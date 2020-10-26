@@ -1,0 +1,745 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>射线投射 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="collision.html" />
+    
+    
+    <link rel="prev" href="bounding-box.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    新手上路
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../abc/cube.html">
+            
+                <a href="../abc/cube.html">
+            
+                    
+                    绘制一个立方体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../abc/model.html">
+            
+                <a href="../abc/model.html">
+            
+                    
+                    绘制一个 3D 模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    基础结构
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../structure/engine.html">
+            
+                <a href="../structure/engine.html">
+            
+                    
+                    引擎
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../structure/scene.html">
+            
+                <a href="../structure/scene.html">
+            
+                    
+                    场景
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../structure/entity.html">
+            
+                <a href="../structure/entity.html">
+            
+                    
+                    实体
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../structure/script.html">
+            
+                <a href="../structure/script.html">
+            
+                    
+                    脚本组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../structure/resource-loader.html">
+            
+                <a href="../structure/resource-loader.html">
+            
+                    
+                    资源管理与加载
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    资源系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../resource-system/texture.html">
+            
+                <a href="../resource-system/texture.html">
+            
+                    
+                    纹理资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    渲染系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../render-system/camera.html">
+            
+                <a href="../render-system/camera.html">
+            
+                    
+                    相机
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../render-system/light.html">
+            
+                <a href="../render-system/light.html">
+            
+                    
+                    灯光
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../render-system/basic-geometry.html">
+            
+                <a href="../render-system/basic-geometry.html">
+            
+                    
+                    基础几何体渲染器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../render-system/buffer-geometry.html">
+            
+                <a href="../render-system/buffer-geometry.html">
+            
+                    
+                    自定义几何体渲染器
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    变换系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../transform-system/transform.html">
+            
+                <a href="../transform-system/transform.html">
+            
+                    
+                    变换系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    动画系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../animation-system/skeletal-animation.html">
+            
+                <a href="../animation-system/skeletal-animation.html">
+            
+                    
+                    骨骼动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../animation-system/particle-system.html">
+            
+                <a href="../animation-system/particle-system.html">
+            
+                    
+                    粒子动画
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" >
+            
+                <span>
+            
+                    
+                    工具库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../tools/math.html">
+            
+                <a href="../tools/math.html">
+            
+                    
+                    数学库
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" >
+            
+                <span>
+            
+                    
+                    碰撞系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="bounding-box.html">
+            
+                <a href="bounding-box.html">
+            
+                    
+                    包围类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.2" data-path="ray.html">
+            
+                <a href="ray.html">
+            
+                    
+                    射线投射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="collision.html">
+            
+                <a href="collision.html">
+            
+                    
+                    碰撞检测
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" >
+            
+                <span>
+            
+                    
+                    交互系统
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../interaction-system/controls.html">
+            
+                <a href="../interaction-system/controls.html">
+            
+                    
+                    控制器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../interaction-system/framebuffer-picker.html">
+            
+                <a href="../interaction-system/framebuffer-picker.html">
+            
+                    
+                    帧缓冲拾取
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >射线投射</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5C04;&#x7EBF;&#x6295;&#x5C04;">&#x5C04;&#x7EBF;&#x6295;&#x5C04;</h1>
+<p>&#x5C04;&#x7EBF;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6210; 3D &#x4E16;&#x754C;&#x4E2D;&#x4E00;&#x4E2A;&#x70B9;&#x5411;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x53D1;&#x5C04;&#x7684;&#x4E00;&#x6761;&#x65E0;&#x7EC8;&#x70B9;&#x7684;&#x7EBF;&#x3002;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x5728; 3D &#x5E94;&#x7528;&#x4E2D;&#x975E;&#x5E38;&#x5E7F;&#x6CDB;&#x3002;&#x901A;&#x8FC7;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x5C4F;&#x5E55;&#x65F6;&#xFF0C;&#x62FE;&#x53D6; 3D &#x573A;&#x666F;&#x4E2D;&#x7684;&#x7269;&#x4F53;&#xFF1B;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x5C04;&#x51FB;&#x6E38;&#x620F;&#x4E2D;&#xFF0C;&#x5224;&#x65AD;&#x5B50;&#x5F39;&#x80FD;&#x5426;&#x5C04;&#x4E2D;&#x76EE;&#x6807;&#x3002;</p>
+<p><img src="https://intranetproxy.alipay.com/skylark/lark/0/2019/png/161276/1566567969808-796f776a-96eb-4be1-bd50-5bfda698329d.png#align=left&amp;display=inline&amp;height=247&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=294&amp;originWidth=554&amp;size=43365&amp;status=done&amp;style=none&amp;width=465" alt="image.png">
+&#xFF08;<em>&#x56FE;&#x7247;&#x6765;&#x6E90;&#x4E8E;&#x7F51;&#x7EDC;</em>&#xFF09;</p>
+<p><strong>Ray</strong> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x65B9;&#x4FBF;&#x597D;&#x7528;&#x7684;&#x5C04;&#x7EBF;&#x68C0;&#x6D4B;&#x529F;&#x80FD;&#x3002;</p>
+<h2 id="&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;">&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;</h2>
+<p>&#x9700;&#x8981;&#x7ED9;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x7269;&#x4F53;&#xFF08;Entity&#xFF09;&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#xFF08;<strong>Collider</strong>&#xFF09;&#xFF0C;&#x7269;&#x4F53;&#x624D;&#x80FD;&#x5728;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x68C0;&#x6D4B;&#x5230;&#x3002;&#x76EE;&#x524D; <strong>Collider</strong> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x6A21;&#x5F0F;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:right">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="">BoxCollider</a></td>
+<td style="text-align:right">&#x5305;&#x56F4;&#x76D2;&#x78B0;&#x649E;&#x4F53;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="">SphereCollider</a></td>
+<td style="text-align:right">&#x7403;&#x578B;&#x78B0;&#x649E;&#x4F53;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="">PlaneCollider</a></td>
+<td style="text-align:right">&#x5E73;&#x9762;&#x78B0;&#x649E;&#x4F53;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { SphereCollider, BoxCollider, PlaneCollider } from <span class="hljs-string">&apos;oasis-engine&apos;</span>;
+
+<span class="hljs-comment">//-- &#x6DFB;&#x52A0; BoxCollider</span>
+<span class="hljs-keyword">let</span> boxEntity = rootEntity.createChild(<span class="hljs-string">&apos;box&apos;</span>);
+<span class="hljs-keyword">let</span> boxCollider = boxEntity.addComponent(BoxCollider);
+boxCollider.setBoxCenterSize([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [cubeSize, cubeSize, cubeSize]);  
+
+<span class="hljs-comment">//-- &#x6DFB;&#x52A0; SphereCollider</span>
+<span class="hljs-keyword">let</span> sphereEntity = rootEntity.createChild(<span class="hljs-string">&apos;sphere&apos;</span>);
+<span class="hljs-keyword">let</span> sphereCollider = sphereEntity.addComponent(SphereCollider);
+sphereCollider.setSphere([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], radius); 
+
+<span class="hljs-comment">//-- &#x6DFB;&#x52A0; PlaneCollider</span>
+<span class="hljs-keyword">let</span> planeEntity = rootEntity.createChild(<span class="hljs-string">&apos;plane&apos;</span>);
+<span class="hljs-keyword">let</span> planeCollider = planeEntity.addComponent(PlaneCollider);
+planeCollider.setPlane([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]);
+</code></pre>
+<h2 id="&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;">&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;</h2>
+<p>&#x5728;&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5F15;&#x5165; <strong>Ray</strong> &#x6A21;&#x5757;&#xFF1B;&#x7136;&#x540E;&#x751F;&#x6210;&#x5C04;&#x7EBF;&#xFF0C;&#x5C04;&#x7EBF;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76F8;&#x673A;&#xFF08;camera&#xFF09;&#x5C06;&#x5C4F;&#x5E55;&#x8F93;&#x5165;&#x8F6C;&#x5316;&#x6210;&#x5C04;&#x7EBF;&#xFF1B;&#x6700;&#x540E;&#x8C03;&#x7528; <code>scene.raycast</code>  &#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x68C0;&#x6D4B;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x547D;&#x4E2D;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-typescript"><span class="hljs-comment">// &#x52A0;&#x8F7D; Raycast &#x6A21;&#x5757;</span>
+<span class="hljs-keyword">import</span> { Ray } from <span class="hljs-string">&apos;oasis-engine&apos;</span>;
+
+<span class="hljs-comment">// &#x81EA;&#x5B9A;&#x4E49; Ray</span>
+<span class="hljs-keyword">let</span> ray = <span class="hljs-keyword">new</span> Ray([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>]);
+<span class="hljs-keyword">let</span> collider = scene.raycast(ray);
+<span class="hljs-keyword">if</span> (collider) {
+  <span class="hljs-built_in">console</span>.log(collider);
+}
+
+<span class="hljs-comment">// &#x5C06;&#x5C4F;&#x5E55;&#x8F93;&#x5165;&#x8F6C;&#x6362;&#x6210;Ray</span>
+<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;canvas&apos;</span>).addEventListener(<span class="hljs-string">&apos;click&apos;</span>, (e) =&gt; {
+  ray = camera.screenPointToRay(e.offsetX, e.offsetY);
+  collider = scene.raycast(ray);
+  <span class="hljs-keyword">if</span> (collider) {
+    <span class="hljs-built_in">console</span>.log(collider);
+  }
+});
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bounding-box.html" class="navigation navigation-prev " aria-label="Previous page: 包围类">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="collision.html" class="navigation navigation-next " aria-label="Next page: 碰撞检测">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"射线投射","level":"1.9.2","depth":2,"next":{"title":"碰撞检测","level":"1.9.3","depth":2,"path":"collision-system/collision.md","ref":"collision-system/collision.md","articles":[]},"previous":{"title":"包围类","level":"1.9.1","depth":2,"path":"collision-system/bounding-box.md","ref":"collision-system/bounding-box.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"collision-system/ray.md","mtime":"2020-10-26T17:10:31.815Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-26T15:39:40.053Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
