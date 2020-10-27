@@ -1,0 +1,656 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ShaderFactory | Oasis Engine</title>
+	<meta name="description" content="Documentation for Oasis Engine">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="tsd-header">
+	<div class="tsd-page-toolbar">
+		<div class="container header-container">
+			<div class="header-logo">
+				<a href="../globals.html" class="title">
+					<span class="oasis-logo"></span>
+				</a>
+				<select name="version" class="version-select" id="tsd-version">
+				</select>
+			</div>
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Packages</a>
+				</li>
+				<li>
+					<a href="../modules/core.html">core</a>
+				</li>
+				<li>
+					<a href="core.shaderfactory.html">ShaderFactory</a>
+				</li>
+			</ul>
+			<span class="tsd-breadcrumb-current">Class ShaderFactory</span>
+			<div id="tsd-filter">
+				<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+				<div class="tsd-filter-group">
+					<input type="checkbox" id="tsd-filter-inherited" checked />
+					<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+				</div>
+			</div>
+			<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ShaderFactory</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#injectshaderslices" class="tsd-kind-icon">Inject<wbr>Shader<wbr>Slices</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#compatible" class="tsd-kind-icon">compatible</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#convertto300" class="tsd-kind-icon">convert<wbr>To300</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#getmaxdrawbuffers" class="tsd-kind-icon">get<wbr>Max<wbr>Draw<wbr>Buffers</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseattributemacros" class="tsd-kind-icon">parse<wbr>Attribute<wbr>Macros</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parsecustommacros" class="tsd-kind-icon">parse<wbr>Custom<wbr>Macros</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseextension" class="tsd-kind-icon">parse<wbr>Extension</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseincludes" class="tsd-kind-icon">parse<wbr>Includes</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseprecision" class="tsd-kind-icon">parse<wbr>Precision</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseshader" class="tsd-kind-icon">parse<wbr>Shader</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseshadername" class="tsd-kind-icon">parse<wbr>Shader<wbr>Name</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.shaderfactory.html#parseversion" class="tsd-kind-icon">parse<wbr>Version</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="core.shaderfactory.html#replacemrtshader" class="tsd-kind-icon">replaceMRTShader</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="injectshaderslices" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> Inject<wbr>Shader<wbr>Slices</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">Inject<wbr>Shader<wbr>Slices<span class="tsd-signature-symbol">(</span>slices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:74</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>slices: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="compatible" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> compatible</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">compatible<span class="tsd-signature-symbol">(</span>fragmentShader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:144</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<ol>
+										<li>兼容 gl_FragColor 和 gl_FragData 同时存在的报错</li>
+									</ol>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>fragmentShader: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="convertto300" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> convert<wbr>To300</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>To300<span class="tsd-signature-symbol">(</span>shader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, isFrag<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:95</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>切换低版本 GLSL 到 GLSL 300 es</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>shader: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>code</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> isFrag: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>是否为片元着色器。</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="getmaxdrawbuffers" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> get<wbr>Max<wbr>Draw<wbr>Buffers</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Max<wbr>Draw<wbr>Buffers<span class="tsd-signature-symbol">(</span>shader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:129</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>返回相应 shaderCode 中的 draw buffer 长度</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>shader: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>shader code</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseattributemacros" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Attribute<wbr>Macros</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Attribute<wbr>Macros<span class="tsd-signature-symbol">(</span>macros<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:37</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>macros: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parsecustommacros" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Custom<wbr>Macros</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Custom<wbr>Macros<span class="tsd-signature-symbol">(</span>macros<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:45</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>macros: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseextension" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Extension</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Extension<span class="tsd-signature-symbol">(</span>extensions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:82</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>相应版本的 extension</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>extensions: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>such as [&quot;GL_EXT_shader_texture_lod&quot;]</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseincludes" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Includes</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Includes<span class="tsd-signature-symbol">(</span>src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:57</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>src: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseprecision" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Precision</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Precision<span class="tsd-signature-symbol">(</span>vertP<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fragP<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, compileVert<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:13</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>vertP: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>fragP: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> compileVert: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseshader" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Shader</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Shader<span class="tsd-signature-symbol">(</span>src<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:53</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>src: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseshadername" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Shader<wbr>Name</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Shader<wbr>Name<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:33</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
+					<a name="parseversion" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> parse<wbr>Version</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Version<span class="tsd-signature-symbol">(</span>version<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:9</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>GLSL 版本</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> version: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;100&quot;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>&quot;100&quot; | &quot;300 es&quot;</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+					<a name="replacemrtshader" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> <span class="tsd-flag ts-flagPrivate">Private</span> replaceMRTShader</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+						<li class="tsd-signature tsd-kind-icon">replaceMRTShader<span class="tsd-signature-symbol">(</span>shader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, result<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/shaderlib/ShaderFactory.ts:152</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>shader: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>result: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Packages</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html">controls</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/core.html">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/decal.html">decal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/engine_stats.html">engine-<wbr>stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/fsm.html">fsm</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/hud.html">hud</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html">loader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/math.html">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/o3.html">o3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/post_processing.html">post-<wbr>processing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/screenshot.html">screenshot</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html">tween</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html" class="tsd-kind-icon">controls</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
+						<a href="../modules/core.html" class="tsd-kind-icon">core</a>
+						<ul>
+							<li class="current tsd-kind-class tsd-parent-kind-module">
+								<a href="core.shaderfactory.html" class="tsd-kind-icon">Shader<wbr>Factory</a>
+								<ul>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#injectshaderslices" class="tsd-kind-icon">Inject<wbr>Shader<wbr>Slices</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#compatible" class="tsd-kind-icon">compatible</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#convertto300" class="tsd-kind-icon">convert<wbr>To300</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#getmaxdrawbuffers" class="tsd-kind-icon">get<wbr>Max<wbr>Draw<wbr>Buffers</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseattributemacros" class="tsd-kind-icon">parse<wbr>Attribute<wbr>Macros</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parsecustommacros" class="tsd-kind-icon">parse<wbr>Custom<wbr>Macros</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseextension" class="tsd-kind-icon">parse<wbr>Extension</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseincludes" class="tsd-kind-icon">parse<wbr>Includes</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseprecision" class="tsd-kind-icon">parse<wbr>Precision</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseshader" class="tsd-kind-icon">parse<wbr>Shader</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseshadername" class="tsd-kind-icon">parse<wbr>Shader<wbr>Name</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
+										<a href="core.shaderfactory.html#parseversion" class="tsd-kind-icon">parse<wbr>Version</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
+										<a href="core.shaderfactory.html#replacemrtshader" class="tsd-kind-icon">replaceMRTShader</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html" class="tsd-kind-icon">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/engine_stats.html" class="tsd-kind-icon">engine-<wbr>stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

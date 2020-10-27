@@ -1,0 +1,609 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BoundingBox | Oasis Engine</title>
+	<meta name="description" content="Documentation for Oasis Engine">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="tsd-header">
+	<div class="tsd-page-toolbar">
+		<div class="container header-container">
+			<div class="header-logo">
+				<a href="../globals.html" class="title">
+					<span class="oasis-logo"></span>
+				</a>
+				<select name="version" class="version-select" id="tsd-version">
+				</select>
+			</div>
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Packages</a>
+				</li>
+				<li>
+					<a href="../modules/math.html">math</a>
+				</li>
+				<li>
+					<a href="math.boundingbox.html">BoundingBox</a>
+				</li>
+			</ul>
+			<span class="tsd-breadcrumb-current">Class BoundingBox</span>
+			<div id="tsd-filter">
+				<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+				<div class="tsd-filter-group">
+					<input type="checkbox" id="tsd-filter-inherited" checked />
+					<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+				</div>
+			</div>
+			<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">BoundingBox</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">any</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="math.boundingbox.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingbox.html#max" class="tsd-kind-icon">max</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingbox.html#min" class="tsd-kind-icon">min</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingbox.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingbox.html#cloneto" class="tsd-kind-icon">clone<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingbox.html#intersectsfrustum" class="tsd-kind-icon">intersects<wbr>Frustum</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingbox.html#isinfrustum" class="tsd-kind-icon">is<wbr>InFrustum</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingbox.html#setfromcenterandsize" class="tsd-kind-icon">set<wbr>From<wbr>Center<wbr>And<wbr>Size</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingbox.html#update" class="tsd-kind-icon">update</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Bounding<wbr>Box<span class="tsd-signature-symbol">(</span>minWorld<span class="tsd-signature-symbol">: </span><a href="math.vector3.html" class="tsd-signature-type">Vector3</a>, maxWorld<span class="tsd-signature-symbol">: </span><a href="math.vector3.html" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:12</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>AABB 的 min/max 基于世界坐标系，且不能通过 modelMatrix 缓存计算</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>minWorld: <a href="math.vector3.html" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>世界坐标系的最小坐标</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>maxWorld: <a href="math.vector3.html" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>世界坐标系的最大坐标</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="max" class="tsd-anchor"></a>
+					<h3>max</h3>
+					<div class="tsd-signature tsd-kind-icon">max<span class="tsd-signature-symbol">:</span> <a href="math.vector3.html" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol"> = new Vector3()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/math/src/BoundingBox.ts:12</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="min" class="tsd-anchor"></a>
+					<h3>min</h3>
+					<div class="tsd-signature tsd-kind-icon">min<span class="tsd-signature-symbol">:</span> <a href="math.vector3.html" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol"> = new Vector3()</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in packages/math/src/BoundingBox.ts:11</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:109</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>克隆并返回一个新的包围盒对象。</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a></h4>
+							<p>新的包围盒对象</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="cloneto" class="tsd-anchor"></a>
+					<h3>clone<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<wbr>To<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:117</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>将当包围盒值拷贝给 out 包围盒。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>目标包围盒</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="intersectsfrustum" class="tsd-anchor"></a>
+					<h3>intersects<wbr>Frustum</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">intersects<wbr>Frustum<span class="tsd-signature-symbol">(</span>frustumPlanes<span class="tsd-signature-symbol">: </span><a href="math.vector4.html" class="tsd-signature-type">Vector4</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/math.intersectinfo.html" class="tsd-signature-type">IntersectInfo</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:51</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>获取与视锥体的 具体相交状态</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>frustumPlanes: <a href="math.vector4.html" class="tsd-signature-type">Vector4</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Oasis 视锥体的6个平面方程</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/math.intersectinfo.html" class="tsd-signature-type">IntersectInfo</a></h4>
+							<p>返回相交状态</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="isinfrustum" class="tsd-anchor"></a>
+					<h3>is<wbr>InFrustum</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>InFrustum<span class="tsd-signature-symbol">(</span>frustumPlanes<span class="tsd-signature-symbol">: </span><a href="math.vector4.html" class="tsd-signature-type">Vector4</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:86</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>是否在视锥体内部（包含或者交叉）</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>frustumPlanes: <a href="math.vector4.html" class="tsd-signature-type">Vector4</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Oasis 视锥体的6个平面方程</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setfromcenterandsize" class="tsd-anchor"></a>
+					<h3>set<wbr>From<wbr>Center<wbr>And<wbr>Size</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>From<wbr>Center<wbr>And<wbr>Size<span class="tsd-signature-symbol">(</span>center<span class="tsd-signature-symbol">: </span><a href="math.vector3.html" class="tsd-signature-type">Vector3</a>, size<span class="tsd-signature-symbol">: </span><a href="math.vector3.html" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:38</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>使用中心点和 Size 的方式来计算 AABB 包围盒</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>center: <a href="math.vector3.html" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>包围盒的中心点</p>
+									</div>
+								</li>
+								<li>
+									<h5>size: <a href="math.vector3.html" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>包围盒的3个轴向的大小</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="update" class="tsd-anchor"></a>
+					<h3>update</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>minWorld<span class="tsd-signature-symbol">: </span><a href="math.vector3.html" class="tsd-signature-type">Vector3</a>, maxWorld<span class="tsd-signature-symbol">: </span><a href="math.vector3.html" class="tsd-signature-type">Vector3</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/math/src/BoundingBox.ts:28</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>更新 AABB</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>minWorld: <a href="math.vector3.html" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>世界坐标系的最小坐标</p>
+									</div>
+								</li>
+								<li>
+									<h5>maxWorld: <a href="math.vector3.html" class="tsd-signature-type">Vector3</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>世界坐标系的最大坐标</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Packages</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html">controls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/core.html">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/decal.html">decal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/engine_stats.html">engine-<wbr>stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/fsm.html">fsm</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/hud.html">hud</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html">loader</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/math.html">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/o3.html">o3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/post_processing.html">post-<wbr>processing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/screenshot.html">screenshot</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html">tween</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html" class="tsd-kind-icon">controls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/core.html" class="tsd-kind-icon">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html" class="tsd-kind-icon">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/engine_stats.html" class="tsd-kind-icon">engine-<wbr>stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
+						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
+						<ul>
+							<li class=" tsd-kind-enum tsd-parent-kind-module">
+								<a href="../enums/math.intersectinfo.html" class="tsd-kind-icon">Intersect<wbr>Info</a>
+							</li>
+							<li class="current tsd-kind-class tsd-parent-kind-module">
+								<a href="math.boundingbox.html" class="tsd-kind-icon">Bounding<wbr>Box</a>
+								<ul>
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
+										<a href="math.boundingbox.html#constructor" class="tsd-kind-icon">constructor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingbox.html#max" class="tsd-kind-icon">max</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingbox.html#min" class="tsd-kind-icon">min</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingbox.html#clone" class="tsd-kind-icon">clone</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingbox.html#cloneto" class="tsd-kind-icon">clone<wbr>To</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingbox.html#intersectsfrustum" class="tsd-kind-icon">intersects<wbr>Frustum</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingbox.html#isinfrustum" class="tsd-kind-icon">is<wbr>InFrustum</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingbox.html#setfromcenterandsize" class="tsd-kind-icon">set<wbr>From<wbr>Center<wbr>And<wbr>Size</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingbox.html#update" class="tsd-kind-icon">update</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.boundingsphere.html" class="tsd-kind-icon">Bounding<wbr>Sphere</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.mathutil.html" class="tsd-kind-icon">Math<wbr>Util</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.matrix.html" class="tsd-kind-icon">Matrix</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.matrix3x3.html" class="tsd-kind-icon">Matrix3x3</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.obb.html" class="tsd-kind-icon">OBB</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.quaternion.html" class="tsd-kind-icon">Quaternion</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.ray.html" class="tsd-kind-icon">Ray</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.raycasthit.html" class="tsd-kind-icon">Raycast<wbr>Hit</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.spherical.html" class="tsd-kind-icon">Spherical</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.vector2.html" class="tsd-kind-icon">Vector2</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.vector3.html" class="tsd-kind-icon">Vector3</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.vector4.html" class="tsd-kind-icon">Vector4</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/math.html#esp" class="tsd-kind-icon">ESP</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/math.html#getmaxscalebymodelmatrix" class="tsd-kind-icon">get<wbr>Max<wbr>Scale<wbr>ByModel<wbr>Matrix</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-private">
+								<a href="../modules/math.html#pointdistancetoplane" class="tsd-kind-icon">point<wbr>Distance<wbr>ToPlane</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
