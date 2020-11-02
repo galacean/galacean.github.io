@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>射线投射 · GitBook</title>
+        <title>射线投射 · Oasis Engine</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -35,16 +35,6 @@
     
         
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
     
@@ -60,8 +50,6 @@
     <link rel="next" href="collision.html" />
     
     
-    <link rel="prev" href="bounding-box.html" />
-    
 
     </head>
     <body>
@@ -71,7 +59,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -213,9 +201,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../structure/resource-loader.html">
+        <li class="chapter " data-level="1.3.5" data-path="../structure/resource-manager.html">
             
-                <a href="../structure/resource-loader.html">
+                <a href="../structure/resource-manager.html">
             
                     
                     资源管理与加载
@@ -303,12 +291,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../render-system/basic-geometry.html">
+        <li class="chapter " data-level="1.5.3" data-path="../render-system/geometry-renderer.html">
             
-                <a href="../render-system/basic-geometry.html">
+                <a href="../render-system/geometry-renderer.html">
             
                     
-                    基础几何体渲染器
+                    几何体渲染器
             
                 </a>
             
@@ -316,12 +304,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../render-system/buffer-geometry.html">
+        <li class="chapter " data-level="1.5.4" data-path="../render-system/basic-geometry.html">
             
-                <a href="../render-system/buffer-geometry.html">
+                <a href="../render-system/basic-geometry.html">
             
                     
-                    自定义几何体渲染器
+                    常用几何体
             
                 </a>
             
@@ -457,20 +445,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="bounding-box.html">
-            
-                <a href="bounding-box.html">
-            
-                    
-                    包围类
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.9.2" data-path="ray.html">
+        <li class="chapter active" data-level="1.9.1" data-path="ray.html">
             
                 <a href="ray.html">
             
@@ -483,7 +458,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="collision.html">
+        <li class="chapter " data-level="1.9.2" data-path="collision.html">
             
                 <a href="collision.html">
             
@@ -553,7 +528,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -597,26 +572,26 @@
 &#xFF08;<em>&#x56FE;&#x7247;&#x6765;&#x6E90;&#x4E8E;&#x7F51;&#x7EDC;</em>&#xFF09;</p>
 <p><strong>Ray</strong> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4E86;&#x65B9;&#x4FBF;&#x597D;&#x7528;&#x7684;&#x5C04;&#x7EBF;&#x68C0;&#x6D4B;&#x529F;&#x80FD;&#x3002;</p>
 <h2 id="&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;">&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;</h2>
-<p>&#x9700;&#x8981;&#x7ED9;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x7269;&#x4F53;&#xFF08;Entity&#xFF09;&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#xFF08;<strong>Collider</strong>&#xFF09;&#xFF0C;&#x7269;&#x4F53;&#x624D;&#x80FD;&#x5728;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x68C0;&#x6D4B;&#x5230;&#x3002;&#x76EE;&#x524D; <strong>Collider</strong> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x6A21;&#x5F0F;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<p>&#x9700;&#x8981;&#x7ED9;&#x573A;&#x666F;&#x4E2D;&#x7684;&#x7269;&#x4F53;&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.entity.html" target="_blank">Entity</a>&#xFF09;&#x6DFB;&#x52A0;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.collider.html" target="_blank">Collider</a>&#xFF09;&#xFF0C;&#x7269;&#x4F53;&#x624D;&#x80FD;&#x5728;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x7684;&#x65F6;&#x5019;&#x88AB;&#x68C0;&#x6D4B;&#x5230;&#x3002;&#x76EE;&#x524D; <strong>Collider</strong> &#x6A21;&#x5757;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x6A21;&#x5F0F;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x7EC4;&#x4EF6;&#xFF1A;</p>
 <table>
 <thead>
 <tr>
 <th style="text-align:left">&#x540D;&#x79F0;</th>
-<th style="text-align:right">&#x89E3;&#x91CA;</th>
+<th style="text-align:left">&#x89E3;&#x91CA;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="">BoxCollider</a></td>
-<td style="text-align:right">&#x5305;&#x56F4;&#x76D2;&#x78B0;&#x649E;&#x4F53;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.boxcollider.html" target="_blank">BoxCollider</a></td>
+<td style="text-align:left">&#x5305;&#x56F4;&#x76D2;&#x78B0;&#x649E;&#x4F53;</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="">SphereCollider</a></td>
-<td style="text-align:right">&#x7403;&#x578B;&#x78B0;&#x649E;&#x4F53;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.aspherecollider.html" target="_blank">SphereCollider</a></td>
+<td style="text-align:left">&#x7403;&#x578B;&#x78B0;&#x649E;&#x4F53;</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="">PlaneCollider</a></td>
-<td style="text-align:right">&#x5E73;&#x9762;&#x78B0;&#x649E;&#x4F53;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.planecollider.html" target="_blank">PlaneCollider</a></td>
+<td style="text-align:left">&#x5E73;&#x9762;&#x78B0;&#x649E;&#x4F53;</td>
 </tr>
 </tbody>
 </table>
@@ -639,7 +614,7 @@ sphereCollider.setSphere([<span class="hljs-number">0</span>, <span class="hljs-
 planeCollider.setPlane([<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]);
 </code></pre>
 <h2 id="&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;">&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;</h2>
-<p>&#x5728;&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5F15;&#x5165; <strong>Ray</strong> &#x6A21;&#x5757;&#xFF1B;&#x7136;&#x540E;&#x751F;&#x6210;&#x5C04;&#x7EBF;&#xFF0C;&#x5C04;&#x7EBF;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76F8;&#x673A;&#xFF08;camera&#xFF09;&#x5C06;&#x5C4F;&#x5E55;&#x8F93;&#x5165;&#x8F6C;&#x5316;&#x6210;&#x5C04;&#x7EBF;&#xFF1B;&#x6700;&#x540E;&#x8C03;&#x7528; <code>scene.raycast</code>  &#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x68C0;&#x6D4B;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x547D;&#x4E2D;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x5728;&#x4F7F;&#x7528;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x5F15;&#x5165; <a href="https://oasis-engine.github.io/api/0.1/classes/math.ray.html" target="_blank">Ray</a> &#x6A21;&#x5757;&#xFF1B;&#x7136;&#x540E;&#x751F;&#x6210;&#x5C04;&#x7EBF;&#xFF0C;&#x5C04;&#x7EBF;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x76F8;&#x673A;&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.camera.html#viewportpointtoray" target="_blank">camera</a>&#xFF09;&#x5C06;&#x5C4F;&#x5E55;&#x8F93;&#x5165;&#x8F6C;&#x5316;&#x6210;&#x5C04;&#x7EBF;&#xFF1B;&#x6700;&#x540E;&#x8C03;&#x7528; <code>scene.raycast</code>  &#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x68C0;&#x6D4B;&#x5C04;&#x7EBF;&#x6295;&#x5C04;&#x547D;&#x4E2D;&#x7684;&#x78B0;&#x649E;&#x4F53;&#x3002;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x52A0;&#x8F7D; Raycast &#x6A21;&#x5757;</span>
 <span class="hljs-keyword">import</span> { Ray } from <span class="hljs-string">&apos;oasis-engine&apos;</span>;
 
@@ -686,12 +661,8 @@ planeCollider.setPlane([<span class="hljs-number">0</span>, <span class="hljs-nu
 
             
                 
-                <a href="bounding-box.html" class="navigation navigation-prev " aria-label="Previous page: 包围类">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="collision.html" class="navigation navigation-next " aria-label="Next page: 碰撞检测">
+                <a href="collision.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 碰撞检测">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -702,7 +673,7 @@ planeCollider.setPlane([<span class="hljs-number">0</span>, <span class="hljs-nu
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"射线投射","level":"1.9.2","depth":2,"next":{"title":"碰撞检测","level":"1.9.3","depth":2,"path":"collision-system/collision.md","ref":"collision-system/collision.md","articles":[]},"previous":{"title":"包围类","level":"1.9.1","depth":2,"path":"collision-system/bounding-box.md","ref":"collision-system/bounding-box.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"collision-system/ray.md","mtime":"2020-10-26T17:10:31.815Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-26T15:39:40.053Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"射线投射","level":"1.9.1","depth":2,"next":{"title":"碰撞检测","level":"1.9.2","depth":2,"path":"collision-system/collision.md","ref":"collision-system/collision.md","articles":[]},"previous":{"title":"碰撞系统","level":"1.9","depth":1,"ref":"","articles":[{"title":"射线投射","level":"1.9.1","depth":2,"path":"collision-system/ray.md","ref":"collision-system/ray.md","articles":[]},{"title":"碰撞检测","level":"1.9.2","depth":2,"path":"collision-system/collision.md","ref":"collision-system/collision.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"api":"https://oasis-engine.github.io/api/0.1/","docs":"https://oasis-engine.github.io/docs/"},"title":"Oasis Engine","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"collision-system/ray.md","mtime":"2020-11-02T06:53:28.881Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-02T13:52:47.601Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -729,10 +700,6 @@ planeCollider.setPlane([<span class="hljs-number">0</span>, <span class="hljs-nu
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

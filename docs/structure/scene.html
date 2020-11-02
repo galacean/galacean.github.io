@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>场景 · GitBook</title>
+        <title>场景 · Oasis Engine</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -35,16 +35,6 @@
     
         
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
     
@@ -71,7 +61,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -213,9 +203,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="resource-loader.html">
+        <li class="chapter " data-level="1.3.5" data-path="resource-manager.html">
             
-                <a href="resource-loader.html">
+                <a href="resource-manager.html">
             
                     
                     资源管理与加载
@@ -303,12 +293,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="../render-system/basic-geometry.html">
+        <li class="chapter " data-level="1.5.3" data-path="../render-system/geometry-renderer.html">
             
-                <a href="../render-system/basic-geometry.html">
+                <a href="../render-system/geometry-renderer.html">
             
                     
-                    基础几何体渲染器
+                    几何体渲染器
             
                 </a>
             
@@ -316,12 +306,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="../render-system/buffer-geometry.html">
+        <li class="chapter " data-level="1.5.4" data-path="../render-system/basic-geometry.html">
             
-                <a href="../render-system/buffer-geometry.html">
+                <a href="../render-system/basic-geometry.html">
             
                     
-                    自定义几何体渲染器
+                    常用几何体
             
                 </a>
             
@@ -457,20 +447,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../collision-system/bounding-box.html">
-            
-                <a href="../collision-system/bounding-box.html">
-            
-                    
-                    包围类
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="../collision-system/ray.html">
+        <li class="chapter " data-level="1.9.1" data-path="../collision-system/ray.html">
             
                 <a href="../collision-system/ray.html">
             
@@ -483,7 +460,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../collision-system/collision.html">
+        <li class="chapter " data-level="1.9.2" data-path="../collision-system/collision.html">
             
                 <a href="../collision-system/collision.html">
             
@@ -553,7 +530,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -592,12 +569,43 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x573A;&#x666F;">&#x573A;&#x666F;</h1>
-<p>Scene &#x4F5C;&#x4E3A;&#x573A;&#x666F;&#x5355;&#x5143;&#xFF0C;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x573A;&#x666F;&#x7684;&#x5B9E;&#x4F53;&#x6811;&#x7BA1;&#x7406;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5927;&#x578B;&#x6E38;&#x620F;&#x573A;&#x666F;&#x3002;
-&#x5982;&#xFF0C;<strong>scene1</strong> &#x548C; <strong>scene2</strong> &#x4F5C;&#x4E3A;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x6FC0;&#x6D3B;&#x548C;&#x6E32;&#x67D3;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5EFA;&#x6A21;&#x8F6F;&#x4EF6;&#x6216;&#x8005;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#xFF0C;&#x5C06;&#x4E4B;&#x5212;&#x5206;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x65F6;&#x673A;&#x5206;&#x522B;&#x5730;&#x6FC0;&#x6D3B;&#x76F8;&#x5E94;&#x573A;&#x666F;&#xFF0C;&#x6216;&#x8005;&#x5408;&#x5E76;&#x573A;&#x666F;&#x3002;</p>
+<p>Scene &#x4F5C;&#x4E3A;&#x573A;&#x666F;&#x5355;&#x5143;&#xFF0C;&#x53EF;&#x4EE5;&#x65B9;&#x4FBF;&#x573A;&#x666F;&#x7684;&#x5B9E;&#x4F53;&#x6811;&#x7BA1;&#x7406;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5927;&#x578B;&#x6E38;&#x620F;&#x573A;&#x666F;&#x3002;&#x5982;&#xFF0C;<strong>scene1</strong> &#x548C; <strong>scene2</strong> &#x4F5C;&#x4E3A;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x540C;&#x65F6;&#x52A0;&#x8F7D;&#x6FC0;&#x6D3B;&#x548C;&#x6E32;&#x67D3;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x5EFA;&#x6A21;&#x8F6F;&#x4EF6;&#x6216;&#x8005;&#x4EE3;&#x7801;&#x903B;&#x8F91;&#xFF0C;&#x5C06;&#x4E4B;&#x5212;&#x5206;&#x4E3A;&#x4E0D;&#x540C;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x65F6;&#x673A;&#x5206;&#x522B;&#x5730;&#x6FC0;&#x6D3B;&#x76F8;&#x5E94;&#x573A;&#x666F;&#xFF0C;&#x6216;&#x8005;&#x5408;&#x5E76;&#x573A;&#x666F;&#x3002;</p>
 <h2 id="&#x573A;&#x666F;&#x7BA1;&#x7406;">&#x573A;&#x666F;&#x7BA1;&#x7406;</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x5C5E;&#x6027;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.scenemanager.html#activescene" target="_blank">activeScene</a></td>
+<td style="text-align:left">&#x6FC0;&#x6D3B;&#x573A;&#x666F;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.scenemanager.html#mergescenes" target="_blank">mergeScenes</a></td>
+<td style="text-align:left">&#x5408;&#x5E76;&#x573A;&#x666F;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.scenemanager.html#loadscene" target="_blank">loadScene</a></td>
+<td style="text-align:left">&#x52A0;&#x8F7D;&#x573A;&#x666F;</td>
+</tr>
+</tbody>
+</table>
 <h3 id="&#x57FA;&#x672C;&#x7528;&#x6CD5;">&#x57FA;&#x672C;&#x7528;&#x6CD5;</h3>
 <h4 id="1-&#x6FC0;&#x6D3B;-scene">1. &#x6FC0;&#x6D3B; Scene</h4>
-<p> &#x6FC0;&#x6D3B; <strong>Scene</strong> &#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x60F3;&#x8981;&#x6FC0;&#x6D3B;&#x7684; <strong>scene</strong> &#x8D4B;&#x4E88;&#x5230; <code>engine.sceneManager.activeScene</code>  &#x4E0A;&#x5373;&#x53EF;&#x3002;</p>
+<p> &#x6FC0;&#x6D3B; <strong>Scene</strong> &#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5C06;&#x60F3;&#x8981;&#x6FC0;&#x6D3B;&#x7684; <strong>scene</strong> &#x8D4B;&#x4E88;&#x5230; <a href="https://oasis-engine.github.io/api/0.1/classes/core.scenemanager.html#activescene" target="_blank">engine.sceneManager.activeScene</a> &#x4E0A;&#x5373;&#x53EF;&#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x6709;&#x4E24;&#x4E2A;&#x672A;&#x6FC0;&#x6D3B;&#x7684;&#x573A;&#x666F;</span>
 <span class="hljs-keyword">const</span> scene1,scene2;
 
@@ -608,7 +616,7 @@ engine.sceneManager.activeScene = scene1;
 engine.sceneManager.activeScene = scene2;
 </code></pre>
 <h4 id="2-&#x5408;&#x5E76;-scene">2. &#x5408;&#x5E76; Scene</h4>
-<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x540C;&#x65F6;&#x6FC0;&#x6D3B;&#x591A;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>engine.sceneManager.mergeScenes</code> &#x5C06;2&#x4E2A;&#x573A;&#x666F;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x4E3A;1&#x4E2A;&#x573A;&#x666F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x540C;&#x65F6;&#x6FC0;&#x6D3B;&#x591A;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://oasis-engine.github.io/api/0.1/classes/core.scenemanager.html#mergescenes" target="_blank">engine.sceneManager.mergeScenes</a> &#x5C06;2&#x4E2A;&#x573A;&#x666F;&#x8FDB;&#x884C;&#x5408;&#x5E76;&#x4E3A;1&#x4E2A;&#x573A;&#x666F;&#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x5047;&#x8BBE;&#x5DF2;&#x7ECF;&#x6709;&#x4E24;&#x4E2A;&#x672A;&#x6FC0;&#x6D3B;&#x7684;&#x573A;&#x666F;</span>
 <span class="hljs-keyword">const</span> sourceScene,destScene;
 
@@ -619,7 +627,7 @@ engine.sceneManager.mergeScenes(sourceScene,destScene);
 engine.sceneManager.activeScene = destScene;
 </code></pre>
 <h4 id="3-&#x52A0;&#x8F7D;-scene">3. &#x52A0;&#x8F7D; Scene</h4>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5C06; Oasis Editor &#x4E2D;&#x7F16;&#x8F91;&#x7684;&#x573A;&#x666F;&#x4FDD;&#x5B58;&#x4E3A; <strong>Scene</strong> &#x8D44;&#x4EA7;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x52A0;&#x8F7D; <strong>Scene</strong> &#x8D44;&#x4EA7;&#x4F5C;&#x4E3A;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>engine.sceneManager.loadScene</code> &#x4F20;&#x5165; url &#x5373;&#x53EF;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x52A0;&#x8F7D; <strong>Scene</strong> &#x8D44;&#x4EA7;&#x4F5C;&#x4E3A;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <a href="https://oasis-engine.github.io/api/0.1/classes/core.scenemanager.html#loadscene" target="_blank">engine.sceneManager.loadScene</a> &#x4F20;&#x5165; url &#x5373;&#x53EF;&#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-keyword">const</span> sceneUrl = <span class="hljs-string">&quot;https://*****&quot;</span>;
 
 <span class="hljs-keyword">const</span> scenePromise = engine.sceneManager.loadScene(sceneUrl);
@@ -629,40 +637,6 @@ scenePromise.then( scene =&gt; {
     <span class="hljs-built_in">console</span>.log( scene );
 })
 </code></pre>
-<h3 id="&#x5C5E;&#x6027;">&#x5C5E;&#x6027;</h3>
-<table>
-<thead>
-<tr>
-<th>&#x5C5E;&#x6027;&#x540D;&#x79F0;</th>
-<th>&#x5C5E;&#x6027;&#x91CA;&#x4E49;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>activeScene</td>
-<td>&#x6FC0;&#x6D3B;&#x573A;&#x666F;</td>
-</tr>
-</tbody>
-</table>
-<h3 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h3>
-<table>
-<thead>
-<tr>
-<th>&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
-<th>&#x65B9;&#x6CD5;&#x91CA;&#x4E49;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mergeScenes</td>
-<td>&#x5408;&#x5E76;&#x573A;&#x666F;</td>
-</tr>
-<tr>
-<td>loadScene</td>
-<td>&#x52A0;&#x8F7D;&#x573A;&#x666F;</td>
-</tr>
-</tbody>
-</table>
 <h2 id="&#x5B9E;&#x4F53;&#x6811;&#x7BA1;&#x7406;">&#x5B9E;&#x4F53;&#x6811;&#x7BA1;&#x7406;</h2>
 <h3 id="&#x57FA;&#x672C;&#x7528;&#x6CD5;">&#x57FA;&#x672C;&#x7528;&#x6CD5;</h3>
 <pre><code class="lang-typescript"><span class="hljs-keyword">const</span> engine = <span class="hljs-keyword">new</span> WebGLEngine(<span class="hljs-string">&quot;demo&quot;</span>);
@@ -686,37 +660,34 @@ scene.removeRootEntity(rootEntity);
 <table>
 <thead>
 <tr>
-<th>&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
-<th>&#x65B9;&#x6CD5;&#x91CA;&#x4E49;</th>
+<th style="text-align:left">&#x65B9;&#x6CD5;&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x89E3;&#x91CA;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>createRootEntity</td>
-<td>&#x65B0;&#x521B;&#x5EFA;&#x7684; <strong>scene</strong> &#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x6839;&#x5B9E;&#x4F53;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x521B;&#x5EFA;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.scene.html#createrootentity" target="_blank">createRootEntity</a></td>
+<td style="text-align:left">&#x65B0;&#x521B;&#x5EFA;&#x7684; <em>scene</em> &#x9ED8;&#x8BA4;&#x6CA1;&#x6709;&#x6839;&#x5B9E;&#x4F53;&#xFF0C;&#x9700;&#x8981;&#x624B;&#x52A8;&#x521B;&#x5EFA;</td>
 </tr>
 <tr>
-<td>addRootEntity</td>
-<td>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x65B0;&#x5EFA;&#x5B9E;&#x4F53;&#xFF0C;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5B9E;&#x4F53;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.scene.html#addrootentity" target="_blank">addRootEntity</a></td>
+<td style="text-align:left">&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x65B0;&#x5EFA;&#x5B9E;&#x4F53;&#xFF0C;&#x6216;&#x8005;&#x6DFB;&#x52A0;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5B9E;&#x4F53;</td>
 </tr>
 <tr>
-<td>removeRootEntity</td>
-<td>&#x5220;&#x9664;&#x6839;&#x5B9E;&#x4F53;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/core.scene.html#removerootentity" target="_blank">removeRootEntity</a></td>
+<td style="text-align:left">&#x5220;&#x9664;&#x6839;&#x5B9E;&#x4F53;</td>
 </tr>
 <tr>
-<td>getRootEntity</td>
-<td>&#x67E5;&#x627E;&#x6839;&#x5B9E;&#x4F53;&#xFF0C;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x5168;&#x90E8;&#x6839;&#x5B9E;&#x4F53;&#xFF0C;&#x6216;&#x8005;&#x5355;&#x72EC;&#x7684;&#x67D0;&#x4E2A;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5168;&#x90E8;&#x5B9E;&#x4F53;&#x662F;&#x53EA;&#x8BFB;&#x6570;&#x7EC4;&#xFF0C;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x957F;&#x5EA6;&#x548C;&#x987A;&#x5E8F;&#x3002;</td>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.scene.html#getrootentity" target="_blank">getRootEntity</a></td>
+<td style="text-align:left">&#x67E5;&#x627E;&#x6839;&#x5B9E;&#x4F53;&#xFF0C;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x5168;&#x90E8;&#x6839;&#x5B9E;&#x4F53;&#xFF0C;&#x6216;&#x8005;&#x5355;&#x72EC;&#x7684;&#x67D0;&#x4E2A;&#x5B9E;&#x4F53;&#x5BF9;&#x8C61;&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5168;&#x90E8;&#x5B9E;&#x4F53;&#x662F;&#x53EA;&#x8BFB;&#x6570;&#x7EC4;&#xFF0C;&#x4E0D;&#x80FD;&#x6539;&#x53D8;&#x957F;&#x5EA6;&#x548C;&#x987A;&#x5E8F;</td>
 </tr>
 </tbody>
 </table>
 <h2 id="&#x5176;&#x4ED6;">&#x5176;&#x4ED6;</h2>
-<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x719F;&#x6089;&#x4E86; <a href="">Engine</a> &#x548C; <strong>Scene</strong> &#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5C06;&#x6E32;&#x67D3;&#x753B;&#x9762;&#x8F93;&#x51FA;&#x5230;&#x5C4F;&#x5E55;&#x4E0A;&#x6216;&#x8005;&#x8FDB;&#x884C;&#x79BB;&#x5C4F;&#x6E32;&#x67D3;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5F97;&#x786E;&#x4FDD;&#x5F53;&#x524D; <strong>scene</strong> &#x7684;&#x5B9E;&#x4F53;&#x6811;&#x4E0A;&#x6302;&#x8F7D;&#x4E86; <a href="">Camera</a>&#xFF0C;&#x6302;&#x8F7D;&#x76F8;&#x673A;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x719F;&#x6089;&#x4E86; <a href="https://oasis-engine.github.io/api/0.1/classes/core.engine.html" target="_blank">Engine</a> &#x548C; <a href="https://oasis-engine.github.io/api/0.1/classes/core.scene.html" target="_blank">Scene</a> &#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5C06;&#x6E32;&#x67D3;&#x753B;&#x9762;&#x8F93;&#x51FA;&#x5230;&#x5C4F;&#x5E55;&#x4E0A;&#x6216;&#x8005;&#x8FDB;&#x884C;&#x79BB;&#x5C4F;&#x6E32;&#x67D3;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x5F97;&#x786E;&#x4FDD;&#x5F53;&#x524D; <em>scene</em> &#x7684;&#x5B9E;&#x4F53;&#x6811;&#x4E0A;&#x6302;&#x8F7D;&#x4E86; <a href="https://oasis-engine.github.io/api/0.1/classes/core.camera.html" target="_blank">Camera</a>&#xFF0C;&#x6302;&#x8F7D;&#x76F8;&#x673A;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
 <pre><code class="lang-typescript"><span class="hljs-keyword">const</span> cameraEntity = rootEntity.createChild(<span class="hljs-string">&quot;camera&quot;</span>);
 
 cameraEntity.addComponent(Camera);
-
-<span class="hljs-comment">// &#x5982;&#x679C;&#x60F3;&#x8981;&#x548C;&#x76F8;&#x673A;&#x8FDB;&#x884C;&#x8F68;&#x9053;&#x5F0F;&#x4EA4;&#x4E92;&#xFF0C;&#x53EF;&#x4EE5;&#x518D;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; OrbitControls &#x7EC4;&#x4EF6;</span>
-cameraEntity.addComponent(OrbitControls);
 </code></pre>
 
                                 
@@ -761,7 +732,7 @@ cameraEntity.addComponent(OrbitControls);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"场景","level":"1.3.2","depth":2,"next":{"title":"实体","level":"1.3.3","depth":2,"path":"structure/entity.md","ref":"structure/entity.md","articles":[]},"previous":{"title":"引擎","level":"1.3.1","depth":2,"path":"structure/engine.md","ref":"structure/engine.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"structure/scene.md","mtime":"2020-10-26T17:16:45.931Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-26T15:39:40.053Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"场景","level":"1.3.2","depth":2,"next":{"title":"实体","level":"1.3.3","depth":2,"path":"structure/entity.md","ref":"structure/entity.md","articles":[]},"previous":{"title":"引擎","level":"1.3.1","depth":2,"path":"structure/engine.md","ref":"structure/engine.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"api":"https://oasis-engine.github.io/api/0.1/","docs":"https://oasis-engine.github.io/docs/"},"title":"Oasis Engine","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"structure/scene.md","mtime":"2020-11-02T13:53:42.496Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-02T13:52:47.601Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -788,10 +759,6 @@ cameraEntity.addComponent(OrbitControls);
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

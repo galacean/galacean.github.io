@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "gitbook-plugin-header": "^0.1.0",
+    "gitbook-plugin-layout": "^0.0.1"
+  }
+}

@@ -1,10 +1,10 @@
 
 <!DOCTYPE HTML>
-<html lang="" >
+<html lang="zh-hans" >
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>灯光 · GitBook</title>
+        <title>灯光 · Oasis Engine</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -35,16 +35,6 @@
     
         
     
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
 
         
     
@@ -57,7 +47,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basic-geometry.html" />
+    <link rel="next" href="geometry-renderer.html" />
     
     
     <link rel="prev" href="camera.html" />
@@ -71,7 +61,7 @@
         
             
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
+    <input type="text" placeholder="输入并搜索" />
 </div>
 
             
@@ -213,9 +203,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.5" data-path="../structure/resource-loader.html">
+        <li class="chapter " data-level="1.3.5" data-path="../structure/resource-manager.html">
             
-                <a href="../structure/resource-loader.html">
+                <a href="../structure/resource-manager.html">
             
                     
                     资源管理与加载
@@ -303,12 +293,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.3" data-path="basic-geometry.html">
+        <li class="chapter " data-level="1.5.3" data-path="geometry-renderer.html">
             
-                <a href="basic-geometry.html">
+                <a href="geometry-renderer.html">
             
                     
-                    基础几何体渲染器
+                    几何体渲染器
             
                 </a>
             
@@ -316,12 +306,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.4" data-path="buffer-geometry.html">
+        <li class="chapter " data-level="1.5.4" data-path="basic-geometry.html">
             
-                <a href="buffer-geometry.html">
+                <a href="basic-geometry.html">
             
                     
-                    自定义几何体渲染器
+                    常用几何体
             
                 </a>
             
@@ -457,20 +447,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.9.1" data-path="../collision-system/bounding-box.html">
-            
-                <a href="../collision-system/bounding-box.html">
-            
-                    
-                    包围类
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="../collision-system/ray.html">
+        <li class="chapter " data-level="1.9.1" data-path="../collision-system/ray.html">
             
                 <a href="../collision-system/ray.html">
             
@@ -483,7 +460,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.9.3" data-path="../collision-system/collision.html">
+        <li class="chapter " data-level="1.9.2" data-path="../collision-system/collision.html">
             
                 <a href="../collision-system/collision.html">
             
@@ -553,7 +530,7 @@
 
     <li>
         <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
+            本书使用 GitBook 发布
         </a>
     </li>
 </ul>
@@ -592,26 +569,46 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x706F;&#x5149;">&#x706F;&#x5149;</h1>
-<p>&#x5149;&#x7167;&#x4F7F;&#x573A;&#x666F;&#x66F4;&#x6709;&#x5C42;&#x6B21;&#x611F;&#xFF0C;&#x4F7F;&#x7528;&#x706F;&#x5149;&#xFF0C;&#x80FD;&#x5EFA;&#x7ACB;&#x66F4;&#x771F;&#x5B9E;&#x7684;&#x4E09;&#x7EF4;&#x573A;&#x666F;&#x3002;Oasis 3D &#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5149;&#x6E90;&#xFF1A;</p>
-<ul>
-<li><a href="">AmbientLight </a>&#xFF1A;<strong>&#x73AF;&#x5883;&#x5149;</strong>&#xFF0C;&#x4ECE;&#x5404;&#x4E2A;&#x89D2;&#x5EA6;&#x7167;&#x5C04;&#x7269;&#x4F53;&#xFF0C;&#x5176;&#x5F3A;&#x5EA6;&#x90FD;&#x662F;&#x4E00;&#x81F4;&#x7684;</li>
-<li><a href="">DirectLight </a>&#xFF1A;<strong>&#x65B9;&#x5411;&#x5149;</strong>&#xFF0C;&#x5149;&#x7EBF;&#x76F8;&#x4E92;&#x5E73;&#x884C;&#xFF0C;&#x51E0;&#x4F55;&#x5C5E;&#x6027;&#x53EA;&#x6709;&#x65B9;&#x5411;</li>
-<li><a href="">PointLight </a>&#xFF1A;<strong>&#x70B9;&#x5149;&#x6E90;</strong>&#xFF0C;&#x4E00;&#x4E2A;&#x70B9;&#x5411;&#x5468;&#x56F4;&#x6240;&#x6709;&#x65B9;&#x5411;&#x53D1;&#x51FA;&#x7684;&#x5149;&#xFF0C;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x968F;&#x5149;&#x6E90;&#x8DDD;&#x79BB;&#x8870;&#x51CF;</li>
-<li><a href="">SpotLight </a>&#xFF1A;<strong>&#x805A;&#x5149;&#x706F;</strong>&#xFF0C;&#x7531;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x53D1;&#x51FA;&#xFF0C;&#x5411;&#x7279;&#x5B9A;&#x65B9;&#x5411;&#x5EF6;&#x4F38;&#x7684;&#x5149;&#xFF0C;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x968F;&#x5149;&#x6E90;&#x8DDD;&#x79BB;&#x8870;&#x51CF;&#xFF0C;&#x5149;&#x7167;&#x533A;&#x57DF;&#x4E3A;&#x9525;&#x5F62;&#xFF0C;&#x9525;&#x5F62;&#x8FB9;&#x7F18;&#x968F;&#x5F20;&#x5F00;&#x89D2;&#x5EA6;&#x8870;&#x51CF;</li>
-</ul>
+<p>&#x5149;&#x7167;&#x4F7F;&#x573A;&#x666F;&#x66F4;&#x6709;&#x5C42;&#x6B21;&#x611F;&#xFF0C;&#x4F7F;&#x7528;&#x706F;&#x5149;&#xFF0C;&#x80FD;&#x5EFA;&#x7ACB;&#x66F4;&#x771F;&#x5B9E;&#x7684;&#x4E09;&#x7EF4;&#x573A;&#x666F;&#x3002;Oasis Engine &#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5149;&#x6E90;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x7C7B;&#x578B;</th>
+<th style="text-align:left">&#x89E3;&#x91CA;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.ambientlight.html" target="_blank">AmbientLight</a></td>
+<td style="text-align:left"><strong>&#x73AF;&#x5883;&#x5149;</strong>&#xFF0C;&#x4ECE;&#x5404;&#x4E2A;&#x89D2;&#x5EA6;&#x7167;&#x5C04;&#x7269;&#x4F53;&#xFF0C;&#x5176;&#x5F3A;&#x5EA6;&#x90FD;&#x662F;&#x4E00;&#x81F4;&#x7684;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.directlight.html" target="_blank">DirectLight</a></td>
+<td style="text-align:left"><strong>&#x65B9;&#x5411;&#x5149;</strong>&#xFF0C;&#x5149;&#x7EBF;&#x76F8;&#x4E92;&#x5E73;&#x884C;&#xFF0C;&#x51E0;&#x4F55;&#x5C5E;&#x6027;&#x53EA;&#x6709;&#x65B9;&#x5411;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.pointlight.html" target="_blank">PointLight</a></td>
+<td style="text-align:left"><strong>&#x70B9;&#x5149;&#x6E90;</strong>&#xFF0C;&#x4E00;&#x4E2A;&#x70B9;&#x5411;&#x5468;&#x56F4;&#x6240;&#x6709;&#x65B9;&#x5411;&#x53D1;&#x51FA;&#x7684;&#x5149;&#xFF0C;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x968F;&#x5149;&#x6E90;&#x8DDD;&#x79BB;&#x8870;&#x51CF;</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html" target="_blank">SpotLight</a></td>
+<td style="text-align:left"><strong>&#x805A;&#x5149;&#x706F;</strong>&#xFF0C;&#x7531;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x4F4D;&#x7F6E;&#x53D1;&#x51FA;&#xFF0C;&#x5411;&#x7279;&#x5B9A;&#x65B9;&#x5411;&#x5EF6;&#x4F38;&#x7684;&#x5149;&#xFF0C;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x968F;&#x5149;&#x6E90;&#x8DDD;&#x79BB;&#x8870;&#x51CF;&#xFF0C;&#x5149;&#x7167;&#x533A;&#x57DF;&#x4E3A;&#x9525;&#x5F62;&#xFF0C;&#x9525;&#x5F62;&#x8FB9;&#x7F18;&#x968F;&#x5F20;&#x5F00;&#x89D2;&#x5EA6;&#x8870;&#x51CF;</td>
+</tr>
+</tbody>
+</table>
 <h3 id="&#x73AF;&#x5883;&#x5149;">&#x73AF;&#x5883;&#x5149;</h3>
-<p><strong>&#x73AF;&#x5883;&#x5149;</strong>&#x8868;&#x793A;&#x6A21;&#x578B;&#x56DB;&#x5468;&#x7684;&#x5149;&#x7167;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x989C;&#x8272;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x5F3A;&#x5EA6;&#x3002;&#x989C;&#x8272;&#x8868;&#x793A;&#x5149;&#x7684;&#x989C;&#x8272;&#xFF0C;&#x5F3A;&#x5EA6;&#x5373;&#x8868;&#x793A;&#x5149;&#x7EBF;&#x7684;&#x4EAE;&#x5EA6;&#xFF0C;&#x6700;&#x4EAE;&#x4E3A; <code>1</code> &#xFF0C;&#x6700;&#x6697;&#x5373;&#x65E0;&#x5149;&#x4E3A; <code>0</code> &#x3002;</p>
+<p><strong>&#x73AF;&#x5883;&#x5149;</strong>&#x8868;&#x793A;&#x6A21;&#x578B;&#x56DB;&#x5468;&#x7684;&#x5149;&#x7167;&#xFF0C;&#x6709;&#x4E24;&#x4E2A;&#x7279;&#x6027;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;<em>&#x989C;&#x8272;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.ambientlight.html#color" target="_blank">color</a>&#xFF09;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;<em>&#x5F3A;&#x5EA6;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.ambientlight.html#intensity" target="_blank">intensity</a>&#xFF09;&#x3002;<em>&#x989C;&#x8272;</em> &#x8868;&#x793A;&#x5149;&#x7684;&#x989C;&#x8272;&#xFF0C;<em>&#x5F3A;&#x5EA6;</em> &#x5373;&#x8868;&#x793A;&#x5149;&#x7EBF;&#x7684;&#x4EAE;&#x5EA6;&#xFF0C;&#x6700;&#x4EAE;&#x4E3A; <code>1</code> &#xFF0C;&#x6700;&#x6697;&#x5373;&#x65E0;&#x5149;&#x4E3A; <code>0</code> &#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x4F53;&#x7528;&#x6765;&#x6302;&#x8F7D;&#x65B9;&#x5411;&#x5149;</span>
 <span class="hljs-keyword">let</span> directLight = rootEntity.createChild( <span class="hljs-string">&apos;direction_light&apos;</span> );
 
 <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x5149;&#x7EC4;&#x4EF6;</span>
-directLight.addComponent(DirectLight , {
+directLight.addComponent(DirectLight, {
   color: <span class="hljs-keyword">new</span> Vector3( <span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span> ),
   intensity: <span class="hljs-number">0.5</span>
 });
 </code></pre>
 <h3 id="&#x65B9;&#x5411;&#x5149;">&#x65B9;&#x5411;&#x5149;</h3>
-<p><strong>&#x65B9;&#x5411;&#x5149;</strong>&#x8868;&#x793A;&#x7684;&#x662F;&#x5149;&#x7EBF;&#x4ECE;&#x4EE5;&#x67D0;&#x4E2A;&#x65B9;&#x5411;&#x5747;&#x5300;&#x5C04;&#x51FA;&#xFF0C;&#x5149;&#x7EBF;&#x4E4B;&#x95F4;&#x662F;&#x5E73;&#x884C;&#x7684;&#xFF0C;&#x592A;&#x9633;&#x7167;&#x5C04;&#x5728;&#x5730;&#x7403;&#x8868;&#x9762;&#x7684;&#x5149;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x65B9;&#x5411;&#x5149;&#xFF0C;&#x56E0;&#x4E3A;&#x592A;&#x9633;&#x548C;&#x5730;&#x7403;&#x8DDD;&#x79BB;&#x7684;&#x8FDC;&#x5927;&#x4E8E;&#x5730;&#x7403;&#x534A;&#x5F84;&#xFF0C;&#x6240;&#x4EE5;&#x7167;&#x5C04;&#x5728;&#x5730;&#x7403;&#x7684;&#x9633;&#x5149;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x6765;&#x81EA;&#x540C;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x4E00;&#x7EC4;&#x5E73;&#x884C;&#x5149;&#xFF0C;&#x5373;&#x65B9;&#x5411;&#x5149;&#x3002;&#x65B9;&#x5411;&#x5149;&#x6709; 3 &#x4E2A;&#x4E3B;&#x8981;&#x4E2A;&#x7279;&#x6027;&#xFF1A;<strong>&#x989C;&#x8272;</strong>&#x3001;<strong>&#x5F3A;&#x5EA6;</strong>&#x3001;<strong>&#x65B9;&#x5411;</strong>&#x3002;&#x65B9;&#x5411;&#x5219;&#x7531;&#x65B9;&#x5411;&#x5149;&#x6240;&#x5728;&#x7684;&#x8282;&#x70B9;&#x7684;&#x671D;&#x5411;&#x8868;&#x793A;&#x3002;</p>
+<p><strong>&#x65B9;&#x5411;&#x5149;</strong>&#x8868;&#x793A;&#x7684;&#x662F;&#x5149;&#x7EBF;&#x4ECE;&#x4EE5;&#x67D0;&#x4E2A;&#x65B9;&#x5411;&#x5747;&#x5300;&#x5C04;&#x51FA;&#xFF0C;&#x5149;&#x7EBF;&#x4E4B;&#x95F4;&#x662F;&#x5E73;&#x884C;&#x7684;&#xFF0C;&#x592A;&#x9633;&#x7167;&#x5C04;&#x5728;&#x5730;&#x7403;&#x8868;&#x9762;&#x7684;&#x5149;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x662F;&#x65B9;&#x5411;&#x5149;&#xFF0C;&#x56E0;&#x4E3A;&#x592A;&#x9633;&#x548C;&#x5730;&#x7403;&#x8DDD;&#x79BB;&#x7684;&#x8FDC;&#x5927;&#x4E8E;&#x5730;&#x7403;&#x534A;&#x5F84;&#xFF0C;&#x6240;&#x4EE5;&#x7167;&#x5C04;&#x5728;&#x5730;&#x7403;&#x7684;&#x9633;&#x5149;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x6765;&#x81EA;&#x540C;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x7684;&#x4E00;&#x7EC4;&#x5E73;&#x884C;&#x5149;&#xFF0C;&#x5373;&#x65B9;&#x5411;&#x5149;&#x3002;&#x65B9;&#x5411;&#x5149;&#x6709; 3 &#x4E2A;&#x4E3B;&#x8981;&#x4E2A;&#x7279;&#x6027;&#xFF1A;<em>&#x989C;&#x8272;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.directlight.html#color" target="_blank">color</a>&#xFF09;&#x3001;<em>&#x5F3A;&#x5EA6;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.directlight.html#intensity" target="_blank">intensity</a>&#xFF09;&#x3001;<em>&#x65B9;&#x5411;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.directlight.html#direction" target="_blank">direction</a>&#xFF09;&#x3002;<em>&#x65B9;&#x5411;</em> &#x5219;&#x7531;&#x65B9;&#x5411;&#x5149;&#x6240;&#x5728;&#x7684;&#x8282;&#x70B9;&#x7684;&#x671D;&#x5411;&#x8868;&#x793A;&#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x706F;&#x5149;</span>
 <span class="hljs-keyword">let</span> light = rootEntity.createChild(<span class="hljs-string">&apos;light&apos;</span>);
 light.addComponent(DirectLight, {
@@ -623,7 +620,7 @@ light.addComponent(DirectLight, {
 light.transform.rotation = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">-45</span>, <span class="hljs-number">-45</span>, <span class="hljs-number">0</span>);
 </code></pre>
 <h3 id="&#x70B9;&#x5149;&#x6E90;">&#x70B9;&#x5149;&#x6E90;</h3>
-<p><strong>&#x70B9;&#x5149;&#x6E90;</strong>&#x5B58;&#x5728;&#x4E0E;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x7531;&#x8BE5;&#x70B9;&#x5411;&#x56DB;&#x9762;&#x516B;&#x65B9;&#x53D1;&#x5C04;&#x5149;&#x7EBF;&#xFF0C;&#x6BD4;&#x5982;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x706F;&#x6CE1;&#x5C31;&#x662F;&#x70B9;&#x5149;&#x6E90;&#x3002;&#x70B9;&#x5149;&#x6E90;&#x6709; 4 &#x4E2A;&#x4E3B;&#x8981;&#x7279;&#x6027;&#xFF1A;<strong>&#x989C;&#x8272;</strong>&#x3001;<strong>&#x5F3A;&#x5EA6;</strong>&#x3001;<strong>&#x6709;&#x6548;&#x8DDD;&#x79BB;</strong>&#x3001;<strong>&#x8870;&#x51CF;&#x7CFB;&#x6570;</strong>&#x3002;&#x8DDD;&#x79BB;&#x5149;&#x6E90;&#x8D85;&#x8FC7;&#x6709;&#x6548;&#x8DDD;&#x79BB;&#x7684;&#x5730;&#x65B9;&#x5C06;&#x65E0;&#x6CD5;&#x63A5;&#x53D7;&#x5230;&#x7535;&#x5149;&#x6E90;&#x7684;&#x5149;&#x7EBF;&#xFF0C;&#x5E76;&#x4E14;&#x79BB;&#x5149;&#x6E90;&#x8D8A;&#x8FDC;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x4E5F;&#x964D;&#x4F4E;&#xFF0C;&#x8870;&#x51CF;&#x7CFB;&#x6570;&#x63A7;&#x5236;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x964D;&#x4F4E;&#x7684;&#x901F;&#x7387;&#x3002;</p>
+<p><strong>&#x70B9;&#x5149;&#x6E90;</strong>&#x5B58;&#x5728;&#x4E0E;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E00;&#x70B9;&#xFF0C;&#x7531;&#x8BE5;&#x70B9;&#x5411;&#x56DB;&#x9762;&#x516B;&#x65B9;&#x53D1;&#x5C04;&#x5149;&#x7EBF;&#xFF0C;&#x6BD4;&#x5982;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x706F;&#x6CE1;&#x5C31;&#x662F;&#x70B9;&#x5149;&#x6E90;&#x3002;&#x70B9;&#x5149;&#x6E90;&#x6709; 4 &#x4E2A;&#x4E3B;&#x8981;&#x7279;&#x6027;&#xFF1A;<em>&#x989C;&#x8272;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.pointlight.html#color" target="_blank">color</a>&#xFF09;&#x3001;<em>&#x5F3A;&#x5EA6;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.pointlight.html#intensity" target="_blank">intensity</a>&#xFF09;&#x3001;<em>&#x6709;&#x6548;&#x8DDD;&#x79BB;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.pointlight.html#distance" target="_blank">distance</a>&#xFF09;&#x3001;<em>&#x8870;&#x51CF;&#x7CFB;&#x6570;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.pointlight.html#decay" target="_blank">decay</a>&#xFF09;&#x3002;&#x8DDD;&#x79BB;&#x5149;&#x6E90;&#x8D85;&#x8FC7;&#x6709;&#x6548;&#x8DDD;&#x79BB;&#x7684;&#x5730;&#x65B9;&#x5C06;&#x65E0;&#x6CD5;&#x63A5;&#x53D7;&#x5230;&#x7535;&#x5149;&#x6E90;&#x7684;&#x5149;&#x7EBF;&#xFF0C;&#x5E76;&#x4E14;&#x79BB;&#x5149;&#x6E90;&#x8D8A;&#x8FDC;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x4E5F;&#x964D;&#x4F4E;&#xFF0C;&#x8870;&#x51CF;&#x7CFB;&#x6570;&#x63A7;&#x5236;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x964D;&#x4F4E;&#x7684;&#x901F;&#x7387;&#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x706F;&#x5149;</span>
 <span class="hljs-keyword">let</span> light = rootEntity.createChild(<span class="hljs-string">&apos;light&apos;</span>);
 light.addComponent(PointLight, {
@@ -634,7 +631,7 @@ light.addComponent(PointLight, {
 light.transform.position = <span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">-10</span>, <span class="hljs-number">10</span>, <span class="hljs-number">10</span>);
 </code></pre>
 <h3 id="&#x805A;&#x5149;&#x706F;">&#x805A;&#x5149;&#x706F;</h3>
-<p><strong>&#x805A;&#x5149;&#x706F;</strong>&#x548C;&#x70B9;&#x5149;&#x6E90;&#x6709;&#x70B9;&#x50CF;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x5149;&#x7EBF;&#x4E0D;&#x662F;&#x671D;&#x56DB;&#x9762;&#x516B;&#x65B9;&#x53D1;&#x5C04;&#xFF0C;&#x800C;&#x662F;&#x671D;&#x67D0;&#x4E2A;&#x65B9;&#x5411;&#x8303;&#x56F4;&#xFF0C;&#x5C31;&#x50CF;&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x624B;&#x7535;&#x7B52;&#x53D1;&#x51FA;&#x7684;&#x5149;&#x3002;&#x805A;&#x5149;&#x706F;&#x6709;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7279;&#x6027;&#xFF1A;<strong>&#x989C;&#x8272;</strong>&#x3001;<strong>&#x5F3A;&#x5EA6;</strong>&#x3001;<strong>&#x6709;&#x6548;&#x8DDD;&#x79BB;</strong>&#x3001;<strong>&#x8870;&#x51CF;&#x7CFB;&#x6570;</strong>&#x3001;<strong>&#x6563;&#x5C04;&#x89D2;&#x5EA6;</strong>&#x3001;<strong>&#x534A;&#x5F71;&#x8870;&#x51CF;&#x7CFB;&#x6570;</strong>&#x3002;&#x6563;&#x5C04;&#x89D2;&#x5EA6;&#x8868;&#x793A;&#x4E0E;&#x5149;&#x6E90;&#x671D;&#x5411;&#x5939;&#x89D2;&#x5C0F;&#x4E8E;&#x591A;&#x5C11;&#x65F6;&#x6709;&#x5149;&#x7EBF;&#xFF0C;&#x534A;&#x5F71;&#x8870;&#x51CF;&#x7CFB;&#x6570;&#x8868;&#x793A;&#x5728;&#x6709;&#x6548;&#x7684;&#x5939;&#x89D2;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x968F;&#x7740;&#x5939;&#x89D2;&#x589E;&#x5927;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x8870;&#x51CF;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
+<p><strong>&#x805A;&#x5149;&#x706F;</strong>&#x548C;&#x70B9;&#x5149;&#x6E90;&#x6709;&#x70B9;&#x50CF;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x7684;&#x5149;&#x7EBF;&#x4E0D;&#x662F;&#x671D;&#x56DB;&#x9762;&#x516B;&#x65B9;&#x53D1;&#x5C04;&#xFF0C;&#x800C;&#x662F;&#x671D;&#x67D0;&#x4E2A;&#x65B9;&#x5411;&#x8303;&#x56F4;&#xFF0C;&#x5C31;&#x50CF;&#x73B0;&#x5B9E;&#x751F;&#x6D3B;&#x4E2D;&#x7684;&#x624B;&#x7535;&#x7B52;&#x53D1;&#x51FA;&#x7684;&#x5149;&#x3002;&#x805A;&#x5149;&#x706F;&#x6709;&#x51E0;&#x4E2A;&#x4E3B;&#x8981;&#x7279;&#x6027;&#xFF1A;<em>&#x989C;&#x8272;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html#color" target="_blank">color</a>&#xFF09;&#x3001;<em>&#x5F3A;&#x5EA6;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html#intensity" target="_blank">intensity</a>&#xFF09;&#x3001;<em>&#x6709;&#x6548;&#x8DDD;&#x79BB;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html#distance" target="_blank">distance</a>&#xFF09;&#x3001;<em>&#x8870;&#x51CF;&#x7CFB;&#x6570;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html#decay" target="_blank">decay</a>&#xFF09;&#x3001;<em>&#x6563;&#x5C04;&#x89D2;&#x5EA6;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html#angle" target="_blank">angle</a>&#xFF09;&#x3001;<em>&#x534A;&#x5F71;&#x8870;&#x51CF;&#x7CFB;&#x6570;</em>&#xFF08;<a href="https://oasis-engine.github.io/api/0.1/classes/core.spotlight.html#penumbra" target="_blank">penumbra</a>&#xFF09;&#x3002;&#x6563;&#x5C04;&#x89D2;&#x5EA6;&#x8868;&#x793A;&#x4E0E;&#x5149;&#x6E90;&#x671D;&#x5411;&#x5939;&#x89D2;&#x5C0F;&#x4E8E;&#x591A;&#x5C11;&#x65F6;&#x6709;&#x5149;&#x7EBF;&#xFF0C;&#x534A;&#x5F71;&#x8870;&#x51CF;&#x7CFB;&#x6570;&#x8868;&#x793A;&#x5728;&#x6709;&#x6548;&#x7684;&#x5939;&#x89D2;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x968F;&#x7740;&#x5939;&#x89D2;&#x589E;&#x5927;&#x5149;&#x7167;&#x5F3A;&#x5EA6;&#x8870;&#x51CF;&#x7684;&#x901F;&#x5EA6;&#x3002;</p>
 <pre><code class="lang-typescript"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x706F;&#x5149;</span>
 <span class="hljs-keyword">let</span> light = rootEntity.createChild(<span class="hljs-string">&apos;light&apos;</span>);
 light.addComponent(SpotLight, {
@@ -680,7 +677,7 @@ light.transform.rotation = <span class="hljs-keyword">new</span> Vector3(<span c
                 </a>
                 
                 
-                <a href="basic-geometry.html" class="navigation navigation-next " aria-label="Next page: 基础几何体渲染器">
+                <a href="geometry-renderer.html" class="navigation navigation-next " aria-label="Next page: 几何体渲染器">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -691,7 +688,7 @@ light.transform.rotation = <span class="hljs-keyword">new</span> Vector3(<span c
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"灯光","level":"1.5.2","depth":2,"next":{"title":"基础几何体渲染器","level":"1.5.3","depth":2,"path":"render-system/basic-geometry.md","ref":"render-system/basic-geometry.md","articles":[]},"previous":{"title":"相机","level":"1.5.1","depth":2,"path":"render-system/camera.md","ref":"render-system/camera.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"render-system/light.md","mtime":"2020-10-26T17:13:24.305Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-26T15:39:40.053Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"灯光","level":"1.5.2","depth":2,"next":{"title":"几何体渲染器","level":"1.5.3","depth":2,"path":"render-system/geometry-renderer.md","ref":"render-system/geometry-renderer.md","articles":[]},"previous":{"title":"相机","level":"1.5.1","depth":2,"path":"render-system/camera.md","ref":"render-system/camera.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","livereload"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"api":"https://oasis-engine.github.io/api/0.1/","docs":"https://oasis-engine.github.io/docs/"},"title":"Oasis Engine","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"render-system/light.md","mtime":"2020-11-02T09:40:21.343Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-02T13:52:47.601Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -718,10 +715,6 @@ light.transform.rotation = <span class="hljs-keyword">new</span> Vector3(<span c
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
