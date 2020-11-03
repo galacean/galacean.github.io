@@ -145,14 +145,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Transparent<wbr>Material<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.transparentmaterial.html" class="tsd-signature-type">TransparentMaterial</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Transparent<wbr>Material<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a>, name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.transparentmaterial.html" class="tsd-signature-type">TransparentMaterial</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:10</li>
+									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:11</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -162,6 +162,9 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>engine: <a href="core.engine.html" class="tsd-signature-type">Engine</a></h5>
+								</li>
 								<li>
 									<h5>name: <span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
@@ -183,7 +186,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> instance<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ++EngineObject._instanceIdCounter</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#instanceid">instanceId</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#instanceid">instanceId</a></p>
 						<ul>
 							<li>Defined in packages/core/src/base/EngineObject.ts:12</li>
 						</ul>
@@ -199,7 +202,7 @@
 					<h3>isGCIgnored</h3>
 					<div class="tsd-signature tsd-kind-icon">isGCIgnored<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#isgcignored">isGCIgnored</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#isgcignored">isGCIgnored</a></p>
 						<ul>
 							<li>Defined in packages/core/src/asset/RefObject.ts:10</li>
 						</ul>
@@ -300,7 +303,7 @@
 					<div class="tsd-signature tsd-kind-icon">TECH_<wbr>NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;Transparent&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:10</li>
+							<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:11</li>
 						</ul>
 					</aside>
 				</section>
@@ -319,7 +322,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#ambient">ambient</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:54</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:55</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -338,7 +341,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#ambient">ambient</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:58</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:59</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -370,7 +373,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#destroyed">destroyed</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroyed">destroyed</a></p>
 								<ul>
 									<li>Defined in packages/core/src/asset/RefObject.ts:27</li>
 								</ul>
@@ -396,7 +399,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#emission">emission</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:42</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:43</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -415,7 +418,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#emission">emission</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:46</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:47</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -447,7 +450,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#refcount">refCount</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#refcount">refCount</a></p>
 								<ul>
 									<li>Defined in packages/core/src/asset/RefObject.ts:20</li>
 								</ul>
@@ -526,7 +529,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:42</li>
+									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:43</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -544,7 +547,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:38</li>
+									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:39</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -635,7 +638,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#_generatefragmentuniform">_generateFragmentUniform</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:50</li>
+									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:51</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -658,7 +661,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#_generatemacros">_generateMacros</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:65</li>
+									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:66</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -676,7 +679,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides CommonMaterial._generateTechnique</p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:20</li>
+									<li>Defined in packages/core/src/mobile-material/TransparentMaterial.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -694,7 +697,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#_internalgenerate">_internalGenerate</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:94</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:95</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -786,7 +789,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#bindlightuniformdefine">bindLightUniformDefine</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:82</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:83</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -883,9 +886,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#destroy">destroy</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in packages/core/src/asset/RefObject.ts:43</li>
+									<li>Defined in packages/core/src/asset/RefObject.ts:41</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1085,7 +1088,7 @@
 								<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#preparedrawing">prepareDrawing</a></p>
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#preparedrawing">prepareDrawing</a></p>
 								<ul>
-									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:62</li>
+									<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:63</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1154,7 +1157,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.commonmaterial.html">CommonMaterial</a>.<a href="core.commonmaterial.html#renderstates">renderStates</a></p>
 						<ul>
-							<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:16</li>
+							<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:17</li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1163,7 +1166,7 @@
 						<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:18</li>
+								<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:19</li>
 							</ul>
 						</aside>
 					</section>
@@ -1173,7 +1176,7 @@
 						<div class="tsd-signature tsd-kind-icon">enable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:17</li>
+								<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:18</li>
 							</ul>
 						</aside>
 					</section>
@@ -1183,7 +1186,7 @@
 						<div class="tsd-signature tsd-kind-icon">functions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:19</li>
+								<li>Defined in packages/core/src/mobile-material/CommonMaterial.ts:20</li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -1208,9 +1211,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1223,31 +1223,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -1373,9 +1358,6 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1388,31 +1370,16 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>

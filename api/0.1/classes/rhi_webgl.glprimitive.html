@@ -65,13 +65,14 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="rhi_webgl.glasset.html" class="tsd-signature-type">GLAsset</a>
-						<ul class="tsd-hierarchy">
-							<li>
-								<span class="target">GLPrimitive</span>
-							</li>
-						</ul>
+						<span class="target">GLPrimitive</span>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">IPlatformPrimitive</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -81,30 +82,22 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="rhi_webgl.glprimitive.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="rhi_webgl.glprimitive.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="rhi_webgl.glprimitive.html#_usevao" class="tsd-kind-icon">_use<wbr>Vao</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rhi_webgl.glprimitive.html#activeframe" class="tsd-kind-icon">active<wbr>Frame</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rhi_webgl.glprimitive.html#asset" class="tsd-kind-icon">asset</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="rhi_webgl.glprimitive.html#cacheid" class="tsd-kind-icon">cacheID</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="rhi_webgl.glprimitive.html#gl" class="tsd-kind-icon">gl</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="rhi_webgl.glprimitive.html#vao" class="tsd-kind-icon">vao</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="rhi_webgl.glprimitive.html#rhi" class="tsd-kind-icon">rhi</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="rhi_webgl.glprimitive.html#destroy" class="tsd-kind-icon">destroy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="rhi_webgl.glprimitive.html#draw" class="tsd-kind-icon">draw</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="rhi_webgl.glprimitive.html#finalize" class="tsd-kind-icon">finalize</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="rhi_webgl.glprimitive.html#registervao" class="tsd-kind-icon">registerVAO</a></li>
 							</ul>
 						</section>
@@ -113,16 +106,15 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">new GLPrimitive<span class="tsd-signature-symbol">(</span>rhi<span class="tsd-signature-symbol">: </span><a href="rhi_webgl.webglrenderer.html" class="tsd-signature-type">WebGLRenderer</a>, primitive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="rhi_webgl.glprimitive.html" class="tsd-signature-type">GLPrimitive</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides GLAsset.__constructor</p>
 								<ul>
 									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:24</li>
 								</ul>
@@ -141,7 +133,7 @@
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="_usevao" class="tsd-anchor"></a>
@@ -153,43 +145,13 @@
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="activeframe" class="tsd-anchor"></a>
-					<h3>active<wbr>Frame</h3>
-					<div class="tsd-signature tsd-kind-icon">active<wbr>Frame<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="gl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> gl</h3>
+					<div class="tsd-signature tsd-kind-icon">gl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">WebGLRenderingContext</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/rhi_webgl.webglextension.html" class="tsd-signature-type">WebGLExtension</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebGL2RenderingContext</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="rhi_webgl.gltechnique.html">GLTechnique</a>.<a href="rhi_webgl.gltechnique.html#activeframe">activeFrame</a></p>
 						<ul>
-							<li>Defined in packages/rhi-webgl/src/GLAsset.ts:12</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="asset" class="tsd-anchor"></a>
-					<h3>asset</h3>
-					<div class="tsd-signature tsd-kind-icon">asset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AssetObject</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="rhi_webgl.gltechnique.html">GLTechnique</a>.<a href="rhi_webgl.gltechnique.html#asset">asset</a></p>
-						<ul>
-							<li>Defined in packages/rhi-webgl/src/GLAsset.ts:11</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<dl class="tsd-comment-tags">
-							<dt>member</dt>
-							<dd><p>{AssetObject} -  引擎 js 部分的资源对象</p>
-							</dd>
-						</dl>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="cacheid" class="tsd-anchor"></a>
-					<h3>cacheID</h3>
-					<div class="tsd-signature tsd-kind-icon">cacheID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="rhi_webgl.gltechnique.html">GLTechnique</a>.<a href="rhi_webgl.gltechnique.html#cacheid">cacheID</a></p>
-						<ul>
-							<li>Defined in packages/rhi-webgl/src/GLAsset.ts:13</li>
+							<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:22</li>
 						</ul>
 					</aside>
 				</section>
@@ -204,40 +166,36 @@
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a name="rhi" class="tsd-anchor"></a>
-					<h3>rhi</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rhi<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="rhi_webgl.webglrenderer.html" class="tsd-signature-type">WebGLRenderer</a></li>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="rhi_webgl.gltechnique.html">GLTechnique</a>.<a href="rhi_webgl.gltechnique.html#rhi">rhi</a></p>
 								<ul>
-									<li>Defined in packages/rhi-webgl/src/GLAsset.ts:24</li>
+									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:93</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="rhi_webgl.webglrenderer.html" class="tsd-signature-type">WebGLRenderer</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="draw" class="tsd-anchor"></a>
 					<h3>draw</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">draw<span class="tsd-signature-symbol">(</span>tech<span class="tsd-signature-symbol">: </span><a href="rhi_webgl.gltechnique.html" class="tsd-signature-type">GLTechnique</a>, subPrimitive<span class="tsd-signature-symbol">: </span><a href="core.subprimitive.html" class="tsd-signature-type">SubPrimitive</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">draw<span class="tsd-signature-symbol">(</span>tech<span class="tsd-signature-symbol">: </span><a href="rhi_webgl.gltechnique.html" class="tsd-signature-type">GLTechnique</a>, subPrimitive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SubPrimitive</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:81</li>
+									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:36</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -251,32 +209,9 @@
 									<h5>tech: <a href="rhi_webgl.gltechnique.html" class="tsd-signature-type">GLTechnique</a></h5>
 								</li>
 								<li>
-									<h5>subPrimitive: <a href="core.subprimitive.html" class="tsd-signature-type">SubPrimitive</a></h5>
+									<h5>subPrimitive: <span class="tsd-signature-type">SubPrimitive</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="finalize" class="tsd-anchor"></a>
-					<h3>finalize</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">finalize<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Overrides <a href="rhi_webgl.glasset.html">GLAsset</a>.<a href="rhi_webgl.glasset.html#finalize">finalize</a></p>
-								<ul>
-									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:169</li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>释放 GL 资源</p>
-								</div>
-							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -291,7 +226,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:145</li>
+									<li>Defined in packages/rhi-webgl/src/GLPrimitive.ts:154</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -319,9 +254,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -334,31 +266,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class="current tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -374,9 +291,6 @@
 						<a href="../modules/core.html" class="tsd-kind-icon">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -389,25 +303,13 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -429,35 +331,26 @@
 							<li class=" tsd-kind-class tsd-parent-kind-module tsd-is-private">
 								<a href="rhi_webgl.glextensions.html" class="tsd-kind-icon">GLExtensions</a>
 							</li>
-							<li class="current tsd-kind-class tsd-parent-kind-module tsd-is-private">
+							<li class="current tsd-kind-class tsd-parent-kind-module">
 								<a href="rhi_webgl.glprimitive.html" class="tsd-kind-icon">GLPrimitive</a>
 								<ul>
-									<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
 										<a href="rhi_webgl.glprimitive.html#constructor" class="tsd-kind-icon">constructor</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 										<a href="rhi_webgl.glprimitive.html#_usevao" class="tsd-kind-icon">_use<wbr>Vao</a>
 									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-										<a href="rhi_webgl.glprimitive.html#activeframe" class="tsd-kind-icon">active<wbr>Frame</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-										<a href="rhi_webgl.glprimitive.html#asset" class="tsd-kind-icon">asset</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-										<a href="rhi_webgl.glprimitive.html#cacheid" class="tsd-kind-icon">cacheID</a>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="rhi_webgl.glprimitive.html#gl" class="tsd-kind-icon">gl</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 										<a href="rhi_webgl.glprimitive.html#vao" class="tsd-kind-icon">vao</a>
 									</li>
-									<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-										<a href="rhi_webgl.glprimitive.html#rhi" class="tsd-kind-icon">rhi</a>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="rhi_webgl.glprimitive.html#destroy" class="tsd-kind-icon">destroy</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class">
 										<a href="rhi_webgl.glprimitive.html#draw" class="tsd-kind-icon">draw</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-										<a href="rhi_webgl.glprimitive.html#finalize" class="tsd-kind-icon">finalize</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 										<a href="rhi_webgl.glprimitive.html#registervao" class="tsd-kind-icon">registerVAO</a>
@@ -532,9 +425,6 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
 					</li>
 				</ul>
@@ -570,9 +460,6 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 			</ul>
 		</div>
 	</div>

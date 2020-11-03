@@ -116,7 +116,7 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Light<wbr>Shadow<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.lightshadow.html" class="tsd-signature-type">LightShadow</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Light<wbr>Shadow<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.lightshadow.html" class="tsd-signature-type">LightShadow</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -128,8 +128,11 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> props: <span class="tsd-signature-symbol">{ </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = { width: 512, height: 512 }</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> props: <span class="tsd-signature-symbol">{ </span>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = { engine: null, width: 512, height: 512 }</span></h5>
 									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span></h5>
+										</li>
 										<li class="tsd-parameter">
 											<h5>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></h5>
 										</li>
@@ -229,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/shadow/LightShadow.ts:65</li>
+									<li>Defined in packages/core/src/shadow/LightShadow.ts:70</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -258,7 +261,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/shadow/LightShadow.ts:74</li>
+									<li>Defined in packages/core/src/shadow/LightShadow.ts:79</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -287,7 +290,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/shadow/LightShadow.ts:56</li>
+									<li>Defined in packages/core/src/shadow/LightShadow.ts:61</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -319,7 +322,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/shadow/LightShadow.ts:113</li>
+									<li>Defined in packages/core/src/shadow/LightShadow.ts:118</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +358,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/shadow/LightShadow.ts:82</li>
+									<li>Defined in packages/core/src/shadow/LightShadow.ts:87</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -385,7 +388,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/shadow/LightShadow.ts:132</li>
+									<li>Defined in packages/core/src/shadow/LightShadow.ts:137</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -423,9 +426,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -438,31 +438,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -531,9 +516,6 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -546,31 +528,16 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>

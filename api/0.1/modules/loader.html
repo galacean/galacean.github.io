@@ -655,7 +655,7 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 					<a name="getdefaultmaterial" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Default<wbr>Material</h3>
-					<div class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>Material<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> = (function () {let defaultMateril: ConstantMaterial;return () &#x3D;&gt; {if (!defaultMateril) {defaultMateril &#x3D; new ConstantMaterial(&quot;default&quot;);defaultMateril.emission &#x3D; new Vector4(0.749, 0.749, 0.749, 1);}return defaultMateril;};})()</span></div>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>Material<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> = (function () {// let defaultMateril: ConstantMaterial;return (engine: Engine) &#x3D;&gt; {// if (!defaultMateril) {let defaultMateril: ConstantMaterial &#x3D; new ConstantMaterial(engine, &quot;default&quot;);defaultMateril.emission &#x3D; new Vector4(0.749, 0.749, 0.749, 1);// }return defaultMateril;};})()</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in packages/loader/src/gltf/glTF.ts:62</li>
@@ -741,7 +741,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:776</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:780</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1112,7 +1112,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:764</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:768</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1399,7 +1399,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:610</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:614</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1578,7 +1578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:552</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:556</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1609,7 +1609,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:672</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:676</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1634,13 +1634,13 @@
 					<a name="parseprimitivevertex" class="tsd-anchor"></a>
 					<h3>parse<wbr>Primitive<wbr>Vertex</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Primitive<wbr>Vertex<span class="tsd-signature-symbol">(</span>mesh<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mesh</span>, primitive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Primitive</span>, primitiveGroup<span class="tsd-signature-symbol">: </span><a href="../classes/core.subprimitive.html" class="tsd-signature-type">SubPrimitive</a>, gltfPrimitive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, gltf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, buffers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, resources<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Primitive<wbr>Vertex<span class="tsd-signature-symbol">(</span>mesh<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Mesh</span>, primitive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Primitive</span>, primitiveGroup<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SubPrimitive</span>, gltfPrimitive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, gltf<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, buffers<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, resources<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Primitive</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:435</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:439</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1652,7 +1652,7 @@
 									<h5>primitive: <span class="tsd-signature-type">Primitive</span></h5>
 								</li>
 								<li>
-									<h5>primitiveGroup: <a href="../classes/core.subprimitive.html" class="tsd-signature-type">SubPrimitive</a></h5>
+									<h5>primitiveGroup: <span class="tsd-signature-type">SubPrimitive</span></h5>
 								</li>
 								<li>
 									<h5>gltfPrimitive: <span class="tsd-signature-type">any</span></h5>
@@ -1750,7 +1750,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:734</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:738</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1804,7 +1804,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:404</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:408</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1835,7 +1835,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/loader/src/gltf/glTF.ts:500</li>
+									<li>Defined in packages/loader/src/gltf/glTF.ts:504</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2709,9 +2709,6 @@
 						<a href="core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -2723,12 +2720,6 @@
 					<li class=" tsd-kind-module">
 						<a href="framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
-					<li class=" tsd-kind-module">
-						<a href="fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="hud.html">hud</a>
-					</li>
 					<li class="current tsd-kind-module">
 						<a href="loader.html">loader</a>
 					</li>
@@ -2736,19 +2727,10 @@
 						<a href="math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="tween.html">tween</a>
@@ -2764,9 +2746,6 @@
 						<a href="core.html" class="tsd-kind-icon">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="decal.html" class="tsd-kind-icon">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="design.html" class="tsd-kind-icon">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -2777,12 +2756,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="hud.html" class="tsd-kind-icon">hud</a>
 					</li>
 				</ul>
 				<ul class="current">
@@ -3232,19 +3205,10 @@
 						<a href="math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="tween.html" class="tsd-kind-icon">tween</a>

@@ -145,18 +145,21 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Sky<wbr>Box<wbr>Material<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.skyboxmaterial.html" class="tsd-signature-type">SkyBoxMaterial</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Sky<wbr>Box<wbr>Material<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a>, name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.skyboxmaterial.html" class="tsd-signature-type">SkyBoxMaterial</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:14</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:15</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>engine: <a href="core.engine.html" class="tsd-signature-type">Engine</a></h5>
+								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = SkyBoxMaterial.defaultName</span></h5>
 								</li>
@@ -174,7 +177,7 @@
 					<div class="tsd-signature tsd-kind-icon">_cache<wbr>Mat1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Matrix</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:12</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:13</li>
 						</ul>
 					</aside>
 				</section>
@@ -184,7 +187,7 @@
 					<div class="tsd-signature tsd-kind-icon">_cache<wbr>Mat2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Matrix</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:13</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:14</li>
 						</ul>
 					</aside>
 				</section>
@@ -193,7 +196,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> instance<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ++EngineObject._instanceIdCounter</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#instanceid">instanceId</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#instanceid">instanceId</a></p>
 						<ul>
 							<li>Defined in packages/core/src/base/EngineObject.ts:12</li>
 						</ul>
@@ -209,7 +212,7 @@
 					<h3>isGCIgnored</h3>
 					<div class="tsd-signature tsd-kind-icon">isGCIgnored<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#isgcignored">isGCIgnored</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#isgcignored">isGCIgnored</a></p>
 						<ul>
 							<li>Defined in packages/core/src/asset/RefObject.ts:10</li>
 						</ul>
@@ -247,7 +250,7 @@
 					<div class="tsd-signature tsd-kind-icon">model<wbr>Matrix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Matrix</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:14</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:15</li>
 						</ul>
 					</aside>
 				</section>
@@ -320,7 +323,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;SKY_BOX_MATERIAL&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:65</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:66</li>
 						</ul>
 					</aside>
 				</section>
@@ -330,7 +333,7 @@
 					<div class="tsd-signature tsd-kind-icon">fragment<wbr>Shader<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = fs</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:68</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:69</li>
 						</ul>
 					</aside>
 				</section>
@@ -340,7 +343,7 @@
 					<div class="tsd-signature tsd-kind-icon">technique<wbr>Name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;SKY_BOX_TECHNIQUE&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:66</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:67</li>
 						</ul>
 					</aside>
 				</section>
@@ -350,7 +353,7 @@
 					<div class="tsd-signature tsd-kind-icon">vertex<wbr>Shader<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = vs</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:67</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:68</li>
 						</ul>
 					</aside>
 				</section>
@@ -366,7 +369,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#destroyed">destroyed</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroyed">destroyed</a></p>
 								<ul>
 									<li>Defined in packages/core/src/asset/RefObject.ts:27</li>
 								</ul>
@@ -389,7 +392,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#refcount">refCount</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#refcount">refCount</a></p>
 								<ul>
 									<li>Defined in packages/core/src/asset/RefObject.ts:20</li>
 								</ul>
@@ -524,7 +527,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:53</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:54</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -675,9 +678,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#destroy">destroy</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in packages/core/src/asset/RefObject.ts:43</li>
+									<li>Defined in packages/core/src/asset/RefObject.ts:41</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -876,7 +879,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#preparedrawing">prepareDrawing</a></p>
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:28</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:29</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -907,7 +910,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:20</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:21</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -969,7 +972,7 @@
 					<div class="tsd-signature tsd-kind-icon">technique<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:69</li>
+							<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:70</li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -978,7 +981,7 @@
 						<div class="tsd-signature tsd-kind-icon">attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:70</li>
+								<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:71</li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -993,7 +996,7 @@
 						<div class="tsd-signature tsd-kind-icon">states<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:81</li>
+								<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:82</li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1002,7 +1005,7 @@
 							<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <a href="../enums/core.renderstate.html" class="tsd-signature-type">RenderState</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [RenderState.CULL_FACE]</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:82</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:83</li>
 								</ul>
 							</aside>
 						</section>
@@ -1012,7 +1015,7 @@
 							<div class="tsd-signature tsd-kind-icon">functions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:83</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:84</li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1021,7 +1024,7 @@
 								<div class="tsd-signature tsd-kind-icon">depth<wbr>Func<span class="tsd-signature-symbol">:</span> <a href="../enums/core.compfunc.html" class="tsd-signature-type">CompFunc</a><span class="tsd-signature-symbol"> = CompFunc.LEQUAL</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:84</li>
+										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:85</li>
 									</ul>
 								</aside>
 							</section>
@@ -1033,7 +1036,7 @@
 						<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:71</li>
+								<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:72</li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal">
@@ -1042,7 +1045,7 @@
 							<div class="tsd-signature tsd-kind-icon">u_<wbr>cube<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:76</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:77</li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1051,7 +1054,7 @@
 								<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;u_cube&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:77</li>
+										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:78</li>
 									</ul>
 								</aside>
 							</section>
@@ -1061,7 +1064,7 @@
 								<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/core.datatype.html" class="tsd-signature-type">DataType</a><span class="tsd-signature-symbol"> = DataType.SAMPLER_CUBE</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:78</li>
+										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:79</li>
 									</ul>
 								</aside>
 							</section>
@@ -1072,7 +1075,7 @@
 							<div class="tsd-signature tsd-kind-icon">u_<wbr>mvp<wbr>Noscale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:72</li>
+									<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:73</li>
 								</ul>
 							</aside>
 							<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1081,7 +1084,7 @@
 								<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;u_mvpNoscale&quot;</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:73</li>
+										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:74</li>
 									</ul>
 								</aside>
 							</section>
@@ -1091,7 +1094,7 @@
 								<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/core.datatype.html" class="tsd-signature-type">DataType</a><span class="tsd-signature-symbol"> = DataType.FLOAT_MAT4</span></div>
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:74</li>
+										<li>Defined in packages/core/src/skybox/SkyBoxMaterial.ts:75</li>
 									</ul>
 								</aside>
 							</section>
@@ -1113,9 +1116,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1128,31 +1128,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -1278,9 +1263,6 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1293,31 +1275,16 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>

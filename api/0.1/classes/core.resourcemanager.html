@@ -99,8 +99,10 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="core.resourcemanager.html#_assigndefaultoptions" class="tsd-kind-icon">_assign<wbr>Default<wbr>Options</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-private"><a href="core.resourcemanager.html#_loadsingleitem" class="tsd-kind-icon">_load<wbr>Single<wbr>Item</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.resourcemanager.html#cancelnotloaded" class="tsd-kind-icon">cancel<wbr>Not<wbr>Loaded</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.resourcemanager.html#gc" class="tsd-kind-icon">gc</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.resourcemanager.html#getassetpath" class="tsd-kind-icon">get<wbr>Asset<wbr>Path</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="core.resourcemanager.html#load" class="tsd-kind-icon">load</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static"><a href="core.resourcemanager.html#_gettypebyurl" class="tsd-kind-icon">_get<wbr>Type<wbr>ByUrl</a></li>
 							</ul>
 						</section>
@@ -351,7 +353,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/asset/ResourceManager.ts:183</li>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:177</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -374,7 +376,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/asset/ResourceManager.ts:195</li>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:189</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -394,6 +396,74 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="cancelnotloaded" class="tsd-anchor"></a>
+					<h3>cancel<wbr>Not<wbr>Loaded</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Not<wbr>Loaded<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Not<wbr>Loaded<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">cancel<wbr>Not<wbr>Loaded<span class="tsd-signature-symbol">(</span>urls<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:93</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>取消所有未完成加载的资产。</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:99</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>取消 url 未完成加载的资产。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>资源链接</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:105</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>取消加载 urls 中未完成加载的资产。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>urls: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>资源链接数组</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="gc" class="tsd-anchor"></a>
 					<h3>gc</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -403,7 +473,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/asset/ResourceManager.ts:131</li>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:125</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -430,7 +500,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/asset/ResourceManager.ts:145</li>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:139</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -449,6 +519,119 @@
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 							<p>资源路径</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="load" class="tsd-anchor"></a>
+					<h3>load</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">load&lt;T&gt;<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>pathes<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">load&lt;T&gt;<span class="tsd-signature-symbol">(</span>assetItem<span class="tsd-signature-symbol">: </span><a href="../modules/core.html#loaditem" class="tsd-signature-type">LoadItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">load<span class="tsd-signature-symbol">(</span>assetItems<span class="tsd-signature-symbol">: </span><a href="../modules/core.html#loaditem" class="tsd-signature-type">LoadItem</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:57</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>通过路径异步加载资源。</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>路径</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>资源 Promise</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:64</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>通过路径集合异步加载资源集合。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>pathes: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>资源 Promise</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:71</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>通过加载信息集合异步加载资源集合。</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>assetItem: <a href="../modules/core.html#loaditem" class="tsd-signature-type">LoadItem</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>资源加载项</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>资源 Promise</p>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in packages/core/src/asset/ResourceManager.ts:78</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>通过加载信息集合异步加载资源集合。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>assetItems: <a href="../modules/core.html#loaditem" class="tsd-signature-type">LoadItem</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>资源加载项集合</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="core.assetpromise.html" class="tsd-signature-type">AssetPromise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">Object</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<p>资源 Promise</p>
 						</li>
 					</ul>
 				</section>
@@ -490,9 +673,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -505,31 +685,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -589,10 +754,16 @@
 										<a href="core.resourcemanager.html#_loadsingleitem" class="tsd-kind-icon">_load<wbr>Single<wbr>Item</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="core.resourcemanager.html#cancelnotloaded" class="tsd-kind-icon">cancel<wbr>Not<wbr>Loaded</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
 										<a href="core.resourcemanager.html#gc" class="tsd-kind-icon">gc</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class">
 										<a href="core.resourcemanager.html#getassetpath" class="tsd-kind-icon">get<wbr>Asset<wbr>Path</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+										<a href="core.resourcemanager.html#load" class="tsd-kind-icon">load</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private tsd-is-static">
 										<a href="core.resourcemanager.html#_gettypebyurl" class="tsd-kind-icon">_get<wbr>Type<wbr>ByUrl</a>
@@ -603,9 +774,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
@@ -619,31 +787,16 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>

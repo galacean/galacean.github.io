@@ -200,14 +200,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new PBRMaterial<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, props<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.pbrmaterial.html" class="tsd-signature-type">PBRMaterial</a></li>
+						<li class="tsd-signature tsd-kind-icon">new PBRMaterial<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a>, name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, props<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.pbrmaterial.html" class="tsd-signature-type">PBRMaterial</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:27</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:28</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -217,6 +217,9 @@
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
+								<li>
+									<h5>engine: <a href="core.engine.html" class="tsd-signature-type">Engine</a></h5>
+								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> name: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = PBRMaterial.MATERIAL_NAME</span></h5>
 								</li>
@@ -239,7 +242,7 @@
 					<div class="tsd-signature tsd-kind-icon">_ambient<wbr>Light<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:19</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:20</li>
 						</ul>
 					</aside>
 				</section>
@@ -249,7 +252,7 @@
 					<div class="tsd-signature tsd-kind-icon">_clip<wbr>Plane<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:26</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:27</li>
 						</ul>
 					</aside>
 				</section>
@@ -259,7 +262,7 @@
 					<div class="tsd-signature tsd-kind-icon">_direct<wbr>Light<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:22</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:23</li>
 						</ul>
 					</aside>
 				</section>
@@ -269,7 +272,7 @@
 					<div class="tsd-signature tsd-kind-icon">_env<wbr>Map<wbr>Light<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:20</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -279,7 +282,7 @@
 					<div class="tsd-signature tsd-kind-icon">_point<wbr>Light<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:23</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:24</li>
 						</ul>
 					</aside>
 				</section>
@@ -289,7 +292,7 @@
 					<div class="tsd-signature tsd-kind-icon">_spot<wbr>Light<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:21</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:22</li>
 						</ul>
 					</aside>
 				</section>
@@ -299,7 +302,7 @@
 					<div class="tsd-signature tsd-kind-icon">_state<wbr>Obj<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:18</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:19</li>
 						</ul>
 					</aside>
 				</section>
@@ -309,7 +312,7 @@
 					<div class="tsd-signature tsd-kind-icon">_uniform<wbr>Obj<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:17</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:18</li>
 						</ul>
 					</aside>
 				</section>
@@ -319,7 +322,7 @@
 					<div class="tsd-signature tsd-kind-icon">_use<wbr>Diffuse<wbr>Env<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:24</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:25</li>
 						</ul>
 					</aside>
 				</section>
@@ -329,7 +332,7 @@
 					<div class="tsd-signature tsd-kind-icon">_useOIT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:27</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:28</li>
 						</ul>
 					</aside>
 				</section>
@@ -339,7 +342,7 @@
 					<div class="tsd-signature tsd-kind-icon">_use<wbr>Specular<wbr>Env<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:25</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:26</li>
 						</ul>
 					</aside>
 				</section>
@@ -348,7 +351,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> instance<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ++EngineObject._instanceIdCounter</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#instanceid">instanceId</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#instanceid">instanceId</a></p>
 						<ul>
 							<li>Defined in packages/core/src/base/EngineObject.ts:12</li>
 						</ul>
@@ -364,7 +367,7 @@
 					<h3>isGCIgnored</h3>
 					<div class="tsd-signature tsd-kind-icon">isGCIgnored<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#isgcignored">isGCIgnored</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#isgcignored">isGCIgnored</a></p>
 						<ul>
 							<li>Defined in packages/core/src/asset/RefObject.ts:10</li>
 						</ul>
@@ -465,7 +468,7 @@
 					<div class="tsd-signature tsd-kind-icon">MATERIAL_<wbr>NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;PBR_MATERIAL&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1103</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1104</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -480,7 +483,7 @@
 					<div class="tsd-signature tsd-kind-icon">STATIC_<wbr>FRAGMENT_<wbr>SHADER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = fs</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1120</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1121</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -495,7 +498,7 @@
 					<div class="tsd-signature tsd-kind-icon">STATIC_<wbr>VERTEX_<wbr>SHADER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = vs</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1114</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1115</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -510,7 +513,7 @@
 					<div class="tsd-signature tsd-kind-icon">TECHNIQUE_<wbr>NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;PBR_TECHNIQUE&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1108</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1109</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -525,7 +528,7 @@
 					<div class="tsd-signature tsd-kind-icon">attrib<wbr>Uniform<wbr>Vec4<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 12</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1126</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1127</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -548,7 +551,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:539</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:540</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -561,7 +564,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:543</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:544</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -590,7 +593,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:700</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:701</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -606,7 +609,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:704</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:705</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -638,7 +641,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:347</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:348</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -653,7 +656,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:351</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:352</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -684,7 +687,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:368</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:369</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -697,7 +700,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:372</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:373</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -726,7 +729,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:791</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:792</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -734,7 +737,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:795</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:796</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -758,7 +761,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:799</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:800</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -766,7 +769,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:803</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:804</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -790,7 +793,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:807</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:808</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -798,7 +801,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:811</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:812</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -820,7 +823,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#destroyed">destroyed</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroyed">destroyed</a></p>
 								<ul>
 									<li>Defined in packages/core/src/asset/RefObject.ts:27</li>
 								</ul>
@@ -845,7 +848,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:712</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:713</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -858,7 +861,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:716</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:717</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -887,7 +890,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:500</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:501</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -900,7 +903,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:504</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:505</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -929,7 +932,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:487</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:488</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -942,7 +945,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:491</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:492</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -971,7 +974,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:604</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:605</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -984,7 +987,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:608</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:609</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1013,7 +1016,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:844</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:845</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1030,7 +1033,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:848</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:849</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1063,7 +1066,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:783</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:784</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1076,7 +1079,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:787</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:788</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1105,7 +1108,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:820</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:821</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1123,7 +1126,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:824</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:825</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1157,7 +1160,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:565</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:566</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1170,7 +1173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:569</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:570</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1199,7 +1202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:832</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:833</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1216,7 +1219,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:836</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:837</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1249,7 +1252,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:394</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:395</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1262,7 +1265,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:398</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:399</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1291,7 +1294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:448</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:449</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1304,7 +1307,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:452</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:453</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1333,7 +1336,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:422</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:423</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1346,7 +1349,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:426</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:427</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1375,7 +1378,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:474</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:475</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1388,7 +1391,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:478</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:479</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1417,7 +1420,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:461</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:462</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1430,7 +1433,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:465</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:466</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1459,7 +1462,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:526</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:527</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1472,7 +1475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:530</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:531</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1501,7 +1504,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:513</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:514</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1514,7 +1517,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:517</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:518</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1543,7 +1546,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:356</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:357</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1551,7 +1554,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:360</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:361</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1575,7 +1578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:381</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:382</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1588,7 +1591,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:385</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:386</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1617,7 +1620,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:656</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:657</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1630,7 +1633,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:660</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:661</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1659,7 +1662,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:669</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:670</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1672,7 +1675,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:673</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:674</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1701,7 +1704,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:682</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:683</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1714,7 +1717,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:686</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:687</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1741,7 +1744,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#refcount">refCount</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#refcount">refCount</a></p>
 								<ul>
 									<li>Defined in packages/core/src/asset/RefObject.ts:20</li>
 								</ul>
@@ -1766,7 +1769,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:591</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:592</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1779,7 +1782,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:595</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:596</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1808,7 +1811,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:630</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:631</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1821,7 +1824,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:634</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:635</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1850,7 +1853,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:617</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:618</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1863,7 +1866,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:621</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:622</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1892,7 +1895,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:643</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:644</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1905,7 +1908,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:647</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:648</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1934,7 +1937,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:408</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:409</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1947,7 +1950,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:412</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:413</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1976,7 +1979,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:435</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:436</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1989,7 +1992,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:439</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:440</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2018,7 +2021,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:729</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:730</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2031,7 +2034,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:733</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:734</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2060,7 +2063,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:552</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:553</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2073,7 +2076,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:556</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:557</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2102,7 +2105,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:578</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:579</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2115,7 +2118,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:582</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:583</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2144,7 +2147,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:760</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:761</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2157,7 +2160,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:764</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:765</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2186,7 +2189,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:771</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:772</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2199,7 +2202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:775</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:776</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2336,7 +2339,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:748</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:749</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2349,7 +2352,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:752</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:753</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2380,7 +2383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1024</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1025</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2402,7 +2405,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:951</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:952</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2442,7 +2445,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:924</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:925</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2543,7 +2546,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#clone">clone</a></p>
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1078</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1079</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2574,7 +2577,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:90</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:91</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2626,9 +2629,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="core.buffer.html">Buffer</a>.<a href="core.buffer.html#destroy">destroy</a></p>
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in packages/core/src/asset/RefObject.ts:43</li>
+									<li>Defined in packages/core/src/asset/RefObject.ts:41</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2827,7 +2830,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#preparedrawing">prepareDrawing</a></p>
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:860</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:861</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2866,7 +2869,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:234</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:235</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2897,7 +2900,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:139</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:140</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2968,7 +2971,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:284</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:285</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2999,7 +3002,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:293</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:294</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -3029,7 +3032,7 @@
 					<div class="tsd-signature tsd-kind-icon">TECH_<wbr>CONFIG<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1132</li>
+							<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1133</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -3043,7 +3046,7 @@
 						<div class="tsd-signature tsd-kind-icon">attributes<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1133</li>
+								<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1134</li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -3058,7 +3061,7 @@
 						<div class="tsd-signature tsd-kind-icon">uniforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = Object.assign({u_baseColorSampler: {name: &quot;u_baseColorSampler&quot;,paramName: &quot;baseColorTexture&quot;,type: DataType.SAMPLER_2D},u_baseColorFactor: {name: &quot;u_baseColorFactor&quot;,paramName: &quot;baseColorFactor&quot;,type: DataType.FLOAT_VEC4},u_normalSampler: {name: &quot;u_normalSampler&quot;,paramName: &quot;normalTexture&quot;,type: DataType.SAMPLER_2D},u_normalScale: {name: &quot;u_normalScale&quot;,paramName: &quot;normalScale&quot;,type: DataType.FLOAT},u_lightDirection: {name: &quot;u_lightDirection&quot;,type: DataType.FLOAT_VEC3},u_lightColor: {name: &quot;u_lightColor&quot;,type: DataType.FLOAT_VEC3},u_metallicRoughnessValue: {name: &quot;u_metallicRoughnessValue&quot;,paramName: &quot;metallicRoughness&quot;,type: DataType.FLOAT_VEC2},u_metallicSampler: {name: &quot;u_metallicSampler&quot;,paramName: &quot;metallicTexture&quot;,type: DataType.SAMPLER_2D},u_roughnessSampler: {name: &quot;u_roughnessSampler&quot;,paramName: &quot;roughnessTexture&quot;,type: DataType.SAMPLER_2D},u_metallicRoughnessSampler: {name: &quot;u_metallicRoughnessSampler&quot;,paramName: &quot;metallicRoughnessTexture&quot;,type: DataType.SAMPLER_2D},u_emissiveFactor: {name: &quot;u_emissiveFactor&quot;,paramName: &quot;emissiveFactor&quot;,type: DataType.FLOAT_VEC3},u_emissiveSampler: {name: &quot;u_emissiveSampler&quot;,paramName: &quot;emissiveTexture&quot;,type: DataType.SAMPLER_2D},u_occlusionSampler: {name: &quot;u_occlusionSampler&quot;,paramName: &quot;occlusionTexture&quot;,type: DataType.SAMPLER_2D},u_occlusionStrength: {name: &quot;u_occlusionStrength&quot;,paramName: &quot;occlusionStrength&quot;,type: DataType.FLOAT},u_alphaCutoff: {name: &quot;u_alphaCutoff&quot;,paramName: &quot;alphaCutoff&quot;,type: DataType.FLOAT},u_opacitySampler: {name: &quot;u_opacitySampler&quot;,paramName: &quot;opacityTexture&quot;,type: DataType.SAMPLER_2D},u_specularFactor: {name: &quot;u_specularFactor&quot;,paramName: &quot;specularFactor&quot;,type: DataType.FLOAT_VEC3},u_glossinessFactor: {name: &quot;u_glossinessFactor&quot;,paramName: &quot;glossinessFactor&quot;,type: DataType.FLOAT},u_specularGlossinessSampler: {name: &quot;u_specularGlossinessSampler&quot;,paramName: &quot;specularGlossinessTexture&quot;,type: DataType.SAMPLER_2D},u_reflectionSampler: {name: &quot;u_reflectionSampler&quot;,paramName: &quot;reflectionTexture&quot;,type: DataType.SAMPLER_CUBE},u_PTMMatrix: {name: &quot;u_PTMMatrix&quot;,paramName: &quot;PTMMatrix&quot;,type: DataType.FLOAT_MAT4},u_envMapIntensity: {name: &quot;u_envMapIntensity&quot;,paramName: &quot;envMapIntensity&quot;,type: DataType.FLOAT},u_refractionRatio: {name: &quot;u_refractionRatio&quot;,paramName: &quot;refractionRatio&quot;,type: DataType.FLOAT},u_refractionDepth: {name: &quot;u_refractionDepth&quot;,paramName: &quot;refractionDepth&quot;,type: DataType.FLOAT},u_refractionSampler: {name: &quot;u_refractionSampler&quot;,paramName: &quot;refractionTexture&quot;,type: DataType.SAMPLER_2D},u_resolution: {name: &quot;u_resolution&quot;,paramName: &quot;resolution&quot;,type: DataType.FLOAT_VEC2},u_perturbationSampler: {name: &quot;u_perturbationSampler&quot;,paramName: &quot;perturbationTexture&quot;,type: DataType.SAMPLER_2D},u_perturbationUOffset: {name: &quot;u_perturbationUOffset&quot;,paramName: &quot;perturbationUOffset&quot;,type: DataType.FLOAT},u_perturbationVOffset: {name: &quot;u_perturbationVOffset&quot;,paramName: &quot;perturbationVOffset&quot;,type: DataType.FLOAT},u_depthSampler: {name: &quot;u_depthSampler&quot;,type: DataType.SAMPLER_2D}})</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1134</li>
+								<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1135</li>
 							</ul>
 						</aside>
 					</section>
@@ -3068,7 +3071,7 @@
 						<div class="tsd-signature tsd-kind-icon">states<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1283</li>
+								<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1284</li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -3077,7 +3080,7 @@
 							<div class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1284</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1285</li>
 								</ul>
 							</aside>
 						</section>
@@ -3087,7 +3090,7 @@
 							<div class="tsd-signature tsd-kind-icon">enable<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1285</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1286</li>
 								</ul>
 							</aside>
 						</section>
@@ -3097,7 +3100,7 @@
 							<div class="tsd-signature tsd-kind-icon">functions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1286</li>
+									<li>Defined in packages/core/src/pbr/PBRMaterial.ts:1287</li>
 								</ul>
 							</aside>
 							<div class="tsd-type-declaration">
@@ -3123,9 +3126,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -3138,31 +3138,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -3453,9 +3438,6 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -3468,31 +3450,16 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>

@@ -102,8 +102,6 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="core.engine.html#features" class="tsd-kind-icon">features</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#instanceid" class="tsd-kind-icon">instance<wbr>Id</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="core.engine.html#_" class="tsd-kind-icon">ƒ</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="core.engine.html#_lastcreateengine" class="tsd-kind-icon">_last<wbr>Create<wbr>Engine</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="core.engine.html#defaultcreateobjectengine" class="tsd-kind-icon">default<wbr>Create<wbr>Object<wbr>Engine</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -127,8 +125,13 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#addeventlistener" class="tsd-kind-icon">add<wbr>Event<wbr>Listener</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.engine.html#createentity" class="tsd-kind-icon">create<wbr>Entity</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.engine.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#dispatch" class="tsd-kind-icon">dispatch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.engine.html#findfeature" class="tsd-kind-icon">find<wbr>Feature</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#hasevent" class="tsd-kind-icon">has<wbr>Event</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#off" class="tsd-kind-icon">off</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#once" class="tsd-kind-icon">once</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.engine.html#pause" class="tsd-kind-icon">pause</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#removealleventlisteners" class="tsd-kind-icon">remove<wbr>All<wbr>Event<wbr>Listeners</a></li>
@@ -137,7 +140,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.engine.html#run" class="tsd-kind-icon">run</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.engine.html#trigger" class="tsd-kind-icon">trigger</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="core.engine.html#update" class="tsd-kind-icon">update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.engine.html#_getdefaultengine" class="tsd-kind-icon">_get<wbr>Default<wbr>Engine</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="core.engine.html#registerfeature" class="tsd-kind-icon">register<wbr>Feature</a></li>
 							</ul>
 						</section>
@@ -155,9 +157,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="core.eventdispatcher.html">EventDispatcher</a>.<a href="core.eventdispatcher.html#constructor">constructor</a></p>
+								<p>Overrides <a href="core.assetobject.html">AssetObject</a>.<a href="core.assetobject.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:125</li>
+									<li>Defined in packages/core/src/Engine.ts:114</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -197,7 +199,7 @@
 					<div class="tsd-signature tsd-kind-icon">_components<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="core.componentsmanager.html" class="tsd-signature-type">ComponentsManager</a><span class="tsd-signature-symbol"> = new ComponentsManager()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:31</li>
+							<li>Defined in packages/core/src/Engine.ts:20</li>
 						</ul>
 					</aside>
 				</section>
@@ -207,7 +209,7 @@
 					<div class="tsd-signature tsd-kind-icon">_hardware<wbr>Renderer<span class="tsd-signature-symbol">:</span> <a href="../interfaces/core.hardwarerenderer.html" class="tsd-signature-type">HardwareRenderer</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:32</li>
+							<li>Defined in packages/core/src/Engine.ts:21</li>
 						</ul>
 					</aside>
 				</section>
@@ -217,7 +219,7 @@
 					<div class="tsd-signature tsd-kind-icon">_is<wbr>Paused<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:40</li>
+							<li>Defined in packages/core/src/Engine.ts:29</li>
 						</ul>
 					</aside>
 				</section>
@@ -227,7 +229,7 @@
 					<div class="tsd-signature tsd-kind-icon">_loop<wbr>Counter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:43</li>
+							<li>Defined in packages/core/src/Engine.ts:32</li>
 						</ul>
 					</aside>
 				</section>
@@ -237,7 +239,7 @@
 					<div class="tsd-signature tsd-kind-icon">_request<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:41</li>
+							<li>Defined in packages/core/src/Engine.ts:30</li>
 						</ul>
 					</aside>
 				</section>
@@ -247,7 +249,7 @@
 					<div class="tsd-signature tsd-kind-icon">_resource<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="core.resourcemanager.html" class="tsd-signature-type">ResourceManager</a><span class="tsd-signature-symbol"> = new ResourceManager(this)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:35</li>
+							<li>Defined in packages/core/src/Engine.ts:24</li>
 						</ul>
 					</aside>
 				</section>
@@ -257,7 +259,7 @@
 					<div class="tsd-signature tsd-kind-icon">_scene<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="core.scenemanager.html" class="tsd-signature-type">SceneManager</a><span class="tsd-signature-symbol"> = new SceneManager(this)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:36</li>
+							<li>Defined in packages/core/src/Engine.ts:25</li>
 						</ul>
 					</aside>
 				</section>
@@ -267,7 +269,7 @@
 					<div class="tsd-signature tsd-kind-icon">_target<wbr>Frame<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1000 / 60</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:44</li>
+							<li>Defined in packages/core/src/Engine.ts:33</li>
 						</ul>
 					</aside>
 				</section>
@@ -277,7 +279,7 @@
 					<div class="tsd-signature tsd-kind-icon">_target<wbr>Frame<wbr>Rate<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 60</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:38</li>
+							<li>Defined in packages/core/src/Engine.ts:27</li>
 						</ul>
 					</aside>
 				</section>
@@ -287,7 +289,7 @@
 					<div class="tsd-signature tsd-kind-icon">_time<span class="tsd-signature-symbol">:</span> <a href="core.time.html" class="tsd-signature-type">Time</a><span class="tsd-signature-symbol"> = new Time()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:39</li>
+							<li>Defined in packages/core/src/Engine.ts:28</li>
 						</ul>
 					</aside>
 				</section>
@@ -297,7 +299,7 @@
 					<div class="tsd-signature tsd-kind-icon">_timeout<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:42</li>
+							<li>Defined in packages/core/src/Engine.ts:31</li>
 						</ul>
 					</aside>
 				</section>
@@ -307,7 +309,7 @@
 					<div class="tsd-signature tsd-kind-icon">_v<wbr>Sync<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:37</li>
+							<li>Defined in packages/core/src/Engine.ts:26</li>
 						</ul>
 					</aside>
 				</section>
@@ -317,7 +319,7 @@
 					<div class="tsd-signature tsd-kind-icon">features<span class="tsd-signature-symbol">:</span> <a href="core.enginefeature.html" class="tsd-signature-type">EngineFeature</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = []</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:273</li>
+							<li>Defined in packages/core/src/Engine.ts:261</li>
 						</ul>
 					</aside>
 				</section>
@@ -326,7 +328,7 @@
 					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> instance<wbr>Id</h3>
 					<div class="tsd-signature tsd-kind-icon">instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ++EngineObject._instanceIdCounter</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#instanceid">instanceId</a></p>
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#instanceid">instanceId</a></p>
 						<ul>
 							<li>Defined in packages/core/src/base/EngineObject.ts:12</li>
 						</ul>
@@ -343,34 +345,9 @@
 					<div class="tsd-signature tsd-kind-icon">ƒ<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/core/src/Engine.ts:209</li>
+							<li>Defined in packages/core/src/Engine.ts:197</li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="_lastcreateengine" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> _last<wbr>Create<wbr>Engine</h3>
-					<div class="tsd-signature tsd-kind-icon">_last<wbr>Create<wbr>Engine<span class="tsd-signature-symbol">:</span> <a href="core.engine.html" class="tsd-signature-type">Engine</a><span class="tsd-signature-symbol"> = null</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in packages/core/src/Engine.ts:25</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="defaultcreateobjectengine" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> default<wbr>Create<wbr>Object<wbr>Engine</h3>
-					<div class="tsd-signature tsd-kind-icon">default<wbr>Create<wbr>Object<wbr>Engine<span class="tsd-signature-symbol">:</span> <a href="core.engine.html" class="tsd-signature-type">Engine</a><span class="tsd-signature-symbol"> = null</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in packages/core/src/Engine.ts:23</li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>当前创建对象所属的默认引擎对象。</p>
-						</div>
-					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -385,7 +362,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:62</li>
+									<li>Defined in packages/core/src/Engine.ts:51</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -407,7 +384,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:90</li>
+									<li>Defined in packages/core/src/Engine.ts:79</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -429,7 +406,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:123</li>
+									<li>Defined in packages/core/src/Engine.ts:112</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,7 +430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:69</li>
+									<li>Defined in packages/core/src/Engine.ts:58</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -475,7 +452,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:76</li>
+									<li>Defined in packages/core/src/Engine.ts:65</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -498,7 +475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:109</li>
+									<li>Defined in packages/core/src/Engine.ts:98</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -512,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:113</li>
+									<li>Defined in packages/core/src/Engine.ts:102</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -541,7 +518,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:83</li>
+									<li>Defined in packages/core/src/Engine.ts:72</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -564,7 +541,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:97</li>
+									<li>Defined in packages/core/src/Engine.ts:86</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -577,7 +554,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:101</li>
+									<li>Defined in packages/core/src/Engine.ts:90</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -608,7 +585,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:46</li>
+									<li>Defined in packages/core/src/Engine.ts:35</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -625,7 +602,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:238</li>
+									<li>Defined in packages/core/src/Engine.ts:226</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -642,33 +619,47 @@
 					<a name="addeventlistener" class="tsd-anchor"></a>
 					<h3>add<wbr>Event<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
+						<li class="tsd-signature tsd-kind-icon">add<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a>, once<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#addeventlistener">addEventListener</a></p>
 								<ul>
-									<li>Defined in packages/core/src/base/EventDispatcher.ts:24</li>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:99</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>添加对指定事件的监听</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>使用 on/once 替换
+										添加指定事件名的监听函数。</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a></h5>
+									<h5>fn: <a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>函数</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> once: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>是否是一次性监听</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></h4>
+							<p>this</p>
 						</li>
 					</ul>
 				</section>
@@ -682,7 +673,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:147</li>
+									<li>Defined in packages/core/src/Engine.ts:135</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -713,7 +704,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:214</li>
+									<li>Defined in packages/core/src/Engine.ts:202</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -722,6 +713,69 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="dispatch" class="tsd-anchor"></a>
+					<h3>dispatch</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">dispatch<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, data<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#dispatch">dispatch</a></p>
+								<ul>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:51</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>派发指定事件名的事件。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> data: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>数据</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>派发事件是否成功</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="eventnames" class="tsd-anchor"></a>
+					<h3>event<wbr>Names</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">event<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#eventnames">eventNames</a></p>
+								<ul>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:27</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>返回注册的所有事件名。</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<p>所有的事件名</p>
 						</li>
 					</ul>
 				</section>
@@ -735,7 +789,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:265</li>
+									<li>Defined in packages/core/src/Engine.ts:253</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -752,26 +806,131 @@
 					<a name="hasevent" class="tsd-anchor"></a>
 					<h3>has<wbr>Event</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">has<wbr>Event<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, listener<span class="tsd-signature-symbol">?: </span><a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Event<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#hasevent">hasEvent</a></p>
 								<ul>
-									<li>Defined in packages/core/src/base/EventDispatcher.ts:88</li>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:19</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>判断是否有事件监听。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>返回是否有对应事件</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="listenercount" class="tsd-anchor"></a>
+					<h3>listener<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">listener<wbr>Count<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#listenercount">listenerCount</a></p>
+								<ul>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:37</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>返回指定事件名的监听函数的数量。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>监听函数的数量</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="off" class="tsd-anchor"></a>
+					<h3>off</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">off<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">?: </span><a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#off">off</a></p>
+								<ul>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:113</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> listener: <a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fn: <a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#on">on</a></p>
+								<ul>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:77</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>添加监听函数。</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
+								</li>
+								<li>
+									<h5>fn: <a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>函数</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></h4>
+							<p>this</p>
 						</li>
 					</ul>
 				</section>
@@ -779,33 +938,38 @@
 					<a name="once" class="tsd-anchor"></a>
 					<h3>once</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
+						<li class="tsd-signature tsd-kind-icon">once<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">: </span><a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#once">once</a></p>
 								<ul>
-									<li>Defined in packages/core/src/base/EventDispatcher.ts:43</li>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:87</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>指定事件发生时，只回调一次</p>
+									<p>添加一次性的监听函数。</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a></h5>
+									<h5>fn: <a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>函数</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></h4>
+							<p>this</p>
 						</li>
 					</ul>
 				</section>
@@ -819,7 +983,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:154</li>
+									<li>Defined in packages/core/src/Engine.ts:142</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -835,21 +999,30 @@
 					<a name="removealleventlisteners" class="tsd-anchor"></a>
 					<h3>remove<wbr>All<wbr>Event<wbr>Listeners</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<wbr>Event<wbr>Listeners<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>All<wbr>Event<wbr>Listeners<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#removealleventlisteners">removeAllEventListeners</a></p>
 								<ul>
-									<li>Defined in packages/core/src/base/EventDispatcher.ts:84</li>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:152</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>移除所有事件的监听</p>
+									<p>移除所有的事件监听。</p>
 								</div>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名，若不传则删除所有事件</p>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -858,29 +1031,36 @@
 					<a name="removeeventlistener" class="tsd-anchor"></a>
 					<h3>remove<wbr>Event<wbr>Listener</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span>, listener<span class="tsd-signature-symbol">: </span><a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
+						<li class="tsd-signature tsd-kind-icon">remove<wbr>Event<wbr>Listener<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fn<span class="tsd-signature-symbol">?: </span><a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#removeeventlistener">removeEventListener</a></p>
 								<ul>
-									<li>Defined in packages/core/src/base/EventDispatcher.ts:55</li>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:144</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>移除对指定事件的监听</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>使用
+										移除指定事件名的事件监听。</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<h5>event: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>事件名</p>
+									</div>
 								</li>
 								<li>
-									<h5>listener: <a href="../modules/core.html#listener" class="tsd-signature-type">Listener</a></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fn: <a href="../interfaces/loader.classtype.html#function" class="tsd-signature-type">Function</a></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>函数，若不传则删除所有对应的事件监听</p>
 									</div>
 								</li>
 							</ul>
@@ -898,7 +1078,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:163</li>
+									<li>Defined in packages/core/src/Engine.ts:151</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -920,7 +1100,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:203</li>
+									<li>Defined in packages/core/src/Engine.ts:191</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -936,30 +1116,30 @@
 					<a name="trigger" class="tsd-anchor"></a>
 					<h3>trigger</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">trigger<span class="tsd-signature-symbol">(</span>event<span class="tsd-signature-symbol">: </span><a href="core.event.html" class="tsd-signature-type">Event</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></li>
+						<li class="tsd-signature tsd-kind-icon">trigger<span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="core.event.html" class="tsd-signature-type">Event</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.component.html">Component</a>.<a href="core.component.html#trigger">trigger</a></p>
 								<ul>
-									<li>Defined in packages/core/src/base/EventDispatcher.ts:106</li>
+									<li>Defined in packages/core/src/base/EventDispatcher.ts:165</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>触发事件</p>
-								</div>
+								<dl class="tsd-comment-tags">
+									<dt>deprecated</dt>
+									<dd><p>使用 dispatch 替换</p>
+									</dd>
+								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>event: <a href="core.event.html" class="tsd-signature-type">Event</a></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
+									<h5>e: <a href="core.event.html" class="tsd-signature-type">Event</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="core.eventdispatcher.html" class="tsd-signature-type">EventDispatcher</a></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -973,7 +1153,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:172</li>
+									<li>Defined in packages/core/src/Engine.ts:160</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -982,23 +1162,6 @@
 								</div>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="_getdefaultengine" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> _get<wbr>Default<wbr>Engine</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">_get<wbr>Default<wbr>Engine<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in packages/core/src/Engine.ts:27</li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="core.engine.html" class="tsd-signature-type">Engine</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -1012,7 +1175,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/core/src/Engine.ts:269</li>
+									<li>Defined in packages/core/src/Engine.ts:257</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1042,9 +1205,6 @@
 						<a href="../modules/core.html">core</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html">decal</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/design.html">design</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -1057,31 +1217,16 @@
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -1149,12 +1294,6 @@
 									<li class=" tsd-kind-property tsd-parent-kind-class">
 										<a href="core.engine.html#_" class="tsd-kind-icon">ƒ</a>
 									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-										<a href="core.engine.html#_lastcreateengine" class="tsd-kind-icon">_last<wbr>Create<wbr>Engine</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-										<a href="core.engine.html#defaultcreateobjectengine" class="tsd-kind-icon">default<wbr>Create<wbr>Object<wbr>Engine</a>
-									</li>
 									<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 										<a href="core.engine.html#canvas" class="tsd-kind-icon">canvas</a>
 									</li>
@@ -1194,11 +1333,26 @@
 									<li class=" tsd-kind-method tsd-parent-kind-class">
 										<a href="core.engine.html#destroy" class="tsd-kind-icon">destroy</a>
 									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.engine.html#dispatch" class="tsd-kind-icon">dispatch</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.engine.html#eventnames" class="tsd-kind-icon">event<wbr>Names</a>
+									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class">
 										<a href="core.engine.html#findfeature" class="tsd-kind-icon">find<wbr>Feature</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 										<a href="core.engine.html#hasevent" class="tsd-kind-icon">has<wbr>Event</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.engine.html#listenercount" class="tsd-kind-icon">listener<wbr>Count</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.engine.html#off" class="tsd-kind-icon">off</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.engine.html#on" class="tsd-kind-icon">on</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 										<a href="core.engine.html#once" class="tsd-kind-icon">once</a>
@@ -1225,9 +1379,6 @@
 										<a href="core.engine.html#update" class="tsd-kind-icon">update</a>
 									</li>
 									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-										<a href="core.engine.html#_getdefaultengine" class="tsd-kind-icon">_get<wbr>Default<wbr>Engine</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
 										<a href="core.engine.html#registerfeature" class="tsd-kind-icon">register<wbr>Feature</a>
 									</li>
 								</ul>
@@ -1236,9 +1387,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-module">
-						<a href="../modules/decal.html" class="tsd-kind-icon">decal</a>
-					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
 					</li>
@@ -1252,31 +1400,16 @@
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/fsm.html" class="tsd-kind-icon">fsm</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/hud.html" class="tsd-kind-icon">hud</a>
-					</li>
-					<li class=" tsd-kind-module">
 						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="../modules/o3.html" class="tsd-kind-icon">o3</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/post_processing.html" class="tsd-kind-icon">post-<wbr>processing</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/renderer_oit.html" class="tsd-kind-icon">renderer-<wbr>oit</a>
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="../modules/screenshot.html" class="tsd-kind-icon">screenshot</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
@@ -1319,11 +1452,10 @@
 				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
 			</ul>
 		</div>
 	</div>
