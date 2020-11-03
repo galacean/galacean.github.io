@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ShaderHook | Oasis Engine</title>
+	<title>TextureHook | Oasis Engine</title>
 	<meta name="description" content="Documentation for Oasis Engine">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -40,13 +40,13 @@
 					<a href="../globals.html">Packages</a>
 				</li>
 				<li>
-					<a href="../modules/engine_stats.html">engine-stats</a>
+					<a href="../modules/stats.html">stats</a>
 				</li>
 				<li>
-					<a href="engine_stats.shaderhook.html">ShaderHook</a>
+					<a href="stats.texturehook.html">TextureHook</a>
 				</li>
 			</ul>
-			<span class="tsd-breadcrumb-current">Class ShaderHook</span>
+			<span class="tsd-breadcrumb-current">Class TextureHook</span>
 			<div id="tsd-filter">
 				<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
 				<div class="tsd-filter-group">
@@ -65,7 +65,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ShaderHook</span>
+						<span class="target">TextureHook</span>
 					</li>
 				</ul>
 			</section>
@@ -76,26 +76,26 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="engine_stats.shaderhook.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="stats.texturehook.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="engine_stats.shaderhook.html#gl" class="tsd-kind-icon">gl</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="engine_stats.shaderhook.html#hooked" class="tsd-kind-icon">hooked</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="engine_stats.shaderhook.html#realattachshader" class="tsd-kind-icon">real<wbr>Attach<wbr>Shader</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="engine_stats.shaderhook.html#realdetachshader" class="tsd-kind-icon">real<wbr>Detach<wbr>Shader</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="engine_stats.shaderhook.html#shaders" class="tsd-kind-icon">shaders</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="stats.texturehook.html#gl" class="tsd-kind-icon">gl</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="stats.texturehook.html#hooked" class="tsd-kind-icon">hooked</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="stats.texturehook.html#realcreatetexture" class="tsd-kind-icon">real<wbr>Create<wbr>Texture</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="stats.texturehook.html#realdeletetexture" class="tsd-kind-icon">real<wbr>Delete<wbr>Texture</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="stats.texturehook.html#textures" class="tsd-kind-icon">textures</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="engine_stats.shaderhook.html#hookedattachshader" class="tsd-kind-icon">hooked<wbr>Attach<wbr>Shader</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="engine_stats.shaderhook.html#hookeddetachshader" class="tsd-kind-icon">hooked<wbr>Detach<wbr>Shader</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="engine_stats.shaderhook.html#release" class="tsd-kind-icon">release</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="engine_stats.shaderhook.html#reset" class="tsd-kind-icon">reset</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="stats.texturehook.html#hookedcreatetexture" class="tsd-kind-icon">hooked<wbr>Create<wbr>Texture</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="stats.texturehook.html#hookeddeletetexture" class="tsd-kind-icon">hooked<wbr>Delete<wbr>Texture</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stats.texturehook.html#release" class="tsd-kind-icon">release</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stats.texturehook.html#reset" class="tsd-kind-icon">reset</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,13 +107,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Shader<wbr>Hook<span class="tsd-signature-symbol">(</span>gl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebGLRenderingContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebGL2RenderingContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="engine_stats.shaderhook.html" class="tsd-signature-type">ShaderHook</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Texture<wbr>Hook<span class="tsd-signature-symbol">(</span>gl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">WebGLRenderingContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebGL2RenderingContext</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="stats.texturehook.html" class="tsd-signature-type">TextureHook</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:11</li>
+									<li>Defined in packages/stats/src/hooks/TextureHook.ts:11</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -122,7 +122,7 @@
 									<h5>gl: <span class="tsd-signature-type">WebGLRenderingContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebGL2RenderingContext</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="engine_stats.shaderhook.html" class="tsd-signature-type">ShaderHook</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="stats.texturehook.html" class="tsd-signature-type">TextureHook</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -135,7 +135,7 @@
 					<div class="tsd-signature tsd-kind-icon">gl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">WebGLRenderingContext</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">WebGL2RenderingContext</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:11</li>
+							<li>Defined in packages/stats/src/hooks/TextureHook.ts:11</li>
 						</ul>
 					</aside>
 				</section>
@@ -145,37 +145,37 @@
 					<div class="tsd-signature tsd-kind-icon">hooked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:10</li>
+							<li>Defined in packages/stats/src/hooks/TextureHook.ts:10</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="realattachshader" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> real<wbr>Attach<wbr>Shader</h3>
-					<div class="tsd-signature tsd-kind-icon">real<wbr>Attach<wbr>Shader<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="realcreatetexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> real<wbr>Create<wbr>Texture</h3>
+					<div class="tsd-signature tsd-kind-icon">real<wbr>Create<wbr>Texture<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:8</li>
+							<li>Defined in packages/stats/src/hooks/TextureHook.ts:8</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="realdetachshader" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> real<wbr>Detach<wbr>Shader</h3>
-					<div class="tsd-signature tsd-kind-icon">real<wbr>Detach<wbr>Shader<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<a name="realdeletetexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> real<wbr>Delete<wbr>Texture</h3>
+					<div class="tsd-signature tsd-kind-icon">real<wbr>Delete<wbr>Texture<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:9</li>
+							<li>Defined in packages/stats/src/hooks/TextureHook.ts:9</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="shaders" class="tsd-anchor"></a>
-					<h3>shaders</h3>
-					<div class="tsd-signature tsd-kind-icon">shaders<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
+					<a name="textures" class="tsd-anchor"></a>
+					<h3>textures</h3>
+					<div class="tsd-signature tsd-kind-icon">textures<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:7</li>
+							<li>Defined in packages/stats/src/hooks/TextureHook.ts:7</li>
 						</ul>
 					</aside>
 				</section>
@@ -183,51 +183,39 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="hookedattachshader" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> hooked<wbr>Attach<wbr>Shader</h3>
+					<a name="hookedcreatetexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> hooked<wbr>Create<wbr>Texture</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">hooked<wbr>Attach<wbr>Shader<span class="tsd-signature-symbol">(</span>program<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, shader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">hooked<wbr>Create<wbr>Texture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:26</li>
+									<li>Defined in packages/stats/src/hooks/TextureHook.ts:26</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>program: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>shader: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="hookeddetachshader" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> hooked<wbr>Detach<wbr>Shader</h3>
+					<a name="hookeddeletetexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> hooked<wbr>Delete<wbr>Texture</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">hooked<wbr>Detach<wbr>Shader<span class="tsd-signature-symbol">(</span>program<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, shader<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">hooked<wbr>Delete<wbr>Texture<span class="tsd-signature-symbol">(</span>texture<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:34</li>
+									<li>Defined in packages/stats/src/hooks/TextureHook.ts:36</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>program: <span class="tsd-signature-type">any</span></h5>
-								</li>
-								<li>
-									<h5>shader: <span class="tsd-signature-type">any</span></h5>
+									<h5>texture: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -244,7 +232,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:46</li>
+									<li>Defined in packages/stats/src/hooks/TextureHook.ts:48</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -261,7 +249,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in packages/engine-stats/src/hooks/ShaderHook.ts:42</li>
+									<li>Defined in packages/stats/src/hooks/TextureHook.ts:44</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -288,14 +276,6 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/draco.html">draco</a>
 					</li>
-					<li class="current tsd-kind-module">
-						<a href="../modules/engine_stats.html">engine-<wbr>stats</a>
-						<ul>
-							<li class=" tsd-kind-namespace tsd-parent-kind-module tsd-is-not-exported">
-								<a href="../modules/engine_stats.__global.html">__global</a>
-							</li>
-						</ul>
-					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
 					</li>
@@ -310,6 +290,14 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/stats.html">stats</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/stats.__global.html">__global</a>
+							</li>
+						</ul>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html">tween</a>
@@ -330,80 +318,6 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/draco.html" class="tsd-kind-icon">draco</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-module">
-						<a href="../modules/engine_stats.html" class="tsd-kind-icon">engine-<wbr>stats</a>
-						<ul>
-							<li class=" tsd-kind-namespace tsd-parent-kind-module tsd-is-not-exported">
-								<a href="../modules/engine_stats.__global.html" class="tsd-kind-icon">__global</a>
-							</li>
-							<li class=" tsd-kind-class tsd-parent-kind-module">
-								<a href="engine_stats.core.html" class="tsd-kind-icon">Core</a>
-							</li>
-							<li class=" tsd-kind-class tsd-parent-kind-module">
-								<a href="engine_stats.drawcallhook.html" class="tsd-kind-icon">Draw<wbr>Call<wbr>Hook</a>
-							</li>
-							<li class=" tsd-kind-class tsd-parent-kind-module">
-								<a href="engine_stats.monitor.html" class="tsd-kind-icon">Monitor</a>
-							</li>
-							<li class="current tsd-kind-class tsd-parent-kind-module">
-								<a href="engine_stats.shaderhook.html" class="tsd-kind-icon">Shader<wbr>Hook</a>
-								<ul>
-									<li class=" tsd-kind-constructor tsd-parent-kind-class">
-										<a href="engine_stats.shaderhook.html#constructor" class="tsd-kind-icon">constructor</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-										<a href="engine_stats.shaderhook.html#gl" class="tsd-kind-icon">gl</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-										<a href="engine_stats.shaderhook.html#hooked" class="tsd-kind-icon">hooked</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-										<a href="engine_stats.shaderhook.html#realattachshader" class="tsd-kind-icon">real<wbr>Attach<wbr>Shader</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-										<a href="engine_stats.shaderhook.html#realdetachshader" class="tsd-kind-icon">real<wbr>Detach<wbr>Shader</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class">
-										<a href="engine_stats.shaderhook.html#shaders" class="tsd-kind-icon">shaders</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-										<a href="engine_stats.shaderhook.html#hookedattachshader" class="tsd-kind-icon">hooked<wbr>Attach<wbr>Shader</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-										<a href="engine_stats.shaderhook.html#hookeddetachshader" class="tsd-kind-icon">hooked<wbr>Detach<wbr>Shader</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="engine_stats.shaderhook.html#release" class="tsd-kind-icon">release</a>
-									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
-										<a href="engine_stats.shaderhook.html#reset" class="tsd-kind-icon">reset</a>
-									</li>
-								</ul>
-							</li>
-							<li class=" tsd-kind-class tsd-parent-kind-module">
-								<a href="engine_stats.stats.html" class="tsd-kind-icon">Stats</a>
-							</li>
-							<li class=" tsd-kind-class tsd-parent-kind-module">
-								<a href="engine_stats.texturehook.html" class="tsd-kind-icon">Texture<wbr>Hook</a>
-							</li>
-							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-								<a href="../modules/engine_stats.html#css" class="tsd-kind-icon">css</a>
-							</li>
-							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-								<a href="../modules/engine_stats.html#tpl" class="tsd-kind-icon">tpl</a>
-							</li>
-							<li class=" tsd-kind-function tsd-parent-kind-module">
-								<a href="../modules/engine_stats.html#errorlog" class="tsd-kind-icon">error<wbr>Log</a>
-							</li>
-							<li class=" tsd-kind-function tsd-parent-kind-module">
-								<a href="../modules/engine_stats.html#log" class="tsd-kind-icon">log</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-module">
 						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
 					</li>
@@ -419,6 +333,80 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
 					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
+						<a href="../modules/stats.html" class="tsd-kind-icon">stats</a>
+						<ul>
+							<li class=" tsd-kind-namespace tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/stats.__global.html" class="tsd-kind-icon">__global</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="stats.core.html" class="tsd-kind-icon">Core</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="stats.drawcallhook.html" class="tsd-kind-icon">Draw<wbr>Call<wbr>Hook</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="stats.monitor.html" class="tsd-kind-icon">Monitor</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="stats.shaderhook.html" class="tsd-kind-icon">Shader<wbr>Hook</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="stats.stats-1.html" class="tsd-kind-icon">Stats</a>
+							</li>
+							<li class="current tsd-kind-class tsd-parent-kind-module">
+								<a href="stats.texturehook.html" class="tsd-kind-icon">Texture<wbr>Hook</a>
+								<ul>
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
+										<a href="stats.texturehook.html#constructor" class="tsd-kind-icon">constructor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="stats.texturehook.html#gl" class="tsd-kind-icon">gl</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="stats.texturehook.html#hooked" class="tsd-kind-icon">hooked</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="stats.texturehook.html#realcreatetexture" class="tsd-kind-icon">real<wbr>Create<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="stats.texturehook.html#realdeletetexture" class="tsd-kind-icon">real<wbr>Delete<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="stats.texturehook.html#textures" class="tsd-kind-icon">textures</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+										<a href="stats.texturehook.html#hookedcreatetexture" class="tsd-kind-icon">hooked<wbr>Create<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+										<a href="stats.texturehook.html#hookeddeletetexture" class="tsd-kind-icon">hooked<wbr>Delete<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="stats.texturehook.html#release" class="tsd-kind-icon">release</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="stats.texturehook.html#reset" class="tsd-kind-icon">reset</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/stats.html#css" class="tsd-kind-icon">css</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/stats.html#tpl" class="tsd-kind-icon">tpl</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/stats.html#errorlog" class="tsd-kind-icon">error<wbr>Log</a>
+							</li>
+							<li class=" tsd-kind-function tsd-parent-kind-module">
+								<a href="../modules/stats.html#log" class="tsd-kind-icon">log</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-module">
 						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
 					</li>
