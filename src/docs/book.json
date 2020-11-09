@@ -1,0 +1,15 @@
+{
+  "title": "Oasis Engine",
+  "language": "zh-hans",
+  "gitbook": "3.2.3",
+  "structure": {
+      "readme": "README.md"
+  },
+  "plugins": [
+      "-sharing"
+  ],
+  "variables": {
+    "api": "https://oasis-engine.github.io/api/0.1/",
+    "docs": "https://oasis-engine.github.io/docs/"
+  }
+}
