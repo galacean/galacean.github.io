@@ -12,9 +12,6 @@ $ npm install gitbook-cli -g
 $ gitbook serve
 ```
 
-## Build
-$ npm run deploy
-
 - Add Link:
 
 ```
@@ -23,4 +20,9 @@ $ npm run deploy
 
 // docs
 [资源加载]({{book.docs}}structure/resource-manager.html)
+```
+
+## Build
+```bash
+$ npm run deploy
 ```
