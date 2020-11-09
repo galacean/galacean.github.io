@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "deploy": "rm -rf ../../docs && mv _book ../../docs"
+    "build": "gitbook build && rm -rf ../../docs && mv _book ../../docs"
   }
 }
