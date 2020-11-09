@@ -1,6 +1,5 @@
 {
-  "dependencies": {
-    "gitbook-plugin-header": "^0.1.0",
-    "gitbook-plugin-layout": "^0.0.1"
+  "scripts": {
+    "deploy": "rm -rf ../../docs && mv _book ../../docs"
   }
 }

@@ -4,7 +4,6 @@
 
 ```bash
 $ npm install gitbook-cli -g
-$ gitbook -V
 ```
 
 ## Develop
@@ -12,6 +11,9 @@ $ gitbook -V
 ```bash
 $ gitbook serve
 ```
+
+## Build
+$ npm run deploy
 
 - Add Link:
 
