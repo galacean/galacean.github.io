@@ -24,5 +24,5 @@ $ gitbook serve
 
 ## Build
 ```bash
-$ npm run build
+$ gitbook build
 ```
