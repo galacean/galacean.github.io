@@ -19,7 +19,7 @@ $ gitbook serve
 [CuboidGeometry]({{book.api}}classes/core.cuboidgeometry.html)
 
 // docs
-[资源加载]({{book.docs}}structure/resource-manager.html)
+[资源加载]({{book.docs}}resource/resource-manager.html)
 ```
 
 ## Build
