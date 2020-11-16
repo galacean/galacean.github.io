@@ -2,6 +2,8 @@
 
 当你的项目在线完成场景编辑和脚本编写，你可能会困惑如何使用开发的 3D 产物。我们希望 3D 组件和业务前端工程（如用 [React](https://reactjs.org/) 编写的工程）是解耦的（解耦的好处有很多，比如可以沉淀玩法组件），所以我们建议把 3D 产物发布成前端通用的 [NPM](https://npm.alibaba-inc.com/) 包，然后在业务工程中安装这个包来使用。
 
+![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Z1V-TbNyuc4AAAAAAAAAAAAAARQnAQ)
+
 ## 使用
 
 ### 1. 导出项目至本地
