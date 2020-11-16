@@ -1,6 +1,6 @@
 # 关于 Oasis Editor
 
-> [Oasis Editor](https://oasistwa.alipay.com/3d/)（未开放，仅内网可访问）是一个云端 Web 3D 内容创作工具，可以在线完成一个 3D 项目的创建、编辑、发布。
+[Oasis Editor](https://oasistwa.alipay.com/3d/)（未开放，仅内网可访问）是一个云端 Web 3D 内容创作工具，可以在线完成一个 3D 项目的创建、编辑、发布。
 
 ## 核心能力
 
