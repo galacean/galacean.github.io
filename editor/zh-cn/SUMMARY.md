@@ -13,3 +13,7 @@
 * 脚本开发 
   * [添加脚本组件](${book.editor}script.md)
   * [常用实体操作](${book.editor}entity.md)
+* 项目导出
+  * [导出 Web 平台包](${book.editor}export-web.md)
+  * [导出支付宝小程序包](${book.editor}export-minprogram.md)
+  * [事件通信](${book.editor}event.md)
