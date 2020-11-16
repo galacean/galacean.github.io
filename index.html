@@ -1,1 +1,116 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/docsify-toc@1.0.0/dist/toc.css">
+  <style>
+    .page_toc {
+      margin-top: 90px;
+    }
+    .cover-main img{
+      width: 160px;
+    }
+    .sidebar {
+      background: #fcfcfc;
+    }
+  </style>
+</head>
+<body>
+  <nav id="nav">
+    <a data-lang="en">EN</a>
+    <a data-lang="zh-cn">中文</a>
+  </nav>
+  <div id="app"></div>
+  <script>
+    (function () {
+      var OASIS_VERSION = 0.1;
+      var OASIS_LANG = localStorage.getItem('oasis-doc-lang') || 'zh-cn';
+      var origin = window.location.origin;
+      var homepage = `${origin}/${OASIS_VERSION}/manual/${OASIS_LANG}/README.md`;
+      var isHomePage = window.location.href.endsWith('/#/');
+      var sidebar = isHomePage ? `${OASIS_VERSION}/manual/${OASIS_LANG}/SUMMARY.md` : `SUMMARY.md`;
+      console.log('sidebar', sidebar)
+
+      console.log(homepage)
+      var href = location.href;
+
+      window.$docsify = {
+        // name: 'Oasis Engine',
+        repo: 'https://github.com/oasis-engine',
+        loadSidebar: sidebar,
+        // loadNavbar: '_nav.md',
+        fallbackLanguages: ['zh-cn', 'en'],
+        // logo: 'https://gw.alipayobjects.com/zos/bmw-prod/69fa4781-a238-4a6e-957c-8393413f756a.svg',
+        auto2top: true,
+        coverpage: true,
+        homepage: homepage,
+        markdown: {
+          renderer: {
+            link: function (href, title, text) {
+              if (href.indexOf('${book.api}') > -1) {
+                // handle api url
+                href = href.replace('${book.api}', `/${OASIS_VERSION}/api/`)
+                return `<a href="${href}" target="_blank">${text}</a>`
+              }
+              else if (href.indexOf('${book.manual}') > -1) {
+                href = href.replace('${book.manual}', `/${OASIS_VERSION}/manual/${window.$docsify.lang}/`)
+                href = `#${href.replace('.md', '')}`
+                return `<a href="${href}">${text}</a>`
+              }
+              else if (href.indexOf('//') > -1) {
+                // don't handle absolute path
+                return `<a href="${href}" target="_blank">${text}</a>`
+              }
+              else {
+                // handle relative path
+                href = `#${href.replace('.md', '')}`;
+                return `<a href="${href}">${text}</a>`
+              }
+            }
+          }
+        },
+        // plugins
+        toc: {
+          scope: '.markdown-section',
+          headings: 'h1, h2, h3, h4, h5, h6',
+          title: 'Table of Contents',
+        },
+        lang: OASIS_LANG
+      };
+
+      var nav = document.querySelector('#nav');
+
+      nav.addEventListener('click', function (e) {
+        var currentLang = window.$docsify.lang;
+
+        var target = e.target;
+
+        var lang = target.getAttribute('data-lang');
+
+        if (!lang) {
+          return;
+        }
+
+        window.$docsify.lang = lang;
+
+        localStorage.setItem('oasis-doc-lang', lang);
+
+        var href = window.location.href;
+
+        href = href.replace(currentLang, lang);
+
+        window.location.replace(href)
+      });
+    })();
+  </script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
+  <script src="//unpkg.com/prismjs/components/prism-typescript.min.js"></script>
+  <script src="//unpkg.com/docsify-toc@1.0.0/dist/toc.js"></script>
+</body>
+</html>
