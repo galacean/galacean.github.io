@@ -102,7 +102,7 @@
 
         var href = window.location.href;
 
-        href = href.replace(currentLang, lang);
+        href = href.replace(`/${currentLang}`, `/${lang}`);
 
         window.location.replace(href)
       });
