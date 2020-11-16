@@ -21,10 +21,10 @@
   </style>
 </head>
 <body>
-  <nav id="nav">
+  <!-- <nav id="nav">
     <a data-lang="en">EN</a>
     <a data-lang="zh-cn">中文</a>
-  </nav>
+  </nav> -->
   <div id="app"></div>
   <script>
     (function () {
@@ -40,7 +40,8 @@
         // name: 'Oasis Engine',
         repo: 'https://github.com/oasis-engine',
         loadSidebar: sidebar,
-        // loadNavbar: '_nav.md',
+        loadNavbar: '_nav.md',
+        // externalLinkTarget:  '_blank',
         fallbackLanguages: ['zh-cn', 'en'],
         // logo: 'https://gw.alipayobjects.com/zos/bmw-prod/69fa4781-a238-4a6e-957c-8393413f756a.svg',
         auto2top: true,
@@ -56,6 +57,12 @@
               }
               else if (href.indexOf('${book.manual}') > -1) {
                 href = href.replace('${book.manual}', `/${OASIS_VERSION}/manual/${window.$docsify.lang}/`)
+                href = `#${href.replace('.md', '')}`
+                return `<a href="${href}">${text}</a>`
+              }
+              if (href.indexOf('${book.editor}') > -1) {
+                // handle api url
+                href = href.replace('${book.editor}', `/editor/${window.$docsify.lang}/`)
                 href = `#${href.replace('.md', '')}`
                 return `<a href="${href}">${text}</a>`
               }
@@ -83,29 +90,29 @@
         lang: OASIS_LANG
       };
 
-      var nav = document.querySelector('#nav');
+      // var nav = document.querySelector('#nav');
 
-      nav.addEventListener('click', function (e) {
-        var currentLang = window.$docsify.lang;
+      // nav.addEventListener('click', function (e) {
+      //   var currentLang = window.$docsify.lang;
 
-        var target = e.target;
+      //   var target = e.target;
 
-        var lang = target.getAttribute('data-lang');
+      //   var lang = target.getAttribute('data-lang');
 
-        if (!lang) {
-          return;
-        }
+      //   if (!lang) {
+      //     return;
+      //   }
 
-        window.$docsify.lang = lang;
+      //   window.$docsify.lang = lang;
 
-        localStorage.setItem('oasis-doc-lang', lang);
+      //   localStorage.setItem('oasis-doc-lang', lang);
 
-        var href = window.location.href;
+      //   var href = window.location.href;
 
-        href = href.replace(`/${currentLang}`, `/${lang}`);
+      //   href = href.replace(`/${currentLang}`, `/${lang}`);
 
-        window.location.replace(href)
-      });
+      //   window.location.replace(href)
+      // });
     })();
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>

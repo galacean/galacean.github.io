@@ -1,0 +1,40 @@
+# 关于 Oasis Editor
+
+> [Oasis Editor](https://oasistwa.alipay.com/3d/)（未开放，仅内网可访问）是一个云端 Web 3D 内容创作工具，可以在线完成一个 3D 项目的创建、编辑、发布。
+
+## 核心能力
+
+- **资产标准化能力：**通过 Oasis Editor 的云端资产标准化服务，3D 美术资产可以快速进引擎，上传 FBX 文件直接转成适合 Web 环境的 glTF 和 压缩纹理格式并发布到CDN，即使美术资产不断修改，迭代过程也高效轻松。
+
+- **场景编排能力：**用户可以通过可视化的画布窗口灵活调整场景中物体的位置、旋转角度、缩放比例等基础变换信息。通过 Oasis Editor 的 PBR 材质面板，用户可以轻松地完成材质各种参数的设置，包括添加环境光等加强真实感的能力。具有丰富多样的动画系统，实现骨骼动画、插值动画、粒子动画等片段的编排。
+
+- **自定义脚本能力：**Oasis 3D 引擎的架构天然具备脚本扩展能力，通过编辑器能够快速地创建自定义脚本能力，并且有一套简洁灵活的事件通信机制实现与业务逻辑的双向通信。
+
+- **跨平台发布能力：**支持导出H5、小程序等多平台的产物，支持 React 组件、Sherry组件、小程序组件、Rax组件等，实现一处开发，多处部署。
+
+## 界面介绍
+
+编辑器主要分为两个页面：**场景编辑器**和**代码编辑器。**
+
+### 场景编辑器
+职责是场景创作，完成场景节点的摆放、材质编辑、组件绑定等操作。由六个窗口区域构成：
+
+![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1597840655034-7ed27cce-8ba7-4b1b-bfe1-bdef2f7849ff.png#align=left&display=inline&height=981&margin=%5Bobject%20Object%5D&name=image.png&originHeight=981&originWidth=1532&size=406207&status=done&style=none&width=1532)
+
+
+1. **工具窗口：**包括属性可视化操作工具（节点平移、旋转、缩放）、撤销、重做等功能。
+2. **场景层级窗口：**我们可以可视化操作整个场景，包括节点添加、删除、复制、拖拽移动等功能。
+3. **3D场景操作视口：**可以实时反馈节点以及其属性变化的渲染效果，也可通过鼠标和快捷键操作场景内容来修改属性。
+4. **属性检查器：**可以修改节点属性和资源属性。
+5. **资源管理：**可以添加上传资源、删除资源，供3D场景关联使用。
+6. **导航栏：**展示一些项目级别的功能操作按钮，包括预览、下载功能按钮。
+
+###  代码编辑器
+职责是完成场景里通过代码实现的功能，比如编写[脚本组件](${book.manual}component/script.md)、[自定义 Shader](${book.manual}resource/shader.md) 等。由4个窗口区域构成：
+
+![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1597841666840-2981a259-694b-4663-85f9-ced0a49bda7a.png#align=left&display=inline&height=986&margin=%5Bobject%20Object%5D&name=image.png&originHeight=986&originWidth=1528&size=277039&status=done&style=none&width=1528)
+
+1. **文件目录窗口：**展示当前项目中所有的代码目录。
+2. **代码编辑器区：**编写脚本组件、自定义 Shader，支持 Typescript 及引擎代码提示，支持 vim 模式编辑。
+3. **游戏预览区：**脚本改动后保存会自动触发预览页面刷新。
+4. **导航栏**：展示一些功能操作按钮，包括预览、保存（可通过 Command+S 快捷键保存）、新窗口打开等功能。
