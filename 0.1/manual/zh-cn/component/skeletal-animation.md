@@ -1,6 +1,6 @@
 # 骨骼动画
 
-Oasis 3D 中的骨骼动画通过 glTF 模型（相关教程请参考[资源加载](${book.manual}resource/resource-manager)）的动画组件（[Animation](${book.api}classes/core.animationclip.html)）获得，动画组件中包含多个动画片段（[AnimationClip](${book.api}classes/core.animation.html)），动画组件可以控制动画片段的播放。
+Oasis Engine 中的骨骼动画通过 glTF 模型（相关教程请参考[资源加载](${book.manual}resource/resource-manager)）的动画组件（[Animation](${book.api}classes/core.animationclip.html)）获得，动画组件中包含多个动画片段（[AnimationClip](${book.api}classes/core.animation.html)），动画组件可以控制动画片段的播放。
 
 ```typescript
 // 在脚本组件中使用

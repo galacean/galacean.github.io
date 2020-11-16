@@ -18,9 +18,11 @@
   * [粒子动画](${book.manual}component/particle-system.md)
   * [碰撞检测](${book.manual}component/collision.md)
     * [射线投射](${book.manual}component/ray.md)
+  * [2D精灵](${book.manual}component/sprite-renderer.md)
 * 资源系统
   * [资源管理与加载](${book.manual}resource/resource-manager.md)
-  * [纹理资源](${book.manual}resource/texture.md)
+  * [纹理](${book.manual}resource/texture.md)
+  * [着色器](${book.manual}resource/shader.md)
 * 工具库
   * [数学库](${book.manual}tools/math.md)
 * 二方组件

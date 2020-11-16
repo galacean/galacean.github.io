@@ -1,6 +1,6 @@
 # 粒子动画
 
-Oasis 3D 的 **GPU 粒子系统** [GPUParticleSystem](${book.api}classes/core.gpuparticlesystem.html) 内部将会根据配置参数，自动生成几何体和材质，不需要手动创建和添加。所以，使用粒子系统，我们唯一需要关注的是配置参数。
+Oasis Engine 的 **GPU 粒子系统** [GPUParticleSystem](${book.api}classes/core.gpuparticlesystem.html) 内部将会根据配置参数，自动生成几何体和材质，不需要手动创建和添加。所以，使用粒子系统，我们唯一需要关注的是配置参数。
 
 ```typescript
 let particleComp = obj.addComponent(GPUParticleSystem);
