@@ -66,9 +66,12 @@
                 // don't handle absolute path
                 return `<a href="${href}" target="_blank">${text}</a>`
               }
-              else {
+              else if (href.indexOf('.md') > -1){
                 // handle relative path
                 href = `#${href.replace('.md', '')}`;
+                return `<a href="${href}">${text}</a>`
+              }
+              else {
                 return `<a href="${href}">${text}</a>`
               }
             }

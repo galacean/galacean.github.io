@@ -6,6 +6,6 @@
 
 - Mobile optimization | Component system | Front-end Friendly
 
-[Playground](https://oasis-engine.github.io/0.1/playground/)
-[API](https://oasis-engine.github.io/0.1/api/globals.html)
+[Playground](/0.1/playground/)
+[API](/0.1/api/globals.html)
 [Manual](${book.manual}README.md)
