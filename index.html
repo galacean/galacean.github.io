@@ -32,7 +32,8 @@
       var OASIS_LANG = localStorage.getItem('oasis-doc-lang') || 'zh-cn';
       var origin = window.location.origin;
       var homepage = `${origin}/${OASIS_VERSION}/manual/${OASIS_LANG}/README.md`;
-      var isHomePage = window.location.href.endsWith('/#/');
+      var herf = window.location.href
+      var isHomePage = href.endsWith('/#/') || href.endsWith('github.io/');
       var sidebar = isHomePage ? `${OASIS_VERSION}/manual/${OASIS_LANG}/SUMMARY.md` : `SUMMARY.md`;
       console.log('sidebar', sidebar)
 
