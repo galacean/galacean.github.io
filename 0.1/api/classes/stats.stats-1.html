@@ -65,7 +65,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">any</span>
+						<span class="tsd-signature-type">EngineFeature</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">Stats</span>
@@ -93,8 +93,10 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stats.stats-1.html#posttick" class="tsd-kind-icon">post<wbr>Tick</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="stats.stats-1.html#pretick" class="tsd-kind-icon">pre<wbr>Tick</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="stats.stats-1.html#posttick" class="tsd-kind-icon">post<wbr>Tick</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="stats.stats-1.html#preload" class="tsd-kind-icon">pre<wbr>Load</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="stats.stats-1.html#pretick" class="tsd-kind-icon">pre<wbr>Tick</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="stats.stats-1.html#shutdown" class="tsd-kind-icon">shutdown</a></li>
 							</ul>
 						</section>
 					</div>
@@ -140,15 +142,16 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="posttick" class="tsd-anchor"></a>
 					<h3>post<wbr>Tick</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">post<wbr>Tick<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a>, currentScene<span class="tsd-signature-symbol">: </span><a href="core.scene.html" class="tsd-signature-type">Scene</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">post<wbr>Tick<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Engine</span>, currentScene<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Scene</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides EngineFeature.postTick</p>
 								<ul>
 									<li>Defined in packages/stats/src/Stats.ts:31</li>
 								</ul>
@@ -161,25 +164,57 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>engine: <a href="core.engine.html" class="tsd-signature-type">Engine</a></h5>
+									<h5>engine: <span class="tsd-signature-type">Engine</span></h5>
 								</li>
 								<li>
-									<h5>currentScene: <a href="core.scene.html" class="tsd-signature-type">Scene</a></h5>
+									<h5>currentScene: <span class="tsd-signature-type">Scene</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="pretick" class="tsd-anchor"></a>
-					<h3>pre<wbr>Tick</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">pre<wbr>Tick<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a>, currentScene<span class="tsd-signature-symbol">: </span><a href="core.scene.html" class="tsd-signature-type">Scene</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="preload" class="tsd-anchor"></a>
+					<h3>pre<wbr>Load</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">pre<wbr>Load<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Engine</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="stats.stats-1.html">Stats</a>.<a href="stats.stats-1.html#preload">preLoad</a></p>
+								<ul>
+									<li>Defined in packages/core/types/EngineFeature.d.ts:12</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>引擎主循环运行之前的回调，用来预加载资源</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>engine: <span class="tsd-signature-type">Engine</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="pretick" class="tsd-anchor"></a>
+					<h3>pre<wbr>Tick</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">pre<wbr>Tick<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Engine</span>, currentScene<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Scene</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides EngineFeature.preTick</p>
 								<ul>
 									<li>Defined in packages/stats/src/Stats.ts:19</li>
 								</ul>
@@ -192,10 +227,41 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>engine: <a href="core.engine.html" class="tsd-signature-type">Engine</a></h5>
+									<h5>engine: <span class="tsd-signature-type">Engine</span></h5>
 								</li>
 								<li>
-									<h5>currentScene: <a href="core.scene.html" class="tsd-signature-type">Scene</a></h5>
+									<h5>currentScene: <span class="tsd-signature-type">Scene</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="shutdown" class="tsd-anchor"></a>
+					<h3>shutdown</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">shutdown<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Engine</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="stats.stats-1.html">Stats</a>.<a href="stats.stats-1.html#shutdown">shutdown</a></p>
+								<ul>
+									<li>Defined in packages/core/types/EngineFeature.d.ts:28</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>引擎关闭的时候调用</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>engine: <span class="tsd-signature-type">Engine</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -308,11 +374,17 @@
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 										<a href="stats.stats-1.html#monitor" class="tsd-kind-icon">monitor</a>
 									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 										<a href="stats.stats-1.html#posttick" class="tsd-kind-icon">post<wbr>Tick</a>
 									</li>
-									<li class=" tsd-kind-method tsd-parent-kind-class">
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="stats.stats-1.html#preload" class="tsd-kind-icon">pre<wbr>Load</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 										<a href="stats.stats-1.html#pretick" class="tsd-kind-icon">pre<wbr>Tick</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="stats.stats-1.html#shutdown" class="tsd-kind-icon">shutdown</a>
 									</li>
 								</ul>
 							</li>
@@ -367,6 +439,9 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
