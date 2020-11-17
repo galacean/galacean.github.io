@@ -18,6 +18,9 @@
     .sidebar {
       background: #fcfcfc;
     }
+    .app-nav ul li img {
+      max-width: inherit;
+    }
   </style>
   <script>
     !function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
@@ -43,7 +46,6 @@
       var OASIS_VERSION = 0.1;
       var OASIS_LANG = localStorage.getItem('oasis-doc-lang') || 'zh-cn';
       var origin = window.location.origin;
-      var homepage = `${origin}/${OASIS_VERSION}/manual/${OASIS_LANG}/README.md`;
       var href = window.location.href;
       var isHomePage = href.endsWith('/#/') || href.endsWith('github.io') || href.endsWith('github.io/');
       var sidebar = isHomePage ? `${OASIS_VERSION}/manual/${OASIS_LANG}/SUMMARY.md` : `SUMMARY.md`;
@@ -58,7 +60,7 @@
         // logo: 'https://gw.alipayobjects.com/zos/bmw-prod/69fa4781-a238-4a6e-957c-8393413f756a.svg',
         auto2top: true,
         coverpage: true,
-        homepage: homepage,
+        onlyCover: true,
         markdown: {
           renderer: {
             link: function (href, title, text) {
