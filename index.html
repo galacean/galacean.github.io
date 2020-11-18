@@ -36,7 +36,23 @@
   </script>
 </head>
 <body>
-  <div id="app"></div>
+  <nav class="app-nav" id="app-nav">
+    <ul>
+      <li><a href="/0.1/playground/" title="Playground">Playground</a></li>
+      <li><a href="/0.1/api/globals.html" title="API">API</a></li>
+      <li><a href="#/0.1/manual/zh-cn/README" title="Engine">Engine</a></li>
+      <li><a href="#/editor/zh-cn/README" title="Editor">Editor</a></li>
+      <li><a href="https://yuque.antfin-inc.com/oasisgroup/blog" target="_blank" title="Blog">Blog</a></li>
+      <li>DingTalk
+        <ul>
+          <li>&nbsp;内部服务群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开源社区群</li>
+          <li><img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*K9myT6snmn0AAAAAAAAAAAAAARQnAQ" data-origin="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*K9myT6snmn0AAAAAAAAAAAAAARQnAQ" alt="DingTalk"></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div id="app">
+  </div>
   <script>
     (function () {
       var OASIS_VERSION = 0.1;
@@ -47,7 +63,6 @@
       window.$docsify = {
         repo: 'https://github.com/oasis-engine',
         loadSidebar: true,
-        loadNavbar: true,
         // externalLinkTarget:  '_blank',
         fallbackLanguages: ['zh-cn', 'en'],
         // logo: 'https://gw.alipayobjects.com/zos/bmw-prod/69fa4781-a238-4a6e-957c-8393413f756a.svg',
@@ -96,6 +111,22 @@
         },
         lang: OASIS_LANG
       };
+
+      var nav = document.querySelector('#app-nav');
+      var navItem;
+
+      nav.addEventListener('click', (e) => {
+        var item = e.target;
+
+        if (item && item.tagName === 'A' && !item.getAttribute('target')) {
+          if (navItem) {
+            navItem.classList.remove('active');
+          }
+
+          item.classList.add('active');
+          navItem = item;
+        }
+      });
 
       // var nav = document.querySelector('#nav');
 
