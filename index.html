@@ -36,10 +36,6 @@
   </script>
 </head>
 <body>
-  <!-- <nav id="nav">
-    <a data-lang="en">EN</a>
-    <a data-lang="zh-cn">中文</a>
-  </nav> -->
   <div id="app"></div>
   <script>
     (function () {
@@ -48,12 +44,10 @@
       var origin = window.location.origin;
       var href = window.location.href;
       var isHomePage = href.endsWith('/#/') || href.endsWith('github.io') || href.endsWith('github.io/');
-      var sidebar = isHomePage ? `${OASIS_VERSION}/manual/${OASIS_LANG}/SUMMARY.md` : `SUMMARY.md`;
-
       window.$docsify = {
         repo: 'https://github.com/oasis-engine',
-        loadSidebar: sidebar,
-        loadNavbar: '_nav.md',
+        loadSidebar: true,
+        loadNavbar: true,
         // externalLinkTarget:  '_blank',
         fallbackLanguages: ['zh-cn', 'en'],
         // logo: 'https://gw.alipayobjects.com/zos/bmw-prod/69fa4781-a238-4a6e-957c-8393413f756a.svg',

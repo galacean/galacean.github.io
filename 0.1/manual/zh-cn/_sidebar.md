@@ -4,7 +4,7 @@
   * [绘制一个 3D 模型](${book.manual}abc/model.md)
 * 核心
   * [引擎](${book.manual}structure/engine.md)
-    * [屏幕适配](${book.manual}structure/sceen-fit.md)
+    * [屏幕适配](${book.manual}structure/screen-fit.md)
   * [场景](${book.manual}structure/scene.md)
   * [实体](${book.manual}structure/entity.md)
     * [克隆](${book.manual}structure/entity-clone.md)
