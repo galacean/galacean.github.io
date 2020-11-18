@@ -4,25 +4,11 @@
 
 > Oasis 组件如何与业务代码进行双向的通信 ？
 
-举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Oasis Engine 中的 [Engine](${book.manual}structure/engine) 就是一个 [EventDispatcher](${book.api}classes/core.eventdispatcher.html) 我们可以使用他作为内外部通信的媒介。
+举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Oasis Engine 中的 [Engine](${book.manual}structure/engine) 就是一个 [EventDispatcher](${book.manual}tools/event) 我们可以使用他作为内外部通信的媒介。
 
 ## 基本用法
 
-- **创建事件，**可以从 `oasis-engine` 拿到事件类：
-
-```typescript
-import { Event } from 'oasis-engine';
-
-const event = new Event('test')
-```
-
-- **设置事件参数**，直接在创建的实例中设置 `data` 属性即可：
-
-```typescript
-event.data = 'my event'
-```
-
-- **监听事件**，类似dom的方法：
+- **监听事件**
 
 ```typescript
  engine.addEventListener('test', e => {
@@ -33,7 +19,7 @@ event.data = 'my event'
 - **触发事件**：
 
 ```typescript
-engine.trigger(event);
+engine.trigger('test');
 ```
 
 下面介绍 Oasis 与业务双向通信分别怎么写。
@@ -54,7 +40,6 @@ onAwake () {
 2. 在业务代码里触发事件：
 
 ```typescript
-import { Event } from 'oasis-engine';
 import MyOasisComponent from "MyOasisComponent";
 
 export default ()=> {
@@ -67,7 +52,7 @@ export default ()=> {
 
   const handleClick = () => {
     // 触发事件
-    engine && engine.trigger(new Event('rotate'));
+    engine && engine.trigger('rotate');
   };
 
   return (
