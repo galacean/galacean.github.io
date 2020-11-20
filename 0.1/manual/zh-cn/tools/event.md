@@ -2,7 +2,7 @@
 
 引擎中提供了基本的事件系统，一般组件间的通信，**游戏和业务**的通信会考虑采用事件系统。引擎提供了 [EventDispatcher](${book.api}classes/core.eventdispatcher.html) 作为事件类，[Engine](${book.api}classes/core.engine.html) 和 [Entity](${book.api}classes/core.entity.html) 继承自 EventDispatcher。
 
-> 注意：一般情况下，推荐使用[脚本组件](${book.manual}component/script})来解决游戏内的组件间通信问题，事件系统只推荐在一些需要解耦的场景下使用。
+> 注意：一般情况下，推荐使用[脚本组件](${book.manual}component/script)来解决游戏内的组件间通信问题，事件系统只推荐在一些需要解耦的场景下使用。
 
 ## 事件监听
 
