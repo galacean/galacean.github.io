@@ -2,7 +2,7 @@
 
 ## 基本使用
 
-加载一个 3D 模型只要调用引擎 [ResourceManager](${book.manual}resource/resource/resource-manager.md) 实例的 [load](${book.api}classes/core.resourcemanager.html#load) 方法即可，如下：
+加载一个 3D 模型只要调用引擎 [ResourceManager](${book.manual}resource/resource-manager.md) 实例的 [load](${book.api}classes/core.resourcemanager.html#load) 方法即可，如下：
 
 ```typescript
 const gltf = await this.engine.resourceManager.load(
