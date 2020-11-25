@@ -66,7 +66,7 @@ lightEntity.transform.rotation = new Vector3(45, 45, 45);
 // 创建立方体实体
 let cubeEntity = rootEntity.createChild('cube');
 let cube = cubeEntity.addComponent(GeometryRenderer)
-cube.geometry = new CuboidGeometry(4, 4, 4);
+cube.geometry = new CuboidGeometry(engine, 4, 4, 4);
 cube.material = new BlinnPhongMaterial('blinn');
 
 // 旋转脚本组件

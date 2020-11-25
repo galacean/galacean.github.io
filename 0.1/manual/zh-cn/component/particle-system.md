@@ -11,9 +11,9 @@ particleComp.initialize({
   spawnCount: 100,
   once: true,
   options: {
-    velocity: [0.2, 0.2, 0.2],
-    acceleration: [0, -0.02, 0],
-    color: 0x125570,
+    velocity: new Vector3(0.2, 0.2, 0.2),
+    acceleration: new Vector3(0, -0.02, 0),
+    color: new Vector3(1, 0, 0),
     lifetime: 5,
     size:20,
   }
@@ -27,7 +27,7 @@ particleComp.stop();
 
 // 发射过程中调整发射参数
 particleComp.setOptions({
-  velocity: [0, 0, 0],
+  velocity: new Vector3(0, 0, 0),
   lifetime: 10,
 });
 ```
@@ -83,13 +83,13 @@ particleComp.setOptions({
     let r = Math.acos(Math.sin(tick));
     let x = r * Math.cos(tick);
     let y = r * Math.sin(tick);
-    return [x, y, 0];
+    return new Vector3(x, y, 0);
   }
 
   const options = {
-    velocityRandomness: [0.2, 0.2, 0.2],
-    acceleration: [0, -0.02, 0],
-    color: 0x125570,
+    velocityRandomness: new Vector3(0.2, 0.2, 0.2),
+    acceleration: new Vector3(0, -0.02, 0),
+    color: new Vector3(1, 0, 0),
     colorRandomness: 0.5,
     lifetime: 5,
     size:30,
