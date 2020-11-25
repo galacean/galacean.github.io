@@ -10,7 +10,7 @@ Engine 在 Oasis 引擎中扮演着总控制器的角色，他能够控制画布
 
 ### Canvas
 
-Oasis 引擎包装了不同平台的画布，如 [WebCanvas](${book.api}classes/rhi_webgl.webcanvas.html) 支持用 [Engine](${book.api}classes/core.engine.html) 控制 [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) 或者 [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) 。如何进行 Canvas 的屏幕适配请看[这里]()TODO。
+Oasis 引擎包装了不同平台的画布，如 [WebCanvas](${book.api}classes/rhi_webgl.webcanvas.html) 支持用 [Engine](${book.api}classes/core.engine.html) 控制 [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) 或者 [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) 。如何进行 Canvas 的屏幕适配请看[这里](${book.manual}structure/screen-fit)。
 
 
 ### HardwareRenderer
