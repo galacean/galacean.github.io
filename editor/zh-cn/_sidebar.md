@@ -17,3 +17,4 @@
   * [导出 Web 平台包](${book.editor}export-web.md)
   * [导出支付宝小程序包](${book.editor}export-minprogram.md)
   * [事件通信](${book.editor}event.md)
+  * [本地开发指南](${book.editor}pro-code.md)
