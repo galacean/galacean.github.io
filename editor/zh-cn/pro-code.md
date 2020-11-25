@@ -1,4 +1,4 @@
-# 本地开发指南(针对 pro code 用户)
+# 本地开发指南(针对 Pro Code 用户)
 
 > 在 [导出小程序](${book.editor}export-miniprogram.md) 和 [导出 Web 平台包](${book.editor}export-web.md) 之后，部分 Pro Code 用户希望可以通过本地 IDE 和 git 工作流去开发项目，线上只用来编辑场景。本文档针对这类用户提供了一套解决方案。
 
@@ -15,7 +15,7 @@
 
 ## 线上场景同步本地
 
-拉取线上编辑器场景文件，而**不**拉取脚本文件。
+只拉取场景文件：
 
 ```shell
 tnpm run pull
@@ -25,7 +25,7 @@ tnpm run pull
 
 > 本操作执行时间较慢，建议确认之后再操作。
 
-同步所有脚本文件。
+同步所有脚本文件：
 
 ```shell
 tnpm run push:script
