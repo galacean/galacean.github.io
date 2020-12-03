@@ -199,7 +199,7 @@ texture.setImageSource(img,0,undefined,true); // 第 4 个参数
 在脚本中，可以这样设置：
 
 ```typescript
-const material = new PBRMaterial();
+const material = new PBRMaterial(engine);
 const texture = 生成纹理(); // 上文所示，不再赘述
 
 material.baseColorTexture = texture;

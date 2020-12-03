@@ -67,7 +67,7 @@ lightEntity.transform.rotation = new Vector3(45, 45, 45);
 let cubeEntity = rootEntity.createChild('cube');
 let cube = cubeEntity.addComponent(GeometryRenderer)
 cube.geometry = new CuboidGeometry(engine, 4, 4, 4);
-cube.material = new BlinnPhongMaterial('blinn');
+cube.material = new BlinnPhongMaterial(engine, 'blinn');
 
 // 旋转脚本组件
 class Rotate extends Script {

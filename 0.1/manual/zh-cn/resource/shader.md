@@ -71,6 +71,6 @@ import { Material, RenderTechnique } from 'oasis-engine';
   tech.isValid = true;
 
   //-- 创建材质对象
-  let myMtl = new Material('MyMtl');
+  let myMtl = new Material(engine, 'MyMtl');
   myMtl.technique = tech;
 ```
