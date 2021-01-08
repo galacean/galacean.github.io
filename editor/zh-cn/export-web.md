@@ -8,7 +8,6 @@
 
 ### 1. 导出项目至本地
 
-
 使用 Oasis Editor 导出项目非常简单，只需要点击编辑器右上角的 *下载项目按钮* 即可：
 
 ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1596613890072-022388a1-40a3-42aa-a73e-563ce35be7f2.png#align=left&display=inline&height=948&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1896&originWidth=3358&size=1690016&status=done&style=none&width=1679)
