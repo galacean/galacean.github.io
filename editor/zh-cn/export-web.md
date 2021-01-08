@@ -160,3 +160,4 @@ tnpm run dev
 一切顺利的话，你的项目就展示在浏览器中：
 
 ![image](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1596616065302-ae2121de-5835-4b0e-9071-d3be63e95bae.png?x-oss-process=image%2Fresize%2Cw_1500#align=left&display=inline&height=371&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1860&originWidth=3358&size=246355&status=done&style=none&width=669)
+
