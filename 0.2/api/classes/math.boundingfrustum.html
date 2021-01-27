@@ -1,0 +1,650 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BoundingFrustum | Oasis Engine</title>
+	<meta name="description" content="Documentation for Oasis Engine">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="tsd-header">
+	<div class="tsd-page-toolbar">
+		<div class="container header-container">
+			<div class="header-logo">
+				<a href="../globals.html" class="title">
+					<span class="oasis-logo"></span>
+				</a>
+				</select>
+			</div>
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Packages</a>
+				</li>
+				<li>
+					<a href="../modules/math.html">math</a>
+				</li>
+				<li>
+					<a href="math.boundingfrustum.html">BoundingFrustum</a>
+				</li>
+			</ul>
+			<span class="tsd-breadcrumb-current">Class BoundingFrustum</span>
+			<div id="tsd-filter">
+				<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+				<div class="tsd-filter-group">
+					<input type="checkbox" id="tsd-filter-inherited" checked />
+					<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+				</div>
+			</div>
+			<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">BoundingFrustum</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><span class="tsd-signature-type">IClone</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="math.boundingfrustum.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingfrustum.html#bottom" class="tsd-kind-icon">bottom</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingfrustum.html#far" class="tsd-kind-icon">far</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingfrustum.html#left" class="tsd-kind-icon">left</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingfrustum.html#near" class="tsd-kind-icon">near</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingfrustum.html#right" class="tsd-kind-icon">right</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="math.boundingfrustum.html#top" class="tsd-kind-icon">top</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingfrustum.html#calculatefrommatrix" class="tsd-kind-icon">calculate<wbr>From<wbr>Matrix</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingfrustum.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingfrustum.html#cloneto" class="tsd-kind-icon">clone<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingfrustum.html#getplane" class="tsd-kind-icon">get<wbr>Plane</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingfrustum.html#intersectsbox" class="tsd-kind-icon">intersects<wbr>Box</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="math.boundingfrustum.html#intersectssphere" class="tsd-kind-icon">intersects<wbr>Sphere</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Bounding<wbr>Frustum<span class="tsd-signature-symbol">(</span>matrix<span class="tsd-signature-symbol">?: </span><a href="math.matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L24">packages/math/src/BoundingFrustum.ts:24</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Constructor of BoundingFrustum.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> matrix: <a href="math.matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol"> = null</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The view-projection matrix</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="bottom" class="tsd-anchor"></a>
+					<h3>bottom</h3>
+					<div class="tsd-signature tsd-kind-icon">bottom<span class="tsd-signature-symbol">:</span> <a href="math.plane.html" class="tsd-signature-type">Plane</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L24">packages/math/src/BoundingFrustum.ts:24</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The bottom plane of this frustum.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="far" class="tsd-anchor"></a>
+					<h3>far</h3>
+					<div class="tsd-signature tsd-kind-icon">far<span class="tsd-signature-symbol">:</span> <a href="math.plane.html" class="tsd-signature-type">Plane</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L16">packages/math/src/BoundingFrustum.ts:16</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The far plane of this frustum.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="left" class="tsd-anchor"></a>
+					<h3>left</h3>
+					<div class="tsd-signature tsd-kind-icon">left<span class="tsd-signature-symbol">:</span> <a href="math.plane.html" class="tsd-signature-type">Plane</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L18">packages/math/src/BoundingFrustum.ts:18</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The left plane of this frustum.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="near" class="tsd-anchor"></a>
+					<h3>near</h3>
+					<div class="tsd-signature tsd-kind-icon">near<span class="tsd-signature-symbol">:</span> <a href="math.plane.html" class="tsd-signature-type">Plane</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L14">packages/math/src/BoundingFrustum.ts:14</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The near plane of this frustum.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="right" class="tsd-anchor"></a>
+					<h3>right</h3>
+					<div class="tsd-signature tsd-kind-icon">right<span class="tsd-signature-symbol">:</span> <a href="math.plane.html" class="tsd-signature-type">Plane</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L20">packages/math/src/BoundingFrustum.ts:20</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The right plane of this frustum.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="top" class="tsd-anchor"></a>
+					<h3>top</h3>
+					<div class="tsd-signature tsd-kind-icon">top<span class="tsd-signature-symbol">:</span> <a href="math.plane.html" class="tsd-signature-type">Plane</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L22">packages/math/src/BoundingFrustum.ts:22</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The top plane of this frustum.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="calculatefrommatrix" class="tsd-anchor"></a>
+					<h3>calculate<wbr>From<wbr>Matrix</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">calculate<wbr>From<wbr>Matrix<span class="tsd-signature-symbol">(</span>matrix<span class="tsd-signature-symbol">: </span><a href="math.matrix.html" class="tsd-signature-type">Matrix</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L100">packages/math/src/BoundingFrustum.ts:100</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Update all planes from the given matrix.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>matrix: <a href="math.matrix.html" class="tsd-signature-type">Matrix</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The given view-projection matrix</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L45">packages/math/src/BoundingFrustum.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a clone of this frustum.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></h4>
+							<p>A clone of this frustum</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="cloneto" class="tsd-anchor"></a>
+					<h3>clone<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">clone<wbr>To<span class="tsd-signature-symbol">(</span>out<span class="tsd-signature-symbol">: </span><a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L56">packages/math/src/BoundingFrustum.ts:56</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clones this frustum to the specified frustum.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>out: <a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The specified frustum</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="math.boundingfrustum.html" class="tsd-signature-type">BoundingFrustum</a></h4>
+							<p>The specified frustum</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getplane" class="tsd-anchor"></a>
+					<h3>get<wbr>Plane</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Plane<span class="tsd-signature-symbol">(</span>index<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="math.plane.html" class="tsd-signature-type">Plane</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L77">packages/math/src/BoundingFrustum.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get the plane by the given index.
+										0: near
+										1: far
+										2: left
+										3: right
+										4: top
+									5: bottom</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>index: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The index</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="math.plane.html" class="tsd-signature-type">Plane</a></h4>
+							<p>The plane get</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="intersectsbox" class="tsd-anchor"></a>
+					<h3>intersects<wbr>Box</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">intersects<wbr>Box<span class="tsd-signature-symbol">(</span>box<span class="tsd-signature-symbol">: </span><a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L174">packages/math/src/BoundingFrustum.ts:174</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get whether or not a specified bounding box intersects with this frustum (Contains or Intersects).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>box: <a href="math.boundingbox.html" class="tsd-signature-type">BoundingBox</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The box for testing</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>True if bounding box intersects with this frustum, false otherwise</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="intersectssphere" class="tsd-anchor"></a>
+					<h3>intersects<wbr>Sphere</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">intersects<wbr>Sphere<span class="tsd-signature-symbol">(</span>sphere<span class="tsd-signature-symbol">: </span><a href="math.boundingsphere.html" class="tsd-signature-type">BoundingSphere</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/math/src/BoundingFrustum.ts#L183">packages/math/src/BoundingFrustum.ts:183</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Get whether or not a specified bounding sphere intersects with this frustum (Contains or Intersects).</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>sphere: <a href="math.boundingsphere.html" class="tsd-signature-type">BoundingSphere</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The sphere for testing</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>True if bounding sphere intersects with this frustum, false otherwise</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Packages</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html">controls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/core.html">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html">loader</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/math.html">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/stats.html">stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html">tween</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html" class="tsd-kind-icon">controls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/core.html" class="tsd-kind-icon">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html" class="tsd-kind-icon">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
+						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
+						<ul>
+							<li class=" tsd-kind-enum tsd-parent-kind-module">
+								<a href="../enums/math.containmenttype.html" class="tsd-kind-icon">Containment<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-enum tsd-parent-kind-module">
+								<a href="../enums/math.planeintersectiontype.html" class="tsd-kind-icon">Plane<wbr>Intersection<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.boundingbox.html" class="tsd-kind-icon">Bounding<wbr>Box</a>
+							</li>
+							<li class="current tsd-kind-class tsd-parent-kind-module">
+								<a href="math.boundingfrustum.html" class="tsd-kind-icon">Bounding<wbr>Frustum</a>
+								<ul>
+									<li class=" tsd-kind-constructor tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#constructor" class="tsd-kind-icon">constructor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#bottom" class="tsd-kind-icon">bottom</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#far" class="tsd-kind-icon">far</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#left" class="tsd-kind-icon">left</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#near" class="tsd-kind-icon">near</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#right" class="tsd-kind-icon">right</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#top" class="tsd-kind-icon">top</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#calculatefrommatrix" class="tsd-kind-icon">calculate<wbr>From<wbr>Matrix</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#clone" class="tsd-kind-icon">clone</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#cloneto" class="tsd-kind-icon">clone<wbr>To</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#getplane" class="tsd-kind-icon">get<wbr>Plane</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#intersectsbox" class="tsd-kind-icon">intersects<wbr>Box</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class">
+										<a href="math.boundingfrustum.html#intersectssphere" class="tsd-kind-icon">intersects<wbr>Sphere</a>
+									</li>
+								</ul>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.boundingsphere.html" class="tsd-kind-icon">Bounding<wbr>Sphere</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.collisionutil.html" class="tsd-kind-icon">Collision<wbr>Util</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.color.html" class="tsd-kind-icon">Color</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.mathutil.html" class="tsd-kind-icon">Math<wbr>Util</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.matrix.html" class="tsd-kind-icon">Matrix</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.matrix3x3.html" class="tsd-kind-icon">Matrix3x3</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.plane.html" class="tsd-kind-icon">Plane</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.quaternion.html" class="tsd-kind-icon">Quaternion</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.ray.html" class="tsd-kind-icon">Ray</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.spherical.html" class="tsd-kind-icon">Spherical</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.vector2.html" class="tsd-kind-icon">Vector2</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.vector3.html" class="tsd-kind-icon">Vector3</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="math.vector4.html" class="tsd-kind-icon">Vector4</a>
+							</li>
+							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
+								<a href="../modules/math.html#esp" class="tsd-kind-icon">ESP</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/stats.html" class="tsd-kind-icon">stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
