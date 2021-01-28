@@ -1,6 +1,6 @@
 ![logo](https://gw.alipayobjects.com/zos/bmw-prod/a3bd25c4-dc50-40f7-88ea-6004566481b0.svg)
 
-# Oasis Engine <small>0.1</small>
+# Oasis Engine
 
 > Mobile-First Web Graphics Engine
 

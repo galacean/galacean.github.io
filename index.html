@@ -41,9 +41,15 @@
 <body>
   <nav class="app-nav" id="app-nav">
     <ul>
-      <li><a href="/0.1/playground/" title="Playground">Playground</a></li>
-      <li><a href="/0.1/api/globals.html" title="API">API</a></li>
-      <li><a href="#/0.1/manual/zh-cn/README" title="Engine">Engine</a></li>
+      <li>
+        <select name="choice" id="version-select">
+          <option value="0.1">0.1</option>
+          <option value="0.2" selected>0.2</option>
+        </select>
+      </li>
+      <li><a href="/${version}/playground/" title="Playground" id="playground-link">Playground</a></li>
+      <li><a href="/${version}/api/globals.html" title="API" id="api-link">API</a></li>
+      <li><a href="#/${version}/manual/zh-cn/README" title="Engine" id="manual-link">Engine</a></li>
       <li><a href="#/editor/zh-cn/README" title="Editor">Editor</a></li>
       <li><a href="https://yuque.antfin-inc.com/oasisgroup/blog" target="_blank" title="Blog">Blog</a></li>
       <li>DingTalk
@@ -58,11 +64,27 @@
   </div>
   <script>
     (function () {
-      var OASIS_VERSION = 0.1;
       var OASIS_LANG = localStorage.getItem('oasis-doc-lang') || 'zh-cn';
-      var origin = window.location.origin;
       var href = window.location.href;
+      var versionRegResult = /\d+[.]\d+([.]\d+)?/.exec(href);
+      var OASIS_VERSION = (versionRegResult && versionRegResult[0]) || '0.2';
+      
+      function replaceLink (link, from, to) {
+        var url = link.getAttribute('href');
+        link.setAttribute('href', url.replace(from, to));
+      }
+
+      var playgroundLink = document.querySelector('#playground-link');
+      var apiLink = document.querySelector('#api-link');
+      var apiLink = document.querySelector('#api-link');
+      var manualLink = document.querySelector('#manual-link');
+
+      replaceLink(playgroundLink, '${version}', OASIS_VERSION);
+      replaceLink(apiLink, '${version}', OASIS_VERSION);
+      replaceLink(manualLink, '${version}', OASIS_VERSION);
+
       var isHomePage = href.endsWith('/#/') || href.endsWith('github.io') || href.endsWith('github.io/');
+
       window.$docsify = {
         repo: 'https://github.com/oasis-engine',
         loadSidebar: true,
@@ -118,7 +140,7 @@
       var nav = document.querySelector('#app-nav');
       var navItem;
 
-      nav.addEventListener('click', (e) => {
+      nav.addEventListener('click', function(e) {
         var item = e.target;
 
         if (item && item.tagName === 'A' && !item.getAttribute('target')) {
@@ -130,6 +152,22 @@
           navItem = item;
         }
       });
+
+      var versionSelect = document.querySelector('#version-select');
+
+      versionSelect.value = OASIS_VERSION;
+
+      versionSelect.addEventListener('change', function (e) {
+        var version = e.target.value;
+
+        window.location.href = window.location.href.replace(OASIS_VERSION, version);
+
+        replaceLink(playgroundLink, OASIS_VERSION, version);
+        replaceLink(apiLink, OASIS_VERSION, version);
+        replaceLink(manualLink, OASIS_VERSION, version);
+
+        OASIS_VERSION = version;
+      })
 
       // var nav = document.querySelector('#nav');
 
