@@ -16,7 +16,7 @@
   * [常用几何体](${book.manual}component/basic-geometry.md)
   * [脚本组件](${book.manual}component/script.md)
   * [骨骼动画](${book.manual}component/skeletal-animation.md)
-  * [粒子动画](${book.manual}component/particle-system.md)
+  * [粒子动画](${book.manual}component/particle-renderer.md)
   * [碰撞检测](${book.manual}component/collision.md)
     * [射线投射](${book.manual}component/ray.md)
   * [2D精灵](${book.manual}component/sprite-renderer.md)
