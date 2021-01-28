@@ -28,7 +28,8 @@ if (collider) {
 // 将屏幕输入转换成Ray
 const canvas = document.getElementById('canvas');
 canvas.addEventListener('click', (e) => {
-  ray = camera.viewportPointToRay(new Vector2(e.offsetX / canvas.clientWidth, e.offsetY / canvas.clientHeight));
+  const ray = new Ray();
+  camera.viewportPointToRay(new Vector2(e.offsetX / canvas.clientWidth, e.offsetY / canvas.clientHeight), ray);
   collider = scene.raycast(ray);
   if (collider) {
     console.log(collider);
