@@ -57,6 +57,7 @@ const material = renderer.setSharedMaterial(0, material);
 | 自发射光纹理（[emissiveTexture](${book.api}classes/core.pbrmaterial.html#emissivetexture)） | 我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${book.api}classes/core.pbrmaterial.html#emissivefactor)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
 | 阴影遮蔽纹理（[occlusionTexture](${book.api}classes/core.pbrmaterial.html#occlusiontexture)） | 我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
 | 是否金属粗糙度工作流（[isMetallicWorkflow](${book.api}classes/core.pbrmaterial.html#ismetallicworkflow)） | 可以切换金属工作流和高光工作流。 |
+| 渲染双面（[doublesided](${book.api}classes/core.pbrmaterial.html#doublesided)） | true：渲染双面，不进行裁剪、false：背面裁剪，只渲染正面 |
 
 
 **注：如果您使用了 PBR 材质，千万别忘了往场景中添加一个[EnvironmentMapLight](${book.manual}component/light.md?id=environmentmaplight) ～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。**
@@ -71,8 +72,6 @@ const material = renderer.setSharedMaterial(0, material);
 ### 常用参数介绍
 | 参数 | 应用 |
 | :--- | :--- |
-| 环境颜色（[ambientColor](${book.api}classes/core.blinnphongmaterial.html#ambientcolor)） | **环境颜色** * **环境纹理** = **最后的环境颜色**。  |
-| 环境纹理（[ambientTexture](${book.api}classes/core.blinnphongmaterial.html#ambienttexture)） | 搭配环境颜色使用，是个相乘的关系。 |
 | 自发光颜色（[emissiveColor](${book.api}classes/core.blinnphongmaterial.html#emissivecolor)） | **自发光颜色 * 自发光纹理 = 最后的自发光颜色。即使没有光照也能渲染出颜色。** |
 | 自发光纹理（[emissiveTexture](${book.api}classes/core.blinnphongmaterial.html#emissivetexture)） | 搭配自发光颜色使用，是个相乘的关系。 |
 | 漫反射颜色（[diffuseColor](${book.api}classes/core.blinnphongmaterial.html#diffusecolor)） | **漫反射颜色 * 漫反射纹理 = 最后的漫反射颜色。** |
@@ -81,6 +80,7 @@ const material = renderer.setSharedMaterial(0, material);
 | 镜面反射纹理（[specularTexture](${book.api}classes/core.blinnphongmaterial.html#speculartexture)） | 搭配镜面反射颜色使用，是个相乘的关系。 |
 | 镜面反射系数（[shininess](${book.api}classes/core.blinnphongmaterial.html#shininess)） | 值越大镜面反射效果越聚拢。 |
 | 透明度模式（[alphaMode](${book.api}classes/core.blinnphongmaterial.html#alphamode)） | "AlphaMode.Opaque"：不透明(默认)、"AlphaMode.Blend"：透明 |
+| 渲染双面（[doublesided](${book.api}classes/core.blinnphongmaterial.html#doublesided)） | true：渲染双面，不进行裁剪、false：背面裁剪，只渲染正面 |
 
 
 

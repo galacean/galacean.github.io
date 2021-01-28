@@ -2,7 +2,6 @@
 
 业务中可能有一些特殊的渲染需求，例如毛发效果，这时候就需要“自定义材质”去实现。通过使用 _material_ 这个模块中的 [Material](${book.api}classes/core.material.html) 和 [Shader](${book.api}classes/core.shader.html) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。
 
-![](https://www.techpowerup.com/img/nRXJmG76dIL7Krlg.jpg)
 
 ## 创建 shader
 [Shader](${book.api}classes/core.shader.html) 封装了顶点着色器、片元着色器、着色器预编译、平台精度、平台差异性。他的创建和使用非常方便，用户只需要关注 shader 算法本身，而不用纠结于使用什么精度，亦或是使用 GLSL 哪个版本的写法。
