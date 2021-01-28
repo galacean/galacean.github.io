@@ -17,15 +17,18 @@
 import { Ray } from 'oasis-engine';
 
 // 自定义 Ray
-let ray = new Ray([0, 0, 0], [0, 0, 1]);
+let ray = new Ray();
+ray.origin.setValue(0, 0, 0);
+ray.direction.setValue(0, 0, 1);
 let collider = scene.raycast(ray);
 if (collider) {
   console.log(collider);
 }
 
 // 将屏幕输入转换成Ray
-document.getElementById('canvas').addEventListener('click', (e) => {
-  ray = camera.screenPointToRay(e.offsetX, e.offsetY);
+const canvas = document.getElementById('canvas');
+canvas.addEventListener('click', (e) => {
+  ray = camera.viewportPointToRay(new Vector2(e.offsetX / canvas.clientWidth, e.offsetY / canvas.clientHeight));
   collider = scene.raycast(ray);
   if (collider) {
     console.log(collider);
