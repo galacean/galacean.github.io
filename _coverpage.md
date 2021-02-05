@@ -6,7 +6,7 @@
 
 - Mobile optimization | Component system | Front-end Friendly
 
-[Playground](/0.1/playground/)
-[API](/0.1/api/globals.html)
+[Playground](/0.2/playground/)
+[API](${book.api}/globals.html)
 [Engine](${book.manual}README.md)
 [Editor](${book.editor}README.md)
