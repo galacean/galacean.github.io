@@ -98,7 +98,8 @@ renderer2ShaderData.setFloat("u_progross",0.8);
 ```
 
 ### 调用接口
-shader 中变量的类型和调用的接口对应关系如下：
+shader 中变量的类型和调用的接口对应关系如下:
+
 | shader 类型 |   ShaderData API |
 | :--- | :--- | :--- |
 | bool 、 int  | setInt( value: number ) |
@@ -186,7 +187,7 @@ shaderData.disableMacro("LIGHT_COUNT");
 
 ## 渲染状态
 我们通过材质的 shader，四块 shaderData 决定了材质的渲染表现。但是渲染管线除了着色器的操作，还提供了一些渲染状态来使我们对可编程的输入输出进行一些额外配置和处理。
-因此，引擎提供了[RenderState](${book.api}classes/core.renderstate.html) ，可以分别对[混合状态（BlendState）](${book.api}classes/core.renderstate.html#blendstate)、[深度状态（DepthState）](${book.api}classes/core.renderstate.html#depthstate)、[模版状态（StencilState）](${book.api}classes/core.renderstate.html#stencilstate)、[光栅状态（RasterState）](${book.api}classes/core.renderstate.html#rasterstate)进行配置。
+因此，引擎提供了[RenderState](${book.api}classes/core.renderstate-1.html) ，可以分别对[混合状态（BlendState）](${book.api}classes/core.renderstate-1.html#blendstate)、[深度状态（DepthState）](${book.api}classes/core.renderstate-1.html#depthstate)、[模版状态（StencilState）](${book.api}classes/core.renderstate-1.html#stencilstate)、[光栅状态（RasterState）](${book.api}classes/core.renderstate-1.html#rasterstate)进行配置。
 我们拿一个透明物体的标准渲染流程来举例，我们希望开启混合模式并设置混合因子，并且因为透明物体是叠加渲染的，所以我们还要关闭深度写入;
 ```typescript
 const renderState = material.renderState;
@@ -196,7 +197,7 @@ const blendState = renderState.blendState;
 const target = blendState.targetBlendState;
 
 // src 混合因子为（As，As，As，As）
-target.sourceColorBlendFactor = target.sourceAlphaBlendFactor =BlendFactor.SourceColor;
+target.sourceColorBlendFactor = target.sourceAlphaBlendFactor =BlendFactor.SourceAlpha;
 // dst 混合因子为（1 - As，1 - As，1 - As，1 - As）。
 target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
 // 操作方式为 src + dst  */
@@ -209,13 +210,13 @@ depthState.writeEnabled = false;
 // 3. 设置透明渲染队列 （后面会讲为什么）
 material.renderQueueType = RenderQueueType.Transparent;
 ```
-有关渲染状态的更多选项可以分别查看相应的[API 文档](${book.api}classes/core.renderstate.html) 
+有关渲染状态的更多选项可以分别查看相应的[API 文档](${book.api}classes/core.renderstate-1.html) 
 
 
 
 
 ## 渲染队列
-至此，自定义材质已经非常完善了，但是也许我们还需要对物体的渲染顺序做一些处理，比如透明物体的渲染一般都是放在非透明队列后面的，因此，引擎提供了 [渲染队列（RenderQueueType）](${book.api}classes/core.renderqueuetype.html) ，我们设置材质的渲染队列，可以决定这个材质在当前场景中的渲染顺序，引擎底层会对不同范围的渲染队列进行一些特殊处理，如 [RenderQueueType.Transparent](${book.api}classes/core.renderqueuetype.html#transparent) 会从远到近进行渲染。值得注意的是渲染队列的值可以是枚举值加上任何自定义数字。
+至此，自定义材质已经非常完善了，但是也许我们还需要对物体的渲染顺序做一些处理，比如透明物体的渲染一般都是放在非透明队列后面的，因此，引擎提供了 [渲染队列（RenderQueueType）](${book.api}enums/core.renderqueuetype.html) ，我们设置材质的渲染队列，可以决定这个材质在当前场景中的渲染顺序，引擎底层会对不同范围的渲染队列进行一些特殊处理，如 [RenderQueueType.Transparent](${book.api}enums/core.renderqueuetype.html#transparent) 会从远到近进行渲染。值得注意的是渲染队列的值可以是枚举值加上任何自定义数字。
 ```typescript
 material.renderQueueType = RenderQueueType.Opaque + 1;
 ```
