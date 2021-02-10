@@ -92,13 +92,14 @@ const material = renderer.setSharedMaterial(0, material);
 | 渲染双面（[doublesided](${book.api}classes/core.blinnphongmaterial.html#doublesided)） | true：渲染双面，不进行裁剪、false：背面裁剪，只渲染正面 |
 
 
-##  UnlightMaterial
-在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlightMaterial](${book.api}classes/core.unlightmaterial.html)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
+##  UnlitMaterial
+在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${book.api}classes/core.unlitmaterial.html)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
 
 | 参数 | 应用 |
 | :--- | :--- |
-| 基础颜色（[baseColor](${book.api}classes/core.unlightmaterial.html#basecolor) )| **基础颜色 * 基础颜色纹理 = 最后的颜色。** |
-| 基础纹理（[baseColorTexture](${book.api}classes/core.unlightmaterial.html#basecolortexture) )| 搭配基础颜色使用，是个相乘的关系 |
+| 基础颜色（[baseColor](${book.api}classes/core.unlitmaterial.html#basecolor) )| **基础颜色 * 基础颜色纹理 = 最后的颜色。** |
+| 基础纹理（[baseColorTexture](${book.api}classes/core.unlitmaterial.html#basecolortexture) )| 搭配基础颜色使用，是个相乘的关系 |
+
 
 
 # 常见 QA
