@@ -94,10 +94,9 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_alphamode" class="tsd-kind-icon">_alpha<wbr>Mode</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_ambientcolor" class="tsd-kind-icon">_ambient<wbr>Color</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_ambienttexture" class="tsd-kind-icon">_ambient<wbr>Texture</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_diffusecolor" class="tsd-kind-icon">_diffuse<wbr>Color</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_diffusetexture" class="tsd-kind-icon">_diffuse<wbr>Texture</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_doublesided" class="tsd-kind-icon">_double<wbr>Sided</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_emissivecolor" class="tsd-kind-icon">_emissive<wbr>Color</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_emissivetexture" class="tsd-kind-icon">_emissive<wbr>Texture</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.blinnphongmaterial.html#_shininess" class="tsd-kind-icon">_shininess</a></li>
@@ -115,11 +114,10 @@
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#alphamode" class="tsd-kind-icon">alpha<wbr>Mode</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#ambientcolor" class="tsd-kind-icon">ambient<wbr>Color</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#ambienttexture" class="tsd-kind-icon">ambient<wbr>Texture</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="core.blinnphongmaterial.html#destroyed" class="tsd-kind-icon">destroyed</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#diffusecolor" class="tsd-kind-icon">diffuse<wbr>Color</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#diffusetexture" class="tsd-kind-icon">diffuse<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#doublesided" class="tsd-kind-icon">double<wbr>Sided</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#emissivecolor" class="tsd-kind-icon">emissive<wbr>Color</a></li>
 								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.blinnphongmaterial.html#emissivetexture" class="tsd-kind-icon">emissive<wbr>Texture</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="core.blinnphongmaterial.html#refcount" class="tsd-kind-icon">ref<wbr>Count</a></li>
@@ -153,7 +151,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L198">packages/core/src/material/BlinnPhongMaterial.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L176">packages/core/src/material/BlinnPhongMaterial.ts:176</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -175,27 +173,7 @@
 					<div class="tsd-signature tsd-kind-icon">_alpha<wbr>Mode<span class="tsd-signature-symbol">:</span> <a href="../enums/core.alphamode.html" class="tsd-signature-type">AlphaMode</a><span class="tsd-signature-symbol"> = AlphaMode.Opaque</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L198">packages/core/src/material/BlinnPhongMaterial.ts:198</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_ambientcolor" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _ambient<wbr>Color</h3>
-					<div class="tsd-signature tsd-kind-icon">_ambient<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> = new Color(0, 0, 0, 1)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L189">packages/core/src/material/BlinnPhongMaterial.ts:189</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_ambienttexture" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _ambient<wbr>Texture</h3>
-					<div class="tsd-signature tsd-kind-icon">_ambient<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L193">packages/core/src/material/BlinnPhongMaterial.ts:193</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L23">packages/core/src/material/BlinnPhongMaterial.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -205,7 +183,7 @@
 					<div class="tsd-signature tsd-kind-icon">_diffuse<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> = new Color(1, 1, 1, 1)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L191">packages/core/src/material/BlinnPhongMaterial.ts:191</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L17">packages/core/src/material/BlinnPhongMaterial.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -215,7 +193,17 @@
 					<div class="tsd-signature tsd-kind-icon">_diffuse<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L195">packages/core/src/material/BlinnPhongMaterial.ts:195</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L20">packages/core/src/material/BlinnPhongMaterial.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_doublesided" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _double<wbr>Sided</h3>
+					<div class="tsd-signature tsd-kind-icon">_double<wbr>Sided<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L24">packages/core/src/material/BlinnPhongMaterial.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -225,7 +213,7 @@
 					<div class="tsd-signature tsd-kind-icon">_emissive<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> = new Color(0, 0, 0, 1)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L190">packages/core/src/material/BlinnPhongMaterial.ts:190</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L16">packages/core/src/material/BlinnPhongMaterial.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -235,7 +223,7 @@
 					<div class="tsd-signature tsd-kind-icon">_emissive<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L194">packages/core/src/material/BlinnPhongMaterial.ts:194</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L19">packages/core/src/material/BlinnPhongMaterial.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -245,7 +233,7 @@
 					<div class="tsd-signature tsd-kind-icon">_shininess<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 16</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L197">packages/core/src/material/BlinnPhongMaterial.ts:197</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L22">packages/core/src/material/BlinnPhongMaterial.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -255,7 +243,7 @@
 					<div class="tsd-signature tsd-kind-icon">_specular<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> = new Color(1, 1, 1, 1)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L192">packages/core/src/material/BlinnPhongMaterial.ts:192</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L18">packages/core/src/material/BlinnPhongMaterial.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -265,7 +253,7 @@
 					<div class="tsd-signature tsd-kind-icon">_specular<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L196">packages/core/src/material/BlinnPhongMaterial.ts:196</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L21">packages/core/src/material/BlinnPhongMaterial.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -276,7 +264,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#instanceid">instanceId</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/EngineObject.ts#L12">packages/core/src/base/EngineObject.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/EngineObject.ts#L12">packages/core/src/base/EngineObject.ts:12</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -292,7 +280,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#isgcignored">isGCIgnored</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/RefObject.ts#L10">packages/core/src/asset/RefObject.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/RefObject.ts#L10">packages/core/src/asset/RefObject.ts:10</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -308,7 +296,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#renderqueuetype">renderQueueType</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/Material.ts#L19">packages/core/src/material/Material.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/Material.ts#L19">packages/core/src/material/Material.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -324,7 +312,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#renderstate">renderState</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/Material.ts#L23">packages/core/src/material/Material.ts:23</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/Material.ts#L23">packages/core/src/material/Material.ts:23</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -340,7 +328,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#shader">shader</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/Material.ts#L17">packages/core/src/material/Material.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/Material.ts#L17">packages/core/src/material/Material.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -356,7 +344,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#shaderdata">shaderData</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/Material.ts#L21">packages/core/src/material/Material.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/Material.ts#L21">packages/core/src/material/Material.ts:21</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -379,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L150">packages/core/src/material/BlinnPhongMaterial.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L131">packages/core/src/material/BlinnPhongMaterial.ts:131</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -392,7 +380,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L154">packages/core/src/material/BlinnPhongMaterial.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L135">packages/core/src/material/BlinnPhongMaterial.ts:135</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -410,90 +398,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="ambientcolor" class="tsd-anchor"></a>
-					<h3>ambient<wbr>Color</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ambientColor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> ambientColor<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L18">packages/core/src/material/BlinnPhongMaterial.ts:18</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Ambient color.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L22">packages/core/src/material/BlinnPhongMaterial.ts:22</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Ambient color.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">Color</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="ambienttexture" class="tsd-anchor"></a>
-					<h3>ambient<wbr>Texture</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> ambientTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> ambientTexture<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L30">packages/core/src/material/BlinnPhongMaterial.ts:30</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Ambient texture.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L34">packages/core/src/material/BlinnPhongMaterial.ts:34</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Ambient texture.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="destroyed" class="tsd-anchor"></a>
 					<h3>destroyed</h3>
@@ -505,7 +409,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroyed">destroyed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/RefObject.ts#L25">packages/core/src/asset/RefObject.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/RefObject.ts#L25">packages/core/src/asset/RefObject.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -528,7 +432,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L78">packages/core/src/material/BlinnPhongMaterial.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L59">packages/core/src/material/BlinnPhongMaterial.ts:59</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -541,7 +445,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L82">packages/core/src/material/BlinnPhongMaterial.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L63">packages/core/src/material/BlinnPhongMaterial.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -570,7 +474,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L90">packages/core/src/material/BlinnPhongMaterial.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L71">packages/core/src/material/BlinnPhongMaterial.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -583,7 +487,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L94">packages/core/src/material/BlinnPhongMaterial.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L75">packages/core/src/material/BlinnPhongMaterial.ts:75</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -602,6 +506,58 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="doublesided" class="tsd-anchor"></a>
+					<h3>double<wbr>Sided</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> doubleSided<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> doubleSided<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L166">packages/core/src/material/BlinnPhongMaterial.ts:166</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to render both sides.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Only the front side is rendered by default</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L170">packages/core/src/material/BlinnPhongMaterial.ts:170</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to render both sides.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Only the front side is rendered by default</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
 					<a name="emissivecolor" class="tsd-anchor"></a>
 					<h3>emissive<wbr>Color</h3>
 					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
@@ -612,7 +568,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L48">packages/core/src/material/BlinnPhongMaterial.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L29">packages/core/src/material/BlinnPhongMaterial.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -625,7 +581,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L52">packages/core/src/material/BlinnPhongMaterial.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L33">packages/core/src/material/BlinnPhongMaterial.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -654,7 +610,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L60">packages/core/src/material/BlinnPhongMaterial.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L41">packages/core/src/material/BlinnPhongMaterial.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -667,7 +623,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L64">packages/core/src/material/BlinnPhongMaterial.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L45">packages/core/src/material/BlinnPhongMaterial.ts:45</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -696,7 +652,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#refcount">refCount</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/RefObject.ts#L18">packages/core/src/asset/RefObject.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/RefObject.ts#L18">packages/core/src/asset/RefObject.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -719,7 +675,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L138">packages/core/src/material/BlinnPhongMaterial.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L119">packages/core/src/material/BlinnPhongMaterial.ts:119</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -732,7 +688,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L142">packages/core/src/material/BlinnPhongMaterial.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L123">packages/core/src/material/BlinnPhongMaterial.ts:123</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -761,7 +717,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L108">packages/core/src/material/BlinnPhongMaterial.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L89">packages/core/src/material/BlinnPhongMaterial.ts:89</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -774,7 +730,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L112">packages/core/src/material/BlinnPhongMaterial.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L93">packages/core/src/material/BlinnPhongMaterial.ts:93</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -803,7 +759,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L120">packages/core/src/material/BlinnPhongMaterial.ts:120</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L101">packages/core/src/material/BlinnPhongMaterial.ts:101</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -816,7 +772,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L124">packages/core/src/material/BlinnPhongMaterial.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L105">packages/core/src/material/BlinnPhongMaterial.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -849,7 +805,7 @@
 								<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#_addrefcount">_addRefCount</a></p>
 								<p>Overrides RefObject._addRefCount</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/Material.ts#L58">packages/core/src/material/Material.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/Material.ts#L58">packages/core/src/material/Material.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -879,7 +835,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#clone">clone</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/BlinnPhongMaterial.ts#L214">packages/core/src/material/BlinnPhongMaterial.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/BlinnPhongMaterial.ts#L191">packages/core/src/material/BlinnPhongMaterial.ts:191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -903,7 +859,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#cloneto">cloneTo</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/material/Material.ts#L48">packages/core/src/material/Material.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/material/Material.ts#L48">packages/core/src/material/Material.ts:48</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -935,7 +891,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/RefObject.ts#L39">packages/core/src/asset/RefObject.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/RefObject.ts#L39">packages/core/src/asset/RefObject.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1020,16 +976,13 @@
 										<a href="core.blinnphongmaterial.html#_alphamode" class="tsd-kind-icon">_alpha<wbr>Mode</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-										<a href="core.blinnphongmaterial.html#_ambientcolor" class="tsd-kind-icon">_ambient<wbr>Color</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-										<a href="core.blinnphongmaterial.html#_ambienttexture" class="tsd-kind-icon">_ambient<wbr>Texture</a>
-									</li>
-									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 										<a href="core.blinnphongmaterial.html#_diffusecolor" class="tsd-kind-icon">_diffuse<wbr>Color</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 										<a href="core.blinnphongmaterial.html#_diffusetexture" class="tsd-kind-icon">_diffuse<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="core.blinnphongmaterial.html#_doublesided" class="tsd-kind-icon">_double<wbr>Sided</a>
 									</li>
 									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 										<a href="core.blinnphongmaterial.html#_emissivecolor" class="tsd-kind-icon">_emissive<wbr>Color</a>
@@ -1067,12 +1020,6 @@
 									<li class=" tsd-kind-accessor tsd-parent-kind-class">
 										<a href="core.blinnphongmaterial.html#alphamode" class="tsd-kind-icon">alpha<wbr>Mode</a>
 									</li>
-									<li class=" tsd-kind-accessor tsd-parent-kind-class">
-										<a href="core.blinnphongmaterial.html#ambientcolor" class="tsd-kind-icon">ambient<wbr>Color</a>
-									</li>
-									<li class=" tsd-kind-accessor tsd-parent-kind-class">
-										<a href="core.blinnphongmaterial.html#ambienttexture" class="tsd-kind-icon">ambient<wbr>Texture</a>
-									</li>
 									<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 										<a href="core.blinnphongmaterial.html#destroyed" class="tsd-kind-icon">destroyed</a>
 									</li>
@@ -1081,6 +1028,9 @@
 									</li>
 									<li class=" tsd-kind-accessor tsd-parent-kind-class">
 										<a href="core.blinnphongmaterial.html#diffusetexture" class="tsd-kind-icon">diffuse<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class">
+										<a href="core.blinnphongmaterial.html#doublesided" class="tsd-kind-icon">double<wbr>Sided</a>
 									</li>
 									<li class=" tsd-kind-accessor tsd-parent-kind-class">
 										<a href="core.blinnphongmaterial.html#emissivecolor" class="tsd-kind-icon">emissive<wbr>Color</a>

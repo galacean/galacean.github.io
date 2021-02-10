@@ -78,6 +78,7 @@
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.nodemanager.html" class="tsd-kind-icon">Node<wbr>Manager</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.oasis.html" class="tsd-kind-icon">Oasis</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.pbrmaterialresource.html" class="tsd-kind-icon">PBRMaterial<wbr>Resource</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.pbrspecularmaterialresource.html" class="tsd-kind-icon">PBRSpecular<wbr>Material<wbr>Resource</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.parser.html" class="tsd-kind-icon">Parser</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.pluginmanager.html" class="tsd-kind-icon">Plugin<wbr>Manager</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.schemaresource.html" class="tsd-kind-icon">Schema<wbr>Resource</a></li>
@@ -88,6 +89,7 @@
 								<li class="tsd-kind-class tsd-parent-kind-module tsd-is-not-exported"><a href="../classes/loader.texturecubeloader.html" class="tsd-kind-icon">Texture<wbr>Cube<wbr>Loader</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.texturecubemapresource.html" class="tsd-kind-icon">Texture<wbr>Cube<wbr>Map<wbr>Resource</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.textureresource.html" class="tsd-kind-icon">Texture<wbr>Resource</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/loader.unlitmaterialresource.html" class="tsd-kind-icon">Unlit<wbr>Material<wbr>Resource</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -161,7 +163,6 @@
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#registedobjs" class="tsd-kind-icon">Registed<wbr>Objs</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#tex_2d" class="tsd-kind-icon">TEX_<wbr>2D</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#tex_3d" class="tsd-kind-icon">TEX_<wbr>3D</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#_vec3attribute" class="tsd-kind-icon">_vec3<wbr>Attribute</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#decoder" class="tsd-kind-icon">decoder</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#getdefaultmaterial" class="tsd-kind-icon">get<wbr>Default<wbr>Material</a></li>
 								<li class="tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#nodecount" class="tsd-kind-icon">node<wbr>Count</a></li>
@@ -190,7 +191,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#getmipmaps" class="tsd-kind-icon">get<wbr>Mipmaps</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="loader.html#getvertexstride" class="tsd-kind-icon">get<wbr>Vertex<wbr>Stride</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#handleassets" class="tsd-kind-icon">handle<wbr>Assets</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#handleprops" class="tsd-kind-icon">handle<wbr>Props</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#handlecomponents" class="tsd-kind-icon">handle<wbr>Components</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#isabsoluteurl" class="tsd-kind-icon">is<wbr>Absolute<wbr>Url</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="loader.html#isasset" class="tsd-kind-icon">is<wbr>Asset</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="loader.html#isbase64" class="tsd-kind-icon">is<wbr>Base64</a></li>
@@ -245,7 +246,7 @@
 					<div class="tsd-signature tsd-kind-icon">Compressed<wbr>Cube<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>engineFormat<span class="tsd-signature-symbol">: </span><a href="../enums/core.textureformat.html" class="tsd-signature-type">TextureFormat</a><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>internalFormat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>mipmapsFaces<span class="tsd-signature-symbol">: </span><a href="loader.html#mipmap" class="tsd-signature-type">Mipmap</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/type.ts#L11">packages/loader/src/compressed-texture/type.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/type.ts#L11">packages/loader/src/compressed-texture/type.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -275,7 +276,7 @@
 					<div class="tsd-signature tsd-kind-icon">Compressed<wbr>Texture<wbr>Data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>engineFormat<span class="tsd-signature-symbol">: </span><a href="../enums/core.textureformat.html" class="tsd-signature-type">TextureFormat</a><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>internalFormat<span class="tsd-signature-symbol">: </span><a href="../enums/core.glcompressedtextureinternalformat.html" class="tsd-signature-type">GLCompressedTextureInternalFormat</a><span class="tsd-signature-symbol">; </span>mipmaps<span class="tsd-signature-symbol">: </span><a href="loader.html#mipmap" class="tsd-signature-type">Mipmap</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/type.ts#L3">packages/loader/src/compressed-texture/type.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/type.ts#L3">packages/loader/src/compressed-texture/type.ts:3</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -305,7 +306,7 @@
 					<div class="tsd-signature tsd-kind-icon">Gl<wbr>TfId<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/GLTF.ts#L3">packages/loader/src/GLTF.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/GLTF.ts#L3">packages/loader/src/GLTF.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -315,7 +316,7 @@
 					<div class="tsd-signature tsd-kind-icon">KTXContainer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBuffer</span><span class="tsd-signature-symbol">; </span>bytesOfKeyValueData<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>engineFormat<span class="tsd-signature-symbol">?: </span><a href="../enums/core.textureformat.html" class="tsd-signature-type">TextureFormat</a><span class="tsd-signature-symbol">; </span>glBaseInternalFormat<span class="tsd-signature-symbol">: </span><a href="../enums/core.glcompressedtextureinternalformat.html" class="tsd-signature-type">GLCompressedTextureInternalFormat</a><span class="tsd-signature-symbol">; </span>glFormat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>glInternalFormat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>glType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>glTypeSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>loadType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>mipmaps<span class="tsd-signature-symbol">?: </span><a href="loader.html#mipmap" class="tsd-signature-type">Mipmap</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>numberOfArrayElements<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>numberOfFaces<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>numberOfMipmapLevels<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pixelDepth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pixelHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>pixelWidth<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/type.ts#L25">packages/loader/src/compressed-texture/type.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/type.ts#L25">packages/loader/src/compressed-texture/type.ts:25</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -458,7 +459,7 @@
 					<div class="tsd-signature tsd-kind-icon">Mipmap<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ArrayBufferView</span><span class="tsd-signature-symbol">; </span>height<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/type.ts#L19">packages/loader/src/compressed-texture/type.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/type.ts#L19">packages/loader/src/compressed-texture/type.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -482,7 +483,7 @@
 					<div class="tsd-signature tsd-kind-icon">Plugin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span>oasis<span class="tsd-signature-symbol">: </span><a href="../classes/loader.oasis.html" class="tsd-signature-type">Oasis</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><a href="../interfaces/loader.pluginhook.html" class="tsd-signature-type">PluginHook</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/loader.pluginhook.html" class="tsd-signature-type">PluginHook</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/plugins/Plugin.ts#L4">packages/loader/src/scene-loader/plugins/Plugin.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/plugins/Plugin.ts#L4">packages/loader/src/scene-loader/plugins/Plugin.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -495,7 +496,7 @@
 					<div class="tsd-signature tsd-kind-icon">COMPRESSED_<wbr>2D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L12">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L12">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -505,7 +506,7 @@
 					<div class="tsd-signature tsd-kind-icon">COMPRESSED_<wbr>3D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">1</span><span class="tsd-signature-symbol"> = 1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L13">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L13">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -515,7 +516,7 @@
 					<div class="tsd-signature tsd-kind-icon">CURRENT_<wbr>SCHEMA_<wbr>VERSION<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">3</span><span class="tsd-signature-symbol"> = 3</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/Parser.ts#L8">packages/loader/src/scene-loader/Parser.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/Parser.ts#L8">packages/loader/src/scene-loader/Parser.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -525,7 +526,7 @@
 					<div class="tsd-signature tsd-kind-icon">HEADER_<wbr>LEN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 12 + 13 * 4</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L9">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L9">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -535,7 +536,7 @@
 					<div class="tsd-signature tsd-kind-icon">KHR_<wbr>lights<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L79">packages/loader/src/gltf/glTF.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L80">packages/loader/src/gltf/glTF.ts:80</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -545,7 +546,7 @@
 					<div class="tsd-signature tsd-kind-icon">RESOURCE_<wbr>TYPE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><a href="../classes/loader.schemaresource.html" class="tsd-signature-type">SchemaResource</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new Map()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L30">packages/loader/src/scene-loader/ResourceManager.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L32">packages/loader/src/scene-loader/ResourceManager.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -555,7 +556,7 @@
 					<div class="tsd-signature tsd-kind-icon">Registed<wbr>Custom<wbr>Materials<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L54">packages/loader/src/gltf/glTF.ts:54</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L55">packages/loader/src/gltf/glTF.ts:55</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -570,7 +571,7 @@
 					<div class="tsd-signature tsd-kind-icon">Registed<wbr>Objs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L53">packages/loader/src/gltf/glTF.ts:53</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L54">packages/loader/src/gltf/glTF.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -585,7 +586,7 @@
 					<div class="tsd-signature tsd-kind-icon">TEX_<wbr>2D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">2</span><span class="tsd-signature-symbol"> = 2</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L14">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L14">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -595,17 +596,7 @@
 					<div class="tsd-signature tsd-kind-icon">TEX_<wbr>3D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">3</span><span class="tsd-signature-symbol"> = 3</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L15">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:15</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-					<a name="_vec3attribute" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> _vec3<wbr>Attribute</h3>
-					<div class="tsd-signature tsd-kind-icon">_vec3<wbr>Attribute<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&quot;color&quot;,&quot;center&quot;,&quot;size&quot;,&quot;__position&quot;,&quot;__positionRandomness&quot;,&quot;__color&quot;,&quot;__velocity&quot;,&quot;__velocityRandomness&quot;,&quot;__acceleration&quot;,&quot;__accelerationRandomness&quot;,&quot;_center&quot;]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/temp.compatible.ts#L4">packages/loader/src/scene-loader/temp.compatible.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L15">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -615,7 +606,7 @@
 					<div class="tsd-signature tsd-kind-icon">decoder<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L4">packages/loader/src/gltf/glTFDracoMeshCompression.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L4">packages/loader/src/gltf/glTFDracoMeshCompression.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -625,7 +616,7 @@
 					<div class="tsd-signature tsd-kind-icon">get<wbr>Default<wbr>Material<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> = (function () {// let defaultMateril: BlinnPhongMaterial;return (engine: Engine) &#x3D;&gt; {// if (!defaultMateril) {let defaultMateril: BlinnPhongMaterial &#x3D; new BlinnPhongMaterial(engine);defaultMateril.emissiveColor &#x3D; new Color(0.749, 0.749, 0.749, 1);// }return defaultMateril;};})()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L56">packages/loader/src/gltf/glTF.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L57">packages/loader/src/gltf/glTF.ts:57</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -635,7 +626,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L51">packages/loader/src/gltf/glTF.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L52">packages/loader/src/gltf/glTF.ts:52</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -645,7 +636,7 @@
 					<div class="tsd-signature tsd-kind-icon">parser<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.parser.html" class="tsd-signature-type">Parser</a><span class="tsd-signature-symbol"> = Parser.create()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/Parser.ts#L56">packages/loader/src/scene-loader/Parser.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/Parser.ts#L56">packages/loader/src/scene-loader/Parser.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -655,7 +646,7 @@
 					<div class="tsd-signature tsd-kind-icon">script<wbr>Ability<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/ScriptResource.ts#L6">packages/loader/src/scene-loader/resources/ScriptResource.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/ScriptResource.ts#L6">packages/loader/src/scene-loader/resources/ScriptResource.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -677,7 +668,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L93">packages/loader/src/gltf/glTF.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L94">packages/loader/src/gltf/glTF.ts:94</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -708,7 +699,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L778">packages/loader/src/gltf/glTF.ts:778</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L788">packages/loader/src/gltf/glTF.ts:788</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -736,7 +727,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/temp.compatible.ts#L22">packages/loader/src/scene-loader/temp.compatible.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/temp.compatible.ts#L7">packages/loader/src/scene-loader/temp.compatible.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -766,7 +757,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L134">packages/loader/src/gltf/Util.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L134">packages/loader/src/gltf/Util.ts:134</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -798,7 +789,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L18">packages/loader/src/gltf/Util.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L18">packages/loader/src/gltf/Util.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -827,7 +818,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L41">packages/loader/src/gltf/Util.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L41">packages/loader/src/gltf/Util.ts:41</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -861,7 +852,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L83">packages/loader/src/gltf/Util.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L83">packages/loader/src/gltf/Util.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -895,7 +886,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L55">packages/loader/src/gltf/Util.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L55">packages/loader/src/gltf/Util.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -923,7 +914,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L12">packages/loader/src/scene-loader/utils.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L12">packages/loader/src/scene-loader/utils.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -946,7 +937,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L121">packages/loader/src/gltf/Util.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L121">packages/loader/src/gltf/Util.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -977,7 +968,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L72">packages/loader/src/gltf/Util.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L72">packages/loader/src/gltf/Util.ts:72</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1007,7 +998,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L150">packages/loader/src/gltf/Util.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L150">packages/loader/src/gltf/Util.ts:150</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1033,7 +1024,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L75">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L75">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1056,7 +1047,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L139">packages/loader/src/gltf/Util.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L139">packages/loader/src/gltf/Util.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1079,7 +1070,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L766">packages/loader/src/gltf/glTF.ts:766</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L776">packages/loader/src/gltf/glTF.ts:776</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1116,7 +1107,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L17">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L17">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:17</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1142,7 +1133,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L128">packages/loader/src/gltf/Util.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L128">packages/loader/src/gltf/Util.ts:128</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1165,7 +1156,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/temp.compatible.ts#L55">packages/loader/src/scene-loader/temp.compatible.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/temp.compatible.ts#L44">packages/loader/src/scene-loader/temp.compatible.ts:44</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1179,16 +1170,16 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="handleprops" class="tsd-anchor"></a>
-					<h3>handle<wbr>Props</h3>
+					<a name="handlecomponents" class="tsd-anchor"></a>
+					<h3>handle<wbr>Components</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">handle<wbr>Props<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Components<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/temp.compatible.ts#L39">packages/loader/src/scene-loader/temp.compatible.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/temp.compatible.ts#L24">packages/loader/src/scene-loader/temp.compatible.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1211,7 +1202,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L203">packages/loader/src/gltf/Util.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L203">packages/loader/src/gltf/Util.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1234,7 +1225,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L8">packages/loader/src/scene-loader/utils.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L8">packages/loader/src/scene-loader/utils.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1257,7 +1248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/BufferLoader.ts#L3">packages/loader/src/BufferLoader.ts:3</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/BufferLoader.ts#L3">packages/loader/src/BufferLoader.ts:3</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1280,7 +1271,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L198">packages/loader/src/gltf/Util.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L198">packages/loader/src/gltf/Util.ts:198</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1303,7 +1294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L50">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L50">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:50</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1335,7 +1326,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L179">packages/loader/src/gltf/Util.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L179">packages/loader/src/gltf/Util.ts:179</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1366,7 +1357,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L574">packages/loader/src/gltf/glTF.ts:574</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L584">packages/loader/src/gltf/glTF.ts:584</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1397,7 +1388,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/index.ts#L16">packages/loader/src/compressed-texture/index.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/index.ts#L16">packages/loader/src/compressed-texture/index.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1420,7 +1411,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L169">packages/loader/src/gltf/glTF.ts:169</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L167">packages/loader/src/gltf/glTF.ts:167</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1443,7 +1434,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glb.ts#L9">packages/loader/src/gltf/glb.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glb.ts#L9">packages/loader/src/gltf/glb.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1483,7 +1474,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L139">packages/loader/src/gltf/glTF.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L137">packages/loader/src/gltf/glTF.ts:137</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1508,13 +1499,13 @@
 					<a name="parsematerial" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> parse<wbr>Material</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">parse<wbr>Material<span class="tsd-signature-symbol">(</span>gltfMaterial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, resources<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PBRMaterial</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Material<span class="tsd-signature-symbol">(</span>gltfMaterial<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, resources<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">UnlitMaterial</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PBRSpecularMaterial</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PBRMaterial</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L241">packages/loader/src/gltf/glTF.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L239">packages/loader/src/gltf/glTF.ts:239</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1531,7 +1522,7 @@
 									<h5>resources: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">PBRMaterial</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><a href="../classes/core.assetpromise.html#promise" class="tsd-signature-type">Promise</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">UnlitMaterial</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PBRSpecularMaterial</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PBRMaterial</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1545,7 +1536,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L480">packages/loader/src/gltf/glTF.ts:480</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L490">packages/loader/src/gltf/glTF.ts:490</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1576,7 +1567,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L636">packages/loader/src/gltf/glTF.ts:636</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L646">packages/loader/src/gltf/glTF.ts:646</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1607,7 +1598,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L416">packages/loader/src/gltf/glTF.ts:416</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L426">packages/loader/src/gltf/glTF.ts:426</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1681,7 +1672,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L207">packages/loader/src/gltf/Util.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L207">packages/loader/src/gltf/Util.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1707,7 +1698,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L214">packages/loader/src/gltf/glTF.ts:214</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L212">packages/loader/src/gltf/glTF.ts:212</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1750,7 +1741,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L736">packages/loader/src/gltf/glTF.ts:736</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L746">packages/loader/src/gltf/glTF.ts:746</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1781,7 +1772,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/index.ts#L5">packages/loader/src/compressed-texture/index.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/index.ts#L5">packages/loader/src/compressed-texture/index.ts:5</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1804,7 +1795,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L385">packages/loader/src/gltf/glTF.ts:385</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L395">packages/loader/src/gltf/glTF.ts:395</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1835,7 +1826,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L472">packages/loader/src/gltf/glTF.ts:472</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L482">packages/loader/src/gltf/glTF.ts:482</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1867,7 +1858,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/plugins/PluginManager.ts#L57">packages/loader/src/scene-loader/plugins/PluginManager.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/plugins/PluginManager.ts#L57">packages/loader/src/scene-loader/plugins/PluginManager.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1890,7 +1881,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L49">packages/loader/src/scene-loader/ResourceManager.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L46">packages/loader/src/scene-loader/ResourceManager.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1916,7 +1907,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/ScriptResource.ts#L7">packages/loader/src/scene-loader/resources/ScriptResource.ts:7</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/ScriptResource.ts#L7">packages/loader/src/scene-loader/resources/ScriptResource.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1939,7 +1930,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L1">packages/loader/src/scene-loader/utils.ts:1</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L1">packages/loader/src/scene-loader/utils.ts:1</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1968,7 +1959,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L24">packages/loader/src/scene-loader/utils.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L24">packages/loader/src/scene-loader/utils.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1993,7 +1984,7 @@
 					<div class="tsd-signature tsd-kind-icon">Handled<wbr>Extensions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L70">packages/loader/src/gltf/glTF.ts:70</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L71">packages/loader/src/gltf/glTF.ts:71</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -2007,7 +1998,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>draco_<wbr>mesh_<wbr>compression<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;KHR_draco_mesh_compression&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L76">packages/loader/src/gltf/glTF.ts:76</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L77">packages/loader/src/gltf/glTF.ts:77</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2017,7 +2008,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>lights<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;KHR_lights&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L72">packages/loader/src/gltf/glTF.ts:72</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L73">packages/loader/src/gltf/glTF.ts:73</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2027,7 +2018,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>materials_<wbr>pbr<wbr>Specular<wbr>Glossiness<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;KHR_materials_pbrSpecularGlossiness&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L74">packages/loader/src/gltf/glTF.ts:74</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L75">packages/loader/src/gltf/glTF.ts:75</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2037,7 +2028,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>materials_<wbr>unlit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;KHR_materials_unlit&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L73">packages/loader/src/gltf/glTF.ts:73</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L74">packages/loader/src/gltf/glTF.ts:74</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2047,7 +2038,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>techniques_<wbr>webgl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;KHR_techniques_webgl&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L75">packages/loader/src/gltf/glTF.ts:75</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L76">packages/loader/src/gltf/glTF.ts:76</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2057,7 +2048,7 @@
 						<div class="tsd-signature tsd-kind-icon">PBRMaterial<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;PBRMaterial&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L71">packages/loader/src/gltf/glTF.ts:71</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L72">packages/loader/src/gltf/glTF.ts:72</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2068,7 +2059,7 @@
 					<div class="tsd-signature tsd-kind-icon">RESOURCE_<wbr>CLASS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L16">packages/loader/src/scene-loader/ResourceManager.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L18">packages/loader/src/scene-loader/ResourceManager.ts:18</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2077,7 +2068,7 @@
 						<div class="tsd-signature tsd-kind-icon">Blinn<wbr>Phong<wbr>Material<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.blinnphongmaterialresource.html" class="tsd-signature-type">BlinnPhongMaterialResource</a><span class="tsd-signature-symbol"> = BlinnPhongMaterialResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L25">packages/loader/src/scene-loader/ResourceManager.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L27">packages/loader/src/scene-loader/ResourceManager.ts:27</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2087,17 +2078,27 @@
 						<div class="tsd-signature tsd-kind-icon">PBRMaterial<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.pbrmaterialresource.html" class="tsd-signature-type">PBRMaterialResource</a><span class="tsd-signature-symbol"> = PBRMaterialResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L22">packages/loader/src/scene-loader/ResourceManager.ts:22</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L24">packages/loader/src/scene-loader/ResourceManager.ts:24</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="resource_class.pbrspecularmaterial" class="tsd-anchor"></a>
 						<h3>PBRSpecular<wbr>Material</h3>
-						<div class="tsd-signature tsd-kind-icon">PBRSpecular<wbr>Material<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.pbrmaterialresource.html" class="tsd-signature-type">PBRMaterialResource</a><span class="tsd-signature-symbol"> = PBRMaterialResource</span></div>
+						<div class="tsd-signature tsd-kind-icon">PBRSpecular<wbr>Material<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.pbrspecularmaterialresource.html" class="tsd-signature-type">PBRSpecularMaterialResource</a><span class="tsd-signature-symbol"> = PBRSpecularMaterialResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L23">packages/loader/src/scene-loader/ResourceManager.ts:23</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L25">packages/loader/src/scene-loader/ResourceManager.ts:25</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="resource_class.unlitmaterial" class="tsd-anchor"></a>
+						<h3>Unlit<wbr>Material</h3>
+						<div class="tsd-signature tsd-kind-icon">Unlit<wbr>Material<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.unlitmaterialresource.html" class="tsd-signature-type">UnlitMaterialResource</a><span class="tsd-signature-symbol"> = UnlitMaterialResource</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L26">packages/loader/src/scene-loader/ResourceManager.ts:26</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2107,7 +2108,7 @@
 						<div class="tsd-signature tsd-kind-icon">base<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.baseresource.html" class="tsd-signature-type">BaseResource</a><span class="tsd-signature-symbol"> = BaseResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L27">packages/loader/src/scene-loader/ResourceManager.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L29">packages/loader/src/scene-loader/ResourceManager.ts:29</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2117,7 +2118,7 @@
 						<div class="tsd-signature tsd-kind-icon">cube<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.texturecubemapresource.html" class="tsd-signature-type">TextureCubeMapResource</a><span class="tsd-signature-symbol"> = TextureCubeMapResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L21">packages/loader/src/scene-loader/ResourceManager.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L23">packages/loader/src/scene-loader/ResourceManager.ts:23</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2127,7 +2128,7 @@
 						<div class="tsd-signature tsd-kind-icon">gltf<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.gltfresource-1.html" class="tsd-signature-type">GLTFResource</a><span class="tsd-signature-symbol"> = GLTFResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L18">packages/loader/src/scene-loader/ResourceManager.ts:18</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L20">packages/loader/src/scene-loader/ResourceManager.ts:20</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2137,7 +2138,7 @@
 						<div class="tsd-signature tsd-kind-icon">script<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.scriptresource.html" class="tsd-signature-type">ScriptResource</a><span class="tsd-signature-symbol"> = ScriptResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L17">packages/loader/src/scene-loader/ResourceManager.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L19">packages/loader/src/scene-loader/ResourceManager.ts:19</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2147,17 +2148,7 @@
 						<div class="tsd-signature tsd-kind-icon">texture<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.textureresource.html" class="tsd-signature-type">TextureResource</a><span class="tsd-signature-symbol"> = TextureResource</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L19">packages/loader/src/scene-loader/ResourceManager.ts:19</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="resource_class.unlitmaterial" class="tsd-anchor"></a>
-						<h3>unlit<wbr>Material</h3>
-						<div class="tsd-signature tsd-kind-icon">unlit<wbr>Material<span class="tsd-signature-symbol">:</span> <a href="../classes/loader.pbrmaterialresource.html" class="tsd-signature-type">PBRMaterialResource</a><span class="tsd-signature-symbol"> = PBRMaterialResource</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L24">packages/loader/src/scene-loader/ResourceManager.ts:24</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L21">packages/loader/src/scene-loader/ResourceManager.ts:21</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2168,7 +2159,7 @@
 					<div class="tsd-signature tsd-kind-icon">TARGET_<wbr>PATH_<wbr>MAP<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L44">packages/loader/src/gltf/glTF.ts:44</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L45">packages/loader/src/gltf/glTF.ts:45</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -2177,7 +2168,7 @@
 						<div class="tsd-signature tsd-kind-icon">rotation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;rotation&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L46">packages/loader/src/gltf/glTF.ts:46</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L47">packages/loader/src/gltf/glTF.ts:47</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2187,7 +2178,7 @@
 						<div class="tsd-signature tsd-kind-icon">scale<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;scale&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L47">packages/loader/src/gltf/glTF.ts:47</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L48">packages/loader/src/gltf/glTF.ts:48</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2197,7 +2188,7 @@
 						<div class="tsd-signature tsd-kind-icon">translation<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;position&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L45">packages/loader/src/gltf/glTF.ts:45</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L46">packages/loader/src/gltf/glTF.ts:46</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2207,7 +2198,7 @@
 						<div class="tsd-signature tsd-kind-icon">weights<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;weights&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L48">packages/loader/src/gltf/glTF.ts:48</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L49">packages/loader/src/gltf/glTF.ts:49</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2218,7 +2209,7 @@
 					<div class="tsd-signature tsd-kind-icon">WEBGL_<wbr>COMPONENT_<wbr>TYPES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L3">packages/loader/src/gltf/Util.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L3">packages/loader/src/gltf/Util.ts:3</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -2227,7 +2218,7 @@
 						<div class="tsd-signature tsd-kind-icon">5120<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Int8ArrayConstructor</span><span class="tsd-signature-symbol"> = Int8Array</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L4">packages/loader/src/gltf/Util.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L4">packages/loader/src/gltf/Util.ts:4</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2237,7 +2228,7 @@
 						<div class="tsd-signature tsd-kind-icon">5121<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint8ArrayConstructor</span><span class="tsd-signature-symbol"> = Uint8Array</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L5">packages/loader/src/gltf/Util.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L5">packages/loader/src/gltf/Util.ts:5</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2247,7 +2238,7 @@
 						<div class="tsd-signature tsd-kind-icon">5122<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Int16ArrayConstructor</span><span class="tsd-signature-symbol"> = Int16Array</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L6">packages/loader/src/gltf/Util.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L6">packages/loader/src/gltf/Util.ts:6</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2257,7 +2248,7 @@
 						<div class="tsd-signature tsd-kind-icon">5123<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint16ArrayConstructor</span><span class="tsd-signature-symbol"> = Uint16Array</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L7">packages/loader/src/gltf/Util.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L7">packages/loader/src/gltf/Util.ts:7</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2267,7 +2258,7 @@
 						<div class="tsd-signature tsd-kind-icon">5125<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint32ArrayConstructor</span><span class="tsd-signature-symbol"> = Uint32Array</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L8">packages/loader/src/gltf/Util.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L8">packages/loader/src/gltf/Util.ts:8</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2277,7 +2268,7 @@
 						<div class="tsd-signature tsd-kind-icon">5126<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Float32ArrayConstructor</span><span class="tsd-signature-symbol"> = Float32Array</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/Util.ts#L9">packages/loader/src/gltf/Util.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/Util.ts#L9">packages/loader/src/gltf/Util.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2288,7 +2279,7 @@
 					<div class="tsd-signature tsd-kind-icon">compressed<wbr>Texture<wbr>Load<wbr>Order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L34">packages/loader/src/scene-loader/utils.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L34">packages/loader/src/scene-loader/utils.ts:34</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2297,7 +2288,7 @@
 						<div class="tsd-signature tsd-kind-icon">astc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L35">packages/loader/src/scene-loader/utils.ts:35</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L35">packages/loader/src/scene-loader/utils.ts:35</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2307,7 +2298,7 @@
 						<div class="tsd-signature tsd-kind-icon">etc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 4</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L38">packages/loader/src/scene-loader/utils.ts:38</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L38">packages/loader/src/scene-loader/utils.ts:38</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2317,7 +2308,7 @@
 						<div class="tsd-signature tsd-kind-icon">etc1<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 5</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L39">packages/loader/src/scene-loader/utils.ts:39</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L39">packages/loader/src/scene-loader/utils.ts:39</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2327,7 +2318,7 @@
 						<div class="tsd-signature tsd-kind-icon">pvrtc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 3</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L37">packages/loader/src/scene-loader/utils.ts:37</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L37">packages/loader/src/scene-loader/utils.ts:37</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2337,7 +2328,7 @@
 						<div class="tsd-signature tsd-kind-icon">s3tc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 2</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/utils.ts#L36">packages/loader/src/scene-loader/utils.ts:36</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/utils.ts#L36">packages/loader/src/scene-loader/utils.ts:36</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2348,7 +2339,7 @@
 					<div class="tsd-signature tsd-kind-icon">extension<wbr>Parsers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L81">packages/loader/src/gltf/glTF.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L82">packages/loader/src/gltf/glTF.ts:82</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -2357,7 +2348,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>draco_<wbr>mesh_<wbr>compression<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>init<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span>parse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> = glTFDracoMeshCompression</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L86">packages/loader/src/gltf/glTF.ts:86</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L87">packages/loader/src/gltf/glTF.ts:87</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -2372,7 +2363,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L7">packages/loader/src/gltf/glTFDracoMeshCompression.ts:7</a></li>
+													<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L7">packages/loader/src/gltf/glTFDracoMeshCompression.ts:7</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2388,7 +2379,7 @@
 										<li class="tsd-description">
 											<aside class="tsd-sources">
 												<ul>
-													<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L12">packages/loader/src/gltf/glTFDracoMeshCompression.ts:12</a></li>
+													<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L12">packages/loader/src/gltf/glTFDracoMeshCompression.ts:12</a></li>
 												</ul>
 											</aside>
 											<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2419,27 +2410,27 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>lights<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = KHR_lights</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L82">packages/loader/src/gltf/glTF.ts:82</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L83">packages/loader/src/gltf/glTF.ts:83</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="extensionparsers.khr_materials_pbrspecularglossiness-1" class="tsd-anchor"></a>
 						<h3>KHR_<wbr>materials_<wbr>pbr<wbr>Specular<wbr>Glossiness</h3>
-						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>materials_<wbr>pbr<wbr>Specular<wbr>Glossiness<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PBRMaterial</span><span class="tsd-signature-symbol"> = PBRMaterial</span></div>
+						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>materials_<wbr>pbr<wbr>Specular<wbr>Glossiness<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PBRSpecularMaterial</span><span class="tsd-signature-symbol"> = PBRSpecularMaterial</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L84">packages/loader/src/gltf/glTF.ts:84</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L85">packages/loader/src/gltf/glTF.ts:85</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 						<a name="extensionparsers.khr_materials_unlit-1" class="tsd-anchor"></a>
 						<h3>KHR_<wbr>materials_<wbr>unlit</h3>
-						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>materials_<wbr>unlit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PBRMaterial</span><span class="tsd-signature-symbol"> = PBRMaterial</span></div>
+						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>materials_<wbr>unlit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">UnlitMaterial</span><span class="tsd-signature-symbol"> = UnlitMaterial</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L83">packages/loader/src/gltf/glTF.ts:83</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L84">packages/loader/src/gltf/glTF.ts:84</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2449,7 +2440,7 @@
 						<div class="tsd-signature tsd-kind-icon">KHR_<wbr>techniques_<wbr>webgl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Material</span><span class="tsd-signature-symbol"> = Material</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTF.ts#L85">packages/loader/src/gltf/glTF.ts:85</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTF.ts#L86">packages/loader/src/gltf/glTF.ts:86</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2460,7 +2451,7 @@
 					<div class="tsd-signature tsd-kind-icon">glTFDraco<wbr>Mesh<wbr>Compression<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L6">packages/loader/src/gltf/glTFDracoMeshCompression.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L6">packages/loader/src/gltf/glTFDracoMeshCompression.ts:6</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal">
@@ -2473,7 +2464,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L7">packages/loader/src/gltf/glTFDracoMeshCompression.ts:7</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L7">packages/loader/src/gltf/glTFDracoMeshCompression.ts:7</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2490,7 +2481,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L12">packages/loader/src/gltf/glTFDracoMeshCompression.ts:12</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/gltf/glTFDracoMeshCompression.ts#L12">packages/loader/src/gltf/glTFDracoMeshCompression.ts:12</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2519,7 +2510,7 @@
 					<div class="tsd-signature tsd-kind-icon">image<wbr>Order<wbr>Map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L6">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L6">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:6</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -2528,7 +2519,7 @@
 						<div class="tsd-signature tsd-kind-icon">nx<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L8">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L8">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:8</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2538,7 +2529,7 @@
 						<div class="tsd-signature tsd-kind-icon">ny<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 3</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L10">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L10">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2548,7 +2539,7 @@
 						<div class="tsd-signature tsd-kind-icon">nz<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 5</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L12">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L12">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:12</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2558,7 +2549,7 @@
 						<div class="tsd-signature tsd-kind-icon">px<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L7">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L7">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:7</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2568,7 +2559,7 @@
 						<div class="tsd-signature tsd-kind-icon">py<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 2</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L9">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L9">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2578,7 +2569,7 @@
 						<div class="tsd-signature tsd-kind-icon">pz<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 4</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L11">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts#L11">packages/loader/src/scene-loader/resources/TextureCubeMapResource.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2589,7 +2580,7 @@
 					<div class="tsd-signature tsd-kind-icon">khronos<wbr>Texture<wbr>Container<wbr>Parser<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L121">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:121</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L121">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:121</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -2608,7 +2599,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L130">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:130</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/compressed-texture/KhronosTextureContainer.ts#L130">packages/loader/src/compressed-texture/KhronosTextureContainer.ts:130</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -2648,7 +2639,7 @@
 					<div class="tsd-signature tsd-kind-icon">resource<wbr>Factory<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L43">packages/loader/src/scene-loader/ResourceManager.ts:43</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L40">packages/loader/src/scene-loader/ResourceManager.ts:40</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -2661,7 +2652,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/loader/src/scene-loader/ResourceManager.ts#L44">packages/loader/src/scene-loader/ResourceManager.ts:44</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/loader/src/scene-loader/ResourceManager.ts#L41">packages/loader/src/scene-loader/ResourceManager.ts:41</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2786,6 +2777,9 @@
 								<a href="../classes/loader.pbrmaterialresource.html" class="tsd-kind-icon">PBRMaterial<wbr>Resource</a>
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/loader.pbrspecularmaterialresource.html" class="tsd-kind-icon">PBRSpecular<wbr>Material<wbr>Resource</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/loader.parser.html" class="tsd-kind-icon">Parser</a>
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
@@ -2814,6 +2808,9 @@
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/loader.textureresource.html" class="tsd-kind-icon">Texture<wbr>Resource</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/loader.unlitmaterialresource.html" class="tsd-kind-icon">Unlit<wbr>Material<wbr>Resource</a>
 							</li>
 							<li class=" tsd-kind-interface tsd-parent-kind-module">
 								<a href="../interfaces/loader.accessor.html" class="tsd-kind-icon">Accessor</a>
@@ -2990,9 +2987,6 @@
 								<a href="loader.html#tex_3d" class="tsd-kind-icon">TEX_<wbr>3D</a>
 							</li>
 							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
-								<a href="loader.html#_vec3attribute" class="tsd-kind-icon">_vec3<wbr>Attribute</a>
-							</li>
-							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
 								<a href="loader.html#decoder" class="tsd-kind-icon">decoder</a>
 							</li>
 							<li class=" tsd-kind-variable tsd-parent-kind-module tsd-is-not-exported">
@@ -3062,7 +3056,7 @@
 								<a href="loader.html#handleassets" class="tsd-kind-icon">handle<wbr>Assets</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-								<a href="loader.html#handleprops" class="tsd-kind-icon">handle<wbr>Props</a>
+								<a href="loader.html#handlecomponents" class="tsd-kind-icon">handle<wbr>Components</a>
 							</li>
 							<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
 								<a href="loader.html#isabsoluteurl" class="tsd-kind-icon">is<wbr>Absolute<wbr>Url</a>

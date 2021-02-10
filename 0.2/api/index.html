@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Oasis Engine</title>
+	<meta name="description" content="Documentation for Oasis Engine">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header class="tsd-header">
+	<div class="tsd-page-toolbar">
+		<div class="container header-container">
+			<div class="header-logo">
+				<a href="globals.html" class="title">
+					<span class="oasis-logo"></span>
+				</a>
+				</select>
+			</div>
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Packages</a>
+				</li>
+			</ul>
+			<span class="tsd-breadcrumb-current">Oasis Engine</span>
+			<div id="tsd-filter">
+				<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+				<div class="tsd-filter-group">
+					<input type="checkbox" id="tsd-filter-inherited" checked />
+					<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+				</div>
+			</div>
+			<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#oasis-engine-ant-graphics-engine" id="oasis-engine-ant-graphics-engine" style="color: inherit; text-decoration: none;">
+					<h1>Oasis Engine (Ant Graphics Engine)</h1>
+				</a>
+				<p align="center"><a href="https://oasis-engine.github.io" target="_blank" rel="noopener noreferrer"><img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*f1pVTpPvzA8AAAAAAAAAAAAAARQnAQ" alt="Oasis logo"></a></p>
+				<p><img src="https://img.shields.io/npm/v/oasis-engine" alt="npm-version">
+					<img src="https://img.shields.io/bundlephobia/minzip/oasis-engine" alt="npm-size">
+				<img src="https://img.shields.io/npm/dm/oasis-engine" alt="npm-download"></p>
+				<p>Oasis is a <strong>web-first</strong> and <strong>mobile-first</strong> high-performance real-time development platform. Use <strong>component system design</strong> and pursue ease of use and light weight. This repository is the core engine of Oasis. Developers can independently use and write Typescript scripts to develop projects using pure code.</p>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
+				<ul>
+					<li>🖥  &nbsp;<strong>Platform</strong> - Suppport HTML5 and Alipay miniprogram</li>
+					<li>🔮  &nbsp;<strong>Graphics</strong> - Advanced 2D + 3D graphics engine</li>
+					<li>🏃  &nbsp;<strong>Animation</strong> - Powerful animation system</li>
+					<li>📑  &nbsp;<strong>Scripts</strong> - Use TypeScript to write logic efficiently</li>
+				</ul>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-comment">// Create engine by passing in the HTMLCanvasElement name and get root entity.</span>
+<span class="hljs-keyword">const</span> engine = <span class="hljs-keyword">new</span> WebGLEngine(<span class="hljs-string">&quot;canvas&quot;</span>);
+<span class="hljs-keyword">const</span> canvas = engine.canvas;
+<span class="hljs-keyword">const</span> rootEntity = engine.sceneManager.activeScene.createRootEntity(<span class="hljs-string">&quot;Root&quot;</span>);
+canvas.width = <span class="hljs-built_in">window</span>.innerWidth * SystemInfo.devicePixelRatio;
+canvas.height = <span class="hljs-built_in">window</span>.innerHeight * SystemInfo.devicePixelRatio;
+
+<span class="hljs-comment">// Create light.</span>
+<span class="hljs-keyword">const</span> lightEntity = rootEntity.createChild(<span class="hljs-string">&quot;Light&quot;</span>);
+<span class="hljs-keyword">const</span> ambient = lightEntity.addComponent(AmbientLight);
+<span class="hljs-keyword">const</span> directLight = lightEntity.addComponent(DirectLight);
+ambient.color = <span class="hljs-keyword">new</span> Color(<span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">0.5</span>);
+directLight.color = <span class="hljs-keyword">new</span> Color(<span class="hljs-number">0.3</span>, <span class="hljs-number">0.4</span>, <span class="hljs-number">0.4</span>);
+
+<span class="hljs-comment">// Create camera.</span>
+<span class="hljs-keyword">const</span> cameraEntity = rootEntity.createChild(<span class="hljs-string">&quot;Camera&quot;</span>);
+cameraEntity.transform.setPosition(<span class="hljs-number">0</span>, <span class="hljs-number">6</span>, <span class="hljs-number">10</span>);
+cameraEntity.transform.lookAt(<span class="hljs-keyword">new</span> Vector3(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>));
+cameraEntity.addComponent(Camera);
+
+<span class="hljs-comment">// Create cube.</span>
+<span class="hljs-keyword">const</span> cubeEntity = rootEntity.createChild(<span class="hljs-string">&quot;Cube&quot;</span>);
+<span class="hljs-keyword">const</span> cubeRenderer = cubeEntity.addComponent(GeometryRenderer);
+<span class="hljs-keyword">const</span> material = <span class="hljs-keyword">new</span> BlinnPhongMaterial(engine);
+cubeEntity.transform.rotate(<span class="hljs-number">0</span>, <span class="hljs-number">60</span>, <span class="hljs-number">0</span>);
+material.ambientColor = <span class="hljs-keyword">new</span> Color(<span class="hljs-number">0.6</span>, <span class="hljs-number">0.6</span>, <span class="hljs-number">0.6</span>, <span class="hljs-number">1</span>);
+cubeRenderer.geometry = <span class="hljs-keyword">new</span> CuboidGeometry(engine, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+cubeRenderer.material = material;
+
+<span class="hljs-comment">// Run engine.</span>
+engine.run();
+</code></pre>
+				<a href="#npm" id="npm" style="color: inherit; text-decoration: none;">
+					<h2>npm</h2>
+				</a>
+				<p>Oasis Engine are published on npm with full typing support. To install, use:</p>
+				<pre><code class="language-sh">npm install oasis-engine
+</code></pre>
+				<p>This will allow you to import Oasis Engine entirely using:</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> OASIS <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;oasis-engine&quot;</span>;
+</code></pre>
+				<p>or individual classes using:</p>
+				<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { Engine, Scene, Entity } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;oasis-engine&quot;</span>;
+</code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>Everyone is welcome to join us! Whether you find a bug, have a great feature request or you fancy owning a task from the road map feel free to get in touch.</p>
+				<p>Make sure to read the <a href=".github/HOW_TO_CONTRIBUTE.md">Contributing Guide</a> before submitting changes.</p>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h2>Build</h2>
+				</a>
+				<p>If you don&#39;t already have Node.js and NPM, go install them. Then, in the folder where you have cloned the repository, install the build dependencies using npm:</p>
+				<pre><code class="language-sh">npm run bootstrap
+</code></pre>
+				<p>Then, to build the source, using npm:</p>
+				<pre><code class="language-sh">npm run build
+</code></pre>
+				<p>The docs can be generated using npm:</p>
+				<pre><code class="language-sh">npm run doc
+</code></pre>
+				<a href="#links" id="links" style="color: inherit; text-decoration: none;">
+					<h2>Links</h2>
+				</a>
+				<ul>
+					<li><a href="https://oasis-engine.github.io">Official Site</a></li>
+					<li><a href="https://oasis-engine.github.io/0.2/playground">Playground</a></li>
+					<li><a href="https://oasis-engine.github.io/#/0.2/manual/zh-cn/README">Manual</a></li>
+					<li><a href="https://oasis-engine.github.io/0.2/api/globals.html">API References</a></li>
+				</ul>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>The Oasis Engine is released under the <a href="https://opensource.org/licenses/MIT">MIT</a> license. See LICENSE file.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Packages</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/controls.html">controls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/core.html">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/design.html">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/draco.html">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/loader.html">loader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/math.html">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/oasis_engine.html">oasis-<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/rhi_webgl.html">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/stats.html">stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tween.html">tween</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="modules/controls.html" class="tsd-kind-icon">controls</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/core.html" class="tsd-kind-icon">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/design.html" class="tsd-kind-icon">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/draco.html" class="tsd-kind-icon">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/loader.html" class="tsd-kind-icon">loader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/math.html" class="tsd-kind-icon">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/stats.html" class="tsd-kind-icon">stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tween.html" class="tsd-kind-icon">tween</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -92,6 +92,7 @@
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.interpolationtype.html" class="tsd-kind-icon">Interpolation<wbr>Type</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.layer.html" class="tsd-kind-icon">Layer</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.materialtype.html" class="tsd-kind-icon">Material<wbr>Type</a></li>
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.particlerendererblendmode.html" class="tsd-kind-icon">Particle<wbr>Renderer<wbr>Blend<wbr>Mode</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.primitivetopology.html" class="tsd-kind-icon">Primitive<wbr>Topology</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.refreshrate.html" class="tsd-kind-icon">Refresh<wbr>Rate</a></li>
 								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/core.renderbuffercolorformat.html" class="tsd-kind-icon">Render<wbr>Buffer<wbr>Color<wbr>Format</a></li>
@@ -169,7 +170,9 @@
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.meshrenderer.html" class="tsd-kind-icon">Mesh<wbr>Renderer</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.model.html" class="tsd-kind-icon">Model</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.multiexecutor.html" class="tsd-kind-icon">Multi<wbr>Executor</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.pbrbasematerial.html" class="tsd-kind-icon">PBRBase<wbr>Material</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.pbrmaterial.html" class="tsd-kind-icon">PBRMaterial</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.pbrspecularmaterial.html" class="tsd-kind-icon">PBRSpecular<wbr>Material</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.particlerenderer.html" class="tsd-kind-icon">Particle<wbr>Renderer</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.planecollider.html" class="tsd-kind-icon">Plane<wbr>Collider</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.planegeometry.html" class="tsd-kind-icon">Plane<wbr>Geometry</a></li>
@@ -226,6 +229,7 @@
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.trailmaterial.html" class="tsd-kind-icon">Trail<wbr>Material</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.trailrenderer.html" class="tsd-kind-icon">Trail<wbr>Renderer</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.transform.html" class="tsd-kind-icon">Transform</a></li>
+								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.unlitmaterial.html" class="tsd-kind-icon">Unlit<wbr>Material</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.updateflag.html" class="tsd-kind-icon">Update<wbr>Flag</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.vertexbufferbinding.html" class="tsd-kind-icon">Vertex<wbr>Buffer<wbr>Binding</a></li>
 								<li class="tsd-kind-class tsd-parent-kind-module"><a href="../classes/core.vertexelement.html" class="tsd-kind-icon">Vertex<wbr>Element</a></li>
@@ -338,7 +342,7 @@
 					<div class="tsd-signature tsd-kind-icon">Component<wbr>Constructor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/ComponentsDependencies.ts#L4">packages/core/src/ComponentsDependencies.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/ComponentsDependencies.ts#L4">packages/core/src/ComponentsDependencies.ts:4</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -353,7 +357,7 @@
 					<div class="tsd-signature tsd-kind-icon">IChannel<wbr>Target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>outputSize<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>pathType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>targetObject<span class="tsd-signature-symbol">: </span><a href="../classes/core.entity.html" class="tsd-signature-type">Entity</a><span class="tsd-signature-symbol"> | </span><a href="../classes/core.component.html" class="tsd-signature-type">Component</a><span class="tsd-signature-symbol"> | </span><a href="../classes/core.skinnedmeshrenderer.html" class="tsd-signature-type">SkinnedMeshRenderer</a><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/animation/types.ts#L42">packages/core/src/animation/types.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/animation/types.ts#L42">packages/core/src/animation/types.ts:42</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -380,7 +384,7 @@
 					<div class="tsd-signature tsd-kind-icon">Item<span class="tsd-signature-symbol">:</span> <a href="../classes/core.renderelement.html" class="tsd-signature-type">RenderElement</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/core.spriteelement.html" class="tsd-signature-type">SpriteElement</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/RenderPipeline/RenderQueue.ts#L21">packages/core/src/RenderPipeline/RenderQueue.ts:21</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/RenderPipeline/RenderQueue.ts#L21">packages/core/src/RenderPipeline/RenderQueue.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -390,7 +394,7 @@
 					<div class="tsd-signature tsd-kind-icon">List<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/animation/types.ts#L49">packages/core/src/animation/types.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/animation/types.ts#L49">packages/core/src/animation/types.ts:49</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -400,7 +404,7 @@
 					<div class="tsd-signature tsd-kind-icon">Listener<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="../classes/core.event.html" class="tsd-signature-type">Event</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>once<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Event.ts#L3">packages/core/src/base/Event.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Event.ts#L3">packages/core/src/base/Event.ts:3</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -410,7 +414,7 @@
 					<div class="tsd-signature tsd-kind-icon">Load<wbr>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>retryCount<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>retryInterval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">?: </span><a href="../enums/core.assettype.html" class="tsd-signature-type">AssetType</a><span class="tsd-signature-symbol">; </span>url<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>urls<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/LoadItem.ts#L6">packages/core/src/asset/LoadItem.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/LoadItem.ts#L6">packages/core/src/asset/LoadItem.ts:6</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -478,7 +482,7 @@
 					<div class="tsd-signature tsd-kind-icon">Promise<wbr>Notifier<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>progress<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">void</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/AssetPromise.ts#L1">packages/core/src/asset/AssetPromise.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/AssetPromise.ts#L1">packages/core/src/asset/AssetPromise.ts:1</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -509,7 +513,7 @@
 					<div class="tsd-signature tsd-kind-icon">Request<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>retryCount<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>retryInterval<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>timeout<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>type<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">XMLHttpRequestResponseType</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"image"</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">RequestInit</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L19">packages/core/src/asset/request.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L19">packages/core/src/asset/request.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -519,7 +523,7 @@
 					<div class="tsd-signature tsd-kind-icon">Shader<wbr>Property<wbr>Value<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Vector2</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Vector4</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Matrix</span><span class="tsd-signature-symbol"> | </span><a href="../classes/core.texture.html" class="tsd-signature-type">Texture</a><span class="tsd-signature-symbol"> | </span><a href="../classes/core.texture.html" class="tsd-signature-type">Texture</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Int32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shader/ShaderData.ts#L12">packages/core/src/shader/ShaderData.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shader/ShaderData.ts#L12">packages/core/src/shader/ShaderData.ts:12</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -529,7 +533,7 @@
 					<div class="tsd-signature tsd-kind-icon">Sky<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/Camera.ts#L22">packages/core/src/Camera.ts:22</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/Camera.ts#L22">packages/core/src/Camera.ts:22</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -550,7 +554,7 @@
 					<div class="tsd-signature tsd-kind-icon">Type<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint16Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Int8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Int16Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Int32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float64Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/clone/CloneManager.ts#L4">packages/core/src/clone/CloneManager.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/clone/CloneManager.ts#L4">packages/core/src/clone/CloneManager.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -560,7 +564,7 @@
 					<div class="tsd-signature tsd-kind-icon">Typed<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Int8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint8Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Int16Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint16Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Int32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Uint8ClampedArray</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float32Array</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Float64Array</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Constant.ts#L351">packages/core/src/base/Constant.ts:351</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Constant.ts#L351">packages/core/src/base/Constant.ts:351</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -570,7 +574,7 @@
 					<div class="tsd-signature tsd-kind-icon">Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="core.html#list" class="tsd-signature-type">List</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Quaternion</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/animation/types.ts#L51">packages/core/src/animation/types.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/animation/types.ts#L51">packages/core/src/animation/types.ts:51</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -583,7 +587,7 @@
 					<div class="tsd-signature tsd-kind-icon">_temp<wbr>Vector3<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> = new Vector3()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/trail/TrailRenderer.ts#L13">packages/core/src/trail/TrailRenderer.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/trail/TrailRenderer.ts#L13">packages/core/src/trail/TrailRenderer.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -593,7 +597,7 @@
 					<div class="tsd-signature tsd-kind-icon">cache<wbr>Dir<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> = new Vector3()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/env-probe/CubeProbe.ts#L8">packages/core/src/env-probe/CubeProbe.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/env-probe/CubeProbe.ts#L8">packages/core/src/env-probe/CubeProbe.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -603,7 +607,7 @@
 					<div class="tsd-signature tsd-kind-icon">cache<wbr>Target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> = new Vector3()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/env-probe/CubeProbe.ts#L6">packages/core/src/env-probe/CubeProbe.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/env-probe/CubeProbe.ts#L6">packages/core/src/env-probe/CubeProbe.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -613,7 +617,7 @@
 					<div class="tsd-signature tsd-kind-icon">cache<wbr>Up<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Vector3</span><span class="tsd-signature-symbol"> = new Vector3()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/env-probe/CubeProbe.ts#L7">packages/core/src/env-probe/CubeProbe.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/env-probe/CubeProbe.ts#L7">packages/core/src/env-probe/CubeProbe.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -623,7 +627,7 @@
 					<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = console.log.bind(console)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L7">packages/core/src/base/Logger.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L7">packages/core/src/base/Logger.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -633,7 +637,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Interval<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">500</span><span class="tsd-signature-symbol"> = 500</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L17">packages/core/src/asset/request.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L17">packages/core/src/asset/request.ts:17</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -643,7 +647,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Retry<wbr>Count<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">4</span><span class="tsd-signature-symbol"> = 4</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L15">packages/core/src/asset/request.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L15">packages/core/src/asset/request.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -653,7 +657,7 @@
 					<div class="tsd-signature tsd-kind-icon">default<wbr>Timeout<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">15000</span><span class="tsd-signature-symbol"> = 15000</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L16">packages/core/src/asset/request.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L16">packages/core/src/asset/request.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -663,7 +667,7 @@
 					<div class="tsd-signature tsd-kind-icon">engine<wbr>Feature<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="../classes/core.featuremanager.html" class="tsd-signature-type">FeatureManager</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/core.enginefeature.html" class="tsd-signature-type">EngineFeature</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> = new FeatureManager&lt;EngineFeature&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/Engine.ts#L18">packages/core/src/Engine.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/Engine.ts#L18">packages/core/src/Engine.ts:18</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -678,7 +682,7 @@
 					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = console.error.bind(console)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L10">packages/core/src/base/Logger.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L10">packages/core/src/base/Logger.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -688,7 +692,7 @@
 					<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = console.info.bind(console)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L8">packages/core/src/base/Logger.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L8">packages/core/src/base/Logger.ts:8</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -698,7 +702,7 @@
 					<div class="tsd-signature tsd-kind-icon">pass<wbr>Num<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/RenderPipeline/RenderPass.ts#L9">packages/core/src/RenderPipeline/RenderPass.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/RenderPipeline/RenderPass.ts#L9">packages/core/src/RenderPipeline/RenderPass.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -708,7 +712,7 @@
 					<div class="tsd-signature tsd-kind-icon">skinID<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/mesh/Skin.ts#L4">packages/core/src/mesh/Skin.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/mesh/Skin.ts#L4">packages/core/src/mesh/Skin.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -718,7 +722,7 @@
 					<div class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> = console.warn.bind(console)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L9">packages/core/src/base/Logger.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L9">packages/core/src/base/Logger.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -735,7 +739,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L150">packages/core/src/shaderlib/ShaderLib.ts:150</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L150">packages/core/src/shaderlib/ShaderLib.ts:150</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -758,7 +762,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L77">packages/core/src/base/Util.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L77">packages/core/src/base/Util.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -781,7 +785,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/raycast/index.ts#L126">packages/core/src/raycast/index.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/raycast/index.ts#L125">packages/core/src/raycast/index.ts:125</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -812,7 +816,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/raycast/index.ts#L143">packages/core/src/raycast/index.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/raycast/index.ts#L142">packages/core/src/raycast/index.ts:142</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -841,7 +845,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/raycast/index.ts#L110">packages/core/src/raycast/index.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/raycast/index.ts#L109">packages/core/src/raycast/index.ts:109</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -890,7 +894,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/mesh/MeshRenderer.ts#L11">packages/core/src/mesh/MeshRenderer.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/mesh/MeshRenderer.ts#L11">packages/core/src/mesh/MeshRenderer.ts:11</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -916,7 +920,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/collision/CollisionDetection.ts#L222">packages/core/src/collision/CollisionDetection.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/collision/CollisionDetection.ts#L222">packages/core/src/collision/CollisionDetection.ts:222</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -942,7 +946,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/clone/CloneManager.ts#L28">packages/core/src/clone/CloneManager.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/clone/CloneManager.ts#L28">packages/core/src/clone/CloneManager.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -979,7 +983,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/clone/CloneManager.ts#L52">packages/core/src/clone/CloneManager.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/clone/CloneManager.ts#L52">packages/core/src/clone/CloneManager.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1017,7 +1021,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/ComponentsDependencies.ts#L73">packages/core/src/ComponentsDependencies.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/ComponentsDependencies.ts#L73">packages/core/src/ComponentsDependencies.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1040,7 +1044,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L126">packages/core/src/asset/request.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L126">packages/core/src/asset/request.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1063,7 +1067,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/lighting/LightFeature.ts#L17">packages/core/src/lighting/LightFeature.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/lighting/LightFeature.ts#L17">packages/core/src/lighting/LightFeature.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1086,7 +1090,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/clone/CloneManager.ts#L17">packages/core/src/clone/CloneManager.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/clone/CloneManager.ts#L17">packages/core/src/clone/CloneManager.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1117,7 +1121,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/collision/intersect.ts#L21">packages/core/src/collision/intersect.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/collision/intersect.ts#L21">packages/core/src/collision/intersect.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1155,7 +1159,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/collision/intersect.ts#L49">packages/core/src/collision/intersect.ts:49</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/collision/intersect.ts#L49">packages/core/src/collision/intersect.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1193,7 +1197,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/collision/intersect.ts#L38">packages/core/src/collision/intersect.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/collision/intersect.ts#L38">packages/core/src/collision/intersect.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1231,7 +1235,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L55">packages/core/src/base/Util.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L55">packages/core/src/base/Util.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1260,7 +1264,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L6">packages/core/src/base/Logger.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L6">packages/core/src/base/Logger.ts:6</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1288,7 +1292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L63">packages/core/src/base/Util.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L63">packages/core/src/base/Util.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1325,7 +1329,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L31">packages/core/src/asset/request.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L31">packages/core/src/asset/request.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1368,7 +1372,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L58">packages/core/src/asset/request.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L58">packages/core/src/asset/request.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1400,7 +1404,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L90">packages/core/src/asset/request.ts:90</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L90">packages/core/src/asset/request.ts:90</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -1432,7 +1436,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/ResourceManager.ts#L222">packages/core/src/asset/ResourceManager.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/ResourceManager.ts#L222">packages/core/src/asset/ResourceManager.ts:222</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1472,7 +1476,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/clone/CloneManager.ts#L40">packages/core/src/clone/CloneManager.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/clone/CloneManager.ts#L40">packages/core/src/clone/CloneManager.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1509,7 +1513,7 @@
 					<div class="tsd-signature tsd-kind-icon">Logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L12">packages/core/src/base/Logger.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L12">packages/core/src/base/Logger.ts:12</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1518,7 +1522,7 @@
 						<div class="tsd-signature tsd-kind-icon">debug<span class="tsd-signature-symbol">:</span> <a href="core.html#noop" class="tsd-signature-type">noop</a><span class="tsd-signature-symbol"> = noop</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L13">packages/core/src/base/Logger.ts:13</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L13">packages/core/src/base/Logger.ts:13</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1528,7 +1532,7 @@
 						<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <a href="core.html#noop" class="tsd-signature-type">noop</a><span class="tsd-signature-symbol"> = noop</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L16">packages/core/src/base/Logger.ts:16</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L16">packages/core/src/base/Logger.ts:16</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1538,7 +1542,7 @@
 						<div class="tsd-signature tsd-kind-icon">info<span class="tsd-signature-symbol">:</span> <a href="core.html#noop" class="tsd-signature-type">noop</a><span class="tsd-signature-symbol"> = noop</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L14">packages/core/src/base/Logger.ts:14</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L14">packages/core/src/base/Logger.ts:14</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1548,7 +1552,7 @@
 						<div class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L17">packages/core/src/base/Logger.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L17">packages/core/src/base/Logger.ts:17</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1558,7 +1562,7 @@
 						<div class="tsd-signature tsd-kind-icon">warn<span class="tsd-signature-symbol">:</span> <a href="core.html#noop" class="tsd-signature-type">noop</a><span class="tsd-signature-symbol"> = noop</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L15">packages/core/src/base/Logger.ts:15</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L15">packages/core/src/base/Logger.ts:15</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1572,7 +1576,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L29">packages/core/src/base/Logger.ts:29</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L29">packages/core/src/base/Logger.ts:29</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1594,7 +1598,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Logger.ts#L20">packages/core/src/base/Logger.ts:20</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Logger.ts#L20">packages/core/src/base/Logger.ts:20</a></li>
 									</ul>
 								</aside>
 								<div class="tsd-comment tsd-typography">
@@ -1613,7 +1617,7 @@
 					<div class="tsd-signature tsd-kind-icon">Shader<wbr>Lib<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L74">packages/core/src/shaderlib/ShaderLib.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L74">packages/core/src/shaderlib/ShaderLib.ts:74</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -1622,7 +1626,7 @@
 						<div class="tsd-signature tsd-kind-icon">ambient_<wbr>light_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L101">packages/core/src/shaderlib/ShaderLib.ts:101</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L101">packages/core/src/shaderlib/ShaderLib.ts:101</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1632,7 +1636,7 @@
 						<div class="tsd-signature tsd-kind-icon">begin_<wbr>mobile_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L108">packages/core/src/shaderlib/ShaderLib.ts:108</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L108">packages/core/src/shaderlib/ShaderLib.ts:108</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1642,7 +1646,7 @@
 						<div class="tsd-signature tsd-kind-icon">begin_<wbr>normal_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L109">packages/core/src/shaderlib/ShaderLib.ts:109</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L109">packages/core/src/shaderlib/ShaderLib.ts:109</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1652,7 +1656,7 @@
 						<div class="tsd-signature tsd-kind-icon">begin_<wbr>normal_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L86">packages/core/src/shaderlib/ShaderLib.ts:86</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L86">packages/core/src/shaderlib/ShaderLib.ts:86</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1662,7 +1666,7 @@
 						<div class="tsd-signature tsd-kind-icon">begin_<wbr>position_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L87">packages/core/src/shaderlib/ShaderLib.ts:87</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L87">packages/core/src/shaderlib/ShaderLib.ts:87</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1672,7 +1676,7 @@
 						<div class="tsd-signature tsd-kind-icon">begin_<wbr>viewdir_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L110">packages/core/src/shaderlib/ShaderLib.ts:110</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L110">packages/core/src/shaderlib/ShaderLib.ts:110</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1682,7 +1686,7 @@
 						<div class="tsd-signature tsd-kind-icon">clip<wbr>Plane_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L140">packages/core/src/shaderlib/ShaderLib.ts:140</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L140">packages/core/src/shaderlib/ShaderLib.ts:140</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1692,7 +1696,7 @@
 						<div class="tsd-signature tsd-kind-icon">clip<wbr>Plane_<wbr>frag_<wbr>define<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L139">packages/core/src/shaderlib/ShaderLib.ts:139</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L139">packages/core/src/shaderlib/ShaderLib.ts:139</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1702,7 +1706,7 @@
 						<div class="tsd-signature tsd-kind-icon">clip<wbr>Plane_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L138">packages/core/src/shaderlib/ShaderLib.ts:138</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L138">packages/core/src/shaderlib/ShaderLib.ts:138</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1712,7 +1716,7 @@
 						<div class="tsd-signature tsd-kind-icon">clip<wbr>Plane_<wbr>vert_<wbr>define<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L137">packages/core/src/shaderlib/ShaderLib.ts:137</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L137">packages/core/src/shaderlib/ShaderLib.ts:137</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1722,7 +1726,7 @@
 						<div class="tsd-signature tsd-kind-icon">color_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L79">packages/core/src/shaderlib/ShaderLib.ts:79</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L79">packages/core/src/shaderlib/ShaderLib.ts:79</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1732,7 +1736,7 @@
 						<div class="tsd-signature tsd-kind-icon">color_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L92">packages/core/src/shaderlib/ShaderLib.ts:92</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L92">packages/core/src/shaderlib/ShaderLib.ts:92</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1742,7 +1746,7 @@
 						<div class="tsd-signature tsd-kind-icon">common<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L75">packages/core/src/shaderlib/ShaderLib.ts:75</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L75">packages/core/src/shaderlib/ShaderLib.ts:75</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1752,7 +1756,7 @@
 						<div class="tsd-signature tsd-kind-icon">common_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L77">packages/core/src/shaderlib/ShaderLib.ts:77</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L77">packages/core/src/shaderlib/ShaderLib.ts:77</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1762,7 +1766,7 @@
 						<div class="tsd-signature tsd-kind-icon">common_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L76">packages/core/src/shaderlib/ShaderLib.ts:76</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L76">packages/core/src/shaderlib/ShaderLib.ts:76</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1772,7 +1776,7 @@
 						<div class="tsd-signature tsd-kind-icon">direct_<wbr>light_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L102">packages/core/src/shaderlib/ShaderLib.ts:102</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L102">packages/core/src/shaderlib/ShaderLib.ts:102</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1782,7 +1786,7 @@
 						<div class="tsd-signature tsd-kind-icon">fog_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L106">packages/core/src/shaderlib/ShaderLib.ts:106</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L106">packages/core/src/shaderlib/ShaderLib.ts:106</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1792,7 +1796,7 @@
 						<div class="tsd-signature tsd-kind-icon">fog_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L84">packages/core/src/shaderlib/ShaderLib.ts:84</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L84">packages/core/src/shaderlib/ShaderLib.ts:84</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1802,7 +1806,7 @@
 						<div class="tsd-signature tsd-kind-icon">fog_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L99">packages/core/src/shaderlib/ShaderLib.ts:99</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L99">packages/core/src/shaderlib/ShaderLib.ts:99</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1812,7 +1816,7 @@
 						<div class="tsd-signature tsd-kind-icon">gamma_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L142">packages/core/src/shaderlib/ShaderLib.ts:142</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L142">packages/core/src/shaderlib/ShaderLib.ts:142</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1822,7 +1826,7 @@
 						<div class="tsd-signature tsd-kind-icon">mobile_<wbr>blinnphong_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L112">packages/core/src/shaderlib/ShaderLib.ts:112</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L112">packages/core/src/shaderlib/ShaderLib.ts:112</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1832,7 +1836,7 @@
 						<div class="tsd-signature tsd-kind-icon">mobile_<wbr>lambert_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L113">packages/core/src/shaderlib/ShaderLib.ts:113</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L113">packages/core/src/shaderlib/ShaderLib.ts:113</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1842,7 +1846,7 @@
 						<div class="tsd-signature tsd-kind-icon">mobile_<wbr>material_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L105">packages/core/src/shaderlib/ShaderLib.ts:105</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L105">packages/core/src/shaderlib/ShaderLib.ts:105</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1852,7 +1856,7 @@
 						<div class="tsd-signature tsd-kind-icon">morph_<wbr>target_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L89">packages/core/src/shaderlib/ShaderLib.ts:89</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L89">packages/core/src/shaderlib/ShaderLib.ts:89</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1862,7 +1866,7 @@
 						<div class="tsd-signature tsd-kind-icon">morph_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L98">packages/core/src/shaderlib/ShaderLib.ts:98</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L98">packages/core/src/shaderlib/ShaderLib.ts:98</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1872,7 +1876,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>cellular<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L120">packages/core/src/shaderlib/ShaderLib.ts:120</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L120">packages/core/src/shaderlib/ShaderLib.ts:120</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1882,7 +1886,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>cellular_<wbr>2D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L116">packages/core/src/shaderlib/ShaderLib.ts:116</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L116">packages/core/src/shaderlib/ShaderLib.ts:116</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1892,7 +1896,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>cellular_<wbr>2x2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L117">packages/core/src/shaderlib/ShaderLib.ts:117</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L117">packages/core/src/shaderlib/ShaderLib.ts:117</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1902,7 +1906,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>cellular_<wbr>2x2x2<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L118">packages/core/src/shaderlib/ShaderLib.ts:118</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L118">packages/core/src/shaderlib/ShaderLib.ts:118</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1912,7 +1916,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>cellular_<wbr>3D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L119">packages/core/src/shaderlib/ShaderLib.ts:119</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L119">packages/core/src/shaderlib/ShaderLib.ts:119</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1922,7 +1926,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>common<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L115">packages/core/src/shaderlib/ShaderLib.ts:115</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L115">packages/core/src/shaderlib/ShaderLib.ts:115</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1932,7 +1936,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>perlin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L124">packages/core/src/shaderlib/ShaderLib.ts:124</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L124">packages/core/src/shaderlib/ShaderLib.ts:124</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1942,7 +1946,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>perlin_<wbr>2D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L121">packages/core/src/shaderlib/ShaderLib.ts:121</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L121">packages/core/src/shaderlib/ShaderLib.ts:121</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1952,7 +1956,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>perlin_<wbr>3D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L122">packages/core/src/shaderlib/ShaderLib.ts:122</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L122">packages/core/src/shaderlib/ShaderLib.ts:122</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1962,7 +1966,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>perlin_<wbr>4D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L123">packages/core/src/shaderlib/ShaderLib.ts:123</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L123">packages/core/src/shaderlib/ShaderLib.ts:123</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1972,7 +1976,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>psrd_<wbr>2D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L125">packages/core/src/shaderlib/ShaderLib.ts:125</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L125">packages/core/src/shaderlib/ShaderLib.ts:125</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1982,7 +1986,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>simplex<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L130">packages/core/src/shaderlib/ShaderLib.ts:130</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L130">packages/core/src/shaderlib/ShaderLib.ts:130</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -1992,7 +1996,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>simplex_<wbr>2D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L126">packages/core/src/shaderlib/ShaderLib.ts:126</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L126">packages/core/src/shaderlib/ShaderLib.ts:126</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2002,7 +2006,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>simplex_<wbr>3D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L128">packages/core/src/shaderlib/ShaderLib.ts:128</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L128">packages/core/src/shaderlib/ShaderLib.ts:128</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2012,7 +2016,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>simplex_<wbr>3<wbr>D_<wbr>grad<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L127">packages/core/src/shaderlib/ShaderLib.ts:127</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L127">packages/core/src/shaderlib/ShaderLib.ts:127</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2022,7 +2026,7 @@
 						<div class="tsd-signature tsd-kind-icon">noise_<wbr>simplex_<wbr>4D<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L129">packages/core/src/shaderlib/ShaderLib.ts:129</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L129">packages/core/src/shaderlib/ShaderLib.ts:129</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2032,7 +2036,7 @@
 						<div class="tsd-signature tsd-kind-icon">normal_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L80">packages/core/src/shaderlib/ShaderLib.ts:80</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L80">packages/core/src/shaderlib/ShaderLib.ts:80</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2042,7 +2046,7 @@
 						<div class="tsd-signature tsd-kind-icon">normal_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L93">packages/core/src/shaderlib/ShaderLib.ts:93</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L93">packages/core/src/shaderlib/ShaderLib.ts:93</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2052,7 +2056,7 @@
 						<div class="tsd-signature tsd-kind-icon">oit_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L144">packages/core/src/shaderlib/ShaderLib.ts:144</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L144">packages/core/src/shaderlib/ShaderLib.ts:144</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2062,7 +2066,7 @@
 						<div class="tsd-signature tsd-kind-icon">oit_<wbr>frag_<wbr>define<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L145">packages/core/src/shaderlib/ShaderLib.ts:145</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L145">packages/core/src/shaderlib/ShaderLib.ts:145</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2072,7 +2076,7 @@
 						<div class="tsd-signature tsd-kind-icon">perturbation_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L133">packages/core/src/shaderlib/ShaderLib.ts:133</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L133">packages/core/src/shaderlib/ShaderLib.ts:133</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2082,7 +2086,7 @@
 						<div class="tsd-signature tsd-kind-icon">perturbation_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L132">packages/core/src/shaderlib/ShaderLib.ts:132</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L132">packages/core/src/shaderlib/ShaderLib.ts:132</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2092,7 +2096,7 @@
 						<div class="tsd-signature tsd-kind-icon">point_<wbr>light_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L103">packages/core/src/shaderlib/ShaderLib.ts:103</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L103">packages/core/src/shaderlib/ShaderLib.ts:103</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2102,7 +2106,7 @@
 						<div class="tsd-signature tsd-kind-icon">position_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L91">packages/core/src/shaderlib/ShaderLib.ts:91</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L91">packages/core/src/shaderlib/ShaderLib.ts:91</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2112,7 +2116,7 @@
 						<div class="tsd-signature tsd-kind-icon">refraction_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L135">packages/core/src/shaderlib/ShaderLib.ts:135</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L135">packages/core/src/shaderlib/ShaderLib.ts:135</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2122,7 +2126,7 @@
 						<div class="tsd-signature tsd-kind-icon">refraction_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L134">packages/core/src/shaderlib/ShaderLib.ts:134</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L134">packages/core/src/shaderlib/ShaderLib.ts:134</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2132,7 +2136,7 @@
 						<div class="tsd-signature tsd-kind-icon">shadow_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L83">packages/core/src/shaderlib/ShaderLib.ts:83</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L83">packages/core/src/shaderlib/ShaderLib.ts:83</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2142,7 +2146,7 @@
 						<div class="tsd-signature tsd-kind-icon">shadow_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L97">packages/core/src/shaderlib/ShaderLib.ts:97</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L97">packages/core/src/shaderlib/ShaderLib.ts:97</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2152,7 +2156,7 @@
 						<div class="tsd-signature tsd-kind-icon">skinning_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L94">packages/core/src/shaderlib/ShaderLib.ts:94</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L94">packages/core/src/shaderlib/ShaderLib.ts:94</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2162,7 +2166,7 @@
 						<div class="tsd-signature tsd-kind-icon">spot_<wbr>light_<wbr>frag<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L104">packages/core/src/shaderlib/ShaderLib.ts:104</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L104">packages/core/src/shaderlib/ShaderLib.ts:104</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2172,7 +2176,7 @@
 						<div class="tsd-signature tsd-kind-icon">uv_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L81">packages/core/src/shaderlib/ShaderLib.ts:81</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L81">packages/core/src/shaderlib/ShaderLib.ts:81</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2182,7 +2186,7 @@
 						<div class="tsd-signature tsd-kind-icon">uv_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L95">packages/core/src/shaderlib/ShaderLib.ts:95</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L95">packages/core/src/shaderlib/ShaderLib.ts:95</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2192,7 +2196,7 @@
 						<div class="tsd-signature tsd-kind-icon">worldpos_<wbr>share<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L82">packages/core/src/shaderlib/ShaderLib.ts:82</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L82">packages/core/src/shaderlib/ShaderLib.ts:82</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2202,7 +2206,7 @@
 						<div class="tsd-signature tsd-kind-icon">worldpos_<wbr>vert<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/shaderlib/ShaderLib.ts#L96">packages/core/src/shaderlib/ShaderLib.ts:96</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/shaderlib/ShaderLib.ts#L96">packages/core/src/shaderlib/ShaderLib.ts:96</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2213,7 +2217,7 @@
 					<div class="tsd-signature tsd-kind-icon">Util<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L1">packages/core/src/base/Util.ts:1</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L1">packages/core/src/base/Util.ts:1</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -2222,7 +2226,7 @@
 						<div class="tsd-signature tsd-kind-icon">is<wbr>Array<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">(Anonymous function)</span><span class="tsd-signature-symbol"> = &quot;isArray&quot; in Array? Array.isArray: (value: any): boolean &#x3D;&gt; {return toString.call(value) &#x3D;&#x3D;&#x3D; &quot;[object Array]&quot;;}</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L2">packages/core/src/base/Util.ts:2</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L2">packages/core/src/base/Util.ts:2</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2236,7 +2240,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L11">packages/core/src/base/Util.ts:11</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L11">packages/core/src/base/Util.ts:11</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -2265,7 +2269,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L33">packages/core/src/base/Util.ts:33</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L33">packages/core/src/base/Util.ts:33</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2291,7 +2295,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/base/Util.ts#L8">packages/core/src/base/Util.ts:8</a></li>
+										<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/base/Util.ts#L8">packages/core/src/base/Util.ts:8</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2311,7 +2315,7 @@
 					<div class="tsd-signature tsd-kind-icon">mime<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L3">packages/core/src/asset/request.ts:3</a></li>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L3">packages/core/src/asset/request.ts:3</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -2320,7 +2324,7 @@
 						<div class="tsd-signature tsd-kind-icon">bin<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;arraybuffer&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L9">packages/core/src/asset/request.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L9">packages/core/src/asset/request.ts:9</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2330,7 +2334,7 @@
 						<div class="tsd-signature tsd-kind-icon">gltf<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;json&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L5">packages/core/src/asset/request.ts:5</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L5">packages/core/src/asset/request.ts:5</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2340,7 +2344,7 @@
 						<div class="tsd-signature tsd-kind-icon">jpg<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;image&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L12">packages/core/src/asset/request.ts:12</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L12">packages/core/src/asset/request.ts:12</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2350,7 +2354,7 @@
 						<div class="tsd-signature tsd-kind-icon">json<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;json&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L4">packages/core/src/asset/request.ts:4</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L4">packages/core/src/asset/request.ts:4</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2360,7 +2364,7 @@
 						<div class="tsd-signature tsd-kind-icon">mtl<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;json&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L6">packages/core/src/asset/request.ts:6</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L6">packages/core/src/asset/request.ts:6</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2370,7 +2374,7 @@
 						<div class="tsd-signature tsd-kind-icon">png<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;image&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L10">packages/core/src/asset/request.ts:10</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L10">packages/core/src/asset/request.ts:10</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2380,7 +2384,7 @@
 						<div class="tsd-signature tsd-kind-icon">prefab<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;json&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L7">packages/core/src/asset/request.ts:7</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L7">packages/core/src/asset/request.ts:7</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2390,7 +2394,7 @@
 						<div class="tsd-signature tsd-kind-icon">txt<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;text&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L8">packages/core/src/asset/request.ts:8</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L8">packages/core/src/asset/request.ts:8</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2400,7 +2404,7 @@
 						<div class="tsd-signature tsd-kind-icon">webp<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;image&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/65981e5/packages/core/src/asset/request.ts#L11">packages/core/src/asset/request.ts:11</a></li>
+								<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/88c55b2/packages/core/src/asset/request.ts#L11">packages/core/src/asset/request.ts:11</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -2541,6 +2545,9 @@
 							</li>
 							<li class=" tsd-kind-enum tsd-parent-kind-module">
 								<a href="../enums/core.materialtype.html" class="tsd-kind-icon">Material<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-enum tsd-parent-kind-module">
+								<a href="../enums/core.particlerendererblendmode.html" class="tsd-kind-icon">Particle<wbr>Renderer<wbr>Blend<wbr>Mode</a>
 							</li>
 							<li class=" tsd-kind-enum tsd-parent-kind-module">
 								<a href="../enums/core.primitivetopology.html" class="tsd-kind-icon">Primitive<wbr>Topology</a>
@@ -2759,7 +2766,13 @@
 								<a href="../classes/core.multiexecutor.html" class="tsd-kind-icon">Multi<wbr>Executor</a>
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/core.pbrbasematerial.html" class="tsd-kind-icon">PBRBase<wbr>Material</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/core.pbrmaterial.html" class="tsd-kind-icon">PBRMaterial</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/core.pbrspecularmaterial.html" class="tsd-kind-icon">PBRSpecular<wbr>Material</a>
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/core.particlerenderer.html" class="tsd-kind-icon">Particle<wbr>Renderer</a>
@@ -2928,6 +2941,9 @@
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/core.transform.html" class="tsd-kind-icon">Transform</a>
+							</li>
+							<li class=" tsd-kind-class tsd-parent-kind-module">
+								<a href="../classes/core.unlitmaterial.html" class="tsd-kind-icon">Unlit<wbr>Material</a>
 							</li>
 							<li class=" tsd-kind-class tsd-parent-kind-module">
 								<a href="../classes/core.updateflag.html" class="tsd-kind-icon">Update<wbr>Flag</a>
