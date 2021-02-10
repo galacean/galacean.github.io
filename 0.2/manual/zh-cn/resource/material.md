@@ -32,32 +32,41 @@ const material = renderer.setSharedMaterial(0, material);
 
 
 跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
+引擎提供了 **金属-粗糙度/高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${book.api}classes/core.pbrmaterial.html) 和 [PBRSpecularMaterial](${book.api}classes/core.pbrspecularmaterial.html)。
 
 
-### 常用参数介绍
+### 通用参数介绍
 | 参数 | 应用 |
 | :--- | :--- |
 | 基础颜色（[baseColor](${book.api}classes/core.pbrmaterial.html#basecolor) )| **基础颜色** * **基础颜色纹理** = **最后的基础颜色**。  基础颜色是物体的反照率值,与传统的漫反射颜色不同，它会同时贡献镜面反射和漫反射的颜色，我们可以通过上面提到过的金属度、粗糙度，来控制贡献比。 |
 | 自发光颜色（[emissiveColor](${book.api}classes/core.pbrmaterial.html#emissivecolor)） | 使得即使没有光照也能渲染出颜色。 |
 | 透明度模式（[alphaMode](${book.api}classes/core.pbrmaterial.html#alphamode)） | "AlphaMode.Opaque"：不透明(默认)、"AlphaMode.Blend"：透明、"AlphaMode.CutOff"：透明度裁剪 |
+| 渲染双面（[doublesided](${book.api}classes/core.pbrmaterial.html#doublesided)） | true：渲染双面，不进行裁剪、false：背面裁剪，只渲染正面 |
 | 透明度（[opacity](${book.api}classes/core.pbrmaterial.html#opacity)） | 当设置为透明模式后，可以通过透明度来调整透明度。 |
 | 透明度裁剪值（[alphaCutoff](${book.api}classes/core.pbrmaterial.html#alphacutoff)） | 当设置为透明度裁剪模式后，可以设置裁剪值来指定裁剪小于此数值的片元。 |
-| 不受光（[unLight](${book.api}classes/core.pbrmaterial.html#unlight)） | 当设置为不受光后，材质的表现将和光照无关，只受基础颜色和透明度以及他们的纹理影响。 |
-| 金属度（[metallicFactor](${book.api}classes/core.pbrmaterial.html#metallicfactor)） | 模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
-| 粗糙度（[roughnessFactor](${book.api}classes/core.pbrmaterial.html#roughnessfactor)） | 模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
-| 高光度（[specularColor](${book.api}classes/core.pbrmaterial.html#specularcolor)） | 不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) |
-| 光泽度（[glossinessFactor](${book.api}classes/core.pbrmaterial.html#glossinessfactor)） | 模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
 | 基础颜色纹理（[baseColorTexture](${book.api}classes/core.pbrmaterial.html#basecolortexture)） | 搭配基础颜色使用，是个相乘的关系。 |
 | 透明度纹理（[opacityTexture](${book.api}classes/core.pbrmaterial.html#opacitytexture)） | 搭配透明度使用，是相乘的关系，注意透明度模式的切换。 |
-| 金属粗糙度纹理（[metallicRoughnessTexture](${book.api}classes/core.pbrmaterial.html#metallicroughnesstexture)） | 搭配金属粗糙度使用，是相乘的关系。 |
-| 金属度纹理（[metallicTexture](${book.api}classes/core.pbrmaterial.html#metallictexture)） | 搭配金属度使用，是相乘的关系。 |
-| 粗糙度纹理（[roughnessTexture](${book.api}classes/core.pbrmaterial.html#roughnesstexture)） | 搭配粗糙度使用，是相乘的关系。 |
-| 高光光泽度纹理（[specularGlossinessTexture](${book.api}classes/core.pbrmaterial.html#specularglossinesstexture)） | 搭配高光光泽度使用，是相乘的关系。 |
 | 法线纹理（[normalTexture](${book.api}classes/core.pbrmaterial.html#normaltexture)） | 可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
 | 自发射光纹理（[emissiveTexture](${book.api}classes/core.pbrmaterial.html#emissivetexture)） | 我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${book.api}classes/core.pbrmaterial.html#emissivefactor)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
 | 阴影遮蔽纹理（[occlusionTexture](${book.api}classes/core.pbrmaterial.html#occlusiontexture)） | 我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
-| 是否金属粗糙度工作流（[isMetallicWorkflow](${book.api}classes/core.pbrmaterial.html#ismetallicworkflow)） | 可以切换金属工作流和高光工作流。 |
-| 渲染双面（[doublesided](${book.api}classes/core.pbrmaterial.html#doublesided)） | true：渲染双面，不进行裁剪、false：背面裁剪，只渲染正面 |
+
+
+### 金属-粗糙度 参数介绍
+| 参数 | 应用 |
+| :--- | :--- |
+| 金属度（[metallicFactor](${book.api}classes/core.pbrmaterial.html#metallicfactor)） | 模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
+| 粗糙度（[roughnessFactor](${book.api}classes/core.pbrmaterial.html#roughnessfactor)） | 模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
+| 金属粗糙度纹理（[metallicRoughnessTexture](${book.api}classes/core.pbrmaterial.html#metallicroughnesstexture)） | 搭配金属粗糙度使用，是相乘的关系。 |
+| 金属度纹理（[metallicTexture](${book.api}classes/core.pbrmaterial.html#metallictexture)） | 搭配金属度使用，是相乘的关系。 |
+| 粗糙度纹理（[roughnessTexture](${book.api}classes/core.pbrmaterial.html#roughnesstexture)） | 搭配粗糙度使用，是相乘的关系。 |
+
+### 高光-光泽度 参数介绍
+| 参数 | 应用 |
+| :--- | :--- |
+| 高光度（[specularColor](${book.api}classes/core.pbrspecularmaterial.html#specularcolor)） | 不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) |
+| 光泽度（[glossinessFactor](${book.api}classes/core.pbrspecularmaterial.html#glossinessfactor)） | 模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
+| 高光光泽度纹理（[specularGlossinessTexture](${book.api}classes/core.pbrspecularmaterial.html#specularglossinesstexture)） | 搭配高光光泽度使用，是相乘的关系。 |
+
 
 
 **注：如果您使用了 PBR 材质，千万别忘了往场景中添加一个[EnvironmentMapLight](${book.manual}component/light.md?id=environmentmaplight) ～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。**
@@ -83,7 +92,13 @@ const material = renderer.setSharedMaterial(0, material);
 | 渲染双面（[doublesided](${book.api}classes/core.blinnphongmaterial.html#doublesided)） | true：渲染双面，不进行裁剪、false：背面裁剪，只渲染正面 |
 
 
+##  UnlightMaterial
+在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlightMaterial](${book.api}classes/core.unlightmaterial.html)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
 
+| 参数 | 应用 |
+| :--- | :--- |
+| 基础颜色（[baseColor](${book.api}classes/core.unlightmaterial.html#basecolor) )| **基础颜色 * 基础颜色纹理 = 最后的颜色。** |
+| 基础纹理（[baseColorTexture](${book.api}classes/core.unlightmaterial.html#basecolortexture) )| 搭配基础颜色使用，是个相乘的关系 |
 
 
 # 常见 QA

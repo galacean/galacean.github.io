@@ -10,7 +10,7 @@ const scene = engine.sceneManager.activeScene;
 const root = scene.createRootEntity('root');
 const cubeEntity = root.createChild('cube');
 
-// entity在创建后会默认自带变换组件
+// entity 在创建后会默认自带变换组件
 // 通过变换组件能够对实体进行几何变换
 
 // 修改节点位移，旋转，缩放
@@ -20,14 +20,14 @@ transform.position = new Vector3();
 transform.rotation = new Vector3(90, 0, 0);
 // 也可以 transform.setRotation(90, 0, 0);
 
- // 也可以通过实体的属性获取到transform组件
+// 也可以通过实体的属性获取到 transform 组件
 cubeEntity.transform.scale = new Vector3(2, 1, 1);
 // 也可以 cubeEntity.transform.setScale(2, 1, 1);
 
-// 局部位移cube实体
+// 局部位移 cube 实体
 cubeEntity.transform.translate(new Vector3(10, 0, 0), true);
 
-// 局部旋转cube实体
+// 局部旋转 cube 实体
 cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 
 ```
@@ -53,7 +53,7 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 | 方法名称 | 方法释义 |
 | --- | --- |
 | [getWorldUp](${book.api}classes/core.transform.html#getworldup) | 获取世界矩阵上向量 |
-| [getWorldRight](${book.api}classes/core.transform.html#getworldright) | 获取世界矩阵友向量 |
+| [getWorldRight](${book.api}classes/core.transform.html#getworldright) | 获取世界矩阵右向量 |
 | [getWorldForward](${book.api}classes/core.transform.html#getworldforward) | 获取世界矩阵前向量 |
 | [lookAt](${book.api}classes/core.transform.html#lookat) | 旋转并且保证世界前向量指向目标世界位置 |
 | [registerWorldChangeFlag](${book.api}classes/core.transform.html#registerworldchangeflag) | 注册世界变换改变标记 |

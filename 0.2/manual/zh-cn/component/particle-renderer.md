@@ -24,7 +24,7 @@ particleComp.stop();
 
 ## 属性
 
-粒子渲染器包含生命周期、纹理颜色、变换等属性。
+粒子渲染器包含生命周期、材质、变换等属性。
 
 ### 基础属性 
 - [`maxCount`](${book.api}classes/core.particlerenderer.html#maxcount)：最大粒子数，决定所占内存的大小，需要合理分配。
@@ -33,19 +33,21 @@ particleComp.stop();
 - [`lifetime`](${book.api}classes/core.particlerenderer.html#lifetime)：粒子的生命周期，单位秒。
 - [`startTimeRandomness`](${book.api}classes/core.particlerenderer.html#starttimerandomness)：开始时间随机因子。
 - [`isOnce`](${book.api}classes/core.particlerenderer.html#isonce) ：是否只发射一次，默认 `false` （循环发射）。
+- [`playOnEnable`](${book.api}classes/core.particlerenderer.html#playonenable) ：是否自动播放，默认`true`。
 
-### 纹理颜色
+### 材质
 - [`texture`](${book.api}classes/core.particlerenderer.html#texture) ： 粒子形状贴图。
 - [`color`](${book.api}classes/core.particlerenderer.html#color)：粒子颜色。
-- [`colorRandomness`](${book.api})，颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
-- [`isUseOriginColor`](${book.api}) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色：
+- [`colorRandomness`](${book.api}classes/core.particlerenderer.html#colorrandomness)，颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
+- [`isUseOriginColor`](${book.api}classes/core.particlerenderer.html#isuseorigincolor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色：
 
   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*3Md4RKo0YjsAAAAAAAAAAAAAARQnAQ)
 
-- [`alpha`](${book.api})：透明度。
-- [`alphaRandomness`](${book.api})：透明度随机因子。
-- [`fadeIn`](${book.api}) ：是否添加淡入效果。
-- [`fadeOut`](${book.api}) ：是否添加淡出效果。
+- [`alpha`](${book.api}classes/core.particlerenderer.html#alpha)：透明度。
+- [`alphaRandomness`](${book.api}classes/core.particlerenderer.html#alpharandomness)：透明度随机因子。
+- [`fadeIn`](${book.api}classes/core.particlerenderer.html#isfadein) ：是否添加淡入效果。
+- [`fadeOut`](${book.api}classes/core.particlerenderer.html#isfadeout) ：是否添加淡出效果。
+- [`blendMode`](${book.api}classes/core.particlerenderer.html#blendmode)：混合模式，目前支持 [Transparent](${book.api}enums/core.particlerendererblendmode.html#transparent) 和 [Additive](${book.api}enums/core.particlerendererblendmode.html#additive) 模式，默认`Transparent`。
 
 ### 变换
 - [`position`](${book.api}classes/core.particlerenderer.html#position) ：初始位置。
