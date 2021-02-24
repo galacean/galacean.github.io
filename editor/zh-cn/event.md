@@ -107,7 +107,7 @@ this.engine.trigger(new o3.Event('rotate'));
 ## 事件测试
 在 Oasis Editor 的代码编辑器中，我们提供了一个事件测试面板，用户可以使用它进行事件通信的测试：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1599044791937-31647ce9-0a03-4c54-bbd3-d6a7093ca46b.png#align=left&display=inline&height=895&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1790&originWidth=3356&size=1363512&status=done&style=none&width=1678)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Qg5pQ7cSrC8AAAAAAAAAAAAAARQnAQ)
 
 3D项目中监听的事件会出现在输入事件列表中，触发的事件则会出现在输出事件面板中。
 
@@ -115,8 +115,10 @@ this.engine.trigger(new o3.Event('rotate'));
 
 点击输入事件列表中的事件名右侧的编辑按钮，可以配置事件参数：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1599044901759-50f725c4-bcd4-4352-9005-af569db3df59.png#align=left&display=inline&height=435&margin=%5Bobject%20Object%5D&name=image.png&originHeight=870&originWidth=676&size=66421&status=done&style=none&width=338)![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1599044979832-67e6b78f-99b2-4a86-9f9f-3b8a5219e6b5.png#align=left&display=inline&height=529&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1058&originWidth=1726&size=197306&status=done&style=none&width=863)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cfsMSKvFq3cAAAAAAAAAAAAAARQnAQ)
+
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*24eJSJ2T3oYAAAAAAAAAAAAAARQnAQ)
 
 点击触发按钮事件就被触发了：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1599045076386-223767de-da95-464b-868f-235065d3e3a0.png#align=left&display=inline&height=446&margin=%5Bobject%20Object%5D&name=image.png&originHeight=892&originWidth=682&size=58023&status=done&style=none&width=341)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*GP1cSq2GJuYAAAAAAAAAAAAAARQnAQ)

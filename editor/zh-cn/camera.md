@@ -6,13 +6,13 @@
 
 1. 选中节点，点击添加能力
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/161276/1593659706543-823a6dca-9af1-4f85-b498-d0e5ef6b26fd.png#align=left&display=inline&height=377&margin=%5Bobject%20Object%5D&name=image.png&originHeight=754&originWidth=640&size=146202&status=done&style=none&width=320)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*0DO6SbM7V9AAAAAAAAAAAAAAARQnAQ)
 
 2. 选中相机即可
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/161276/1593659762434-ae95f42c-820c-49ea-96bb-56d4eeaee96d.png#align=left&display=inline&height=298&margin=%5Bobject%20Object%5D&name=image.png&originHeight=446&originWidth=479&size=70097&status=done&style=none&width=320)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*9WfrRp6fLIcAAAAAAAAAAAAAARQnAQ)
 
 
 3. 然后在编辑器里就可以很方便的修改相机属性了
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/161276/1593670162941-ccb157fe-8365-4771-a406-4572bf9dbc39.png#align=left&display=inline&height=247&margin=%5Bobject%20Object%5D&name=image.png&originHeight=260&originWidth=339&size=20642&status=done&style=none&width=322)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*RTmNSL8iDzcAAAAAAAAAAAAAARQnAQ)

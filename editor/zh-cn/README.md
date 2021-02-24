@@ -19,7 +19,7 @@
 ### 场景编辑器
 职责是场景创作，完成场景节点的摆放、材质编辑、组件绑定等操作。由六个窗口区域构成：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1597840655034-7ed27cce-8ba7-4b1b-bfe1-bdef2f7849ff.png#align=left&display=inline&height=981&margin=%5Bobject%20Object%5D&name=image.png&originHeight=981&originWidth=1532&size=406207&status=done&style=none&width=1532)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*bNcGQaqCWkkAAAAAAAAAAAAAARQnAQ)
 
 
 1. **工具窗口：**包括属性可视化操作工具（节点平移、旋转、缩放）、撤销、重做等功能。
@@ -32,7 +32,7 @@
 ###  代码编辑器
 职责是完成场景里通过代码实现的功能，比如编写[脚本组件](${book.manual}component/script.md)、[自定义 Shader](${book.manual}resource/shader.md) 等。由4个窗口区域构成：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1597841666840-2981a259-694b-4663-85f9-ced0a49bda7a.png#align=left&display=inline&height=986&margin=%5Bobject%20Object%5D&name=image.png&originHeight=986&originWidth=1528&size=277039&status=done&style=none&width=1528)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*ppQYQIqlUk8AAAAAAAAAAAAAARQnAQ)
 
 1. **文件目录窗口：**展示当前项目中所有的代码目录。
 2. **代码编辑器区：**编写脚本组件、自定义 Shader，支持 Typescript 及引擎代码提示，支持 vim 模式编辑。

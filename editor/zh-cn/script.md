@@ -6,21 +6,21 @@
 
 你可以在资源面板中的右上角通过点击 *资源面板 > +* 来创建一份组件脚本。此时你会在你的资源编辑器中得到一份新的脚本：
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1602495944812-acad3d5b-d509-4dd7-b9af-814b7fdb285b.png#align=left&display=inline&height=206&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-10-12%20%E4%B8%8B%E5%8D%885.45.41.png&originHeight=206&originWidth=936&size=10671&status=done&style=none&width=936)
+![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*sR34TI55SpwAAAAAAAAAAAAAARQnAQ)
 
 ## 2. 添加脚本到实体
 
 选择一个实体，在右侧的**实体检查器**中点击 **添加组件 > 脚本**，选择刚才我们创建的脚本：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1593673965869-b8275542-259a-463d-969e-111941b7e1bf.png#align=left&display=inline&height=557&margin=%5Bobject%20Object%5D&name=image.png&originHeight=646&originWidth=558&size=160658&status=done&style=none&width=481)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*VHmAQaXgzw8AAAAAAAAAAAAAARQnAQ)
 
 这样脚本就挂在到我们的实体上：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1593674018150-1d2e830f-8514-4490-9b90-31f79f3defe1.png#align=left&display=inline&height=377&margin=%5Bobject%20Object%5D&name=image.png&originHeight=356&originWidth=353&size=36409&status=done&style=none&width=374)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*x7XVSZmC5hkAAAAAAAAAAAAAARQnAQ)
 
 有时候我们我们会觉得先创建再添加有点繁琐，也可以选择在添加时直接新建脚本：
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1602496330750-f9264452-172d-40bd-aca4-086c68231b09.png#align=left&display=inline&height=560&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-10-12_%E4%B8%8B%E5%8D%885_46_28.png&originHeight=560&originWidth=612&size=57739&status=done&style=none&width=612)
+![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*TeVWT7-NjUQAAAAAAAAAAAAAARQnAQ)
 
 ## 3. 编辑脚本
 
@@ -76,7 +76,7 @@ export class Script1250228 extends Script {
 
 进入代码编辑界面之后，用户就可以根据自己的需求在提供的生命周期回调函数中实现自己的需求了。修改完毕后，按 `Ctrl+S` 保存右侧的预览面板会自动刷新。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1602495699185-84af04ac-9d00-4a4e-88b1-3b4159dcb052.png#align=left&display=inline&height=856&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-10-12%20%E4%B8%8B%E5%8D%885.41.34.png&originHeight=856&originWidth=1354&size=163651&status=done&style=none&width=1354)
+![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*9UMvS6MTCIAAAAAAAAAAAAAAARQnAQ)
 
 
 

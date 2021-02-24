@@ -10,7 +10,7 @@
 
 使用 Oasis Editor 导出项目非常简单，只需要点击编辑器右上角的 *下载项目按钮* 即可：
 
-![image](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1596613890072-022388a1-40a3-42aa-a73e-563ce35be7f2.png?x-oss-process=image%2Fresize%2Cw_1500#align=left&display=inline&height=948&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1896&originWidth=3358&size=1690016&status=done&style=none&width=1679)
+![image](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*bQXuQqaJMQcAAAAAAAAAAAAAARQnAQ)
 
 Oasis Editor 目前提供三种框架模板的导出，分别为：
 
@@ -22,13 +22,13 @@ Oasis Editor 目前提供三种框架模板的导出，分别为：
 
 
 
-![image](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/6148/1599116323592-c3177d1f-0a11-4678-8058-2b4c2f7382dd.png#align=left&display=inline&height=281&margin=%5Bobject%20Object%5D&name=%E6%88%AA%E5%B1%8F2020-09-03%20%E4%B8%8B%E5%8D%882.58.39.png&originHeight=281&originWidth=517&size=21931&status=done&style=none&width=517)
+![image](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*-at1RLaE5PMAAAAAAAAAAAAAARQnAQ)
 
 
 
 以 React Component 为例，zip 解压之后目录结构如下：
 
-![image](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1599045955874-0b54d0f9-d6b5-444c-a39b-9d1449c53ace.png#align=left&display=inline&height=315&margin=%5Bobject%20Object%5D&name=image.png&originHeight=630&originWidth=562&size=133768&status=done&style=none&width=281)
+![image](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*_DPwRrU1X0gAAAAAAAAAAAAAARQnAQ)
 
 
 
@@ -159,5 +159,5 @@ tnpm run dev
 
 一切顺利的话，你的项目就展示在浏览器中：
 
-![image](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/18082/1596616065302-ae2121de-5835-4b0e-9071-d3be63e95bae.png?x-oss-process=image%2Fresize%2Cw_1500#align=left&display=inline&height=371&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1860&originWidth=3358&size=246355&status=done&style=none&width=669)
+![image](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*oEv0S7CMX5MAAAAAAAAAAAAAARQnAQ)
 
