@@ -2,7 +2,7 @@
 
 射线可以理解成 3D 世界中一个点向一个方向发射的一条无终点的线。射线投射在 3D 应用中非常广泛。通过射线投射，可以在用户点击屏幕时，拾取 3D 场景中的物体；也可以在射击游戏中，判断子弹能否射中目标。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2019/png/161276/1566567969808-796f776a-96eb-4be1-bd50-5bfda698329d.png#align=left&display=inline&height=247&margin=%5Bobject%20Object%5D&name=image.png&originHeight=294&originWidth=554&size=43365&status=done&style=none&width=465)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*sr_IRYSLugMAAAAAAAAAAAAAARQnAQ)
 （_图片来源于网络_）
 
 **Ray** 模块提供了方便好用的射线检测功能。

@@ -1,6 +1,6 @@
 # 材质
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1578983052725-b7a50b9c-cf8c-4f84-b451-085efdbd83de.png?x-oss-process=image%2Fresize%2Cw_1492#align=left&display=inline&height=1056&margin=%5Bobject%20Object%5D&originHeight=1056&originWidth=1492&status=done&style=none&width=1492)
+![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cz-ESaYIiGsAAAAAAAAAAAAAARQnAQ)
 
 ## 如何使用材质
 用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${book.manual}resource/resource-manager.md?id=_5-gltf)或者[编辑器](https://oasistwa.alipay.com/3d/projects)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。

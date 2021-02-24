@@ -10,21 +10,21 @@
 ### 1. 2D纹理
 2D 纹理（[Texture2D](${book.api}sses/core.texture2d.html)）是最常用的美术资源，使用二维 UV  坐标进行采样，如下图：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1594007441112-b94629f3-f8ac-47c2-b3b2-fb299158cc60.png#align=left&display=inline&height=136&margin=%5Bobject%20Object%5D&name=image.png&originHeight=210&originWidth=598&size=98914&status=done&style=none&width=388)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*tmTkSLi0XJ8AAAAAAAAAAAAAARQnAQ)
 
 
 #### 2. 立方纹理
 
 立方纹理（[TextureCubeMap](${book.api}classes/core.texturecubemap.html)）和 2D 纹理的区别是它有6个面，即用 6 张 2D 纹理组成了一个立方纹理。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593763468307-ccfaaa05-e41b-4872-8bbe-80d7a0753942.png#align=left&display=inline&height=163&margin=%5Bobject%20Object%5D&name=image.png&originHeight=342&originWidth=345&size=50808&status=done&style=none&width=164)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Omw8Qo0WzfYAAAAAAAAAAAAAARQnAQ)
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593763480438-03b68774-5dc8-4109-b8f1-90285858e448.png#align=left&display=inline&height=263&margin=%5Bobject%20Object%5D&name=image.png&originHeight=323&originWidth=345&size=81333&status=done&style=none&width=281)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*r-XPSaUTEnEAAAAAAAAAAAAAARQnAQ)
 
 
 立方纹理和 2D 纹理的底层采样方式略有不同，纹理使用二维坐标进行采样，而立方纹理使用三维坐标，即 *方向向量* 进行采样，如使用一个橘黄色的方向向量来从立方纹理上采样一个纹理值会像是这样：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593763385612-110879f2-221e-43e7-bb48-3889dd3304f3.png#align=left&display=inline&height=179&margin=%5Bobject%20Object%5D&name=image.png&originHeight=358&originWidth=400&size=25350&status=done&style=none&width=200)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*X752S5pQSB0AAAAAAAAAAAAAARQnAQ)
 
 正因为这种采样特性，所以立方纹理可以用来实现天空盒、环境反射等特效。
 
@@ -96,18 +96,18 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
 - 截取模式（Clamp）：超出范围采样边缘纹素。
 
-    ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593768696379-5145cb50-f2e3-4f4d-922d-c07030657ce4.png#align=left&display=inline&height=164&margin=%5Bobject%20Object%5D&name=image.png&originHeight=328&originWidth=336&size=51338&status=done&style=shadow&width=168)
+    ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*zXIGR6-vAzQAAAAAAAAAAAAAARQnAQ)
 
    
 
 - 重复模式（Repeat）：超出范围从 [0,1] 开始重新采样
 
-    ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593768761775-b39f851c-e74a-4d43-8165-41114a4194e4.png#align=left&display=inline&height=164&margin=%5Bobject%20Object%5D&name=image.png&originHeight=328&originWidth=336&size=162799&status=done&style=shadow&width=168)
+    ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*uAy_Q4C6WL8AAAAAAAAAAAAAARQnAQ)
 
 
 - 镜像重复模式（Mirror）：超出范围从 [1,0] 开始镜像采样。
 
-   ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593768785455-7973bad4-47b3-4756-afe4-fc52ec018919.png#align=left&display=inline&height=164&margin=%5Bobject%20Object%5D&name=image.png&originHeight=328&originWidth=336&size=195836&status=done&style=shadow&width=168)
+   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*RI_hTpGzpjwAAAAAAAAAAAAAARQnAQ)
 
 
 ### 2. 过滤模式
@@ -120,17 +120,17 @@ texture.filterMode = TextureFilterMode.Bilinear;
 
 - 点过滤（Point）：使用距离采样点最近的纹素。
 
-   ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593770442636-2b616531-bdba-4c56-8d8d-19202a51f10e.png#align=left&display=inline&height=152&margin=%5Bobject%20Object%5D&name=image.png&originHeight=304&originWidth=484&size=296409&status=done&style=none&width=242)
+   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*n_Z3Tq5uBH8AAAAAAAAAAAAAARQnAQ)
 
 
 - 双线性过滤（Bilinear）：使用距离最近的2*2纹素矩阵的平均值。
 
-   ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593770416087-c7fd5514-6f48-48bc-9d3e-8c83cc243b1c.png#align=left&display=inline&height=147&margin=%5Bobject%20Object%5D&name=image.png&originHeight=294&originWidth=482&size=281328&status=done&style=none&width=241)
+   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*5W-wT6OHhqMAAAAAAAAAAAAAARQnAQ)
 
 
 - 三线性过滤（Trilinear）：在双线性过滤的基础上，对 mipmap 层级也进行了平均值过滤。
 
-   ![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593770374978-6d389237-db63-4695-913e-2a8c5e40e106.png#align=left&display=inline&height=154&margin=%5Bobject%20Object%5D&name=image.png&originHeight=308&originWidth=488&size=330217&status=done&style=none&width=244)
+   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lVd1QqdzDhMAAAAAAAAAAAAAARQnAQ)
 
 
 
@@ -138,7 +138,7 @@ texture.filterMode = TextureFilterMode.Bilinear;
 
 各向异性过滤技术可以使纹理在倾斜角度下观看会更加清晰。如下图，纹理的尽头随着各向异性过滤等级的增加会愈加清晰。
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593770944716-3b36089c-45ca-4534-8610-71c6786cd613.png#align=left&display=inline&height=152&margin=%5Bobject%20Object%5D&name=image.png&originHeight=304&originWidth=1474&size=867575&status=done&style=none&width=737)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*oqkqSJMAe7cAAAAAAAAAAAAAARQnAQ)
 
 ```typescript
 texture.anisoLevel = 4; // 1~16
@@ -150,7 +150,7 @@ texture.anisoLevel = 4; // 1~16
 
 **引擎默认开启 [mipmap](${book.api}classes/core.texture.html#generatemipmaps)**（多级纹理渐变），mipmap 用来解决从低分辨率屏幕中采样高分辨率纹理时的精度和性能问题，即能在合适的距离时选取不同分辨率的纹理，如下图：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593838642320-03ac8607-01bb-4930-97e5-eab145f92a43.png#align=left&display=inline&height=200&margin=%5Bobject%20Object%5D&name=image.png&originHeight=200&originWidth=300&size=137064&status=done&style=none&width=300)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mTBvTJ7Czt4AAAAAAAAAAAAAARQnAQ)
 
 需要注意的是，WebGL2.0 支持**任意分辨率**的纹理，会根据 [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) 算法进行一层层的mip，但是如果您的环境是在 WebGL1.0 环境，那么请务必上传**2次幂纹理**，如 1024 * 512 这种分辨率的纹理,否则 Oasis 会检测到环境不可使用 mipmap，自动降级关闭 mipmap 功能，在视觉上带来一些意外情况。
 
@@ -209,7 +209,7 @@ material.baseColorTexture = texture;
 
 天空盒需要使用一张立方纹理,即将天空盒的6个面都赋予纹理，效果如下：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593845495289-f2aa8132-8c52-41f8-a811-f22af5310c21.png#align=left&display=inline&height=509&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1018&originWidth=1614&size=1921373&status=done&style=none&width=807)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*K0fcT5IMQ9gAAAAAAAAAAAAAARQnAQ)
 
 ```typescript
 const skybox = skyNode.addComponent(ASkyBox);
@@ -220,7 +220,7 @@ skybox.skyBoxMap = cubeTexture;
 
 在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得往场景中添加 EnvironmentMapLight 组件，底层使用环境反射 IBL（基于图像的照明） 技术。EnvironmentMapLight 需要一张立方纹理当作镜面反射环境贴图，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/204641/1593846150274-a271fa23-4645-48bf-bd83-dc03bf1eb6b6.png#align=left&display=inline&height=506&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1012&originWidth=1606&size=2042442&status=done&style=none&width=803)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*uOdnTZ9R2j4AAAAAAAAAAAAAARQnAQ)
 
 EnvironmentMapLight 对应引擎的组件为 [EnvironmentMapLight](${book.api}classes/core.environmentmaplight.html)
 

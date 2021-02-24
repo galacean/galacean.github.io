@@ -81,7 +81,7 @@ const material = new Material(engine, Shader.find("demo"));
 除了内置的变量，我们可以在 shader 中上传任何自定义名字的变量(建议使用 u_** 、 v_** 分别表示 uniform、varying变量)，我们唯一要做的就是根据 shader 的变量类型，使用正确的接口。
 上传接口全部保存在 [ShaderData](${book.api}classes/core.shaderdata.html) 中，而 shaderData 实例对象又分别保存在引擎的四大类 [Scene](${book.api}classes/core.scene.html)、[Camera](${book.api}classes/core.camera.html)、[Renderer](${book.api}classes/core.renderer.html)、[Material](${book.api}classes/core.material.html) 中，我们只需要分别往这些 shaderData 中调用接口，上传变量，引擎便会在底层自动帮我们组装这些数据，并进行判重等性能的优化。
 
-![](https://intranetproxy.alipay.com/skylark/lark/0/2021/png/204641/1611543397728-4ca7ea51-97ca-481f-95c2-3e867b726fcb.png?x-oss-process=image%2Fresize%2Cw_1492)
+![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*yR97QbVx-QwAAAAAAAAAAAAAARQnAQ)
 
 ### shaderData 分开的好处
 shaderData 分别保存在引擎的四大类 [Scene](${book.api}classes/core.scene.html)、[Camera](${book.api}classes/core.camera.html)、[Renderer](${book.api}classes/core.renderer.html)、[Material](${book.api}classes/core.material.html) 中，这样做的好处之一就是底层可以根据上传时机上传某一块 uniform，提升性能；另外，将材质无关的 shaderData 剥离出来，可以实现共享材质，比如两个 renderer ，共享了一个材质，虽然都要操控同一个 shader，但是因为这一部分 shader 数据的上传来源于两个 renderer 的 shaderData，所以是不会影响彼此的渲染结果的。

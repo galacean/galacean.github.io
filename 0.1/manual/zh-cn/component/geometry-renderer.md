@@ -5,7 +5,7 @@
 ## 原理图
 我们先概览一下 `BufferGeometry`  的原理图
 
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/294833/1601286204460-45dc15d9-02e2-41d1-b871-b41ea73defe6.png#align=left&display=inline&height=851&margin=%5Bobject%20Object%5D&name=image.png&originHeight=851&originWidth=1917&size=416754&status=done&style=none&width=1917)
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*pYFLSIbNKZYAAAAAAAAAAAAAARQnAQ)
 
 使用 `GeometryRenderer` 最为关键的一点就是 `BufferGeometry` ，而 `BufferGeometry` 有三大核心元素分别是：
 
