@@ -6,7 +6,7 @@
 
 ## 代码示例
 
-```TypeScript
+```typescript
 const entity = rootEntity.createChild('mesh-example');
 const meshRenderer = entity.addComponent(MeshRenderer);
 
@@ -50,7 +50,7 @@ meshRenderer.setMaterial(new UnlitMaterial());
 
 [SubMesh](${book.api}classes/core.submesh.html) 包含了主要的绘制信息。调用 [addSubMesh](${book.api}classes/core.modelmesh.html#addsubmesh) 添加。
 
-```TypeScript
+```typescript
 modelMesh.addSubMesh(new SubMesh(0, 2, MeshTopology.Triangles));
 ```
 
@@ -58,7 +58,7 @@ modelMesh.addSubMesh(new SubMesh(0, 2, MeshTopology.Triangles));
 
 **注意要调用 `set` 方法**
 
-```TypeScript
+```typescript
 const positions = modelMesh.getPositions();
 positions.push(
   new Vector3(-1.0, -1.0,  1.0),
@@ -103,13 +103,13 @@ modelMesh.setColors(
 
 如果不再需要修改 `ModelMesh` 数据：
 
-``` TypeScript
+``` typescript
 modelMesh.uploadData(false);
 ```
 
 如果需要持续修改 `ModelMesh` 数据：
 
-``` TypeScript
+``` typescript
 modelMesh.uploadData(true);
 ```
 
