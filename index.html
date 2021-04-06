@@ -79,7 +79,7 @@
       var OASIS_LANG = localStorage.getItem('oasis-doc-lang') || 'zh-cn';
       var href = window.location.href;
       var versionRegResult = /\d+[.]\d+([.]\d+)?/.exec(href);
-      var OASIS_VERSION = (versionRegResult && versionRegResult[0]) || '0.2';
+      var OASIS_VERSION = (versionRegResult && versionRegResult[0]) || '0.3';
       
       function replaceLink (link, from, to) {
         var url = link.getAttribute('href');
