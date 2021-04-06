@@ -118,6 +118,9 @@
                 href = href.replace('${book.manual}', `/${OASIS_VERSION}/manual/${window.$docsify.lang}/`)
                 href = `#${href.replace('.md', '')}`
                 return `<a href="${href}">${text}</a>`
+              } else if (href.indexOf('${book.playground}') > -1) {
+                href = href.replace('${book.playground}', `/${OASIS_VERSION}/playground/`)
+                return `<a href="${href}">${text}</a>`
               }
               if (href.indexOf('${book.editor}') > -1) {
                 // handle api url

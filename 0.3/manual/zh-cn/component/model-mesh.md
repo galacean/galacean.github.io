@@ -2,7 +2,7 @@
 
 `ModelMesh` 是为开发者快速自定义网格设计的类，简单易用。可以方便地定义顶点、顶点索引、颜色、UV、法线等信息。
 
-使用案例可以参考[Playground](${book.playground}/#/modelmesh)。
+使用案例可以参考[Playground](${book.playground}#/modelmesh)。
 
 ## 代码示例
 
