@@ -2,6 +2,8 @@
 
 Oasis Engine 中的骨骼动画通过 glTF 模型（相关教程请参考[资源加载](${book.manual}resource/resource-manager)）的动画组件（[Animation](${book.api}classes/core.animationclip.html)）获得，动画组件中包含多个动画片段（[AnimationClip](${book.api}classes/core.animation.html)），动画组件可以控制动画片段的播放。
 
+使用案例可以参考[Playground](${book.playground}#/skeleton-animation)。
+
 ```typescript
 // 在脚本组件中使用
 class ResourceScript extends Script {
@@ -44,7 +46,7 @@ animator.playAnimationClip('walk', {
 
 ### 动画融合
 
-实现两个动画之间的平滑切换。例如一个角色从步行动画切换到待机动画，直接切换会有明显的跳帧，使用动画混合可以平滑地从上一个动作切换到下一个动作。 通过 `Animation`  组件的 [`crossFade`](${book.api}classes/core.animation.html#crossfade)  接口实现动画融合切换。
+实现两个动画之间的平滑切换。例如一个角色从步行动画切换到待机动画，直接切换会有明显的跳帧，使用动画混合可以平滑地从上一个动作切换到下一个动作。 通过 `Animation`  组件的 [`crossFade`](${book.api}classes/core.animation.html#crossfade)  接口实现动画融合切换。使用案例可以参考[Playground](${book.playground}#/animation-cross-fade)
 
 ```typescript
 // 先让角色播放步行（‘walk’）动画

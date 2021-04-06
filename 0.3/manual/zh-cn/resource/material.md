@@ -1,9 +1,9 @@
 # 材质
-
 ![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cz-ESaYIiGsAAAAAAAAAAAAAARQnAQ)
 
 ## 如何使用材质
-用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${book.manual}resource/resource-manager.md?id=_5-gltf)或者[编辑器](https://oasistwa.alipay.com/3d/projects)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
+用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${book.manual}resource/resource-manager.md?id=_5-gltf)或者[编辑器](https://oasistwa.alipay.com/3d/projects)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。使用案例可以参考[Playground](${book.playground}#/pbr)
+
 ```typescript
 // 获取想要修改的 renderer
 const renderer = entity.getComponent(MeshRenderer);
@@ -44,7 +44,8 @@ const material = renderer.setMaterial(material);
 
 
 跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
-引擎提供了 **金属-粗糙度/高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${book.api}classes/core.pbrmaterial.html) 和 [PBRSpecularMaterial](${book.api}classes/core.pbrspecularmaterial.html)。
+
+引擎提供了 **金属-粗糙度/高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${book.api}classes/core.pbrmaterial.html) 和 [PBRSpecularMaterial](${book.api}classes/core.pbrspecularmaterial.html)。使用案例可以参考[Playground](${book.playground}#/pbr-base)
 
 
 ### 通用参数介绍
@@ -58,7 +59,7 @@ const material = renderer.setMaterial(material);
 | 法线纹理（[normalTexture](${book.api}classes/core.pbrbasematerial.html#normaltexture)） | 可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
 | 自发射光纹理（[emissiveTexture](${book.api}classes/core.pbrbasematerial.html#emissivetexture)） | 我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${book.api}classes/core.pbrbasematerial.html#emissivefactor)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
 | 阴影遮蔽纹理（[occlusionTexture](${book.api}classes/core.pbrbasematerial.html#occlusiontexture)） | 我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
-| 纹理坐标的缩放与偏移（[tilingOffset](${book.api}classes/core.pbrbasematerial.html#tilingoffset)） | 是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
+| 纹理坐标的缩放与偏移（[tilingOffset](${book.api}classes/core.pbrbasematerial.html#tilingoffset)） | 是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。使用案例可以参考[Playground](${book.playground}#/material-tilingoffset)|
 
 ### 金属-粗糙度模式 参数介绍
 | 参数 | 应用 |

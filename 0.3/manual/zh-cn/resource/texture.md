@@ -3,7 +3,7 @@
 纹理（[Texture](${book.api}classes/core.texture.html)）, 是在 3D 渲染中最常用到的资源。我们在给模型着色时，需要给每个片元设置一个颜色值，这个色值除了直接手动设置，我们还可以选择从纹理中读取纹素来进行着色，来达到更加丰富的美术效果。
 
 
-值得注意的是，图片、canvas 画布、原始数据、视频等都可以用来当作纹理，Oasis 引擎目前支持所有 WebGL 标准的纹理。
+值得注意的是，图片、canvas 画布、原始数据、视频（参考案例 [Playground](${book.playground}#/video-texture)）等都可以用来当作纹理，Oasis 引擎目前支持所有 WebGL 标准的纹理。
 
 ## 纹理类型
 

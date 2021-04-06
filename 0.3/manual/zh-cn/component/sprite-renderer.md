@@ -1,6 +1,6 @@
 # 图片显示
 
-[SpriteRenderer](${book.api}classes/core.spriterenderer.html) 组件用于在 3D/2D 场景中显示图片。完整使用示例见 [playgournd](https://oasisengine.cn/0.3/playground/#/sprite-renderer)
+[SpriteRenderer](${book.api}classes/core.spriterenderer.html) 组件用于在 3D/2D 场景中显示图片。完整使用示例见 [playgournd](${book.playground}#/sprite-renderer)
 
 ## 基本使用
 
@@ -73,6 +73,8 @@ engine.resourceManager
   });
 ```
 
+使用案例可以参考[Playground](${book.playground}#/sprite-flip)。
+
 ## 设置颜色
 
 可以通过设置 color 属性来调整颜色，从而实现一些淡入淡出的效果，如下：
@@ -107,3 +109,9 @@ engine.resourceManager
     spriteRenderer.color.setValue(1, 0, 0, 1);
   });
 ```
+
+使用案例可以参考[Playground](${book.playground}#/sprite-color)。
+
+## 自定义材质
+
+SpriteRenderer 的自定义材质的使用方法和 MeshRenderer 的一样，请参考[自定义材质](${book.manual}resource/custom-material.md)文档。使用案例可以参考[Playground](${book.playground}#/sprite-material)。

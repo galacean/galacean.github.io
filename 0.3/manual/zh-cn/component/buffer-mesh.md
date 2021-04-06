@@ -1,4 +1,6 @@
 # BufferMesh
+
+使用案例可以参考[Playground](${book.playground}#/buffer-mesh)。
 ## 原理图
 我们先概览一下 `BufferMesh`  的原理图
 

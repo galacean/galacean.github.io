@@ -1,6 +1,6 @@
 # 自定义材质
 
-业务中可能有一些特殊的渲染需求，例如水流特效，这时候就需要“自定义材质”去实现。通过使用 __material__ 这个模块中的 [Material](${book.api}classes/core.material.html) 和 [Shader](${book.api}classes/core.shader.html) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。
+业务中可能有一些特殊的渲染需求，例如水流特效，这时候就需要“自定义材质”去实现。通过使用 __material__ 这个模块中的 [Material](${book.api}classes/core.material.html) 和 [Shader](${book.api}classes/core.shader.html) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。使用案例可以参考[Playground](${book.playground}#/shader-water)
 
 ![avatar](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_LPIS5lrGUUAAAAAAAAAAAAAARQnAQ)
 
@@ -105,16 +105,16 @@ shader 中变量的类型和调用的接口对应关系如下:
 
 | shader 类型 | ShaderData API |
 | :--- | :--- | :--- |
-| bool 、 int  | setInt( value: number ) |
-| float | setFloat( value: number ) |
-| bvec2、ivec2、vec2 | setVector2( value:Vector2 ) |
-| bvec3、ivec3、vec3 | setVector3( value:Vector3 ) |
-| bvec4、ivec4、vec4 | setVector4( value:Vector4 ) |
-| mat4 | setMatrix( value:Matrix ) |
-| float[] 、vec2[] 、vec3[]、 vec4[] 、mat4[] | setFloatArray( value:Float32Array ) |
-| bool[]、 int[] 、bvec2[]、 bvec3[] 、bvec4[]、 ivec2[]、 ivec3[] 、ivec4[] | setIntArray( value:Int32Array ) |
-| sampler2D 、 samplerCube | setTexture( value:Texture ) |
-| sampler2D[] 、 samplerCube[] | setTextureArray( value:Texture[] ) |
+| `bool` 、 `int`  | setInt( value: number ) |
+| `float` | setFloat( value: number )` |
+| `bvec2`、`ivec2`、`vec2` | setVector2( value:Vector2 ) |
+| `bvec3`、`ivec3`、`vec3` | setVector3( value:Vector3 ) |
+| `bvec4`、`ivec4`、`vec4` | setVector4( value:Vector4 ) |
+| `mat4` | setMatrix( value:Matrix ) |
+| `float[]` 、`vec2[]` 、`vec3[]`、 `vec4[]` 、`mat4[]` | setFloatArray( value:Float32Array ) |
+| `bool[]`、 `int[]` 、`bvec2[]`、 `bvec3[]` 、`bvec4[]`、 `ivec2[]`、 `ivec3[]` 、`ivec4[]` | setIntArray( value:Int32Array ) |
+| `sampler2D` 、 `samplerCube` | setTexture( value:Texture ) |
+| `sampler2D[]` 、 `samplerCube[]` | setTextureArray( value:Texture[] ) |
 
 代码演示如下：
 ```

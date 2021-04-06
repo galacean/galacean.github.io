@@ -22,6 +22,8 @@ controler.maxDistance = 50;
 
 [FreeControl](${book.api}classes/controls.freecontrol.html) 一般用于漫游控制，常见于游戏场景：
 
+使用案例可以参考[Playground](${book.playground}#/controls-free)。
+
 ```typescript
 import { Camera } from 'oasis-engine';
 import { FreeControl } from '@oasis-engine/controls';

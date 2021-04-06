@@ -1,6 +1,6 @@
 # 基础几何体
 
-常用几何体统一在 [PrimitiveMesh](${book.api}classes/core.primitivemesh.html) 中提供，目前提供的几何体如下，完整使用示例见 [playgournd](https://oasisengine.cn/0.3/playground/#/primitive-mesh)
+常用几何体统一在 [PrimitiveMesh](${book.api}classes/core.primitivemesh.html) 中提供，目前提供的几何体如下，完整使用示例见 [playgournd](${book.playground}#/primitive-mesh)
 
 - [createCuboid](${book.api}classes/core.primitivemesh.html) **立方体**
 

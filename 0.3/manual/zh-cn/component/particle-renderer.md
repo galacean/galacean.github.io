@@ -38,11 +38,11 @@ particleComp.stop();
 ### 材质
 - [`texture`](${book.api}classes/core.particlerenderer.html#texture) ： 粒子形状贴图。
 - [`color`](${book.api}classes/core.particlerenderer.html#color)：粒子颜色。
-- [`colorRandomness`](${book.api}classes/core.particlerenderer.html#colorrandomness)，颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
+- [`colorRandomness`](${book.api}classes/core.particlerenderer.html#colorrandomness)：颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
 - [`isUseOriginColor`](${book.api}classes/core.particlerenderer.html#isuseorigincolor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色：
 
   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*3Md4RKo0YjsAAAAAAAAAAAAAARQnAQ)
-
+- [`spriteSheet`](${book.api}classes/core.particlerenderer.html#spritesheet)：精灵图表，使用案例可以参考[Playground](${book.playground}#/particle-renderer-spritesheet)
 - [`alpha`](${book.api}classes/core.particlerenderer.html#alpha)：透明度。
 - [`alphaRandomness`](${book.api}classes/core.particlerenderer.html#alpharandomness)：透明度随机因子。
 - [`fadeIn`](${book.api}classes/core.particlerenderer.html#isfadein) ：是否添加淡入效果。

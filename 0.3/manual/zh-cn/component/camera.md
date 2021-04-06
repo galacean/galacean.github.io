@@ -1,6 +1,6 @@
 # 相机
 
-相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼镜。
+相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼镜。Oasis Engine 的相机实现了[自动视锥剔除](${book.playground}#/renderer-cull)，只渲染视锥体内的物体。
 
 ## 基本用法
 ```typescript
@@ -24,7 +24,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0]
 |:--|:--|:--|
 |通用|[isOrthographic](${book.api}classes/core.camera.html#isorthographic)|是否正交投影，默认是 `false`|
 ||[aspectRatio](${book.api}classes/core.camera.html#aspectratio)|画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐）|
-|          | [cullingMask](${book.api}classes/core.camera.html#cullingmask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                 |
+|          | [cullingMask](${book.api}classes/core.camera.html#cullingmask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。 使用案例可以参考[Playground](${book.playground}#/camera-culling-mask)                |
 |透视投影| [nearClipPlane](${book.api}classes/core.camera.html#nearclipplane) | 近裁剪平面                                                   |
 || [farClipPlane](${book.api}classes/core.camera.html#farclipplane) | 远裁剪平面                                                   |
 || [fieldOfView](${book.api}classes/core.camera.html#fieldofview) | 视角                                                         |

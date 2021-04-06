@@ -2,6 +2,8 @@
 
 在三维应用中时常需要拾取场景中的物体，射线包围盒是一种常用的方法，在 CPU 中进行拾取，性能较好，但是精度较差，因为包围盒比较简单，拾取边缘误差较大。当拾取频率不高时，可以考虑使用像素级精度的帧缓冲拾取。[framebuffer-picker](${book.api}classes/framebuffer_picker.framebufferpicker.html) 组件提供了帧缓冲拾取支持。
 
+使用案例可以参考[Playground](${book.playground}#/framebuffer-picker)。
+
 ## 创建帧缓冲拾取
 
 ```typescript
