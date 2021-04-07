@@ -8,6 +8,17 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-toc@1.0.0/dist/toc.css">
+  <!-- Hotjar Tracking Code for https://oasis-engine.gitee.io/ -->
+  <script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2329383,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
   <style>
     .page_toc {
       margin-top: 90px;
@@ -44,14 +55,15 @@
       <li>
         <select name="choice" id="version-select">
           <option value="0.1">0.1</option>
-          <option value="0.2" selected>0.2</option>
+          <option value="0.2">0.2</option>
+          <option value="0.3" selected>0.3</option>
         </select>
       </li>
       <li><a href="/${version}/playground/" title="Playground" id="playground-link">Playground</a></li>
       <li><a href="/${version}/api/globals.html" title="API" id="api-link">API</a></li>
       <li><a href="#/${version}/manual/zh-cn/README" title="Engine" id="manual-link">Engine</a></li>
       <li><a href="#/editor/zh-cn/README" title="Editor">Editor</a></li>
-      <li><a href="https://yuque.antfin-inc.com/oasisgroup/blog" target="_blank" title="Blog">Blog</a></li>
+      <li><a href="https://www.yuque.com/oasis-engine/blog" target="_blank" title="Blog">Blog</a></li>
       <li>DingTalk
         <ul>
           <li>&nbsp;内部服务群&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;开源社区群</li>
@@ -67,7 +79,7 @@
       var OASIS_LANG = localStorage.getItem('oasis-doc-lang') || 'zh-cn';
       var href = window.location.href;
       var versionRegResult = /\d+[.]\d+([.]\d+)?/.exec(href);
-      var OASIS_VERSION = (versionRegResult && versionRegResult[0]) || '0.2';
+      var OASIS_VERSION = (versionRegResult && versionRegResult[0]) || '0.3';
       
       function replaceLink (link, from, to) {
         var url = link.getAttribute('href');
@@ -105,6 +117,9 @@
               else if (href.indexOf('${book.manual}') > -1) {
                 href = href.replace('${book.manual}', `/${OASIS_VERSION}/manual/${window.$docsify.lang}/`)
                 href = `#${href.replace('.md', '')}`
+                return `<a href="${href}">${text}</a>`
+              } else if (href.indexOf('${book.playground}') > -1) {
+                href = href.replace('${book.playground}', `/${OASIS_VERSION}/playground/`)
                 return `<a href="${href}">${text}</a>`
               }
               if (href.indexOf('${book.editor}') > -1) {
@@ -199,5 +214,6 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify-toc@1.0.0/dist/toc.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <!-- Hotjar Tracking Code for oasisengine.cn -->
 </body>
 </html>

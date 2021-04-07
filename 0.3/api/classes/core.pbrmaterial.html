@@ -1,0 +1,2312 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>PBRMaterial | Oasis Engine</title>
+	<meta name="description" content="Documentation for Oasis Engine">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header class="tsd-header">
+	<div class="tsd-page-toolbar">
+		<div class="container header-container">
+			<div class="header-logo">
+				<a href="../globals.html" class="title">
+					<span class="oasis-logo"></span>
+				</a>
+				</select>
+			</div>
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Packages</a>
+				</li>
+				<li>
+					<a href="../modules/core.html">core</a>
+				</li>
+				<li>
+					<a href="core.pbrmaterial.html">PBRMaterial</a>
+				</li>
+			</ul>
+			<span class="tsd-breadcrumb-current">Class PBRMaterial</span>
+			<div id="tsd-filter">
+				<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+				<div class="tsd-filter-group">
+					<input type="checkbox" id="tsd-filter-inherited" checked />
+					<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+				</div>
+			</div>
+			<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<a href="core.pbrbasematerial.html" class="tsd-signature-type">PBRBaseMaterial</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">PBRMaterial</span>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/core.irefobject.html" class="tsd-signature-type">IRefObject</a></li>
+					<li><span class="tsd-signature-type">IClone</span></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="core.pbrmaterial.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.pbrmaterial.html#_metallicfactor" class="tsd-kind-icon">_metallic<wbr>Factor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.pbrmaterial.html#_metallicroughnesstexture" class="tsd-kind-icon">_metallic<wbr>Roughness<wbr>Texture</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.pbrmaterial.html#_metallictexture" class="tsd-kind-icon">_metallic<wbr>Texture</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.pbrmaterial.html#_roughnessfactor" class="tsd-kind-icon">_roughness<wbr>Factor</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="core.pbrmaterial.html#_roughnesstexture" class="tsd-kind-icon">_roughness<wbr>Texture</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#instanceid" class="tsd-kind-icon">instance<wbr>Id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#isgcignored" class="tsd-kind-icon">isGCIgnored</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#renderqueuetype" class="tsd-kind-icon">render<wbr>Queue<wbr>Type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#renderstate" class="tsd-kind-icon">render<wbr>State</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#shader" class="tsd-kind-icon">shader</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#shaderdata" class="tsd-kind-icon">shader<wbr>Data</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#alphacutoff" class="tsd-kind-icon">alpha<wbr>Cutoff</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#basecolor" class="tsd-kind-icon">base<wbr>Color</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#basetexture" class="tsd-kind-icon">base<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#blendmode" class="tsd-kind-icon">blend<wbr>Mode</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#destroyed" class="tsd-kind-icon">destroyed</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#emissivecolor" class="tsd-kind-icon">emissive<wbr>Color</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#emissivetexture" class="tsd-kind-icon">emissive<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#envmapintensity" class="tsd-kind-icon">env<wbr>Map<wbr>Intensity</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#envmapmoderefract" class="tsd-kind-icon">env<wbr>Map<wbr>Mode<wbr>Refract</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#gamma" class="tsd-kind-icon">gamma</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#getopacityfromrgb" class="tsd-kind-icon">get<wbr>Opacity<wbr>FromRGB</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#istransparent" class="tsd-kind-icon">is<wbr>Transparent</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.pbrmaterial.html#metallicfactor" class="tsd-kind-icon">metallic<wbr>Factor</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.pbrmaterial.html#metallicroughnesstexture" class="tsd-kind-icon">metallic<wbr>Roughness<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.pbrmaterial.html#metallictexture" class="tsd-kind-icon">metallic<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#normalintensity" class="tsd-kind-icon">normal<wbr>Intensity</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#normaltexture" class="tsd-kind-icon">normal<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#occlusionstrength" class="tsd-kind-icon">occlusion<wbr>Strength</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#occlusiontexture" class="tsd-kind-icon">occlusion<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#opacity" class="tsd-kind-icon">opacity</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#opacitytexture" class="tsd-kind-icon">opacity<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#perturbationtexture" class="tsd-kind-icon">perturbation<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#perturbationuoffset" class="tsd-kind-icon">perturbationUOffset</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#perturbationvoffset" class="tsd-kind-icon">perturbationVOffset</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#refcount" class="tsd-kind-icon">ref<wbr>Count</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#reflectiontexture" class="tsd-kind-icon">reflection<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#refractiondepth" class="tsd-kind-icon">refraction<wbr>Depth</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#refractionratio" class="tsd-kind-icon">refraction<wbr>Ratio</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#refractiontexture" class="tsd-kind-icon">refraction<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#renderface" class="tsd-kind-icon">render<wbr>Face</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.pbrmaterial.html#roughnessfactor" class="tsd-kind-icon">roughness<wbr>Factor</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="core.pbrmaterial.html#roughnesstexture" class="tsd-kind-icon">roughness<wbr>Texture</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#srgb" class="tsd-kind-icon">srgb</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#srgbfast" class="tsd-kind-icon">srgb<wbr>Fast</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#tilingoffset" class="tsd-kind-icon">tiling<wbr>Offset</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="core.pbrmaterial.html#_addrefcount" class="tsd-kind-icon">_add<wbr>Ref<wbr>Count</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="core.pbrmaterial.html#clone" class="tsd-kind-icon">clone</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#cloneto" class="tsd-kind-icon">clone<wbr>To</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="core.pbrmaterial.html#destroy" class="tsd-kind-icon">destroy</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new PBRMaterial<span class="tsd-signature-symbol">(</span>engine<span class="tsd-signature-symbol">: </span><a href="core.engine.html" class="tsd-signature-type">Engine</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.pbrmaterial.html" class="tsd-signature-type">PBRMaterial</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#constructor">constructor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L91">packages/core/src/material/PBRMaterial.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a pbr metallic-roughness workflow material instance.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>engine: <a href="core.engine.html" class="tsd-signature-type">Engine</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>Engine to which the material belongs</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="core.pbrmaterial.html" class="tsd-signature-type">PBRMaterial</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_metallicfactor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _metallic<wbr>Factor</h3>
+					<div class="tsd-signature tsd-kind-icon">_metallic<wbr>Factor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L9">packages/core/src/material/PBRMaterial.ts:9</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_metallicroughnesstexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _metallic<wbr>Roughness<wbr>Texture</h3>
+					<div class="tsd-signature tsd-kind-icon">_metallic<wbr>Roughness<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L13">packages/core/src/material/PBRMaterial.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_metallictexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _metallic<wbr>Texture</h3>
+					<div class="tsd-signature tsd-kind-icon">_metallic<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L11">packages/core/src/material/PBRMaterial.ts:11</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_roughnessfactor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _roughness<wbr>Factor</h3>
+					<div class="tsd-signature tsd-kind-icon">_roughness<wbr>Factor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L10">packages/core/src/material/PBRMaterial.ts:10</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_roughnesstexture" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _roughness<wbr>Texture</h3>
+					<div class="tsd-signature tsd-kind-icon">_roughness<wbr>Texture<span class="tsd-signature-symbol">:</span> <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L12">packages/core/src/material/PBRMaterial.ts:12</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="instanceid" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> instance<wbr>Id</h3>
+					<div class="tsd-signature tsd-kind-icon">instance<wbr>Id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = ++EngineObject._instanceIdCounter</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#instanceid">instanceId</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/base/EngineObject.ts#L12">packages/core/src/base/EngineObject.ts:12</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Engine unique id.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="isgcignored" class="tsd-anchor"></a>
+					<h3>isGCIgnored</h3>
+					<div class="tsd-signature tsd-kind-icon">isGCIgnored<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#isgcignored">isGCIgnored</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/asset/RefObject.ts#L10">packages/core/src/asset/RefObject.ts:10</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether to ignore the garbage collection check, if it is true, it will not be affected by ResourceManager.gc().</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="name" class="tsd-anchor"></a>
+					<h3>name</h3>
+					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#name">name</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L17">packages/core/src/material/Material.ts:17</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Name.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="renderqueuetype" class="tsd-anchor"></a>
+					<h3>render<wbr>Queue<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">render<wbr>Queue<wbr>Type<span class="tsd-signature-symbol">:</span> <a href="../enums/core.renderqueuetype.html" class="tsd-signature-type">RenderQueueType</a><span class="tsd-signature-symbol"> = RenderQueueType.Opaque</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#renderqueuetype">renderQueueType</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L21">packages/core/src/material/Material.ts:21</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Render queue type.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="renderstate" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> render<wbr>State</h3>
+					<div class="tsd-signature tsd-kind-icon">render<wbr>State<span class="tsd-signature-symbol">:</span> <a href="core.renderstate-1.html" class="tsd-signature-type">RenderState</a><span class="tsd-signature-symbol"> = new RenderState()</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#renderstate">renderState</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L25">packages/core/src/material/Material.ts:25</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Render state.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="shader" class="tsd-anchor"></a>
+					<h3>shader</h3>
+					<div class="tsd-signature tsd-kind-icon">shader<span class="tsd-signature-symbol">:</span> <a href="core.shader.html" class="tsd-signature-type">Shader</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#shader">shader</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L19">packages/core/src/material/Material.ts:19</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Shader used by the material.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="shaderdata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> shader<wbr>Data</h3>
+					<div class="tsd-signature tsd-kind-icon">shader<wbr>Data<span class="tsd-signature-symbol">:</span> <a href="core.shaderdata.html" class="tsd-signature-type">ShaderData</a><span class="tsd-signature-symbol"> = new ShaderData(ShaderDataGroup.Material)</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#shaderdata">shaderData</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L23">packages/core/src/material/Material.ts:23</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Shader data.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="alphacutoff" class="tsd-anchor"></a>
+					<h3>alpha<wbr>Cutoff</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> alphaCutoff<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> alphaCutoff<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#alphacutoff">alphaCutoff</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L55">packages/core/src/material/BaseMaterial.ts:55</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Alpha cutoff value.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Fragments with alpha channel lower than cutoff value will be discarded.
+										<code>0</code> means no fragment will be discarded.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#alphacutoff">alphaCutoff</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L59">packages/core/src/material/BaseMaterial.ts:59</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Alpha cutoff value.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Fragments with alpha channel lower than cutoff value will be discarded.
+										<code>0</code> means no fragment will be discarded.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="basecolor" class="tsd-anchor"></a>
+					<h3>base<wbr>Color</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> baseColor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> baseColor<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#basecolor">baseColor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L53">packages/core/src/material/PBRBaseMaterial.ts:53</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base color.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#basecolor">baseColor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L57">packages/core/src/material/PBRBaseMaterial.ts:57</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base color.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">Color</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="basetexture" class="tsd-anchor"></a>
+					<h3>base<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> baseTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> baseTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#basetexture">baseTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L65">packages/core/src/material/PBRBaseMaterial.ts:65</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#basetexture">baseTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L69">packages/core/src/material/PBRBaseMaterial.ts:69</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Base texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="blendmode" class="tsd-anchor"></a>
+					<h3>blend<wbr>Mode</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> blendMode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/core.blendmode.html" class="tsd-signature-type">BlendMode</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> blendMode<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="../enums/core.blendmode.html" class="tsd-signature-type">BlendMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#blendmode">blendMode</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L103">packages/core/src/material/BaseMaterial.ts:103</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Alpha blend mode.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Only take effect when <code>isTransparent</code> is <code>true</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/core.blendmode.html" class="tsd-signature-type">BlendMode</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#blendmode">blendMode</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L107">packages/core/src/material/BaseMaterial.ts:107</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Alpha blend mode.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>Only take effect when <code>isTransparent</code> is <code>true</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <a href="../enums/core.blendmode.html" class="tsd-signature-type">BlendMode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="destroyed" class="tsd-anchor"></a>
+					<h3>destroyed</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> destroyed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroyed">destroyed</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/asset/RefObject.ts#L25">packages/core/src/asset/RefObject.ts:25</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether it has been destroyed.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="emissivecolor" class="tsd-anchor"></a>
+					<h3>emissive<wbr>Color</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> emissiveColor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> emissiveColor<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Color</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#emissivecolor">emissiveColor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L160">packages/core/src/material/PBRBaseMaterial.ts:160</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emissive color.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Color</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#emissivecolor">emissiveColor</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L164">packages/core/src/material/PBRBaseMaterial.ts:164</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emissive color.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">Color</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="emissivetexture" class="tsd-anchor"></a>
+					<h3>emissive<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> emissiveTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> emissiveTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#emissivetexture">emissiveTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L142">packages/core/src/material/PBRBaseMaterial.ts:142</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emissive texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#emissivetexture">emissiveTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L146">packages/core/src/material/PBRBaseMaterial.ts:146</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Emissive texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="envmapintensity" class="tsd-anchor"></a>
+					<h3>env<wbr>Map<wbr>Intensity</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> envMapIntensity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> envMapIntensity<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#envmapintensity">envMapIntensity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L221">packages/core/src/material/PBRBaseMaterial.ts:221</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reflection intensity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#envmapintensity">envMapIntensity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L225">packages/core/src/material/PBRBaseMaterial.ts:225</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reflection intensity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="envmapmoderefract" class="tsd-anchor"></a>
+					<h3>env<wbr>Map<wbr>Mode<wbr>Refract</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> envMapModeRefract<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> envMapModeRefract<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#envmapmoderefract">envMapModeRefract</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L386">packages/core/src/material/PBRBaseMaterial.ts:386</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to refract global environmentMapLight, default reflection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#envmapmoderefract">envMapModeRefract</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L390">packages/core/src/material/PBRBaseMaterial.ts:390</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to refract global environmentMapLight, default reflection.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="gamma" class="tsd-anchor"></a>
+					<h3>gamma</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> gamma<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> gamma<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#gamma">gamma</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L352">packages/core/src/material/PBRBaseMaterial.ts:352</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to use Gamma correction.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#gamma">gamma</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L356">packages/core/src/material/PBRBaseMaterial.ts:356</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to use Gamma correction.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="getopacityfromrgb" class="tsd-anchor"></a>
+					<h3>get<wbr>Opacity<wbr>FromRGB</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> getOpacityFromRGB<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> getOpacityFromRGB<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#getopacityfromrgb">getOpacityFromRGB</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L369">packages/core/src/material/PBRBaseMaterial.ts:369</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to take the brightness value of the opacityTexture as the transparency.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#getopacityfromrgb">getOpacityFromRGB</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L373">packages/core/src/material/PBRBaseMaterial.ts:373</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to take the brightness value of the opacityTexture as the transparency.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="istransparent" class="tsd-anchor"></a>
+					<h3>is<wbr>Transparent</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> isTransparent<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> isTransparent<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#istransparent">isTransparent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L22">packages/core/src/material/BaseMaterial.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Is this material transparent.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>If material is transparent, transparent blend mode will be affected by <code>blendMode</code>, default is <code>BlendMode.Normal</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#istransparent">isTransparent</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L26">packages/core/src/material/BaseMaterial.ts:26</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Is this material transparent.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>If material is transparent, transparent blend mode will be affected by <code>blendMode</code>, default is <code>BlendMode.Normal</code>.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="metallicfactor" class="tsd-anchor"></a>
+					<h3>metallic<wbr>Factor</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> metallicFactor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> metallicFactor<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L18">packages/core/src/material/PBRMaterial.ts:18</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Metallic factor.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L22">packages/core/src/material/PBRMaterial.ts:22</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Metallic factor.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="metallicroughnesstexture" class="tsd-anchor"></a>
+					<h3>metallic<wbr>Roughness<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> metallicRoughnessTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> metallicRoughnessTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L78">packages/core/src/material/PBRMaterial.ts:78</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Metallic rough texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L82">packages/core/src/material/PBRMaterial.ts:82</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Metallic rough texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="metallictexture" class="tsd-anchor"></a>
+					<h3>metallic<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> metallicTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> metallicTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L42">packages/core/src/material/PBRMaterial.ts:42</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Metallic texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L46">packages/core/src/material/PBRMaterial.ts:46</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Metallic texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="normalintensity" class="tsd-anchor"></a>
+					<h3>normal<wbr>Intensity</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> normalIntensity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> normalIntensity<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#normalintensity">normalIntensity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L130">packages/core/src/material/PBRBaseMaterial.ts:130</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Normal intensity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#normalintensity">normalIntensity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L134">packages/core/src/material/PBRBaseMaterial.ts:134</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Normal intensity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="normaltexture" class="tsd-anchor"></a>
+					<h3>normal<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> normalTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> normalTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#normaltexture">normalTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L112">packages/core/src/material/PBRBaseMaterial.ts:112</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Normal texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#normaltexture">normalTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L116">packages/core/src/material/PBRBaseMaterial.ts:116</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Normal texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="occlusionstrength" class="tsd-anchor"></a>
+					<h3>occlusion<wbr>Strength</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> occlusionStrength<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> occlusionStrength<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#occlusionstrength">occlusionStrength</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L190">packages/core/src/material/PBRBaseMaterial.ts:190</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Occlusive intensity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#occlusionstrength">occlusionStrength</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L194">packages/core/src/material/PBRBaseMaterial.ts:194</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Occlusive intensity.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="occlusiontexture" class="tsd-anchor"></a>
+					<h3>occlusion<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> occlusionTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> occlusionTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#occlusiontexture">occlusionTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L172">packages/core/src/material/PBRBaseMaterial.ts:172</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Occlusive texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#occlusiontexture">occlusionTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L176">packages/core/src/material/PBRBaseMaterial.ts:176</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Occlusive texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="opacity" class="tsd-anchor"></a>
+					<h3>opacity</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> opacity<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> opacity<span class="tsd-signature-symbol">(</span>val<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#opacity">opacity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L83">packages/core/src/material/PBRBaseMaterial.ts:83</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transparent coefficient.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#opacity">opacity</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L87">packages/core/src/material/PBRBaseMaterial.ts:87</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transparent coefficient.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>val: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="opacitytexture" class="tsd-anchor"></a>
+					<h3>opacity<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> opacityTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> opacityTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#opacitytexture">opacityTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L94">packages/core/src/material/PBRBaseMaterial.ts:94</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transparent texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#opacitytexture">opacityTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L98">packages/core/src/material/PBRBaseMaterial.ts:98</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Transparent texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="perturbationtexture" class="tsd-anchor"></a>
+					<h3>perturbation<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> perturbationTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> perturbationTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#perturbationtexture">perturbationTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L276">packages/core/src/material/PBRBaseMaterial.ts:276</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Perturbation texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#perturbationtexture">perturbationTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L280">packages/core/src/material/PBRBaseMaterial.ts:280</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Perturbation texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="perturbationuoffset" class="tsd-anchor"></a>
+					<h3>perturbationUOffset</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> perturbationUOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> perturbationUOffset<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#perturbationuoffset">perturbationUOffset</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L294">packages/core/src/material/PBRBaseMaterial.ts:294</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Offset of the perturbation texture coordinate on S.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#perturbationuoffset">perturbationUOffset</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L298">packages/core/src/material/PBRBaseMaterial.ts:298</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Offset of the perturbation texture coordinate on S.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="perturbationvoffset" class="tsd-anchor"></a>
+					<h3>perturbationVOffset</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> perturbationVOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> perturbationVOffset<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#perturbationvoffset">perturbationVOffset</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L306">packages/core/src/material/PBRBaseMaterial.ts:306</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Offset of the perturbation texture coordinate on T.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#perturbationvoffset">perturbationVOffset</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L310">packages/core/src/material/PBRBaseMaterial.ts:310</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Offset of the perturbation texture coordinate on T.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="refcount" class="tsd-anchor"></a>
+					<h3>ref<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> refCount<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#refcount">refCount</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/asset/RefObject.ts#L18">packages/core/src/asset/RefObject.ts:18</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Counted by valid references.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="reflectiontexture" class="tsd-anchor"></a>
+					<h3>reflection<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> reflectionTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texturecubemap.html" class="tsd-signature-type">TextureCubeMap</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> reflectionTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texturecubemap.html" class="tsd-signature-type">TextureCubeMap</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#reflectiontexture">reflectionTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L203">packages/core/src/material/PBRBaseMaterial.ts:203</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reflection texture.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>if this texture is not set, the global environmentMapLight&#39;s specularTexture will be used.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texturecubemap.html" class="tsd-signature-type">TextureCubeMap</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#reflectiontexture">reflectionTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L207">packages/core/src/material/PBRBaseMaterial.ts:207</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Reflection texture.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>if this texture is not set, the global environmentMapLight&#39;s specularTexture will be used.</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texturecubemap.html" class="tsd-signature-type">TextureCubeMap</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="refractiondepth" class="tsd-anchor"></a>
+					<h3>refraction<wbr>Depth</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> refractionDepth<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> refractionDepth<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#refractiondepth">refractionDepth</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L245">packages/core/src/material/PBRBaseMaterial.ts:245</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The depth value of the local refraction texture, used to simulate the refraction distance.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#refractiondepth">refractionDepth</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L249">packages/core/src/material/PBRBaseMaterial.ts:249</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The depth value of the local refraction texture, used to simulate the refraction distance.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="refractionratio" class="tsd-anchor"></a>
+					<h3>refraction<wbr>Ratio</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> refractionRatio<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> refractionRatio<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#refractionratio">refractionRatio</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L233">packages/core/src/material/PBRBaseMaterial.ts:233</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The ratio of IOR(index of refraction) from air to medium.eg. 1 / 1.33 from air to water.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#refractionratio">refractionRatio</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L237">packages/core/src/material/PBRBaseMaterial.ts:237</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>The ratio of IOR(index of refraction) from air to medium.eg. 1 / 1.33 from air to water.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="refractiontexture" class="tsd-anchor"></a>
+					<h3>refraction<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> refractionTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> refractionTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#refractiontexture">refractionTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L257">packages/core/src/material/PBRBaseMaterial.ts:257</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Local refraction texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#refractiontexture">refractionTexture</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L261">packages/core/src/material/PBRBaseMaterial.ts:261</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Local refraction texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="renderface" class="tsd-anchor"></a>
+					<h3>render<wbr>Face</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> renderFace<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/core.renderface.html" class="tsd-signature-type">RenderFace</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> renderFace<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><a href="../enums/core.renderface.html" class="tsd-signature-type">RenderFace</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#renderface">renderFace</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L77">packages/core/src/material/BaseMaterial.ts:77</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set which face for render.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/core.renderface.html" class="tsd-signature-type">RenderFace</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.basematerial.html">BaseMaterial</a>.<a href="core.basematerial.html#renderface">renderFace</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/BaseMaterial.ts#L81">packages/core/src/material/BaseMaterial.ts:81</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set which face for render.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <a href="../enums/core.renderface.html" class="tsd-signature-type">RenderFace</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="roughnessfactor" class="tsd-anchor"></a>
+					<h3>roughness<wbr>Factor</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> roughnessFactor<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> roughnessFactor<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L30">packages/core/src/material/PBRMaterial.ts:30</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rough factor.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L34">packages/core/src/material/PBRMaterial.ts:34</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rough factor.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="roughnesstexture" class="tsd-anchor"></a>
+					<h3>roughness<wbr>Texture</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> roughnessTexture<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> roughnessTexture<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L60">packages/core/src/material/PBRMaterial.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rough texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L64">packages/core/src/material/PBRMaterial.ts:64</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Rough texture.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="core.texture2d.html" class="tsd-signature-type">Texture2D</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="srgb" class="tsd-anchor"></a>
+					<h3>srgb</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> srgb<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> srgb<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#srgb">srgb</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L318">packages/core/src/material/PBRBaseMaterial.ts:318</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to use SRGB color space.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#srgb">srgb</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L322">packages/core/src/material/PBRBaseMaterial.ts:322</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether to use SRGB color space.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="srgbfast" class="tsd-anchor"></a>
+					<h3>srgb<wbr>Fast</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> srgbFast<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> srgbFast<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#srgbfast">srgbFast</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L335">packages/core/src/material/PBRBaseMaterial.ts:335</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether sRGB linear correction uses approximate fast algorithm.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#srgbfast">srgbFast</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L339">packages/core/src/material/PBRBaseMaterial.ts:339</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Whether sRGB linear correction uses approximate fast algorithm.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+					<a name="tilingoffset" class="tsd-anchor"></a>
+					<h3>tiling<wbr>Offset</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> tilingOffset<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector4</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> tilingOffset<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Vector4</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#tilingoffset">tilingOffset</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L41">packages/core/src/material/PBRBaseMaterial.ts:41</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tiling and offset of main textures.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Vector4</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.pbrbasematerial.html">PBRBaseMaterial</a>.<a href="core.pbrbasematerial.html#tilingoffset">tilingOffset</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRBaseMaterial.ts#L45">packages/core/src/material/PBRBaseMaterial.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Tiling and offset of main textures.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">Vector4</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+					<a name="_addrefcount" class="tsd-anchor"></a>
+					<h3>_add<wbr>Ref<wbr>Count</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">_add<wbr>Ref<wbr>Count<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#_addrefcount">_addRefCount</a></p>
+								<p>Overrides RefObject._addRefCount</p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L60">packages/core/src/material/Material.ts:60</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>override</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="clone" class="tsd-anchor"></a>
+					<h3>clone</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="core.pbrmaterial.html" class="tsd-signature-type">PBRMaterial</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="core.material.html">Material</a>.<a href="core.material.html#clone">clone</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/PBRMaterial.ts#L108">packages/core/src/material/PBRMaterial.ts:108</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>override</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <a href="core.pbrmaterial.html" class="tsd-signature-type">PBRMaterial</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="cloneto" class="tsd-anchor"></a>
+					<h3>clone<wbr>To</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">clone<wbr>To<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><a href="core.material.html" class="tsd-signature-type">Material</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.material.html">Material</a>.<a href="core.material.html#cloneto">cloneTo</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/material/Material.ts#L50">packages/core/src/material/Material.ts:50</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Clone to the target material.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>target: <a href="core.material.html" class="tsd-signature-type">Material</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>target material</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="destroy" class="tsd-anchor"></a>
+					<h3>destroy</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span>force<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="core.refobject.html">RefObject</a>.<a href="core.refobject.html#destroy">destroy</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/oasis-engine/engine/blob/656b01e/packages/core/src/asset/RefObject.ts#L39">packages/core/src/asset/RefObject.ts:39</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Destroy self.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> force: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = false</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Whether to force the destruction, if it is fasle, refCount = 0 can be released successfully.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>Whether the release was successful.</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Packages</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html">controls</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/core.html">core</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html">loader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/math.html">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/oasis_engine.html">oasis-<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/stats.html">stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html">tween</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/controls.html" class="tsd-kind-icon">controls</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-module">
+						<a href="../modules/core.html" class="tsd-kind-icon">core</a>
+						<ul>
+							<li class="current tsd-kind-class tsd-parent-kind-module">
+								<a href="core.pbrmaterial.html" class="tsd-kind-icon">PBRMaterial</a>
+								<ul>
+									<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+										<a href="core.pbrmaterial.html#constructor" class="tsd-kind-icon">constructor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="core.pbrmaterial.html#_metallicfactor" class="tsd-kind-icon">_metallic<wbr>Factor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="core.pbrmaterial.html#_metallicroughnesstexture" class="tsd-kind-icon">_metallic<wbr>Roughness<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="core.pbrmaterial.html#_metallictexture" class="tsd-kind-icon">_metallic<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="core.pbrmaterial.html#_roughnessfactor" class="tsd-kind-icon">_roughness<wbr>Factor</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+										<a href="core.pbrmaterial.html#_roughnesstexture" class="tsd-kind-icon">_roughness<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#instanceid" class="tsd-kind-icon">instance<wbr>Id</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#isgcignored" class="tsd-kind-icon">isGCIgnored</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#name" class="tsd-kind-icon">name</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#renderqueuetype" class="tsd-kind-icon">render<wbr>Queue<wbr>Type</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#renderstate" class="tsd-kind-icon">render<wbr>State</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#shader" class="tsd-kind-icon">shader</a>
+									</li>
+									<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#shaderdata" class="tsd-kind-icon">shader<wbr>Data</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#alphacutoff" class="tsd-kind-icon">alpha<wbr>Cutoff</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#basecolor" class="tsd-kind-icon">base<wbr>Color</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#basetexture" class="tsd-kind-icon">base<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#blendmode" class="tsd-kind-icon">blend<wbr>Mode</a>
+									</li>
+									<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#destroyed" class="tsd-kind-icon">destroyed</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#emissivecolor" class="tsd-kind-icon">emissive<wbr>Color</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#emissivetexture" class="tsd-kind-icon">emissive<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#envmapintensity" class="tsd-kind-icon">env<wbr>Map<wbr>Intensity</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#envmapmoderefract" class="tsd-kind-icon">env<wbr>Map<wbr>Mode<wbr>Refract</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#gamma" class="tsd-kind-icon">gamma</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#getopacityfromrgb" class="tsd-kind-icon">get<wbr>Opacity<wbr>FromRGB</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#istransparent" class="tsd-kind-icon">is<wbr>Transparent</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class">
+										<a href="core.pbrmaterial.html#metallicfactor" class="tsd-kind-icon">metallic<wbr>Factor</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class">
+										<a href="core.pbrmaterial.html#metallicroughnesstexture" class="tsd-kind-icon">metallic<wbr>Roughness<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class">
+										<a href="core.pbrmaterial.html#metallictexture" class="tsd-kind-icon">metallic<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#normalintensity" class="tsd-kind-icon">normal<wbr>Intensity</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#normaltexture" class="tsd-kind-icon">normal<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#occlusionstrength" class="tsd-kind-icon">occlusion<wbr>Strength</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#occlusiontexture" class="tsd-kind-icon">occlusion<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#opacity" class="tsd-kind-icon">opacity</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#opacitytexture" class="tsd-kind-icon">opacity<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#perturbationtexture" class="tsd-kind-icon">perturbation<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#perturbationuoffset" class="tsd-kind-icon">perturbationUOffset</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#perturbationvoffset" class="tsd-kind-icon">perturbationVOffset</a>
+									</li>
+									<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#refcount" class="tsd-kind-icon">ref<wbr>Count</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#reflectiontexture" class="tsd-kind-icon">reflection<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#refractiondepth" class="tsd-kind-icon">refraction<wbr>Depth</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#refractionratio" class="tsd-kind-icon">refraction<wbr>Ratio</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#refractiontexture" class="tsd-kind-icon">refraction<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#renderface" class="tsd-kind-icon">render<wbr>Face</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class">
+										<a href="core.pbrmaterial.html#roughnessfactor" class="tsd-kind-icon">roughness<wbr>Factor</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class">
+										<a href="core.pbrmaterial.html#roughnesstexture" class="tsd-kind-icon">roughness<wbr>Texture</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#srgb" class="tsd-kind-icon">srgb</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#srgbfast" class="tsd-kind-icon">srgb<wbr>Fast</a>
+									</li>
+									<li class=" tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#tilingoffset" class="tsd-kind-icon">tiling<wbr>Offset</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited">
+										<a href="core.pbrmaterial.html#_addrefcount" class="tsd-kind-icon">_add<wbr>Ref<wbr>Count</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+										<a href="core.pbrmaterial.html#clone" class="tsd-kind-icon">clone</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#cloneto" class="tsd-kind-icon">clone<wbr>To</a>
+									</li>
+									<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+										<a href="core.pbrmaterial.html#destroy" class="tsd-kind-icon">destroy</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-module">
+						<a href="../modules/design.html" class="tsd-kind-icon">design</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/draco.html" class="tsd-kind-icon">draco</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/framebuffer_picker.html" class="tsd-kind-icon">framebuffer-<wbr>picker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/loader.html" class="tsd-kind-icon">loader</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/math.html" class="tsd-kind-icon">math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/oasis_engine.html" class="tsd-kind-icon">oasis-<wbr>engine</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/rhi_webgl.html" class="tsd-kind-icon">rhi-<wbr>webgl</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/stats.html" class="tsd-kind-icon">stats</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/tween.html" class="tsd-kind-icon">tween</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
