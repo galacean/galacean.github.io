@@ -4,7 +4,7 @@
 ## 原理图
 我们先概览一下 `BufferMesh`  的原理图
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*pYFLSIbNKZYAAAAAAAAAAAAAARQnAQ)
+![image.png](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*piB3Q4501loAAAAAAAAAAAAAARQnAQ)
 
 `BufferMesh` 有三大核心元素分别是：
 
@@ -37,7 +37,7 @@ const vertices = new ArrayBuffer(vertexByteCount);
 const vertexBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, vertices);
 
 // bind vertexBuffer with stride, stride is every vertex byte length,so the value is 16.
-mesh.setVertexBufferBindings(new VertexBufferBinding(vertexBuffer, 16));
+mesh.setVertexBufferBinding(vertexBuffer, 16);
 
 // add vertexElement to tell GPU how to read vertex from vertexBuffer.
 mesh.setVertexElements([new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0),
@@ -146,7 +146,7 @@ const vertexBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, vertices);
 const indexBuffer = new Buffer(engine, BufferBindFlag.IndexBuffer, indices);
 
 // bind vertexBuffer with stride, stride is every vertex byte length,so the value is 16.
-mesh.setVertexBufferBindings(new VertexBufferBinding(vertexBuffer, 16));
+mesh.setVertexBufferBinding(vertexBuffer, 16);
 
 // bind vertexBuffer with format.
 mesh.setIndexBufferBinding(indexBuffer, IndexFormat.UInt16);

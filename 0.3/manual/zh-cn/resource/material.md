@@ -20,7 +20,7 @@ const renderer = entity.getComponent(MeshRenderer);
 
 // 创建 blinn-phong 材质
 const material = new BlinnPhongMaterial(engine);
-material.diffuseColor.r = 0;
+material.baseColor.r = 0;
 
 // 通过 `setMaterial` 设置当前 renderer 的第 i 个材质, 默认第 0 个。
 const material = renderer.setMaterial(material);

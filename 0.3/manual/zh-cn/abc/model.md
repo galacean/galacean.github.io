@@ -40,7 +40,10 @@ class ResourceScript extends Script {
   }
 }
 
-const engine = new WebGLEngine('canvas');
+// 创建画布 
+// ps: o3-demo 是canvas元素的id，若id不同请自行替换
+const engine = new WebGLEngine("o3-demo");
+// 设置屏幕适配
 engine.canvas.resizeByClientSize();
 
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
