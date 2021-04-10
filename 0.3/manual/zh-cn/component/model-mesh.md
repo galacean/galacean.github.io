@@ -6,12 +6,12 @@
 
 ## 代码示例
 
-```typescript
+```TypeScript
 const entity = rootEntity.createChild('mesh-example');
 const meshRenderer = entity.addComponent(MeshRenderer);
 
 const modelMesh = new ModelMesh(engine);
-modelMesh.addSubMesh(0, 2);
+modelMesh.addSubMesh(0, 6);
 
 // 设置顶点数据
 const positions = modelMesh.getPositions();
@@ -24,22 +24,11 @@ positions.push(
   new Vector3(-1.0, -1.0,  1.0)
 );
 modelMesh.setPositions(positions);
-
-modelMesh.setColors(
-  [
-    new Color(1, 0, 0),
-    new Color(1, 1, 0),
-    new Color(0, 1, 1),
-    new Color(0, 1, 0),
-    new Color(0, 1, 1),
-    new Color(1, 0, 1),
-  ]
-);
 // 上传数据
 modelMesh.uploadData(false);
 
 meshRenderer.mesh = modelMesh;
-meshRenderer.setMaterial(new UnlitMaterial());
+meshRenderer.setMaterial(new UnlitMaterial(engine));
 ```
 
 ## 详细介绍
@@ -50,7 +39,7 @@ meshRenderer.setMaterial(new UnlitMaterial());
 
 [SubMesh](${book.api}classes/core.submesh.html) 包含了主要的绘制信息。调用 [addSubMesh](${book.api}classes/core.modelmesh.html#addsubmesh) 添加。
 
-```typescript
+```TypeScript
 modelMesh.addSubMesh(new SubMesh(0, 2, MeshTopology.Triangles));
 ```
 
@@ -58,7 +47,7 @@ modelMesh.addSubMesh(new SubMesh(0, 2, MeshTopology.Triangles));
 
 **注意要调用 `set` 方法**
 
-```typescript
+```TypeScript
 const positions = modelMesh.getPositions();
 positions.push(
   new Vector3(-1.0, -1.0,  1.0),
@@ -103,13 +92,13 @@ modelMesh.setColors(
 
 如果不再需要修改 `ModelMesh` 数据：
 
-``` typescript
+``` TypeScript
 modelMesh.uploadData(false);
 ```
 
 如果需要持续修改 `ModelMesh` 数据：
 
-``` typescript
+``` TypeScript
 modelMesh.uploadData(true);
 ```
 

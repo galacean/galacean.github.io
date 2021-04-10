@@ -10,7 +10,7 @@
 let lightEntity = rootEntity.createChild('light');
 
 let directLight = lightEntity.addComponent(DirectLight);
-directLight.color =  new Vector3(0.3, 0.3, 1);
+directLight.color =  new Color(0.3, 0.3, 1);
 directLight.intensity =  1;
 ```
 

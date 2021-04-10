@@ -14,7 +14,8 @@ class ResourceScript extends Script {
 
     this.entity.addChild(defaultSceneRoot);
 
-    const animator = defaultSceneRoot.getComponent(o3.Animation);
+    // ps: 此处需import oasis-engine的Animation
+    const animator = defaultSceneRoot.getComponent(Animation);
 
     animator.playAnimationClip(animations[0].name);
   }
