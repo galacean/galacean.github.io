@@ -35,3 +35,4 @@
 * 二方组件
   * [控制器](${book.manual}second-party-component/controls.md)
   * [帧缓冲拾取](${book.manual}second-party-component/framebuffer-picker.md)
+  * [Spine 动画](${book.manual}second-party-component/spine-animation.md)

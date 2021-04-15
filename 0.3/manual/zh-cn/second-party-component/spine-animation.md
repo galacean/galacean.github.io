@@ -1,11 +1,11 @@
+# Spine 动画
 Oasis Engine 通过BufferMesh API 实现了 spine 动画的渲染。
-
 
 ## 下载
 ```typescript
 npm i @oasis-engine/engine-spine --save
 ```
-## 
+
 ## 使用
 ### 资源加载
 当引入了  @oasis-engine/engine-spine 后，会自动在 engine 的 resourceManager 上注册 spine 资源的loader。通过 resourceManager 的 load 方法能够加载 spine 动画资源。
