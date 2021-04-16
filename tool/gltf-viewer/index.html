@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="initial-scale=1.0" />
+    <title>Oasis GLTF Viewer</title>
+  <script type="module" crossorigin src="/tool/gltf-viewer/assets/index.b4721569.js"></script>
+  <link rel="modulepreload" href="/tool/gltf-viewer/assets/vendor.1cb6e1fc.js">
+  <link rel="stylesheet" href="/tool/gltf-viewer/assets/index.8d696286.css">
+</head>
+
+  <body>
+    <canvas id="o3-canvas"></canvas>
+
+    <a class="logo" target="_blank" href="https://oasisengine.cn">
+      <img
+        width="50px"
+        height="50px"
+        src="https://gw.alipayobjects.com/zos/bmw-prod/a3bd25c4-dc50-40f7-88ea-6004566481b0.svg"
+      />
+    </a>
+
+    <input id="input" type="file" class="hide" />
+
+    <div id="dropZone" class="dropZone">
+      <img
+        id="close"
+        class="closeIcon"
+        onClick="{this.dropSuccess.bind(this)}"
+        src="https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*B7GAQq_VPyIAAAAAAAAAAABkARQnAQ"
+        alt=""
+      />
+      <p>拖拽 gltf 2.0 规范的文件或者文件夹到此页面进行预览</p>
+      <p>拖拽支持的图片或者文件夹到此页面，调试纹理贴图</p>
+      <br />
+      <p>模型格式支持:.gltf .glb .bin</p>
+      <p>贴图格式支持:.jpg .png</p>
+    </div>
+
+    <div id="spinner" class="spinner hide" />
+
+    
+  </body>
+</html>
