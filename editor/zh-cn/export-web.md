@@ -83,7 +83,7 @@ export default ()=> {
     console.log('loaded', oasis);
     // 业务取到engine进行事件通信
     const { engine } = oasis;
-        engine.trigger('test');
+    engine.dispatch('test');
   };
   
   return (
@@ -119,7 +119,7 @@ class App extends Component {
     console.log("loaded", oasis);
     // 业务取到engine进行事件通信
     const { engine } = oasis;
-        engine.trigger('test');
+    engine.dispatch('test');
   }
 
   render() {
@@ -143,7 +143,7 @@ const canvas = document.getElementById('canvasId') //<canvas id="canvasId"/>
 const oasis = init(canvas);
 // 业务取到engine进行事件通信
 const { engine } = oasis;
-engine.trigger('test');
+engine.dispatch('test');
 ```
 
 ---

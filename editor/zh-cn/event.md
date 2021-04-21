@@ -19,7 +19,7 @@
 - **触发事件**：
 
 ```typescript
-engine.trigger('test');
+engine.dispatch('test');
 ```
 
 下面介绍 Oasis 与业务双向通信分别怎么写。
@@ -52,7 +52,7 @@ export default ()=> {
 
   const handleClick = () => {
     // 触发事件
-    engine && engine.trigger('rotate');
+    engine && engine.dispatch('rotate');
   };
 
   return (
@@ -101,7 +101,7 @@ export default ()=> {
 2. 在脚本组件的[生命周期函数](${book.manual}component/script)内可以触发事件：
 
 ```typescript
-this.engine.trigger(new o3.Event('rotate'));
+this.engine.dispatch('rotate');
 ```
 
 ## 事件测试

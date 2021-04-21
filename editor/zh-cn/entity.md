@@ -4,10 +4,10 @@
 
 ## 变换
 
-以旋转为例，在 [onUpdate](${book.api}classes/core.script.html#onupdate) 中通过 [rotateXYZ](${book.api}classes/core.transform.html#rotatexyz) 方法来旋转实体：
+以旋转为例，在 [onUpdate](${book.api}classes/core.script.html#onupdate) 中通过 [setRotation](${book.api}classes/core.transform.html#setrotation) 方法来旋转实体：
 
 ```typescript
-this.entity.rotateXYZ(0, 5, 0);
+this.entity.transform.setRotation(0, 5, 0);
 ```
 
 ## 访问实体和其他组件
