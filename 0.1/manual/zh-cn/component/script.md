@@ -126,12 +126,11 @@ Oasis 为用户提供了丰富的生命周期回调函数，用户只要定义�
 
 	当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [`render`](${book.api}classes/core.camera.html#render) 方法调用之前 `onBeginRender` 回调将被调用。
 
-
 - [**onEndRender**](${book.api}classes/core.script.html#onendrender)
 
-	当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [`render`](${book.api}classes/core.camera.html#render) 方法调用之后 `onBeginRender` 回调将被调用。
+	当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [`render`](${book.api}classes/core.camera.html#render) 方法调用之后 `onEndRender` 回调将被调用。
 
 - [**onDestroy**](${book.api}classes/core.script.html#ondestroy)
 
-	当组件或者所在实体调用了 `[destroy()](${book.api}classes/core.entity.html#destroy)`，则会调用 `onDestroy` 回调，并在当帧结束时统一回收组件。
+	当组件或者所在实体调用了 [`destroy`](${book.api}classes/core.entity.html#destroy)，则会调用 `onDestroy` 回调，并在当帧结束时统一回收组件。
 
