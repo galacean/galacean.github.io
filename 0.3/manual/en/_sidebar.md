@@ -1,1 +1,0 @@
-* [About Oasis Engine](${book.manual}README.md)
