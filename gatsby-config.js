@@ -3,10 +3,10 @@ const enginePath = '../../oasis/engine';
 
 module.exports = {
   siteMetadata: {
-    title: 'ANT DESIGN PRO',
+    title: 'OASIS ENGINE',
     description: 'Out-of-box UI solution for enterprise applications',
-    author: 'Ant Design',
-    siteUrl: 'https://pro.ant.design',
+    author: 'Oasis Engine',
+    siteUrl: 'https://oasisengine.cn',
   },
   plugins: [
     {

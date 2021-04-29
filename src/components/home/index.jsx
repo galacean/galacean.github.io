@@ -11,20 +11,20 @@ function Home(props) {
   return (
     <>
       <Helmet>
-        <title>{`Ant Design Pro - ${intl.formatMessage({
+        <title>{`Oasis Engine - ${intl.formatMessage({
           id: 'app.home.slogan',
         })}`}</title>
         <meta
           name="description"
-          content={`Ant Design Pro - ${intl.formatMessage({
+          content={`Oasis Engine - ${intl.formatMessage({
             id: 'app.home.slogan',
           })}`}
         />
       </Helmet>
       <div className="home-wrapper">
         <Banner {...props} />
-        <Page1 {...props} />
-        <Page2 {...props} />
+        {/* <Page1 {...props} /> */}
+        {/* <Page2 {...props} /> */}
       </div>
     </>
   );

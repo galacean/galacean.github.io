@@ -67,7 +67,7 @@ export default class Article extends React.PureComponent<ArticleProps> {
     return (
       <>
         <Helmet>
-          <title>{`${title} - Ant Design Pro`}</title>
+          <title>{`${title} - Oasis Engine`}</title>
           <meta name="description" content={title} />
         </Helmet>
         <article

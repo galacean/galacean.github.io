@@ -54,7 +54,7 @@ export class Layout extends React.Component<LayoutProps, LayoutState> {
               ...children.props,
               isMobile: restProps.isMobile,
             })} */}
-            <Footer {...restProps} location={location} />
+            {/* <Footer {...restProps} location={location} /> */}
           </div>
         </ConfigProvider>
       </IntlProvider>

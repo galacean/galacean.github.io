@@ -7,7 +7,7 @@ import * as utils from '../utils';
 
 const { Option } = Select;
 
-const LOGO_URL = 'https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg';
+const LOGO_URL = 'https://gw.alipayobjects.com/zos/bmw-prod/a3bd25c4-dc50-40f7-88ea-6004566481b0.svg';
 
 const key = 'antd-pro@2.0.0-notification-sent';
 
@@ -268,7 +268,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
               <Link id="logo" to="/">
                 <img src={LOGO_URL} alt="logo" />
-                <span>Ant Design Pro</span>
+                <span>Oasis Engine</span>
               </Link>
             </Col>
             <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>

@@ -1,12 +1,9 @@
-# Ant Design Pro Site
+# Oasis Engine Site
 
-The documentation source of [Ant Design Pro](https://github.com/ant-design/ant-design-pro).
-
+The documentation source of [Oasis Engine](https://github.com/oasis-engine/oasis-engine.github.io).
 ### Development
 
 ```bash
-$ git clone git@github.com:ant-design/ant-design-pro-site.git
-$ cd ant-design-pro-site
 $ npm install
 $ npm start
 ```

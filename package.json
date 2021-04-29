@@ -1,11 +1,11 @@
 {
-  "name": "ant-design-pro-site",
+  "name": "oasis-engine-site",
   "version": "2.3.0",
-  "description": "site of Ant Design Pro",
-  "homepage": "http://pro.ant.design/",
+  "description": "site of Oasis Engine",
+  "homepage": "http://oasisengine.cn",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ant-design/ant-design-pro-site"
+    "url": "https://github.com/oasis-engine/oasis-engine.github.io"
   },
   "license": "MIT",
   "scripts": {
@@ -105,5 +105,5 @@
   "resolutions": {
     "@typescript-eslint/eslint-plugin": "^4.12.0"
   },
-  "title": "Ant Design Pro"
+  "title": "Oasis Engine"
 }
