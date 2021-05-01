@@ -15,10 +15,11 @@
   margin: 20px 0;
   padding: 20px;
   border: 1px solid #ddd;
+  border-radius: 5px;
   h3 {
-    margin: 0 -20px 0;
-    padding: 0 20px 10px;
-    border-bottom: 1px solid #eee;
+    margin: -20px -20px 0;
+    padding: 10px 20px 10px;
+    background-color: #f9f9f9;
   }
   h4 {
     font-size: 16px;
@@ -26,6 +27,10 @@
   h5 {
     font-size: 14px;
   }
+}
+
+.tsd-description {
+  margin-top: 10px;
 }
 
 .tsd-signature {
@@ -39,9 +44,16 @@
   border-width: 1px 0
 }
 
+.tsd-signature-symbol {
+  color: #999;
+}
 
-ul.tsd-parameters,
-ul.tsd-type-parameters {
+.tsd-signature-type {
+  color: #999;
+}
+
+.tsd-parameters-list,
+.tsd-type-parameters-list {
   list-style: square;
   margin: 0;
   padding-left: 20px;

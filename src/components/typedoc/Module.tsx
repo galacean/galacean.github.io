@@ -3,12 +3,13 @@ import Item from './Item';
 import { IModule } from './Interface';
 import Source from './Source';
 import Comment from './Comment';
+import Kind from './Kind';
 
 export default function Module(props: IModule) {
   console.log('module', props)
   return <div>
     <h2 className="tsd-module-name">
-      {props.name}
+      <Kind {...props} />
       {props.sources?.map(source => {
         return <Source key={source.fileName} {...source} />
       })}

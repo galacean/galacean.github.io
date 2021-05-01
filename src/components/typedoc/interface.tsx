@@ -10,10 +10,16 @@ export interface ISource {
   character: number;
 }
 
+interface ITag {
+  tag: string;
+  text: string;
+}
+
 export interface IComment {
   shortText?: string;
   text?: string;
   returns?: string;
+  tags?: ITag;
 }
 
 interface IExtendedType {
@@ -36,10 +42,17 @@ export interface IParameter {
   type: IType;
 }
 
+interface ITarget {
+  elementType: IType;
+  type: string;
+}
+
 export interface IType {
   id: number;
   type: string;
   name: string;
+  operator?: string;
+  target?: ITarget;
 }
 
 export interface ISignature {
@@ -48,11 +61,11 @@ export interface ISignature {
   kind: number;
   kindString: string;
   overwrites: IOverwrite[];
+  flags: IFlag;
   type: IType;
   parameters?: IParameter[];
   typeParameter?: IParameter[];
   comment?: IComment;
-  flags: IFlag;
 }
 
 export interface IItem {
