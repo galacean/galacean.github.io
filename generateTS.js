@@ -3,9 +3,8 @@ const fsExtra = require('fs-extra');
 const path = require('path');
 const fs = require('fs');
 
-const enginePath = '../../oasis/engine/packages/**/index.ts';
 
-glob(enginePath, {}, function(er, files) {
+glob('../../oasis/engine/packages/**/src/index.ts', {realpath: true}, function(er, files) {
   var re = new RegExp(/([^test]+).ts/);
 
   var tsFiles = [];

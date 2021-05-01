@@ -61,7 +61,7 @@ module.exports = async ({ graphql, actions }) => {
       createPage({
         path: `api/${name}`,
         component: apiTemplate,
-        context: { node, paths: `${name}/` }
+        context: { node, paths: `${name}/`, type: 'package' }
       });
 
       if (node.children){
@@ -70,7 +70,7 @@ module.exports = async ({ graphql, actions }) => {
           createPage({
             path: `api/${name}/${child.name}`,
             component: apiTemplate,
-            context: { node: child, paths: `${name}/${child.name}` }
+            context: { node: child, paths: `${name}/${child.name}`, type: 'module' }
           });
         })
       }
