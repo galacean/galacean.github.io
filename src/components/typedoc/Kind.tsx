@@ -27,7 +27,7 @@ export default function (props: IItem) {
 
   return (
     <span className={`tsd-parent-kind-module tsd-kind-${kindClassName}`}>
-      <a href={`#${props.name}`} className="tsd-kind-icon">{props.name}</a>
+      <a href={`#${props.name}`} id={props.name} className="tsd-kind-icon">{props.name}</a>
     </span>
   );
 }
