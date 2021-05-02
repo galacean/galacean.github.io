@@ -10,17 +10,23 @@
   margin: 10px 0;
   font-size: 16px;
 }
-.tsd-comment-tags {
+.tsd-comment-tag {
   display: inline-block;
   padding: 1px 5px;
   border-radius: 4px;
   color: #fff;
-  background-color: rgb(202, 31, 31);
-  text-indent: 0;
   font-weight: 400;
   margin-right: 5px;
   font-size: 12px;
-
+  &.tsd-comment-tag-deprecated {
+    background-color: rgb(202, 31, 31);
+  }
+  &.tsd-comment-tag-todo {
+    background-color: rgb(202, 199, 31);
+  }
+  &.tsd-comment-tag-remarks {
+    background-color: rgb(31, 202, 88);
+  }
 }
 
 .tsd-panel {
