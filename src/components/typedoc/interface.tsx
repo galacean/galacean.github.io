@@ -29,7 +29,8 @@ interface IExtendedType {
 }
 
 interface IFlag {
-  isOptional: boolean;
+  isOptional?: boolean;
+  isReadonly?: boolean;
 }
 
 export interface IParameter {
@@ -40,6 +41,7 @@ export interface IParameter {
   comment: IComment;
   flags: IFlag;
   type: IType;
+  index?: number;
 }
 
 interface ITarget {
@@ -48,11 +50,12 @@ interface ITarget {
 }
 
 export interface IType {
-  id: number;
-  type: string;
   name: string;
+  id?: number;
+  type?: string;
   operator?: string;
   target?: ITarget;
+  elementType?: IType;
 }
 
 export interface ISignature {
@@ -82,6 +85,7 @@ export interface IItem {
   sources?: ISource[];
   type?: IType;
   defaultValue?: any;
+  flags?: IFlag;
 }
 
 
