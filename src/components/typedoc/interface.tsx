@@ -10,7 +10,7 @@ export interface ISource {
   character: number;
 }
 
-interface ITag {
+export interface ITag {
   tag: string;
   text: string;
 }
@@ -19,7 +19,7 @@ export interface IComment {
   shortText?: string;
   text?: string;
   returns?: string;
-  tags?: ITag;
+  tags?: ITag[];
 }
 
 interface IExtendedType {
