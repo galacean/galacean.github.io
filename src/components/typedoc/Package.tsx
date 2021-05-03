@@ -1,7 +1,7 @@
 import React from 'react';
-import './Package.less';
 import Kind from './Kind';
 import { IPackage } from './interface';
+import './index.less';
 
 export default function (props: IPackage) {
   const maps:any = {}
