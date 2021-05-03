@@ -1,12 +1,12 @@
 import React from 'react';
 import Item from './Item';
-import { IModule } from './Interface';
+import type { IModule } from './Interface';
 import Source from './Source';
 import Comment from './Comment';
 import Kind from './Kind';
 
 export default function Module(props: IModule) {
-  console.log('module', props)
+  // console.log('module', props)
   return <div>
     <h2 className="tsd-module-name">
       <Kind {...props} />
@@ -22,6 +22,9 @@ export default function Module(props: IModule) {
       if (!child.name.startsWith('_')) {
         return <Item key={child.id} {...child} />
       }
+      
+        return null;
+      
     })}
   </div>
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import Kind from './Kind';
-import { IItem, ISignature, IType, IParameter } from './interface';
+import type { IItem, ISignature, IType, IParameter } from './interface';
 import Source from './Source';
 import Comment from './Comment';
 import { Kinds } from './enum';
@@ -24,7 +24,7 @@ function Parameter(props: IParameter) {
 }
 
 function GetSignature(props: ISignature) {
-  const type = props.type;
+  const {type} = props;
 
   return <div className="tsd-signature">
     <span className="tsd-signature-symbol">get </span>
@@ -84,27 +84,33 @@ function TypeParameter (props: IType) {
 }
 
 function ParameterElement (p: IParameter) {
+  let element = null;
+
+  if (p.type?.type === 'reflection'){
+    element = <i>T</i>;
+  }
+  else if (p.type?.elementType?.type === 'reference') {
+    element = <span><i>{p.type.elementType.name}</i>{p.type.type === 'array' && <span>[]</span>}</span>
+  }
+  else{
+    element = <Type {...p.type} />
+  }
   return <span>
     {p.index !== 0 && ', '}
-    {p.name}:  {
-      p.type?.type === 'reflection' ? <i>T</i> : 
-        (p.type?.elementType?.type === 'reference' ? 
-          <span><i>{p.type.elementType.name}</i>{p.type.type === 'array' && <span>[]</span>}</span> : 
-            <Type {...p.type} />)
-    }
+    {p.name}: {element} 
   </span>
 } 
 
 function ReturnElement (props: ISignature) {
   if (!props.type) {
     return <span>void</span>
-  } else {
+  } 
     return props.typeParameter ? 
       <span>
         <Type name={props.type.name} />
         {props.type.type === 'array' && <span><i>{props.type.elementType && <Type name={props.type.elementType?.name} />}</i>[]</span>}
       </span> : <Type {...props.type}/>
-  }
+  
 }
 
 function MethodSignature(props: ISignature) {
@@ -112,7 +118,7 @@ function MethodSignature(props: ISignature) {
     <strong>{props.name}</strong>
     {props.typeParameter && props.typeParameter[0] && <TypeParameter {...props.typeParameter[0].type} />}
     ({props.parameters?.map((p, i) => {
-      return <ParameterElement key={i} {...p} index={i} />
+      return <ParameterElement key={p.id} {...p} index={i} />
     })}): <ReturnElement {...props} />
   </div>
 }

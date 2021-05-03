@@ -1,8 +1,8 @@
 import React from 'react';
-import { IItem } from './interface';
+import type { IItem } from './interface';
 import { Kinds } from './enum';
 
-export default function (props: IItem) {
+export default function Kind (props: IItem) {
   const kinds: any = {
     [Kinds.ENUM]: 'enum',
     [Kinds.CLASS]: 'class',

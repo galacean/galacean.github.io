@@ -16,8 +16,9 @@ import classNames from 'classnames';
 import MobileMenu from 'rc-drawer-menu';
 import moment from 'moment';
 import Article from './Article';
-import { isZhCN, getMenuItems, MenuDataItem, IMenuData } from '../utils';
-import { IFrontmatterData } from '../../templates/docs';
+import type { MenuDataItem, IMenuData } from '../utils';
+import { isZhCN, getMenuItems } from '../utils';
+import type { IFrontmatterData } from '../../templates/docs';
 
 const { SubMenu } = Menu;
 

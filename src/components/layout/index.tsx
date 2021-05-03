@@ -8,7 +8,7 @@ import cnLocale from '../../locale/zh-CN';
 import * as utils from '../utils';
 import '../../static/style';
 import Header from './Header';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 export interface LayoutProps {
   location: {

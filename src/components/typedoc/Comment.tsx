@@ -1,5 +1,5 @@
 import React from 'react';
-import { IComment, ITag } from './interface';
+import type { IComment, ITag } from './interface';
 
 function Tag (props: ITag) {
   return <p>
@@ -9,8 +9,8 @@ function Tag (props: ITag) {
 export default function Comment(props: IComment) {
   return <blockquote className="tsd-comment">
     {props.shortText && <p>{props.shortText}</p>}
-    {props.tags && props.tags.map((tag, i) => {
-      return <Tag key={i} {...tag}/>
+    {props.tags && props.tags.map((tag) => {
+      return <Tag key={tag.tag} {...tag}/>
     })}
   </blockquote>;
 }

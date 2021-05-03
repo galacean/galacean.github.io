@@ -1,9 +1,12 @@
 import React from 'react';
 import { Affix } from 'antd';
 import Kind from './Kind';
-import { IModule, IPackage } from './interface';
+import type { IModule, IPackage } from './interface';
 
 // const { SubMenu } = Menu;
+declare global {
+  interface Window {location: Location;}
+}
 
 function Module (props: IModule) {
   return <div>
@@ -16,12 +19,15 @@ function Module (props: IModule) {
             <Kind {...item} link={`#${item.name}`}/>
           </li>
         }
+        
+          return null;
+        
       })}
     </ul>
   </div>
 }
 
-export default function (props: IPackage) {
+export default function Menu (props: IPackage) {
   return (
     <Affix>
       <nav className="tsd-menu-nav">
@@ -30,9 +36,12 @@ export default function (props: IPackage) {
             if (!item.name.startsWith('_')) {
               return <li key={item.id} >
                 <Kind {...item} link={`../${item.name}/`}/>
-                {item.child && <Module {...item.child} hash={location.hash.replace('#', '')}/>}
+                {item.child && <Module {...item.child} hash={window.location.hash.replace('#', '')}/>}
               </li>
             }
+            
+              return null;
+            
           })}
         </ul>
       </nav>

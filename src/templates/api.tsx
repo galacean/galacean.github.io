@@ -3,11 +3,12 @@ import { graphql } from "gatsby";
 import Menu from '../components/typedoc/Menu';
 import WrapperLayout from '../components/layout';
 import { Layout, Breadcrumb } from 'antd';
-const { Sider, Content } = Layout;
 import Package from '../components/typedoc/Package';
 import Module from '../components/typedoc/Module';
 
-export default function (props: any) {
+const { Sider, Content } = Layout;
+
+export default function API (props: any) {
   const { node, paths, type, packages, packageIndex } = props.pageContext;
   const path = paths.split('/');
 

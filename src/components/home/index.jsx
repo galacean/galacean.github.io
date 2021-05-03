@@ -3,8 +3,8 @@ import { injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
 
 import Banner from './Banner';
-import Page1 from './Page1';
-import Page2 from './Page2';
+// import Page1 from './Page1';
+// import Page2 from './Page2';
 
 function Home(props) {
   const { intl } = props;
