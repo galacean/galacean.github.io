@@ -1,4 +1,5 @@
 export enum Kinds {
+  MODULE = 1,
   ENUM = 4,
   CLASS = 128,
   INTERFACE = 256,

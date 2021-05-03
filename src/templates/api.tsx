@@ -7,30 +7,35 @@ const { Sider, Content } = Layout;
 import Package from '../components/typedoc/Package';
 import Module from '../components/typedoc/Module';
 
-
-export default function (props) {
-  const { node, paths, type } = props.pageContext;
+export default function (props: any) {
+  const { node, paths, type, packages, packageIndex } = props.pageContext;
   const path = paths.split('/');
+
+  if (type === 'module') {
+    packages[packageIndex].child = node;
+  }
+
+  const menu = {children: packages}
 
   return (
     <>
       <WrapperLayout {...props}>
         <Layout>
-          <Content className="api" style={{padding: '20px', backgroundColor: '#fff'}}>
+          <Content className="api" style={{ padding: '20px', backgroundColor: '#fff' }}>
             <div className="tsc-content">
               <Breadcrumb>
                 <Breadcrumb.Item>API</Breadcrumb.Item>
-                {path[0] &&<Breadcrumb.Item>
+                {path[0] && <Breadcrumb.Item>
                   <a href="">{path[0]}</a>
                 </Breadcrumb.Item>}
-                {path[1] &&<Breadcrumb.Item>
+                {path[1] && <Breadcrumb.Item>
                   <a href="">{path[1]}</a>
                 </Breadcrumb.Item>}
               </Breadcrumb>
-              { type === 'package' ? <Package {...node}/> : <Module {...node} />}
+              {type === 'package' ? <Package {...node} /> : <Module {...node} />}
             </div>
           </Content>
-          <Sider style={{width: '300px!important'}}><Menu {...node} /></Sider>
+          <Sider style={{ width: '300px!important' }}><Menu {...menu} /></Sider>
         </Layout>
       </WrapperLayout>
     </>

@@ -86,6 +86,7 @@ export interface IItem {
   type?: IType;
   defaultValue?: any;
   flags?: IFlag;
+  link?: string;
 }
 
 

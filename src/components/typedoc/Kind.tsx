@@ -12,7 +12,8 @@ export default function (props: IItem) {
     [Kinds.PROPERTY]: 'property',
     [Kinds.CONSTRUCTOR]: 'constructor',
     [Kinds.ACCESSOR]: 'get-signature',
-    [Kinds.METHOD]: 'method'
+    [Kinds.METHOD]: 'method',
+    [Kinds.MODULE]: 'module'
   };
 
   let kindClassName: string = kinds[props.kind];
@@ -27,7 +28,7 @@ export default function (props: IItem) {
 
   return (
     <span className={`tsd-parent-kind-module tsd-kind-${kindClassName}`}>
-      <a href={`#${props.name}`} id={props.name} className="tsd-kind-icon">{props.name}</a>
+      <a href={props.link} id={props.name} className="tsd-kind-icon">{props.name}</a>
     </span>
   );
 }

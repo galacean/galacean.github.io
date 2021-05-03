@@ -23,7 +23,7 @@ export default function (props: IPackage) {
           <ul className="tsd-index-list">
             {maps[group.kind].map((child:any) => {
               return <li key={child.id} >
-                <Kind {...child} />
+                <Kind {...child} link={`${child.name}`}/>
               </li>
             })}
           </ul>

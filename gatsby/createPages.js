@@ -53,15 +53,22 @@ module.exports = async ({ graphql, actions }) => {
 
   let apis = JSON.parse(typedocquery.data.typedoc.internal.content);
 
+  const packages = apis.children.map((p) => {
+    return {
+      id: p.id,
+      kind: p.kind,
+      name: p.name.replace('/src', '')
+    };
+  });
+
   if (apis) {
-    apis.children.forEach((node) => {
+    apis.children.forEach((node, i) => {
       const name = node.name.replace('/src', '');
 
-      // console.log('node:', node)
       createPage({
-        path: `api/${name}`,
+        path: `api/${name}/`,
         component: apiTemplate,
-        context: { node, paths: `${name}/`, type: 'package' }
+        context: { node, paths: `${name}/`, type: 'package', packages}
       });
 
       if (node.children){
@@ -70,14 +77,12 @@ module.exports = async ({ graphql, actions }) => {
           createPage({
             path: `api/${name}/${child.name}`,
             component: apiTemplate,
-            context: { node: child, paths: `${name}/${child.name}`, type: 'module' }
+            context: { node: child, paths: `${name}/${child.name}`, type: 'module', packages, packageIndex: i }
           });
         })
       }
     });
   }
-
-  // console.log(typedocquery.data.typedoc.internal.content);
 
   if (allMarkdown.errors) {
     console.error(allMarkdown.errors);
