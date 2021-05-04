@@ -8,6 +8,14 @@ import moment from 'moment';
 import EditButton from './EditButton';
 import type { IFrontmatterData } from '../../templates/docs';
 import AvatarList from './AvatarList';
+import rehypeReact from "rehype-react"
+import Playground from "../Playground";
+
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+  components: { "playground": Playground }
+}).Compiler;
+
 
 interface ArticleProps {
   content: {
@@ -64,6 +72,8 @@ export default class Article extends React.PureComponent<ArticleProps> {
           locale: 'zh-CN' | 'en-US';
         };
       };
+    console.log('content:', content)
+
     return (
       <>
         <Helmet>
@@ -100,9 +110,11 @@ export default class Article extends React.PureComponent<ArticleProps> {
           )}
           <section
             className="markdown api-container"
-            // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: content.content }}
-          />
+          // eslint-disable-next-line react/no-danger
+          // dangerouslySetInnerHTML={{ __html: content.content }}
+          >
+            {renderAst(content.htmlAst)}
+          </section>
         </article>
       </>
     );

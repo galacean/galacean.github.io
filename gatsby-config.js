@@ -55,11 +55,27 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: '/playground',
+        path: `${__dirname}/playground/`,
+        ignore: [`**/\.*`],
+      },
+    },
+    {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           'gatsby-remark-autolink-headers',
           'gatsby-remark-img-warpper-p',
+          'gatsby-remark-oasis-playground',
+          {
+            resolve: "gatsby-remark-component-parent2div",
+            options: {
+              components: ["Playground"],
+              verbose: true
+            }
+          },
           {
             resolve: 'gatsby-remark-prismjs',
             options: {
@@ -96,6 +112,7 @@ module.exports = {
           tsconfig: `${enginePath}/tsconfig.json`
         }
       }
-    }
+    },
+    'gatsby-transformer-oasis-playground'
   ],
 };

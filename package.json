@@ -56,11 +56,12 @@
     "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-plugin-typescript": "^2.0.13",
     "gatsby-remark-codepen": "^0.1.0",
+    "gatsby-remark-component-parent2div": "^1.2.3",
     "gatsby-remark-copy-linked-files": "^2.0.0",
     "gatsby-remark-embed-snippet": "^4.3.5",
     "gatsby-remark-prismjs": "^3.0.2",
     "gatsby-source-filesystem": "^2.0.0",
-    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-remark": "^2.16.1",
     "husky": "^5.0.9",
     "moment": "^2.24.0",
     "oasis-engine": "^0.3.2",
@@ -75,7 +76,9 @@
     "react-github-button": "^0.1.11",
     "react-helmet": "^5.2.1",
     "react-intl": "^2.4.0",
-    "react-media": "^1.9.2"
+    "react-media": "^1.9.2",
+    "react-prism": "^4.3.2",
+    "rehype-react": "^6.2.0"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",

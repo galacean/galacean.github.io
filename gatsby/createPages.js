@@ -11,7 +11,6 @@ module.exports = async ({ graphql, actions }) => {
   // Used to detect and prevent duplicate redirects
 
   const docsTemplate = resolve(__dirname, '../src/templates/docs.tsx');
-  const apiTemplate  = resolve(__dirname, '../src/templates/api.tsx');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -38,6 +37,44 @@ module.exports = async ({ graphql, actions }) => {
     `,
   );
 
+
+  if (allMarkdown.errors) {
+    console.error(allMarkdown.errors);
+
+    throw Error(allMarkdown.errors);
+  }
+  const redirects = {};
+
+  const { edges } = allMarkdown.data.allMarkdownRemark;
+  
+  edges.forEach((edge) => {
+    const { slug, underScoreCasePath } = edge.node.fields;
+    if (slug.includes('docs/') || slug.includes('/blog')) {
+      const template = docsTemplate;
+      const createArticlePage = (path) => {
+        if (underScoreCasePath !== path) {
+          redirects[underScoreCasePath] = path;
+        }
+
+        return createPage({
+          path,
+          component: template,
+          context: {
+            slug,
+            // if is docs page
+            type: slug.includes('docs/') ? '/docs/' : '/blog/',
+            locale: slug.includes('-cn') ? '/-cn/' : '//',
+          },
+        });
+      };
+
+      // Register primary URL.
+      createArticlePage(slug.replace('/index', ''));
+    }
+  });
+
+  // API
+  const apiTemplate  = resolve(__dirname, '../src/templates/api.tsx');
   const typedocquery = await graphql(
     `
     {
@@ -84,40 +121,27 @@ module.exports = async ({ graphql, actions }) => {
     });
   }
 
-  if (allMarkdown.errors) {
-    console.error(allMarkdown.errors);
+  // Playground
+  const playgroundTemplate  = resolve(__dirname, '../src/templates/playground.tsx');
 
-    throw Error(allMarkdown.errors);
-  }
-  const redirects = {};
-
-  const { edges } = allMarkdown.data.allMarkdownRemark;
-  
-  edges.forEach((edge) => {
-    const { slug, underScoreCasePath } = edge.node.fields;
-    if (slug.includes('docs/') || slug.includes('/blog')) {
-      const template = docsTemplate;
-      const createArticlePage = (path) => {
-        if (underScoreCasePath !== path) {
-          redirects[underScoreCasePath] = path;
+  const playgroundquery = await graphql(
+    `
+    {
+      playground {
+        internal {
+          content
         }
-
-        return createPage({
-          path,
-          component: template,
-          context: {
-            slug,
-            // if is docs page
-            type: slug.includes('docs/') ? '/docs/' : '/blog/',
-            locale: slug.includes('-cn') ? '/-cn/' : '//',
-          },
-        });
-      };
-
-      // Register primary URL.
-      createArticlePage(slug.replace('/index', ''));
+      }
     }
+    `,
+  );
+
+  createPage({
+    path: `playground/tranform`,
+    component: playgroundTemplate,
+    context: { node: playgroundquery }
   });
+
   // 首页的中文版
   const indexTemplate = resolve(__dirname, '../src/pages/index.tsx');
 

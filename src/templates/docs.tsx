@@ -38,6 +38,7 @@ export interface IGraphqlFrontmatterData extends Omit<IFrontmatterData, 'title'>
 
 export interface IMarkdownRemarkData {
   html: string;
+  htmlAst: any;
   tableOfContents: string;
   frontmatter: IGraphqlFrontmatterData;
   fields: IMarkDownFields;
@@ -68,7 +69,7 @@ export default function Template({
   };
 }) {
   const { markdownRemark, allMarkdownRemark } = data;
-  const { frontmatter, fields, html, tableOfContents } = markdownRemark;
+  const { frontmatter, fields, html, htmlAst, tableOfContents } = markdownRemark;
   const { edges } = allMarkdownRemark;
   const menuList = edges.map(({ node, next, previous }) => {
     const { fields: nodeFields } = node;
@@ -99,6 +100,7 @@ export default function Template({
           },
           toc: tableOfContents,
           content: html,
+          htmlAst
         }}
         menuList={menuList}
       />
@@ -110,6 +112,7 @@ export const pageQuery = graphql`
   query TemplateDocsMarkdown($slug: String!, $type: String!, $locale: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      htmlAst
       tableOfContents
       frontmatter {
         title
