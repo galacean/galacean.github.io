@@ -11,7 +11,7 @@ declare global {
 function Module (props: IModule) {
   return <div>
     <div className="tsd-menu-class"><Kind {...props} link={`#${props.name}`} /></div>
-    <ul className="tsd-menu-list tsd-menu-list-items">
+    {props.children && <ul className="tsd-menu-list tsd-menu-list-items">
       {props.children.map((item) => {
         const className = item.name === props.hash ? 'tsd-menu-current' : '';
         if (!item.name.startsWith('_')) {
@@ -23,7 +23,7 @@ function Module (props: IModule) {
           return null;
         
       })}
-    </ul>
+    </ul>}
   </div>
 }
 
@@ -31,19 +31,19 @@ export default function Menu (props: IPackage) {
   return (
     <Affix>
       <nav className="tsd-menu-nav">
-        <ul className="tsd-menu-list">
+        {props.children && <ul className="tsd-menu-list">
           {props.children.map((item: any) => {
             if (!item.name.startsWith('_')) {
               return <li key={item.id} >
                 <Kind {...item} link={`../${item.name}/`}/>
-                {item.child && <Module {...item.child} hash={window.location.hash.replace('#', '')}/>}
+                {item.child && <Module {...item.child} hash={'#'}/>}
               </li>
             }
             
               return null;
             
           })}
-        </ul>
+        </ul>}
       </nav>
     </Affix>
   );

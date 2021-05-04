@@ -8,17 +8,17 @@
 
 .tsd-comment {
   margin: 10px 0;
-  font-size: 16px;
   color: #717171;
+  font-size: 16px;
 }
 .tsd-comment-tag {
   display: inline-block;
+  margin-right: 5px;
   padding: 1px 5px;
-  border-radius: 4px;
   color: #fff;
   font-weight: 400;
-  margin-right: 5px;
   font-size: 12px;
+  border-radius: 4px;
   &.tsd-comment-tag-deprecated {
     background-color: rgb(202, 31, 31);
   }
@@ -56,14 +56,14 @@
 }
 
 .tsd-signature {
-  padding: 10px 20px;
-  border-bottom: 1px solid #eee;
-  font-family: Menlo,Monaco,Consolas,courier new,monospace;
-  font-size: 14px;
-  overflow-x: auto;
-  margin-left: -20px;
   margin-right: -20px;
-  border-width: 1px 0
+  margin-left: -20px;
+  padding: 10px 20px;
+  overflow-x: auto;
+  font-size: 14px;
+  font-family: Menlo,Monaco,Consolas,courier new,monospace;
+  border-width: 1px 0;
+  border-bottom: 1px solid #eee
 }
 
 .tsd-signature-symbol {
@@ -75,21 +75,21 @@
 }
 
 .tsd-parameters-list {
-  list-style: square;
   margin: 0;
   padding-left: 20px;
+  list-style: square;
 }
 
 .tsd-flag {
   display: inline-block;
-  padding: 1px 5px;
-  border-radius: 4px;
-  color: #fff;
-  background-color: #707070;
-  text-indent: 0;
-  font-weight: 400;
   margin-right: 5px;
+  padding: 1px 5px;
+  color: #fff;
+  font-weight: 400;
   font-size: 12px;
+  text-indent: 0;
+  background-color: #707070;
+  border-radius: 4px;
 }
 
 .tsc-source {
@@ -102,11 +102,11 @@
     margin: 0 -20px 10px;
   } 
   .tsd-index-list {
+    padding: 0;
+    line-height: 1.333em;
     column-count: 4;
     column-gap: 20px;
-    padding: 0;
     list-style: none;
-    line-height: 1.333em;
   }
 }
 
@@ -114,13 +114,13 @@
   .tsd-kind-icon {
     color: #9600ff;
     &::before {
-      content: "";
       display: inline-block;
-      vertical-align: middle;
       width: 17px;
       height: 17px;
       margin: 0 3px 2px 0;
-      background-image: url(//gw.alipayobjects.com/mdn/rms_e54b79/afts/img/A*50wRRKbc55sAAAAAAAAAAAAAARQnAQ);
+      vertical-align: middle;
+      background-image: url('//gw.alipayobjects.com/mdn/rms_e54b79/afts/img/A*50wRRKbc55sAAAAAAAAAAAAAARQnAQ');
+      content: '';
     }
   }
   &.tsd-kind-module{
@@ -234,30 +234,30 @@
 }
 
 .tsd-menu-list {
-  background-color: #fff;
+  padding: 0 0 0 10px;
   list-style: none;
-  padding: 0 0 0 10px; 
+  background-color: #fff; 
   &.tsd-menu-list-items {
     padding-left: 30px;
     border-left: 1px solid #eee;
   }
   .tsd-menu-current {
     position: relative;
-    &:before {
-      content: '';
+    &::before {
       position: absolute;
+      top: 2px;
+      left: -31px;
       width: 1px;
       height: 20px;
-      left: -31px;
-      top: 2px;
       background-color: #0672de;
+      content: '';
     }
   }
 }
 
 .ant-layout-sider {
-  width: 300px!important;
-  max-width: 300px!important;
-  min-width: 300px!important;
+  width: 300px !important;
+  min-width: 300px !important;
+  max-width: 300px !important;
   background-color: #fff;
 }

@@ -12,7 +12,7 @@ export default function API (props: any) {
   const { node, paths, type, packages, packageIndex } = props.pageContext;
   const path = paths.split('/');
 
-  if (type === 'module') {
+  if (type === 'module' && packageIndex !== undefined) {
     packages[packageIndex].child = node;
   }
 
@@ -21,7 +21,7 @@ export default function API (props: any) {
   return (
     <>
       <WrapperLayout {...props}>
-        <Layout>
+        <Layout hasSider={true}>
           <Content className="api" style={{ padding: '20px', backgroundColor: '#fff' }}>
             <div className="tsc-content">
               <Breadcrumb>
