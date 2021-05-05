@@ -13,7 +13,7 @@ export default function Playground (props) {
         </code>
       </pre>
       <span className="code-preview-demo">
-        <iframe src="" frameBorder="0"></iframe>
+        <iframe src="/playground/transform" width="100%" height="100%" frameBorder="0"></iframe>
       </span>
     </span>
   );

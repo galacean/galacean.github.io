@@ -137,7 +137,7 @@ module.exports = async ({ graphql, actions }) => {
   );
 
   createPage({
-    path: `playground/tranform`,
+    path: `playground/transform`,
     component: playgroundTemplate,
     context: { node: playgroundquery }
   });
