@@ -127,20 +127,27 @@ module.exports = async ({ graphql, actions }) => {
   const playgroundquery = await graphql(
     `
     {
-      playground {
-        internal {
-          content
+      allPlayground {
+        nodes {
+          internal {
+            content
+          }
+          name
+          id
         }
       }
     }
     `,
   );
 
-  createPage({
-    path: `playground/transform`,
-    component: playgroundTemplate,
-    context: { node: playgroundquery }
-  });
+  playgroundquery.data.allPlayground.nodes.forEach(node => {
+    createPage({
+      path: `playground/${node.name}`,
+      component: playgroundTemplate,
+      context: { node: node}
+    });
+  })
+
 
   // 首页的中文版
   const indexTemplate = resolve(__dirname, '../src/pages/index.tsx');

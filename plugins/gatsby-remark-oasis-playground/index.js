@@ -12,9 +12,10 @@ module.exports = ({ markdownAST }) => {
       const src = /src="(.+)"/.exec(node.value);
 
       if (src && src[1]) {
-        console.log('node.value:', src[1])
-        const code = fs.readFileSync(`./playground/${src[1]}`, {encoding: 'utf8'});
-        node.value = `<playground>${Prism.highlight(code, Prism.languages.javascript, 'javascript')}</playground>`;
+        const name = src[1];
+        const path = `playground/${name}`
+        const code = fs.readFileSync(`./${path}`, {encoding: 'utf8'});
+        node.value = `<playground name=${name} src=${path}>${Prism.highlight(code, Prism.languages.javascript, 'javascript')}</playground>`;
       }
     } });
   return markdownAST;

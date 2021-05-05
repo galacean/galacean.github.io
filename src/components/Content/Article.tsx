@@ -72,7 +72,6 @@ export default class Article extends React.PureComponent<ArticleProps> {
           locale: 'zh-CN' | 'en-US';
         };
       };
-    console.log('content:', content)
 
     return (
       <>

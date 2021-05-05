@@ -1,10 +1,7 @@
 import React from 'react';
 import './index.less';
 
-export default function Playground (props) {
-  
-  console.log('playground:', props);
-
+export default function Playground (props: any) {
   return (
     <span className="code-preview">
       <pre className="code-preview-source">
@@ -13,7 +10,7 @@ export default function Playground (props) {
         </code>
       </pre>
       <span className="code-preview-demo">
-        <iframe src="/playground/transform" width="100%" height="100%" frameBorder="0"></iframe>
+        <iframe src={`/playground/${props.name.replace('.ts', '')}`} width="100%" height="100%" frameBorder="0"></iframe>
       </span>
     </span>
   );

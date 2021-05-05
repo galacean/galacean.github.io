@@ -37,7 +37,7 @@ const useScript = (s: IScript) => {
 };
 
 export default function API(props: any) {
-  const content = props.pageContext.node.data.playground.internal.content;
+  const content = props.pageContext.node.internal.content;
 
   useScript({
     engine: 'https://g.alipay.com/oasis-engine@0.3.4/dist/browser.min.js',
@@ -50,13 +50,3 @@ export default function API(props: any) {
     </>
   );
 }
-
-// export const query = graphql`
-//   query {
-//     playground(playgroundId: { eq: "default" }) {
-//       internal {
-//         content
-//       }
-//     }
-//   }
-// `;
