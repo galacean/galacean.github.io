@@ -27,7 +27,7 @@ export default function Playground (props: any) {
           <code>{props.children}</code>
         </pre>
       </div>
-      {sourceCode && <CodeActions sourceCode={sourceCode}/>}
+      {sourceCode && <CodeActions sourceCode={sourceCode} name={props.name}/>}
       {url && <DemoActions url={url}/>}
     </div>
   );
