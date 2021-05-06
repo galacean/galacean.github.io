@@ -17,7 +17,7 @@
 - 使用 [once](${book.api}classes/core.eventdispatcher.html#once) 监听，只会触发一次回调函数：
 
   ```typescript
-  this.engine.on("event-test", ()=> {
+  this.engine.once("event-test", ()=> {
     console.log('call event-test')
   })
   ```
