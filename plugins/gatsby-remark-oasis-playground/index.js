@@ -15,7 +15,7 @@ module.exports = ({ markdownAST }) => {
         const name = src[1];
         const path = `playground/${name}`
         const code = fs.readFileSync(`./${path}`, {encoding: 'utf8'});
-        node.value = `<playground name=${name} src=${path}>${Prism.highlight(code, Prism.languages.javascript, 'javascript')}</playground>`;
+        node.value = `<playground name="${name}" path="${path}"><textarea>${code}</textarea>${Prism.highlight(code, Prism.languages.javascript, 'javascript')}</playground>`;
       }
     } });
   return markdownAST;

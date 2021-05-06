@@ -1,14 +1,34 @@
-.code-preview {
+.code-box {
   display: flex;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  .code-preview-source {
+  border: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+  position: relative;
+  &-source {
     flex: 1;
     margin: 0;
     max-height: 400px;
+    overflow: auto;
+    pre {
+      margin: 0;
+      background-color: #fff;
+      code {
+        background-color: #fff;
+      }
+    }
   }
-  .code-preview-demo{
+  &-demo{
     flex: 1;
     background-color: #eee;
+    padding: 0;
+  }
+  &-actions {
+    position: absolute;
+    text-align: center;
+    width: 50%;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    border-top: 1px dashed #f0f0f0;
+    padding: 2px 0;
   }
 }
