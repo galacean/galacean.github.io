@@ -147,7 +147,7 @@ function Description(props: ISignature) {
 }
 
 export default function Item(props: IItem) {
-  return <Element name={props.id} className="tsd-panel-anchor">
+  return <Element name={props.name} className="tsd-panel-anchor">
     <section className="tsd-panel" key={props.id}>
       <h3>
             <Kind {...props} />

@@ -4,27 +4,27 @@ import Kind from './Kind';
 import type { IModule, IPackage } from './interface';
 import { Link } from 'react-scroll'
 
-function Module (props: IModule) {
+function Module(props: IModule) {
   return <div>
     <div className="tsd-menu-class"><Kind {...props} link={`#${props.name}`} /></div>
     {props.children && <ul className="tsd-menu-list tsd-menu-list-items">
       {props.children.map((item) => {
         if (!item.name.startsWith('_')) {
-          return <Link to={item.id} spy={true} smooth={true} duration={250} activeClass="tsd-menu-current" >
-            <li key={item.id}>
-                <Kind {...item} link={`#${item.name}`}/>
-            </li>
-          </Link>
+          return <li key={item.id} >
+            <Link to={item.name} spy={true} smooth={true} duration={250} activeClass="tsd-menu-current" >
+              <Kind {...item} />
+            </Link>
+          </li>
         }
-        
-          return null;
-        
+
+        return null;
+
       })}
     </ul>}
   </div>
 }
 
-export default function Menu (props: IPackage) {
+export default function Menu(props: IPackage) {
   return (
     <Affix>
       <nav className="tsd-menu-nav">
@@ -32,13 +32,13 @@ export default function Menu (props: IPackage) {
           {props.children.map((item: any) => {
             if (!item.name.startsWith('_')) {
               return <li key={item.id} >
-                <Kind {...item} link={`../${item.name}/`}/>
-                {item.child && <Module {...item.child} hash={'#'}/>}
+                <Kind {...item} link={`../${item.name}/`} />
+                {item.child && <Module {...item.child} hash={'#'} />}
               </li>
             }
-            
-              return null;
-            
+
+            return null;
+
           })}
         </ul>}
       </nav>

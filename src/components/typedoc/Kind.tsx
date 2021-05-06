@@ -28,7 +28,7 @@ export default function Kind (props: IItem) {
 
   return (
     <span className={`tsd-parent-kind-module tsd-kind-${kindClassName}`}>
-      <a href={props.link} id={props.name} className="tsd-kind-icon">{props.name}</a>
+      {props.link ? <a href={props.link} id={props.name} className="tsd-kind-icon">{props.name}</a> : <span id={props.name} className="tsd-kind-icon">{props.name}</span>}
     </span>
   );
 }
