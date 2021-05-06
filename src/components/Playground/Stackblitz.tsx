@@ -13,7 +13,7 @@ export default function CodeActions (props: any) {
 
   const stackblitzPrefillConfig:any = {
     title: `${props.name} - oasis-engine@${props.version}`,
-    template: 'create-react-app',
+    template: 'typescript',
     dependencies: {
       'oasis-engine': `${props.version}`,
     },
