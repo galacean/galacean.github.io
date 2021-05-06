@@ -1,9 +1,7 @@
 import React from 'react';
-import {
-  CopyOutlined,
-} from '@ant-design/icons';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './index.less';
+import DemoActions from './DemoActions';
+import CodeActions from './CodeActions';
 
 export default function Playground (props: any) {
   let sourceCode: string = '';
@@ -17,21 +15,20 @@ export default function Playground (props: any) {
     props.children.shift();
   }
 
+  const url = `/playground/${props.name.replace('.ts', '')}`;
+
   return (
     <div className="code-box">
       <div className="code-box-demo">
-        <iframe src={`/playground/${props.name.replace('.ts', '')}`} width="100%" height="100%" frameBorder="0"></iframe>
+        <iframe src={url} width="100%" height="100%" frameBorder="0"></iframe>
       </div>
       <div className="code-box-source">
         <pre>
           <code>{props.children}</code>
         </pre>
       </div>
-      {sourceCode && <div className="code-box-actions">
-        <CopyToClipboard text={sourceCode}>
-          <CopyOutlined />
-        </CopyToClipboard>
-      </div>}
+      {sourceCode && <CodeActions sourceCode={sourceCode}/>}
+      {url && <DemoActions url={url}/>}
     </div>
   );
 }

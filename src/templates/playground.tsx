@@ -1,13 +1,4 @@
 import React, { useEffect } from 'react';
-import { graphql } from "gatsby";
-import Menu from '../components/typedoc/Menu';
-import WrapperLayout from '../components/layout';
-import { Layout, Breadcrumb } from 'antd';
-import Package from '../components/typedoc/Package';
-import Module from '../components/typedoc/Module';
-
-const { Sider, Content } = Layout;
-
 interface IScript {
   engine: string;
   playground: string;
@@ -36,7 +27,7 @@ const useScript = (s: IScript) => {
   }, [s]);
 };
 
-export default function API(props: any) {
+export default function Playground (props: any) {
   const content = props.pageContext.node.internal.content;
 
   useScript({
