@@ -37,8 +37,19 @@
     border-right: 1px dashed #f0f0f0;
   }
   &-action {
+    opacity: 0.5;
     cursor: pointer;
     display: inline-block;
-    margin-left: 16px;
+    margin-right: 16px;
+    transition: opacity 0.5s;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      color: #314659;
+    }
+    &:hover {
+      opacity: 1;
+    }
   }
 }
