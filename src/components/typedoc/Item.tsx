@@ -5,6 +5,7 @@ import type { IItem, ISignature, IType, IParameter } from './interface';
 import Source from './Source';
 import Comment from './Comment';
 import { Kinds } from './enum';
+import { Element } from 'react-scroll';
 
 function Type(props: IType) {
   return <span>
@@ -146,33 +147,35 @@ function Description(props: ISignature) {
 }
 
 export default function Item(props: IItem) {
-  return <section className="tsd-panel" key={props.id}>
-    <h3>
-      <Kind {...props} />
-      &nbsp;{props.flags?.isReadonly && <span className="tsd-flag">ReadOnly</span>}
-      {props.sources?.map((source) => {
-        return <Source key={source.fileName} {...source} />
+  return <Element name={props.id} className="tsd-panel-anchor">
+    <section className="tsd-panel" key={props.id}>
+      <h3>
+            <Kind {...props} />
+          &nbsp;{props.flags?.isReadonly && <span className="tsd-flag">ReadOnly</span>}
+          {props.sources?.map((source) => {
+            return <Source key={source.fileName} {...source} />
+          })}
+        </h3>
+      {props.type && <Property {...props} />}
+      {props.kind === Kinds.CONSTRUCTOR && props.signatures?.map((signature) =>{
+        return <ConstructorSignature key={signature.id} {...signature} />
       })}
-    </h3>
-    {props.type && <Property {...props} />}
-    {props.kind === Kinds.CONSTRUCTOR && props.signatures?.map((signature) =>{
-      return <ConstructorSignature key={signature.id} {...signature} />
-    })}
-    {props.kind === Kinds.METHOD && props.signatures?.map((signature) =>{
-      return <MethodSignature key={signature.id} {...signature} />
-    })}
-    <Row>
-      {props.getSignature && <Col span={12}>
-        <GetSignature {...props.getSignature[0]} />
-        <Description {...props.getSignature[0]} />
-      </Col>}
-      {props.setSignature && <Col span={12}> 
-        <SetSignature {...props.setSignature[0]} />
-      </Col>}
-    </Row>
-    {!props.getSignature && props.comment && <Comment {...props.comment} />}
-    {props.signatures?.map((signature) => {
-      return <Description key={signature.id} {...signature} />
-    })}
-  </section>
+      {props.kind === Kinds.METHOD && props.signatures?.map((signature) =>{
+        return <MethodSignature key={signature.id} {...signature} />
+      })}
+      <Row>
+        {props.getSignature && <Col span={12}>
+          <GetSignature {...props.getSignature[0]} />
+          <Description {...props.getSignature[0]} />
+        </Col>}
+        {props.setSignature && <Col span={12}> 
+          <SetSignature {...props.setSignature[0]} />
+        </Col>}
+      </Row>
+      {!props.getSignature && props.comment && <Comment {...props.comment} />}
+      {props.signatures?.map((signature) => {
+        return <Description key={signature.id} {...signature} />
+      })}
+    </section>
+  </Element>
 };

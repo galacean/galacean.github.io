@@ -82,6 +82,7 @@
     "react-intl": "^2.4.0",
     "react-media": "^1.9.2",
     "react-prism": "^4.3.2",
+    "react-scroll": "^1.8.2",
     "rehype-react": "^6.2.0"
   },
   "devDependencies": {
