@@ -76,7 +76,7 @@ export default class Article extends React.PureComponent<ArticleProps> {
       // <div> can not be a descendant of <p>
       if (content.htmlAst.children) {
         content.htmlAst.children.forEach((node) => {
-          if(node.tagName === 'p' && node.children[0].tagName === 'playground') {
+          if(node.tagName === 'p' && node?.children[0] && node.children[0].tagName === 'playground') {
             node.tagName = 'div';
           }
         })
