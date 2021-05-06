@@ -12,7 +12,7 @@ export default function DemoActions (props: any) {
   return (
     <div className="code-box-actions code-box-actions-demo">
       <div className="code-box-action code-box-qrcode">
-        <Tooltip title={<QRCode value={props.url} />}>
+        <Tooltip title={<QRCode value={props.url} />} color="#fff" placement="bottom">
           <QrcodeOutlined />
         </Tooltip>
       </div>
