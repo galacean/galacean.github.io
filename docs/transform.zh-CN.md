@@ -43,7 +43,7 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 ## 组件属性
 | 属性名称 | 属性释义 |
 | :--- | :--- |
-| [position](${book.api}classes/core.transform.html#position) | 局部位移 |
+| [position](${api}core/Transform#position) | 局部位移 |
 | [rotation](${book.api}classes/core.transform.html#rotation) | 局部旋转 - 欧拉角 |
 | [rotationQuaternion](${book.api}classes/core.transform.html#rotationquaternion) | 局部旋转 - 四元数 |
 | [scale](${book.api}classes/core.transform.html#scale) | 局部缩放 |

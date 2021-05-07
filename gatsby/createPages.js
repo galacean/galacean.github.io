@@ -5,12 +5,10 @@
  */
 
 const { resolve } = require('path');
+const { version } = require('../siteconfig.json');
 
-module.exports = async ({ graphql, actions }) => {
+async function createHomepage(actions) {
   const { createPage, createRedirect } = actions;
-  // Used to detect and prevent duplicate redirects
-
-  const docsTemplate = resolve(__dirname, '../src/templates/docs.tsx');
 
   // Redirect /index.html to root.
   createRedirect({
@@ -18,6 +16,20 @@ module.exports = async ({ graphql, actions }) => {
     redirectInBrowser: true,
     toPath: '/',
   });
+
+  // 首页的中文版
+  const indexTemplate = resolve(__dirname, '../src/pages/index.tsx');
+
+  createPage({
+    path: '/index-cn',
+    component: indexTemplate,
+  });
+}
+
+async function createDoc(graphql, actions) {
+  const { createPage, createRedirect } = actions;
+
+  const docsTemplate = resolve(__dirname, '../src/templates/docs.tsx');
 
   const allMarkdown = await graphql(
     `
@@ -43,21 +55,16 @@ module.exports = async ({ graphql, actions }) => {
 
     throw Error(allMarkdown.errors);
   }
-  const redirects = {};
 
   const { edges } = allMarkdown.data.allMarkdownRemark;
-  
+
   edges.forEach((edge) => {
-    const { slug, underScoreCasePath } = edge.node.fields;
+    const { slug } = edge.node.fields;
     if (slug.includes('docs/') || slug.includes('/blog')) {
       const template = docsTemplate;
       const createArticlePage = (path) => {
-        if (underScoreCasePath !== path) {
-          redirects[underScoreCasePath] = path;
-        }
-
         return createPage({
-          path,
+          path: slug.includes('docs/') ? version + path : path,
           component: template,
           context: {
             slug,
@@ -73,8 +80,17 @@ module.exports = async ({ graphql, actions }) => {
     }
   });
 
-  // API
-  const apiTemplate  = resolve(__dirname, '../src/templates/api.tsx');
+  createRedirect({
+    fromPath: '/docs/',
+    redirectInBrowser: true,
+    toPath: '/docs/getting-started',
+  });
+}
+
+async function createAPI(graphql, actions) {
+  const { createPage } = actions;
+
+  const apiTemplate = resolve(__dirname, '../src/templates/api.tsx');
   const typedocquery = await graphql(
     `
     {
@@ -103,16 +119,16 @@ module.exports = async ({ graphql, actions }) => {
       const name = node.name.replace('/src', '');
 
       createPage({
-        path: `api/${name}/`,
+        path: `${version}/api/${name}/`,
         component: apiTemplate,
-        context: { node, paths: `${name}/`, type: 'package', packages}
+        context: { node, paths: `${name}/`, type: 'package', packages }
       });
 
-      if (node.children){
+      if (node.children) {
         node.children.forEach((child) => {
           // console.log('node:', node)
           createPage({
-            path: `api/${name}/${child.name}`,
+            path: `${version}/api/${name}/${child.name}`,
             component: apiTemplate,
             context: { node: child, paths: `${name}/${child.name}`, type: 'module', packages, packageIndex: i }
           });
@@ -120,9 +136,12 @@ module.exports = async ({ graphql, actions }) => {
       }
     });
   }
+}
 
+async function createPlayground(graphql, actions) {
+  const { createPage } = actions;
   // Playground
-  const playgroundTemplate  = resolve(__dirname, '../src/templates/playground.tsx');
+  const playgroundTemplate = resolve(__dirname, '../src/templates/playground.tsx');
 
   const playgroundquery = await graphql(
     `
@@ -142,80 +161,17 @@ module.exports = async ({ graphql, actions }) => {
 
   playgroundquery.data.allPlayground.nodes.forEach(node => {
     createPage({
-      path: `playground/${node.name}`,
+      path: `${version}/playground/${node.name}`,
       component: playgroundTemplate,
-      context: { node: node}
+      context: { node: node }
     });
   })
 
+}
 
-  // 首页的中文版
-  const indexTemplate = resolve(__dirname, '../src/pages/index.tsx');
-
-  createPage({
-    path: '/index-cn',
-    component: indexTemplate,
-  });
-
-  createRedirect({
-    fromPath: '/docs/',
-    redirectInBrowser: true,
-    toPath: '/docs/getting-started',
-  });
-
-  createRedirect({
-    fromPath: '/blog/beter-block/',
-    redirectInBrowser: true,
-    toPath: '/blog/better-block',
-  });
-
-  createRedirect({
-    fromPath: '/blog/beter-block-cn/',
-    redirectInBrowser: true,
-    toPath: '/blog/better-block-cn',
-  });
-
-  const blogEdges = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/blog/" }, fields: { slug: {} } }
-          sort: { order: DESC, fields: [frontmatter___time] }
-          limit: 1
-        ) {
-          edges {
-            node {
-              id
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
-
-  const { node } = blogEdges.data.allMarkdownRemark.edges[0];
-  const blogPath = node.fields.slug.replace('-cn', '');
-
-  createRedirect({
-    fromPath: '/blog-cn',
-    redirectInBrowser: true,
-    toPath: `${blogPath}-cn`,
-  });
-
-  createRedirect({
-    fromPath: '/blog/',
-    redirectInBrowser: true,
-    toPath: blogPath,
-  });
-
-  Object.keys(redirects).map((path) =>
-    createRedirect({
-      fromPath: path,
-      redirectInBrowser: true,
-      toPath: redirects[path],
-    }),
-  );
+module.exports = async ({ graphql, actions }) => {
+  createHomepage(actions);
+  await createDoc(graphql, actions);
+  await createAPI(graphql, actions);
+  await createPlayground(graphql, actions);
 };

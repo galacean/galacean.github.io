@@ -1,5 +1,5 @@
 const DTS = require('./scripts/typedoc/tsfiles');
-const siteConfig = require('./siteconfig.json')
+const { version, typedocSource } = require('./siteconfig.json')
 
 module.exports = {
   siteMetadata: {
@@ -68,7 +68,14 @@ module.exports = {
         plugins: [
           'gatsby-remark-autolink-headers',
           'gatsby-remark-img-warpper-p',
-          'gatsby-remark-oasis-playground',
+          {
+            resolve: 'gatsby-remark-oasis',
+            options: {
+              api: `/${version}/api/`,
+              playground: `/${version}/playground/`,
+              docs: `/${version}/docs/`,
+            }
+          },
           {
             resolve: "gatsby-remark-component-parent2div",
             options: {
@@ -109,7 +116,7 @@ module.exports = {
         //   tsconfig: `${__dirname}/path/to/tsconfig.json`
         // }
         typedoc: {
-          tsconfig: `${siteConfig.typedocSource}/tsconfig.json`
+          tsconfig: `${typedocSource}/tsconfig.json`
         }
       }
     },
