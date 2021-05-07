@@ -58,7 +58,6 @@
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sitemap": "^2.1.0",
     "gatsby-plugin-typescript": "^2.0.13",
-    "gatsby-remark-codepen": "^0.1.0",
     "gatsby-remark-component-parent2div": "^1.2.3",
     "gatsby-remark-copy-linked-files": "^2.0.0",
     "gatsby-remark-embed-snippet": "^4.3.5",

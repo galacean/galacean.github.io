@@ -6,8 +6,6 @@ type: 组件
 
 Oasis Engine 的粒子渲染器 [ParticleRenderer](${book.api}classes/core.particlerenderer.html) 是常用的渲染组件，具备丰富的属性，通过调节各个属性值达到绚丽多彩的粒子效果。
 
-https://codepen.io/eyworldwide/pen/OJWgxKg
-
 ```typescript
 let particles: ParticleRenderer = particleEntity.addComponent(ParticleRenderer);
 
@@ -27,8 +25,6 @@ particleComp.start();
 // Stop
 particleComp.stop();
 ```
-
-https://codepen.io/eyworldwide/pen/abpwLee
 
 
 ## 属性

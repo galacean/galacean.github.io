@@ -304,8 +304,6 @@ BoundingSphere.fromBox(box, sphere2);
 
 ## 视锥体
 
-https://codepen.io/eyworldwide/pen/OJWgxYg
-
 ```typescript
 import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@oasis-engine/math";
 

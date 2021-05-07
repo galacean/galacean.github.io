@@ -34,8 +34,6 @@ entity.engine.sceneManager.activeScene._activeCameras[0]
 || [fieldOfView](${book.api}classes/core.camera.html#fieldofview) | 视角                                                         |
 |正交投影|[orthographicSize](${book.api}classes/core.camera.html#orthographicsize)|正交模式下相机的一半尺寸|
 
-https://codepen.io/eyworldwide/pen/rNjwYNR
-
 ## 类型
 
 通过设置 [isOrthographic](${book.api}classes/core.camera.html#isorthographic) 来决定采用透视投影或正交投影。

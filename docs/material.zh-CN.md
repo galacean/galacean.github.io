@@ -4,8 +4,6 @@ title: 材质
 type: 资源系统
 ---
 
-https://codepen.io/eyworldwide/pen/WNROZdO
-
 ## 如何使用材质
 用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${book.manual}resource/resource-manager.md?id=_5-gltf)或者[编辑器](https://oasistwa.alipay.com/3d/projects)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
 ```typescript
@@ -33,8 +31,6 @@ const material = renderer.setSharedMaterial(0, material);
 
 ## PBRMaterial
 引擎和编辑器全面提倡使用 PBR 材质 [PBRMaterial](${book.api}classes/core.pbrmaterial.html) 。PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。
-
-https://codepen.io/eyworldwide/pen/jOywaWp
 
 跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
 引擎提供了 **金属-粗糙度/高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${book.api}classes/core.pbrmaterial.html) 和 [PBRSpecularMaterial](${book.api}classes/core.pbrspecularmaterial.html)。

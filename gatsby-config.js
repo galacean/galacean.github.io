@@ -96,14 +96,6 @@ module.exports = {
               noInlineHighlight: true,
             },
           },
-          {
-            resolve:"gatsby-remark-codepen",
-            options: {
-              theme: "light",
-              height: 500,
-              defaultTab: 'js,result'
-            }
-          },
         ],
       },
     },

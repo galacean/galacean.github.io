@@ -6,10 +6,6 @@ type: 组件
 
 [GeometryRenderer](${book.api}classes/core.geometryrenderer.html) 是一个偏底层的几何体渲染组件，其数据对象是 [BufferGeometry](${book.api}classes/core.buffergeometry.html) ，`BufferGeometry` 可以自由操作顶点缓冲和索引缓冲数据，以及一些与几何体绘制相关的指令。具备高效、灵活、简洁等特点。开发者如果想高效灵活的实现自定义几何体就可以使用该类。
 
-https://codepen.io/eyworldwide/pen/wvgerRe
-
-https://codepen.io/eyworldwide/pen/qBRjVNO
-
 ## 原理图
 我们先概览一下 `BufferGeometry`  的原理图
 
