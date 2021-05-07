@@ -11,13 +11,13 @@ export default function CodeActions (props: any) {
     ${props.sourceCode}
   `;
 
-  const dependencies:any = {};
+  const dependencies: any = {};
 
-  for(let p in props.packages){
+  for(const p in props.packages){
     dependencies[p] = props.packages[p].version;
   }
 
-  const stackblitzPrefillConfig:any = {
+  const stackblitzPrefillConfig: any = {
     title: `${props.name} - ${props.engineName}@${props.version}`,
     template: 'typescript',
     dependencies,

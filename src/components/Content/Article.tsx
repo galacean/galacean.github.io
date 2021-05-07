@@ -8,10 +8,10 @@ import moment from 'moment';
 import EditButton from './EditButton';
 import type { IFrontmatterData } from '../../templates/docs';
 import AvatarList from './AvatarList';
-import rehypeReact from "rehype-react"
+import RehypeReact from "rehype-react"
 import Playground from "../Playground";
 
-const renderAst = new rehypeReact({
+const renderAst = new RehypeReact({
   createElement: React.createElement,
   components: { "playground": Playground }
 }).Compiler;

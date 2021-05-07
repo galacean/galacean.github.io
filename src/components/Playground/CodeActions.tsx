@@ -4,11 +4,11 @@ import {
 } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import Codepen from './Codepen'; 
-import CodeSandbox from './CodeSandbox'; 
-import Stackblitz from './Stackblitz'; 
+import Codepen from './Codepen';
+import CodeSandbox from './CodeSandbox';
+import Stackblitz from './Stackblitz';
 
-export default function CodeActions (props: any) {
+export default function CodeActions(props: any) {
   const [copy, setCopy] = useState('Copy');
 
   const html = `<!DOCTYPE html>
@@ -28,10 +28,10 @@ export default function CodeActions (props: any) {
 
   return (
     <div className="code-box-actions">
-      <Codepen sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css}/>
+      <Codepen sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css} />
       <CodeSandbox sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css} />
       <Stackblitz sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css} />
-      <Tooltip className="code-box-action" title={copy} onVisibleChange={(s)=> { s && setCopy('Copy')}}>
+      <Tooltip className="code-box-action" title={copy} onVisibleChange={(s) => { if (s) { setCopy('Copy') } }}>
         <CopyToClipboard text={sourceCode}
           onCopy={() => setCopy('Copied')}>
           <CopyOutlined />

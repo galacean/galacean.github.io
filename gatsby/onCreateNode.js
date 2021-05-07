@@ -92,14 +92,5 @@ module.exports = exports.onCreateNode = async ({ node, actions, getNode }) => {
         value: JSON.stringify(html),
       });
       break;
-    // case 'Typedoc':
-      // const apiSlug = createFilePath({ node, getNode, basePath: `api` })
-      // console.log('........', node, apiSlug )
-      // createNodeField({
-      //   node,
-      //   name: `slug`,
-      //   value: apiSlug,
-      // })
-      // break;
   }
 };

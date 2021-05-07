@@ -18,7 +18,7 @@ export default function Playground (props: any) {
 
   const name = props.name.replace('.ts', '');
   const url = `/${siteConfig.version}/playground/${name}`;
-  const version = siteConfig.packages['oasis-engine'].version;
+  const {version} = siteConfig.packages['oasis-engine'];
 
   return (
     <div className="code-box">

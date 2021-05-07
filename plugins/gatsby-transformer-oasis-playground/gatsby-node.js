@@ -13,7 +13,6 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
   try {
     const { createNode } = actions
 
-    // console.log('!!!...........node', node)
     const content = await loadNodeContent(node)
 
     const result = babel.transformSync(content, {

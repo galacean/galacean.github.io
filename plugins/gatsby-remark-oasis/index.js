@@ -21,7 +21,6 @@ module.exports = ({ markdownAST }, { api, playground, docs }) => {
   visit(markdownAST, 'link', (node) => {
     const { url } = node;
 
-    console.log('.......link', node)
     if (url) {
       if (url.includes('${docs}')) {
         node.url = url.replace('${docs}', docs);

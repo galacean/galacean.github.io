@@ -30,7 +30,7 @@ const useScript = (s: IScript) => {
 };
 
 export default function Playground (props: any) {
-  const content = props.pageContext.node.internal.content;
+  const {content} = props.pageContext.node.internal;
 
   useScript({
     engine: siteConfig.packages['oasis-engine'].cdn,

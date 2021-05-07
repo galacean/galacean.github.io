@@ -7,9 +7,9 @@ import { Tooltip } from 'antd';
 
 export default function CodeActions (props: any) {
   const iconRef = useRef(null);
-  const jsExternal:string[] = [];
+  const jsExternal: string[] = [];
 
-  for(let lib in props.packages) {
+  for(const lib in props.packages) {
     jsExternal.push(`${lib}@${props.packages[lib].version}/dist/browser.min.js`);
   }
 
