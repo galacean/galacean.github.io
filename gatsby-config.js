@@ -1,5 +1,5 @@
-const DTS = require('./tsfiles');
-const enginePath = '../../oasis/engine';
+const DTS = require('./scripts/typedoc/tsfiles');
+const siteConfig = require('./siteconfig.json')
 
 module.exports = {
   siteMetadata: {
@@ -109,7 +109,7 @@ module.exports = {
         //   tsconfig: `${__dirname}/path/to/tsconfig.json`
         // }
         typedoc: {
-          tsconfig: `${enginePath}/tsconfig.json`
+          tsconfig: `${siteConfig.typedocSource}/tsconfig.json`
         }
       }
     },

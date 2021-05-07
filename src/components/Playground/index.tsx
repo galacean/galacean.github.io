@@ -2,6 +2,7 @@ import React from 'react';
 import './index.less';
 import DemoActions from './DemoActions';
 import CodeActions from './CodeActions';
+import siteConfig from '../../../siteconfig.json';
 
 export default function Playground (props: any) {
   let sourceCode: string = '';
@@ -15,7 +16,9 @@ export default function Playground (props: any) {
     props.children.shift();
   }
 
-  const url = `/playground/${props.name.replace('.ts', '')}`;
+  const name = props.name.replace('.ts', '');
+  const url = `/playground/${name}`;
+  const version = siteConfig.packages['oasis-engine'].version;
 
   return (
     <div className="code-box">
@@ -27,7 +30,7 @@ export default function Playground (props: any) {
           <code>{props.children}</code>
         </pre>
       </div>
-      {sourceCode && <CodeActions sourceCode={sourceCode} name={props.name} url={url}/>}
+      {sourceCode && <CodeActions sourceCode={sourceCode} engineName={siteConfig.name} name={name} url={url} version={version} packages={siteConfig.packages}/>}
       {url && <DemoActions url={url}/>}
     </div>
   );

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import siteConfig from '../../siteconfig.json';
+
 interface IScript {
   engine: string;
   playground: string;
@@ -31,7 +33,7 @@ export default function Playground (props: any) {
   const content = props.pageContext.node.internal.content;
 
   useScript({
-    engine: 'https://g.alipay.com/oasis-engine@0.3.4/dist/browser.min.js',
+    engine: siteConfig.packages['oasis-engine'].cdn,
     playground: content
   });
 

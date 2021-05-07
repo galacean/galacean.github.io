@@ -24,14 +24,15 @@ export default function CodeActions (props: any) {
   </html>`;
 
   const css = `body {margin: 0;}`;
+  const { sourceCode, version, name, packages, engineName } = props;
 
   return (
     <div className="code-box-actions">
-      <Codepen sourceCode={props.sourceCode} version="0.3.4" name={props.name} html={html} css={css}/>
-      <CodeSandbox sourceCode={props.sourceCode} version="0.3.4" name={props.name} html={html} css={css} />
-      <Stackblitz sourceCode={props.sourceCode} version="0.3.4" name={props.name} html={html} css={css} />
+      <Codepen sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css}/>
+      <CodeSandbox sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css} />
+      <Stackblitz sourceCode={sourceCode} version={version} packages={packages} name={name} engineName={engineName} html={html} css={css} />
       <Tooltip className="code-box-action" title={copy} onVisibleChange={(s)=> { s && setCopy('Copy')}}>
-        <CopyToClipboard text={props.sourceCode}
+        <CopyToClipboard text={sourceCode}
           onCopy={() => setCopy('Copied')}>
           <CopyOutlined />
         </CopyToClipboard>

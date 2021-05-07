@@ -19,12 +19,16 @@ export default function CodeActions (props: any) {
   ${props.sourceCode}
   `;
 
+  const dependencies:any = {};
+
+  for(let p in props.packages){
+    dependencies[p] = props.packages[p].version;
+  }
+
   const codesandboxPackage = {
-    title: `${props.name} - oasis-engine@${props.version}`,
+    title: `${props.name} - ${props.engineName}@${props.version}`,
     main: 'index.ts',
-    dependencies: {
-      'oasis-engine': `${props.version}`,
-    },
+    dependencies,
     devDependencies: {
       typescript: '^4.0.5',
     },

@@ -9,7 +9,8 @@
     "noUnusedLocals": true,
     "noImplicitAny": true,
     "target": "es6",
-    "lib": ["dom", "es2017"]
+    "lib": ["dom", "es2017"],
+    "resolveJsonModule": true
   },
   "exclude": ["node_modules", "lib", "es"]
 }

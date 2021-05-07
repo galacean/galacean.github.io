@@ -11,12 +11,16 @@ export default function CodeActions (props: any) {
     ${props.sourceCode}
   `;
 
+  const dependencies:any = {};
+
+  for(let p in props.packages){
+    dependencies[p] = props.packages[p].version;
+  }
+
   const stackblitzPrefillConfig:any = {
-    title: `${props.name} - oasis-engine@${props.version}`,
+    title: `${props.name} - ${props.engineName}@${props.version}`,
     template: 'typescript',
-    dependencies: {
-      'oasis-engine': `${props.version}`,
-    },
+    dependencies,
     files: {
       'index.css': props.css,
       'index.ts': indexJsContent,

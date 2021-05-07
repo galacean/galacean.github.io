@@ -1,0 +1,12 @@
+{
+  "name": "oasis-engine",
+  "version": "0.3",
+  "github": "https://github.com/oasis-engine/engine/blob/main/",
+  "typedocSource": "../../oasis/engine",
+  "packages": {
+    "oasis-engine": {
+      "version": "0.3.4",
+      "cdn": "https://g.alipay.com/oasis-engine@0.3.4/dist/browser.min.js"
+    }
+  }
+}
