@@ -159,6 +159,12 @@ async function createPlayground(graphql, actions) {
     `,
   );
 
+  if (playgroundquery.errors) {
+    console.error(playgroundquery.errors);
+
+    throw Error(playgroundquery.errors);
+  }
+
   playgroundquery.data.allPlayground.nodes.forEach(node => {
     createPage({
       path: `${version}/playground/${node.name}`,

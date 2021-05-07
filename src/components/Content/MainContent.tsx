@@ -19,6 +19,7 @@ import Article from './Article';
 import type { MenuDataItem, IMenuData } from '../utils';
 import { isZhCN, getMenuItems } from '../utils';
 import type { IFrontmatterData } from '../../templates/docs';
+import { version } from '../../../siteconfig.json';
 
 const { SubMenu } = Menu;
 
@@ -129,6 +130,11 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const {
       location: { pathname },
     } = this.props;
+
+    if (filename.includes('docs')) {
+      filename = `/${version}` + filename;
+    }
+
     if (isZhCN(pathname) && !filename.includes('-cn')) {
       return `${filename}-cn`;
     }

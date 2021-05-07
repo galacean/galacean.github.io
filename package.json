@@ -9,8 +9,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
+    "build": "gatsby clean && gatsby build --prefix-paths",
+    "dev": "gatsby clean && gatsby develop",
     "gh-pages": "gh-pages -d public",
     "lint": "npm run lint:js && npm run lint:style",
     "lint-staged": "lint-staged",
@@ -94,6 +94,7 @@
     "@umijs/fabric": "^2.0.0",
     "cross-env": "^7.0.2",
     "eslint": "^7.8.1",
+    "gatsby-plugin-asset-path": "^3.0.3",
     "gatsby-remark-autolink-headers": "^2.2.1",
     "gatsby-source-typedoc": "^1.3.0",
     "gh-pages": "^3.1.0",

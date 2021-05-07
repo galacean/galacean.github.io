@@ -8,7 +8,14 @@ module.exports = {
     author: 'Oasis Engine',
     siteUrl: 'https://oasisengine.cn',
   },
+  assetPrefix: `/${version}/asset`,
   plugins: [
+    {
+      resolve: "gatsby-plugin-asset-path",
+      options: {
+        removeMapFiles: true,
+      },
+    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
