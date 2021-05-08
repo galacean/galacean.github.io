@@ -19,7 +19,7 @@ export default function CodeActions(props: any) {
       <meta name="theme-color" content="#000000">
     </head>
     <body>
-      <canvas id="canvas"/>
+      <canvas id="canvas" style="width: 100vw; height:100vh;"/>
     </body>
   </html>`;
 

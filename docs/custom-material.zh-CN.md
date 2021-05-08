@@ -4,8 +4,9 @@ title: 自定义材质
 type: 资源系统
 ---
 
-业务中可能有一些特殊的渲染需求，例如毛发效果，这时候就需要“自定义材质”去实现。通过使用 _material_ 这个模块中的 [Material](${book.api}classes/core.material.html) 和 [Shader](${book.api}classes/core.shader.html) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。
+业务中可能有一些特殊的渲染需求，例如水流特效，这时候就需要“自定义材质”去实现。通过使用 __material__ 这个模块中的 [Material](${book.api}classes/core.material.html) 和 [Shader](${book.api}classes/core.shader.html) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。
 
+<playground src="shader-water.ts"></playground>
 
 ## 创建 shader
 [Shader](${book.api}classes/core.shader.html) 封装了顶点着色器、片元着色器、着色器预编译、平台精度、平台差异性。他的创建和使用非常方便，用户只需要关注 shader 算法本身，而不用纠结于使用什么精度，亦或是使用 GLSL 哪个版本的写法。
@@ -43,8 +44,6 @@ const material = new Material(engine, Shader.find("demo"));
 **注：引擎已经预先 create 了 blinn-phong、pbr、shadow-map、shadow、skybox、framebuffer-picker-color、trail。用户可以直接使用这些内置 shader，但是不能重名创建。**
 
 因为我们没有上传 `u_color`  变量，所以片元输出还是黑色的(uniform 默认值)，接下来我们来介绍下引擎内置的 shader 变量以及如何上传自定义变量。
-
-
 
 ## 内置 shader 变量
 在上面，我们给 material 赋予了 shader，这个时候程序已经可以开始渲染了。需要注意的是，shader 代码中有两种变量，一种是**逐顶点**的 `attribute` 变量，另一种是**逐 shader** 的 `uniform` 变量。(在 GLSL300 后，统一为 in 变量)
@@ -106,16 +105,16 @@ shader 中变量的类型和调用的接口对应关系如下:
 
 | shader 类型 | ShaderData API |
 | :--- | :--- | :--- |
-| bool 、 int  | setInt( value: number ) |
-| float | setFloat( value: number ) |
-| bvec2、ivec2、vec2 | setVector2( value:Vector2 ) |
-| bvec3、ivec3、vec3 | setVector3( value:Vector3 ) |
-| bvec4、ivec4、vec4 | setVector4( value:Vector4 ) |
-| mat4 | setMatrix( value:Matrix ) |
-| float[] 、vec2[] 、vec3[]、 vec4[] 、mat4[] | setFloatArray( value:Float32Array ) |
-| bool[]、 int[] 、bvec2[]、 bvec3[] 、bvec4[]、 ivec2[]、 ivec3[] 、ivec4[] | setIntArray( value:Int32Array ) |
-| sampler2D 、 samplerCube | setTexture( value:Texture ) |
-| sampler2D[] 、 samplerCube[] | setTextureArray( value:Texture[] ) |
+| `bool` 、 `int`  | setInt( value: number ) |
+| `float` | setFloat( value: number )` |
+| `bvec2`、`ivec2`、`vec2` | setVector2( value:Vector2 ) |
+| `bvec3`、`ivec3`、`vec3` | setVector3( value:Vector3 ) |
+| `bvec4`、`ivec4`、`vec4` | setVector4( value:Vector4 ) |
+| `mat4` | setMatrix( value:Matrix ) |
+| `float[]` 、`vec2[]` 、`vec3[]`、 `vec4[]` 、`mat4[]` | setFloatArray( value:Float32Array ) |
+| `bool[]`、 `int[]` 、`bvec2[]`、 `bvec3[]` 、`bvec4[]`、 `ivec2[]`、 `ivec3[]` 、`ivec4[]` | setIntArray( value:Int32Array ) |
+| `sampler2D` 、 `samplerCube` | setTexture( value:Texture ) |
+| `sampler2D[]` 、 `samplerCube[]` | setTextureArray( value:Texture[] ) |
 
 代码演示如下：
 ```
@@ -207,11 +206,14 @@ target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendF
 // 操作方式为 src + dst  */
 target.colorBlendOperation = target.alphaBlendOperation = BlendOperation.Add;
 
-// 2. 关闭深度写入。
+// 2. 开启颜色混合
+target.enabled = true;
+
+// 3. 关闭深度写入。
 const depthState = renderState.depthState;
 depthState.writeEnabled = false;
 
-// 3. 设置透明渲染队列 （后面会讲为什么）
+// 4. 设置透明渲染队列 （后面会讲为什么）
 material.renderQueueType = RenderQueueType.Transparent;
 ```
 有关渲染状态的更多选项可以分别查看相应的[API 文档](${book.api}classes/core.renderstate-1.html) 
@@ -287,6 +289,7 @@ export class CustomMaterial extends Material{
     const target = this.renderState.blendState.targetBlendState;
     const depthState = this.renderState.depthState;
 
+    target.enabled = true;
     target.sourceColorBlendFactor = target.sourceAlphaBlendFactor = BlendFactor.SourceAlpha;
     target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
     depthState.writeEnabled = false;

@@ -59,6 +59,6 @@ engine.targetFrameRate = 120;
 
 | 属性名称 | 属性释义 |
 | --- | --- |
-| run | 执行 |
-| pause | 暂停 |
-| resume | 继续 |
+| [run]() | 执行 |
+| [pause]() | 暂停 |
+| [resume]() | 继续 |

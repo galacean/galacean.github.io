@@ -6,6 +6,9 @@ type: 组件
 
 Oasis Engine 的粒子渲染器 [ParticleRenderer](${book.api}classes/core.particlerenderer.html) 是常用的渲染组件，具备丰富的属性，通过调节各个属性值达到绚丽多彩的粒子效果。
 
+<playground src="particle-renderer.ts"></playground>
+## 代码示例
+
 ```typescript
 let particles: ParticleRenderer = particleEntity.addComponent(ParticleRenderer);
 
@@ -26,7 +29,6 @@ particleComp.start();
 particleComp.stop();
 ```
 
-
 ## 属性
 
 粒子渲染器包含生命周期、材质、变换等属性。
@@ -43,10 +45,11 @@ particleComp.stop();
 ### 材质
 - [`texture`](${book.api}classes/core.particlerenderer.html#texture) ： 粒子形状贴图。
 - [`color`](${book.api}classes/core.particlerenderer.html#color)：粒子颜色。
-- [`colorRandomness`](${book.api}classes/core.particlerenderer.html#colorrandomness)，颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
-- [`isUseOriginColor`](${book.api}classes/core.particlerenderer.html#isuseorigincolor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色：
+- [`colorRandomness`](${book.api}classes/core.particlerenderer.html#colorrandomness)：颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
+- [`isUseOriginColor`](${book.api}classes/core.particlerenderer.html#isuseorigincolor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色。
+- [`spriteSheet`](${book.api}classes/core.particlerenderer.html#spritesheet)：精灵图表，每个粒子可以渲染精灵图中某块区域：
 
-  ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*3Md4RKo0YjsAAAAAAAAAAAAAARQnAQ)
+<playground src="particle-renderer-spritesheet.ts"></playground>
 
 - [`alpha`](${book.api}classes/core.particlerenderer.html#alpha)：透明度。
 - [`alphaRandomness`](${book.api}classes/core.particlerenderer.html#alpharandomness)：透明度随机因子。
@@ -66,21 +69,12 @@ particleComp.stop();
 - [`angleRandomness`](${book.api}classes/core.particlerenderer.html#anglerandomness): 初始旋转角度随机因子，取值在 `0~1` 之间，例如：rotate 为 0，随机因子为 0，则生成的粒子角度均为 0，随机因子为 1，则生成的角度在 `-PI~PI` 之间随机。
 - [`rotateVelocity`](${book.api}classes/core.particlerenderer.html#rotatevelocity): 旋转速度。
 - [`rotateVelocityRandomness`](${book.api}classes/core.particlerenderer.html#rotatevelocityrandomness): 旋转速度随机因子。
-- [`isRotateToVelocity`](${book.api}classes/core.particlerenderer.html#isrotatetovelocity)：是否跟随粒子运动速度的方向，默认 `false`，为 `true`  时，将粒子贴图的单位向量旋转至粒子运动速度的方向，例如烟花：
-
-  ![xi.gif](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*elfKT7N16T0AAAAAAAAAAAAAARQnAQ)
-
-  为 `false` 时，无旋转，适用于方向一致的场景，例如孔明灯：
-
-  ![xx.gif](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*F5CqSrNuhUoAAAAAAAAAAAAAARQnAQ)
-
+- [`isRotateToVelocity`](${book.api}classes/core.particlerenderer.html#isrotatetovelocity)：是否跟随粒子运动速度的方向，默认 `false`，为 `true`  时，将粒子贴图的单位向量旋转至粒子运动速度的方向，例如烟花。为 `false` 时，无旋转，适用于方向一致的场景，例如孔明灯。
 - [`is2d`](${book.api}classes/core.particlerenderer.html#is2d)：是否是 2D 粒子，默认 `true`。
 - [`size`](${book.api}classes/core.particlerenderer.html#size)：粒子大小。
 - [`sizeRandomness`](${book.api}classes/core.particlerenderer.html#sizerandomness)：粒子大小随机因子。
 - [`scale`](${book.api}classes/core.particlerenderer.html#scale)：粒子缩放。
-- [`isScaleByLifetime`](${book.api}classes/core.particlerenderer.html#isscalebylifetime) ：是否随生命周期缩小至消失。为 `true` 时粒子会越来越小，为 `false` 时粒子大小保持不变，只有透明度会降低，可用于制作淡出消失的效果：
-
-  ![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*BztcTq-Vp3AAAAAAAAAAAAAAARQnAQ)
+- [`isScaleByLifetime`](${book.api}classes/core.particlerenderer.html#isscalebylifetime) ：是否随生命周期缩小至消失。为 `true` 时粒子会越来越小，为 `false` 时粒子大小保持不变，只有透明度会降低，可用于制作淡出消失的效果。
 
   ## 方法
 - `start()`：开始播放。

@@ -1,19 +1,8 @@
 // import { OrbitControl } from "https://cdn.skypack.dev/@oasis-engine/controls";
-import {
-  BlinnPhongMaterial,
-  Camera,
-  Color,
-  MeshRenderer,
-  PrimitiveMesh,
-  Script,
-  SpotLight,
-  SystemInfo,
-  Vector3,
-  WebGLEngine
-} from "oasis-engine";
+import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, SpotLight, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
+
 const target = new Vector3(0, -3, 0);
 const up = new Vector3(0, 1, 0);
-
 class Move extends Script {
   time = 0;
   y = 3;
@@ -41,8 +30,7 @@ class LookAtFocus extends Script {
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
-engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
-engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
+engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
