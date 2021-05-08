@@ -11,7 +11,6 @@
   "scripts": {
     "build": "gatsby clean && gatsby build --prefix-paths",
     "dev": "gatsby clean && gatsby develop",
-    "gh-pages": "gh-pages -d public",
     "lint": "npm run lint:js && npm run lint:style",
     "lint-staged": "lint-staged",
     "lint-staged:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
@@ -21,7 +20,6 @@
     "prettier": "prettier --write \"**/**\"",
     "serve": "gatsby serve",
     "presite": "npm run build",
-    "site": "npm run gh-pages",
     "start": "gatsby develop",
     "test": "npm run lint",
     "typedoc": "node scripts/typedoc/generateTS.js"
