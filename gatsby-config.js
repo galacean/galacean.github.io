@@ -14,6 +14,8 @@ module.exports = {
       resolve: "gatsby-plugin-asset-path",
       options: {
         removeMapFiles: true,
+        fileTypes: ["js", "css", "txt", "chunk-map.json"],
+        files: ["chunk-map.json", "webpack.stats.json"]
       },
     },
     {
