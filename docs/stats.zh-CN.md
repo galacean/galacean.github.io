@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 引擎状态面板
+title: 统计面板
 type: 工具库
 ---
 
