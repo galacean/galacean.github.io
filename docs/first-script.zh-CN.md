@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 第一个脚本组件
+title: 3. 第一个脚本组件
 type: 入门
 ---
 
