@@ -3,11 +3,12 @@ order: 5
 title: 基础几何体渲染器
 type: 组件
 ---
-# 基础几何体
 
-常用几何体统一在 [PrimitiveMesh](${book.api}classes/core.primitivemesh.html) 中提供，目前提供的几何体如下，完整使用示例见 [playgournd](${book.playground}#/primitive-mesh)
+常用几何体统一在 [PrimitiveMesh](${book.api}classes/core.primitivemesh.html) 中提供。
 
 <playground src="primitive-mesh.ts"></playground>
+
+目前提供的几何体如下：
 
 - [createCuboid](${book.api}classes/core.primitivemesh.html) **立方体**
 

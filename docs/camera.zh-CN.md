@@ -6,6 +6,8 @@ type: 组件
 
 相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了[自动视锥剔除](${book.playground}#/renderer-cull)，只渲染视锥体内的物体。
 
+<playground src="renderer-cull.ts"></playground>
+
 ## 基本用法
 ```typescript
 // 创建实体
@@ -33,6 +35,11 @@ entity.engine.sceneManager.activeScene._activeCameras[0]
 || [farClipPlane](${book.api}classes/core.camera.html#farclipplane) | 远裁剪平面                                                   |
 || [fieldOfView](${book.api}classes/core.camera.html#fieldofview) | 视角                                                         |
 |正交投影|[orthographicSize](${book.api}classes/core.camera.html#orthographicsize)|正交模式下相机的一半尺寸|
+
+cullingMask 案例：
+
+<playground src="camera-culling-mask.ts"></playground>
+
 
 ## 类型
 
