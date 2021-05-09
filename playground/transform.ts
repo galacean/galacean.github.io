@@ -1,72 +1,56 @@
+import { AmbientLight, Camera, Color, DirectLight, Entity, GLTFResource, Script, WebGLEngine } from "oasis-engine";
 // import { OrbitControl } from "@oasis-engine/controls";
-import {
-  AmbientLight,
-  Camera,
-  Color,
-  DirectLight,
-  Entity,
-  GLTFResource,
-  Script,
-  SystemInfo,
-  WebGLEngine
-} from "oasis-engine";
 
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
-init();
+// Create engine
+const engine = new WebGLEngine("canvas");
+engine.canvas.resizeByClientSize();
 
-/**
- * Init demo.
- */
-function init(): void {
-  // Create engine
-  const engine = new WebGLEngine("canvas");
-  engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
-  engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
+// Create yellow duck
+engine.resourceManager
+  .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf")
+  .then((gltf) => {
+    // Create root entity.
+    const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
-  // Create yellow duck
-  engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf")
-    .then((gltf) => {
-      // Create root entity.
-      const rootEntity = engine.sceneManager.activeScene.createRootEntity();
+    // Create camera.
+    const cameraEntity = rootEntity.createChild("CameraEntity");
+    cameraEntity.transform.setPosition(0, 3, 9);
+    cameraEntity.addComponent(Camera);
+    cameraEntity.addComponent(OrbitControl);
 
-      // Create camera.
-      const cameraEntity = rootEntity.createChild("CameraEntity");
-      cameraEntity.transform.setPosition(0, 3, 9);
-      cameraEntity.addComponent(Camera);
-      // cameraEntity.addComponent(OrbitControl);
+    // Create light.
+    const lightEntity = rootEntity.createChild("LightEntity");
+    const ambient = lightEntity.addComponent(AmbientLight);
+    const directLight = lightEntity.addComponent(DirectLight);
+    ambient.color = new Color(0.5, 0.5, 0.5);
+    directLight.color = new Color(0.5, 0.5, 0.5);
 
-      // Create light.
-      const lightEntity = rootEntity.createChild("LightEntity");
-      const ambient = lightEntity.addComponent(AmbientLight);
-      const directLight = lightEntity.addComponent(DirectLight);
-      ambient.color = new Color(0.5, 0.5, 0.5);
-      directLight.color = new Color(0.5, 0.5, 0.5);
+    // Create three duck modles, set rotation and position.
+    const duck0 = gltf.defaultSceneRoot;
+    duck0.transform.rotate(0, -45, 0);
 
-      // Create three duck modles, set rotation and position.
-      const duck0 = gltf.defaultSceneRoot;
-      duck0.transform.rotate(0, -45, 0);
+    const duck1 = duck0.clone();
+    const duck2 = duck0.clone();
+    duck1.transform.setPosition(-3, 0, 0);
+    duck2.transform.setPosition(3, 0, 0);
 
-      const duck1 = duck0.clone();
-      const duck2 = duck0.clone();
-      duck1.transform.setPosition(-3, 0, 0);
-      duck2.transform.setPosition(3, 0, 0);
+    // Create root entity and add transform script.
+    const script = rootEntity.addComponent(TransformScript);
+    script.duck0 = duck0;
+    script.duck1 = duck1;
+    script.duck2 = duck2;
 
-      // Create root entity and add transform script.
-      const script = rootEntity.addComponent(TransformScript);
-      script.duck0 = duck0;
-      script.duck1 = duck1;
-      script.duck2 = duck2;
+    // Add ducks to scene.
+    rootEntity.addChild(duck0);
+    rootEntity.addChild(duck1);
+    rootEntity.addChild(duck2);
 
-      // Add ducks to scene.
-      rootEntity.addChild(duck0);
-      rootEntity.addChild(duck1);
-      rootEntity.addChild(duck2);
-
-      //Run engine.
-      engine.run();
-    });
-}
+    //Run engine.
+    engine.run();
+  });
 
 /**
  * Script for updating ducks position, rotation, and scale.

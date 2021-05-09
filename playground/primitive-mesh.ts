@@ -1,5 +1,7 @@
-// import { OrbitControl } from "@oasis-engine/controls";
 import { AssetType, BlinnPhongMaterial, Camera, DirectLight, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, SystemInfo, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@oasis-engine/controls";
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 // Create engine
 const engine = new WebGLEngine("canvas");
@@ -12,7 +14,7 @@ const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.setPosition(0, 0, 20);
 cameraEntity.addComponent(Camera);
-// cameraEntity.addComponent(OrbitControl);
+cameraEntity.addComponent(OrbitControl);
 
 // Create direct light
 const lightEntity = rootEntity.createChild("DirectLight");

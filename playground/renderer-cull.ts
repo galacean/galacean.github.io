@@ -1,7 +1,9 @@
-// import { FreeControl } from "@oasis-engine/controls";
-// import * as dat from "dat.gui";
 import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, Vector3, WebGLEngine } from "oasis-engine";
-// const gui = new dat.GUI();
+// import { FreeControl } from "@oasis-engine/controls";
+import * as dat from "dat.gui";
+// @ts-ignore
+let { FreeControl } = window['@oasisEngine/controls']
+
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -14,8 +16,8 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera_entity");
 cameraEntity.transform.position = new Vector3(0, 0, 50);
 cameraEntity.addComponent(Camera);
-// const control = cameraEntity.addComponent(FreeControl);
-// control.movementSpeed = 50;
+const control = cameraEntity.addComponent(FreeControl);
+control.movementSpeed = 50;
 
 engine.run();
 
@@ -64,7 +66,8 @@ class ObserverScript extends Script {
 
 rootEntity.addComponent(ObserverScript);
 
-// const folder = gui.addFolder("移动视角，观察视锥体裁剪情况");
-// folder.add(state, "cube1").name("红色立方体").listen();
-// folder.add(state, "cube2").name("蓝色球体").listen();
-// folder.open();
+const gui = new dat.GUI();
+const folder = gui.addFolder("移动视角，观察视锥体裁剪情况");
+folder.add(state, "cube1").name("红色立方体").listen();
+folder.add(state, "cube2").name("蓝色球体").listen();
+folder.open();

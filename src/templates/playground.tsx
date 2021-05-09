@@ -2,29 +2,59 @@ import React, { useEffect } from 'react';
 import siteConfig from '../../siteconfig.json';
 
 interface IScript {
-  engine: string;
+  libs: any;
   playground: string;
 }
 
 const useScript = (s: IScript) => {
   useEffect(() => {
-    const script = document.createElement('script');
-    if (s.engine) {
-      script.src = s.engine;
+    const promises: Promise<any>[] = [];
+    const scripts: any[] = [];
+    
+    const addLib = (lib:any): Promise<any> => {
+      const promise = new Promise((resolve) => {
+        if (lib.cdn) {
+          const script = document.createElement('script');
+          script.type = "text/javascript";
+          document.body.appendChild(script);
+
+          script.onload = () => {
+            scripts.push(script);
+            resolve(script);
+          }
+
+          script.src = lib.cdn;
+        }
+
+      });
+
+      return promise;
     }
 
-    script.onload = () => {
-      const script = document.createElement('script');
-      if (s.playground) {
-        script.text = s.playground;
+    addLib(s.libs['oasis-engine']).then(() => {
+      for (const name in s.libs) {
+        if (name !== 'oasis-engine') {
+          const promise = addLib(s.libs[name])
+          promises.push(promise);
+        }
       }
-      document.body.appendChild(script);
-    }
 
-    document.body.appendChild(script);
+      Promise.all(promises).then(() => {
+        const script = document.createElement('script');
+        if (s.playground) {
+          script.text = s.playground;
+          document.body.appendChild(script);
+          scripts.push(script);
+          // console.log(s.playground)
+        }
+      });
+    });
+
 
     return () => {
-      document.body.removeChild(script);
+      scripts.forEach((script)=>{
+        document.body.removeChild(script);
+      });
     }
   }, [s]);
 };
@@ -33,7 +63,7 @@ export default function Playground (props: any) {
   const {content} = props.pageContext.node.internal;
 
   useScript({
-    engine: siteConfig.packages['oasis-engine'].cdn,
+    libs: siteConfig.packages,
     playground: content
   });
 

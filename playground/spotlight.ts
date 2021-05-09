@@ -1,5 +1,7 @@
-// import { OrbitControl } from "https://cdn.skypack.dev/@oasis-engine/controls";
 import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, SpotLight, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "https://cdn.skypack.dev/@oasis-engine/controls";
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 const target = new Vector3(0, -3, 0);
 const up = new Vector3(0, 1, 0);
@@ -77,7 +79,7 @@ let cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.position = new Vector3(0, 5, 17);
 cameraNode.transform.lookAt(new Vector3(), new Vector3(0, 1, 0));
 cameraNode.addComponent(Camera);
-// cameraNode.addComponent(OrbitControl);
+cameraNode.addComponent(OrbitControl);
 
 //-- run
 engine.run();

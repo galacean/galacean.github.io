@@ -1,6 +1,9 @@
-// import { OrbitControl } from "@oasis-engine/controls";
-// import * as dat from "dat.gui";
 import { AssetType, BlinnPhongMaterial, Camera, MeshRenderer, PrimitiveMesh, RenderFace, Script, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@oasis-engine/controls";
+import * as dat from "dat.gui";
+
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -40,8 +43,8 @@ engine.resourceManager
     const animationScript = rootEntity.addComponent(AnimateScript);
 
     // Add data GUI
-    // const guiData = addDataGUI(material, animationScript);
-    // animationScript.guiData = guiData;
+    const guiData = addDataGUI(material, animationScript);
+    animationScript.guiData = guiData;
     animationScript.material = material;
 
     // Run engine
@@ -51,58 +54,58 @@ engine.resourceManager
 /**
  * Add data GUI.
  */
-// function addDataGUI(material: BlinnPhongMaterial, animationScript: AnimateScript): any {
-//   const gui = new dat.GUI();
-//   const guiData = {
-//     tilingX: 1,
-//     tilingY: 1,
-//     offsetX: 0,
-//     offsetY: 0,
-//     reset: function () {
-//       guiData.tilingX = 1;
-//       guiData.tilingY = 1;
-//       guiData.offsetX = 0;
-//       guiData.offsetY = 0;
-//       material.tilingOffset.setValue(1, 1, 0, 0);
-//     },
-//     pause: function () {
-//       animationScript.enabled = false;
-//     },
-//     resume: function () {
-//       animationScript.enabled = true;
-//     }
-//   };
+function addDataGUI(material: BlinnPhongMaterial, animationScript: AnimateScript): any {
+  const gui = new dat.GUI();
+  const guiData = {
+    tilingX: 1,
+    tilingY: 1,
+    offsetX: 0,
+    offsetY: 0,
+    reset: function () {
+      guiData.tilingX = 1;
+      guiData.tilingY = 1;
+      guiData.offsetX = 0;
+      guiData.offsetY = 0;
+      material.tilingOffset.setValue(1, 1, 0, 0);
+    },
+    pause: function () {
+      animationScript.enabled = false;
+    },
+    resume: function () {
+      animationScript.enabled = true;
+    }
+  };
 
-//   gui
-//     .add(guiData, "tilingX", 0, 10)
-//     .onChange((value: number) => {
-//       material.tilingOffset.x = value;
-//     })
-//     .listen();
-//   gui
-//     .add(guiData, "tilingY", 0, 10)
-//     .onChange((value: number) => {
-//       material.tilingOffset.y = value;
-//     })
-//     .listen();
-//   gui
-//     .add(guiData, "offsetX", 0, 1)
-//     .onChange((value: number) => {
-//       material.tilingOffset.z = value;
-//     })
-//     .listen();
-//   gui
-//     .add(guiData, "offsetY", 0, 1)
-//     .onChange((value: number) => {
-//       material.tilingOffset.w = value;
-//     })
-//     .listen();
-//   gui.add(guiData, "reset").name("重置");
-//   gui.add(guiData, "pause").name("暂停动画");
-//   gui.add(guiData, "resume").name("继续动画");
+  gui
+    .add(guiData, "tilingX", 0, 10)
+    .onChange((value: number) => {
+      material.tilingOffset.x = value;
+    })
+    .listen();
+  gui
+    .add(guiData, "tilingY", 0, 10)
+    .onChange((value: number) => {
+      material.tilingOffset.y = value;
+    })
+    .listen();
+  gui
+    .add(guiData, "offsetX", 0, 1)
+    .onChange((value: number) => {
+      material.tilingOffset.z = value;
+    })
+    .listen();
+  gui
+    .add(guiData, "offsetY", 0, 1)
+    .onChange((value: number) => {
+      material.tilingOffset.w = value;
+    })
+    .listen();
+  gui.add(guiData, "reset").name("重置");
+  gui.add(guiData, "pause").name("暂停动画");
+  gui.add(guiData, "resume").name("继续动画");
 
-//   return guiData;
-// }
+  return guiData;
+}
 
 /**
  * Animation script.

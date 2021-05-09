@@ -1,6 +1,11 @@
+import { AssetType, Camera, Color, EnvironmentMapLight, GLTFResource, LoadItem, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
 // import { OrbitControl } from "@oasis-engine/controls";
 // import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
-import { AssetType, Camera, Color, EnvironmentMapLight, GLTFResource, LoadItem, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
+
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
+// @ts-ignore
+let { FramebufferPicker } = window['@oasisEngine/framebufferPicker']
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -16,7 +21,7 @@ let envLight = envLightNode.addComponent(EnvironmentMapLight);
 let cameraNode = rootNode.createChild("camera_node");
 cameraNode.transform.position = new Vector3(0, 0, 30);
 const camera = cameraNode.addComponent(Camera);
-// cameraNode.addComponent(OrbitControl);
+cameraNode.addComponent(OrbitControl);
 
 const resources: LoadItem[] = [
   { url: "https://gw.alipayobjects.com/os/bmw-prod/83219f61-7d20-4704-890a-60eb92aa6159.gltf" },
@@ -78,8 +83,8 @@ engine.resourceManager.load(resources).then((res) => {
   };
 
   document.getElementById("canvas").addEventListener("mousedown", (e) => {
-    // console.log(e.offsetX, e.offsetY);
-    // framebufferPicker.pick(e.offsetX, e.offsetY);
+    console.log(e.offsetX, e.offsetY);
+    framebufferPicker.pick(e.offsetX, e.offsetY);
   });
 });
 

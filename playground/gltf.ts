@@ -1,4 +1,6 @@
 import { AmbientLight, WebGLEngine, Camera, Vector3, DirectLight } from 'oasis-engine';
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 // 创建画布 
 const engine = new WebGLEngine("canvas");
@@ -11,6 +13,7 @@ const cameraEntity = rootEntity.createChild('camera');
 cameraEntity.addComponent(Camera);
 cameraEntity.transform.setPosition(3, 3, 3);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+cameraEntity.addComponent(OrbitControl);
 
 rootEntity.addComponent(AmbientLight).intensity = 0.7;
 rootEntity.addComponent(DirectLight).intensity = 0.3;

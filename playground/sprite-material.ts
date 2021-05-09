@@ -1,5 +1,7 @@
-// import { OrbitControl } from "@oasis-engine/controls";
 import { AssetType, BlendFactor, BlendOperation, Camera, CullMode, Entity, Material, RenderQueueType, Shader, Sprite, SpriteRenderer, Texture2D, TextureWrapMode, Vector2, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@oasis-engine/controls";
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -12,7 +14,7 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.position = new Vector3(0, 0, 50);
 cameraEntity.addComponent(Camera);
-// cameraEntity.addComponent(OrbitControl);
+cameraEntity.addComponent(OrbitControl);
 
 engine.resourceManager
   .load<Texture2D>({

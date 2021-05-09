@@ -1,7 +1,8 @@
+import { Animation, Camera, DirectLight, EnvironmentMapLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
 // import { OrbitControl } from "@oasis-engine/controls";
-import { Animation, Camera, DirectLight, EnvironmentMapLight, GLTFResource, Logger, Vector3, WebGLEngine } from "oasis-engine";
 
-Logger.enable();
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -12,7 +13,7 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera_node");
 cameraEntity.transform.position = new Vector3(0, 1, 3);
 cameraEntity.addComponent(Camera);
-// cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
+cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
 const lightNode = rootEntity.createChild("light_node");
 rootEntity.addComponent(EnvironmentMapLight);

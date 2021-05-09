@@ -1,5 +1,7 @@
-// import { OrbitControl } from "@oasis-engine/controls";
 import { AssetType, Camera, Color, ParticleRenderer, ParticleRendererBlendMode, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@oasis-engine/controls";
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -12,9 +14,9 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera_entity");
 cameraEntity.transform.position = new Vector3(0, 0, 50);
 cameraEntity.addComponent(Camera);
-// const controls = cameraEntity.addComponent(OrbitControl);
-// controls.autoRotate = true;
-// controls.autoRotateSpeed = Math.PI / 5;
+const controls = cameraEntity.addComponent(OrbitControl);
+controls.autoRotate = true;
+controls.autoRotateSpeed = Math.PI / 5;
 
 engine.run();
 

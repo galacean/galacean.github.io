@@ -1,6 +1,9 @@
-// import { OrbitControl } from "@oasis-engine/controls";
-// import * as dat from "dat.gui";
 import { AmbientLight, AssetType, Camera, Color, DirectLight, EnvironmentMapLight, GLTFResource, SkyBox, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@oasis-engine/controls";
+import * as dat from "dat.gui";
+
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -11,24 +14,24 @@ const rootEntity = scene.createRootEntity();
 
 const color2glColor = (color) => new Color(color[0] / 255, color[1] / 255, color[2] / 255);
 const glColor2Color = (color) => new Color(color[0] * 255, color[1] * 255, color[2] * 255);
-// const gui = new dat.GUI();
-// gui.domElement.style = "position:absolute;top:0px;left:50vw";
+const gui = new dat.GUI();
+gui.domElement.style = "position:absolute;top:0px;left:50vw";
 
 let envLightNode = rootEntity.createChild("env_light");
 let envLight = envLightNode.addComponent(EnvironmentMapLight);
-// let envFolder = gui.addFolder("EnvironmentMapLight");
-// envFolder.add(envLight, "enabled");
-// envFolder.add(envLight, "specularIntensity", 0, 1);
-// envFolder.add(envLight, "diffuseIntensity", 0, 1);
+let envFolder = gui.addFolder("EnvironmentMapLight");
+envFolder.add(envLight, "enabled");
+envFolder.add(envLight, "specularIntensity", 0, 1);
+envFolder.add(envLight, "diffuseIntensity", 0, 1);
 
 let directLightColor = { color: [255, 255, 255] };
 let directLightNode = rootEntity.createChild("dir_light");
 let directLight = directLightNode.addComponent(DirectLight);
 directLight.color = new Color(1, 1, 1);
-// let dirFolder = gui.addFolder("DirectionalLight1");
-// dirFolder.add(directLight, "enabled");
-// dirFolder.addColor(directLightColor, "color").onChange((v) => (directLight.color = color2glColor(v)));
-// dirFolder.add(directLight, "intensity", 0, 1);
+let dirFolder = gui.addFolder("DirectionalLight1");
+dirFolder.add(directLight, "enabled");
+dirFolder.addColor(directLightColor, "color").onChange((v) => (directLight.color = color2glColor(v)));
+dirFolder.add(directLight, "intensity", 0, 1);
 
 const ambient = rootEntity.addComponent(AmbientLight);
 ambient.color = new Color(0.2, 0.2, 0.2, 1);
@@ -37,7 +40,7 @@ ambient.color = new Color(0.2, 0.2, 0.2, 1);
 let cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.position = new Vector3(0, 0, 5);
 cameraNode.addComponent(Camera);
-// cameraNode.addComponent(OrbitControl);
+cameraNode.addComponent(OrbitControl);
 
 Promise.all([
   engine.resourceManager

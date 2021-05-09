@@ -1,6 +1,9 @@
-// import { OrbitControl } from "@oasis-engine/controls";
-// import * as dat from "dat.gui";
 import { AssetType, Camera, EnvironmentMapLight, MeshRenderer, PBRMaterial, PrimitiveMesh, SkyBox, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@oasis-engine/controls";
+import * as dat from "dat.gui";
+
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
 
 /**
  * use PBR material
@@ -42,14 +45,14 @@ function usePBR(rows = 5, cols = 5, radius = 1, gap = 1) {
   }
 }
 
-// const gui = new dat.GUI();
-// const guiDebug = {
-//   env: "forrest",
-//   introX: "从左到右粗糙度递增",
-//   introY: "从上到下金属度递减"
-// };
-// gui.add(guiDebug, "introX");
-// gui.add(guiDebug, "introY");
+const gui = new dat.GUI();
+const guiDebug = {
+  env: "forrest",
+  introX: "从左到右粗糙度递增",
+  introY: "从上到下金属度递减"
+};
+gui.add(guiDebug, "introX");
+gui.add(guiDebug, "introY");
 
 // create engine object
 const engine = new WebGLEngine("canvas");
@@ -62,9 +65,9 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera_entity");
 cameraEntity.transform.position = new Vector3(0, 0, 20);
 cameraEntity.addComponent(Camera);
-// const control = cameraEntity.addComponent(OrbitControl);
-// control.maxDistance = 20;
-// control.minDistance = 2;
+const control = cameraEntity.addComponent(OrbitControl);
+control.maxDistance = 20;
+control.minDistance = 2;
 
 // create skybox
 const skybox = rootEntity.addComponent(SkyBox);
@@ -113,18 +116,19 @@ engine.resourceManager
     envLight.diffuseTexture = cubeMaps[0];
     envLight.specularTexture = cubeMaps[1];
     skybox.skyBoxMap = cubeMaps[1];
-    // gui.add(guiDebug, "env", ["forrest", "road"]).onChange((v) => {
-    //   switch (v) {
-    //     case "forrest":
-    //       envLight.specularTexture = cubeMaps[1];
-    //       skybox.skyBoxMap = cubeMaps[1];
-    //       break;
-    //     case "road":
-    //       envLight.specularTexture = cubeMaps[2];
-    //       skybox.skyBoxMap = cubeMaps[2];
-    //       break;
-    //   }
-    // });
+
+    gui.add(guiDebug, "env", ["forrest", "road"]).onChange((v) => {
+      switch (v) {
+        case "forrest":
+          envLight.specularTexture = cubeMaps[1];
+          skybox.skyBoxMap = cubeMaps[1];
+          break;
+        case "road":
+          envLight.specularTexture = cubeMaps[2];
+          skybox.skyBoxMap = cubeMaps[2];
+          break;
+      }
+    });
   });
 
 // run engine

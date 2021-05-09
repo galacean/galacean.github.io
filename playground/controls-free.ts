@@ -1,5 +1,7 @@
-//  import { FreeControl } from "@oasis-engine/controls";
  import { Camera, BlinnPhongMaterial, MeshRenderer, MeshTopology, WebGLEngine, Color, PrimitiveMesh } from "oasis-engine";
+//  import { FreeControl } from "@oasis-engine/controls";
+ // @ts-ignore
+let { FreeControl } = window['@oasisEngine/controls']
  
  const engine = new WebGLEngine("canvas");
  engine.canvas.resizeByClientSize();
@@ -13,9 +15,9 @@
  const camera = cameraNode.addComponent(Camera);
  camera.farClipPlane = 2000;
  
-//  const controler = cameraNode.addComponent(FreeControl);
-//  controler.movementSpeed = 100;
-//  controler.rotateSpeed = 1;
+ const controler = cameraNode.addComponent(FreeControl);
+ controler.movementSpeed = 100;
+ controler.rotateSpeed = 1;
  
  const cuboid = PrimitiveMesh.createCuboid(engine, 50, 50, 50);
  const material = new BlinnPhongMaterial(engine);

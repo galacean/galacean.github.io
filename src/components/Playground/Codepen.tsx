@@ -10,7 +10,7 @@ export default function CodeActions (props: any) {
   const jsExternal: string[] = [];
 
   for(const lib in props.packages) {
-    jsExternal.push(`${lib}@${props.packages[lib].version}/dist/browser.min.js`);
+    jsExternal.push(`${lib}@${props.packages[lib].version}/${(props.packages[lib].dist || 'dist/browser.min.js')}`);
   }
 
   const codepenPrefillConfig = {

@@ -1,7 +1,10 @@
-// import { OrbitControl } from "@oasis-engine/controls";
-// import * as dat from "dat.gui";
 import { AssetType, Camera, Color, Engine, Material, MeshRenderer, PrimitiveMesh, Script, Shader, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
-// const gui = new dat.GUI();
+// import { OrbitControl } from "@oasis-engine/controls";
+import * as dat from "dat.gui";
+
+// @ts-ignore
+let { OrbitControl } = window['@oasisEngine/controls']
+
 //-- create engine object
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -13,9 +16,9 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera_entity");
 cameraEntity.transform.position = new Vector3(0, 0, 15);
 cameraEntity.addComponent(Camera);
-// const orbitControl = cameraEntity.addComponent(OrbitControl);
-// orbitControl.minDistance = 15;
-// orbitControl.maxDistance = 15;
+const orbitControl = cameraEntity.addComponent(OrbitControl);
+orbitControl.minDistance = 15;
+orbitControl.maxDistance = 15;
 
 // 自定义材质
 const vertexSource = `
@@ -205,38 +208,41 @@ class WaterScript extends Script {
 }
 sphereEntity.addComponent(WaterScript);
 
+
 // debug
-// function openDebug() {
-//   const shaderData = material.shaderData;
-  // const baseColor = shaderData.getColor("u_sea_base");
-  // const waterColor = shaderData.getColor("u_water_color");
-  // const debug = {
-  //   sea_height: shaderData.getFloat("u_sea_height"),
-  //   water_scale: shaderData.getFloat("u_water_scale"),
-  //   water_speed: shaderData.getFloat("u_water_speed"),
-  //   sea_base: [baseColor.r * 255, baseColor.g * 255, baseColor.b * 255],
-  //   water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255]
-  // };
+function openDebug() {
+  const shaderData = material.shaderData;
+  const baseColor = shaderData.getColor("u_sea_base");
+  const waterColor = shaderData.getColor("u_water_color");
+  const debug = {
+    sea_height: shaderData.getFloat("u_sea_height"),
+    water_scale: shaderData.getFloat("u_water_scale"),
+    water_speed: shaderData.getFloat("u_water_speed"),
+    sea_base: [baseColor.r * 255, baseColor.g * 255, baseColor.b * 255],
+    water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255]
+  };
 
-  // gui.add(debug, "sea_height", 0, 3).onChange((v) => {
-  //   shaderData.setFloat("u_sea_height", v);
-  // });
-  // gui.add(debug, "water_scale", 0, 4).onChange((v) => {
-  //   shaderData.setFloat("u_water_scale", v);
-  // });
-  // gui.add(debug, "water_speed", 0, 4).onChange((v) => {
-  //   shaderData.setFloat("u_water_speed", v);
-  // });
-  // gui.addColor(debug, "sea_base").onChange((v) => {
-  //   baseColor.r = v[0] / 255;
-  //   baseColor.g = v[1] / 255;
-  //   baseColor.b = v[2] / 255;
-  // });
-  // gui.addColor(debug, "water_color").onChange((v) => {
-  //   waterColor.r = v[0] / 255;
-  //   waterColor.g = v[1] / 255;
-  //   waterColor.b = v[2] / 255;
-  // });
-// }
+  const gui = new dat.GUI();
 
-// openDebug();
+  gui.add(debug, "sea_height", 0, 3).onChange((v) => {
+    shaderData.setFloat("u_sea_height", v);
+  });
+  gui.add(debug, "water_scale", 0, 4).onChange((v) => {
+    shaderData.setFloat("u_water_scale", v);
+  });
+  gui.add(debug, "water_speed", 0, 4).onChange((v) => {
+    shaderData.setFloat("u_water_speed", v);
+  });
+  gui.addColor(debug, "sea_base").onChange((v) => {
+    baseColor.r = v[0] / 255;
+    baseColor.g = v[1] / 255;
+    baseColor.b = v[2] / 255;
+  });
+  gui.addColor(debug, "water_color").onChange((v) => {
+    waterColor.r = v[0] / 255;
+    waterColor.g = v[1] / 255;
+    waterColor.b = v[2] / 255;
+  });
+}
+
+openDebug();
