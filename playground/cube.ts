@@ -34,16 +34,5 @@ let cube = cubeEntity.addComponent(MeshRenderer);
 cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
 cube.setMaterial(new BlinnPhongMaterial(engine));
 
-// 旋转脚本组件
-class Rotate extends Script {
-  private _tempVector = new Vector3(0, 1, 0);
-  onUpdate() {
-    this.entity.transform.rotate(this._tempVector);
-  }
-}
-
-// 添加旋转脚本组件
-cubeEntity.addComponent(Rotate);
-
 // 启动引擎
 engine.run();

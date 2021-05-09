@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 引擎安装
+title: 安装 Oasis Engine
 type: 入门
 ---
 

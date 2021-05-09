@@ -4,7 +4,7 @@ title: 绘制一个立方体
 type: 入门
 ---
 
-这个教程将带你开发一个“旋转的方块”示例。
+这个教程将带你开发一个立方体示例：
 
 <playground src="cube.ts"></playground>
 
@@ -83,17 +83,4 @@ let cubeEntity = rootEntity.createChild('cube');
 let cube = cubeEntity.addComponent(MeshRenderer);
 cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
 cube.setMaterial(new BlinnPhongMaterial(engine));
-```
-## 创建旋转脚本组件
-
-```typescript
-class Rotate extends Script {
-  private _tempVector = new Vector3(0, 1, 0);
-  onUpdate() {
-    this.entity.transform.rotate(this._tempVector);
-  }
-}
-
-// 添加旋转脚本组件
-cubeEntity.addComponent(Rotate);
 ```

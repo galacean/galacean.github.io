@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 绘制一个 3D 模型
+title: 加载一个 3D 模型
 type: 入门
 ---
 
