@@ -1,9 +1,6 @@
 import { AssetType, Camera, Color, Engine, Material, MeshRenderer, PrimitiveMesh, Script, Shader, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");

@@ -26,7 +26,21 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
         "@babel/preset-typescript"
       ],
       plugins: [
-        ["@babel/plugin-proposal-class-properties", { loose: true }],
+        [
+          "@babel/plugin-proposal-class-properties", { loose: true },
+        ],
+        [
+          "@babel/plugin-transform-modules-umd",
+          {
+              "globals": {
+                  "@oasis-engine/controls": "@oasisEngine/controls",
+                  "@oasis-engine/framebuffer-picker": "@oasisEngine/framebufferPicker",
+                  "@oasis-engine/stats": "@oasisEngine/stats",
+                  "@oasis-engine/engine-spine": "oasisSpine"
+              },
+              exactGlobals: true
+          }
+        ],
       ],
       filename: "index.ts",
     });

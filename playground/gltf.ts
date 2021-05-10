@@ -1,6 +1,5 @@
 import { AmbientLight, WebGLEngine, Camera, Vector3, DirectLight } from 'oasis-engine';
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
+import { OrbitControl } from "@oasis-engine/controls";
 
 // 创建画布 
 const engine = new WebGLEngine("canvas");

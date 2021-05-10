@@ -1,9 +1,6 @@
 import { AssetType, BlinnPhongMaterial, Camera, MeshRenderer, PrimitiveMesh, RenderFace, Script, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -23,7 +20,7 @@ engine.resourceManager
     const cameraEntity = rootEntity.createChild("Camera");
     cameraEntity.transform.position = new Vector3(0, 0, 20);
     cameraEntity.addComponent(Camera);
-    // cameraEntity.addComponent(OrbitControl);
+    cameraEntity.addComponent(OrbitControl);
 
     // Create plane
     const entity = rootEntity.createChild();

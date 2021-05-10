@@ -1,11 +1,6 @@
 import { AssetType, Camera, Color, EnvironmentMapLight, GLTFResource, LoadItem, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
-// import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
-// @ts-ignore
-let { FramebufferPicker } = window['@oasisEngine/framebufferPicker']
+import { OrbitControl } from "@oasis-engine/controls";
+import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

@@ -1,9 +1,6 @@
 import { AssetType, Camera, EnvironmentMapLight, MeshRenderer, PBRMaterial, PrimitiveMesh, SkyBox, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
 
 /**
  * use PBR material

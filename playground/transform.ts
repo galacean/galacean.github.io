@@ -1,8 +1,5 @@
 import { AmbientLight, Camera, Color, DirectLight, Entity, GLTFResource, Script, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
+import { OrbitControl } from "@oasis-engine/controls";
 
 // Create engine
 const engine = new WebGLEngine("canvas");

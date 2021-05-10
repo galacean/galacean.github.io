@@ -1,7 +1,5 @@
  import { Camera, BlinnPhongMaterial, MeshRenderer, MeshTopology, WebGLEngine, Color, PrimitiveMesh } from "oasis-engine";
-//  import { FreeControl } from "@oasis-engine/controls";
- // @ts-ignore
-let { FreeControl } = window['@oasisEngine/controls']
+ import { FreeControl } from "@oasis-engine/controls";
  
  const engine = new WebGLEngine("canvas");
  engine.canvas.resizeByClientSize();

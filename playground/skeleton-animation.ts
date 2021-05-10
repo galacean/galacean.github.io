@@ -1,8 +1,5 @@
 import { Animation, Camera, DirectLight, EnvironmentMapLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
+import { OrbitControl } from "@oasis-engine/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

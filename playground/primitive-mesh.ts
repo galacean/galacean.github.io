@@ -1,7 +1,5 @@
 import { AssetType, BlinnPhongMaterial, Camera, DirectLight, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, SystemInfo, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
-// import { OrbitControl } from "@oasis-engine/controls";
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
+import { OrbitControl } from "@oasis-engine/controls";
 
 // Create engine
 const engine = new WebGLEngine("canvas");

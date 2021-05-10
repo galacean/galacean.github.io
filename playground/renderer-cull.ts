@@ -1,8 +1,6 @@
 import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, Vector3, WebGLEngine } from "oasis-engine";
-// import { FreeControl } from "@oasis-engine/controls";
+import { FreeControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-// @ts-ignore
-let { FreeControl } = window['@oasisEngine/controls']
 
 
 //-- create engine object

@@ -1,10 +1,6 @@
 import { Camera, Vector3, WebGLEngine, Entity } from "oasis-engine";
-// import { SpineAnimation } from "@oasis-engine/engine-spine";
-
-// @ts-ignore
-let { OrbitControl } = window['@oasisEngine/controls']
-// @ts-ignore
-let { SpineAnimation } = window.oasisSpine;
+import { OrbitControl } from "@oasis-engine/controls";
+import { SpineAnimation } from "@oasis-engine/engine-spine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
