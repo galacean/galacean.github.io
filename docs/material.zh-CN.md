@@ -5,26 +5,26 @@ type: 资源系统
 ---
 ## 材质分类
 ### PBRMaterial
-引擎和编辑器全面提倡使用 PBR 材质 [PBRMaterial](${api}core.pbrmaterial.html) 。PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
+引擎和编辑器全面提倡使用 PBR 材质 [PBRMaterial](${api}core/PBRMaterial) 。PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
 
 <playground src="pbr-helmet.ts"></playground>
 
-引擎提供了 **金属-粗糙度/高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${api}core.pbrmaterial.html) 和 [PBRSpecularMaterial](${api}core.pbrspecularmaterial.html)。
+引擎提供了 **金属-粗糙度/高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${api}core/PBRMaterial) 和 [PBRSpecularMaterial](${api}core/PBRSpecularMaterial)。
 
 <playground src="pbr-base.ts"></playground>
 
 #### 通用参数介绍
 | 参数 | 应用 |
 | :--- | :--- |
-| 基础颜色（[baseColor](${api}core.pbrbasematerial.html#basecolor) )| **基础颜色** * **基础颜色纹理** = **最后的基础颜色**。  基础颜色是物体的反照率值,与传统的漫反射颜色不同，它会同时贡献镜面反射和漫反射的颜色，我们可以通过上面提到过的金属度、粗糙度，来控制贡献比。 |
-| 自发光颜色（[emissiveColor](${api}core.pbrbasematerial.html#emissivecolor)） | 使得即使没有光照也能渲染出颜色。 |
-| 透明度（[opacity](${api}core.pbrbasematerial.html#opacity)） | 当设置为透明模式后，可以通过透明度来调整透明度。 |
-| 基础颜色纹理（[baseTexture](${api}core.pbrbasematerial.html#basecolortexture)） | 搭配基础颜色使用，是个相乘的关系。 |
-| 透明度纹理（[opacityTexture](${api}core.pbrbasematerial.html#opacitytexture)） | 搭配透明度使用，是相乘的关系，注意透明度模式的切换。 |
-| 法线纹理（[normalTexture](${api}core.pbrbasematerial.html#normaltexture)） | 可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
-| 自发射光纹理（[emissiveTexture](${api}core.pbrbasematerial.html#emissivetexture)） | 我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${api}core.pbrbasematerial.html#emissivefactor)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
-| 阴影遮蔽纹理（[occlusionTexture](${api}core.pbrbasematerial.html#occlusiontexture)） | 我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
-| 纹理坐标的缩放与偏移（[tilingOffset](${api}core.pbrbasematerial.html#tilingoffset)） | 是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。|
+| [baseColor](${api}core/PBRBaseMaterial#baseColor) | 基础颜色。**基础颜色** * **基础颜色纹理** = **最后的基础颜色**。基础颜色是物体的反照率值,与传统的漫反射颜色不同，它会同时贡献镜面反射和漫反射的颜色，我们可以通过上面提到过的金属度、粗糙度，来控制贡献比。 |
+| [emissiveColor](${api}core/PBRBaseMaterial#emissiveColor) | 自发光颜色。使得即使没有光照也能渲染出颜色。 |
+| [opacity](${api}core/PBRBaseMaterial#opacity) | 透明度。当设置为透明模式后，可以通过透明度来调整透明度。 |
+| [baseTexture](${api}core/PBRBaseMaterial#baseTexture)| 基础颜色纹理。搭配基础颜色使用，是个相乘的关系。 |
+| [opacityTexture](${api}core/PBRBaseMaterial#opacityTexture) | 透明度纹理。搭配透明度使用，是相乘的关系，注意透明度模式的切换。 |
+| [normalTexture](${api}core/PBRBaseMaterial#normalTexture) | 法线纹理。可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
+| [emissiveTexture](${api}core/PBRBaseMaterial#emissiveTexture) | 自发射光纹理。我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${api}core/PBRBaseMaterial#emissiveTexture)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
+| [occlusionTexture](${api}core/PBRBaseMaterial#occlusionTexture) | 阴影遮蔽纹理。我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
+| [tilingOffset](${api}core/PBRBaseMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。|
 
 tilingOffset 案例：
 
@@ -33,52 +33,52 @@ tilingOffset 案例：
 #### 金属-粗糙度模式 参数介绍
 | 参数 | 应用 |
 | :--- | :--- |
-| 金属度（[metallicFactor](${api}core.pbrmaterial.html#metallicfactor)） | 模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
-| 粗糙度（[roughnessFactor](${api}core.pbrmaterial.html#roughnessfactor)） | 模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
-| 金属粗糙度纹理（[metallicRoughnessTexture](${api}core.pbrmaterial.html#metallicroughnesstexture)） | 搭配金属粗糙度使用，是相乘的关系。 |
-| 金属度纹理（[metallicTexture](${api}core.pbrmaterial.html#metallictexture)） | 搭配金属度使用，是相乘的关系。 |
-| 粗糙度纹理（[roughnessTexture](${api}core.pbrmaterial.html#roughnesstexture)） | 搭配粗糙度使用，是相乘的关系。 |
+| [metallicFactor](${api}core/PBRMaterial#metallicFactor) | 金属度。模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
+| [roughnessFactor](${api}core/PBRMaterial#roughnessFactor) | 粗糙度。模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
+| [metallicRoughnessTexture](${api}core/PBRMaterial#metallicRoughnessTexture) | 金属粗糙度纹理。搭配金属粗糙度使用，是相乘的关系。 |
+| [metallicTexture](${api}core/PBRMaterial#metallicTexture) | 金属度纹理。搭配金属度使用，是相乘的关系。 |
+| [roughnessTexture](${api}core/PBRMaterial#roughnessTexture) | 粗糙度纹理。搭配粗糙度使用，是相乘的关系。 |
 
 #### 高光-光泽度 参数介绍
 | 参数 | 应用 |
 | :--- | :--- |
-| 高光度（[specularColor](${api}core.pbrspecularmaterial.html#specularcolor)） | 不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) |
-| 光泽度（[glossinessFactor](${api}core.pbrspecularmaterial.html#glossinessfactor)） | 模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
-| 高光光泽度纹理（[specularGlossinessTexture](${api}core.pbrspecularmaterial.html#specularglossinesstexture)） | 搭配高光光泽度使用，是相乘的关系。 |
+| [specularColor](${api}core/PBRSpecularMaterial#specularColor) | 高光度。不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) |
+| [glossinessFactor](${api}core/PBRSpecularMaterial#glossinessFactor) | 光泽度。模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
+| [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | 高光光泽度纹理。搭配高光光泽度使用，是相乘的关系。 |
 
 
-> **注**：如果您使用了 PBR 材质，千万别忘了往场景中添加一个[EnvironmentMapLight](${docs}component/light.md?id=environmentmaplight) ～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。**
+> **注**：如果您使用了 PBR 材质，千万别忘了往场景中添加一个[EnvironmentMapLight](${docs}light-cn#environmentmaplight) ～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。**
 
 
 ### BlinnPhongMaterial
-[BlinnPhongMaterial](${api}core.blinnphongmaterial.html) 虽然不是基于物理渲染，但是其高效的渲染算法和基本齐全的光学部分，还是有很多的应用场景。
+[BlinnPhongMaterial](${api}core/BlinnPhongMaterial) 虽然不是基于物理渲染，但是其高效的渲染算法和基本齐全的光学部分，还是有很多的应用场景。
 
 #### 常用参数介绍
 | 参数 | 应用 |
 | :--- | :--- |
-| 基础颜色（[baseColor](${api}core.blinnphongmaterial.html#basecolor)） | **基础颜色 * 基础纹理 = 最后的基础颜色。** |
-| 基础纹理（[baseTexture](${api}core.blinnphongmaterial.html#basetexture)） | 搭配基础颜色使用，是个相乘的关系。 |
-| 镜面反射颜色（[specularColor](${api}core.blinnphongmaterial.html#specularcolor)） | **镜面反射颜色 * 镜面反射纹理 = 最后的镜面反射颜色。** |
-| 镜面反射纹理（[specularTexture](${api}core.blinnphongmaterial.html#speculartexture)） | 搭配镜面反射颜色使用，是个相乘的关系。 |
-| 法线纹理（[normalTexture](${api}core.blinnphongmaterial.html#normaltexture)） | 可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
-| 法线强度（[normalIntensity ](${api}core.blinnphongmaterial.html#normalintensity)） | 法线强度，用来控制凹凸程度。 |
-| 自发光颜色（[emissiveColor](${api}core.blinnphongmaterial.html#emissivecolor)） | **自发光颜色 * 自发光纹理 = 最后的自发光颜色。即使没有光照也能渲染出颜色。** |
-| 自发光纹理（[emissiveTexture](${api}core.blinnphongmaterial.html#emissivetexture)） | 搭配自发光颜色使用，是个相乘的关系。 |
-| 镜面反射系数（[shininess](${api}core.blinnphongmaterial.html#shininess)） | 值越大镜面反射效果越聚拢。 |
-| 纹理坐标的缩放与偏移（[tilingOffset](${api}core.blinnphongmaterial.html#tilingoffset)） | 是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
+| [baseColor](${api}core/BlinnPhongMaterial#baseColor) | 基础颜色。 **基础颜色 * 基础纹理 = 最后的基础颜色。** |
+| [baseTexture](${api}core/BlinnPhongMaterial#baseTexture) | 基础纹理。搭配基础颜色使用，是个相乘的关系。 |
+| [specularColor](${api}core/BlinnPhongMaterial#specularColor) | 镜面反射颜色。**镜面反射颜色 * 镜面反射纹理 = 最后的镜面反射颜色。** |
+| [specularTexture](${api}core/BlinnPhongMaterial#specularTexture) | 镜面反射纹理。搭配镜面反射颜色使用，是个相乘的关系。 |
+| [normalTexture](${api}core/BlinnPhongMaterial#normalTexture) | 法线纹理。可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
+| [normalIntensity ](${api}core/BlinnPhongMaterial#normalIntensity) | 法线强度。法线强度，用来控制凹凸程度。 |
+| [emissiveColor](${api}core/BlinnPhongMaterial#emissiveColor) | 自发光颜色。**自发光颜色 * 自发光纹理 = 最后的自发光颜色。即使没有光照也能渲染出颜色。** |
+| [emissiveTexture](${api}core/BlinnPhongMaterial#emissiveTexture) | 自发光纹理。搭配自发光颜色使用，是个相乘的关系。 |
+| [shininess](${api}core/BlinnPhongMaterial#shininess) | 镜面反射系数。值越大镜面反射效果越聚拢。 |
+| [tilingOffset](${api}core/BlinnPhongMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
 
 
 ###  UnlitMaterial
-在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core.unlitmaterial.html)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
+在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
 
 | 参数 | 应用 |
 | :--- | :--- |
-| 基础颜色（[baseColor](${api}core.unlitmaterial.html#basecolor) )| **基础颜色 * 基础颜色纹理 = 最后的颜色。** |
-| 基础纹理（[baseTexture](${api}core.unlitmaterial.html#basetexture) )| 搭配基础颜色使用，是个相乘的关系。 |
-| 纹理坐标的缩放与偏移（[tilingOffset](${api}core.unlitmaterial.html#tilingoffset)） | 是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
+| [baseColor](${api}core/UnlitMaterial#baseColor) | 基础颜色。**基础颜色 * 基础颜色纹理 = 最后的颜色。** |
+| [baseTexture](${api}core/UnlitMaterial#baseTexture) | 基础纹理。搭配基础颜色使用，是个相乘的关系。 |
+| [tilingOffset](${api}core/UnlitMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
 ## 如何使用材质
 
-用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${docs}resource/resource-manager.md?id=_5-gltf)或者[编辑器](https://oasistwa.alipay.com/3d/projects)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
+用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
 
 ```typescript
 // 获取想要修改的 renderer
@@ -103,39 +103,39 @@ const material = renderer.setMaterial(material);
 ```
 
 ## 材质通用属性
-以下属性都可以直接在 [UnlitMaterial](${api}core.unlitmaterial.html)、[BlinnPhongMaterial](${api}core.blinnphongmaterial.html)、[PBRMaterial](${api}core.pbrmaterial.html)、[PBRSpecularMaterial](${api}core.pbrspecularmaterial.html) 材质中使用。
+以下属性都可以直接在 [UnlitMaterial](${api}core/UnlitMaterial)、[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)、[PBRMaterial](${api}core/PBRMaterial)、[PBRSpecularMaterial](${api}core/PBRSpecularMaterial) 材质中使用。
 
 | 参数 | 应用 |
 | :--- | :--- |
-| 是否透明 ([isTransparent](${api}core.basematerial.html#istransparent))| 可以设置材质是否透明。如果设置为透明，可以通过[BlendMode](${api}core.basematerial.html#blendmode) 来设置颜色混合模式。 |
-| 透明度裁剪值 ([alphaCutoff](${api}core.basematerial.html#alphacutoff))| 可以设置裁剪值，来指定在着色器中，裁剪透明度小于此数值的片元。 |
-| 渲染面 ([renderFace](${api}core.basematerial.html#renderface))| 可以决定渲染正面、背面、双面。 |
-| 颜色混合模式 ([blendMode](${api}core.basematerial.html#blendmode))| 当设置材质为透明后，可以设置此枚举来决定颜色混合模式。 |
+| [isTransparent](${api}core/BaseMaterial#isTransparent) | 是否透明。可以设置材质是否透明。如果设置为透明，可以通过 [BlendMode](${api}core/BaseMaterial#blendMode) 来设置颜色混合模式。 |
+| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | 透明度裁剪值。可以设置裁剪值，来指定在着色器中，裁剪透明度小于此数值的片元。 |
+| [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
+| [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式。 |
 
 
 
 
 ## 常见 QA
 ### 1. 透明渲染异常？
-- 请先确保材质开启了透明度模式，即材质的 [isTransparent](${api}core.basematerial.html#istransparent) 属性设置为了 `true`。
-- 相应的材质的 [baseColor](${api}core.blinnphongmaterial.html#basecolor) 需要设置正确的透明度。如 `material.baseColor.a = 0.5`。透明度范围为 【0～1】，数值越小，越透明。
+- 请先确保材质开启了透明度模式，即材质的 [isTransparent](${api}core/BaseMaterial#isTransparent) 属性设置为了 `true`。
+- 相应的材质的 [baseColor](${api}core/BlinnPhongMaterial#baseColor) 需要设置正确的透明度。如 `material.baseColor.a = 0.5`。透明度范围为 【0～1】，数值越小，越透明。
 - 如果还上传了透明度纹理，请先确保透明纹理是否含有透明通道，即是正常的 png 图片，如果不是的话，可以开启 `getOpacityFromRGB` 为 true 代表希望采样亮度值作为透明度。
-- 如果透明度渲染仍有异常，请确保材质的颜色混合度模式（[blendMode](${api}core.basematerial.html#blendmode)）为期望的组合。
-- 有一些透明度渲染异常可能是因为没有关闭背面剔除，可以通过 [renderFace](${api}core.basematerial.html#renderface) 来设置想要渲染的面。
+- 如果透明度渲染仍有异常，请确保材质的颜色混合度模式（[blendMode](${api}core/BaseMaterial#blendMode)）为期望的组合。
+- 有一些透明度渲染异常可能是因为没有关闭背面剔除，可以通过 [renderFace](${api}core/BaseMaterial#renderFace) 来设置想要渲染的面。
 - 如果是自定义材质，请确保设置了正确的混合模式，混合因子，关闭了深度写入，设置了正确的渲染队列。
 
 
 ### 2. 为什么材质是黑的？
 
 
-- 场景中需要有光才能照亮物体，请确保您往场景中添加了全局光（[EnvironmentMapLight](${api}core/EnvironmentMapLight)）或者直接光如方向光（[DirectLight](${api}core.directlight.html)）。
+- 场景中需要有光才能照亮物体，请确保您往场景中添加了全局光（[EnvironmentMapLight](${api}core/EnvironmentMapLight)）或者直接光如方向光（[DirectLight](${api}core/DirectLight)）。
 
 
 
 ### 3. 为什么模型背面没有渲染？
 
 
-- 请确保关闭背面了剔除，可以通过 [RasterState.cullMode](${api}core.rasterstate.html#cullmode) 来设置，也可以通过材质内置的 [renderFace](${api}core.basematerial.html#renderface) 来设置想要渲染的面。
+- 请确保关闭背面了剔除，可以通过 [RasterState.cullMode](${api}core/RasterState#cullMode) 来设置，也可以通过材质内置的 [renderFace](${api}core/BaseMaterial#renderFace) 来设置想要渲染的面。
 
 
 
@@ -143,7 +143,7 @@ const material = renderer.setMaterial(material);
 
 
 - 一般场景只需要添加一个全局光（[EnvironmentMapLight](${api}core/EnvironmentMapLight)）就可以了，它可以基于图片的照明实现直接光照和间接光照。
-- 如果出于美术流程的困难度， 1 个 EnvironmentMapLight 无法满足需求，可以适当添加方向光（[DirectLight](${api}core.directlight.html)）和点光源（[PointLight](${api}core.pointlight.html)）来补充光照细节。
+- 如果出于美术流程的困难度， 1 个 EnvironmentMapLight 无法满足需求，可以适当添加方向光（[DirectLight](${api}core/DirectLight)）和点光源（[PointLight](${api}core/PointLight)）来补充光照细节。
 - 出于性能考虑，尽量不要超过 1 个 EnvironmentMapLight + 2 个直接光 。
 
 
@@ -151,4 +151,4 @@ const material = renderer.setMaterial(material);
 ### 5. 为什么渲染的不够立体？
 
 
-- 合理搭配使用[纹理烘焙](${book.editor}bake) 、 法线纹理（[normalTexture](${api}core.pbrmaterial.html#normaltexture)）、阴影遮蔽纹理（[occlusionTexture](${api}core.pbrmaterial.html#occlusiontexture)）
+- 合理搭配使用纹理烘焙、 法线纹理（[normalTexture](${api}core/PBRMaterial#normalTexture)）、阴影遮蔽纹理（[occlusionTexture](${api}core/PBRMaterial#occlusionTexture)）
