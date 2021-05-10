@@ -36,7 +36,8 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
                   "@oasis-engine/controls": "@oasisEngine/controls",
                   "@oasis-engine/framebuffer-picker": "@oasisEngine/framebufferPicker",
                   "@oasis-engine/stats": "@oasisEngine/stats",
-                  "@oasis-engine/engine-spine": "oasisSpine"
+                  "@oasis-engine/engine-spine": "oasisSpine",
+                  "dat.gui": "dat"
               },
               exactGlobals: true
           }

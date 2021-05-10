@@ -1,16 +1,16 @@
 ---
-order: 5
+order: 7
 title: 基础几何体渲染器
 type: 组件
 ---
 
-常用几何体统一在 [PrimitiveMesh](${book.api}classes/core.primitivemesh.html) 中提供。
+常用几何体统一在 [PrimitiveMesh](${api}core/PrimitiveMesh) 中提供。
 
 <playground src="primitive-mesh.ts"></playground>
 
 目前提供的几何体如下：
 
-- [createCuboid](${book.api}classes/core.primitivemesh.html) **立方体**
+- [createCuboid](${api}core/PrimitiveMesh#createCuboid) **立方体**
 
 ```typescript
 const entity = rootEntity.createChild('cuboid');
@@ -23,7 +23,7 @@ material.emissiveColor.setValue(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
-- [createSphere](${book.api}classes/core.primitivemesh.html) **球体**
+- [createSphere](${api}core/PrimitiveMesh#createSphere) **球体**
 
 ```typescript
 const entity = rootEntity.createChild('sphere');
@@ -36,7 +36,7 @@ material.emissiveColor.setValue(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
-- [createPlane](${book.api}classes/core.primitivemesh.html) **平面**
+- [createPlane](${api}core/PrimitiveMesh#createPlane) **平面**
 
 ```typescript
 const entity = rootEntity.createChild('plane');
@@ -49,7 +49,7 @@ material.emissiveColor.setValue(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
-- [createCylinder](${book.api}classes/core.primitivemesh.html) **圆柱**
+- [createCylinder](${api}core/PrimitiveMesh#createCylinder) **圆柱**
 
 ```typescript
 const entity = rootEntity.createChild('cylinder');
@@ -62,7 +62,7 @@ material.emissiveColor.setValue(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
-- [createTorus](${book.api}classes/core.primitivemesh.html) **圆环**
+- [createTorus](${api}core/PrimitiveMesh#createTorus) **圆环**
 
 ```typescript
 const entity = rootEntity.createChild('torus');
@@ -75,7 +75,7 @@ material.emissiveColor.setValue(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
-- [createCone](${book.api}classes/core.primitivemesh.html) **圆锥**
+- [createCone](${api}core/PrimitiveMesh#createCone) **圆锥**
 
 ```typescript
 const entity = rootEntity.createChild('cone');

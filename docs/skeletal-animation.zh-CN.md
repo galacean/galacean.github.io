@@ -1,10 +1,10 @@
 ---
-order: 7
+order: 10
 title: 骨骼动画
 type: 组件
 ---
 
-Oasis Engine 中的骨骼动画通过 glTF 模型（相关教程请参考[资源加载](${book.manual}resource/resource-manager)）的动画组件（[Animation](${book.api}classes/core.animationclip.html)）获得，动画组件中包含多个动画片段（[AnimationClip](${book.api}classes/core.animation.html)），动画组件可以控制动画片段的播放。
+Oasis Engine 中的骨骼动画通过 glTF 模型（相关教程请参考[资源加载](${docs}resource-manager-cn)）的动画组件（[Animation](${api}core/Animation)）获得，动画组件中包含多个动画片段（[AnimationClip](${api}core/AnimationClip)），动画组件可以控制动画片段的播放。
 
 <playground src="skeleton-animation.ts"></playground>
 
@@ -33,7 +33,7 @@ rootEntity.addComponent(ResourceScript);
 ## 属性
 ### 播放速度
 
-通过 `Animation`  组件的 [`timeScale`](${book.api}classes/core.animation.html#timescale)  属性来控制动画的播放速度。 `timeScale` 默认值为 `1.0` ，值越大播放的越快，越小播放的越慢。
+通过 *Animation* 组件的 [timeScale](${api}core/Animation#timeScale)  属性来控制动画的播放速度。 `timeScale` 默认值为 `1.0` ，值越大播放的越快，越小播放的越慢。
 
 
 ```javascript
@@ -43,7 +43,7 @@ animator.timeScale = 2.0；
 
 ### 播放次数
 
-通过设置 [`WrapMode`](${book.api}enums/core.wrapmode.html)  来控制动画播放的模式，默认 [`WrapMode.LOOP`](${book.api}enums/core.wrapmode.html#loop) 。
+通过设置 [WrapMode](${api}core/WrapMode)  来控制动画播放的模式，默认 `WrapMode.LOOP`。
 
 ```typescript
 animator.playAnimationClip('walk', {
@@ -55,7 +55,7 @@ animator.playAnimationClip('walk', {
 ## 方法
 ### 动画融合
 
-实现两个动画之间的平滑切换。例如一个角色从步行动画切换到待机动画，直接切换会有明显的跳帧，使用动画混合可以平滑地从上一个动作切换到下一个动作。 通过 `Animation`  组件的 [`crossFade`](${book.api}classes/core.animation.html#crossfade)  接口实现动画融合切换。使用案例可以参考[Playground](${book.playground}#/animation-cross-fade)
+实现两个动画之间的平滑切换。例如一个角色从步行动画切换到待机动画，直接切换会有明显的跳帧，使用动画混合可以平滑地从上一个动作切换到下一个动作。 通过 *Animation* 组件的 [crossFade](${api}core/Animation#crossFade)  接口实现动画融合切换。
 
 ```typescript
 // 先让角色播放步行（‘walk’）动画
@@ -65,10 +65,11 @@ animator.playAnimationClip('walk');
 animator.crossFade('idle', 600)；
 ```
 
+<playground src="animation-cross-fade.ts"></playground>
 
 ### 动画混合
 
-实现角色的一部分播放一个动画，别的部分播放另外一个动画。例如，一个角色可以上半身播放射击、砍杀等动作，下半身播放站立、走动、跑动等动作。使用这种融合方式可以实现不同动作的自由组合，极大减少美术的工作量。通过 `Animation`  组件的 [`mix`](${book.api}classes/core.animation.html#mix)  接口实现动画组合功能。
+实现角色的一部分播放一个动画，别的部分播放另外一个动画。例如，一个角色可以上半身播放射击、砍杀等动作，下半身播放站立、走动、跑动等动作。使用这种融合方式可以实现不同动作的自由组合，极大减少美术的工作量。通过 *Animation*  组件的 [mix](${api}core/Animation#mix)  接口实现动画组合功能。
 
 
 ```javascript
@@ -85,9 +86,9 @@ animator.mix('wave', 'upper_body');  //设置角色的上半身的根骨骼（'u
 
 |事件名称|解释|
 |:--|:--|
-|[`AnimationEvent.FINISHED`](${book.api}enums/core.animationevent.html#finished)|动画播放结束后触发事件，仅在 `WrapMode.ONCE` 时生效 |
-| [`AnimationEvent.FRAME_EVENT`](${book.api}enums/core.animationevent.html#frame_event) | 动画播放到特定时间触发事件，需要配置触发时间 |
-| [`AnimationEvent.LOOP_END`](${book.api}enums/core.animationevent.html#loop_end) | 循环播放的动画在一轮结束后触发事件，仅在 `WrapMode.LOOP` 是生效|
+|[AnimationEvent.FINISHED](${api}core/AnimationEvent#FINISHED)|动画播放结束后触发事件，仅在 `WrapMode.ONCE` 时生效 |
+| [AnimationEvent.FRAME_EVENT](${api}core/AnimationEvent#FRAME_EVENT) | 动画播放到特定时间触发事件，需要配置触发时间 |
+| [AnimationEvent.LOOP_END](${api}core/AnimationEvent#LOOP_END) | 循环播放的动画在一轮结束后触发事件，仅在 `WrapMode.LOOP` 是生效|
 
 
 ```typescript

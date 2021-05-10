@@ -1,21 +1,59 @@
 ---
 order: 2
-title: 屏幕适配
+title: 画布
 type: 核心
 ---
 
-关于屏幕适配，核心要注意的点是**设备像素比**，以 iPhoneX 为例，设备像素比 `window.devicePixelRatio` 为 *3*， 窗口宽度 `window.innerWidth` 为 *375*，屏幕物理像素宽度则为：375 * 3 = *1125*。
+Oasis Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl/WebCanvas) 支持用 [Engine](${api}core/Engine) 控制 [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) 或者 [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) 。
 
-渲染压力和屏幕物理像素高宽成正比，物理像素越大，渲染压力越大，也就越耗电。画布的高宽建议通过 [WebCanvas](${book.api}classes/rhi_webgl.webcanvas.html) 暴露的 API 设置，不建议使用原生 canvas 的 API ，如 `canvas.width` 或 `canvas.style.width` 这些方法修改。
+## 基础使用
 
->️ 注意：Sherry 等脚手架工具会修改页面的缩放比：
+### 创建画布
+
+在 HTML 中插入一个 `<canvas>` 标签，指定一个 id：
+
+```html
+<canvas id="canvas" style="width: 500px; height: 500px"/>
+```
+
+创建 WebGLEngine 实例的时候会自动创建一个 WebCanvas 实例：
+
+```typescript
+const engine = new WebGLEngine("canvas");
+
+console.log(engine.canvas) // => WebCanvas 实例
+```
+
+如果你希望手动创建 canvas，需要多写几行代码，这和上面的代码是等效的：
+
+```typescript
+const canvas = document.getElementById("canvas");
+const webCanvas = new WebCanvas(canvas);
+const webGLRenderer = new WebGLRenderer();
+const engine = new Engine(webCanvas,webGLRenderer);
+```
+
+### 基础适配
+
+以下代码会根据 canvas 元素的 css 样式自动适配：
+
+```typescript
+engine.canvas.resizeByClientSize();
+```
+
+> 一般情况下这行代码已经可以满足适配的需求，如果你有更复杂的适配需求，请阅读“高级使用”部分。
+
+## 高级使用
+
+关于适配，核心要注意的点是**设备像素比**，以 iPhoneX 为例，设备像素比 `window.devicePixelRatio` 为 *3*， 窗口宽度 `window.innerWidth` 为 *375*，屏幕物理像素宽度则为：375 * 3 = *1125*。
+
+渲染压力和屏幕物理像素高宽成正比，物理像素越大，渲染压力越大，也就越耗电。画布的高宽建议通过 [WebCanvas](${api}rhi-webgl/WebCanvas) 暴露的 API 设置，不建议使用原生 canvas 的 API ，如 `canvas.width` 或 `canvas.style.width` 这些方法修改。
+
+>️ **注意**：有些前端脚手架会插入以下标签修改页面的缩放比：
 >
 > `<meta name="viewport" content="width=device-width, initial-scale=0.333333333">`
 >
-> 此时 `window.innerWidth` 的值是 1125，这种情况下设置画布高宽，可以认为 pixelRatio 为 1。
-
-
-## 使用
+> 这行代码会把 `window.innerWidth` 的值从 375 修改为 1125。
 
 Oasis 的屏幕适配推荐使用以下四种模式：
 

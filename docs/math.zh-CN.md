@@ -4,25 +4,25 @@ title: 数学库
 type: 工具库
 ---
 
-在一个渲染场景中，我们经常会对物体进行平移、旋转、缩放等操作（这些操作我们统一称为 [变换](${book.manual}component/transform) ），从而达到我们想要的互动效果。而这些变换的计算，我们一般都是通过向量、四元数、矩阵等来实现的，为此我们提供一个数学库来完成 *向量* 、*四元数* 、*矩阵* 等相关运算。除此之外，数学库还提供了更为丰富的类来帮助我们描述空间中的 *点* *线* *面* *几何体*，以及判断它们在三维空间中的相交、位置关系等。
+在一个渲染场景中，我们经常会对物体进行平移、旋转、缩放等操作（这些操作我们统一称为 [变换](${docs}component/transform) ），从而达到我们想要的互动效果。而这些变换的计算，我们一般都是通过向量、四元数、矩阵等来实现的，为此我们提供一个数学库来完成 *向量* 、*四元数* 、*矩阵* 等相关运算。除此之外，数学库还提供了更为丰富的类来帮助我们描述空间中的 *点* *线* *面* *几何体*，以及判断它们在三维空间中的相交、位置关系等。
 
 
 | 类型 | 解释 |
 | :--- | :--- |
-| [BoundingBox](${book.api}classes/math.boundingbox.html) | AABB 包围盒 |
-| [BoundingFrustum](${book.api}classes/math.boundingfrustum.html) | 视锥体 |
-| [BoundingSphere](${book.api}classes/math.boundingsphere.html) | 包围球 |
-| [CollisionUtil](${book.api}classes/math.collisionutil.html) | 提供很多静态方式，用来判断空间中各个物体之间的相交、位置关系等 |
-| [Color](${book.api}classes/math.color.html) | 颜色类，使用 RGBA 描述 |
-| [MathUtil](${book.api}classes/math.mathutil.html) | 工具类，提供比较、角度弧度转换等常用计算 |
-| [Matrix](${book.api}classes/math.matrix.html) | 默认的4x4矩阵，提供矩阵基本运算，变换相关运算 |
-| [Matrix3x3](${book.api}classes/math.matrix3x3.html) | 3x3矩阵，提供矩阵基本运算，变换相关运算 |
-| [Plane](${book.api}classes/math.plane.html) | 平面类，用来描述三维空间中的平面 |
-| [Quaternion](${book.api}classes/math.quaternion.html) | 四元数，包含x、y、z、w分量，负责旋转相关的运算 |
-| [Ray](${book.api}classes/math.ray.html) | 射线类，用来描述三维空间中的射线 |
-| [Vector2](${book.api}classes/math.vector2.html) | 二维向量，包含x、y分量 |
-| [Vector3](${book.api}classes/math.vector3.html) | 三维向量，包含x、y、z分量 |
-| [Vector4](${book.api}classes/math.vector4.html) | 四维向量，包含x、y、z、w分量 |
+| [BoundingBox](${api}classes/math.boundingbox.html) | AABB 包围盒 |
+| [BoundingFrustum](${api}classes/math.boundingfrustum.html) | 视锥体 |
+| [BoundingSphere](${api}classes/math.boundingsphere.html) | 包围球 |
+| [CollisionUtil](${api}classes/math.collisionutil.html) | 提供很多静态方式，用来判断空间中各个物体之间的相交、位置关系等 |
+| [Color](${api}classes/math.color.html) | 颜色类，使用 RGBA 描述 |
+| [MathUtil](${api}classes/math.mathutil.html) | 工具类，提供比较、角度弧度转换等常用计算 |
+| [Matrix](${api}classes/math.matrix.html) | 默认的4x4矩阵，提供矩阵基本运算，变换相关运算 |
+| [Matrix3x3](${api}classes/math.matrix3x3.html) | 3x3矩阵，提供矩阵基本运算，变换相关运算 |
+| [Plane](${api}classes/math.plane.html) | 平面类，用来描述三维空间中的平面 |
+| [Quaternion](${api}classes/math.quaternion.html) | 四元数，包含x、y、z、w分量，负责旋转相关的运算 |
+| [Ray](${api}classes/math.ray.html) | 射线类，用来描述三维空间中的射线 |
+| [Vector2](${api}classes/math.vector2.html) | 二维向量，包含x、y分量 |
+| [Vector3](${api}classes/math.vector3.html) | 三维向量，包含x、y、z分量 |
+| [Vector4](${api}classes/math.vector4.html) | 四维向量，包含x、y、z、w分量 |
 
 ## 向量
 

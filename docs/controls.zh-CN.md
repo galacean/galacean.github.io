@@ -5,7 +5,7 @@ type: 二方库
 ---
 
 ## 轨道控制器
-[OrbitControl](${book.api}classes/controls.orbitcontrol.html) 用来模拟轨道交互，适用于围绕一个目标对象进行 360旋转交互：
+[OrbitControl](${api}classes/controls.orbitcontrol.html) 用来模拟轨道交互，适用于围绕一个目标对象进行 360旋转交互：
 
 ```typescript
 import { Camera } from 'oasis-engine';
@@ -25,7 +25,7 @@ controler.maxDistance = 50;
 
 ## 自由控制器
 
-[FreeControl](${book.api}classes/controls.freecontrol.html) 一般用于漫游控制，常见于游戏场景：
+[FreeControl](${api}classes/controls.freecontrol.html) 一般用于漫游控制，常见于游戏场景：
 
 
 ```typescript

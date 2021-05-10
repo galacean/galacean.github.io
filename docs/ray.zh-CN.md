@@ -1,5 +1,5 @@
 ---
-order: 10
+order: 13
 title: 射线投射
 type: 组件
 ---
@@ -13,7 +13,7 @@ type: 组件
 
 ## 使用射线投射
 
-在使用射线投射，首先要在代码中引入 [Ray](${book.api}classes/math.ray.html) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${book.api}classes/core.camera.html#viewportpointtoray)）将屏幕输入转化成射线；最后调用 `scene.raycast`  方法即可检测射线投射命中的碰撞体。代码如下：
+在使用射线投射，首先要在代码中引入 [Ray](${api}math/Ray) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${api}core/Camera#viewportPointToRay)）将屏幕输入转化成射线；最后调用 [scene.raycast](${api}core/Scene#raycast)  方法即可检测射线投射命中的碰撞体。代码如下：
 
 
 ```typescript

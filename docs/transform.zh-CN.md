@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 变换组件
+title: 变换
 type: 组件
 ---
 
@@ -41,30 +41,30 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 ## 组件属性
 | 属性名称 | 属性释义 |
 | :--- | :--- |
-| [position](${book.api}classes/core.transform.html#position) | 局部位移 |
-| [rotation](${book.api}classes/core.transform.html#rotation) | 局部旋转 - 欧拉角 |
-| [rotationQuaternion](${book.api}classes/core.transform.html#rotationquaternion) | 局部旋转 - 四元数 |
-| [scale](${book.api}classes/core.transform.html#scale) | 局部缩放 |
-| [worldPosition](${book.api}classes/core.transform.html#worldposition) | 世界位移 |
-| [worldRotation](${book.api}classes/core.transform.html#worldrotation) | 世界旋转 - 欧拉角 |
-| [worldRotationQuaternion](${book.api}classes/core.transform.html#worldrotationquaternion) | 世界旋转 - 四元数 |
-| [lossyWorldScale](${book.api}classes/core.transform.html#lossyworldscale) | 世界有损缩放 - 当父节点有缩放，子节点有旋转时，缩放会倾斜，无法使用Vector3正确表示,必须使用Matrix3x3矩阵才能正确表示 |
-| [localMatrix](${book.api}classes/core.transform.html#localmatrix) | 局部矩阵 |
-| [worldMatrix](${book.api}classes/core.transform.html#worldmatrix) | 世界矩阵 |
+| [position](${api}core/Transform#position) | 局部位移 |
+| [rotation](${api}core/Transform#rotation) | 局部旋转 - 欧拉角 |
+| [rotationQuaternion](${api}core/Transform#rotationquaternion) | 局部旋转 - 四元数 |
+| [scale](${api}core/Transform#scale) | 局部缩放 |
+| [worldPosition](${api}core/Transform#worldPosition) | 世界位移 |
+| [worldRotation](${api}core/Transform#worldRotation) | 世界旋转 - 欧拉角 |
+| [worldRotationQuaternion](${api}core/Transform#worldRotationQuaternion) | 世界旋转 - 四元数 |
+| [lossyWorldScale](${api}core/Transform#lossyWorldScale) | 世界有损缩放 - 当父节点有缩放，子节点有旋转时，缩放会倾斜，无法使用Vector3正确表示,必须使用Matrix3x3矩阵才能正确表示 |
+| [localMatrix](${api}core/Transform#localMatrix) | 局部矩阵 |
+| [worldMatrix](${api}core/Transform#worldMatrix) | 世界矩阵 |
 
 
 
 ## 组件方法
 | 方法名称 | 方法释义 |
 | --- | --- |
-| [getWorldUp](${book.api}classes/core.transform.html#getworldup) | 获取世界矩阵上向量 |
-| [getWorldRight](${book.api}classes/core.transform.html#getworldright) | 获取世界矩阵右向量 |
-| [getWorldForward](${book.api}classes/core.transform.html#getworldforward) | 获取世界矩阵前向量 |
-| [lookAt](${book.api}classes/core.transform.html#lookat) | 旋转并且保证世界前向量指向目标世界位置 |
-| [registerWorldChangeFlag](${book.api}classes/core.transform.html#registerworldchangeflag) | 注册世界变换改变标记 |
-| [rotate](${book.api}classes/core.transform.html#rotate) | 根据指定欧拉角旋转 |
-| [rotateByAxis](${book.api}classes/core.transform.html#rotatebyaxis) | 根据指定角度绕着指定轴旋转 |
-| [translate](${book.api}classes/core.transform.html#translate) | 根据指定的方向和距离进行位移 |
+| [getWorldUp](${api}core/Transform#getWorldUp) | 获取世界矩阵上向量 |
+| [getWorldRight](${api}core/Transform#getWorldRight) | 获取世界矩阵右向量 |
+| [getWorldForward](${api}core/Transform#getWorldForward) | 获取世界矩阵前向量 |
+| [lookAt](${api}core/Transform#lookAt) | 旋转并且保证世界前向量指向目标世界位置 |
+| [registerWorldChangeFlag](${api}core/Transform#registerWorldChangeFlag) | 注册世界变换改变标记 |
+| [rotate](${api}core/Transform#rotate) | 根据指定欧拉角旋转 |
+| [rotateByAxis](${api}core/Transform#rotateByAxis) | 根据指定角度绕着指定轴旋转 |
+| [translate](${api}core/Transform#translate) | 根据指定的方向和距离进行位移 |
 
 
 

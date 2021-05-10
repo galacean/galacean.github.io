@@ -1,5 +1,5 @@
 ---
-order: 9
+order: 12
 title: 碰撞检测
 type: 组件
 ---
@@ -8,20 +8,20 @@ type: 组件
 
 ## 碰撞检测组件
 
-**[CollisionDetection](${book.api}classes/core.collisiondetection.html)** 用来检测当前 [`Entity`](${book.api}classes/core.entity.html)  上的碰撞体（ [`Collider`](${book.api}classes/core.collider.html) ) 与场景中其他碰撞体 的碰撞情况。目前支持了以下碰撞体之间的碰撞检测：
+[CollisionDetection](${api}core/CollisionDetection) 用来检测当前 [Entity](${api}core/Entity)  上的碰撞体与场景中其他碰撞体 的碰撞情况。目前支持了以下碰撞体之间的碰撞检测：
 
 | 名称 | 解释 |
 | :--- | :--- |
-| [BoxCollider](${book.api}classes/core.boxcollider.html) | 包围盒碰撞体 |
-| [SphereCollider](${book.api}classes/core.aspherecollider.html) | 球型碰撞体 |
-| [PlaneCollider](${book.api}classes/core.planecollider.html) | 平面碰撞体 |
+| [BoxCollider](${api}core/BoxCollider) | 包围盒碰撞体 |
+| [SphereCollider](${api}core/SphereCollider) | 球型碰撞体 |
+| [PlaneCollider](${api}core/PlaneCollider) | 平面碰撞体 |
 
 
-给物体添加碰撞体的方法请参考[射线投射](${book.manual}component/ray)。
+给物体添加碰撞体的方法请参考[射线投射](${docs}ray-cn)。
 
 ## 使用方法
 
-使用碰撞检测，首先需要给场景中的 `Entity`  添加 `Collider` ；然后给需要碰撞检测的 `Entity` 添加 [`CollisionDetection`](${book.api}classes/core.collisiondetection.html)  组件，并注册发生碰撞的时候触发的事件：
+使用碰撞检测，首先需要给场景中的 *Entity*  添加 *Collider* ；然后给需要碰撞检测的 *Entity* 添加 [CollisionDetection](${api}core/CollisionDetection) 组件，并注册发生碰撞的时候触发的事件：
 
 
 ```typescript

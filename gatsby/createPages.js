@@ -119,7 +119,7 @@ async function createAPI(graphql, actions) {
       const name = node.name.replace('/src', '');
 
       createPage({
-        path: `${version}/api/${name}/`,
+        path: `${version}/api/${name}/index`,
         component: apiTemplate,
         context: { node, paths: `${name}/`, type: 'package', packages }
       });

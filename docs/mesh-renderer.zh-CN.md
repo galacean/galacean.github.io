@@ -1,10 +1,10 @@
 ---
-order: 3
+order: 4
 title: 自定义几何体渲染器
 type: 组件
 ---
 
-[MeshRenderer](${book.api}classes/core.meshrenderer.html) 是几何体渲染组件，其数据对象是 [Mesh](${book.api}classes/core.mesh.html)。开发者一般使用 [ModelMesh](${book.api}classes/core.modelmesh.html) 或 [BufferMesh](${book.api}classes/core.buffermesh.html)。
+[MeshRenderer](${api}core/MeshRenderer) 是几何体渲染组件，其数据对象是 [Mesh](${api}core/Mesh)。开发者一般使用 [ModelMesh](${api}core/ModelMesh) 或 [BufferMesh](${api}core/BufferMesh)。
 
 ``` TypeScript
 const meshRenderer = entity.addComponent(MeshRenderer);
@@ -19,5 +19,5 @@ meshRenderer.mesh = new BufferMesh(engine);
 
 具体文档可以查看
 
-- [BufferMesh](${book.manual}component/buffer-mesh)
-- [ModelMesh](${book.manual}/components/model-mesh)
+- [ModelMesh](${docs}model-mesh-cn)
+- [BufferMesh](${docs}buffer-mesh-cn)

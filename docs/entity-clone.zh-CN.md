@@ -8,13 +8,13 @@ type: 核心
 节点克隆是运行时的常用功能，同时节点克隆也会附带克隆其绑定的组件。例如在初始化阶段根据配置动态创建一定数量相同的实体,然后根据逻辑规则摆放到场景不同的位置。这里会对脚本的克隆细节进行详细讲解。
 
 ## 实体的克隆
-非常简单，直接调用实体的 [clone()](${book.api}interfaces/design.iclone.html#clone) 方法即可完成实体以及附属组件的克隆。
+非常简单，直接调用实体的 [clone()](${api}design/IClone#clone) 方法即可完成实体以及附属组件的克隆。
 ```typescript
 const cloneEntity = entity.clone();
 ```
 
 ## 脚本的克隆
-脚本的本质也是组件，所以当我们调用实体的 [clone()](${book.api}interfaces/design.iclone.html#clone) 函数时，引擎不仅会对引擎内置组件进行克隆，还是对自定义脚本进行克隆。引擎内置组件的克隆规则官方已经完成定制，同样我们也将脚本的克隆能力和规则定制开放给了开发者。脚本字段默认的克隆方式为浅拷贝，例如我们对脚本的字段值进行修改后再克隆，克隆后的脚本将保持修改后的值,无需增加任何额外的编码。以下为自定义脚本的克隆案例：
+脚本的本质也是组件，所以当我们调用实体的 [clone()](${api}design/IClone#clone) 函数时，引擎不仅会对引擎内置组件进行克隆，还是对自定义脚本进行克隆。引擎内置组件的克隆规则官方已经完成定制，同样我们也将脚本的克隆能力和规则定制开放给了开发者。脚本字段默认的克隆方式为浅拷贝，例如我们对脚本的字段值进行修改后再克隆，克隆后的脚本将保持修改后的值,无需增加任何额外的编码。以下为自定义脚本的克隆案例：
 ```typescript
 // define a custom script
 class CustomScript extends Script{
@@ -47,10 +47,10 @@ console.log(cloneScript.c);// output is (1,1,1).
 
 | 装饰器名称 | 装饰器释义 |
 | :--- | :--- |
-| [ignoreClone](${book.api}modules/core.html#ignoreclone) | 克隆时对字段进行忽略。 |
-| [assignmentClone](${book.api}modules/core.html#assignmentclone) | ( 默认值，和不添加任何克隆装饰器等效) 克隆时对字段进行赋值。如果是基本类型则会拷贝值，如果是引用类型则会拷贝其引用地址。 |
-| [shallowClone](${book.api}modules/core.html#shallowclone) | 克隆时对字段进行浅克隆。克隆后会保持自身引用独立，并使用赋值的方式克隆其内部所有字段（如果内部字段是基本类型则会拷贝值，如果内部字段是引用类型则会拷贝其引用地址）。|
-| [deepClone](${book.api}modules/core.html#deepClone) | 克隆时对字段进行深克隆。克隆后会保持自身引用独立，并且其内部所有深层字段均保持完全独立。|
+| [ignoreClone](${api}core/ignoreClone) | 克隆时对字段进行忽略。 |
+| [assignmentClone](${api}core/assignmentClone) | ( 默认值，和不添加任何克隆装饰器等效) 克隆时对字段进行赋值。如果是基本类型则会拷贝值，如果是引用类型则会拷贝其引用地址。 |
+| [shallowClone](${api}core/shallowClone) | 克隆时对字段进行浅克隆。克隆后会保持自身引用独立，并使用赋值的方式克隆其内部所有字段（如果内部字段是基本类型则会拷贝值，如果内部字段是引用类型则会拷贝其引用地址）。|
+| [deepClone](${api}core/deepClone) | 克隆时对字段进行深克隆。克隆后会保持自身引用独立，并且其内部所有深层字段均保持完全独立。|
 
  我们将上面的案例稍加修改,分别对 `CustomScript` 中的四个字段添加了不同的“克隆装饰器“,由于 `shallowClone` 和 `deepCone`  较复杂，我们对字段 `c` 和 `d` 增加了额外的打印输出进行进一步讲解。
 ```typescript
@@ -99,4 +99,4 @@ console.log(script.d[0]);// output is (1,1,1). bacause deepClone let d[0] use th
 
 - `shallowClone` 和 `deepClone` 适用于 *Obect*、*Array* 和 *Class* 类型。
 - `shallowClone` 克隆后会保持自身引用独立，并使用赋值的方式克隆其内部所有字段（如果内部字段是基本类型则会拷贝值，如果内部字段是引用类型则会拷贝其引用地址）。
-- `deepClone` 如果在深克隆过程中遇到 *Class* 则会调用对象的 [cloneTo()](${book.api}interfaces/design.iclone.html#cloneTo) 实现克隆，需要对象实现 [IClone](${bool.api}interfaces/design.iclone.html) 接口。
+- `deepClone` 如果在深克隆过程中遇到 *Class* 则会调用对象的 [cloneTo()](${api}design/IClone#cloneTo) 实现克隆，需要对象实现 [IClone](${api}design/IClone) 接口。

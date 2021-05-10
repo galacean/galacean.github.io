@@ -4,7 +4,7 @@ title: 相机
 type: 组件
 ---
 
-相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了[自动视锥剔除](${book.playground}#/renderer-cull)，只渲染视锥体内的物体。
+相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
 
 <playground src="renderer-cull.ts"></playground>
 
@@ -28,13 +28,13 @@ entity.engine.sceneManager.activeScene._activeCameras[0]
 
 |类型|属性|解释|
 |:--|:--|:--|
-|通用|[isOrthographic](${book.api}classes/core.camera.html#isorthographic)|是否正交投影，默认是 `false`|
-||[aspectRatio](${book.api}classes/core.camera.html#aspectratio)|画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐）|
-|          | [cullingMask](${book.api}classes/core.camera.html#cullingmask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。 使用案例可以参考[Playground](${book.playground}#/camera-culling-mask)                |
-|透视投影| [nearClipPlane](${book.api}classes/core.camera.html#nearclipplane) | 近裁剪平面                                                   |
-|| [farClipPlane](${book.api}classes/core.camera.html#farclipplane) | 远裁剪平面                                                   |
-|| [fieldOfView](${book.api}classes/core.camera.html#fieldofview) | 视角                                                         |
-|正交投影|[orthographicSize](${book.api}classes/core.camera.html#orthographicsize)|正交模式下相机的一半尺寸|
+|通用|[isOrthographic](${api}core/Camera#isOrthographic)|是否正交投影，默认是 `false`|
+||[aspectRatio](${api}core/Camera#aspectRatio)|画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐）|
+|          | [cullingMask](${api}core/Camera#cullingMask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。|
+|透视投影| [nearClipPlane](${api}core/Camera#nearClipPlane) | 近裁剪平面 |
+|| [farClipPlane](${api}core/Camera#farClipPlane) | 远裁剪平面 |
+|| [fieldOfView](${api}core/Camera#fieldOfView) | 视角 |
+|正交投影|[orthographicSize](${api}core/Camera#orthographicSize)| 正交模式下相机的一半尺寸|
 
 cullingMask 案例：
 
@@ -43,7 +43,7 @@ cullingMask 案例：
 
 ## 类型
 
-通过设置 [isOrthographic](${book.api}classes/core.camera.html#isorthographic) 来决定采用透视投影或正交投影。
+通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定采用透视投影或正交投影。
 
 ### 透视投影
 
@@ -51,7 +51,7 @@ cullingMask 案例：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*isMHSpe21ZMAAAAAAAAAAAAAARQnAQ)
 
-根据上图可以看出，近裁剪平面（[nearClipPlane](${book.api}classes/core.camera.html#nearclipplane)），远裁剪平面（[farClipPlane](${book.api}classes/core.camera.html#farclipplane)）和 视角（[fieldOfView](${book.api}classes/core.camera.html#fieldofview)） 会形成一个视椎体 ([*View Frustum*](https://en.wikipedia.org/wiki/Viewing_frustum))。在视椎体内部的物体是会被投影到摄像机里的，也就是会渲染在画布上，而视椎体外的物体则会被裁剪。
+根据上图可以看出，近裁剪平面（[nearClipPlane](${api}core/Camera#nearClipPlane)），远裁剪平面（[farClipPlane](${api}core/Camera#farClipPlane)）和 视角（[fieldOfView](${api}core/Camera#fieldOfView)） 会形成一个视椎体 ([*View Frustum*](https://en.wikipedia.org/wiki/Viewing_frustum))。在视椎体内部的物体是会被投影到摄像机里的，也就是会渲染在画布上，而视椎体外的物体则会被裁剪。
 
 
 ### 正交投影
@@ -60,7 +60,7 @@ cullingMask 案例：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*KEuGSqX-vXsAAAAAAAAAAAAAARQnAQ)
 
-如上图所示，有 top、bottom、left 和 right，Oasis 对正交属性做了一些简化，更符合开发者的使用习惯，只有 [orthographicSize](${book.api}classes/core.camera.html#orthographicsize)（正交模式下相机的一半尺寸）。下面是针对各项属性和 [orthographicSize](${book.api}classes/core.camera.html#orthographicsize) 的关系
+如上图所示，有 top、bottom、left 和 right，Oasis 对正交属性做了一些简化，更符合开发者的使用习惯，只有 [orthographicSize](${api}core/Camera#orthographicSize)（正交模式下相机的一半尺寸）。下面是针对各项属性和 [orthographicSize](${api}core/Camera#orthographicSize) 的关系
 
 - `top = orthographicSize`
 - `bottom = -orthographicSize`
@@ -68,4 +68,4 @@ cullingMask 案例：
 - `left = -orthographicSize * aspectRatio`
 
 
-详情请查看 [API 文档](${book.api}classes/core.camera.html)。
+详情请查看 [API 文档](${api}core/Camera)。

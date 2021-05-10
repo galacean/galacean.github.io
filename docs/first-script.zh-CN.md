@@ -10,7 +10,7 @@ type: 入门
 
 ## 创建旋转脚本组件
 
-`Script` 是引擎提供的脚本组件基类，这个类提供了丰富的生命周期函数，只要扩展这个类就可以实现自定义的脚本功能。这篇教程中，我们创建了名为 `Rotate` 的脚本组件，在组件内部用到了 `onUpdate` 生命周期函数，它可以让我们在每一帧渲染前更新实体的状态，在函数体内可以通过 `this.entity` 获取当前脚本绑定的实体：
+[Script](${api}core/Script) 是引擎提供的脚本组件基类，这个类提供了丰富的生命周期函数，只要扩展这个类就可以实现自定义的脚本功能。这篇教程中，我们创建了名为 `Rotate` 的脚本组件，在组件内部用到了 [onUpdate](${api}core/Script#onUpdate) 生命周期函数，它可以让我们在每一帧渲染前更新实体的状态，在函数体内可以通过 `this.entity` 获取当前脚本绑定的实体：
 
 ```typescript
 class Rotate extends Script {
@@ -31,9 +31,9 @@ duck.addComponent(Rotate);
 
 ## 增加旋转逻辑
 
-想要实现旋转，只要在 `onUpdate` 函数内不断改变鸭子的 **Y** 轴角度就可以。旋转、位移、缩放都是经典的变换动画，由于变换是最常用的组件，所以 Oasis Engine 把 `transform` 作为实体属性，通过 `entity.transform` 就可以获得变换组件。
+想要实现旋转，只要在 `onUpdate` 函数内不断改变鸭子的 **Y** 轴角度就可以。旋转、位移、缩放都是经典的变换动画，由于[变换](${docs}transform-cn)是最常用的组件，所以 Oasis Engine 把 `transform` 作为实体属性，通过 `entity.transform` 就可以获得变换组件。
 
-变换组件提供了增量旋转方法 `rotate`，它的参数是类型为 Vector3 的变量。我们让鸭子每帧沿 Y 轴旋转 1 度：
+变换组件提供了增量旋转方法 `rotate`，它的参数是类型为 [Vector3](${api}math/Vector3) 的变量。我们让鸭子每帧沿 Y 轴旋转 1 度：
 
 ```typescript
 class Rotate extends Script {

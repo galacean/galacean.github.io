@@ -1,8 +1,10 @@
 ---
-order: 4
+order: 6
 title: Buffer Mesh
 type: 组件
 ---
+
+[BufferMesh]() 可以自由操作顶点缓冲和索引缓冲数据，以及一些与几何体绘制相关的指令。具备高效、灵活、简洁等特点。开发者如果想高效灵活的实现自定义几何体就可以使用该类。
 
 <playground src="buffer-mesh.ts"></playground>
 
@@ -15,18 +17,18 @@ type: 组件
 
 |名称|解释|
 |:--|:--|
-|[VertexBufferBinding](${book.api}classes/core.vertexbufferbinding.html)|顶点缓冲绑定，用于将顶点缓冲和顶点跨度（字节）打包。|
-|[VertexElement](${book.api}classes/core.vertexelement.html)|顶点元素，用于描述顶点语义、顶点偏移、顶点格式和顶点缓冲绑定索引等信息。|
-|[IndexBufferBinding](${book.api}classes/core.indexbufferbinding.html)|索引缓冲绑定（可选），用于将索引缓冲和索引格式打包。|
+|[VertexBufferBinding](${api}core/VertexBufferBinding)|顶点缓冲绑定，用于将顶点缓冲和顶点跨度（字节）打包。|
+|[VertexElement](${api}core/VertexElement)|顶点元素，用于描述顶点语义、顶点偏移、顶点格式和顶点缓冲绑定索引等信息。|
+|[IndexBufferBinding](${api}core/IndexBufferBinding)|索引缓冲绑定（可选），用于将索引缓冲和索引格式打包。|
   
-其中  `IndexBufferBinding`  为可选，也就是说必要核心元素只有两个，分别通过 [`setVertexBufferBindings()`](${book.api}classes/core.primitive.html#setvertexbufferbindings) 接口和 [`setVertexElements()`](${book.api}classes/core.primitive.html#setvertexelements) 接口设置。 最后一项就是通过 [`addSubMesh`](${book.api}classes/core.buffermesh.html#addsubmesh) 添加子 *SubMesh* ，并设置顶点或索引绘制数量， *SubMesh* 包含三个属性分别是起始绘制偏移、绘制数量、图元拓扑，并且开发者可以自行添加多个 *SubMesh*，每个子几何体均可对应独立的材质。
+其中  [IndexBufferBinding](${api}core/IndexBufferBinding) 为可选，也就是说必要核心元素只有两个，分别通过 [setVertexBufferBindings()](${api}core/BufferMesh#setVertexBufferBindings) 接口和 [setVertexElements()](${api}core/BufferMesh#setVertexElements) 接口设置。 最后一项就是通过 [addSubMesh](${api}core/BufferMesh#addSubMesh) 添加子 [SubMesh](${api}core/SubMesh)，并设置顶点或索引绘制数量， [SubMesh](${api}core/SubMesh) 包含三个属性分别是起始绘制偏移、绘制数量、图元拓扑，并且开发者可以自行添加多个 [SubMesh](${api}core/SubMesh)，每个子几何体均可对应独立的材质。
 
 
 ## 常用案例
-这里列举几个 [MeshRenderer](${book.api}classes/core.meshrenderer.html) 和 [BufferMesh](${book.api}classes/core.buffermesh.html) 的常用使用场景，因为这个类的功能偏底层和灵活，所以这里给出了比较详细的代码。
+这里列举几个 [MeshRenderer](${api}core/MeshRenderer) 和 [BufferMesh](${api}core/BufferMesh) 的常用使用场景，因为这个类的功能偏底层和灵活，所以这里给出了比较详细的代码。
 
 ### 交错顶点缓冲
-常用方式，比如自定义 Mesh、Particle 等实现，具有显存紧凑，每帧 CPU 数据上传至 GPU 次数少等优势。这个案例的主要特点是多个 [VertexElement](${book.api}classes/core.vertexelement.html) 对应一个 *VertexBuffer* （[Buffer](${book.api}classes/core.buffer.html)），仅使用一个 *VertexBuffer* 就可以将不同顶点元素与 Shader 关联。
+常用方式，比如自定义 Mesh、Particle 等实现，具有显存紧凑，每帧 CPU 数据上传至 GPU 次数少等优势。这个案例的主要特点是多个 [VertexElement](${api}core/VertexElement) 对应一个 *VertexBuffer* （[Buffer](${api}core/Buffer)），仅使用一个 *VertexBuffer* 就可以将不同顶点元素与 Shader 关联。
 
 ```typescript
 // add MeshRenderer component
@@ -55,7 +57,7 @@ mesh.addSubMesh(0, vertexCount);
 renderer.mesh = mesh;
 ```
 ### 独立顶点缓冲
-动态顶点 buffer 和静态顶点 buffer 混用时具有优势，比如 *position* 为静态，但 *color* 为动态，独立顶点缓冲可以仅更新颜色数据至 GPU。这个案例的主要特点是一个 [VertexElement](${book.api}classes/core.vertexelement.html) 对应一个 *VertexBuffer* ，可以分别调用 [Buffer](${book.api}classes/core.buffer.html) 对象的 [setData](${book.api}classes/core.buffer.html#setdata) 方法独立更新数据。
+动态顶点 buffer 和静态顶点 buffer 混用时具有优势，比如 *position* 为静态，但 *color* 为动态，独立顶点缓冲可以仅更新颜色数据至 GPU。这个案例的主要特点是一个 [VertexElement](${api}core/VertexElement) 对应一个 *VertexBuffer* ，可以分别调用 [Buffer](${api}core/Buffer) 对象的 [setData](${api}core/Buffer#setData) 方法独立更新数据。
 
 ```typescript
 // add MeshRenderer component
@@ -89,7 +91,7 @@ renderer.mesh = mesh;
 
 
 ### Instance 渲染
-GPU Instance 渲染是三维引擎的常用技术，比如可以把相同几何体形状的物体一次性渲染到不同的位置，可以大幅提升渲染性能。这个案例的主要特点是使用了 [VertexElement](${book.api}classes/core.vertexelement.html) 的实例功能，其构造函数的最后一个参数表示实例步频（在缓冲中每前进一个顶点绘制的实例数量，非实例元素必须为 0），[BufferMesh](${book.api}classes/core.buffermesh.html) 的 [instanceCount](${book.api}classes/core.buffermesh.html#instancecount) 表示实例数量。
+GPU Instance 渲染是三维引擎的常用技术，比如可以把相同几何体形状的物体一次性渲染到不同的位置，可以大幅提升渲染性能。这个案例的主要特点是使用了 [VertexElement](${api}core/VertexElement) 的实例功能，其构造函数的最后一个参数表示实例步频（在缓冲中每前进一个顶点绘制的实例数量，非实例元素必须为 0），[BufferMesh](${api}core/BufferMesh) 的 [instanceCount](${api}core/BufferMesh#instanceCount) 表示实例数量。
 
 ```typescript
 // add MeshRenderer component

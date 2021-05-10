@@ -1,5 +1,5 @@
-import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, SpotLight, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
-import { OrbitControl } from "https://cdn.skypack.dev/@oasis-engine/controls";
+import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, SpotLight, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@oasis-engine/controls";
 
 const target = new Vector3(0, -3, 0);
 const up = new Vector3(0, 1, 0);
