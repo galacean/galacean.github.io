@@ -71,21 +71,27 @@ export default function Template({
   const { markdownRemark, allMarkdownRemark } = data;
   const { frontmatter, fields, html, htmlAst, tableOfContents } = markdownRemark;
   const { edges } = allMarkdownRemark;
-  const menuList = edges.map(({ node, next, previous }) => {
+  const { type } = rest.pageContext;
+
+  let menuList:any[] = [];
+
+  edges.forEach(({ node, next, previous }) => {
     const { fields: nodeFields } = node;
 
-    return {
-      slug: nodeFields.slug,
-      meta: {
-        ...node.frontmatter,
+    if (nodeFields.slug.indexOf(type) > -1) {
+      menuList.push({
         slug: nodeFields.slug,
-        filename: nodeFields.slug,
-      },
-      ...node.frontmatter,
-      filename: nodeFields.path,
-      next,
-      previous,
-    };
+        meta: {
+          ...node.frontmatter,
+          slug: nodeFields.slug,
+          filename: nodeFields.slug,
+        },
+        ...node.frontmatter,
+        filename: nodeFields.path,
+        next,
+        previous,
+      });
+    }
   });
   return (
     <WrapperLayout {...rest}>

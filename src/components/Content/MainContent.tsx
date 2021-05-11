@@ -198,7 +198,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     );
     const lang = isZhCN(this.props.location.pathname) ? 'zh-CN' : 'en-US';
     const order = {
-      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方组件'],
+      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库'],
       'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other'],
     };
     const itemGroups = Object.keys(obj)
@@ -213,7 +213,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
             if ('order' in a && 'order' in b) {
               return a.order - b.order;
             }
-             return a.title.charCodeAt(0) - b.title.charCodeAt(0);
+            return a.title.charCodeAt(0) - b.title.charCodeAt(0);
           })
           .map(this.generateMenuItem.bind(this, footerNavIcons));
         return (
@@ -249,9 +249,9 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
       menuItems.length && !menuItems[0].props.children.length
         ? menuItems
         : Object.keys(menuItems).reduce(
-            (pre, key) => pre.concat(menuItems[key].props.children),
-            [],
-          );
+          (pre, key) => pre.concat(menuItems[key].props.children),
+          [],
+        );
     const index = list.findIndex(
       (item: { key: string }) => item.key === filename || item.key === `${filename}-cn`,
     );
@@ -276,7 +276,6 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const { openKeys } = this.state;
     const menuChild = (
       <Menu
-        inlineIndent={16}
         className="aside-container"
         mode="inline"
         openKeys={openKeys}
