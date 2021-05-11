@@ -94,7 +94,8 @@ export default function Template({
     }
   });
   return (
-    <WrapperLayout {...rest}>
+    // Only show version selector in docs page
+    <WrapperLayout {...rest} showVersion={type==='/docs/'}>
       <MainContent
         {...rest}
         localizedPageData={{

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
-import { EyeOutlined, MenuOutlined, SearchOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined, SettingOutlined } from '@ant-design/icons';
 import { Row, Space, Col, Select, Alert, Input, Menu, Button, Modal, Popover } from 'antd';
 import * as utils from '../utils';
 import {version} from '../../../siteconfig.json';
@@ -51,6 +51,7 @@ interface HeaderProps {
   location: {
     pathname: string;
   };
+  showVersion?: boolean;
 }
 interface HeaderState {
   inputValue?: string;
@@ -193,6 +194,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const { menuMode, menuVisible } = this.state;
     const { location, intl } = this.props;
     const path = location.pathname;
+    const { formatMessage } = intl;
 
     const module = location.pathname
       .replace(/(^\/|\/$)/g, '')
@@ -211,28 +213,53 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const isZhCN = intl.locale === 'zh-CN';
 
     const menu = [
-      <Menu mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav">
-        <Menu.Item key="home">
+      <Menu mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav" inlineIndent={0}>
+        <Menu.Item key="home" icon={<HomeOutlined />}>
           <Link to={utils.getLocalizedPathname('/', isZhCN)}>
             <FormattedMessage id="app.header.menu.home" />
           </Link>
         </Menu.Item>
-        <Menu.Item key="docs">
-          <Link to={utils.getLocalizedPathname(`${version}/docs/install`, isZhCN)}>
-            <FormattedMessage id="app.header.menu.docs" />
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="api">
-          <Link to={`/${version}/api/core/index`}>
-            API
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="editor">
-          <Link to={utils.getLocalizedPathname('/editor/', isZhCN)}>
-            <FormattedMessage id="app.header.menu.editor" />
-          </Link>
-        </Menu.Item>
-        <Menu.Item key="blog">
+        <Menu.SubMenu key="docs" icon={<ReadOutlined />} title={formatMessage({id:"app.header.menu.docs"})}>
+          <Menu.ItemGroup title={formatMessage({id:"app.header.menu.engine"})}>
+            <Menu.Item key="docs">
+              <Link to={utils.getLocalizedPathname(`${version}/docs/install`, isZhCN)}>
+                {formatMessage({id:"app.header.menu.engine.docs"})}
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="api">
+              <Link to={`/${version}/api/core/index`}>
+                API
+              </Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title={formatMessage({id:"app.header.menu.editor"})}>
+            <Menu.Item key="setting:3">
+              <Link to={utils.getLocalizedPathname('/editor/', isZhCN)}>
+                {formatMessage({id:"app.header.menu.editor.docs"})}
+              </Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
+        </Menu.SubMenu>
+        <Menu.SubMenu key="ecosystem" icon={<AppstoreAddOutlined />} title={formatMessage({id:"app.header.menu.ecosystem"})}>
+          <Menu.ItemGroup title={formatMessage({id:"app.header.menu.ecosystem.tool"})}>
+            <Menu.Item key="editor">
+              <Link to="https://oasis.alipay.com/editor" target="_blank">
+                {formatMessage({id:"app.header.menu.ecosystem.editor"})}
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="gltfviewer">
+              <Link to={`/gltfviewer`}>
+                {formatMessage({id:"app.header.menu.ecosystem.gltfviewer"})}
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="createapp">
+              <Link to="https://github.com/oasis-engine/create-oasis-app"  target="_blank">
+                {formatMessage({id:"app.header.menu.ecosystem.createapp"})}
+              </Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
+        </Menu.SubMenu>
+        <Menu.Item key="blog" icon={<NotificationOutlined />}>
           <Link to={utils.getLocalizedPathname('/blog/', isZhCN)}>
             <FormattedMessage id="app.header.menu.blog" />
           </Link>
@@ -300,11 +327,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       <FormattedMessage id="app.header.lang" />
                     </Button>
                   </div> */}
-                  <Select size="small" onChange={this.onVersionChange} value="stable">
+                  {this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value="stable">
                     <Option value="0.1">v0.1</Option>
                     <Option value="0.2">v0.2</Option>
                     <Option value="0.3">v0.3</Option>
-                  </Select>
+                  </Select>}
                 </div>
                 {menuMode === 'horizontal' ? <div id="menu">{menu}</div> : null}
               </div>
