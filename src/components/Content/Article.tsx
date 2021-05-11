@@ -10,6 +10,7 @@ import type { IFrontmatterData } from '../../templates/docs';
 import AvatarList from './AvatarList';
 import RehypeReact from "rehype-react"
 import Playground from "../Playground";
+import { version } from '../../../siteconfig.json';
 
 const renderAst = new RehypeReact({
   createElement: React.createElement,
@@ -73,14 +74,17 @@ export default class Article extends React.PureComponent<ArticleProps> {
         };
       };
 
-      // <div> can not be a descendant of <p>
-      if (content.htmlAst.children) {
-        content.htmlAst.children.forEach((node) => {
-          if(node.tagName === 'p' && node?.children[0] && node.children[0].tagName === 'playground') {
-            node.tagName = 'div';
-          }
-        })
-      }
+    // <div> can not be a descendant of <p>
+    if (content.htmlAst.children) {
+      content.htmlAst.children.forEach((node) => {
+        if (node.tagName === 'p' && node?.children[0] && node.children[0].tagName === 'playground') {
+          node.tagName = 'div';
+        }
+      })
+    }
+
+    let toc = content.toc.replace(/<ul>/g, '<ul class="toc">').replace(/\/#/g, '#');
+    toc = toc.replace(/\/docs\//g, `/${version}/docs/`).replace(/\/#/g, '#');
 
     return (
       <>
@@ -111,7 +115,7 @@ export default class Article extends React.PureComponent<ArticleProps> {
               <div
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
-                  __html: content.toc.replace(/<ul>/g, '<ul class="toc">').replace(/\/#/g, '#'),
+                  __html: toc,
                 }}
               />
             </Affix>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Affix } from 'antd';
 import Kind from './Kind';
 import type { IModule, IPackage } from './interface';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
 
 function Module(props: IModule) {
   return <div>
@@ -32,7 +32,7 @@ export default function Menu(props: IPackage) {
           {props.children.map((item: any) => {
             if (!item.name.startsWith('_')) {
               return <li key={item.id} >
-                <Kind {...item} link={`../${item.name}/`} />
+                <Kind {...item} link={`../${item.name}/index`} />
                 {item.child && <Module {...item.child} hash={'#'} />}
               </li>
             }

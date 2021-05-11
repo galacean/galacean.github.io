@@ -11,28 +11,32 @@ const { Sider, Content } = Layout;
 export default function API (props: any) {
   const { node, paths, type, packages, packageIndex } = props.pageContext;
   const path = paths.split('/');
+  const pkg = packages[packageIndex];
 
   if (type === 'module' && packageIndex !== undefined) {
-    packages[packageIndex].child = node;
+    pkg.child = node;
   }
 
   const menu = {children: packages}
 
+  console.log('paths', paths, node, pkg)
   return (
     <>
       <WrapperLayout {...props}>
         <Layout hasSider={true}>
           <Content className="api" style={{ padding: '20px', backgroundColor: '#fff' }}>
             <div className="tsc-content">
-              <Breadcrumb>
-                <Breadcrumb.Item>API</Breadcrumb.Item>
-                {path[0] && <Breadcrumb.Item>
-                  <a href="">{path[0]}</a>
-                </Breadcrumb.Item>}
-                {path[1] && <Breadcrumb.Item>
-                  <a href="">{path[1]}</a>
-                </Breadcrumb.Item>}
-              </Breadcrumb>
+              <div className="tsc-nav">
+                <Breadcrumb>
+                  <Breadcrumb.Item>API</Breadcrumb.Item>
+                  {pkg && <Breadcrumb.Item>
+                    <a href="./index">{pkg.name}</a>
+                  </Breadcrumb.Item>}
+                  {node && <Breadcrumb.Item>
+                    {node.name && node.name.replace('/src', '')}
+                  </Breadcrumb.Item>}
+                </Breadcrumb>
+              </div>
               {type === 'package' ? <Package {...node} /> : <Module {...node} />}
             </div>
           </Content>
