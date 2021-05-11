@@ -10,17 +10,10 @@ export type IMenuData = Record<string, IMenuData | MenuDataItem[]>;
 // https://github.com/WickyNilliams/enquire.js/issues/82
 
 export function isZhCN(pathname: string) {
-  if (pathname === '/') {
-    if (typeof window !== 'undefined') {
-      const locale = localStorage ? localStorage.getItem('locale') : 'en-US';
-      if (locale === 'zh-CN') {
-        return true;
-      }
-      return false;
-    }
-    return false;
-  }
-  return /-cn/.test(pathname);
+  return true;
+  // const locale = localStorage ? localStorage.getItem('locale') : 'en-US';
+
+  // return !!(locale === 'zh-CN')
 }
 
 /**

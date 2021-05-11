@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import { EyeOutlined, MenuOutlined, SearchOutlined } from '@ant-design/icons';
 import { Row, Space, Col, Select, Alert, Input, Menu, Button, Modal, Popover } from 'antd';
 import * as utils from '../utils';
+import {version} from '../../../siteconfig.json';
 
 const { Option } = Select;
 
@@ -217,12 +218,24 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           </Link>
         </Menu.Item>
         <Menu.Item key="docs">
-          <Link to={utils.getLocalizedPathname('/docs/getting-started', isZhCN)}>
+          <Link to={utils.getLocalizedPathname(`${version}/docs/install`, isZhCN)}>
             <FormattedMessage id="app.header.menu.docs" />
           </Link>
         </Menu.Item>
+        <Menu.Item key="api">
+          <Link to={`/${version}/api/core/index`}>
+            API
+          </Link>
+        </Menu.Item>
+        <Menu.Item key="editor">
+          <Link to={utils.getLocalizedPathname('/editor/', isZhCN)}>
+            <FormattedMessage id="app.header.menu.editor" />
+          </Link>
+        </Menu.Item>
         <Menu.Item key="blog">
-          <Link to={utils.getLocalizedPathname('/blog/', isZhCN)}>Blog</Link>
+          <Link to={utils.getLocalizedPathname('/blog/', isZhCN)}>
+            <FormattedMessage id="app.header.menu.blog" />
+          </Link>
         </Menu.Item>
         {menuMode === 'inline' && (
           <Menu.Item key="preview">
@@ -240,8 +253,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           message={
             <Space>
               {isZhCN
-                ? 'Pro V5 已支持预览，欢迎试用！'
-                : 'V0.3 already release, welcome to try!'}
+                ? 'v0.3 已发布，欢迎试用！'
+                : 'v0.3 already release, welcome to try!'}
               <a href="oasisengine.cn/blog/" target="_blank" rel="noreferrer">
                 oasisengine.cn/blog/
               </a>
@@ -282,23 +295,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </div>
               <div className="header-meta">
                 <div className="right-header">
-                  <div id="lang">
+                  {/* <div id="lang">
                     <Button onClick={this.handleLangChange} size="small">
                       <FormattedMessage id="app.header.lang" />
                     </Button>
-                  </div>
-                  <div id="preview">
-                    <a
-                      id="preview-button"
-                      target="_blank"
-                      href="http://preview.pro.ant.design"
-                      rel="noopener noreferrer"
-                    >
-                      <Button icon={<EyeOutlined />} size="small">
-                        <FormattedMessage id="app.home.preview" />
-                      </Button>
-                    </a>
-                  </div>
+                  </div> */}
                   <Select size="small" onChange={this.onVersionChange} value="stable">
                     <Option value="0.1">v0.1</Option>
                     <Option value="0.2">v0.2</Option>

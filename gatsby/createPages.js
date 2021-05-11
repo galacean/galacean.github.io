@@ -81,9 +81,9 @@ async function createDoc(graphql, actions) {
   });
 
   createRedirect({
-    fromPath: '/docs/',
+    fromPath: `${version}/docs/`,
     redirectInBrowser: true,
-    toPath: '/docs/getting-started',
+    toPath: `${version}/docs/install`,
   });
 }
 
@@ -180,4 +180,40 @@ module.exports = async ({ graphql, actions }) => {
   await createDoc(graphql, actions);
   await createAPI(graphql, actions);
   await createPlayground(graphql, actions);
+
+  const blogEdges = await graphql(
+    `
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/blog/" }, fields: { slug: {} } }
+          sort: { order: DESC, fields: [frontmatter___time] }
+          limit: 1
+        ) {
+          edges {
+            node {
+              id
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `,
+  );
+
+  const { node } = blogEdges.data.allMarkdownRemark.edges[0];
+  const blogPath = node.fields.slug.replace('-cn', '');
+
+  createRedirect({
+    fromPath: '/blog-cn',
+    redirectInBrowser: true,
+    toPath: `${blogPath}-cn`,
+  });
+
+  createRedirect({
+    fromPath: '/blog/',
+    redirectInBrowser: true,
+    toPath: blogPath,
+  });
 };
