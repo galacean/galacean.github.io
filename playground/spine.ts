@@ -11,7 +11,7 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera_node");
 cameraEntity.addComponent(Camera);
 cameraEntity.transform.position = new Vector3(0, 0, 70);
-cameraEntity.addChild(OrbitControl);
+cameraEntity.addComponent(OrbitControl);
 
 engine.resourceManager
   .load({

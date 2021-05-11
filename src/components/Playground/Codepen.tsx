@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import {
   CodepenOutlined,
@@ -13,11 +12,16 @@ export default function CodeActions (props: any) {
     jsExternal.push(`${lib}@${props.packages[lib].version}/${(props.packages[lib].dist || 'dist/browser.min.js')}`);
   }
 
+  let js: string = props.sourceCode;
+
+  js = js.replace(/(import.+from\s+)"(.+)";/g, ($1, $2, $3) => {
+    return `${$2}"https://cdn.skypack.dev/${$3}"`;
+  });
+
   const codepenPrefillConfig = {
     title: `${props.name} - ${props.engineName}@${props.version}`,
     html: props.html,
-    js: props.sourceCode
-      .replace(/import\s+{(\s+[^}]*\s+)}\s+from\s+"oasis-engine";/, 'const { $1 } = oasisEngine;'),
+    js,
     css: props.css,
     editors: '001',
     js_external: jsExternal.map(url => `https://unpkg.com/${url}`).join(';'),
