@@ -176,6 +176,8 @@ async function createPlayground(graphql, actions) {
 }
 
 module.exports = async ({ graphql, actions }) => {
+  const { createRedirect } = actions;
+
   createHomepage(actions);
   await createDoc(graphql, actions);
   await createAPI(graphql, actions);

@@ -13,6 +13,8 @@ export default {
     'app.header.menu.blog': '博客',
     'app.header.menu.engine': '引擎',
     'app.header.menu.editor': '编辑器',
+    'app.home.spine': '使用 Spine',
+    'app.home.spine.intro': 'Oasis Engine 通过 BufferMesh 实现 spine 动画的合批渲染，其卓越的性能将带给你丝滑的体验。',
     'app.header.menu.components': '组件',
     'app.header.menu.resource': '资源',
     'app.header.lang': 'English',
