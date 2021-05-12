@@ -24,7 +24,7 @@ function init (): WebGLEngine {
   // camera
   const cameraEntity = rootEntity.createChild("camera_node");
   const camera = cameraEntity.addComponent(Camera);
-  camera.backgroundColor = new Vector4(1, 1, 1, 1);
+  camera.backgroundColor = new Vector4(51/255, 51/255, 51/255, 1);
   cameraEntity.transform.position = new Vector3(0, 0, 50);
   const controls = cameraEntity.addComponent(OrbitControl);
   controls.enableZoom = false;

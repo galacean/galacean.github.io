@@ -13,32 +13,34 @@ export default function Features (props) {
   const { isMobile, location } = props;
   return (
     <section className="home-section home-section-features">
-      <div className='home-flex home-flex-feature'>
-        <PBRHelmet /> 
-        <h2>3D</h2>
-        <p className="home-flex-intro">
-          <FormattedMessage id="app.home.3d.intro" />
-        </p>
-        <div className="button-wrapper">
-          <Link to={getLocalizedPathname(`${version}/docs/install`, isZhCN(location.pathname))}>
-            <Button type="primary" size="small" ghost>
-              <FormattedMessage id="app.home.more" />
-            </Button>
-          </Link>
+      <div className="home-section-inner">
+        <div className='home-flex home-flex-feature'>
+          <PBRHelmet /> 
+          <h2>3D</h2>
+          <p className="home-flex-intro">
+            <FormattedMessage id="app.home.3d.intro" />
+          </p>
+          <div className="button-wrapper">
+            <Link to={getLocalizedPathname(`${version}/docs/mesh-renderer`, isZhCN(location.pathname))}>
+              <Button type="primary" size="small">
+                <FormattedMessage id="app.home.more" />
+              </Button>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className='home-flex home-flex-feature'>
-        <Spine /> 
-        <h2>2D</h2>
-        <p className="home-flex-intro">
-          <FormattedMessage id="app.home.2d.intro" />
-        </p>
-        <div className="button-wrapper">
-          <Link to={getLocalizedPathname(`${version}/docs/install`, isZhCN(location.pathname))}>
-            <Button type="primary" size="small" ghost>
-              <FormattedMessage id="app.home.more" />
-            </Button>
-          </Link>
+        <div className='home-flex home-flex-feature'>
+          <Spine /> 
+          <h2>2D</h2>
+          <p className="home-flex-intro">
+            <FormattedMessage id="app.home.2d.intro" />
+          </p>
+          <div className="button-wrapper">
+            <Link to={getLocalizedPathname(`${version}/docs/sprite-renderer`, isZhCN(location.pathname))}>
+              <Button type="primary" size="small">
+                <FormattedMessage id="app.home.more" />
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

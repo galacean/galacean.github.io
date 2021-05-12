@@ -1,4 +1,4 @@
-import { AmbientLight, AssetType, Camera, Color, DirectLight, EnvironmentMapLight, GLTFResource, SkyBox, TextureCubeMap, Vector3, Vector4, WebGLEngine } from "oasis-engine";
+import { AmbientLight, AssetType, Camera, Color, DirectLight, EnvironmentMapLight, GLTFResource, TextureCubeMap, Vector3, Vector4, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import React, { useEffect } from "react";
 
@@ -36,7 +36,7 @@ function init (): WebGLEngine {
   let cameraNode = rootEntity.createChild("camera_node");
   cameraNode.transform.position = new Vector3(0, 0, 3);
   const camera = cameraNode.addComponent(Camera);
-  camera.backgroundColor = new Vector4(1, 1, 1, 1);
+  camera.backgroundColor = new Vector4(51/255, 51/255, 51/255, 1);
   const controls = cameraNode.addComponent(OrbitControl);
   controls.enableZoom = false;
   controls.autoRotate = true;
@@ -80,7 +80,6 @@ function init (): WebGLEngine {
       })
       .then((cubeMap) => {
         envLight.specularTexture = cubeMap;
-        // rootEntity.addComponent(SkyBox).skyBoxMap = cubeMap;
       })
   ]).then(() => {
   });
