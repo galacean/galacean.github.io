@@ -16,7 +16,7 @@
   width: 100%;
   max-width: 1500px;
   margin: auto;
-  &-features {
+  &-advantage {
     .home-flex {
       padding: 0 70px;
       border-right: 1px solid #ededed;
@@ -28,7 +28,7 @@
   &-spine {
     padding-top: 50px;
   }
-  &-features {
+  &-advantage {
     max-width: 1200px;
   }
   &-partners {
@@ -52,6 +52,9 @@
       }
     }
   }
+  &-features {
+    max-width: 1200px;
+  }
   h2 {
     font-size: 40px;
   }
@@ -62,12 +65,16 @@
   padding: 30px;
   h3 {
     text-align: center;
+    margin-bottom: 20px;
   }
   &-intro {
     padding-bottom: 40px;
   }
-  &-spine {
-    padding: 0 0 0 200px;
+  &-feature {
+    text-align: center;
+    .home-flex-intro {
+      padding: 0 20%;
+    }
   }
   &-spine-intro {
     flex: 2;
@@ -79,14 +86,10 @@ svg g {
   transform-box: fill-box;
 }
 
-.banner-wrapper {
+.home-section-banner {
   .banner-title-wrapper {
-    position: relative;
-    top: 100px;
-    left: 20%;
-    > * {
-      will-change: transform;
-    }
+    text-align: center;
+    padding: 50px 0;
     h1 {
       margin: 12px 0;
       font-size: 54px;
@@ -97,45 +100,46 @@ svg g {
     p {
       font-size: 20px;
     }
+    .github-btn {
+      display: inline-block;
+      height: 28px;
+      .gh-btn {
+        display: flex;
+        align-items: center;
+        height: 28px;
+        padding: 0 12px;
+        font-size: 13px;
+        background: rgba(243, 243, 243, 1);
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 1) 0%,
+          rgba(243, 243, 243, 1) 100%
+        );
+        border: 1px solid #ebedf0;
+        border-radius: 4px;
+        &:hover {
+          color: @primary-color;
+        }
+        .gh-ico {
+          margin-right: 8px;
+        }
+      }
+      .gh-count {
+        height: 28px;
+        padding: 2px 8px;
+        font-size: 13px;
+        line-height: 22px;
+        background: #fff;
+        border: 1px solid #ebedf0;
+        border-radius: 4px;
+      }
+    }
     .button-wrapper {
       display: flex;
       align-items: center;
-      margin-top: 64px;
+      justify-content: center;
+      margin-top: 40px;
       line-height: 40px;
-      .github-btn {
-        display: inline-block;
-        height: 28px;
-        .gh-btn {
-          display: flex;
-          align-items: center;
-          height: 28px;
-          padding: 0 12px;
-          font-size: 13px;
-          background: rgba(243, 243, 243, 1);
-          background: linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 1) 0%,
-            rgba(243, 243, 243, 1) 100%
-          );
-          border: 1px solid #ebedf0;
-          border-radius: 4px;
-          &:hover {
-            color: @primary-color;
-          }
-          .gh-ico {
-            margin-right: 8px;
-          }
-        }
-        .gh-count {
-          height: 28px;
-          padding: 2px 8px;
-          font-size: 13px;
-          line-height: 22px;
-          background: #fff;
-          border: 1px solid #ebedf0;
-          border-radius: 4px;
-        }
-      }
     }
     .title-line {
       transform: translateX(-64px);

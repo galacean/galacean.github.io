@@ -3,8 +3,8 @@ import { injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
 
 import Banner from './Banner';
-import SpinePage from './SpinePage';
 import Features from './Features';
+import Advantage from './Advantage';
 import Partners from './Partners';
 import Footer from './Footer';
 
@@ -25,8 +25,8 @@ function Home(props) {
       </Helmet>
       <div className="home-wrapper">
         <Banner {...props} />
+        <Advantage {...props} />
         <Features {...props} />
-        <SpinePage {...props} />
         <Partners {...props} />
         <Footer {...props} />
       </div>

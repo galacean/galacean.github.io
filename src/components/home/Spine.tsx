@@ -1,5 +1,6 @@
 import { Camera, Vector3, WebGLEngine, Entity, Vector4 } from "oasis-engine";
 import { SpineAnimation } from "@oasis-engine/engine-spine";
+import { OrbitControl } from "@oasis-engine/controls";
 import React, { useEffect } from "react";
 
 export default function PBRHelmet () {
@@ -11,7 +12,7 @@ export default function PBRHelmet () {
     }
   });
 
-  return <canvas id="canvas-spine" style={{width: '300px', height: '500px'}}/>
+  return <canvas id="canvas-spine" style={{width: '300px', height: '400px'}}/>
 }
 
 function init (): WebGLEngine {
@@ -24,7 +25,10 @@ function init (): WebGLEngine {
   const cameraEntity = rootEntity.createChild("camera_node");
   const camera = cameraEntity.addComponent(Camera);
   camera.backgroundColor = new Vector4(1, 1, 1, 1);
-  cameraEntity.transform.position = new Vector3(0, 0, 60);
+  cameraEntity.transform.position = new Vector3(0, 0, 50);
+  const controls = cameraEntity.addComponent(OrbitControl);
+  controls.enableZoom = false;
+
   engine.run();
 
   engine.resourceManager
@@ -33,7 +37,7 @@ function init (): WebGLEngine {
       type: "spine"
     })
     .then((spineEntity: Entity) => {
-      spineEntity.transform.setPosition(0, -12, 0);
+      spineEntity.transform.setPosition(0, -15, 0);
       rootEntity.addChild(spineEntity);
       const spineAnimation = spineEntity.getComponent(SpineAnimation);
       spineAnimation.state.setAnimation(0, "walk", true);

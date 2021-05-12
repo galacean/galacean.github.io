@@ -11,7 +11,7 @@ export default function PBRHelmet () {
     }
   });
 
-  return <canvas id="canvas-pbr-helmet" style={{width: '500px', height: '500px'}}/>
+  return <canvas id="canvas-pbr-helmet" style={{width: '400px', height: '400px'}}/>
 }
 
 function init (): WebGLEngine {
@@ -48,6 +48,7 @@ function init (): WebGLEngine {
     engine.resourceManager
       .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/83219f61-7d20-4704-890a-60eb92aa6159.gltf")
       .then((gltf) => {
+      gltf.defaultSceneRoot.transform.position = new Vector3(0, 0.1, 0);
         rootEntity.addChild(gltf.defaultSceneRoot);
       }),
     engine.resourceManager
