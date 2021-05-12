@@ -198,7 +198,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     );
     const lang = isZhCN(this.props.location.pathname) ? 'zh-CN' : 'en-US';
     const order = {
-      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库'],
+      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库', '编辑器'],
       'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other'],
     };
     const itemGroups = Object.keys(obj)
