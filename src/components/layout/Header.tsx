@@ -287,8 +287,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               {isZhCN
                 ? 'v0.3 已发布，欢迎试用！'
                 : 'v0.3 already release, welcome to try!'}
-              <a href="oasisengine.cn/blog/" target="_blank" rel="noreferrer">
-                oasisengine.cn/blog/
+              <a href="/blog/v0.3-release-cn" target="_blank" rel="noreferrer">
+                v0.3 发布日志
               </a>
             </Space>
           }

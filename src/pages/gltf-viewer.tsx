@@ -89,7 +89,7 @@ class Oasis {
   cubeTextures: Record<string, TextureCubeMap> = {};
   textures: Record<string, Texture2D> = {};
 
-  engine: Engine = new WebGLEngine("o3-canvas", { alpha: true });
+  engine: Engine = new WebGLEngine("canvas-gltf-viewer", { alpha: true });
   scene: Scene = this.engine.sceneManager.activeScene;
 
   // Entity
@@ -173,9 +173,7 @@ class Oasis {
   }
 
   initScene() {
-    const devicePixelRatio = SystemInfo.devicePixelRatio;
-    this.engine.canvas.width = window.innerWidth * devicePixelRatio;
-    this.engine.canvas.height = window.innerHeight * devicePixelRatio;
+    this.engine.canvas.resizeByClientSize();
 
     this.controler.minDistance = 0;
 
@@ -699,7 +697,7 @@ export default function GLTFView(props: any) {
     <>
       <WrapperLayout {...props}>
         <div className="page-gltf-view">
-          <canvas id="o3-canvas"></canvas>
+          <canvas id="canvas-gltf-viewer" style={{width: '100%', height: '100%'}}></canvas>
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
             <img
