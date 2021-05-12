@@ -61,11 +61,10 @@ async function createDoc(graphql, actions) {
   edges.forEach((edge) => {
     const { slug } = edge.node.fields;
     if (slug.includes('docs/') || slug.includes('/blog')) {
-      const template = docsTemplate;
       const createArticlePage = (path) => {
         return createPage({
           path: slug.includes('docs/') ? version + path : path,
-          component: template,
+          component: docsTemplate,
           context: {
             slug,
             // if is docs page
@@ -165,14 +164,22 @@ async function createPlayground(graphql, actions) {
     throw Error(playgroundquery.errors);
   }
 
-  playgroundquery.data.allPlayground.nodes.forEach(node => {
+  const { nodes } = playgroundquery.data.allPlayground;
+
+  nodes.forEach(node => {
     createPage({
       path: `${version}/playground/${node.name}`,
       component: playgroundTemplate,
-      context: { node: node }
+      context: { node }
     });
   })
 
+  const examplesPage = resolve(__dirname, '../src/pages/examples.tsx');
+
+  createPage({
+    path: `${version}/examples`,
+    component: examplesPage 
+  });
 }
 
 module.exports = async ({ graphql, actions }) => {

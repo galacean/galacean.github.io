@@ -1,8 +1,8 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
-import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined, SettingOutlined } from '@ant-design/icons';
-import { Row, Space, Col, Select, Alert, Input, Menu, Button, Modal, Popover } from 'antd';
+import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
+import { Row, Space, Col, Select, Alert, Input, Menu, Modal, Popover } from 'antd';
 import * as utils from '../utils';
 import {version} from '../../../siteconfig.json';
 
@@ -229,6 +229,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <Menu.Item key="api">
               <Link to={`/${version}/api/core/index`}>
                 API
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="api">
+              <Link to={`/${version}/examples`}>
+                {formatMessage({id:"app.header.menu.engine.examples"})}
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>

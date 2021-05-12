@@ -13,6 +13,7 @@ export default {
     'app.header.menu.blog': '博客',
     'app.header.menu.engine': '引擎',
     'app.header.menu.engine.docs': '引擎文档',
+    'app.header.menu.engine.examples': '示例',
     'app.header.menu.editor': '编辑器',
     'app.header.menu.editor.docs': '编辑器文档',
     'app.header.menu.ecosystem': '生态系统',
