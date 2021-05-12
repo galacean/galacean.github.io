@@ -36,7 +36,7 @@ function init () {
   const controls = cameraNode.addComponent(OrbitControl);
   controls.enableZoom = false;
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.05;
+  controls.autoRotateSpeed = 0.02;
 
   engine.run();
 

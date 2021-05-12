@@ -3,9 +3,10 @@ import { injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
 
 import Banner from './Banner';
-import Page1 from './Page1';
+import SpinePage from './SpinePage';
 import Features from './Features';
-// import Page2 from './Page2';
+import Partners from './Partners';
+import Footer from './Footer';
 
 function Home(props) {
   const { intl } = props;
@@ -25,8 +26,9 @@ function Home(props) {
       <div className="home-wrapper">
         <Banner {...props} />
         <Features {...props} />
-        <Page1 {...props} />
-        {/* <Page2 {...props} /> */}
+        <SpinePage {...props} />
+        <Partners {...props} />
+        <Footer {...props} />
       </div>
     </>
   );

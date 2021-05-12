@@ -28,14 +28,38 @@
   &-spine {
     padding-top: 50px;
   }
+  &-features {
+    max-width: 1200px;
+  }
+  &-partners {
+    background: #ffffff;
+    text-align: center;
+    padding: 4rem 0 6rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .partners {
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      .partner {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+    }
+  }
+  h2 {
+    font-size: 40px;
+  }
 }
 
 .home-flex {
   flex: 1;
   padding: 30px;
-  h2 {
-    font-size: 40px;
-  }
   h3 {
     text-align: center;
   }
@@ -117,11 +141,6 @@ svg g {
       transform: translateX(-64px);
       animation: bannerTitleLine 3s ease-in-out 0s infinite;
     }
-  }
-
-  .banner-image-wrapper {
-    padding: 50px; 
-    opacity: 0;
   }
 }
 

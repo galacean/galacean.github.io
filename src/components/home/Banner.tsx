@@ -35,7 +35,7 @@ function Banner(props) {
         </QueueAnim>
       </div>
       <div className='home-flex banner-bottom-img'>
-        <TweenOne animation={{ opacity: 1, type: 'to' }} className="banner-image-wrapper banner-svg-anim" key='banner-bottom-img'>
+        <TweenOne animation={{ opacity: 1, type: 'to' }} key='banner-bottom-img'>
           <PBRHelmet /> 
         </TweenOne>
       </div>
