@@ -1,6 +1,4 @@
 import React from 'react';
-import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
 import { Button } from 'antd';
 import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
@@ -22,7 +20,7 @@ export default function Features (props) {
           </p>
           <div className="button-wrapper">
             <Link to={getLocalizedPathname(`${version}/docs/mesh-renderer`, isZhCN(location.pathname))}>
-              <Button type="primary" size="small">
+              <Button type="primary" size="small" ghost>
                 <FormattedMessage id="app.home.more" />
               </Button>
             </Link>
@@ -36,7 +34,7 @@ export default function Features (props) {
           </p>
           <div className="button-wrapper">
             <Link to={getLocalizedPathname(`${version}/docs/sprite-renderer`, isZhCN(location.pathname))}>
-              <Button type="primary" size="small">
+              <Button type="primary" size="small" ghost>
                 <FormattedMessage id="app.home.more" />
               </Button>
             </Link>
