@@ -42,10 +42,12 @@
     "@babel/core": "^7.14.0",
     "@oasis-engine/controls": "^0.3.8",
     "@oasis-engine/engine-spine": "^0.1.4",
+    "@oasis-engine/stats": "^0.3.8",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "^4.1.1",
     "cheerio": "^1.0.0-rc.3",
     "classnames": "^2.2.6",
+    "dat.gui": "^0.7.7",
     "delegate": "^3.2.0",
     "docsearch.js": "^2.6.3",
     "gatsby": "^2.24.47",
@@ -83,7 +85,8 @@
     "react-media": "^1.9.2",
     "react-prism": "^4.3.2",
     "react-scroll": "^1.8.2",
-    "rehype-react": "^6.2.0"
+    "rehype-react": "^6.2.0",
+    "simple-dropzone": "^0.8.1"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",

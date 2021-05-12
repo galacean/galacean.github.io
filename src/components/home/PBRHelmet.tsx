@@ -4,13 +4,17 @@ import React, { useEffect } from "react";
 
 export default function PBRHelmet () {
   useEffect(() => {
-    init();
+    const engine = init();
+
+    return () => {
+      engine.destroy();
+    }
   });
 
   return <canvas id="canvas-pbr-helmet" style={{width: '500px', height: '500px'}}/>
 }
 
-function init () {
+function init (): WebGLEngine {
   //-- create engine object
   const engine = new WebGLEngine("canvas-pbr-helmet");
   engine.canvas.resizeByClientSize();
@@ -79,4 +83,6 @@ function init () {
       })
   ]).then(() => {
   });
+
+  return engine;
 }

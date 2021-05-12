@@ -1,0 +1,93 @@
+.page-gltf-view {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  background: radial-gradient(black, transparent);
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+  .hide {
+    display: none;
+  }
+
+  .logo {
+    position: absolute;
+    left: 9em;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dropZone {
+    position: absolute;
+    width: 500px;
+    padding: 50px;
+    height: 320px;
+    top: 300px;
+    left: 50%;
+    margin-left: -250px;
+    background: #eee6;
+    text-align: center;
+    color: #333;
+    user-select: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 0 12px 4px #666;
+    pointer-events: none;
+    font-weight: bold;
+  }
+
+  .closeIcon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -20px;
+    background-color: #333;
+    border-radius: 50%;
+    -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+    animation: sk-scaleout 1s infinite ease-in-out;
+  }
+
+  @keyframes sk-scaleout {
+    0% {
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+}
+
+
+  .dg.ac{
+    top: 120px;
+  }
+
+  .dg.main > ul {
+    overflow: initial;
+  }
+  .dg .c select {
+    color: #333;
+  }
+  .dg .c input {
+    height: 23px;
+  }

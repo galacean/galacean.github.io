@@ -4,13 +4,17 @@ import React, { useEffect } from "react";
 
 export default function PBRHelmet () {
   useEffect(() => {
-    init();
+    const engine = init();
+
+    return () => {
+      engine.destroy();
+    }
   });
 
   return <canvas id="canvas-spine" style={{width: '300px', height: '500px'}}/>
 }
 
-function init () {
+function init (): WebGLEngine {
   const engine = new WebGLEngine("canvas-spine");
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -36,5 +40,7 @@ function init () {
       spineAnimation.skeleton.scaleX = 0.05;
       spineAnimation.skeleton.scaleY = 0.05;
     });
+
+  return engine;
 
 }

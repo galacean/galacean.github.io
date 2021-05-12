@@ -231,7 +231,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                 API
               </Link>
             </Menu.Item>
-            <Menu.Item key="api">
+            <Menu.Item key="examples">
               <Link to={`/${version}/examples`}>
                 {formatMessage({id:"app.header.menu.engine.examples"})}
               </Link>
@@ -253,7 +253,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </Link>
             </Menu.Item>
             <Menu.Item key="gltfviewer">
-              <Link to={`/gltfviewer`}>
+              <Link to={`/gltf-viewer`}>
                 {formatMessage({id:"app.header.menu.ecosystem.gltfviewer"})}
               </Link>
             </Menu.Item>
