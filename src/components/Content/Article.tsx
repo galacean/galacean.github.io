@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { Helmet } from 'react-helmet';
 import { Affix } from 'antd';
-import delegate from 'delegate';
 import moment from 'moment';
 import EditButton from './EditButton';
 import type { IFrontmatterData } from '../../templates/docs';
