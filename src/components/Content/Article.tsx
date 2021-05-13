@@ -38,18 +38,6 @@ export default class Article extends React.PureComponent<ArticleProps> {
   };
 
   componentDidMount() {
-    // Add ga event click
-    this.delegation = delegate(
-      this.node,
-      '.resource-card',
-      'click',
-      (e: { delegateTarget: { href: any } }) => {
-        if ((window as any).ga) {
-          (window as any).ga('send', 'event', 'Download', 'resource', e.delegateTarget.href);
-        }
-      },
-      false,
-    );
   }
 
   componentWillUnmount() {
