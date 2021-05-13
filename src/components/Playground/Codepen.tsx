@@ -14,7 +14,8 @@ export default function CodeActions (props: any) {
 
   let js: string = props.sourceCode;
 
-  js = js.replace(/(import.+from\s+)"(.+)";/g, ($1, $2, $3) => {
+  js = js.replace(/(import.+from\s+)["'](.+)["'];/g, ($1, $2, $3) => {
+    console.log('codepen', $1, $2, $3);
     return `${$2}"https://cdn.skypack.dev/${$3}"`;
   });
 
