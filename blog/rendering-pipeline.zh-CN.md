@@ -174,6 +174,7 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 
 在图形渲染管线中，存在着众多平级的渲染状态，比如深度测试、颜色混合模式、模版测试、 背面剔除。因此引擎设计将众多的渲染状态分为了**渲染状态**（BlendState）**、深度状态**（DepthState）**、模版状态**（StencilState）**、光栅化状态**（RasterState）。
+
 ![1620467710622-3c51e37d-2c4b-4bb4-a454-2e046abd6aac.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805729578-1aee2cd9-455b-4acf-9469-02b5ebf50cbd.png#clientId=u59b6cee5-37a0-4&from=ui&height=233&id=u2b8cf636&margin=%5Bobject%20Object%5D&name=1620467710622-3c51e37d-2c4b-4bb4-a454-2e046abd6aac.png&originHeight=466&originWidth=516&originalType=binary&size=25084&status=done&style=none&taskId=uad396415-3658-4b28-8161-70e4e7bf5b9&width=258)
 
 

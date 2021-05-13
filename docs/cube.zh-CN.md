@@ -8,79 +8,120 @@ type: 入门
 
 <playground src="cube.ts"></playground>
 
-## 引入模块
+## HTML 和 CSS
 
-为了实现这样一个功能，需要引入以下模块：
+无论你使用何种前端框架，[WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL) 引擎的渲染都离不开 *Canvas* 元素。请在 HTML 模板中插入一行 Canvas 标签代码：
 
-```typescript
-import { Camera, WebGLEngine, PrimitiveMesh, BlinnPhongMaterial, DirectLight, Vector3, Vector4, Script, Color, MeshRenderer } from 'oasis-engine';
+```html
+<canvas id="canvas" style="width: 100vw; height:100vh;" />
 ```
 
-WebGL 引擎类：
-- [WebGLEngine](${docs}engine-cn)：
+同时，我们为这个 *Canvas* 元素设置了一个全屏的样式（style）。
+
+> **注**：样式并不是 Canvas 的真实高宽，只是视觉上的高宽，比如把一个小的画布通过样式拉伸变大，画面就会变模。下文中将使用 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法根据样式重设 *Canvas* 的 width 和 height 属性值。详见 [画布](${docs}canvas-cn) 章节。
+
+## 引入模块
+
+接下来，我们开始使用 [TypeScript](https://www.typescriptlang.org/) 编写引擎代码。如果你还不太适应 TypeScript，使用 JavaScript 也一样可以运行，并且同样可以享受到引擎 API 提示（通过使用 [VSCode](https://code.visualstudio.com/) 等 IDE 进行编程）。
+
+回到我们的编程，为了实现这样一个功能，需要在我们的工程里引入如下 Oasis 引擎的类：
+
+```typescript
+import {
+  WebGLEngine,
+  Camera,
+  MeshRenderer,
+  PrimitiveMesh,
+  BlinnPhongMaterial,
+  DirectLight,
+  Script,
+  Vector3,
+  Vector4,
+  Color,
+} from 'oasis-engine';
+```
+
+我们先来简单认识一下这些类：
+
+**WebGL 引擎类**：
+- [WebGLEngine](${api}rhi-webgl/WebGLEngine)：WebGL 平台引擎，支持 WebGL1.0 和 WebGL2.0，它能够控制画布的一切行为，包括资源管理、场景管理、执行/暂停/继续、垂直同步等功能。(详见 [引擎](${docs}engine-cn) 章节。)
 
 组件类：
-- [Camera]()：
-- [DirectLight]()： 
-- [Script]()：
-- [MeshRenderer]()：
+- [Camera](${api}core/Camera)：相机，是一个图形引擎对 3D 投影的抽象概念，作用好比现实世界中的摄像机或眼睛，如果不加相机，画布将什么都画不出来。（详见 [相机](${docs}camera-cn) 章节）
+- [DirectLight](${api}core/DirectLight)：直接光，是光照的一种，光照使场景更有层次感，使用光照，能建立更真实的三维场景。（详见 [光照](${docs}light-cn) 章节）
+- [Script](${api}core/Script)：脚本，是衔接引擎能力和游戏逻辑的纽带，可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。（详见 [脚本](${docs}script-cn) 章节）
+- [MeshRenderer](${api}core/MeshRenderer)：网格渲染器，使用网格对象（这个例子中就是立方体）作为几何体轮廓的数据源。（详见 [网格渲染器](${docs}mesh-renderer-cn) 章节）
 
-几何体和材质类：
-- [PrimitiveMesh]()：
-- [BlinnPhongMaterial]()：
+**几何体和材质类**：
+- [PrimitiveMesh](${api}core/PrimitiveMesh)：基础几何体，提供了创建立方体、球体等网格对象的便捷方法。（详见 [基础几何体](${docs}primitive-mesh-cn) 章节）
+- [BlinnPhongMaterial](${api}core/BlinnPhongMaterial)：材质定义了如何渲染这个立方体，BlinnPhong 材质是经典的材质之一。（详见 [材质](${docs}material-cn) 章节）
 
-数学库相关类：
-- [Vector3]()：
-- [Vector4]()：
-- [Color]()：
+**数学库相关类**：
+- [Vector3]()、[Vector4]()、[Color]()：这几个类是数学计算的一些基本单元，用来计算立方体的位置、颜色等。（详见 [数学库](${docs}math-cn) 章节）
 
-## 创建引擎示例
+## 创建引擎实例
 
-参数 `canvas` 是canvas元素的id，若id不同请自行替换。通过 [resizeByClientSize]() 设置屏幕适配。
+创建引擎实例，参数 `canvas` 是 *Canvas* 元素的 `id`，若 `id` 不同请自行替换。如上文所述，通过 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法重设画布高宽。
 
 ```typescript
 const engine = new WebGLEngine("canvas");
-// 设置屏幕适配
 engine.canvas.resizeByClientSize();
-
-// 启动引擎
-engine.run();
 ```
+## 创建场景根节点
 
-## 创建一个相机实体
+值得注意的是，一个引擎实例可能包含多个场景实例，如果为了在当前激活的场景中添加一个立方体，需要通过引擎的场景管理器 `engine.sceneManager` 获得当前激活的场景。
+
+获得场景后，通过场景的 `createRootEntity` 方法创建一个**根实体**。场景中的根实体是场景树的根节点。
 
 ```typescript
-// 获取场景根实体
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity('root');
+```
+## 创建一个相机实体
 
+在 Oasis Engine 中，功能是以组件形式添加到实体上的。首先，我们先创建一个实体用来添加相机组件。
+
+创建完成之后，通过实体上自带的变换组件 `transform` 来改变相机的位置和朝向。然后给这个实体添加相机组件 `Camera`，并给相机添加一个背景色（其实是给场景设置一个背景色）。 
+
+
+```typescript
 let cameraEntity = rootEntity.createChild('camera_entity');
+
 cameraEntity.transform.position = new Vector3(0, 5, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+
 let camera = cameraEntity.addComponent(Camera);
 camera.backgroundColor = new Vector4(1,1,1,1)
 ```
+## 创建光照
 
-## 创建灯光
+同样的，光照也是通过组件形式挂载到实体上。创建完实体之后，添加直接光组件 `DirectLight`，设置直接光组件的颜色、强度属性和光照角度来获得合适的光照效果。
 
 ```typescript
-// 创建一个实体用来挂载方向光
 let lightEntity = rootEntity.createChild('light');
 
-// 创建一个方向光组件
 let directLight = lightEntity.addComponent(DirectLight)
 directLight.color = new Color( 1.0, 1.0, 1.0 );
 directLight.intensity = 0.5;
 
-// 通过灯光实体的旋转角度控制光线方向
 lightEntity.transform.rotation = new Vector3(45, 45, 45);
 
 ```
 ## 创建立方体
+
+再创建一个实体用来挂载立方体网格渲染组件。`MeshRenderer` 是网格渲染器组件，通过 `.mesh` 属性设置成 `PrimitiveMesh` 创建的立方体数据，通过 `setMaterial` 方法把立方体的材质设置成 BlinnPhong。
 
 ```typescript
 let cubeEntity = rootEntity.createChild('cube');
 let cube = cubeEntity.addComponent(MeshRenderer);
 cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
 cube.setMaterial(new BlinnPhongMaterial(engine));
+```
+
+## 启动引擎
+
+一切都准备好了，让我们用一行代码来启动引擎吧！
+
+```typescript
+engine.run();
 ```

@@ -1,10 +1,10 @@
 ---
 order: 4
-title: 自定义几何体渲染器
+title: 网格渲染器
 type: 组件
 ---
 
-[MeshRenderer](${api}core/MeshRenderer) 是几何体渲染组件，其数据对象是 [Mesh](${api}core/Mesh)。开发者一般使用 [ModelMesh](${api}core/ModelMesh) 或 [BufferMesh](${api}core/BufferMesh)。
+[MeshRenderer](${api}core/MeshRenderer) 是网格渲染组件，其数据对象是 [Mesh](${api}core/Mesh)。开发者一般使用 [ModelMesh](${api}core/ModelMesh) 或 [BufferMesh](${api}core/BufferMesh)。
 
 ``` TypeScript
 const meshRenderer = entity.addComponent(MeshRenderer);

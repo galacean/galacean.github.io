@@ -1,6 +1,6 @@
 ---
 order: 7
-title: 基础几何体渲染器
+title: 基础几何体
 type: 组件
 ---
 

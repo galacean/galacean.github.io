@@ -25,7 +25,7 @@ let directLight = lightEntity.addComponent(DirectLight)
 directLight.color = new Color( 1.0, 1.0, 1.0 );
 directLight.intensity = 0.5;
 
-// 通过灯光实体的旋转角度控制光线方向
+// 通过光照实体的旋转角度控制光线方向
 lightEntity.transform.rotation = new Vector3(45, 45, 45);
 
 // 创建立方体实体

@@ -24,4 +24,4 @@ const gltf = await this.engine.resourceManager.load('{gltf source}');
 entity.addChild(gltf.defaultSceneRoot);
 ```
 
-> **注意**：由于 [glTF 2.0](https://www.khronos.org/gltf/) 的默认材质为 [PBR 材质](${docs}material-cn#pbrmaterial)，PBR 材质默认是需要光照的运算模型，所以场景中必须要添加[灯光](${docs}light-cn)，否则会得到黑色的反射结果。
+> **注意**：由于 [glTF 2.0](https://www.khronos.org/gltf/) 的默认材质为 [PBR 材质](${docs}material-cn#pbrmaterial)，PBR 材质默认是需要光照的运算模型，所以场景中必须要添加[光照](${docs}light-cn)，否则会得到黑色的反射结果。
