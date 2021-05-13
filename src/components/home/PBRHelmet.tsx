@@ -46,7 +46,7 @@ function init (): WebGLEngine {
 
   Promise.all([
     engine.resourceManager
-      .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/83219f61-7d20-4704-890a-60eb92aa6159.gltf")
+      .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf")
       .then((gltf) => {
       gltf.defaultSceneRoot.transform.position = new Vector3(0, 0.1, 0);
         rootEntity.addChild(gltf.defaultSceneRoot);
