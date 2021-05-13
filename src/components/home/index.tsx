@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import Banner from './Banner';
 import Features from './Features';
+import Cases from './Cases';
 import Advantage from './Advantage';
 import Partners from './Partners';
 import Footer from './Footer';
@@ -27,6 +28,7 @@ function Home(props) {
         <Banner {...props} />
         <Advantage {...props} />
         <Features {...props} />
+        <Cases {...props} />
         <Partners {...props} />
         <Footer {...props} />
       </div>
