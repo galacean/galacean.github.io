@@ -147,21 +147,25 @@ function Description(props: ISignature) {
 }
 
 export default function Item(props: IItem) {
+  // console.log('Item props', props)
   return <Element name={props.name} className="tsd-panel-anchor">
     <section className="tsd-panel" key={props.id}>
       <h3>
-            <Kind {...props} />
-          &nbsp;{props.flags?.isReadonly && <span className="tsd-flag">ReadOnly</span>}
-          {props.sources?.map((source) => {
-            return <Source key={source.fileName} {...source} />
-          })}
-        </h3>
+        <Kind {...props} />&nbsp;
+        {props.flags?.isReadonly && <span className="tsd-flag">ReadOnly</span>}
+        {props.sources?.map((source) => {
+          return <Source key={source.fileName} {...source} />
+        })}
+      </h3>
       {props.type && <Property {...props} />}
-      {props.kind === Kinds.CONSTRUCTOR && props.signatures?.map((signature) =>{
+      {(props.kind === Kinds.CONSTRUCTOR || props.kind === Kinds.FUNCTION) && props.signatures?.map((signature) =>{
         return <ConstructorSignature key={signature.id} {...signature} />
       })}
       {props.kind === Kinds.METHOD && props.signatures?.map((signature) =>{
-        return <MethodSignature key={signature.id} {...signature} />
+        return <div key={signature.id} >
+          <MethodSignature {...signature} />
+          <Description {...signature} />
+        </div>
       })}
       <Row>
         {props.getSignature && <Col span={12}>
@@ -173,7 +177,7 @@ export default function Item(props: IItem) {
         </Col>}
       </Row>
       {!props.getSignature && props.comment && <Comment {...props.comment} />}
-      {props.signatures?.map((signature) => {
+      {props.kind !== Kinds.METHOD && props.signatures?.map((signature) => {
         return <Description key={signature.id} {...signature} />
       })}
     </section>

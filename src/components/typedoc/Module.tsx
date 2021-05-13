@@ -18,13 +18,11 @@ export default function Module(props: IModule) {
     {props.extendedTypes && <p>Hierarchy: {props.extendedTypes.map((extendedType) => {
       return <a key={extendedType.id}>{extendedType.name}</a>;
     })}</p>}
-    {props.children && props.children.map((child) => {
+    {props.children ? props.children.map((child) => {
       if (!child.name.startsWith('_')) {
         return <Item key={child.id} {...child} />
       }
-      
-        return null;
-      
-    })}
+      return null;
+    }) : <Item key={props.id} {...props} />}
   </div>
 }

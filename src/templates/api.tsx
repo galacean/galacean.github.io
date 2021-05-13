@@ -19,7 +19,7 @@ export default function API (props: any) {
 
   const menu = {children: packages}
 
-  console.log('paths', paths, node, pkg)
+  // console.log('paths', paths, node, pkg)
   return (
     <>
       <WrapperLayout {...props}>

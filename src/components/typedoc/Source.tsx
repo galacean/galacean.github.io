@@ -5,5 +5,5 @@ import siteConfig from '../../../siteconfig.json';
 
 export default function Source(source: ISource) {
   const url = source.fileName.replace('engine/', siteConfig.github);
-  return source && <a href={`${url}#L${source.line}`} target="_blank" className="tsc-source"><GithubOutlined /></a>
+  return source && <a href={`${url}#L${source.line}`} target="_blank" className="tsc-source"><GithubOutlined /> Source</a>
 }
