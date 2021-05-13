@@ -1,4 +1,4 @@
-import { AssetType, BlinnPhongMaterial, Camera, DirectLight, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, SystemInfo, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { AssetType, BlinnPhongMaterial, Camera, DirectLight, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 
 // Create engine

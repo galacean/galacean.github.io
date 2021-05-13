@@ -15,7 +15,7 @@ type: 组件
 3、创建 [SpriteRenderer](${api}core/SpriteRenderer) 组件显示图片
 
 ```typescript
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, SystemInfo, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 
 engine.resourceManager
   .load<Texture2D>({

@@ -7,15 +7,13 @@ import {
   Color,
   DirectLight,
   GLTFResource,
-  SystemInfo,
   WebGLEngine
 } from "oasis-engine";
 
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
-engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
-engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
+engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();

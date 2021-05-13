@@ -1,4 +1,4 @@
-import { AmbientLight, BlinnPhongMaterial, Buffer, BufferBindFlag, BufferMesh, BufferUsage, Camera, Color, DirectLight, Engine, IndexFormat, Mesh, MeshRenderer, SystemInfo, Vector3, VertexElement, VertexElementFormat, WebGLEngine } from "oasis-engine";
+import { AmbientLight, BlinnPhongMaterial, Buffer, BufferBindFlag, BufferMesh, BufferUsage, Camera, Color, DirectLight, Engine, IndexFormat, Mesh, MeshRenderer, Vector3, VertexElement, VertexElementFormat, WebGLEngine } from "oasis-engine";
 
 // Create engine and get root entity.
 const engine = new WebGLEngine("canvas");
