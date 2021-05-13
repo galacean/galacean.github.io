@@ -51,7 +51,6 @@ export default {
     'app.home.start': '开始使用',
     'app.home.download': '下载',
     'app.home.letspro': '命令行运行下列命令，快速启动开发服务：',
-    'app.home.selectpro': '选择 Ant Design Pro',
     'app.home.selectlanguage': '选择你使用的语言',
     'app.home.openbrowser': '打开浏览器访问',
     'app.home.needhelp':
@@ -60,7 +59,6 @@ export default {
     'app.home.faq': '常见问题',
     'app.home.ask': '进行提问',
     'app.footer.repo': 'GitHub 仓库',
-    'app.footer.awesome': 'Awesome Ant Design',
     'app.footer.chinamirror': '国内镜像站点 🇨🇳',
     'app.footer.primary-color-changed': '修改主题色成功！',
     'app.footer.kitchen': 'Sketch 工具集',

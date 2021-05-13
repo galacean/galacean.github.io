@@ -33,7 +33,6 @@ export default {
     'app.home.start': 'Getting Started',
     'app.home.download': 'Download',
     'app.home.letspro': 'Run commands below, explore it!',
-    'app.home.selectpro': 'Select Ant Design Pro',
     'app.home.selectlanguage': 'Select language you use',
     'app.home.openbrowser': 'open browser and visit',
     'app.home.needhelp':
@@ -42,7 +41,6 @@ export default {
     'app.home.faq': 'faq',
     'app.home.ask': 'ask questions',
     'app.footer.repo': 'GitHub Repository',
-    'app.footer.awesome': 'Awesome Ant Design',
     'app.footer.chinamirror': 'China Mirror 🇨🇳',
     'app.footer.primary-color-changed': 'Change primary color successfully!',
     'app.footer.scaffold': 'Scaffold',
