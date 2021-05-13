@@ -15,8 +15,8 @@ export default function Examples(props: any) {
     <>
       <WrapperLayout {...props}>
         <Layout hasSider={true}>
-          <Sider style={{ width: '300px!important' }}>
-            <Menu onSelect={(item) => { setUrl(item.key); }}>
+          <Sider>
+            <Menu onSelect={(item) => { setUrl(item.key); }} style={{ width: '300px!important', height: 'calc(100vh - 102px)', overflow: 'auto'}}>
               {nodes.map((node: any) => {
                 const { name } = node;
                 return <Menu.Item key={name}>
@@ -25,7 +25,7 @@ export default function Examples(props: any) {
               })}
             </Menu>
           </Sider>
-          <Content>
+          <Content style={{height: 'calc(100vh - 102px)'}}>
             <iframe src={`/${version}/playground/${url}`} frameBorder="0" width="100%" height="100%"></iframe>
           </Content>
         </Layout>
