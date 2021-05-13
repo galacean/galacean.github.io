@@ -697,7 +697,7 @@ export default function GLTFView(props: any) {
     <>
       <WrapperLayout {...props}>
         <div className="page-gltf-view">
-          <canvas id="canvas-gltf-viewer" style={{width: '100%', height: '100%'}}></canvas>
+          <canvas id="canvas-gltf-viewer" style={{width: '100%', height: 'calc(100vh - 102px)'}}></canvas>
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
             <img
