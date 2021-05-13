@@ -1,33 +1,32 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import WrapperLayout from '../components/layout';
-import { Layout, Menu } from 'antd';
-import { version } from '../../siteconfig.json';
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
+import type {
+  AnimationClip,
+  Engine,
+  Entity,
+  GLTFResource,
+  Material,
+  Renderer,
+  Scene,
+  Texture2D,
+  TextureCubeMap} from "oasis-engine";
 import {
   Animation,
-  AnimationClip,
   AssetType,
   BoundingBox,
   Camera,
   Color,
-  Engine,
-  Entity,
   EnvironmentMapLight,
-  GLTFResource,
-  Material,
   MeshRenderer,
   PBRBaseMaterial,
   PBRMaterial,
   PBRSpecularMaterial,
   PointLight,
   PrimitiveMesh,
-  Renderer,
-  Scene,
   SkinnedMeshRenderer,
   SkyBox,
-  Texture2D,
-  TextureCubeMap,
   UnlitMaterial,
   Vector3,
   Vector4,
@@ -207,8 +206,9 @@ class Oasis {
       ])
       .name("IBL")
       .onChange((v) => {
-        this.envLight.specularTexture = this.skybox.skyBoxMap =
-          v === "None" ? null : this.cubeTextures[v];
+        const texture:any = (v === "None" ? null : this.cubeTextures[v]); 
+        this.envLight.specularTexture = texture;
+        this.skybox.skyBoxMap = texture;
       });
     lightFolder
       .add(this.state, "envIntensity", 0, 2)
@@ -287,14 +287,14 @@ class Oasis {
     };
   }
 
-  loadFileMaps(files: Map<String, File>) {
+  loadFileMaps(files: Map<string, File>) {
     const modelReg = /\.(gltf|glb)$/i;
     const imgReg = /\.(jpg|jpeg|png)$/i;
     let mainFile: File;
     let rootPath: string;
     let type = "gltf";
     const filesMap = {}; // [fileName]:LocalUrl
-    const fileArray: any = Array.from(files); //['/*/*.*',obj:File]
+    const fileArray: any = Array.from(files); // ['/*/*.*',obj:File]
 
     fileArray.some(([path, file]) => {
       if (modelReg.test(file.name)) {
@@ -325,7 +325,7 @@ class Oasis {
 
   loadModel(
     url: string,
-    filesMap: { [key: string]: string },
+    filesMap: Record<string, string>,
     type: "gltf" | "glb"
   ) {
     this.destoryGLTF();
@@ -340,7 +340,7 @@ class Oasis {
         .then((gltf: any) => {
           gltf.buffers.concat(gltf.images).forEach((item) => {
             if (!item) return;
-            const uri = item.uri;
+            const {uri} = item;
             if (filesMap[uri]) {
               item.uri = filesMap[uri];
             }
@@ -350,7 +350,7 @@ class Oasis {
           this.engine.resourceManager
             .load<GLTFResource>({
               type: AssetType.Perfab,
-              url: urlNew + "#.gltf",
+              url: `${urlNew  }#.gltf`,
             })
             .then((asset) => {
               this.handleGltfResource(asset);
@@ -363,7 +363,7 @@ class Oasis {
       this.engine.resourceManager
         .load<GLTFResource>({
           type: AssetType.Perfab,
-          url: url + "#.glb",
+          url: `${url  }#.glb`,
         })
         .then((asset) => {
           this.handleGltfResource(asset);
@@ -376,7 +376,7 @@ class Oasis {
 
   handleGltfResource(asset: GLTFResource) {
     const { defaultSceneRoot, materials, animations } = asset;
-    console.log(asset);
+    // console.log(asset);
     this.dropSuccess();
     this.gltfRootEntity = defaultSceneRoot;
     this.rootEntity.addChild(defaultSceneRoot);
@@ -395,11 +395,11 @@ class Oasis {
   }
 
   addTexture(name: string, url: string) {
-    let repeat = Object.keys(this.textures).find(
+    const repeat = Object.keys(this.textures).find(
       (textureName) => textureName === name
     );
     if (repeat) {
-      console.warn(`${name} 已经存在，请更换图片名字重新上传`);
+      // console.warn(`${name} 已经存在，请更换图片名字重新上传`);
       return;
     }
     this.engine.resourceManager
@@ -410,7 +410,7 @@ class Oasis {
       .then((texture) => {
         this.textures[name] = texture;
         this.loadMaterialGUI();
-        console.log("图片上传成功！", name);
+        // console.log("图片上传成功！", name);
       });
   }
 

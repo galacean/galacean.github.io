@@ -73,7 +73,7 @@ export default function Template({
   const { edges } = allMarkdownRemark;
   const { type } = rest.pageContext;
 
-  let menuList:any[] = [];
+  const menuList: any[] = [];
 
   edges.forEach(({ node, next, previous }) => {
     const { fields: nodeFields } = node;

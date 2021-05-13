@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function Case (props) {
-  const { isMobile, location } = props;
   const videos = [
     'https://gw.alipayobjects.com/mdn/rms_d27172/afts/file/A*RyNURrY3jjwAAAAAAAAAAAAAARQnAQ',
     'https://gw.alipayobjects.com/mdn/rms_d27172/afts/file/A*BwqJTbbwGRMAAAAAAAAAAAAAARQnAQ',

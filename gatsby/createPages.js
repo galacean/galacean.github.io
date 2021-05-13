@@ -120,7 +120,7 @@ async function createAPI(graphql, actions) {
       createPage({
         path: `${version}/api/${name}/index`,
         component: apiTemplate,
-        context: { node, paths: `${name}/`, type: 'package', packages }
+        context: { node, type: 'package', packages }
       });
 
       if (node.children) {
@@ -129,7 +129,7 @@ async function createAPI(graphql, actions) {
           createPage({
             path: `${version}/api/${name}/${child.name}`,
             component: apiTemplate,
-            context: { node: child, paths: `${name}/${child.name}`, type: 'module', packages, packageIndex: i }
+            context: { node: child, type: 'module', packages, packageIndex: i }
           });
         })
       }

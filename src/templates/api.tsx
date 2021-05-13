@@ -9,8 +9,7 @@ import Module from '../components/typedoc/Module';
 const { Sider, Content } = Layout;
 
 export default function API (props: any) {
-  const { node, paths, type, packages, packageIndex } = props.pageContext;
-  const path = paths.split('/');
+  const { node, type, packages, packageIndex } = props.pageContext;
   const pkg = packages[packageIndex];
 
   if (type === 'module' && packageIndex !== undefined) {

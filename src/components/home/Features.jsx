@@ -8,7 +8,7 @@ import Spine from './Spine';
 import PBRHelmet from './PBRHelmet';
 
 export default function Features (props) {
-  const { isMobile, location } = props;
+  const { location } = props;
   return (
     <section className="home-section home-section-features">
       <div className="home-section-inner">

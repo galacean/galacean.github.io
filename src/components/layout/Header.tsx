@@ -2,15 +2,13 @@ import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
 import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
-import { Row, Space, Col, Select, Alert, Input, Menu, Modal, Popover } from 'antd';
+import { Row, Space, Col, Select, Alert, Input, Menu, Popover } from 'antd';
 import * as utils from '../utils';
 import {version} from '../../../siteconfig.json';
 
 const { Option } = Select;
 
 const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
-
-const key = 'antd-pro@2.0.0-notification-sent';
 
 let docSearch: (config: any) => void;
 if (typeof window !== 'undefined') {

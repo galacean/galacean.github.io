@@ -6,7 +6,6 @@ import { Link } from 'gatsby';
 import { FormattedMessage } from 'react-intl';
 import { isZhCN, getLocalizedPathname } from '../utils';
 import { version } from '../../../siteconfig.json';
-import PBRHelmet from './PBRHelmet';
 
 function Banner(props) {
   const { isMobile, location } = props;

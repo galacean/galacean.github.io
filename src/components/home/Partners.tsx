@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function Partners (props) {
+export default function Partners () {
   return (
     <section className="home-section home-section-partners">
       <h2>

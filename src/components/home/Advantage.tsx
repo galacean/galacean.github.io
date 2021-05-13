@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-export default function Features (props) {
+export default function Features () {
   return (
     <section className="home-section home-section-advantage">
       <div className='home-flex'>

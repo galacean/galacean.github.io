@@ -11,7 +11,7 @@ const useScript = (s: IScript) => {
     const promises: Promise<any>[] = [];
     const scripts: any[] = [];
     
-    const addLib = (lib:any): Promise<any> => {
+    const addLib = (lib: any): Promise<any> => {
       const promise = new Promise((resolve) => {
         if (lib.cdn) {
           const script = document.createElement('script');

@@ -1,4 +1,5 @@
-import { AmbientLight, AssetType, Camera, Color, DirectLight, EnvironmentMapLight, GLTFResource, TextureCubeMap, Vector3, Vector4, WebGLEngine } from "oasis-engine";
+import type { GLTFResource, TextureCubeMap} from "oasis-engine";
+import { AmbientLight, AssetType, Camera, Color, DirectLight, EnvironmentMapLight, Vector3, Vector4, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import React, { useEffect } from "react";
 
@@ -15,25 +16,25 @@ export default function PBRHelmet () {
 }
 
 function init (): WebGLEngine {
-  //-- create engine object
+  // -- create engine object
   const engine = new WebGLEngine("canvas-pbr-helmet");
   engine.canvas.resizeByClientSize();
 
-  let scene = engine.sceneManager.activeScene;
+  const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
 
-  let envLightNode = rootEntity.createChild("env_light");
-  let envLight = envLightNode.addComponent(EnvironmentMapLight);
+  const envLightNode = rootEntity.createChild("env_light");
+  const envLight = envLightNode.addComponent(EnvironmentMapLight);
 
-  let directLightNode = rootEntity.createChild("dir_light");
-  let directLight = directLightNode.addComponent(DirectLight);
+  const directLightNode = rootEntity.createChild("dir_light");
+  const directLight = directLightNode.addComponent(DirectLight);
   directLight.color = new Color(1, 1, 1);
 
   const ambient = rootEntity.addComponent(AmbientLight);
   ambient.color = new Color(0.2, 0.2, 0.2, 1);
 
-  //-- create camera
-  let cameraNode = rootEntity.createChild("camera_node");
+  // -- create camera
+  const cameraNode = rootEntity.createChild("camera_node");
   cameraNode.transform.position = new Vector3(0, 0, 3);
   const camera = cameraNode.addComponent(Camera);
   camera.backgroundColor = new Vector4(51/255, 51/255, 51/255, 1);
@@ -48,7 +49,7 @@ function init (): WebGLEngine {
     engine.resourceManager
       .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf")
       .then((gltf) => {
-      gltf.defaultSceneRoot.transform.position = new Vector3(0, 0.1, 0);
+        gltf.defaultSceneRoot.transform.position = new Vector3(0, 0.1, 0);
         rootEntity.addChild(gltf.defaultSceneRoot);
       }),
     engine.resourceManager

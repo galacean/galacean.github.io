@@ -9,7 +9,7 @@ export type IMenuData = Record<string, IMenuData | MenuDataItem[]>;
 // matchMedia polyfill for
 // https://github.com/WickyNilliams/enquire.js/issues/82
 
-export function isZhCN(pathname: string) {
+export function isZhCN() {
   return true;
   // const locale = localStorage ? localStorage.getItem('locale') : 'en-US';
 
