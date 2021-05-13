@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import WrapperLayout from '../components/layout';
 import { OrbitControl } from "@oasis-engine/controls";
-import * as dat from "dat.gui";
+// import * as dat from "dat.gui";
 import type {
   AnimationClip,
   Engine,
@@ -11,7 +11,8 @@ import type {
   Renderer,
   Scene,
   Texture2D,
-  TextureCubeMap} from "oasis-engine";
+  TextureCubeMap,
+} from "oasis-engine";
 import {
   Animation,
   AssetType,
@@ -32,7 +33,7 @@ import {
   Vector4,
   WebGLEngine,
 } from "oasis-engine";
-import { SimpleDropzone } from "simple-dropzone";
+// import { SimpleDropzone } from "simple-dropzone";
 import "./gltf-viewer.less";
 
 const envList = {
@@ -71,9 +72,9 @@ const envList = {
 };
 
 class Oasis {
-  static guiToColor(gui: number[], color: Color) {
-    color.setValue(gui[0] / 255, gui[1] / 255, gui[2] / 255, color.a);
-  }
+  // static guiToColor(gui: number[], color: Color) {
+  //   color.setValue(gui[0] / 255, gui[1] / 255, gui[2] / 255, color.a);
+  // }
 
   static colorToGui(color: Color = new Color(1, 1, 1)): number[] {
     const v = [];
@@ -107,7 +108,7 @@ class Oasis {
   skybox: SkyBox = this.rootEntity.addComponent(SkyBox);
 
   // Debug
-  gui = new dat.GUI();
+  // gui = new dat.GUI();
   materialFolder = null;
   animationFolder = null;
   state = {
@@ -190,53 +191,53 @@ class Oasis {
   }
 
   addSceneGUI() {
-    const { gui } = this;
+    // const { gui } = this;
     // Display controls.
-    const dispFolder = gui.addFolder("Scene");
-    dispFolder.add(this.state, "background").onChange((v: boolean) => {
-      this.skybox.enabled = v;
-    });
+    // const dispFolder = gui.addFolder("Scene");
+    // dispFolder.add(this.state, "background").onChange((v: boolean) => {
+    //   this.skybox.enabled = v;
+    // });
 
     // Lighting controls.
-    const lightFolder = gui.addFolder("Lighting");
-    lightFolder
-      .add(this.state, "envTexture", [
-        "None",
-        ...Object.keys(this.cubeTextures),
-      ])
-      .name("IBL")
-      .onChange((v) => {
-        const texture:any = (v === "None" ? null : this.cubeTextures[v]); 
-        this.envLight.specularTexture = texture;
-        this.skybox.skyBoxMap = texture;
-      });
-    lightFolder
-      .add(this.state, "envIntensity", 0, 2)
-      .onChange((v) => {
-        this.envLight.specularIntensity = v;
-      })
-      .name("间接光强度");
-    lightFolder
-      .add(this.state, "addLights")
-      .onChange((v) => {
-        this.pointLight1.enabled = v;
-        this.pointLight2.enabled = v;
-      })
-      .name("直接光");
-    lightFolder.addColor(this.state, "lightColor").onChange((v) => {
-      Oasis.guiToColor(v, this.pointLight1.color);
-      Oasis.guiToColor(v, this.pointLight2.color);
-    });
-    lightFolder
-      .add(this.state, "lightIntensity", 0, 2)
-      .onChange((v) => {
-        this.pointLight1.intensity = v;
-        this.pointLight2.intensity = v;
-      })
-      .name("直接光强度");
+    // const lightFolder = gui.addFolder("Lighting");
+    // lightFolder
+    //   .add(this.state, "envTexture", [
+    //     "None",
+    //     ...Object.keys(this.cubeTextures),
+    //   ])
+    //   .name("IBL")
+    //   .onChange((v) => {
+    //     const texture:any = (v === "None" ? null : this.cubeTextures[v]); 
+    //     this.envLight.specularTexture = texture;
+    //     this.skybox.skyBoxMap = texture;
+    //   });
+    // lightFolder
+    //   .add(this.state, "envIntensity", 0, 2)
+    //   .onChange((v) => {
+    //     this.envLight.specularIntensity = v;
+    //   })
+    //   .name("间接光强度");
+    // lightFolder
+    //   .add(this.state, "addLights")
+    //   .onChange((v) => {
+    //     this.pointLight1.enabled = v;
+    //     this.pointLight2.enabled = v;
+    //   })
+    //   .name("直接光");
+    // lightFolder.addColor(this.state, "lightColor").onChange((v) => {
+    //   Oasis.guiToColor(v, this.pointLight1.color);
+    //   Oasis.guiToColor(v, this.pointLight2.color);
+    // });
+    // lightFolder
+    //   .add(this.state, "lightIntensity", 0, 2)
+    //   .onChange((v) => {
+    //     this.pointLight1.intensity = v;
+    //     this.pointLight2.intensity = v;
+    //   })
+    //   .name("直接光强度");
 
-    dispFolder.open();
-    lightFolder.open();
+    // dispFolder.open();
+    // lightFolder.open();
   }
 
   initDefaultDebugMesh() {
@@ -280,11 +281,11 @@ class Oasis {
   }
 
   initDropZone() {
-    const dropCtrl = new SimpleDropzone(document.body, this.$input);
-    dropCtrl.on("drop", ({ files }) => this.loadFileMaps(files));
-    this.$close.onclick = () => {
-      this.$dropZone.classList.add("hide");
-    };
+    // const dropCtrl = new SimpleDropzone(document.body, this.$input);
+    // dropCtrl.on("drop", ({ files }) => this.loadFileMaps(files));
+    // this.$close.onclick = () => {
+    //   this.$dropZone.classList.add("hide");
+    // };
   }
 
   loadFileMaps(files: Map<string, File>) {
@@ -434,19 +435,19 @@ class Oasis {
   }
 
   loadMaterialGUI(materials?: Material[]) {
-    const { gui } = this;
-    if (this.materialFolder) {
-      gui.removeFolder(this.materialFolder);
-      this.materialFolder = null;
-    }
+    // const { gui } = this;
+    // if (this.materialFolder) {
+    //   gui.removeFolder(this.materialFolder);
+    //   this.materialFolder = null;
+    // }
     if (!materials) {
       materials = this._materials;
     }
     this._materials = materials;
     if (!materials.length) return;
 
-    const folder = (this.materialFolder = gui.addFolder("Material"));
-    const folderName = {};
+    // const folder = (this.materialFolder = gui.addFolder("Material"));
+    // const folderName = {};
 
     materials.forEach((material) => {
       if (
@@ -500,14 +501,14 @@ class Oasis {
           .specularGlossinessTexture,
       };
 
-      const f = folder.addFolder(
-        folderName[material.name]
-          ? `${material.name}_${folderName[material.name] + 1}`
-          : material.name
-      );
+      // const f = folder.addFolder(
+      //   folderName[material.name]
+      //     ? `${material.name}_${folderName[material.name] + 1}`
+      //     : material.name
+      // );
 
-      folderName[material.name] =
-        folderName[material.name] == null ? 1 : folderName[material.name] + 1;
+      // folderName[material.name] =
+      //   folderName[material.name] == null ? 1 : folderName[material.name] + 1;
 
       // metallic
       if (material instanceof PBRMaterial) {
@@ -649,35 +650,35 @@ class Oasis {
       }
     });
 
-    folder.open();
+    // folder.open();
   }
 
   loadAnimationGUI(animations: AnimationClip[]) {
-    if (this.animationFolder) {
-      this.gui.removeFolder(this.animationFolder);
-      this.animationFolder = null;
-    }
+    // if (this.animationFolder) {
+      // this.gui.removeFolder(this.animationFolder);
+      // this.animationFolder = null;
+    // }
 
     if (animations?.length) {
-      this.animationFolder = this.gui.addFolder("Animation");
-      this.animationFolder.open();
+      // this.animationFolder = this.gui.addFolder("Animation");
+      // this.animationFolder.open();
       const animator = this.gltfRootEntity.getComponent(Animation);
       animator.playAnimationClip(animations[0].name);
       const state = {
         animation: animations[0].name,
       };
-      this.animationFolder
-        .add(state, "animation", [
-          "None",
-          ...animations.map((animation) => animation.name),
-        ])
-        .onChange((name) => {
-          if (name === "None") {
-            animator.stop(true);
-          } else {
-            animator.playAnimationClip(name);
-          }
-        });
+      // this.animationFolder
+      //   .add(state, "animation", [
+      //     "None",
+      //     ...animations.map((animation) => animation.name),
+      //   ])
+      //   .onChange((name) => {
+      //     if (name === "None") {
+      //       animator.stop(true);
+      //     } else {
+      //       animator.playAnimationClip(name);
+      //     }
+      //   });
     }
   }
 }
@@ -688,7 +689,7 @@ export default function GLTFView(props: any) {
     const oasis = new Oasis();
     return () => {
       oasis.engine.destroy();
-      oasis.gui.destroy();
+      // oasis.gui.destroy();
     }
   });
   return (

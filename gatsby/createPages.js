@@ -181,10 +181,10 @@ async function createPlayground(graphql, actions) {
   });
 
   // gltf viewer page
-  createPage({
-    path: `/gltf-viewer`,
-    component: resolve(__dirname, '../src/pages/gltf-viewer.tsx')
-  });
+  // createPage({
+  //   path: `/gltf-viewer`,
+  //   component: resolve(__dirname, '../src/pages/gltf-viewer.tsx')
+  // });
 }
 
 module.exports = async ({ graphql, actions }) => {
