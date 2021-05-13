@@ -8,7 +8,7 @@ import {version} from '../../../siteconfig.json';
 
 const { Option } = Select;
 
-const LOGO_URL = '//gw.alipayobjects.com/zos/bmw-prod/14240f46-512f-47da-ac0e-a2115f7cef67.svg';
+const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
 
 const key = 'antd-pro@2.0.0-notification-sent';
 

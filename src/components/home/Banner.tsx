@@ -14,7 +14,7 @@ function Banner(props) {
     <section className="home-section home-section-banner">
       <div className='home-flex'>
         <QueueAnim className="banner-title-wrapper" type={isMobile ? 'bottom' : 'right'}>
-          <h1>Oasis Engine</h1>
+          <h1><img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ" alt="Oasis Engine" /></h1>
           <p>
             <FormattedMessage id="app.home.slogan" />
           </p>

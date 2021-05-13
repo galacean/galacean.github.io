@@ -10,7 +10,7 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <link
           rel="icon"
-          href="https://gw.alipayobjects.com/zos/antfincdn/r3d46eFZ7D/method-draw-image.ico"
+          href="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mXcgQ7ZHThAAAAAAAAAAAAAAARQnAQ"
           type="image/x-icon"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
