@@ -7,5 +7,5 @@ exports.onCreatePage = require('./gatsby/onCreatePage');
 
 exports.onPostBuild = () => {
   // 复制 CNAME
-  fsExtra.copyFileSync(`${__dirname}/CNAME`, `${__dirname}/public/CNAME`);
+  // fsExtra.copyFileSync(`${__dirname}/CNAME`, `${__dirname}/public/CNAME`);
 };

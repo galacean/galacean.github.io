@@ -31,7 +31,7 @@ export default function Playground (props: any) {
         </pre>
       </div>
       {sourceCode && <CodeActions sourceCode={sourceCode} engineName={siteConfig.name} name={name} url={url} version={version} packages={siteConfig.packages}/>}
-      {url && <DemoActions url={url}/>}
+      {url && <DemoActions url={`https://${(window as any).location.host}${url}`}/>}
     </div>
   );
 }
