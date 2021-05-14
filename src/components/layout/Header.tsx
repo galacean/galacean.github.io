@@ -230,13 +230,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <FormattedMessage id="app.header.menu.blog" />
           </Link>
         </Menu.Item>
-        {menuMode === 'inline' && (
-          <Menu.Item key="preview">
-            <a target="_blank" href="http://preview.pro.ant.design/" rel="noopener noreferrer">
-              <FormattedMessage id="app.home.preview" />
-            </a>
-          </Menu.Item>
-        )}
       </Menu>,
     ];
 
