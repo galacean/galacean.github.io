@@ -89,7 +89,7 @@ const spriteFragmentShader = `
   precision mediump float;
   precision mediump int;
 
-  uniform sampler2D u_texture;
+  uniform sampler2D u_spriteTexture;
   uniform float u_blurSize;
   uniform vec2 u_texSize;
 
@@ -101,7 +101,7 @@ const spriteFragmentShader = `
   }
 
   void main() {
-    vec4 color = texture2D(u_texture, v_uv);
+    vec4 color = texture2D(u_spriteTexture, v_uv);
     const int mSize = 11;
     const int kSize = (mSize - 1) / 2;
     float kernel[mSize];
@@ -126,7 +126,7 @@ const spriteFragmentShader = `
     for (int i = -kSize; i <= kSize; ++i) {
       for (int j = -kSize; j <= kSize; ++j) {
         uv = v_uv.xy + vec2(float(i) * offsetX, float(j) * offsetY);
-        final_colour += kernel[kSize + j] * kernel[kSize + i] * texture2D(u_texture, uv).rgb;
+        final_colour += kernel[kSize + j] * kernel[kSize + i] * texture2D(u_spriteTexture, uv).rgb;
       }
     }
 
