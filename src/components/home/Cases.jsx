@@ -14,9 +14,7 @@ export default function Cases (props) {
       <div className="home-section-inner">
         {videos.map((src) => {
           return <div className='home-flex home-flex-case' key={src}>
-            {props.isMobile ?
-              <video width="250" height="540" playsInline controls muted loop><source src={src} type="video/mp4"/></video>
-              : <video width="250" height="540" playsInline autoPlay muted loop><source src={src} type="video/mp4"/></video>}
+            <video width="250" height="540" playsInline autoPlay muted loop><source src={src} type="video/mp4"/></video>
           </div>
         })}
       </div>
