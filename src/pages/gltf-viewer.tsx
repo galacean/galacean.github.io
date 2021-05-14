@@ -643,7 +643,7 @@ export default function GLTFView(props: any) {
         <div className="page-gltf-view">
           <canvas
             id="canvas-gltf-viewer"
-            style={{ width: '100%', height: 'calc(100vh - 102px)' }}
+            style={{ width: '100%', height: 'calc(100vh - 64px)' }}
           ></canvas>
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">

@@ -18,7 +18,7 @@ export default function Examples(props: any) {
   const menu = <Menu onSelect={(item) => { 
     setUrl(item.key); 
     toggleMenu(false);
-  }} style={{ width: '300px!important', height: 'calc(100vh - 102px)', overflow: 'auto'}}>
+  }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto'}}>
     {nodes.map((node: any) => {
       const { name } = node;
       return <Menu.Item key={name}>
@@ -35,7 +35,7 @@ export default function Examples(props: any) {
           {(isMobile) => 
             <Layout hasSider={!isMobile}>
               {!isMobile && <Sider>{menu}</Sider>}
-              <Content style={{height: 'calc(100vh - 102px)'}}>
+              <Content style={{height: 'calc(100vh - 64px)'}}>
                 {isMobile &&
                   <Popover
                     className="examples-popover-menu"
