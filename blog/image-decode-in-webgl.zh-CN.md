@@ -110,6 +110,7 @@ createImageBitmap(blob).then((imageBitmap)=>{
 
 
 根据上面测试的结果以及推导的结论，在 WebGL 中采取的图片请求最佳解码方案是：
+
 ![](https://gw.alipayobjects.com/zos/OasisHub/983bea3d-909e-4acc-b81e-f5808f60f73f/3ea78572041822b115811b2ed58d5c9a.svg)
 
 以上方案即将应用到 oasis-engine 中，欢迎大家在 [PR](https://github.com/oasis-engine/engine/pull/249) 中讨论。
