@@ -1,3 +1,5 @@
+@import '~antd/lib/style/themes/default.less';
+
 .tsc-content {
   padding: 0 20px;
   .tsc-nav {
@@ -269,4 +271,13 @@
   min-width: 300px !important;
   max-width: 300px !important;
   background-color: #fff;
+}
+
+// mobile
+@media only screen and (max-width: @screen-md) {
+  .tsd-index-panel{
+    .tsd-index-list {
+      column-count: 1;
+    }
+  }
 }

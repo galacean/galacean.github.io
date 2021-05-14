@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { graphql } from "gatsby";
 import Menu from '../components/typedoc/Menu';
 import WrapperLayout from '../components/layout';
-import { Layout, Breadcrumb } from 'antd';
+import { Layout, Breadcrumb, Popover } from 'antd';
 import Package from '../components/typedoc/Package';
 import Module from '../components/typedoc/Module';
+import Media from 'react-media';
+import { MenuUnfoldOutlined } from '@ant-design/icons';
 
 const { Sider, Content } = Layout;
 
@@ -16,31 +18,51 @@ export default function API (props: any) {
     pkg.child = node;
   }
 
-  const menu = {children: packages}
+  const menuData = {children: packages}
 
-  // console.log('paths', paths, node, pkg)
+  const [menuVisible, toggleMenu] = useState(false);
+
+  const menu = <Menu {...menuData }/>
+
+  console.log(props.isMobile)
   return (
     <>
       <WrapperLayout {...props}>
-        <Layout hasSider={true}>
-          <Content className="api" style={{ padding: '20px', backgroundColor: '#fff' }}>
-            <div className="tsc-content">
-              <div className="tsc-nav">
-                <Breadcrumb>
-                  <Breadcrumb.Item>API</Breadcrumb.Item>
-                  {pkg && <Breadcrumb.Item>
-                    <a href="./index">{pkg.name}</a>
-                  </Breadcrumb.Item>}
-                  {node && <Breadcrumb.Item>
-                    {node.name && node.name.replace('/src', '')}
-                  </Breadcrumb.Item>}
-                </Breadcrumb>
+        <Media query="(max-width: 599px)">
+          {(isMobile) => 
+          <Layout hasSider={true}>
+            <Content className="api" style={{ padding: '20px', backgroundColor: '#fff' }}>
+              {isMobile &&
+                  <Popover
+                    className="examples-popover-menu"
+                    placement="bottomRight"
+                    content={menu}
+                    trigger="click"
+                    visible={menuVisible}
+                    arrowPointAtCenter
+                  >
+                    <MenuUnfoldOutlined className="nav-phone-icon" onClick={() => {toggleMenu(!menuVisible)}} />
+                  </Popover>
+                } 
+              <div className="tsc-content">
+                <div className="tsc-nav">
+                  <Breadcrumb>
+                    <Breadcrumb.Item>API</Breadcrumb.Item>
+                    {pkg && <Breadcrumb.Item>
+                      <a href="./index">{pkg.name}</a>
+                    </Breadcrumb.Item>}
+                    {node && <Breadcrumb.Item>
+                      {node.name && node.name.replace('/src', '')}
+                    </Breadcrumb.Item>}
+                  </Breadcrumb>
+                </div>
+                {type === 'package' ? <Package {...node} /> : <Module {...node} />}
               </div>
-              {type === 'package' ? <Package {...node} /> : <Module {...node} />}
-            </div>
-          </Content>
-          <Sider style={{ width: '300px!important' }}><Menu {...menu} /></Sider>
-        </Layout>
+            </Content>
+            {!isMobile && <Sider style={{ width: '300px!important' }}>{menu}</Sider>}
+            </Layout>
+          }
+        </Media>
       </WrapperLayout>
     </>
   );

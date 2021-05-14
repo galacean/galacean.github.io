@@ -92,7 +92,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 
   componentDidUpdate(preProps: HeaderProps) {
     const { isMobile } = this.props;
-    console.log(isMobile, preProps.isMobile )
     if (isMobile !== preProps.isMobile) {
       this.setMenuMode(isMobile);
     }
