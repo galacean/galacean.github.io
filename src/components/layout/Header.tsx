@@ -2,11 +2,11 @@ import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
 import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
-import { Row, Space, Col, Select, Alert, Input, Menu, Popover } from 'antd';
+import { Row,  Col, Select,  Input, Menu, Popover } from 'antd';
 import * as utils from '../utils';
 import {version} from '../../../siteconfig.json';
 
-const { Option } = Select;
+// const { Option } = Select;
 
 const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
 
@@ -232,18 +232,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       </Menu>
     ];
 
-    const message = <Space>
-      {isZhCN
-        ? 'v0.3 已发布，欢迎试用！'
-        : 'v0.3 already release, welcome to try!'}
-      <a href="/blog/v0.3-release-cn" target="_blank" rel="noreferrer">
-        v0.3 发布日志
-      </a>
-    </Space>
 
     return (
       <div>
-        <Alert message={message} type="warning" banner />
         <div id="header" className="header">
           {menuMode === 'inline' ? (
             <Popover
