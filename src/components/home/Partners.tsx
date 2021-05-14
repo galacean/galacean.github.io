@@ -71,7 +71,7 @@ export default function Partners () {
         <FormattedMessage id="app.home.partners" />
       </h2>
       {partners.map((partner)=> {
-        return <div className="partner">
+        return <div className="partner" key={partner.logo}>
           <img src={partner.logo} width={partner.width} />
         </div>
       })}
