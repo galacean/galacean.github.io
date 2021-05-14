@@ -233,10 +233,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       </Menu>,
     ];
 
-    console.log('menuMode', menuMode)
     return (
       <div>
-        <Alert
+        {!this.props.isMobile && <Alert
           message={
             <Space>
               {isZhCN
@@ -249,7 +248,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
           }
           type="warning"
           banner
-        />
+        />}
         <div id="header" className="header">
           {menuMode === 'inline' ? (
             <Popover

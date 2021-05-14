@@ -1,3 +1,5 @@
+@import '~antd/lib/style/themes/default.less';
+
 .code-box {
   display: flex;
   border: 1px solid #f0f0f0;
@@ -20,7 +22,6 @@
   }
   &-demo{
     flex: 1;
-    background-color: #eee;
     padding-top: 37px;
   }
   &-actions {
@@ -55,4 +56,18 @@
       opacity: 1;
     }
   }
+}
+
+// mobile
+@media only screen and (max-width: @screen-md) {
+  .code-box {
+    flex-direction: column;
+    &-demo {
+      height: 300px;
+    }
+    &-source {
+      display: none;
+    }
+  }
+
 }
