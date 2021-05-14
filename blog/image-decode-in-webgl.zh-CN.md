@@ -8,9 +8,9 @@ time: 2021-04-23
 
 虽然 WebGL 支持 [压缩纹理](https://zh.wikipedia.org/wiki/%E7%BA%B9%E7%90%86%E5%8E%8B%E7%BC%A9)，上传 GPU 不存在解码耗时的问题，但日常应用中还是会用到 png/jpg/webp 等压缩过的图片格式。这些格式在 WebGL 中渲染需要转换成位图，即每个像素使用 RGB 或 RGBA 表示。这个过程称为**图片解码**。图片解码在渲染中是非常重要的一环，若直接使用 Image 对象上传([texImage2D](https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/texImage2D))至 GPU，往往耗时较长，阻塞主线程，比如说会导致动画播放卡顿，影响用户体验。所以，在这里我们对浏览器中的一些 WebGL 中图片解码的方案做了一些研究和测试。
 
-![左.gif](https://cdn.nlark.com/yuque/0/2021/gif/1255339/1619169474197-0d204baf-d9de-40b7-a368-6401724aee8f.gif#clientId=u15c48de9-e5f5-4&from=ui&height=240&id=Co9PF&margin=%5Bobject%20Object%5D&name=%E5%B7%A6.gif&originHeight=480&originWidth=720&originalType=binary&size=231490&status=done&style=none&taskId=u6716f839-ac25-477a-9d67-16d7bd05747&width=360)
+![左.gif](https://gw.alipayobjects.com/zos/OasisHub/8524aac7-70c7-4ab1-b907-0a2522f1e301/1619169474197-0d204baf-d9de-40b7-a368-6401724aee8f.gif)
 
-![右.gif](https://cdn.nlark.com/yuque/0/2021/gif/1255339/1619169493323-04f264c2-56a7-4860-b7c8-9a265df78343.gif#clientId=u15c48de9-e5f5-4&from=ui&height=240&id=nuMHI&margin=%5Bobject%20Object%5D&name=%E5%8F%B3.gif&originHeight=480&originWidth=720&originalType=binary&size=281215&status=done&style=none&taskId=ue7c4a51f-464a-4215-a833-f4ebdf9bfc9&width=360)
+![右.gif](https://gw.alipayobjects.com/zos/OasisHub/122ff3ad-6774-41c1-b27e-a1142b9fcb95/1619169493323-04f264c2-56a7-4860-b7c8-9a265df78343.gif)
 
 > 第一幅图是同步解码，第二幅图是异步解码，可以看到明显缓解动画的卡顿
 
@@ -110,6 +110,7 @@ createImageBitmap(blob).then((imageBitmap)=>{
 
 
 根据上面测试的结果以及推导的结论，在 WebGL 中采取的图片请求最佳解码方案是：
-![](https://cdn.nlark.com/yuque/__mermaid_v3/3ea78572041822b115811b2ed58d5c9a.svg#lake_card_v2=eyJ0eXBlIjoibWVybWFpZCIsImNvZGUiOiJncmFwaFxuICAgIEF75piv5ZCm5pyJIGNyZWF0ZUltYWdlQml0bWFwIOaWueazlX1cbiAgICBBIC0tPnxZfCBCW2ZldGNoIOWbvueJh11cbiAgICBBIC0tPnxOfCBDW-WIm-W7uiBJbWFnZSDor7fmsYLlm77niYddXG4gICAgQiAtLT4gRXvmmK_lkKblkK_nlKggd29ya2VyfVxuICAgIEUgLS0-IHxZfFNBW-i9rOaIkCBBcnJheUJ1ZmZlcl1cbiAgICBTQS0tPiBOQVvkvKDliLAgd29ya2VyXVxuICAgIE5BLS0-IEJCU1vovazmiJAgQmxvYl1cbiAgICBFIC0tPiB8TnxTQ1vovazmiJAgQmxvYl1cbiAgICBCQlMtLT4gQUJb5L2_55SoIGNyZWF0ZUltYWdlQml0bWFwIOWIm-W7uiBJbWFnZUJpdG1hcCDlr7nosaFdXG4gICAgQUIgLS0-IOS8oOWbnuS4u-e6v-eoi1xuICAgIFNDLS0-IEJCW-ebtOaOpSBjcmVhdGVJbWFnZUJpdG1hcCDliJvlu7ogSW1hZ2VCaXRtYXBdIiwidXJsIjoiaHR0cHM6Ly9jZG4ubmxhcmsuY29tL3l1cXVlL19fbWVybWFpZF92My8zZWE3ODU3MjA0MTgyMmIxMTU4MTFiMmVkNThkNWM5YS5zdmciLCJpZCI6IlFZc0VqIiwibWFyZ2luIjp7InRvcCI6dHJ1ZSwiYm90dG9tIjp0cnVlfSwiY2FyZCI6ImRpYWdyYW0ifQ==)
+
+![](https://gw.alipayobjects.com/zos/OasisHub/983bea3d-909e-4acc-b81e-f5808f60f73f/3ea78572041822b115811b2ed58d5c9a.svg)
 
 以上方案即将应用到 oasis-engine 中，欢迎大家在 [PR](https://github.com/oasis-engine/engine/pull/249) 中讨论。
