@@ -207,11 +207,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         </Menu.SubMenu>
         <Menu.SubMenu key="ecosystem" icon={<AppstoreAddOutlined />} title={formatMessage({id:"app.header.menu.ecosystem"})}>
           <Menu.ItemGroup title={formatMessage({id:"app.header.menu.ecosystem.tool"})}>
-            {/* <Menu.Item key="gltfviewer">
+            <Menu.Item key="gltfviewer">
               <Link to={`/gltf-viewer`}>
                 {formatMessage({id:"app.header.menu.ecosystem.gltfviewer"})}
               </Link>
-            </Menu.Item> */}
+            </Menu.Item>
             <Menu.Item key="createapp">
               <Link to="https://github.com/oasis-engine/create-oasis-app"  target="_blank">
                 {formatMessage({id:"app.header.menu.ecosystem.createapp"})}
