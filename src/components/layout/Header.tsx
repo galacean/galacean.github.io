@@ -285,11 +285,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       <FormattedMessage id="app.header.lang" />
                     </Button>
                   </div> */}
-                  {this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value="stable">
+                  {/* {this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value="stable">
                     <Option value="0.1">v0.1</Option>
                     <Option value="0.2">v0.2</Option>
                     <Option value="0.3">v0.3</Option>
-                  </Select>}
+                  </Select>} */}
                 </div>
                 {menuMode === 'horizontal' ? <div id="menu">{menu}</div> : null}
               </div>
