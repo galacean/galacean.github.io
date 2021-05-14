@@ -8,24 +8,28 @@ time: 2021-05-12
 ​
 ## 引言
 通常而言，在图形学中，我们所说的“**渲染**”(Rendering)，指在给定虚拟相机、三维物体、光源等条件下，在屏幕等终端生成或绘制一幅二维图像的过程。
-![1620373084300-b77b40e4-546e-4808-a9ad-e70610dd1a86.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805160286-65a9d3fc-89c8-4a4b-b5c8-80124e540c1c.png#clientId=u59b6cee5-37a0-4&from=ui&id=u95b91ca9&margin=%5Bobject%20Object%5D&name=1620373084300-b77b40e4-546e-4808-a9ad-e70610dd1a86.png&originHeight=582&originWidth=2146&originalType=binary&size=599231&status=done&style=none&taskId=u864c50bf-bfa9-4ad6-8f61-c8a66b542cb)
+
+![1.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*Hz8ER7_WFRgAAAAAAAAAAAAAARQnAQ)
+
 如下图所示，渲染管线一般包含了三大阶段。其中**应用程序阶段**（Application）可以理解为数据准备阶段，Oasis 引擎在这里准备了着色器编译、视锥体裁剪、渲染队列排序、着色器数据等初始化工作；**几何体阶段**（Geometry Processing）将上述数据经过顶点着色器、投影变换、裁剪、屏幕映射一系列处理后输出到屏幕坐标系上；**光栅化阶段**（Rasterizer）将上一个阶段的顶点栅格化成一个个片元，然后经过片元着色器、颜色融合等操作，给每一个像素点描绘出相应的颜色。
 
 
-![1620451156989-1463a5a7-ce6c-4329-beaf-f8c974cfd30c.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805180283-d2a27833-67a2-4a4b-9ebc-13bf28b2cfc3.png#clientId=u59b6cee5-37a0-4&from=ui&id=uc2132e97&margin=%5Bobject%20Object%5D&name=1620451156989-1463a5a7-ce6c-4329-beaf-f8c974cfd30c.png&originHeight=329&originWidth=1030&originalType=binary&size=34407&status=done&style=none&taskId=u58a212b1-6923-4fff-bccb-8eccf677134)
+![2.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*m6eYS5WfChYAAAAAAAAAAAAAARQnAQ)
 
 
 在动态场景中，相机、三维物体、光源等对象都是在不断变化的，也就是我们每一帧都需要执行一遍渲染管线。而一般画面度流畅的最低要求为 FPS > 30，即走一遍渲染管线的时间需要少于 **33**（1000 / 30）毫秒。Oasis 引擎在 0.3 里程碑中，**借助**[**材质系统**](https://oasisengine.cn/#/0.3/manual/zh-cn/resource/custom-material)**对渲染管线进行了全面重构，** 通过 [骨骼动画](https://oasis-engine.github.io/0.3/playground/#/skeleton-animation) demo （如下图所示，面数 728300，drawcall 50 次，不采用 Instance 合批等技术）的测试，在近 100 万面的浏览器 **6 倍降频**渲染中，跟渲染相关的 **render** 方法只占用了 **900 微秒**（ 0.2 版本渲染相同的场景 **render** 方法需要耗时 10 ms）！
-![1620487677757-b4061d96-bf05-486f-a9e0-efbafef02cf5.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805285242-b6d92cac-1b5b-4490-a961-19e69f399514.png#clientId=u59b6cee5-37a0-4&from=ui&id=u1fdb997c&margin=%5Bobject%20Object%5D&name=1620487677757-b4061d96-bf05-486f-a9e0-efbafef02cf5.png&originHeight=1402&originWidth=3006&originalType=binary&size=1330669&status=done&style=none&taskId=u7ff8d62d-27b0-4df0-948b-887405a0169)
+
+![3.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*Ja_mS4AFCFMAAAAAAAAAAAAAARQnAQ)
+
 MacBook Pro，2.7GHz 四核 Intel Core i7，Intel Iris Plus Graphics 655 1536 MB，Google Chrome 90.0
 
 
 
 
-本文将重点针对**应用程序阶段，**从数据结构、语法、架构设计等角度分析 **Oasis 引擎的渲染管线是如何设计和优化的。**
+本文将重点针对**应用程序阶段，** 从数据结构、语法、架构设计等角度分析**Oasis 引擎的渲染管线是如何设计和优化的。**
 
 
-![1620617353816-57c02c68-8c20-44e8-ac75-6579c9d0c00f.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805304333-57bc870a-d24e-46e9-a94d-848acd7382b2.png#clientId=u59b6cee5-37a0-4&from=ui&id=u03d174c2&margin=%5Bobject%20Object%5D&name=1620617353816-57c02c68-8c20-44e8-ac75-6579c9d0c00f.png&originHeight=1246&originWidth=4426&originalType=binary&size=331167&status=done&style=none&taskId=u59ffe783-279c-450c-ade6-471af79eca2)
+![4.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*27vBQ73OrNUAAAAAAAAAAAAAARQnAQ)
 
 
 
@@ -35,12 +39,21 @@ MacBook Pro，2.7GHz 四核 Intel Core i7，Intel Iris Plus Graphics 655 1536 MB
 
 
 假如场景中所有激活的物体都会进入接下去的渲染管线，但是有些物体其实是在相机的视锥体范围之外的，那么这些视锥体之外物体的渲染其实是多余的，尤其是面数比较多的模型，会大大浪费性能。我们把在渲染管线开始之前，将相机视锥体范围之外的物体进行排除的这种操作，称为视锥体剔除，如 [视锥体剔除 Demo](https://oasisengine.cn/0.3/playground/#/renderer-cull)。
-![1620290443769-64f2e7f0-705d-42df-84ba-67f99ac44cc9.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805412000-66fdbcab-7909-467b-ad69-babb3c9f16d0.png#clientId=u59b6cee5-37a0-4&from=ui&id=u16ec8f87&margin=%5Bobject%20Object%5D&name=1620290443769-64f2e7f0-705d-42df-84ba-67f99ac44cc9.png&originHeight=658&originWidth=1036&originalType=binary&size=136535&status=done&style=none&taskId=u2de1a11f-a447-4095-b48c-a063a766eee)
+
+![5.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*ZS_dSoKwU4cAAAAAAAAAAAAAARQnAQ)
+
 Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.cn/0.3/api/classes/math.boundingfrustum.html)是否发生变化，从而更新**视锥体**；
-![1620457358641-33cf5c35-64ab-488f-8a39-cb5595449fcb.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805437228-fc74dbbf-72ec-4781-832c-ae08e2918b5a.png#clientId=u59b6cee5-37a0-4&from=ui&id=u230a326d&margin=%5Bobject%20Object%5D&name=1620457358641-33cf5c35-64ab-488f-8a39-cb5595449fcb.png&originHeight=304&originWidth=2262&originalType=binary&size=454609&status=done&style=none&taskId=uf6bd8a8f-d1e6-475b-8aee-42298dfb89d)然后将视锥体与物体的[ AABB 包围盒](https://oasisengine.cn/0.3/api/classes/math.boundingbox.html)进行碰撞检测；同理，物体的包围盒是否发生变化也采用了脏标记检测：
-![1620457327131-d2981d0c-560f-49aa-9b08-5893125f86f0.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805458961-2e791f4d-941e-4671-ad8d-03877b03bfe3.png#clientId=u59b6cee5-37a0-4&from=ui&id=u23200720&margin=%5Bobject%20Object%5D&name=1620457327131-d2981d0c-560f-49aa-9b08-5893125f86f0.png&originHeight=610&originWidth=1076&originalType=binary&size=394253&status=done&style=none&taskId=udaa8517a-df65-4943-9e89-61b6061f1fb)
+
+![6.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*-t6nTa0w4tAAAAAAAAAAAAAAARQnAQ)
+
+然后将视锥体与物体的[ AABB 包围盒](https://oasisengine.cn/0.3/api/classes/math.boundingbox.html)进行碰撞检测；同理，物体的包围盒是否发生变化也采用了脏标记检测：
+
+![7.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*Zd7CSb-jyEAAAAAAAAAAAAAAARQnAQ)
+
 顺便一提，包围盒的更新使用了 [component-wise](https://zeux.io/2010/10/17/aabb-from-obb-with-component-wise-abs/) 算法，只需要对两个矢量运算即可得到包围盒的世界坐标系：
-![1620620113756-c054d4dc-f614-41fa-a3e0-a9e91a15c416.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805473200-cee41bc2-513b-498c-b2bc-47fedee897b3.png#clientId=u59b6cee5-37a0-4&from=ui&id=u0d86097a&margin=%5Bobject%20Object%5D&name=1620620113756-c054d4dc-f614-41fa-a3e0-a9e91a15c416.png&originHeight=1274&originWidth=1734&originalType=binary&size=1618177&status=done&style=none&taskId=uc1dd94b0-658d-4475-ab09-a546b699244)
+
+![8.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*aKIGQq6X-xAAAAAAAAAAAAAAARQnAQ)
+
 最后，只有视锥体**包含**或者**交叉**物体包围盒的物体才会进入渲染管线，减少了后续管线压力，提升了性能。
 
 
@@ -51,10 +64,11 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 
 在渲染管线中，物体的默认渲染队列是无序的，即物体与相机的距离远近，透明度等不同渲染状态因素都不受控制，**渲染效果的正确性、管线性能**都会受到影响，因此引擎将渲染队列分成了不透明（Opaque）、透明度测试（AlphaTest）、透明（Transparent） 三种队列。
-![1620614678257-9e7b1846-d876-4ff4-95a6-bfebd8767884.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805537862-f0e7a05a-0adf-4d4f-bebd-2e57ceb81c84.png#clientId=u59b6cee5-37a0-4&from=ui&id=u7b3a88a6&margin=%5Bobject%20Object%5D&name=1620614678257-9e7b1846-d876-4ff4-95a6-bfebd8767884.png&originHeight=1058&originWidth=4692&originalType=binary&size=437748&status=done&style=none&taskId=ub3827878-2e89-4ad2-a7fb-382981a0e56)
+
+![9.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*9lY_Rp7YtB4AAAAAAAAAAAAAARQnAQ)
 
 
-- **不透明队列从近到远排序**。我们一般会对非透明物体进行从近到远排序，这是因为当我们开启**深度测试**后，深度测试**失败**的片元将不进行颜色融合，支持** early-Z** 的 GPU 还会直接跳过片元着色器；又因为深度测试失败的默认配置为 z1 > z2 ，即距离较远的片元会深度测试失败，所以我们对非透明物体进行从近到远排序，可以最大程度地剔除后续深度测试失败的片元，达到性能优化；值得一提的是，有些 GPU 架构比如 PowerVR 支持[ HSR](http://cdn.imgtec.com/sdk-documentation/PowerVR+Series5.Architecture+Guide+for+Developers.pdf)（Hidden Surface Removal）技术，引擎利用此技术能够不排序也能实现 early-Z 剔除效果，因此从近到远排序并不是必然的选择。
+- **不透明队列从近到远排序**。我们一般会对非透明物体进行从近到远排序，这是因为当我们开启**深度测试**后，深度测试**失败**的片元将不进行颜色融合，支持**early-Z** 的 GPU 还会直接跳过片元着色器；又因为深度测试失败的默认配置为 z1 > z2 ，即距离较远的片元会深度测试失败，所以我们对非透明物体进行从近到远排序，可以最大程度地剔除后续深度测试失败的片元，达到性能优化；值得一提的是，有些 GPU 架构比如 PowerVR 支持[ HSR](http://cdn.imgtec.com/sdk-documentation/PowerVR+Series5.Architecture+Guide+for+Developers.pdf)（Hidden Surface Removal）技术，引擎利用此技术能够不排序也能实现 early-Z 剔除效果，因此从近到远排序并不是必然的选择。
 
 
 
@@ -105,7 +119,7 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 基于着色器中的数据缓存机制，当数据没有发生变化时，可以不用每一帧都上传数据，由此，可以联想到一个优化手段，那就是**分块更新/上传**。
 
 
-![1620312672843-86bca06d-d3db-44ff-97ee-a56fbc9c7864.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805558367-b90961f7-4452-4c83-9217-529ec114b986.png#clientId=u59b6cee5-37a0-4&from=ui&height=346&id=u32192579&margin=%5Bobject%20Object%5D&name=1620312672843-86bca06d-d3db-44ff-97ee-a56fbc9c7864.png&originHeight=692&originWidth=1166&originalType=binary&size=89127&status=done&style=none&taskId=u479d3f8c-234c-4cd0-95f3-86287d91740&width=583)
+![10.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*b8THTaEYT3cAAAAAAAAAAAAAARQnAQ)
 
 
 如上图所示，Oasis 引擎设计将着色器数据 [ShaderData](https://oasis-engine.github.io/0.3/api/classes/core.shaderdata.html) 分别保存在 [Scene](https://oasis-engine.github.io/0.3/api/classes/core.scene.html)、[Camera](https://oasis-engine.github.io/0.3/api/classes/core.camera.html)、[Renderer](https://oasis-engine.github.io/0.3/api/classes/core.renderer.html)、[Material](https://oasis-engine.github.io/0.3/api/classes/core.material.html) 四大块中。进行分块后，引擎可以在 CPU 分块更新着色器数据，最后分块上传到 GPU，期间还存在一些细小的优化点，接下来分别展开讨论。
@@ -113,11 +127,14 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 ### CPU 分块更新
 在很多设计中，着色器相关的数据都存放在了材质（Material）中，也就是说所有的着色器数据都在渲染器更新的时候进行了更新，即使是那些不需要更新的数据，复杂度为 **O(Scene*Camera*Renderer)，**
-![1620617666061-efb011d4-10c6-4900-b138-b850821d5636.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805585108-7f434e5b-2318-4444-8ec0-9f7e08881a8c.png#clientId=u59b6cee5-37a0-4&from=ui&id=ue60f0047&margin=%5Bobject%20Object%5D&name=1620617666061-efb011d4-10c6-4900-b138-b850821d5636.png&originHeight=1466&originWidth=2968&originalType=binary&size=310236&status=done&style=none&taskId=u57739e2b-0ed3-4a1e-aae4-0d6937373c2)
+
+![11.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*ZaKOTplzuVAAAAAAAAAAAAAAARQnAQ)
 
 
 而进行了分块之后，更新着色器数据的逻辑就分别放在了场景更新、相机更新、渲染器更新、材质更新里面，复杂度变为 **O(Scene+Camera+Renderer)**，即相应的数据只在相应的钩子里面进行运算；比如着色器中有一个变量，只跟场景相关，那么分块后，只有场景切换的时候，才会更新此数据。
-![1620632729717-b861de46-4689-4170-9f90-e2a387ace2bc.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805594274-55e34412-4aee-4320-9ec2-227c9de76049.png#clientId=u59b6cee5-37a0-4&from=ui&id=ue45bda5c&margin=%5Bobject%20Object%5D&name=1620632729717-b861de46-4689-4170-9f90-e2a387ace2bc.png&originHeight=1854&originWidth=3094&originalType=binary&size=399658&status=done&style=none&taskId=ubb477c5d-be9d-442c-b7f9-d283366a802)
+
+![12.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*CqzVR6wbT2wAAAAAAAAAAAAAARQnAQ)
+
 值得一提的是，虽然分块机制肯定能降低 CPU 运算次数，但是数据的存放位置还是很有讲究的，比如开发者将一个可以属于 Scene 级别的着色器变量放在了 Renderer 里面，本来渲染场景的时候运算一次即可，但是现在每个 Renderer 都将重复计算，那么将会浪费 scene * camera * renderer 次运算。
 
 
@@ -128,16 +145,21 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 
 受益于分块机制，我们可以根据这四大块内容有没有发生变化，然后再选择是否上传这一块的数据，从而减少 GPU 通信，如：
-![1611973870038-a0a54105-445c-4a02-9baf-d5a31dd1f3a9.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805610356-21b25a77-3732-4dab-9be8-14cc71ae9ef1.png#clientId=u59b6cee5-37a0-4&from=ui&id=u3385c414&margin=%5Bobject%20Object%5D&name=1611973870038-a0a54105-445c-4a02-9baf-d5a31dd1f3a9.png&originHeight=82&originWidth=512&originalType=binary&size=63794&status=done&style=none&taskId=u6b12be56-9577-4ba9-85dd-038987e07b7)
+
+![13.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*sZrQRKtGaI0AAAAAAAAAAAAAARQnAQ)
+
 如上图所示，如果当前渲染管线所属相机没有发生变化，那么属于相机这一整块的着色器数据是不会上传的。当然即使上传了这一块数据，我们也在最底层上传着色器数据的时候进行了判重处理，如果与着色器的缓存值重复，则不上传这一个着色器数据到 GPU：
-![1611973530845-f6b6d878-1c22-4e45-aec0-d8ea1eb2b50c.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805642236-bd4ec069-d1c2-4588-8bd9-2070c97a1f83.png#clientId=u59b6cee5-37a0-4&from=ui&id=ufb1e4f31&margin=%5Bobject%20Object%5D&name=1611973530845-f6b6d878-1c22-4e45-aec0-d8ea1eb2b50c.png&originHeight=121&originWidth=482&originalType=binary&size=65128&status=done&style=none&taskId=ub91177f2-942f-4b3f-8314-95415a83165)
+
+![14.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*IPuCTaGBSNcAAAAAAAAAAAAAARQnAQ)
 
 
 
 
 ### 预分析着色器
 上面说到，我们可以通过 [Uniform](https://learnopengl-cn.readthedocs.io/zh/latest/01%20Getting%20started/05%20Shaders/#uniform) 方式上传着色器数据，但是不同的着色器数据类型，需要调用不同的 API：
-![1620466736862-f00c1da3-06f6-45d8-a6db-6fc02a642a04.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805661186-7b08f841-f11f-40b4-a6ea-7461cbcc35ff.png#clientId=u59b6cee5-37a0-4&from=ui&id=ub0504043&margin=%5Bobject%20Object%5D&name=1620466736862-f00c1da3-06f6-45d8-a6db-6fc02a642a04.png&originHeight=2150&originWidth=2726&originalType=binary&size=1133825&status=done&style=none&taskId=ue517fa27-dc3b-4d18-99d1-c4f3f19872c)
+
+![15.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*ilTOQKBn4SAAAAAAAAAAAAAAARQnAQ)
+
 如果我们在上传着色器数据的时候，再根据着色器数据类型调用相应 API，那么就免不了调用 switch、for 等循环查找的语法，而在频繁调用的接口中，使用这些方法将是非常耗时的。
 因此，引擎不仅提供了自动创建 **ShaderProgram** 上下文的功能，而且在创建的时候记录了一些着色器在运行时必要的条件，后续引擎在更新着色器数据的时候，只需要调用保存的钩子即可，省去了运行时查找的耗时。
 
@@ -157,16 +179,20 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 ### 预绑定纹理单元
 对于**纹理单元**的处理，引擎在预分析着色器数据的时候就已经对着色器里面的所有采样器变量预绑定了纹理单元， 在后续更新着色器纹理时，只需要调用激活纹理单元的接口即可，减少了绑定纹理单元的操作。
-![1620484477610-a2128e49-c5a4-4b88-a5a1-2942ffe1572a.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805681937-b27c4eb4-9669-4feb-8429-8b55f1c8a624.png#clientId=u59b6cee5-37a0-4&from=ui&id=u92b65f35&margin=%5Bobject%20Object%5D&name=1620484477610-a2128e49-c5a4-4b88-a5a1-2942ffe1572a.png&originHeight=902&originWidth=2956&originalType=binary&size=380508&status=done&style=none&taskId=u9c2af588-277f-4969-98ea-9d791c41efb)
+
+![16.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*1gosSKBw2zUAAAAAAAAAAAAAARQnAQ)
 
 
 
 
 ### 数字索引着色器数据
 在更新着色器数据的时候，引擎肯定需要频繁查询大量着色器相关的数据，比如为了上传着色器的某一个 uniform 变量 ，那我们需要根据这个 uniform 变量的名字在 CPU 中找到这个数据，而这个查询过程中如果用字符串会很慢，我们用了数字索引来提升性能。
-![1620630775285-47d2eecc-4328-4931-9069-09574e345498.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805699125-b43c905c-abe8-4e50-890f-876f27b9d803.png#clientId=u59b6cee5-37a0-4&from=ui&id=u7318c5b5&margin=%5Bobject%20Object%5D&name=1620630775285-47d2eecc-4328-4931-9069-09574e345498.png&originHeight=456&originWidth=1656&originalType=binary&size=360150&status=done&style=none&taskId=u35c79471-60c6-4d5b-ba0f-f9e8664bd6e)
+
+![17.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*n1yHRqAaJLkAAAAAAAAAAAAAARQnAQ)
+
 如上图所示，如果涉及到数据的频繁查询，建议尽量使用数字索引；经过实践验证，在 JS 对象中查找元素，数字索引会比字符串索引快很多，而且样本量越大，字符串越复杂，速度相差就越明显。如下[案例](https://codepen.io/zhuxudong/pen/ZEeEyNV)，对比了从 1000 个样本中分别使用数字索引和字符串索引，速度相差 10 倍以上：
-![1620725995655-c51876c1-4bee-4bdf-9f46-b2d38f2beba1.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805709373-7323231b-7501-4e13-b14c-ca4d5cd10052.png#clientId=u59b6cee5-37a0-4&from=ui&id=u9a2d6347&margin=%5Bobject%20Object%5D&name=1620725995655-c51876c1-4bee-4bdf-9f46-b2d38f2beba1.png&originHeight=152&originWidth=750&originalType=binary&size=45853&status=done&style=none&taskId=u5be8c152-fcb7-4052-9ae3-f18d7e0e4ec)
+
+![18.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*nKajRI5Ur5MAAAAAAAAAAAAAARQnAQ)
 
 
 ## 更新渲染状态
@@ -175,15 +201,15 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 在图形渲染管线中，存在着众多平级的渲染状态，比如深度测试、颜色混合模式、模版测试、 背面剔除。因此引擎设计将众多的渲染状态分为了**渲染状态**（BlendState）**、深度状态**（DepthState）**、模版状态**（StencilState）**、光栅化状态**（RasterState）。
 
-![1620467710622-3c51e37d-2c4b-4bb4-a454-2e046abd6aac.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805729578-1aee2cd9-455b-4acf-9469-02b5ebf50cbd.png#clientId=u59b6cee5-37a0-4&from=ui&height=233&id=u2b8cf636&margin=%5Bobject%20Object%5D&name=1620467710622-3c51e37d-2c4b-4bb4-a454-2e046abd6aac.png&originHeight=466&originWidth=516&originalType=binary&size=25084&status=done&style=none&taskId=uad396415-3658-4b28-8161-70e4e7bf5b9&width=258)
+![19.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*kLTsTp7ohA8AAAAAAAAAAAAAARQnAQ)
 
 
 - **判断重复**。渲染状态的更新需要与 GPU 通信，比较耗性能，因此在改变渲染状态(RenderState)时需要进行判重，如果与缓存值重复，则不改变此渲染状态。
 
-![1611973640681-bf01675d-406e-4d13-bc7a-75c1094b9f60.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620805751896-555e8cf4-7233-4aee-bbc4-dfc53fa5498f.png#clientId=u59b6cee5-37a0-4&from=ui&id=ufd7aef6a&margin=%5Bobject%20Object%5D&name=1611973640681-bf01675d-406e-4d13-bc7a-75c1094b9f60.png&originHeight=236&originWidth=547&originalType=binary&size=156411&status=done&style=none&taskId=u41437338-4b24-4da5-b9b0-7f589eb8552)
+![20.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*HThFQbzgZYMAAAAAAAAAAAAAARQnAQ)
 
 
-- **开关过滤**。渲染状态是有层级关系的，运行时采用 **总开关  + 子状态配置 **的优先级，来决定是否进行 GPU 通信。比如在深度状态相关的配置中，总开关为开启/关闭深度测试，状态配置为深度写入、深度比较函数，那么只有开启深度开关这个总开关后，深度写入这些状态配置才会生效，才会更新 GPU 的渲染状态。
+- **开关过滤**。渲染状态是有层级关系的，运行时采用 **总开关  + 子状态配置**的优先级，来决定是否进行 GPU 通信。比如在深度状态相关的配置中，总开关为开启/关闭深度测试，状态配置为深度写入、深度比较函数，那么只有开启深度开关这个总开关后，深度写入这些状态配置才会生效，才会更新 GPU 的渲染状态。
 
 
 
@@ -197,5 +223,7 @@ Oasis 引擎底层首先会利用脏标记检测[视锥体](https://oasisengine.
 
 ## 最后
 欢迎大家 star 我们的[ github 仓库](https://github.com/oasis-engine/engine)，也可以随时关注我们的后续[规划](https://github.com/orgs/oasis-engine/projects)，也可以在 [issues](https://github.com/oasis-engine/engine/issues) 里给我们提需求和问题。开发者可以加入到我们的钉钉群里来跟我们吐槽和探讨一些问题：
-![1617693093025-5653062d-8bfc-4f3c-b8ed-f1085c055114.png](https://cdn.nlark.com/yuque/0/2021/png/1255339/1620806319325-f2c9d51a-2a76-4c79-9f3e-14f579e3b18c.png#clientId=u2c4a189e-b433-4&from=ui&height=743&id=u7b5848cc&margin=%5Bobject%20Object%5D&name=1617693093025-5653062d-8bfc-4f3c-b8ed-f1085c055114.png&originHeight=1485&originWidth=1125&originalType=binary&size=281805&status=done&style=none&taskId=u01345d87-dfae-41ed-8e48-66878eecce4&width=563)
-**无论你是渲染、TA 、Web 前端或是游戏方向，只要你和我们一样，渴望实现心中的绿洲，欢迎投递简历到 **[chenmo.gl@antgroup.com](mailto:chenmo.gl@antgroup.com)。
+
+![21.png](https://gw.alipayobjects.com/mdn/rms_003787/afts/img/A*eNg9QYPruE8AAAAAAAAAAAAAARQnAQ)
+
+**无论你是渲染、TA 、Web 前端或是游戏方向，只要你和我们一样，渴望实现心中的绿洲，欢迎投递简历到** [chenmo.gl@antgroup.com](mailto:chenmo.gl@antgroup.com)。
