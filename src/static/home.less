@@ -41,21 +41,13 @@
     background: #ffffff;
     text-align: center;
     padding: 4rem 0 6rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    .partners {
-      padding-top: 1rem;
-      display: flex;
-      flex-direction: row;
-      .partner {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5px 30px;
-      }
+    display: block;
+    .partner {
+      height: 70px;
+      display: inline-block;
+      align-items: center;
+      justify-content: center;
+      padding: 0 30px;
     }
   }
   &-features {
@@ -104,65 +96,63 @@
 }
 
 .home-section-banner {
-  .banner-title-wrapper {
-    text-align: center;
-    padding: 40px 0;
-    h1 {
-      margin: 12px 0;
-      font-size: 54px;
-      img {
-        width: 600px;
-        opacity: 0.9;
-      }
+  text-align: center;
+  padding: 40px 0;
+  h1 {
+    margin: 12px 0;
+    font-size: 54px;
+    img {
+      width: 600px;
+      opacity: 0.9;
     }
-    p {
-      font-size: 20px;
-    }
-    .github-btn {
-      display: inline-block;
-      height: 28px;
-      .gh-btn {
-        display: flex;
-        align-items: center;
-        height: 28px;
-        padding: 0 12px;
-        font-size: 13px;
-        background: rgba(243, 243, 243, 1);
-        background: linear-gradient(
-          to bottom,
-          rgba(255, 255, 255, 1) 0%,
-          rgba(243, 243, 243, 1) 100%
-        );
-        border: 1px solid #ebedf0;
-        border-radius: 4px;
-        &:hover {
-          color: @primary-color;
-        }
-        .gh-ico {
-          margin-right: 8px;
-        }
-      }
-      .gh-count {
-        height: 28px;
-        padding: 2px 8px;
-        font-size: 13px;
-        line-height: 22px;
-        background: #fff;
-        border: 1px solid #ebedf0;
-        border-radius: 4px;
-      }
-    }
-    .button-wrapper {
+  }
+  p {
+    font-size: 20px;
+  }
+  .github-btn {
+    display: inline-block;
+    height: 28px;
+    .gh-btn {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-top: 40px;
-      line-height: 40px;
+      height: 28px;
+      padding: 0 12px;
+      font-size: 13px;
+      background: rgba(243, 243, 243, 1);
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(243, 243, 243, 1) 100%
+      );
+      border: 1px solid #ebedf0;
+      border-radius: 4px;
+      &:hover {
+        color: @primary-color;
+      }
+      .gh-ico {
+        margin-right: 8px;
+      }
     }
-    .title-line {
-      transform: translateX(-64px);
-      animation: bannerTitleLine 3s ease-in-out 0s infinite;
+    .gh-count {
+      height: 28px;
+      padding: 2px 8px;
+      font-size: 13px;
+      line-height: 22px;
+      background: #fff;
+      border: 1px solid #ebedf0;
+      border-radius: 4px;
     }
+  }
+  .button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    line-height: 40px;
+  }
+  .title-line {
+    transform: translateX(-64px);
+    animation: bannerTitleLine 3s ease-in-out 0s infinite;
   }
 }
 

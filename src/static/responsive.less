@@ -25,7 +25,7 @@
   #logo {
     padding: 0 40px;
   }
-  .home-section-banner .banner-title-wrapper {
+  .home-section-banner {
     h1 {
       font-size: 36px;
     }
@@ -210,6 +210,7 @@
   }
 }
 
+// mobile
 @media only screen and (max-width: @screen-md) {
   #search-box {
     display: none;
@@ -227,6 +228,38 @@
     padding-right: 80px;
   }
 
+  .home-section {
+    display: block;
+    &-inner {
+      display: block;
+      width: auto;
+    }
+    &-banner {
+      h1 {
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &-advantage {
+      .home-flex {
+        padding: 20px 70px;
+        border-right: 0;
+        border-top: 1px solid #ededed;
+      }
+    }
+    &-features {
+      flex-direction: row;
+      canvas {
+        width: 100vw!important;
+        height: 100vw!important;
+      }
+      .home-flex-feature {
+        padding: 20px 0;
+      }
+    }
+  }
+  
   .home-banner-image {
     display: block;
   }
@@ -235,29 +268,6 @@
     display: none;
   }
 
-  .home-section-banner {
-    width: 80%;
-    height: calc(~'100vh - 64px');
-    overflow: hidden;
-    .banner-title-wrapper {
-      max-width: 480px;
-      text-align: center;
-
-      .button-wrapper {
-        display: block;
-        margin-top: 5vh;
-        text-align: center;
-        a {
-          display: inline-block;
-        }
-        .github-btn {
-          display: flex;
-          justify-content: center;
-          margin: 20px auto;
-        }
-      }
-    }
-  }
   .home-page {
     width: 90%;
   }
@@ -267,7 +277,15 @@
   }
   #footer {
     .footer-wrap {
-      padding: 0;
+      padding: 20px 0;
+      .ant-col {
+        padding-bottom:  20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        &:last-child{
+          padding-bottom:  0;
+          border-bottom: none;
+        }
+      }
     }
   }
 }
@@ -290,7 +308,7 @@
       }
     }
   }
-  .home-section-banner .banner-title-wrapper {
+  .home-section-banner {
     h1 {
       font-size: 28px;
     }
