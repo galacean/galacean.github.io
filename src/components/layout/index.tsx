@@ -50,11 +50,6 @@ export class Layout extends React.Component<LayoutProps, LayoutState> {
           >
             <Header {...restProps} location={location} />
             {children}
-            {/* {React.cloneElement(children, {
-              ...children.props,
-              isMobile: restProps.isMobile,
-            })} */}
-            {/* <Footer {...restProps} location={location} /> */}
           </div>
         </ConfigProvider>
       </IntlProvider>

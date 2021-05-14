@@ -60,14 +60,17 @@ interface HeaderState {
 }
 
 class Header extends React.Component<HeaderProps, HeaderState> {
-  state: HeaderState = {
-    menuVisible: false,
-    menuMode: 'horizontal',
-  };
-
   searchInput: Input | null | undefined;
 
   timer: number;
+
+  constructor(props){
+    super(props);
+    this.state = {
+      menuVisible: false,
+      menuMode: props.isMobile ? 'inline' : 'horizontal'
+    };
+  }
 
   componentDidMount() {
     const { searchInput } = this;
@@ -89,6 +92,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 
   componentDidUpdate(preProps: HeaderProps) {
     const { isMobile } = this.props;
+    console.log(isMobile, preProps.isMobile )
     if (isMobile !== preProps.isMobile) {
       this.setMenuMode(isMobile);
     }
@@ -170,7 +174,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const isZhCN = intl.locale === 'zh-CN';
 
     const menu = [
-      <Menu mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav" inlineIndent={0}>
+      <Menu mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav">
         <Menu.Item key="home" icon={<HomeOutlined />}>
           <Link to={utils.getLocalizedPathname('/', isZhCN)}>
             <FormattedMessage id="app.header.menu.home" />
@@ -236,6 +240,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       </Menu>,
     ];
 
+    console.log('menuMode', menuMode)
     return (
       <div>
         <Alert
