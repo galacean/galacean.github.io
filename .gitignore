@@ -49,3 +49,4 @@ config/components/package.json
 public
 false
 .eslintcache
+scripts/typedoc/tsfiles.js

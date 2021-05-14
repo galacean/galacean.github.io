@@ -1,10 +1,12 @@
 # Oasis Engine Site
 
 The documentation source of [Oasis Engine](https://github.com/oasis-engine/oasis-engine.github.io).
+
 ### Development
 
 ```bash
 $ npm install
+$ npm run bootstrap
 $ npm start
 ```
 
@@ -21,3 +23,7 @@ $ npm run site
 ```
 $ npm run publish-components
 ```
+
+### Config
+
+- `typedocSource` in `siteconfig.json`

@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "bootstrap":"node scripts/typedoc/generateTS.js",
     "build": "gatsby clean && gatsby build --prefix-paths",
     "dev": "gatsby clean && gatsby develop",
     "lint": "npm run lint:js && npm run lint:style",
