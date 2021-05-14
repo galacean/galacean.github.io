@@ -10,7 +10,7 @@ import Partners from './Partners';
 import Footer from './Footer';
 
 function Home(props) {
-  const { intl, isMobile } = props;
+  const { intl } = props;
   return (
     <>
       <Helmet>
@@ -28,10 +28,10 @@ function Home(props) {
         <Banner {...props} />
         <Advantage {...props} />
         <Features {...props} />
-        {!isMobile && <Cases {...props} />}
+        <Cases {...props} />
         <Partners {...props} />
-        <Footer {...props} />
       </div>
+      <Footer {...props} />
     </>
   );
 }

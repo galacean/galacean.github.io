@@ -24,7 +24,6 @@ export default function API (props: any) {
 
   const menu = <Menu {...menuData }/>
 
-  console.log(props.isMobile)
   return (
     <>
       <WrapperLayout {...props}>

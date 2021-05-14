@@ -150,10 +150,6 @@
     margin-top: 40px;
     line-height: 40px;
   }
-  .title-line {
-    transform: translateX(-64px);
-    animation: bannerTitleLine 3s ease-in-out 0s infinite;
-  }
 }
 
 .home-banner-image {
@@ -328,37 +324,4 @@
 
 .home-code-comment {
   color: @site-text-color-secondary !important;
-}
-
-@keyframes bannerTitleLine {
-  0%,
-  25% {
-    transform: translateX(-64px);
-  }
-  75%,
-  100% {
-    transform: translateX(544px);
-  }
-}
-
-@keyframes page1TitleLine {
-  0%,
-  25% {
-    transform: translateX(-64px);
-  }
-  75%,
-  100% {
-    transform: translateX(376px);
-  }
-}
-
-@keyframes page2TitleLine {
-  0%,
-  25% {
-    transform: translateX(-64px);
-  }
-  75%,
-  100% {
-    transform: translateX(178px);
-  }
 }

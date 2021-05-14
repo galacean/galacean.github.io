@@ -229,25 +229,21 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <FormattedMessage id="app.header.menu.blog" />
           </Link>
         </Menu.Item>
-      </Menu>,
+      </Menu>
     ];
+
+    const message = <Space>
+      {isZhCN
+        ? 'v0.3 已发布，欢迎试用！'
+        : 'v0.3 already release, welcome to try!'}
+      <a href="/blog/v0.3-release-cn" target="_blank" rel="noreferrer">
+        v0.3 发布日志
+      </a>
+    </Space>
 
     return (
       <div>
-        {!this.props.isMobile && <Alert
-          message={
-            <Space>
-              {isZhCN
-                ? 'v0.3 已发布，欢迎试用！'
-                : 'v0.3 already release, welcome to try!'}
-              <a href="/blog/v0.3-release-cn" target="_blank" rel="noreferrer">
-                v0.3 发布日志
-              </a>
-            </Space>
-          }
-          type="warning"
-          banner
-        />}
+        <Alert message={message} type="warning" banner />
         <div id="header" className="header">
           {menuMode === 'inline' ? (
             <Popover
