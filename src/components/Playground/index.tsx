@@ -5,9 +5,9 @@ import CodeActions from './CodeActions';
 import siteConfig from '../../../siteconfig.json';
 
 export default function Playground (props: any) {
-  let sourceCode: string = '';
+  let sourceCode: string = props.sourceCode;
 
-  if (props.children[0] && props.children[0].type === 'textarea') {
+  if (props.children && props.children[0] && props.children[0].type === 'textarea') {
     const texts = props.children[0].props.children;
     if (texts) {
       sourceCode = texts.join('');
@@ -27,7 +27,12 @@ export default function Playground (props: any) {
       </div>
       <div className="code-box-source">
         <pre>
-          <code>{props.children}</code>
+          {props.children && <code>{props.children}</code>}
+          {props.formatedCode && <code
+            dangerouslySetInnerHTML={{
+              __html: props.formatedCode,
+            }} />
+          }
         </pre>
       </div>
       {sourceCode && <CodeActions sourceCode={sourceCode} engineName={siteConfig.name} name={name} url={url} version={version} packages={siteConfig.packages}/>}

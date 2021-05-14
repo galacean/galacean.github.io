@@ -6,17 +6,18 @@ import { version } from '../../siteconfig.json';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import Media from 'react-media';
 import './examples.less';
+import Playground from '../components/Playground';
 
 const { Sider, Content } = Layout;
 
 export default function Examples(props: any) {
   const { nodes } = props.data.allPlayground;
 
-  const [url, setUrl] = useState('pbr-helmet');
+  const [name, setName] = useState('pbr-helmet');
   const [menuVisible, toggleMenu] = useState(false);
 
   const menu = <Menu onSelect={(item) => { 
-    setUrl(item.key); 
+    setName(item.key); 
     toggleMenu(false);
   }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto'}}>
     {nodes.map((node: any) => {
@@ -27,7 +28,18 @@ export default function Examples(props: any) {
     })}
   </Menu>
 
+  const selectNode = nodes.find((node) => {
+    return node.name === name;
+  });
 
+  let sourceCode = '';
+  let formatedCode = '';
+
+  if (selectNode) {
+    sourceCode = selectNode.sourceCode;
+    formatedCode = selectNode.formatedCode;
+  }
+  
   return (
     <>
       <WrapperLayout {...props}>
@@ -35,7 +47,7 @@ export default function Examples(props: any) {
           {(isMobile) => 
             <Layout hasSider={!isMobile}>
               {!isMobile && <Sider>{menu}</Sider>}
-              <Content style={{height: 'calc(100vh - 64px)'}}>
+              <Content style={{height: 'calc(100vh - 64px)'}} className="examples-content">
                 {isMobile &&
                   <Popover
                     className="examples-popover-menu"
@@ -48,7 +60,7 @@ export default function Examples(props: any) {
                     <MenuUnfoldOutlined className="nav-phone-icon" onClick={() => {toggleMenu(!menuVisible)}} />
                   </Popover>
                 }
-                <iframe src={`/${version}/playground/${url}`} frameBorder="0" width="100%" height="100%"></iframe>
+                <Playground name={name} sourceCode={sourceCode} formatedCode={formatedCode}></Playground>
               </Content>
             </Layout>
           }
@@ -67,6 +79,8 @@ export const query = graphql`
         }
         name
         id
+        sourceCode, 
+        formatedCode, 
       }
     }
   }

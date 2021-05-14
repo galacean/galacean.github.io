@@ -1,4 +1,5 @@
 const babel = require("@babel/core");
+const Prism = require('prismjs');
 
 exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode(
   {
@@ -50,6 +51,8 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
       id: createNodeId(`${node.id} >>> Playground`),
       playgroundId: 'default',
       name: node.name,
+      sourceCode: content,
+      formatedCode: Prism.highlight(content, Prism.languages.javascript, 'javascript'), 
       internal: {
         content: result.code,
         type: `Playground`,
