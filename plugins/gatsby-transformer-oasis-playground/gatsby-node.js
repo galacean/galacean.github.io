@@ -47,10 +47,17 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
       filename: "index.ts",
     });
 
+    const titleResult = /@title\s+(.+)\b/.exec(content);
+    const categoryResult = /@category\s+(.+)\b/.exec(content);
+    // const orderResult = /@order\s+(.+)\b/.exec(content);
+
     const playgroundNode = {
       id: createNodeId(`${node.id} >>> Playground`),
       playgroundId: 'default',
       name: node.name,
+      title: titleResult ? titleResult[1] : node.name,
+      category: categoryResult ? categoryResult[1]: 'Others',
+      // order: orderResult ? orderResult[1] : 0,
       sourceCode: content,
       formatedCode: Prism.highlight(content, Prism.languages.javascript, 'javascript'), 
       internal: {

@@ -1,3 +1,7 @@
+/**
+ * @title Sprite Renderer
+ * @category 2D
+ */
 import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 

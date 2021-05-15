@@ -1,3 +1,7 @@
+ /**
+ * @title Free Controls
+ * @category Controls
+ */
  import { Camera, BlinnPhongMaterial, MeshRenderer, MeshTopology, WebGLEngine, Color, PrimitiveMesh } from "oasis-engine";
  import { FreeControl } from "@oasis-engine/controls";
  

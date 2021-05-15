@@ -1,3 +1,7 @@
+/**
+ * @title Spine Renderer
+ * @category 2D
+ */
 import { Camera, Vector3, WebGLEngine, Entity } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import { SpineAnimation } from "@oasis-engine/engine-spine";

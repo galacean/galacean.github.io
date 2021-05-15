@@ -1,3 +1,7 @@
+/**
+ * @title Model Mesh
+ * @category Mesh
+ */
 import { AssetType, Camera, Color, Engine, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, Shader, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 
 // Create engine

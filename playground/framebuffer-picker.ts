@@ -1,3 +1,7 @@
+/**
+ * @title Framebuffer Picker
+ * @category Picking
+ */
 import { AssetType, Camera, Color, EnvironmentMapLight, GLTFResource, LoadItem, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";

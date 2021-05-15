@@ -16,21 +16,45 @@ export default function Examples(props: any) {
   const [name, setName] = useState('pbr-helmet');
   const [menuVisible, toggleMenu] = useState(false);
 
+  const groups:any = {};
+
+  let selectNode;
+
+  nodes.forEach((node:any) => {
+    const { category } = node;
+    if (category) {
+      if (!groups[category]) {
+        groups[category] = [];
+      }
+
+      groups[category].push(node);
+    }
+
+    if (node.name === name) {
+      selectNode = node;
+    }
+  });
+
+  const itemGroups = []
+
+  for (let category in groups) {
+    const groupNodes = groups[category];
+    itemGroups.push(<Menu.ItemGroup title={category}>
+        {groupNodes.map((node) => {
+        return <Menu.Item key={node.name}>
+          {node.title}
+        </Menu.Item>
+      })}
+      </Menu.ItemGroup>)
+  }
+
   const menu = <Menu onSelect={(item) => { 
     setName(item.key); 
     toggleMenu(false);
   }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto'}}>
-    {nodes.map((node: any) => {
-      const { name } = node;
-      return <Menu.Item key={name}>
-        {node.name}
-      </Menu.Item>
-    })}
+    {itemGroups}
   </Menu>
 
-  const selectNode = nodes.find((node) => {
-    return node.name === name;
-  });
 
   let sourceCode = '';
   let formatedCode = '';
@@ -78,9 +102,11 @@ export const query = graphql`
           content
         }
         name
+        title
+        category
         id
-        sourceCode, 
-        formatedCode, 
+        sourceCode 
+        formatedCode 
       }
     }
   }

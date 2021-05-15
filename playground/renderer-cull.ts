@@ -1,3 +1,7 @@
+/**
+ * @title Renderer Cull
+ * @category Camera
+ */
 import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, Vector3, WebGLEngine } from "oasis-engine";
 import { FreeControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";

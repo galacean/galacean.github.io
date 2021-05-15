@@ -1,3 +1,7 @@
+/**
+ * @title Rotate Script
+ * @category Script 
+ */
 import { AmbientLight, WebGLEngine, Camera, Vector3, DirectLight, Script } from 'oasis-engine';
 import { OrbitControl } from '@oasis-engine/controls';
 

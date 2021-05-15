@@ -1,3 +1,7 @@
+/**
+ * @title Animation Cross Fade
+ * @category Animation
+ */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
 import {

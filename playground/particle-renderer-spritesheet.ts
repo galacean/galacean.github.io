@@ -1,3 +1,7 @@
+/**
+ * @title Particle Renderer Spritesheet
+ * @category Particles
+ */
 import { AssetType, Camera, Color, ParticleRenderer, ParticleRendererBlendMode, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 

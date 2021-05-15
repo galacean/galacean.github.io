@@ -1,3 +1,7 @@
+/**
+ * @title Culling Mask
+ * @category Camera
+ */
 import { WebGLEngine, Camera, Vector3, AmbientLight, MeshRenderer, PrimitiveMesh, BlinnPhongMaterial, Color, Layer} from "oasis-engine";
 import * as dat from "dat.gui";
 

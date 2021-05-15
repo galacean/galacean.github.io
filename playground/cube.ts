@@ -1,3 +1,7 @@
+/**
+ * @title Cube
+ * @category Mesh
+ */
 // 引入模块
 import { Camera, WebGLEngine, PrimitiveMesh, BlinnPhongMaterial, DirectLight, Vector3, Vector4, Color, MeshRenderer } from 'oasis-engine';
 

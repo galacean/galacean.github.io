@@ -1,3 +1,7 @@
+/**
+ * @title Particle Renderer
+ * @category Particles
+ */
 import { AssetType, Camera, Color, ParticleRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 
 //-- create engine object

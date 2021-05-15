@@ -1,3 +1,7 @@
+/**
+ * @title Sprite Material
+ * @category 2D
+ */
 import { AssetType, BlendFactor, BlendOperation, Camera, CullMode, Entity, Material, RenderQueueType, Shader, Sprite, SpriteRenderer, Texture2D, TextureWrapMode, Vector2, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 

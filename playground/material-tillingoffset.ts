@@ -1,3 +1,7 @@
+/**
+ * @title Tilling Offset
+ * @category Material
+ */
 import { AssetType, BlinnPhongMaterial, Camera, MeshRenderer, PrimitiveMesh, RenderFace, Script, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";

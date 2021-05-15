@@ -1,3 +1,7 @@
+/**
+ * @title glTF of Duck
+ * @category Mesh
+ */
 import { AmbientLight, WebGLEngine, Camera, Vector3, DirectLight } from 'oasis-engine';
 import { OrbitControl } from "@oasis-engine/controls";
 

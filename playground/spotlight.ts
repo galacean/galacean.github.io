@@ -1,3 +1,7 @@
+/**
+ * @title Spot Light
+ * @category Light
+ */
 import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, SpotLight, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 

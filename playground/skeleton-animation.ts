@@ -1,3 +1,7 @@
+/**
+ * @title Skeleton Animation
+ * @category Animation
+ */
 import { Animation, Camera, DirectLight, EnvironmentMapLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 

@@ -1,3 +1,7 @@
+/**
+ * @title PBR Base
+ * @category Material
+ */
 import { AssetType, Camera, EnvironmentMapLight, MeshRenderer, PBRMaterial, PrimitiveMesh, SkyBox, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
