@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { graphql } from "gatsby";
 import WrapperLayout from '../components/layout';
-import { Layout, Menu, Popover } from 'antd';
+import { Col, Menu, Popover, Row } from 'antd';
 import { version } from '../../siteconfig.json';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import Media from 'react-media';
 import './examples.less';
 import Playground from '../components/Playground';
-
-const { Sider, Content } = Layout;
 
 export default function Examples(props: any) {
   const { nodes } = props.data.allPlayground;
@@ -39,7 +37,7 @@ export default function Examples(props: any) {
 
   for (let category in groups) {
     const groupNodes = groups[category];
-    itemGroups.push(<Menu.ItemGroup title={category}>
+    itemGroups.push(<Menu.ItemGroup key={category} title={category}>
         {groupNodes.map((node) => {
         return <Menu.Item key={node.name}>
           {node.title}
@@ -69,9 +67,9 @@ export default function Examples(props: any) {
       <WrapperLayout {...props}>
         <Media query="(max-width: 599px)">
           {(isMobile) => 
-            <Layout hasSider={!isMobile}>
-              {!isMobile && <Sider>{menu}</Sider>}
-              <Content style={{height: 'calc(100vh - 64px)'}} className="examples-content">
+            <Row>
+              {!isMobile && <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24}>{menu}</Col>}
+              <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24} style={{height: 'calc(100vh - 64px)'}} className="examples-content">
                 {isMobile &&
                   <Popover
                     className="examples-popover-menu"
@@ -85,8 +83,8 @@ export default function Examples(props: any) {
                   </Popover>
                 }
                 <Playground name={name} sourceCode={sourceCode} formatedCode={formatedCode}></Playground>
-              </Content>
-            </Layout>
+              </Col>
+            </Row>
           }
         </Media>
       </WrapperLayout>
