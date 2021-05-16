@@ -1,7 +1,8 @@
 {
   "name": "oasis-engine",
   "version": "0.3",
-  "github": "https://github.com/oasis-engine/engine/blob/main/",
+  "engineSource": "https://github.com/oasis-engine/engine/blob/main/",
+  "docSource": "https://github.com/oasis-engine/oasis-engine.github.io/blob/",
   "typedocSource": "../../oasis/engine",
   "packages": {
     "oasis-engine": {

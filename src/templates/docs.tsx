@@ -7,10 +7,7 @@ interface IMarkDownFields {
   path: string;
   slug: string;
   modifiedTime: number;
-  avatarList: {
-    url: string;
-    username: string;
-  }[];
+  source: string;
 }
 export interface IFrontmatterData extends IMarkDownFields {
   title: string;
@@ -130,7 +127,7 @@ export const pageQuery = graphql`
         path
         slug
         modifiedTime
-        avatarList
+        source
       }
     }
     allMarkdownRemark(

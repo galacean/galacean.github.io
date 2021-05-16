@@ -3,8 +3,9 @@ import {
   CodepenOutlined,
 } from '@ant-design/icons';
 import { Tooltip } from 'antd';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
-export default function CodeActions (props: any) {
+function Codepen (props: any) {
   const iconRef = useRef(null);
   const jsExternal: string[] = [];
 
@@ -41,10 +42,12 @@ export default function CodeActions (props: any) {
           }}
           >
             <input type="hidden" name="data" value={JSON.stringify(codepenPrefillConfig)} />
-            <Tooltip title={"在 Codepen 中打开"}>
+            <Tooltip title={<FormattedMessage id="app.demo.codepen"/>}>
               <CodepenOutlined />
             </Tooltip>
         </form>
       </div>
   );
 }
+
+export default injectIntl(Codepen);

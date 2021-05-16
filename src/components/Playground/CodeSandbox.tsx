@@ -5,6 +5,7 @@ import {
 } from '@ant-design/icons';
 import LZString from 'lz-string';
 import { Tooltip } from 'antd';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
 function compress(string: string) {
   return LZString.compressToBase64(string)
@@ -13,7 +14,7 @@ function compress(string: string) {
     .replace(/=+$/, ''); // Remove ending '='
 }
 
-export default function CodeActions (props: any) {
+function CodeSandbox (props: any) {
   const iconRef = useRef(null);
   const indexJsContent = `import './index.css';
   ${props.sourceCode}
@@ -65,10 +66,11 @@ export default function CodeActions (props: any) {
           }}
           >
             <input type="hidden" name="parameters" value={compress(JSON.stringify(codesanboxPrefillConfig))} />
-            <Tooltip title={"在 CodeSandbox 中打开"}>
+            <Tooltip title={<FormattedMessage id="app.demo.codesandbox"/>}>
               <CodeSandboxOutlined />
             </Tooltip>
         </form>
       </div>
   );
 }
+export default injectIntl(CodeSandbox);

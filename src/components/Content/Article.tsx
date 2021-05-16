@@ -6,7 +6,7 @@ import { Affix } from 'antd';
 import moment from 'moment';
 import EditButton from './EditButton';
 import type { IFrontmatterData } from '../../templates/docs';
-import AvatarList from './AvatarList';
+import Source from './Source';
 import RehypeReact from "rehype-react"
 import Playground from "../Playground";
 import { version } from '../../../siteconfig.json';
@@ -50,7 +50,8 @@ export default class Article extends React.PureComponent<ArticleProps> {
     const { props } = this;
     const { content } = props;
     const { meta } = content;
-    const { title, subtitle, path, modifiedTime, avatarList } = meta;
+    const { title, subtitle, path, modifiedTime, source } = meta;
+
     const {
       intl: { locale },
     } =
@@ -92,7 +93,7 @@ export default class Article extends React.PureComponent<ArticleProps> {
           </h1>
 
           <div className="modifiedTime">
-            <AvatarList avatarList={avatarList} />
+            <Source src={source} />
             <FormattedMessage id="app.content.modifiedTime" />
             {moment(modifiedTime).format('YYYY-MM-DD HH:mm:SS')}
           </div>

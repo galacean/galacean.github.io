@@ -5,8 +5,9 @@ import {
 } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import stackblitzSdk from '@stackblitz/sdk';
+import { FormattedMessage, injectIntl } from 'react-intl';
 
-export default function CodeActions (props: any) {
+function Stackblitz (props: any) {
   const indexJsContent = `import './index.css';
     ${props.sourceCode}
   `;
@@ -30,7 +31,7 @@ export default function CodeActions (props: any) {
 
   return (
       <div className="code-box-action">
-        <Tooltip title={"在 Stackblitz 中打开"}>
+        <Tooltip title={<FormattedMessage id="app.demo.stackblitz"/>}>
           <span onClick={() => {
               stackblitzSdk.openProject(stackblitzPrefillConfig);
             }}
@@ -41,3 +42,5 @@ export default function CodeActions (props: any) {
       </div>
   );
 }
+
+export default injectIntl(Stackblitz);
