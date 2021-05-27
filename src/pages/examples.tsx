@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from "gatsby";
 import WrapperLayout from '../components/layout';
 import { Layout, Menu, Popover } from 'antd';
@@ -12,7 +12,7 @@ const { Sider, Content } = Layout;
 export default function Examples(props: any) {
   const { nodes } = props.data.allPlayground;
 
-  const [name, setName] = useState(window.location.hash.replace('#', '') || 'pbr-helmet');
+  const [name, setName] = useState('pbr-helmet');
   const [menuVisible, toggleMenu] = useState(false);
 
   const groups: any = {};
@@ -39,19 +39,19 @@ export default function Examples(props: any) {
   for (const category in groups) {
     const groupNodes = groups[category];
     itemGroups.push(<Menu.ItemGroup key={category} title={category}>
-        {groupNodes.map((node) => {
+      {groupNodes.map((node) => {
         return <Menu.Item key={node.name}>
           {node.title}
         </Menu.Item>
       })}
-      </Menu.ItemGroup>)
+    </Menu.ItemGroup>)
   }
 
-  const menu = <Menu onSelect={(item) => { 
-    setName(item.key); 
+  const menu = <Menu selectedKeys={[name]} onSelect={(item) => {
+    setName(item.key);
     window.history.pushState(null, null, `#${item.key}`);
     toggleMenu(false);
-  }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto'}}>
+  }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto' }}>
     {itemGroups}
   </Menu>
 
@@ -63,15 +63,23 @@ export default function Examples(props: any) {
     sourceCode = selectNode.sourceCode;
     formatedCode = selectNode.formatedCode;
   }
-  
+
+  useEffect(() => {
+    const { hash } = window.location;
+
+    if (hash) {
+      setName(hash.replace('#', '') || 'pbr-helmet');
+    }
+  });
+
   return (
     <>
       <WrapperLayout {...props}>
         <Media query="(max-width: 599px)">
-          {(isMobile) => 
+          {(isMobile) =>
             <Layout hasSider={true}>
               {!isMobile && <Sider>{menu}</Sider>}
-              <Content style={{height: 'calc(100vh - 64px)'}} className="examples-content">
+              <Content style={{ height: 'calc(100vh - 64px)' }} className="examples-content">
                 {isMobile &&
                   <Popover
                     className="examples-popover-menu"
@@ -81,7 +89,7 @@ export default function Examples(props: any) {
                     visible={menuVisible}
                     arrowPointAtCenter
                   >
-                    <MenuUnfoldOutlined className="nav-phone-icon" onClick={() => {toggleMenu(!menuVisible)}} />
+                    <MenuUnfoldOutlined className="nav-phone-icon" onClick={() => { toggleMenu(!menuVisible) }} />
                   </Popover>
                 }
                 <Playground name={name} sourceCode={sourceCode} formatedCode={formatedCode}></Playground>
