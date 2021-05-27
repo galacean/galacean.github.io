@@ -16,10 +16,10 @@ function Type(props: IType) {
 
 function Parameter(props: IParameter) {
   return <li>
-    <h5>
+    <h4 title={props.name}>
       {props.flags.isOptional && <span className="tsd-flag">optional</span>}
       <strong>{props.name}</strong>
-    </h5>
+    </h4>
     {props.comment && <p> {props.comment?.text}</p>}
   </li>
 }
@@ -130,7 +130,7 @@ function Description(props: ISignature) {
   return <div className="tsd-description">
     {kind !== Kinds.SET_SIGNATURE &&comment && <Comment {...comment} />}
     {parameters && <div className="tsd-parameters">
-      <h4>Parameters</h4>
+      <h3>Parameters</h3>
       <ul className="tsd-parameters-list">
         {parameters.map((p) => {
           return <Parameter key={p.id} {...p} />
@@ -139,7 +139,7 @@ function Description(props: ISignature) {
     </div>
     }
     {comment && comment.returns && <div>
-      <h4>Returns</h4>
+      <h3>Returns</h3>
       {comment.returns}
     </div>
     }
@@ -150,14 +150,14 @@ export default function Item(props: IItem) {
   // console.log('Item props', props)
   return <Element name={props.name} className="tsd-panel-anchor">
     <section className="tsd-panel" key={props.id}>
-      <h3>
+      <h2 title={props.name}>
         <a href={`#${props.name}`}><Kind {...props} /></a>
         &nbsp;
         {props.flags?.isReadonly && <span className="tsd-flag">ReadOnly</span>}
         {props.sources?.map((source) => {
           return <Source key={source.fileName} {...source} />
         })}
-      </h3>
+      </h2>
       {props.type && <Property {...props} />}
       {(props.kind === Kinds.CONSTRUCTOR || props.kind === Kinds.FUNCTION) && props.signatures?.map((signature) =>{
         return <ConstructorSignature key={signature.id} {...signature} />

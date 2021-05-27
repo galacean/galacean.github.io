@@ -4,7 +4,6 @@ import { FormattedMessage } from 'react-intl';
 import { Helmet } from 'react-helmet';
 import { Affix } from 'antd';
 import moment from 'moment';
-import EditButton from './EditButton';
 import type { IFrontmatterData } from '../../templates/docs';
 import Source from './Source';
 import RehypeReact from "rehype-react"
@@ -73,12 +72,14 @@ export default class Article extends React.PureComponent<ArticleProps> {
 
     let toc = content.toc.replace(/<ul>/g, '<ul class="toc">').replace(/\/#/g, '#');
     toc = toc.replace(/\/docs\//g, `/${version}/docs/`).replace(/\/#/g, '#');
+    const lang = locale === 'zh-CN' ? 'cn' : 'en';
 
     return (
       <>
         <Helmet>
           <title>{`${title} - Oasis Engine`}</title>
           <meta name="description" content={title} />
+          <meta name="docsearch:lang" content={lang} />
         </Helmet>
         <article
           className="markdown"
@@ -86,10 +87,9 @@ export default class Article extends React.PureComponent<ArticleProps> {
             this.node = node;
           }}
         >
-          <h1>
+          <h1 title={title}>
             {title}
             {!subtitle || locale === 'en-US' ? null : <span className="subtitle">{subtitle}</span>}
-            <EditButton title={<FormattedMessage id="app.content.edit-page" />} filename={path} />
           </h1>
 
           <div className="modifiedTime">

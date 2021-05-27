@@ -8,12 +8,12 @@ import Kind from './Kind';
 export default function Module(props: IModule) {
   // console.log('module', props)
   return <div>
-    <h2 className="tsd-module-name">
+    <h1 className="tsd-module-name" title={props.name}>
       <a href={`#${props.name}`}><Kind {...props} /></a>
       {props.sources?.map(source => {
         return <Source key={source.fileName} {...source} />
       })}
-    </h2>
+    </h1>
     {props.comment && <Comment {...props.comment}/>}
     {props.extendedTypes && <p>Hierarchy: {props.extendedTypes.map((extendedType) => {
       return <a key={extendedType.id}>{extendedType.name}</a>;

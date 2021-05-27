@@ -6,6 +6,7 @@ import { Layout, Breadcrumb, Popover } from 'antd';
 import Package from '../components/typedoc/Package';
 import Module from '../components/typedoc/Module';
 import Media from 'react-media';
+import { Helmet } from 'react-helmet';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 
 const { Sider, Content } = Layout;
@@ -43,7 +44,10 @@ export default function API (props: any) {
                     <MenuUnfoldOutlined className="nav-phone-icon" onClick={() => {toggleMenu(!menuVisible)}} />
                   </Popover>
                 } 
-              <div className="tsc-content">
+              <Helmet>
+                <meta name="docsearch:lang" content="cn,en" />
+              </Helmet>
+              <article className="tsc-content">
                 <div className="tsc-nav">
                   <Breadcrumb>
                     <Breadcrumb.Item>API</Breadcrumb.Item>
@@ -56,7 +60,7 @@ export default function API (props: any) {
                   </Breadcrumb>
                 </div>
                 {type === 'package' ? <Package {...node} /> : <Module {...node} />}
-              </div>
+              </article>
             </Content>
             {!isMobile && <Sider style={{ width: '300px!important' }}>{menu}</Sider>}
             </Layout>

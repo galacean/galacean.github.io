@@ -1,6 +1,7 @@
 // eslint-disable-next-line eslint-comments/disable-enable-pair
 /* eslint-disable react/no-danger */
 import React from 'react';
+import { version } from '../siteconfig.json';
 
 export default function HTML(props) {
   return (
@@ -14,6 +15,7 @@ export default function HTML(props) {
           type="image/x-icon"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="docsearch:version" content={version} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

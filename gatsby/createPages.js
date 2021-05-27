@@ -78,12 +78,6 @@ async function createDoc(graphql, actions) {
       createArticlePage(slug.replace('/index', ''));
     }
   });
-
-  createRedirect({
-    fromPath: `${version}/docs/`,
-    redirectInBrowser: true,
-    toPath: `${version}/docs/install`,
-  });
 }
 
 async function createAPI(graphql, actions) {
