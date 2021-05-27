@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { graphql } from "gatsby";
 import WrapperLayout from '../components/layout';
 import { Layout, Menu, Popover } from 'antd';
-import { version } from '../../siteconfig.json';
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import Media from 'react-media';
 import './examples.less';
@@ -13,7 +12,7 @@ const { Sider, Content } = Layout;
 export default function Examples(props: any) {
   const { nodes } = props.data.allPlayground;
 
-  const [name, setName] = useState('pbr-helmet');
+  const [name, setName] = useState(window.location.hash.replace('#', '') || 'pbr-helmet');
   const [menuVisible, toggleMenu] = useState(false);
 
   const groups:any = {};
@@ -50,6 +49,7 @@ export default function Examples(props: any) {
 
   const menu = <Menu onSelect={(item) => { 
     setName(item.key); 
+    history.pushState(null, null, `#${item.key}`);
     toggleMenu(false);
   }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto'}}>
     {itemGroups}
