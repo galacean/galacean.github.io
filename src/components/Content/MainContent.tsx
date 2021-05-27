@@ -132,7 +132,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     } = this.props;
 
     if (filename.includes('docs')) {
-      filename = `/${version}${  filename}`;
+      filename = `/${version}${filename}`;
     }
 
     if (isZhCN(pathname) && !filename.includes('-cn')) {

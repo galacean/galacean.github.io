@@ -5,7 +5,7 @@ import CodeActions from './CodeActions';
 import siteConfig from '../../../siteconfig.json';
 
 export default function Playground (props: any) {
-  let sourceCode: string = props.sourceCode;
+  let {sourceCode} = props;
 
   if (props.children && props.children[0] && props.children[0].type === 'textarea') {
     const texts = props.children[0].props.children;

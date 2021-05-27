@@ -49,7 +49,7 @@ export default class Article extends React.PureComponent<ArticleProps> {
     const { props } = this;
     const { content } = props;
     const { meta } = content;
-    const { title, subtitle, path, modifiedTime, source } = meta;
+    const { title, subtitle, modifiedTime, source } = meta;
 
     const {
       intl: { locale },

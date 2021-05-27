@@ -12,7 +12,7 @@ function Module(props: IModule) {
         if (!item.name.startsWith('_')) {
           return <li key={item.id} >
             <Link to={item.name} spy={true} smooth={true} duration={250} activeClass="tsd-menu-current" onClick={()=>{
-              history.pushState(null, null, `#${item.name}`);
+              window.history.pushState(null, null, `#${item.name}`);
             }}>
               <Kind {...item} />
             </Link>

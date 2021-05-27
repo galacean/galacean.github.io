@@ -15,11 +15,11 @@ export default function Examples(props: any) {
   const [name, setName] = useState(window.location.hash.replace('#', '') || 'pbr-helmet');
   const [menuVisible, toggleMenu] = useState(false);
 
-  const groups:any = {};
+  const groups: any = {};
 
   let selectNode;
 
-  nodes.forEach((node:any) => {
+  nodes.forEach((node: any) => {
     const { category } = node;
     if (category) {
       if (!groups[category]) {
@@ -36,7 +36,7 @@ export default function Examples(props: any) {
 
   const itemGroups = []
 
-  for (let category in groups) {
+  for (const category in groups) {
     const groupNodes = groups[category];
     itemGroups.push(<Menu.ItemGroup key={category} title={category}>
         {groupNodes.map((node) => {
@@ -49,7 +49,7 @@ export default function Examples(props: any) {
 
   const menu = <Menu onSelect={(item) => { 
     setName(item.key); 
-    history.pushState(null, null, `#${item.key}`);
+    window.history.pushState(null, null, `#${item.key}`);
     toggleMenu(false);
   }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto'}}>
     {itemGroups}

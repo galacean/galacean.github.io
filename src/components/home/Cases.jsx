@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Cases (props) {
+export default function Cases () {
   const videos = [
     {
       src: 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/file/A*RyNURrY3jjwAAAAAAAAAAAAAARQnAQ',
