@@ -9,7 +9,7 @@ export default function Module(props: IModule) {
   // console.log('module', props)
   return <div>
     <h2 className="tsd-module-name">
-      <Kind {...props} />
+      <a href={`#${props.name}`}><Kind {...props} /></a>
       {props.sources?.map(source => {
         return <Source key={source.fileName} {...source} />
       })}

@@ -151,7 +151,8 @@ export default function Item(props: IItem) {
   return <Element name={props.name} className="tsd-panel-anchor">
     <section className="tsd-panel" key={props.id}>
       <h3>
-        <Kind {...props} />&nbsp;
+        <a href={`#${props.name}`}><Kind {...props} /></a>
+        &nbsp;
         {props.flags?.isReadonly && <span className="tsd-flag">ReadOnly</span>}
         {props.sources?.map((source) => {
           return <Source key={source.fileName} {...source} />

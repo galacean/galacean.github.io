@@ -11,7 +11,9 @@ function Module(props: IModule) {
       {props.children.map((item) => {
         if (!item.name.startsWith('_')) {
           return <li key={item.id} >
-            <Link to={item.name} spy={true} smooth={true} duration={250} activeClass="tsd-menu-current" >
+            <Link to={item.name} spy={true} smooth={true} duration={250} activeClass="tsd-menu-current" onClick={()=>{
+              history.pushState(null, null, `#${item.name}`);
+            }}>
               <Kind {...item} />
             </Link>
           </li>
