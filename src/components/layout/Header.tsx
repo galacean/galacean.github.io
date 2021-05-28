@@ -16,17 +16,16 @@ if (typeof window !== 'undefined') {
   docSearch = require('docsearch.js');
 }
 
-function initDocSearch(locale: 'zh-CN' | 'en-US') {
+function initDocSearch(lang: 'en' | 'cn') {
   if (!docSearch) {
     return;
   }
-  const lang = locale === 'zh-CN' ? 'cn' : 'en';
   docSearch({
     apiKey: '6cea501a58304e81c8e9d028a1d995e9',
     indexName: 'oasisengine',
     inputSelector: '#search-box input',
     algoliaOptions: {
-      facetFilters: [`version:${version}`, `lang:${lang}`] 
+      facetFilters: [`version:${version}`, `tags:${lang}`]
     },
     transformData(
       hits: {
@@ -76,7 +75,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 
   componentDidMount() {
     const { searchInput } = this;
-    const { intl } = this.props;
+    const { intl: { locale } } = this.props;
+
     document.addEventListener('keyup', (event) => {
       if (event.keyCode === 83 && event.target === document.body) {
         if (searchInput) {
@@ -84,12 +84,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         }
       }
     });
-    initDocSearch(intl.locale);
 
-    const {
-      intl: { locale },
-    } = this.props;
-    initDocSearch(locale);
+    initDocSearch(locale === 'zh-CN' ? 'cn' : 'en');
   }
 
   componentDidUpdate(preProps: HeaderProps) {
@@ -192,12 +188,12 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         <Menu.SubMenu key="docs" icon={<ReadOutlined />} title={formatMessage({ id: "app.header.menu.docs" })}>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.engine" })}>
             <Menu.Item key="docs">
-              <Link to={utils.getLocalizedPathname(`${version}/docs/install`, isZhCN)} className="docsearch-lvl0">
+              <Link to={utils.getLocalizedPathname(`${version}/docs/install`, isZhCN)}>
                 {formatMessage({ id: "app.header.menu.engine.docs" })}
               </Link>
             </Menu.Item>
             <Menu.Item key="api">
-              <Link to={`/${version}/api/core/index`} className="docsearch-lvl0">
+              <Link to={`/${version}/api/core/index`}>
                 API
               </Link>
             </Menu.Item>

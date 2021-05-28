@@ -50,7 +50,7 @@ export default function API (props: any) {
               <article className="tsc-content">
                 <div className="tsc-nav">
                   <Breadcrumb>
-                    <Breadcrumb.Item>API</Breadcrumb.Item>
+                    <Breadcrumb.Item className="docsearch-lvl0">API</Breadcrumb.Item>
                     {pkg && <Breadcrumb.Item>
                       <a href="./index">{pkg.name}</a>
                     </Breadcrumb.Item>}
