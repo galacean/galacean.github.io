@@ -1,5 +1,5 @@
 /**
- * @title Sprite Material dissolve
+ * @title Sprite Material Dissolve
  * @category 2D
  */
 import { OrbitControl } from "@oasis-engine/controls";
