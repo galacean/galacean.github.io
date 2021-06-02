@@ -45,7 +45,7 @@ engine.resourceManager
 ```typescript
 // mask 的 sprite 中纹理 alpha 小于 0.5 的将被丢弃
 spriteMask.alphaCutoff = 0.5;
-// mask 对所有遮罩层都生效
+// mask 对所有遮罩层的精灵都生效
 spriteMask.influenceLayers = SpriteMaskLayer.Everything;
 // mask 只对处于遮罩层 Layer0 的精灵有效
 spriteMask.influenceLayers = SpriteMaskLayer.Layer0;
