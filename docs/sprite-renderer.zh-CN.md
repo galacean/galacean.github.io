@@ -58,4 +58,19 @@ spriteRenderer.color.setValue(1, 0, 0, 1);
 
 SpriteRenderer 的自定义材质的使用方法和 [MeshRenderer](${docs}mesh-renderer-cn) 的一样，请参考[自定义材质](${docs}custom-material-cn)文档。
 
-<playground src="sprite-material.ts"></playground>
+<playground src="sprite-material-blur.ts"></playground>
+
+## 使用遮罩
+
+从 0.4 版本开始，引擎加入了 [SpriteMask](${docs}sprite-mask-cn) 组件，SpriteRenderer 和 SpriteMask 配合使用，可以实现精灵的各种遮挡效果。可以通过以下代码打开精灵的遮罩功能：
+
+```typescript
+// 设置遮罩类型
+spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+// 设置精灵处于哪个遮罩层
+spriteRenderer.maskLayer = SpriteMaskLayer.Layer0;
+```
+
+[SpriteMaskInteraction](${api}core/SpriteMaskInteraction) 里面声明了精灵的遮罩类型，[SpriteMaskLayer](${api}core/SpriteMaskLayer) 里面声明了所有的遮罩层，这个在 SpriteMask 中也需要用到。
+
+<playground src="sprite-mask.ts"></playground>
