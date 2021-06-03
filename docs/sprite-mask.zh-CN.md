@@ -52,3 +52,11 @@ spriteMask.influenceLayers = SpriteMaskLayer.Layer0;
 // mask 对处于遮罩层 Layer0 和 Layer1 的精灵有效
 spriteMask.influenceLayers = SpriteMaskLayer.Layer0 | SpriteMaskLayer.Layer1;
 ```
+
+## 遮罩层
+
+[SpriteMaskLayer](${api}core/SpriteMaskLayer) 里面声明了引擎提供的遮罩层，遮罩层是 SpriteMask 如何和 SpriteRenderer 作用的桥梁。SpriteMask 的 influenceLayers 表示该 mask 对处于哪些遮罩层内的 SpriteRenderer 会起到遮罩作用，SpriteRenderer 的 maskLayer 表示该精灵处于哪些遮罩层，如下：
+
+![070C8B9F-14E2-4A9A-BFEC-4BC3F2BB564F](https://gw.alipayobjects.com/zos/OasisHub/09abdf57-84b8-4aa9-b785-822f858fb4f9/070C8B9F-14E2-4A9A-BFEC-4BC3F2BB564F.png)
+
+上图中，spriteMask 对处于 Layer1 和 Layer30 的精灵有遮罩作用，spriteRenderer0 处于 Layer2，所以 spriteRenderer0 不与 spriteMask 起作用，spriteRenderer1 处于 Layer1，和 spriteMask 有相同的遮罩层，所以 spriteRenderer1 与 spriteMask 起作用。
