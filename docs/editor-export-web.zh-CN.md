@@ -60,7 +60,7 @@ tnpm publish
 tnpm i MyOasisComponent --save
 ```
 
-业务与3D组件之间的通信使用事件通信的方式，具体见[事件通信](https://yuque.antfin-inc.com/wz84888/vzuhuh/${book.editor}event)小节。
+业务与3D组件之间的通信使用事件通信的方式，具体见[事件通信](${docs}editor-event-cn)小节。
 
 
 

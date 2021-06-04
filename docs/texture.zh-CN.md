@@ -5,7 +5,7 @@ type: 资源系统
 ---
 
 
-纹理（[Texture](${api}core.texture.html)）, 是在 3D 渲染中最常用到的资源。我们在给模型着色时，需要给每个片元设置一个颜色值，这个色值除了直接手动设置，我们还可以选择从纹理中读取纹素来进行着色，来达到更加丰富的美术效果。
+纹理（[Texture](${api}core/Texture)）, 是在 3D 渲染中最常用到的资源。我们在给模型着色时，需要给每个片元设置一个颜色值，这个色值除了直接手动设置，我们还可以选择从纹理中读取纹素来进行着色，来达到更加丰富的美术效果。
 
 
 值得注意的是，图片、canvas 画布、原始数据、视频（参考案例 [Playground](${book.playground}#/video-texture)）等都可以用来当作纹理，Oasis 引擎目前支持所有 WebGL 标准的纹理。
@@ -13,14 +13,14 @@ type: 资源系统
 ## 纹理类型
 
 ### 1. 2D纹理
-2D 纹理（[Texture2D](${api}sses/core.texture2d.html)）是最常用的美术资源，使用二维 UV  坐标进行采样，如下图：
+2D 纹理（[Texture2D](${api}core/Texture2D)）是最常用的美术资源，使用二维 UV  坐标进行采样，如下图：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*tmTkSLi0XJ8AAAAAAAAAAAAAARQnAQ)
 
 
 #### 2. 立方纹理
 
-立方纹理（[TextureCubeMap](${api}core.texturecubemap.html)）和 2D 纹理的区别是它有6个面，即用 6 张 2D 纹理组成了一个立方纹理。
+立方纹理（[TextureCubeMap](${api}core/TextureCubeMap)）和 2D 纹理的区别是它有6个面，即用 6 张 2D 纹理组成了一个立方纹理。
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Omw8Qo0WzfYAAAAAAAAAAAAAARQnAQ)
 
@@ -39,18 +39,18 @@ type: 资源系统
 离屏渲染纹理，顾名思义，该纹理可以通过离屏渲染得到。底层使用了 [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) 技术，将渲染操作不再输出到屏幕上，而是输出到纹理上，用户通过该纹理，可以用来实现后处理特效、折射、反射、动态环境贴图等一些艺术创作。
 
 
-引擎提供了 [RenderTarget](${api}core.rendertarget.html) 类来进行离屏渲染，并获取相应的离屏渲染纹理，目前引擎支持生成以下离屏渲染纹理：
+引擎提供了 [RenderTarget](${api}core/RenderTarget) 类来进行离屏渲染，并获取相应的离屏渲染纹理，目前引擎支持生成以下离屏渲染纹理：
 
 |类型|应用|
 |:--|:--|
-|颜色纹理（[RenderColorTexture](${api}core.rendercolortexture.html)）| 颜色纹理、颜色立方纹理、 多张颜色纹理 （MRT）|
-|深度纹理（[RenderColorTexture](${api}core.renderdepthtexture.html)）| 深度纹理、深度立方纹理 |
+|颜色纹理（[RenderColorTexture](${api}core/RenderColorTexture)）| 颜色纹理、颜色立方纹理、 多张颜色纹理 （MRT）|
+|深度纹理（[RendeDepthTexture](${api}core/RenderDepthTexture)）| 深度纹理、深度立方纹理 |
 |纹理组合 | 颜色纹理 + 深度纹理、颜色立方体纹理 + 深度立方体纹理、多张颜色纹理 + 深度纹理 |
 
 
 ## 生成纹理
 
-在脚本中，我们可以通过 [ResourceManager](${docs}resource/resource-manager) 来加载 2D 纹理和立方纹理：
+在脚本中，我们可以通过 [ResourceManager](${docs}resource-manager-cn) 来加载 2D 纹理和立方纹理：
 
 ```typescript
 const textureResource = {
@@ -86,10 +86,10 @@ engine.resourceManager
 
 |属性|值|
 |:--|:--|
-|循环模式U（[wrapModeU](${api}core.texture.html#wrapmodeu)）| 截取模式（[Clamp](${api}enums/core.texturewrapmode.html#clamp)）、 重复模式（[Repeat](${api}enums/core.texturewrapmode.html#repeat)）、镜像重复模式（[Mirror](${api}enums/core.texturewrapmode.html#mirror)）|
-|循环模式V（[wrapModeV](${api}core.texture.html#wrapmodev)）| 截取模式（[Clamp](${api}enums/core.texturewrapmode.html#clamp)）、重复模式（[Repeat](${api}enums/core.texturewrapmode.html#repeat)）、 镜像重复模式（[Mirror](${api}enums/core.texturewrapmode.html#mirror)）|
-| 过滤模式（[filterMode](${api}core.texture.html#filtermode)）| 点过滤（[Point](${api}enums/core.texturefiltermode.html#point)）、双线性过滤（[Bilinear](${api}enums/core.texturefiltermode.html#bilinear)）、 三线性过滤（[Trilinear](${api}enums/core.texturefiltermode.html#trilinear)）|
-| 各向异性过滤等级（[anisoLevel](${api}core.texture.html#anisolevel)）| 1 ~ 16|
+|循环模式U（[wrapModeU](${api}core/Texture#wrapModeU)）| 截取模式（[Clamp](${api}core/TextureWrapMode#Clamp)）、 重复模式（[Repeat](${api}core/TextureWrapMode#Repeat)）、镜像重复模式（[Mirror](${api}core/TextureWrapMode#Mirror)）|
+|循环模式V（[wrapModeV](${api}core/Texture#wrapModeV)）| 截取模式（[Clamp](${api}core/TextureWrapMode#Clamp)）、重复模式（[Repeat](${api}core/TextureWrapMode#Repeat)）、 镜像重复模式（[Mirror](${api}core/TextureWrapMode#Mirror)）|
+| 过滤模式（[filterMode](${api}core/Texture#filterMode)）| 点过滤（[Point](${api}core/TextureFilterMode#Point)）、双线性过滤（[Bilinear](${api}core/TextureFilterMode#Bilinear)）、 三线性过滤（[Trilinear](${api}core/TextureFilterMode#Trilinear)）|
+| 各向异性过滤等级（[anisoLevel](${api}core/Texture#anisoLevel)）| 1 ~ 16|
 
 
 ### 1. 循环模式
@@ -153,20 +153,20 @@ texture.anisoLevel = 4; // 1~16
 #### 4. mipmap
 
 
-**引擎默认开启 [mipmap](${api}core.texture.html#generatemipmaps)**（多级纹理渐变），mipmap 用来解决从低分辨率屏幕中采样高分辨率纹理时的精度和性能问题，即能在合适的距离时选取不同分辨率的纹理，如下图：
+**引擎默认开启 [mipmap](${api}core/Texture#generateMipmaps)**（多级纹理渐变），mipmap 用来解决从低分辨率屏幕中采样高分辨率纹理时的精度和性能问题，即能在合适的距离时选取不同分辨率的纹理，如下图：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mTBvTJ7Czt4AAAAAAAAAAAAAARQnAQ)
 
 需要注意的是，WebGL2.0 支持**任意分辨率**的纹理，会根据 [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) 算法进行一层层的mip，但是如果您的环境是在 WebGL1.0 环境，那么请务必上传**2次幂纹理**，如 1024 * 512 这种分辨率的纹理,否则 Oasis 会检测到环境不可使用 mipmap，自动降级关闭 mipmap 功能，在视觉上带来一些意外情况。
 
 
-如果需要改变 mipmap 的默认行为，可以通过脚本来实现，参数详见 [API](${api}core.texture2d.html#constructor)：
+如果需要改变 mipmap 的默认行为，可以通过脚本来实现，参数详见 [API](${api}core/Texture#constructor)：
 
 ```typescript
 const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8A8, false); // 第 5 个参数
 ```
 
-立方纹理脚本写法，详见 [API](${api}core.texturecubemap.html#constructor)：
+立方纹理脚本写法，详见 [API](${api}core/TextureCubeMap#constructor)：
 
 ```typescript
 const cubeTexture = new TextureCubeMap(engine, size, TextureFormat.R8G8B8A8, false); // 第 4 个参数
@@ -174,7 +174,7 @@ const cubeTexture = new TextureCubeMap(engine, size, TextureFormat.R8G8B8A8, fal
 
 ### 5. flipY
 
-flipY 用来控制纹理是否翻转 Y 轴，即上下颠倒，**引擎和编辑器默认关闭**，如果需要改变 flipY 的默认行为，可以通过 [setImageSource](${api}core.texture2d.html#setimagesource) 方法来实现：
+flipY 用来控制纹理是否翻转 Y 轴，即上下颠倒，**引擎和编辑器默认关闭**，如果需要改变 flipY 的默认行为，可以通过 [setImageSource](${api}core/Texture2D#setImageSource) 方法来实现：
 
 ```typescript
 const texture = new Texture2D(engine, width, height);
@@ -184,7 +184,7 @@ texture.setImageSource(img, 0, true); // 第 3 个参数
 
 ### 6. premultiplyAlpha
 
-premultiplyAlpha 用来控制纹理是否预乘 alpha(透明) 通道，**引擎和编辑器默认关闭**，如果需要改变 premultiplyAlpha 的默认行为，可以通过 [setImageSource](${api}core.texture2d.html#setimagesource) 方法来实现：
+premultiplyAlpha 用来控制纹理是否预乘 alpha(透明) 通道，**引擎和编辑器默认关闭**，如果需要改变 premultiplyAlpha 的默认行为，可以通过 [setImageSource](${api}core/Texture2D#setImageSource) 方法来实现：
 
 ```typescript
 const texture = new Texture2D(engine, width, height);
@@ -256,7 +256,7 @@ if (rhi.canIUse(GLCapabilityType.s3tc)) {
 }
 ```
 
-确定支持某种格式后,使用 [ResourceManager](${docs}resource/resource-manager) 进行资源加载
+确定支持某种格式后,使用 [ResourceManager](${docs}resource-manager-cn) 进行资源加载
 
 ```typescript
 const resource = {
