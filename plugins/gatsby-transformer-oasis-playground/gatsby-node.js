@@ -47,8 +47,8 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
       filename: "index.ts",
     });
 
-    const titleResult = /@title\s+(.+)\b/.exec(content);
-    const categoryResult = /@category\s+(.+)\b/.exec(content);
+    const titleResult = /@title\s+(.+)|([\u4e00-\u9fa5]+)\b/.exec(content);
+    const categoryResult = /@category\s+(.+)|([\u4e00-\u9fa5]+)\b/.exec(content);
     // const orderResult = /@order\s+(.+)\b/.exec(content);
 
     const playgroundNode = {
