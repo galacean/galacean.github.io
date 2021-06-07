@@ -1,6 +1,6 @@
 /**
  * @title Transform Basic
- * @category Transform
+ * @category Basic
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import { Camera, Color, DirectLight, Entity, GLTFResource, Script, WebGLEngine } from "oasis-engine";

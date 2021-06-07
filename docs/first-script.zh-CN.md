@@ -6,7 +6,7 @@ type: 入门
 
 [上篇教程](${docs}model-cn)中，你已经学会了如何加载一个 3D 模型。这时候，你也许会问：如何给这个鸭子增加一点动画呢？在 Oasis Engine 中，功能以**组件**形式添加到实体上，其中[脚本组件](${docs}script-cn)提供了最灵活的扩展能力。这个教程将带你开发一个“匀速旋转的鸭子”示例：
 
-<playground src="first-script.ts"></playground>
+<playground src="script-basic.ts"></playground>
 
 ## 创建旋转脚本组件
 

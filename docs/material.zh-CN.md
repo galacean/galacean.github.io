@@ -28,7 +28,7 @@ type: 资源系统
 
 tilingOffset 案例：
 
-<playground src="material-tillingoffset.ts"></playground>
+<playground src="tiling-offset.ts"></playground>
 
 #### 金属-粗糙度模式 参数介绍
 | 参数 | 应用 |

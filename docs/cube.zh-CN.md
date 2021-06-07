@@ -6,7 +6,7 @@ type: 入门
 
 这个教程将带你开发一个立方体示例：
 
-<playground src="cube.ts"></playground>
+<playground src="scene-basic.ts"></playground>
 
 ## HTML 和 CSS
 
