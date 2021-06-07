@@ -220,19 +220,20 @@ const skybox = skyNode.addComponent(ASkyBox);
 skybox.skyBoxMap = cubeTexture;
 ```
 
-#### 3. EnvironmentMapLight
+#### 3. IBL
 
-在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得往场景中添加 EnvironmentMapLight 组件，底层使用环境反射 IBL（基于图像的照明） 技术。EnvironmentMapLight 需要一张立方纹理当作镜面反射环境贴图，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
+在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得开启[环境光的 IBL 模式](${docs}light-cn)。而 IBL 需要立方纹理作为漫反射和镜面反射纹理，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*uOdnTZ9R2j4AAAAAAAAAAAAAARQnAQ)
 
-EnvironmentMapLight 对应引擎的组件为 [EnvironmentMapLight](${api}core/EnvironmentMapLight)
 
 ```typescript
-const envLight = node.addComponent(EnvironmentMapLight);
-
-envLight.specularMap = cubeTexture1; // 镜面反射间接光
-envLight.diffuseMap = cubeTexture2;  // 漫反射间接光
+const ambientLight = scene.ambientLight;
+// IBL 漫反射
+ambientLight.diffuseMode = DiffuseMode.Texture;
+ambientLight.diffuseTexture = cubeTexture; // 加载相应立方体纹理
+// IBL 镜面反射
+ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
 ```
 
 ### 压缩纹理
