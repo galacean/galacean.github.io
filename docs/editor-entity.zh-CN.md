@@ -4,11 +4,11 @@ title: 常用实体操作
 type: 编辑器
 ---
 
-[实体](${book.manual}structure/entity)是脚本的主要操作对象，以下展示一些常用操作：
+[实体](${docs}entity-cn)是脚本的主要操作对象，以下展示一些常用操作：
 
 ## 变换
 
-以旋转为例，在 [onUpdate](${book.api}classes/core.script.html#onupdate) 中通过 [setRotation](${book.api}classes/core.transform.html#setrotation) 方法来旋转实体：
+以旋转为例，在 [onUpdate](${api}core/Script#onUpdate) 中通过 [setRotation](${api}core/Transform#setRotation) 方法来旋转实体：
 
 ```typescript
 this.entity.transform.setRotation(0, 5, 0);
@@ -30,7 +30,7 @@ onAwake() {
 
 ### 获得其它组件
 
-当我们需要获取同一节点上的其他组件，这时就要用到 [getComponent](${book.api}classes/core.entity.html#getcomponent) 这个API, 它会帮你查找你要的组件。
+当我们需要获取同一节点上的其他组件，这时就要用到 [getComponent](${api}core/Entity#getComponent) 这个API, 它会帮你查找你要的组件。
 
 ```typescript
 onAwake() {
@@ -38,7 +38,7 @@ onAwake() {
 }
 ```
 
-有些时候可能会有多个同一类型的组件，上面的方法只会返回第一个找到的组件，如果需要找到所有组件可以用 [getComponents](${book.api}classes/core.entity.html#getcomponents) ：
+有些时候可能会有多个同一类型的组件，上面的方法只会返回第一个找到的组件，如果需要找到所有组件可以用 [getComponents](${api}core/Entity#getComponents) ：
 
 ```typescript
 onAwake() {
@@ -51,7 +51,7 @@ onAwake() {
 
 有时候，场景中会有很多个相同类型的对象，像多个粒子动画，多个金币，它们通常都有一个全局的脚本来统一管理。如果用一个一个将它们关联到这个脚本上，那工作就会很繁琐。为了更好地统一管理这些对象，我们可以把它们放到一个统一的父物体下，然后通过父物体来获得所有的子物体：
 
-如果明确知道子节点在父节点中的index可以直接使用 [getChild](${book.api}classes/core.entity.html#getchild) ：          
+如果明确知道子节点在父节点中的index可以直接使用 [getChild](${api}core/Entity#getChild) ：          
 
 ```typescript
 onAwake() {
@@ -59,7 +59,7 @@ onAwake() {
 }
 ```
 
-如果不清楚子节点的index，可以使用 [findByName](${book.api}classes/core.entity.html#findbyname) 通过节点的名字找到它, [findByName](${book.api}classes/core.entity.html#findbyname) 不仅会查找子节点，还会查找孙子节点
+如果不清楚子节点的index，可以使用 [findByName](${api}core/Entity#findByName) 通过节点的名字找到它, [findByName](${api}core/Entity#findByName) 不仅会查找子节点，还会查找孙子节点
 
 ```typescript
 onAwake() {
@@ -67,7 +67,7 @@ onAwake() {
 }
 ```
 
-如果有同名的节点可以使用 [findByPath](${book.api}classes/core.entity.html#findbypath) 传入路径进行逐级查找，使用此API也会一定程度上提高查找效率。
+如果有同名的节点可以使用 [findByPath](${api}core/Entity#findByPath) 传入路径进行逐级查找，使用此API也会一定程度上提高查找效率。
 
 ```typescript
 onAwake() {
@@ -76,7 +76,7 @@ onAwake() {
 ```
 ### 全局节点查找
 
-用户也可以通过 [Entity.findByName](${book.api}classes/core.entity.html#findbyname-1) 和 [Entity.findByPath](${book.api}classes/core.entity.html#findbypath-1) 进行全局的节点查找，使用方法和之前的查找子节点类似:
+用户也可以通过 [Entity.findByName](${api}core/Entity#findByName) 和 [Entity.findByPath](${api}core/Entity#findByPath) 进行全局的节点查找，使用方法和之前的查找子节点类似:
 
 ```typescript
 onAwake() {

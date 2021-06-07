@@ -4,11 +4,11 @@ title: 事件通信
 type: 编辑器
 ---
 
-如果你已经完成了上一步的[产物组件](${book.editor}export-web)，把组件安装到业务项目中，这时候就会面临一个问题：
+如果你已经完成了上一步的[产物组件](${docs}editor-export-web-cn)，把组件安装到业务项目中，这时候就会面临一个问题：
 
 > Oasis 组件如何与业务代码进行双向的通信 ？
 
-举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Oasis Engine 中的 [Engine](${book.manual}structure/engine) 就是一个 [EventDispatcher](${book.manual}tools/event) 我们可以使用他作为内外部通信的媒介。
+举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Oasis Engine 中的 [Engine](${docs}engine-cn) 就是一个 [EventDispatcher](${docs}event-cn) 我们可以使用他作为内外部通信的媒介。
 
 ## 基本用法
 
@@ -30,7 +30,7 @@ engine.dispatch('test');
 
 ## 从外到里通信
 
-1. 在脚本组件的[生命周期函数](https://yuque.antfin-inc.com/oasisgroup/oasis3d_manual/phb3mi#qh8HJ)（如 `onAwake` ）内可以监听事件：
+1. 在脚本组件的[生命周期函数](${docs}script-cn#组件生命周期函数)（如 `onAwake` ）内可以监听事件：
 
 ```typescript
 onAwake () {
@@ -102,7 +102,7 @@ export default ()=> {
 
 ```
 
-2. 在脚本组件的[生命周期函数](${book.manual}component/script)内可以触发事件：
+2. 在脚本组件的[生命周期函数](${docs}script-cn)内可以触发事件：
 
 ```typescript
 this.engine.dispatch('rotate');

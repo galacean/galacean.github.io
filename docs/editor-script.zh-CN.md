@@ -4,7 +4,7 @@ title: 添加脚本组件
 type: 编辑器
 ---
 
-[脚本组件](${book.manual}component/script)是引擎提供给开发者的重要的扩展能力，在 Oasis Editor 中，脚本也是资源的一部分，使用 [Typescript](https://www.typescriptlang.org/) 语言。
+[脚本组件](${docs}script-cn)是引擎提供给开发者的重要的扩展能力，在 Oasis Editor 中，脚本也是资源的一部分，使用 [Typescript](https://www.typescriptlang.org/) 语言。
 
 ## 1. 创建脚本
 

@@ -4,7 +4,7 @@ title: 本地开发指南(针对 Pro Code 用户)
 type: 编辑器
 ---
 
-> 在 [导出小程序](${book.editor}export-miniprogram.md) 和 [导出 Web 平台包](${book.editor}export-web.md) 之后，部分 Pro Code 用户希望可以通过本地 IDE 和 git 工作流去开发项目，线上只用来编辑场景。本文档针对这类用户提供了一套解决方案。
+> 在 [导出小程序](${docs}editor-export-minprogram-cn) 和 [导出 Web 平台包](${docs}editor-export-web-cn) 之后，部分 Pro Code 用户希望可以通过本地 IDE 和 git 工作流去开发项目，线上只用来编辑场景。本文档针对这类用户提供了一套解决方案。
 
 为了满足此类需求，我们提供两个功能:
 
@@ -13,7 +13,7 @@ type: 编辑器
 
 在执行下面功能之前:
 
-1. [导出小程序](${book.editor}export-miniprogram.md)或者[导出 Web 平台包](${book.editor}export-web.md)。
+1. [导出小程序](${docs}editor-export-minprogram-cn)或者[导出 Web 平台包](${docs}editor-export-web-cn)。
 2. 使用 Terminal 进入到工程根目录。
 3. 完成 `tnpm install`。
 

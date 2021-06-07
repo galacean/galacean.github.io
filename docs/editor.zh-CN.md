@@ -34,7 +34,7 @@ type: 编辑器
 6. **导航栏：**展示一些项目级别的功能操作按钮，包括预览、下载功能按钮。
 
 ###  代码编辑器
-职责是完成场景里通过代码实现的功能，比如编写[脚本组件](${book.manual}component/script.md)、[自定义 Shader](${book.manual}resource/shader.md) 等。由4个窗口区域构成：
+职责是完成场景里通过代码实现的功能，比如编写[脚本组件](${docs}script-cn)、[自定义 Shader](${docs}custom-material-cn) 等。由4个窗口区域构成：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*ppQYQIqlUk8AAAAAAAAAAAAAARQnAQ)
 
