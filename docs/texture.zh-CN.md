@@ -113,6 +113,7 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
    ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*RI_hTpGzpjwAAAAAAAAAAAAAARQnAQ)
 
+<playground src="wrap-mode.ts"></playground>
 
 ### 2. 过滤模式
 
