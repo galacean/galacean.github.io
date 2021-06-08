@@ -8,7 +8,7 @@ type: 组件
 
 |类型|解释|
 |:--|:--|
-|[AmbientLight](${api}core/AmbientLight)|**环境光**，默认从各个角度照射物体，其强度都是一致的，如果设置了漫反射纹理模式，则采样纹理作为环境颜色；如果设置了镜面反射纹理，则开启IBL，用来实现全局光照|
+|[AmbientLight](${api}core/AmbientLight)|**环境光**，默认从各个角度照射物体，其强度都是一致的，如果开启了漫反射纹理模式，则采样纹理作为环境颜色；如果设置了镜面反射纹理，则开启IBL，用来实现全局光照|
 |[DirectLight](${api}core/DirectLight)|**方向光**，光线相互平行，几何属性只有方向|
 |[PointLight](${api}core/PointLight) | **点光源**，一个点向周围所有方向发出的光，光照强度随光源距离衰减|
 |[SpotLight](${api}core/SpotLight) |**聚光灯**，由一个特定位置发出，向特定方向延伸的光，光照强度随光源距离衰减，光照区域为锥形，锥形边缘随张开角度衰减|
@@ -41,7 +41,7 @@ ambientLight.diffuseTexture = cubeTexture; // 加载相应立方体纹理
 // IBL 镜面反射
 ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
 ```
-如果您使用了 PBR 材质，千万记得开启环境光的 IBL 模式～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出真实感效果。
+如果您使用了 PBR 材质，千万记得开启环境光的 IBL 模式～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
 
 
 
