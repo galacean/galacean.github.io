@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 纹理烘焙
+title: 美术-纹理烘焙
 type: 编辑器
 ---
 
