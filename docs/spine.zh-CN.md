@@ -8,7 +8,7 @@ Oasis Engine 通过 [BufferMesh](${docs}buffer-mesh-cn) 实现了 spine 动画�
 
 > **注**：oasis spine 运行时目前指支持 spine 3.8 以上版本动画的播放。
 
-<playground src="spine.ts"></playground>
+<playground src="spine-animation.ts"></playground>
 
 ## 安装
 

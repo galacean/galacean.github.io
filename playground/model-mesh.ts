@@ -2,24 +2,44 @@
  * @title Model Mesh
  * @category Mesh
  */
-import { AssetType, Camera, Color, Engine, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, Shader, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import {
+  AssetType,
+  Camera,
+  Color,
+  Engine,
+  Entity,
+  Material,
+  MeshRenderer,
+  ModelMesh,
+  PrimitiveMesh,
+  Script,
+  Shader,
+  Texture2D,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
-// Create engine
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
+init();
 
-// Create root entity
-const rootEntity = engine.sceneManager.activeScene.createRootEntity();
+function init(): void {
+  // Create engine
+  const engine = new WebGLEngine("canvas");
+  engine.canvas.resizeByClientSize();
 
-// Create camera
-const cameraEntity = rootEntity.createChild("Camera");
-cameraEntity.transform.setPosition(0, 10, 10);
-cameraEntity.transform.lookAt(new Vector3(0, 8, 0));
-const camera = cameraEntity.addComponent(Camera);
-camera.farClipPlane = 2000;
-camera.fieldOfView = 55;
+  // Create root entity
+  const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
-createPlane(engine, rootEntity);
+  // Create camera
+  const cameraEntity = rootEntity.createChild("Camera");
+  cameraEntity.transform.setPosition(0, 10, 10);
+  cameraEntity.transform.lookAt(new Vector3(0, 8, 0));
+  const camera = cameraEntity.addComponent(Camera);
+  camera.farClipPlane = 2000;
+  camera.fieldOfView = 55;
+
+  createPlane(engine, rootEntity);
+  engine.run();
+}
 
 /**
  * Create a plane as a child of entity.
@@ -100,37 +120,35 @@ class PlaneAnimation extends Script {
 const shader = Shader.create(
   "test-plane",
   `uniform mat4 u_MVPMat;
-  attribute vec4 POSITION;
-  attribute vec2 TEXCOORD_0;
-  
-  uniform mat4 u_MVMat;
-  
-  varying vec2 v_uv;
-  varying vec3 v_position;
-  
-  void main() {
-    v_uv = TEXCOORD_0;
-    v_position = (u_MVMat * POSITION).xyz;
-    gl_Position = u_MVPMat * POSITION;
-  }`,
+    attribute vec4 POSITION;
+    attribute vec2 TEXCOORD_0;
+    
+    uniform mat4 u_MVMat;
+    
+    varying vec2 v_uv;
+    varying vec3 v_position;
+    
+    void main() {
+      v_uv = TEXCOORD_0;
+      v_position = (u_MVMat * POSITION).xyz;
+      gl_Position = u_MVPMat * POSITION;
+    }`,
 
   `
-  uniform sampler2D u_baseColor;
-  uniform vec4 u_color;
-  uniform vec4 u_fogColor;
-  uniform float u_fogDensity;
-  
-  varying vec2 v_uv;
-  varying vec3 v_position;
-  
-  void main() {
-    vec4 color = texture2D(u_baseColor, v_uv) * u_color;
-    float fogDistance = length(v_position);
-    float fogAmount = 1. - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
-    fogAmount = clamp(fogAmount, 0., 1.);
-    gl_FragColor = mix(color, u_fogColor, fogAmount); 
-  }
-  `
+    uniform sampler2D u_baseColor;
+    uniform vec4 u_color;
+    uniform vec4 u_fogColor;
+    uniform float u_fogDensity;
+    
+    varying vec2 v_uv;
+    varying vec3 v_position;
+    
+    void main() {
+      vec4 color = texture2D(u_baseColor, v_uv) * u_color;
+      float fogDistance = length(v_position);
+      float fogAmount = 1. - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
+      fogAmount = clamp(fogAmount, 0., 1.);
+      gl_FragColor = mix(color, u_fogColor, fogAmount); 
+    }
+    `
 );
-
-engine.run();

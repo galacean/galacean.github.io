@@ -1,41 +1,32 @@
 /**
  * @title Sprite Pivot
- * @category 2D
+ * @category Sprite
  */
-import { OrbitControl } from '@oasis-engine/controls';
-import * as dat from 'dat.gui';
-import {
-  AssetType,
-  Camera,
-  Entity,
-  Sprite,
-  SpriteRenderer,
-  Texture2D,
-  Vector2,
-  WebGLEngine,
-} from 'oasis-engine';
+import { OrbitControl } from "@oasis-engine/controls";
+import * as dat from "dat.gui";
+import { AssetType, Camera, Entity, Sprite, SpriteRenderer, Texture2D, Vector2, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
-const engine = new WebGLEngine('canvas');
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 // Create root entity.
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 // Create camera.
-const cameraEntity = rootEntity.createChild('Camera');
+const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.setPosition(0, 0, 50);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 
 engine.resourceManager
   .load<Texture2D>({
-    url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*d3N9RYpcKncAAAAAAAAAAAAAARQnAQ',
-    type: AssetType.Texture2D,
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*d3N9RYpcKncAAAAAAAAAAAAAARQnAQ",
+    type: AssetType.Texture2D
   })
   .then((texture) => {
     // Create origin sprite entity.
-    const spriteEntity = new Entity(engine, 'spritePivot');
+    const spriteEntity = new Entity(engine, "spritePivot");
     const { transform } = spriteEntity;
     transform.setScale(3, 3, 3);
     transform.setPosition(0, 5, 0);
@@ -75,24 +66,24 @@ function addDataGUI(entity: Entity) {
       guiData.pivotY = 0.5;
       pivot.setValue(0.5, 0.5);
       sprite.pivot = pivot;
-    },
+    }
   };
 
   gui
-    .add(guiData, 'pivotX', 0.0, 1.0, 0.01)
+    .add(guiData, "pivotX", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       pivot.x = value;
       sprite.pivot = pivot;
     })
     .listen();
   gui
-    .add(guiData, 'pivotY', 0.0, 1.0, 0.01)
+    .add(guiData, "pivotY", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       pivot.y = value;
       sprite.pivot = pivot;
     })
     .listen();
-  gui.add(guiData, 'reset').name('重置');
+  gui.add(guiData, "reset").name("重置");
 
   return guiData;
 }

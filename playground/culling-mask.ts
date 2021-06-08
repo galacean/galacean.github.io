@@ -2,32 +2,33 @@
  * @title Culling Mask
  * @category Camera
  */
-import { WebGLEngine, Camera, Vector3, AmbientLight, MeshRenderer, PrimitiveMesh, BlinnPhongMaterial, Color, Layer} from "oasis-engine";
 import * as dat from "dat.gui";
+import * as o3 from "oasis-engine";
+import { DirectLight, Logger } from "oasis-engine";
 
-const engine = new WebGLEngine("canvas");
+Logger.enable();
+const engine = new o3.WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
-
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 // init camera
 const cameraEntity = rootEntity.createChild("camera");
-cameraEntity.addComponent(Camera);
+const camera = cameraEntity.addComponent(o3.Camera);
 const pos = cameraEntity.transform.position;
 pos.setValue(10, 10, 10);
 cameraEntity.transform.position = pos;
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+cameraEntity.transform.lookAt(new o3.Vector3(0, 0, 0));
 
-// init light
-const light = rootEntity.addComponent(AmbientLight);
-light.intensity = 1.2;
+const lightNode = rootEntity.createChild("Light");
+lightNode.transform.setRotation(-30, 0, 0);
+lightNode.addComponent(DirectLight);
 
 // init cube
 const cubeEntity = rootEntity.createChild("cube");
-const renderer = cubeEntity.addComponent(MeshRenderer);
-renderer.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
-const material = new BlinnPhongMaterial(engine);
-material.baseColor = new Color(1, 0.25, 0.25, 1);
+const renderer = cubeEntity.addComponent(o3.MeshRenderer);
+renderer.mesh = o3.PrimitiveMesh.createCuboid(engine, 1, 1, 1);
+const material = new o3.BlinnPhongMaterial(engine);
+material.baseColor = new o3.Color(1, 0.25, 0.25, 1);
 renderer.setMaterial(material);
 
 engine.run();
@@ -37,10 +38,10 @@ function addGUI() {
   const cameraFolder = gui.addFolder("camera cullingMask");
   cameraFolder.open();
   const constMap = {
-    EveryThing: Layer.Everything,
-    Layer1: Layer.Layer1,
-    Layer2: Layer.Layer2,
-    Layer3: Layer.Layer3
+    EveryThing: o3.Layer.Everything,
+    Layer1: o3.Layer.Layer1,
+    Layer2: o3.Layer.Layer2,
+    Layer3: o3.Layer.Layer3
   };
   const cameraController = cameraFolder.add({ cullingMask: "EveryThing" }, "cullingMask", Object.keys(constMap));
   cameraController.onChange((v) => {

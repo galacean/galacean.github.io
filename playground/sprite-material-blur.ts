@@ -1,6 +1,6 @@
 /**
  * @title Sprite Material Blur
- * @category 2D
+ * @category Sprite
  */
 import {
   AssetType,
@@ -18,30 +18,30 @@ import {
   TextureWrapMode,
   Vector2,
   Vector3,
-  WebGLEngine,
-} from 'oasis-engine';
+  WebGLEngine
+} from "oasis-engine";
 
 // Create engine object
-const engine = new WebGLEngine('canvas');
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
 // Create camera
-const cameraEntity = rootEntity.createChild('Camera');
+const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.position = new Vector3(0, 0, 20);
 cameraEntity.addComponent(Camera).isOrthographic = true;
 
 engine.resourceManager
   .load<Texture2D>({
-    url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*L2GNRLWn9EAAAAAAAAAAAAAAARQnAQ',
-    type: AssetType.Texture2D,
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*L2GNRLWn9EAAAAAAAAAAAAAAARQnAQ",
+    type: AssetType.Texture2D
   })
   .then((texture) => {
     // Create origin sprite entity.
     const texSize = new Vector2(texture.width, texture.height);
-    const spriteEntity = rootEntity.createChild('spriteBlur');
+    const spriteEntity = rootEntity.createChild("spriteBlur");
 
     spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture);
     // The blur algorithm will sample the edges of the texture.
@@ -60,16 +60,11 @@ engine.resourceManager
 
 engine.run();
 
-function addCustomMaterialSpriteEntity(
-  entity: Entity,
-  posX: number,
-  texSize: Vector2,
-  blurSize: number,
-): void {
+function addCustomMaterialSpriteEntity(entity: Entity, posX: number, texSize: Vector2, blurSize: number): void {
   rootEntity.addChild(entity);
   entity.transform.setPosition(posX, 0, 0);
   // Create material
-  const material = new Material(engine, Shader.find('SpriteBlur'));
+  const material = new Material(engine, Shader.find("SpriteBlur"));
   entity.getComponent(SpriteRenderer).setMaterial(material);
   // Init state
   const target = material.renderState.blendState.targetBlendState;
@@ -83,8 +78,8 @@ function addCustomMaterialSpriteEntity(
   material.renderQueueType = RenderQueueType.Transparent;
   material.renderState.rasterState.cullMode = CullMode.Off;
   // Set uniform
-  material.shaderData.setVector2('u_texSize', texSize);
-  material.shaderData.setFloat('u_blurSize', blurSize);
+  material.shaderData.setVector2("u_texSize", texSize);
+  material.shaderData.setFloat("u_blurSize", blurSize);
 }
 
 // Custom shader
@@ -157,4 +152,4 @@ const spriteFragmentShader = `
   }
 `;
 
-Shader.create('SpriteBlur', spriteVertShader, spriteFragmentShader);
+Shader.create("SpriteBlur", spriteVertShader, spriteFragmentShader);

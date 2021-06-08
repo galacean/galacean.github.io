@@ -4,16 +4,9 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-import {
-  AmbientLight,
-  Animation,
-  Camera,
-  Color,
-  DirectLight,
-  GLTFResource,
-  WebGLEngine
-} from "oasis-engine";
+import { AmbientLight, Animation, Camera, Color, DirectLight, GLTFResource, WebGLEngine } from "oasis-engine";
 
+const gui = new dat.GUI();
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -24,8 +17,6 @@ const rootEntity = scene.createRootEntity();
 const lightEntity = rootEntity.createChild("light");
 lightEntity.transform.rotate(0, 180, 0);
 
-const ambient = lightEntity.addComponent(AmbientLight);
-ambient.color = new Color(0.2, 0.2, 0.2, 1);
 const light = lightEntity.addComponent(DirectLight);
 light.color = new Color(0.8, 0.8, 0.8, 1.0);
 
@@ -53,8 +44,6 @@ engine.resourceManager
       crossFade: true,
       crossTime: 1000
     };
-
-    const gui = new dat.GUI();
 
     gui.add(debugInfo, "animation", animationNameList).onChange((v) => {
       const { crossFade, crossTime } = debugInfo;

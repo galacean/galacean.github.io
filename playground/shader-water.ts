@@ -1,11 +1,25 @@
 /**
- * @title Water
- * @category Shader
+ * @title Shader Water
+ * @category Material
  */
-import { AssetType, Camera, Color, Engine, Material, MeshRenderer, PrimitiveMesh, Script, Shader, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
+import {
+  AssetType,
+  Camera,
+  Color,
+  Engine,
+  Material,
+  MeshRenderer,
+  PrimitiveMesh,
+  Script,
+  Shader,
+  Texture2D,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
+const gui = new dat.GUI();
 //-- create engine object
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -209,7 +223,6 @@ class WaterScript extends Script {
 }
 sphereEntity.addComponent(WaterScript);
 
-
 // debug
 function openDebug() {
   const shaderData = material.shaderData;
@@ -222,8 +235,6 @@ function openDebug() {
     sea_base: [baseColor.r * 255, baseColor.g * 255, baseColor.b * 255],
     water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255]
   };
-
-  const gui = new dat.GUI();
 
   gui.add(debug, "sea_height", 0, 3).onChange((v) => {
     shaderData.setFloat("u_sea_height", v);

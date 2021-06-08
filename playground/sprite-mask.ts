@@ -1,8 +1,8 @@
 /**
  * @title Sprite Mask
- * @category 2D
+ * @category Sprite
  */
-import { OrbitControl } from '@oasis-engine/controls';
+import { OrbitControl } from "@oasis-engine/controls";
 import {
   AssetType,
   Camera,
@@ -15,18 +15,18 @@ import {
   SpriteRenderer,
   Texture2D,
   Vector3,
-  WebGLEngine,
-} from 'oasis-engine';
+  WebGLEngine
+} from "oasis-engine";
 
 // Create engine.
-const engine = new WebGLEngine('canvas');
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 // Create root entity.
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 // Create camera.
-const cameraEntity = rootEntity.createChild('Camera');
+const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.setPosition(0, 0, 50);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
@@ -36,19 +36,19 @@ engine.resourceManager
   .load([
     {
       // Sprite texture
-      url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iMy1Sq0XlVMAAAAAAAAAAAAAARQnAQ',
-      type: AssetType.Texture2D,
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iMy1Sq0XlVMAAAAAAAAAAAAAARQnAQ",
+      type: AssetType.Texture2D
     },
     {
       // Mask texture
-      url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*qyhFT5Un5AgAAAAAAAAAAAAAARQnAQ',
-      type: AssetType.Texture2D,
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*qyhFT5Un5AgAAAAAAAAAAAAAARQnAQ",
+      type: AssetType.Texture2D
     },
     {
       // Mask texture
-      url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*pgrpQIneqSUAAAAAAAAAAAAAARQnAQ',
-      type: AssetType.Texture2D,
-    },
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*pgrpQIneqSUAAAAAAAAAAAAAARQnAQ",
+      type: AssetType.Texture2D
+    }
   ])
   .then((textures: Texture2D[]) => {
     const pos = new Vector3();
@@ -62,25 +62,13 @@ engine.resourceManager
     // Show inside mask.
     pos.setValue(-5, 0, 0);
     scale.setValue(3, 3, 3);
-    addSpriteRenderer(
-      pos,
-      scale,
-      sprite,
-      SpriteMaskInteraction.VisibleInsideMask,
-      SpriteMaskLayer.Layer0,
-    );
+    addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleInsideMask, SpriteMaskLayer.Layer0);
     addMask(pos, maskSprite0, SpriteMaskLayer.Layer0, ScaleScript);
 
     // Show outside mask.
     pos.setValue(5, 0, 0);
     scale.setValue(3, 3, 3);
-    addSpriteRenderer(
-      pos,
-      scale,
-      sprite,
-      SpriteMaskInteraction.VisibleOutsideMask,
-      SpriteMaskLayer.Layer1,
-    );
+    addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleOutsideMask, SpriteMaskLayer.Layer1);
     addMask(pos, maksSprite1, SpriteMaskLayer.Layer1, RotationScript);
   });
 
@@ -94,9 +82,9 @@ function addSpriteRenderer(
   scale: Vector3,
   sprite: Sprite,
   maskInteraction: SpriteMaskInteraction,
-  maskLayer: number,
+  maskLayer: number
 ): void {
-  const entity = rootEntity.createChild('Sprite');
+  const entity = rootEntity.createChild("Sprite");
   const renderer = entity.addComponent(SpriteRenderer);
   const { transform } = entity;
 
@@ -114,9 +102,9 @@ function addMask<T extends Script>(
   pos: Vector3,
   sprite: Sprite,
   influenceLayers: number,
-  scriptType: new (entity: Entity) => T,
+  scriptType: new (entity: Entity) => T
 ): void {
-  const entity = rootEntity.createChild('Mask');
+  const entity = rootEntity.createChild("Mask");
   const mask = entity.addComponent(SpriteMask);
 
   entity.addComponent(scriptType);

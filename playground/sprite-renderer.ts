@@ -1,9 +1,9 @@
 /**
  * @title Sprite Renderer
- * @category 2D
+ * @category Sprite
  */
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
+import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -34,7 +34,7 @@ engine.resourceManager
         spriteRenderer.sprite = sprite;
         // spriteRenderer.flipX = true;
         // spriteRenderer.flipY = true;
-        const rect = spriteRenderer.sprite.rect;
+        const rect = spriteRenderer.sprite.region;
         const scaleX = 100.0 / rect.width;
         const scaleY = 100.0 / rect.height;
         spriteEntity.transform.setScale(scaleX, scaleY, 1);

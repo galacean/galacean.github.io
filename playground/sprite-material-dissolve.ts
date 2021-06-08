@@ -1,6 +1,6 @@
 /**
  * @title Sprite Material Dissolve
- * @category 2D
+ * @category Sprite
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";

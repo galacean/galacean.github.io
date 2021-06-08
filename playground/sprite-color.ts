@@ -1,9 +1,19 @@
 /**
  * @title Sprite Color
- * @category 2D
+ * @category Sprite
  */
-import { AssetType, Camera, Color, Entity, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
+import {
+  AssetType,
+  Camera,
+  Color,
+  Entity,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");

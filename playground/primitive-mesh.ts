@@ -2,73 +2,93 @@
  * @title Primitive Mesh
  * @category Mesh
  */
-import { AssetType, BlinnPhongMaterial, Camera, DirectLight, Entity, Material, MeshRenderer, ModelMesh, PrimitiveMesh, Script, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
+import {
+  AssetType,
+  BlinnPhongMaterial,
+  Camera,
+  Color,
+  DirectLight,
+  Entity,
+  Material,
+  MeshRenderer,
+  ModelMesh,
+  PrimitiveMesh,
+  Script,
+  Texture2D,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
-// Create engine
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
+init();
 
-// Create root entity
-const rootEntity = engine.sceneManager.activeScene.createRootEntity();
+function init(): void {
+  // Create engine
+  const engine = new WebGLEngine("canvas");
+  engine.canvas.resizeByClientSize();
 
-// Create camera
-const cameraEntity = rootEntity.createChild("Camera");
-cameraEntity.transform.setPosition(0, 0, 20);
-cameraEntity.addComponent(Camera);
-cameraEntity.addComponent(OrbitControl);
+  // Create root entity
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
+  scene.ambientLight.diffuseSolidColor = new Color(0.6, 0.6, 0.6);
 
-// Create direct light
-const lightEntity = rootEntity.createChild("DirectLight");
-const light = lightEntity.addComponent(DirectLight);
-light.intensity = 0.3;
+  // Create camera
+  const cameraEntity = rootEntity.createChild("Camera");
+  cameraEntity.transform.setPosition(0, 0, 20);
+  cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(OrbitControl);
 
-engine.resourceManager
-  .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ArCHTbfVPXUAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
-  })
-  .then((texture) => {
-    const distanceX = 2.5;
-    const distanceY = 2.5;
-    const position = new Vector3();
+  // Create direct light
+  const lightEntity = rootEntity.createChild("DirectLight");
+  const light = lightEntity.addComponent(DirectLight);
+  light.intensity = 0.6;
 
-    // Create material
-    const material = new BlinnPhongMaterial(engine);
-    material.emissiveTexture = texture;
-    material.emissiveColor.setValue(1, 1, 1, 1);
+  engine.resourceManager
+    .load<Texture2D>({
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ArCHTbfVPXUAAAAAAAAAAAAAARQnAQ",
+      type: AssetType.Texture2D
+    })
+    .then((texture) => {
+      const distanceX = 2.5;
+      const distanceY = 2.5;
+      const position = new Vector3();
 
-    for (let i = 0; i < 3; i++) {
-      const posX = (i - 1) * distanceX;
+      // Create material
+      const material = new BlinnPhongMaterial(engine);
+      material.baseTexture = texture;
 
-      // Create cuboid
-      position.setValue(posX, distanceY * 2.5, 0);
-      generatePrimitiveEntity(rootEntity, "cuboid", position, material, PrimitiveMesh.createCuboid(engine));
+      for (let i = 0; i < 3; i++) {
+        const posX = (i - 1) * distanceX;
 
-      // Create sphere
-      position.setValue(posX, distanceY * 1.5, 0);
-      generatePrimitiveEntity(rootEntity, "sphere", position, material, PrimitiveMesh.createSphere(engine));
+        // Create cuboid
+        position.setValue(posX, distanceY * 2.5, 0);
+        generatePrimitiveEntity(rootEntity, "cuboid", position, material, PrimitiveMesh.createCuboid(engine));
 
-      // Create plane
-      position.setValue(posX, distanceY * 0.5, 0);
-      generatePrimitiveEntity(rootEntity, "plane", position, material, PrimitiveMesh.createPlane(engine));
+        // Create sphere
+        position.setValue(posX, distanceY * 1.5, 0);
+        generatePrimitiveEntity(rootEntity, "sphere", position, material, PrimitiveMesh.createSphere(engine));
 
-      // Create cylinder
-      position.setValue(posX, -distanceY * 0.5, 0);
-      generatePrimitiveEntity(rootEntity, "cylinder", position, material, PrimitiveMesh.createCylinder(engine));
+        // Create plane
+        position.setValue(posX, distanceY * 0.5, 0);
+        generatePrimitiveEntity(rootEntity, "plane", position, material, PrimitiveMesh.createPlane(engine));
 
-      // Create cone
-      position.setValue(posX, -distanceY * 1.5, 0);
-      generatePrimitiveEntity(rootEntity, "cone", position, material, PrimitiveMesh.createCone(engine));
+        // Create cylinder
+        position.setValue(posX, -distanceY * 0.5, 0);
+        generatePrimitiveEntity(rootEntity, "cylinder", position, material, PrimitiveMesh.createCylinder(engine));
 
-      // Create turos
-      position.setValue(posX, -distanceY * 2.5, 0);
-      generatePrimitiveEntity(rootEntity, "torus", position, material, PrimitiveMesh.createTorus(engine));
-    }
-  });
+        // Create cone
+        position.setValue(posX, -distanceY * 1.5, 0);
+        generatePrimitiveEntity(rootEntity, "cone", position, material, PrimitiveMesh.createCone(engine));
+
+        // Create turos
+        position.setValue(posX, -distanceY * 2.5, 0);
+        generatePrimitiveEntity(rootEntity, "torus", position, material, PrimitiveMesh.createTorus(engine));
+      }
+    });
 
   // Run engine
   engine.run();
+}
 
 /**
  * generate primitive mesh entity.

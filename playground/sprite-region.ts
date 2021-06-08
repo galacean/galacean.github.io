@@ -1,40 +1,31 @@
 /**
  * @title Sprite Region
- * @category 2D
+ * @category Sprite
  */
-import { OrbitControl } from '@oasis-engine/controls';
-import {
-  AssetType,
-  Camera,
-  Entity,
-  Rect,
-  Sprite,
-  SpriteRenderer,
-  Texture2D,
-  WebGLEngine,
-} from 'oasis-engine';
+import { OrbitControl } from "@oasis-engine/controls";
+import { AssetType, Camera, Entity, Rect, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
-const engine = new WebGLEngine('canvas');
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 // Create root entity.
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 // Create camera.
-const cameraEntity = rootEntity.createChild('Camera');
+const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.setPosition(0, 0, 50);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 
 engine.resourceManager
   .load<Texture2D>({
-    url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*d3N9RYpcKncAAAAAAAAAAAAAARQnAQ',
-    type: AssetType.Texture2D,
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*d3N9RYpcKncAAAAAAAAAAAAAARQnAQ",
+    type: AssetType.Texture2D
   })
   .then((texture) => {
     // Create origin sprite entity.
-    const spriteEntity = new Entity(engine, 'spriteRegion');
+    const spriteEntity = new Entity(engine, "spriteRegion");
     spriteEntity.transform.setScale(3, 3, 3);
     spriteEntity.addComponent(SpriteRenderer);
 
@@ -61,13 +52,7 @@ engine.run();
 /**
  * Add flip entity.
  */
-function addRegionEntity(
-  entity: Entity,
-  texture: Texture2D,
-  posX: number,
-  posY: number,
-  region: Rect,
-): void {
+function addRegionEntity(entity: Entity, texture: Texture2D, posX: number, posY: number, region: Rect): void {
   rootEntity.addChild(entity);
   entity.transform.setPosition(posX, posY, 0);
   const regionRenderer = entity.getComponent(SpriteRenderer);

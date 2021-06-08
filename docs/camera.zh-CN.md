@@ -38,7 +38,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0]
 
 cullingMask 案例：
 
-<playground src="camera-culling-mask.ts"></playground>
+<playground src="culling-mask.ts"></playground>
 
 
 ## 类型

@@ -2,15 +2,29 @@
  * @title PBR Helmet
  * @category Material
  */
-import { AmbientLight, AssetType, Camera, Color, DirectLight, EnvironmentMapLight, GLTFResource, SkyBox, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
+import {
+  AssetType,
+  BackgroundMode,
+  Camera,
+  Color,
+  DiffuseMode,
+  DirectLight,
+  GLTFResource,
+  PrimitiveMesh,
+  SkyBoxMaterial,
+  TextureCubeMap,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
 //-- create engine object
-const engine = new WebGLEngine("canvas");
+let engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 let scene = engine.sceneManager.activeScene;
+const { ambientLight, background } = scene;
 const rootEntity = scene.createRootEntity();
 
 const color2glColor = (color) => new Color(color[0] / 255, color[1] / 255, color[2] / 255);
@@ -18,12 +32,9 @@ const glColor2Color = (color) => new Color(color[0] * 255, color[1] * 255, color
 const gui = new dat.GUI();
 gui.domElement.style = "position:absolute;top:0px;left:50vw";
 
-let envLightNode = rootEntity.createChild("env_light");
-let envLight = envLightNode.addComponent(EnvironmentMapLight);
 let envFolder = gui.addFolder("EnvironmentMapLight");
-envFolder.add(envLight, "enabled");
-envFolder.add(envLight, "specularIntensity", 0, 1);
-envFolder.add(envLight, "diffuseIntensity", 0, 1);
+envFolder.add(ambientLight, "specularIntensity", 0, 1);
+envFolder.add(ambientLight, "diffuseIntensity", 0, 1);
 
 let directLightColor = { color: [255, 255, 255] };
 let directLightNode = rootEntity.createChild("dir_light");
@@ -34,14 +45,18 @@ dirFolder.add(directLight, "enabled");
 dirFolder.addColor(directLightColor, "color").onChange((v) => (directLight.color = color2glColor(v)));
 dirFolder.add(directLight, "intensity", 0, 1);
 
-const ambient = rootEntity.addComponent(AmbientLight);
-ambient.color = new Color(0.2, 0.2, 0.2, 1);
-
-//-- create camera
+//Create camera
 let cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.position = new Vector3(0, 0, 5);
 cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
+
+// Create sky
+const sky = background.sky;
+const skyMaterial = new SkyBoxMaterial(engine);
+background.mode = BackgroundMode.Sky;
+sky.material = skyMaterial;
+sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 Promise.all([
   engine.resourceManager
@@ -63,23 +78,24 @@ Promise.all([
       type: AssetType.TextureCube
     })
     .then((cubeMap) => {
-      envLight.diffuseTexture = cubeMap;
+      ambientLight.diffuseMode = DiffuseMode.Texture;
+      ambientLight.diffuseTexture = cubeMap;
     }),
   engine.resourceManager
     .load<TextureCubeMap>({
       urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*4ebgQaWOLaIAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*i56eR6AbreUAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*3wYERKsel5oAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*YiG7Srwmb3QAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*VUUwQrAv47sAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Dn2qSoqzfwoAAAAAAAAAAAAAARQnAQ"
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
       ],
       type: AssetType.TextureCube
     })
     .then((cubeMap) => {
-      envLight.specularTexture = cubeMap;
-      rootEntity.addComponent(SkyBox).skyBoxMap = cubeMap;
+      ambientLight.specularTexture = cubeMap;
+      skyMaterial.textureCubeMap = cubeMap;
     })
 ]).then(() => {
   engine.run();

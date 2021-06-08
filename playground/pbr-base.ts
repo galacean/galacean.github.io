@@ -2,84 +2,71 @@
  * @title PBR Base
  * @category Material
  */
-import { AssetType, Camera, EnvironmentMapLight, MeshRenderer, PBRMaterial, PrimitiveMesh, SkyBox, TextureCubeMap, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
+import {
+  AssetType,
+  BackgroundMode,
+  Camera,
+  Color,
+  DiffuseMode,
+  DirectLight,
+  GLTFResource,
+  PrimitiveMesh,
+  SkyBoxMaterial,
+  TextureCubeMap,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
-/**
- * use PBR material
- */
-function usePBR(rows = 5, cols = 5, radius = 1, gap = 1) {
-  const deltaGap = radius * 2 + gap;
-  const minX = (-deltaGap * (cols - 1)) / 2;
-  const maxY = (deltaGap * (rows - 1)) / 2;
-  const deltaMetal = 1 / (cols - 1);
-  const deltaRoughness = 1 / (rows - 1);
-
-  // create model mesh
-  const mesh = PrimitiveMesh.createSphere(engine, radius, 64);
-
-  // create renderer
-  for (let i = 0, count = rows * cols; i < count; i++) {
-    const entity = rootEntity.createChild();
-    const renderer = entity.addComponent(MeshRenderer);
-    const material = new PBRMaterial(engine);
-    const currentRow = Math.floor(i / cols);
-    const currentCol = i % cols;
-
-    renderer.mesh = mesh;
-    renderer.setMaterial(material);
-    entity.transform.setPosition(minX + currentCol * deltaGap, maxY - currentRow * deltaGap, 0);
-
-    // pbr metallic
-    material.metallicFactor = 1 - deltaMetal * currentRow;
-
-    // pbr roughness
-    material.roughnessFactor = deltaRoughness * currentCol;
-
-    // base color
-    if (currentRow === 0) {
-      material.baseColor.setValue(186 / 255, 110 / 255, 64 / 255, 1.0);
-    } else if (currentRow === rows - 1) {
-      material.baseColor.setValue(0, 0, 0, 1);
-    }
-  }
-}
-
-const gui = new dat.GUI();
-const guiDebug = {
-  env: "forrest",
-  introX: "从左到右粗糙度递增",
-  introY: "从上到下金属度递减"
-};
-gui.add(guiDebug, "introX");
-gui.add(guiDebug, "introY");
-
-// create engine object
+//-- create engine object
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
+const { ambientLight, background } = scene;
 const rootEntity = scene.createRootEntity();
 
-// create camera
-const cameraEntity = rootEntity.createChild("camera_entity");
-cameraEntity.transform.position = new Vector3(0, 0, 20);
-cameraEntity.addComponent(Camera);
-const control = cameraEntity.addComponent(OrbitControl);
-control.maxDistance = 20;
-control.minDistance = 2;
+const color2glColor = (color) => new Color(color[0] / 255, color[1] / 255, color[2] / 255);
+const gui = new dat.GUI();
 
-// create skybox
-const skybox = rootEntity.addComponent(SkyBox);
+const envFolder = gui.addFolder("EnvironmentMapLight");
+envFolder.add(ambientLight, "specularIntensity", 0, 1);
+envFolder.add(ambientLight, "diffuseIntensity", 0, 1);
 
-// create env light
-const envLight = rootEntity.addComponent(EnvironmentMapLight);
+const directLightColor = { color: [255, 255, 255] };
+const directLightNode = rootEntity.createChild("dir_light");
+const directLight = directLightNode.addComponent(DirectLight);
+directLight.color = new Color(1, 1, 1);
+const dirFolder = gui.addFolder("DirectionalLight1");
+dirFolder.add(directLight, "enabled");
+dirFolder.addColor(directLightColor, "color").onChange((v) => (directLight.color = color2glColor(v)));
+dirFolder.add(directLight, "intensity", 0, 1);
 
-// load env texture
-engine.resourceManager
-  .load([
-    {
+//Create camera
+const cameraNode = rootEntity.createChild("camera_node");
+cameraNode.transform.position = new Vector3(0.25, 0.5, 1.5);
+cameraNode.addComponent(Camera);
+const control = cameraNode.addComponent(OrbitControl);
+control.target.setValue(0.25, 0.25, 0);
+
+// Create sky
+const sky = background.sky;
+const skyMaterial = new SkyBoxMaterial(engine);
+background.mode = BackgroundMode.Sky;
+sky.material = skyMaterial;
+sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
+
+Promise.all([
+  engine.resourceManager
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/dda73ec2-6921-42c7-b109-b5cd386f4410.glb")
+    .then((gltf) => {
+      rootEntity.addChild(gltf.defaultSceneRoot);
+      gltf.defaultSceneRoot.transform.setScale(100, 100, 100);
+      console.log(gltf);
+    }),
+  engine.resourceManager
+    .load<TextureCubeMap>({
       urls: [
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Bk5FQKGOir4AAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_cPhR7JMDjkAAAAAAAAAAAAAARQnAQ",
@@ -89,51 +76,27 @@ engine.resourceManager
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*DP5QTbTSAYgAAAAAAAAAAAAAARQnAQ"
       ],
       type: AssetType.TextureCube
-    },
-    {
+    })
+    .then((cubeMap) => {
+      ambientLight.diffuseMode = DiffuseMode.Texture;
+      ambientLight.diffuseTexture = cubeMap;
+    }),
+  engine.resourceManager
+    .load<TextureCubeMap>({
       urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*4ebgQaWOLaIAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*i56eR6AbreUAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*3wYERKsel5oAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*YiG7Srwmb3QAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*VUUwQrAv47sAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Dn2qSoqzfwoAAAAAAAAAAAAAARQnAQ"
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5bs-Sb80qcUAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rLUCT4VPBeEAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*LjSHTI5iSPoAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*pgCvTJ85RUYAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*0BKxR6jgRDAAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Pir4RoxLm3EAAAAAAAAAAAAAARQnAQ"
       ],
       type: AssetType.TextureCube
-    },
-    {
-      urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
-      ],
-      type: AssetType.TextureCube
-    }
-  ])
-  .then((cubeMaps: TextureCubeMap[]) => {
-    envLight.diffuseTexture = cubeMaps[0];
-    envLight.specularTexture = cubeMaps[1];
-    skybox.skyBoxMap = cubeMaps[1];
-
-    gui.add(guiDebug, "env", ["forrest", "road"]).onChange((v) => {
-      switch (v) {
-        case "forrest":
-          envLight.specularTexture = cubeMaps[1];
-          skybox.skyBoxMap = cubeMaps[1];
-          break;
-        case "road":
-          envLight.specularTexture = cubeMaps[2];
-          skybox.skyBoxMap = cubeMaps[2];
-          break;
-      }
-    });
-  });
-
-// run engine
-engine.run();
-
-// show pbr materials
-usePBR();
+    })
+    .then((cubeMap) => {
+      ambientLight.specularTexture = cubeMap;
+      skyMaterial.textureCubeMap = cubeMap;
+    })
+]).then(() => {
+  engine.run();
+});

@@ -1,7 +1,8 @@
 /**
  * @title Particle Renderer
- * @category Particles
+ * @category Particle
  */
+// import { OrbitControl } from "@oasis-engine/controls";
 import { AssetType, Camera, Color, ParticleRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 
 //-- create engine object

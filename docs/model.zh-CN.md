@@ -4,7 +4,7 @@ title: 2. 加载一个 3D 模型
 type: 入门
 ---
 
-<playground src="gltf.ts"></playground>
+<playground src="gltf-basic.ts"></playground>
 
 ## 基本使用
 

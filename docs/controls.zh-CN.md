@@ -7,7 +7,7 @@ type: 二方库
 ## 轨道控制器
 [OrbitControl](${api}controls/OrbitControl) 用来模拟轨道交互，适用于围绕一个目标对象进行 360旋转交互：
 
-<playground src="gltf.ts"></playground>
+<playground src="gltf-basic.ts"></playground>
 
 ```typescript
 import { Camera } from 'oasis-engine';

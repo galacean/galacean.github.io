@@ -2,11 +2,21 @@
  * @title Spot Light
  * @category Light
  */
-import { BlinnPhongMaterial, Camera, Color, MeshRenderer, PrimitiveMesh, Script, SpotLight, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
-
+import {
+  BlinnPhongMaterial,
+  Camera,
+  Color,
+  MeshRenderer,
+  PrimitiveMesh,
+  Script,
+  SpotLight,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 const target = new Vector3(0, -3, 0);
 const up = new Vector3(0, 1, 0);
+
 class Move extends Script {
   time = 0;
   y = 3;
@@ -35,6 +45,7 @@ class LookAtFocus extends Script {
 //-- create engine object
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
+
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
@@ -60,7 +71,6 @@ light1.addComponent(LookAtFocus);
 
 let spotLight = light1.addComponent(SpotLight);
 spotLight.angle = Math.PI / 12;
-spotLight.penumbra = 2;
 spotLight["enableShadow"] = true;
 spotLight["shadow"].bias = 0.0001;
 spotLight["shadow"].intensity = 0.2;

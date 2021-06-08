@@ -1,9 +1,18 @@
 /**
- * @title Particle Renderer Spritesheet
- * @category Particles
+ * @title Particle Sprite Sheet
+ * @category Particle
  */
-import { AssetType, Camera, Color, ParticleRenderer, ParticleRendererBlendMode, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
+import {
+  AssetType,
+  Camera,
+  Color,
+  ParticleRenderer,
+  ParticleRendererBlendMode,
+  Texture2D,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");

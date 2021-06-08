@@ -6,7 +6,7 @@ type: 组件
 
 在创建一个新的节点时，会自动为该节点添加变换组件。变换组件能够对节点的位移，旋转，缩放，矩阵等进行操作，完成节点的几何变换。
 
-<playground src="transform.ts"></playground>
+<playground src="transform-basic.ts"></playground>
 
 ## 基本用法
 ```typescript

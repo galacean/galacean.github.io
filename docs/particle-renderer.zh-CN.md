@@ -49,7 +49,7 @@ particleComp.stop();
 - [isUseOriginColor](${api}core/ParticleRenderer#isUseOriginColor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色。
 - [spriteSheet](${api}core/ParticleRenderer#spriteSheet)：精灵图表，每个粒子可以渲染精灵图中某块区域：
 
-<playground src="particle-renderer-spritesheet.ts"></playground>
+<playground src="particle-sprite-sheet.ts"></playground>
 
 - [alpha](${api}core/ParticleRenderer#alpha)：透明度。
 - [alphaRandomness](${api}core/ParticleRenderer#alphaRandomness)：透明度随机因子。

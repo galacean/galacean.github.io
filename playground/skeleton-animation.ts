@@ -2,23 +2,25 @@
  * @title Skeleton Animation
  * @category Animation
  */
-import { Animation, Camera, DirectLight, EnvironmentMapLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
+import { Animation, Camera, DirectLight, GLTFResource, Logger, Vector3, WebGLEngine } from "oasis-engine";
+
+Logger.enable();
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
+
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
 // camera
 const cameraEntity = rootEntity.createChild("camera_node");
-cameraEntity.transform.position = new Vector3(0, 1, 3);
+cameraEntity.transform.position = new Vector3(0, 1, 5);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
 const lightNode = rootEntity.createChild("light_node");
-rootEntity.addComponent(EnvironmentMapLight);
-lightNode.addComponent(DirectLight).intensity = 0.6;
+lightNode.addComponent(DirectLight).intensity = 0.8;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
