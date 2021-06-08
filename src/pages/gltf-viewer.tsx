@@ -3,11 +3,11 @@ import {
   Animation,
   AnimationClip,
   AssetType,
+  BackgroundMode,
   BoundingBox,
   Camera,
   Color,
   Entity,
-  EnvironmentMapLight,
   GLTFResource,
   Material,
   MeshRenderer,
@@ -19,12 +19,11 @@ import {
   Renderer,
   Scene,
   SkinnedMeshRenderer,
-  SkyBox,
+  SkyBoxMaterial,
   Texture2D,
   TextureCubeMap,
   UnlitMaterial,
   Vector3,
-  Vector4,
   WebGLEngine,
 } from 'oasis-engine';
 import React, { useEffect } from 'react';
@@ -64,6 +63,14 @@ const envList = {
     'https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*IRc7R7cl4CcAAAAAAAAAAABkARQnAQ',
     'https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*y_4hRYVgzQ4AAAAAAAAAAABkARQnAQ',
   ],
+  road: [
+    'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*4ebgQaWOLaIAAAAAAAAAAAAAARQnAQ',
+    'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*i56eR6AbreUAAAAAAAAAAAAAARQnAQ',
+    'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*3wYERKsel5oAAAAAAAAAAAAAARQnAQ',
+    'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*YiG7Srwmb3QAAAAAAAAAAAAAARQnAQ',
+    'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*VUUwQrAv47sAAAAAAAAAAAAAARQnAQ',
+    'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Dn2qSoqzfwoAAAAAAAAAAAAAARQnAQ',
+  ],
 };
 
 class Oasis {
@@ -84,6 +91,7 @@ class Oasis {
 
   engine: WebGLEngine = new WebGLEngine('canvas-gltf-viewer', { alpha: true });
   scene: Scene = this.engine.sceneManager.activeScene;
+  skyMaterial: SkyBoxMaterial = new SkyBoxMaterial(this.engine);
 
   // Entity
   rootEntity: Entity = this.scene.createRootEntity('root');
@@ -95,10 +103,8 @@ class Oasis {
   // Component
   camera: Camera = this.cameraEntity.addComponent(Camera);
   controler: OrbitControl = this.cameraEntity.addComponent(OrbitControl);
-  envLight: EnvironmentMapLight = this.rootEntity.addComponent(EnvironmentMapLight);
   pointLight1: PointLight = this.pointLightEntity1.addComponent(PointLight);
   pointLight2: PointLight = this.pointLightEntity2.addComponent(PointLight);
-  skybox: SkyBox = this.rootEntity.addComponent(SkyBox);
 
   // Debug
   gui = new window.dat.GUI();
@@ -128,17 +134,11 @@ class Oasis {
   $close = document.getElementById('close');
 
   constructor() {
-    const guiStyle = this.gui.domElement.style;
-    guiStyle.position = 'relative';
-    guiStyle.top = '68px';
-    guiStyle.right = '-12px';
-
     this.initResources().then(() => {
       this.initScene();
       this.initDropZone();
       this.addSceneGUI();
       this.initDefaultDebugMesh();
-
     });
   }
 
@@ -160,8 +160,8 @@ class Oasis {
             const name = names[index];
             this.cubeTextures[name] = texture;
             if (name === this.state.envTexture) {
-              this.envLight.specularTexture = texture;
-              this.skybox.skyBoxMap = texture;
+              this.scene.ambientLight.specularTexture = texture;
+              this.skyMaterial.textureCubeMap = texture;
             }
           });
           resolve(true);
@@ -174,8 +174,8 @@ class Oasis {
     this.controler.minDistance = 0;
 
     // debug sync
-    if (!this.state.background) {
-      this.skybox.enabled = false;
+    if (this.state.background) {
+      this.scene.background.mode = BackgroundMode.Sky;
     }
     if (!this.state.addLights) {
       this.pointLight1.enabled = false;
@@ -183,8 +183,10 @@ class Oasis {
     }
     this.pointLight1.intensity = this.state.lightIntensity;
     this.pointLight2.intensity = this.state.lightIntensity;
-    this.envLight.specularIntensity = this.state.envIntensity;
-    this.camera.backgroundColor = new Vector4(0, 0, 0, 0);
+    this.scene.ambientLight.specularIntensity = this.state.envIntensity;
+    this.scene.background.solidColor = new Color(0, 0, 0, 0);
+    this.scene.background.sky.material = this.skyMaterial;
+    this.scene.background.sky.mesh = PrimitiveMesh.createCuboid(this.engine, 1, 1, 1);
     this.engine.run();
   }
 
@@ -193,7 +195,11 @@ class Oasis {
     // Display controls.
     const dispFolder = gui.addFolder('Scene');
     dispFolder.add(this.state, 'background').onChange((v: boolean) => {
-      this.skybox.enabled = v;
+      if (v) {
+        this.scene.background.mode = BackgroundMode.Sky;
+      } else {
+        this.scene.background.mode = BackgroundMode.SolidColor;
+      }
     });
 
     // Lighting controls.
@@ -202,13 +208,13 @@ class Oasis {
       .add(this.state, 'envTexture', ['None', ...Object.keys(this.cubeTextures)])
       .name('IBL')
       .onChange((v) => {
-        this.envLight.specularTexture = this.skybox.skyBoxMap =
+        this.scene.ambientLight.specularTexture = this.skyMaterial.textureCubeMap =
           v === 'None' ? null : this.cubeTextures[v];
       });
     lightFolder
       .add(this.state, 'envIntensity', 0, 2)
       .onChange((v) => {
-        this.envLight.specularIntensity = v;
+        this.scene.ambientLight.specularIntensity = v;
       })
       .name('间接光强度');
     lightFolder
@@ -268,6 +274,13 @@ class Oasis {
     this.cameraEntity.transform.setPosition(center.x, center.y, size * 3);
 
     this.camera.farClipPlane = size * 12;
+
+    if (this.camera.nearClipPlane > size) {
+      this.camera.nearClipPlane = size / 10;
+    } else {
+      this.camera.nearClipPlane = 0.1;
+    }
+
     this.controler.maxDistance = size * 10;
 
     this.pointLightEntity1.transform.setPosition(0, size * 3, size * 3);
@@ -527,17 +540,16 @@ class Oasis {
         common
           .add(material, 'opacity', 0, 1)
           .step(0.01)
-          .onChange((v) => (state.baseColor[3] = v));
+          .onChange((v) => {
+            material.opacity = v;
+          });
         common.add(material, 'isTransparent');
         common.add(material, 'alphaCutoff', 0, 1).step(0.01);
         common.add(material, 'getOpacityFromRGB');
 
-        common
-          .addColor(state, 'baseColor')
-          .onChange((v) => {
-            Oasis.guiToColor(v, material.baseColor);
-          })
-          .listen();
+        common.addColor(state, 'baseColor').onChange((v) => {
+          Oasis.guiToColor(v, material.baseColor);
+        });
         common.addColor(state, 'emissiveColor').onChange((v) => {
           Oasis.guiToColor(v, material.emissiveColor);
         });
