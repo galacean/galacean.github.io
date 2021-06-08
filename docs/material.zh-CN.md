@@ -116,7 +116,7 @@ const material = renderer.setMaterial(material);
 | [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
 | [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式。 |
 
-
+<playground src="blend-mode.ts"></playground>
 
 
 ## 常见 QA

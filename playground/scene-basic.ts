@@ -2,7 +2,7 @@
  * @title Scene Basic
  * @category Basic
  */
-// 引入模块
+// Import Modules
 import {
   BlinnPhongMaterial,
   Camera,
@@ -14,38 +14,38 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
-// 创建画布
+// Init Engine
 const engine = new WebGLEngine("canvas");
-// 设置屏幕适配
+// Adapter to screen
 engine.canvas.resizeByClientSize();
 
-// 获取场景根实体
+// Get root entity of current scene
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
 
-// 创建一个相机实体
+// Init Camera
 let cameraEntity = rootEntity.createChild("camera_entity");
 cameraEntity.transform.position = new Vector3(0, 5, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 cameraEntity.addComponent(Camera);
 scene.background.solidColor.setValue(1, 1, 1, 1);
 
-// 创建一个实体用来挂载方向光
+// Create a entity to add light component
 let lightEntity = rootEntity.createChild("light");
 
-// 创建一个方向光组件
+// Create light component
 let directLight = lightEntity.addComponent(DirectLight);
 directLight.color = new Color(1.0, 1.0, 1.0);
 directLight.intensity = 0.5;
 
-// 通过光照实体的旋转角度控制光线方向
+// Control light direction by entity's transform
 lightEntity.transform.rotation = new Vector3(45, 45, 45);
 
-// 创建立方体实体
+// Create Cube
 let cubeEntity = rootEntity.createChild("cube");
 let cube = cubeEntity.addComponent(MeshRenderer);
 cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
 cube.setMaterial(new BlinnPhongMaterial(engine));
 
-// 启动引擎
+// Run Engine
 engine.run();
