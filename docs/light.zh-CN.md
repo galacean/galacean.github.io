@@ -21,13 +21,9 @@ type: 组件
 
 
 ```typescript
-// 创建一个实体用来挂载方向光
-let lightEntity = rootEntity.createChild('ambient_light');
-
-// 创建一个环境光组件
-let ambientLight = lightEntity.addComponent(AmbientLight);
-ambientLight.color = new Color(1, 0, 0);
-ambientLight.intensity = 0.5;
+// 在场景中设置环境光
+const scene = engine.sceneManager.activeScene;
+scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
 ```
 
 
