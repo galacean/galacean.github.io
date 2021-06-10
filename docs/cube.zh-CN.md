@@ -81,7 +81,7 @@ const rootEntity = scene.createRootEntity('root');
 
 在 Oasis Engine 中，功能是以组件形式添加到实体上的。首先，我们先创建一个实体用来添加相机组件。
 
-创建完成之后，通过实体上自带的变换组件 `transform` 来改变相机的位置和朝向。然后给这个实体添加相机组件 `Camera`，并给相机添加一个背景色（其实是给场景设置一个背景色）。 
+创建完成之后，通过实体上自带的变换组件 `transform` 来改变相机的位置和朝向。然后给这个实体添加相机组件 `Camera`。 
 
 
 ```typescript
@@ -91,7 +91,6 @@ cameraEntity.transform.position = new Vector3(0, 5, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 
 let camera = cameraEntity.addComponent(Camera);
-camera.backgroundColor = new Vector4(1,1,1,1)
 ```
 ## 创建光照
 
