@@ -1,6 +1,6 @@
 /**
  * @title Sprite Material Blur
- * @category Sprite
+ * @category 2D
  */
 import {
   AssetType,

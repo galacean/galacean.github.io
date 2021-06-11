@@ -1,6 +1,6 @@
 /**
  * @title Spine Animation
- * @category Spine
+ * @category 2D
  */
 import { SpineAnimation } from "@oasis-engine/engine-spine";
 import { Camera, Entity, Logger, Vector3, WebGLEngine } from "oasis-engine";
