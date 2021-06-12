@@ -43,7 +43,7 @@
     "@babel/core": "^7.14.0",
     "@oasis-engine/controls": "0.4.0-alpha.0",
     "@oasis-engine/engine-spine": "^0.1.4",
-    "@oasis-engine/lottie": "^0.0.2",
+    "@oasis-engine/lottie": "^0.0.3",
     "@oasis-engine/stats": "0.4.0-alpha.0",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "^4.1.1",
