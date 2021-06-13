@@ -47,7 +47,7 @@ tilingOffset 案例：
 | [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | 高光光泽度纹理。搭配高光光泽度使用，是相乘的关系。 |
 
 
-> **注**：如果您使用了 PBR 材质，千万别忘了往场景中添加一个[EnvironmentMapLight](${docs}light-cn#environmentmaplight) ～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。**
+> **注**：如果您使用了 PBR 材质，千万别忘了开启[环境光的 IBL 模式](${docs}light-cn#IBL模式)～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。**
 
 
 ### BlinnPhongMaterial
@@ -129,30 +129,24 @@ const material = renderer.setMaterial(material);
 - 如果是自定义材质，请确保设置了正确的混合模式，混合因子，关闭了深度写入，设置了正确的渲染队列。
 
 
-### 2. 为什么材质是黑的？
 
-
-- 场景中需要有光才能照亮物体，请确保您往场景中添加了全局光（[EnvironmentMapLight](${api}core/EnvironmentMapLight)）或者直接光如方向光（[DirectLight](${api}core/DirectLight)）。
-
-
-
-### 3. 为什么模型背面没有渲染？
+### 2. 为什么模型背面没有渲染？
 
 
 - 请确保关闭背面了剔除，可以通过 [RasterState.cullMode](${api}core/RasterState#cullMode) 来设置，也可以通过材质内置的 [renderFace](${api}core/BaseMaterial#renderFace) 来设置想要渲染的面。
 
 
 
-### 4. 一般需要打几个光？
+### 3. 一般需要打几个光？
 
 
-- 一般场景只需要添加一个全局光（[EnvironmentMapLight](${api}core/EnvironmentMapLight)）就可以了，它可以基于图片的照明实现直接光照和间接光照。
-- 如果出于美术流程的困难度， 1 个 EnvironmentMapLight 无法满足需求，可以适当添加方向光（[DirectLight](${api}core/DirectLight)）和点光源（[PointLight](${api}core/PointLight)）来补充光照细节。
-- 出于性能考虑，尽量不要超过 1 个 EnvironmentMapLight + 2 个直接光 。
+- 一般场景只需要使用默认的环境光（[AmbientLight](${api}core/AmbientLight)）就可以了，它可以支持基于图片的照明实现直接光照和间接光照,也可以拥有普通的颜色叠加。
+- 如果 环境光 无法满足需求，可以适当添加方向光（[DirectLight](${api}core/DirectLight)）和点光源（[PointLight](${api}core/PointLight)）来补充光照细节。
+- 出于性能考虑，尽量不要超过 4 个直接光 。
 
 
 
-### 5. 为什么渲染的不够立体？
+### 4. 为什么渲染的不够立体？
 
 
 - 合理搭配使用纹理烘焙、 法线纹理（[normalTexture](${api}core/PBRMaterial#normalTexture)）、阴影遮蔽纹理（[occlusionTexture](${api}core/PBRMaterial#occlusionTexture)）
