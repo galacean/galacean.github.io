@@ -113,6 +113,7 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
    ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*RI_hTpGzpjwAAAAAAAAAAAAAARQnAQ)
 
+<playground src="wrap-mode.ts"></playground>
 
 ### 2. 过滤模式
 
@@ -137,6 +138,7 @@ texture.filterMode = TextureFilterMode.Bilinear;
    ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lVd1QqdzDhMAAAAAAAAAAAAAARQnAQ)
 
 
+<playground src="filter-mode.ts"></playground>
 
 ### 3. 各向异性过滤等级
 

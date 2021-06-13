@@ -67,6 +67,7 @@ tilingOffset 案例：
 | [shininess](${api}core/BlinnPhongMaterial#shininess) | 镜面反射系数。值越大镜面反射效果越聚拢。 |
 | [tilingOffset](${api}core/BlinnPhongMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
 
+<playground src="blinn-phong.ts"></playground>
 
 ###  UnlitMaterial
 在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
@@ -76,6 +77,9 @@ tilingOffset 案例：
 | [baseColor](${api}core/UnlitMaterial#baseColor) | 基础颜色。**基础颜色 * 基础颜色纹理 = 最后的颜色。** |
 | [baseTexture](${api}core/UnlitMaterial#baseTexture) | 基础纹理。搭配基础颜色使用，是个相乘的关系。 |
 | [tilingOffset](${api}core/UnlitMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移。 |
+
+<playground src="unlit-material.ts"></playground>
+
 ## 如何使用材质
 
 用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [GLTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 GLTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
@@ -112,7 +116,7 @@ const material = renderer.setMaterial(material);
 | [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
 | [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式。 |
 
-
+<playground src="blend-mode.ts"></playground>
 
 
 ## 常见 QA

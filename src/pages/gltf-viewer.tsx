@@ -134,6 +134,11 @@ class Oasis {
   $close = document.getElementById('close');
 
   constructor() {
+    const guiStyle = this.gui.domElement.style;
+    guiStyle.position = 'relative';
+    guiStyle.top = '68px';
+    guiStyle.right = '-12px';
+
     this.initResources().then(() => {
       this.initScene();
       this.initDropZone();
