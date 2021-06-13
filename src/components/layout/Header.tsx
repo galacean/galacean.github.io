@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
-import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, PlayCircleOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
 import { Row, Col, Select, Input, Menu, Popover } from 'antd';
 import * as utils from '../utils';
 import { version } from '../../../siteconfig.json';
@@ -207,11 +207,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                 API
               </Link>
             </Menu.Item>
-            <Menu.Item key="examples">
-              <Link to={`/${version}/examples`}>
-                {formatMessage({ id: "app.header.menu.engine.examples" })}
-              </Link>
-            </Menu.Item>
           </Menu.ItemGroup>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.editor" })}>
             <Menu.Item key="editor-docs">
@@ -221,6 +216,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu.SubMenu>
+        <Menu.Item key="examples" icon={<PlayCircleOutlined />}>
+          <Link to={`/${version}/examples`}>
+            <FormattedMessage id="app.header.menu.engine.examples" />
+          </Link>
+        </Menu.Item>
         <Menu.SubMenu key="ecosystem" icon={<AppstoreAddOutlined />} title={formatMessage({ id: "app.header.menu.ecosystem" })}>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.tool" })}>
             <Menu.Item key="gltfviewer">
