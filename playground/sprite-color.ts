@@ -1,6 +1,6 @@
 /**
  * @title Sprite Color
- * @category Sprite
+ * @category 2D
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {

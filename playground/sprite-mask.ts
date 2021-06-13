@@ -1,6 +1,6 @@
 /**
  * @title Sprite Mask
- * @category Sprite
+ * @category 2D
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
@@ -36,7 +36,7 @@ engine.resourceManager
   .load([
     {
       // Sprite texture
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iMy1Sq0XlVMAAAAAAAAAAAAAARQnAQ",
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rgNGR4Vb7lQAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     },
     {
@@ -61,13 +61,13 @@ engine.resourceManager
 
     // Show inside mask.
     pos.setValue(-5, 0, 0);
-    scale.setValue(3, 3, 3);
+    scale.setValue(2, 2, 2);
     addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleInsideMask, SpriteMaskLayer.Layer0);
     addMask(pos, maskSprite0, SpriteMaskLayer.Layer0, ScaleScript);
 
     // Show outside mask.
     pos.setValue(5, 0, 0);
-    scale.setValue(3, 3, 3);
+    scale.setValue(2, 2, 2);
     addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleOutsideMask, SpriteMaskLayer.Layer1);
     addMask(pos, maksSprite1, SpriteMaskLayer.Layer1, RotationScript);
   });
