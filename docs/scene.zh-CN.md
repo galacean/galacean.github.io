@@ -66,7 +66,7 @@ scenePromise.then((scene) => {
 
 #### 4. 设置场景背景
 
-目前场景背景支持添加纯色和天空。
+目前场景背景支持添加纯色和天空。代码示例如下：
 
 ```typescript
 const scene = engine.sceneManager.activeScene;
@@ -78,10 +78,14 @@ background.solidColor.setValue(1, 1, 1, 1); // 纯白色
 
 // 添加天空盒背景
 background.mode = BackgroundMode.Sky; // 默认纯色背景
-const skyMaterial = (background.sky = new SkyBoxMaterial(engine)); // 添加天空盒材质
+const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
 skyMaterial.textureCubeMap = textureCube; // 设置立方体纹理
 background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // 设置天空盒网格
 ```
+
+Playground 示例如下：
+
+<playground src="background.ts"></playground>
 
 #### 5. 设置场景环境光
 
