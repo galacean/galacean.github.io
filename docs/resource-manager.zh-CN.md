@@ -141,6 +141,8 @@ import type { GLTFResource } from '@oasis-engine/loader/types/gltf/glTF';
 const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 ```
 
+<playground src="gltf-basic.ts"></playground>
+
 ### 6. 自定义加载器
 用户也可以自定义加载器来加载自定义的资源：
 

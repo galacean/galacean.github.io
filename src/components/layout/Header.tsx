@@ -203,6 +203,13 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>
+          <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.artist" })}>
+            <Menu.Item key="artist-docs">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/artist-bake`, isZhCN)}>
+                {formatMessage({ id: "app.header.menu.artist.docs" })}
+              </Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.editor" })}>
             <Menu.Item key="editor-docs">
               <Link to={utils.getLocalizedPathname(`/${version}/docs/editor`, isZhCN)}>

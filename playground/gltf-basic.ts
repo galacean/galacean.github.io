@@ -5,9 +5,7 @@
 import { OrbitControl } from "@oasis-engine/controls";
 import { Camera, GLTFResource, WebGLEngine } from "oasis-engine";
 
-// 创建画布
 const engine = new WebGLEngine("canvas");
-// 设置屏幕适配
 engine.canvas.resizeByClientSize();
 
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();

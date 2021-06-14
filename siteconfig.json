@@ -6,20 +6,25 @@
   "typedocSource": "../engine",
   "packages": {
     "oasis-engine": {
-      "version": "0.4.1",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.4.1/dist/browser.min.js"
+      "version": "0.4.0-alpha.0",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.4.0-alpha.0/dist/browser.min.js"
     },
     "@oasis-engine/controls": {
-      "version": "0.4.1",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/controls/0.4.1/dist/browser.js"
+      "version": "0.4.0-alpha.0",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/controls/0.4.0-alpha.0/dist/browser.js"
     },
     "@oasis-engine/framebuffer-picker": {
-      "version": "0.4.1",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.4.1/dist/browser.js"
+      "version": "0.4.0-alpha.0",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.4.0-alpha.0/dist/browser.js"
     },
     "@oasis-engine/engine-spine": {
       "version": "0.1.4",
       "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/engine-spine/0.1.4/dist/browser.js",
+      "dist": "dist/browser.js"
+    },
+    "@oasis-engine/lottie": {
+      "version": "0.0.1",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/lottie/0.0.3/dist/browser.js",
       "dist": "dist/browser.js"
     },
     "dat.gui": {

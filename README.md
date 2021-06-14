@@ -27,7 +27,7 @@ $ npm run bootstrap
 $ npm run dev
 ```
 
-OK, visit http://localhost:8001 .
+OK, visit http://localhost:8000 .
 
 ### Deploy
 

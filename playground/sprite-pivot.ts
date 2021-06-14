@@ -1,6 +1,6 @@
 /**
  * @title Sprite Pivot
- * @category Sprite
+ * @category 2D
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
