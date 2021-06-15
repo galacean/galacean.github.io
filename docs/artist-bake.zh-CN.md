@@ -1,7 +1,7 @@
 ---
-order: 4
-title: 美术-纹理烘焙
-type: 编辑器
+order: 1
+title: 纹理烘焙
+type: 美术
 ---
 
 以 C4D-OC 渲染器的烘培（windows）为例讲解。

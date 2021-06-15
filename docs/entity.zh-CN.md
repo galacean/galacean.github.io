@@ -26,7 +26,6 @@ directLight.intensity =  1;
 | [MeshRenderer](${api}core/MeshRenderer) |  静态模型渲染器 |
 | [SkinnedMeshRenderer](${api}core/SkinnedMeshRenderer) | 骨骼模型渲染器 |
 | [Animation](${api}core/Animation) | 骨骼动画组件 |
-| [AmbientLight](${api}core/AmbientLight) |  Ambient光照 |
 | [DirectLight](${api}core/DirectLight) | 方向光 |
 | [PointLight](${api}core/PointLight) | 点光源 |
 | [SpotLight](${api}core/SpotLight) | 聚光灯 |

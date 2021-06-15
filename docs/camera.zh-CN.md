@@ -19,7 +19,6 @@ const camera = entity.addComponent(Camera);
 camera.nearClipPlane = 0.1;
 camera.farClipPlane = 100;
 camera.fieldOfView = 60;
-camera.backgroundColor = new Vector4(1,1,1,1);
 
 // 通过 entity 获取相机
 entity.engine.sceneManager.activeScene._activeCameras[0]
