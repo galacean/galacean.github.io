@@ -103,7 +103,6 @@ export default {
     'app.footer.zhihu.xtech': '体验科技专栏',
     'app.footer.seeconf': '蚂蚁体验科技大会',
     'app.footer.xcloud': '蚂蚁体验云',
-    'app.footer.webchat-miniprogram': '微信小程序适配器',
     'app.footer.dingtalk': '钉钉开源社区群',
     'app.footer.wechat': '微信公众号',
     'app.footer.juejin': '掘金',
