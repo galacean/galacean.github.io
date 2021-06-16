@@ -60,6 +60,10 @@ export default function Partners () {
       width: 100
     },
     {
+      logo: 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*50n0TK8BL1YAAAAAAAAAAAAAARQnAQ',
+      width: 130
+    },
+    {
       logo: 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*SlVpSLS239IAAAAAAAAAAAAAARQnAQ',
       width: 70
     },
