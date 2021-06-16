@@ -39,6 +39,77 @@ npm init @oasis-engine/oasis-app -- --template miniprogram
 
 ![image-20210609164816776](https://gw.alipayobjects.com/zos/OasisHub/04386e9c-b882-41f7-8aa6-a1bf990d578b/image-20210609164816776.png)
 
+## 已有项目使用 Oasis
+
+本教程假设你已经有一定开发能力，若不熟悉小程序开发，请详细阅读[小程序开发文档](https://opendocs.alipay.com/mini/developer)。
+
+1. 在项目目录中打开 `Terminal`，安装依赖：
+
+```shell
+# 使用 npm
+npm install oasis-engine --save
+npm install @oasis-engine/miniprogram-adapter --save
+# 使用 yarn
+yarn add oasis-engine
+yarn add @oasis-engine/miniprogram-adapter
+```
+
+2. 在小程序项目配置文件 `app.json` 里添加下面配置项：
+
+```json
+{
+  ...
+  "window": {
+    ...
+    "v8WorkerPlugins": "gcanvas_runtime",
+    "v8Worker": 1,
+    "enableSkia": "true"
+  }
+}
+```
+
+3. 在需要添加互动的 axml 页面里加入 canvas 标签
+
+```html
+<canvas onReady="onCanvasReady" id="canvas" type="webgl" />
+```
+
+使用 `onReady` 配置 `canvas` 初始化回调。需要设置 `canvas` 的 id，后面会用到。
+
+4. 在页面的 `.js` 代码文件里添加回调函数，使用 `my._createCanvas` 创建所需的 canvas 上下文，之后在 `success` 回调里使用 oasis 即可.
+
+注意：
+  1. 使用 `import * as OASIS from "oasis-engine/dist/miniprogram"` 引入小程序依赖。
+  2. 需要使用『@oasis-engine/miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
+
+详情可以参考下面代码：
+```js
+import * as OASIS from "oasis-engine/dist/miniprogram";
+import { registerCanvas } from "@oasis-engine/miniprogram-adapter";
+
+Page({
+  onCanvasReady() {
+		my._createCanvas({
+			id: "canvas",
+			success: (canvas) => {
+        // 注册 canvas
+				registerCanvas(canvas);
+        // 适配 canvas 大小
+        const info = my.getSystemInfoSync();
+        const { windowWidth, windowHeight, pixelRatio, titleBarHeight } = info;
+        canvas.width = windowWidth * pixelRatio;
+        canvas.height = (windowHeight - titleBarHeight) * pixelRatio;
+
+        // 创建引擎
+        const engine = new OASIS.WebGLEngine(canvas);
+        // 剩余代码和 Oasis Web 版本一致
+        ...
+			},
+		});
+	}
+})
+```
+
 ## 项目发布
 
 - [支付宝小程序](https://opendocs.alipay.com/mini/introduce/release)
