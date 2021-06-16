@@ -234,6 +234,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         </Menu.Item>
         <Menu.SubMenu key="ecosystem" icon={<AppstoreAddOutlined />} title={formatMessage({ id: "app.header.menu.ecosystem" })}>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.tool" })}>
+            <Menu.Item key="miniprogram">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/miniprogram`, isZhCN)}>
+                {formatMessage({ id: "app.header.menu.ecosystem.miniprogram" })}
+              </Link>
+            </Menu.Item>
             <Menu.Item key="gltfviewer">
               <Link to={`/gltf-viewer`}>
                 {formatMessage({ id: "app.header.menu.ecosystem.gltfviewer" })}
@@ -247,6 +252,18 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <Menu.Item key="editor">
               <Link to="https://oasis.alipay.com/editor" target="_blank">
                 {formatMessage({ id: "app.header.menu.ecosystem.editor" })}
+              </Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.animation" })}>
+            <Menu.Item key="miniprogram">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/spine`, isZhCN)}>
+                Spine
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="miniprogram">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/lottie`, isZhCN)}>
+                Lottie
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>
