@@ -31,7 +31,7 @@ import { WebGLEngine, Camera } from 'oasis-engine';
 
 **Oasis Engine** 是一套移动优先的图形引擎，使用 [Typescript](https://www.typescriptlang.org/) 编写。为了保证引擎的体积最小化，我们将引擎的包分为：
 
-![packages](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*D7G8RIWSLqQAAAAAAAAAAAAAARQnAQ)
+![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*p2UWTY3jkkIAAAAAAAAAAAAAARQnAQ)
 
 ### 主包
 引擎核心架构逻辑和核心功能（[oasis-engine](https://www.npmjs.com/package/oasis-engine)），包含以下子包：
