@@ -172,10 +172,14 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     let activeMenuItem = module || 'home';
     if (/^blog/.test(path)) {
       activeMenuItem = 'blog';
-    } else if (/docs\/editor[-]/.test(path)) {
-      activeMenuItem = 'editor-docs';
     } else if (/docs/.test(path)) {
-      activeMenuItem = 'docs';
+      if (/docs\/editor[-]/.test(path)) {
+        activeMenuItem = 'editor-docs';
+      } else if (/docs\/artist[-]/.test(path)) {
+        activeMenuItem = 'artist-docs';
+      } else {
+        activeMenuItem = 'engine-docs';
+      }
     } else if (/api/.test(path)) {
       activeMenuItem = 'api';
     } else if (/examples/.test(path)) {
