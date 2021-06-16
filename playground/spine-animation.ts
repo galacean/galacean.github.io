@@ -2,7 +2,7 @@
  * @title Spine Animation
  * @category 2D
  */
-import { SpineAnimation } from "@oasis-engine/engine-spine";
+import { SpineAnimation } from "@oasis-engine/spine";
 import { Camera, Entity, Logger, Vector3, WebGLEngine } from "oasis-engine";
 
 Logger.enable();
