@@ -1,12 +1,12 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
-import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, PlayCircleOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
 import { Row, Col, Select, Input, Menu, Popover } from 'antd';
 import * as utils from '../utils';
 import { version } from '../../../siteconfig.json';
 
-// const { Option } = Select;
+const { Option } = Select;
 
 const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
 
@@ -58,6 +58,7 @@ interface HeaderState {
   menuMode?: 'vertical' | 'vertical-left' | 'vertical-right' | 'horizontal' | 'inline';
   searchOption?: any[];
   searching?: boolean;
+  versions?: string[]
 }
 
 class Header extends React.Component<HeaderProps, HeaderState> {
@@ -69,11 +70,12 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     super(props);
     this.state = {
       menuVisible: false,
-      menuMode: props.isMobile ? 'inline' : 'horizontal'
+      menuMode: props.isMobile ? 'inline' : 'horizontal',
+      versions: []
     };
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const { searchInput } = this;
     const { intl: { locale } } = this.props;
 
@@ -86,6 +88,14 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     });
 
     initDocSearch(locale === 'zh-CN' ? 'cn' : 'en');
+
+    // Fetch version from remote config
+    const versionConfig = 'https://render.alipay.com/p/h5data/oasis-version_site-doc-versions-h5data.json';
+    const versions = await fetch(versionConfig).then((e) => e.json());
+    
+    if (versions) {
+      this.setState({ versions: versions.map((v) => v.version)}) 
+    }
   }
 
   componentDidUpdate(preProps: HeaderProps) {
@@ -140,11 +150,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   };
 
   onVersionChange = (value: string) => {
-    if (value === 'v1') {
-      window.open('https://v1.pro.ant.design/');
-    }
-    if (value === 'v2') {
-      window.open('https://v2-pro.ant.design/');
+    const versionReg = /\/(\d+[.]\d+[^/]*)\//;
+    const matchedResult = location.href.match(versionReg);
+    
+    if (matchedResult && matchedResult[1]) {
+      location.href = location.href.replace(matchedResult[1], value);
     }
   };
 
@@ -187,7 +197,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         </Menu.Item>
         <Menu.SubMenu key="docs" icon={<ReadOutlined />} title={formatMessage({ id: "app.header.menu.docs" })}>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.engine" })}>
-            <Menu.Item key="docs">
+            <Menu.Item key="engine-docs">
               <Link to={utils.getLocalizedPathname(`${version}/docs/install`, isZhCN)}>
                 {formatMessage({ id: "app.header.menu.engine.docs" })}
               </Link>
@@ -195,11 +205,6 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <Menu.Item key="api">
               <Link to={`/${version}/api/core/index`}>
                 API
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="examples">
-              <Link to={`/${version}/examples`}>
-                {formatMessage({ id: "app.header.menu.engine.examples" })}
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>
@@ -218,6 +223,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu.SubMenu>
+        <Menu.Item key="examples" icon={<PlayCircleOutlined />}>
+          <Link to={`/${version}/examples`}>
+            <FormattedMessage id="app.header.menu.engine.examples" />
+          </Link>
+        </Menu.Item>
         <Menu.SubMenu key="ecosystem" icon={<AppstoreAddOutlined />} title={formatMessage({ id: "app.header.menu.ecosystem" })}>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.tool" })}>
             <Menu.Item key="gltfviewer">
@@ -285,11 +295,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       <FormattedMessage id="app.header.lang" />
                     </Button>
                   </div> */}
-                  {/* {this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value="stable">
-                    <Option value="0.1">v0.1</Option>
-                    <Option value="0.2">v0.2</Option>
-                    <Option value="0.3">v0.3</Option>
-                  </Select>} */}
+                  {this.state.versions.length && this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value={version}>
+                    {this.state.versions.map((v)=> {
+                      return <Option value={v} key={v}>{`v${v}`}</Option>
+                    })}
+                  </Select>}
                 </div>
                 {menuMode === 'horizontal' ? <div id="menu">{menu}</div> : null}
               </div>

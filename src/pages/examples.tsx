@@ -74,7 +74,7 @@ export default function Examples(props: any) {
 
   return (
     <>
-      <WrapperLayout {...props}>
+      <WrapperLayout {...props} showVersion="true">
         <Media query="(max-width: 599px)">
           {(isMobile) =>
             <Layout hasSider={true}>
