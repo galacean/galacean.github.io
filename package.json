@@ -46,7 +46,7 @@
     "@oasis-engine/lottie": "^0.0.3",
     "@oasis-engine/stats": "0.4.0-alpha.2",
     "@stackblitz/sdk": "^1.5.2",
-    "antd": "^4.1.1",
+    "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",
     "classnames": "^2.2.6",
     "dat.gui": "^0.7.7",
