@@ -1,6 +1,6 @@
 const fs = require('fs-extra');
 
-fs.removeSync('./0.3'); 
+fs.removeSync('./0.4'); 
 fs.removeSync('./404'); 
 fs.removeSync('./blog'); 
 fs.removeSync('./examples'); 
@@ -10,7 +10,7 @@ fs.removeSync('./404.html');
 fs.removeSync('./index.html'); 
 fs.removeSync('./sitemap.xml'); 
 
-fs.copySync('./public/0.3', './0.3');
+fs.copySync('./public/0.4', './0.4');
 fs.copySync('./public/404', './404'); 
 fs.copySync('./public/blog', './blog'); 
 fs.copySync('./public/examples', './examples'); 
