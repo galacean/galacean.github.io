@@ -6,7 +6,7 @@ type: 组件
 
 `ModelMesh` 是为开发者快速自定义网格设计的类，简单易用。可以方便地定义顶点、顶点索引、颜色、UV、法线等信息。
 
-<playground src="model-mesh.ts"></playground>
+<playground src="obj-loader.ts"></playground>
 
 ## 代码示例
 
@@ -77,16 +77,16 @@ modelMesh.setColors(
 
 设置数据的 API 有：
 
-| API            | 说明                   |
-| -------------- | ---------------------- |
-| [setPositions](${api}core/ModelMesh#setPositions)   | 设置顶点坐标           |
-| [setIndices](${api}core/ModelMesh#setIndices)     | 设置索引数据           |
-| [setNormals](${api}core/ModelMesh#setNormals)     | 设置逐顶点法线数据     |
-| [setColors](${api}core/ModelMesh#setColors)      | 设置逐顶点颜色数据     |
-| [setTangents](${api}core/ModelMesh#setTangents)    | 设置逐顶点切线         |
+| API                                                   | 说明                   |
+| ----------------------------------------------------- | ---------------------- |
+| [setPositions](${api}core/ModelMesh#setPositions)     | 设置顶点坐标           |
+| [setIndices](${api}core/ModelMesh#setIndices)         | 设置索引数据           |
+| [setNormals](${api}core/ModelMesh#setNormals)         | 设置逐顶点法线数据     |
+| [setColors](${api}core/ModelMesh#setColors)           | 设置逐顶点颜色数据     |
+| [setTangents](${api}core/ModelMesh#setTangents)       | 设置逐顶点切线         |
 | [setBoneWeights](${api}core/ModelMesh#setBoneWeights) | 设置逐顶点骨骼权重     |
 | [setBoneIndices](${api}core/ModelMesh#setBoneIndices) | 设置逐顶点骨骼索引数据 |
-| [setUVs](${api}core/ModelMesh#setUVs)         | 设置逐顶点 uv 数据     |
+| [setUVs](${api}core/ModelMesh#setUVs)                 | 设置逐顶点 uv 数据     |
 
 可以根据所需数据设置。
 
@@ -96,14 +96,14 @@ modelMesh.setColors(
 
 如果不再需要修改 `ModelMesh` 数据：
 
-``` TypeScript
+```TypeScript
 modelMesh.uploadData(false);
 ```
 
 如果需要持续修改 `ModelMesh` 数据：
 
-``` TypeScript
+```TypeScript
 modelMesh.uploadData(true);
 ```
 
-
+<playground src="model-mesh.ts"></playground>

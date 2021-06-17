@@ -1,6 +1,6 @@
 /**
  * @title Animation
- * @category Performance
+ * @category Benchmark
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import "@oasis-engine/stats";
