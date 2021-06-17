@@ -132,16 +132,18 @@ const compressedTextureCube = await this.engine.resourceManager.load<TextureCube
 ```
 
 ### 5. glTF
-
-[glTF](https://www.khronos.org/gltf/) 资源如上面例子，得到的是一个 [GLTFResource](${api}loader/GLTFResource) 资源。加载成功后，会得到 glTF 里包含的 [Scene](${api}core/Scene)、[Entity](${api}core/Entity)、[Texture](${api}core/Texture)、[Material](${api}core/Material) 和 [AnimationClip](${api}core/AnimationClip)。
+GLTF（GL Transmission Format）是 [khronos](https://www.khronos.org/) 发布的一种能高效传输和加载 3D 场景的规范，与 FBX、OBJ 等传统模型格式一样，基本支持 3D 场景中的所有特性，也是目前 Oasis 推荐的首选 3D 文件格式。
+资源加载后得到的是一个 [GLTFResource](${api}loader/GLTFResource) 资源，包含 [Scene](${api}core/Scene)、[Entity](${api}core/Entity)、[Texture](${api}core/Texture)、[Material](${api}core/Material) 和 [AnimationClip](${api}core/AnimationClip) 等对象。
 
 ``` typescript
-import type { GLTFResource } from '@oasis-engine/loader/types/gltf/glTF';
+import type { GLTFResource } from 'oasis-engine';
 
 const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 ```
 
 <playground src="gltf-basic.ts"></playground>
+
+更多案例可以前往[加载3D模型](${docs}model-cn)。
 
 ### 6. 自定义加载器
 用户也可以自定义加载器来加载自定义的资源：
