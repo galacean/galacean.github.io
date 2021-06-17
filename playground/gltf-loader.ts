@@ -3,7 +3,6 @@
  * @category Advance
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import "@oasis-engine/stats";
 import * as dat from "dat.gui";
 import {
   Animation,

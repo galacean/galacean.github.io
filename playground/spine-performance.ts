@@ -4,7 +4,6 @@
  */
 import { Camera, Logger, SystemInfo, Vector3, WebGLEngine, Entity } from "oasis-engine";
 import { SpineAnimation } from "@oasis-engine/spine";
-import "@oasis-engine/stats";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
