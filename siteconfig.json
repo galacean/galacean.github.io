@@ -18,7 +18,7 @@
       "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.4.0-alpha.2/dist/browser.js"
     },
     "@oasis-engine/spine": {
-      "version": "0.1.4",
+      "version": "0.0.2",
       "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.0.2/dist/browser.js",
       "dist": "dist/browser.js"
     },
