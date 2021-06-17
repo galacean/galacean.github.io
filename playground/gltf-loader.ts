@@ -13,6 +13,7 @@ import {
   BoundingBox,
   Camera,
   Color,
+  DirectLight,
   Entity,
   GLTFResource,
   Logger,
@@ -21,7 +22,6 @@ import {
   PBRBaseMaterial,
   PBRMaterial,
   PBRSpecularMaterial,
-  PointLight,
   PrimitiveMesh,
   Renderer,
   Scene,
@@ -95,14 +95,14 @@ class Oasis {
   rootEntity: Entity = this.scene.createRootEntity("root");
   cameraEntity: Entity = this.rootEntity.createChild("camera");
   gltfRootEntity: Entity = this.rootEntity.createChild("gltf");
-  pointLightEntity1: Entity = this.rootEntity.createChild("point_light1");
-  pointLightEntity2: Entity = this.rootEntity.createChild("point_light2");
+  lightEntity1: Entity = this.rootEntity.createChild("direct_light1");
+  lightEntity2: Entity = this.rootEntity.createChild("direct_light2");
 
   // Component
   camera: Camera = this.cameraEntity.addComponent(Camera);
   controler: OrbitControl = this.cameraEntity.addComponent(OrbitControl);
-  pointLight1: PointLight = this.pointLightEntity1.addComponent(PointLight);
-  pointLight2: PointLight = this.pointLightEntity2.addComponent(PointLight);
+  light1: DirectLight = this.lightEntity1.addComponent(DirectLight);
+  light2: DirectLight = this.lightEntity2.addComponent(DirectLight);
 
   // Debug
   gui = new dat.GUI();
@@ -118,7 +118,7 @@ class Oasis {
     lightColor: Oasis.colorToGui(new Color(1, 1, 1)),
     lightIntensity: 0.8,
     // GLTF Model List
-    defaultGLTF: "brianStem",
+    defaultGLTF: "fox",
     gltfList: {
       "2CylinderEngine": "https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb",
       alphaBlendModeTest: "https://gw.alipayobjects.com/os/bmw-prod/d099b30b-59a3-42e4-99eb-b158afa8e65d.glb",
@@ -219,11 +219,11 @@ class Oasis {
       this.scene.background.mode = BackgroundMode.Sky;
     }
     if (!this.state.addLights) {
-      this.pointLight1.enabled = false;
-      this.pointLight2.enabled = false;
+      this.light1.enabled = this.light2.enabled = false;
     }
-    this.pointLight1.intensity = this.state.lightIntensity;
-    this.pointLight2.intensity = this.state.lightIntensity;
+    this.light1.intensity = this.light2.intensity = this.state.lightIntensity;
+    this.lightEntity1.transform.setRotation(30, 0, 0);
+    this.lightEntity2.transform.setRotation(-30, 180, 0);
     this.scene.ambientLight.specularIntensity = this.state.envIntensity;
     this.scene.background.sky.material = this.skyMaterial;
     this.scene.background.sky.mesh = PrimitiveMesh.createCuboid(this.engine, 1, 1, 1);
@@ -270,19 +270,17 @@ class Oasis {
     lightFolder
       .add(this.state, "addLights")
       .onChange((v) => {
-        this.pointLight1.enabled = v;
-        this.pointLight2.enabled = v;
+        this.light1.enabled = this.light2.enabled = v;
       })
       .name("直接光");
     lightFolder.addColor(this.state, "lightColor").onChange((v) => {
-      Oasis.guiToColor(v, this.pointLight1.color);
-      Oasis.guiToColor(v, this.pointLight2.color);
+      Oasis.guiToColor(v, this.light1.color);
+      Oasis.guiToColor(v, this.light2.color);
     });
     lightFolder
       .add(this.state, "lightIntensity", 0, 2)
       .onChange((v) => {
-        this.pointLight1.intensity = v;
-        this.pointLight2.intensity = v;
+        this.light1.intensity = this.light2.intensity = v;
       })
       .name("直接光强度");
   }
@@ -314,9 +312,6 @@ class Oasis {
     }
 
     this.controler.maxDistance = size * 10;
-
-    this.pointLightEntity1.transform.setPosition(0, size * 3, size * 3);
-    this.pointLightEntity2.transform.setPosition(0, -size * 3, -size * 3);
   }
 
   loadGLTF(url: string) {

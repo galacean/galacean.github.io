@@ -1,22 +1,21 @@
 /**
- * @title Spine Animation
- * @category 2D
+ * @title Spine
+ * @category Benchmark
  */
 import { Camera, Logger, SystemInfo, Vector3, WebGLEngine, Entity } from "oasis-engine";
 import { SpineAnimation } from "@oasis-engine/spine";
-
-Logger.enable();
+import "@oasis-engine/stats";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
-
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
 // camera
 const cameraEntity = rootEntity.createChild("camera_node");
 const camera = cameraEntity.addComponent(Camera);
-cameraEntity.transform.position = new Vector3(0, 0, 60);
+cameraEntity.transform.position = new Vector3(0, 0, 110);
+camera.farClipPlane = 200;
 
 engine.resourceManager
   .load({
@@ -24,11 +23,16 @@ engine.resourceManager
     type: "spine"
   })
   .then((spineEntity: Entity) => {
-    spineEntity.transform.setPosition(0, -12, 0);
-    rootEntity.addChild(spineEntity);
-    const spineAnimation = spineEntity.getComponent(SpineAnimation);
-    spineAnimation.state.setAnimation(0, "walk", true);
-    spineAnimation.scale = 0.05;
+    for (let i = -5; i < 5; i++) {
+      for (let j = -5; j < 5; j++) {
+        const clone = spineEntity.clone();
+        clone.transform.setPosition(8 * i, 8 * j, 0);
+        rootEntity.addChild(clone);
+        const spineAnimation = clone.getComponent(SpineAnimation);
+        spineAnimation.state.setAnimation(0, "walk", true);
+        spineAnimation.scale = 0.01;
+      }
+    }
   });
 
 engine.run();

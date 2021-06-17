@@ -20,9 +20,26 @@ type: 组件
 **环境光**已经内置在了[场景](${api}core/Scene)中，提供了普通模式和IBL模式。默认普通模式下，*颜色* 表示光的颜色，*强度* 即表示光线的亮度，最亮为 `1` ，最暗为 `0` 。
 
 ```typescript
-// 在场景中设置环境光
-const scene = engine.sceneManager.activeScene;
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+const ambientLight = scene.ambientLight;
+// 设置环境光颜色
+ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
+// 设置环境光强度
+ambientLight.diffuseIntensity = 0.5;
+```
+
+#### IBL模式
+“点光源”、“方向光”，都属于“直接光”，即光线经过物体表面后直接进入我们眼睛，而我们现实世界中并不是这样的，光线其实会经过周围物体、空气尘埃的各种碰撞，最终才进入我们眼睛，这也正是为什么我们能看到不被光线直接照射到的地方，如图所示，左图是直接光照，我们只能看到球的右边是亮的，而右图是**全局光照**，光线经过各种碰撞进入我们眼睛，所以打亮了整个场景。仔细观察的话我们还能看到球的左下角还透出了红色墙壁的颜色，这正是因为光线的各种碰撞，产生的“颜色渗透”现象。
+
+![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*j6_uQq2oqtEAAAAAAAAAAAAAARQnAQ)
+
+为了模拟这种全局光照，引擎提供了[IBL](https://www.wikiwand.com/en/Image-based_lighting) 技术。
+```typescript
+const ambientLight = scene.ambientLight;
+// IBL 漫反射
+ambientLight.diffuseMode = DiffuseMode.Texture;
+ambientLight.diffuseTexture = cubeTexture; // 加载相应立方体纹理
+// IBL 镜面反射
+ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
 ```
 如果您使用了 PBR 材质，千万记得开启环境光的 IBL 模式～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
 
