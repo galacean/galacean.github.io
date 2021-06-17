@@ -9,7 +9,7 @@ import { Element } from 'react-scroll';
 
 function Type(props: IType) {
   return <span>
-    <i>{props.type === 'reference' ? <a href={props.name}>{props.name}</a>: props.name}</i>
+    <i>{props.type === 'reference' ? <a href={props.name}>{props.name}</a> : props.name}</i>
     {props.type === 'array' && <span>[]</span>}
   </span>
 }
@@ -25,27 +25,27 @@ function Parameter(props: IParameter) {
 }
 
 function GetSignature(props: ISignature) {
-  const {type} = props;
+  const { type } = props;
 
   return <div className="tsd-signature">
     <span className="tsd-signature-symbol">get </span>
     {props.name}(): {type.type === "typeOperator" ?
       <TypeOperator {...type} /> :
-      <Type {...type}/>
+      <Type {...type} />
     }
   </div>
 }
 
-function TypeOperator (props: IType) {
+function TypeOperator(props: IType) {
   return <span>
     <i className="tsd-signature-type">{props.operator} </i>
     {props.target && (props.target.type === 'array' ?
       <span>
-      &lt;
-      <Type {...props.target?.elementType}/>
+        &lt;
+      <Type {...props.target?.elementType} />
       []&gt;
       </span> :
-      <Type {...props.target?.elementType}/>
+      <Type {...props.target?.elementType} />
     )}
   </span>
 }
@@ -54,8 +54,8 @@ function SetSignature(props: ISignature) {
   return <div className="tsd-signature">
     <span className="tsd-signature-symbol">set </span>
     {props.name}({
-      props.parameters && <Type {...props.parameters[0].type}/>
-    }): void 
+      props.parameters && <Type {...props.parameters[0].type} />
+    }): void
   </div>
 }
 
@@ -80,38 +80,38 @@ function ConstructorSignature(props: ISignature) {
   </div>
 }
 
-function TypeParameter (props: IType) {
-  return <span><i>&lt;</i>T extends <Type {...props}/><i>&gt;</i></span>
+function TypeParameter(props: IType) {
+  return <span><i>&lt;</i>T extends <Type {...props} /><i>&gt;</i></span>
 }
 
-function ParameterElement (p: IParameter) {
+function ParameterElement(p: IParameter) {
   let element = null;
 
-  if (p.type?.type === 'reflection'){
+  if (p.type?.type === 'reflection') {
     element = <i>T</i>;
   }
   else if (p.type?.elementType?.type === 'reference') {
     element = <span><i>{p.type.elementType.name}</i>{p.type.type === 'array' && <span>[]</span>}</span>
   }
-  else{
+  else {
     element = <Type {...p.type} />
   }
   return <span>
     {p.index !== 0 && ', '}
-    {p.name}: {element} 
+    {p.name}: {element}
   </span>
-} 
+}
 
-function ReturnElement (props: ISignature) {
+function ReturnElement(props: ISignature) {
   if (!props.type) {
     return <span>void</span>
-  } 
-    return props.typeParameter ? 
-      <span>
-        <Type name={props.type.name} />
-        {props.type.type === 'array' && <span><i>{props.type.elementType && <Type name={props.type.elementType?.name} />}</i>[]</span>}
-      </span> : <Type {...props.type}/>
-  
+  }
+  return props.typeParameter ?
+    <span>
+      <Type name={props.type.name} />
+      {props.type.type === 'array' && <span><i>{props.type.elementType && <Type name={props.type.elementType?.name} />}</i>[]</span>}
+    </span> : <Type {...props.type} />
+
 }
 
 function MethodSignature(props: ISignature) {
@@ -128,7 +128,7 @@ function Description(props: ISignature) {
   const { parameters, comment, kind } = props;
 
   return <div className="tsd-description">
-    {kind !== Kinds.SET_SIGNATURE &&comment && <Comment {...comment} />}
+    {kind !== Kinds.SET_SIGNATURE && comment && <Comment {...comment} />}
     {parameters && <div className="tsd-parameters">
       <h3>Parameters</h3>
       <ul className="tsd-parameters-list">
@@ -147,6 +147,7 @@ function Description(props: ISignature) {
 }
 
 export default function Item(props: IItem) {
+  const { kind } = props;
   // console.log('Item props', props)
   return <Element name={props.name} className="tsd-panel-anchor">
     <section className="tsd-panel" key={props.id}>
@@ -159,10 +160,13 @@ export default function Item(props: IItem) {
         })}
       </h2>
       {props.type && <Property {...props} />}
-      {(props.kind === Kinds.CONSTRUCTOR || props.kind === Kinds.FUNCTION) && props.signatures?.map((signature) =>{
-        return <ConstructorSignature key={signature.id} {...signature} />
+      {(kind === Kinds.CONSTRUCTOR || kind === Kinds.FUNCTION) && props.signatures?.map((signature) => {
+        return <div key={signature.id}>
+          <ConstructorSignature {...signature} />
+          <Description key={signature.id} {...signature} />
+        </div>
       })}
-      {props.kind === Kinds.METHOD && props.signatures?.map((signature) =>{
+      {props.kind === Kinds.METHOD && props.signatures?.map((signature) => {
         return <div key={signature.id} >
           <MethodSignature {...signature} />
           <Description {...signature} />
@@ -173,14 +177,11 @@ export default function Item(props: IItem) {
           <GetSignature {...props.getSignature[0]} />
           <Description {...props.getSignature[0]} />
         </Col>}
-        {props.setSignature && <Col span={12}> 
+        {props.setSignature && <Col span={12}>
           <SetSignature {...props.setSignature[0]} />
         </Col>}
       </Row>
       {!props.getSignature && props.comment && <Comment {...props.comment} />}
-      {props.kind !== Kinds.METHOD && props.signatures?.map((signature) => {
-        return <Description key={signature.id} {...signature} />
-      })}
     </section>
   </Element>
 };
