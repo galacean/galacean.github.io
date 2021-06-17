@@ -17,7 +17,7 @@ const result = babel.transformFileSync('./playground/spine.ts', {
       {
         "globals": {
           "@oasis-engine/controls": "controlsssssss",
-          "@oasis-engine/engine-spine": "oasisSpine"
+          "@oasis-engine/spine": "oasisSpine"
         },
         exactGlobals: true
       }

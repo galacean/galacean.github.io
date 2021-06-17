@@ -43,11 +43,6 @@ class Footer extends React.Component<{
                   </a>
                 </div>
                 <div>
-                  <a target="_blank" rel="noopener noreferrer" href="https://github.com/oasis-engine/platform-wechat-miniprogram">
-                    <FormattedMessage id="app.footer.webchat-miniprogram" />
-                  </a>
-                </div>
-                <div>
                   <a target="_blank " href="https://oasis-engine.gitee.io/">
                     <FormattedMessage id="app.footer.chinamirror" />
                   </a>

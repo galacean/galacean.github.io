@@ -25,7 +25,7 @@ function initDocSearch(lang: 'en' | 'cn') {
     indexName: 'oasisengine',
     inputSelector: '#search-box input',
     algoliaOptions: {
-      facetFilters: [`version:${version}`, `tags:${lang}`]
+      // facetFilters: [`version:${version}`, `tags:${lang}`]
     },
     transformData(
       hits: {
@@ -172,10 +172,14 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     let activeMenuItem = module || 'home';
     if (/^blog/.test(path)) {
       activeMenuItem = 'blog';
-    } else if (/docs\/editor[-]/.test(path)) {
-      activeMenuItem = 'editor-docs';
     } else if (/docs/.test(path)) {
-      activeMenuItem = 'docs';
+      if (/docs\/editor[-]/.test(path)) {
+        activeMenuItem = 'editor-docs';
+      } else if (/docs\/artist[-]/.test(path)) {
+        activeMenuItem = 'artist-docs';
+      } else {
+        activeMenuItem = 'engine-docs';
+      }
     } else if (/api/.test(path)) {
       activeMenuItem = 'api';
     } else if (/examples/.test(path)) {
@@ -230,6 +234,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
         </Menu.Item>
         <Menu.SubMenu key="ecosystem" icon={<AppstoreAddOutlined />} title={formatMessage({ id: "app.header.menu.ecosystem" })}>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.tool" })}>
+            <Menu.Item key="miniprogram">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/miniprogram`, isZhCN)}>
+                {formatMessage({ id: "app.header.menu.ecosystem.miniprogram" })}
+              </Link>
+            </Menu.Item>
             <Menu.Item key="gltfviewer">
               <Link to={`/gltf-viewer`}>
                 {formatMessage({ id: "app.header.menu.ecosystem.gltfviewer" })}
@@ -243,6 +252,18 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             <Menu.Item key="editor">
               <Link to="https://oasis.alipay.com/editor" target="_blank">
                 {formatMessage({ id: "app.header.menu.ecosystem.editor" })}
+              </Link>
+            </Menu.Item>
+          </Menu.ItemGroup>
+          <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.animation" })}>
+            <Menu.Item key="miniprogram">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/spine`, isZhCN)}>
+                Spine
+              </Link>
+            </Menu.Item>
+            <Menu.Item key="miniprogram">
+              <Link to={utils.getLocalizedPathname(`/${version}/docs/lottie`, isZhCN)}>
+                Lottie
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>
