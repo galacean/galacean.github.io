@@ -118,7 +118,7 @@ class Oasis {
     lightColor: Oasis.colorToGui(new Color(1, 1, 1)),
     lightIntensity: 0.8,
     // GLTF Model List
-    defaultGLTF: "brianStem",
+    defaultGLTF: "cesiumMan",
     gltfList: {
       "2CylinderEngine": "https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb",
       alphaBlendModeTest: "https://gw.alipayobjects.com/os/bmw-prod/d099b30b-59a3-42e4-99eb-b158afa8e65d.glb",
