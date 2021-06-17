@@ -25,7 +25,7 @@ function initDocSearch(lang: 'en' | 'cn') {
     indexName: 'oasisengine',
     inputSelector: '#search-box input',
     algoliaOptions: {
-      facetFilters: [`version:${version}`, `tags:${lang}`]
+      // facetFilters: [`version:${version}`, `tags:${lang}`]
     },
     transformData(
       hits: {
