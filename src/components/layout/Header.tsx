@@ -25,7 +25,9 @@ function initDocSearch(lang: 'en' | 'cn') {
     indexName: 'oasisengine',
     inputSelector: '#search-box input',
     algoliaOptions: {
-      // facetFilters: [`version:${version}`, `tags:${lang}`]
+      facetFilters: [
+        `version:${version}`
+      ]
     },
     transformData(
       hits: {
@@ -256,12 +258,12 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             </Menu.Item>
           </Menu.ItemGroup>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.animation" })}>
-            <Menu.Item key="miniprogram">
+            <Menu.Item key="spine">
               <Link to={utils.getLocalizedPathname(`/${version}/docs/spine`, isZhCN)}>
                 Spine
               </Link>
             </Menu.Item>
-            <Menu.Item key="miniprogram">
+            <Menu.Item key="lottie">
               <Link to={utils.getLocalizedPathname(`/${version}/docs/lottie`, isZhCN)}>
                 Lottie
               </Link>
