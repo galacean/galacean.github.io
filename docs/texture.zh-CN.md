@@ -208,7 +208,7 @@ texture.setImageSource(img,0,undefined,true); // 第 4 个参数
 const material = new PBRMaterial(engine);
 const texture = 生成纹理(); // 上文所示，不再赘述
 
-material.baseColorTexture = texture;
+material.baseTexture = texture;
 ```
 
 #### 2. 天空盒
@@ -268,7 +268,7 @@ const resource = {
 
 engine.resourceManager.load(resource).then(res => {
    const compressedTexture = res;
-   material.baseColorTexture = compressedTexture;
+   material.baseTexture = compressedTexture;
   // ...
 });
 ```
