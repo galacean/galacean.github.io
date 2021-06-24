@@ -4,7 +4,7 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-import { AmbientLight, Animation, Camera, Color, DirectLight, GLTFResource, WebGLEngine } from "oasis-engine";
+import { Animation, Camera, Color, DirectLight, GLTFResource, WebGLEngine } from "oasis-engine";
 
 const gui = new dat.GUI();
 
@@ -49,7 +49,7 @@ engine.resourceManager
       const { crossFade, crossTime } = debugInfo;
 
       if (crossFade) {
-        animator.crossFade(v, crossTime);
+        animator.crossFade(v, crossTime, {});
       } else {
         animator.playAnimationClip(v);
       }

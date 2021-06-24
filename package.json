@@ -23,11 +23,11 @@
     "presite": "npm run build",
     "start": "gatsby develop",
     "test": "npm run lint",
-    "typedoc": "node scripts/typedoc/generateTS.js"
+    "typedoc": "node scripts/typedoc/generateTS.js",
+    "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint-staged"
     }
   },
   "lint-staged": {
@@ -41,10 +41,11 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
     "@babel/core": "^7.14.0",
-    "@oasis-engine/controls": "0.4.0",
-    "@oasis-engine/spine": "^0.0.2",
+    "@oasis-engine/controls": "^0.4.0",
+    "@oasis-engine/framebuffer-picker": "^0.4.0",
     "@oasis-engine/lottie": "^0.0.5",
-    "@oasis-engine/stats": "0.4.0",
+    "@oasis-engine/spine": "^0.0.2",
+    "@oasis-engine/stats": "^0.4.0",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",
@@ -70,7 +71,7 @@
     "husky": "^5.0.9",
     "lz-string": "^1.4.4",
     "moment": "^2.24.0",
-    "oasis-engine": "0.4.0",
+    "oasis-engine": "^0.4.0",
     "prop-types": "^15.7.2",
     "qrcode.react": "^1.0.1",
     "rc-drawer-menu": "^1.1.0",
@@ -109,10 +110,12 @@
     "pre-commit": "^1.2.2",
     "prettier": "^2.0.0",
     "prismjs": "^1.15.0",
+    "sass": "^1.35.1",
     "slash2": "^2.0.0",
     "stylelint": "^13.6.0",
     "typedoc": "^0.20.35",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.3",
+    "vite": "^2.3.7"
   },
   "resolutions": {
     "@typescript-eslint/eslint-plugin": "^4.12.0"

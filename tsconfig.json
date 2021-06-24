@@ -10,7 +10,8 @@
     "noImplicitAny": false,
     "target": "es6",
     "lib": ["dom", "es2017"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "sourceMap": true
   },
   "exclude": ["node_modules", "lib", "es"]
 }
