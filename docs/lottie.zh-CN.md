@@ -52,7 +52,7 @@ engine.resourceManager.load({
 
 ![3D rotation](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ)
 
-得益于 Oasis Engine 2D/3D 引擎统一架构的优势，我们轻松地实现了 3D 旋转功能，为 lottie 补充了这项重要特性。
+得益于 Oasis Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 旋转功能，为 lottie 补充了这项重要特性。
 
 <playground src="lottie-3d-rotation.ts"></playground>
 ### 属性
