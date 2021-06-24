@@ -31,6 +31,7 @@ engine.resourceManager
   .then((lottieEntity) => {
     rootEntity.addChild(lottieEntity);
     const lottie = lottieEntity.getComponent(LottieAnimation);
+    lottieEntity.transform.setScale(1.5, 1.5, 1);
     lottie.isLooping = true;
     lottie.play();
   });
