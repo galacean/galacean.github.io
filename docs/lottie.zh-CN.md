@@ -64,7 +64,7 @@ engine.resourceManager.load({
 | `repeats` | 重复播放次数 |
 | `timeScale` | 播放倍速 |
 
-## 属性
+## 方法
 
 | 名称 |  描述 |
 | :--- | :--- |
