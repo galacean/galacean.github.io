@@ -3,7 +3,6 @@
  * @category Benchmark
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import "@oasis-engine/stats";
 import { Animation, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.

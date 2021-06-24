@@ -18,6 +18,7 @@ npm i @oasis-engine/lottie --save
 
 ## 使用
 
+### 基础使用
 合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，把其中的 **assets**（有可能是 base64 编码的图片集）合并成一张精灵图。你可以使用 <a href="https://www.codeandweb.com/texturepacker" target="_blank">TexturePacker</a> 软件很方便地完成图片的合并，它会产生一个图集文件（atlas）和一张精灵图，你可以删除 Lottie JSON 中的 **assets** 字段以减少文件体积。
 
 > 未来我们会提供工具来帮助开发者完成以上操作。
@@ -45,7 +46,17 @@ engine.resourceManager.load({
 });
 ```
 
-### 属性
+### 3D 旋转功能
+
+业务场景中经常会出现 3D 翻转的需求，比如一些弹窗的入场动画。由于传统的 lottie-web 方案只能沿着 **Z轴** 旋转（也就是说垂直于屏幕法线方向旋转），即使我们在 AE 中实现了沿着 **X轴** 或 **Y轴** 的旋转效果，使用 lotte-web  播放时也会被忽略：
+
+![3D rotation](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ)
+
+得益于 Oasis Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 旋转功能，为 lottie 补充了这项重要特性。
+
+<playground src="lottie-3d-rotation.ts"></playground>
+
+## 属性
 
 | 名称 |  描述 |
 | :--- | :--- |
@@ -53,7 +64,7 @@ engine.resourceManager.load({
 | `repeats` | 重复播放次数 |
 | `timeScale` | 播放倍速 |
 
-### 属性
+## 方法
 
 | 名称 |  描述 |
 | :--- | :--- |

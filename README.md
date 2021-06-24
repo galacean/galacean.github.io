@@ -4,6 +4,8 @@ The documentation source of [Oasis Engine](https://github.com/oasis-engine/engin
 
 ### Development
 
+#### Steps
+
 1. Clone the engine repository to local (if you have done, please skip to next step):
 
 ```bash
@@ -28,6 +30,12 @@ $ npm run dev
 ```
 
 OK, visit http://localhost:8000 .
+
+#### How to insert a playground in markdown
+```
+// leave a blank line here
+<playground src="buffer-mesh.ts"></playground>
+```
 
 ### Deploy
 
