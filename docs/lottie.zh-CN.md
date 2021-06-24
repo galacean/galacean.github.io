@@ -46,7 +46,7 @@ engine.resourceManager.load({
 });
 ```
 
-## 3D 旋转功能
+### 3D 旋转功能
 
 业务场景中经常会出现 3D 翻转的需求，比如一些弹窗的入场动画。由于传统的 lottie-web 方案只能沿着 **Z轴** 旋转（也就是说垂直于屏幕法线方向旋转），即使我们在 AE 中实现了沿着 **X轴** 或 **Y轴** 的旋转效果，使用 lotte-web  播放时也会被忽略：
 
@@ -55,7 +55,8 @@ engine.resourceManager.load({
 得益于 Oasis Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 旋转功能，为 lottie 补充了这项重要特性。
 
 <playground src="lottie-3d-rotation.ts"></playground>
-### 属性
+
+## 属性
 
 | 名称 |  描述 |
 | :--- | :--- |
@@ -63,7 +64,7 @@ engine.resourceManager.load({
 | `repeats` | 重复播放次数 |
 | `timeScale` | 播放倍速 |
 
-### 属性
+## 属性
 
 | 名称 |  描述 |
 | :--- | :--- |

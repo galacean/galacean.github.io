@@ -35,7 +35,6 @@ OK, visit http://localhost:8000 .
 ```
 // leave a blank line here
 <playground src="buffer-mesh.ts"></playground>
-// leave a blank line here
 ```
 
 ### Deploy
