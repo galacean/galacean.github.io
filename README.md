@@ -46,3 +46,22 @@ $ npm run build
 ```
 
 2. Copy the files in `public` directory to the root of `gh-pages` branch.
+
+
+
+### Playground
+
+#### How to development
+```bash
+npm run playground
+```
+
+#### How to link
+* Mac
+```bash
+npm link ../engine/packages/* --no-package-lock
+```
+* windows
+```bash
+npm link ..\engine\packages\oasis-engine --no-package-lock
+```

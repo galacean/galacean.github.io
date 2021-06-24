@@ -50,3 +50,7 @@ public
 false
 .eslintcache
 scripts/typedoc/tsfiles.js
+
+
+# playground
+playground/.dev/mpa
