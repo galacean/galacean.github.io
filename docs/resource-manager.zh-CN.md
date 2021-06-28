@@ -143,7 +143,7 @@ const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 
 <playground src="gltf-basic.ts"></playground>
 
-更多案例可以前往[加载3D模型](${docs}model-cn)。
+前往[ glTF 资源](${docs}gltf-cn) 了解更多 glTF 相关设计。
 
 ### 6. 自定义加载器
 用户也可以自定义加载器来加载自定义的资源：
