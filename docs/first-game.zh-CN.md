@@ -50,6 +50,10 @@ type: 入门
 | Restart | [https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png) |  |
 | Number | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png) |  |
 
+## 加载 UI 资源
+
+在获取 UI 资源后，可以参考[资源管理与加载](${docs}resource-manager-cn#1-texture2d)中加载 [Texture2D](${docs}texture-cn#1-2d纹理) 的方式。
+
 ## 界面搭建
 
 ### 分析移动策略
@@ -345,7 +349,7 @@ const pipeDebutTime = 3000;
 }
 ```
 
-其中 `createPipe` 函数使用了引擎自带的 `clone` 功能，将水管克隆一份即可。
+其中 `createPipe` 函数使用了引擎自带的 [clone](${docs}entity-clone-cn) 功能，将水管克隆一份即可。
 
 ```typescript
 private createPipe(posX, posY, posZ) {
