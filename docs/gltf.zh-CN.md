@@ -96,7 +96,7 @@ if (sceneRoots.length > 1) {
 
 ### 多材质切换
 
-如果 glTF 文件包含[多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants)，f 则可以利用 [variants](<(${api}loader/GLTFResource#variants)>) 来切换材质。
+如果 glTF 文件包含[多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants)，则可以利用 [variants](<(${api}loader/GLTFResource#variants)>) 来切换材质。
 
 ```typescript
 const { variants, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
