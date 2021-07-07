@@ -38,7 +38,7 @@ rootEntity.addChild(defaultSceneRoot);
 | :-- | :-- |
 | [gltf](${api}loader/GLTFResource#gltf) | glTF 源文件 JSON 格式 |
 | [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) | glTF 默认根节点 |
-| [sceneRoots](${api}loader/GLTFResource#sceneRoots) | glTF 可能包含多个场景，即多个根节点，但是默认导出只能有一个场景，开发者可以手动添加/切换场景 |
+| [sceneRoots](${api}loader/GLTFResource#sceneRoots) | glTF 可能包含多个根节点，但是默认导出只能有一个根节点，开发者可以手动添加/切换根节点 |
 | [animations](${api}loader/GLTFResource#animations) | 动画片段 |
 | [cameras](${api}loader/GLTFResource#cameras) | glTF 可以导出相机，但是引擎默认使用之前用户创建的相机，开发者可以手动切换 glTF 相机 |
 | [entities](${api}loader/GLTFResource#entities) | 解析后的所有实体 |
@@ -50,6 +50,8 @@ rootEntity.addChild(defaultSceneRoot);
 
 ### 播放动画
 
+我们先从根节点上获取 [animator](${api}core/Animation) 组件，然后可以选择播放哪一个动画片段。
+
 ```typescript
 const { animations, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 const animator = defaultSceneRoot.getComponent(Animation);
@@ -59,6 +61,8 @@ animator.playAnimationClip(animations[0].name);
 ```
 
 ### 切换 glTF 相机
+
+引擎默认不使用 glTF 导出的相机，如果需要，可以先禁用引擎的默认相机，然后启用 glTF 导出的某个相机。
 
 ```typescript
 const { cameras, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
@@ -73,14 +77,17 @@ if (cameras) {
 }
 ```
 
-### 切换场景
+### 选择场景根节点
+
+glTF 中的场景(**Scene**)指的是根节点，即引擎的 [Entity](${api}core/Entity)。除了默认场景根节点 `defaultSceneRoot`，还可能包含多个场景根节点 `sceneRoots`，开发者可以手动选择/切换根节点。
 
 ```typescript
-const { sceneRoots } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
+const { sceneRoots, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 
 if (sceneRoots.length > 1) {
   const replaceSceneRoot = sceneRoots[1];
 
+  // 注意此处，使用的并不是 defaultSceneRoot
   rootEntity.addChild(replaceSceneRoot);
 }
 ```
