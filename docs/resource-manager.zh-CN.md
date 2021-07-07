@@ -132,7 +132,7 @@ const compressedTextureCube = await this.engine.resourceManager.load<TextureCube
 ```
 
 ### 5. glTF
-GLTF（GL Transmission Format）是 [khronos](https://www.khronos.org/) 发布的一种能高效传输和加载 3D 场景的规范，与 FBX、OBJ 等传统模型格式一样，基本支持 3D 场景中的所有特性，也是目前 Oasis 推荐的首选 3D 文件格式。
+
 资源加载后得到的是一个 [GLTFResource](${api}loader/GLTFResource) 资源，包含 [Scene](${api}core/Scene)、[Entity](${api}core/Entity)、[Texture](${api}core/Texture)、[Material](${api}core/Material) 和 [AnimationClip](${api}core/AnimationClip) 等对象。
 
 ``` typescript

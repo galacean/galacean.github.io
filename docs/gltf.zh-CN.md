@@ -6,7 +6,9 @@ type: 资源系统
 
 ## 什么是 glTF?
 
-正如[官网](https://www.khronos.org/gltf/)所介绍，**glTF**（GL Transmission Format）是 [khronos ](https://www.khronos.org/)发布的一种能高效传输和加载 3D 场景的规范，是 3D 领域中的 "JPEG" 格式，其功能涵盖了 FBX、OBJ 等传统模型格式，基本支持 3D 场景中的所有特性，其[插件机制](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos)也使用户可以灵活地自定义实现想要的功能。
+正如 [glTF 官网](https://www.khronos.org/gltf/) 所介绍，**glTF**（GL Transmission Format）是 [khronos ](https://www.khronos.org/)发布的一种能高效传输和加载 3D 场景的规范，是 3D 领域中的 "JPEG" 格式，其功能涵盖了 FBX、OBJ 等传统模型格式，基本支持 3D 场景中的所有特性，其[插件机制](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos)也使用户可以灵活地自定义实现想要的功能。
+
+glTF 是目前 Oasis 推荐的首选 3D 场景传输格式，Oasis 对 glTF 的核心功能和插件都做了很好的支持。
 
 <playground src="gltf-loader.ts"></playground>
 
@@ -50,14 +52,14 @@ rootEntity.addChild(defaultSceneRoot);
 
 ### 播放动画
 
-我们先从根节点上获取 [animator](${api}core/Animation) 组件，然后可以选择播放哪一个动画片段。
+我们先从根节点上获取 [Animation](${api}core/Animation) 组件，然后可以选择播放哪一个动画片段。
 
 ```typescript
 const { animations, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
-const animator = defaultSceneRoot.getComponent(Animation);
+const animation = defaultSceneRoot.getComponent(Animation);
 
 rootEntity.addChild(defaultSceneRoot);
-animator.playAnimationClip(animations[0].name);
+animation.playAnimationClip(animations[0].name);
 ```
 
 ### 切换 glTF 相机
@@ -94,7 +96,7 @@ if (sceneRoots.length > 1) {
 
 ### 多材质切换
 
-如果 glTF 文件包含[多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants),则可以利用 [variants](<(${api}loader/GLTFResource#variants)>) 来切换材质。
+如果 glTF 文件包含[多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants)，f 则可以利用 [variants](<(${api}loader/GLTFResource#variants)>) 来切换材质。
 
 ```typescript
 const { variants, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
@@ -109,3 +111,17 @@ if (variants) {
   renderer.setMaterial(material);
 }
 ```
+
+### 插件支持
+
+Oasis 目前支持了以下插件：
+
+| 插件 | 功能 |
+| :-- | :-- |
+| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | 支持 Draco 压缩模型，节省显存 |
+| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多种光源组合 |
+| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR 高光-光泽度工作流 |
+| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | 支持 [Unlit 材质](https://oasisengine.cn/0.4/docs/artist-unlit-cn) |
+| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 支持多材质切换 |
+| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存 |
+| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理 [TilingOffset](https://oasisengine.cn/0.4/examples#tiling-offset)， 缩放位移变换 |
