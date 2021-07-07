@@ -9,7 +9,7 @@ type: 资源系统
 推荐用[脚本组件](${docs}script-cn)的方式加载资源。[load](${api}core/ResourceManager#load) 方法即可传入 url，也可以传入 [loadItem](${api}core/LoadItem)，也可以传入数组表示批量加载。
 
 ```typescript
-import type { GLTFResource } from '@oasis-engine/loader/types/gltf/glTF';
+import { GLTFResource } from 'oasis-engine';
 
 export class ResourceScript extends Script {
 	async onAwake() {
@@ -136,7 +136,7 @@ GLTF（GL Transmission Format）是 [khronos](https://www.khronos.org/) 发布�
 资源加载后得到的是一个 [GLTFResource](${api}loader/GLTFResource) 资源，包含 [Scene](${api}core/Scene)、[Entity](${api}core/Entity)、[Texture](${api}core/Texture)、[Material](${api}core/Material) 和 [AnimationClip](${api}core/AnimationClip) 等对象。
 
 ``` typescript
-import type { GLTFResource } from 'oasis-engine';
+import { GLTFResource } from 'oasis-engine';
 
 const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 ```
