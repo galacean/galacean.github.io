@@ -145,7 +145,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 - 在 svg 渲染模式下，开发人员需要一个 id 进行元素查找，设计这边只需要在AE对应图层名字前加上“ # ” 即可。并将命名以后的字符告知到开发人员。并在导出 json 的时候，取消 “Glyphs” 的选中。
 
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677480926-71e3803f-f1be-427c-85ce-3a31fe5e7d76.png#align=left&display=inline&height=311&margin=%5Bobject%20Object%5D&name=image.png&originHeight=622&originWidth=2398&size=620985&status=done&style=none&width=1199)
+![image.png](https://gw.alicdn.com/imgextra/i4/O1CN01b6vFVd1RGW5oI3VOh_!!6000000002084-2-tps-2398-622.png)
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677675709-67f326aa-efe5-4ec9-9614-b2229ce484c1.png#align=left&display=inline&height=495&margin=%5Bobject%20Object%5D&name=image.png&originHeight=990&originWidth=1278&size=387946&status=done&style=none&width=639)
 
 
