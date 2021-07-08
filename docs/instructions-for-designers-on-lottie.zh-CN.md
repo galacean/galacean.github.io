@@ -53,7 +53,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 - 打开一个 AE 项目。         
       
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597675384725-91198995-b2f1-4e8a-bf9e-c9573f4e8d5b.png#align=left&display=inline&height=896&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1792&originWidth=2406&size=2091475&status=done&style=none&width=1203)
+![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01ChXn781jglsjOiFnx_!!6000000004578-2-tps-1336-995.png)
       
 - 打开Bodymovin插件窗口，可以发现该项目的名称出现在了下面的列表中。选中该名称，设置好 json 文件输出位置，点击 “Render”。
 
@@ -70,7 +70,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597675804466-e14c7c20-5dde-46d4-95d1-944372f41613.png#align=left&display=inline&height=821&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1642&originWidth=2878&size=245024&status=done&style=none&width=1439)
       
 - 上传成功以后，点击右上角“文件检测”：
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597675911965-a219246c-3050-4827-ba70-ce9a0083a11b.png#align=left&display=inline&height=819&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1638&originWidth=2878&size=1210960&status=done&style=none&width=1439)
+![image.png](https://gw.alicdn.com/imgextra/i1/O1CN01YiZnT21Z4AKu5bCgI_!!6000000003140-2-tps-1336-760.png)
       
 - 通过“文件检测”查看低性能以及不支持的属性，可以回到 AE 中进行修改：
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597675975163-4bb8f3bd-0a4a-4de0-ba8b-f087d039e8fb.png#align=left&display=inline&height=818&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1636&originWidth=2876&size=1185678&status=done&style=none&width=1438)
@@ -81,7 +81,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
       
 - 视情况选择图片保留质量，并点击“执行”，进行动画压缩
 - 执行完毕以后，使用手淘扫码查看动画表现，并将导出的 json 文件地址给到前端、客户端开发
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597676232725-254fa0a7-72f0-4b95-b6ff-5e1b98f99b49.png#align=left&display=inline&height=533&margin=%5Bobject%20Object%5D&name=image.png&originHeight=1066&originWidth=1604&size=477307&status=done&style=none&width=802)
+![image.png](https://gw.alicdn.com/imgextra/i1/O1CN01fjifn31pjPrPrE8HX_!!6000000005396-2-tps-1336-888.png)
 
 
 
@@ -146,7 +146,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 - 在 svg 渲染模式下，开发人员需要一个 id 进行元素查找，设计这边只需要在AE对应图层名字前加上“ # ” 即可。并将命名以后的字符告知到开发人员。并在导出 json 的时候，取消 “Glyphs” 的选中。
 
 ![image.png](https://gw.alicdn.com/imgextra/i4/O1CN01b6vFVd1RGW5oI3VOh_!!6000000002084-2-tps-2398-622.png)
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677675709-67f326aa-efe5-4ec9-9614-b2229ce484c1.png#align=left&display=inline&height=495&margin=%5Bobject%20Object%5D&name=image.png&originHeight=990&originWidth=1278&size=387946&status=done&style=none&width=639)
+![image.png](https://gw.alicdn.com/imgextra/i2/O1CN01B8fqzN1WovvvFYvPl_!!6000000002836-2-tps-1278-990.png)
 
 
 <br />导出完成以后，会出现询问字体样式的弹窗，可以不设置，配置以后点击“save”自动生成完毕。<br />![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01X9AQ7R1Emx8ek1DcV_!!6000000000395-2-tps-640-496.png) <br />
