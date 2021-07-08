@@ -11,15 +11,16 @@ type: 资源系统
 | 属性名 | 属性类型 | 描述 |
 | :--- | :--- | :--- |
 |[texture](${api}core/Sprite#texture)|[Texture2D](${api}core/Texture2D)|使用纹理的引用|
-|[pivot](${api}core/Sprite#pivot)|[Vector2](${api}math/Vector2)|精灵中心点在原始纹理上的rect中的位置，范围 0～1|
-|[rect](${api}core/Sprite#rect)|[Rect](${api}math/Rect)|精灵在原始纹理上的位置，范围 0～1|
+|[pivot](${api}core/Sprite#pivot)|[Vector2](${api}math/Vector2)|精灵中心点在原始纹理上的region中的位置，范围 0～1|
+|[region](${api}core/Sprite#region)|[Rect](${api}math/Rect)|精灵在原始纹理上的位置，范围 0～1|
+|[pixelsPerUnit](${api}core/Sprite#pixelsPerUnit)|number|精灵中对应于世界空间中一个单位的像素数|
 
-## 纹理、pivot、rect 三者关系
-rect 决定精灵的显示内容，可以在纹理中选择一个矩形区域进行显示，超出部分会自动过滤掉，如下：
+## 纹理、pivot、region(Rect) 三者关系
+region 决定精灵的显示内容，可以在纹理中选择一个矩形区域进行显示，超出部分会自动过滤掉，如下：
 
 ![avatar](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Thx9Rpk6WkQAAAAAAAAAAAAAARQnAQ)
 
-pivot 代表精灵中心在 rect 中的位置，如下：
+pivot 代表精灵中心在 region 中的位置，如下：
 
 ![avatar](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*-h_1Sri5P6oAAAAAAAAAAAAAARQnAQ)
 ## 使用 Sprite
@@ -43,9 +44,9 @@ engine.resourceManager
 sprite.pivot = new Vector2(0.5, 0.5);
 ```
 对于 pivot 来说，纹理左下角为 (0, 0)，X 轴从左到右，Y 轴从下到上
-### 设置 rect，我们以取纹理左半边为例，如下：
+### 设置 region，我们以取纹理左半边为例，如下：
 ```typescript
-sprite.rect = new Rect(0, 0, 0.5, 1);
+sprite.region = new Rect(0, 0, 0.5, 1);
 ```
-我们通过 rect 获取纹理内容时，纹理左上角为 (0, 0)，X 轴从左到右，Y 轴从上到下。并且当 rect.x + rect.width > 1 时，rect.width 会自动修改，保证 rect.x + rect.width <= 1，rect.y 和 rect.height 同理。
+我们通过 region 获取纹理内容时，纹理左上角为 (0, 0)，X 轴从左到右，Y 轴从上到下。并且当 region.x + region.width > 1， region.width 会自动修改，保证 region.x + region.width <= 1，region.y 和 region.height 同理。
 
