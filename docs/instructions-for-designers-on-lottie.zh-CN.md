@@ -96,7 +96,8 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 - Matte 和 mask 有尺寸问题，使用半透明遮罩会影响性能，可能会造成潜在的渲染错误以及严重的性能损耗！很多设计师习惯画图形用纯色图层，纯色图层形成的形状是基于蒙版的，这个要注意。如果必须使用遮罩，请覆盖最小的区域。
 - lottie 不支持图层样式，图层效果不支持drop shadow, color overlay 或 stroke。
 - lottie 不支持合成路径（merged path），如果从 AI 中制作的图形有，请删掉。
-- 图层命名尽量用英文。**如果你使用了渐变，那么工程名（包括****aep文件名）以及渐变图层、到其父级图层、到根级图层这条链路中的每一层都要用英文，包括变换属性命名，否则会出现渲染错误：![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677516151-39787ab8-75cf-4ac1-9d04-65839abb68fc.png#align=left&display=inline&height=108&margin=%5Bobject%20Object%5D&name=image.png&originHeight=216&originWidth=340&size=24623&status=done&style=none&width=170)**
+- 图层命名尽量用英文。**如果你使用了渐变，那么工程名（包括aep文件名）以及渐变图层、到其父级图层、到根级图层这条链路中的每一层都要用英文，包括变换属性命名，否则会出现渲染错误：
+![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677516151-39787ab8-75cf-4ac1-9d04-65839abb68fc.png#align=left&display=inline&height=108&margin=%5Bobject%20Object%5D&name=image.png&originHeight=216&originWidth=340&size=24623&status=done&style=none&width=170)**
 
 
 
@@ -148,7 +149,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677675709-67f326aa-efe5-4ec9-9614-b2229ce484c1.png#align=left&display=inline&height=495&margin=%5Bobject%20Object%5D&name=image.png&originHeight=990&originWidth=1278&size=387946&status=done&style=none&width=639)
 
 
-<br />导出完成以后，会出现询问字体样式的弹窗，可以不设置，配置以后点击“save”自动生成完毕。<br />![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/293361/1598967550938-b27fc865-2acd-4a07-9534-fc5a74dda71f.png#align=left&display=inline&height=494&margin=%5Bobject%20Object%5D&name=image.png&originHeight=496&originWidth=640&size=61952&status=done&style=none&width=637) <br />
+<br />导出完成以后，会出现询问字体样式的弹窗，可以不设置，配置以后点击“save”自动生成完毕。<br />![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01X9AQ7R1Emx8ek1DcV_!!6000000000395-2-tps-640-496.png) <br />
 <br /> 
 <a name="mNn9O"></a>
 ### 9、动画被导入 AE 的时候尽量重新绘制图片
@@ -164,4 +165,4 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 <a name="KE8oQ"></a>
 ### 10、官方提供的属性支持度
-![image.png](https://intranetproxy.alipay.com/skylark/lark/0/2020/png/293361/1597678938573-558720a1-db76-4c99-914a-41e48b9e1a60.png#align=left&display=inline&height=1168&margin=%5Bobject%20Object%5D&name=image.png&originHeight=2336&originWidth=593&size=514439&status=done&style=none&width=296.5)
+![image.png](https://gw.alicdn.com/imgextra/i4/O1CN01hoo8Nt1U5vmjDCPJS_!!6000000002467-2-tps-593-2336.png)
