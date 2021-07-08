@@ -96,9 +96,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 - Matte 和 mask 有尺寸问题，使用半透明遮罩会影响性能，可能会造成潜在的渲染错误以及严重的性能损耗！很多设计师习惯画图形用纯色图层，纯色图层形成的形状是基于蒙版的，这个要注意。如果必须使用遮罩，请覆盖最小的区域。
 - lottie 不支持图层样式，图层效果不支持drop shadow, color overlay 或 stroke。
 - lottie 不支持合成路径（merged path），如果从 AI 中制作的图形有，请删掉。
-- 图层命名尽量用英文。**如果你使用了渐变，那么工程名（包括aep文件名）以及渐变图层、到其父级图层、到根级图层这条链路中的每一层都要用英文，包括变换属性命名，否则会出现渲染错误：
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597677516151-39787ab8-75cf-4ac1-9d04-65839abb68fc.png#align=left&display=inline&height=108&margin=%5Bobject%20Object%5D&name=image.png&originHeight=216&originWidth=340&size=24623&status=done&style=none&width=170)**
-
+- 图层命名尽量用英文。**如果你使用了渐变，那么工程名（包括aep文件名）以及渐变图层、到其父级图层、到根级图层这条链路中的每一层都要用英文，包括变换属性命名，否则会出现渲染错误。
 
 
 <a name="DjBmt"></a>
