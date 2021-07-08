@@ -15,7 +15,7 @@ function Codepen (props: any) {
 
   let js: string = props.sourceCode;
 
-  js = js.replace(/(import.+from\s+)["'](.+)["'];/g, ($1, $2, $3) => {
+  js = js.replace(/(\s+from\s+)["'](.+)["'];/g, ($1, $2, $3) => {
     return `${$2}"https://cdn.skypack.dev/${$3}"`;
   });
 
