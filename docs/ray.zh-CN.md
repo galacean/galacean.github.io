@@ -29,7 +29,8 @@ if (collider) {
 
 // 将屏幕输入转换成Ray
 document.getElementById('canvas').addEventListener('click', (e) => {
-  ray = camera.screenPointToRay(e.offsetX, e.offsetY);
+  const ratio = window.devicePixelRatio;
+  camera.screenPointToRay(new Vector2(e.offsetX, e.offsetY).scale(ratio), ray);
   collider = scene.raycast(ray);
   if (collider) {
     console.log(collider);
