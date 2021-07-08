@@ -8,7 +8,8 @@ type: 美术
 <a name="LUKWX"></a>
 ### 1、lottie 简介
 [lottie](https://airbnb.io/lottie/) 是 Airbnb 于 2017 年前后发布的一款跨平台的动画解决方案，可应用于 iOS，Android，React Native 和 web，通过 Bodymovin 插件解析 [AE](https://www.adobe.com/products/aftereffects.html) 动画，并导出可在移动端和 web 端渲染动画的 json 文件。设计师通过 AE 来制作动画，再用 Bodymovin 导出相应的 json 文件给到前端，前端可以使用这个 json 文件直接生成 100% 还原的动画。<br />
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597657217465-70cf1530-4a33-464f-a3ed-13c738968c1f.png#align=left&display=inline&height=204&margin=%5Bobject%20Object%5D&name=image.png&originHeight=407&originWidth=969&size=46694&status=done&style=none&width=484.5) <br />
+
+![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01hwDRHF1D8MQ1AewTj_!!6000000000171-2-tps-485-204.png#align=left&display=inline&height=495&margin=%5Bobject%20Object%5D&name=image.png) <br />
 
 <a name="Cbszs"></a>
 ### 2、为什么选择 lottie
