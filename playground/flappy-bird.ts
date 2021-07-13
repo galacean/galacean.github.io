@@ -4,28 +4,26 @@
  */
 import {
   AssetType,
+  BoxCollider,
   Camera,
   Entity,
   MeshRenderer,
   PrimitiveMesh,
-  Ray,
   Rect,
   Script,
   Sprite,
   SpriteRenderer,
   Texture2D,
-  Transform,
   UnlitMaterial,
   Vector2,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
 import * as TWEEN from "@tweenjs/tween.js";
+import { Touch, TouchType, TouchManager } from "@oasis-engine/touch";
 
 // The y coordinate of the ground collision detection
 const groundY = -3.1;
-// Horizontal movement speed (bird, pipe, ground...)
-const birdHorizontalV = 0.003;
 
 const GameEvent = {
   fly: "fly",
@@ -36,13 +34,6 @@ const GameEvent = {
   gameOver: "gameOver",
   addScore: "addScore",
   reStartGame: "reStartGame"
-};
-
-const CanvasEvent = {
-  touchend: "touchend",
-  touchstart: "touchstart",
-  mouseup: "mouseup",
-  mousedown: "mousedown"
 };
 
 let gameResArray: Texture2D[];
@@ -64,7 +55,7 @@ function fitWithHeight(aspectRatio: number) {
 }
 
 // Design size
-fitWithHeight(525 / 728);
+fitWithHeight(768 / 896);
 // Create engine object
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -84,8 +75,8 @@ camera.orthographicSize = 4.5;
 engine.resourceManager
   .load([
     {
-      // Bird
-      url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png",
+      // Background
+      url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png",
       type: AssetType.Texture2D
     },
     {
@@ -94,13 +85,13 @@ engine.resourceManager
       type: AssetType.Texture2D
     },
     {
-      // Background
-      url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png",
+      // Ground
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Sj7OS4YJHDIAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     },
     {
-      // Ground
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Sj7OS4YJHDIAAAAAAAAAAAAAARQnAQ",
+      // Bird
+      url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png",
       type: AssetType.Texture2D
     },
     {
@@ -115,62 +106,68 @@ engine.resourceManager
     }
   ])
   .then((texture2DArr: Texture2D[]) => {
+    // Record the resources
     gameResArray = texture2DArr;
-    // Initialize each node （I usually go from far to near）
-    // background
+    // Initialize location information and component information
+    // ====================== Background ======================
     const nodeBg = rootEntity.createChild("nodeBg");
-    nodeBg.transform.setPosition(0.3, 0, -5);
-    addSpriteRender(nodeBg, texture2DArr[2]);
+    nodeBg.transform.setPosition(0.3, 0, -10);
+    nodeBg.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[0], null, null, 100);
 
-    // Pipe
+    // ====================== Pipe ======================
     const nodePipe = rootEntity.createChild("nodePipe");
     nodePipe.transform.setPosition(0, 0, -3);
     nodePipe.addComponent(ScriptPipe);
 
-    // Ground
+    // ====================== Ground ======================
     const nodeGround = rootEntity.createChild("nodeGround");
-    nodeGround.transform.setPosition(0.3, -4.125, 0);
+    nodeGround.transform.setPosition(0.3, -4.125, -2);
+    const groundRenderer = nodeGround.addComponent(MeshRenderer);
+    groundRenderer.mesh = PrimitiveMesh.createPlane(engine, 7.68, 1.28);
+    const groundMaterial = new UnlitMaterial(engine);
+    groundRenderer.setMaterial(groundMaterial);
+    groundMaterial.baseTexture = texture2DArr[2];
+    groundMaterial.tilingOffset.setValue(21, 1, 0, 0);
     nodeGround.addComponent(ScriptGround);
 
-    // Bird
+    // ====================== Bird ======================
     const nodeBird = rootEntity.createChild("nodeBird");
     nodeBird.transform.setPosition(-1, 1.15, 0);
-    addSpriteRender(nodeBird, texture2DArr[0]);
-    // Death splash screen effect
-    const renderer = nodeBird.addComponent(MeshRenderer);
-    renderer.mesh = PrimitiveMesh.createPlane(engine, 20, 20);
-    const material = new UnlitMaterial(engine);
-    // Can be transparent
-    material.isTransparent = true;
-    renderer.setMaterial(material);
+    nodeBird.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[3], null, null, 100);
     nodeBird.addComponent(ScriptBird);
 
-    // GUI
+    // ====================== Death Effect ======================
+    const nodeDeathEff = rootEntity.createChild("nodeEff");
+    nodeDeathEff.transform.setPosition(0, 0, -1);
+    const effRenderer = nodeDeathEff.addComponent(MeshRenderer);
+    effRenderer.mesh = PrimitiveMesh.createPlane(engine, 20, 20);
+    const material = new UnlitMaterial(engine);
+    effRenderer.setMaterial(material);
+    // Can be transparent
+    material.isTransparent = true;
+    material.baseColor.setValue(0, 0, 0, 0);
+    nodeDeathEff.addComponent(ScriptDeathEff);
+
+    // ====================== GUI ======================
     const nodeGui = rootEntity.createChild("nodeGui");
     nodeGui.transform.setPosition(0.3, 0, 1);
+    // restart
     const nodeRestart = nodeGui.createChild("nodeRestart");
-    addSpriteRender(nodeRestart, texture2DArr[4]);
+    nodeRestart.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[4], null, null, 100);
+
+    // score
     const nodeScore = nodeGui.createChild("nodeScore");
     nodeScore.transform.setPosition(0, 3.2, 0);
     nodeScore.transform.setScale(0.3, 0.3, 0.3);
-    nodeGui.addComponent(ScriptGUI);
     nodeScore.addComponent(ScriptScore);
+
+    nodeGui.addComponent(ScriptGUI);
 
     // GameCtrl controls the global game
     rootEntity.addComponent(GameCtrl);
   });
 
 engine.run();
-
-/**
- * General method for adding spriterender to nodes
- * @param node
- * @param texture2D
- */
-function addSpriteRender(node: Entity, texture2D: Texture2D) {
-  let renderer = node.addComponent(SpriteRenderer);
-  renderer.sprite = new Sprite(engine, texture2D, null, null, 100);
-}
 
 class ScriptPipe extends Script {
   // When there is no pipe in the pool, use this instance to clone
@@ -191,6 +188,37 @@ class ScriptPipe extends Script {
   private _pipeRandomPosY = 3.5;
   // Water pipe debut time(ms)
   private _pipeDebutTime = 3000;
+  // Horizontal movement speed
+  private pipeHorizontalV = 0.003;
+
+  private createPipe(posX, posY, posZ) {
+    const pipePool = this._pipePool;
+    var pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
+    pipe.transform.setPosition(posX, posY, posZ);
+    this.entity.addChild(pipe);
+    this._nowPipeArr.push(pipe);
+  }
+
+  /**
+   * It’s not really destroyed, we just put it in the pool
+   * @param pipeIndex If pipeIndex is less than 0, we recycle all pipes
+   */
+  private destroyPipe(pipeIndex: number = -1) {
+    const { entity, _pipePool, _nowPipeArr } = this;
+    const removePipe = (pipe: Entity) => {
+      entity.removeChild(pipe);
+      _pipePool.push(pipe);
+    };
+    if (pipeIndex >= 0) {
+      removePipe(_nowPipeArr[pipeIndex]);
+      _nowPipeArr.splice(pipeIndex, 1);
+    } else {
+      for (let index = _nowPipeArr.length - 1; index >= 0; index--) {
+        removePipe(_nowPipeArr[index]);
+      }
+      _nowPipeArr.length = 0;
+    }
+  }
 
   onAwake() {
     // Init originPipe
@@ -201,8 +229,8 @@ class ScriptPipe extends Script {
     node1.transform.setPosition(0, -verticalDis / 2, 0);
     node2.transform.setPosition(0, verticalDis / 2, 0);
     node2.transform.setScale(1, -1, 1);
-    addSpriteRender(node1, gameResArray[1]);
-    addSpriteRender(node2, gameResArray[1]);
+    node1.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1], null, null, 100);
+    node2.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1], null, null, 100);
     this._pipePool.push(pipe);
 
     // Control the performance of the pipe according to the change of the game state
@@ -250,7 +278,7 @@ class ScriptPipe extends Script {
     if (engine.time.nowTime - this._curStartTimeStamp >= debutTime) {
       let bAddScore = false;
       // After deltaTime, the distance the pipe has moved
-      const changeVal = deltaTime * birdHorizontalV;
+      const changeVal = deltaTime * this.pipeHorizontalV;
       const pipeLen = this._nowPipeArr.length;
       const { _pipeHorizontalDis: horizontalDis, _pipeRandomPosY: randomPosY, _pipeHideX: hideX } = this;
       // Adjust the position of all pipes
@@ -281,35 +309,6 @@ class ScriptPipe extends Script {
       }
     }
   }
-
-  private createPipe(posX, posY, posZ) {
-    const pipePool = this._pipePool;
-    var pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
-    pipe.transform.setPosition(posX, posY, posZ);
-    this.entity.addChild(pipe);
-    this._nowPipeArr.push(pipe);
-  }
-
-  /**
-   * It’s not really destroyed, we just put it in the pool
-   * @param pipeIndex If pipeIndex is less than 0, we recycle all pipes
-   */
-  private destroyPipe(pipeIndex: number = -1) {
-    const nowPipeArr = this._nowPipeArr;
-    if (pipeIndex >= 0) {
-      const pipe = nowPipeArr[pipeIndex];
-      this.entity.removeChild(pipe);
-      this._pipePool.push(pipe);
-      nowPipeArr.splice(pipeIndex, 1);
-    } else {
-      for (let index = nowPipeArr.length - 1; index >= 0; index--) {
-        const pipe = nowPipeArr[index];
-        this.entity.removeChild(pipe);
-        this._pipePool.push(pipe);
-      }
-      nowPipeArr.length = 0;
-    }
-  }
 }
 
 class ScriptScore extends Script {
@@ -321,35 +320,6 @@ class ScriptScore extends Script {
   private _scoreEntitys: Entity[] = [];
   private _scoreRenderer: SpriteRenderer[] = [];
   private _myScore = 0;
-
-  onAwake() {
-    // Init spriteArray
-    const spriteArray = this._spriteArray;
-    for (var i = 0; i < 10; i++) {
-      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1), null, 75));
-    }
-
-    engine.on(GameEvent.addScore, () => {
-      ++this._myScore;
-      this.showScore("" + this._myScore);
-    });
-
-    // Control the performance of the score according to the change of the game state
-    engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
-      switch (gameState) {
-        case EnumGameState.Idel:
-          this.entity.isActive = false;
-          break;
-        case EnumGameState.Start:
-          this._myScore = 0;
-          this.entity.isActive = true;
-          this.showScore("0");
-          break;
-        case EnumGameState.End:
-          break;
-      }
-    });
-  }
 
   private showScore(scoreNumStr: string) {
     const scoreLen = scoreNumStr.length;
@@ -388,20 +358,46 @@ class ScriptScore extends Script {
       }
     }
   }
+
+  onAwake() {
+    // Init spriteArray
+    const spriteArray = this._spriteArray;
+    // Cut digital resources into ten
+    for (var i = 0; i < 10; i++) {
+      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1), null, 75));
+    }
+
+    engine.on(GameEvent.addScore, () => {
+      ++this._myScore;
+      this.showScore("" + this._myScore);
+    });
+
+    // Control the performance of the score according to the change of the game state
+    engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
+      switch (gameState) {
+        case EnumGameState.Idel:
+          this.entity.isActive = false;
+          break;
+        case EnumGameState.Start:
+          this.entity.isActive = true;
+          this._myScore = 0;
+          this.showScore("0");
+          break;
+        case EnumGameState.End:
+          break;
+      }
+    });
+  }
 }
 
 class ScriptGround extends Script {
   // Swap two pieces of ground to achieve constant movement
   private groundMaterial: UnlitMaterial;
+  // Horizontal movement speed
+  private groundHorizontalV = 0.0082;
 
   onAwake() {
-    const entity = this.entity;
-    const groundRenderer = entity.addComponent(MeshRenderer);
-    groundRenderer.mesh = PrimitiveMesh.createPlane(engine, 7.68, 1.28);
-    const groundMaterial = (this.groundMaterial = new UnlitMaterial(engine));
-    groundRenderer.setMaterial(groundMaterial);
-    groundMaterial.baseTexture = gameResArray[3];
-    groundMaterial.tilingOffset.setValue(21, 1, 0, 0);
+    this.groundMaterial = <UnlitMaterial>this.entity.getComponent(MeshRenderer).getMaterial();
     // Control the performance of the ground according to the change of the game state
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       switch (gameState) {
@@ -425,91 +421,34 @@ class ScriptGround extends Script {
 
   onUpdate(deltaTime: number) {
     // After deltaTime, the distance the ground has moved
-    this.groundMaterial.tilingOffset.z += ((deltaTime * birdHorizontalV) / 37) * 100;
+    this.groundMaterial.tilingOffset.z += deltaTime * this.groundHorizontalV;
   }
 }
 
 class GameCtrl extends Script {
   private _gameState: EnumGameState;
-  private _tempViewportVec2 = new Vector2();
-  private _tempRay = new Ray();
+  private _touch: Touch;
 
-  private _onTouchEnd: Function;
-  private _onMouseUp: Function;
-  private _onMouseDown: Function;
   onAwake() {
-    const { entity } = this;
+    //启动 touchmanager
+    TouchManager.ins.initEngine(this.engine);
+
     engine.on(GameEvent.reStartGame, () => {
-      this.gameState = EnumGameState.Idel;
+      this.setGameState(EnumGameState.Idel);
     });
 
     engine.on(GameEvent.gameOver, () => {
-      this.gameState = EnumGameState.End;
+      this.setGameState(EnumGameState.End);
     });
 
-    const webCanvas = engine.canvas._webCanvas;
-    const camera = entity.findByName("camera").getComponent(Camera);
-    const viewport = camera.viewport;
-    const tempViewportVec2 = this._tempViewportVec2;
-    const tempRay = this._tempRay;
-    this._onTouchEnd = (touchEvt) => {
-      if (!touchEvt) {
-        return;
-      }
-      switch (this._gameState) {
-        case EnumGameState.End:
-          const { changedTouches = [], target } = touchEvt;
-          const { left = 0, top = 0 } = target && target.getBoundingClientRect();
-          if (changedTouches.length > 0) {
-            const mPos = changedTouches[0];
-            tempViewportVec2.setValue(
-              ((mPos.clientX - left) / webCanvas.clientWidth - viewport.x) / viewport.z,
-              ((mPos.clientY - top) / webCanvas.clientHeight - viewport.y) / viewport.w
-            );
-            camera.viewportPointToRay(tempViewportVec2, tempRay);
-            engine.dispatch(GameEvent.checkHitGui, tempRay);
-          }
-          if (touchEvt) break;
-        default:
-          break;
-      }
-    };
-    this._onMouseUp = (touchEvt) => {
-      if (!touchEvt) {
-        return;
-      }
-      switch (this._gameState) {
-        case EnumGameState.End:
-          const { pageX, pageY, target } = touchEvt;
-          const { offsetLeft = 0, offsetTop = 0 } = target;
-          tempViewportVec2.setValue(
-            ((pageX - offsetLeft) / webCanvas.clientWidth - viewport.x) / viewport.z,
-            ((pageY - offsetTop) / webCanvas.clientHeight - viewport.y) / viewport.w
-          );
-          camera.viewportPointToRay(tempViewportVec2, tempRay);
-          engine.dispatch(GameEvent.checkHitGui, tempRay);
-        default:
-          break;
-      }
-    };
-    this._onMouseDown = () => {
-      switch (this._gameState) {
-        case EnumGameState.Idel:
-          this.gameState = EnumGameState.Start;
-          engine.dispatch(GameEvent.fly);
-          break;
-        case EnumGameState.Start:
-          engine.dispatch(GameEvent.fly);
-          break;
-        default:
-          break;
-      }
-    };
+    const boxCollider: BoxCollider = this.entity.addComponent(BoxCollider);
+    boxCollider.setBoxCenterSize(new Vector3(), new Vector3(10, 10, 0.001));
+    this._touch = this.entity.addComponent(Touch);
   }
 
   onStart() {
     // Give a state at the beginning
-    this.gameState = EnumGameState.Idel;
+    this.setGameState(EnumGameState.Idel);
   }
 
   onUpdate() {
@@ -517,30 +456,34 @@ class GameCtrl extends Script {
     TWEEN.update();
   }
 
+  private onMouseDown = () => {
+    switch (this._gameState) {
+      case EnumGameState.Idel:
+        this.setGameState(EnumGameState.Start);
+        engine.dispatch(GameEvent.fly);
+        break;
+      case EnumGameState.Start:
+        engine.dispatch(GameEvent.fly);
+        break;
+      default:
+        break;
+    }
+  };
+
   /**
    * The status will be distributed to all objects in the game
    */
-  set gameState(state: EnumGameState) {
+  private setGameState(state: EnumGameState) {
     if (this._gameState != state) {
       this._gameState = state;
       engine.dispatch(GameEvent.stateChange, state);
-      const webCanvas = engine.canvas._webCanvas;
-      const { _onMouseUp: onMouseUp, _onTouchEnd: onTouchEnd, _onMouseDown: onMouseDown } = this;
-      switch (state) {
-        case EnumGameState.End:
-          //Monitor mouse events
-          webCanvas.addEventListener(CanvasEvent.mouseup, onMouseUp);
-          webCanvas.addEventListener(CanvasEvent.touchend, onTouchEnd);
-          webCanvas.removeEventListener(CanvasEvent.touchstart, onMouseDown);
-          webCanvas.removeEventListener(CanvasEvent.mousedown, onMouseDown);
-          break;
+      switch (this._gameState) {
         case EnumGameState.Idel:
-        case EnumGameState.Start:
-          //Monitor mouse events
-          webCanvas.removeEventListener(CanvasEvent.mouseup, onMouseUp);
-          webCanvas.removeEventListener(CanvasEvent.touchend, onTouchEnd);
-          webCanvas.addEventListener(CanvasEvent.touchstart, onMouseDown);
-          webCanvas.addEventListener(CanvasEvent.mousedown, onMouseDown);
+          this._touch.on(TouchType.MouseDown, this.onMouseDown);
+          break;
+        case EnumGameState.End:
+          this._touch.off(TouchType.MouseDown, this.onMouseDown);
+          break;
         default:
           break;
       }
@@ -549,20 +492,19 @@ class GameCtrl extends Script {
 }
 
 class ScriptGUI extends Script {
+  private _touch: Touch;
   onAwake() {
     const { entity } = this;
     const resetBtnNode = entity.findByName("nodeRestart");
-    const resetBtnRenderer = resetBtnNode.getComponent(SpriteRenderer);
-    engine.on(GameEvent.checkHitGui, (tempRay) => {
-      if (!resetBtnNode.isActive || !tempRay) {
-        return;
-      }
-      // Check whether the ray intersects the bounding box
-      if (tempRay.intersectBox(resetBtnRenderer.bounds) >= 0) {
-        // Tell gamectrl to restart the game
-        engine.dispatch(GameEvent.reStartGame);
-      }
-    });
+
+    // Add PlaneCollider
+    const boxCollider: BoxCollider = resetBtnNode.addComponent(BoxCollider);
+    boxCollider.setBoxCenterSize(new Vector3(), new Vector3(2.14, 0.75, 0.001));
+    // Add Touch
+    this._touch = resetBtnNode.addComponent(Touch);
+    const onMouseUp = () => {
+      engine.dispatch(GameEvent.reStartGame);
+    };
 
     // Control the performance of the GUI according to the change of the game state
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
@@ -570,6 +512,7 @@ class ScriptGUI extends Script {
         case EnumGameState.Idel:
         case EnumGameState.Start:
           resetBtnNode.isActive = false;
+          this._touch.off(TouchType.MouseUp, onMouseUp);
           break;
         case EnumGameState.End:
           break;
@@ -580,6 +523,7 @@ class ScriptGUI extends Script {
 
     engine.on(GameEvent.showGui, () => {
       resetBtnNode.isActive = true;
+      this._touch.on(TouchType.MouseUp, onMouseUp);
     });
   }
 }
@@ -606,32 +550,50 @@ class ScriptBird extends Script {
   private _birdState = EnumBirdState.Alive;
 
   private _sprite: Sprite;
-  private _material: UnlitMaterial;
   private _curFrameIndex: number;
-  private _birdTransform: Transform;
   private _startY: number;
   private _flyStartTime: number;
   private _gameState: EnumGameState;
   private _yoyoTween;
   private _dropTween;
 
-  onAwake() {
+  private initDataAndUI() {
     const { entity } = this;
-    const transform = (this._birdTransform = entity.transform);
-    this._material = <UnlitMaterial>entity.getComponent(MeshRenderer).getMaterial();
-    this._material.baseColor.setValue(0, 0, 0, 0);
-    this._sprite = entity.getComponent(SpriteRenderer).sprite;
+    const renderer = entity.getComponent(SpriteRenderer);
+    renderer.sprite = this._sprite = new Sprite(engine, gameResArray[3], null, null, 100);
     this._setFrameIndex(0);
-    this.initTween();
+  }
 
+  private initTween() {
+    const transform = this.entity.transform;
+    const rotation = transform.rotation;
+    const position = transform.position;
+    this._yoyoTween = new TWEEN.Tween(position)
+      .to({ y: 0.25 }, 380)
+      .repeat(Infinity)
+      .onUpdate((target) => {
+        transform.position = target;
+      })
+      .yoyo(true)
+      .easing(TWEEN.Easing.Sinusoidal.InOut);
+    this._dropTween = new TWEEN.Tween(rotation)
+      .to({ z: -90 }, 380)
+      .onUpdate((target) => {
+        transform.rotation = target;
+      })
+      .delay(520);
+  }
+
+  private initListener() {
+    const transform = this.entity.transform;
     engine.on(GameEvent.fly, () => {
       // Record start time and location
-      this._startY = this.birdPosY;
+      this._startY = transform.position.y;
       this._flyStartTime = engine.time.nowTime;
-
       // Flying performance
-      this.stopAllTween();
-      this.birdRotationZ = 20;
+      this._yoyoTween.stop();
+      this._dropTween.stop();
+      transform.setRotation(transform.rotation.x, transform.rotation.y, 20);
       this._dropTween.start();
     });
 
@@ -642,20 +604,32 @@ class ScriptBird extends Script {
         case EnumGameState.Idel:
           transform.setPosition(0, 0, 0);
           transform.rotation = new Vector3(0, 0, 0);
-          this.setBirdState(EnumBirdState.Alive);
+          this._birdState = EnumBirdState.Alive;
           this._yoyoTween.start();
           break;
         case EnumGameState.Start:
           break;
         case EnumGameState.End:
-          this.setBirdState(EnumBirdState.Dead);
-          this.stopAllTween();
-          this.showShock();
+          this._birdState = EnumBirdState.Dead;
           setTimeout(() => {
-            if (this.birdPosY > groundY) {
-              new TWEEN.Tween(this).to({ birdRotationZ: -90 }, (this.birdPosY - groundY) * 40).start();
-              new TWEEN.Tween(this)
-                .to({ birdPosY: groundY }, (this.birdPosY - groundY) * 120)
+            const { position, rotation } = transform;
+            const birdPosY = position.y;
+            if (birdPosY > groundY) {
+              this._yoyoTween.stop();
+              this._dropTween.stop();
+              new TWEEN.Tween(rotation)
+                .duration((birdPosY - groundY) * 40)
+                .to({ z: -90 })
+                .onUpdate((target) => {
+                  transform.rotation = target;
+                })
+                .start();
+              new TWEEN.Tween(position)
+                .duration((birdPosY - groundY) * 120)
+                .to({ y: groundY })
+                .onUpdate((target) => {
+                  transform.position = target;
+                })
                 .onComplete(() => {
                   engine.dispatch(GameEvent.showGui);
                 })
@@ -669,69 +643,6 @@ class ScriptBird extends Script {
     });
   }
 
-  /**
-   *  There is a death splash screen effect when you die
-   */
-  private showShock() {
-    new TWEEN.Tween(this).to({ materialAlpha: 1 }, 80).start();
-    new TWEEN.Tween(this).to({ materialAlpha: 0 }, 80).delay(100).start();
-  }
-
-  private initTween() {
-    if (!this._yoyoTween) {
-      this._yoyoTween = new TWEEN.Tween(this)
-        .to({ birdPosY: 0.25 }, 380)
-        .repeat(Infinity)
-        .yoyo(true)
-        .easing(TWEEN.Easing.Sinusoidal.InOut);
-
-      this._dropTween = new TWEEN.Tween(this).to({ birdRotationZ: -90 }, 380).delay(520);
-    }
-  }
-
-  onUpdate(deltaTime: number) {
-    switch (this._birdState) {
-      case EnumBirdState.Alive:
-        const { _frameInterval, _totalFrames } = this;
-        this._cumulativeTime += deltaTime;
-        if (this._cumulativeTime >= _frameInterval) {
-          // Need update frameIndex
-          const addFrameCount = Math.floor(this._cumulativeTime / _frameInterval);
-          this._cumulativeTime -= addFrameCount * _frameInterval;
-          this._setFrameIndex((this._curFrameIndex + addFrameCount) % _totalFrames);
-        }
-        break;
-      case EnumBirdState.Dead:
-        this._setFrameIndex(0);
-        break;
-    }
-    if (this._gameState == EnumGameState.Start) {
-      this.updateBirdPosY();
-    }
-  }
-
-  // Free fall and uniform motion are superimposed to obtain the current position
-  public updateBirdPosY(): void {
-    const { _maxDropV, _startFlyV, _gravity } = this;
-    // How much time has passed
-    const subTime = (engine.time.nowTime - this._flyStartTime) / 1000;
-    // How long has it been in free fall
-    const addToMaxUseTime = (_maxDropV - _startFlyV) / _gravity;
-    if (subTime <= addToMaxUseTime) {
-      // Free fall
-      this.birdPosY = ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 + this._startY;
-    } else {
-      // Falling at a constant speed
-      this.birdPosY =
-        this._startY + ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 + _maxDropV * (subTime - addToMaxUseTime);
-    }
-  }
-
-  onLateUpdate() {
-    // After updating the position, check the collision
-    engine.dispatch(GameEvent.checkHit, this.birdPosY);
-  }
-
   private _setFrameIndex(frameIndex: number): void {
     if (this._curFrameIndex !== frameIndex) {
       this._curFrameIndex = frameIndex;
@@ -742,44 +653,75 @@ class ScriptBird extends Script {
     }
   }
 
-  public setBirdState(state: EnumBirdState) {
-    if (this._birdState != state) {
-      this._birdState = state;
+  onAwake() {
+    this.initDataAndUI();
+    this.initTween();
+    this.initListener();
+  }
+
+  onUpdate(deltaTime: number) {
+    // Update the performance of the bird
+    switch (this._birdState) {
+      case EnumBirdState.Alive:
+        const { _frameInterval, _totalFrames } = this;
+        this._cumulativeTime += deltaTime;
+        if (this._cumulativeTime >= _frameInterval) {
+          // Need update frameIndex
+          const addFrameCount = Math.floor(this._cumulativeTime / _frameInterval);
+          this._cumulativeTime -= addFrameCount * _frameInterval;
+          this._setFrameIndex((this._curFrameIndex + addFrameCount) % _totalFrames);
+        }
+
+        // Update bird's location information
+        if (this._gameState == EnumGameState.Start) {
+          // Free fall and uniform motion are superimposed to obtain the current position
+          let endY;
+          const { _maxDropV, _startFlyV, _gravity } = this;
+          const transform = this.entity.transform;
+          const position = transform.position;
+          // How much time has passed
+          const subTime = (engine.time.nowTime - this._flyStartTime) / 1000;
+          // How long has it been in free fall
+          const addToMaxUseTime = (_maxDropV - _startFlyV) / _gravity;
+          if (subTime <= addToMaxUseTime) {
+            // Free fall
+            endY = ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 + this._startY;
+          } else {
+            // Falling at a constant speed
+            endY =
+              ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 + _maxDropV * (subTime - addToMaxUseTime) + this._startY;
+          }
+          transform.setPosition(position.x, endY, position.z);
+        }
+        break;
+      case EnumBirdState.Dead:
+        this._setFrameIndex(0);
+        break;
     }
   }
 
-  private stopAllTween() {
-    this._yoyoTween && this._yoyoTween.stop();
-    this._dropTween && this._dropTween.stop();
+  onLateUpdate() {
+    // After updating the position, check the collision
+    engine.dispatch(GameEvent.checkHit, this.entity.transform.position.y);
   }
+}
 
-  set materialAlpha(alpha) {
-    this._material.baseColor.a = alpha;
-  }
+class ScriptDeathEff extends Script {
+  onAwake() {
+    const entity = this.entity;
+    const renderer = entity.getComponent(MeshRenderer);
+    const material = <UnlitMaterial>renderer.getMaterial();
 
-  get materialAlpha() {
-    return this._material.baseColor.a;
-  }
-
-  set birdPosY(val) {
-    const transform = this._birdTransform;
-    const position = transform.position;
-    position.y = val;
-    transform.position = position;
-  }
-
-  get birdPosY() {
-    return this._birdTransform.position.y;
-  }
-
-  set birdRotationZ(val) {
-    const transform = this._birdTransform;
-    const rotation = transform.rotation;
-    transform.setRotation(rotation.x, rotation.y, val);
-  }
-
-  get birdRotationZ() {
-    return this._birdTransform.rotation.z;
+    // init Tween
+    const baseColor = material.baseColor;
+    const shockTween = new TWEEN.Tween(baseColor).to({ a: 1 }, 80).repeat(1).yoyo(true).delay(20);
+    engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
+      switch (gameState) {
+        case EnumGameState.End:
+          shockTween.start();
+          break;
+      }
+    });
   }
 }
 
