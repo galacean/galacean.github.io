@@ -17,6 +17,6 @@ type: 编辑器
 <img src="/Users/guolei/Library/Application Support/typora-user-images/image-20210720164414642.png" alt="image-20210720164414642" style="zoom:50%;" />
 
 
-3. 然后我们再检查面板就可以看到 Camera 属性，并进行修改
+3. 然后我们在**检查面板**就可以看到 Camera 属性，并进行调整
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/e9728bd7-89af-40dd-999a-e030188e8fa4/image-20210720164512927.png" alt="image-20210720164512927" style="zoom:50%;" />
