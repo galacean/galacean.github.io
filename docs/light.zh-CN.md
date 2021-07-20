@@ -96,3 +96,6 @@ lightEntity.color = new Color(0.3, 0.3, 1);
 lightEntity.transform.position = new Vector3(-10, 10, 10);
 lightEntity.transform.rotation = new Vector3(-45, -45, 0);
 ```
+
+
+<playground src="light-type.ts"></playground>
