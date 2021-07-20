@@ -11,23 +11,27 @@ type: 编辑器
 
 
 
-## 导入纹理
+## 使用
+
+### 如何导入
 
 ![TextureUpload](https://gw.alipayobjects.com/zos/OasisHub/c4aaec36-3781-42a9-8df6-58be14c659db/TextureUpload.gif)
 
-## 纹理属性
+### 属性面板
+
+在**资产管理器**中点击导入的 Texture **检查器面板**会显示 Texture 的相关属性。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/d22803eb-b9ea-454a-87dd-fdf1694bd6ac/image-20210720155138392.png" alt="image-20210720155138392" style="zoom:50%;" />
 
-## 纹理使用
+### 给场景元素使用
 
-### 三维对象
+#### 三维对象
 
 在三维对象中使用纹理，需要将纹理应用于 [Material](${docs}material-cn) 对象，再将 Material 对象赋值给 [MeshRenderer](${docs}mesh-renderer-cn) 和 [ParticleRenderer](${docs}particle-renderer-cn) 等三维对象渲染器。一个 Material 对象可以包含多张 Texture，多个 Material 也可以共享一张 Texture。
 
 ![TextureToMaterial](https://gw.alipayobjects.com/zos/OasisHub/ba930f61-6ec7-49e8-814b-b6c24a078f0f/TextureToMaterial.gif)
 
-### 二维对象 
+#### 二维对象 
 
 在二维对象对象中使用纹理，需要将纹理应用于 [Sprite](${docs}sprite-cn) 对象，再将 Sprite 对象赋值给 [SpriterRenderer](${docs}sprite-renderer-cn) 。多个 Sprite 对象可以共享同一张 Texture。
 
