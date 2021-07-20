@@ -83,7 +83,6 @@ lightEntity.transform.position = new Vector3(-10, 10, 10);
 
 **聚光灯**和点光源有点像，但是它的光线不是朝四面八方发射，而是朝某个方向范围，就像现实生活中的手电筒发出的光。聚光灯有几个主要特性：*颜色*（[color](${api}core/SpotLight#color)）、*强度*（[intensity](${api}core/SpotLight#intensity)）、*有效距离*（[distance](${api}core/SpotLight#distance)）、*衰减系数*（[decay](${api}core/SpotLight#decay)）、*散射角度*（[angle](${api}core/SpotLight#angle)）、*半影衰减系数*（[penumbra](${api}core/SpotLight#penumbra)）。散射角度表示与光源朝向夹角小于多少时有光线，半影衰减系数表示在有效的夹角范围内，随着夹角增大光照强度衰减的速度。
 
-<playground src="spotlight-shadow.ts"></playground>
 
 ```typescript
 let lightEntity = rootEntity.createChild('light');
