@@ -1,16 +1,16 @@
 ---
 order: 2
-title: 帧缓冲拾取
-type: 二方库
+title: FrameBuffer Picker
+type: Second party library
 ---
 
-在三维应用中时常需要拾取场景中的物体，[射线包围盒](${docs}ray-cn)是一种常用的方法，在 CPU 中进行拾取，**性能较好，但是精度较差**，因为包围盒比较简单，不能拾取复杂的模型。
+In 3D applications, you often need to pick up the object in the scene, [RayCast-Collision](${docs}ray) is a common method, it will pick up in the CPU, **it performance better, but the accuracy is poor** , because the bounding is relatively simple, the complex model cannot be picked up.
 
-当拾取频率不高时，可以考虑使用**像素级精度**的 [FramebufferPicker 组件](${api}framebuffer-picker/FramebufferPicker)；当拾取频率过高时，需要开发者评估好性能开销是否适合业务场景，因为该组件底层会进行 CPU-GPU 通信，即调用 `gl.readPixels` 。
+When the pick-up frequency is not high, you can consider [FramebufferPicker](${api}framebuffer-picker/FramebufferPicker); when the picked frequency is too high, it is necessary to assess the performance overhead the business scene, because the underlying layer will be CPU-GPU communication, that is, calls `gl.readpixels`.
 
 <playground src="framebuffer-picker.ts"></playground>
 
-## 创建帧缓冲拾取
+## Create FrameBufferPicker
 
 ```typescript
 import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
@@ -19,7 +19,7 @@ const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
 framebufferPicker.camera = camera;
 ```
 
-## 注册拾取事件
+## Register picking events
 
 ```typescript
 framebufferPicker.onPick = (obj) => {
@@ -29,7 +29,7 @@ framebufferPicker.onPick = (obj) => {
   }
 };
 
-// 鼠标点击触发拾取
+// Mouse click trigger pick
 document.getElementById("canvas").addEventListener("mousedown", (e) => {
   framebufferPicker.pick(e.offsetX, e.offsetY);
 });
