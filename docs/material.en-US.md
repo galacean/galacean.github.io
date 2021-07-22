@@ -1,147 +1,145 @@
 ---
 order: 3
-title: 材质
-type: 资源系统
+title: Material
+type: Resource System
 ---
 
-## 材质分类
+## Material category
 
-### 1. PBR 通用参数
+### 1. PBR general parameters
 
-引擎和编辑器全面提倡使用 PBR 材质 。PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
+Engine and editor have fully advocated the use of PBR materials. **PBR means physically based rendering**, It was first proposed by Disney in 2012 and was later widely used in the game industry. Compared with traditional rendering methods such as **Blinn-Phong**, PBR follows the conservation of energy and conforms to the physical rules. Artists only need to adjust a few simple parameters to ensure the correct rendering effect even in complex scenes.
 
 <playground src="pbr-helmet.ts"></playground>
 
-**通用参数介绍:**
+**General parameter in PBR:**
 
-| 参数 | 应用 |
+| Parameter | Feature |
 | :-- | :-- |
-| [baseColor](${api}core/PBRBaseMaterial#baseColor) | 基础颜色。**基础颜色** \* **基础颜色纹理** = **最后的基础颜色**。基础颜色是物体的反照率值,与传统的漫反射颜色不同，它会同时贡献镜面反射和漫反射的颜色，我们可以通过上面提到过的金属度、粗糙度，来控制贡献比。 |
-| [emissiveColor](${api}core/PBRBaseMaterial#emissiveColor) | 自发光颜色。使得即使没有光照也能渲染出颜色。 |
-| [opacity](${api}core/PBRBaseMaterial#opacity) | 透明度。当设置为透明模式后，可以通过透明度来调整透明度。 |
-| [baseTexture](${api}core/PBRBaseMaterial#baseTexture) | 基础颜色纹理。搭配基础颜色使用，是个相乘的关系。 |
-| [opacityTexture](${api}core/PBRBaseMaterial#opacityTexture) | 透明度纹理。搭配透明度使用，是相乘的关系，注意透明度模式的切换。 |
-| [normalTexture](${api}core/PBRBaseMaterial#normalTexture) | 法线纹理。可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
-| [emissiveTexture](${api}core/PBRBaseMaterial#emissiveTexture) | 自发射光纹理。我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${api}core/PBRBaseMaterial#emissiveTexture)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
-| [occlusionTexture](${api}core/PBRBaseMaterial#occlusionTexture) | 阴影遮蔽纹理。我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
-| [tilingOffset](${api}core/PBRBaseMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移，参考 [案例](${examples}tiling-offset) |
+| [baseColor](${api}core/PBRBaseMaterial#baseColor) | **baseColor** \* **baseTexture** = **final color**. base color is the albeo color of the material, different from traditional diffuse color, it will contribute to the color of the specular reflection and diffuse reflection, we can control the contribution ratio by the `metallicFactor` and `roughnessFactor`. |
+| [emissiveColor](${api}core/PBRBaseMaterial#emissiveColor) | `emissiveColor` can make the color rendered even if there is no light. |
+| [opacity](${api}core/PBRBaseMaterial#opacity) | When set to transparent mode, the transparency can be adjusted by `opacity`. |
+| [baseTexture](${api}core/PBRBaseMaterial#baseTexture) | With the `baseColor`, it is a multiplied relationship. |
+| [opacityTexture](${api}core/PBRBaseMaterial#opacityTexture) | With the `opacity`, it is a multiplied relationship. |
+| [emissiveTexture](${api}core/PBRBaseMaterial#emissiveTexture) | With the `emissiveColor`, it is a multiplied relationship. |
+| [normalTexture](${api}core/PBRBaseMaterial#normalTexture) | Normal texture can visually create a sense of bump, and the `normalIntensity` can also be used to control the degree of bumps. |
+| [occlusionTexture](${api}core/PBRBaseMaterial#occlusionTexture) | `occlusionTexture` can enhance the shadow details of the object. |
+| [tilingOffset](${api}core/PBRBaseMaterial#tilingOffset) | The scaling and offset of texture coordinates, is a `Vector4` data, which respectively controls the scaling and offset of texture coordinates in the uv direction. Refer to [playground](${examples}tiling-offset) |
 
-除了以上通用参数，PBR 提供了 **金属-粗糙度** 和 **高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${api}core/PBRMaterial) 和 [PBRSpecularMaterial](${api}core/PBRSpecularMaterial)。
+In addition to the above general parameters, PBR provides two workflows: **Metal-Roughness** and **Specular-Glossiness**, corresponding to [PBRMaterial](${api}core/PBRMaterial) and [PBRSpecularMaterial](${api}core/PBRSpecularMaterial).
 
 ### 2. PBRMaterial
 
-| 参数 | 应用 |
+| Parameter | Feature |
 | :-- | :-- |
-| [metallicFactor](${api}core/PBRMaterial#metallicFactor) | 金属度。模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
-| [roughnessFactor](${api}core/PBRMaterial#roughnessFactor) | 粗糙度。模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
-| [metallicRoughnessTexture](${api}core/PBRMaterial#metallicRoughnessTexture) | 金属粗糙度纹理。搭配金属粗糙度使用，是相乘的关系。 |
-| [metallicTexture](${api}core/PBRMaterial#metallicTexture) | 金属度纹理。搭配金属度使用，是相乘的关系。 |
-| [roughnessTexture](${api}core/PBRMaterial#roughnessTexture) | 粗糙度纹理。搭配粗糙度使用，是相乘的关系。 |
+| [metallicFactor](${api}core/PBRMaterial#metallicFactor) | Metal degree. The degree of metal of the material, the larger the metal value, the stronger the specular reflection, which can reflect more environments. |
+| [roughnessFactor](${api}core/PBRMaterial#roughnessFactor) | Roughness degree. The degree of roughness of the material, the larger the roughness, the more uneven the micro surface, the more blurred the mirror reflection. |
+| [metallicRoughnessTexture](${api}core/PBRMaterial#metallicRoughnessTexture) | Metal roughness texture, used with `metallicFactor` and `roughnessFactor`, it is a multiplied relationship. |
+| [metallicTexture](${api}core/PBRMaterial#metallicTexture) | Metallic texture, used with `metallicFactor`, it is a multiplied relationship. |
+| [roughnessTexture](${api}core/PBRMaterial#roughnessTexture) | Roughness texture, used with `roughnessFactor`, it is a multiplied relationship. |
 
 <playground src="pbr-base.ts"></playground>
 
 ### 3. PBRSpecularMaterial
 
-| 参数 | 应用 |
+| Parameter | Feature |
 | :-- | :-- |
-| [specularColor](${api}core/PBRSpecularMaterial#specularColor) | 高光度。不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) |
-| [glossinessFactor](${api}core/PBRSpecularMaterial#glossinessFactor) | 光泽度。模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
-| [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | 高光光泽度纹理。搭配高光光泽度使用，是相乘的关系。 |
+| [specularColor](${api}core/PBRSpecularMaterial#specularColor) | Different from the Metal-Roughness workflow, which calculates the specular reflection based on the `metallicFactor` and the `baseColor`, it directly uses the `specularColor` to express the specular reflection color. |
+| [glossinessFactor](${api}core/PBRSpecularMaterial#glossinessFactor) | The degree of smoothness, opposite to roughness. |
+| [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | Specular glossiness texture, used with `specularColor` and `glossinessFactor`, it is a multiplied relationship. |
 
-> **注**：如果您使用了 PBR 材质，千万别忘了开启[环境光的 IBL 模式](${docs}light-cn#IBL模式)～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
+> **Note**: If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#IBL-Mode) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
 
 ### 4. BlinnPhongMaterial
 
-[BlinnPhongMaterial](${api}core/BlinnPhongMaterial) 虽然不是基于物理渲染，但是其高效的渲染算法和基本齐全的光学部分，还是有很多的应用场景。
+Although [BlinnPhongMaterial](${api}core/BlinnPhongMaterial) is not based on physical rendering, its efficient rendering algorithm and basic complete optical part, there are still a lot of application scene.
 
-**常用参数介绍**
-
-| 参数 | 应用 |
+| Parameter | Feature |
 | :-- | :-- |
-| [baseColor](${api}core/BlinnPhongMaterial#baseColor) | 基础颜色。 **基础颜色 \* 基础纹理 = 最后的基础颜色。** |
-| [baseTexture](${api}core/BlinnPhongMaterial#baseTexture) | 基础纹理。搭配基础颜色使用，是个相乘的关系。 |
-| [specularColor](${api}core/BlinnPhongMaterial#specularColor) | 镜面反射颜色。**镜面反射颜色 \* 镜面反射纹理 = 最后的镜面反射颜色。** |
-| [specularTexture](${api}core/BlinnPhongMaterial#specularTexture) | 镜面反射纹理。搭配镜面反射颜色使用，是个相乘的关系。 |
-| [normalTexture](${api}core/BlinnPhongMaterial#normalTexture) | 法线纹理。可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
-| [normalIntensity ](${api}core/BlinnPhongMaterial#normalIntensity) | 法线强度。法线强度，用来控制凹凸程度。 |
-| [emissiveColor](${api}core/BlinnPhongMaterial#emissiveColor) | 自发光颜色。**自发光颜色 \* 自发光纹理 = 最后的自发光颜色。即使没有光照也能渲染出颜色。** |
-| [emissiveTexture](${api}core/BlinnPhongMaterial#emissiveTexture) | 自发光纹理。搭配自发光颜色使用，是个相乘的关系。 |
-| [shininess](${api}core/BlinnPhongMaterial#shininess) | 镜面反射系数。值越大镜面反射效果越聚拢。 |
-| [tilingOffset](${api}core/BlinnPhongMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移，参考 [案例](${examples}tiling-offset) |
+| [baseColor](${api}core/BlinnPhongMaterial#baseColor) | **baseColor \* baseTexture = final color** |
+| [baseTexture](${api}core/BlinnPhongMaterial#baseTexture) | With the `baseColor`, it is a multiplied relationship. |
+| [specularColor](${api}core/BlinnPhongMaterial#specularColor) | **specularColor \* specularTexture = final specular color** |
+| [specularTexture](${api}core/BlinnPhongMaterial#specularTexture) | With the `specularColor`, it is a multiplied relationship. |
+| [normalTexture](${api}core/BlinnPhongMaterial#normalTexture) | Normal texture can visually create a sense of bump, and the `normalIntensity` can also be used to control the degree of bumps. |
+| [normalIntensity ](${api}core/BlinnPhongMaterial#normalIntensity) | Control the degree of bumps. |
+| [emissiveColor](${api}core/BlinnPhongMaterial#emissiveColor) | `emissiveColor` can make the color rendered even if there is no light. |
+| [emissiveTexture](${api}core/BlinnPhongMaterial#emissiveTexture) | With the `emissiveColor`, it is a multiplied relationship. |
+| [shininess](${api}core/BlinnPhongMaterial#shininess) | Specular reflection coefficient. The larger the value, the more convergent the specular reflection effect. |
+| [tilingOffset](${api}core/BlinnPhongMaterial#tilingOffset) | The scaling and offset of texture coordinates, is a `Vector4` data, which respectively controls the scaling and offset of texture coordinates in the uv direction. Refer to [playground](${examples}tiling-offset) |
 
 <playground src="blinn-phong.ts"></playground>
 
 ### 5. UnlitMaterial
 
-在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。
+In some simple scenes, you may not want to calculate lighting. Oasis engine provides [UnlitMaterial](${api}core/UnlitMaterial), which uses the most streamlined shader code, and only needs to provide colors or textures to render.
 
-| 参数 | 应用 |
+| Parameter | Feature |
 | :-- | :-- |
-| [baseColor](${api}core/UnlitMaterial#baseColor) | 基础颜色。**基础颜色 \* 基础颜色纹理 = 最后的颜色。** |
-| [baseTexture](${api}core/UnlitMaterial#baseTexture) | 基础纹理。搭配基础颜色使用，是个相乘的关系。 |
-| [tilingOffset](${api}core/UnlitMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移，参考 [案例](${examples}tiling-offset) |
+| [baseColor](${api}core/UnlitMaterial#baseColor) | **baseColor \* baseTexture = final color** |
+| [baseTexture](${api}core/UnlitMaterial#baseTexture) | With the `baseColor`, it is a multiplied relationship. |
+| [tilingOffset](${api}core/UnlitMaterial#tilingOffset) | The scaling and offset of texture coordinates, is a `Vector4` data, which respectively controls the scaling and offset of texture coordinates in the uv direction. Refer to [playground](${examples}tiling-offset) |
 
 <playground src="unlit-material.ts"></playground>
 
-## 如何使用材质
+## How to use material
 
-用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，GLTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
+Users can export [glTF file](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md) by some software such as Unity, 3ds Max, C4D, Blender, etc. It contains resources such as scenes, entities, textures, animations, materials, etc. Oasis supports the use of [Resource Manager](${docs}resource-manager) to load and parse this glTF file. After parsing, the model has been automatically assigned the corresponding material. We can also get the material of the model and perform some post-processing, such as changing the color.
 
 ```typescript
-// 获取想要修改的 renderer
+// Get renderer
 const renderer = entity.getComponent(MeshRenderer);
-// 通过 `getMaterial` 获取当前 renderer 的第 i 个材质, 默认第 0 个。
+// Get the i-th material of the current renderer by `getMaterial`, the default is 0.
 const material = renderer.getMaterial();
-// 修改材质颜色
+// change base color
 material.baseColor.r = 0;
 ```
 
-我们也可以直接替换材质类型，比如将模型重新赋予一个 blinn-phong 材质：
+We can also directly replace the material type, for example, re-assign the model to a blinn-phong material:
 
 ```typescript
-// 获取想要修改的 renderer
+// Get renderer
 const renderer = entity.getComponent(MeshRenderer);
 
-// 创建 blinn-phong 材质
+// Create blinn-phong material
 const material = new BlinnPhongMaterial(engine);
 material.baseColor.r = 0;
 
-// 通过 `setMaterial` 设置当前 renderer 的第 i 个材质, 默认第 0 个。
+// Set the i-th material of the current renderer by `setMaterial`, the default is 0.
 const material = renderer.setMaterial(material);
 ```
 
-## 材质通用属性
+## General parameter in material
 
-以下属性都可以直接在 [UnlitMaterial](${api}core/UnlitMaterial)、[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)、[PBRMaterial](${api}core/PBRMaterial)、[PBRSpecularMaterial](${api}core/PBRSpecularMaterial) 材质中使用。
+The following parameters can be directly used in [UnlitMaterial](${api}core/UnlitMaterial), [BlinnPhongMaterial](${api}core/BlinnPhongMaterial), [PBRMaterial](${api}core/PBRMaterial), [PBRSpecularMaterial](${api}core/PBRSpecularMaterial).
 
-| 参数 | 应用 |
+| parameter | Feature |
 | :-- | :-- |
-| [isTransparent](${api}core/BaseMaterial#isTransparent) | 是否透明。可以设置材质是否透明。如果设置为透明，可以通过 [BlendMode](${api}core/BaseMaterial#blendMode) 来设置颜色混合模式。 |
-| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | 透明度裁剪值。可以设置裁剪值，来指定在着色器中，裁剪透明度小于此数值的片元。 |
-| [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
-| [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式，参考 [案例](${examples}blend-mode) |
+| [isTransparent](${api}core/BaseMaterial#isTransparent) | You can set whether the material is transparent. If it is set to transparent, you can set the color blending mode by [BlendMode](${api}core/BaseMaterial#blendMode). |
+| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | You can set the transparency cutoff value to specify the value whose transparency is less than this value to be discard in the fragment shader. |
+| [renderFace](${api}core/BaseMaterial#renderFace) | Can decide to render the front, back or double side. |
+| [blendMode](${api}core/BaseMaterial#blendMode) | After setting the material to be transparent, you can set this enumeration to determine the color blending mode, refer to [playground](${examples}blend-mode). |
 
-## 常见 QA
+## QA
 
-### 1. 透明渲染异常？
+### 1. Transparent rendering is abnormal?
 
-- 请先确保材质开启了透明度模式，即材质的 [isTransparent](${api}core/BaseMaterial#isTransparent) 属性设置为了 `true`。
-- 相应的材质的 [baseColor](${api}core/BlinnPhongMaterial#baseColor) 需要设置正确的透明度。如 `material.baseColor.a = 0.5`。透明度范围为 【0 ～ 1】，数值越小，越透明。
-- 如果还上传了透明度纹理，请先确保透明纹理是否含有透明通道，即是正常的 png 图片，如果不是的话，可以开启 `getOpacityFromRGB` 为 true 代表希望采样亮度值作为透明度。
-- 如果透明度渲染仍有异常，请确保材质的颜色混合度模式（[blendMode](${api}core/BaseMaterial#blendMode)）为期望的组合。
-- 有一些透明度渲染异常可能是因为没有关闭背面剔除，可以通过 [renderFace](${api}core/BaseMaterial#renderFace) 来设置想要渲染的面。
-- 如果是自定义材质，请确保设置了正确的混合模式，混合因子，关闭了深度写入，设置了正确的渲染队列。
+- Please make sure that the transparency mode of the material is turned on, that is, the [isTransparent](${api}core/BaseMaterial#isTransparent) parameter of the material is set to `true`.
+- The [baseColor](${api}core/BlinnPhongMaterial#baseColor) of the corresponding material needs to be set to the correct transparency. For example, `material.baseColor.a = 0.5`. The range of transparency is [0 ~ 1], the smaller the value, the more transparent.
+- If you have uploaded a `opacityTexture`, please make sure that the `opacityTexture` contains the transparent channel, that is, a normal png image. If it is not, you can turn on `getOpacityFromRGB` to true, which means you want to sample the brightness value as the transparency.
+- If the transparency rendering is still abnormal, please make sure that the color blending mode of the material ([blendMode](${api}core/BaseMaterial#blendMode)) is the desired combination.
+- Some transparency rendering exceptions may be due to the fact that the back culling is not turned off. You can set the face you want to render by [renderFace](${api}core/BaseMaterial#renderFace).
+- If it is a custom material, please make sure to set the correct blend mode, blend factor, turn off the depth writing, and set the correct render queue.
 
-### 2. 为什么模型背面没有渲染？
+### 2. Why is the back side of the model not rendered?
 
-- 请确保关闭背面了剔除，可以通过 [RasterState.cullMode](${api}core/RasterState#cullMode) 来设置，也可以通过材质内置的 [renderFace](${api}core/BaseMaterial#renderFace) 来设置想要渲染的面。
+- Please make sure to turn off the culling of the back side, which can be set by [RasterState.cullMode](${api}core/RasterState#cullMode), or by the built-in material parameter [renderFace](${api}core/BaseMaterial#renderFace).
 
-### 3. 一般需要打几个光？
+### 3. How many lights usually need to add?
 
-- 一般场景只需要使用默认的环境光（[AmbientLight](${api}core/AmbientLight)）就可以了，它可以支持基于图片的照明实现直接光照和间接光照,也可以拥有普通的颜色叠加。
-- 如果 环境光 无法满足需求，可以适当添加方向光（[DirectLight](${api}core/DirectLight)）和点光源（[PointLight](${api}core/PointLight)）来补充光照细节。
-- 出于性能考虑，尽量不要超过 4 个直接光 。
+- Normal scenes only need to use the default ambient light ([AmbientLight](${api}core/AmbientLight)). It can support image-based lighting to achieve direct and indirect lighting, and it can also have ordinary color overlays.
+- If the ambient light cannot meet the requirements, you can appropriately add directional light ([DirectLight](${api}core/DirectLight)) and point light ([PointLight](${api}core/PointLight)) to supplement the lighting details.
+- For performance consideration, try not to exceed 4 direct lights.
 
-### 4. 为什么渲染的不够立体？
+### 4. Why the rendering is not three-dimensional enough?
 
-- 合理搭配使用纹理烘焙、 法线纹理（[normalTexture](${api}core/PBRMaterial#normalTexture)）、阴影遮蔽纹理（[occlusionTexture](${api}core/PBRMaterial#occlusionTexture)）
+- Use a reasonable combination of texture baking, normal texture ([normalTexture](${api}core/PBRMaterial#normalTexture)) and shadow masking texture ([occlusionTexture](${api}core/PBRMaterial#occlusionTexture))
