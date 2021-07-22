@@ -1,20 +1,21 @@
 ---
 order: 4
-title: 自定义材质
-type: 资源系统
+title: Custom material
+type: Resource System
 ---
 
-业务中可能有一些特殊的渲染需求，例如水流特效，这时候就需要“自定义材质”去实现。通过使用 __material__ 这个模块中的 [Material](${api}core/Material) 和 [Shader](${api}core/Shader) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。
+There may be some special rendering requirements, such as water flow, and this time you need **custom material** to achieve. By using [Material](${api}core/Material) and [Shader](${api}core/Shader), you can integrate your own shader code into the engine rendering process.
 
 <playground src="shader-water.ts"></playground>
 
-## 创建 shader
-[Shader](${api}core/Shader) 封装了顶点着色器、片元着色器、着色器预编译、平台精度、平台差异性。他的创建和使用非常方便，用户只需要关注 shader 算法本身，而不用纠结于使用什么精度，亦或是使用 GLSL 哪个版本的写法。
-下面是一个简单的demo:
+## Create shader
+
+[Shader](${api}core/Shader) encapsulates vertex shaders, fragment shaders, shader pre-compilation, platform precision, and platform differences. It is very convenient to create and use. Users only need to pay attention to the shader algorithm itself, and don't have to worry about what precision is used, or which version of GLSL is written. Here is a simple demo:
+
 ```javascript
 import { Material, Shader, Color } from "oasis-engine";
 
-//-- Shader 代码
+//-- Shader
 const vertexSource = `
   uniform mat4 u_MVPMat;
 
@@ -33,79 +34,77 @@ const fragmentSource = `
   }
   `;
 
-// 创建 shader（整个 runtime 只需要创建一次）
+// create shader (only needs to be created once in the whole runtime )
 Shader.create("demo", vertexSource, fragmentSource);
 
-// 创建自定义材质
+// create custom material
 const material = new Material(engine, Shader.find("demo"));
-
 ```
-`Shader.create()`用来将 shader 添加到引擎的缓存池子中，因此整个 runtime 只需要创建一次,接下来就可以通过 [Shader.find(name)](${api}core/Shader#find) 来反复使用.
-**注：引擎已经预先 create 了 blinn-phong、pbr、shadow-map、shadow、skybox、framebuffer-picker-color、trail。用户可以直接使用这些内置 shader，但是不能重名创建。**
 
-因为我们没有上传 `u_color`  变量，所以片元输出还是黑色的(uniform 默认值)，接下来我们来介绍下引擎内置的 shader 变量以及如何上传自定义变量。
+`Shader.create()` is used to add the shader to the cache pool of the engine, so the entire runtime only needs to be created once, and then you can pass [Shader.find(name)](${api}core/Shader#find) to use repeatedly. **Note: The engine has pre-created blinn-phong, pbr, shadow-map, shadow, skybox, framebuffer-picker-color, and trail. Users can directly use these built-in shaders, but cannot create them with the same name.**
 
-## 内置 shader 变量
-在上面，我们给 material 赋予了 shader，这个时候程序已经可以开始渲染了。需要注意的是，shader 代码中有两种变量，一种是**逐顶点**的 `attribute` 变量，另一种是**逐 shader** 的 `uniform` 变量。(在 GLSL300 后，统一为 in 变量)
-引擎已经自动上传了一些常用变量，用户可以直接在 shader 代码中使用，如顶点数据和 mvp 数据，下面是引擎默认上传的变量。
+Because we don't have uploaded `u_color` variable, the fragment output is still black (uniform has default value), let's introduce the built-in shader variable in the engine and how to upload a custom variable.
 
-| 逐顶点数据 |  attribute name | 数据类型 |
-| :--- | :--- | :--- |
-| 顶点 | POSITION | vec3  |
-| 法线 | NORMAL | vec3  |
-| 切线 | TANGENT |  vec4 |
-| 顶点颜色 | COLOR_0 |  vec4 |
-| 骨骼索引 | JOINTS_0 | vec4  |
-| 骨骼权重 | WEIGHTS_0 | vec4  |
-| 第一套纹理坐标 | TEXCOORD_0 | vec2  |
-| 第二套纹理坐标 | TEXCOORD_1 | vec2  |
+## Built-in shader variables
 
+In the above, we gave the material a shader, this time the program can start rendering. It should be noted that there are two kinds of variables in the shader, one is the `attribute` variable which is **per vertex**, and the other is the `uniform` variable which is **per shader** (After GLSL300, they are unified as `in` variables). The engine has automatically uploaded some commonly used variables, and users can directly use them in the shader code, such as vertex data and `mvp` data. The following are the variables uploaded by the engine by default.
 
-| 逐 shader 数据 |  uniform name | 数据类型 |
-| :--- | :--- | :--- |
-| canvas 分辨率 | u_resolution | vec2 |
-| 视口矩阵 | u_viewMat | mat4 |
-| 投影矩阵 | u_projMat | mat4 |
-| 视口投影矩阵 | u_VPMat | mat4 |
-| 视口逆矩阵 | u_viewInvMat | mat4 |
-| 投影逆矩阵 | u_projInvMat | mat4 |
-| 相机位置 | u_cameraPos | vec3 |
-| 模型本地坐标系矩阵 | u_localMat | mat4 |
-| 模型世界坐标系矩阵 | u_modelMat | mat4 |
-| 模型视口矩阵 | u_MVMat | mat4 |
-| 模型视口投影矩阵 | u_MVPMat | mat4 |
-| 模型视口逆矩阵 | u_MVInvMat | mat4 |
-| 法线逆转置矩阵 | u_normalMat | mat4 |
+| attribute data        | attribute name | type of data |
+| :-------------------- | :------------- | :----------- |
+| vertex data           | POSITION       | vec3         |
+| normal data           | NORMAL         | vec3         |
+| tangent data          | TANGENT        | vec4         |
+| vertex color          | COLOR_0        | vec4         |
+| skeleton index        | JOINTS_0       | vec4         |
+| skeleton weight       | WEIGHTS_0      | vec4         |
+| fist uv coordinates   | TEXCOORD_0     | vec2         |
+| Second uv coordinates | TEXCOORD_1     | vec2         |
 
+| uniform data                         | uniform name | type of data |
+| :----------------------------------- | :----------- | :----------- |
+| canvas resolution                    | u_resolution | vec2         |
+| viewport matrix                      | u_viewMat    | mat4         |
+| projection matrix                    | u_projMat    | mat4         |
+| viewport projection matrix           | u_VPMat      | mat4         |
+| viewport inverse matrix              | u_viewInvMat | mat4         |
+| projection inverse matrix            | u_projInvMat | mat4         |
+| camera position                      | u_cameraPos  | vec3         |
+| model local coordinate system matrix | u_localMat   | mat4         |
+| model world Coordinate System Matrix | u_modelMat   | mat4         |
+| model viewport matrix                | u_MVMat      | mat4         |
+| model viewport projection matrix     | u_MVPMat     | mat4         |
+| model viewport inverse matrix        | u_MVInvMat   | mat4         |
+| normal inverse transpose matrix      | u_normalMat  | mat4         |
 
-## 上传 shader 变量
-> attribute 逐顶点数据的上传请参考 [网格渲染器](${docs}mesh-renderer-cn),这里不再赘述。
+## Upload shader variables
 
-除了内置的变量，我们可以在 shader 中上传任何自定义名字的变量(建议使用 u_** 、 v_** 分别表示 uniform、varying变量)，我们唯一要做的就是根据 shader 的变量类型，使用正确的接口。
-上传接口全部保存在 [ShaderData](${api}core/ShaderData) 中，而 shaderData 实例对象又分别保存在引擎的四大类 [Scene](${api}core/Scene)、[Camera](${api}core/Camera)、[Renderer](${api}core/Renderer)、[Material](${api}core/Material) 中，我们只需要分别往这些 shaderData 中调用接口，上传变量，引擎便会在底层自动帮我们组装这些数据，并进行判重等性能的优化。
+> Please refer to [Mesh Renderer](${docs}mesh-renderer) for uploading attribute data, won’t repeat it here.
 
-![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*yR97QbVx-QwAAAAAAAAAAAAAARQnAQ)
+In addition to the built-in variables, we can upload any variable with a custom name in the shader (it is recommended to use u\_\*\*, v\_\*\* to represent uniform and varying variables respectively), the only thing we have to do is using the correct interface according to the shader variable type. The upload interface is all in [ShaderData](${api}core/ShaderData), and the shaderData instance objects are saved in the four categories [Scene](${api}core/Scene), [Camera](${api}core/Camera), [Renderer](${api}core/Renderer), [Material](${api}core/Material) of the engine , we only need to call the interface in these shaderData, upload variables, and engine will automatically help us assemble these data at the bottom layer and optimize performance such as judging duplication.
 
-### shaderData 分开的好处
-shaderData 分别保存在引擎的四大类 [Scene](${api}core/Scene)、[Camera](${api}core/Camera)、[Renderer](${api}core/Renderer)、[Material](${api}core/Material) 中，这样做的好处之一就是底层可以根据上传时机上传某一块 uniform，提升性能；另外，将材质无关的 shaderData 剥离出来，可以实现共享材质，比如两个 renderer ，共享了一个材质，虽然都要操控同一个 shader，但是因为这一部分 shader 数据的上传来源于两个 renderer 的 shaderData，所以是不会影响彼此的渲染结果的。
+![image-20210722153638785](https://gw.alipayobjects.com/zos/OasisHub/fc605510-5b14-476f-8c91-03205c623b4b/image-20210722153638785.png)
 
-如：
+### ShaderData separate benefits
+
+The shaderData are saved in the four categories [Scene](${api}core/Scene), [Camera](${api}core/Camera), [Renderer](${api}core/Renderer), [Material ](${api}core/Material) of the engine, one of the benefits is that the bottom layer can upload a block of uniform according to the upload timing to improve performance; in addition, the material-independent shaderData can be stripped out to achieve shared materials, ie. two renderer shares one material, although the same shader must be controlled, but the upload of this part of the shader data comes from the shaderData of the two renderers, it will not affect each other's rendering results.
+
+ie.
+
 ```typescript
 const renderer1ShaderData = renderer1.shaderData;
 const renderer2ShaderData = renderer2.shaderData;
 const materialShaderData = material.shaderData;
 
-materialShaderData.setColor("u_color", new Color(1,0,0,1));
-renderer1ShaderData.setFloat("u_progross",0.5);
-renderer2ShaderData.setFloat("u_progross",0.8);
+materialShaderData.setColor("u_color", new Color(1, 0, 0, 1));
+renderer1ShaderData.setFloat("u_progross", 0.5);
+renderer2ShaderData.setFloat("u_progross", 0.8);
 ```
 
-### 调用接口
-shader 中变量的类型和调用的接口对应关系如下:
+### Interface in shaderData
 
-| shader 类型 | ShaderData API |
-| :--- | :--- | :--- |
-| `bool` 、 `int`  | setInt( value: number ) |
+| Shader type | ShaderData API |
+| :-- | :-- |
+| `bool` 、 `int` | setInt( value: number ) |
 | `float` | setFloat( value: number )` |
 | `bvec2`、`ivec2`、`vec2` | setVector2( value:Vector2 ) |
 | `bvec3`、`ivec3`、`vec3` | setVector3( value:Vector3 ) |
@@ -116,7 +115,8 @@ shader 中变量的类型和调用的接口对应关系如下:
 | `sampler2D` 、 `samplerCube` | setTexture( value:Texture ) |
 | `sampler2D[]` 、 `samplerCube[]` | setTextureArray( value:Texture[] ) |
 
-代码演示如下：
+The code demo is as follows:
+
 ```
 // shader
 
@@ -134,33 +134,36 @@ uniform samplerCube u_samplerCube;
 uniform sampler2D u_samplerArray[2];
 
 // GLSL 300:
-// in float u_float; 
+// in float u_float;
 // ...
 ```
 
 ```typescript
-// shaderData 可以分别保存在 scene 、camera 、renderer、 material 中。
+// ShaderData can be saved separately in Scene, Camera, Renderer, Material.
 const shaderData = material.shaderData;
 
 shaderData.setFloat("u_float", 1.5);
 shaderData.setInt("u_int", 1);
 shaderData.setInt("u_bool", 1);
-shaderData.setVector2("u_vec2", new Vector2(1,1));
-shaderData.setVector3("u_vec3", new Vector3(1,1,1));
-shaderData.setVector4("u_vec4", new Vector4(1,1,1,1));
+shaderData.setVector2("u_vec2", new Vector2(1, 1));
+shaderData.setVector3("u_vec3", new Vector3(1, 1, 1));
+shaderData.setVector4("u_vec4", new Vector4(1, 1, 1, 1));
 shaderData.setMatrix("u_matrix", new Matrix());
 shaderData.setIntArray("u_intArray", new Int32Array(10));
 shaderData.setFloatArray("u_floatArray", new Float32Array(10));
 shaderData.setTexture("u_sampler2D", texture2D);
-shaderData.setTexture("u_samplerCube",textureCube);
-shaderData.setTextureArray("u_samplerArray",[texture2D,textureCube]);
+shaderData.setTexture("u_samplerCube", textureCube);
+shaderData.setTextureArray("u_samplerArray", [texture2D, textureCube]);
 ```
-> **注**：为了性能考虑，引擎暂不支持 结构体数组上传、数组单个元素上传。
 
-### 宏开关
-除了uniform 变量之外，引擎将 shader 中的[宏定义](https://www.wikiwand.com/en/OpenGL_Shading_Language)也视为一种变量，因为宏定义的开启/关闭 将生成不同的着色器变种，也会影响渲染结果。
+> **Note**: For performance, the engine does not support struct arrays or upload a single element of the array
 
-如 shader 中有这些宏相关的操作：
+### Macro switch
+
+In addition to uniform variables, the engine also regards [macro definition](https://www.wikiwand.com/en/OpenGL_Shading_Language) in the shader as a variable, because the enable/disable of the macro definition will generate different shaders variations, it will also affect the rendering results.
+
+For example, these macros have been related to Shader:
+
 ```
 #ifdef DISCARD
 	discard;
@@ -170,69 +173,74 @@ shaderData.setTextureArray("u_samplerArray",[texture2D,textureCube]);
 	uniform vec4 u_color[ LIGHT_COUNT ];
 #endif
 ```
-也是通过 [ShaderData](${api}core/Shader#enableMacro) 来操控宏变量：
+
+Then use `enableMacro` and `disableMacro` in [ShaderData](${api}core/Shader#enableMacro) to control marco：
+
 ```typescript
-// 开启宏开关
+// Open macro switch
 shaderData.enableMacro("DISCARD");
-// 关闭宏开关
+// Close macro switch
 shaderData.disableMacro("DISCARD");
 
-// 开启变量宏
+// Open variable macro
 shaderData.enableMacro("LIGHT_COUNT", "3");
 
-// 切换变量宏。这里底层会自动 disable 上一个宏，即 “LIGHT_COUNT 3”
+// Switch variable macro. Here, the bottom layer will automatically disable "Light_Count 3" above.
 shaderData.enableMacro("LIGHT_COUNT", "2");
 
-// 关闭变量宏
+// Close variable macro
 shaderData.disableMacro("LIGHT_COUNT");
 ```
 
-## 渲染状态
-我们通过材质的 shader，四块 shaderData 决定了材质的渲染表现。但是渲染管线除了着色器的操作，还提供了一些渲染状态来使我们对可编程的输入输出进行一些额外配置和处理。
-因此，引擎提供了[RenderState](${api}core/RenderState) ，可以分别对[混合状态（BlendState）](${api}core/RenderState#BlendState)、[深度状态（DepthState）](${api}core/RenderState#DepthState)、[模版状态（StencilState）](${api}core/RenderState#StencilState)、[光栅状态（RasterState）](${api}core/RenderState#RasterState)进行配置。
-我们拿一个透明物体的标准渲染流程来举例，我们希望开启混合模式并设置混合因子，并且因为透明物体是叠加渲染的，所以我们还要关闭深度写入;
+## Rendering state
+
+We determine the rendering result by the four block of shaderData of the material. However, in addition to the operation of the shader, the rendering pipeline also provides some rendering states to enable us to perform some additional configuration and processing of programmable input and output. Therefore, the engine provides [RenderState](${api}core/RenderState), which can be used for [BlendState](${api}core/RenderState#BlendState), [DepthState](${api}core/RenderState#DepthState), [StencilState](${api}core/RenderState#StencilState), [RasterState](${api}core/RenderState#RasterState) for configuration. Let's take a standard rendering process of a transparent model as an example. We want to turn on the blending mode and set the blending factor, because the transparent object is rendered by overlay, we also need to disable the depth writing;
+
 ```typescript
 const renderState = material.renderState;
 
-// 1. 设置颜色混合因子。
+// 1. Set color mixing factor.
 const blendState = renderState.blendState;
 const target = blendState.targetBlendState;
 
-// src 混合因子为（As，As，As，As）
-target.sourceColorBlendFactor = target.sourceAlphaBlendFactor =BlendFactor.SourceAlpha;
-// dst 混合因子为（1 - As，1 - As，1 - As，1 - As）。
+// src factor:（As，As，As，As）
+target.sourceColorBlendFactor = target.sourceAlphaBlendFactor = BlendFactor.SourceAlpha;
+// dst factor: (As，1 - As，1 - As，1 - As）。
 target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
-// 操作方式为 src + dst  */
+// operation: src + dst  */
 target.colorBlendOperation = target.alphaBlendOperation = BlendOperation.Add;
 
-// 2. 开启颜色混合
+// 2. Open color mix
 target.enabled = true;
 
-// 3. 关闭深度写入。
+// 3. Disable depth wirting
 const depthState = renderState.depthState;
 depthState.writeEnabled = false;
 
-// 4. 设置透明渲染队列 （后面会讲为什么）
+// 4. Set the rendering queue as transparent
 material.renderQueueType = RenderQueueType.Transparent;
 ```
-有关渲染状态的更多选项可以分别查看相应的[API 文档](${api}core/RenderState) 
 
+For more options about the rendering state, please refer to the corresponding [API document](${api}core/RenderState)
 
+## Rendering queue
 
+So far, the custom material has been very perfect, but maybe we need to do some processing on the rendering order of the objects. For example, the transparent objects is generally rendered behind the opaque queue. Therefore, the engine provides [RenderQueueType](${api}core/RenderQueueType), the rendering queue of the material can determine the rendering order of this material in the current scene, and the bottom layer of the engine will perform some special processing on the rendering queue of different ranges, such as [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) will render **from far to near**. It is worth noting that the value of the render queue can be an enumerated value plus any custom number.
 
-## 渲染队列
-至此，自定义材质已经非常完善了，但是也许我们还需要对物体的渲染顺序做一些处理，比如透明物体的渲染一般都是放在非透明队列后面的，因此，引擎提供了 [渲染队列（RenderQueueType）](${api}core/RenderQueueType) ，我们设置材质的渲染队列，可以决定这个材质在当前场景中的渲染顺序，引擎底层会对不同范围的渲染队列进行一些特殊处理，如 [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) 会从远到近进行渲染。值得注意的是渲染队列的值可以是枚举值加上任何自定义数字。
+ie.
+
 ```typescript
 material.renderQueueType = RenderQueueType.Opaque + 1;
 ```
 
+## Package custom material
 
-## 封装自定义材质
-这部分的内容是结合上文所有内容，给用户一个简单的封装示例，希望对您有所帮助：
+This part of the content is a combination of all the above content, to give users a simple packaging example, hope it will be helpful to you:
+
 ```typescript
 import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from "oasis-engine";
 
-//-- Shader 代码
+//-- Shader
 const vertexSource = `
   uniform mat4 u_MVPMat;
 
@@ -266,25 +274,24 @@ const fragmentSource = `
   }
   `;
 
-Shader.create("demo",vertexSource,fragmentSource)
+Shader.create("demo", vertexSource, fragmentSource);
 
-export class CustomMaterial extends Material{
-
-  set texture(value: Texture2D){
-    if(value){
+export class CustomMaterial extends Material {
+  set texture(value: Texture2D) {
+    if (value) {
       this.shaderData.enableMacro("TEXTURE");
       this.shaderData.setTexture("u_texture", value);
-    }else{
+    } else {
       this.shaderData.disableMacro("TEXTURE");
     }
   }
 
-  set color(val:Color){
+  set color(val: Color) {
     this.shaderData.setColor("u_color", val);
   }
 
   // make it transparent
-  set transparent(){
+  set transparent() {
     const target = this.renderState.blendState.targetBlendState;
     const depthState = this.renderState.depthState;
 
@@ -295,9 +302,8 @@ export class CustomMaterial extends Material{
     this.renderQueueType = RenderQueueType.Transparent;
   }
 
-  constructor(engine:Engine){
-    super(engine, Shader.find("demo"))
+  constructor(engine: Engine) {
+    super(engine, Shader.find("demo"));
   }
 }
-
 ```
