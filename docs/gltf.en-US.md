@@ -1,20 +1,18 @@
 ---
 order: 5
-title: glTF 资源
-type: 资源系统
+title: glTF Resource
+type: Resource System
 ---
 
-## 什么是 glTF?
+## What is glTF?
 
-正如 [glTF 官网](https://www.khronos.org/gltf/) 所介绍，**glTF**（GL Transmission Format）是 [khronos ](https://www.khronos.org/)发布的一种能高效传输和加载 3D 场景的规范，是 3D 领域中的 "JPEG" 格式，其功能涵盖了 FBX、OBJ 等传统模型格式，基本支持 3D 场景中的所有特性，其[插件机制](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos)也使用户可以灵活地自定义实现想要的功能。
-
-glTF 是目前 Oasis 推荐的首选 3D 场景传输格式，Oasis 对 glTF 的核心功能和插件都做了很好的支持。
+As [glTF Official Website](https://www.khronos.org/gltf/) described, **glTF**（GL Transmission Format）It is a specification that can efficiently transmit and load 3D scenes in [khronos ](https://www.khronos.org/), which is a "JPEG" format in the 3D field, which features traditional models such as FBX, OBJ. Format, basically support all features in 3D scenes,Its [Plug-in mechanism](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos) also enables users to flexibly customize the desired features. glTF is currently the preferred 3D scene transmission format recommended by Oasis. Oasis has made good support for the core functions and plugins of glTF.
 
 <playground src="gltf-loader.ts"></playground>
 
-## 加载 glTF
+## Load glTF
 
-首先，我们可以通过 [ResourceManager](${api}core/ResourceManager#load) 加载一个 glTF 文件，如下代码：
+First, we can load a glTF file by [ResourceManager](${api}core/ResourceManager#load), as follows:
 
 ```typescript
 import { GLTFResource } from "oasis-engine";
@@ -22,37 +20,37 @@ import { GLTFResource } from "oasis-engine";
 const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 ```
 
-加载完成后，我们拿到了 1 份 [GLTFResource](${api}loader/GLTFResource)，里面有很多解析产物，一般情况下，我们只需要把解析得到的 [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) 添加到引擎中即可，如下代码：
+After loading, we got one [GLTFResource](${api}loader/GLTFResource), there are many analytical products inside, in general, we only need to get the parsing [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) add to the engine, as follows:
 
 ```typescript
 import { GLTFResource } from "oasis-engine";
 
-// 此处省略引擎初始化代码...
+// The engine initialization code is omitted here ...
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 const { defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 
 rootEntity.addChild(defaultSceneRoot);
 ```
 
-除了 `defaultSceneRoot`，`GLTFResource` 中还有许多常用的解析产物：
+In addition to `defaultSceneRoot`, there are many commonly used analytical products in` GLTFResource`
 
-| 解析产物 | 功能 |
+| analytical products | Features |
 | :-- | :-- |
-| [gltf](${api}loader/GLTFResource#gltf) | glTF 源文件 JSON 格式 |
-| [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) | glTF 默认根节点 |
-| [sceneRoots](${api}loader/GLTFResource#sceneRoots) | glTF 可能包含多个根节点，但是默认导出只能有一个根节点，开发者可以手动添加/切换根节点 |
-| [animations](${api}loader/GLTFResource#animations) | 动画片段 |
-| [cameras](${api}loader/GLTFResource#cameras) | glTF 可以导出相机，但是引擎默认使用之前用户创建的相机，开发者可以手动切换 glTF 相机 |
-| [entities](${api}loader/GLTFResource#entities) | 解析后的所有实体 |
-| [materials](${api}loader/GLTFResource#materials) | 解析后的所有材质 |
-| [textures](${api}loader/GLTFResource#textures) | 解析后的所有纹理 |
-| [lights](${api}loader/GLTFResource#lights) | 解析后的所有光源 |
+| [gltf](${api}loader/GLTFResource#gltf) | glTF source file, JSON format |
+| [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) | default root node |
+| [sceneRoots](${api}loader/GLTFResource#sceneRoots) | glTF may contain multiple root nodes, but the default export can only have one root node, the developer can manually add / switch the root node. |
+| [animations](${api}loader/GLTFResource#animations) | animation clip |
+| [cameras](${api}loader/GLTFResource#cameras) | glTF can export the camera, but the engine uses the camera created by the user by default, the developer can switch the glTF camera manually |
+| [entities](${api}loader/GLTFResource#entities) | All entities parsed |
+| [materials](${api}loader/GLTFResource#materials) | All materials parsed |
+| [textures](${api}loader/GLTFResource#textures) | All textures parsed |
+| [lights](${api}loader/GLTFResource#lights) | All lights parsed |
 
-## 更多使用
+## More usage
 
-### 播放动画
+### Play animation
 
-我们先从根节点上获取 [Animation](${api}core/Animation) 组件，然后可以选择播放哪一个动画片段。
+Let's get [Animation](${api}core/Animation) from the root node first, then you can choose which animation clip playing.
 
 ```typescript
 const { animations, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
@@ -62,9 +60,9 @@ rootEntity.addChild(defaultSceneRoot);
 animation.playAnimationClip(animations[0].name);
 ```
 
-### 切换 glTF 相机
+### Switch glTF camera
 
-引擎默认不使用 glTF 导出的相机，如果需要，可以先禁用引擎的默认相机，然后启用 glTF 导出的某个相机。
+The engine does not use the camera exported by the glTF by default. If necessary, you can disable the engine's default camera, and then enable a camera exported from the glTF.
 
 ```typescript
 const { cameras, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
@@ -79,9 +77,9 @@ if (cameras) {
 }
 ```
 
-### 选择场景根节点
+### Choose root entity in scene
 
-glTF 中的场景(**Scene**)指的是根节点，即引擎的 [Entity](${api}core/Entity)。除了默认场景根节点 `defaultSceneRoot`，还可能包含多个场景根节点 `sceneRoots`，开发者可以手动选择/切换根节点。
+The **scene** in the glTF refers to the root node, that is, the engine's [Entity](${api}core/Entity). In addition to the default scene root node `defaultSceneRoot`, it is also possible to include multiple scene root nodes `sceneRoots`, developers can manually select / switch the root node.
 
 ```typescript
 const { sceneRoots, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
@@ -89,14 +87,14 @@ const { sceneRoots, defaultSceneRoot } = await this.engine.resourceManager.load<
 if (sceneRoots.length > 1) {
   const replaceSceneRoot = sceneRoots[1];
 
-  // 注意此处，使用的并不是 defaultSceneRoot
+  // Please note that this is not defaultSceneRoot
   rootEntity.addChild(replaceSceneRoot);
 }
 ```
 
-### 多材质切换
+### Multi-material switch
 
-如果 glTF 文件包含[多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants)，则可以利用 [variants](<(${api}loader/GLTFResource#variants)>) 来切换材质。
+If the glTF file contains [multi-material plugin](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants), you can take advantage of [variants](<(${api}loader/GLTFResource#variants)>) from `GLTFResource` to switch the material.
 
 ```typescript
 const { variants, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
@@ -112,16 +110,16 @@ if (variants) {
 }
 ```
 
-### 插件支持
+### Plugins support
 
-Oasis 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，则会自动加载相应功能：
+Oasis currently supports the following glTF plugins, if the corresponding plugin is included in the glTF file, the corresponding capability is automatically loaded:
 
-| 插件 | 功能 |
+| Plugin | Feature |
 | :-- | :-- |
-| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | 支持 Draco 压缩模型，节省显存 |
-| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多光源组合，会解析成引擎的光源，详见[光照教程](${docs}light-cn) |
-| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR [高光-光泽度工作流](${api}core/PBRSpecularMaterial) |
-| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | 支持 [Unlit 材质](https://oasisengine.cn/0.4/docs/artist-unlit-cn) |
-| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 允许渲染器存在多个材质，然后通过 [setMaterial](${api}core/Renderer#setMaterial) 接口进行材质切换 |
-| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
-| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://oasisengine.cn/0.4/examples#tiling-offset) 案例 |
+| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | Support DRACO compression model to save GPU memory |
+| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | Support multi-light combination, it resolve the light source of the engine, see [Light tutorial](${docs}light) |
+| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | Support PBR [specular-glossiness workflow](${api}core/PBRSpecularMaterial) |
+| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | Support [Unlit Material](https://oasisengine.cn/0.4/docs/artist-unlit) |
+| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | Allow the renderer to exist multiple materials, then make material switching via [setMaterial](${api}core/Renderer#setMaterial) API |
+| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | Support [Vertical data compression](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes) to save memory in CPU and GPU. for example, if the vertex data is generally floating point, this plugin can be saved as integer |
+| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | Support for texture zoom and displacement, you can refer to [TilingOffset](https://oasisengine.cn/0.4/examples#tiling-offset) in playground |
