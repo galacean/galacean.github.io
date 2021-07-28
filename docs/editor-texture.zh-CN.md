@@ -30,6 +30,10 @@ type: 编辑器
 | 过滤模式（[filterMode](${api}core/Texture#filterMode)）      | 点过滤（[Point](${api}core/TextureFilterMode#Point)）、双线性过滤（[Bilinear](${api}core/TextureFilterMode#Bilinear)）、 三线性过滤（[Trilinear](${api}core/TextureFilterMode#Trilinear)） |
 | 各向异性过滤等级（[anisoLevel](${api}core/Texture#anisoLevel)） | 向向异性等级，1 ~ 16                                         |
 
+| 格式     | 值                                                           |
+| :------- | :----------------------------------------------------------- |
+| 转为WebP | 是否将文件存储格式转换为 WebP（非纹理压缩格式有效），WebP 格式将有效减少文件尺寸 |
+| 纹理压缩 | 是否使用 GPU 纹理压缩格式，GPU 纹理压缩格式可有效减少显存    |
 
 ### 
 
