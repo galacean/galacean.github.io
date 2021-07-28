@@ -75,7 +75,7 @@ module.exports = {
             resolve: 'gatsby-remark-oasis',
             options: {
               api: `/${version}/api/`,
-              playground: `/${version}/playground/`,
+              playground: `/${version}/examples#`,
               docs: `/${version}/docs/`,
             }
           },

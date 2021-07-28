@@ -23,6 +23,16 @@ type: 编辑器
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/d22803eb-b9ea-454a-87dd-fdf1694bd6ac/image-20210720155138392.png" alt="image-20210720155138392" style="zoom:50%;" />
 
+| 属性                                                         | 值                                                           |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| 循环模式U（[wrapModeU](${api}core/Texture#wrapModeU)）       | 截取模式（[Clamp](${api}core/TextureWrapMode#Clamp)）、 重复模式（[Repeat](${api}core/TextureWrapMode#Repeat)）、镜像重复模式（[Mirror](${api}core/TextureWrapMode#Mirror)） |
+| 循环模式V（[wrapModeV](${api}core/Texture#wrapModeV)）       | 截取模式（[Clamp](${api}core/TextureWrapMode#Clamp)）、重复模式（[Repeat](${api}core/TextureWrapMode#Repeat)）、 镜像重复模式（[Mirror](${api}core/TextureWrapMode#Mirror)） |
+| 过滤模式（[filterMode](${api}core/Texture#filterMode)）      | 点过滤（[Point](${api}core/TextureFilterMode#Point)）、双线性过滤（[Bilinear](${api}core/TextureFilterMode#Bilinear)）、 三线性过滤（[Trilinear](${api}core/TextureFilterMode#Trilinear)） |
+| 各向异性过滤等级（[anisoLevel](${api}core/Texture#anisoLevel)） | 向向异性等级，1 ~ 16                                         |
+
+
+### 
+
 ### 给场景元素使用
 
 #### 三维对象
@@ -36,3 +46,9 @@ type: 编辑器
 在二维对象对象中使用纹理，需要将纹理应用于 [Sprite](${docs}sprite-cn) 对象，再将 Sprite 对象赋值给 [SpriterRenderer](${docs}sprite-renderer-cn) 。多个 Sprite 对象可以共享同一张 Texture。
 
 ![TextureToSprite](https://gw.alipayobjects.com/zos/OasisHub/16109017-fe5e-45f8-bd66-51abfcedf60e/TextureToSprite.gif)
+
+
+
+## 更多详情
+
+更多功能详见[纹理引擎文档](${docs}texture-cn)。
