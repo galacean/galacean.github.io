@@ -1,164 +1,164 @@
 ---
 order: 2
-title: 纹理资源
-type: 资源系统
+title: Texture Resource
+type: Resource System
 ---
 
-纹理（[Texture](${api}core/Texture)）, 是在 3D 渲染中最常用到的资源。我们在给模型着色时，需要给每个片元设置一个颜色值，这个色值除了直接手动设置，我们还可以选择从纹理中读取纹素来进行着色，来达到更加丰富的美术效果。
+Texture ([Texture](${api}core/Texture)), is the most commonly used resource in 3D rendering. When we color the model, we need to set a color value for each fragment. In addition to setting this color value directly, we can also choose to read texels from the texture for coloring to achieve a richer art effect.
 
-值得注意的是，图片、canvas 画布、原始数据、视频等都可以用来当作纹理，Oasis 引擎目前支持所有 WebGL 标准的纹理。
+It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Oasis engine currently supports all WebGL standard textures.
 
-## 纹理类型
+## Texture type
 
-### 1. 2D 纹理
+### 1. 2D texture
 
-2D 纹理（[Texture2D](${api}core/Texture2D)）是最常用的美术资源，使用二维 UV 坐标进行采样，如下图：
+2D texture ([Texture2D](${api}core/Texture2D)) is the most commonly used art resource, which uses two-dimensional UV coordinates for sampling, as shown below:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*tmTkSLi0XJ8AAAAAAAAAAAAAARQnAQ)
 
-#### 2. 立方纹理
+#### 2. Cube texture
 
-立方纹理（[TextureCubeMap](${api}core/TextureCubeMap)）和 2D 纹理的区别是它有 6 个面，即用 6 张 2D 纹理组成了一个立方纹理。
+The difference between a cube texture ([TextureCubeMap](${api}core/TextureCubeMap)) and a 2D texture is that it has 6 faces, that is, a cube texture is composed of 6 2D textures.
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Omw8Qo0WzfYAAAAAAAAAAAAAARQnAQ)
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*r-XPSaUTEnEAAAAAAAAAAAAAARQnAQ)
 
-立方纹理和 2D 纹理的底层采样方式略有不同，纹理使用二维坐标进行采样，而立方纹理使用三维坐标，即 _方向向量_ 进行采样，如使用一个橘黄色的方向向量来从立方纹理上采样一个纹理值会像是这样：
+The sampling method of cube texture and 2D texture is slightly different. Texture uses two-dimensional coordinates for sampling, while cubic texture uses three-dimensional coordinates, namely _direction vector_ for sampling. If you use an orange direction vector to sample a texture value from a cube texture, it will look like this:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*X752S5pQSB0AAAAAAAAAAAAAARQnAQ)
 
-正因为这种采样特性，所以立方纹理可以用来实现天空盒、环境反射等特效。
+Because of this sampling feature, cube texture can be used to achieve special effects such as skybox, environmental reflection and so on.
 
-### 3. 离屏渲染纹理
+### 3. Off-screen rendering texture
 
-离屏渲染纹理，顾名思义，该纹理可以通过离屏渲染得到。底层使用了 [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) 技术，将渲染操作不再输出到屏幕上，而是输出到纹理上，用户通过该纹理，可以用来实现后处理特效、折射、反射、动态环境贴图等一些艺术创作。
+Off-screen rendering texture, as the name suggests, the texture can be obtained by off-screen rendering. The bottom layer uses the [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) technology to output the rendering operation to the texture instead of the screen. The user can use this texture to realize post-processing special effects, refraction, reflection, dynamic environment mapping and other artistic creations.
 
-引擎提供了 [RenderTarget](${api}core/RenderTarget) 类来进行离屏渲染，并获取相应的离屏渲染纹理，目前引擎支持生成以下离屏渲染纹理：
+Oasis provides the [RenderTarget](${api}core/RenderTarget) class to perform off-screen rendering and obtain the corresponding off-screen rendering textures. Currently, the engine supports the generation of the following off-screen rendering textures:
 
-| 类型 | 应用 |
+| Type | Usage |
 | :-- | :-- |
-| 颜色纹理（[RenderColorTexture](${api}core/RenderColorTexture)） | 颜色纹理、颜色立方纹理、 多张颜色纹理 （MRT） |
-| 深度纹理（[RendeDepthTexture](${api}core/RenderDepthTexture)） | 深度纹理、深度立方纹理 |
-| 纹理组合 | 颜色纹理 + 深度纹理、颜色立方体纹理 + 深度立方体纹理、多张颜色纹理 + 深度纹理  |
+| Color texture（[RenderColorTexture](${api}core/RenderColorTexture)） | Color texture, <br> color cubic texture, <br> multiple color texture (MRT) |
+| Depth texture（[RendeDepthTexture](${api}core/RenderDepthTexture)） | Depth texture, <br> depth cubic texture |
+| Texture combination | Color Texture + Depth Texture, <br> Color Cube Texture + Depth Cube Texture, <br> Multi Color Texture + Depth Texture  |
 
-## 生成纹理
+## Generate texture
 
-### 1. 加载网络图片
+### 1. Loading web images
 
-我们可以通过 [ResourceManager](${docs}resource-manager-cn) 加载图片，详见 [资源加载教程](${docs}resource-manager-cn#内置资源类型)：
+We can use [ResourceManager](${docs}resource-manager) to load images, see [Resource loading tutorial](${docs}resource-manager) for details:
 
 ```typescript
 const textureResource = {
   type: AssetType.Texture2D,
-  url: `图片url`
+  url: `image url`
 };
 
 const cubeTextureResource = {
   type: AssetType.TextureCube,
   urls: [
-    "px - right 图片 url",
-    "nx - left 图片 url",
-    "py - top 图片 url",
-    "ny - bottom 图片 url",
-    "pz - front 图片 url",
-    "nz - back 图片 url"
+    "px - right image url",
+    "nx - left image url",
+    "py - top image url",
+    "ny - bottom image url",
+    "pz - front image url",
+    "nz - back image url"
   ]
 };
 
 engine.resourceManager.load([textureResource, cubeTextureResource]).then((resources) => {
-  // 引擎支持的2D纹理
+  // 2D texture supported by the engine
   const texture = resources[0];
-  // 引擎支持的立方纹理
+  // Cube texture supported by the engine
   const cubeTexture = resources[1];
-  // 接下来可以将纹理应用到材质上或者进行其他操作
+  // Next, you can apply the texture to the material or other operations.
 });
 ```
 
-### 2. 加载任何图像数据源
+### 2. Load any image data source
 
-前面提到过，图片、canvas 画布、视频等跟图像相关的数据源都可以用来当作纹理。比如视频就可以通过 [setImageSource](${api}core/Texture2D#setImageSource) 接口上传到纹理：
+As mentioned above, image, canvas, video and other image-related data sources can all be used as textures. For example, the video can be uploaded to the texture through the [setImageSource](${api}core/Texture2D#setImageSource) interface:
 
 ```typescript
-// 拿到视频标签，即 HTMLVideoElement
+// Get the HTMLVideoElement
 const video = document.getElementsByTagName("video")[0];
 
-// 加载到纹理
+// Set to texture
 texture.setImageSource(video);
 ```
 
-> `setImageSource` 只能同步那一帧的数据，但是视频每一帧都在变化，如果需要纹理同步变化，则要在脚本 onUpdate 钩子里面执行
+> `setImageSource` only sync the data of the frame, but each frame is changing, if you need to change synchronous changes, you can perform in the script `onUpdate` hook.
 
-### 3. 加载原始数据
+### 3. Load raw data
 
-纹理底层其实对应着每个像素的颜色值，即 RGBA 通道，我们可以手动填写这些颜色通道的颜色数值，然后通过 [setPixelBuffer](${api}core/Texture2D#setPixelBuffer) 接口传到纹理中：
+The bottom layer of the texture actually corresponds to the color value of each pixel, that is, the RGBA channel. We can manually fill in the color value of these color channels, and then pass it to the texture through the [setPixelBuffer](${api}core/Texture2D#setPixelBuffer) interface:
 
 ```typescript
-// 假设纹理只有一个像素，即 1 * 1 宽高。
-// 将该像素设置为红色，即 R 通道为 255。
+// Assume that the texture has only one pixel, ie 1 * 1 wide.
+// Set this pixel to red, that is, the R channel is 255.
 const data = new Uint8Array([255, 0, 0, 255]);
 
 texture.setPixelBuffer(data);
 ```
 
-## 纹理属性
+## Texture properties
 
-上传完纹理之后，我们有必要了解下纹理的一些基本属性：
+After uploading the texture, we need to understand some of the basic properties of the texture:
 
-| 属性 | 值 |
+| properties | value |
 | :-- | :-- |
-| 循环模式 U（[wrapModeU](${api}core/Texture#wrapModeU)） | 截取模式（[Clamp](${api}core/TextureWrapMode#Clamp)）、 重复模式（[Repeat](${api}core/TextureWrapMode#Repeat)）、镜像重复模式（[Mirror](${api}core/TextureWrapMode#Mirror)） |
-| 循环模式 V（[wrapModeV](${api}core/Texture#wrapModeV)） | 截取模式（[Clamp](${api}core/TextureWrapMode#Clamp)）、重复模式（[Repeat](${api}core/TextureWrapMode#Repeat)）、 镜像重复模式（[Mirror](${api}core/TextureWrapMode#Mirror)） |
-| 过滤模式（[filterMode](${api}core/Texture#filterMode)） | 点过滤（[Point](${api}core/TextureFilterMode#Point)）、双线性过滤（[Bilinear](${api}core/TextureFilterMode#Bilinear)）、 三线性过滤（[Trilinear](${api}core/TextureFilterMode#Trilinear)） |
-| 各向异性过滤等级（[anisoLevel](${api}core/Texture#anisoLevel)） | 1 ~ 16 ,具体要看设备支持情况 |
+| Wrap mode U（[wrapModeU](${api}core/Texture#wrapModeU)） | [Clamp](${api}core/TextureWrapMode#Clamp)、 [Repeat](${api}core/TextureWrapMode#Repeat)、[Mirror](${api}core/TextureWrapMode#Mirror) |
+| Wrap mode V（[wrapModeV](${api}core/Texture#wrapModeV)） | [Clamp](${api}core/TextureWrapMode#Clamp)、 [Repeat](${api}core/TextureWrapMode#Repeat)、[Mirror](${api}core/TextureWrapMode#Mirror) |
+| Filter mode（[filterMode](${api}core/Texture#filterMode)） | [Point](${api}core/TextureFilterMode#Point)、[Bilinear](${api}core/TextureFilterMode#Bilinear)、[Trilinear](${api}core/TextureFilterMode#Trilinear) |
+| Anisotropic level（[anisoLevel](${api}core/Texture#anisoLevel)） | 1 ~ 16, depends on the equipment support |
 
-### 1. 循环模式
+### 1. Wrap mode
 
-纹理采样的范围为`[0,1]`，那么当纹理 UV 坐标超出这个范围时，我们可以通过设置循环模式来控制如何进行超出部分的采样。
+The range of texture sampling is `[0,1]`, then when the texture UV coordinates exceed this range, we can control how to sample the excess part by setting the wrap mode.
 
 ```typescript
 texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat、Mirror
 ```
 
-- 截取模式（Clamp）：超出范围采样边缘纹素。
+- Clamp: Sampling edge texels when out of range
 
 ![image-20210720153811910](https://gw.alipayobjects.com/zos/OasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png)
 
-- 重复模式（Repeat）：超出范围从 [0,1] 开始重新采样
+- Repeat: Resample from [0,1] when out of range
 
 ![repeat.png](https://gw.alipayobjects.com/zos/OasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png)
 
-- 镜像重复模式（Mirror）：超出范围从 [1,0] 开始镜像采样。
+- Mirror: Mirror sampling from [1,0] when out of range
 
 ![image-20210720153841976](https://gw.alipayobjects.com/zos/OasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png)
 
 <playground src="wrap-mode.ts"></playground>
 
-### 2. 过滤模式
+### 2. Filter mode
 
-一般来说，纹素和屏幕像素不会刚好对应，我们可以通过设置过滤模式来控制放大（Mag）和缩小（Min）模式下分别的过滤模式。
+Generally, texels and screen pixels do not correspond exactly. We can control the respective filter modes in magnification (Mag) and reduction (Min) modes by setting the `filterMode`
 
 ```typescript
 texture.filterMode = TextureFilterMode.Bilinear;
 ```
 
-- 点过滤（Point）：使用距离采样点最近的纹素。
+- Point: Use the texel closest to the sampling point
 
   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*n_Z3Tq5uBH8AAAAAAAAAAAAAARQnAQ)
 
-- 双线性过滤（Bilinear）：使用距离最近的 2\*2 纹素矩阵的平均值。
+- Bilinear: Use the average of the nearest 2\*2 texels
 
   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*5W-wT6OHhqMAAAAAAAAAAAAAARQnAQ)
 
-- 三线性过滤（Trilinear）：在双线性过滤的基础上，对 mipmap 层级也进行了平均值过滤。
+- Trilinear: On the basis of Bilinear , average filtering is also performed on the mipmap level
 
   ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lVd1QqdzDhMAAAAAAAAAAAAAARQnAQ)
 
 <playground src="filter-mode.ts"></playground>
 
-### 3. 各向异性过滤等级
+### 3. Anisotropic level
 
-各向异性过滤技术可以使纹理在倾斜角度下观看会更加清晰。如下图，纹理的尽头随着各向异性过滤等级的增加会愈加清晰。
+Anisotropic filtering technology can make the texture clearer when viewed at an oblique angle. As shown in the figure below, the end of the texture will become clearer as the anisotropic filtering level increases.
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*oqkqSJMAe7cAAAAAAAAAAAAAARQnAQ)
 
@@ -168,60 +168,59 @@ texture.anisoLevel = 4; // 1~16
 
 #### 4. mipmap
 
-**引擎默认开启 [mipmap](${api}core/Texture#generateMipmaps)**（多级纹理渐变），mipmap 用来解决从低分辨率屏幕中采样高分辨率纹理时的精度和性能问题，即能在合适的距离时选取不同分辨率的纹理，如下图：
+**Oasis enable [mipmap](${api}core/Texture#generateMipmaps) by default**, mipmap is used to solve the accuracy and performance problems when sampling high-resolution textures from low-resolution screens. That is, textures of different resolutions can be selected at a suitable distance, as shown in the following figure:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mTBvTJ7Czt4AAAAAAAAAAAAAARQnAQ)
 
-需要注意的是，WebGL2.0 支持**任意分辨率**的纹理，会根据 [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) 算法进行一层层的 mip，但是如果您的环境是在 WebGL1.0 环境，那么请务必上传**2 次幂纹理**，如 1024 \* 512 这种分辨率的纹理,否则 Oasis 会检测到环境不可使用 mipmap，自动降级关闭 mipmap 功能，在视觉上带来一些意外情况。
+It should be noted that WebGL2.0 supports textures of **any resolution**, which will be processed according to the algorithm of [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) Layers of mip, but if your environment is in WebGL1.0 , then please be sure to upload a **2 power texture**, such as a texture with a resolution of 1024 \* 512, otherwise Oasis will detect that the environment is unavailable mipmap, automatically downgrades to turn off the mipmap, which brings some visual surprises.
 
-如果需要改变 mipmap 的默认行为，可以通过脚本来实现，参数详见 [API](${api}core/Texture2D#constructor)：
+If you need to close mipmap, you can do it through a script. For the parameters, see [API](${api}core/Texture2D#constructor):
 
 ```typescript
-const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8A8, false); // 第 5 个参数
+const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8A8, false); // 5th parameters
 ```
 
-立方纹理脚本写法，详见 [API](${api}core/TextureCubeMap#constructor)：
+For the cube texture, please refer to [API](${api}core/TextureCubeMap#constructor):
 
 ```typescript
-const cubeTexture = new TextureCubeMap(engine, size, TextureFormat.R8G8B8A8, false); // 第 4 个参数
+const cubeTexture = new TextureCubeMap(engine, size, TextureFormat.R8G8B8A8, false); // 4th parameters
 ```
 
 ### 5. flipY
 
-flipY 用来控制纹理是否翻转 Y 轴，即上下颠倒，**引擎和编辑器默认关闭**，如果需要改变 flipY 的默认行为，可以通过 [setImageSource](${api}core/Texture2D#setImageSource) 方法来实现：
+`flipY` is used to control whether the texture flips the Y axis, that is, upside down, **engine and editor are closed by default**, if you need to open the `flipY`, you can use the [setImageSource](${api}core/Texture2D#setImageSource) API:
 
 ```typescript
 const texture = new Texture2D(engine, width, height);
-texture.setImageSource(img, 0, true); // 第 3 个参数
+texture.setImageSource(img, 0, true); // 3th parameters
 ```
 
 ### 6. premultiplyAlpha
 
-premultiplyAlpha 用来控制纹理是否预乘 alpha(透明) 通道，**引擎和编辑器默认关闭**，如果需要改变 premultiplyAlpha 的默认行为，可以通过 [setImageSource](${api}core/Texture2D#setImageSource) 方法来实现：
+`premultiplyAlpha` is used to control whether the texture is premultiplied by the alpha (transparency) channel. **The engine and editor are turned off by default**. If you need to open the `premultiplyAlpha`, you can use the [setImageSource](${api}core/Texture2D#setImageSource) API:
 
 ```typescript
 const texture = new Texture2D(engine, width, height);
-texture.setImageSource(img, 0, undefined, true); // 第 4 个参数
+texture.setImageSource(img, 0, undefined, true); // 4th parameters
 ```
 
-## 纹理的用途
+## Use of texture
 
-当上传和设置好纹理后，我们就可以使用纹理了，纹理可以用于以下场景：
+After uploading and setting the texture, we can use the texture. The texture can be used in the following scene:
 
-### 1. 材质
+### 1. Material
 
-将纹理赋予材质球的相应属性，可以开启不同的渲染功能，如添加基础颜色纹理，可以决定模型的基本色调。在脚本中，可以这样设置：
+Assigning textures to the corresponding properties of the material can enable different rendering features, such as adding a `baseTexture` to determine the basic tone of the model. In the script, you can set it like this:
 
 ```typescript
 const material = new PBRMaterial(engine);
-const texture = 生成纹理(); // 上文所示，不再赘述
 
 material.baseTexture = texture;
 ```
 
-#### 2. 天空盒
+#### 2. Skybox
 
-天空盒需要使用一张立方纹理,即将天空盒的 6 个面都赋予纹理，效果如下：
+The sky box needs a cube texture, the effect is as follows:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*K0fcT5IMQ9gAAAAAAAAAAAAAARQnAQ)
 
@@ -235,22 +234,24 @@ skyMaterial.textureCubeMap = cubeTexture;
 
 #### 3. IBL
 
-在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得开启[环境光的 IBL 模式](${docs}light-cn#IBL模式)。而 IBL 需要立方纹理作为漫反射和镜面反射纹理，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
+In PBR rendering, if we want to get realistic environment reflection phenomenon, we have to turn on [IBL in ambientLight](${docs}light#IBL). IBL needs cube textures as diffuse and specular textures, which can reflect the surrounding environment, with the following effects:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*uOdnTZ9R2j4AAAAAAAAAAAAAARQnAQ)
 
 ```typescript
 const ambientLight = scene.ambientLight;
-// IBL 漫反射
+
+// Diffuse
 ambientLight.diffuseMode = DiffuseMode.Texture;
-ambientLight.diffuseTexture = cubeTexture; // 加载相应立方体纹理
-// IBL 镜面反射
-ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
+ambientLight.diffuseTexture = cubeTexture;
+
+// IBL
+ambientLight.specularTexture = cubeTexture;
 ```
 
-### 压缩纹理
+### Compressed texture
 
-Oasis 支持 **DXT/PVR/ETC/ASTC** 格式的压缩纹理，并且支持通过 **KTX**（[Khronos Texture](https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/)）容器格式加载。 因为各个硬件支持的压缩格式不一样，所以在使用前请先查询是否支持某种格式：
+Oasis supports compressed textures in **DXT/PVR/ETC/ASTC** format, and supports the use of **KTX**([Khronos Texture](https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/)) container format loading. Because each hardware supports different compression formats, please check whether a certain format is supported before use:
 
 ```typescript
 const engine = new Engine();
@@ -268,7 +269,7 @@ if (rhi.canIUse(GLCapabilityType.s3tc)) {
 }
 ```
 
-确定支持某种格式后,使用 [ResourceManager](${docs}resource-manager-cn) 进行资源加载
+After confirming that a certain format is supported, use [ResourceManager](${docs}resource-manager) to load resources:
 
 ```typescript
 const resource = {
@@ -276,18 +277,17 @@ const resource = {
   url: "https://gw.alipayobjects.com/os/bmw-prod/b38cb09e-154c-430e-98c8-81dc19d4fb8e.ktx"
 };
 
-engine.resourceManager.load(resource).then((res) => {
-  const compressedTexture = res;
+engine.resourceManager.load(resource).then((compressedTexture) => {
   material.baseTexture = compressedTexture;
   // ...
 });
 ```
 
-## 常见 QA
+## QA
 
-### 1. 为什么无法上传立方纹理？
+### 1. Why can't upload cube texture?
 
-1.请确保您上传的立方纹理**至少包含 6 张纹理**，分别为：
+Make sure the uploaded cube texture **contains at least 6 textures**, respectively:
 
 - `px`: Positive X face for a cube-mapped texture.
 - `nx`: Negative X face for a cube-mapped texture.
@@ -296,17 +296,17 @@ engine.resourceManager.load(resource).then((res) => {
 - `pz`: Positive Z face for a cube-mapped texture.
 - `nz`: Negative Z face for a cube-mapped texture.
 
-  2.立方纹理必须保证每张 2D 纹理的分辨率相等，即每张 2D 纹理的宽高必须一致。
+The cube texture must ensure that the resolution of each 2D texture is equal, that is, the width and height of each 2D texture must be the same.
 
-### 2. 为什么设置了一些属性后在设备上没生效？
+### 2. Why did you have some attributes that have not taken effect on the device?
 
-引擎不能保证每个配置在所有设备上都能支持，如以下配置：
+The engine cannot guarantee that each configuration can be supported on all devices, such as the following configuration:
 
-- **各项异性过滤等级**： 每个设备 是否支持/支持的最大值 都不一样。
-- **压缩纹理**：每个设备支持的压缩纹理格式不一样。
+- **Anisotropic level**: The maximum value supported by each device is different.
+- **Compressed texture**: The compressed texture format supported by each device is different.
 
-为了保证您的设置的兼容性，建议浏览以下步骤：
+In order to ensure the compatibility of your settings, you can refer to the following steps:
 
-1. 通过 [canIUse](https://caniuse.com/) 、 [webglStats](https://webglstats.com/)、[webglReport](https://webglreport.com/?v=2) 等能力检测网站，知晓不同设备的兼容性差异。
-2. 通过引擎提供的 RHI#canIUse 接口,检测能力是否可以使用。
-3. 通过工程手段进行方案降级和强制降级。
+1. Check the website through [canIUse](https://caniuse.com/) 、 [webglStats](https://webglstats.com/)、[webglReport](https://webglreport.com/?v=2) and other capabilities to know the compatibility differences of different devices.
+2. Through the [RHI#canIUse](${api}rhi-webgl/WebGLRenderer#canIUse) interface provided by the engine, check whether the capability can be used.
+3. Project downgrades and forced downgrades are carried out through engineering means.
