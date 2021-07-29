@@ -1,25 +1,25 @@
 ---
 order: 7
 
-title: glTF 模型
+title: glTF Model
 
-type: 编辑器
+type: Editor
 ---
 
-## 介绍
+## introduce
 
-我们在[ 模型资产](${docs}editor-resource-gltf-cn) 教程里面创建了 glTF 模型资产，但是这个时候它还仅仅是个资产，并没有在场景中渲染。 Oasis 通过 [网格渲染器](${docs}mesh-renderer-cn) 渲染模型，在编辑器的操作为给节点添加一个 **GLTF 模型** 组件。
+We created the glTF model resource in the [glTF resource tutorial](${docs}editor-resource-gltf) tutorial, but at this time it is only an resource and is not rendered in the scene. Oasis renders the model through [Mesh Renderer](${docs}mesh-renderer), and the operation in the editor is to add a **GLTF model** component to the node.
 
-## 使用
+## Use
 
-1.**上传 glTF 资产。** 详细步骤见[ 模型资产教程](${docs}editor-resource-gltf-cn)。
+1.**Upload glTF resource.** For detailed steps, see [glTF resource tutorial](${docs}editor-resource-gltf).
 
-2.**绑定 glTF 模型组件。** 在资源上传成功后，资源的模型、贴图等内容会被展示在资源面板当中。然后，我们创建一个节点，并在右侧节点检查器中 **添加能力** ，选择 **GLTF 模型**，在资源面板中选择绑定相应的 `.gltf` 资产，模型就渲染出来了。
+2.**Bind to glTF model component.** After the resource is successfully uploaded, the glTF model, texture and other resources will be displayed in the resource panel. Then, we create a node, and **add component** in the node inspector on the right, select **GLTF model**, then bind the corresponding `.gltf` resource in the resource panel, then the model is rendered .
 
 ![bind-gif](https://gw.alipayobjects.com/zos/OasisHub/8d8c2197-ad95-46c0-98b1-2beadba0535b/bind-gif.gif)
 
-> 一般情况下，渲染的模型是有纹理细节的，即材质会自动绑定相应的纹理，如基础纹理；如果没有，则说明 glTF 文件本身没有绑定纹理，开发者需要根据需求手动进行绑定。材质调试详见 [材质资产](${docs}editor-material-cn) 教程。
+> Generally, the rendered model has texture details, that is, the material will automatically bind the corresponding texture, such as the `baseTexture`; if not, it means that the glTF file itself does not bind the texture, and the developer needs to manually bind it according to the requirements. For details on material debugging, please refer to the [Material tutorial](${docs}editor-material).
 
-3.**操作动画。** 如果绑定的 glTF 模型中包含动画，那么我们还可以在模型组件里面设置**动画播放片段**和**循环模式**。
+3.**Control animation.** If the bound glTF model contains animation, then we can also set **animation clip** and **loop mode** in the model component.
 
 ![animation](https://gw.alipayobjects.com/zos/OasisHub/0105f8dd-3e24-4127-8075-e1df34c2ab71/animation.gif)
