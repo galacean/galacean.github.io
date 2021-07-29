@@ -1,53 +1,53 @@
 ---
 order: 7
 
-title: 模型资产
+title: glTF resource
 
-type: 编辑器
+type: Editor
 ---
 
-## 介绍
+## Introduce
 
-编辑器目前支持导入 `glTF`、`FBX` 两种模型格式，但是最后其实都会转换成 glTF 格式。
+Oasis Editor currently supports importing `glTF` and `FBX` two model formats, but in the end they will all be converted to glTF format.
 
-glTF 模型是一种高效传输的 3D 资源格式标准，实际上是一个 JSON 文件，包含了场景、渲染器、动画等数据结构。详见[ glTF 资源教程](${docs}gltf-cn)
+The glTF model is a 3D resource format standard for efficient transmission. It is actually a JSON file that contains data structures such as scenes, renderers, and animations. For details, please refer to [glTF resource tutorial](${docs}gltf).
 
-## 使用
+## Use
 
-1.**准备 glTF 资源。** glTF 格式的资源比较灵活，通常有如下几种组合方式：
+1.**Prepare glTF resources.** The resources of glTF format are flexible, and there are usually several combinations as follows:
 
-- `.gltf` + `图片`
+- `.gltf` + `images`
 - `.glb`
-- `.gltf` + `.bin` + `图片`
+- `.gltf` + `.bin` + `images`
 
-如果是单文件，直接拖拽即可；如果是多文件，需要先打包成 `.zip` 再进行拖拽。
+If it is a single file, just drag and drop; if it is multiple files, you need to package it into `.zip` and then drag and drop.
 
-> zip 打包的时候，要选中所有资源，右击选择压缩 x 个项目”，不要选择外层文件夹打包。
+> When zip packaging, you must select all resources, right-click and choose to "compress x items", do not select the outer folder for packaging.
 
 ![gltf](https://gw.alipayobjects.com/zos/OasisHub/28f36b3d-8463-4da3-b458-047a4155d3b3/gltf.gif)
 
-2.**上传 glTF 模型。** 可以选择以下两种方式上传：
+2.**Upload the glTF model.** You can choose to upload in the following two ways:
 
-- 直接把模型文件或者 **.zip** 拖进编辑器的资源面板即可完成上传（**推荐**）；
+- Simply drag the model file or **.zip** into the resource panel of the editor to complete the upload (**recommended**);
 
-- 在编辑器下方的资源面板中选择上传 **模型**。
+- Select upload **model** in the resource panel at the bottom of the editor.
 
 ![image-20210719120746843](https://gw.alipayobjects.com/zos/OasisHub/14d4a8ab-67fc-4671-9694-9bf797c444ca/image-20210719120746843.png)
 
-3.**预览缩略图。** 在资源上传成功后，资源的模型、贴图等内容会被展示在资源面板当中。
+3.**Preview thumbnails.** After the resource is uploaded, the 3D model, texture and other resources will be displayed in the resource panel.
 
 ![image-20210719162230883](https://gw.alipayobjects.com/zos/OasisHub/d5626811-f20e-4b84-aa28-7c6909dc607b/image-20210719162230883.png)
 
-> 一般情况下，材质会自动绑定相应的纹理，如基础纹理；如果没有，则说明 glTF 文件本身没有绑定纹理，开发者需要根据需求手动进行绑定。材质调试详见 [材质资产](${docs}editor-material-cn) 教程。
+> In general, the material will automatically bind the corresponding texture, such as the `baseTexture`; if not, it means that the glTF file itself is not bound to the texture, and the developer needs to manually bind it according to the requirements. For details on material debugging, please refer to the [Material Assets](${docs}editor-material) tutorial.
 
-如果模型很复杂，资源数量比较多，可以使用编辑器的筛选功能。
+If the model is complex and the number of resources is relatively large, you can use the **filter** function of the editor.
 
 ![image-20210719170606534](https://gw.alipayobjects.com/zos/OasisHub/f0cf8db3-d89a-4a35-96cc-4561626a86f4/image-20210719170606534.png)
 
-4.**更多配置。** 编辑器支持对上传的模型资源进行二次加工，比如我们可以对 glTF 资源进行压缩：
+4.**More configuration.** The editor supports secondary processing of uploaded model resources. For example, we can compress glTF resources:
 
 ![image-20210719181013426](https://gw.alipayobjects.com/zos/OasisHub/27e2419c-1d8b-4f7e-9d17-4390c7255bba/image-20210719181013426.png)
 
-也可以替换 glTF 模型的材质：
+can also replace the material of the glTF model:
 
 ![image-20210719180514914](https://gw.alipayobjects.com/zos/OasisHub/c27f9f28-80cf-4167-bc57-0767d9e1b58e/image-20210719180514914.png)
