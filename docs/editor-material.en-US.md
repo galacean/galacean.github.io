@@ -1,74 +1,74 @@
 ---
 order: 7
 
-title: 材质资产
+title: Material resource
 
-type: 编辑器
+type: Editor
 ---
 
-## 介绍
+## Introduce
 
-通过引擎的 [材质教程](${docs}material-cn) 中可以了解到 Oasis 的材质分为 [PBR 材质](${api}core/PBRMaterial)(**推荐**)、[PBR-Specular 材质](${api}core/PBRSpecularMaterial)、[BlinnPhong 材质](${api}core/BlinnPhongMaterial)、 [Unlit 材质](${api}core/UnlitMaterial) 四种材质类型，每种材质类型的应用场景都不一样，其中 PBR 材质为 glTF 模型默认材质标准，其余的类型也可以通过插件方式导入。
+By the engine’s [Material Tutorial](${docs}material), you can learn that Oasis’ materials are divided into [PBR material](${api}core/PBRMaterial)(**recommended**), [PBR-Specular Material](${api}core/PBRSpecularMaterial), [BlinnPhong Material](${api}core/BlinnPhongMaterial), [Unlit Material](${api}core/UnlitMaterial) Four material types, the application of each material type are different. The PBR material is the default material standard of the glTF model, and the other types can also be imported through plug-ins.
 
-- PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，采用金属度-粗糙度工作流，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。
-- PBR-Specular 材质是相对于 PBR 的另外一种工作流： 高光-光泽度工作流。唯一的区别就是通过高光、光泽度参数，替代了 PBR 的金属度、粗糙度 参数。
-- Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
-- Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
+- PBR material is suitable for application scenarios that require realistic rendering, because PBR is physically-based rendering, following energy conservation, and adopts a metal-roughness workflow. Developers can ensure the rendering effect by adjusting parameters such as metal, roughness, and lighting. All are physically correct.
+- PBR-Specular material is another workflow relative to PBR: specular-glossiness workflow. The only difference is that the `metal` and `roughness` parameters of PBR are replaced by the `specular` and `glossiness` parameters.
+- Blinn Phong material is suitable for scenes that do not have such high requirements for realism. Although it does not follow physics, its efficient rendering algorithm and basic optical parts can be applied to many scenes.
+- The Unlit material is suitable for rendering the baked model. it only needs to set a `baseTexture` or `baseColor` to show the high-quality rendering results obtained by offline rendering, but the disadvantage is that it cannot display the light and shadow interaction in real time, because `UnlitMaterial` is rendered by the texture and is not affected by any lighting, please refer to [Baking Tutorial](${docs}artist-bake) and [Export Unlit Tutorial](${docs}artist-unlit) for details.
 
-## 使用
+## Use
 
-- 如果导入 glTF 模型，会自动创建对应类型的资源，其中就包含材质，如下图：
+- If you import the glTF model, the corresponding type of resource will be automatically created, which contains the material, as shown below:
 
 ![image-20210719162230883](https://gw.alipayobjects.com/zos/OasisHub/d5626811-f20e-4b84-aa28-7c6909dc607b/image-20210719162230883.png)
 
-- 也可以在资源面板手动创建不同类型的材质：
+- You can also manually create different types of materials in the resource panel:
 
 ![image-20210719175600845](https://gw.alipayobjects.com/zos/OasisHub/01f73e82-8be1-4568-baca-a7de3baf17fb/image-20210719175600845.png)
 
-## 调整渲染效果
+## Adjust the rendering effect
 
-通常情况， glTF 导入的材质中已经绑定了相应的纹理和参数，不需要进行任何操作。但是编辑器支持对材质进行二次加工，接下来针对不同材质类型进行渲染效果调整步骤。
+Generally, the materials imported by glTF have already bound the corresponding textures and parameters, and no operation is required. However, the editor supports secondary processing of materials, and the next step is to adjust the rendering effect for different material types.
 
-### 1. Unlit 材质
+### 1. Unlit material
 
-正如上文所说， Unlit 材质不受光照影响，只需要设置烘焙好的纹理即可：
+As mentioned above, the Unlit material is not affected by light, you only need to set the baked texture:
 
 ![unlit](https://gw.alipayobjects.com/zos/OasisHub/e2639e60-a6ed-416d-9f53-064557261d14/unlit.gif)
 
-一般 Unlit 的渲染效果非常不错，因为设置的是建模软件通过离线渲染得到的高质量纹理。如果不需要光线的实时变化，则大部分场景都可以使用此模式。
+Generally, the rendering effect of Unlit is very good, because it sets the high-quality texture obtained by the modeling software through offline rendering. If real-time changes in light are not required, this mode can be used in most scenes.
 
-### 2. BlinnPhong 材质
+### 2. BlinnPhong material
 
-BlinnPhong 材质受光照的影响，一般只需要设置基础颜色、镜面反射、法线。
+BlinnPhong material is affected by the light, generally only need to set the **base color, specular, normal.**
 
-- 基础颜色控制主色调：
+- Base color control main tone:
 
 ![baseColor](https://gw.alipayobjects.com/zos/OasisHub/a3ac25e1-36fa-4994-bb24-37b837698478/baseColor.gif)
 
-- 镜面反射控制高光部分的颜色和强度：
+- The specular reflection controls the color and intensity of the highlight portion:
 
 ![specular](https://gw.alipayobjects.com/zos/OasisHub/cbda6aec-63e8-4665-b15e-28adaccd7f19/specular.gif)
 
-- 法线控制视觉上面的 **凹凸感**：
+- Normal controls the **bump sense** above the vision:
 
 ![normal](https://gw.alipayobjects.com/zos/OasisHub/9e48930a-a231-416d-9cb0-7bacc675be0a/normal.gif)
 
-### 3. PBR 材质
+### 3. PBR material
 
-PBR 材质遵循能量守恒，是基于物理的渲染，也能设置基础颜色、法线等参数，但是不支持像 BlinnPhong 材质一样控制反光颜色和强度，因为这不符合能量守恒，但是可以通过金属度、粗糙度，更加方便地调节渲染效果，并且还可以反射周边的环境，参考 [环境光的 IBL 模式](${docs}light-cn#IBL模式)。
+The PBR material follows the conservation of energy and is based on physics. You can also set the basic color, normal and other parameters, but it does not support the control of the reflective color and intensity like the BlinnPhong material, because it does not comply with the conservation of energy, however, the rendering effect can be adjusted more conveniently through the `metallicFactor` and `roughness`, and it can also reflect the surrounding environment. Refer to [IBL mode of ambient light](${docs}light#IBL).
 
-- 根据真实世界中光线与材质的交互，绝缘体，即当金属度为 0 时，材质也能反射大约 4% 纯色光线，从而渲染出周边环境，如下模型的头部：
+- According to the interaction between light and material in the real world, the insulator, that is, when the `metallicFactor` is 0, the material can also reflect about 4% of pure color light, thereby rendering the surrounding environment, such as the head of the model:
 
 ![env](https://gw.alipayobjects.com/zos/OasisHub/c40a665d-9d37-46f1-9206-a29859be75a3/env.gif)
 
-- 我们调节材质的金属度，可以发现，金属度越大，周围的环境越清晰，并且开始从白色纯色变成彩色。这是因为电介质，即金属度为 1 时，光线将 100% 全部反射出物体表面，即反射出彩色的周边环境：
+- When we adjust the `metallicFactor` of the material, we can find that the greater the metal, the clearer the surrounding environment, and it starts to change from a pure white color to a colorful one. This is because the dielectric, that is, when the `metallicFactor` is 1, the light will be 100% reflected off the surface of the model, that is, the colorful surrounding environment will be reflected:
 
 ![metal](https://gw.alipayobjects.com/zos/OasisHub/95562cce-618f-4093-a775-c6a03831c580/metal.gif)
 
-- 真实世界中的大部分材质都是有粗糙度的，在微表面的理论基础上解释即为光线将从物体表面从四面八方反射出去，这样的话，即使金属度为 1，也不能清晰地反射周边环境：
+- Most materials in the real world have roughness. The explanation based on the theory of micro-surface means that light will be reflected from the surface of the model from all directions. In this case, even if the `metallicFactor` is 1, it cannot clearly reflect the surrounding environment:
 
 ![roughness](https://gw.alipayobjects.com/zos/OasisHub/a51d5eca-e0ae-4882-8941-2fd15c8e523a/roughness.gif)
 
-所有材质类型都支持配置透明度相关：
+All material types support configuration transparency related:
 
 ![opacity](https://gw.alipayobjects.com/zos/OasisHub/7f93cca8-0e2f-4549-b02a-199a9ed36bfc/opacity.gif)

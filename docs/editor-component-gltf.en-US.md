@@ -6,7 +6,7 @@ title: glTF Model
 type: Editor
 ---
 
-## introduce
+## Introduce
 
 We created the glTF model resource in the [glTF resource tutorial](${docs}editor-resource-gltf) tutorial, but at this time it is only an resource and is not rendered in the scene. Oasis renders the model through [Mesh Renderer](${docs}mesh-renderer), and the operation in the editor is to add a **GLTF model** component to the node.
 
