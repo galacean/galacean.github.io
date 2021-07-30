@@ -35,7 +35,7 @@ type: 编辑器
 
 ![tree4.gif](https://img.alicdn.com/imgextra/i3/O1CN01A0iZVl1jLhfJw4Ulh_!!6000000004532-1-tps-939-549.gif)
 
-### Glossary
+### 术语表
 
 1. Entity 实体
 1. Hierarchy 层级面板
