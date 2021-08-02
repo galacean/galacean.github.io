@@ -47,7 +47,7 @@ As shown above, spriteMask has a masking effect on the sprites in `Layer1` and `
 
 In basic use, we already know how to create a mask, the next step is to control how to interact with [SpriteRenderer](${docs}sprite-renderer-cn#使用遮罩) through the parameters provided by the [SpriteMask](${api}core/SpriteMask).
 
-| parameter | type | instruction |
+| parameter | type | description |
 | :--- | :--- | :--- |
 | influenceLayers | number | The mask layer affected by the current mask, the default value is SpriteMaskLayer.Everything, which means it has an effect on all mask layers |
 | alphaCutoff | number | The lower limit of the effective alpha value of the current mask (range: 0~1), that is, the sprite texture whose alpha value is less than alphaCutoff will be discarded |
