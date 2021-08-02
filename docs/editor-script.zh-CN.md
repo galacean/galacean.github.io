@@ -80,7 +80,11 @@ export class Script1250228 extends Script {
 
 进入代码编辑界面之后，用户就可以根据自己的需求在提供的生命周期回调函数中实现自己的需求了。修改完毕后，按 `Ctrl+S` 保存右侧的预览面板会自动刷新。
 
-![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*9UMvS6MTCIAAAAAAAAAAAAAAARQnAQ)
+> 提示：Oasis的代码编辑器使用了vscode团队开源的monaco编辑器，编辑体验与快捷键与vscode基本一致
+
+Oasis的代码编辑器还具有代码提示的功能，可以帮助你更加方便的编写代码。
+
+![](https://gw.alipayobjects.com/zos/OasisHub/c31ce846-51ae-4b07-97d9-6a6536029750/test.gif)
 
 
 
