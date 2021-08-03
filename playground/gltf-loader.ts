@@ -5,7 +5,7 @@
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
 import {
-  Animation,
+  Animator,
   AnimationClip,
   AssetType,
   BackgroundMode,
@@ -318,7 +318,7 @@ class Oasis {
     const isGLB = /.glb$/.test(url);
     this.engine.resourceManager
       .load<GLTFResource>({
-        type: AssetType.Perfab,
+        type: AssetType.Prefab,
         url: `${url}#${Math.random()}.${isGLB ? "glb" : "gltf"}` // @todo: resourceManager cache bug
       })
       .then((asset) => {
@@ -481,8 +481,8 @@ class Oasis {
     if (animations?.length) {
       this.animationFolder = this.gui.addFolder("Animation");
       this.animationFolder.open();
-      const animator = this.gltfRootEntity.getComponent(Animation);
-      animator.playAnimationClip(animations[0].name);
+      const animator = this.gltfRootEntity.getComponent(Animator);
+      animator.play(animations[0].name);
       const state = {
         animation: animations[0].name
       };
@@ -490,9 +490,10 @@ class Oasis {
         .add(state, "animation", ["None", ...animations.map((animation) => animation.name)])
         .onChange((name) => {
           if (name === "None") {
-            animator.stop(true);
+            animator.speed = 0;
           } else {
-            animator.playAnimationClip(name);
+            animator.speed = 1;
+            animator.play(name);
           }
         });
     }
