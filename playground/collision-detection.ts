@@ -7,7 +7,7 @@
  */
 import {
   WebGLEngine, SphereCollider,
-  BoxCollider, Vector3, ACollider,
+  BoxCollider, Vector3,
   MeshRenderer, BlinnPhongMaterial,
   PrimitiveMesh, Camera, CollisionDetection, Script
 } from "oasis-engine";
@@ -82,8 +82,9 @@ boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cube
 
 // add CollisionDetection
 sphereEntity.addComponent(CollisionDetection);
+
 class CollisionScript extends Script {
-  onTriggerExit(other: ACollider) {
+  onTriggerExit() {
     const mtl = new BlinnPhongMaterial(engine);
     const color = mtl.baseColor;
     color.r = Math.random();
@@ -93,7 +94,7 @@ class CollisionScript extends Script {
     renderer.setMaterial(mtl);
   }
 
-  onTriggerEnter(other: ACollider) {
+  onTriggerEnter() {
     const mtl = new BlinnPhongMaterial(engine);
     const color = mtl.baseColor;
     color.r = Math.random();
@@ -103,6 +104,7 @@ class CollisionScript extends Script {
     renderer.setMaterial(mtl);
   }
 }
+
 // add Script
 sphereEntity.addComponent(CollisionScript);
 
