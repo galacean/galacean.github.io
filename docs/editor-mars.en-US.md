@@ -1,6 +1,6 @@
 ---
 order: 8
-title: Mars
+title: Mars Component
 type: Editor
 ---
 
@@ -8,9 +8,9 @@ Mars is a very powerful tool to help us create web special effects, including a 
 
 ## Usage
 
-Before using our engine to play Mars special effects, designers need to use Mars to make special effects and export the .vfx file. If you don’t know Mars, please take a look at [here](https://render.alipay.com/p/s/mars-editor/#).
+Before using our engine to play Mars special effects, designers need to use Mars to make special effects and export the `.vfx` file. If you don’t know Mars, please take a look at [here](https://render.alipay.com/p/s/mars-editor/#).
 
-1. After the developer gets the _.vfx_, first upload the _.vfx_ file to our Oasis editor, as follows:
+1. After the developer gets the `.vfx`, first upload the `.vfx` file to our Oasis editor, as follows:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lhieRKWLn64AAAAAAAAAAAAAARQnAQ)
 
@@ -18,7 +18,7 @@ Before using our engine to play Mars special effects, designers need to use Mars
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*zIECQJ0MzCsAAAAAAAAAAAAAARQnAQ)
 
-3. After adding the Mars component, you can select the corresponding _.vfx_ and set the animation to be played, as follows:
+3. After adding the Mars component, you can select the corresponding `.vfx` and set the animation to be played, as follows:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*HGUdTLoJuHcAAAAAAAAAAAAAARQnAQ)
 
