@@ -4,13 +4,13 @@ title: Mars 组件
 type: 编辑器
 ---
 
-Mars 是一个帮助我们制作 web 特效的非常强大的工具，包含一个[特效编辑器](https://render.alipay.com/p/s/mars-editor/)和一个特效播放库。如果想了解更多关于 Mars 的内容，请跳转至 [Mars](https://yuque.antfin-inc.com/oasisgroup/mars)。
+Mars 是一个非常强大、能帮助我们制作 Web 特效的工具，包含一个[特效编辑器](https://render.alipay.com/p/s/mars-editor/)和一个特效播放库。如果想了解更多关于 Mars 的内容，请跳转至 [Mars](https://yuque.antfin-inc.com/oasisgroup/mars)。
 
 ## 使用
 
-在使用我们引擎播放 Mars 特效前，需要设计师先使用 Mars 制作特效并导出 .vfx 文件，如果对 Mars 还不了解的建议先看看[这里](https://render.alipay.com/p/s/mars-editor/#)。
+在使用我们引擎播放 Mars 特效前，需要设计师先使用 Mars 制作特效并导出 `.vfx` 文件，如果对 Mars 还不了解的话建议先看看[这里](https://render.alipay.com/p/s/mars-editor/#)。
 
-1. 开发者拿到 _.vfx_ 后，首先需要把 _.vfx_ 文件上传到我们 Oasis 编辑器，如下：
+1. 开发者拿到 `.vfx` 后，首先需要把 `.vfx` 文件上传到我们 Oasis 编辑器，如下：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1f3b268d-cede-4dd7-b0a4-0c17323fc6d2/Jul-19-2021%25252017-26-45.gif)
 

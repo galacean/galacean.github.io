@@ -4,7 +4,7 @@ title: 精灵资源
 type: 编辑器
 ---
 
-[Sprite](${api}core/Sprite) 是 2D 图形对象，用于角色、道具、子弹以及一些其他 2D 游戏要素。这些图形是从 [Texture2D](${docs}texture-cn) 获得的。[Sprite](${api}core/Sprite) 类主要标识应用于特定Sprite的图像部分。然后 [Entity](${docs}entity-cn) 上的  [SpriteRenderer](${docs}sprite-renderer-cn) 组件可以使用此信息来实际显示图形，[Entity](${docs}entity-cn) 上的 [SpriteMask](${docs}sprite-mask-cn) 组件可以使用此信息来表示遮罩区域。详见 [精灵资源](${docs}sprite-cn)。
+[Sprite](${api}core/Sprite) 是 2D 图形对象，用于角色、道具、子弹以及一些其他 2D 游戏要素。这些图形是从 [Texture2D](${docs}texture-cn) 获得的。[Sprite](${api}core/Sprite) 类主要标识应用于特定 `Sprite` 的图像部分。然后 [Entity](${docs}entity-cn) 上的  [SpriteRenderer](${docs}sprite-renderer-cn) 组件可以使用此信息来实际显示图形，[Entity](${docs}entity-cn) 上的 [SpriteMask](${docs}sprite-mask-cn) 组件可以使用此信息来表示遮罩区域。详见 [精灵资源](${docs}sprite-cn)。
 
 
 ## 使用
@@ -23,7 +23,7 @@ type: 编辑器
 
 ### 设置 pivot
 
-对于 pivot 来说，纹理左下角为 (0, 0)，X 轴从左到右，Y 轴从下到上。在编辑器中，内置了一些常用的 pivot 快捷方式，如下：
+对于 pivot 来说，纹理左下角为 `(0, 0)`，X 轴从左到右，Y 轴从下到上。在编辑器中，内置了一些常用的 pivot 快捷方式，如下：
 
 ![sprite-pivot](https://gw.alipayobjects.com/zos/OasisHub/39fb7688-a2f6-41ed-978b-250a4466e85f/image-20210720202052097.png)
 
@@ -43,10 +43,10 @@ type: 编辑器
 
 ![image-20210804111802890](https://gw.alipayobjects.com/zos/OasisHub/19305365-9a36-4bd3-a193-2a5a82db4c84/image-20210804111802890.png)
 
-将 1024*1024 大小的精灵的 pixelsPerUnit 设置为 128，效果如下：
+将 1024*1024 大小的精灵的 `pixelsPerUnit` 设置为 128，效果如下：
 
 ![image-20210804111234363](https://gw.alipayobjects.com/zos/OasisHub/5a032f53-fa1a-446a-bcb7-f585603fc047/image-20210804111234363.png)
 
-上图中一个方格代表的就是世界空间中的一个单位，我们尝试把 pixelsPerUnit 设置为 256，效果如下：
+上图中一个方格代表的就是世界空间中的一个单位，我们尝试把 `pixelsPerUnit` 设置为 256，效果如下：
 
 ![image-20210804111254309](https://gw.alipayobjects.com/zos/OasisHub/e54b65f6-04d7-41ab-98c4-dd3a94a8b93d/image-20210804111254309.png)
