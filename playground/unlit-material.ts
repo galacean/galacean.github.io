@@ -4,7 +4,7 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-import { Animation, Camera, GLTFResource, UnlitMaterial, Vector3, WebGLEngine } from "oasis-engine";
+import { Animator, Camera, GLTFResource, UnlitMaterial, Vector3, WebGLEngine } from "oasis-engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -28,8 +28,8 @@ engine.resourceManager
     const { materials, animations, defaultSceneRoot } = gltf;
     rootEntity.addChild(defaultSceneRoot);
 
-    const animator = defaultSceneRoot.getComponent(Animation);
-    animator.playAnimationClip(animations[0].name);
+    const animator = defaultSceneRoot.getComponent(Animator);
+    animator.play(animations[0].name);
     addGUI(materials as UnlitMaterial[]);
   });
 
