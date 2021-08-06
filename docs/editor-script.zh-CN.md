@@ -29,7 +29,7 @@ type: 编辑器
 ![image-20210720204627127](https://gw.alipayobjects.com/zos/OasisHub/ba51d8f7-eb03-40c2-8bf1-2bcc6e59808e/image-20210720204627127.png)
 
 ## 绑定脚本
-如果你的脚本是通过上文说的第二种方式创建的，Oasis编辑器会自动将脚本绑到实体上，无需再操作了。如果你是通过第一种方式创建的，就需要将其绑定到节点上才能运行：
+如果你的脚本是通过上文说的第二种方式创建的， `Oasis` 编辑器会自动将脚本绑到实体上，无需再操作了。如果你是通过第一种方式创建的，就需要将其绑定到节点上才能运行：
 1. 选择你想添加脚本的实体
    ![image-20210720205530946](https://gw.alipayobjects.com/zos/OasisHub/3f66f051-0a7e-4ef9-b4c6-041996ff590e/image-20210720205530946.png)
 
@@ -46,7 +46,7 @@ type: 编辑器
 ![image-20210720212141177](https://gw.alipayobjects.com/zos/OasisHub/a7a07bf4-bafb-44fb-b388-c9ddb776b704/image-20210720212141177.png)
 
 ### 代码编辑区
-代码编辑区会有Oasis创建的脚本模板代码， Oasis的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
+代码编辑区会有 `Oasis` 创建的脚本模板代码，  `Oasis` 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
 ```typescript
 import {Script} from 'oasis-engine';
 /**
@@ -93,16 +93,16 @@ export class Script1250228 extends Script {
 }
 ```
 
-> 注意：不要写空函数，如果需要使用某个生命周期函数时再写，这样性能可以得到一定的提升。
+> 注意：不要写空函数，需要使用某个生命周期函数时再写，这样性能更好。
 
 脚本的详细介绍见：[脚本组件](${docs}script-cn)
 
 当你修改完毕后，按 `Ctrl/CMD + S` 代码即可保存，右侧的实时预览区即可展现最新的效果。
 
 
-> 提示：Oasis的代码编辑器使用了vscode团队开源的monaco编辑器，编辑体验与快捷键与vscode基本一致
+> 提示： `Oasis` 的代码编辑器使用了 `Vscode` 团队开源的 `Monaco` 编辑器，编辑体验与快捷键与 `Vscode` 基本一致
 
-Oasis的代码编辑器还具有代码提示的功能，可以帮助你更加方便的编写代码。
+ `Oasis` 的代码编辑器还具有代码提示的功能，可以帮助你更加方便的编写代码。
 
 ![codeTip](https://gw.alipayobjects.com/zos/OasisHub/d8f14771-df23-4faf-bb22-6644aeb30df9/codeTip.gif)
 
