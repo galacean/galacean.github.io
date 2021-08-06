@@ -1,0 +1,19 @@
+---
+ order: 6
+ title: 几何体模型
+ type: 编辑器
+
+---
+
+几何体模型表示引擎当中预设的几何体类型，包括了盒子，球，平面等等。可以通过在节点上增加一个model，即可在编辑器视图出现对应的模型。
+
+![333](https://gw.alipayobjects.com/zos/OasisHub/8c47ad73-bd80-48a8-b446-380bd114f36a/333.gif)
+
+选中模型，在右侧的检查器面板上可以看到不同模型对应的属性，并并且可以调整type来更改默认的模型，比如切换到球或者平面：
+
+![111](https://gw.alipayobjects.com/zos/OasisHub/84cdf8d5-beb3-42ba-9f6d-0d9691abc580/111.gif)
+
+对于不同的模型，都有相对应的属性，例如对于盒子，可以调整长宽高，以及设置对应的材质。可以看到，在面板中调整参数后，编辑器视图会动态更新模型的外观：
+
+![222](https://gw.alipayobjects.com/zos/OasisHub/1e69890d-6503-4b79-9b3e-641c3b0114de/222.gif)
+
