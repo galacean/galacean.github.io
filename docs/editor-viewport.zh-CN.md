@@ -6,7 +6,7 @@ type: 编辑器
 
 ![image-20210719155730830](https://gw.alipayobjects.com/zos/OasisHub/2517d654-a676-411e-b4bc-5dde6680786c/image-20210719155730830.png)
 
-**视图区** 是主要是做场景编辑，我们可以在这里去布置所有的模型、灯光、特效等元素。并且可以选中模型用变换工具（Gizmo）去改变实体的位置（Position），旋转（Rotation）和缩放（Scale）。
+**视图区** 的主要作用是场景编辑，我们可以在这里布置所有的模型、灯光、特效等元素。并且可以选中模型用变换工具（Gizmo）去改变实体的位置（Position），旋转（Rotation）和缩放（Scale）。
 
 ## 编辑器相机操作
 
@@ -71,4 +71,14 @@ type: 编辑器
 ### 缩放
 
 ![gizmo-scale](https://gw.alipayobjects.com/zos/OasisHub/9ad7d8bb-5013-4dc0-ad1e-c01aef3ff1ca/gizmo-scale.gif)
+
+## 相机视角转换
+
+相机视角转换是将编辑器相机转换到场景相机，并且可以通过鼠标调整相机的坐标。
+
+![camera-transform](https://gw.alipayobjects.com/zos/OasisHub/e88e425e-a2bb-4fbb-b3af-af2c0aed4a59/camera-transform.gif)
+
+点击工具区即可开启，再次点击就可以关闭：
+
+![image-20210806150416229](/Users/husong/Library/Application Support/typora-user-images/image-20210806150416229.png)
 
