@@ -97,7 +97,7 @@ export class Script1250228 extends Script {
 
 脚本的详细介绍见：[脚本组件](${docs}script-cn)
 
-当你修改完毕后，按 `Ctrl/CMD + S` 代码即可保存，右侧的实时预览区即可展现最新的效果。
+当你修改完毕后，按 Ctrl/CMD + S 代码即可保存，右侧的实时预览区即可展现最新的效果。
 
 
 > 提示： Oasis 的代码编辑器使用了 VSCode 团队开源的 Monaco 编辑器，编辑体验与快捷键与 VSCode 基本一致
