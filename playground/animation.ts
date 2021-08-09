@@ -28,7 +28,7 @@ engine.resourceManager
       type: AssetType.Prefab
     },
     {
-      url: "https://gw-office.alipayobjects.com/basement_prod/3c140e43-e7d8-4c51-999e-1f68218afc54.jpg",
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*OStMT63k5o8AAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     }
   ])
