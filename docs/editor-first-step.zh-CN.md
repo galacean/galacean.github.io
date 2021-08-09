@@ -44,7 +44,7 @@ type: 编辑器
 
 ![image-20210730201757522](https://gw.alipayobjects.com/zos/OasisHub/dd7dbcdc-d048-4798-ba78-88a14d876ef0/image-20210730201757522.png)
 
-现在看起来场景搭建好了，可是方块和地面的材质过于接近，我们需要赋予方块一个新的材质。首先，在 **资源** 面板中右击添加一个 **BlinnPhong 材质** ：
+现在看起来场景搭建好了，可是方块和地面的材质过于接近，为了区分二者，我们最好赋予方块一个新的材质。首先，在 **资源** 面板中右击添加一个 **BlinnPhong 材质** ：
 
 ![create-material](https://gw.alipayobjects.com/zos/OasisHub/cfd04ad7-4301-4cdb-aff4-1580accd7da3/create-material.gif)
 
@@ -54,7 +54,7 @@ type: 编辑器
 
 ##  添加脚本
 
-接下去，我们为这个方块添加脚本组件，让它沿着 Y 轴 匀速旋转。和创建材质一样，在资产面板中右击创建脚本并重名，然后添加脚本组件到 *model* 节点：
+接下来，我们为这个方块添加脚本组件，让它沿着 Y 轴匀速旋转。和创建材质一样，在资产面板中右击创建脚本并重名，然后添加脚本组件到 *model* 节点：
 
 ![add-script](https://gw.alipayobjects.com/zos/OasisHub/b6a33f8d-f8e3-4e4d-9bcf-3ac6e3920f70/add-script.gif)
 
