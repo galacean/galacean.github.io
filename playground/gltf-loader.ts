@@ -366,25 +366,24 @@ class Oasis {
         material.name = "default";
       }
       const state = {
+        opacity: material.baseColor.a,
         baseColor: Oasis.colorToGui(material.baseColor),
         emissiveColor: Oasis.colorToGui((material as PBRBaseMaterial).emissiveColor),
         specularColor: Oasis.colorToGui((material as PBRSpecularMaterial).specularColor),
         baseTexture: material.baseTexture ? "origin" : "",
-        metallicRoughnessTexture: (material as PBRMaterial).metallicRoughnessTexture ? "origin" : "",
+        roughnessMetallicTexture: (material as PBRMaterial).roughnessMetallicTexture ? "origin" : "",
         normalTexture: (material as PBRBaseMaterial).normalTexture ? "origin" : "",
         emissiveTexture: (material as PBRBaseMaterial).emissiveTexture ? "origin" : "",
         occlusionTexture: (material as PBRBaseMaterial).occlusionTexture ? "origin" : "",
-        opacityTexture: (material as PBRBaseMaterial).opacityTexture ? "origin" : "",
         specularGlossinessTexture: (material as PBRSpecularMaterial).specularGlossinessTexture ? "origin" : ""
       };
 
       const originTexture = {
         baseTexture: material.baseTexture,
-        metallicRoughnessTexture: (material as PBRMaterial).metallicRoughnessTexture,
+        roughnessMetallicTexture: (material as PBRMaterial).roughnessMetallicTexture,
         normalTexture: (material as PBRBaseMaterial).normalTexture,
         emissiveTexture: (material as PBRBaseMaterial).emissiveTexture,
         occlusionTexture: (material as PBRBaseMaterial).occlusionTexture,
-        opacityTexture: (material as PBRBaseMaterial).opacityTexture,
         specularGlossinessTexture: (material as PBRSpecularMaterial).specularGlossinessTexture
       };
 
@@ -397,13 +396,13 @@ class Oasis {
       // metallic
       if (material instanceof PBRMaterial) {
         const mode1 = f.addFolder("金属模式");
-        mode1.add(material, "metallicFactor", 0, 1).step(0.01);
-        mode1.add(material, "roughnessFactor", 0, 1).step(0.01);
+        mode1.add(material, "metallic", 0, 1).step(0.01);
+        mode1.add(material, "roughness", 0, 1).step(0.01);
         mode1
-          .add(state, "metallicRoughnessTexture", ["None", "origin", ...Object.keys(this.textures)])
+          .add(state, "roughnessMetallicTexture", ["None", "origin", ...Object.keys(this.textures)])
           .onChange((v) => {
-            material.metallicRoughnessTexture =
-              v === "None" ? null : this.textures[v] || originTexture.metallicRoughnessTexture;
+            material.roughnessMetallicTexture =
+              v === "None" ? null : this.textures[v] || originTexture.roughnessMetallicTexture;
           });
         mode1.open();
       }
@@ -435,16 +434,14 @@ class Oasis {
       if (!(material instanceof UnlitMaterial)) {
         const common = f.addFolder("通用");
 
-        common.add(material, "envMapIntensity", 0, 2).step(0.01);
         common
-          .add(material, "opacity", 0, 1)
+          .add(state, "opacity", 0, 1)
           .step(0.01)
           .onChange((v) => {
-            material.opacity = v;
+            material.baseColor.a = v;
           });
         common.add(material, "isTransparent");
         common.add(material, "alphaCutoff", 0, 1).step(0.01);
-        common.add(material, "getOpacityFromRGB");
 
         common.addColor(state, "baseColor").onChange((v) => {
           Oasis.guiToColor(v, material.baseColor);
@@ -463,9 +460,6 @@ class Oasis {
         });
         common.add(state, "occlusionTexture", ["None", "origin", ...Object.keys(this.textures)]).onChange((v) => {
           material.occlusionTexture = v === "None" ? null : this.textures[v] || originTexture.occlusionTexture;
-        });
-        common.add(state, "opacityTexture", ["None", "origin", ...Object.keys(this.textures)]).onChange((v) => {
-          material.opacityTexture = v === "None" ? null : this.textures[v] || originTexture.opacityTexture;
         });
         common.open();
       }
