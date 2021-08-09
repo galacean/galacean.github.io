@@ -114,14 +114,14 @@ if (variants) {
 
 ### 插件支持
 
-Oasis 目前支持了以下插件：
+Oasis 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，则会自动加载相应功能：
 
 | 插件 | 功能 |
 | :-- | :-- |
 | [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | 支持 Draco 压缩模型，节省显存 |
-| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多种光源组合 |
-| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR 高光-光泽度工作流 |
+| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多光源组合，会解析成引擎的光源，详见[光照教程](${docs}light-cn) |
+| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR [高光-光泽度工作流](${api}core/PBRSpecularMaterial) |
 | [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | 支持 [Unlit 材质](https://oasisengine.cn/0.4/docs/artist-unlit-cn) |
-| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 支持多材质切换 |
-| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存 |
-| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理 [TilingOffset](https://oasisengine.cn/0.4/examples#tiling-offset)， 缩放位移变换 |
+| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 允许渲染器存在多个材质，然后通过 [setMaterial](${api}core/Renderer#setMaterial) 接口进行材质切换 |
+| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
+| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://oasisengine.cn/0.4/examples#tiling-offset) 案例 |
