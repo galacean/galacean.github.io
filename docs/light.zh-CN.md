@@ -27,16 +27,40 @@ ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
 ambientLight.diffuseIntensity = 0.5;
 ```
 
-#### 纹理模式
+#### 球谐模式
 
-现实世界中，漫反射肯定不是纯色的，我们可以加载一张立方体纹理作为环境颜色，并切换 `diffuseMode`：
+现实世界中，漫反射肯定不是纯色的，一般是比较**低频**的颜色变化，针对这种低频滤波，Oasis 通过 9 个[球谐系数](https://graphics.stanford.edu/papers/envmap/envmap.pdf)保存环境颜色，然后切换 `diffuseMode` 为球谐模式：
 
 ```typescript
 const ambientLight = scene.ambientLight;
 
-// IBL 漫反射
-ambientLight.diffuseMode = DiffuseMode.Texture;
-ambientLight.diffuseTexture = cubeTexture; // 加载相应立方体纹理
+// 球谐 漫反射
+ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+ambientLight.diffuseSphericalHarmonics = sh; // 通过烘焙等方式获取球谐系数
+```
+
+Oasis 提供了球谐烘焙的[工具库](https://github.com/oasis-engine/engine-baker)。可以先通过烘焙工具离线烘焙得到球谐系数，然后在运行时直接设置即可：
+
+```typescript
+// -----------离线烘焙-----------
+import { SphericalHarmonics3Baker } from "@oasis-engine/baker";
+
+const sh = new SphericalHarmonics3();
+
+// 离线烘焙 cubeTexture 到 sh
+SphericalHarmonics3Baker.fromTextureCubeMap(cubeTexture, sh);
+
+// 导出数组
+const arr = [];
+sh.toArray(arr);
+
+// -----------运行时-----------
+
+// 运行时可以直接使用，不用再进行上述烘焙过程
+ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+const sh = new SphericalHarmonics3();
+sh.setValueByArray(arr); // 通过上文导出的数组设置球谐
+ambientLight.diffuseSphericalHarmonics = sh;
 ```
 
 #### IBL 镜面反射

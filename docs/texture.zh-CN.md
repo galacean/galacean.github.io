@@ -241,9 +241,7 @@ skyMaterial.textureCubeMap = cubeTexture;
 
 ```typescript
 const ambientLight = scene.ambientLight;
-// IBL 漫反射
-ambientLight.diffuseMode = DiffuseMode.Texture;
-ambientLight.diffuseTexture = cubeTexture; // 加载相应立方体纹理
+
 // IBL 镜面反射
 ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
 ```
