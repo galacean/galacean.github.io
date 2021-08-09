@@ -18,9 +18,7 @@ type: 资源系统
 | :-- | :-- |
 | [baseColor](${api}core/PBRBaseMaterial#baseColor) | 基础颜色。**基础颜色** \* **基础颜色纹理** = **最后的基础颜色**。基础颜色是物体的反照率值,与传统的漫反射颜色不同，它会同时贡献镜面反射和漫反射的颜色，我们可以通过上面提到过的金属度、粗糙度，来控制贡献比。 |
 | [emissiveColor](${api}core/PBRBaseMaterial#emissiveColor) | 自发光颜色。使得即使没有光照也能渲染出颜色。 |
-| [opacity](${api}core/PBRBaseMaterial#opacity) | 透明度。当设置为透明模式后，可以通过透明度来调整透明度。 |
 | [baseTexture](${api}core/PBRBaseMaterial#baseTexture) | 基础颜色纹理。搭配基础颜色使用，是个相乘的关系。 |
-| [opacityTexture](${api}core/PBRBaseMaterial#opacityTexture) | 透明度纹理。搭配透明度使用，是相乘的关系，注意透明度模式的切换。 |
 | [normalTexture](${api}core/PBRBaseMaterial#normalTexture) | 法线纹理。可以设置法线纹理 ，在视觉上造成一种凹凸感，还可以通过法线强度来控制凹凸程度。 |
 | [emissiveTexture](${api}core/PBRBaseMaterial#emissiveTexture) | 自发射光纹理。我们可以设置自发光纹理和自发光颜色（[emissiveFactor](${api}core/PBRBaseMaterial#emissiveTexture)）达到自发光的效果，即使没有光照也能渲染出颜色。 |
 | [occlusionTexture](${api}core/PBRBaseMaterial#occlusionTexture) | 阴影遮蔽纹理。我们可以设置阴影遮蔽纹理来提升物体的阴影细节。 |
@@ -32,11 +30,9 @@ type: 资源系统
 
 | 参数 | 应用 |
 | :-- | :-- |
-| [metallicFactor](${api}core/PBRMaterial#metallicFactor) | 金属度。模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
-| [roughnessFactor](${api}core/PBRMaterial#roughnessFactor) | 粗糙度。模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
-| [metallicRoughnessTexture](${api}core/PBRMaterial#metallicRoughnessTexture) | 金属粗糙度纹理。搭配金属粗糙度使用，是相乘的关系。 |
-| [metallicTexture](${api}core/PBRMaterial#metallicTexture) | 金属度纹理。搭配金属度使用，是相乘的关系。 |
-| [roughnessTexture](${api}core/PBRMaterial#roughnessTexture) | 粗糙度纹理。搭配粗糙度使用，是相乘的关系。 |
+| [metallic](${api}core/PBRMaterial#metallic) | 金属度。模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
+| [roughness](${api}core/PBRMaterial#roughness) | 粗糙度。模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
+| [roughnessMetallicTexture](${api}core/PBRMaterial#roughnessMetallicTexture) | 金属粗糙度纹理。搭配金属粗糙度使用，是相乘的关系。 |
 
 <playground src="pbr-base.ts"></playground>
 
@@ -45,7 +41,7 @@ type: 资源系统
 | 参数 | 应用 |
 | :-- | :-- |
 | [specularColor](${api}core/PBRSpecularMaterial#specularColor) | 高光度。不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) |
-| [glossinessFactor](${api}core/PBRSpecularMaterial#glossinessFactor) | 光泽度。模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
+| [glossiness](${api}core/PBRSpecularMaterial#glossiness) | 光泽度。模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
 | [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | 高光光泽度纹理。搭配高光光泽度使用，是相乘的关系。 |
 
 > **注**：如果您使用了 PBR 材质，千万别忘了开启[环境光的 IBL 模式](${docs}light-cn#IBL模式)～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
@@ -127,7 +123,6 @@ const material = renderer.setMaterial(material);
 
 - 请先确保材质开启了透明度模式，即材质的 [isTransparent](${api}core/BaseMaterial#isTransparent) 属性设置为了 `true`。
 - 相应的材质的 [baseColor](${api}core/BlinnPhongMaterial#baseColor) 需要设置正确的透明度。如 `material.baseColor.a = 0.5`。透明度范围为 【0 ～ 1】，数值越小，越透明。
-- 如果还上传了透明度纹理，请先确保透明纹理是否含有透明通道，即是正常的 png 图片，如果不是的话，可以开启 `getOpacityFromRGB` 为 true 代表希望采样亮度值作为透明度。
 - 如果透明度渲染仍有异常，请确保材质的颜色混合度模式（[blendMode](${api}core/BaseMaterial#blendMode)）为期望的组合。
 - 有一些透明度渲染异常可能是因为没有关闭背面剔除，可以通过 [renderFace](${api}core/BaseMaterial#renderFace) 来设置想要渲染的面。
 - 如果是自定义材质，请确保设置了正确的混合模式，混合因子，关闭了深度写入，设置了正确的渲染队列。

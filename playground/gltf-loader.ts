@@ -409,7 +409,7 @@ class Oasis {
       // specular
       else if (material instanceof PBRSpecularMaterial) {
         const mode2 = f.addFolder("高光模式");
-        mode2.add(material, "glossinessFactor", 0, 1).step(0.01);
+        mode2.add(material, "glossiness", 0, 1).step(0.01);
         mode2.addColor(state, "specularColor").onChange((v) => {
           Oasis.guiToColor(v, material.specularColor);
         });
