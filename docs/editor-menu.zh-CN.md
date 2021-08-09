@@ -18,7 +18,7 @@ type: 编辑器
 
 ![set1.gif](https://img.alicdn.com/imgextra/i2/O1CN01Dit11q1YhGXZNv8j0_!!6000000003090-1-tps-286-98.gif)
 
-点击项目按钮可以打开项目管理的菜单，在其中可以 **克隆项目**，**下载项目**，和对当前项目使用的引擎做 **版本控制**。这其中还会显示出当前项目所使用的引擎版本。  
+点击项目按钮可以打开[项目管理](${docs}editor-projec-cn)的菜单，在其中可以 **克隆项目**，**下载项目**，和对当前项目使用的引擎做 **版本控制**。这其中还会显示出当前项目所使用的引擎版本。  
 
 ![image.png](https://img.alicdn.com/imgextra/i2/O1CN01jGVh1o1rzZ42dHa8B_!!6000000005702-2-tps-424-368.png)
 
