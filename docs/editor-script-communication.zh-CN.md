@@ -5,7 +5,7 @@ type: 编辑器
 group: 脚本
 ---
 
-开发完的3D项目往往还需要添加到真正的业务项目中和业务代码相结合。
+开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合。
 
 > Oasis 组件如何与业务代码进行双向的通信 ？
 
@@ -120,10 +120,10 @@ this.engine.dispatch('rotate');
 
 点击输入事件列表中的事件名右侧的编辑按钮，可以配置事件参数：
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cfsMSKvFq3cAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cfsMSKvFq3cAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*24eJSJ2T3oYAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*24eJSJ2T3oYAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
 点击触发按钮事件就被触发了：
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*GP1cSq2GJuYAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*GP1cSq2GJuYAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />

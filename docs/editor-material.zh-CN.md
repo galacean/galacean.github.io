@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 材质资产
+title: 材质
 type: 编辑器
 group: 资产
 ---

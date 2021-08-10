@@ -1,6 +1,6 @@
 ---
 order: 3.3
-title: Mars 组件
+title: Mars
 type: 编辑器
 group: 组件
 ---

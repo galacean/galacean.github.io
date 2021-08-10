@@ -1,9 +1,8 @@
 ---
-order: 2
-
-title: spine 组件
-
+order: 3.4
+title: Spine
 type: 编辑器
+group: 组件
 ---
 
 spine 组件用于给实体添加 spine 动画效果。

@@ -1,6 +1,6 @@
 ---
 order: 3.1
-title: 精灵渲染组件
+title: 精灵渲染
 type: 编辑器
 group: 组件
 ---

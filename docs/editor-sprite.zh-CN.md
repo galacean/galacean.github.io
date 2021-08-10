@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 精灵资源
+title: 精灵
 type: 编辑器
 group: 资产
 ---

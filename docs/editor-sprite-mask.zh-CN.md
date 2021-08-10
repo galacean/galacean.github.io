@@ -1,6 +1,6 @@
 ---
 order: 3.2
-title: 精灵遮罩组件
+title: 精灵遮罩
 type: 编辑器
 group: 组件
 ---

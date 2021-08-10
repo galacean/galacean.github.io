@@ -1,6 +1,6 @@
 ---
 order: 0 
-title: 模型资产
+title: 模型
 type: 编辑器
 group: 资产
 ---
