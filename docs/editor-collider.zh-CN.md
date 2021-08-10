@@ -1,8 +1,8 @@
 ---
-order: 32
+order: 1.4
 title: 碰撞体
 type: 编辑器
-author: 阿霑
+group: 组件
 ---
 
 ## 介绍

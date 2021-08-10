@@ -1,8 +1,8 @@
 ---
-order: 31
+order: 2
 title: 立方体纹理
 type: 编辑器
-author: 阿霑
+group: 资产
 ---
 
 ## 介绍

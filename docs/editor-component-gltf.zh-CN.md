@@ -1,9 +1,8 @@
 ---
-order: 7
-
+order: 2.1
 title: glTF 模型
-
 type: 编辑器
+group: 组件
 ---
 
 ## 介绍

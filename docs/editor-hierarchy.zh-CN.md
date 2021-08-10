@@ -1,12 +1,13 @@
 ---
-order: 4
+order: 3
 title: 层级面板
 type: 编辑器
+group: 基础操作
 ---
 
 层次面板场景中的实体节点用树形视图的方式显示，它位于编辑器的最左侧。场景节点总是出现在树的顶部。使用层级面板能够很方便的对场景中的节点进行查找和编辑。点击层级树中的某个节点会选中它，再次点击会取消选中。
 
-![image.png](https://img.alicdn.com/imgextra/i3/O1CN010JEnsw1aXJ9wTddi9_!!6000000003339-2-tps-624-788.png)
+<img src="https://img.alicdn.com/imgextra/i3/O1CN010JEnsw1aXJ9wTddi9_!!6000000003339-2-tps-624-788.png" alt="image.png" style="zoom:50%;" />
 
 ## 添加与删除实体
 

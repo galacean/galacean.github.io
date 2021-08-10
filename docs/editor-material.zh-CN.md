@@ -1,9 +1,8 @@
 ---
-order: 7
-
+order: 4
 title: 材质资产
-
 type: 编辑器
+group: 资产
 ---
 
 ## 介绍

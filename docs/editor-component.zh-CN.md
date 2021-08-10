@@ -1,7 +1,8 @@
 ---
-order: 4
+order: 6
 title: 添加组件
 type: 编辑器
+group: 基础操作
 ---
 
 Oasis Engine 的内置[组件](${docs}entity-cn#常用组件)可以通过编辑器的 *添加组件* 功能拼装功能，省去开发者写样板式代码的时间。

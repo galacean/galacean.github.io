@@ -1,9 +1,8 @@
 ---
-order: 7
-
+order: 0 
 title: 模型资产
-
 type: 编辑器
+group: 资产
 ---
 
 ## 介绍

@@ -1,8 +1,8 @@
 ---
-order: 30
+order: 1.3
 title: 光照
 type: 编辑器
-author: 阿霑
+group: 组件
 ---
 
 ## 介绍

@@ -1,7 +1,8 @@
 ---
-order: 12
+order: 1
 title: 导出支付宝小程序包
 type: 编辑器
+group: 发布
 ---
 
 Oasis Engine 也支持在支付宝小程序环境中运行。和[导出 Web 平台包](${docs}editor-export-web-cn)一样，Oasis 编辑器也支持导出小程序包，包中已经封装了许多小程序行为，使用请遵循[小程序自定义组件规范](https://opendocs.alipay.com/mini/framework/custom-component-overview)，构建使用的是 [sherry-appx 框架](http://sherry.alipay.net/appx/component/component.html#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B)。

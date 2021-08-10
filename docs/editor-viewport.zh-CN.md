@@ -1,7 +1,8 @@
 ---
-order: 6
-title: Viewport 视图区编辑
+order: 2
+title: 视图区
 type: 编辑器
+group: 基础操作
 ---
 
 ![image-20210719155730830](https://gw.alipayobjects.com/zos/OasisHub/2517d654-a676-411e-b4bc-5dde6680786c/image-20210719155730830.png)

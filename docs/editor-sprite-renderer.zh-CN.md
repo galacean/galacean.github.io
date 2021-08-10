@@ -1,7 +1,8 @@
 ---
-order: 8
+order: 3.1
 title: 精灵渲染组件
 type: 编辑器
+group: 组件
 ---
 
 精灵组件用于在 3D/2D 场景中显示图片，详见 [精灵组件](${docs}sprite-renderer-cn)。
