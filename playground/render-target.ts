@@ -4,6 +4,7 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
+  Animator,
   AssetType,
   BackgroundMode,
   Camera,
@@ -31,7 +32,9 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera");
 cameraEntity.addComponent(Camera);
 cameraEntity.transform.setPosition(0, 0, 10);
-cameraEntity.addComponent(OrbitControl);
+const control = cameraEntity.addComponent(OrbitControl);
+control.minDistance = 3;
+
 scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
 
 // Create planes to mock mirror
@@ -80,9 +83,13 @@ engine.resourceManager
 
 // Load glTF
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf")
+  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/8cc524dd-2481-438d-8374-3c933adea3b6.gltf")
   .then((gltf) => {
-    rootEntity.addChild(gltf.defaultSceneRoot);
+    const { animations, defaultSceneRoot } = gltf;
+
+    rootEntity.addChild(defaultSceneRoot);
+    const animator = defaultSceneRoot.getComponent(Animator);
+    animator.play(animations[0].name);
   });
 
 // Add script to switch `camera.renderTarget`
