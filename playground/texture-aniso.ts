@@ -33,6 +33,7 @@ cameraEntity.addComponent(OrbitControl);
 const mesh = PrimitiveMesh.createPlane(engine, 2, 2);
 const material = new UnlitMaterial(engine);
 material.renderFace = RenderFace.Double;
+material.tilingOffset.setValue(30, 30, 0, 0);
 const planeEntity = rootEntity.createChild("ground");
 planeEntity.transform.setRotation(-85, 0, 0);
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
@@ -41,7 +42,7 @@ planeRenderer.setMaterial(material);
 
 engine.resourceManager
   .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*aHXyTqXu1_IAAAAAAAAAAAAAARQnAQ",
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_CtuR7LW4C0AAAAAAAAAAAAAARQnAQ",
     type: AssetType.Texture2D
   })
   .then((texture) => {
