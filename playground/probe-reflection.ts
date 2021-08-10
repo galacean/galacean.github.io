@@ -21,7 +21,6 @@ import {
   SkyBoxMaterial,
   SphericalHarmonics3,
   TextureCubeMap,
-  Vector3,
   WebGLEngine
 } from "oasis-engine";
 
@@ -37,11 +36,16 @@ const gui = new dat.GUI();
 gui.domElement.style = "position:absolute;top:0px;left:50vw";
 
 const directLightNode = rootEntity.createChild("dir_light");
+const directLightNode2 = rootEntity.createChild("dir_light2");
 directLightNode.addComponent(DirectLight);
+directLightNode2.addComponent(DirectLight);
+
+directLightNode.transform.setRotation(30, 0, 0);
+directLightNode2.transform.setRotation(-30, 180, 0);
 
 // Create camera
 const cameraEntity = rootEntity.createChild("camera_node");
-cameraEntity.transform.position = new Vector3(0, 0, 5);
+cameraEntity.transform.setPosition(0, 0, 5);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 

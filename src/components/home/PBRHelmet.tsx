@@ -34,12 +34,16 @@ function init(): WebGLEngine {
   const rootEntity = scene.createRootEntity();
 
   const directLightNode = rootEntity.createChild("dir_light");
-  const directLight = directLightNode.addComponent(DirectLight);
-  directLight.color = new Color(1, 1, 1);
+  const directLightNode2 = rootEntity.createChild("dir_light2");
+  directLightNode.addComponent(DirectLight);
+  directLightNode2.addComponent(DirectLight);
+
+  directLightNode.transform.setRotation(30, 0, 0);
+  directLightNode2.transform.setRotation(-30, 180, 0);
 
   // -- create camera
   const cameraNode = rootEntity.createChild("camera_node");
-  cameraNode.transform.position = new Vector3(0, 0, 3);
+  cameraNode.transform.setPosition(0, 0, 3);
   cameraNode.addComponent(Camera);
   scene.background.solidColor.setValue(51 / 255, 51 / 255, 51 / 255, 1);
   const controls = cameraNode.addComponent(OrbitControl);

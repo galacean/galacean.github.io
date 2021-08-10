@@ -3,12 +3,10 @@
  * @category Material
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import * as dat from "dat.gui";
 import {
   AssetType,
   BackgroundMode,
   Camera,
-  Color,
   DiffuseMode,
   DirectLight,
   GLTFResource,
@@ -16,38 +14,27 @@ import {
   SkyBoxMaterial,
   SphericalHarmonics3,
   TextureCubeMap,
-  Vector3,
   WebGLEngine
 } from "oasis-engine";
 
 //-- create engine object
-let engine = new WebGLEngine("canvas");
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
-let scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.activeScene;
 const { ambientLight, background } = scene;
 const rootEntity = scene.createRootEntity();
 
-const color2glColor = (color) => new Color(color[0] / 255, color[1] / 255, color[2] / 255);
-const glColor2Color = (color) => new Color(color[0] * 255, color[1] * 255, color[2] * 255);
-const gui = new dat.GUI();
-gui.domElement.style = "position:absolute;top:0px;left:50vw";
-
-let envFolder = gui.addFolder("EnvironmentMapLight");
-envFolder.add(ambientLight, "specularIntensity", 0, 1);
-envFolder.add(ambientLight, "diffuseIntensity", 0, 1);
-
-let directLightColor = { color: [255, 255, 255] };
-let directLightNode = rootEntity.createChild("dir_light");
-let directLight = directLightNode.addComponent(DirectLight);
-let dirFolder = gui.addFolder("DirectionalLight1");
-dirFolder.add(directLight, "enabled");
-dirFolder.addColor(directLightColor, "color").onChange((v) => (directLight.color = color2glColor(v)));
-dirFolder.add(directLight, "intensity", 0, 1);
+const directLightNode = rootEntity.createChild("dir_light");
+const directLightNode2 = rootEntity.createChild("dir_light2");
+directLightNode.addComponent(DirectLight);
+directLightNode2.addComponent(DirectLight);
+directLightNode.transform.setRotation(30, 0, 0);
+directLightNode2.transform.setRotation(-30, 180, 0);
 
 //Create camera
-let cameraNode = rootEntity.createChild("camera_node");
-cameraNode.transform.position = new Vector3(0, 0, 5);
+const cameraNode = rootEntity.createChild("camera_node");
+cameraNode.transform.setPosition(0, 0, 5);
 cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
 
