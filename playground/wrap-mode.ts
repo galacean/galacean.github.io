@@ -45,12 +45,13 @@ planeRenderer.setMaterial(material);
 
 engine.resourceManager
   .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rO8wTYuzpAIAAAAAAAAAAAAAARQnAQ",
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rgNGR4Vb7lQAAAAAAAAAAAAAARQnAQ",
     type: AssetType.Texture2D
   })
   .then((texture) => {
     material.baseTexture = texture;
     addGUI(texture);
+    engine.run();
   });
 
 function addGUI(texture: Texture2D) {
@@ -72,5 +73,3 @@ function addGUI(texture: Texture2D) {
     }
   });
 }
-
-engine.run();

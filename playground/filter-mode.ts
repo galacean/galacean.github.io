@@ -48,6 +48,7 @@ engine.resourceManager
   .then((texture) => {
     material.baseTexture = texture;
     addGUI(texture);
+    engine.run();
   });
 
 function addGUI(texture: Texture2D) {
@@ -68,5 +69,3 @@ function addGUI(texture: Texture2D) {
     }
   });
 }
-
-engine.run();
