@@ -6,7 +6,7 @@ title: spine 资产
 type: 编辑器
 ---
 
-spine 资产包含 spine 动画的 json 文件，atlas图集文件，image 贴图文件。用于渲染 spine 动画效果。
+spine 资产包含 spine 动画的 json 文件，atlas 图集文件，image 贴图文件。用于渲染 spine 动画效果。
 
 
 

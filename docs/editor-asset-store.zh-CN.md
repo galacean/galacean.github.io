@@ -10,7 +10,7 @@ type: 编辑器
 
 
 
-进入项目后，在右侧能够看到资产库面板。资产库面板与检查器面板在相同位置的不同tab下。
+进入项目后，在右侧能够看到资产库面板。资产库面板与检查器面板在相同位置的不同 tab 下。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626765059791-772a06d9-fd23-42a8-9ea9-d22fad77d748.png" alt="img" style="zoom: 50%;" />
 
