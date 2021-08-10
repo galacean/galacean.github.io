@@ -80,5 +80,5 @@ type: 编辑器
 
 点击工具区即可开启，再次点击就可以关闭：
 
-![image-20210806150416229](/Users/husong/Library/Application Support/typora-user-images/image-20210806150416229.png)
+![image-20210806150416229](https://gw.alipayobjects.com/zos/OasisHub/c3af1c03-f79b-41be-ac63-aa33e78fa523/image-20210806150416229.png)
 
