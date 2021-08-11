@@ -654,10 +654,10 @@ export default function GLTFView(props: any) {
   useEffect(() => {
     let oasis: Oasis;
     const scripts = [
-      { dom: null, url: "https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js" },
+      { dom: null, url: "https://gw.alipayobjects.com/os/bmw-prod/2053244f-1709-41d1-bc2b-ff27a6689816.bin" },
       {
         dom: null,
-        url: "https://cdn.jsdelivr.net/npm/simple-dropzone@0.8.1/dist/simple-dropzone.umd.js"
+        url: "https://gw.alipayobjects.com/os/bmw-prod/e4aa24ce-182b-401c-b2e8-12456db0eb68.bin"
       }
     ];
     Promise.all(
