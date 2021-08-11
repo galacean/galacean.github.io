@@ -42,12 +42,12 @@ glTF 模型是一种高效传输的 3D 资源格式标准，实际上是一个 J
 
 如果模型很复杂，资源数量比较多，可以使用编辑器的筛选功能。
 
-![image-20210719170606534](https://gw.alipayobjects.com/zos/OasisHub/f0cf8db3-d89a-4a35-96cc-4561626a86f4/image-20210719170606534.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/f0cf8db3-d89a-4a35-96cc-4561626a86f4/image-20210719170606534.png" style="zoom:50%;" />
 
 4.**更多配置。** 编辑器支持对上传的模型资源进行二次加工，比如我们可以对 glTF 资源进行压缩：
 
-![image-20210719181013426](https://gw.alipayobjects.com/zos/OasisHub/27e2419c-1d8b-4f7e-9d17-4390c7255bba/image-20210719181013426.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/27e2419c-1d8b-4f7e-9d17-4390c7255bba/image-20210719181013426.png" style="zoom:50%;" />
 
 也可以替换 glTF 模型的材质：
 
-![image-20210719180514914](https://gw.alipayobjects.com/zos/OasisHub/c27f9f28-80cf-4167-bc57-0767d9e1b58e/image-20210719180514914.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c27f9f28-80cf-4167-bc57-0767d9e1b58e/image-20210719180514914.png" style="zoom:50%;" />
