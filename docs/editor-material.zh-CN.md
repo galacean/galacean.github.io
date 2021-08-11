@@ -23,7 +23,7 @@ type: 编辑器
 
 - 也可以在资源面板手动创建不同类型的材质：
 
-![image-20210719175600845](https://gw.alipayobjects.com/zos/OasisHub/01f73e82-8be1-4568-baca-a7de3baf17fb/image-20210719175600845.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/01f73e82-8be1-4568-baca-a7de3baf17fb/image-20210719175600845.png" style="zoom:50%;" />
 
 ## 调整渲染效果
 
