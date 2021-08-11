@@ -11,7 +11,7 @@ group: 基础操作
 
 ## 添加与删除实体
 
-一旦在层次结构中选定了一个实体，就可以创建一个新的子实体或删除选定内容。你可以使用层级面板右上角的 ![image.png](https://img.alicdn.com/imgextra/i2/O1CN0174RKfI1dp7PPeLmHn_!!6000000003784-2-tps-34-38.png) 按钮，或者通过在实体节点上右键点击来打开菜单。
+一旦在层次结构中选定了一个实体，就可以创建一个新的子实体或删除选定内容。你可以使用层级面板右上角的 <img src="https://img.alicdn.com/imgextra/i2/O1CN0174RKfI1dp7PPeLmHn_!!6000000003784-2-tps-34-38.png" alt="image.png" style="zoom:50%;" /> 按钮，或者通过在实体节点上右键点击来打开菜单。
 
 ### 搜索节点
 
@@ -30,7 +30,7 @@ group: 基础操作
 
 ### 删除节点
 
-层级面板右上角有一个回收站 ![image.png](https://img.alicdn.com/imgextra/i4/O1CN01i25J1t1MFXARTy5NA_!!6000000001405-2-tps-32-46.png) 按钮，点击某个实体后，再点击回收站按钮即可删除该节点
+层级面板右上角有一个回收站 <img src="https://img.alicdn.com/imgextra/i4/O1CN01i25J1t1MFXARTy5NA_!!6000000001405-2-tps-32-46.png" alt="image.png" style="zoom:50%;" /> 按钮，点击某个实体后，再点击回收站按钮即可删除该节点
 
 ![tree5.gif](https://img.alicdn.com/imgextra/i4/O1CN01eGhuHb1Zt0ItZsnzc_!!6000000003251-1-tps-305-312.gif)
 

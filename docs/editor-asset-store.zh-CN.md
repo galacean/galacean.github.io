@@ -5,7 +5,7 @@ type: 编辑器
 group: 资产
 ---
 
-资产库面板能够检索 [Oasis 资产库](https://oasis.alipay.com/store)内的资产。通过拖拽，能够将这些资产添加到项目的[资产面板](${docs}editor-store-panel.zh-CN)中。
+资产库面板能够检索 [Oasis 资产库](https://oasis.alipay.com/store)内的资产。通过拖拽，能够将这些资产添加到项目的[资产面板](${docs}editor-store-panel-cn)中。
 
 
 
@@ -13,8 +13,8 @@ group: 资产
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626765059791-772a06d9-fd23-42a8-9ea9-d22fad77d748.png" alt="img" style="zoom: 50%;" />
 
-通过拖拽资产库面板内的卡片到[资产面板](${docs}editor-store-panel.zh-CN)区域，即可完成资产的添加。
+通过拖拽资产库面板内的卡片到[资产面板](${docs}editor-store-panel-cn)区域，即可完成资产的添加。
 
-添加成功后，即可使用这些资产。如下图所示，通过添加 [GLTF 组件](${docs}editor-component-gltf.zh-CN)，实现了模型资产的展示。
+添加成功后，即可使用这些资产。如下图所示，通过添加 [GLTF 组件](${docs}editor-component-gltf-cn)，实现了模型资产的展示。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/76063/1626765529522-27526ec0-b69e-4d80-88e9-9d63ec40b531.gif" alt="img"  />

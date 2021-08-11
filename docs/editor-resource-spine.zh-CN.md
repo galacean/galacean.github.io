@@ -25,4 +25,4 @@ spine 资产包含 spine 动画的 json 文件，atlas 图集文件，image 贴�
 
 #### 资产使用
 
-spine 资产需要结合 spine 组件来实现 spine 动画效果，参考[ spine 组件文档](${docs}editor-component-spine.zh-CN)。
+spine 资产需要结合 spine 组件来实现 spine 动画效果，参考[ spine 组件文档](${docs}editor-component-spine-cn)。

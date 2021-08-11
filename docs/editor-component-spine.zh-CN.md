@@ -11,15 +11,15 @@ spine 组件用于给实体添加 spine 动画效果。
 
 ### 组件添加
 
-在[节点树](${docs}editor-hierarchy.zh-CN)中，创建并点击选中实体（Entity）。
+在[节点树](${docs}editor-hierarchy-cn)中，创建并点击选中实体（Entity）。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626681634222-8beabf17-8f7f-43de-8310-d18e32e27eac.png" alt="img" style="zoom:50%;" />
 
-在[检查器面板](${docs}editor-inspector.zh-CN)中，点击添加组件按钮，选择 spine 动画。
+在[检查器面板](${docs}editor-inspector-cn)中，点击添加组件按钮，选择 spine 动画。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626750041954-834ddb16-f66e-4f7b-b2b5-112f580e3714.png" alt="img" style="zoom:50%;" />
 
-添加完毕后，能够在[检查器面板](${docs}editor-inspector.zh-CN)中看到 spine 组件：
+添加完毕后，能够在[检查器面板](${docs}editor-inspector-cn)中看到 spine 组件：
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626682071627-aa55a319-fd35-44b4-adae-98fcababca86.png" alt="img" style="zoom:50%;" />
 
@@ -29,7 +29,7 @@ spine 组件用于给实体添加 spine 动画效果。
 
 #### 资产选择
 
-点击组件的 resource 选项，进入资产选择模式，选择资产面板中的 [spine 资产](${docs}editor-resource-spine.zh-CN)。
+点击组件的 resource 选项，进入资产选择模式，选择资产面板中的 [spine 资产](${docs}editor-resource-spine-cn)。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626750237947-f457782d-807c-4a04-87fa-10f99dbb1a0b.png" alt="img" style="zoom:50%;" />
 
@@ -50,9 +50,9 @@ spine 组件用于给实体添加 spine 动画效果。
 
 #### 脚本控制
 
-如果 spine 组件本身提供组件参数不能满足开发的需要，我们能够借助[脚本组件](${docs}editor-component-script.zh-CN)实现更加复杂的控制。
+如果 spine 组件本身提供组件参数不能满足开发的需要，我们能够借助[脚本组件](${docs}editor-component-script-cn)实现更加复杂的控制。
 
-如下图所示，在脚本的 `onAwake` 生命周期中，能够通过[事件系统](${docs}editor-script-communication.zh-CN)对外暴露 spine 动画播放事件。
+如下图所示，在脚本的 `onAwake` 生命周期中，能够通过[事件系统](${docs}editor-script-communication-cn)对外暴露 spine 动画播放事件。
 
 当事件触发时，会执行回调函数 `playAnimation`（左侧事件通信测试面板能手动触发事件）。
 

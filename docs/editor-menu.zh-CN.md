@@ -14,7 +14,7 @@ group: 基础操作
 <img src="https://img.alicdn.com/imgextra/i4/O1CN01gVf5E61hSSH3HUpgK_!!6000000004276-2-tps-782-76.png" alt="image.png" style="zoom:50%;" />  
 
 设置区域主要有四部分包含如下功能：切换项目、编辑当前项目的名称、本项目的管理和帮助信息。
-其中，点击 oasis logo图标(<img src="https://img.alicdn.com/imgextra/i2/O1CN012Po13d1b0A749y10f_!!6000000003402-2-tps-68-60.png" alt="image.png" style="zoom:50%;" />) 和首页按钮可以呼起项目管理的弹窗。
+其中，点击 oasis logo 和 首页按钮 可以呼起项目管理的弹窗。
 点击项目名称可以启动编辑状态，编辑完成后让输入栏失焦即可实时保存。  
 
 ![set1.gif](https://img.alicdn.com/imgextra/i2/O1CN01Dit11q1YhGXZNv8j0_!!6000000003090-1-tps-286-98.gif)
