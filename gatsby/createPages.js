@@ -165,12 +165,6 @@ async function createPlayground(graphql, actions) {
     path: `${version}/examples`,
     component: resolve(__dirname, '../src/pages/examples.tsx') 
   });
-
-  // gltf viewer page
-  // createPage({
-  //   path: `/gltf-viewer`,
-  //   component: resolve(__dirname, '../src/pages/gltf-viewer.tsx')
-  // });
 }
 
 module.exports = async ({ graphql, actions }) => {

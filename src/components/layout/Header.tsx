@@ -197,7 +197,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const menu = [
       <Menu mode={menuMode} selectedKeys={[activeMenuItem]} id="nav" key="nav">
         <Menu.Item key="home" icon={<HomeOutlined />}>
-          <Link to={utils.getLocalizedPathname('/', isZhCN)}>
+          <Link to="/">
             <FormattedMessage id="app.header.menu.home" />
           </Link>
         </Menu.Item>
@@ -221,6 +221,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>
+          {isZhCN &&
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.editor" })}>
             <Menu.Item key="editor-docs">
               <Link to={utils.getLocalizedPathname(`/${version}/docs/editor`, isZhCN)}>
@@ -228,6 +229,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </Link>
             </Menu.Item>
           </Menu.ItemGroup>
+          }
         </Menu.SubMenu>
         <Menu.Item key="examples" icon={<PlayCircleOutlined />}>
           <Link to={`/${version}/examples`}>
@@ -251,11 +253,13 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                 {formatMessage({ id: "app.header.menu.ecosystem.createapp" })}
               </Link>
             </Menu.Item>
+            {isZhCN &&
             <Menu.Item key="editor">
               <Link to="https://oasis.alipay.com/editor" target="_blank">
                 {formatMessage({ id: "app.header.menu.ecosystem.editor" })}
               </Link>
             </Menu.Item>
+            }
           </Menu.ItemGroup>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.animation" })}>
             <Menu.Item key="spine">
@@ -270,11 +274,13 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu.SubMenu>
-        <Menu.Item key="blog" icon={<NotificationOutlined />}>
-          <Link to={utils.getLocalizedPathname('/blog/', isZhCN)}>
-            <FormattedMessage id="app.header.menu.blog" />
-          </Link>
-        </Menu.Item>
+        {isZhCN &&
+          <Menu.Item key="blog" icon={<NotificationOutlined />}>
+            <Link to={utils.getLocalizedPathname('/blog/', isZhCN)}>
+              <FormattedMessage id="app.header.menu.blog" />
+            </Link>
+          </Menu.Item>
+        }
       </Menu>
     ];
 
