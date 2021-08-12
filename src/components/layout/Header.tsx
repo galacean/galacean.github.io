@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
 import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, PlayCircleOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
-import { Row, Col, Select, Input, Menu, Popover } from 'antd';
+import { Row, Col, Select, Input, Menu, Popover, Button } from 'antd';
 import * as utils from '../utils';
 import { version } from '../../../siteconfig.json';
 
@@ -313,11 +313,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </div>
               <div className="header-meta">
                 <div className="right-header">
-                  {/* <div id="lang">
+                  <div id="lang">
                     <Button onClick={this.handleLangChange} size="small">
                       <FormattedMessage id="app.header.lang" />
                     </Button>
-                  </div> */}
+                  </div>
                   {this.state.versions.length && this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value={version}>
                     {this.state.versions.map((v)=> {
                       return <Option value={v} key={v}>{`v${v}`}</Option>

@@ -8,21 +8,13 @@ const { resolve } = require('path');
 const { version } = require('../siteconfig.json');
 
 async function createHomepage(actions) {
-  const { createPage, createRedirect } = actions;
+  const { createRedirect } = actions;
 
   // Redirect /index.html to root.
   createRedirect({
     fromPath: '/index.html',
     redirectInBrowser: true,
     toPath: '/',
-  });
-
-  // 首页的中文版
-  const indexTemplate = resolve(__dirname, '../src/pages/index.tsx');
-
-  createPage({
-    path: '/index-cn',
-    component: indexTemplate,
   });
 }
 
