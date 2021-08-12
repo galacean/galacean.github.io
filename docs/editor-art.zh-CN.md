@@ -1,7 +1,7 @@
 ---
 order: 3
 title: 场景规格
-type: 编辑器
+type: 美术
 ---
 
 Oasis Engine 支持主流的 3D 建模软件（C4D、3ds Max、Maya、Blender）等导出 *.fbx* 文件。考虑到运行时的性能和兼容性问题，请美术注意 3D 场景规格：
