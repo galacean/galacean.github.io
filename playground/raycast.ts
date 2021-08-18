@@ -16,10 +16,10 @@ import {
   Ray,
   SphereCollider,
   Vector2,
-  Vector3,
+  Vector3, PointLight,
   WebGLEngine
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine/controls";
+import {OrbitControl} from "@oasis-engine/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -38,15 +38,20 @@ cameraEntity.addComponent(OrbitControl);
 scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
 scene.ambientLight.diffuseIntensity = 1.2;
 
+let light = rootEntity.createChild("light");
+light.transform.position = new Vector3(0, 3, 0);
+const p = light.addComponent(PointLight);
+p.intensity = 0.3;
+
 // create sphere test entity
 const sphereEntity = rootEntity.createChild("SphereEntity");
 sphereEntity.position = new Vector3(-2, 0, 0);
 const radius = 1.25;
 const mtl = new BlinnPhongMaterial(engine);
 const color = mtl.baseColor;
-color.r = Math.random();
-color.g = Math.random();
-color.b = Math.random();
+color.r = 0.7;
+color.g = 0.1;
+color.b = 0.1;
 color.a = 1.0;
 const renderer = sphereEntity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createSphere(engine, radius);
@@ -60,9 +65,9 @@ const cubeSize = 2.0;
 {
   const mtl = new BlinnPhongMaterial(engine);
   const color = mtl.baseColor;
-  color.r = Math.random();
-  color.g = Math.random();
-  color.b = Math.random();
+  color.r = 0.1;
+  color.g = 0.7;
+  color.b = 0.1;
   color.a = 1.0;
   const renderer = boxEntity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
@@ -71,6 +76,7 @@ const cubeSize = 2.0;
 const boxCollider = boxEntity.addComponent(BoxCollider);
 boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cubeSize));
 
+let mtl_reset;
 window.addEventListener("mousedown", (event: MouseEvent) => {
   const ray = new Ray();
   cameraEntity.getComponent(Camera).screenPointToRay(
@@ -82,17 +88,25 @@ window.addEventListener("mousedown", (event: MouseEvent) => {
   if (result) {
     const mtl = new BlinnPhongMaterial(engine);
     const color = mtl.baseColor;
-    color.r = Math.random();
-    color.g = Math.random();
-    color.b = Math.random();
+    color.r = 0.3;
+    color.g = 0.3;
+    color.b = 0.3;
     color.a = 1.0;
 
     const meshes: MeshRenderer[] = [];
     hit.collider.entity.getComponentsIncludeChildren(MeshRenderer, meshes);
     meshes.forEach((mesh: MeshRenderer) => {
+      const old_mtl = mesh.getMaterial()
+      mtl_reset = () => {
+        mesh.setMaterial(old_mtl);
+      }
       mesh.setMaterial(mtl);
     });
   }
+});
+
+window.addEventListener("mouseup", () => {
+  mtl_reset()
 });
 
 // Run engine
