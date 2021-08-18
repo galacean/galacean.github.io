@@ -3,7 +3,7 @@
  * @category Animation
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import { Animation, Camera, DirectLight, GLTFResource, Logger, Vector3, WebGLEngine } from "oasis-engine";
+import { Animator, Camera, DirectLight, GLTFResource, Logger, Vector3, WebGLEngine } from "oasis-engine";
 
 Logger.enable();
 
@@ -30,8 +30,8 @@ engine.resourceManager
     const { animations, defaultSceneRoot } = asset;
     rootEntity.addChild(defaultSceneRoot);
 
-    const animator = defaultSceneRoot.getComponent(Animation);
-    animator.playAnimationClip(animations[0].name);
+    const animator = defaultSceneRoot.getComponent(Animator);
+    animator.play(animations[0].name);
   });
 
 engine.run();
