@@ -49,6 +49,7 @@ engine.resourceManager
     material.baseTexture = texture;
     material.tilingOffset.setValue(30, 30, 0, 0);
     addGUI(texture);
+    engine.run();
   });
 
 function addGUI(texture: Texture2D) {
@@ -69,5 +70,3 @@ function addGUI(texture: Texture2D) {
     }
   });
 }
-
-engine.run();
