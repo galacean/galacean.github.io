@@ -1,5 +1,5 @@
 /**
- * @title Filter Mode
+ * @title Anisotropic
  * @category Texture
  */
 import { OrbitControl } from "@oasis-engine/controls";
@@ -11,7 +11,6 @@ import {
   PrimitiveMesh,
   RenderFace,
   Texture2D,
-  TextureFilterMode,
   UnlitMaterial,
   WebGLEngine
 } from "oasis-engine";
@@ -34,6 +33,7 @@ cameraEntity.addComponent(OrbitControl);
 const mesh = PrimitiveMesh.createPlane(engine, 2, 2);
 const material = new UnlitMaterial(engine);
 material.renderFace = RenderFace.Double;
+material.tilingOffset.setValue(30, 30, 0, 0);
 const planeEntity = rootEntity.createChild("ground");
 planeEntity.transform.setRotation(-85, 0, 0);
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
@@ -47,27 +47,11 @@ engine.resourceManager
   })
   .then((texture) => {
     material.baseTexture = texture;
-    material.tilingOffset.setValue(30, 30, 0, 0);
     addGUI(texture);
+    engine.run();
   });
 
 function addGUI(texture: Texture2D) {
-  const filterMap: Record<TextureFilterMode, string> = {
-    [TextureFilterMode.Point]: "Point",
-    [TextureFilterMode.Bilinear]: "Bilinear",
-    [TextureFilterMode.Trilinear]: "Trilinear"
-  };
-  const state = {
-    filterMode: filterMap[texture.filterMode]
-  };
-  gui.add(state, "filterMode", Object.values(filterMap)).onChange((v) => {
-    for (let key in filterMap) {
-      const value = filterMap[key];
-      if (v === value) {
-        texture.filterMode = Number(key);
-      }
-    }
-  });
+  const maxAnisoLevel = engine._hardwareRenderer.capability.maxAnisoLevel;
+  gui.add(texture, "anisoLevel", 1, maxAnisoLevel, 1);
 }
-
-engine.run();

@@ -150,6 +150,8 @@ texture.filterMode = TextureFilterMode.Bilinear;
 texture.anisoLevel = 4; // 1~16
 ```
 
+<playground src="texture-aniso.ts"></playground>
+
 
 #### 4. mipmap
 
