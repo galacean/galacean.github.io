@@ -166,6 +166,8 @@ texture.filterMode = TextureFilterMode.Bilinear;
 texture.anisoLevel = 4; // 1~16
 ```
 
+<playground src="texture-aniso.ts"></playground>
+
 #### 4. mipmap
 
 **引擎默认开启 [mipmap](${api}core/Texture#generateMipmaps)**（多级纹理渐变），mipmap 用来解决从低分辨率屏幕中采样高分辨率纹理时的精度和性能问题，即能在合适的距离时选取不同分辨率的纹理，如下图：

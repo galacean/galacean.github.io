@@ -16,7 +16,7 @@ type: 入门
 npm install --save oasis-engine
 ```
 
-1. 引入引擎模块
+2. 引入引擎模块
 
 ```typescript
 import { WebGLEngine, Camera } from 'oasis-engine';

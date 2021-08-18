@@ -50,6 +50,8 @@ const sh = new SphericalHarmonics3();
 // 离线烘焙 cubeTexture 到 sh
 SphericalHarmonics3Baker.fromTextureCubeMap(cubeTexture, sh);
 
+<playground src="ambient-light.ts"></playground>
+
 // 导出数组
 const arr = [];
 sh.toArray(arr);
@@ -119,3 +121,6 @@ lightEntity.color.setValue(0.3, 0.3, 1, 1);
 lightEntity.transform.setPosition(-10, 10, 10);
 lightEntity.transform.setRotation(-45, -45, 0);
 ```
+
+
+<playground src="light-type.ts"></playground>
