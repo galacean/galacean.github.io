@@ -96,9 +96,9 @@ background.texture = texture;
 
 | 适配模式        | 说明                                               |
 | --------------- | -------------------------------------------------- |
-| AspectFitWidth  | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
-| AspectFitHeight | 保持宽高比，把纹理高缩放至 Canvas 的高，左右居中。 |
-| Fill            | 把纹理的宽高填满 Canvas 的宽高。                   |
+| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth)  | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
+| [AspectFitHeight](${api}core/BackgroundTextureFillMode#AspectFitHeight) | 保持宽高比，把纹理高缩放至 Canvas 的高，左右居中。 |
+| [Fill](${api}core/BackgroundTextureFillMode#Fill)            | 把纹理的宽高填满 Canvas 的宽高。                   |
 
 默认的适配模式是 `BackgroundTextureFillMode.AspectFitHeight`。
 
