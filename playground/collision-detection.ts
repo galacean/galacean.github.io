@@ -8,7 +8,7 @@
 import {
   WebGLEngine, SphereCollider,
   BoxCollider, Vector3,
-  MeshRenderer, BlinnPhongMaterial,
+  MeshRenderer, BlinnPhongMaterial, PointLight,
   PrimitiveMesh, Camera, CollisionDetection, Script
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
@@ -29,6 +29,11 @@ cameraEntity.addComponent(OrbitControl);
 // init light
 scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
 scene.ambientLight.diffuseIntensity = 1.2;
+
+let light = rootEntity.createChild("light");
+light.transform.position = new Vector3(0, 3, 0);
+const p = light.addComponent(PointLight);
+p.intensity = 0.3;
 
 // create sphere test entity
 const sphereEntity = rootEntity.createChild("SphereEntity");
@@ -69,9 +74,9 @@ const cubeSize = 2.0;
 {
   const mtl = new BlinnPhongMaterial(engine);
   const color = mtl.baseColor;
-  color.r = Math.random();
-  color.g = Math.random();
-  color.b = Math.random();
+  color.r = 0.6;
+  color.g = 0.3;
+  color.b = 0.3;
   color.a = 1.0;
   const renderer = boxEntity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
