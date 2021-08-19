@@ -80,7 +80,7 @@ addDataGUI(skinnedMeshRenderer);
 function addDataGUI(skinnedMeshRenderer: SkinnedMeshRenderer): void {
   const gui = new dat.GUI();
   const guiData = {
-    blendShapeWeights: 0.0
+    blendShapeWeights: 1.0
   };
 
   gui.add(guiData, "blendShapeWeights", 0, 1).onChange((value: number) => {
