@@ -129,16 +129,16 @@ modelMesh.uploadData(false);
    ```typescript
    // Add BlendShape
    const deltaPositions = [
-     new Vector3( 0.0, -1.0,  0.0),
-     new Vector3( 0.0, -1.0,  0.0),
-     new Vector3( 0.0,  1.0,  0.0),
-     new Vector3( 0.0,  1.0,  0.0),
-     new Vector3( 0.0,  1.0,  0.0),
-     new Vector3( 0.0, -1.0,  0.0)
-   ];
-   const blendShape = new BlendShape("BlendShapeA");
-   blendShape.addFrame(1.0, deltaPositions);
-   modelMesh.addBlendShape(blendShape);
+      new Vector3(0.0, 0.0, 0.0),
+      new Vector3(0.0, 0.0, 0.0),
+      new Vector3(-1.0, 0.0, 0.0),
+      new Vector3(-1.0, 0.0, 0.0),
+      new Vector3(1.0, 0.0, 0.0),
+      new Vector3(0.0, 0.0, 0.0)
+    ];
+    const blendShape = new BlendShape("BlendShapeA");
+    blendShape.addFrame(1.0, deltaPositions);
+    modelMesh.addBlendShape(blendShape);
    ```
 
    
