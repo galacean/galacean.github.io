@@ -112,52 +112,11 @@ modelMesh.uploadData(false);
 
 `BlendShape` 通常用于制作精细程度非常高的动画，比如表情动画等。其原理也比较简单，主要通过权重混合基础形状和目标形状的网格数据来表现形状之间过度的动画效果。
 
+**glTF 导入 BlendShape 动画案例：**
 <playground src="skeleton-animation-blendShape.ts"></playground>
 
-### 代码示例
-
-```TypeScript
-const entity = rootEntity.createChild('mesh-example');
-const skinnedMeshRenderer = entity.addComponent(SkinnedMeshRenderer);
-
-const modelMesh = new ModelMesh(engine);
-
-// Set vertieces data
-const positions = [
-  new Vector3(-1.0, -1.0,  1.0),
-  new Vector3( 1.0, -1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3(-1.0,  1.0,  1.0),
-  new Vector3(-1.0, -1.0,  1.0)
-];
-modelMesh.setPositions(positions);
-
-// Add SubMesh
-modelMesh.addSubMesh(0, 6);
-
-// Upload data
-modelMesh.uploadData(false);
-
-// Add BlendShape
-const deltaPositions = [
-  new Vector3( 0.0, -1.0,  0.0),
-  new Vector3( 0.0, -1.0,  0.0),
-  new Vector3( 0.0,  1.0,  0.0),
-  new Vector3( 0.0,  1.0,  0.0),
-  new Vector3( 0.0,  1.0,  0.0),
-  new Vector3( 0.0, -1.0,  0.0)
-];
-const blendShape = new BlendShape("BlendShapeA");
-blendShape.addFrame(1.0, deltaPositions);
-modelMesh.addBlendShape(blendShape);
-
-skinnedMeshRenderer.mesh = modelMesh;
-skinnedMeshRenderer.setMaterial(new UnlitMaterial(engine));
-
-// Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
-skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
-```
+**脚本自定义 BlendShape 动画案例：**
+<playground src="skeleton-animation-customBlendShape.ts"></playground>
 
 ### 详细步骤
 
