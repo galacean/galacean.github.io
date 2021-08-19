@@ -41,7 +41,7 @@ meshRenderer.setMaterial(new UnlitMaterial(engine));
 
 ### 详细介绍
 
-`ModelMesh` 的使用分有三步：
+`ModelMesh` 的使用分为三步：
 
 1. **设置数据**
 
@@ -67,7 +67,7 @@ modelMesh.setColors([
 ]);
 ```
 
-设置数据的 API 有，可以根据需求选择性设置（注意位置是必要数据且需要最先设置）：
+设置数据的 API 有：
 
 | API                                                   | 说明                   |
 | ----------------------------------------------------- | ---------------------- |
@@ -79,6 +79,8 @@ modelMesh.setColors([
 | [setBoneWeights](${api}core/ModelMesh#setBoneWeights) | 设置逐顶点骨骼权重     |
 | [setBoneIndices](${api}core/ModelMesh#setBoneIndices) | 设置逐顶点骨骼索引数据 |
 | [setUVs](${api}core/ModelMesh#setUVs)                 | 设置逐顶点 uv 数据     |
+
+可以根据需求选择性设置（注意位置是必要数据且需要最先设置）。
 
 2. **添加 SubMesh**
 
@@ -108,7 +110,7 @@ modelMesh.uploadData(false);
 
 ## 脚本添加 BlendShape 动画
 
-`BlendShape` 通常用于制作精细程度非常高的动画，比如表情动画等。其原理也比较简单，主要通过权重混合当前形状和目标形状，来达到形状之间过度的动画效果。
+`BlendShape` 通常用于制作精细程度非常高的动画，比如表情动画等。其原理也比较简单，主要通过权重混合基础形状和目标形状的网格数据来表现形状之间过度的动画效果。
 
 <playground src="skeleton-animation-blendShape.ts"></playground>
 
@@ -161,7 +163,7 @@ skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
 
 1. **组织`BlendShape`数据**
 
-   首先我们先创建一个`BlendShape` 对象，然后调用 `addFrame()` 添加混合形状的帧数据，其中**位置**是必须的，**法线**和**切线**为可选参数。
+   首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame)添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
 
    然后我们通过`Mesh`的`addBlendShape()` 方法添加创建好的`BlendShape`。
 
@@ -184,7 +186,7 @@ skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
 
 2. **通过权重调整至目标 `BlendShape`**
 
-   现在我们将网格的形状完全调整为刚才添加的`BlendShape`，我们需要设置一个权重数组，并把第一个元素的值设置为1.0。
+   现在我们要将网格的形状完全调整为刚才添加的`BlendShape`，我们需要设置一个权重数组，由于我们只添加了一个`BlendShape`，所以权重数组长度为1即可，并把第一个元素的值设置为1.0。
 
    ```typescript
    // Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
