@@ -8,45 +8,59 @@
 import {
   WebGLEngine, SphereCollider,
   BoxCollider, Vector3,
-  MeshRenderer, BlinnPhongMaterial,
+  MeshRenderer, BlinnPhongMaterial, PointLight,
   PrimitiveMesh, Camera, CollisionDetection, Script
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine/controls";
+import {OrbitControl} from "@oasis-engine/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
 
-// init camera
-const cameraEntity = rootEntity.createChild("camera");
-cameraEntity.addComponent(Camera);
-const pos = cameraEntity.transform.position;
-pos.setValue(10, 10, 10);
-cameraEntity.transform.position = pos;
-cameraEntity.addComponent(OrbitControl);
-
-// init light
 scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
 scene.ambientLight.diffuseIntensity = 1.2;
 
+// init camera
+const cameraEntity = rootEntity.createChild("camera");
+cameraEntity.addComponent(Camera);
+cameraEntity.transform.setPosition(10, 10, 10);
+cameraEntity.addComponent(OrbitControl);
+
+// init point light
+let light = rootEntity.createChild("light");
+light.transform.setPosition(0, 3, 0);
+const pointLight = light.addComponent(PointLight);
+pointLight.intensity = 0.3;
+
+// create box test entity
+const cubeSize = 2.0;
+const boxEntity = rootEntity.createChild("BoxEntity");
+
+const boxMtl = new BlinnPhongMaterial(engine);
+const boxRenderer = boxEntity.addComponent(MeshRenderer);
+boxMtl.baseColor.setValue(0.6, 0.3, 0.3, 1.0);
+boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
+boxRenderer.setMaterial(boxMtl);
+
+const boxCollider = boxEntity.addComponent(BoxCollider);
+boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cubeSize));
+
 // create sphere test entity
-const sphereEntity = rootEntity.createChild("SphereEntity");
-sphereEntity.position = new Vector3(-2, 0, 0);
 const radius = 1.25;
-const mtl = new BlinnPhongMaterial(engine);
-const color = mtl.baseColor;
-color.r = Math.random();
-color.g = Math.random();
-color.b = Math.random();
-color.a = 1.0;
-const renderer = sphereEntity.addComponent(MeshRenderer);
-renderer.mesh = PrimitiveMesh.createSphere(engine, radius);
-renderer.setMaterial(mtl);
+const sphereEntity = rootEntity.createChild("SphereEntity");
+sphereEntity.transform.setPosition(-2, 0, 0);
+
+const sphereMtl = new BlinnPhongMaterial(engine);
+const sphereRenderer = sphereEntity.addComponent(MeshRenderer);
+sphereMtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
+sphereRenderer.setMaterial(sphereMtl);
+
 const sphereCollider = sphereEntity.addComponent(SphereCollider);
 sphereCollider.setSphere(new Vector3(), radius);
 
-class Move extends Script {
+class MoveScript extends Script {
   pos: Vector3 = new Vector3(-5, 0, 0);
   vel: number = 0.005;
 
@@ -61,52 +75,20 @@ class Move extends Script {
   }
 }
 
-sphereEntity.addComponent(Move);
-
-// create box test entity
-const boxEntity = rootEntity.createChild("BoxEntity");
-const cubeSize = 2.0;
-{
-  const mtl = new BlinnPhongMaterial(engine);
-  const color = mtl.baseColor;
-  color.r = Math.random();
-  color.g = Math.random();
-  color.b = Math.random();
-  color.a = 1.0;
-  const renderer = boxEntity.addComponent(MeshRenderer);
-  renderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
-  renderer.setMaterial(mtl);
-}
-const boxCollider = boxEntity.addComponent(BoxCollider);
-boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cubeSize));
-
-// add CollisionDetection
-sphereEntity.addComponent(CollisionDetection);
-
+// Collision Detection
 class CollisionScript extends Script {
   onTriggerExit() {
-    const mtl = new BlinnPhongMaterial(engine);
-    const color = mtl.baseColor;
-    color.r = Math.random();
-    color.g = Math.random();
-    color.b = Math.random();
-    color.a = 1.0;
-    renderer.setMaterial(mtl);
+    (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0)
   }
 
   onTriggerEnter() {
-    const mtl = new BlinnPhongMaterial(engine);
-    const color = mtl.baseColor;
-    color.r = Math.random();
-    color.g = Math.random();
-    color.b = Math.random();
-    color.a = 1.0;
-    renderer.setMaterial(mtl);
+    (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0)
   }
 }
 
-// add Script
+sphereEntity.addComponent(CollisionDetection);
 sphereEntity.addComponent(CollisionScript);
+sphereEntity.addComponent(MoveScript);
 
 // Run engine
 engine.run();
