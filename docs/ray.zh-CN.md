@@ -13,27 +13,33 @@ type: 组件
 
 ## 使用射线投射
 
-在使用射线投射，首先要在代码中引入 [Ray](${api}math/Ray) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${api}core/Camera#viewportPointToRay)）将屏幕输入转化成射线；最后调用 [scene.raycast](${api}core/Scene#raycast)  方法即可检测射线投射命中的碰撞体。代码如下：
+在使用射线投射，首先要在代码中引入 [Ray](${api}math/Ray) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${api}core/Camera#viewportPointToRay)）将屏幕输入转化成射线；最后调用 [PhysicsManager.raycast](${api}core/PhysicsManager#raycast)  方法即可检测射线投射命中的碰撞体。代码如下：
 
 
 ```typescript
 // 加载 Raycast 模块
-import { Ray } from 'oasis-engine';
+import { WebGLEngine, HitResult, Ray } from 'oasis-engine';
+
+const engine = new WebGLEngine("canvas");
+engine.canvas.resizeByClientSize();
 
 // 自定义 Ray
 let ray = new Ray([0, 0, 0], [0, 0, 1]);
-let collider = scene.raycast(ray);
-if (collider) {
-  console.log(collider);
+let result = scene.raycast(ray);
+if (result) {
+  console.log("hit on the object");
 }
 
 // 将屏幕输入转换成Ray
 document.getElementById('canvas').addEventListener('click', (e) => {
   const ratio = window.devicePixelRatio;
   camera.screenPointToRay(new Vector2(e.offsetX, e.offsetY).scale(ratio), ray);
-  collider = scene.raycast(ray);
-  if (collider) {
-    console.log(collider);
+  const hit = new HitResult();
+  result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Everything, hit);
+  if (result) {
+    console.log(hit.entity.name);
   }
 });
 ```
+
+需要特别指出，如果想要对Entity启用射线投射，该Entity就必须拥有Collider，否则无法触发。

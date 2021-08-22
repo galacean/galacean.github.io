@@ -47,10 +47,6 @@ varying vec3 v_position;
 varying vec3 v_normal;
 
 
-uniform float uTime;
-
-uniform sampler2D u_texture;
-
 void main() {
 
   gl_Position = u_MVPMat  *  vec4( POSITION, 1.0 );

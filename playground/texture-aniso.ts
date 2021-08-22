@@ -1,5 +1,5 @@
 /**
- * @title Wrap Mode
+ * @title Anisotropic
  * @category Texture
  */
 import { OrbitControl } from "@oasis-engine/controls";
@@ -7,12 +7,10 @@ import * as dat from "dat.gui";
 import {
   AssetType,
   Camera,
-  CullMode,
   MeshRenderer,
   PrimitiveMesh,
+  RenderFace,
   Texture2D,
-  TextureFilterMode,
-  TextureWrapMode,
   UnlitMaterial,
   WebGLEngine
 } from "oasis-engine";
@@ -27,25 +25,24 @@ const rootEntity = scene.createRootEntity();
 
 // Create camera
 const cameraEntity = rootEntity.createChild("Camera");
-cameraEntity.transform.setPosition(0, 0, 5);
+cameraEntity.transform.setPosition(0, 0, 1);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 
 // Create Plane
 const mesh = PrimitiveMesh.createPlane(engine, 2, 2);
 const material = new UnlitMaterial(engine);
-material.tilingOffset.x = 2;
-material.tilingOffset.y = 2;
-material.isTransparent = true;
-material.renderState.rasterState.cullMode = CullMode.Off;
-const planeEntity = rootEntity.createChild("plane");
+material.renderFace = RenderFace.Double;
+material.tilingOffset.setValue(30, 30, 0, 0);
+const planeEntity = rootEntity.createChild("ground");
+planeEntity.transform.setRotation(-85, 0, 0);
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
 planeRenderer.mesh = mesh;
 planeRenderer.setMaterial(material);
 
 engine.resourceManager
   .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rgNGR4Vb7lQAAAAAAAAAAAAAARQnAQ",
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_CtuR7LW4C0AAAAAAAAAAAAAARQnAQ",
     type: AssetType.Texture2D
   })
   .then((texture) => {
@@ -55,21 +52,6 @@ engine.resourceManager
   });
 
 function addGUI(texture: Texture2D) {
-  const wrapModeMap: Record<TextureFilterMode, string> = {
-    [TextureWrapMode.Clamp]: "Clamp",
-    [TextureWrapMode.Repeat]: "Repeat",
-    [TextureWrapMode.Mirror]: "Mirror"
-  };
-  const state = {
-    wrapMode: wrapModeMap[texture.wrapModeU]
-  };
-  gui.add(state, "wrapMode", Object.values(wrapModeMap)).onChange((v) => {
-    for (let key in wrapModeMap) {
-      const value = wrapModeMap[key];
-      if (v === value) {
-        texture.wrapModeU = Number(key);
-        texture.wrapModeV = Number(key);
-      }
-    }
-  });
+  const maxAnisoLevel = engine._hardwareRenderer.capability.maxAnisoLevel;
+  gui.add(texture, "anisoLevel", 1, maxAnisoLevel, 1);
 }
