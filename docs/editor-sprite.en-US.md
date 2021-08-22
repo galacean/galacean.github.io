@@ -4,7 +4,7 @@ title: Sprite Resource
 type: Editor
 ---
 
-[Sprite](${api}core/Sprite) is a 2D graphic object used for characters, props, bullets and some other 2D game elements. These graphics are obtained from [Texture2D](${docs}texture-cn). The [Sprite](${api}core/Sprite) class mainly identifies the part of the image applied to a specific `Sprite`. Then the [SpriteRenderer](${docs}sprite-renderer-cn) component on [Entity](${docs}entity-cn) can use this information to actually display graphics, [Entity](${docs}entity-cn ) On the [SpriteMask](${docs}sprite-mask-cn) component can use this information to represent the mask area. See [Spirite Resources](${docs}sprite-cn) for details.
+[Sprite](${api}core/Sprite) is a 2D graphic object used for characters, props, bullets and some other 2D game elements. These graphics are obtained from [Texture2D](${docs}texture-cn). The [Sprite](${api}core/Sprite) class mainly identifies the part of the image applied to a specific `Sprite`. Then the [SpriteRenderer](${docs}sprite-renderer-cn) component on [Entity](${docs}entity-cn) can use this information to actually display graphics, [Entity](${docs}entity-cn ) On the [SpriteMask](${docs}sprite-mask-cn) component can use this information to represent the mask area. See [Sprite Resources](${docs}sprite-cn) for details.
 
 ## Usage
 

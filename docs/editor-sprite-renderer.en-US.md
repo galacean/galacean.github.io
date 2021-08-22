@@ -8,7 +8,7 @@ The sprite renderer component is used to display images in a 3D/2D scene, see [S
 
 ## Add SpriteRenderer component
 
-When you need to display a image, you need to add a sprite renderer component to an entity first, as follows:
+When you need to display an image, a sprite renderer component should be added to an entity first, as follows:
 
 ![sprite-renderer-create](https://gw.alipayobjects.com/zos/OasisHub/93905eee-26ff-4479-b620-aa524729c213/tttttt.gif)
 

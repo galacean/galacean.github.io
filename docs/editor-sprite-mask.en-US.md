@@ -8,7 +8,7 @@ The sprite mask component is used to mask the [sprite](${docs}editor-sprite-rend
 
 ## Add sprite mask component
 
-When we need to mask a sprite, we first need to create an entity and add the sprite mask component, as follows:
+When we need to mask a sprite, an new entity with the sprite mask component can be created as follows:
 
 ![mask-create](https://gw.alipayobjects.com/zos/OasisHub/cb173a1d-addd-4ad0-bf23-83a7817200cd/mask-create.gif)
 

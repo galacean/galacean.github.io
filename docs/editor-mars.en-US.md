@@ -14,7 +14,7 @@ Before using our engine to play Mars special effects, designers need to use Mars
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lhieRKWLn64AAAAAAAAAAAAAARQnAQ)
 
-2. Select a entity and add the Mars component as follows:
+2. Select an entity and add the Mars component as follows:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*zIECQJ0MzCsAAAAAAAAAAAAAARQnAQ)
 
