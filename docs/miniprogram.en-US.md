@@ -1,60 +1,59 @@
 ---
 order: 0
-title: 支付宝/淘宝小程序
-type: 小程序
+title: Mini Program
+type: miniprogram
 ---
 
-目前 Oasis 已经适配到支付宝和淘宝小程序。本教程默认开发者已经具备一定的小程序开发能力，如果没有，请阅读下面教程，下载小程序开发工具及申请 AppId：
+At present, Oasis has been adapted to Alipay and Taobao miniprogram. This tutorial defaults that the developer has a certain ability to develop miniprograms. If not, please read the following tutorial, download the miniprogram development tools and apply for AppId:
 
-- [支付宝小程序](https://opendocs.alipay.com/mini/developer)
-- [淘宝小程序](https://miniapp.open.taobao.com/docV3.htm?docId=119114&docType=1&tag=dev)
+-[Alipay Mini Program](https://opendocs.alipay.com/mini/developer) -[Taobao Mini Program](https://miniapp.open.taobao.com/docV3.htm?docId=119114&docType=1&tag=dev)
 
-## 创建 Oasis 小程序项目
+## Create Oasis Mini Program Project
 
-> 需要 Node.js 版本 >=12.0.0.
+> Requires Node.js version >=12.0.0.
 
-使用 yarn 创建
+Create with yarn
 
 ```shell
 yarn create @oasis-engine/oasis-app --template miniprogram
 ```
 
-使用 npm **6.x** 版本创建
+Created with npm **6.x** version
 
 ```
 npm init @oasis-engine/oasis-app --template miniprogram
 ```
 
-使用 npm **7.x** 版本创建
+Created with npm **7.x** version
 
-```she
+```shell
 npm init @oasis-engine/oasis-app -- --template miniprogram
 ```
 
-**根据提示**完成后续步骤后，可以使用小程序开发工具打开项目：
+**Follow the prompts** After completing the next steps, you can use the miniprogram development tool to open the project:
 
 ![image-20210609164550721](https://gw.alipayobjects.com/zos/OasisHub/3e2df40f-6ccd-4442-85f8-69233d04b3b5/image-20210609164550721.png)
 
-选择对应目录即可，顺利的话可以看到：
+Just select the corresponding directory, if it goes well, you can see:
 
 ![image-20210609164816776](https://gw.alipayobjects.com/zos/OasisHub/04386e9c-b882-41f7-8aa6-a1bf990d578b/image-20210609164816776.png)
 
-## 已有项目使用 Oasis
+## Existing projects use Oasis
 
-本教程假设你已经有一定开发能力，若不熟悉小程序开发，请详细阅读[小程序开发文档](https://opendocs.alipay.com/mini/developer)。
+This tutorial assumes that you already have certain development capabilities. If you are not familiar with mini program development, please read [Mini Program Development Document](https://opendocs.alipay.com/mini/developer) in detail.
 
-1. 在项目目录中打开 `Terminal`，安装依赖：
+1. Open `Terminal` in the project directory and install dependencies:
 
 ```shell
-# 使用 npm
+# use npm
 npm install oasis-engine --save
 npm install @oasis-engine/miniprogram-adapter --save
-# 使用 yarn
+# use yarn
 yarn add oasis-engine
 yarn add @oasis-engine/miniprogram-adapter
 ```
 
-2. 在小程序项目配置文件 `app.json` 里添加下面配置项：
+2. Add the following configuration items in the applet project configuration file `app.json`:
 
 ```json
 {
@@ -68,21 +67,23 @@ yarn add @oasis-engine/miniprogram-adapter
 }
 ```
 
-3. 在需要添加互动的 axml 页面里加入 canvas 标签
+3. Add the canvas tag to the `axml` page that needs to be interactive
 
 ```html
 <canvas onReady="onCanvasReady" id="canvas" type="webgl" />
 ```
 
-使用 `onReady` 配置 `canvas` 初始化回调。需要设置 `canvas` 的 id，后面会用到。
+Use `onReady` to configure `canvas` initialization callback. Need to set the id of `canvas`, which will be used later.
 
-4. 在页面的 `.js` 代码文件里添加回调函数，使用 `my._createCanvas` 创建所需的 canvas 上下文，之后在 `success` 回调里使用 oasis 即可.
+4. Add a callback function to the `.js` code file of the page, use `my._createCanvas` to create the required canvas context, and then use oasis in the `success` callback.
 
-注意：
-  1. 使用 `import * as OASIS from "oasis-engine/dist/miniprogram"` 引入小程序依赖。
-  2. 需要使用『@oasis-engine/miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
+Note:
 
-详情可以参考下面代码：
+1. Use `import * as OASIS from "oasis-engine/dist/miniprogram"` to import the dependencies of miniprogram。
+2. Use `registerCanvas` which imported from `@oasis-engine/miniprogram-adapter` to register `canvas`。
+
+For example:
+
 ```js
 import * as OASIS from "oasis-engine/dist/miniprogram";
 import { registerCanvas } from "@oasis-engine/miniprogram-adapter";
@@ -92,17 +93,17 @@ Page({
 		my._createCanvas({
 			id: "canvas",
 			success: (canvas) => {
-        // 注册 canvas
+        // register canvas
 				registerCanvas(canvas);
-        // 适配 canvas 大小
+        // adapt canvas size
         const info = my.getSystemInfoSync();
         const { windowWidth, windowHeight, pixelRatio, titleBarHeight } = info;
         canvas.width = windowWidth * pixelRatio;
         canvas.height = (windowHeight - titleBarHeight) * pixelRatio;
 
-        // 创建引擎
+        // create engine
         const engine = new OASIS.WebGLEngine(canvas);
-        // 剩余代码和 Oasis Web 版本一致
+        // The remaining code is consistent with the Oasis Web version
         ...
 			},
 		});
@@ -110,11 +111,10 @@ Page({
 })
 ```
 
-## 项目发布
+## Project release
 
-- [支付宝小程序](https://opendocs.alipay.com/mini/introduce/release)
-- [淘宝小程序](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
+-[Alipay Mini Program](https://opendocs.alipay.com/mini/introduce/release) -[Taobao Mini Program](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
 
-## 更多 Oasis 小程序案例
+## More Oasis Mini Program Cases
 
-正在建设中...
+Coming soon...
