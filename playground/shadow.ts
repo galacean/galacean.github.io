@@ -1,5 +1,5 @@
 /**
- * @title Spot Light
+ * @title Shadow
  * @category Light
  */
 import { OrbitControl } from "@oasis-engine/controls";
