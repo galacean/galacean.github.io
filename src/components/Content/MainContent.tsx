@@ -201,26 +201,67 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
       'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库','美术', '编辑器', '小程序'],
       'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other', 'Editor'],
     };
+
+    const groupOrder = {
+      '编辑器': ['介绍', '基础操作', '资产', '组件', '脚本', '发布'],
+    };
+
+    const sortItems = (items) => {
+      return (items as MenuDataItem[])
+        .sort((a, b) => {
+          if ('time' in a && 'time' in b) {
+            return moment(b.time).valueOf() - moment(a.time).valueOf();
+          }
+          if ('order' in a && 'order' in b) {
+            return a.order - b.order;
+          }
+          return a.title.charCodeAt(0) - b.title.charCodeAt(0);
+        })
+        .map(this.generateMenuItem.bind(this, footerNavIcons))
+    }
+
     const itemGroups = Object.keys(obj)
       .filter(isNotTopLevel)
       .sort((a, b) => order[lang].findIndex(item => item === a) - order[lang].findIndex(item => item === b))
       .map((type) => {
-        const groupItems = (obj[type] as MenuDataItem[])
-          .sort((a, b) => {
-            if ('time' in a && 'time' in b) {
-              return moment(b.time).valueOf() - moment(a.time).valueOf();
+        const itemOrders = groupOrder[type];
+        const items = obj[type];
+        if (itemOrders) {
+          const itemsMap = {};
+
+          for (let i = 0; i < items.length; i++) {
+            const item = items[i];
+            const { group } = item;
+            if (!itemsMap[group]) {
+              itemsMap[group] = [];
             }
-            if ('order' in a && 'order' in b) {
-              return a.order - b.order;
-            }
-            return a.title.charCodeAt(0) - b.title.charCodeAt(0);
+
+            itemsMap[group].push(item);
+          }
+
+          const groupItems = itemOrders.map((group) => {
+            const items = sortItems(itemsMap[group]);
+
+            return <Menu.ItemGroup key={group} title={group}>
+              {items}
+            </Menu.ItemGroup>
           })
-          .map(this.generateMenuItem.bind(this, footerNavIcons));
-        return (
-          <SubMenu title={type} key={type}>
-            {groupItems}
-          </SubMenu>
-        );
+
+          return (
+            <SubMenu title={type} key={type}>
+              {groupItems}
+            </SubMenu>
+          );
+
+        } else {
+          const groupItems = sortItems(items);
+
+          return (
+            <SubMenu title={type} key={type}>
+              {groupItems}
+            </SubMenu>
+          );
+        }
       });
     return [...topLevel, ...itemGroups];
   };

@@ -14,6 +14,7 @@ import {
   MeshRenderer,
   ModelMesh,
   PrimitiveMesh,
+  RenderFace,
   Script,
   Texture2D,
   Vector3,
@@ -55,6 +56,7 @@ function init(): void {
 
       // Create material
       const material = new BlinnPhongMaterial(engine);
+      material.renderFace = RenderFace.Double;
       material.baseTexture = texture;
 
       for (let i = 0; i < 3; i++) {

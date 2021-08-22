@@ -14,6 +14,7 @@ import {
   GLTFResource,
   PrimitiveMesh,
   SkyBoxMaterial,
+  SphericalHarmonics3,
   TextureCubeMap,
   Vector3,
   WebGLEngine
@@ -68,22 +69,6 @@ Promise.all([
   engine.resourceManager
     .load<TextureCubeMap>({
       urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Bk5FQKGOir4AAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_cPhR7JMDjkAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*trqjQp1nOMQAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_RXwRqwMK3EAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*q4Q6TroyuXcAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*DP5QTbTSAYgAAAAAAAAAAAAAARQnAQ"
-      ],
-      type: AssetType.TextureCube
-    })
-    .then((cubeMap) => {
-      ambientLight.diffuseMode = DiffuseMode.Texture;
-      ambientLight.diffuseTexture = cubeMap;
-    }),
-  engine.resourceManager
-    .load<TextureCubeMap>({
-      urls: [
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5bs-Sb80qcUAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rLUCT4VPBeEAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*LjSHTI5iSPoAAAAAAAAAAAAAARQnAQ",
@@ -96,6 +81,19 @@ Promise.all([
     .then((cubeMap) => {
       ambientLight.specularTexture = cubeMap;
       skyMaterial.textureCubeMap = cubeMap;
+
+      ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+
+      const sh = new SphericalHarmonics3();
+      sh.setValueByArray([
+        1.8788462324918593, 1.7312828350173162, 2.192336144643786, -0.6525031748653022, -0.8654715759989732,
+        -1.4377779850288188, -0.8416757486504501, -0.41179952604695474, -0.1938213424322001, -1.3376251509896964,
+        -0.8442529811610728, -0.6636745076744581, 0.4910727199644451, 0.34840739912192364, 0.28813369830776675,
+        0.32862785633745595, 0.19673766013799854, 0.10167597732474559, 0.13255842780633711, 0.11016791384190244,
+        0.05570034532455586, 1.0923561959080181, 0.5169269988464549, 0.29335295647453824, 1.0160477739941591,
+        0.4602609485053868, 0.0878602808986376
+      ]);
+      ambientLight.diffuseSphericalHarmonics = sh;
     })
 ]).then(() => {
   engine.run();

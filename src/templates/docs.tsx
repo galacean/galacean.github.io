@@ -25,6 +25,7 @@ export interface IFrontmatterData extends IMarkDownFields {
     fields: IMarkDownFields;
   };
   previous: { frontmatter: IGraphqlFrontmatterData; fields: IMarkDownFields };
+  group?: string;
 }
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
@@ -141,6 +142,7 @@ export const pageQuery = graphql`
             order
             type
             time
+            group
           }
           fields {
             slug

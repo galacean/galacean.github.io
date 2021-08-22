@@ -3,7 +3,7 @@
  * @category Benchmark
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import { Animation, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
+import { Animator, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -25,10 +25,10 @@ engine.resourceManager
   .load([
     {
       url: "https://gw.alipayobjects.com/os/loanprod/bf055064-3eec-4d40-bce0-ddf11dfbb88a/5d78db60f211d21a43834e23/4f5e6bb277dd2fab8e2097d7a418c5bc.gltf",
-      type: AssetType.Perfab
+      type: AssetType.Prefab
     },
     {
-      url: "https://gw-office.alipayobjects.com/basement_prod/3c140e43-e7d8-4c51-999e-1f68218afc54.jpg",
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*OStMT63k5o8AAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     }
   ])
@@ -52,7 +52,7 @@ engine.resourceManager
         transform.setScale(0.5, 0.5, 0.5);
         transform.setPosition(i * 1.0 - 3.0, j * 1.2, -j * 3.5);
 
-        huabeiClone.getComponent(Animation).playAnimationClip("A");
+        huabeiClone.getComponent(Animator).play("A");
       }
     }
   });
