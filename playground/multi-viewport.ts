@@ -7,7 +7,6 @@ import {
   WebGLEngine,
   CameraClearFlags,
   DirectLight,
-  Logger,
   AssetType,
   Camera,
   Vector3,
@@ -21,7 +20,6 @@ import {
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 
-Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
