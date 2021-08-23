@@ -2,10 +2,24 @@
  * @title Multi Camera
  * @category Camera
  */
-import * as o3 from "oasis-engine";
+
 import {
-  CameraClearFlags, DirectLight, Logger, AssetType, Entity,
-  BackgroundMode, SkyBoxMaterial, PrimitiveMesh, Layer, Script
+  CameraClearFlags,
+  DirectLight,
+  Logger,
+  AssetType,
+  Entity,
+  Camera,
+  WebGLEngine,
+  Vector3,
+  MeshRenderer,
+  BlinnPhongMaterial,
+  Color,
+  BackgroundMode,
+  SkyBoxMaterial,
+  PrimitiveMesh,
+  Layer,
+  Script
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 import {SpineAnimation} from "@oasis-engine/spine";
@@ -25,7 +39,7 @@ class RotateScript extends Script {
 }
 
 Logger.enable();
-const engine = new o3.WebGLEngine("canvas");
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const {background} = scene;
@@ -33,24 +47,24 @@ const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 // init full screen camera
 const cameraEntity = rootEntity.createChild("fullscreen-camera");
-const camera = cameraEntity.addComponent(o3.Camera);
+const camera = cameraEntity.addComponent(Camera);
 camera.cullingMask = Layer.Layer0;
 camera.clearFlags = CameraClearFlags.Depth;
 cameraEntity.transform.setPosition(10, 10, 10);
-cameraEntity.transform.lookAt(new o3.Vector3(0, 0, 0));
+cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 cameraEntity.addComponent(OrbitControl);
 
-const lightNode = rootEntity.createChild("Light");
-lightNode.transform.setRotation(-30, 0, 0);
-lightNode.addComponent(DirectLight);
+const lightEntity = rootEntity.createChild("Light");
+lightEntity.transform.setRotation(-30, 0, 0);
+lightEntity.addComponent(DirectLight);
 
 // init cube
 const cubeEntity = rootEntity.createChild("cube");
 cubeEntity.transform.setPosition(-3, 0, 3);
-const renderer = cubeEntity.addComponent(o3.MeshRenderer);
-renderer.mesh = o3.PrimitiveMesh.createCuboid(engine, 2, 2, 2);
-const material = new o3.BlinnPhongMaterial(engine);
-material.baseColor = new o3.Color(1, 0.25, 0.25, 1);
+const renderer = cubeEntity.addComponent(MeshRenderer);
+renderer.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
+const material = new BlinnPhongMaterial(engine);
+material.baseColor = new Color(1, 0.25, 0.25, 1);
 renderer.setMaterial(material);
 cubeEntity.addComponent(RotateScript);
 
@@ -59,7 +73,7 @@ cubeEntity.addComponent(RotateScript);
 const windowEntity = engine.sceneManager.activeScene.createRootEntity();
 windowEntity.layer = Layer.Layer1;
 const windowCameraEntity = windowEntity.createChild("window-camera");
-const windowCamera = windowCameraEntity.addComponent(o3.Camera);
+const windowCamera = windowCameraEntity.addComponent(Camera);
 windowCamera.cullingMask = Layer.Layer1;
 windowCamera.viewport.setValue(0.5, 0.2, 0.3, 0.6);
 windowCamera.clearFlags = CameraClearFlags.Depth;
@@ -78,12 +92,12 @@ engine.resourceManager
     type: "spine"
   })
   .then((spineEntity: Entity) => {
-        const clone = spineEntity.clone();
-        clone.layer = Layer.Layer1;
-        windowEntity.addChild(clone);
-        const spineAnimation = clone.getComponent(SpineAnimation);
-        spineAnimation.state.setAnimation(0, "walk", true);
-        spineAnimation.scale = 0.01;
+    const clone = spineEntity.clone();
+    clone.layer = Layer.Layer1;
+    windowEntity.addChild(clone);
+    const spineAnimation = clone.getComponent(SpineAnimation);
+    spineAnimation.state.setAnimation(0, "walk", true);
+    spineAnimation.scale = 0.01;
   });
 
 engine.resourceManager
@@ -97,17 +111,6 @@ engine.resourceManager
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
-      ],
-      type: AssetType.TextureCube
-    },
-    {
-      urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Bk5FQKGOir4AAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_cPhR7JMDjkAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*trqjQp1nOMQAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_RXwRqwMK3EAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*q4Q6TroyuXcAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*DP5QTbTSAYgAAAAAAAAAAAAAARQnAQ"
       ],
       type: AssetType.TextureCube
     }
