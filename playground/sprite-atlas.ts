@@ -18,7 +18,7 @@ cameraEntity.addComponent(Camera).isOrthographic = true;
 
 engine.resourceManager
   .load<SpriteAtlas>({
-    url: "https://gw.alipayobjects.com/os/bmw-prod/af68c012-e164-4f7f-81bc-46a2272f1dfb.atlas",
+    url: "https://gw.alipayobjects.com/os/bmw-prod/c4ccf5ec-3b3b-4c08-bf65-5092d014f797.atlas",
     type: AssetType.SpriteAtlas
   })
   .then((atlas) => {
