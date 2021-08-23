@@ -78,13 +78,17 @@ cullingMask 案例：
 - `可视区域模型`
 - `是否有近大远小的效果`
 
-因此在实际项目中使用时，一般会以想要获得的视觉效果来确定投影的类型，比如当需要展示 2D 效果时，就会选择正交投影，当需要展示 3D 效果时，就会选择透视投影。
+因此在实际项目中使用时，一般会以想要获得的视觉效果来确定投影的类型，比如当需要展示 2D 效果时，就选择正交投影，当需要展示 3D 效果时，就选择透视投影。
+
+<playground src="ortho-switch.ts"></playground>
 
 ## Q&A
 
 ### 当场景中有多个相机时会如何渲染？
 
 首先回顾之前提到的属性 `priority` ，`renderTarget` 和 `viewport` ，当一个场景中同时有多个相机的时候，每次调用渲染时我们会根据 `priority` 来确定相机队列渲染的属性，根据 `viewport` 确定最后需要渲染到 `renderTarget` 的哪些范围内。
+
+<playground src="multi-viewport.ts"></playground>
 
 ### 相机和相机控件如何配合使用？
 
