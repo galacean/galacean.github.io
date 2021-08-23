@@ -6,7 +6,7 @@ type: Artist
 
 Taking the bake of the C4D-OC renderer under the Windows platform as an example.
 
-### What is Baking?
+### Introduction
 
 Baking is to expressed all rendered material colors information in the form of a texture.
 
@@ -48,7 +48,7 @@ The details of the random wiring are different, but the visible parts of the two
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*gsxbTZBSKGQAAAAAAAAAAAAAARQnAQ)
 
-If you are not very satisfied with the baking results, C4D and Substance Painter can both paint and modify the texture. Realistic rendering is not the only chooice. Painting textures can also be used to restore some special styles.
+If you are not very satisfied with the baking results, C4D and Substance Painter can both paint and modify the texture. Realistic rendering is not the only choice. Painting textures can also be used to restore some special styles.
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*PCz8TpYJd5wAAAAAAAAAAAAAARQnAQ)
 

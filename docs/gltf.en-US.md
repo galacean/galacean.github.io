@@ -117,7 +117,7 @@ Oasis currently supports the following glTF plugins, if the corresponding plugin
 | Plugin | Feature |
 | :-- | :-- |
 | [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | Support DRACO compression model to save GPU memory |
-| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | Support multi-light combination, it resolve the light source of the engine, see [Light tutorial](${docs}light) |
+| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | Support multi-light combination, it resolves the light source of the engine, see [Light tutorial](${docs}light) |
 | [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | Support PBR [specular-glossiness workflow](${api}core/PBRSpecularMaterial) |
 | [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | Support [Unlit Material](https://oasisengine.cn/0.4/docs/artist-unlit) |
 | [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | Allow the renderer to exist multiple materials, then make material switching via [setMaterial](${api}core/Renderer#setMaterial) API |

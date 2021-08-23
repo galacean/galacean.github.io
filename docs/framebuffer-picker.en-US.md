@@ -4,7 +4,7 @@ title: FrameBuffer Picker
 type: Second party library
 ---
 
-In 3D applications, you often need to pick up the object in the scene, [RayCast-Collision](${docs}ray) is a common method, it will pick up in the CPU, **it performance better, but the accuracy is poor** , because the bounding is relatively simple, the complex model cannot be picked up.
+In 3D applications, you often need to pick up the object in the scene, [RayCast-Collision](${docs}ray) is a common method, it will pick up in the CPU, **it's performance better, but the accuracy is poor** , because the bounding is relatively simple, the complex model cannot be picked up.
 
 When the pick-up frequency is not high, you can consider [FramebufferPicker](${api}framebuffer-picker/FramebufferPicker); when the picked frequency is too high, it is necessary to assess the performance overhead the business scene, because the underlying layer will be CPU-GPU communication, that is, calls `gl.readpixels`.
 

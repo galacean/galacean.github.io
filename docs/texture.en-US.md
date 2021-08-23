@@ -39,7 +39,7 @@ Oasis provides the [RenderTarget](${api}core/RenderTarget) class to perform off-
 | Type | Usage |
 | :-- | :-- |
 | Color texture（[RenderColorTexture](${api}core/RenderColorTexture)） | Color texture, <br> color cubic texture, <br> multiple color texture (MRT) |
-| Depth texture（[RendeDepthTexture](${api}core/RenderDepthTexture)） | Depth texture, <br> depth cubic texture |
+| Depth texture（[RenderDepthTexture](${api}core/RenderDepthTexture)） | Depth texture, <br> depth cubic texture |
 | Texture combination | Color Texture + Depth Texture, <br> Color Cube Texture + Depth Cube Texture, <br> Multi Color Texture + Depth Texture  |
 
 ## Generate texture
@@ -103,7 +103,7 @@ texture.setPixelBuffer(data);
 
 ## Texture properties
 
-After uploading the texture, we need to understand some of the basic properties of the texture:
+After uploading the texture, we need to understand some basic properties of the texture:
 
 | properties | value |
 | :-- | :-- |

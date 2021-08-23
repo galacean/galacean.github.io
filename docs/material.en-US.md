@@ -16,7 +16,7 @@ Engine and editor have fully advocated the use of PBR materials. **PBR means phy
 
 | Parameter | Feature |
 | :-- | :-- |
-| [baseColor](${api}core/PBRBaseMaterial#baseColor) | **baseColor** \* **baseTexture** = **final color**. base color is the albeo color of the material, different from traditional diffuse color, it will contribute to the color of the specular reflection and diffuse reflection, we can control the contribution ratio by the `metallicFactor` and `roughnessFactor`. |
+| [baseColor](${api}core/PBRBaseMaterial#baseColor) | **baseColor** \* **baseTexture** = **final color**. base color is the albedo color of the material, different from traditional diffuse color, it will contribute to the color of the specular reflection and diffuse reflection, we can control the contribution ratio by the `metallicFactor` and `roughnessFactor`. |
 | [emissiveColor](${api}core/PBRBaseMaterial#emissiveColor) | `emissiveColor` can make the color rendered even if there is no light. |
 | [opacity](${api}core/PBRBaseMaterial#opacity) | When set to transparent mode, the transparency can be adjusted by `opacity`. |
 | [baseTexture](${api}core/PBRBaseMaterial#baseTexture) | With the `baseColor`, it is a multiplied relationship. |
@@ -115,7 +115,7 @@ The following parameters can be directly used in [UnlitMaterial](${api}core/Unli
 | parameter | Feature |
 | :-- | :-- |
 | [isTransparent](${api}core/BaseMaterial#isTransparent) | You can set whether the material is transparent. If it is set to transparent, you can set the color blending mode by [BlendMode](${api}core/BaseMaterial#blendMode). |
-| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | You can set the transparency cutoff value to specify the value whose transparency is less than this value to be discard in the fragment shader. |
+| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | You can set the transparency cutoff value to specify the value whose transparency is less than this value to be discarded in the fragment shader. |
 | [renderFace](${api}core/BaseMaterial#renderFace) | Can decide to render the front, back or double side. |
 | [blendMode](${api}core/BaseMaterial#blendMode) | After setting the material to be transparent, you can set this enumeration to determine the color blending mode, refer to [playground](${examples}blend-mode). |
 

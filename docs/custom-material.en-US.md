@@ -86,9 +86,9 @@ In addition to the built-in variables, we can upload any variable with a custom 
 
 ### ShaderData separate benefits
 
-The shaderData are saved in the four categories [Scene](${api}core/Scene), [Camera](${api}core/Camera), [Renderer](${api}core/Renderer), [Material ](${api}core/Material) of the engine, one of the benefits is that the bottom layer can upload a block of uniform according to the upload timing to improve performance; in addition, the material-independent shaderData can be stripped out to achieve shared materials, ie. two renderer shares one material, although the same shader must be controlled, but the upload of this part of the shader data comes from the shaderData of the two renderers, it will not affect each other's rendering results.
+The shaderData are saved in the four categories [Scene](${api}core/Scene), [Camera](${api}core/Camera), [Renderer](${api}core/Renderer), [Material ](${api}core/Material) of the engine, one of the benefits is that the bottom layer can upload a block of uniform according to the upload timing to improve performance; in addition, the material-independent shaderData can be stripped out to achieve shared materials, i.e. two renderer shares one material, although the same shader must be controlled, but the upload of this part of the shader data comes from the shaderData of the two renderers, it will not affect each other's rendering results.
 
-ie.
+i.e.
 
 ```typescript
 const renderer1ShaderData = renderer1.shaderData;
@@ -227,7 +227,7 @@ For more options about the rendering state, please refer to the corresponding [A
 
 So far, the custom material has been very perfect, but maybe we need to do some processing on the rendering order of the objects. For example, the transparent objects is generally rendered behind the opaque queue. Therefore, the engine provides [RenderQueueType](${api}core/RenderQueueType), the rendering queue of the material can determine the rendering order of this material in the current scene, and the bottom layer of the engine will perform some special processing on the rendering queue of different ranges, such as [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) will render **from far to near**. It is worth noting that the value of the render queue can be an enumerated value plus any custom number.
 
-ie.
+i.e.
 
 ```typescript
 material.renderQueueType = RenderQueueType.Opaque + 1;
