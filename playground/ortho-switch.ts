@@ -11,12 +11,10 @@ import {
   BlinnPhongMaterial,
   Color,
   Vector3,
-  DirectLight,
-  Logger
+  DirectLight
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 
-Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
@@ -37,6 +35,7 @@ lightEntity.addComponent(DirectLight);
 createCube(0, 0, 0);
 createCube(6.5, 0, 6.5);
 createCube(-6.5, 0, -6.5);
+addGUI();
 
 engine.run();
 
@@ -57,6 +56,3 @@ function addGUI() {
   camera.isOrthographic = true;
   cameraFolder.add(camera, "isOrthographic");
 }
-
-addGUI();
-
