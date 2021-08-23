@@ -141,12 +141,12 @@ function createCustomMesh(engine: Engine, size: number, randomColorScript: Rando
 
   // Create gpu vertex buffer and index buffer.
   const posNorBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, positionNormals, BufferUsage.Static);
-  const colorBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, colorData, BufferUsage.Dynamic);
+  const independentColorBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, colorData, BufferUsage.Dynamic);
   const indexBuffer = new Buffer(engine, BufferBindFlag.IndexBuffer, indices, BufferUsage.Static);
 
   // Bind buffer
   cubeMesh.setVertexBufferBinding(posNorBuffer, 24, 0);
-  cubeMesh.setVertexBufferBinding(colorBuffer, 12, 1);
+  cubeMesh.setVertexBufferBinding(independentColorBuffer, 12, 1);
   cubeMesh.setIndexBufferBinding(indexBuffer, IndexFormat.UInt16);
 
   // Add vertexElement
@@ -161,7 +161,7 @@ function createCustomMesh(engine: Engine, size: number, randomColorScript: Rando
 
   // Set `vertexColors` and `colorBuffer` to `randomColorScript`.
   randomColorScript.colorData = colorData;
-  randomColorScript.colorBuffer = colorBuffer;
+  randomColorScript.colorBuffer = independentColorBuffer;
 
   return cubeMesh;
 }
