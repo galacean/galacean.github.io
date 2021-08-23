@@ -19,7 +19,8 @@ import {
   SkyBoxMaterial,
   PrimitiveMesh,
   Layer,
-  Script
+  Script,
+  TextureCubeMap
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 import {SpineAnimation} from "@oasis-engine/spine";
@@ -31,9 +32,9 @@ class RotateScript extends Script {
   /**
    * @override
    * The main loop, called frame by frame.
-   * @param deltaTime - The deltaTime when the script update.
+   * @param _deltaTime - The deltaTime when the script update.
    */
-  onUpdate(_: number): void {
+  onUpdate(_deltaTime: number): void {
     this.entity.transform.rotate(0.0, 0.6, 0);
   }
 }
@@ -101,9 +102,7 @@ engine.resourceManager
   });
 
 engine.resourceManager
-  //@ts-ignore
-  .load<TextureCubeMap[]>([
-    {
+  .load<TextureCubeMap>({
       urls: [
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
@@ -114,8 +113,8 @@ engine.resourceManager
       ],
       type: AssetType.TextureCube
     }
-  ])
-  .then(([cubeMap1]) => {
+  )
+  .then((cubeMap1) => {
     // 添加天空盒背景
     background.mode = BackgroundMode.Sky; // 默认纯色背景
     const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
