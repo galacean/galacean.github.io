@@ -30,7 +30,7 @@ The following demo:
 
 ## More cases
 
-glTF has a lot of features, the official website provides a large number of [examples] (https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) for reference, and Oasis also provides a reprinted version For a quick overview, you can switch between different glTF models through the following **GLTF List**.
+glTF has a lot of features, the official website provides many [examples](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) for reference, and Oasis also provides a reprinted version For a quick overview, you can switch between different glTF models through the following **GLTF List**.
 
 Go to [glTF resources](${docs}gltf-cn) to learn more about glTF related designs.
 
