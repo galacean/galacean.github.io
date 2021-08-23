@@ -6,7 +6,6 @@
 import {
   CameraClearFlags,
   DirectLight,
-  Logger,
   AssetType,
   Entity,
   Camera,
@@ -39,7 +38,6 @@ class RotateScript extends Script {
   }
 }
 
-Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
