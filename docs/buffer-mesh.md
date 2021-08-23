@@ -15,7 +15,7 @@ Let's take a look at the schematic diagram of `BufferMesh`
 
 The three core elements of `BufferMesh` are:
 
-|名称|解释|
+| Property name | Interpretation |
 |:--|:--|
 |[VertexBufferBinding](${api}core/VertexBufferBinding)|Vertex buffer binding, used to pack the vertex buffer and the vertex span (byte).|
 |[VertexElement](${api}core/VertexElement)|Vertex elements are used to describe information such as vertex semantics, vertex offset, vertex format, and vertex buffer binding index.|
@@ -131,7 +131,7 @@ renderer.mesh = mesh;
 
 
 ## IndexBuffer
-Using the index buffer can reuse the vertices in the vertex buffer, so as to achieve the purpose of saving video memory. Its usage is very simple, that is, an index buffer object is added on the original basis. The following code is modified on the basis of the first **interleaved vertex buffer** case.
+To achieve the purpose of saving video memory, the vertices in the vertex buffer can be reused by using the index buffer. Its usage is very simple, that is, an index buffer object is added on the original basis. The following code is modified on the basis of the first **interleaved vertex buffer** case.
 
 ```typescript
 // add MeshRenderer component

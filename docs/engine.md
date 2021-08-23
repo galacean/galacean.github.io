@@ -35,7 +35,7 @@ const engine = new WebGLEngine("canvas")
 ## Properties
 | Property name | Interpretation |
 | --- | --- |
-| [vSyncCount](${api}core/Engine#vSyncCount) | The engine is turned on by default [Vertical Sync](https://baike.baidu.com/item/%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5/7263524?fromtitle=V -Sync&fromid=691778) and the refresh rate `vSyncCount` is `1`, which is consistent with the screen refresh rate. If `vSyncCount` is set to `2`, the engine will be updated every 2 frames. |
+| [vSyncCount](${api}core/Engine#vSyncCount) | The engine is turned on by default [Vertical Sync](https://baike.baidu.com/item/%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5/7263524?fromtitle=V-Sync&fromid=691778) and the refresh rate `vSyncCount` is `1`, which is consistent with the screen refresh rate. If `vSyncCount` is set to `2`, the engine will be updated every 2 frames. |
 | [resourceManager](${api}core/Engine#resourceManager) | Resource management. |
 | [sceneManager](${api}core/Engine#sceneManager) | Scene management. *Engine* is the main controller, *Scene* is a scene unit, which can facilitate the entity management of large scenes; *Camera* is mounted as a component under an entity in *Scene*, and it can be selected as a camera in reality. Take any entity in the *Scene*, and finally render it to an area on the screen or off-screen rendering. |
 
@@ -53,7 +53,7 @@ engine.targetFrameRate = 120;
 
 ## Functions
 
-| Funcition Name | Interpretation |
+| Function Name | Interpretation |
 | --- | --- |
 | [run](${api}core/Engine#run) | Start loop |
 | [pause](${api}core/Engine#pause) | Pause loop |

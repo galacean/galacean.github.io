@@ -1,7 +1,7 @@
 ---
 order: 5
 title: Model Mesh
-type: Compoment
+type: Component
 ---
 
 `ModelMesh` is a mesh rendering data class used to describe the outline of a geometric body, which mainly contains data such as vertices (position, normal, UV, etc.), index, and mixed shape. Not only can you use modeling software to make and export glTF to analyze and restore in the engine, you can also use scripts to directly write data to create.
@@ -18,7 +18,7 @@ const meshRenderer = entity.addComponent(MeshRenderer);
 
 const modelMesh = new ModelMesh(engine);
 
-// Set vertieces data
+// Set vertices data
 const positions = [
   new Vector3(-1.0, -1.0,  1.0),
   new Vector3( 1.0, -1.0,  1.0),
