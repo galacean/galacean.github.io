@@ -6,7 +6,8 @@ Type: Resource System
 
 3D resources are generally linked to Engine. We use [resourceManager](${api}core/Engine#resourceManager) mounted in the Engine instance to manage and load resources.
 
-Use [Script component](${docs}script-cn) to load resources. {api}core/LoadItem), it can also be a module to indicate demonstration loading.
+Use [Script component](${docs}script-cn) to load resources. [load](${api}core/ResourceManager#load) method can pass URL, [loadItem](${api}core/LoadItem), and an array which indicate batch loading.
+
 
 ````Typescript
 import { GLTFResource } from "oasis-engine";
@@ -60,7 +61,7 @@ For example, the entity shown in the figure below contains the [MeshRenderer](${
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*xgpHSIn9RYAAAAAAAAAAAAAAARQnAQ)
 
-> Note: JavaScript cannot track references to objects. Generally, in weakly typed languages ​​such as JavaScript, there is no memory management function provided to developers. The memory of all objects is managed through the garbage collection mechanism. You have no way to determine when the object will be released, so there is no [Analysis Destructor](https://zh.wikipedia.org/wiki/%E8%A7%A3%E6%A7%8B%E5%AD%90) to call the release of referenced resources.
+> Note: JavaScript cannot track object references. Generally, in weakly typed languages ​​such as JavaScript, there is no memory management function provided to developers. The memory of all objects is managed through the garbage collection mechanism. You have no way to determine when the object will be released, so there is no [Analysis Destructor](https://zh.wikipedia.org/wiki/%E8%A7%A3%E6%A7%8B%E5%AD%90) to call the release of referenced resources.
 
 `ResourceManager` provides a set of resource release based on reference counting, which requires developers to manually call [gc](${api}core/ResourceManager#gc):
 
@@ -122,7 +123,7 @@ The suffix of compressed texture is generally `ktx`, and you need to pay attenti
 
 ### 4. Compressed Cube Texture
 
-The loading of the compressed cube texture is different from the general cube texture. It is a separate binary file path, instead of the file path of 6 images, but it needs to be specified as [AssetType.KTXCube](${api}core/AssetType#KTXCube). Because ResourceManager cannot identify which specific type of Loader needs to be used based on the suffix.
+The loading of the compressed cube texture is different from the general cube texture. It is a separate binary file path, instead of the file path of 6 images, but it needs to be specified as [AssetType.KTXCube](${api}core/AssetType#KTXCube), because ResourceManager cannot identify which specific type of Loader needs to be used based on the suffix.
 
 ```typescript
 import { TextureCubeMap } from "oasis-engine";
