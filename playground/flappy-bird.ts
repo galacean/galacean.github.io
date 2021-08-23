@@ -497,7 +497,7 @@ class ScriptGUI extends Script {
     const { entity } = this;
     const resetBtnNode = entity.findByName("nodeRestart");
 
-    // Add PlaneCollider
+    // Add BoxCollider
     const boxCollider: BoxCollider = resetBtnNode.addComponent(BoxCollider);
     boxCollider.setBoxCenterSize(new Vector3(), new Vector3(2.14, 0.75, 0.001));
     // Add Touch
