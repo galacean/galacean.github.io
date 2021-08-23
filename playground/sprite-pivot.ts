@@ -101,9 +101,7 @@ function addDataGUI(entity: Entity) {
 }
 
 class RotateScript extends Script {
-  static _rotate = new Vector3(0, 0, 1);
-
   onUpdate(dt: number) {
-    this.entity.transform.rotate(RotateScript._rotate);
+    this.entity.transform.rotate(0, 0, 1);
   }
 }
