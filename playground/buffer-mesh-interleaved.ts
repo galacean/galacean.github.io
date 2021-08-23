@@ -1,5 +1,5 @@
 /**
- * @title Buffer Mesh
+ * @title Buffer Mesh Interleaved
  * @category Mesh
  */
 import {
