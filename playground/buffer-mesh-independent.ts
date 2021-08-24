@@ -22,7 +22,7 @@ import {
 } from "oasis-engine";
 
 /**
- * Script for updating ducks position, rotation, and scale.
+ * Script for updating color buffer.
  */
 class RandomColorScript extends Script {
   /** Color data. */
@@ -144,12 +144,12 @@ function createCustomMesh(engine: Engine, size: number, randomColorScript: Rando
   const independentColorBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, colorData, BufferUsage.Dynamic);
   const indexBuffer = new Buffer(engine, BufferBindFlag.IndexBuffer, indices, BufferUsage.Static);
 
-  // Bind buffer
+  // Bind buffer.
   cubeMesh.setVertexBufferBinding(posNorBuffer, 24, 0);
   cubeMesh.setVertexBufferBinding(independentColorBuffer, 12, 1);
   cubeMesh.setIndexBufferBinding(indexBuffer, IndexFormat.UInt16);
 
-  // Add vertexElement
+  // Set vertexElements.
   cubeMesh.setVertexElements([
     new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0),
     new VertexElement("NORMAL", 12, VertexElementFormat.Vector3, 0),
