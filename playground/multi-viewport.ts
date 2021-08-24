@@ -24,7 +24,7 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const {background} = scene;
-const rootEntity = engine.sceneManager.activeScene.createRootEntity();
+const rootEntity = scene.createRootEntity();
 
 // init camera
 const leftCameraEntity = rootEntity.createChild("left-camera");
@@ -71,7 +71,7 @@ engine.resourceManager
     }
   )
   .then((cubeMap1) => {
-    // 添加天空盒背景
+    // Add skybox background
     background.mode = BackgroundMode.Sky; // 默认纯色背景
     const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
     skyMaterial.textureCubeMap = cubeMap1; // 设置立方体纹理

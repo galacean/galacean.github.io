@@ -41,12 +41,12 @@ engine.run();
 
 function createCube(x: number, y: number, z: number) {
   const cubeEntity = rootEntity.createChild("cube");
-  cubeEntity.transform.setPosition(x, y, z);
   const renderer = cubeEntity.addComponent(MeshRenderer);
-  renderer.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
   const material = new BlinnPhongMaterial(engine);
+  cubeEntity.transform.setPosition(x, y, z);
   material.baseColor = new Color(1, 0.25, 0.25, 1);
   renderer.setMaterial(material);
+  renderer.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 }
 
 function addGUI() {

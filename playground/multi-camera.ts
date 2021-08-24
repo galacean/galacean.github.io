@@ -33,7 +33,7 @@ class RotateScript extends Script {
    * The main loop, called frame by frame.
    * @param _deltaTime - The deltaTime when the script update.
    */
-  onUpdate(_deltaTime: number): void {
+  onUpdate(deltaTime: number): void {
     this.entity.transform.rotate(0.0, 0.6, 0);
   }
 }
@@ -42,13 +42,13 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const {background} = scene;
-const rootEntity = engine.sceneManager.activeScene.createRootEntity();
+const rootEntity = scene.createRootEntity();
 
 // init full screen camera
 const cameraEntity = rootEntity.createChild("fullscreen-camera");
 const camera = cameraEntity.addComponent(Camera);
 camera.cullingMask = Layer.Layer0;
-camera.clearFlags = CameraClearFlags.Depth;
+camera.clearFlags = CameraClearFlags.DepthColor;
 cameraEntity.transform.setPosition(10, 10, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 cameraEntity.addComponent(OrbitControl);
@@ -69,7 +69,7 @@ cubeEntity.addComponent(RotateScript);
 
 //----------------------------------------------------------------------------------------------------------------------
 // init window camera
-const windowEntity = engine.sceneManager.activeScene.createRootEntity();
+const windowEntity = scene.createRootEntity();
 windowEntity.layer = Layer.Layer1;
 const windowCameraEntity = windowEntity.createChild("window-camera");
 const windowCamera = windowCameraEntity.addComponent(Camera);
@@ -91,10 +91,9 @@ engine.resourceManager
     type: "spine"
   })
   .then((spineEntity: Entity) => {
-    const clone = spineEntity.clone();
-    clone.layer = Layer.Layer1;
-    windowEntity.addChild(clone);
-    const spineAnimation = clone.getComponent(SpineAnimation);
+    spineEntity.layer = Layer.Layer1;
+    windowEntity.addChild(spineEntity);
+    const spineAnimation = spineEntity.getComponent(SpineAnimation);
     spineAnimation.state.setAnimation(0, "walk", true);
     spineAnimation.scale = 0.01;
   });
@@ -113,7 +112,7 @@ engine.resourceManager
     }
   )
   .then((cubeMap1) => {
-    // 添加天空盒背景
+    // Add skybox background
     background.mode = BackgroundMode.Sky; // 默认纯色背景
     const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
     skyMaterial.textureCubeMap = cubeMap1; // 设置立方体纹理
