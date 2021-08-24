@@ -52,6 +52,6 @@ module.exports = {
     open: true,
   },
   optimizeDeps: {
-    // exclude: ['oasis-engine'],
+    exclude: ['oasis-engine'],
   },
 };
