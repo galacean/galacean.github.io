@@ -31,7 +31,7 @@ class RotateScript extends Script {
   /**
    * @override
    * The main loop, called frame by frame.
-   * @param _deltaTime - The deltaTime when the script update.
+   * @param deltaTime - The deltaTime when the script update.
    */
   onUpdate(deltaTime: number): void {
     this.entity.transform.rotate(0.0, 0.6, 0);
@@ -113,8 +113,8 @@ engine.resourceManager
   )
   .then((cubeMap1) => {
     // Add skybox background
-    background.mode = BackgroundMode.Sky; // 默认纯色背景
-    const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
-    skyMaterial.textureCubeMap = cubeMap1; // 设置立方体纹理
-    background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // 设置天空盒网格
+    background.mode = BackgroundMode.Sky;
+    const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine));
+    skyMaterial.textureCubeMap = cubeMap1;
+    background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
   })
