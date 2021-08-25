@@ -21,8 +21,12 @@ type: 组件
 
 ## 使用方法
 
-使用碰撞检测，首先需要给场景中的 *Entity*  添加 *Collider* ；然后给需要碰撞检测的 *Entity* 添加 [CollisionDetection](${api}core/CollisionDetection) 组件，并注册发生碰撞的时候触发的事件：
+使用碰撞检测，首先需要给场景中的 *Entity*  添加 *Collider* ；然后给需要碰撞检测的 *Entity* 添加 [CollisionDetection](${api}core/CollisionDetection) 组件。该组件会自动触发脚本组件当中的三个函数：
+1. onTriggerEnter：碰撞触发时调用
+2. onTriggerStay：碰撞过程中*循环*调用
+3. onTriggerExit：碰撞结束时调用
 
+代码如下：
 
 ```typescript
 // 加载 collider 和 raycast 模块
@@ -44,7 +48,13 @@ boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cube
 
 // add CollisionDetection
 let cd = sphereEntity.addComponent(CollisionDetection);
-cd.addEventListener('collision', (e) => {
-  console.log('collision' + e.data.collider.entity.name);
-});
+
+class CollisionScript extends Script {
+  onTriggerExit(other: ACollider) {
+    console.log('collision' + other.entity.name);
+  }
+}
+// add Script
+sphereEntity.addComponent(CollisionScript);
+
 ```

@@ -3,7 +3,19 @@
  * @category 2D
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector2, WebGLEngine } from "oasis-engine";
+import {
+  AssetType,
+  Camera,
+  Script,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  Vector2,
+  WebGLEngine,
+  Transform
+} from "oasis-engine";
+import * as TWEEN from "@tweenjs/tween.js";
+
 
 init();
 
@@ -24,12 +36,12 @@ function init(): void {
   // Load texture and create sprite sheet animation.
   engine.resourceManager
     .load<Texture2D>({
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*zcZVTKry5R4AAAAAAAAAAAAAARQnAQ",
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9nsHSpx28rAAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     })
     .then((texture) => {
       const spriteEntity = rootEntity.createChild("Sprite");
-      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture);
+      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture, null, null, 70);
       spriteEntity.addComponent(FrameSpriteScript);
     });
 
@@ -50,16 +62,17 @@ class FrameSpriteScript extends Script {
   /** Total frames. */
   private _totalFrames: number;
   /** Frame interval time, the unit of time is ms. */
-  private _frameInterval: number = 100;
+  private _frameInterval: number = 150;
 
   private _sprite: Sprite;
   private _curFrameIndex: number;
   private _cumulativeTime: number = 0;
+  private _birdTransform: Transform;
 
   onAwake(): void {
     // Sprite sheet animation pictures have 4 rows and 4 columns, if you modify the picture, please modify this.
-    const row = 4;
-    const col = 4;
+    const row = 3;
+    const col = 1;
     const reciprocalSliceWidth = 1 / row;
     const reciprocalSliceHeight = 1 / col;
     const regions = new Array<Vector2>();
@@ -70,21 +83,29 @@ class FrameSpriteScript extends Script {
       }
     }
 
-    this._sprite = this.entity.getComponent(SpriteRenderer).sprite;
+    const {entity} = this;
+    this._sprite = entity.getComponent(SpriteRenderer).sprite;
     this._regions = regions;
     this._reciprocalSliceWidth = reciprocalSliceWidth;
     this._reciprocalSliceHeight = reciprocalSliceHeight;
     this._totalFrames = row * col;
     this._setFrameIndex(0);
+
+    this._birdTransform = entity.transform;
+    new TWEEN.Tween(this)
+      .to({ birdPosY: 0.4 }, 380)
+      .repeat(Infinity)
+      .yoyo(true)
+      .easing(TWEEN.Easing.Sinusoidal.InOut)
+      .start();
   }
 
   onUpdate(deltaTime: number): void {
-    if (this._totalFrames <= 0) {
-      return;
-    }
+    // Update TWEEN
+    TWEEN.update();
+
     const frameInterval = this._frameInterval;
     this._cumulativeTime += deltaTime;
-
     if (this._cumulativeTime >= frameInterval) {
       // Need update frameIndex.
       const addFrameCount = Math.floor(this._cumulativeTime / frameInterval);
@@ -101,5 +122,16 @@ class FrameSpriteScript extends Script {
       region.setValue(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
       this._sprite.region = region;
     }
+  }
+
+  set birdPosY(val) {
+    const transform = this._birdTransform;
+    const position = transform.position;
+    position.y = val;
+    transform.position = position;
+  }
+
+  get birdPosY() {
+    return this._birdTransform.position.y;
   }
 }
