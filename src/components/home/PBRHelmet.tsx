@@ -1,4 +1,5 @@
-import { DiffuseMode, GLTFResource, TextureCubeMap } from 'oasis-engine';
+import type { GLTFResource, TextureCubeMap } from 'oasis-engine';
+import { DiffuseMode } from 'oasis-engine';
 import { AssetType, Camera, Color, DirectLight, Vector3, WebGLEngine } from 'oasis-engine';
 import { OrbitControl } from '@oasis-engine/controls';
 import React, { useEffect } from 'react';
@@ -45,6 +46,7 @@ function init(): WebGLEngine {
         'https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf',
       )
       .then((gltf) => {
+        /* eslint no-param-reassign: ["error", { "props": false }] */
         gltf.defaultSceneRoot.transform.position = new Vector3(0, 0.1, 0);
         rootEntity.addChild(gltf.defaultSceneRoot);
       }),
