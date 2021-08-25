@@ -6,13 +6,13 @@ title: 导出 Unlit 材质
 type: 美术
 ---
 
-如[烘焙教程](${docs}artist-bake-cn)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Oasis 的 [UnlitMaterial](${api}core/UnlitMaterial), GLTF 有专门的[KHR\_materials\_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，oasis 会解析插件，生成 Unlit 材质。
+如[烘焙教程](${docs}artist-bake-cn)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Oasis 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR\_materials\_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，oasis 会解析插件，生成 Unlit 材质。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/39965fc2-3fc2-44b9-a294-a04eb4441120/1623652741734-090284d5-9b1a-4db8-9231-dc3f4d188a38-20210614150743080.png)
 
 测试模型：[TREX.zip](https://www.yuque.com/attachments/yuque/0/2021/zip/381718/1623651429048-7f6a3610-d5cb-4a73-97f5-0d37d0c63b2c.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2021%2Fzip%2F381718%2F1623651429048-7f6a3610-d5cb-4a73-97f5-0d37d0c63b2c.zip%22%2C%22name%22%3A%22TREX.zip%22%2C%22size%22%3A499161%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22ext%22%3A%22zip%22%2C%22status%22%3A%22done%22%2C%22taskId%22%3A%22u458bcbec-d647-4328-8036-3d5eb12860f%22%2C%22taskType%22%3A%22upload%22%2C%22id%22%3A%22ua8a5baad%22%2C%22card%22%3A%22file%22%7D)
 
-接下来介绍如何利用 Blender 软件导出有 unlit 插件的 GLTF 文件 。
+接下来介绍如何利用 Blender 软件导出有 unlit 插件的 glTF 文件 。
 
 1. 导入模型
 
@@ -36,7 +36,7 @@ type: 美术
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/e9a99c9c-f661-4666-86bc-d8e91030c0f7/1623652380351-501dd929-7f96-4578-b49a-11724a0782a7.png)
 
-4. 导出 GLTF
+4. 导出 glTF
 
 若预览正常，导出 GLTF。
 
@@ -44,6 +44,6 @@ type: 美术
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1fe38185-399e-4f56-bff4-c39ba4ae3a2a/1623652462007-85b065a3-69fa-4d80-9dfd-834ef66da12a.png)
 
-将刚才导出来的 gltf 文件拖入编辑器或者 [GLTF 预览器](https://oasisengine.cn/gltf-viewer)，若材质类型为 **UnlitMaterial**，说明已经导出了 GLTF 的 [KHR\_materials\_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) 插件，且 Oasis 已经解析成 Unlit 材质。
+将刚才导出来的 gltf 文件拖入编辑器或者 [glTF 预览器](https://oasisengine.cn/gltf-viewer)，若材质类型为 **UnlitMaterial**，说明已经导出了 glTF 的 [KHR\_materials\_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) 插件，且 Oasis 已经解析成 Unlit 材质。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/fbb6ba43-f7d7-4757-a1d3-590083d30573/1623652636074-d8bb8437-f885-43fd-8957-8e14ae9fd8c0-20210614150914493.png)

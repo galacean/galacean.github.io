@@ -9,7 +9,11 @@ import { Element } from 'react-scroll';
 
 function Type(props: IType) {
   return <span>
-    <i>{props.type === 'reference' ? <a href={props.name}>{props.name}</a> : props.name}</i>
+    <i>{props.type === 'reference'  ? (props.id ?
+      <a href={props.name}>{props.name}</a> :
+      // Link to MDN Doc if it is a native API.
+      <a href={`https://developer.mozilla.org/en-US/search?q=${props.name}`} target="_blank">{props.name}</a>
+    ) : props.name}</i>
     {props.type === 'array' && <span>[]</span>}
   </span>
 }
