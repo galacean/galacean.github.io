@@ -4,18 +4,20 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
-  AnimationClip,
   Animator,
   AnimatorController,
   AnimatorControllerLayer,
   AnimatorStateMachine,
   Camera,
   DirectLight,
-  GLTFResource,
   Logger,
   SystemInfo,
   Vector3,
   WebGLEngine
+} from "oasis-engine";
+import type {
+  AnimationClip,
+  GLTFResource
 } from "oasis-engine";
 
 Logger.enable();
@@ -41,7 +43,7 @@ engine.resourceManager
   .then((asset) => {
     const { animations, defaultSceneRoot } = asset;
 
-    const animator = defaultSceneRoot.addComponent(Animator);
+    const animator = defaultSceneRoot.getComponent(Animator);
     const animatorController = new AnimatorController();
     const layer = new AnimatorControllerLayer("layer");
     const animatorStateMachine = new AnimatorStateMachine();
