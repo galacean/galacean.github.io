@@ -22,7 +22,18 @@ import {
 import * as TWEEN from "@tweenjs/tween.js";
 import { Touch, TouchType, TouchManager } from "@oasis-engine/touch";
 
-// The y coordinate of the ground collision detection
+enum EnumBirdState {
+  Alive = 0,
+  Dead = 1
+}
+
+enum EnumGameState {
+  Idel = 0,
+  Start = 1,
+  End = 2
+}
+
+/** The y coordinate of the ground collision detection. */
 const groundY = -3.1;
 
 const GameEvent = {
@@ -39,87 +50,87 @@ const GameEvent = {
 let gameResArray: Texture2D[];
 
 /**
- * We can customize the size of the interface that is finally presented to the player
- * @param designWidth
- * @param designHeight
+ * We can customize the size of the interface that is finally presented to the player.
+ * @param designWidth - Design width
+ * @param designHeight - Design height
  */
 function fitWithHeight(aspectRatio: number) {
   const canvas = document.getElementById("canvas");
   const parentEle = canvas.parentElement;
   const style = canvas.style;
-  var designHeight = parentEle.clientHeight;
-  var designWidth = designHeight * aspectRatio;
+  const designHeight = parentEle.clientHeight;
+  const designWidth = designHeight * aspectRatio;
   style.width = designWidth + "px";
   style.height = designHeight + "px";
   style.marginLeft = (parentEle.clientWidth - designWidth) / 2 + "px";
 }
 
-// Design size
+// Design size.
 fitWithHeight(768 / 896);
-// Create engine object
+// Create engine object.
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
-// Create camera
+// Create camera.
 const cameraEntity = rootEntity.createChild("camera");
 cameraEntity.transform.setPosition(0.3, 0, 5);
 const camera = cameraEntity.addComponent(Camera);
-// 2D is more suitable for orthographic cameras
+// 2D is more suitable for orthographic cameras.
 camera.isOrthographic = true;
 camera.orthographicSize = 4.5;
 
-// Load the resources needed by the game
+// Load the resources needed by the game.
 engine.resourceManager
   .load([
     {
-      // Background
+      // Background.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png",
       type: AssetType.Texture2D
     },
     {
-      // Pipe
+      // Pipe.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/5987/pipe.png",
       type: AssetType.Texture2D
     },
     {
-      // Ground
+      // Ground.
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Sj7OS4YJHDIAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     },
     {
-      // Bird
+      // Bird.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png",
       type: AssetType.Texture2D
     },
     {
-      // Restart
+      // Restart.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png",
       type: AssetType.Texture2D
     },
     {
-      // Number
+      // Number.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png",
       type: AssetType.Texture2D
     }
   ])
   .then((texture2DArr: Texture2D[]) => {
-    // Record the resources
+    // Record the resources.
     gameResArray = texture2DArr;
-    // Initialize location information and component information
-    // ====================== Background ======================
+    // Initialize location information and component information.
+    // Background.
     const nodeBg = rootEntity.createChild("nodeBg");
     nodeBg.transform.setPosition(0.3, 0, -10);
     nodeBg.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[0], null, null, 100);
 
-    // ====================== Pipe ======================
+    // Pipe.
     const nodePipe = rootEntity.createChild("nodePipe");
     nodePipe.transform.setPosition(0, 0, -3);
     nodePipe.addComponent(ScriptPipe);
 
-    // ====================== Ground ======================
+    // Ground.
     const nodeGround = rootEntity.createChild("nodeGround");
     nodeGround.transform.setPosition(0.3, -4.125, -2);
     const groundRenderer = nodeGround.addComponent(MeshRenderer);
@@ -130,98 +141,67 @@ engine.resourceManager
     groundMaterial.tilingOffset.setValue(21, 1, 0, 0);
     nodeGround.addComponent(ScriptGround);
 
-    // ====================== Bird ======================
+    // Bird.
     const nodeBird = rootEntity.createChild("nodeBird");
     nodeBird.transform.setPosition(-1, 1.15, 0);
     nodeBird.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[3], null, null, 100);
     nodeBird.addComponent(ScriptBird);
 
-    // ====================== Death Effect ======================
+    // Death Effect.
     const nodeDeathEff = rootEntity.createChild("nodeEff");
     nodeDeathEff.transform.setPosition(0, 0, -1);
     const effRenderer = nodeDeathEff.addComponent(MeshRenderer);
     effRenderer.mesh = PrimitiveMesh.createPlane(engine, 20, 20);
     const material = new UnlitMaterial(engine);
     effRenderer.setMaterial(material);
-    // Can be transparent
+    // Can be transparent.
     material.isTransparent = true;
     material.baseColor.setValue(0, 0, 0, 0);
     nodeDeathEff.addComponent(ScriptDeathEff);
 
-    // ====================== GUI ======================
+    // GUI.
     const nodeGui = rootEntity.createChild("nodeGui");
     nodeGui.transform.setPosition(0.3, 0, 1);
-    // restart
+    // Restart.
     const nodeRestart = nodeGui.createChild("nodeRestart");
     nodeRestart.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[4], null, null, 100);
-
-    // score
+    // Score.
     const nodeScore = nodeGui.createChild("nodeScore");
     nodeScore.transform.setPosition(0, 3.2, 0);
     nodeScore.transform.setScale(0.3, 0.3, 0.3);
     nodeScore.addComponent(ScriptScore);
-
     nodeGui.addComponent(ScriptGUI);
 
-    // GameCtrl controls the global game
+    // GameCtrl controls the global game.
     rootEntity.addComponent(GameCtrl);
   });
 
 engine.run();
 
 class ScriptPipe extends Script {
-  // When there is no pipe in the pool, use this instance to clone
+  /** When there is no pipe in the pool, use this instance to clone. */
   private _originPipe: Entity;
-  // All current pipes
+  /** All current pipes. */
   private _nowPipeArr: Array<Entity> = [];
-  // Pool for reuse
+  /** Pool for reuse. */
   private _pipePool: Array<Entity> = [];
-  // Timestamp of the start of the game
+  /** Timestamp of the start of the game. */
   private _curStartTimeStamp: number;
-  // Hide when the x coordinate of the pipe is less than -4.6
-  private _pipeHideX = 4.6;
-  // Vertical distance of pipe
-  private _pipeVerticalDis = 10.8;
-  // Horizontal distance of pipe
-  private _pipeHorizontalDis = 4;
-  // Random location range generated by pipes
-  private _pipeRandomPosY = 3.5;
-  // Water pipe debut time(ms)
-  private _pipeDebutTime = 3000;
-  // Horizontal movement speed
-  private pipeHorizontalV = 0.003;
-
-  private createPipe(posX, posY, posZ) {
-    const pipePool = this._pipePool;
-    var pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
-    pipe.transform.setPosition(posX, posY, posZ);
-    this.entity.addChild(pipe);
-    this._nowPipeArr.push(pipe);
-  }
-
-  /**
-   * It’s not really destroyed, we just put it in the pool
-   * @param pipeIndex If pipeIndex is less than 0, we recycle all pipes
-   */
-  private destroyPipe(pipeIndex: number = -1) {
-    const { entity, _pipePool, _nowPipeArr } = this;
-    const removePipe = (pipe: Entity) => {
-      entity.removeChild(pipe);
-      _pipePool.push(pipe);
-    };
-    if (pipeIndex >= 0) {
-      removePipe(_nowPipeArr[pipeIndex]);
-      _nowPipeArr.splice(pipeIndex, 1);
-    } else {
-      for (let index = _nowPipeArr.length - 1; index >= 0; index--) {
-        removePipe(_nowPipeArr[index]);
-      }
-      _nowPipeArr.length = 0;
-    }
-  }
+  /**  Hide when the x coordinate of the pipe is less than -4.6. */
+  private _pipeHideX: number = 4.6;
+  /**  Vertical distance of pipe. */
+  private _pipeVerticalDis: number = 10.8;
+  /**  Horizontal distance of pipe. */
+  private _pipeHorizontalDis: number = 4;
+  /**  Random location range generated by pipes. */
+  private _pipeRandomPosY: number = 3.5;
+  /**  Water pipe debut time(ms). */
+  private _pipeDebutTime: number = 3000;
+  /**  Horizontal movement speed. */
+  private _pipeHorizontalV: number = 0.003;
 
   onAwake() {
-    // Init originPipe
+    // Init originPipe.
     const pipe = (this._originPipe = new Entity(engine));
     const node1 = pipe.createChild("node1");
     const node2 = pipe.createChild("node2");
@@ -233,12 +213,12 @@ class ScriptPipe extends Script {
     node2.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1], null, null, 100);
     this._pipePool.push(pipe);
 
-    // Control the performance of the pipe according to the change of the game state
+    // Control the performance of the pipe according to the change of the game state.
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       switch (gameState) {
         case EnumGameState.Idel:
           this.enabled = false;
-          this.destroyPipe();
+          this._destroyPipe();
           break;
         case EnumGameState.Start:
           this.enabled = true;
@@ -250,8 +230,8 @@ class ScriptPipe extends Script {
       }
     });
 
-    // When checkHit is monitored, check the collision between the pipe and the bird
-    engine.on(GameEvent.checkHit, (birdY) => {
+    // When checkHit is monitored, check the collision between the pipe and the bird.
+    engine.on(GameEvent.checkHit, (birdY: number) => {
       var len = this._nowPipeArr.length;
       for (var i = 0; i < len; i++) {
         var pipePos = this._nowPipeArr[i].transform.position;
@@ -267,61 +247,120 @@ class ScriptPipe extends Script {
 
   /**
    * Three things will be done here every frame：
-   *    1.Adjust the generation of the pipe
-   *    2.Adjust the position of the pipe
-   *    3.Judge whether to get a point
-   * @param deltaTime
+   *    1.Adjust the generation of the pipe.
+   *    2.Adjust the position of the pipe.
+   *    3.Judge whether to get a point.
+   * @param deltaTime - The deltaTime when the script update
    */
   onUpdate(deltaTime: number) {
     const debutTime = this._pipeDebutTime;
-    // The water pipe will be displayed after the start of the game pipeDebutTime
+    // The water pipe will be displayed after the start of the game pipeDebutTime.
     if (engine.time.nowTime - this._curStartTimeStamp >= debutTime) {
       let bAddScore = false;
-      // After deltaTime, the distance the pipe has moved
-      const changeVal = deltaTime * this.pipeHorizontalV;
+      // After deltaTime, the distance the pipe has moved.
+      const changeVal = deltaTime * this._pipeHorizontalV;
       const pipeLen = this._nowPipeArr.length;
       const { _pipeHorizontalDis: horizontalDis, _pipeRandomPosY: randomPosY, _pipeHideX: hideX } = this;
-      // Adjust the position of all pipes
+      // Adjust the position of all pipes.
       if (pipeLen > 0) {
         for (let i = pipeLen - 1; i >= 0; i--) {
           const pipe = this._nowPipeArr[i];
           const pipeTrans = pipe.transform;
           const pipePos = pipeTrans.position;
           if (pipePos.x < -hideX) {
-            // The invisible pipe can be destroyed
-            this.destroyPipe(i);
+            // The invisible pipe can be destroyed.
+            this._destroyPipe(i);
           } else {
             if (!bAddScore && pipePos.x > -1 && pipePos.x - changeVal <= -1) {
-              // Get a point
+              // Get a point.
               engine.dispatch(GameEvent.addScore);
               bAddScore = true;
             }
             pipeTrans.setPosition(pipePos.x - changeVal, pipePos.y, pipePos.z);
           }
-          // Judge whether the pipe needs to be regenerated according to the X coordinate
+          // Judge whether the pipe needs to be regenerated according to the X coordinate.
           if (i == pipeLen - 1 && pipePos.x <= hideX - horizontalDis) {
-            this.createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
+            this._createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
           }
         }
       } else {
-        // Need to regenerate a pipe
-        this.createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
+        // Need to regenerate a pipe.
+        this._createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
       }
+    }
+  }
+
+  private _createPipe(posX: number, posY: number, posZ: number) {
+    const pipePool = this._pipePool;
+    const pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
+    pipe.transform.setPosition(posX, posY, posZ);
+    this.entity.addChild(pipe);
+    this._nowPipeArr.push(pipe);
+  }
+
+  /**
+   * It’s not really destroyed, we just put it in the pool.
+   * @param pipeIndex - If pipeIndex is less than 0, we recycle all pipes
+   */
+  private _destroyPipe(pipeIndex: number = -1) {
+    const { entity, _pipePool, _nowPipeArr } = this;
+    const removePipe = (pipe: Entity) => {
+      entity.removeChild(pipe);
+      _pipePool.push(pipe);
+    };
+    if (pipeIndex >= 0) {
+      removePipe(_nowPipeArr[pipeIndex]);
+      _nowPipeArr.splice(pipeIndex, 1);
+    } else {
+      for (let index = _nowPipeArr.length - 1; index >= 0; index--) {
+        removePipe(_nowPipeArr[index]);
+      }
+      _nowPipeArr.length = 0;
     }
   }
 }
 
 class ScriptScore extends Script {
-  // The sprite array used by the score（0～9）
+  /** The sprite array used by the score（0～9）. */
   private _spriteArray: Sprite[] = [];
-  // Interval between each number
+  /** Interval between each number. */
   private _numInv = 2;
-  // Each number in the score
+  /** Each number in the score. */
   private _scoreEntitys: Entity[] = [];
   private _scoreRenderer: SpriteRenderer[] = [];
   private _myScore = 0;
 
-  private showScore(scoreNumStr: string) {
+  onAwake() {
+    // Init spriteArray.
+    const spriteArray = this._spriteArray;
+    // Cut digital resources into ten.
+    for (var i = 0; i < 10; i++) {
+      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1), null, 75));
+    }
+
+    engine.on(GameEvent.addScore, () => {
+      ++this._myScore;
+      this._showScore("" + this._myScore);
+    });
+
+    // Control the performance of the score according to the change of the game state.
+    engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
+      switch (gameState) {
+        case EnumGameState.Idel:
+          this.entity.isActive = false;
+          break;
+        case EnumGameState.Start:
+          this.entity.isActive = true;
+          this._myScore = 0;
+          this._showScore("0");
+          break;
+        case EnumGameState.End:
+          break;
+      }
+    });
+  }
+
+  private _showScore(scoreNumStr: string) {
     const scoreLen = scoreNumStr.length;
     const {
       entity,
@@ -333,7 +372,7 @@ class ScriptScore extends Script {
     var nowEntityLen = scoreEntitys.length;
     let scoreEntity: Entity;
     let scoreRenderer: SpriteRenderer;
-    // If the entity is not enough, new one
+    // If the entity is not enough, new one.
     if (scoreLen > nowEntityLen) {
       for (let i = nowEntityLen; i < scoreLen; i++) {
         scoreEntity = new Entity(engine);
@@ -344,7 +383,7 @@ class ScriptScore extends Script {
       }
     }
 
-    // At the moment nowEntityLen >= scoreLen
+    // At the moment nowEntityLen >= scoreLen.
     nowEntityLen = scoreEntitys.length;
     const startX = ((1 - scoreLen) * inv) / 2;
     for (let i = 0; i < nowEntityLen; i++) {
@@ -358,47 +397,17 @@ class ScriptScore extends Script {
       }
     }
   }
-
-  onAwake() {
-    // Init spriteArray
-    const spriteArray = this._spriteArray;
-    // Cut digital resources into ten
-    for (var i = 0; i < 10; i++) {
-      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1), null, 75));
-    }
-
-    engine.on(GameEvent.addScore, () => {
-      ++this._myScore;
-      this.showScore("" + this._myScore);
-    });
-
-    // Control the performance of the score according to the change of the game state
-    engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
-      switch (gameState) {
-        case EnumGameState.Idel:
-          this.entity.isActive = false;
-          break;
-        case EnumGameState.Start:
-          this.entity.isActive = true;
-          this._myScore = 0;
-          this.showScore("0");
-          break;
-        case EnumGameState.End:
-          break;
-      }
-    });
-  }
 }
 
 class ScriptGround extends Script {
-  // Swap two pieces of ground to achieve constant movement
-  private groundMaterial: UnlitMaterial;
-  // Horizontal movement speed
-  private groundHorizontalV = 0.0082;
+  /** Swap two pieces of ground to achieve constant movement. */
+  private _groundMaterial: UnlitMaterial;
+  /** Horizontal movement speed. */
+  private _groundHorizontalV: number = 0.0082;
 
   onAwake() {
-    this.groundMaterial = <UnlitMaterial>this.entity.getComponent(MeshRenderer).getMaterial();
-    // Control the performance of the ground according to the change of the game state
+    this._groundMaterial = <UnlitMaterial>this.entity.getComponent(MeshRenderer).getMaterial();
+    // Control the performance of the ground according to the change of the game state.
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       switch (gameState) {
         case EnumGameState.Idel:
@@ -413,15 +422,15 @@ class ScriptGround extends Script {
       }
     });
 
-    // When checkHit is monitored, check the collision between the ground and the bird
+    // When checkHit is monitored, check the collision between the ground and the bird.
     engine.on(GameEvent.checkHit, (birdY) => {
       birdY < groundY && engine.dispatch(GameEvent.gameOver);
     });
   }
 
   onUpdate(deltaTime: number) {
-    // After deltaTime, the distance the ground has moved
-    this.groundMaterial.tilingOffset.z += deltaTime * this.groundHorizontalV;
+    // After deltaTime, the distance the ground has moved.
+    this._groundMaterial.tilingOffset.z += deltaTime * this._groundHorizontalV;
   }
 }
 
@@ -430,15 +439,15 @@ class GameCtrl extends Script {
   private _touch: Touch;
 
   onAwake() {
-    //启动 touchmanager
+    //Init touchmanager.
     TouchManager.ins.initEngine(this.engine);
 
     engine.on(GameEvent.reStartGame, () => {
-      this.setGameState(EnumGameState.Idel);
+      this._setGameState(EnumGameState.Idel);
     });
 
     engine.on(GameEvent.gameOver, () => {
-      this.setGameState(EnumGameState.End);
+      this._setGameState(EnumGameState.End);
     });
 
     const boxCollider: BoxCollider = this.entity.addComponent(BoxCollider);
@@ -447,19 +456,19 @@ class GameCtrl extends Script {
   }
 
   onStart() {
-    // Give a state at the beginning
-    this.setGameState(EnumGameState.Idel);
+    // Give a state at the beginning.
+    this._setGameState(EnumGameState.Idel);
   }
 
   onUpdate() {
-    // Update TWEEN
+    // Update TWEEN.
     TWEEN.update();
   }
 
-  private onMouseDown = () => {
+  private _onMouseDown = () => {
     switch (this._gameState) {
       case EnumGameState.Idel:
-        this.setGameState(EnumGameState.Start);
+        this._setGameState(EnumGameState.Start);
         engine.dispatch(GameEvent.fly);
         break;
       case EnumGameState.Start:
@@ -471,18 +480,19 @@ class GameCtrl extends Script {
   };
 
   /**
-   * The status will be distributed to all objects in the game
+   * The status will be distributed to all objects in the game.
+   * @param state - EnumGameState
    */
-  private setGameState(state: EnumGameState) {
+  private _setGameState(state: EnumGameState) {
     if (this._gameState != state) {
       this._gameState = state;
       engine.dispatch(GameEvent.stateChange, state);
       switch (this._gameState) {
         case EnumGameState.Idel:
-          this._touch.on(TouchType.MouseDown, this.onMouseDown);
+          this._touch.on(TouchType.MouseDown, this._onMouseDown);
           break;
         case EnumGameState.End:
-          this._touch.off(TouchType.MouseDown, this.onMouseDown);
+          this._touch.off(TouchType.MouseDown, this._onMouseDown);
           break;
         default:
           break;
@@ -492,27 +502,26 @@ class GameCtrl extends Script {
 }
 
 class ScriptGUI extends Script {
-  private _touch: Touch;
   onAwake() {
     const { entity } = this;
     const resetBtnNode = entity.findByName("nodeRestart");
 
-    // Add BoxCollider
+    // Add BoxCollider.
     const boxCollider: BoxCollider = resetBtnNode.addComponent(BoxCollider);
     boxCollider.setBoxCenterSize(new Vector3(), new Vector3(2.14, 0.75, 0.001));
-    // Add Touch
-    this._touch = resetBtnNode.addComponent(Touch);
+    // Add Touch.
+    const touch: Touch = resetBtnNode.addComponent(Touch);
     const onMouseUp = () => {
       engine.dispatch(GameEvent.reStartGame);
     };
 
-    // Control the performance of the GUI according to the change of the game state
+    // Control the performance of the GUI according to the change of the game state.
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       switch (gameState) {
         case EnumGameState.Idel:
         case EnumGameState.Start:
           resetBtnNode.isActive = false;
-          this._touch.off(TouchType.MouseUp, onMouseUp);
+          touch.off(TouchType.MouseUp, onMouseUp);
           break;
         case EnumGameState.End:
           break;
@@ -523,27 +532,27 @@ class ScriptGUI extends Script {
 
     engine.on(GameEvent.showGui, () => {
       resetBtnNode.isActive = true;
-      this._touch.on(TouchType.MouseUp, onMouseUp);
+      touch.on(TouchType.MouseUp, onMouseUp);
     });
   }
 }
 
 class ScriptBird extends Script {
-  /** Offsets of sprite sheet animation */
+  /** Offsets of sprite sheet animation. */
   private _regions: Vector2[] = [new Vector2(0, 0), new Vector2(1 / 3, 0), new Vector2(2 / 3, 0)];
-  /** Reciprocal Of SliceWidth */
+  /** Reciprocal Of SliceWidth. */
   private _reciprocalSliceWidth: number = 1 / 3;
-  /** Reciprocal Of SliceHeight */
+  /** Reciprocal Of SliceHeight. */
   private _reciprocalSliceHeight: number = 1;
-  /** Frame interval time, the unit of time is ms */
+  /** Frame interval time, the unit of time is ms. */
   private _frameInterval = 150;
-  /** Total frames */
+  /** Total frames. */
   private _totalFrames = 3;
-  // Maximum downward speed
+  /** Maximum downward speed */
   private _maxDropV = -8;
-  // Acceleration of gravity
+  /** Acceleration of gravity */
   private _gravity = -35;
-  // Initial upward speed given during fly
+  /** Initial upward speed given during fly */
   private _startFlyV = 10;
 
   private _cumulativeTime: number = 0;
@@ -557,14 +566,66 @@ class ScriptBird extends Script {
   private _yoyoTween;
   private _dropTween;
 
-  private initDataAndUI() {
+  onAwake() {
+    this._initDataAndUI();
+    this._initTween();
+    this._initListener();
+  }
+
+  onUpdate(deltaTime: number) {
+    // Update the performance of the bird.
+    switch (this._birdState) {
+      case EnumBirdState.Alive:
+        const { _frameInterval, _totalFrames } = this;
+        this._cumulativeTime += deltaTime;
+        if (this._cumulativeTime >= _frameInterval) {
+          // Need update frameIndex.
+          const addFrameCount = Math.floor(this._cumulativeTime / _frameInterval);
+          this._cumulativeTime -= addFrameCount * _frameInterval;
+          this._setFrameIndex((this._curFrameIndex + addFrameCount) % _totalFrames);
+        }
+
+        // Update bird's location information.
+        if (this._gameState == EnumGameState.Start) {
+          // Free fall and uniform motion are superimposed to obtain the current position.
+          let endY;
+          const { _maxDropV, _startFlyV, _gravity } = this;
+          const transform = this.entity.transform;
+          const position = transform.position;
+          // How much time has passed.
+          const subTime = (engine.time.nowTime - this._flyStartTime) / 1000;
+          // How long has it been in free fall.
+          const addToMaxUseTime = (_maxDropV - _startFlyV) / _gravity;
+          if (subTime <= addToMaxUseTime) {
+            // Free fall.
+            endY = ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 + this._startY;
+          } else {
+            // Falling at a constant speed.
+            endY =
+              ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 + _maxDropV * (subTime - addToMaxUseTime) + this._startY;
+          }
+          transform.setPosition(position.x, endY, position.z);
+        }
+        break;
+      case EnumBirdState.Dead:
+        this._setFrameIndex(0);
+        break;
+    }
+  }
+
+  onLateUpdate() {
+    // After updating the position, check the collision.
+    engine.dispatch(GameEvent.checkHit, this.entity.transform.position.y);
+  }
+
+  private _initDataAndUI() {
     const { entity } = this;
     const renderer = entity.getComponent(SpriteRenderer);
     renderer.sprite = this._sprite = new Sprite(engine, gameResArray[3], null, null, 100);
     this._setFrameIndex(0);
   }
 
-  private initTween() {
+  private _initTween() {
     const transform = this.entity.transform;
     const rotation = transform.rotation;
     const position = transform.position;
@@ -584,20 +645,20 @@ class ScriptBird extends Script {
       .delay(520);
   }
 
-  private initListener() {
+  private _initListener() {
     const transform = this.entity.transform;
     engine.on(GameEvent.fly, () => {
-      // Record start time and location
+      // Record start time and location.
       this._startY = transform.position.y;
       this._flyStartTime = engine.time.nowTime;
-      // Flying performance
+      // Flying performance.
       this._yoyoTween.stop();
       this._dropTween.stop();
       transform.setRotation(transform.rotation.x, transform.rotation.y, 20);
       this._dropTween.start();
     });
 
-    // Control the performance of the bird according to the change of the game state
+    // Control the performance of the bird according to the change of the game state.
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       this._gameState = gameState;
       switch (gameState) {
@@ -643,7 +704,7 @@ class ScriptBird extends Script {
     });
   }
 
-  private _setFrameIndex(frameIndex: number): void {
+  private _setFrameIndex(frameIndex: number) {
     if (this._curFrameIndex !== frameIndex) {
       this._curFrameIndex = frameIndex;
       const frameInfo = this._regions[frameIndex];
@@ -651,58 +712,6 @@ class ScriptBird extends Script {
       region.setValue(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
       this._sprite.region = region;
     }
-  }
-
-  onAwake() {
-    this.initDataAndUI();
-    this.initTween();
-    this.initListener();
-  }
-
-  onUpdate(deltaTime: number) {
-    // Update the performance of the bird
-    switch (this._birdState) {
-      case EnumBirdState.Alive:
-        const { _frameInterval, _totalFrames } = this;
-        this._cumulativeTime += deltaTime;
-        if (this._cumulativeTime >= _frameInterval) {
-          // Need update frameIndex
-          const addFrameCount = Math.floor(this._cumulativeTime / _frameInterval);
-          this._cumulativeTime -= addFrameCount * _frameInterval;
-          this._setFrameIndex((this._curFrameIndex + addFrameCount) % _totalFrames);
-        }
-
-        // Update bird's location information
-        if (this._gameState == EnumGameState.Start) {
-          // Free fall and uniform motion are superimposed to obtain the current position
-          let endY;
-          const { _maxDropV, _startFlyV, _gravity } = this;
-          const transform = this.entity.transform;
-          const position = transform.position;
-          // How much time has passed
-          const subTime = (engine.time.nowTime - this._flyStartTime) / 1000;
-          // How long has it been in free fall
-          const addToMaxUseTime = (_maxDropV - _startFlyV) / _gravity;
-          if (subTime <= addToMaxUseTime) {
-            // Free fall
-            endY = ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 + this._startY;
-          } else {
-            // Falling at a constant speed
-            endY =
-              ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 + _maxDropV * (subTime - addToMaxUseTime) + this._startY;
-          }
-          transform.setPosition(position.x, endY, position.z);
-        }
-        break;
-      case EnumBirdState.Dead:
-        this._setFrameIndex(0);
-        break;
-    }
-  }
-
-  onLateUpdate() {
-    // After updating the position, check the collision
-    engine.dispatch(GameEvent.checkHit, this.entity.transform.position.y);
   }
 }
 
@@ -712,7 +721,7 @@ class ScriptDeathEff extends Script {
     const renderer = entity.getComponent(MeshRenderer);
     const material = <UnlitMaterial>renderer.getMaterial();
 
-    // init Tween
+    // init Tween.
     const baseColor = material.baseColor;
     const shockTween = new TWEEN.Tween(baseColor).to({ a: 1 }, 80).repeat(1).yoyo(true).delay(20);
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
@@ -723,15 +732,4 @@ class ScriptDeathEff extends Script {
       }
     });
   }
-}
-
-enum EnumBirdState {
-  Alive = 0,
-  Dead = 1
-}
-
-enum EnumGameState {
-  Idel = 0,
-  Start = 1,
-  End = 2
 }

@@ -82,7 +82,7 @@ type: 入门
 无法使用编辑器的同学可以直接拷贝下方代码。
 
 ```typescript
-// Create engine object
+// Create engine object.
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
@@ -95,28 +95,28 @@ const nodeBg = rootEntity.createChild("nodeBg");
 nodeBg.transform.setPosition(0.3, 0, -5);
 addSpriteRender(nodeBg, texture2DArr[2]);
 
-// Pipe
+// Pipe.
 const nodePipe = rootEntity.createChild("nodePipe");
 nodePipe.transform.setPosition(0, 0, -3);
 
-// Bottom
+// Bottom.
 const nodeGround = rootEntity.createChild("nodeGround");
 nodeGround.transform.setPosition(0.3, -4.125, 0);
 nodeGround.addComponent(ScriptGround);
 
-// Bird
+// Bird.
 const nodeBird = rootEntity.createChild("nodeBird");
 nodeBird.transform.setPosition(-1, 1.15, 0);
 addSpriteRender(nodeBird, texture2DArr[0]);
-// Death splash screen effect
+// Death splash screen effect.
 const renderer = nodeBird.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createPlane(engine, 20, 20);
 const material = new UnlitMaterial(engine);
-// Can be transparent
+// Can be transparent.
 material.isTransparent = true;
 renderer.setMaterial(material);
 
-// GUI
+// GUI.
 const nodeGui = rootEntity.createChild("nodeGui");
 nodeGui.transform.setPosition(0.3, 0, 1);
 const nodeRestart = nodeGui.createChild("nodeRestart");
@@ -125,7 +125,7 @@ const nodeScore = nodeGui.createChild("nodeScore");
 nodeScore.transform.setPosition(0, 3.2, 0);
 nodeScore.transform.setScale(0.3, 0.3, 0.3);
 
-// GameCtrl controls the global game
+// GameCtrl controls the global game.
 rootEntity.addComponent(GameCtrl);
 ```
 
@@ -133,7 +133,7 @@ rootEntity.addComponent(GameCtrl);
 
 ```typescript
 /**
- * General method for adding spriterender to nodes
+ * General method for adding spriterender to nodes.
  * @param node
  * @param texture2D
  */
@@ -221,20 +221,15 @@ private _updateProperties(
 	}
 ```
 
-因此为了方便实现，我们可以增加一个简单的 set 函数去设置小鸟的旋转角度：
+因此在我们的代码中可以这样表示：
 
 ```typescript
-set birdRotationZ(val) {
-    const transform = this.entity.transform;
-    const rotation = transform.rotation;
-    transform.setRotation(rotation.x, rotation.y, val);
-}
-```
-
-这样的话，小鸟落下的动画就可以用一句代码表示：
-
-```typescript
-this.dropTween = new TWEEN.Tween(this).to({ birdRotationZ: -90 }, 380).delay(520);
+this._dropTween = new TWEEN.Tween(rotation)
+  .to({ z: -90 }, 380)
+  .onUpdate((target) => {
+    transform.rotation = target;
+  })
+  .delay(520);
 ```
 
 ### 运动轨迹
@@ -243,28 +238,30 @@ this.dropTween = new TWEEN.Tween(this).to({ birdRotationZ: -90 }, 380).delay(520
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
 
-我们假设点击往上飞提供的速度为 `startJumpV`，重力加速度为 `gravity`，最大下落速度为 `maxDropV`，点击屏幕的时刻为 `jumpStartTime`，通过计算我们可以得到任意时刻小鸟的纵坐标：
+我们假设点击往上飞提供的速度为 `_startFlyV`，重力加速度为 `_gravity`，最大下落速度为 `_maxDropV`，点击屏幕的时刻为 `_flyStartTime`，通过计算我们可以得到任意时刻小鸟的纵坐标：
 
 ```typescript
-// 根据自由落体和匀速运动，获取当前位置
-public updateBirdPosY(): void {
-  // 经过了多长时间
-  const subTime = (engine.time.nowTime - this._flyStartTime) / 1000;
-  // 抛物线运动能持续多久
-  const addToMaxUseTime = (maxDropV - startFlyV) / gravity;
-  if (subTime <= addToMaxUseTime) {
-    // 纯抛物线运动
-    this.birdPosY = ((startFlyV + (startFlyV + subTime * gravity)) * subTime) / 2 + this._startY;
-  } else {
-    // 此时是前半段抛物线运动到 maxDropV 后，开始匀速坠落
-    this.birdPosY = this._startY + ((maxDropV + startFlyV) * addToMaxUseTime) / 2 + maxDropV * (subTime - addToMaxUseTime);
-  }
+// Free fall and uniform motion are superimposed to obtain the current position.
+let endY;
+const { _maxDropV, _startFlyV, _gravity } = this;
+const transform = this.entity.transform;
+const position = transform.position;
+// How much time has passed.
+const subTime = (engine.time.nowTime - this._flyStartTime) / 1000;
+// How long has it been in free fall.
+const addToMaxUseTime = (_maxDropV - _startFlyV) / _gravity;
+if (subTime <= addToMaxUseTime) {
+  // Free fall.
+  endY = ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 + this._startY;
+} else {
+  // Falling at a constant speed.
+  endY = ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 + _maxDropV * (subTime - addToMaxUseTime) + this._startY;
 }
 ```
 
 ## 草地
 
-熟悉材质的同学肯定都对材质中的 tilingOffset 参数印象深刻，这是一个只需要改变 Vector4 的值就可以控制纹理坐标缩放和偏移的功能：
+ 熟悉材质的同学肯定都对材质中的 tilingOffset 参数印象深刻，这是一个只需要改变 Vector4 的值就可以控制纹理坐标缩放和偏移的功能：
 
 <playground src="tiling-offset.ts"></playground>
 
@@ -278,8 +275,8 @@ groundMaterial.tilingOffset.setValue(768 / 37, 1, 0, 0);
 
 ```typescript
 onUpdate(deltaTime: number) {
-  // After deltaTime, the distance the ground has moved
-  this.groundMaterial.tilingOffset.z += (deltaTime * birdHorizontalV / 37 * 100);
+  // After deltaTime, the distance the ground has moved.
+  this._groundMaterial.tilingOffset.z += deltaTime * this._groundHorizontalV;
 }
 ```
 
@@ -287,81 +284,80 @@ onUpdate(deltaTime: number) {
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
 
-我们依靠在水管层节点加入 `PipeManager` 管理和生成水管，为了更好地设置水管的生成时机与表现，我们将可配置的参数抽取出来：
+我们依靠在水管层节点加入 `ScriptPipe` 管理和生成水管，为了更好地设置水管的生成时机与表现，我们将可配置的参数抽取出来：
 
 ```typescript
-// Hide when the x coordinate of the pipe is less than -4.6
-private _pipeHideX = 4.6;
-// Vertical distance of pipe
-private _pipeVerticalDis = 10.8;
-// Horizontal distance of pipe
-private _pipeHorizontalDis = 4;
-// Random location range generated by pipes
-private _pipeRandomPosY = 3.5;
-// Water pipe debut time(ms)
-private _pipeDebutTime = 3000;
+  /**  Hide when the x coordinate of the pipe is less than -4.6. */
+  private _pipeHideX: number = 4.6;
+  /**  Vertical distance of pipe. */
+  private _pipeVerticalDis: number = 10.8;
+  /**  Horizontal distance of pipe. */
+  private _pipeHorizontalDis: number = 4;
+  /**  Random location range generated by pipes. */
+  private _pipeRandomPosY: number = 3.5;
+  /**  Water pipe debut time(ms). */
+  private _pipeDebutTime: number = 3000;
 ```
 
 正如上方我们更新草地一般，更新水管也是同样的操作：
 
 ```typescript
-/**
- * Three things will be done here every frame：
- *    1.Adjust the generation of the pipe
- *    2.Adjust the position of the pipe
- *    3.Judge whether to get a point
- * @param deltaTime
- */
-onUpdate(deltaTime: number) {
-  const debutTime = this._pipeDebutTime;
-  // The water pipe will be displayed after the start of the game pipeDebutTime
-  if (engine.time.nowTime - this._curStartTimeStamp >= debutTime) {
-    let bAddScore = false;
-    // After deltaTime, the distance the pipe has moved
-    const changeVal = deltaTime * birdHorizontalV;
-    const pipeLen = this._nowPipeArr.length;
-    const { _pipeHorizontalDis: horizontalDis, _pipeRandomPosY: randomPosY, _pipeHideX: hideX } = this;
-    // Adjust the position of all pipes
-    if (pipeLen > 0) {
-      for (let i = pipeLen - 1; i >= 0; i--) {
-        const pipe = this._nowPipeArr[i];
-        const pipeTrans = pipe.transform;
-        const pipePos = pipeTrans.position;
-        if (pipePos.x < -hideX) {
-          // The invisible pipe can be destroyed
-          this.destroyPipe(i);
-        } else {
-          if (!bAddScore && pipePos.x > -1 && pipePos.x - changeVal <= -1) {
-            // Get a point
-            engine.dispatch(GameEvent.addScore);
-            bAddScore = true;
+  /**
+   * Three things will be done here every frame：
+   *    1.Adjust the generation of the pipe.
+   *    2.Adjust the position of the pipe.
+   *    3.Judge whether to get a point.
+   * @param deltaTime - The deltaTime when the script update
+   */
+  onUpdate(deltaTime: number) {
+    const debutTime = this._pipeDebutTime;
+    // The water pipe will be displayed after the start of the game pipeDebutTime.
+    if (engine.time.nowTime - this._curStartTimeStamp >= debutTime) {
+      let bAddScore = false;
+      // After deltaTime, the distance the pipe has moved.
+      const changeVal = deltaTime * this._pipeHorizontalV;
+      const pipeLen = this._nowPipeArr.length;
+      const { _pipeHorizontalDis: horizontalDis, _pipeRandomPosY: randomPosY, _pipeHideX: hideX } = this;
+      // Adjust the position of all pipes.
+      if (pipeLen > 0) {
+        for (let i = pipeLen - 1; i >= 0; i--) {
+          const pipe = this._nowPipeArr[i];
+          const pipeTrans = pipe.transform;
+          const pipePos = pipeTrans.position;
+          if (pipePos.x < -hideX) {
+            // The invisible pipe can be destroyed.
+            this._destroyPipe(i);
+          } else {
+            if (!bAddScore && pipePos.x > -1 && pipePos.x - changeVal <= -1) {
+              // Get a point.
+              engine.dispatch(GameEvent.addScore);
+              bAddScore = true;
+            }
+            pipeTrans.setPosition(pipePos.x - changeVal, pipePos.y, pipePos.z);
           }
-          pipeTrans.setPosition(pipePos.x - changeVal, pipePos.y, pipePos.z);
+          // Judge whether the pipe needs to be regenerated according to the X coordinate.
+          if (i == pipeLen - 1 && pipePos.x <= hideX - horizontalDis) {
+            this._createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
+          }
         }
-        // Judge whether the pipe needs to be regenerated according to the X coordinate
-        if (i == pipeLen - 1 && pipePos.x <= hideX - horizontalDis) {
-          this.createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
-        }
+      } else {
+        // Need to regenerate a pipe.
+        this._createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
       }
-    } else {
-      // Need to regenerate a pipe
-      this.createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
     }
   }
-}
 ```
 
-
-其中 `createPipe` 函数使用了引擎自带的 [clone](${docs}entity-clone-cn) 功能，将水管克隆一份即可。
+其中 `_createPipe` 函数使用了引擎自带的 [clone](${docs}entity-clone-cn) 功能，将水管克隆一份即可。
 
 ```typescript
-private createPipe(posX, posY, posZ) {
-  const pipePool = this._pipePool;
-  var pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
-  pipe.transform.setPosition(posX, posY, posZ);
-  this.entity.addChild(pipe);
-  this._nowPipeArr.push(pipe);
-}
+  private _createPipe(posX: number, posY: number, posZ: number) {
+    const pipePool = this._pipePool;
+    const pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
+    pipe.transform.setPosition(posX, posY, posZ);
+    this.entity.addChild(pipe);
+    this._nowPipeArr.push(pipe);
+  }
 ```
 
 ## GUI
@@ -382,20 +378,7 @@ private createPipe(posX, posY, posZ) {
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
 
-此处可以参考 [射线投影](${docs}ray-cn) 文档，获得射线后我们可以直接用 Restart 按钮的包围 [bounds](${api}oasis-engine/SpriteRenderer#bounds) 和射线做相交检测 [intersectBox](${api}oasis-engine/Ray#intersectBox) ，当发生碰撞后通知 GameCtrl 重新开始对局。
-
-```typescript
-engine.on(GameEvent.checkHitGui, (tempRay) => {
-  if (!resetBtnNode.isActive || !tempRay) {
-    return;
-  }
-  // Check whether the ray intersects the bounding box
-  if (tempRay.intersectBox(resetBtnRenderer.bounds) >= 0) {
-    // Tell gamectrl to restart the game
-    engine.dispatch(GameEvent.reStartGame);
-  }
-});
-```
+此处可以参考 [射线投影](${docs}ray-cn) 文档，获得射线后我们可以直接用 Restart 按钮的包围 [bounds](${api}oasis-engine/SpriteRenderer#bounds) 和射线做相交检测 [intersectBox](${api}oasis-engine/Ray#intersectBox) ，当发生碰撞后通知 GameCtrl 重新开始对局，此处我简单封装了一个 Touch 组件，下个里程碑我们将完善引擎的 Input 能力。
 
 # 碰撞检测
 
@@ -440,20 +423,19 @@ Math.abs(pipePos.y - birdY) > 1.2;
 对场上所有的 Pipe 做上述操作则得到：
 
 ```typescript
-// When checkHit is monitored, check the collision between the pipe and the bird
-engine.on(GameEvent.checkHit, (birdY) => {
-  var len = this._nowPipeArr.length;
-  for (var i = 0; i < len; i++) {
-    var pipePos = this._nowPipeArr[i].transform.position;
-    if (Math.abs(pipePos.x) < 0.9) {
-      if (Math.abs(pipePos.y - birdY) > 1.2) {
-        engine.dispatch(GameEvent.gameOver);
+    // When checkHit is monitored, check the collision between the pipe and the bird.
+    engine.on(GameEvent.checkHit, (birdY: number) => {
+      var len = this._nowPipeArr.length;
+      for (var i = 0; i < len; i++) {
+        var pipePos = this._nowPipeArr[i].transform.position;
+        if (Math.abs(pipePos.x) < 0.9) {
+          if (Math.abs(pipePos.y - birdY) > 1.2) {
+            engine.dispatch(GameEvent.gameOver);
+          }
+          break;
+        }
       }
-      break;
-    }
-  }
-});
-
+    });
 ```
 
 # 收尾与优化
