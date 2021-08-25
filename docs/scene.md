@@ -51,7 +51,7 @@ engine.sceneManager.activeScene = destScene;
 
 #### 3. Load scene
 
-If you want to load the **Scene** asset in the application, you can pass a url to `engine.sceneManager.loadScene` method.
+If you want to load the **Scene** asset in the application, you can pass an url to `engine.sceneManager.loadScene` method.
 
 ```typescript
 const sceneUrl = '...';
@@ -129,9 +129,9 @@ const entity2 = scene.getRootEntity(2);
 | [removeRootEntity](${api}core/Scene#removeRootEntity) | Delete the root entity |
 | [getRootEntity](${api}core/Scene#getRootEntity) | Find the root entity, you can get all the root entities, or a single entity object. Note that all entities are read-only arrays, and the length and order cannot be changed |
 
-## 其他
+## Other tips
 
-Please note that if we want to output the rendered image to the screen or off-screen rendering, we have to make sure that [Camera](${api}core/Camera) is mounted on the entity in the current _scene_. The method of mounting the camera is as follows:
+Note that if the rendered image is need to show on the screen or off-screen, the [Camera](${api}core/Camera) must be added on the entity in the current _scene_. The method of mounting the camera is as follows:
 
 ```typescript
 const cameraEntity = rootEntity.createChild('camera');

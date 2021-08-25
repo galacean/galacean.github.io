@@ -47,7 +47,7 @@ engine.canvas.resizeByClientSize();
 
 Regarding adaptation, the core thing to pay attention to is **device pixel ratio**. Taking iPhoneX as an example, the device pixel ratio `window.devicePixelRatio` is *3*, the window width `window.innerWidth` is *375*, and the screen physical The pixel width is: 375 * 3 = *1125*
 
-The rendering pressure is proportional to the area size of the screen. The larger the physical pixels, the greater the rendering pressure, and the more power it consumes. It is recommended to set the height and width of the canvas through the API exposed by [WebCanvas](${api}rhi-webgl/WebCanvas). It is not recommended to use the native canvas API, such as `canvas.width` or `canvas.style.width`.
+The rendering pressure is proportional to the area size of the screen. The larger the physical pixels, the greater the rendering pressure, and the more power it consumes. It is recommended to set the height and width of the canvas through the API exposed by [WebCanvas](${api}rhi-webgl/WebCanvas). It is not recommended using the native canvas API, such as `canvas.width` or `canvas.style.width`.
 
 >️ **Note**: Some front-end scaffolding will insert the following tags to modify the zoom ratio of the page:
 >
