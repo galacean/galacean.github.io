@@ -7,12 +7,12 @@ import {
   Animator,
   Camera,
   DirectLight,
-  GLTFResource,
   Logger,
   SkinnedMeshRenderer,
   SystemInfo,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
+  GLTFResource
 } from "oasis-engine";
 
 Logger.enable();
