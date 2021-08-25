@@ -13,9 +13,7 @@ import {
   Logger,
   SystemInfo,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-import type {
+  WebGLEngine,
   AnimationClip,
   GLTFResource
 } from "oasis-engine";

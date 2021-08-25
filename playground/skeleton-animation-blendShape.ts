@@ -11,9 +11,9 @@ import {
   SkinnedMeshRenderer,
   SystemInfo,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
+  GLTFResource
 } from "oasis-engine";
-import type { GLTFResource } from 'oasis-engine';
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");

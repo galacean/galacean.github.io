@@ -4,6 +4,7 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
+  AnimationClip,
   Animator,
   AnimatorController,
   AnimatorControllerLayer,
@@ -11,12 +12,12 @@ import {
   AnimatorStateMachine,
   Camera,
   DirectLight,
+  GLTFResource,
   Logger,
   SystemInfo,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
-import type { AnimationClip, GLTFResource } from 'oasis-engine';
 
 Logger.enable();
 
