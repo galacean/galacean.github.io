@@ -44,7 +44,7 @@
     "@oasis-engine/controls": "^0.4.0",
     "@oasis-engine/framebuffer-picker": "^0.4.0",
     "@oasis-engine/lottie": "^0.0.5",
-    "@oasis-engine/spine": "^0.0.2",
+    "@oasis-engine/spine": "0.2.0-alpha.0",
     "@oasis-engine/stats": "^0.4.0",
     "@oasis-engine/touch": "^0.0.3",
     "@stackblitz/sdk": "^1.5.2",
