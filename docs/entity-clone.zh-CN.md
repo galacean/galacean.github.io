@@ -97,6 +97,6 @@ console.log(script.d[0]);// output is (1,1,1). bacause deepClone let d[0] use th
 ```
 注意: 
 
-- `shallowClone` 和 `deepClone` 适用于 *Obect*、*Array* 和 *Class* 类型。
+- `shallowClone` 和 `deepClone` 适用于 *Object*、*Array* 和 *Class* 类型。
 - `shallowClone` 克隆后会保持自身引用独立，并使用赋值的方式克隆其内部所有字段（如果内部字段是基本类型则会拷贝值，如果内部字段是引用类型则会拷贝其引用地址）。
 - `deepClone` 如果在深克隆过程中遇到 *Class* 则会调用对象的 [cloneTo()](${api}design/IClone#cloneTo) 实现克隆，需要对象实现 [IClone](${api}design/IClone) 接口。

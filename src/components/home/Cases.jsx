@@ -1,4 +1,5 @@
 import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 export default function Cases () {
   const videos = [
@@ -22,7 +23,9 @@ export default function Cases () {
 
   return (
     <section className="home-section home-section-cases">
-      <h2>案例</h2>
+      <h2>
+        <FormattedMessage id="app.home.cases" />
+      </h2>
       <div className="home-section-inner">
         {videos.map(({src, poster}) => {
           return <div className='home-flex home-flex-case' key={src}>

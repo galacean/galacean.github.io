@@ -16,7 +16,7 @@ type: 入门
 npm install --save oasis-engine
 ```
 
-1. 引入引擎模块
+2. 引入引擎模块
 
 ```typescript
 import { WebGLEngine, Camera } from 'oasis-engine';
@@ -24,7 +24,9 @@ import { WebGLEngine, Camera } from 'oasis-engine';
 
 ### Create Oasis App
 
-如果你只是想在本地快速完成一个 Demo， 推荐你使用 [create-oasis-app](https://github.com/oasis-engine/create-oasis-app)， 它提供了一些常用的框架如 [React](https://reactjs.org/)、[Vue](https://vuejs.org/) 等模板。
+如果你只是想在本地快速完成一个 Demo， 推荐你使用 [create-oasis-app](https://github.com/oasis-engine/create-oasis-app)， 它提供了一些常用的框架如 [React](https://reactjs.org/)、[Vue](https://vuejs.org/) 等模板。使用示例如下：
+
+![npm-init](https://gw.alipayobjects.com/zos/OasisHub/b5bdc167-1d83-48a1-b826-bee43c2f1264/npm-init.gif)
 
 
 ## 包分类

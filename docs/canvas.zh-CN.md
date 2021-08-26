@@ -55,42 +55,7 @@ engine.canvas.resizeByClientSize();
 >
 > 这行代码会把 `window.innerWidth` 的值从 375 修改为 1125。
 
-Oasis 的屏幕适配推荐使用以下四种模式：
-
-### 高清模式
-
-此模式下，画布像素 1:1 填充到屏幕物理像素，通俗地说就是设备能渲染多高清，画布就渲染多高清。高清模式的代码如下：
-
-```typescript
-import { WebCanvas } from "oasis-engine";
-
-const canvas = document.getElementById('canvas');
-const webcanvas = new WebCanvas(canvas);
-const pixelRatio = window.devicePixelRatio; // 如果已经设置 meta scale，请设置为 1
-
-/**
- * 设置高清模式，默认全屏，也可以自己设置任意高宽
- */
-webcanvas.width = window.innerWidth * pixelRatio;
-webcanvas.height =  window.innerHeight * pixelRatio;
-```
-
-### 自动模式
-
-如果希望画布能够自适应样式高宽，即用 css 设置了 canvas 的样式高宽，这种模式只要在高清模式基础上做少量修改：
-
-```typescript
-const canvas = document.getElementById('canvas');
-const webcanvas = new WebCanvas(canvas);
-const pixelRatio = window.devicePixelRatio; // 如果已经设置 meta scale，请设置为 1
-
-/**
- * 设置自动模式
- */
-webcanvas.width = canvas.clientWidth * pixelRatio;
-webcanvas.height = canvas.clientHeight * pixelRatio;
-```
-
+除了 `resizeByClientSize` 自动适配，推荐使用以下两种模式：
 ### 节能模式
 
 考虑到移动端设备虽然是高清屏幕（设别像素比高）但实际显卡性能并不能很好地满足高清实时渲染的性能要求的情况（**3倍屏和2倍屏渲染面积比是 9:4，3倍屏较容易造成手机发烫**），此模式下引擎通过对画布缩放拉伸来达到适配的目的。代码如下：
