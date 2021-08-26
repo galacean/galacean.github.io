@@ -54,6 +54,14 @@ module.exports = {
     port: 3000
   },
   optimizeDeps: {
-    exclude: ['oasis-engine'],
-  },
+    exclude: [
+      "oasis-engine",
+      "@oasis-engine/controls",
+      "@oasis-engine/framebuffer-picker",
+      "@oasis-engine/lottie",
+      "@oasis-engine/spine",
+      "@oasis-engine/touch",
+      "@oasis-engine/baker"
+    ]
+  }
 };
