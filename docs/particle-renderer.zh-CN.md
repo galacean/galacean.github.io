@@ -1,6 +1,6 @@
 ---
 order: 11
-title: 粒子动画
+title: 粒子系统
 type: 组件
 ---
 
@@ -45,8 +45,8 @@ particleComp.stop();
 ### 材质
 - [texture](${api}core/ParticleRenderer#texture) ： 粒子形状贴图。
 - [color](${api}core/ParticleRenderer#color)：粒子颜色。
-- [colorRandomness](${api}core/ParticleRenderer#colorRandomness)：颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值，然后截取在 `0~1` 范围内。
-- [isUseOriginColor](${api}core/ParticleRenderer#isUseOriginColor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色，可以在原图的基础上混合出任意的颜色。
+- [colorRandomness](${api}core/ParticleRenderer#colorRandomness)：颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值。
+- [isUseOriginColor](${api}core/ParticleRenderer#isUseOriginColor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色。
 - [spriteSheet](${api}core/ParticleRenderer#spriteSheet)：精灵图表，每个粒子可以渲染精灵图中某块区域：
 
 <playground src="particle-sprite-sheet.ts"></playground>
@@ -60,13 +60,12 @@ particleComp.stop();
 ### 变换
 - [position](${api}core/ParticleRenderer#position) ：初始位置。
 - [positionRandomness](${api}core/ParticleRenderer#positionRandomness)：位置随机因子。
-- [positionArray](${api}core/ParticleRenderer#positionArray) ：位置数组。
 - [velocity](${api}core/ParticleRenderer#velocity) ：移动速度。
 - [velocityRandomness](${api}core/ParticleRenderer#velocityRandomness)：移动速度随机因子。
 - [acceleration`](${api}core/ParticleRenderer#acceleration)：加速度。
 - [accelerationRandomness](${api}core/ParticleRenderer#accelerationRandomness)：加速度随机因子。
 - [angle](${api}core/ParticleRenderer#angle): 初始旋转角度。
-- [angleRandomness](${api}core/ParticleRenderer#angleRandomness): 初始旋转角度随机因子，取值在 `0~1` 之间，例如：rotate 为 0，随机因子为 0，则生成的粒子角度均为 0，随机因子为 1，则生成的角度在 `-PI~PI` 之间随机。
+- [angleRandomness](${api}core/ParticleRenderer#angleRandomness): 初始旋转角度随机因子，取值在 `0~1` 之间，例如：若随机因子为 1，则生成的角度在 `-PI~PI` 之间随机。
 - [rotateVelocity](${api}core/ParticleRenderer#rotateVelocity): 旋转速度。
 - [rotateVelocityRandomness](${api}core/ParticleRenderer#rotateVelocityRandomness): 旋转速度随机因子。
 - [isRotateToVelocity](${api}core/ParticleRenderer#isRotateToVelocity)：是否跟随粒子运动速度的方向，默认 `false`，为 `true`  时，将粒子贴图的单位向量旋转至粒子运动速度的方向，例如烟花。为 `false` 时，无旋转，适用于方向一致的场景，例如孔明灯。
@@ -74,7 +73,7 @@ particleComp.stop();
 - [size](${api}core/ParticleRenderer#size)：粒子大小。
 - [sizeRandomness](${api}core/ParticleRenderer#sizeRandomness)：粒子大小随机因子。
 - [scale](${api}core/ParticleRenderer#scale)：粒子缩放。
-- [isScaleByLifetime](${api}core/ParticleRenderer#isScaleByLifetime) ：是否随生命周期缩小至消失。为 `true` 时粒子会越来越小，为 `false` 时粒子大小保持不变，只有透明度会降低，可用于制作淡出消失的效果。
+- [isScaleByLifetime](${api}core/ParticleRenderer#isScaleByLifetime)：是否随生命周期缩小至消失。为 `true` 时粒子会越来越小。
 
   ## 方法
 - [start()](${api}core/ParticleRenderer#start)：开始播放。
