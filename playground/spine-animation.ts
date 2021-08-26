@@ -2,7 +2,7 @@
  * @title Spine Animation
  * @category 2D
  */
-import { Camera, Logger, SystemInfo, Vector3, WebGLEngine, Entity } from "oasis-engine";
+import { Camera, Logger, Vector3, WebGLEngine, Entity } from "oasis-engine";
 import { SpineAnimation } from "@oasis-engine/spine";
 
 Logger.enable();
@@ -28,7 +28,7 @@ engine.resourceManager
     type: "spine"
   })
   .then((spineEntity: Entity) => {
-    spineEntity.transform.setPosition(0, -12, 0);
+    spineEntity.transform.setPosition(0, -15, 0);
     rootEntity.addChild(spineEntity);
     const spineAnimation = spineEntity.getComponent(SpineAnimation);
     spineAnimation.state.setAnimation(0, "walk", true);
