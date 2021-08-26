@@ -9,9 +9,9 @@ function Codepen (props: any) {
   const iconRef = useRef(null);
   const jsExternal: string[] = [];
 
-  for(const lib in props.packages) {
+  Object.keys(props.packages).forEach(lib => {
     jsExternal.push(`${lib}@${props.packages[lib].version}/${(props.packages[lib].dist || 'dist/browser.min.js')}`);
-  }
+  });
 
   let js: string = props.sourceCode;
 

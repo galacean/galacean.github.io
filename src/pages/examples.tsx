@@ -36,7 +36,7 @@ export default function Examples(props: any) {
 
   const itemGroups = []
 
-  for (const category in groups) {
+  Object.keys(groups).forEach((category) => {
     const groupNodes = groups[category];
     itemGroups.push(<Menu.ItemGroup key={category} title={category}>
       {groupNodes.map((node) => {
@@ -45,7 +45,7 @@ export default function Examples(props: any) {
         </Menu.Item>
       })}
     </Menu.ItemGroup>)
-  }
+  })
 
   const menu = <Menu selectedKeys={[name]} onSelect={(item) => {
     setName(item.key);
@@ -70,7 +70,7 @@ export default function Examples(props: any) {
     if (hash) {
       setName(hash.replace('#', '') || 'pbr-helmet');
     }
-  });
+  }, []);
 
   return (
     <>
