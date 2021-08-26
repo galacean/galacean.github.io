@@ -27,8 +27,7 @@
     "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
   },
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
@@ -44,8 +43,9 @@
     "@oasis-engine/controls": "^0.4.0",
     "@oasis-engine/framebuffer-picker": "^0.4.0",
     "@oasis-engine/lottie": "^0.0.5",
-    "@oasis-engine/spine": "^0.0.2",
+    "@oasis-engine/spine": "0.2.0-alpha.0",
     "@oasis-engine/stats": "^0.4.0",
+    "@oasis-engine/touch": "^0.0.13",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",
@@ -88,7 +88,8 @@
     "react-prism": "^4.3.2",
     "react-scroll": "^1.8.2",
     "rehype-react": "^6.2.0",
-    "simple-dropzone": "^0.8.1"
+    "simple-dropzone": "^0.8.1",
+    "@tweenjs/tween.js": "^18.6.4"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.7",

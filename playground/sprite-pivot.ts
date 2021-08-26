@@ -4,7 +4,18 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-import { AssetType, Camera, Entity, Sprite, SpriteRenderer, Texture2D, Vector2, WebGLEngine } from "oasis-engine";
+import {
+  AssetType,
+  Camera,
+  Entity,
+  Script,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  Vector2,
+  Vector3,
+  WebGLEngine
+} from "oasis-engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -36,6 +47,7 @@ engine.resourceManager
     addPivotEntity(spriteEntity, texture, 8);
     // Display pivot entity
     const pivotEntity = spriteEntity.clone();
+    pivotEntity.addComponent(RotateScript);
     addPivotEntity(pivotEntity, texture, -8);
     addDataGUI(pivotEntity);
   });
@@ -86,4 +98,10 @@ function addDataGUI(entity: Entity) {
   gui.add(guiData, "reset").name("重置");
 
   return guiData;
+}
+
+class RotateScript extends Script {
+  onUpdate(dt: number) {
+    this.entity.transform.rotate(0, 0, 1);
+  }
 }

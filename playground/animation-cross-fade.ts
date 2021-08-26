@@ -42,7 +42,7 @@ engine.resourceManager
     const debugInfo = {
       animation: animationNameList[0],
       crossFade: true,
-      crossTime: 1000
+      crossTime: 1
     };
 
     gui.add(debugInfo, "animation", animationNameList).onChange((v) => {
@@ -55,5 +55,5 @@ engine.resourceManager
     });
 
     gui.add(debugInfo, "crossFade");
-    gui.add(debugInfo, "crossTime", 0, 5000).name("过渡时间(毫秒)");
+    gui.add(debugInfo, "crossTime", 0, 5).name("过渡时间(秒)");
   });

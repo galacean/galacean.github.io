@@ -1,5 +1,5 @@
 /**
- * @title Buffer Mesh
+ * @title Buffer Mesh Interleaved
  * @category Mesh
  */
 import {
@@ -8,12 +8,9 @@ import {
   BufferBindFlag,
   BufferMesh,
   BufferUsage,
-  Camera,
-  Color,
-  Engine,
+  Camera, Engine,
   IndexFormat,
-  Mesh,
-  MeshRenderer,
+  Mesh, MeshRenderer,
   PointLight,
   Vector3,
   VertexElement,

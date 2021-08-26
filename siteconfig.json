@@ -6,8 +6,8 @@
   "typedocSource": "../engine",
   "packages": {
     "oasis-engine": {
-      "version": "0.4.0",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.4.0/dist/browser.min.js"
+      "version": "0.5.3-alpha.0",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.5.3-alpha.0/dist/browser.min.js"
     },
     "@oasis-engine/controls": {
       "version": "0.4.0",
@@ -18,8 +18,8 @@
       "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.4.0/dist/browser.js"
     },
     "@oasis-engine/spine": {
-      "version": "0.0.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.0.2/dist/browser.js",
+      "version": "0.2.0-alpha.2",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.2.0-alpha.2/dist/browser.js",
       "dist": "dist/browser.js"
     },
     "@oasis-engine/lottie": {
@@ -31,6 +31,11 @@
       "version": "0.7.7",
       "cdn": "https://gw.alipayobjects.com/os/lib/dat.gui/0.7.7/build/dat.gui.min.js",
       "dist": "build/dat.gui.min.js"
+    },
+    "@tweenjs/tween.js": {
+      "version": "18.6.4",
+      "cdn": "https://gw.alipayobjects.com/os/lib/tweenjs/tween.js/18.6.4/dist/tween.umd.js",
+      "dist": "dist/tween.umd.js"
     }
   }
 }
