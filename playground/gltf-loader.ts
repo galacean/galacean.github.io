@@ -5,7 +5,7 @@
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
 import {
-  Animation,
+  Animator,
   AnimationClip,
   AssetType,
   BackgroundMode,
@@ -318,7 +318,7 @@ class Oasis {
     const isGLB = /.glb$/.test(url);
     this.engine.resourceManager
       .load<GLTFResource>({
-        type: AssetType.Perfab,
+        type: AssetType.Prefab,
         url: `${url}#${Math.random()}.${isGLB ? "glb" : "gltf"}` // @todo: resourceManager cache bug
       })
       .then((asset) => {
@@ -366,25 +366,24 @@ class Oasis {
         material.name = "default";
       }
       const state = {
+        opacity: material.baseColor.a,
         baseColor: Oasis.colorToGui(material.baseColor),
         emissiveColor: Oasis.colorToGui((material as PBRBaseMaterial).emissiveColor),
         specularColor: Oasis.colorToGui((material as PBRSpecularMaterial).specularColor),
         baseTexture: material.baseTexture ? "origin" : "",
-        metallicRoughnessTexture: (material as PBRMaterial).metallicRoughnessTexture ? "origin" : "",
+        roughnessMetallicTexture: (material as PBRMaterial).roughnessMetallicTexture ? "origin" : "",
         normalTexture: (material as PBRBaseMaterial).normalTexture ? "origin" : "",
         emissiveTexture: (material as PBRBaseMaterial).emissiveTexture ? "origin" : "",
         occlusionTexture: (material as PBRBaseMaterial).occlusionTexture ? "origin" : "",
-        opacityTexture: (material as PBRBaseMaterial).opacityTexture ? "origin" : "",
         specularGlossinessTexture: (material as PBRSpecularMaterial).specularGlossinessTexture ? "origin" : ""
       };
 
       const originTexture = {
         baseTexture: material.baseTexture,
-        metallicRoughnessTexture: (material as PBRMaterial).metallicRoughnessTexture,
+        roughnessMetallicTexture: (material as PBRMaterial).roughnessMetallicTexture,
         normalTexture: (material as PBRBaseMaterial).normalTexture,
         emissiveTexture: (material as PBRBaseMaterial).emissiveTexture,
         occlusionTexture: (material as PBRBaseMaterial).occlusionTexture,
-        opacityTexture: (material as PBRBaseMaterial).opacityTexture,
         specularGlossinessTexture: (material as PBRSpecularMaterial).specularGlossinessTexture
       };
 
@@ -397,20 +396,20 @@ class Oasis {
       // metallic
       if (material instanceof PBRMaterial) {
         const mode1 = f.addFolder("金属模式");
-        mode1.add(material, "metallicFactor", 0, 1).step(0.01);
-        mode1.add(material, "roughnessFactor", 0, 1).step(0.01);
+        mode1.add(material, "metallic", 0, 1).step(0.01);
+        mode1.add(material, "roughness", 0, 1).step(0.01);
         mode1
-          .add(state, "metallicRoughnessTexture", ["None", "origin", ...Object.keys(this.textures)])
+          .add(state, "roughnessMetallicTexture", ["None", "origin", ...Object.keys(this.textures)])
           .onChange((v) => {
-            material.metallicRoughnessTexture =
-              v === "None" ? null : this.textures[v] || originTexture.metallicRoughnessTexture;
+            material.roughnessMetallicTexture =
+              v === "None" ? null : this.textures[v] || originTexture.roughnessMetallicTexture;
           });
         mode1.open();
       }
       // specular
       else if (material instanceof PBRSpecularMaterial) {
         const mode2 = f.addFolder("高光模式");
-        mode2.add(material, "glossinessFactor", 0, 1).step(0.01);
+        mode2.add(material, "glossiness", 0, 1).step(0.01);
         mode2.addColor(state, "specularColor").onChange((v) => {
           Oasis.guiToColor(v, material.specularColor);
         });
@@ -435,16 +434,14 @@ class Oasis {
       if (!(material instanceof UnlitMaterial)) {
         const common = f.addFolder("通用");
 
-        common.add(material, "envMapIntensity", 0, 2).step(0.01);
         common
-          .add(material, "opacity", 0, 1)
+          .add(state, "opacity", 0, 1)
           .step(0.01)
           .onChange((v) => {
-            material.opacity = v;
+            material.baseColor.a = v;
           });
         common.add(material, "isTransparent");
         common.add(material, "alphaCutoff", 0, 1).step(0.01);
-        common.add(material, "getOpacityFromRGB");
 
         common.addColor(state, "baseColor").onChange((v) => {
           Oasis.guiToColor(v, material.baseColor);
@@ -464,9 +461,6 @@ class Oasis {
         common.add(state, "occlusionTexture", ["None", "origin", ...Object.keys(this.textures)]).onChange((v) => {
           material.occlusionTexture = v === "None" ? null : this.textures[v] || originTexture.occlusionTexture;
         });
-        common.add(state, "opacityTexture", ["None", "origin", ...Object.keys(this.textures)]).onChange((v) => {
-          material.opacityTexture = v === "None" ? null : this.textures[v] || originTexture.opacityTexture;
-        });
         common.open();
       }
     });
@@ -481,8 +475,8 @@ class Oasis {
     if (animations?.length) {
       this.animationFolder = this.gui.addFolder("Animation");
       this.animationFolder.open();
-      const animator = this.gltfRootEntity.getComponent(Animation);
-      animator.playAnimationClip(animations[0].name);
+      const animator = this.gltfRootEntity.getComponent(Animator);
+      animator.play(animations[0].name);
       const state = {
         animation: animations[0].name
       };
@@ -490,9 +484,10 @@ class Oasis {
         .add(state, "animation", ["None", ...animations.map((animation) => animation.name)])
         .onChange((name) => {
           if (name === "None") {
-            animator.stop(true);
+            animator.speed = 0;
           } else {
-            animator.playAnimationClip(name);
+            animator.speed = 1;
+            animator.play(name);
           }
         });
     }

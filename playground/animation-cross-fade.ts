@@ -4,7 +4,7 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
-import { Animation, Camera, Color, DirectLight, GLTFResource, WebGLEngine } from "oasis-engine";
+import { Animator, Camera, Color, DirectLight, GLTFResource, WebGLEngine } from "oasis-engine";
 
 const gui = new dat.GUI();
 
@@ -36,25 +36,24 @@ engine.resourceManager
 
     rootEntity.addChild(defaultSceneRoot);
 
-    const animator = defaultSceneRoot.getComponent(Animation);
-    animator.playAnimationClip(animationNameList[0]);
+    const animator = defaultSceneRoot.getComponent(Animator);
+    animator.play(animationNameList[0]);
 
     const debugInfo = {
       animation: animationNameList[0],
       crossFade: true,
-      crossTime: 1000
+      crossTime: 1
     };
 
     gui.add(debugInfo, "animation", animationNameList).onChange((v) => {
       const { crossFade, crossTime } = debugInfo;
-
       if (crossFade) {
-        animator.crossFade(v, crossTime, {});
+        animator.crossFade(v, crossTime);
       } else {
-        animator.playAnimationClip(v);
+        animator.play(v);
       }
     });
 
     gui.add(debugInfo, "crossFade");
-    gui.add(debugInfo, "crossTime", 0, 5000).name("过渡时间(毫秒)");
+    gui.add(debugInfo, "crossTime", 0, 5).name("过渡时间(秒)");
   });
