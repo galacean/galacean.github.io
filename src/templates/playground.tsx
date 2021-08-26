@@ -32,12 +32,12 @@ const useScript = (s: IScript) => {
     }
 
     addLib(s.libs['oasis-engine']).then(() => {
-      for (const name in s.libs) {
+      Object.keys(s.libs).forEach(name => {
         if (name !== 'oasis-engine') {
           const promise = addLib(s.libs[name])
           promises.push(promise);
         }
-      }
+      });
 
       Promise.all(promises).then(() => {
         const script = document.createElement('script');
