@@ -13,25 +13,36 @@ type: 工具库
 - 使用 [on](${api}core/EventDispatcher#on) 监听：
 
   ```typescript
-  this.engine.on("event-test", ()=> {
-    console.log('call event-test')
-  })
+  this.engine.on("event-test", () => {
+    console.log("call event-test");
+  });
   ```
 
 - 使用 [once](${api}core/EventDispatcher#once) 监听，只会触发一次回调函数：
 
   ```typescript
-  this.engine.once("event-test", ()=> {
-    console.log('call event-test')
-  })
+  this.engine.once("event-test", () => {
+    console.log("call event-test");
+  });
   ```
+
+## 事件监听移除
+
+```typescript
+// Remove the specific function "fun" that listen to "event-test".
+this.engine.off("event-test", fun);
+// Remove all functions that listen to "event-test".
+this.engine.off("event-test");
+```
 
 ## 事件派发
 
 调用 [dispatch](${api}core/EventDispatcher#dispatch) 方法可以派发事件，派发对应事件会触发监听事件回调函数的执行。
 
 ```typescript
-this.engine.dispatch("event-test", {eventData: 'mydata'})
+this.engine.dispatch("event-test", { eventData: "mydata" });
 ```
 
-第二个参数是 data，可以传递回调函数需要的数据。
+## 回调参数格式
+
+回调参数与发送时携带的参数格式完全一致。

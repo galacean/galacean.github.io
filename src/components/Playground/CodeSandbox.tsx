@@ -22,9 +22,9 @@ function CodeSandbox (props: any) {
 
   const dependencies: any = {};
 
-  for(const p in props.packages){
+  Object.keys(props.packages).forEach(p => {
     dependencies[p] = props.packages[p].version;
-  }
+  });
 
   const codesandboxPackage = {
     title: `${props.name} - ${props.engineName}@${props.version}`,
