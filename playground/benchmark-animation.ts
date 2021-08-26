@@ -2,12 +2,15 @@
  * @title Animation
  * @category Benchmark
  */
+
+import { Stats } from "@oasis-engine/stats";
 import { OrbitControl } from "@oasis-engine/controls";
-import { Animator, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
+import { Animator, AssetType, Camera, Engine, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
+Engine.registerFeature(Stats);
 
 // Create root entity and get scene.
 const scene = engine.sceneManager.activeScene;
