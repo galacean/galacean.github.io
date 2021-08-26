@@ -27,8 +27,7 @@
     "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
   },
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
@@ -46,7 +45,7 @@
     "@oasis-engine/lottie": "^0.0.5",
     "@oasis-engine/spine": "^0.2.0-alpha.0",
     "@oasis-engine/stats": "^0.5.3-alpha.2",
-    "@oasis-engine/touch": "^0.0.4",
+    "@oasis-engine/touch": "^0.0.13",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",
