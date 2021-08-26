@@ -1,5 +1,5 @@
 import type { Entity } from 'oasis-engine';
-import { Camera, Vector3, WebGLEngine, Vector4 } from 'oasis-engine';
+import { Camera, Vector3, WebGLEngine } from 'oasis-engine';
 import { SpineAnimation } from '@oasis-engine/spine';
 import { OrbitControl } from '@oasis-engine/controls';
 import React, { useEffect } from 'react';
