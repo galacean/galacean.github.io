@@ -68,3 +68,27 @@ const spineAnimation = spineEntity.getComponent(SpineAnimation);
 spineAnimation.state.setAnimation(0, 'your_animation_name', true);
 
 ```
+
+### 常见QA
+- 如何获得 spine 资源？
+通过 spine 编辑器的导出功能能够导出所需的 json, atlas, png 文件。
+如果导出资源可以参考 spine 官方文档：http://zh.esotericsoftware.com/spine-export/
+- 如何进行动画控制？
+可以参考文档：http://zh.esotericsoftware.com/spine-api-reference#AnimationState
+这里列举几个常见的例子：
+```
+// 单次播放
+spineAnimation.state.setAnimation(0, 'your_animation_name', false);
+// 循环动画
+spineAnimation.state.setAnimation(0, 'your_animation_name', true);
+// 暂停播放
+spineAnimation.state.timeScale = 0;
+// 动画A播放完毕后循环播放动画B
+spineAnimation.state.setAnimation(0, 'animationA', false);
+spineAnimation.state.addAnimation(0, 'animationA', true, 0);
+```
+spine 动画的事件与回调可以参考文档：
+http://esotericsoftware.com/spine-unity-events
+
+
+
