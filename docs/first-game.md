@@ -1,46 +1,46 @@
 ---
 order: 4
-title: 4. 第一个游戏
-type: 入门
+title: 4. First game
+type: Introduce
 ---
 
-> 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
+> I believe everyone is familiar with **Flappy Bird**. Today we briefly describe how to use Oasis to replicate 2D games. The process is actually the same as the daily requirements. Original game link:[http://flappybird.io/](http://flappybird.io/)
 
-# 总览
+# Overview
 
-在着手敲代码前，需要先在脑海中规划一下如何实现与游戏的大概流程，因此我们会将本文分为以下几个环节：
+Before coding, we need to plan in our minds the general flow of how to achieve and the game, so we will divide this article into the following sections:
 
-- 需求分析
-- UI 搭建
-- 逻辑的设计与实现
-- 后续优化
-- 碰撞检测
+- Demand analysis.
+- Build UI interface.
+- Design and implementation.
+- Collision detection.
+- Optimization.
 
-# 需求分析
+# Demand analysis
 
-试玩之后，通过简单的需求分析可以总结出以下 tips ：
+After the trial, we can summarize the following points through a simple analysis:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623310879070-048cbc6d-2193-4672-9440-c9a13d31f4d8.png" alt="image.png" style="zoom:50%;" />
 
-- 游戏为 2D 游戏，使用[正交相机](${docs}camera-cn#正交投影)会更加简单方便
-- 整个游戏分为三个状态：
-  - 待机
-  - 对局中
-  - 对局结束
-- 整个游戏中的显示对象(由远到近)：
-  - Backgound （背景）
-  - Pipe （水管）
-  - Ground （草地）
-  - Bird （小鸟的帧动画）
-  - GUI（分数与重新开始按钮）
+- The game is a 2D game, using [Orthogonal Camera](${docs}camera-cn#正交投影) will be easier and more convenient.
+- The game is divided into three states:
+  - Idel
+  - In the game
+  - Game over
+- Display objects throughout the game (from far to near):
+  - Backgound
+  - Pipe
+  - Ground
+  - Bird
+  - GUI
 
-需求分析后，可以基本理清对局的流程与全局的 UI 布局，接下来的步骤就是根据层级关系搭建好整个 UI 界面。 ​
+After the requirements analysis, we can basically sort out the game process and the overall UI layout. The next step is to build the entire UI interface according to the hierarchical relationship.
 
-# UI 搭建
+# Build UI interface
 
-经过上个步骤分析，可以确定整个游戏中的显示对象，此时可以开始实现一个简单的搭建，这里要提前说明的是，本次示例使用 [SpriteRender](${docs}sprite-renderer-cn) 实现，请重点关注其中的 [Sprite](${docs}sprite-cn) ，因为在搭建 UI 的时候，需要确定像素和坐标之间的关系，而其中的 [pixelsPerUnit](${api}core/Sprite#pixelsPerUnit) 确定了一个单位坐标包含的像素值。 ​
+After the analysis of the previous step, we have determined the display objects in the entire game. At this point, we can start to implement a simple construction. It should be noted in advance that this example uses [SpriteRender](${docs}sprite-renderer-cn) implementation, please pay attention to the [Sprite](${docs}sprite-cn), because when building the UI, we need to determine the relationship between pixels and coordinates, and the [pixelsPerUnit](${api}core/Sprite#pixelsPerUnit) determines the pixel value contained in a unit coordinate.
 
-## 获取 UI 资源
+## UI resources
 
 | Bird | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png) |  |
 | --- | --- | --- |
@@ -50,36 +50,32 @@ type: 入门
 | Restart | [https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png) |  |
 | Number | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png) |  |
 
-## 加载 UI 资源
+## Load resources
 
-在获取 UI 资源后，可以参考[资源管理与加载](${docs}resource-manager-cn#1-texture2d)中加载 [Texture2D](${docs}texture-cn#1-2d纹理) 的方式。
+After obtaining UI resources, you can refer to [Resource Management and Loading](${docs}resource-manager-cn#1-texture2d) to load [Texture2D](${docs}texture-cn#1-2d texture).
 
-## 界面搭建
+## Interface construction
 
-### 分析移动策略
+### Analyze the move
 
-在搭建界面前要先确定场景移动与小鸟飞行表现的策略：
+Before building the interface, determine the strategy of scene movement and bird flight performance:
 
-- 固定草地与水管位置，移动小鸟和相机
-- 移动草地与水管，固定小鸟（上下可移动）和相机
+- Fix the position of the grass and the water pipe, move the bird and the camera.
+- Move grass and water pipes, fix bird and camera.
 
-基于简单原则，我们选择固定相机的方式。
+For simplicity, we choose the way of fixing the camera.
 
-### 分析显示层级
+### Analysis shows priority
 
-在之前进行需求分析时可以大概确定各个显示对象的前后遮挡关系，因此可以敲定大概的摆放位置：
+In the previous demand analysis, we can roughly determine the front and rear occlusion relationship of each display object, so we can finalize the approximate placement position:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee.png" alt="image.png" style="zoom:50%;" />
 
-### 编辑器搭建 UI
-
-可以使用编辑器的同学直接使用编辑器进行搭建。
+### Build with editor
 
 ![图片.gif](https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/13456322/1625127518876-501ff175-036d-42b0-97c2-625790260939.gif#clientId=u65f6af94-7da2-4&from=drop&id=u6bc823c7&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%87.gif&originHeight=482&originWidth=800&originalType=binary&ratio=2&size=1086766&status=done&style=none&taskId=u646868c5-4f7e-418b-b025-64c093dc6f1)
 
-### 脚本搭建 UI
-
-无法使用编辑器的同学可以直接拷贝下方代码。
+### Build with Script
 
 ```typescript
 // Create engine object.
@@ -129,7 +125,7 @@ nodeScore.transform.setScale(0.3, 0.3, 0.3);
 rootEntity.addComponent(GameCtrl);
 ```
 
-其中 `addSpriteRender` 函数是为了方便给 `Entity` 增加 `SpriteRender` 组件而自定义的函数，其代码如下：
+The `addSpriteRender` function is a custom function for the convenience of adding a `SpriteRender` component to the `Entity`. The code is as follows:
 
 ```typescript
 /**
@@ -143,43 +139,41 @@ function addSpriteRender(node: Entity, texture2D: Texture2D) {
 }
 ```
 
-# 逻辑的设计与实现
+# Design and implementation
 
-设计的第一原则是简单适用，切忌过早优化，开始的时候不需要计较内存与计算优化，也不需要在对象销毁与复用上做太多的设计，首先要先实现一套完整的流程，然后在此基础上做一些优化迭代，因此先考虑以下的实现：
+The most important point of the design is simple and applicable. Avoid premature optimization. At the beginning, we don’t need to worry about memory and calculation optimization, nor do we need to do too much design on object destruction and reuse. First, we must first implement a complete set of Process, and then do some optimization iterations on this basis, so we first consider the following implementation:
 
-- 全局控制器，监听人机交互（屏幕点击）与各个模块间的交互（ GUI 发出玩家点击了重新开始的事件）
+- The global controller monitors the human-computer interaction (screen click) and the interaction between each module (for example, the player clicks on the restart event)
 - Bird
-  - 结合帧动画与缓动，实现飞行，死亡，点击飞行与坠落
-  - 处于不同游戏状态的表现
-    - 待机
-    - 对局时的交互（点击飞行时的爬升与之后的坠落）
-    - 死亡
+  - Combine frame animation and easing to achieve flight, death, click to fly and fall
+  - Performance in different game states
+    - Idel
+    - Interaction during the game
+    - Die
 - Ground
-  - 创建两块草地，以一个给定的速率向 X 轴负方向移动，在视野内消失后拼接到右边
-  - 与小鸟的碰撞检测
-  - 处于不同游戏状态的表现
+  - Endless movement
+  - Collision detection with the bird
+  - Performance in different game states
 - Pipe
-  - 每经过固定的距离生成水管，水管的纵向位置随机
-  - 与小鸟的碰撞检测
-  - 处于不同游戏状态的表现
+  - Generate pipe
+  - Collision detection with the bird
+  - Performance in different game states
 - GUI
-  - 分数的显示
-  - 射线检测点击重开
-  - 处于不同游戏状态的表现
+  - Show score
+  - Detect click
+  - Performance in different game states
 
-PS：每个显示对象在不同游戏状态时都会展示对应的表现
+## Bird
 
-## 小鸟
+### Frame animation
 
-### 帧动画
-
-请参考示例 `sprite-sheetAnimation` 的实现，我们通过给 `Entity` 增加 `Script` 组件，并在 `Script` 组件中的 `onUpdate` 函数中控制精灵的渲染区域来实现帧动画，并可以根据当前小鸟的状态（ alive or dead ）展示不同的表现：
+Refer to the implementation of the example `sprite-sheetAnimation`, we add a `Script` component to the `Entity`, and control the rendering area of ​​the sprite in the `onUpdate` function of the `Script` The status of the bird (alive or dead) shows different behaviors:
 
 <playground src="sprite-sheetAnimation.ts"></playground>
 
 ### tweenjs
 
-为了实现小鸟的抬头与低头，我们引入[缓动库](https://github.com/tweenjs/tween.js)，抬头的时候逆时针旋转小鸟至 20 度，低头的时候缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件]（${docs}transform-cn）的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
+In order to realize the flying and falling of the bird, we introduce [tweenjs]](https://github.com/tweenjs/tween.js), when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform-cn) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
 
 ```typescript
 private _updateProperties(
@@ -221,7 +215,7 @@ private _updateProperties(
 	}
 ```
 
-因此在代码中可以这样表示：
+So in our code it can be expressed like this:
 
 ```typescript
 this._dropTween = new TWEEN.Tween(rotation)
@@ -232,13 +226,13 @@ this._dropTween = new TWEEN.Tween(rotation)
   .delay(520);
 ```
 
-### 运动轨迹
+### Motion trajectory
 
-运动轨迹涉及到手感，可以看到原版代码实现得十分复杂，此处模拟现实中的体验，点击屏幕时先给小鸟一个向上的初速度，此时一直为抛物线的运动，当下落的速度达到一个峰值时阻力与重力抵消，此时小鸟以一个恒定的速度下落：
+The motion trajectory affects the feel. You can see that the original code is very complicated. Here we simulate the experience in reality. When you click on the screen, first give the bird an upward initial speed. At this time, it is always a parabolic motion. When the falling speed reaches At a peak, the resistance is offset by gravity, and the bird is falling at a constant speed:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
 
-假设点击往上飞提供的速度为 `_startFlyV`，重力加速度为 `_gravity`，最大下落速度为 `_maxDropV`，点击屏幕的时刻为 `_flyStartTime`，通过计算可以得到任意时刻小鸟的纵坐标：
+Assuming that the speed provided by clicking to fly up is `_startFlyV`, the acceleration of gravity is `_gravity`, the maximum falling speed is `_maxDropV`, and the moment of clicking on the screen is `_flyStartTime`, we can get the ordinate of the bird at any moment by calculation::
 
 ```typescript
 // Free fall and uniform motion are superimposed to obtain the current position.
@@ -259,19 +253,19 @@ if (subTime <= addToMaxUseTime) {
 }
 ```
 
-## 草地
+## Ground
 
- 熟悉材质的同学肯定都对材质中的 tilingOffset 参数印象深刻，这是一个只需要改变 Vector4 的值就可以控制纹理坐标缩放和偏移的功能：
+Developers who are familiar with materials must be impressed by the tilingOffset parameter in the material. This is a function that only needs to change the value of Vector4 to control the scaling and offset of texture coordinates:
 
 <playground src="tiling-offset.ts"></playground>
 
-已知草地资源宽度为 ”37“ ，背景大图宽度为 “768” ，为了底部衔接处宽度一致，可以设置草地的 tilingOffset 为：
+It is known that the width of the grass resource is `37` and the width of the large background image is `768`. In order to have the same width at the bottom of the joint, we can set the tilingOffset of the grass to: offset
 
 ```typescript
 groundMaterial.tilingOffset.setValue(768 / 37, 1, 0, 0);
 ```
 
-紧接着只需要在每次更新的时候去改变 tilingOffset 的偏移即可（为了保证水管与草地运行的速度一致，此处需要做一个简单的转换）：
+Then only need to change the offset of tilingOffset every time it is updated (in order to ensure that the running speed of the water pipe and the grass are consistent, a simple conversion is required here):
 
 ```typescript
 onUpdate(deltaTime: number) {
@@ -280,11 +274,11 @@ onUpdate(deltaTime: number) {
 }
 ```
 
-## 水管
+## Pipe
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
 
-依靠在水管层节点加入 `ScriptPipe` 管理和生成水管，为了更好地设置水管的生成时机与表现，我们将可配置的参数抽取出来：
+We add `ScriptPipe` to the water pipe layer node to manage and generate water pipes. In order to better set the timing and performance of water pipe generation, we extract the configurable parameters:
 
 ```typescript
   /**  Hide when the x coordinate of the pipe is less than -4.6. */
@@ -299,11 +293,11 @@ onUpdate(deltaTime: number) {
   private _pipeDebutTime: number = 3000;
 ```
 
-正如上方更新草地一般，更新水管也是同样的操作：
+Just like updating the grass above, updating the water pipe is the same operation:
 
 ```typescript
   /**
-   * Three things will be done here every frame：
+   * Three things will be done here every frame:
    *    1.Adjust the generation of the pipe.
    *    2.Adjust the position of the pipe.
    *    3.Judge whether to get a point.
@@ -348,7 +342,7 @@ onUpdate(deltaTime: number) {
   }
 ```
 
-其中 `_createPipe` 函数使用了引擎自带的 [clone](${docs}entity-clone-cn) 功能，将水管克隆一份即可。
+Among them, the `_createPipe` function uses the [clone](${docs}entity-clone-cn) function that comes with the engine, just clone the water pipe.
 
 ```typescript
   private _createPipe(posX: number, posY: number, posZ: number) {
@@ -362,29 +356,29 @@ onUpdate(deltaTime: number) {
 
 ## GUI
 
-### 分数
+### Score
 
-首先看下分数的资源长什么样。
+First look at what the score resource looks like:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
 
-此处可参考 [Sprite-Region](https://oasisengine.cn/0.4/examples#sprite-region) 示例，我们可按照以下流程对数字进行截取与重组，每个数字都是一个 `Entity`，他们都有自己的 `SpriteRender`：
+Here you can refer to the [Sprite-Region](https://oasisengine.cn/0.4/examples#sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
 
 ### Restart
 
-可以简单分析一下 Restart 要实现的内容并写出大概的流程。
+We can simply analyze the content of Restart and write a general process.
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
 
-此处可以参考 [射线投影](${docs}ray-cn) 文档，获得射线后可以直接用 Restart 按钮的包围 [bounds](${api}oasis-engine/SpriteRenderer#bounds) 和射线做相交检测 [intersectBox](${api}oasis-engine/Ray#intersectBox) ，当发生碰撞后通知 GameCtrl 重新开始对局，此处我简单封装了一个 Touch 组件，下个里程碑我们将完善引擎的 Input 能力。
+Here you can refer to the [Ray casting](${docs}ray-cn) document. After obtaining the ray, we can directly use the Restart button to surround [bounds](${api}oasis-engine/SpriteRenderer#bounds) to intersect the ray Check [intersectBox](${api}oasis-engine/Ray#intersectBox) and notify GameCtrl to restart the game after a collision. Here I simply encapsulate a Touch component. We will improve the input capability of the engine at the next milestone.
 
-# 碰撞检测
+# Collision detection
 
-## 碰撞检测的时机
+## Timing of collision detection
 
-在执行碰撞检测时有一个前提，就是此时已经是这一帧的最终位置了，之前学习过 [Oasis 脚本系统](${docs}script-cn#组件生命周期函数) 的同学应该会很熟悉，当在 `onUpdata` 中改变 `Entity` 的位置后，可以在 `onLateUpdate` 中做碰撞检测，这样可以保证时序不出问题。
+There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script-cn#组件生命周期函数) should be familiar with it. , After we change the position of `Entity` in `onUpdata`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
 
@@ -399,28 +393,26 @@ engine.on(GameEvent.checkHit, (birdY) => {
 
 ## Pipe & Bird
 
-这里的碰撞检测可能会比较复杂，我们做一个简单的分析：
-
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118.png" alt="image.png" style="zoom:50%;" />
 
-可以看到此时在局内的所有 pipe（红色和蓝色），已知 Bird 此刻的坐标，那么目前就有以下几个问题需要我们去解决：
+You can see all the pipes (red and blue) in the game at this time. Knowing the coordinates of Bird at the moment, there are currently the following issues that we need to solve:
 
-- Bird 需要和所有的 Pipe 进行碰撞吗？如果不是，那么如何判断与哪根柱子进行碰撞检测呢？
-- 如何确定 Bird 和 Pipe 是否发生了碰撞？
+- Does Bird need to collide with all pipes? If not, how to determine which column to collide with?
+- How to determine whether Bird and Pipe collide?
 
-首先解答第一个问题，可以发现如果对上图中红色的 Pipe 做碰撞检测是有价值的，但是对蓝色的 Pipe 做则毫无价值，因此我们可以确定当 Pipe 的坐标处在屏幕中间某个位置时，这就是需要做碰撞检测的 Pipe 。
+First answer the first question. You can find that if collision detection is performed on the red Pipe in the above picture, it is valuable, but it is worthless to do it on the blue Pipe. Therefore, we can determine when the coordinates of the Pipe are in the middle of the screen. In this case, this is the Pipe that needs to do collision detection.
 
 ```typescript
 Math.abs(pipePos.x) < 0.9;
 ```
 
-然后解答第二个问题，回到之前创建 Pipe 的过程，我们将 Pipe 的锚点设置在了正中间，因此只需要判断 bird 的 Y 坐标即可：
+Immediately after answering the second question, returning to our previous process of creating Pipe, we set the anchor point of Pipe in the middle, so we only need to determine the Y coordinate of bird:
 
 ```typescript
 Math.abs(pipePos.y - birdY) > 1.2;
 ```
 
-对场上所有的 Pipe 做上述操作则得到：
+Doing the above operations on all Pipes on the field will get:
 
 ```typescript
 // When checkHit is monitored, check the collision between the pipe and the bird.
@@ -438,13 +430,11 @@ engine.on(GameEvent.checkHit, (birdY: number) => {
 });
 ```
 
-# 收尾与优化
+# Optimization
 
-我们已经梳理了所有对象，并且让他们“各司其职”，现在只需要在上面加“亿点点”细节即可，当然完成了整套流程后，你也可以尝试对游戏进行更多的优化：
+We have sorted out all the objects and asked them to "perform their duties". Now we only need to add "billion points" details on it. Of course, after completing the entire process, you can also try to optimize the game more:
 
-- 使用对象池，让对象复用
-- 使用图集，减少 DrawCall
-
-附上最终成果：
+- Use object pools to reuse objects
+- Use atlas to reduce DrawCall
 
 <playground src="flappy-bird.ts"></playground>

@@ -174,7 +174,7 @@ For example, these macros have been related to Shader:
 #endif
 ```
 
-Then use `enableMacro` and `disableMacro` in [ShaderData](${api}core/Shader#enableMacro) to control marco：
+Then use `enableMacro` and `disableMacro` in [ShaderData](${api}core/Shader#enableMacro) to control marco:
 
 ```typescript
 // Open macro switch
@@ -203,9 +203,9 @@ const renderState = material.renderState;
 const blendState = renderState.blendState;
 const target = blendState.targetBlendState;
 
-// src factor:（As，As，As，As）
+// src factor:（As，As，As，As）.
 target.sourceColorBlendFactor = target.sourceAlphaBlendFactor = BlendFactor.SourceAlpha;
-// dst factor: (As，1 - As，1 - As，1 - As）。
+// dst factor: (As，1 - As，1 - As，1 - As）.
 target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
 // operation: src + dst  */
 target.colorBlendOperation = target.alphaBlendOperation = BlendOperation.Add;
