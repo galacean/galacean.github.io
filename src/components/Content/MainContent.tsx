@@ -1,6 +1,7 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/forbid-prop-types */
+/* eslint-disable no-plusplus */
 import React from 'react';
 import { Link } from 'gatsby';
 import {
@@ -127,18 +128,19 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
   };
 
   convertFilename = (filename: string) => {
-    const {
-      location: { pathname },
-    } = this.props;
+    // const {
+    //   location: { pathname },
+    // } = this.props;
+    let newFilename = filename;
 
     if (filename.includes('docs')) {
-      filename = `/${version}${filename}`;
+      newFilename = `/${version}${filename}`;
     }
 
-    if (isZhCN(pathname) && !filename.includes('-cn')) {
-      return `${filename}-cn`;
+    if (isZhCN() && !newFilename.includes('-cn')) {
+      return `${newFilename}-cn`;
     }
-    return filename;
+    return newFilename;
   };
 
   generateMenuItem = ({ before = null, after = null }, item: MenuDataItem) => {
@@ -198,8 +200,8 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     );
     const lang = isZhCN(this.props.location.pathname) ? 'zh-CN' : 'en-US';
     const order = {
-      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库', '美术', '编辑器', '小程序'],
-      'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other'],
+      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库','美术', '编辑器', '小程序'],
+      'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other', 'Resource', 'Tool'],
     };
 
     const groupOrder = {
@@ -240,10 +242,10 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
           }
 
           const groupItems = itemOrders.map((group) => {
-            const items = sortItems(itemsMap[group]);
+            const sortedItems = sortItems(itemsMap[group]);
 
             return <Menu.ItemGroup key={group} title={group}>
-              {items}
+              {sortedItems}
             </Menu.ItemGroup>
           })
 
@@ -253,15 +255,15 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
             </SubMenu>
           );
 
-        } else {
-          const groupItems = sortItems(items);
-
-          return (
-            <SubMenu title={type} key={type}>
-              {groupItems}
-            </SubMenu>
-          );
         }
+
+        const groupItems = sortItems(items);
+
+        return (
+          <SubMenu title={type} key={type}>
+            {groupItems}
+          </SubMenu>
+        );
       });
     return [...topLevel, ...itemGroups];
   };

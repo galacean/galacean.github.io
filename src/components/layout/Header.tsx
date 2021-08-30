@@ -16,7 +16,7 @@ if (typeof window !== 'undefined') {
   docSearch = require('docsearch.js');
 }
 
-function initDocSearch(lang: 'en' | 'cn') {
+function initDocSearch() {
   if (!docSearch) {
     return;
   }
@@ -153,10 +153,10 @@ class Header extends React.Component<HeaderProps, HeaderState> {
 
   onVersionChange = (value: string) => {
     const versionReg = /\/(\d+[.]\d+[^/]*)\//;
-    const matchedResult = location.href.match(versionReg);
+    const matchedResult = window.location.href.match(versionReg);
     
     if (matchedResult && matchedResult[1]) {
-      location.href = location.href.replace(matchedResult[1], value);
+      window.location.href = window.location.href.replace(matchedResult[1], value);
     }
   };
 

@@ -27,8 +27,7 @@
     "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
   },
   "husky": {
-    "hooks": {
-    }
+    "hooks": {}
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
@@ -41,12 +40,14 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
     "@babel/core": "^7.14.0",
-    "@oasis-engine/controls": "^0.4.0",
-    "@oasis-engine/framebuffer-picker": "^0.4.0",
-    "@oasis-engine/lottie": "^0.0.5",
-    "@oasis-engine/spine": "0.2.0-alpha.0",
-    "@oasis-engine/stats": "^0.4.0",
+    "@oasis-engine/controls": "^0.5.3-alpha.2",
+    "@oasis-engine/framebuffer-picker": "^0.5.3-alpha.2",
+    "@oasis-engine/lottie": "^0.0.6-alpha.4",
+    "@oasis-engine/spine": "^0.2.0",
+    "@oasis-engine/stats": "^0.5.3-alpha.2",
+    "@oasis-engine/touch": "^0.0.15",
     "@stackblitz/sdk": "^1.5.2",
+    "@tweenjs/tween.js": "^18.6.4",
     "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",
     "classnames": "^2.2.6",
@@ -71,7 +72,7 @@
     "husky": "^5.0.9",
     "lz-string": "^1.4.4",
     "moment": "^2.24.0",
-    "oasis-engine": "^0.4.0",
+    "oasis-engine": "^0.5.3-alpha.2",
     "prop-types": "^15.7.2",
     "qrcode.react": "^1.0.1",
     "rc-drawer-menu": "^1.1.0",

@@ -1,22 +1,22 @@
 @import '~antd/lib/style/themes/default.less';
 
 .code-box {
-  display: flex;
-  border: 1px solid #f0f0f0;
-  margin-bottom: 20px;
   position: relative;
+  display: flex;
+  margin-bottom: 20px;
+  border: 1px solid #f0f0f0;
   &-source {
     flex: 1;
-    margin: 0;
     max-height: 500px;
-    overflow: auto;
+    margin: 0;
     padding-top: 37px;
+    overflow: auto;
     pre {
       margin: 0;
       background-color: #f9f9f9;
       code {
-        background-color: #f9f9f9;
         font-size: 13px;
+        background-color: #f9f9f9;
       }
     }
   }
@@ -26,27 +26,27 @@
   }
   &-actions {
     position: absolute;
-    text-align: center;
+    top: 0;
+    right: 0;
     width: 50%;
     height: 37px;
+    padding: 2px 0;
     line-height: 33px;
-    right: 0;
-    top: 0;
+    text-align: center;
     background: rgba(255, 255,255, 0.9);
     border-bottom: 1px dashed #f0f0f0;
-    padding: 2px 0;
   }
   &-actions-demo {
-    left: 0;
     right: initial;
+    left: 0;
     border-right: 1px dashed #f0f0f0;
   }
   &-action {
-    font-size: 16px;
-    opacity: 0.5;
-    cursor: pointer;
     display: inline-block;
     margin-right: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    opacity: 0.5;
     transition: opacity 0.5s;
     &:last-child {
       margin-right: 0;
