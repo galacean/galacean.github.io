@@ -18,8 +18,8 @@
       "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.4.0/dist/browser.js"
     },
     "@oasis-engine/spine": {
-      "version": "0.2.0-alpha.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.2.0-alpha.2/dist/browser.js",
+      "version": "0.2.0",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.2.0/dist/browser.js",
       "dist": "dist/browser.js"
     },
     "@oasis-engine/lottie": {
