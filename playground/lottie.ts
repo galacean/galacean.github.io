@@ -25,7 +25,7 @@ engine.resourceManager.load<Entity>({
   type: 'lottie'
 }).then((lottieEntity) => {
   root.addChild(lottieEntity);
-  const lottie:LottieAnimation = lottieEntity.getComponent(LottieAnimation);
+  const lottie = lottieEntity.getComponent(LottieAnimation);
   lottie.isLooping = true;
   lottie.play();
 });

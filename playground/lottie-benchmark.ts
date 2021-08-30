@@ -30,7 +30,7 @@ engine.resourceManager.load<Entity>({
       const clone = lottieEntity.clone();
       clone.transform.setPosition(i * 2, j * 2, 0);
       root.addChild(clone);
-      const lottie:LottieAnimation = clone.getComponent(LottieAnimation);
+      const lottie = clone.getComponent(LottieAnimation);
       lottie.isLooping = true;
       lottie.speed = 0.2 + Math.random() * 2;
       lottie.play();

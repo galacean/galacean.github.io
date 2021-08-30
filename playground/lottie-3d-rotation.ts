@@ -25,7 +25,7 @@
   type: 'lottie'
 }).then((lottieEntity) => {
   rootEntity.addChild(lottieEntity);
-  const lottie:LottieAnimation = lottieEntity.getComponent(LottieAnimation);
+  const lottie = lottieEntity.getComponent(LottieAnimation);
   lottie.isLooping = true;
   lottieEntity.transform.setScale(0.5, 0.5, 0.5);
   lottie.play();
