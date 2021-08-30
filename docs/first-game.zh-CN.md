@@ -28,7 +28,7 @@ type: 入门
   - 对局中
   - 对局结束
 - 整个游戏中的显示对象(由远到近)：
-  - Backgound （背景）
+  - Background （背景）
   - Pipe （水管）
   - Ground （草地）
   - Bird （小鸟的帧动画）

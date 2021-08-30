@@ -28,13 +28,13 @@ After the trial, we can summarize the following points through a simple analysis
   - In the game
   - Game over
 - Display objects throughout the game (from far to near):
-  - Backgound
+  - Background
   - Pipe
   - Ground
   - Bird
   - GUI
 
-After the requirements analysis, we can basically sort out the game process and the overall UI layout. The next step is to build the entire UI interface according to the hierarchical relationship.
+After the requirement analysis, we can basically sort out the game process and the overall UI layout. The next step is to build the entire UI interface according to the hierarchical relationship.
 
 # Build UI interface
 
@@ -173,7 +173,7 @@ Refer to the implementation of the example `sprite-sheetAnimation`, we add a `Sc
 
 ### tweenjs
 
-In order to realize the flying and falling of the bird, we introduce [tweenjs]](https://github.com/tweenjs/tween.js), when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform-cn) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
+In order to realize the flying and falling of the bird, we introduce [tweenjs](https://github.com/tweenjs/tween.js), when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform-cn) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
 
 ```typescript
 private _updateProperties(
@@ -378,7 +378,7 @@ Here you can refer to the [Ray casting](${docs}ray-cn) document. After obtaining
 
 ## Timing of collision detection
 
-There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script-cn#组件生命周期函数) should be familiar with it. , After we change the position of `Entity` in `onUpdata`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
+There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script-cn#组件生命周期函数) should be familiar with it. After we change the position of `Entity` in `onUpdata`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
 
@@ -432,7 +432,7 @@ engine.on(GameEvent.checkHit, (birdY: number) => {
 
 # Optimization
 
-We have sorted out all the objects and asked them to "perform their duties". Now we only need to add "billion points" details on it. Of course, after completing the entire process, you can also try to optimize the game more:
+We have sorted out all the objects and asked them to "perform their duties". Now we only need to add "a billion points" details on it. Of course, after completing the entire process, you can also try to optimize the game more:
 
 - Use object pools to reuse objects
 - Use atlas to reduce DrawCall
