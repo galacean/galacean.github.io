@@ -79,8 +79,8 @@ Use `onReady` to configure `canvas` initialization callback. Need to set the id 
 
 Note:
 
-1. Use `import * as OASIS from "oasis-engine/dist/miniprogram"` to import the dependencies of miniprogram。
-2. Use `registerCanvas` which imported from `@oasis-engine/miniprogram-adapter` to register `canvas`。
+1. Use `import * as OASIS from "oasis-engine/dist/miniprogram"` to import the dependencies of miniprogram.
+2. Use `registerCanvas` which imported from `@oasis-engine/miniprogram-adapter` to register `canvas`.
 
 For example:
 

@@ -8,7 +8,7 @@ type: 二方库
 
 ## 基本原理
 
-相机控件继承于功能强大的脚本，挂载到 `Camera` 组件依附的 `Entity` 上，因此可以顺其自然地拿到 `Camera` ，在生命周期函数中响应外部输入并执行相应的操作。
+相机控件继承于功能强大的脚本，挂载在包含 `Camera` 组件的 `Entity` 上，因此可以顺其自然地拿到 `Camera` ，在生命周期函数中响应外部输入并执行相应的操作。
 
 ## 控件类型
 
@@ -46,10 +46,10 @@ type: 二方库
 
 |属性|解释|
 |:--|:--|
-|[floorMock](${api}controls/FreeControl#floorMock)|是否模拟地面，默认为 true|
-|[floorY](${api}controls/FreeControl#floorY)|配合 floorMock 使用，声明地面的位置信息|
-|[movementSpeed](${api}controls/FreeControl#movementSpeed) | 移动速度|
-|[rotateSpeed](${api}controls/FreeControl#rotateSpeed) | 旋转速度|
+|[floorMock](${api}controls/FreeControl#floorMock)| 是否模拟地面，默认为 true |
+|[floorY](${api}controls/FreeControl#floorY)| 配合 `floorMock` 使用，声明地面的位置信息 |
+|[movementSpeed](${api}controls/FreeControl#movementSpeed) | 移动速度 |
+|[rotateSpeed](${api}controls/FreeControl#rotateSpeed) | 旋转速度 |
 
 ### 正交控制器
 
@@ -59,4 +59,4 @@ type: 二方库
 
 |属性|解释|
 |:--|:--|
-|[zoomSpeed](${api}controls/OrthoControl#zoomSpeed)|缩放速度|
+|[zoomSpeed](${api}controls/OrthoControl#zoomSpeed)| 缩放速度 |
