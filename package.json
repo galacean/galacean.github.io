@@ -43,7 +43,7 @@
     "@oasis-engine/controls": "^0.5.3-alpha.4",
     "@oasis-engine/framebuffer-picker": "^0.5.3-alpha.4",
     "@oasis-engine/lottie": "^0.0.6-alpha.4",
-    "@oasis-engine/spine": "^0.2.0-alpha.0",
+    "@oasis-engine/spine": "^0.2.0-alpha.4",
     "@oasis-engine/stats": "^0.5.3-alpha.4",
     "@oasis-engine/touch": "^0.0.15",
     "@stackblitz/sdk": "^1.5.2",
