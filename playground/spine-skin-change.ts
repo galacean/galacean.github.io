@@ -4,6 +4,7 @@
  */
 import { Camera, Logger, Vector3, WebGLEngine, Entity } from "oasis-engine";
 import { SpineAnimation } from "@oasis-engine/spine";
+import * as dat from "dat.gui";
 
 Logger.enable();
 
