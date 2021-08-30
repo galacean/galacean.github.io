@@ -64,7 +64,7 @@ If the installation is successful, you can see an additional **AntG** option in 
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/aca2c330-4b8b-44ca-b641-f245b8667e96/1622551587689-1f963ad1-2530-4d5a-b312-25a87e7b99e0.png)
 
-4. Drag and drop the FBX file to be sliced into the resource pannel:
+4. Drag and drop the FBX file to be sliced into the resource panel:
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/07feeb22-1cf0-400f-a4d3-3e7f7e45ec5d/1622551819216-1fecbc86-c8e8-4416-82d5-20cd63094fd4.png)
 
@@ -81,7 +81,7 @@ If the installation is successful, you can see an additional **AntG** option in 
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/34102994-c037-4ad7-be0a-941c24f1347f/1622552470594-9e7df115-24c6-4a16-9a64-a7c28206900e.png)
 
-8. As you can see, the Animator component needs to bind an Animator Controller resource, so we need to create a new Animator Controller resource in the resource pannel:
+8. As you can see, the Animator component needs to bind an Animator Controller resource, so we need to create a new Animator Controller resource in the resource panel:
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1d27fbf5-b2a7-4ee8-869d-5ef409e21fe3/1622552588576-858cb05e-f340-4005-885e-429bbb957403.png)
 
