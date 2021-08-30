@@ -43,6 +43,6 @@ this.engine.off("event-test");
 this.engine.dispatch("event-test", { eventData: "mydata" });
 ```
 
-## 回调参数格式
+## 回调参数
 
-回调参数与发送时携带的参数格式完全一致。
+回调参数与发送时携带的参数一致。
