@@ -35,13 +35,13 @@ directLight.intensity =  1;
 
 ### Access entities and components
 
-[Script](${docs}script-cn) can respond to user input, modify, create and destroy entities or components, and implement a variety of game logic. To achieve these effects, you need to get the entity or component you want to modify in the script. Here we will briefly introduce the commonly used entity operations:
+[Script](${docs}script) can respond to user input, modify, create and destroy entities or components, and implement a variety of game logic. To achieve these effects, you need to get the entity or component you want to modify in the script. Here we will briefly introduce the commonly used entity operations:
 
 #### Get the entity which the component bind to
 We can get the entities the script bind to  during any life cycle of the script, such as:
 ```typescript
 onAwake() {
-	const entity = this.entity;
+  const entity = this.entity;
 }
 ```
 #### Get other components
@@ -49,7 +49,7 @@ When we need to get other components on the same entity, we need to use the [get
 
 ```typescript
 onAwake() {
-	const component = this.entity.getComponent(Animation);
+  const component = this.entity.getComponent(Animation);
 }
 ```
 
@@ -57,8 +57,8 @@ Sometimes there may be multiple components of the same type. The above method wi
 
 ```typescript
 onAwake() {
- 	const components = []
-	this.entity.getComponents(Animation, components);
+  const components = []
+  this.entity.getComponents(Animation, components);
 }
 ```
 
@@ -67,7 +67,7 @@ Sometimes, there are many objects of the same type in the scene, such as multipl
 
 ```typescript
 onAwake() {
-	const childrenEntity = this.entity.children;
+  const childrenEntity = this.entity.children;
 }
 ```
 
@@ -75,7 +75,7 @@ If you know the *index* of the child entity in the parent entity, you can direct
 
 ```typescript
 onAwake() {
-	this.entity.getChild(0);
+  this.entity.getChild(0);
 }
 ```
 
@@ -83,7 +83,7 @@ If you don’t know the index of the child entity, you can use [findByName](${ap
 
 ```typescript
 onAwake() {
-	this.entity.findByName('model');
+  this.entity.findByName('model');
 }
 ```
 
@@ -91,7 +91,7 @@ If there is an entity with the same name, you can use [findByPath](${api}core/En
 
 ```typescript
 onAwake() {
-	this.entity.findByPath('parent/child/grandson');
+  this.entity.findByPath('parent/child/grandson');
 }
 ```
 
@@ -101,12 +101,12 @@ You can also use [Entity.findByName](${api}core/Entity#findByName) and [Entity.f
 
 ```typescript
 onAwake() {
-	Entity.findByName('model');
+  Entity.findByName('model');
 }
 ```
 ```typescript
 onAwake() {
-	Entity.findByPath('container/model');
+  Entity.findByPath('container/model');
 }
 ```
 
