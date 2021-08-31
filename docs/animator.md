@@ -58,7 +58,7 @@ You can use the [crossFade](${api}core/animation/Animator#crossFade) method to m
 
 <playground src="animation-event"></playground>
 
-You can use [AnimatioonEvent](${api}core/animation/AnimationEvent) to add events to AnimationClip. The animation event will call the specified callback function of the component you bind to the same entity at the specified time.
+You can use [AnimationEvent](${api}core/animation/AnimationEvent) to add events to AnimationClip. The animation event will call the specified callback function of the component you bind to the same entity at the specified time.
 
 ```typescript
 const event = new AnimationEvent();

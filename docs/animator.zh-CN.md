@@ -61,7 +61,7 @@ animator.animatorController = new AnimatorController()；
 
 <playground src="animation-event"></playground>
 
-你可以使用 [AnimatioonEvent](${api}core/animation/AnimationEvent) 来为AnimationClip添加事件，动画事件将在指定时间调用你在同一实体上绑定组件的指定回调函数。
+你可以使用 [AnimationEvent](${api}core/animation/AnimationEvent) 来为AnimationClip添加事件，动画事件将在指定时间调用你在同一实体上绑定组件的指定回调函数。
 
 ```typescript
 const event = new AnimationEvent();
