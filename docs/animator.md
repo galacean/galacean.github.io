@@ -1,15 +1,16 @@
 ---
 order: 10
-title: 动画控制
-type: 组件
+title: Animator
+type: Component
 ---
 
-动画控制组件（[Animator](${api}core/animation/Animator)）可以通过状态机组织动画片段实现更加灵活丰富的动画效果。
+The [Animator](${api}core/animation/Animator) can organize [AnimationClips](${api}core/animation/AnimationClip) through the state machine to achieve more flexible and rich animation effects.
 
 <playground src="skeleton-animation.ts"></playground>
 
-## 基本使用
-在加载GLTF模型后引擎会自动为模型添加一个Animator组件，并将模型中的动画片段加入其中。可以直接在模型的根节点上获取Animator组件，并播放指定动画。
+## Basic usage
+After loading the GLTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation.
+
 ```typescript
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
@@ -21,47 +22,43 @@ engine.resourceManager
 });
 ```
 
-### 控制播放速度
+### Control playback speed
 
-你可以通过 [speed](${api}core/animation/Animator#speed)  属性来控制动画的播放速度。 `speed` 默认值为 `1.0` ，值越大播放的越快，越小播放的越慢。
-
+You can control the playback speed of the animation through the [speed](${api}core/animation/Animator#speed) property. The default value of `speed` is `1.0`, the larger the value, the faster the playback, the smaller the slower the playback.
 
 ```typescript
 animator.speed = 2.0；
 ```
 
-### 设置动画数据
+### Set animator data
 
-你可以通过 [animatorController](${api}core/animation/Animator#animatorController)  属性来设置动画控制器的动画数据，加载完成的GLTF模型会自动添加一个默认的AnimatorController。
-
+You can set the data of the animation controller through the [animatorController](${api}core/animation/Animator#animatorController) property. The loaded GLTF model will automatically add a default AnimatorController.
 
 ```typescript
 animator.animatorController = new AnimatorController()；
 ```
 
-
-### 播放指定动画状态
+### Play the specified AnimationState
 
 <playground src="skeleton-animation-play"></playground>
 
-你可以使用 [play](${api}core/animation/Animator#play) 方法来播放指定的AnimatorState。参数为AnimatorState的`name`，其他参数说明详见[API文档](${api}core/animation/Animator#play)
+You can use the [play](${api}core/animation/Animator#play) method to play the specified AnimatorState. The parameter is the `name` of AnimatorState, and the description of other parameters is detailed in [API document](${api}core/animation/Animator#play)
 
 ```typescript
   animator.play("run");
 ```
 
-### 动画过渡
+### CrossFade
 
 <playground src="skeleton-animation-crossFade"></playground>
 
-你可以使用 [crossFade](${api}core/animation/Animator#crossFade) 方法来使角色过渡到指定状态。第一个参数为要过渡到的动画状态的`name`，第二个参数为归一化的动画过渡时间，其他参数说明详见[API文档](${api}core/animation/Animator#crossFade)。
+You can use the [crossFade](${api}core/animation/Animator#crossFade) method to make the character transition to a specified state. The first parameter is the `name` of the animation state to be transitioned to, and the second parameter is the normalized animation transition time. For the description of other parameters, please refer to [API document](${api}core/animation/Animator#crossFade ).
 
-
-### 动画事件
+### Add events to animation
 
 <playground src="animation-event"></playground>
 
-你可以使用 [AnimatioonEvent](${api}core/animation/AnimationEvent) 来为AnimationClip添加事件，动画事件将在指定时间调用你在同一实体上绑定组件的指定回调函数。
+You can use [AnimatioonEvent](${api}core/animation/AnimationEvent) to add events to AnimationClip. The animation event will call the specified callback function of the component you bind to the same entity at the specified time.
 
 ```typescript
 const event = new AnimationEvent();
@@ -70,53 +67,73 @@ event.time = 0.5;
 clip.addEvent(event);
 ```
 
-## 使用动画状态机控制动画
+## Use AnimationStateMachine to control animation
 
-在进一步介绍使用方法之前，先简单介绍下动画系统的构成以便理解。动画系统的构成如下：
+Before further introducing the usage method, let's briefly introduce the composition of the animation system for understanding. The composition of the animation system is as follows:
 
-
-### 动画系统的构成
+### Composition of animation system
 
 ![image-20210830233452874](https://gw.alipayobjects.com/zos/OasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
 
 #### [Animator](${api}core/animation/Animator)
-动画系统的控制器组件。
+The Animator component of the animation system, used to control the playback of the animation。
 
 #### [AnimatorController](${api}core/animation/AnimatorController)
-用于存储动画控制组件的动画数据。
+Used to store the data of the  Animator component.
 
 #### AnimatorControllerParameter（0.6版本将会提供）
-动画控制器中使用的变量，用于在动画状态机切换状态使用。
+The variables used in the Animator are used to switch the state of the animation state machine.
 
 #### [AnimatorControllerLayer](${api}core/animation/AnimatorControllerLayer)
-存储该层的动画状态机数据，混合模式以及混合的权重。
+Store the animation state machine data, blending mode and blending weight of this layer.
 
 #### [AnimatorStateMachine](${api}core/animation/AnimatorStateMachine)
-动画状态机，用于控制动画状态的播放逻辑，每个动画状态绑定一个AnimationClip
+Animation state machine, used to control the playback logic of the animation state, each animation state contains an AnimationClip.
 
 #### [BlendingMode](${api}core/animation/AnimatorControllerLayer#blendingMode)
-动画层的混合模式
+Blending mode of the animation layer
 
 #### [AnimatorState](${api}core/animation/AnimatorState)
-动画状态是状态机的基本构成。 每个状态都包含一个 AnimationClip，当角色处于该状态时，则会播放该AnimationClip。
+The AnimatorState is the basic structure of the state machine. Each AnimatorState contains an AnimationClip, when the character is in this state, the AnimationClip will be played.
 
 #### [AnimatorTransition](${api}core/animation/AnimatorTransition)
-AnimatorTransition定义了状态机何时以及如何从一个状态过渡到另一个状态。
+AnimatorTransition defines when and how the state machine transitions from one state to another.
 
 #### [AnimationClip](${api}core/animation/AnimationClip)
-动画片段，存储基于关键帧的动画。
+Store animation based on key frames.
 
 #### [AnimationCurve](${api}core/animation/AnimationCurve)
-存储在指定时间计算的关键帧集合。
+Store a collection of key frames evaluated at a specified time.
 
 #### [AnimationEvent](${api}core/animation/AnimationEvent)
-AnimationEvent 可以让你在指定时间调用其同一实体绑定的脚本的回调函数.
+AnimationEvent allows you to call the callback function of the script bound to the same entity at a specified time.
 
-#### Keyframe
-动画关键帧
+#### [Keyframe](${api}core/animation/KeyFrame)
+Animation key frames
 
-#### InterpolationType
-动画曲线中关键帧的插值方式。
+#### [Interpolation](${api}core/animation/AnimationCurve#interpolation)
+The interpolation method of the key frame in the AnimationCurve.
 
-### 使用AnimatorTransition做动画过渡
-你可以通过为Anima
+### Use AnimatorTransition for animation crossFade
+You can realize the crossFade between AnimationStates by adding AnimatorTransition to AnimatorState.
+
+```typescript
+const walkState = animatorStateMachine.addState('walk');
+walkState.clip = walkClip;
+const runState = animatorStateMachine.addState('run');
+walkState.clip = runClip;
+const transition = new AnimatorStateTransition();
+transition.duration = 1;
+transition.offset = 0;
+transition.exitTime = 0.5;
+transition.destinationState = runState;
+walkState.addTransition(runState);
+animator.play("walk");
+```
+In this way, every time you play the `walk` animation on the layer where the animation state machine is located, you will start to crossFade to the `run` animation halfway through the playback.
+
+### Animation additive
+
+<playground src="skeleton-animation-additive"></playground>
+
+Animation additive is the effect achieved by blending between AnimatorControllerLayers. The first layer is the basic animation layer. Modifying its weight and blending mode will not take effect. Add the AnimationState you want to make additive, add it to other layers and set its blending mode to `AnimatorLayerBlendingMode.Additive` to achieve the animation additive effect. The Oasis engine supports multi-layer animation additive.
