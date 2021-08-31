@@ -1,12 +1,12 @@
 ---
 Order: 1
 title: Resource Management and Loading
-Type: Resource System
+type: Resource
 ---
 
 3D resources are generally linked to Engine. We use [resourceManager](${api}core/Engine#resourceManager) mounted in the Engine instance to manage and load resources.
 
-Use [Script component](${docs}script-cn) to load resources. [load](${api}core/ResourceManager#load) method can pass URL, [loadItem](${api}core/LoadItem), and an array which indicate batch loading.
+Use [Script component](${docs}script) to load resources. [load](${api}core/ResourceManager#load) method can pass URL, [loadItem](${api}core/LoadItem), and an array which indicate batch loading.
 
 
 ````Typescript
@@ -73,7 +73,7 @@ engine.resourceManager.gc();
 
 ### 1. Texture2D
 
-> For more texture related documents, please refer to [Texture Resources](${docs}texture-cn).
+> For more texture related documents, please refer to [Texture Resources](${docs}texture).
 
 ```typescript
 import { Texture2D } from "oasis-engine";
@@ -89,7 +89,7 @@ this.engine.resourceManager.load({ url: "test", type: AssetType.Texture2D });
 
 ### 2. TextureCube
 
-> For more texture related documents, please refer to [Texture Resources](${docs}texture-cn).
+> For more texture related documents, please refer to [Texture Resources](${docs}texture).
 
 ```typescript
 import { TextureCubeMap } from "oasis-engine";
@@ -111,7 +111,7 @@ const textureCube = await this.engine.resourceManager.load<TextureCubeMap>({
 
 ### 3. Compressed texture
 
-> For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture-cn#Compressed Texture).
+> For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture#Compressed Texture).
 
 ```typescript
 import { Texture2D } from "oasis-engine";
@@ -146,7 +146,7 @@ const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 
 <playground src="gltf-basic.ts"></playground>
 
-Go to [glTF resources](${docs}gltf-cn) to learn more about glTF related designs.
+Go to [glTF resources](${docs}gltf) to learn more about glTF related designs.
 
 ### 6. Custom Loader
 

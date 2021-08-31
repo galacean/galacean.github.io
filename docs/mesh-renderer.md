@@ -19,6 +19,6 @@ meshRenderer.mesh = new BufferMesh(engine);
 
 Specific documents can be viewed:
 
-- [ModelMesh](${docs}model-mesh-cn)
-- [BufferMesh](${docs}buffer-mesh-cn)
+- [ModelMesh](${docs}model-mesh)
+- [BufferMesh](${docs}buffer-mesh)
 

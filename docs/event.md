@@ -6,7 +6,7 @@ type: Tool
 
 The engine provides a basic event system, general communication between components, **game and business** communication will consider the use of event system. The engine provides [EventDispatcher](${api}core/EventDispatcher) as the event class, and [Engine](${api}core/Engine) and [Entity](${api}core/Entity) inherit from `EventDispatcher`.
 
-> **Note**: In general, it is recommended to use [script component](${docs}script-cn) to solve the communication problem between components in the game. The event system is only recommended for use in some scenarios that require decoupling.
+> **Note**: In general, it is recommended to use [script component](${docs}script) to solve the communication problem between components in the game. The event system is only recommended for use in some scenarios that require decoupling.
 
 ## Add event listener
 

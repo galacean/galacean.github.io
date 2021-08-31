@@ -8,11 +8,11 @@ type: Core
 
 - **Canvas**:Operations related to the main canvas, such as changing the width and height of the canvas.
 - **Rendering control**: Control rendering execution/pause/continue, vertical synchronization and other functions.
-- **Engine subsystem management**:[Scene Management](${docs}scene-cn) and [Resource Management](${docs}resource-manager-cn) etc.
+- **Engine subsystem management**:[Scene Management](${docs}scene) and [Resource Management](${docs}resource-manager) etc.
 
 ## initialization
 
-To initialize the Engine, you need to provide [Canvas](${docs}canvas-cn)(**Canvas**) and the hardware rendering layer (**HardwareRenderer**).
+To initialize the Engine, you need to provide [Canvas](${docs}canvas)(**Canvas**) and the hardware rendering layer (**HardwareRenderer**).
 
 The Oasis engine encapsulates the hardware rendering layer and manages the rendering capabilities of different platforms in a unified manner. You can also pass in the supported configurations to control the rendering capabilities of different platforms through the constructor of [HardwareRenderer](${api}core/IHardwareRenderer).
 
