@@ -3,7 +3,7 @@
   "version": "0.4",
   "engineSource": "https://github.com/oasis-engine/engine/blob/main/",
   "docSource": "https://github.com/oasis-engine/oasis-engine.github.io/blob/",
-  "typedocSource": "../../engine",
+  "typedocSource": "../engine",
   "packages": {
     "oasis-engine": {
       "version": "0.5.3-alpha.0",
