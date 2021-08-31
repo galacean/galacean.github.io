@@ -10,8 +10,8 @@ type: Component
 
 ## Basic usage
 
-1、Download image texture ([Texture](${docs}texture-cn)), Please refer to the download method [resource load](${docs}resource-manager-cn)  
-2、Create [Sprite](${docs}sprite-cn)  object through texture  
+1、Download image texture ([Texture](${docs}texture)), Please refer to the download method [resource load](${docs}resource-manager)  
+2、Create [Sprite](${docs}sprite)  object through texture  
 3、Create [SpriteRenderer](${api}core/SpriteRenderer) to display image
 
 ```typescript
@@ -57,13 +57,13 @@ spriteRenderer.color.setValue(1, 0, 0, 1);
 
 ## Custom material
 
-The custom material of SpriteRenderer is used in the same way as the [MeshRenderer](${docs}mesh-renderer-cn), Please refer to [Custom Material](${docs}custom-material-cn) document.
+The custom material of SpriteRenderer is used in the same way as the [MeshRenderer](${docs}mesh-renderer), Please refer to [Custom Material](${docs}custom-material) document.
 
 <playground src="sprite-material-blur.ts"></playground>
 
 ## The usage of mask
 
-Starting from version 0.4, the engine has added [SpriteMask](${docs}sprite-mask-cn), Use SpriteRenderer and SpriteMask together, various occlusion effects of elves can be realized. The mask function of the sprite can be turned on by the following code:
+Starting from version 0.4, the engine has added [SpriteMask](${docs}sprite-mask), Use SpriteRenderer and SpriteMask together, various occlusion effects of elves can be realized. The mask function of the sprite can be turned on by the following code:
 
 ```typescript
 // Set the tpye of mask interaction.

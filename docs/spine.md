@@ -4,7 +4,7 @@ title: Spine
 type: Second party packages 
 ---
 
-Oasis Engine implements spine animation rendering through [BufferMesh](${docs}buffer-mesh-cn).
+Oasis Engine implements spine animation rendering through [BufferMesh](${docs}buffer-mesh).
 
 > **PS**: The oasis spine runtime currently only supports spine 3.8 version and above.
 

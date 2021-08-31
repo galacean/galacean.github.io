@@ -1,7 +1,7 @@
 ---
 order: 4
 title: Custom material
-type: Resource System
+type: Resource
 ---
 
 There may be some special rendering requirements, such as water flow, and this time you need **custom material** to achieve. By using [Material](${api}core/Material) and [Shader](${api}core/Shader), you can integrate your own shader code into the engine rendering process.

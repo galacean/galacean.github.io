@@ -90,4 +90,4 @@ First review the attributes `priority`, `renderTarget` and `viewport` mentioned 
 
 ### How to use the camera and controls together？
 
-For details, please read [Controls](${docs}controls-cn)。
+For details, please read [Controls](${docs}controls)。
