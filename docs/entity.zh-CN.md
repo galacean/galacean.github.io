@@ -69,6 +69,12 @@ onAwake() {
 #### 查找子实体
 有时候，场景中会有很多个相同类型的对象，像多个粒子动画，多个金币，它们通常都有一个全局的脚本来统一管理。如果用一个一个将它们关联到这个脚本上，那工作就会很繁琐。为了更好地统一管理这些对象，我们可以把它们放到一个统一的父物体下，然后通过父物体来获得所有的子物体：
 
+```typescript
+onAwake() {
+	const childrenEntity = this.entity.children;
+}
+```
+
 如果明确知道子实体在父实体中的 *index* 可以直接使用 [getChild](${api}core/Entity#getChild)：          
 
 ```typescript
