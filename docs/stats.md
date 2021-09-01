@@ -15,4 +15,4 @@ Engine.registerFeature(Stats);
 
 The display is as follows:
 
-![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*ji_WTolpInMAAAAAAAAAAAAAARQnAQ)
+![image-20210901200322478](https://gw.alipayobjects.com/zos/OasisHub/262bebbd-cdd7-484e-8bdd-38e13915074d/image-20210901200322478.png)
