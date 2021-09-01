@@ -6,8 +6,6 @@ type: 组件
 
 [BufferMesh]() 可以自由操作顶点缓冲和索引缓冲数据，以及一些与几何体绘制相关的指令。具备高效、灵活、简洁等特点。开发者如果想高效灵活的实现自定义几何体就可以使用该类。
 
-<playground src="buffer-mesh.ts"></playground>
-
 ## 原理图
 我们先概览一下 `BufferMesh`  的原理图
 
@@ -28,6 +26,9 @@ type: 组件
 这里列举几个 [MeshRenderer](${api}core/MeshRenderer) 和 [BufferMesh](${api}core/BufferMesh) 的常用使用场景，因为这个类的功能偏底层和灵活，所以这里给出了比较详细的代码。
 
 ### 交错顶点缓冲
+
+<playground src="buffer-mesh-interleaved.ts"></playground>
+
 常用方式，比如自定义 Mesh、Particle 等实现，具有显存紧凑，每帧 CPU 数据上传至 GPU 次数少等优势。这个案例的主要特点是多个 [VertexElement](${api}core/VertexElement) 对应一个 *VertexBuffer* （[Buffer](${api}core/Buffer)），仅使用一个 *VertexBuffer* 就可以将不同顶点元素与 Shader 关联。
 
 ```typescript
@@ -57,6 +58,9 @@ mesh.addSubMesh(0, vertexCount);
 renderer.mesh = mesh;
 ```
 ### 独立顶点缓冲
+
+<playground src="buffer-mesh-independent.ts"></playground>
+
 动态顶点 buffer 和静态顶点 buffer 混用时具有优势，比如 *position* 为静态，但 *color* 为动态，独立顶点缓冲可以仅更新颜色数据至 GPU。这个案例的主要特点是一个 [VertexElement](${api}core/VertexElement) 对应一个 *VertexBuffer* ，可以分别调用 [Buffer](${api}core/Buffer) 对象的 [setData](${api}core/Buffer#setData) 方法独立更新数据。
 
 ```typescript
@@ -91,6 +95,9 @@ renderer.mesh = mesh;
 
 
 ### Instance 渲染
+
+<playground src="buffer-mesh-instance.ts"></playground>
+
 GPU Instance 渲染是三维引擎的常用技术，比如可以把相同几何体形状的物体一次性渲染到不同的位置，可以大幅提升渲染性能。这个案例的主要特点是使用了 [VertexElement](${api}core/VertexElement) 的实例功能，其构造函数的最后一个参数表示实例步频（在缓冲中每前进一个顶点绘制的实例数量，非实例元素必须为 0），[BufferMesh](${api}core/BufferMesh) 的 [instanceCount](${api}core/BufferMesh#instanceCount) 表示实例数量。
 
 ```typescript
