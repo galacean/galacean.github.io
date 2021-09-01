@@ -1,7 +1,7 @@
 ---
 order: 4
 title: Custom material
-type: Resource System
+type: Resource
 ---
 
 There may be some special rendering requirements, such as water flow, and this time you need **custom material** to achieve. By using [Material](${api}core/Material) and [Shader](${api}core/Shader), you can integrate your own shader code into the engine rendering process.
@@ -174,7 +174,7 @@ For example, these macros have been related to Shader:
 #endif
 ```
 
-Then use `enableMacro` and `disableMacro` in [ShaderData](${api}core/Shader#enableMacro) to control marco：
+Then use `enableMacro` and `disableMacro` in [ShaderData](${api}core/Shader#enableMacro) to control marco:
 
 ```typescript
 // Open macro switch
@@ -203,9 +203,9 @@ const renderState = material.renderState;
 const blendState = renderState.blendState;
 const target = blendState.targetBlendState;
 
-// src factor:（As，As，As，As）
+// src factor:（As，As，As，As）.
 target.sourceColorBlendFactor = target.sourceAlphaBlendFactor = BlendFactor.SourceAlpha;
-// dst factor: (As，1 - As，1 - As，1 - As）。
+// dst factor: (As，1 - As，1 - As，1 - As）.
 target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
 // operation: src + dst  */
 target.colorBlendOperation = target.alphaBlendOperation = BlendOperation.Add;

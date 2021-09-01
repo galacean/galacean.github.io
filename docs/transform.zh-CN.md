@@ -70,22 +70,36 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 
 ## 常见QA
 
-- 为什么要添加 transform 组件？
+- 为什么要添加 `transform` 组件？
+
+
 
 3D 场景中，物体的几何变换应该统一进行管理，而不是把变换相关的数据杂糅到节点类中。
-同时，新的 transform 组件内部用脏标记作了大量优化，优化计算，提升性能。
+同时，新的 `transform` 组件内部用脏标记作了大量优化，优化计算，提升性能。
+​
+
+
+- 为什么修改 `transform.position.x` 没有作用？
+
+transform 组件内部使用脏标记进行了大量优化，位移，旋转，缩放，世界矩阵等属性的更新都会受到脏标记的影响。仅通过修改 `position` 对象的属性值，是无法使物体位移的。所以，使用 tweenjs 修改属性也无法实现插值动画。
+若需要修改物体的位移，通过为 `position` 重新赋值，或者调用`setPosition` 方法即可。
 
 
 - `registerWorldChangeFlag` 有什么作用？
 
-当外部需要关注当前 transform 的 `worldMatrix` 变化时，则可以调用这个方法，这个方法会返回一个更新标记，当前 transform 的 `worldMatrix` 被修改时会触发标记的更改。具体用法可以参考：
+由于 `transform` 的 `worldMatrix` 属性也用脏标记进行了优化～ 
+所以，若组件外部需要关注当前 `transform` 的 `worldMatrix` 是否发生了变化，需要获取到其脏标记的状态。
+`transform` 组件提供了 `registerWorldChangeFlag` 方法：这个方法会返回一个更新标记，当前 `transform` 的 `worldMatrix` 被修改时会触发标记的更改。具体用法可以参考相机组件：
+
 ```typescript
 class Camera {
 	onAwake() {
   	this._transform = this.entity.transform;
+    // 注册更新标记
     this._isViewMatrixDirty = this._transform.registerWorldChangeFlag();
   }
   get viewMatrix() {
+    // 当标记更新时，根据 worldmatrix 得到viewMatrix～
   	if (this._isViewMatrixDirty.flag) {
       this._isViewMatrixDirty.flag = false;
       Matrix.invert(this._transform.worldMatrix, this._viewMatrix);

@@ -18,8 +18,8 @@
       "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.4.0/dist/browser.js"
     },
     "@oasis-engine/spine": {
-      "version": "0.2.0-alpha.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.2.0-alpha.2/dist/browser.js",
+      "version": "0.2.0-alpha.4",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.2.0-alpha.4/dist/browser.js",
       "dist": "dist/browser.js"
     },
     "@oasis-engine/lottie": {
@@ -36,6 +36,11 @@
       "version": "18.6.4",
       "cdn": "https://gw.alipayobjects.com/os/lib/tweenjs/tween.js/18.6.4/dist/tween.umd.js",
       "dist": "dist/tween.umd.js"
+    },
+    "@oasis-engine/touch": {
+      "version": "0.0.15",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/touch/0.0.15/dist/index.browser.js",
+      "dist": "dist/browser.js"
     }
   }
 }

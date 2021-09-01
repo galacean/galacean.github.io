@@ -1,7 +1,7 @@
 ---
 order: 0
 title: Mini Program
-type: miniprogram
+type: Miniprogram
 ---
 
 At present, Oasis has been adapted to Alipay and Taobao miniprogram. This tutorial defaults that the developer has a certain ability to develop miniprograms. If not, please read the following tutorial, download the miniprogram development tools and apply for AppId:
@@ -79,8 +79,8 @@ Use `onReady` to configure `canvas` initialization callback. Need to set the id 
 
 Note:
 
-1. Use `import * as OASIS from "oasis-engine/dist/miniprogram"` to import the dependencies of miniprogram。
-2. Use `registerCanvas` which imported from `@oasis-engine/miniprogram-adapter` to register `canvas`。
+1. Use `import * as OASIS from "oasis-engine/dist/miniprogram"` to import the dependencies of miniprogram.
+2. Use `registerCanvas` which imported from `@oasis-engine/miniprogram-adapter` to register `canvas`.
 
 For example:
 
