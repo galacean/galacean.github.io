@@ -697,7 +697,7 @@ export default function GLTFView(props: any) {
     <>
       <WrapperLayout {...props}>
         <div className="page-gltf-view">
-          <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }}></canvas>
+          <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
             <img
@@ -713,7 +713,7 @@ export default function GLTFView(props: any) {
             <p>贴图格式支持:.jpg .png</p>
           </div>
           <div id="spinner" className="spinner hide" />
-          <script type="module" src="./src/index.ts"></script>
+          <script type="module" src="./src/index.ts" />
         </div>
       </WrapperLayout>
     </>

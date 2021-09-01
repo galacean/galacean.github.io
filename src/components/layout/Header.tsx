@@ -110,7 +110,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
   }
 
   redirect() {
-    const pathname = location.pathname;
+    const { pathname } = window.location;
     const isPathNameZhCN = /-cn\/?$/.test(pathname);
     const isZhCN = utils.isZhCN();
 
@@ -118,7 +118,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       return;
     }
 
-    if (isZhCN !== isPathNameZhCN)  {
+    if (isZhCN !== isPathNameZhCN) {
       this.replacePathName(pathname, isZhCN);
     }
   }
@@ -159,7 +159,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     )
   }
 
-  isNotMarkdownPage (pathname: string) {
+  isNotMarkdownPage(pathname: string) {
     return pathname === '/' || /api/.test(pathname) || /gltf-viewer/.test(pathname) || /examples/.test(pathname);
   }
 
