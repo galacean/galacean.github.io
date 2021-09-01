@@ -20,7 +20,7 @@ export default function PBRHelmet() {
     return () => {
       engine.destroy();
     };
-  });
+  }, []);
 
   return <canvas id="canvas-pbr-helmet" style={{ width: "400px", height: "400px" }} />;
 }
