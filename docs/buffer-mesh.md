@@ -6,8 +6,6 @@ type: Component
 
 [BufferMesh]() can freely manipulate vertex buffer and index buffer data, as well as some commands related to geometry rendering. It has the characteristics of high efficiency, flexibility and simplicity. Developers can use this class if they want to implement custom geometry efficiently and flexibly.
 
-<playground src="buffer-mesh.ts"></playground>
-
 ## Schematic diagram
 Let's take a look at the schematic diagram of `BufferMesh`
 
@@ -28,6 +26,9 @@ Among them, [IndexBufferBinding](${api}core/IndexBufferBinding) is optional, whi
 Here are a few common usage scenarios of [MeshRenderer](${api}core/MeshRenderer) and [BufferMesh](${api}core/BufferMesh), because the function of this class is low-level and flexible, so here is a comparison Detailed code.
 
 ### Interleaved VertexBuffer
+
+<playground src="buffer-mesh-interleaved.ts"></playground>
+
 Common methods, such as custom Mesh, Particle, etc., have the advantages of compact video memory and fewer CPU data uploads per frame to the GPU. The main feature of this case is that multiple [VertexElement](${api}core/VertexElement) correspond to one *VertexBuffer* ([Buffer](${api}core/Buffer)), only one *VertexBuffer* can be used Vertex elements are associated with Shader.
 
 ```typescript
@@ -57,6 +58,9 @@ mesh.addSubMesh(0, vertexCount);
 renderer.mesh = mesh;
 ```
 ### Independent VertexBuffer
+
+<playground src="buffer-mesh-independent.ts"></playground>
+
 Dynamic vertex buffer and static vertex buffer have advantages when mixed. For example, *position* is static, but *color* is dynamic. Independent vertex buffer can only update the color data to the GPU. The main feature of this case is that a [VertexElement](${api}core/VertexElement) corresponds to a *VertexBuffer*, and you can call [setData](${api} of the [Buffer](${api}core/Buffer) object respectively core/Buffer#setData) method to update data independently.
 
 ```typescript
@@ -91,6 +95,9 @@ renderer.mesh = mesh;
 
 
 ### Instance VertexBuffer
+
+<playground src="buffer-mesh-instance.ts"></playground>
+
 GPU Instance rendering is a common technology for 3D engines. For example, objects of the same geometric shape can be rendered to different positions at one time, which can greatly improve rendering performance. The main feature of this case is the use of the instance function of [VertexElement](${api}core/VertexElement). The last parameter of the constructor represents the instance step frequency (the number of instances drawn for each vertex in the buffer, non-instance The element must be 0), [instanceCount](${api}core/BufferMesh#instanceCount) in [BufferMesh](${api}core/BufferMesh) represents the number of instances.
 
 ```typescript
