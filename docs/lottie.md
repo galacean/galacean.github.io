@@ -20,17 +20,16 @@ npm i @oasis-engine/lottie --save
 
 ### Basic usage
 
-An atlas is needed for batch rendering. Before you start using the following code, you need to preprocess lottie's JSON file and merge the **assets** (maybe several base64-encoded images) into a sprite image. 
+An atlas is needed for batch rendering. Before you start using the following code, you need to preprocess lottie's JSON file and merge the **assets** (several base64-encoded images) into a sprite image with [tool-atlas-lottie](https://www.npmjs.com/package/@oasis-engine/tool-atlas-lottie). 
 
 ```typescript
 import { LottieRenderer } from "@oasis-engine/lottie";
 
-// Load lottie json、atlas and image file with engine's `resourceManager`
+// Load lottie json、atlas file with engine's `resourceManager`
 engine.resourceManager.load({
   urls: [
-    'https://gw.alipayobjects.com/os/bmw-prod/bf9346a5-8c25-48e2-b2c6-8a504707c8c7.json',
-    'https://gw.alipayobjects.com/os/bmw-prod/083ff1ac-15d9-42cb-8d7a-5b7c39b81f5f.json',
-    'https://gw.alipayobjects.com/mdn/rms_e54b79/afts/img/A*Ax4DSrekVhEAAAAAAAAAAAAAARQnAQ'
+    'https://gw.alipayobjects.com/os/bmw-prod/9ad65a42-9171-47ab-9218-54cf175f6201.json',
+    'https://gw.alipayobjects.com/os/bmw-prod/58cde292-8675-4299-b400-d98029b48ac7.atlas',
   ],
   type: 'lottie'
 }).then((lottieEntity) => {
@@ -39,8 +38,8 @@ engine.resourceManager.load({
 
   // Get `LottieRenderer` component and play the animation
   const lottie = lottieEntity.getComponent(LottieRenderer);
-  lottie.infinite = true;
-  lottie.timeScale = 1;
+  lottie.isLooping = true;
+  lottie.speed = 1;
   lottie.play();
 });
 ```
