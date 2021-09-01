@@ -21,7 +21,7 @@ Before coding, we need to plan in our minds the general flow of how to achieve a
 
 After the trial, we can summarize the following points through a simple analysis:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623310879070-048cbc6d-2193-4672-9440-c9a13d31f4d8.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/27a9f1e5-7b2c-450d-bde5-dd127d498108/image-20210901174005015.png" alt="image.png" />
 
 - The game is a 2D game, using [Orthogonal Camera](${docs}camera#orthogonal-projection) will be easier and more convenient.
 - The game is divided into three states:
@@ -231,7 +231,7 @@ this._dropTween = new TWEEN.Tween(rotation)
 
 The motion trajectory affects the feel. You can see that the original code is very complicated. Here we simulate the experience in reality. When you click on the screen, first give the bird an upward initial speed. At this time, it is always a parabolic motion. When the falling speed reaches At a peak, the resistance is offset by gravity, and the bird is falling at a constant speed:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5ed29897-5094-48be-bffc-3acbeb7f3e9a/image-20210901174457088.png" alt="image.png"/>
 
 Assuming that the speed provided by clicking to fly up is `_startFlyV`, the acceleration of gravity is `_gravity`, the maximum falling speed is `_maxDropV`, and the moment of clicking on the screen is `_flyStartTime`, we can get the ordinate of the bird at any moment by calculation::
 
@@ -277,7 +277,7 @@ onUpdate(deltaTime: number) {
 
 ## Pipe
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/76e350ff-6b14-46b0-99ad-3bf7150be551/image-20210901174713640.png" alt="image.png"/>
 
 We add `ScriptPipe` to the water pipe layer node to manage and generate water pipes. In order to better set the timing and performance of water pipe generation, we extract the configurable parameters:
 
@@ -371,7 +371,7 @@ Here you can refer to the [Sprite-Region](https://oasisengine.cn/0.4/examples#sp
 
 We can simply analyze the content of Restart and write a general process.
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/7c1c09ac-b801-428d-b67d-8f246bb0843b/image-20210901175201126.png" alt="image.png" style="zoom:50%;" />
 
 Here you can refer to the [Ray casting](${docs}ray) document. After obtaining the ray, we can directly use the Restart button to surround [bounds](${api}oasis-engine/SpriteRenderer#bounds) to intersect the ray Check [intersectBox](${api}oasis-engine/Ray#intersectBox) and notify GameCtrl to restart the game after a collision. Here I simply encapsulate a Touch component. We will improve the input capability of the engine at the next milestone.
 
