@@ -9,7 +9,7 @@ type: Resource
 Use [Script component](${docs}script) to load resources. [load](${api}core/ResourceManager#load) method can pass URL, [loadItem](${api}core/LoadItem), and an array which indicate batch loading.
 
 
-````Typescript
+```Typescript
 import { GLTFResource } from "oasis-engine";
 
 export class ResourceScript extension script {
@@ -18,7 +18,7 @@ export class ResourceScript extension script {
     this.entity.addChild(gltf.defaultSceneRoot);
   }
 }
-``
+```
 ## Features
 
 ### 1. Batch Loading
