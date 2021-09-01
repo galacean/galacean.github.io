@@ -81,6 +81,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const { searchInput } = this;
     const { intl: { locale } } = this.props;
 
+    this.redirect();
+
     document.addEventListener('keyup', (event) => {
       if (event.keyCode === 83 && event.target === document.body) {
         if (searchInput) {
@@ -94,9 +96,9 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     // Fetch version from remote config
     const versionConfig = 'https://render.alipay.com/p/h5data/oasis-version_site-doc-versions-h5data.json';
     const versions = await fetch(versionConfig).then((e) => e.json());
-    
+
     if (versions) {
-      this.setState({ versions: versions.map((v) => v.version)}) 
+      this.setState({ versions: versions.map((v) => v.version) })
     }
   }
 
@@ -104,6 +106,20 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const { isMobile } = this.props;
     if (isMobile !== preProps.isMobile) {
       this.setMenuMode(isMobile);
+    }
+  }
+
+  redirect() {
+    const { pathname } = window.location;
+    const isPathNameZhCN = /-cn\/?$/.test(pathname);
+    const isZhCN = utils.isZhCN();
+
+    if (this.isNotMarkdownPage(pathname)) {
+      return;
+    }
+
+    if (isZhCN !== isPathNameZhCN) {
+      this.replacePathName(pathname, isZhCN);
     }
   }
 
@@ -133,28 +149,48 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     window.location.href = value;
   };
 
+  replacePathName = (pathname: string, isZhCN: boolean) => {
+    const currentProtocol = `${window.location.protocol}//`;
+    const currentHref = window.location.href.substr(currentProtocol.length);
+
+    window.location.href = currentProtocol + currentHref.replace(
+      window.location.pathname,
+      utils.getLocalizedPathname(pathname, isZhCN),
+    )
+  }
+
+  isNotMarkdownPage(pathname: string) {
+    return pathname === '/' || /api/.test(pathname) || /gltf-viewer/.test(pathname) || /examples/.test(pathname);
+  }
+
   handleLangChange = () => {
     const {
       location: { pathname },
     } = this.props;
-    const currentProtocol = `${window.location.protocol}//`;
-    const currentHref = window.location.href.substr(currentProtocol.length);
 
-    if (utils.isLocalStorageNameSupported()) {
-      localStorage.setItem('locale', utils.isZhCN(pathname) ? 'en-US' : 'zh-CN');
+    const isPathNameZhCN = /-cn\/?$/.test(pathname);
+    const isZhCN = utils.isZhCN();
+
+    localStorage.setItem('locale', isZhCN ? 'en-US' : 'zh-CN');
+
+    if (this.isNotMarkdownPage(pathname)) {
+      window.location.reload();
+      return;
     }
-    window.location.href =
-      currentProtocol +
-      currentHref.replace(
-        window.location.pathname,
-        utils.getLocalizedPathname(pathname, !utils.isZhCN(pathname)),
-      );
+
+    if (isZhCN && isPathNameZhCN) {
+      this.replacePathName(pathname, false);
+      return;
+    }
+    if (!isZhCN && !isPathNameZhCN) {
+      this.replacePathName(pathname, true);
+    }
   };
 
   onVersionChange = (value: string) => {
     const versionReg = /\/(\d+[.]\d+[^/]*)\//;
     const matchedResult = window.location.href.match(versionReg);
-    
+
     if (matchedResult && matchedResult[1]) {
       window.location.href = window.location.href.replace(matchedResult[1], value);
     }
@@ -222,13 +258,13 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             </Menu.Item>
           </Menu.ItemGroup>
           {isZhCN &&
-          <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.editor" })}>
-            <Menu.Item key="editor-docs">
-              <Link to={utils.getLocalizedPathname(`/${version}/docs/editor`, isZhCN)}>
-                {formatMessage({ id: "app.header.menu.editor.docs" })}
-              </Link>
-            </Menu.Item>
-          </Menu.ItemGroup>
+            <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.editor" })}>
+              <Menu.Item key="editor-docs">
+                <Link to={utils.getLocalizedPathname(`/${version}/docs/editor`, isZhCN)}>
+                  {formatMessage({ id: "app.header.menu.editor.docs" })}
+                </Link>
+              </Menu.Item>
+            </Menu.ItemGroup>
           }
         </Menu.SubMenu>
         <Menu.Item key="examples" icon={<PlayCircleOutlined />}>
@@ -254,11 +290,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
               </Link>
             </Menu.Item>
             {isZhCN &&
-            <Menu.Item key="editor">
-              <Link to="https://oasis.alipay.com/editor" target="_blank">
-                {formatMessage({ id: "app.header.menu.ecosystem.editor" })}
-              </Link>
-            </Menu.Item>
+              <Menu.Item key="editor">
+                <Link to="https://oasis.alipay.com/editor" target="_blank">
+                  {formatMessage({ id: "app.header.menu.ecosystem.editor" })}
+                </Link>
+              </Menu.Item>
             }
           </Menu.ItemGroup>
           <Menu.ItemGroup title={formatMessage({ id: "app.header.menu.ecosystem.animation" })}>
@@ -325,7 +361,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                     </Button>
                   </div>
                   {this.state.versions.length && this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value={version}>
-                    {this.state.versions.map((v)=> {
+                    {this.state.versions.map((v) => {
                       return <Option value={v} key={v}>{`v${v}`}</Option>
                     })}
                   </Select>}

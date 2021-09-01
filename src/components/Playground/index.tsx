@@ -23,7 +23,7 @@ export default function Playground (props: any) {
   return (
     <div className="code-box">
       <div className="code-box-demo">
-        <iframe src={url} width="100%" height="100%" frameBorder="0"></iframe>
+        <iframe src={url} width="100%" height="100%" frameBorder="0" />
       </div>
       <div className="code-box-source">
         <pre>

@@ -92,7 +92,7 @@ export default function Examples(props: any) {
                     <MenuUnfoldOutlined className="nav-phone-icon" onClick={() => { toggleMenu(!menuVisible) }} />
                   </Popover>
                 }
-                <Playground name={name} sourceCode={sourceCode} formatedCode={formatedCode}></Playground>
+                <Playground name={name} sourceCode={sourceCode} formatedCode={formatedCode} />
               </Content>
             </Layout>
           }

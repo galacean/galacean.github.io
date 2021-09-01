@@ -11,7 +11,7 @@ export default function PBRHelmet() {
     return () => {
       engine.destroy();
     };
-  });
+  }, []);
 
   return <canvas id="canvas-spine" style={{ width: '300px', height: '400px' }} />;
 }
