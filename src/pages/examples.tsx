@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { graphql } from "gatsby";
 import WrapperLayout from '../components/layout';
-import { Layout, Menu, Popover } from 'antd';
-import { MenuUnfoldOutlined } from '@ant-design/icons';
+import { Layout, Menu, Popover, Input } from 'antd';
+import { MenuUnfoldOutlined, SearchOutlined } from '@ant-design/icons';
 import Media from 'react-media';
 import './examples.less';
 import Playground from '../components/Playground';
@@ -14,6 +14,7 @@ export default function Examples(props: any) {
 
   const [name, setName] = useState('pbr-helmet');
   const [menuVisible, toggleMenu] = useState(false);
+  const [search, setSearch] = useState('');
 
   const groups: any = {};
 
@@ -35,16 +36,28 @@ export default function Examples(props: any) {
   });
 
   const itemGroups = []
+  const searchReg = new RegExp(search, 'i');
 
   Object.keys(groups).forEach((category) => {
     const groupNodes = groups[category];
-    itemGroups.push(<Menu.ItemGroup key={category} title={category}>
-      {groupNodes.map((node) => {
-        return <Menu.Item key={node.name}>
+    let hasNodes = false;
+    const filteredNodes = groupNodes.map((node) => {
+      const nodeName = node.name;
+      if (searchReg.test(nodeName)) {
+        hasNodes = true;
+        return <Menu.Item key={nodeName}>
           {node.title}
         </Menu.Item>
-      })}
-    </Menu.ItemGroup>)
+      }
+
+      return null;
+    });
+
+    if (hasNodes) {
+      itemGroups.push(<Menu.ItemGroup key={category} title={category}>
+        {filteredNodes}
+      </Menu.ItemGroup>)
+    }
   })
 
   const menu = <Menu selectedKeys={[name]} onSelect={(item) => {
@@ -78,7 +91,14 @@ export default function Examples(props: any) {
         <Media query="(max-width: 599px)">
           {(isMobile) =>
             <Layout hasSider={true}>
-              {!isMobile && <Sider>{menu}</Sider>}
+              {!isMobile && <Sider>
+                <div className="examples-search">
+                  <Input size="large" placeholder="Search..." prefix={<SearchOutlined />} onChange={(e) => {
+                    setSearch(e.currentTarget.value);
+                  }} />
+                </div>
+                {menu}
+              </Sider>}
               <Content style={{ height: 'calc(100vh - 64px)' }} className="examples-content">
                 {isMobile &&
                   <Popover
