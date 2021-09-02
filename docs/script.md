@@ -83,6 +83,17 @@ The callback function description of each life cycle:
 	}
 	```
 
+- [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
+  `onTriggerEnter` will be called when the collider collides, which handle the logic when the colliders meet, 
+  such as deleting the entity when the collision occurs.
+
+- [**onTriggerStay**](${api}core/Script#onTriggerStay)
+  `onTriggerStay` will be called continuously during the collision of the collider, once per frame.
+
+- [**onTriggerExit**](${api}core/Script#onTriggerExit)
+  `onTriggerExit` will be called when the two colliders are separated, that is, 
+  when the collision relationship changes, it will be called only once.
+
 - [**onUpdate**](${api}core/Script#onUpdate)
 
   A key point in game/animation development is to update the behavior, state and orientation of the object before each frame is rendered. These update operations are usually placed in the `onUpdate` callback.
