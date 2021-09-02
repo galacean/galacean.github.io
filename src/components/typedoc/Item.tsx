@@ -8,12 +8,13 @@ import { Kinds } from './enum';
 import { Element } from 'react-scroll';
 
 function Type(props: IType) {
-  return <span>
-    <i>{props.type === 'reference'  ? (props.id ?
+  const reference = props.id ?
       <a href={props.name}>{props.name}</a> :
       // Link to MDN Doc if it is a native API.
       <a href={`https://developer.mozilla.org/en-US/search?q=${props.name}`} target="_blank">{props.name}</a>
-    ) : props.name}</i>
+    
+  return <span>
+    <i>{props.type === 'reference' ? reference : props.name}</i>
     {props.type === 'array' && <span>[]</span>}
   </span>
 }
@@ -46,8 +47,8 @@ function TypeOperator(props: IType) {
     {props.target && (props.target.type === 'array' ?
       <span>
         &lt;
-      <Type {...props.target?.elementType} />
-      []&gt;
+        <Type {...props.target?.elementType} />
+        []&gt;
       </span> :
       <Type {...props.target?.elementType} />
     )}

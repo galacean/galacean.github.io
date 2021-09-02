@@ -41,7 +41,7 @@ ambientLight.diffuseTexture = cubeTexture;
 
 #### IBL
 
-In order to simulate the real world environment, Oasis engine provides [IBL](https://www.wikiwand.com/en/Image-based_lighting) technology, which loads a [cube texture](${docs}resouce-manager#2-texturecube) resouce that can reflect the surrounding environment.
+In order to simulate the real world environment, Oasis engine provides [IBL](https://www.wikiwand.com/en/Image-based_lighting) technology, which loads a [cube texture](${docs}resource-manager#2-texturecube) resouce that can reflect the surrounding environment.
 
 ```typescript
 const ambientLight = scene.ambientLight;
@@ -50,7 +50,7 @@ const ambientLight = scene.ambientLight;
 ambientLight.specularTexture = cubeTexture;
 ```
 
-If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#IBL-Mode) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
+If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#ibl) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
 
 ### Directional light
 

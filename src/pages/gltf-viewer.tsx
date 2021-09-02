@@ -1,6 +1,10 @@
+/* eslint-disable no-console */
+/* eslint no-multi-assign: "off" */
+/* eslint no-param-reassign: ["error", { "props": false }] */
+/* eslint no-underscore-dangle: 0 */
 import { OrbitControl } from "@oasis-engine/controls";
+import type { AnimationClip, Entity, Material, Scene, Texture2D, TextureCubeMap } from "oasis-engine";
 import {
-  AnimationClip,
   Animator,
   AssetType,
   BackgroundMode,
@@ -9,21 +13,14 @@ import {
   Color,
   DiffuseMode,
   DirectLight,
-  Entity,
-  GLTFResource,
-  Material,
   MeshRenderer,
   PBRBaseMaterial,
   PBRMaterial,
   PBRSpecularMaterial,
   PrimitiveMesh,
-  Renderer,
-  Scene,
   SkinnedMeshRenderer,
   SkyBoxMaterial,
   SphericalHarmonics3,
-  Texture2D,
-  TextureCubeMap,
   UnlitMaterial,
   Vector3,
   WebGLEngine
@@ -183,7 +180,6 @@ class Oasis {
   $spinner = document.getElementById("spinner");
   $dropZone = document.getElementById("dropZone");
   $input = document.getElementById("input");
-  $close = document.getElementById("close");
 
   constructor() {
     const guiStyle = this.gui.domElement.style;
@@ -357,30 +353,29 @@ class Oasis {
   initDropZone() {
     const dropCtrl = new window.SimpleDropzone.SimpleDropzone(document.body, this.$input);
     dropCtrl.on("drop", ({ files }) => this.loadFileMaps(files));
-    this.$close.onclick = () => {
-      this.$dropZone.classList.add("hide");
-    };
   }
 
-  loadFileMaps(files: Map<String, File>) {
+  loadFileMaps(files: Map<string, File>) {
     const modelReg = /\.(gltf|glb)$/i;
     const imgReg = /\.(jpg|jpeg|png)$/i;
     let mainFile: File;
-    let rootPath: string;
     let type = "gltf";
     const filesMap = {}; // [fileName]:LocalUrl
-    const fileArray: any = Array.from(files); //['/*/*.*',obj:File]
+    const fileArray: any = Array.from(files); // ['/*/*.*',obj:File]
 
-    fileArray.some(([path, file]) => {
+    fileArray.some((f) => {
+      const file = f[1];
       if (modelReg.test(file.name)) {
         type = RegExp.$1;
         mainFile = file;
-        rootPath = path.replace(file.name, ""); // '/somePath/'
         return true;
       }
+
+      return false;
     });
 
-    fileArray.forEach(([path, file]) => {
+    fileArray.forEach((f) => {
+      const file = f[1];
       if (!modelReg.test(file.name)) {
         const url = URL.createObjectURL(file);
         const fileName = file.name;
@@ -398,7 +393,7 @@ class Oasis {
     }
   }
 
-  loadModel(url: string, filesMap: { [key: string]: string }, type: "gltf" | "glb") {
+  loadModel(url: string, filesMap: Record<string, string>, type: "gltf" | "glb") {
     this.destoryGLTF();
 
     // replace relative path
@@ -411,7 +406,7 @@ class Oasis {
         .then((gltf: any) => {
           gltf.buffers.concat(gltf.images).forEach((item) => {
             if (!item) return;
-            const uri = item.uri;
+            const { uri } = item;
             if (filesMap[uri]) {
               item.uri = filesMap[uri];
             }
@@ -421,7 +416,7 @@ class Oasis {
           this.engine.resourceManager
             .load<GLTFResource>({
               type: AssetType.Prefab,
-              url: urlNew + "#.gltf"
+              url: `${urlNew}#.gltf`
             })
             .then((asset) => {
               this.handleGltfResource(asset);
@@ -434,7 +429,7 @@ class Oasis {
       this.engine.resourceManager
         .load<GLTFResource>({
           type: AssetType.Prefab,
-          url: url + "#.glb"
+          url: `${url}#.glb`
         })
         .then((asset) => {
           this.handleGltfResource(asset);
@@ -463,7 +458,7 @@ class Oasis {
   }
 
   addTexture(name: string, url: string) {
-    let repeat = Object.keys(this.textures).find((textureName) => textureName === name);
+    const repeat = Object.keys(this.textures).find((textureName) => textureName === name);
     if (repeat) {
       console.warn(`${name} 已经存在，请更换图片名字重新上传`);
       return;
@@ -505,16 +500,15 @@ class Oasis {
       gui.removeFolder(this.materialFolder);
       this.materialFolder = null;
     }
-    if (!materials) {
-      materials = this._materials;
-    }
-    this._materials = materials;
-    if (!materials.length) return;
+
+    const _materials = materials || this._materials;
+    this._materials = _materials;
+    if (!_materials.length) return;
 
     const folder = (this.materialFolder = gui.addFolder("Material"));
     const folderName = {};
 
-    materials.forEach((material) => {
+    _materials.forEach((material) => {
       if (!(material instanceof PBRBaseMaterial) && !(material instanceof UnlitMaterial)) return;
       if (!material.name) {
         material.name = "default";
@@ -668,7 +662,7 @@ export default function GLTFView(props: any) {
           document.body.appendChild(script);
 
           script.onload = () => {
-            resolve(void 0);
+            resolve(undefined);
           };
 
           script.src = item.url;
@@ -680,35 +674,24 @@ export default function GLTFView(props: any) {
     });
 
     return () => {
-      oasis.engine.destroy();
-      oasis.gui.destroy();
-
       scripts.forEach((script) => {
         document.body.removeChild(script.dom);
       });
+      oasis.gui.destroy();
+      oasis.engine.destroy();
     };
   });
   return (
     <>
       <WrapperLayout {...props}>
         <div className="page-gltf-view">
-          <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }}></canvas>
+          <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
-            <img
-              id="close"
-              className="closeIcon"
-              src="https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*B7GAQq_VPyIAAAAAAAAAAABkARQnAQ"
-              alt=""
-            />
-            <p>拖拽 gltf 2.0 规范的文件或者文件夹到此页面进行预览</p>
-            <p>拖拽支持的图片或者文件夹到此页面，调试纹理贴图</p>
-            <br />
-            <p>模型格式支持:.gltf .glb .bin</p>
-            <p>贴图格式支持:.jpg .png</p>
+            <p>Drag glTF2.0 and texture files or folder on the viewport</p>
           </div>
           <div id="spinner" className="spinner hide" />
-          <script type="module" src="./src/index.ts"></script>
+          <script type="module" src="./src/index.ts" />
         </div>
       </WrapperLayout>
     </>

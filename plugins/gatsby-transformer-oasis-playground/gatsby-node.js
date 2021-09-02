@@ -40,7 +40,8 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
                   "@oasis-engine/spine": "oasisSpine",
                   "@oasis-engine/lottie": "engine-lottie",
                   "dat.gui": "dat",
-                  "@tweenjs/tween.js": "TWEEN"
+                  "@tweenjs/tween.js": "TWEEN",
+                  "@oasis-engine/touch": "@oasis-engine/touch",
               },
               exactGlobals: true
           }

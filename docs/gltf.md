@@ -1,7 +1,7 @@
 ---
 order: 5
 title: glTF Resource
-type: Resource System
+type: Resource
 ---
 
 ## What is glTF?

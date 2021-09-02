@@ -18,7 +18,7 @@ The rendering of the [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/We
 
 At the same time, we set a full-screen style for this *Canvas* element.
 
-> **Note**: The style is not the real height and width of the Canvas, but just the visual height and width. For example, if a small canvas is stretched to enlarge it through the style, the picture will be changed. In the following, the [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) method will be used to reset the width and height attribute values ​​of *Canvas* according to the style. See the [Canvas](${docs}canvas-cn) chapter for details.
+> **Note**: The style is not the real height and width of the Canvas, but just the visual height and width. For example, if a small canvas is stretched to enlarge it through the style, the picture will be changed. In the following, the [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) method will be used to reset the width and height attribute values ​​of *Canvas* according to the style. See the [Canvas](${docs}canvas) chapter for details.
 
 ## Introduce Module
 
@@ -44,20 +44,20 @@ import {
 Let's first briefly understand these classes:
 
 **WebGL Engine Class**:
--[WebGLEngine](${api}rhi-webgl/WebGLEngine): WebGL platform engine, supports WebGL1.0 and WebGL2.0, it can control all behaviors of the canvas, including resource management, scene management, execution/pause/continue, Vertical synchronization and other functions. (See the [Engine](${docs}engine-cn) chapter for details.)
+-[WebGLEngine](${api}rhi-webgl/WebGLEngine): WebGL platform engine, supports WebGL1.0 and WebGL2.0, it can control all behaviors of the canvas, including resource management, scene management, execution/pause/continue, Vertical synchronization and other functions. (See the [Engine](${docs}engine) chapter for details.)
 
 Component class:
--[Camera](${api}core/Camera): The camera is an abstract concept of a graphics engine for 3D projection. It acts like a camera or eyes in the real world. Without a camera, the canvas will not draw anything. (See the [Camera](${docs}camera-cn) chapter for details)
--[DirectLight](${api}core/DirectLight): Direct light is a kind of lighting, lighting makes the scene more layered, and using lighting can create a more realistic three-dimensional scene. (See the [Lighting](${docs}light-cn) chapter for details)
--[Script](${api}core/Script): Script is the link between engine capabilities and game logic. You can use it to extend the engine's functions, or you can write your own games in the life cycle hook function provided by the script component Logic code. (See the [Script](${docs}script-cn) chapter for details)
--[MeshRenderer](${api}core/MeshRenderer): Mesh renderer, which uses a mesh object (a cube in this example) as the data source for the outline of the geometry. (See [Mesh Renderer](${docs}mesh-renderer-cn) section for details)
+-[Camera](${api}core/Camera): The camera is an abstract concept of a graphics engine for 3D projection. It acts like a camera or eyes in the real world. Without a camera, the canvas will not draw anything. (See the [Camera](${docs}camera) chapter for details)
+-[DirectLight](${api}core/DirectLight): Direct light is a kind of lighting, lighting makes the scene more layered, and using lighting can create a more realistic three-dimensional scene. (See the [Lighting](${docs}light) chapter for details)
+-[Script](${api}core/Script): Script is the link between engine capabilities and game logic. You can use it to extend the engine's functions, or you can write your own games in the life cycle hook function provided by the script component Logic code. (See the [Script](${docs}script) chapter for details)
+-[MeshRenderer](${api}core/MeshRenderer): Mesh renderer, which uses a mesh object (a cube in this example) as the data source for the outline of the geometry. (See [Mesh Renderer](${docs}mesh-renderer) section for details)
 
 **Geometry and Material Class**:
--[PrimitiveMesh](${api}core/PrimitiveMesh): Basic geometry, which provides a convenient way to create mesh objects such as cubes and spheres. (See the [Basic Geometry](${docs}primitive-mesh-cn) chapter for details)
--[BlinnPhongMaterial](${api}core/BlinnPhongMaterial): The material defines how to render the cube. The BlinnPhong material is one of the classic materials. (See the [Material](${docs}material-cn) chapter for details)
+-[PrimitiveMesh](${api}core/PrimitiveMesh): Basic geometry, which provides a convenient way to create mesh objects such as cubes and spheres. (See the [Basic Geometry](${docs}primitive-mesh) chapter for details)
+-[BlinnPhongMaterial](${api}core/BlinnPhongMaterial): The material defines how to render the cube. The BlinnPhong material is one of the classic materials. (See the [Material](${docs}material) chapter for details)
 
 **Mathematics library related classes**:
--[Vector3](), [Vector4](), [Color](): These classes are some basic units of mathematical calculations, used to calculate the position and color of the cube. (See the [Mathematics Library](${docs}math-cn) chapter for details)
+-[Vector3](), [Vector4](), [Color](): These classes are some basic units of mathematical calculations, used to calculate the position and color of the cube. (See the [Mathematics Library](${docs}math) chapter for details)
 
 ## Create an Engine Instance
 

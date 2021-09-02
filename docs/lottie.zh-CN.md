@@ -19,12 +19,12 @@ npm i @oasis-engine/lottie --save
 ## 使用
 
 ### 基础使用
-合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，把其中的 **assets**（有可能是 base64 编码的图片集）合并成一张精灵图。
+合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，使用 [tool-atlas-lottie](https://www.npmjs.com/package/@oasis-engine/tool-atlas-lottie) 把其中的 **assets**（base64 编码的图片集）合并成一张精灵图。
 
 ```typescript
 import { LottieRenderer } from "@oasis-engine/lottie";
 
-// Load lottie json、atlas and image file with engine's `resourceManager`
+// Load lottie json、atlas file with engine's `resourceManager`
 engine.resourceManager.load({
   urls: [
     'https://gw.alipayobjects.com/os/bmw-prod/bf9346a5-8c25-48e2-b2c6-8a504707c8c7.json',
@@ -38,8 +38,8 @@ engine.resourceManager.load({
 
   // Get `LottieRenderer` component and play the animation
   const lottie = lottieEntity.getComponent(LottieRenderer);
-  lottie.infinite = true;
-  lottie.timeScale = 1;
+  lottie.isLooping = true;
+  lottie.speed = 1;
   lottie.play();
 });
 ```

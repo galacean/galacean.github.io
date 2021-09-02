@@ -1,7 +1,7 @@
 ---
 order: 3
 title: Material
-type: Resource System
+type: Resource
 ---
 
 ## Material category
@@ -48,7 +48,7 @@ In addition to the above general parameters, PBR provides two workflows: **Metal
 | [glossinessFactor](${api}core/PBRSpecularMaterial#glossinessFactor) | The degree of smoothness, opposite to roughness. |
 | [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | Specular glossiness texture, used with `specularColor` and `glossinessFactor`, it is a multiplied relationship. |
 
-> **Note**: If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#IBL-Mode) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
+> **Note**: If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#ibl) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
 
 ### 4. BlinnPhongMaterial
 

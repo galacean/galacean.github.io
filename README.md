@@ -34,7 +34,7 @@ OK, visit http://localhost:8000 .
 #### How to insert a playground in markdown
 ```
 // leave a blank line here
-<playground src="buffer-mesh.ts"></playground>
+<playground src="buffer-mesh-instance.ts"></playground>
 ```
 
 ### Deploy

@@ -4,11 +4,11 @@ title: 4. 第一个游戏
 type: 入门
 ---
 
-> 相信大家对 flappy bird 都不陌生，今天我们简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
+> 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
 
 # 总览
 
-在着手敲代码前，我们需要先在脑海中规划一下如何实现与游戏的大概流程，因此我们会将本文分为以下几个环节：
+在着手敲代码前，需要先在脑海中规划一下如何实现与游戏的大概流程，因此我们会将本文分为以下几个环节：
 
 - 需求分析
 - UI 搭建
@@ -18,7 +18,7 @@ type: 入门
 
 # 需求分析
 
-试玩之后，我们通过简单的需求分析可以总结出以下 tips ：
+试玩之后，通过简单的需求分析可以总结出以下 tips ：
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623310879070-048cbc6d-2193-4672-9440-c9a13d31f4d8.png" alt="image.png" style="zoom:50%;" />
 
@@ -28,17 +28,17 @@ type: 入门
   - 对局中
   - 对局结束
 - 整个游戏中的显示对象(由远到近)：
-  - Backgound （背景）
+  - Background （背景）
   - Pipe （水管）
   - Ground （草地）
   - Bird （小鸟的帧动画）
   - GUI（分数与重新开始按钮）
 
-需求分析后，我们可以基本理清对局的流程与全局的 UI 布局，接下来的步骤就是根据层级关系搭建好整个 UI 界面。 ​
+需求分析后，可以基本理清对局的流程与全局的 UI 布局，接下来的步骤就是根据层级关系搭建好整个 UI 界面。 ​
 
 # UI 搭建
 
-经过上个步骤分析，我们确定了整个游戏中的显示对象，此时我们可以开始实现一个简单的搭建，这里要提前说明的是，本次示例使用 [SpriteRender](${docs}sprite-renderer-cn) 实现，请重点关注其中的 [Sprite](${docs}sprite-cn) ，因为在搭建 UI 的时候，我们需要确定像素和坐标之间的关系，而其中的 [pixelsPerUnit](${api}core/Sprite#pixelsPerUnit) 确定了一个单位坐标包含的像素值。 ​
+经过上个步骤分析，可以确定整个游戏中的显示对象，此时可以开始实现一个简单的搭建，这里要提前说明的是，本次示例使用 [SpriteRender](${docs}sprite-renderer-cn) 实现，请重点关注其中的 [Sprite](${docs}sprite-cn) ，因为在搭建 UI 的时候，需要确定像素和坐标之间的关系，而其中的 [pixelsPerUnit](${api}core/Sprite#pixelsPerUnit) 确定了一个单位坐标包含的像素值。 ​
 
 ## 获取 UI 资源
 
@@ -67,7 +67,7 @@ type: 入门
 
 ### 分析显示层级
 
-在之前进行需求分析时可以大概确定各个显示对象的前后遮挡关系，因此我们可以敲定大概的摆放位置：
+在之前进行需求分析时可以大概确定各个显示对象的前后遮挡关系，因此可以敲定大概的摆放位置：
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee.png" alt="image.png" style="zoom:50%;" />
 
@@ -145,7 +145,7 @@ function addSpriteRender(node: Entity, texture2D: Texture2D) {
 
 # 逻辑的设计与实现
 
-设计的第一原则是简单适用，切忌过早优化，开始的时候我们不需要计较内存与计算优化，也不需要在对象销毁与复用上做太多的设计，首先要先实现一套完整的流程，然后在此基础上做一些优化迭代，因此我们先考虑以下的实现：
+设计的第一原则是简单适用，切忌过早优化，开始的时候不需要计较内存与计算优化，也不需要在对象销毁与复用上做太多的设计，首先要先实现一套完整的流程，然后在此基础上做一些优化迭代，因此先考虑以下的实现：
 
 - 全局控制器，监听人机交互（屏幕点击）与各个模块间的交互（ GUI 发出玩家点击了重新开始的事件）
 - Bird
@@ -179,7 +179,7 @@ PS：每个显示对象在不同游戏状态时都会展示对应的表现
 
 ### tweenjs
 
-为了实现小鸟的抬头与低头，我们引入[缓动库](https://github.com/tweenjs/tween.js)，抬头的时候我们逆时针旋转小鸟至 20 度，低头的时候我们缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件]（${docs}transform-cn）的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
+为了实现小鸟的抬头与低头，我们引入[缓动库](https://github.com/tweenjs/tween.js)，抬头的时候逆时针旋转小鸟至 20 度，低头的时候缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件]（${docs}transform-cn）的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
 
 ```typescript
 private _updateProperties(
@@ -221,7 +221,7 @@ private _updateProperties(
 	}
 ```
 
-因此在我们的代码中可以这样表示：
+因此在代码中可以这样表示：
 
 ```typescript
 this._dropTween = new TWEEN.Tween(rotation)
@@ -234,11 +234,11 @@ this._dropTween = new TWEEN.Tween(rotation)
 
 ### 运动轨迹
 
-运动轨迹涉及到手感，可以看到原版代码实现得十分复杂，此处我们模拟现实中的体验，点击屏幕时先给小鸟一个向上的初速度，此时一直为抛物线的运动，当下落的速度达到一个峰值时阻力与重力抵消，此时小鸟以一个恒定的速度下落：
+运动轨迹涉及到手感，可以看到原版代码实现得十分复杂，此处模拟现实中的体验，点击屏幕时先给小鸟一个向上的初速度，此时一直为抛物线的运动，当下落的速度达到一个峰值时阻力与重力抵消，此时小鸟以一个恒定的速度下落：
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
 
-我们假设点击往上飞提供的速度为 `_startFlyV`，重力加速度为 `_gravity`，最大下落速度为 `_maxDropV`，点击屏幕的时刻为 `_flyStartTime`，通过计算我们可以得到任意时刻小鸟的纵坐标：
+假设点击往上飞提供的速度为 `_startFlyV`，重力加速度为 `_gravity`，最大下落速度为 `_maxDropV`，点击屏幕的时刻为 `_flyStartTime`，通过计算可以得到任意时刻小鸟的纵坐标：
 
 ```typescript
 // Free fall and uniform motion are superimposed to obtain the current position.
@@ -265,7 +265,7 @@ if (subTime <= addToMaxUseTime) {
 
 <playground src="tiling-offset.ts"></playground>
 
-已知草地资源宽度为 ”37“ ，背景大图宽度为 “768” ，为了底部衔接处宽度一致，我们可以设置草地的 tilingOffset 为：
+已知草地资源宽度为 ”37“ ，背景大图宽度为 “768” ，为了底部衔接处宽度一致，可以设置草地的 tilingOffset 为：
 
 ```typescript
 groundMaterial.tilingOffset.setValue(768 / 37, 1, 0, 0);
@@ -284,7 +284,7 @@ onUpdate(deltaTime: number) {
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
 
-我们依靠在水管层节点加入 `ScriptPipe` 管理和生成水管，为了更好地设置水管的生成时机与表现，我们将可配置的参数抽取出来：
+依靠在水管层节点加入 `ScriptPipe` 管理和生成水管，为了更好地设置水管的生成时机与表现，我们将可配置的参数抽取出来：
 
 ```typescript
   /**  Hide when the x coordinate of the pipe is less than -4.6. */
@@ -299,7 +299,7 @@ onUpdate(deltaTime: number) {
   private _pipeDebutTime: number = 3000;
 ```
 
-正如上方我们更新草地一般，更新水管也是同样的操作：
+正如上方更新草地一般，更新水管也是同样的操作：
 
 ```typescript
   /**
@@ -364,7 +364,7 @@ onUpdate(deltaTime: number) {
 
 ### 分数
 
-如果有 `BitmapText` ，我们可以很方便地使用位图字体去实现分数的显示，但目前我们只能自己硬着头皮去实现，首先看下分数的资源长什么样。
+首先看下分数的资源长什么样。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
 
@@ -374,17 +374,17 @@ onUpdate(deltaTime: number) {
 
 ### Restart
 
-我们可以简单分析一下 Restart 要实现的内容并写出大概的流程。
+可以简单分析一下 Restart 要实现的内容并写出大概的流程。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
 
-此处可以参考 [射线投影](${docs}ray-cn) 文档，获得射线后我们可以直接用 Restart 按钮的包围 [bounds](${api}oasis-engine/SpriteRenderer#bounds) 和射线做相交检测 [intersectBox](${api}oasis-engine/Ray#intersectBox) ，当发生碰撞后通知 GameCtrl 重新开始对局，此处我简单封装了一个 Touch 组件，下个里程碑我们将完善引擎的 Input 能力。
+此处可以参考 [射线投影](${docs}ray-cn) 文档，获得射线后可以直接用 Restart 按钮的包围 [bounds](${api}oasis-engine/SpriteRenderer#bounds) 和射线做相交检测 [intersectBox](${api}oasis-engine/Ray#intersectBox) ，当发生碰撞后通知 GameCtrl 重新开始对局，此处我简单封装了一个 Touch 组件，下个里程碑我们将完善引擎的 Input 能力。
 
 # 碰撞检测
 
 ## 碰撞检测的时机
 
-我们知道在执行碰撞检测时有一个前提，就是此时已经是这一帧的最终位置了，之前学习过 [Oasis 脚本系统](${docs}script-cn#组件生命周期函数) 的同学应该会很熟悉，当我们在 `onUpdata` 中改变 `Entity` 的位置后，可以在 `onLateUpdate` 中做碰撞检测，这样可以保证时序不出问题。
+在执行碰撞检测时有一个前提，就是此时已经是这一帧的最终位置了，之前学习过 [Oasis 脚本系统](${docs}script-cn#组件生命周期函数) 的同学应该会很熟悉，当在 `onUpdata` 中改变 `Entity` 的位置后，可以在 `onLateUpdate` 中做碰撞检测，这样可以保证时序不出问题。
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
 
@@ -408,13 +408,13 @@ engine.on(GameEvent.checkHit, (birdY) => {
 - Bird 需要和所有的 Pipe 进行碰撞吗？如果不是，那么如何判断与哪根柱子进行碰撞检测呢？
 - 如何确定 Bird 和 Pipe 是否发生了碰撞？
 
-首先解答第一个问题，可以发现如果对上图中红色的 Pipe 做碰撞检测是有价值的，但是对蓝色的 Pipe 做则毫无价值，因此我们可以确定当柱子的坐标处在屏幕中间某个位置时，这个柱子就是我们需要做碰撞检测的柱子。
+首先解答第一个问题，可以发现如果对上图中红色的 Pipe 做碰撞检测是有价值的，但是对蓝色的 Pipe 做则毫无价值，因此我们可以确定当 Pipe 的坐标处在屏幕中间某个位置时，这就是需要做碰撞检测的 Pipe 。
 
 ```typescript
 Math.abs(pipePos.x) < 0.9;
 ```
 
-然后解答第二个问题，回到我们之前创建 Pipe 的过程，我们将 Pipe 的锚点设置在了正中间，因此我们只需要判断 bird 的 Y 坐标即可：
+然后解答第二个问题，回到之前创建 Pipe 的过程，我们将 Pipe 的锚点设置在了正中间，因此只需要判断 bird 的 Y 坐标即可：
 
 ```typescript
 Math.abs(pipePos.y - birdY) > 1.2;
@@ -423,27 +423,27 @@ Math.abs(pipePos.y - birdY) > 1.2;
 对场上所有的 Pipe 做上述操作则得到：
 
 ```typescript
-    // When checkHit is monitored, check the collision between the pipe and the bird.
-    engine.on(GameEvent.checkHit, (birdY: number) => {
-      var len = this._nowPipeArr.length;
-      for (var i = 0; i < len; i++) {
-        var pipePos = this._nowPipeArr[i].transform.position;
-        if (Math.abs(pipePos.x) < 0.9) {
-          if (Math.abs(pipePos.y - birdY) > 1.2) {
-            engine.dispatch(GameEvent.gameOver);
-          }
-          break;
-        }
+// When checkHit is monitored, check the collision between the pipe and the bird.
+engine.on(GameEvent.checkHit, (birdY: number) => {
+  var len = this._nowPipeArr.length;
+  for (var i = 0; i < len; i++) {
+    var pipePos = this._nowPipeArr[i].transform.position;
+    if (Math.abs(pipePos.x) < 0.9) {
+      if (Math.abs(pipePos.y - birdY) > 1.2) {
+        engine.dispatch(GameEvent.gameOver);
       }
-    });
+      break;
+    }
+  }
+});
 ```
 
 # 收尾与优化
 
-我们已经梳理了所有对象，并且让他们“各司其职”，现在我们只需要在上面加“亿点点”细节即可，当然完成了整套流程后，你也可以尝试对游戏进行更多的优化：
+我们已经梳理了所有对象，并且让他们“各司其职”，现在只需要在上面加“亿点点”细节即可，当然完成了整套流程后，你也可以尝试对游戏进行更多的优化：
 
-- 增加对象池，让对象复用减少 gc
-- 使用图集，减少 dc （ 0.5 里程碑支持）
+- 使用对象池，让对象复用
+- 使用图集，减少 DrawCall
 
 附上最终成果：
 
