@@ -33,7 +33,7 @@ entity.addComponent(MyScript);
 
 Oasis provides users with a wealth of life cycle callback functions. As long as the user defines a specific callback function, Oasis will automatically execute related scripts in a specific period, and the user does not need to manually call them. The life cycle callback functions currently provided to users are as follows:
 
-![脚本生命周期-en](https://gw.alipayobjects.com/zos/OasisHub/1f22009b-8b2c-40fd-9d79-5681509bf0be/%25E8%2584%259A%25E6%259C%25AC%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F-en.jpg)
+![脚本生命周期-en](https://gw.alipayobjects.com/zos/OasisHub/effcbf6c-5ca9-467a-bf37-b6ffc06e3984/%25E8%2584%259A%25E6%259C%25AC%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F-en.jpg)
 
 
 

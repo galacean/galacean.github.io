@@ -363,7 +363,7 @@ First look at what the score resource looks like:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
 
-Here you can refer to the [Sprite-Region](https://oasisengine.cn/0.4/examples#sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
+Here you can refer to the [Sprite-Region](${examples}sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
 
