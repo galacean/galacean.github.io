@@ -1,5 +1,5 @@
 ---
-order: 3.5
+order: 3.6
 title: Lottie
 type: 编辑器
 group: 组件
