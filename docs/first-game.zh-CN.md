@@ -368,7 +368,7 @@ onUpdate(deltaTime: number) {
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
 
-此处可参考 [Sprite-Region](https://oasisengine.cn/0.4/examples#sprite-region) 示例，我们可按照以下流程对数字进行截取与重组，每个数字都是一个 `Entity`，他们都有自己的 `SpriteRender`：
+此处可参考 [Sprite-Region](${examples}sprite-region) 示例，我们可按照以下流程对数字进行截取与重组，每个数字都是一个 `Entity`，他们都有自己的 `SpriteRender`：
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
 
