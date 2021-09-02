@@ -86,7 +86,7 @@ Therefore, when used in actual projects, the type of projection is generally det
 
 First review the attributes `priority`, `renderTarget` and `viewport` mentioned earlier. When there are multiple cameras in a scene at the same time, we will determine the attributes of the camera queue rendering according to the `priority` each time the rendering is called. According to `viewport`, determine which range of `renderTarget` needs to be rendered finally.
 
-<playground src="multi-viewport.ts"></playground>
+<playground src="multi-camera.ts"></playground>
 
 ### How to use the camera and controls together？
 
