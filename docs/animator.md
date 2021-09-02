@@ -40,7 +40,7 @@ animator.animatorController = new AnimatorController()；
 
 ### Play the specified AnimationState
 
-<playground src="skeleton-animation-play"></playground>
+<playground src="skeleton-animation-play.ts"></playground>
 
 You can use the [play](${api}core/animation/Animator#play) method to play the specified AnimatorState. The parameter is the `name` of AnimatorState, and the description of other parameters is detailed in [API document](${api}core/animation/Animator#play)
 
@@ -50,13 +50,13 @@ You can use the [play](${api}core/animation/Animator#play) method to play the sp
 
 ### CrossFade
 
-<playground src="skeleton-animation-crossFade"></playground>
+<playground src="skeleton-animation-crossfade.ts"></playground>
 
 You can use the [crossFade](${api}core/animation/Animator#crossFade) method to make the character transition to a specified state. The first parameter is the `name` of the animation state to be transitioned to, and the second parameter is the normalized animation transition time. For the description of other parameters, please refer to [API document](${api}core/animation/Animator#crossFade ).
 
 ### Add events to animation
 
-<playground src="animation-event"></playground>
+<playground src="animation-event.ts"></playground>
 
 You can use [AnimationEvent](${api}core/animation/AnimationEvent) to add events to AnimationClip. The animation event will call the specified callback function of the component you bind to the same entity at the specified time.
 
@@ -134,6 +134,6 @@ In this way, every time you play the `walk` animation on the layer where the ani
 
 ### Animation additive
 
-<playground src="skeleton-animation-additive"></playground>
+<playground src="skeleton-animation-additive.ts"></playground>
 
 Animation additive is the effect achieved by blending between AnimatorControllerLayers. The first layer is the basic animation layer. Modifying its weight and blending mode will not take effect. Add the AnimationState you want to make additive, add it to other layers and set its blending mode to `AnimatorLayerBlendingMode.Additive` to achieve the animation additive effect. The Oasis engine supports multi-layer animation additive.

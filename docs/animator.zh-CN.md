@@ -42,7 +42,7 @@ animator.animatorController = new AnimatorController()；
 
 ### 播放指定动画状态
 
-<playground src="skeleton-animation-play"></playground>
+<playground src="skeleton-animation-play.ts"></playground>
 
 你可以使用 [play](${api}core/animation/Animator#play) 方法来播放指定的AnimatorState。参数为AnimatorState的`name`，其他参数说明详见[API文档](${api}core/animation/Animator#play)
 
@@ -52,14 +52,14 @@ animator.animatorController = new AnimatorController()；
 
 ### 动画过渡
 
-<playground src="skeleton-animation-crossFade"></playground>
+<playground src="skeleton-animation-crossfade.ts"></playground>
 
 你可以使用 [crossFade](${api}core/animation/Animator#crossFade) 方法来使角色过渡到指定状态。第一个参数为要过渡到的动画状态的`name`，第二个参数为归一化的动画过渡时间，其他参数说明详见[API文档](${api}core/animation/Animator#crossFade)。
 
 
 ### 动画事件
 
-<playground src="animation-event"></playground>
+<playground src="animation-event.ts"></playground>
 
 你可以使用 [AnimationEvent](${api}core/animation/AnimationEvent) 来为AnimationClip添加事件，动画事件将在指定时间调用你在同一实体上绑定组件的指定回调函数。
 
@@ -138,6 +138,6 @@ animator.play("walk");
 
 ### 动画叠加
 
-<playground src="skeleton-animation-additive"></playground>
+<playground src="skeleton-animation-additive.ts"></playground>
 
 动画叠加是通过AnimatorControllerLayer间的混合达到的效果。第一层是基础动画层，修改它的权重及混合模式将不会生效。将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，Oasis引擎支持多层的动画叠加。
