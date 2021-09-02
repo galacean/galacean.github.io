@@ -86,7 +86,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 首先回顾之前提到的属性 `priority` ，`renderTarget` 和 `viewport` ，当一个场景中同时有多个相机的时候，每次调用渲染时我们会根据 `priority` 来确定相机队列渲染的属性，根据 `viewport` 确定最后需要渲染到 `renderTarget` 的哪些范围内。
 
-<playground src="multi-viewport.ts"></playground>
+<playground src="multi-camera.ts"></playground>
 
 ### 相机和相机控件如何配合使用？
 
