@@ -59,7 +59,7 @@ In order to avoid reloading resources, when the resources are loaded, they will 
 
 For example, the entity shown in the figure below contains the [MeshRenderer](${api}core/MeshRenderer) component, which depends on [Material](${api}core/Material). _Material_ may be referenced by multiple _MeshRenderer_. If _Material_ is released, Then other _MeshRenderer_ referencing this will not find the _Material_ and report an error.
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*xgpHSIn9RYAAAAAAAAAAAAAAARQnAQ)
+![image.png](https://gw.alipayobjects.com/mdn/mybank_yulibao/afts/img/A*wXmqRIwqI18AAAAAAAAAAAAAARQnAQ)
 
 > Note: JavaScript cannot track object references. Generally, in weakly typed languages ​​such as JavaScript, there is no memory management function provided to developers. The memory of all objects is managed through the garbage collection mechanism. You have no way to determine when the object will be released, so there is no [Analysis Destructor](https://zh.wikipedia.org/wiki/%E8%A7%A3%E6%A7%8B%E5%AD%90) to call the release of referenced resources.
 

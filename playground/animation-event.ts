@@ -1,4 +1,3 @@
-
 /**
  * @title Animation Event
  * @category Animation

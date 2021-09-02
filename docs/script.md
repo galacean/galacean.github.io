@@ -33,7 +33,9 @@ entity.addComponent(MyScript);
 
 Oasis provides users with a wealth of life cycle callback functions. As long as the user defines a specific callback function, Oasis will automatically execute related scripts in a specific period, and the user does not need to manually call them. The life cycle callback functions currently provided to users are as follows:
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*9QW-T7htvrwAAAAAAAAAAAAAARQnAQ)
+![脚本生命周期-en](https://gw.alipayobjects.com/zos/OasisHub/effcbf6c-5ca9-467a-bf37-b6ffc06e3984/%25E8%2584%259A%25E6%259C%25AC%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F-en.jpg)
+
+
 
 It is worth noting that only when **the entity is used as a camera**, that is, the camera component is added, [onBeginRender](${api}core/Script#onBeginRender) and [onEndRender](${api}core/Script #onEndRender) will be called.
 
@@ -82,6 +84,17 @@ The callback function description of each life cycle:
 		console.log(this.otherEntityScript.updateCount)
 	}
 	```
+
+- [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
+  `onTriggerEnter` will be called when the collider collides, which handle the logic when the colliders meet, 
+  such as deleting the entity when the collision occurs.
+
+- [**onTriggerStay**](${api}core/Script#onTriggerStay)
+  `onTriggerStay` will be called continuously during the collision of the collider, once per frame.
+
+- [**onTriggerExit**](${api}core/Script#onTriggerExit)
+  `onTriggerExit` will be called when the two colliders are separated, that is, 
+  when the collision relationship changes, it will be called only once.
 
 - [**onUpdate**](${api}core/Script#onUpdate)
 

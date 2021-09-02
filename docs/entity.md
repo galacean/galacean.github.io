@@ -23,7 +23,7 @@ directLight.intensity =  1;
 | [Camera](${api}core/Camera) | Camera |
 | [MeshRenderer](${api}core/MeshRenderer) | Static model renderer |
 | [SkinnedMeshRenderer](${api}core/SkinnedMeshRenderer) | Skeleton Model Renderer |
-| [Animator](${api}core/animation/Animator) | Animator |
+| [Animator](${api}core/Animator) | Animator |
 | [DirectLight](${api}core/DirectLight) | Directional Light |
 | [PointLight](${api}core/PointLight) | Point Light |
 | [SpotLight](${api}core/SpotLight) | Spotlight |
