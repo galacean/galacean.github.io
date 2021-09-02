@@ -5,7 +5,6 @@
 import { OrbitControl } from "@oasis-engine/controls";
 import { Camera, Entity, WebGLEngine } from "oasis-engine";
 import { LottieAnimation } from "@oasis-engine/lottie";
-import '@oasis-engine/stats';
 
 const engine = new WebGLEngine("canvas");
 
