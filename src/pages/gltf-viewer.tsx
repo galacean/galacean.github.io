@@ -674,12 +674,11 @@ export default function GLTFView(props: any) {
     });
 
     return () => {
-      oasis.engine.destroy();
-      oasis.gui.destroy();
-
       scripts.forEach((script) => {
         document.body.removeChild(script.dom);
       });
+      oasis.gui.destroy();
+      oasis.engine.destroy();
     };
   });
   return (
