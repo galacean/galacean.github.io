@@ -3,14 +3,7 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
 import { OrbitControl } from "@oasis-engine/controls";
-import type {
-  AnimationClip,
-  Texture2D,
-  TextureCubeMap,
-  Material,
-  Scene,
-  Entity 
-} from "oasis-engine";
+import type { AnimationClip, Entity, Material, Scene, Texture2D, TextureCubeMap } from "oasis-engine";
 import {
   Animator,
   AssetType,
@@ -30,7 +23,7 @@ import {
   SphericalHarmonics3,
   UnlitMaterial,
   Vector3,
-  WebGLEngine 
+  WebGLEngine
 } from "oasis-engine";
 import React, { useEffect } from "react";
 import WrapperLayout from "../components/layout";
@@ -187,7 +180,6 @@ class Oasis {
   $spinner = document.getElementById("spinner");
   $dropZone = document.getElementById("dropZone");
   $input = document.getElementById("input");
-  $close = document.getElementById("close");
 
   constructor() {
     const guiStyle = this.gui.domElement.style;
@@ -361,9 +353,6 @@ class Oasis {
   initDropZone() {
     const dropCtrl = new window.SimpleDropzone.SimpleDropzone(document.body, this.$input);
     dropCtrl.on("drop", ({ files }) => this.loadFileMaps(files));
-    this.$close.onclick = () => {
-      this.$dropZone.classList.add("hide");
-    };
   }
 
   loadFileMaps(files: Map<string, File>) {
@@ -374,7 +363,7 @@ class Oasis {
     const filesMap = {}; // [fileName]:LocalUrl
     const fileArray: any = Array.from(files); // ['/*/*.*',obj:File]
 
-    fileArray.some(f => {
+    fileArray.some((f) => {
       const file = f[1];
       if (modelReg.test(file.name)) {
         type = RegExp.$1;
@@ -385,7 +374,7 @@ class Oasis {
       return false;
     });
 
-    fileArray.forEach(f => {
+    fileArray.forEach((f) => {
       const file = f[1];
       if (!modelReg.test(file.name)) {
         const url = URL.createObjectURL(file);
@@ -427,7 +416,7 @@ class Oasis {
           this.engine.resourceManager
             .load<GLTFResource>({
               type: AssetType.Prefab,
-              url: `${urlNew  }#.gltf`
+              url: `${urlNew}#.gltf`
             })
             .then((asset) => {
               this.handleGltfResource(asset);
@@ -440,7 +429,7 @@ class Oasis {
       this.engine.resourceManager
         .load<GLTFResource>({
           type: AssetType.Prefab,
-          url: `${url  }#.glb`
+          url: `${url}#.glb`
         })
         .then((asset) => {
           this.handleGltfResource(asset);
@@ -700,17 +689,7 @@ export default function GLTFView(props: any) {
           <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
-            <img
-              id="close"
-              className="closeIcon"
-              src="https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*B7GAQq_VPyIAAAAAAAAAAABkARQnAQ"
-              alt=""
-            />
-            <p>拖拽 gltf 2.0 规范的文件或者文件夹到此页面进行预览</p>
-            <p>拖拽支持的图片或者文件夹到此页面，调试纹理贴图</p>
-            <br />
-            <p>模型格式支持:.gltf .glb .bin</p>
-            <p>贴图格式支持:.jpg .png</p>
+            <p>Drag glTF2.0 and texture files or folder on the viewport</p>
           </div>
           <div id="spinner" className="spinner hide" />
           <script type="module" src="./src/index.ts" />
