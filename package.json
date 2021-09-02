@@ -45,7 +45,7 @@
     "@oasis-engine/lottie": "^0.0.6-alpha.4",
     "@oasis-engine/spine": "^0.2.0-alpha.4",
     "@oasis-engine/stats": "^0.5.3-alpha.6",
-    "@oasis-engine/touch": "^0.0.15",
+    "@oasis-engine/touch": "^0.0.16",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",

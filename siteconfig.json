@@ -38,8 +38,8 @@
       "dist": "dist/tween.umd.js"
     },
     "@oasis-engine/touch": {
-      "version": "0.0.15",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/touch/0.0.15/dist/index.browser.js",
+      "version": "0.0.16",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/touch/0.0.16/dist/index.browser.js",
       "dist": "dist/browser.js"
     }
   }
