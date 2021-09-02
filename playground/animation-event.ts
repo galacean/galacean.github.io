@@ -1,3 +1,8 @@
+
+/**
+ * @title Animation Event
+ * @category Animation
+ */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
   Animator,
@@ -17,7 +22,7 @@ import {
 } from "oasis-engine";
 
 Logger.enable();
-const engine = new WebGLEngine("o3-demo");
+const engine = new WebGLEngine("canvas");
 engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
 engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
 const scene = engine.sceneManager.activeScene;
