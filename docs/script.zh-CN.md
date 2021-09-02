@@ -88,6 +88,17 @@ Oasis 为用户提供了丰富的生命周期回调函数，用户只要定义�
 		console.log(this.otherEntityScript.updateCount)
 	}
 	```
+ 
+- [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
+`onTriggerEnter` 回调函数会在碰撞器碰撞时调用，以处理碰撞体相遇时的逻辑，例如在碰撞发生时删除实体。
+
+
+- [**onTriggerStay**](${api}core/Script#onTriggerStay)
+`onTriggerStay` 回调函数会在碰撞器碰撞过程中**持续**调用，每帧调用一次。
+
+
+- [**onTriggerExit**](${api}core/Script#onTriggerExit)
+`onTriggerExit` 回调函数会在两个碰撞器分离时被调用，即碰撞关系发生改变，只调用一次。
 
 - [**onUpdate**](${api}core/Script#onUpdate)
 
