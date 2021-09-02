@@ -171,7 +171,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const isPathNameZhCN = /-cn\/?$/.test(pathname);
     const isZhCN = utils.isZhCN();
 
-    localStorage.setItem('locale', isZhCN ? 'en-US' : 'zh-CN');
+    window.localStorage.setItem('locale', isZhCN ? 'en-US' : 'zh-CN');
 
     if (this.isNotMarkdownPage(pathname)) {
       window.location.reload();
