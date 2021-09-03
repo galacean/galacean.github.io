@@ -6,16 +6,16 @@
   "typedocSource": "../engine",
   "packages": {
     "oasis-engine": {
-      "version": "0.5.0",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.5.0/dist/browser.min.js"
+      "version": "0.5.2",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.5.2/dist/browser.min.js"
     },
     "@oasis-engine/controls": {
-      "version": "0.5.0",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/controls/0.5.0/dist/browser.js"
+      "version": "0.5.2",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/controls/0.5.2/dist/browser.js"
     },
     "@oasis-engine/framebuffer-picker": {
-      "version": "0.5.0",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.5.0/dist/browser.js"
+      "version": "0.5.2",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.5.2/dist/browser.js"
     },
     "@oasis-engine/spine": {
       "version": "0.2.1",

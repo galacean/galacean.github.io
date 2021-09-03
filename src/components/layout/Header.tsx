@@ -171,7 +171,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
     const isPathNameZhCN = /-cn\/?$/.test(pathname);
     const isZhCN = utils.isZhCN();
 
-    localStorage.setItem('locale', isZhCN ? 'en-US' : 'zh-CN');
+    window.localStorage.setItem('locale', isZhCN ? 'en-US' : 'zh-CN');
 
     if (this.isNotMarkdownPage(pathname)) {
       window.location.reload();
@@ -360,11 +360,11 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                       <FormattedMessage id="app.header.lang" />
                     </Button>
                   </div>
-                  {this.state.versions.length && this.props.showVersion && <Select size="small" onChange={this.onVersionChange} value={version}>
+                  {(this.state.versions.length && this.props.showVersion) ? <Select size="small" onChange={this.onVersionChange} value={version}>
                     {this.state.versions.map((v) => {
                       return <Option value={v} key={v}>{`v${v}`}</Option>
                     })}
-                  </Select>}
+                  </Select>: null}
                 </div>
                 {menuMode === 'horizontal' ? <div id="menu">{menu}</div> : null}
               </div>
