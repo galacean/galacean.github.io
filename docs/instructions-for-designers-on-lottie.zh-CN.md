@@ -22,7 +22,7 @@ type: 美术
 
 <a name="PhTdf"></a>
 ### 3、使用 lottie 的步骤
-![image.png](https://cdn.nlark.com/yuque/0/2020/png/168092/1597657251435-a5f7cd47-b7f9-41fb-8196-705c8ee94370.png#align=left&display=inline&height=107&margin=%5Bobject%20Object%5D&name=image.png&originHeight=213&originWidth=1450&size=209191&status=done&style=none&width=725) <br />
+![image.png](https://gw.alipayobjects.com/zos/OasisHub/050e54cd-3968-4364-807a-1e6bfc5a2825/1597657251435-a5f7cd47-b7f9-41fb-8196-705c8ee94370.png)
 
 <a name="wozti"></a>
 ### 4、使用 Bodymovin 和洛丽塔导出动画
