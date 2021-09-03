@@ -1,5 +1,5 @@
 ---
-order: 3.4
+order: 3.5
 title: Spine
 type: 编辑器
 group: 组件

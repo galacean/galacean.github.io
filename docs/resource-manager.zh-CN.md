@@ -59,7 +59,7 @@ this.engine.resourceManager.cancelNotLoaded("test.gltf");
 
 例如下图展示的实体包含 [MeshRenderer](${api}core/MeshRenderer) 组件，依赖于 [Material](${api}core/Material)， *Material* 可能被多个 *MeshRenderer* 引用，如果释放 *Material* ，那么引用此的其他 *MeshRenderer* 则会找不到该 *Material* 而报错。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*xgpHSIn9RYAAAAAAAAAAAAAAARQnAQ)
+![image.png](https://gw.alipayobjects.com/mdn/mybank_yulibao/afts/img/A*wXmqRIwqI18AAAAAAAAAAAAAARQnAQ)
 
 
 > 注意：JavaScript 无法追踪对象的引用。 一般在 JavaScript 等弱类型语言中，是没有提供给开发者内存管理的功能的，所有对象的内存都是通过垃圾回收机制来管理，你没有办法去判断对象什么时候会被释放，所以没有[析构函数(destructor)](https://zh.wikipedia.org/wiki/%E8%A7%A3%E6%A7%8B%E5%AD%90)去调用引用资源的释放。

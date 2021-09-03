@@ -28,8 +28,7 @@ interface LayoutState {
 export class Layout extends React.Component<LayoutProps, LayoutState> {
   constructor(props: LayoutProps) {
     super(props);
-    const { pathname } = props.location;
-    const appLocale = utils.isZhCN(pathname) ? cnLocale : enLocale;
+    const appLocale = utils.isZhCN() ? cnLocale : enLocale;
     addLocaleData(appLocale.data);
     this.state = {
       appLocale,

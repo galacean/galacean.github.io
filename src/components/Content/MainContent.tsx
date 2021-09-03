@@ -1,6 +1,7 @@
 /* eslint-disable eslint-comments/disable-enable-pair */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/forbid-prop-types */
+/* eslint-disable no-plusplus */
 import React from 'react';
 import { Link } from 'gatsby';
 import {
@@ -50,12 +51,13 @@ function getActiveMenuItem(props: MainContentProps) {
 
 function getModuleDataWithProps(props: MainContentProps) {
   const moduleData = props.menuList;
-  const excludedSuffix = isZhCN(props.location.pathname) ? 'zh-CN' : 'en-US';
+  const isCN = isZhCN();
   return moduleData.filter(({ filename }) => {
     if (!filename) {
       return false;
     }
-    return filename.includes(excludedSuffix);
+    const includesCN = filename.includes("zh-CN");
+    return isCN ? includesCN : !includesCN;
   });
 }
 
@@ -127,18 +129,19 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
   };
 
   convertFilename = (filename: string) => {
-    const {
-      location: { pathname },
-    } = this.props;
+    // const {
+    //   location: { pathname },
+    // } = this.props;
+    let newFilename = filename;
 
     if (filename.includes('docs')) {
-      filename = `/${version}${filename}`;
+      newFilename = `/${version}${filename}`;
     }
 
-    if (isZhCN(pathname) && !filename.includes('-cn')) {
-      return `${filename}-cn`;
+    if (isZhCN() && !newFilename.includes('-cn')) {
+      return `${newFilename}-cn`;
     }
-    return filename;
+    return newFilename;
   };
 
   generateMenuItem = ({ before = null, after = null }, item: MenuDataItem) => {
@@ -150,10 +153,10 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     } =
       this.context as
       {
-        intl: {
+      intl: {
           locale: 'zh-CN' | 'en-US';
-        };
       };
+    };
     const text = [
       <span key="english">{item.title}</span>,
       <span className="chinese" key="chinese">
@@ -196,10 +199,19 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const topLevel = ((obj.topLevel as MenuDataItem[]) || []).map(
       this.generateMenuItem.bind(this, footerNavIcons),
     );
-    const lang = isZhCN(this.props.location.pathname) ? 'zh-CN' : 'en-US';
+    const lang = isZhCN() ? 'zh-CN' : 'en-US';
     const order = {
-      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库', '美术', '编辑器', '小程序'],
-      'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other'],
+      "zh-CN": ["入门", "核心", "组件", "资源系统", "工具库", "二方库", "美术", "编辑器", "小程序"],
+      "en-US": [
+        "Introduction",
+        "Core",
+        "Component",
+        "Resource",
+        "Tool",
+        "Second party packages",
+        "Artist",
+        "Miniprogram"
+      ]
     };
 
     const groupOrder = {
@@ -240,11 +252,11 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
           }
 
           const groupItems = itemOrders.map((group) => {
-            const items = sortItems(itemsMap[group]);
+            const sortedItems = sortItems(itemsMap[group]);
 
             return <Menu.ItemGroup key={group} title={group}>
-              {items}
-            </Menu.ItemGroup>
+                {sortedItems}
+              </Menu.ItemGroup>
           })
 
           return (
@@ -253,15 +265,15 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
             </SubMenu>
           );
 
-        } else {
-          const groupItems = sortItems(items);
-
-          return (
-            <SubMenu title={type} key={type}>
-              {groupItems}
-            </SubMenu>
-          );
         }
+
+        const groupItems = sortItems(items);
+
+        return (
+          <SubMenu title={type} key={type}>
+            {groupItems}
+          </SubMenu>
+        );
       });
     return [...topLevel, ...itemGroups];
   };

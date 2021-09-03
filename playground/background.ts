@@ -16,6 +16,7 @@ import {
 import { OrbitControl } from "@oasis-engine/controls";
 
 const engine = new WebGLEngine("canvas");
+engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const { background } = scene;
 const root = scene.createRootEntity();
@@ -26,9 +27,13 @@ cameraEntity.addComponent(OrbitControl);
 
 engine.run();
 
+engine.canvas._webCanvas.addEventListener("onresize", () => {
+  engine.canvas.resizeByClientSize();
+});
+
 engine.resourceManager
   //@ts-ignore
-  .load<TextureCubeMap[]>([
+  .load<[TextureCubeMap, TextureCubeMap, Texture2D]>([
     {
       urls: [
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
@@ -50,34 +55,86 @@ engine.resourceManager
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*DP5QTbTSAYgAAAAAAAAAAAAAARQnAQ"
       ],
       type: AssetType.TextureCube
+    },
+    {
+      url: "https://gw.alipayobjects.com/mdn/rms_2e421e/afts/img/A*BcWiRYM7hroAAAAAAAAAAAAAARQnAQ",
+      type: AssetType.Texture2D
     }
   ])
-  .then(([cubeMap1, cubeMap2]) => {
+  .then(([cubeMap1, cubeMap2, texture]) => {
     // 添加天空盒背景
-    background.mode = BackgroundMode.Sky; // 默认纯色背景
+    // background.mode = BackgroundMode.Sky; // 默认纯色背景
     const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
     skyMaterial.textureCubeMap = cubeMap1; // 设置立方体纹理
     background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // 设置天空盒网格
+    background.texture = texture;
     return [cubeMap1, cubeMap2];
   })
   .then((cubeMaps) => {
-    const gui = new dat.GUI();
-    gui.add(background, "mode", { Sky: BackgroundMode.Sky, SolidColor: BackgroundMode.SolidColor }).onChange((v) => {
-      background.mode = parseInt(v);
-    });
-
-    const solidColor = background.solidColor;
-    let colorObj = { color: [solidColor.r / 255, solidColor.g / 255, solidColor.b / 255, solidColor.a] };
-    gui.addColor(colorObj, "color").onChange((v) => {
-      background.solidColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, v[3] / 255);
-    });
-
-    const obj = {
-      cubeMap: 0
-    };
-
-    gui.add(obj, "cubeMap", { cubeMap1: 0, cubeMap2: 1 }).onChange((v) => {
-      // @ts-ignore
-      background.sky.material.textureCubeMap = cubeMaps[parseInt(v)];
-    });
+    addGUI(cubeMaps);
   });
+
+function addGUI(cubeMaps: TextureCubeMap[]) {
+  const gui = new dat.GUI();
+  let colorGUI = null;
+  let cubeMapGUI = null;
+  let fitModeGUI = null;
+  function hide(_gui) {
+    _gui.__li.style.display = "none";
+  }
+  function show(_gui) {
+    _gui.__li.style.display = "block";
+  }
+  background.mode = BackgroundMode.Texture;
+  gui
+    .add(background, "mode", {
+      Sky: BackgroundMode.Sky,
+      SolidColor: BackgroundMode.SolidColor,
+      Texture: BackgroundMode.Texture
+    })
+    .onChange((v) => {
+      const mode = (background.mode = parseInt(v));
+      hide(colorGUI);
+      hide(cubeMapGUI);
+      hide(fitModeGUI);
+      switch (mode) {
+        case BackgroundMode.Sky:
+          show(cubeMapGUI);
+          break;
+        case BackgroundMode.SolidColor:
+          show(colorGUI);
+          break;
+        case BackgroundMode.Texture:
+          show(fitModeGUI);
+          break;
+      }
+    });
+
+  const solidColor = background.solidColor;
+  let colorObj = { color: [solidColor.r / 255, solidColor.g / 255, solidColor.b / 255, solidColor.a] };
+  colorGUI = gui.addColor(colorObj, "color").onChange((v) => {
+    background.solidColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, v[3] / 255);
+  });
+
+  const obj = {
+    cubeMap: 0
+  };
+
+  const mode = {
+    fitMode: 1
+  };
+
+  cubeMapGUI = gui.add(obj, "cubeMap", { cubeMap1: 0, cubeMap2: 1 }).onChange((v) => {
+    // @ts-ignore
+    background.sky.material.textureCubeMap = cubeMaps[parseInt(v)];
+  });
+  fitModeGUI = gui.add(mode, "fitMode", { AspectFitWidth: 0, AspectFitHeight: 1, Fill: 2 }).onChange((v) => {
+    background.textureFillMode = parseInt(v);
+  });
+
+  // init
+  background.mode = BackgroundMode.Texture;
+  hide(colorGUI);
+  hide(cubeMapGUI);
+  show(fitModeGUI);
+}

@@ -66,7 +66,7 @@ scenePromise.then((scene) => {
 
 #### 4. 设置场景背景
 
-目前场景背景支持添加纯色和天空。代码示例如下：
+目前场景背景支持添加纯色、天空和纹理背景。纯色和天空相对简单，代码示例如下：
 
 ```typescript
 const scene = engine.sceneManager.activeScene;
@@ -81,7 +81,26 @@ background.mode = BackgroundMode.Sky; // 默认纯色背景
 const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
 skyMaterial.textureCubeMap = textureCube; // 设置立方体纹理
 background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // 设置天空盒网格
+
+// 添加纹理背景
+background.mode = BackgroundMode.Texture;
+background.textureFillMode = BackgroundTextureFillMode.AspectFitWidth;
+background.texture = texture;
 ```
+
+##### 纹理背景适配模式
+
+通过 `background.textureFillMode = BackgroundTextureFillMode.AspectFitWidth` 设置纹理适配模式。
+
+目前纹理适配模式有以下三种：
+
+| 适配模式        | 说明                                               |
+| --------------- | -------------------------------------------------- |
+| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth)  | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
+| [AspectFitHeight](${api}core/BackgroundTextureFillMode#AspectFitHeight) | 保持宽高比，把纹理高缩放至 Canvas 的高，左右居中。 |
+| [Fill](${api}core/BackgroundTextureFillMode#Fill)            | 把纹理的宽高填满 Canvas 的宽高。                   |
+
+默认的适配模式是 `BackgroundTextureFillMode.AspectFitHeight`。
 
 Playground 示例如下：
 
