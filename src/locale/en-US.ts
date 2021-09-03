@@ -50,7 +50,7 @@ export default {
     'app.demo.codepen': 'Open in CodePen',
     'app.demo.riddle': 'Open in Riddle',
     'app.demo.codesandbox': 'Open in CodeSandbox',
-    'app.home.slogan': 'Mobile first high performance web graphic engine',
+    'app.home.slogan': 'Mobile first web graphic engine',
     'app.home.preview': 'Preview',
     'app.home.start': 'Getting Started',
     'app.home.download': 'Download',
