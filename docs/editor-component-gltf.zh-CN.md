@@ -19,6 +19,6 @@ group: 组件
 
 > 一般情况下，渲染的模型是有纹理细节的，即材质会自动绑定相应的纹理，如基础纹理；如果没有，则说明 glTF 文件本身没有绑定纹理，开发者需要根据需求手动进行绑定。材质调试详见 [材质资产](${docs}editor-material-cn) 教程。
 
-3.**操作动画。** 如果绑定的 glTF 模型中包含动画，那么我们还可以在模型组件里面设置**动画播放片段**和**循环模式**。
+3.**操作动画。** 可以通过绑定 `AnimatorController` 资源进行动画的控制，详见 [动画编辑](${docs}editor-animator-cn) 教程。
 
 ![animation](https://gw.alipayobjects.com/zos/OasisHub/0105f8dd-3e24-4127-8075-e1df34c2ab71/animation.gif)
