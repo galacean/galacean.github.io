@@ -85,6 +85,7 @@ function addGUI(cubeMaps: TextureCubeMap[]) {
   function show(_gui) {
     _gui.__li.style.display = "block";
   }
+  background.mode = BackgroundMode.Texture;
   gui
     .add(background, "mode", {
       Sky: BackgroundMode.Sky,
