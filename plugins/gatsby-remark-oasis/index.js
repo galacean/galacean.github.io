@@ -26,8 +26,8 @@ module.exports = ({ markdownAST }, { api, playground, docs }) => {
         node.url = url.replace('${docs}', docs);
       } else if (url.includes('${api}')) {
         node.url= url.replace('${api}', api);
-      } else if (url.includes('${playground}')) {
-        node.url = url.replace('${playground}', playground);
+      } else if (url.includes('${examples}')) {
+        node.url = url.replace('${examples}', playground);
       }
     }
   });

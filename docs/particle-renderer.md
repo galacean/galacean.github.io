@@ -43,7 +43,7 @@ The particle renderer contains properties such as life cycle, material, transfor
 - [isOnce](${api}core/ParticleRenderer#isOnce): Whether to emit only once, the default is `false` (loop).
 - [playOnEnable](${api}core/ParticleRenderer#playOnEnable): Whether to play automatically, the default is `true`.
 
-### 材质
+### Material
 - [texture](${api}core/ParticleRenderer#texture): Texture of every particle.
 - [color](${api}core/ParticleRenderer#color):Color of Particle.
 - [colorRandomness](${api}core/ParticleRenderer#colorRandomness): The color random factor, the value is between `0~1`, the color value of the R, G, and B channels of the color will take a random value within the range of the random factor.
@@ -58,7 +58,7 @@ The particle renderer contains properties such as life cycle, material, transfor
 - [isFadeOut](${api}core/ParticleRenderer#isFadeOut): Is fade-out.
 - [blendMode](${api}core/ParticleRenderer#blendMode): Blend mode, currently supports [Transparent](${api}core/ParticleRendererBlendMode#Transparent)(default) and [Additive](${api}core/ParticleRendererBlendMode#Additive). 
 
-### 变换
+### Transform
 - [position](${api}core/ParticleRenderer#position): Initial position.
 - [positionRandomness](${api}core/ParticleRenderer#positionRandomness): Position random factor.
 - [velocity](${api}core/ParticleRenderer#velocity): Moving velocity.
@@ -71,12 +71,12 @@ The particle renderer contains properties such as life cycle, material, transfor
 - [rotateVelocityRandomness](${api}core/ParticleRenderer#rotateVelocityRandomness): Rotation velocity factor.
 - [isRotateToVelocity](${api}core/ParticleRenderer#isRotateToVelocity): Whether to follow the direction of the particle moving. The default is `false`. When it is `true`, the unit vector of the particle map texture rotated to the direction of the particle moving, such as fireworks. When it is `false`, there is no rotation, which is suitable for the same direction scenes, such as Kong Ming Lantern.
 - [is2d](${api}core/ParticleRenderer#is2d): Whether it is a 2D particle, the default is `true`.
-- [size](${api}core/ParticleRenderer#size):粒子大小.
-- [sizeRandomness](${api}core/ParticleRenderer#sizeRandomness):粒子大小随机因子.
+- [size](${api}core/ParticleRenderer#size): Particle size.
+- [sizeRandomness](${api}core/ParticleRenderer#sizeRandomness): Particle size random factor.
 - [scale](${api}core/ParticleRenderer#scale): The size of particle.
 .
 - [isScaleByLifetime](${api}core/ParticleRenderer#isScaleByLifetime): Whether to shrink to disappear with the life cycle. When it is `true`, the particles will become smaller and smaller.
 
-  ## 方法
+  ## Methods
 - [start()](${api}core/ParticleRenderer#start): Start playing.
 - [stop()](${api}core/ParticleRenderer#stop): Stop playing.

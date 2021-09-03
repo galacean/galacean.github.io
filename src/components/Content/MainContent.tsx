@@ -51,12 +51,13 @@ function getActiveMenuItem(props: MainContentProps) {
 
 function getModuleDataWithProps(props: MainContentProps) {
   const moduleData = props.menuList;
-  const excludedSuffix = isZhCN(props.location.pathname) ? 'zh-CN' : 'en-US';
+  const isCN = isZhCN(props.location.pathname);
   return moduleData.filter(({ filename }) => {
     if (!filename) {
       return false;
     }
-    return filename.includes(excludedSuffix);
+    const includesCN = filename.includes("zh-CN");
+    return isCN ? includesCN : !includesCN;
   });
 }
 
@@ -152,10 +153,10 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     } =
       this.context as
       {
-        intl: {
+      intl: {
           locale: 'zh-CN' | 'en-US';
-        };
       };
+    };
     const text = [
       <span key="english">{item.title}</span>,
       <span className="chinese" key="chinese">
@@ -200,8 +201,17 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     );
     const lang = isZhCN(this.props.location.pathname) ? 'zh-CN' : 'en-US';
     const order = {
-      'zh-CN': ['入门', '核心', '组件', '资源系统', '工具库', '二方库','美术', '编辑器', '小程序'],
-      'en-US': ['Introduction', 'Development', 'Build & Deployment', 'Advanced', 'Other', 'Resource', 'Tool'],
+      "zh-CN": ["入门", "核心", "组件", "资源系统", "工具库", "二方库", "美术", "编辑器", "小程序"],
+      "en-US": [
+        "Introduction",
+        "Core",
+        "Component",
+        "Resource",
+        "Tool",
+        "Second party packages",
+        "Artist",
+        "Miniprogram"
+      ]
     };
 
     const groupOrder = {
@@ -245,8 +255,8 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
             const sortedItems = sortItems(itemsMap[group]);
 
             return <Menu.ItemGroup key={group} title={group}>
-              {sortedItems}
-            </Menu.ItemGroup>
+                {sortedItems}
+              </Menu.ItemGroup>
           })
 
           return (

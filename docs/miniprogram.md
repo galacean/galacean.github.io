@@ -1,12 +1,13 @@
 ---
 order: 0
 title: Mini Program
-type: miniprogram
+type: Miniprogram
 ---
 
 At present, Oasis has been adapted to Alipay and Taobao miniprogram. This tutorial defaults that the developer has a certain ability to develop miniprograms. If not, please read the following tutorial, download the miniprogram development tools and apply for AppId:
 
--[Alipay Mini Program](https://opendocs.alipay.com/mini/developer) -[Taobao Mini Program](https://miniapp.open.taobao.com/docV3.htm?docId=119114&docType=1&tag=dev)
+- [Alipay Mini Program](https://opendocs.alipay.com/mini/developer)
+- [Taobao Mini Program](https://miniapp.open.taobao.com/docV3.htm?docId=119114&docType=1&tag=dev)
 
 ## Create Oasis Mini Program Project
 
@@ -113,7 +114,8 @@ Page({
 
 ## Project release
 
--[Alipay Mini Program](https://opendocs.alipay.com/mini/introduce/release) -[Taobao Mini Program](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
+- [Alipay Mini Program](https://opendocs.alipay.com/mini/introduce/release)
+- [Taobao Mini Program](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
 
 ## More Oasis Mini Program Cases
 

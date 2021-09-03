@@ -10,22 +10,17 @@ export type IMenuData = Record<string, IMenuData | MenuDataItem[]>;
 // https://github.com/WickyNilliams/enquire.js/issues/82
 
 export function isZhCN() {
-  const locale = localStorage ? localStorage.getItem('locale') : 'en-US';
-
-  return !!(locale === 'zh-CN')
+  return localStorage.getItem('locale') === 'zh-CN';
 }
 
 /**
  * @param {*} path url
  * @param {*} zhCN boolean
- * if(zhCN)
- *  return "avatar-list"
- * else
- *  return "avatar-list-cn"
  */
 export function getLocalizedPathname(path: string, zhCN: boolean) {
   let pathname = path.startsWith('/') ? path : `/${path}`;
   pathname = pathname.replace('-cn', '');
+
   if (pathname === '/' || pathname === '/index') {
     if (zhCN) {
       return '/index-cn';
@@ -36,9 +31,11 @@ export function getLocalizedPathname(path: string, zhCN: boolean) {
   if (!zhCN) {
     return `${pathname}`;
   }
+
   if (pathname.endsWith('/')) {
     return `${pathname.substring(0, pathname.length - 1)}-cn`;
   }
+
   return `${pathname}-cn`;
 }
 
@@ -87,16 +84,4 @@ export function ping(callback: (arg0: any) => void) {
   img.onerror = () => finish('error');
   img.src = url;
   return setTimeout(() => finish('timeout'), 1500);
-}
-
-export function isLocalStorageNameSupported() {
-  const testKey = 'test';
-  const storage = window.localStorage;
-  try {
-    storage.setItem(testKey, '1');
-    storage.removeItem(testKey);
-    return true;
-  } catch (error) {
-    return false;
-  }
 }

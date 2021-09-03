@@ -69,7 +69,7 @@ export default function Playground (props: any) {
 
   return (
     <>
-      <canvas id="canvas" style={{width: '100vw', height: '100vh'}}></canvas>
+      <canvas id="canvas" style={{width: '100vw', height: '100vh'}} />
     </>
   );
 }

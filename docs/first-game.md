@@ -1,7 +1,8 @@
 ---
 order: 4
+
 title: 4. First game
-type: Introduce
+type: Introduction
 ---
 
 > I believe everyone is familiar with **Flappy Bird**. Today we briefly describe how to use Oasis to replicate 2D games. The process is actually the same as the daily requirements. Original game link:[http://flappybird.io/](http://flappybird.io/)
@@ -20,9 +21,9 @@ Before coding, we need to plan in our minds the general flow of how to achieve a
 
 After the trial, we can summarize the following points through a simple analysis:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623310879070-048cbc6d-2193-4672-9440-c9a13d31f4d8.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/27a9f1e5-7b2c-450d-bde5-dd127d498108/image-20210901174005015.png" alt="image.png" />
 
-- The game is a 2D game, using [Orthogonal Camera](${docs}camera-cn#正交投影) will be easier and more convenient.
+- The game is a 2D game, using [Orthogonal Camera](${docs}camera#orthogonal-projection) will be easier and more convenient.
 - The game is divided into three states:
   - Idel
   - In the game
@@ -38,7 +39,7 @@ After the requirement analysis, we can basically sort out the game process and t
 
 # Build UI interface
 
-After the analysis of the previous step, we have determined the display objects in the entire game. At this point, we can start to implement a simple construction. It should be noted in advance that this example uses [SpriteRender](${docs}sprite-renderer-cn) implementation, please pay attention to the [Sprite](${docs}sprite-cn), because when building the UI, we need to determine the relationship between pixels and coordinates, and the [pixelsPerUnit](${api}core/Sprite#pixelsPerUnit) determines the pixel value contained in a unit coordinate.
+After the analysis of the previous step, we have determined the display objects in the entire game. At this point, we can start to implement a simple construction. It should be noted in advance that this example uses [SpriteRender](${docs}sprite-renderer) implementation, please pay attention to the [Sprite](${docs}sprite), because when building the UI, we need to determine the relationship between pixels and coordinates, and the [pixelsPerUnit](${api}core/Sprite#pixelsPerUnit) determines the pixel value contained in a unit coordinate.
 
 ## UI resources
 
@@ -52,7 +53,7 @@ After the analysis of the previous step, we have determined the display objects 
 
 ## Load resources
 
-After obtaining UI resources, you can refer to [Resource Management and Loading](${docs}resource-manager-cn#1-texture2d) to load [Texture2D](${docs}texture-cn#1-2d texture).
+After obtaining UI resources, you can refer to [Resource Management and Loading](${docs}resource-manager#1-texture2d) to load [Texture2D](${docs}texture#1-2d-texture).
 
 ## Interface construction
 
@@ -173,7 +174,7 @@ Refer to the implementation of the example `sprite-sheetAnimation`, we add a `Sc
 
 ### tweenjs
 
-In order to realize the flying and falling of the bird, we introduce [tweenjs](https://github.com/tweenjs/tween.js), when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform-cn) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
+In order to realize the flying and falling of the bird, we introduce [tweenjs](https://github.com/tweenjs/tween.js), when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
 
 ```typescript
 private _updateProperties(
@@ -230,7 +231,7 @@ this._dropTween = new TWEEN.Tween(rotation)
 
 The motion trajectory affects the feel. You can see that the original code is very complicated. Here we simulate the experience in reality. When you click on the screen, first give the bird an upward initial speed. At this time, it is always a parabolic motion. When the falling speed reaches At a peak, the resistance is offset by gravity, and the bird is falling at a constant speed:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5ed29897-5094-48be-bffc-3acbeb7f3e9a/image-20210901174457088.png" alt="image.png"/>
 
 Assuming that the speed provided by clicking to fly up is `_startFlyV`, the acceleration of gravity is `_gravity`, the maximum falling speed is `_maxDropV`, and the moment of clicking on the screen is `_flyStartTime`, we can get the ordinate of the bird at any moment by calculation::
 
@@ -276,7 +277,7 @@ onUpdate(deltaTime: number) {
 
 ## Pipe
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/76e350ff-6b14-46b0-99ad-3bf7150be551/image-20210901174713640.png" alt="image.png"/>
 
 We add `ScriptPipe` to the water pipe layer node to manage and generate water pipes. In order to better set the timing and performance of water pipe generation, we extract the configurable parameters:
 
@@ -342,7 +343,7 @@ Just like updating the grass above, updating the water pipe is the same operatio
   }
 ```
 
-Among them, the `_createPipe` function uses the [clone](${docs}entity-clone-cn) function that comes with the engine, just clone the water pipe.
+Among them, the `_createPipe` function uses the [clone](${docs}entity-clone) function that comes with the engine, just clone the water pipe.
 
 ```typescript
   private _createPipe(posX: number, posY: number, posZ: number) {
@@ -362,7 +363,7 @@ First look at what the score resource looks like:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
 
-Here you can refer to the [Sprite-Region](https://oasisengine.cn/0.4/examples#sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
+Here you can refer to the [Sprite-Region](${examples}sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
 
@@ -370,15 +371,15 @@ Here you can refer to the [Sprite-Region](https://oasisengine.cn/0.4/examples#sp
 
 We can simply analyze the content of Restart and write a general process.
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/7c1c09ac-b801-428d-b67d-8f246bb0843b/image-20210901175201126.png" alt="image.png" style="zoom:50%;" />
 
-Here you can refer to the [Ray casting](${docs}ray-cn) document. After obtaining the ray, we can directly use the Restart button to surround [bounds](${api}oasis-engine/SpriteRenderer#bounds) to intersect the ray Check [intersectBox](${api}oasis-engine/Ray#intersectBox) and notify GameCtrl to restart the game after a collision. Here I simply encapsulate a Touch component. We will improve the input capability of the engine at the next milestone.
+Here you can refer to the [Ray casting](${docs}ray) document. After obtaining the ray, we can directly use the Restart button to surround [bounds](${api}oasis-engine/SpriteRenderer#bounds) to intersect the ray Check [intersectBox](${api}oasis-engine/Ray#intersectBox) and notify GameCtrl to restart the game after a collision. Here I simply encapsulate a Touch component. We will improve the input capability of the engine at the next milestone.
 
 # Collision detection
 
 ## Timing of collision detection
 
-There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script-cn#组件生命周期函数) should be familiar with it. After we change the position of `Entity` in `onUpdata`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
+There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script#component-life-cycle-function) should be familiar with it. After we change the position of `Entity` in `onUpdata`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
 
 <img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
 

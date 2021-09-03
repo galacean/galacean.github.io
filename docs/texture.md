@@ -1,7 +1,7 @@
 ---
 order: 2
 title: Texture Resource
-type: Resource System
+type: Resource
 ---
 
 Texture ([Texture](${api}core/Texture)), is the most commonly used resource in 3D rendering. When we color the model, we need to set a color value for each fragment. In addition to setting this color value directly, we can also choose to read texels from the texture for coloring to achieve a richer art effect.
@@ -234,7 +234,7 @@ skyMaterial.textureCubeMap = cubeTexture;
 
 #### 3. IBL
 
-In PBR rendering, if we want to get realistic environment reflection phenomenon, we have to turn on [IBL in ambientLight](${docs}light#IBL). IBL needs cube textures as diffuse and specular textures, which can reflect the surrounding environment, with the following effects:
+In PBR rendering, if we want to get realistic environment reflection phenomenon, we have to turn on [IBL in ambientLight](${docs}light#ibl). IBL needs cube textures as diffuse and specular textures, which can reflect the surrounding environment, with the following effects:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*uOdnTZ9R2j4AAAAAAAAAAAAAARQnAQ)
 

@@ -10,8 +10,8 @@ type: Component
 
 ## Basic usage
 
-1、Download image texture ([Texture](${docs}texture-cn)), Please refer to the download method [resource load](${docs}resource-manager-cn)   
-2、Create [Sprite](${docs}sprite-cn)  object through texture  
+1、Download image texture ([Texture](${docs}texture)), Please refer to the download method [resource load](${docs}resource-manager)   
+2、Create [Sprite](${docs}sprite)  object through texture  
 3、Create [SpriteMask](${api}core/SpriteRenderer)
 
 ```typescript
@@ -45,7 +45,7 @@ As shown above, spriteMask has a masking effect on the sprites in `Layer1` and `
 
 ## Parameter description
 
-In basic use, we already know how to create a mask, the next step is to control how to interact with [SpriteRenderer](${docs}sprite-renderer-cn#使用遮罩) through the parameters provided by the [SpriteMask](${api}core/SpriteMask).
+In basic use, we already know how to create a mask, the next step is to control how to interact with [SpriteRenderer](${docs}sprite-renderer#the-usage-of-mask) through the parameters provided by the [SpriteMask](${api}core/SpriteMask).
 
 | parameter | type | description |
 | :--- | :--- | :--- |
