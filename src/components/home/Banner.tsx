@@ -8,7 +8,7 @@ import { version } from '../../../siteconfig.json';
 import { GithubOutlined } from '@ant-design/icons';
 
 function Banner(props) {
-  const { isMobile, location } = props;
+  const { isMobile } = props;
   return (
     <section className="home-section home-section-banner">
       <div className='home-flex'>
@@ -16,13 +16,13 @@ function Banner(props) {
           <h1>
             <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ" alt="Oasis Engine" />
           </h1>
-          <p className="description">
-            <Tag>v{version}</Tag>
-            &nbsp;
+          <div className="description">
             <FormattedMessage id="app.home.slogan" />
-          </p>
+            &nbsp;&nbsp;
+            <Tag color="geekblue">v{version}</Tag>
+          </div>
           <div className="button-wrapper">
-            <Link to={getLocalizedPathname(`${version}/docs/install`, isZhCN(location.pathname))}>
+            <Link to={getLocalizedPathname(`${version}/docs/install`, isZhCN())}>
               <Button type="primary">
                 <FormattedMessage id="app.home.start" />
               </Button>

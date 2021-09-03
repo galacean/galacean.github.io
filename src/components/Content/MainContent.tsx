@@ -51,7 +51,7 @@ function getActiveMenuItem(props: MainContentProps) {
 
 function getModuleDataWithProps(props: MainContentProps) {
   const moduleData = props.menuList;
-  const isCN = isZhCN(props.location.pathname);
+  const isCN = isZhCN();
   return moduleData.filter(({ filename }) => {
     if (!filename) {
       return false;
@@ -199,7 +199,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const topLevel = ((obj.topLevel as MenuDataItem[]) || []).map(
       this.generateMenuItem.bind(this, footerNavIcons),
     );
-    const lang = isZhCN(this.props.location.pathname) ? 'zh-CN' : 'en-US';
+    const lang = isZhCN() ? 'zh-CN' : 'en-US';
     const order = {
       "zh-CN": ["入门", "核心", "组件", "资源系统", "工具库", "二方库", "美术", "编辑器", "小程序"],
       "en-US": [
