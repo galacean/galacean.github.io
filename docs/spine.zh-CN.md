@@ -69,6 +69,20 @@ spineAnimation.state.setAnimation(0, 'your_animation_name', true);
 
 ```
 
+### 插槽拆分
+spine 组件会合并 spine 动画的所有顶点生成一个 `Mesh`。使用 `addSeparateSlot` 方法能够将指定名称的插槽拆分成单独的 `SubMesh`，然后使用 `hackSeparateSlotTexture` 方法，能够替换拆分插槽的材质。
+
+```
+// hackTexture: another texture
+const spineAnimation = spineEntity.getComponent(SpineAnimation);
+spineAnimation.addSeparateSlot('slot_name');
+spineAnimation.hackSeparateSlotTexture('slot_name', hackTexture);
+
+```
+通过以上方式能够实现皮肤混搭的效果:
+<playground src="spine-hack-slot-texture.ts"></playground>
+
+
 ### 常见QA
 - 如何获得 spine 资源？
 通过 spine 编辑器的导出功能能够导出所需的 json, atlas, png 文件。

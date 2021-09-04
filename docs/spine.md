@@ -69,6 +69,19 @@ spineAnimation.state.setAnimation(0, 'your_animation_name', true);
 
 ```
 
+### Slot split
+The spine component merges all the vertices of the spine animation to generate a single `Mesh`. Use the `addSeparateSlot` method to split a slot by slot name into separate `SubMesh`, and then use the `hackSeparateSlotTexture` method to replace the texture of the submesh material.
+
+```
+// hackTexture: another texture
+const spineAnimation = spineEntity.getComponent(SpineAnimation);
+spineAnimation.addSeparateSlot('slot_name');
+spineAnimation.hackSeparateSlotTexture('slot_name', hackTexture);
+
+```
+The effect of skin mashup can be achieved through the above methods:
+<playground src="spine-hack-slot-texture.ts"></playground>
+
 ### Common QA
 - How to obtain spine resources?
 The required json, atlas, png files can be exported through the export function of the spine editor.
