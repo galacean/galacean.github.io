@@ -27,16 +27,40 @@ ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
 ambientLight.diffuseIntensity = 0.5;
 ```
 
-#### Texture mode
+#### Spherical Harmonics mode
 
-In the real world, diffuse reflection is definitely not a solid color. We can load a cube texture as the diffuse color by switching `diffuseMode`:
+In the real world, diffuse reflection is definitely not a solid color. It is generally a relatively low-frequency color change. For this kind of low-frequency filtering, Oasis passes 9 [spherical harmonic coefficients](https://graphics.stanford.edu/papers/envmap/envmap.pdf) to save the environment color, and then switch `diffuseMode` to spherical harmonic mode:
 
 ```typescript
 const ambientLight = scene.ambientLight;
 
-// Diffuse
-ambientLight.diffuseMode = DiffuseMode.Texture;
-ambientLight.diffuseTexture = cubeTexture;
+// SH diffuse
+ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+ambientLight.diffuseSphericalHarmonics = sh; // get the spherical harmonic coefficients by baking and other methods
+```
+
+Oasis provides [baking tool](https://github.com/oasis-engine/engine-baker) for baking. You can first use the baking tool to bake off-line to get the spherical harmonic coefficient, and then set it directly at runtime:
+
+```typescript
+// -----------Baking off-line-----------
+import { SphericalHarmonics3Baker } from "@oasis-engine/baker";
+
+const sh = new SphericalHarmonics3();
+
+// bake sh
+SphericalHarmonics3Baker.fromTextureCubeMap(cubeTexture, sh);
+
+// export to array
+const arr = [];
+sh.toArray(arr);
+
+// -----------Runtime-----------
+
+// Can be used directly when running, no need to bake.
+ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+const sh = new SphericalHarmonics3();
+sh.setValueByArray(arr); // Set the spherical harmonic through the array derived above
+ambientLight.diffuseSphericalHarmonics = sh;
 ```
 
 #### IBL
@@ -51,6 +75,8 @@ ambientLight.specularTexture = cubeTexture;
 ```
 
 If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#ibl) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
+
+<playground src="ambient-light.ts"></playground>
 
 ### Directional light
 
@@ -95,3 +121,5 @@ lightEntity.color.setValue(0.3, 0.3, 1, 1);
 lightEntity.transform.setPosition(-10, 10, 10);
 lightEntity.transform.setRotation(-45, -45, 0);
 ```
+
+<playground src="light-type.ts"></playground>

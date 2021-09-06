@@ -237,7 +237,7 @@ skyMaterial.textureCubeMap = cubeTexture;
 
 #### 3. IBL
 
-在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得开启[环境光的 IBL 模式](${docs}light-cn#IBL模式)。而 IBL 需要立方纹理作为漫反射和镜面反射纹理，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
+在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得开启[环境光的 IBL 模式](${docs}light-cn#ibl-镜面反射)。而 IBL 需要立方纹理作为漫反射和镜面反射纹理，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*uOdnTZ9R2j4AAAAAAAAAAAAAARQnAQ)
 
