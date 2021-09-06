@@ -50,8 +50,6 @@ const sh = new SphericalHarmonics3();
 // 离线烘焙 cubeTexture 到 sh
 SphericalHarmonics3Baker.fromTextureCubeMap(cubeTexture, sh);
 
-<playground src="ambient-light.ts"></playground>
-
 // 导出数组
 const arr = [];
 sh.toArray(arr);
@@ -77,6 +75,8 @@ ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
 ```
 
 如果您使用了 PBR 材质，记得开启环境光的 IBL 模式～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
+
+<playground src="ambient-light.ts"></playground>
 
 ### 方向光
 
@@ -121,6 +121,5 @@ lightEntity.color.setValue(0.3, 0.3, 1, 1);
 lightEntity.transform.setPosition(-10, 10, 10);
 lightEntity.transform.setRotation(-45, -45, 0);
 ```
-
 
 <playground src="light-type.ts"></playground>
