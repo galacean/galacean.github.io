@@ -16,6 +16,12 @@ export default function HTML(props) {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="docsearch:version" content={version} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@OasisEngine" />
+        <meta property="og:url" content="https://oasisengine.cn/" />
+        <meta property="og:title" content="Oasis Engine" />
+        <meta property="og:description" content="Mobile first web graphic engine." />
+        <meta property="og:image" content="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
