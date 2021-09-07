@@ -58,6 +58,15 @@ class Footer extends React.Component<{
                   </a>
                 </div>
                 <div>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://twitter.com/OasisEngine"
+                  >
+                    <FormattedMessage id="app.footer.twitter" />
+                  </a>
+                </div>
+                <div>
                   <FormattedMessage id="app.footer.wechat" />
                 </div>
                 <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*dLIgTJhxjnEAAAAAAAAAAAAAARQnAQ" alt=""/>

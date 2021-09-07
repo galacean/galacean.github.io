@@ -100,6 +100,7 @@ export default {
     'app.footer.yuque': '语雀',
     'app.footer.zhihu': '知乎专栏',
     'app.footer.dingtalk': '钉钉开源社区群',
+    'app.footer.twitter': '推特',
     'app.footer.wechat': '微信公众号',
     'app.footer.juejin': '掘金',
     'app.footer.yueque': '语雀',

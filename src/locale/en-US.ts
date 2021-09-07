@@ -97,6 +97,7 @@ export default {
     'app.footer.yuque': 'YuQue',
     'app.footer.zhihu': 'Zhihu',
     'app.footer.dingtalk': 'DingTalk group',
+    'app.footer.twitter': 'Twitter',
     'app.footer.wechat': 'WeChat public account',
     'app.footer.juejin': 'JueJin',
     'app.publish.greeting': 'Hello, ',
