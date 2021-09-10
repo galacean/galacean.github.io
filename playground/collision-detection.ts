@@ -12,7 +12,7 @@ import {
 import { OrbitControl } from "@oasis-engine/controls";
 
 import {
-  PhysicsEngine
+  PhysXPhysics
 } from "../../engine/packages/physics-physx/src/index";
 
 class Oasis {
@@ -25,8 +25,8 @@ class Oasis {
   }
 }
 
-Oasis.init(PhysicsEngine.init).then(() => {
-  const engine = new WebGLEngine("canvas", new PhysicsEngine());
+Oasis.init(PhysXPhysics.init).then(() => {
+  const engine = new WebGLEngine("canvas", new PhysXPhysics());
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -67,8 +67,8 @@ Oasis.init(PhysicsEngine.init).then(() => {
   physicsBox.material.bounciness = 1;
   physicsBox.isTrigger(true);
 
-  boxCollider.attachShape(physicsBox);
-  engine.physicsManager.addActor(boxCollider);
+  boxCollider.addShape(physicsBox);
+  engine.physicsManager.addCollider(boxCollider);
 
   // create sphere test entity
   const radius = 1.25;
@@ -90,8 +90,8 @@ Oasis.init(PhysicsEngine.init).then(() => {
   physicsSphere.material.dynamicFriction = 0.2;
   physicsSphere.material.bounciness = 1;
 
-  sphereCollider.attachShape(physicsSphere);
-  engine.physicsManager.addActor(sphereCollider);
+  sphereCollider.addShape(physicsSphere);
+  engine.physicsManager.addCollider(sphereCollider);
 
   class MoveScript extends Script {
     pos: Vector3 = new Vector3(-5, 0, 0);

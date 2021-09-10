@@ -11,7 +11,7 @@ import { Vector2, Vector3, Quaternion, MathUtil } from "@oasis-engine/math";
 import { OrbitControl } from "@oasis-engine/controls";
 
 import {
-  PhysicsEngine,
+  PhysXPhysics,
   PhysicsCombineMode,
   QueryFlag
 } from "../../engine/packages/physics-physx/src/index";
@@ -26,8 +26,8 @@ class Oasis {
   }
 }
 
-Oasis.init(PhysicsEngine.init).then(() => {
-  const engine = new WebGLEngine("canvas", new PhysicsEngine());
+Oasis.init(PhysXPhysics.init).then(() => {
+  const engine = new WebGLEngine("canvas", new PhysXPhysics());
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -130,7 +130,7 @@ Oasis.init(PhysicsEngine.init).then(() => {
 
     const planeCollider = planeEntity.addComponent(PlaneCollider);
     planeCollider.initWithNormalDistance(new Vector3(0, 1, 0), 0);
-    engine.physicsManager.addActor(planeCollider);
+    engine.physicsManager.addCollider(planeCollider);
     // const quat = new Quaternion();
     // Quaternion.rotateZ(quat, 0.3, quat);
     // planeCollider.rotate(quat);
@@ -163,8 +163,8 @@ Oasis.init(PhysicsEngine.init).then(() => {
     physicsBox.material.bounciness = 0.1;
     physicsBox.isTrigger(false);
 
-    boxCollider.attachShape(physicsBox);
-    engine.physicsManager.addActor(boxCollider);
+    boxCollider.addShape(physicsBox);
+    engine.physicsManager.addCollider(boxCollider);
 
     return boxEntity;
   }
@@ -196,8 +196,8 @@ Oasis.init(PhysicsEngine.init).then(() => {
     physicsSphere.material.bounciness = 1;
     physicsSphere.material.bounceCombine = PhysicsCombineMode.Minimum;
 
-    sphereCollider.attachShape(physicsSphere);
-    engine.physicsManager.addActor(sphereCollider);
+    sphereCollider.addShape(physicsSphere);
+    engine.physicsManager.addCollider(sphereCollider);
 
     return sphereEntity;
   }
@@ -252,8 +252,8 @@ Oasis.init(PhysicsEngine.init).then(() => {
     physicsCapsule.radius = radius;
     physicsCapsule.height = height;
 
-    capsuleCollider.attachShape(physicsCapsule);
-    engine.physicsManager.addActor(capsuleCollider);
+    capsuleCollider.addShape(physicsCapsule);
+    engine.physicsManager.addCollider(capsuleCollider);
 
     return cubeEntity;
   }
