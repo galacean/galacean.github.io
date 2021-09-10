@@ -4,10 +4,10 @@
  */
 
 import {
-  WebGLEngine, SphereCollider,
-  BoxCollider, Vector3,
+  WebGLEngine, PhysicsSphere, DynamicCollider,
+  PhysicsBox, Vector3,
   MeshRenderer, BlinnPhongMaterial, PointLight,
-  PrimitiveMesh, Camera, Script
+  PrimitiveMesh, Camera, Script, StaticCollider
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 
@@ -27,6 +27,7 @@ class Oasis {
 
 Oasis.init(PhysicsEngine.init).then(() => {
   const engine = new WebGLEngine("canvas", new PhysicsEngine());
+
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity("root");
@@ -56,8 +57,18 @@ Oasis.init(PhysicsEngine.init).then(() => {
   boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
   boxRenderer.setMaterial(boxMtl);
 
-  const boxCollider = boxEntity.addComponent(BoxCollider);
-  boxCollider.initWithSize(new Vector3(cubeSize, cubeSize, cubeSize));
+  const boxCollider = boxEntity.addComponent(StaticCollider);
+  boxCollider.init();
+
+  const physicsBox = boxCollider.createShape(PhysicsBox);
+  physicsBox.size = new Vector3(cubeSize, cubeSize, cubeSize)
+  physicsBox.material.staticFriction = 0.1;
+  physicsBox.material.dynamicFriction = 0.2;
+  physicsBox.material.bounciness = 1;
+  physicsBox.setTrigger(true);
+
+  boxCollider.attachShape(physicsBox);
+  engine.physicsManager.addActor(boxCollider);
 
   // create sphere test entity
   const radius = 1.25;
@@ -70,8 +81,17 @@ Oasis.init(PhysicsEngine.init).then(() => {
   sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
   sphereRenderer.setMaterial(sphereMtl);
 
-  const sphereCollider = sphereEntity.addComponent(SphereCollider);
-  sphereCollider.initWithRadius(radius);
+  const sphereCollider = sphereEntity.addComponent(DynamicCollider);
+  sphereCollider.init();
+
+  const physicsSphere = sphereCollider.createShape(PhysicsSphere);
+  physicsSphere.radius = radius;
+  physicsSphere.material.staticFriction = 0.1;
+  physicsSphere.material.dynamicFriction = 0.2;
+  physicsSphere.material.bounciness = 1;
+
+  sphereCollider.attachShape(physicsSphere);
+  engine.physicsManager.addActor(sphereCollider);
 
   class MoveScript extends Script {
     pos: Vector3 = new Vector3(-5, 0, 0);
@@ -90,11 +110,11 @@ Oasis.init(PhysicsEngine.init).then(() => {
 
   // Collision Detection
   class CollisionScript extends Script {
-    onTriggerExit() {
+    onTriggerExit(other: DynamicCollider) {
       (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
     }
 
-    onTriggerEnter() {
+    onTriggerEnter(other: DynamicCollider) {
       (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
     }
   }
