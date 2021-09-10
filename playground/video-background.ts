@@ -1,0 +1,100 @@
+/**
+ * @title Video Background
+ * @category Scene
+ */
+import { OrbitControl } from "@oasis-engine/controls";
+import {
+  BackgroundMode,
+  Camera,
+  CompareFunction,
+  CullMode,
+  Engine,
+  Material,
+  PrimitiveMesh,
+  Script,
+  Shader,
+  Texture2D,
+  WebGLEngine
+} from "oasis-engine";
+
+const engine = new WebGLEngine("canvas");
+engine.canvas.resizeByClientSize();
+const scene = engine.sceneManager.activeScene;
+const rootEntity = scene.createRootEntity();
+const cameraEntity = rootEntity.createChild();
+cameraEntity.transform.setPosition(0, 0, 10);
+cameraEntity.addComponent(Camera);
+cameraEntity.addComponent(OrbitControl);
+engine.run();
+
+// video skybox
+Shader.create(
+  "video",
+  `
+attribute vec3 POSITION;
+attribute vec2 TEXCOORD_0;
+varying vec2 v_uv;
+
+uniform mat4 u_mvpNoscale;
+
+void main() {
+    v_uv = TEXCOORD_0;
+    gl_Position = u_mvpNoscale * vec4( POSITION, 1.0 );
+    gl_Position.z = gl_Position.w;
+}
+  `,
+  `
+  uniform sampler2D u_texture;
+  varying vec2 v_uv;
+
+  void main(){
+    gl_FragColor = texture2D(u_texture, v_uv);
+    
+  }
+  `
+);
+class VideoMaterial extends Material {
+  constructor(engine: Engine) {
+    super(engine, Shader.find("video"));
+
+    this.renderState.rasterState.cullMode = CullMode.Off;
+    this.renderState.depthState.compareFunction = CompareFunction.LessEqual;
+  }
+
+  get texture(): Texture2D {
+    return this.shaderData.getTexture("u_texture") as Texture2D;
+  }
+
+  set texture(v: Texture2D) {
+    this.shaderData.setTexture("u_texture", v);
+  }
+}
+
+class UpdateVideoScript extends Script {
+  video: HTMLVideoElement;
+  texture: Texture2D;
+
+  onUpdate() {
+    this.texture.setImageSource(this.video);
+  }
+}
+
+const dom = document.createElement("video");
+const width = 3840;
+const height = 1920;
+dom.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*p_f5QYjE_2kAAAAAAAAAAAAAARQnAQ";
+dom.crossOrigin = "anonymous";
+dom.loop = true;
+dom.play();
+
+// create video background
+const texture = new Texture2D(engine, width, height, undefined, false);
+const { background } = scene;
+background.mode = BackgroundMode.Sky;
+const skyMaterial = (background.sky.material = new VideoMaterial(engine));
+background.sky.mesh = PrimitiveMesh.createSphere(engine, 2);
+skyMaterial.texture = texture;
+
+const script = rootEntity.addComponent(UpdateVideoScript);
+script.video = dom;
+script.texture = texture;
