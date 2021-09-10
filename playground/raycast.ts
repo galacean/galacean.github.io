@@ -5,14 +5,13 @@
 
 import {
   WebGLEngine, Entity, BlinnPhongMaterial, MeshRenderer, PrimitiveMesh, Camera, Script, Ray, PointLight,
-  PlaneCollider, PhysicsBox, PhysicsSphere, PhysicsCapsule, StaticCollider, HitResult
+  PlaneCollider, BoxColliderShape, CapsuleColliderShape, SphereColliderShape, StaticCollider, HitResult
 } from "oasis-engine";
 import { Vector2, Vector3, Quaternion, MathUtil } from "@oasis-engine/math";
 import { OrbitControl } from "@oasis-engine/controls";
 
 import {
   PhysicsEngine,
-  ShapeFlag,
   PhysicsCombineMode,
   QueryFlag
 } from "../../engine/packages/physics-physx/src/index";
@@ -157,12 +156,12 @@ Oasis.init(PhysicsEngine.init).then(() => {
     const boxCollider = boxEntity.addComponent(StaticCollider);
     boxCollider.init();
 
-    const physicsBox = boxCollider.createShape(PhysicsBox);
-    physicsBox.size = size;
+    const physicsBox = boxCollider.createShape(BoxColliderShape);
+    physicsBox.extents = size;
     physicsBox.material.staticFriction = 1;
     physicsBox.material.dynamicFriction = 2;
     physicsBox.material.bounciness = 0.1;
-    physicsBox.setFlag(ShapeFlag.SIMULATION_SHAPE, true);
+    physicsBox.isTrigger(false);
 
     boxCollider.attachShape(physicsBox);
     engine.physicsManager.addActor(boxCollider);
@@ -190,7 +189,7 @@ Oasis.init(PhysicsEngine.init).then(() => {
     const sphereCollider = sphereEntity.addComponent(StaticCollider);
     sphereCollider.init();
 
-    const physicsSphere =  sphereCollider.createShape(PhysicsSphere);
+    const physicsSphere = sphereCollider.createShape(SphereColliderShape);
     physicsSphere.radius = radius;
     physicsSphere.material.staticFriction = 0.1;
     physicsSphere.material.dynamicFriction = 0.2;
@@ -249,7 +248,7 @@ Oasis.init(PhysicsEngine.init).then(() => {
     const capsuleCollider = cubeEntity.addComponent(StaticCollider);
     capsuleCollider.init();
 
-    const physicsCapsule = capsuleCollider.createShape(PhysicsCapsule);
+    const physicsCapsule = capsuleCollider.createShape(CapsuleColliderShape);
     physicsCapsule.radius = radius;
     physicsCapsule.height = height;
 
