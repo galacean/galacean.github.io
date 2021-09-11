@@ -7,7 +7,7 @@ import {
   WebGLEngine, SphereColliderShape, DynamicCollider,
   BoxColliderShape, Vector3,
   MeshRenderer, BlinnPhongMaterial, PointLight,
-  PrimitiveMesh, Camera, Script, StaticCollider
+  PrimitiveMesh, Camera, Script, StaticCollider, ColliderShape
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 
@@ -96,12 +96,16 @@ PhysXPhysics.init().then(() => {
 
   // Collision Detection
   class CollisionScript extends Script {
-    onTriggerExit(other: DynamicCollider) {
+    onTriggerExit(other: ColliderShape) {
       (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
     }
 
-    onTriggerEnter(other: DynamicCollider) {
+    onTriggerEnter(other: ColliderShape) {
       (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    }
+
+    onTriggerStay(other: ColliderShape) {
+      console.log("hahaha");
     }
   }
 
