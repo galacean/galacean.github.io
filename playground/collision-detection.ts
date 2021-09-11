@@ -13,19 +13,9 @@ import { OrbitControl } from "@oasis-engine/controls";
 
 import {
   PhysXPhysics
-} from "../../engine/packages/physics-physx/src/index";
+} from "@oasis-engine/physics-physx";
 
-class Oasis {
-  static init(type: () => Promise<void>): Promise<void> {
-    return new Promise((resolve) => {
-      type().then(() => {
-        resolve();
-      });
-    });
-  }
-}
-
-Oasis.init(PhysXPhysics.init).then(() => {
+PhysXPhysics.init().then(() => {
   const engine = new WebGLEngine("canvas", PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
