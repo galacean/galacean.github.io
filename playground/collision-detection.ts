@@ -26,7 +26,7 @@ class Oasis {
 }
 
 Oasis.init(PhysXPhysics.init).then(() => {
-  const engine = new WebGLEngine("canvas", new PhysXPhysics());
+  const engine = new WebGLEngine("canvas", PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -57,16 +57,14 @@ Oasis.init(PhysXPhysics.init).then(() => {
   boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
   boxRenderer.setMaterial(boxMtl);
 
-  const boxCollider = boxEntity.addComponent(StaticCollider);
-  boxCollider.init();
-
-  const physicsBox = boxCollider.createShape(BoxColliderShape);
+  const physicsBox = new BoxColliderShape()
   physicsBox.extents = new Vector3(cubeSize, cubeSize, cubeSize)
   physicsBox.material.staticFriction = 0.1;
   physicsBox.material.dynamicFriction = 0.2;
   physicsBox.material.bounciness = 1;
   physicsBox.isTrigger(true);
 
+  const boxCollider = boxEntity.addComponent(StaticCollider);
   boxCollider.addShape(physicsBox);
   engine.physicsManager.addCollider(boxCollider);
 
@@ -81,15 +79,13 @@ Oasis.init(PhysXPhysics.init).then(() => {
   sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
   sphereRenderer.setMaterial(sphereMtl);
 
-  const sphereCollider = sphereEntity.addComponent(DynamicCollider);
-  sphereCollider.init();
-
-  const physicsSphere = sphereCollider.createShape(SphereColliderShape);
+  const physicsSphere = new SphereColliderShape();
   physicsSphere.radius = radius;
   physicsSphere.material.staticFriction = 0.1;
   physicsSphere.material.dynamicFriction = 0.2;
   physicsSphere.material.bounciness = 1;
 
+  const sphereCollider = sphereEntity.addComponent(DynamicCollider);
   sphereCollider.addShape(physicsSphere);
   engine.physicsManager.addCollider(sphereCollider);
 

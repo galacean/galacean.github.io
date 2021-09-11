@@ -4,8 +4,21 @@
  */
 
 import {
-  WebGLEngine, Entity, BlinnPhongMaterial, MeshRenderer, PrimitiveMesh, Camera, Script, Ray, PointLight,
-  PlaneCollider, BoxColliderShape, CapsuleColliderShape, SphereColliderShape, StaticCollider, HitResult
+  WebGLEngine,
+  Entity,
+  BlinnPhongMaterial,
+  MeshRenderer,
+  PrimitiveMesh,
+  Camera,
+  Script,
+  Ray,
+  PointLight,
+  PlaneColliderShape,
+  BoxColliderShape,
+  CapsuleColliderShape,
+  SphereColliderShape,
+  StaticCollider,
+  HitResult, Plane
 } from "oasis-engine";
 import { Vector2, Vector3, Quaternion, MathUtil } from "@oasis-engine/math";
 import { OrbitControl } from "@oasis-engine/controls";
@@ -27,7 +40,7 @@ class Oasis {
 }
 
 Oasis.init(PhysXPhysics.init).then(() => {
-  const engine = new WebGLEngine("canvas", new PhysXPhysics());
+  const engine = new WebGLEngine("canvas", PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -98,7 +111,8 @@ Oasis.init(PhysXPhysics.init).then(() => {
   //--------------------------------------------------------------------------------------------------------------------
   // init scene
   function init() {
-    addPlane(new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
+    const plane = new Plane(new Vector3(0, 1, 1), 0);
+    addPlane(new Vector3(30, 0.1, 30), plane);
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 5; i++) {
       // eslint-disable-next-line no-plusplus
@@ -113,7 +127,7 @@ Oasis.init(PhysXPhysics.init).then(() => {
   }
 
   //--------------------------------------------------------------------------------------------------------------------
-  function addPlane(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
+  function addPlane(size: Vector3, plane: Plane): Entity {
     const mtl = new BlinnPhongMaterial(engine);
     const color = mtl.baseColor;
     color.r = 0.03179807202597362;
@@ -125,15 +139,12 @@ Oasis.init(PhysXPhysics.init).then(() => {
 
     renderer.mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
     renderer.setMaterial(mtl);
-    planeEntity.transform.position = position;
-    planeEntity.transform.rotationQuaternion = rotation;
+    plane.transformFromPlaneEquation(planeEntity.transform.position, planeEntity.transform.rotationQuaternion);
 
-    const planeCollider = planeEntity.addComponent(PlaneCollider);
-    planeCollider.initWithNormalDistance(new Vector3(0, 1, 0), 0);
+    const physicsPlane = new PlaneColliderShape();
+    const planeCollider = planeEntity.addComponent(StaticCollider);
+    planeCollider.addShape(physicsPlane);
     engine.physicsManager.addCollider(planeCollider);
-    // const quat = new Quaternion();
-    // Quaternion.rotateZ(quat, 0.3, quat);
-    // planeCollider.rotate(quat);
 
     return planeEntity;
   }
@@ -153,16 +164,14 @@ Oasis.init(PhysXPhysics.init).then(() => {
     boxEntity.transform.position = position;
     boxEntity.transform.rotationQuaternion = rotation;
 
-    const boxCollider = boxEntity.addComponent(StaticCollider);
-    boxCollider.init();
-
-    const physicsBox = boxCollider.createShape(BoxColliderShape);
+    const physicsBox = new BoxColliderShape();
     physicsBox.extents = size;
     physicsBox.material.staticFriction = 1;
     physicsBox.material.dynamicFriction = 2;
     physicsBox.material.bounciness = 0.1;
     physicsBox.isTrigger(false);
 
+    const boxCollider = boxEntity.addComponent(StaticCollider);
     boxCollider.addShape(physicsBox);
     engine.physicsManager.addCollider(boxCollider);
 
@@ -186,16 +195,14 @@ Oasis.init(PhysXPhysics.init).then(() => {
     sphereEntity.transform.position = position;
     sphereEntity.transform.rotationQuaternion = rotation;
 
-    const sphereCollider = sphereEntity.addComponent(StaticCollider);
-    sphereCollider.init();
-
-    const physicsSphere = sphereCollider.createShape(SphereColliderShape);
+    const physicsSphere = new SphereColliderShape();
     physicsSphere.radius = radius;
     physicsSphere.material.staticFriction = 0.1;
     physicsSphere.material.dynamicFriction = 0.2;
     physicsSphere.material.bounciness = 1;
     physicsSphere.material.bounceCombine = PhysicsCombineMode.Minimum;
 
+    const sphereCollider = sphereEntity.addComponent(StaticCollider);
     sphereCollider.addShape(physicsSphere);
     engine.physicsManager.addCollider(sphereCollider);
 
@@ -245,13 +252,11 @@ Oasis.init(PhysXPhysics.init).then(() => {
       head.transform.position = new Vector3(0, height / 2, 0);
     }
 
-    const capsuleCollider = cubeEntity.addComponent(StaticCollider);
-    capsuleCollider.init();
-
-    const physicsCapsule = capsuleCollider.createShape(CapsuleColliderShape);
+    const physicsCapsule = new CapsuleColliderShape();
     physicsCapsule.radius = radius;
     physicsCapsule.height = height;
 
+    const capsuleCollider = cubeEntity.addComponent(StaticCollider);
     capsuleCollider.addShape(physicsCapsule);
     engine.physicsManager.addCollider(capsuleCollider);
 
