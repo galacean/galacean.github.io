@@ -4,30 +4,29 @@
  */
 
 import {
-  WebGLEngine,
-  Entity,
   BlinnPhongMaterial,
-  MeshRenderer,
-  PrimitiveMesh,
-  Camera,
-  Script,
-  Ray,
-  PointLight,
-  PlaneColliderShape,
   BoxColliderShape,
+  Camera,
   CapsuleColliderShape,
+  Entity,
+  HitResult,
+  Layer,
+  MeshRenderer,
+  PhysicsMaterialCombineMode,
+  Plane,
+  PlaneColliderShape,
+  PointLight,
+  PrimitiveMesh,
+  Ray,
+  Script,
   SphereColliderShape,
   StaticCollider,
-  HitResult, Plane
+  WebGLEngine
 } from "oasis-engine";
-import { Vector2, Vector3, Quaternion, MathUtil } from "@oasis-engine/math";
+import { MathUtil, Quaternion, Vector2, Vector3 } from "@oasis-engine/math";
 import { OrbitControl } from "@oasis-engine/controls";
 
-import {
-  PhysXPhysics,
-  PhysicsCombineMode,
-  QueryFlag
-} from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 PhysXPhysics.init().then(() => {
   const engine = new WebGLEngine("canvas", PhysXPhysics);
@@ -61,7 +60,7 @@ PhysXPhysics.init().then(() => {
       new Vector2(event.pageX * window.devicePixelRatio, event.pageY * window.devicePixelRatio), ray);
 
     const hit = new HitResult();
-    const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, QueryFlag.STATIC, hit);
+    const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Layer0, hit);
     if (result) {
       const mtl = new BlinnPhongMaterial(engine);
       const color = mtl.baseColor;
@@ -125,6 +124,7 @@ PhysXPhysics.init().then(() => {
     color.b = 0.41177952549087604;
     color.a = 1.0;
     const planeEntity = rootEntity.createChild();
+    planeEntity.layer = Layer.Layer1;
     const renderer = planeEntity.addComponent(MeshRenderer);
 
     renderer.mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
@@ -190,7 +190,7 @@ PhysXPhysics.init().then(() => {
     physicsSphere.material.staticFriction = 0.1;
     physicsSphere.material.dynamicFriction = 0.2;
     physicsSphere.material.bounciness = 1;
-    physicsSphere.material.bounceCombine = PhysicsCombineMode.Minimum;
+    physicsSphere.material.bounceCombine = PhysicsMaterialCombineMode.Minimum;
 
     const sphereCollider = sphereEntity.addComponent(StaticCollider);
     sphereCollider.addShape(physicsSphere);
