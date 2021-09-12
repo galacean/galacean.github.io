@@ -60,7 +60,7 @@ const WrapperLayout = (props: LayoutProps) => (
   <Media query="(max-width: 996px)">
     {(isMobile) => {
       const isNode = typeof window === 'undefined';
-      return <Layout {...props} isMobile={isMobile && !isNode} />;
+      return !isNode && <Layout {...props} isMobile={isMobile} />;
     }}
   </Media>
 );
