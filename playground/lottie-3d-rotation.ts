@@ -19,8 +19,8 @@
  
  engine.resourceManager.load<Entity>({
   urls: [
-    "https://gw.alipayobjects.com/os/bmw-prod/fe5aa92d-b573-439d-a14e-9212d45d480d.json",
-    "https://gw.alipayobjects.com/os/bmw-prod/56bd6b71-bd34-485c-b727-6cad484d8896.atlas"
+    "https://gw.alipayobjects.com/os/bmw-prod/70bed2d5-7284-44bf-9df6-638f66945ffd.json",
+    "https://gw.alipayobjects.com/os/bmw-prod/a2853204-2d4a-48e5-9cb7-b89de8dcc7bf.atlas"
   ],
   type: 'lottie'
 }).then((lottieEntity) => {
