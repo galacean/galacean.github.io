@@ -14,6 +14,7 @@ import {
   Script,
   Shader,
   Texture2D,
+  TextureFormat,
   WebGLEngine
 } from "oasis-engine";
 
@@ -23,7 +24,8 @@ const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild();
 cameraEntity.transform.setPosition(0, 0, 10);
-cameraEntity.addComponent(Camera);
+const camera = cameraEntity.addComponent(Camera);
+camera.fieldOfView = 80;
 cameraEntity.addComponent(OrbitControl);
 engine.run();
 
@@ -79,7 +81,7 @@ class UpdateVideoScript extends Script {
   }
 }
 
-const dom = document.createElement("video");
+const dom: HTMLVideoElement = document.createElement("video");
 const width = 3840;
 const height = 1920;
 dom.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*p_f5QYjE_2kAAAAAAAAAAAAAARQnAQ";
@@ -89,13 +91,22 @@ dom.muted = true;
 dom.play();
 
 // create video background
-const texture = new Texture2D(engine, width, height, undefined, false);
+const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8, false);
 const { background } = scene;
 background.mode = BackgroundMode.Sky;
 const skyMaterial = (background.sky.material = new VideoMaterial(engine));
 background.sky.mesh = PrimitiveMesh.createSphere(engine, 2);
 skyMaterial.texture = texture;
 
-const script = rootEntity.addComponent(UpdateVideoScript);
-script.video = dom;
-script.texture = texture;
+function updateVideo() {
+  texture.setImageSource(dom);
+  (dom as any).requestVideoFrameCallback(updateVideo);
+}
+
+if ("requestVideoFrameCallback" in dom) {
+  (dom as any).requestVideoFrameCallback(updateVideo);
+} else {
+  const script = rootEntity.addComponent(UpdateVideoScript);
+  script.video = dom;
+  script.texture = texture;
+}
