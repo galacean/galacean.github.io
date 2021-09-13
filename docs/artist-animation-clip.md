@@ -94,4 +94,4 @@ If the installation is successful, you can see an additional **AntG** option in 
 11. Right-click the node and select Export AntG:
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1bfefe2b-ca58-4cca-a091-9efe8028a4df/1622552925151-16b86fcc-4680-4611-aa32-d3697bbe5086.png)
 
-1.  At this point, the gltf file containing the AnimationClips just made has been exported, and you can visit Oasis' [gltf preview](https://oasisengine.cn/gltf-viewer) for verification.
+1.  At this point, the glTF file containing the AnimationClips just made has been exported, and you can visit Oasis' [glTF preview](https://oasisengine.cn/gltf-viewer) for verification.

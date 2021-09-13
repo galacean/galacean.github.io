@@ -7,13 +7,13 @@ group: 组件
 
 ## 介绍
 
-我们在[ 模型资产](${docs}editor-resource-gltf-cn) 教程里面创建了 glTF 模型资产，但是这个时候它还仅仅是个资产，并没有在场景中渲染。 Oasis 通过 [网格渲染器](${docs}mesh-renderer-cn) 渲染模型，在编辑器的操作为给节点添加一个 **GLTF 模型** 组件。
+我们在[ 模型资产](${docs}editor-resource-gltf-cn) 教程里面创建了 glTF 模型资产，但是这个时候它还仅仅是个资产，并没有在场景中渲染。 Oasis 通过 [网格渲染器](${docs}mesh-renderer-cn) 渲染模型，在编辑器的操作为给节点添加一个 **glTF 模型** 组件。
 
 ## 使用
 
 1.**上传 glTF 资产。** 详细步骤见[ 模型资产教程](${docs}editor-resource-gltf-cn)。
 
-2.**绑定 glTF 模型组件。** 在资源上传成功后，资源的模型、贴图等内容会被展示在资源面板当中。然后，我们创建一个节点，并在右侧节点检查器中 **添加能力** ，选择 **GLTF 模型**，在资源面板中选择绑定相应的 `.gltf` 资产，模型就渲染出来了。
+2.**绑定 glTF 模型组件。** 在资源上传成功后，资源的模型、贴图等内容会被展示在资源面板当中。然后，我们创建一个节点，并在右侧节点检查器中 **添加能力** ，选择 **glTF 模型**，在资源面板中选择绑定相应的 `.gltf` 资产，模型就渲染出来了。
 
 ![bind-gif](https://gw.alipayobjects.com/zos/OasisHub/8d8c2197-ad95-46c0-98b1-2beadba0535b/bind-gif.gif)
 
