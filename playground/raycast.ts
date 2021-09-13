@@ -100,7 +100,7 @@ PhysXPhysics.init().then(() => {
   //--------------------------------------------------------------------------------------------------------------------
   // init scene
   function init() {
-    const plane = new Plane(new Vector3(0, 1, 1), 0);
+    const plane = new Plane(new Vector3(0, 1, 0), 0);
     addPlane(new Vector3(30, 0.1, 30), plane);
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 5; i++) {
@@ -125,11 +125,14 @@ PhysXPhysics.init().then(() => {
     color.a = 1.0;
     const planeEntity = rootEntity.createChild();
     planeEntity.layer = Layer.Layer1;
-    const renderer = planeEntity.addComponent(MeshRenderer);
+    const {position, rotationQuaternion} = planeEntity.transform
+    plane.transformFromPlaneEquation(position, rotationQuaternion);
+    planeEntity.transform.position = position
+    planeEntity.transform.rotationQuaternion = rotationQuaternion
 
+    const renderer = planeEntity.addComponent(MeshRenderer);
     renderer.mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
     renderer.setMaterial(mtl);
-    plane.transformFromPlaneEquation(planeEntity.transform.position, planeEntity.transform.rotationQuaternion);
 
     const physicsPlane = new PlaneColliderShape();
     const planeCollider = planeEntity.addComponent(StaticCollider);
