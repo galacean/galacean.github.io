@@ -85,6 +85,7 @@ const height = 1920;
 dom.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*p_f5QYjE_2kAAAAAAAAAAAAAARQnAQ";
 dom.crossOrigin = "anonymous";
 dom.loop = true;
+dom.muted = true;
 dom.play();
 
 // create video background
