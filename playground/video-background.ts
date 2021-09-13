@@ -52,7 +52,7 @@ void main() {
   varying vec2 v_uv;
 
   void main(){
-    gl_FragColor = texture2D(u_texture, v_uv);
+    gl_FragColor = texture2D(u_texture, vec2(-v_uv.x,v_uv.y));
     
   }
   `
