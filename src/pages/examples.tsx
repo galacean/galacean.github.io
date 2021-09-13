@@ -64,7 +64,7 @@ export default function Examples(props: any) {
     setName(item.key);
     window.history.pushState(null, null, `#${item.key}`);
     toggleMenu(false);
-  }} style={{ width: '300px!important', height: 'calc(100vh - 64px)', overflow: 'auto' }}>
+  }} style={{ width: '300px!important', height: 'calc(100vh - 124px)', overflow: 'auto' }}>
     {itemGroups}
   </Menu>
 
