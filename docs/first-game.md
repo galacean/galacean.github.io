@@ -70,11 +70,11 @@ For simplicity, we choose the way of fixing the camera.
 
 In the previous demand analysis, we can roughly determine the front and rear occlusion relationship of each display object, so we can finalize the approximate placement position:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/a9454792-763d-459d-a2ec-9cdcbdf67dae/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee-20210913105510153.png" alt="image.png" style="zoom:50%;" />
 
 ### Build with editor
 
-![图片.gif](https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/13456322/1625127518876-501ff175-036d-42b0-97c2-625790260939.gif#clientId=u65f6af94-7da2-4&from=drop&id=u6bc823c7&margin=%5Bobject%20Object%5D&name=%E5%9B%BE%E7%89%87.gif&originHeight=482&originWidth=800&originalType=binary&ratio=2&size=1086766&status=done&style=none&taskId=u646868c5-4f7e-418b-b025-64c093dc6f1)
+![图片.gif](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*RACOTrZAYAwAAAAAAAAAAAAAARQnAQ)
 
 ### Build with Script
 
@@ -126,11 +126,11 @@ nodeScore.transform.setScale(0.3, 0.3, 0.3);
 rootEntity.addComponent(GameCtrl);
 ```
 
-The `addSpriteRender` function is a custom function for the convenience of adding a `SpriteRender` component to the `Entity`. The code is as follows:
+The `addSpriteRender` function is a custom function for the convenience of adding a `SpriteRenderer` component to the `Entity`. The code is as follows:
 
 ```typescript
 /**
- * General method for adding spriterender to nodes.
+ * General method for adding SpriteRenderer to nodes.
  * @param node
  * @param texture2D
  */
@@ -361,11 +361,11 @@ Among them, the `_createPipe` function uses the [clone](${docs}entity-clone) fun
 
 First look at what the score resource looks like:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b7c4c65e-9a14-4f7b-8c0e-f4aa0acba85c/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199-20210913105806999.png" alt="image.png" style="zoom:50%;" />
 
 Here you can refer to the [Sprite-Region](${examples}sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/3dd7137b-8fff-40ca-a18f-d9a4be91bccd/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24-20210913105810424.png" alt="image.png" style="zoom:50%;" />
 
 ### Restart
 
@@ -379,9 +379,9 @@ Here you can refer to the [Ray casting](${docs}ray) document. After obtaining th
 
 ## Timing of collision detection
 
-There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script#component-life-cycle-function) should be familiar with it. After we change the position of `Entity` in `onUpdata`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
+There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script#component-life-cycle-function) should be familiar with it. After we change the position of `Entity` in `onUpdate`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/49d73e14-842d-4909-8612-be2209bb0afe/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265-20210913105819642.png" alt="image.png" style="zoom:50%;" />
 
 ## Ground & Bird
 
@@ -394,7 +394,7 @@ engine.on(GameEvent.checkHit, (birdY) => {
 
 ## Pipe & Bird
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/13456322/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/cb8797ba-9ef9-4a20-9148-6e7f7b0001c1/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118-20210913105825037.png" alt="image.png" style="zoom:50%;" />
 
 You can see all the pipes (red and blue) in the game at this time. Knowing the coordinates of Bird at the moment, there are currently the following issues that we need to solve:
 
