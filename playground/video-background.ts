@@ -26,7 +26,9 @@ const cameraEntity = rootEntity.createChild();
 cameraEntity.transform.setPosition(0, 0, 10);
 const camera = cameraEntity.addComponent(Camera);
 camera.fieldOfView = 80;
-cameraEntity.addComponent(OrbitControl);
+const control = cameraEntity.addComponent(OrbitControl);
+control.autoRotate = true;
+control.autoRotateSpeed = 0.1;
 engine.run();
 
 // video skybox
