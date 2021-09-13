@@ -29,7 +29,7 @@ engine.resourceManager
     const spriteRenderer = spriteEntity.addComponent(SpriteRenderer);
     spriteRenderer.sprite = new Sprite(engine, texture);
 
-    // Display mormal.
+    // Display normal.
     addFlipEntity(spriteEntity, -15, false, false);
     // Display flip x.
     addFlipEntity(spriteEntity.clone(), -5, true, false);

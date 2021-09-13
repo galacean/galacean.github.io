@@ -13,15 +13,15 @@ spine 组件用于给实体添加 spine 动画效果。
 
 在[节点树](${docs}editor-hierarchy-cn)中，创建并点击选中实体（Entity）。
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626681634222-8beabf17-8f7f-43de-8310-d18e32e27eac.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/4db9a2d5-9a37-4a27-b2a1-0aafb30ad5cd/1626681634222-8beabf17-8f7f-43de-8310-d18e32e27eac.png" alt="img" style="zoom:50%;" />
 
 在[检查器面板](${docs}editor-inspector-cn)中，点击添加组件按钮，选择 spine 动画。
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626750041954-834ddb16-f66e-4f7b-b2b5-112f580e3714.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/08c20b89-7df9-4d7d-a961-86e6382e7657/1626750041954-834ddb16-f66e-4f7b-b2b5-112f580e3714.png" alt="img" style="zoom:50%;" />
 
 添加完毕后，能够在[检查器面板](${docs}editor-inspector-cn)中看到 spine 组件：
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626682071627-aa55a319-fd35-44b4-adae-98fcababca86.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/f63e85bf-2f1f-42a7-bd60-f03db615785b/1626682071627-aa55a319-fd35-44b4-adae-98fcababca86.png" alt="img" style="zoom:50%;" />
 
 
 
@@ -31,11 +31,11 @@ spine 组件用于给实体添加 spine 动画效果。
 
 点击组件的 resource 选项，进入资产选择模式，选择资产面板中的 [spine 资产](${docs}editor-resource-spine-cn)。
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626750237947-f457782d-807c-4a04-87fa-10f99dbb1a0b.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/3177ad2d-d4a2-4390-95b9-0b11dc142f70/1626750237947-f457782d-807c-4a04-87fa-10f99dbb1a0b.png" alt="img" style="zoom:50%;" />
 
 选中后，就能够在预览窗口中看到 spine 动画了。
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626682342975-ec2ac65d-9b72-48ce-9803-0ea27c061c69.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/6b7cb0dd-6a23-448d-8f8c-17ff3978e06d/1626682342975-ec2ac65d-9b72-48ce-9803-0ea27c061c69.png" alt="img" style="zoom:50%;" />
 
 #### 参数调整
 
@@ -46,7 +46,7 @@ spine 组件用于给实体添加 spine 动画效果。
 
 - 缩放调整：调整 `scale` 的数值能够修改 spine 动画的缩放，改变其大小
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626682566952-675311f9-5cb0-4bc1-86fa-2717ac9e23cc.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/db05bb60-79a9-486d-bec5-2e5519d047b8/1626682566952-675311f9-5cb0-4bc1-86fa-2717ac9e23cc.png" alt="img" style="zoom:50%;" />
 
 #### 脚本控制
 
@@ -62,4 +62,4 @@ spine 组件用于给实体添加 spine 动画效果。
 
 `state` 对象是 spine 运行时的原生动画类。借助 [AnimationState API](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) 以及 事件系统，就能实现更加复杂的动画控制了。
 
-<img src="https://intranetproxy.alipay.com/skylark/lark/0/2021/png/76063/1626751647820-7681d1b3-1f36-45eb-9fbd-0516b6c2612f.png" alt="img" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/410b495b-8078-4357-857f-5cec6f51dcf0/1626751647820-7681d1b3-1f36-45eb-9fbd-0516b6c2612f.png" alt="img" style="zoom:50%;" />

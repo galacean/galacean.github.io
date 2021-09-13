@@ -11,7 +11,7 @@ glTF (GL Transmission Format) is a specification released by [khronos](https://w
 To load a 3D model, just call the [load](${api}core/ResourceManager/#load) method of the engine [ResourceManager](${docs}resource-manager) instance, as follows:
 
 ```typescript
-engine.resourceManager.load("{gltf source}").then((gltf) => {
+engine.resourceManager.load("{glTF source}").then((gltf) => {
   entity.addChild(gltf.defaultSceneRoot);
 });
 ```
@@ -19,7 +19,7 @@ engine.resourceManager.load("{gltf source}").then((gltf) => {
 If used in an asynchronous function body, you can use the `async/await` syntax:
 
 ```typescript
-const gltf = await this.engine.resourceManager.load("{gltf source}");
+const gltf = await this.engine.resourceManager.load("{glTF source}");
 
 entity.addChild(gltf.defaultSceneRoot);
 ```
@@ -30,7 +30,7 @@ The following demo:
 
 ## More cases
 
-glTF has a lot of features, the official website provides many [examples](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) for reference, and Oasis also provides a reprinted version For a quick overview, you can switch between different glTF models through the following **GLTF List**.
+glTF has a lot of features, the official website provides many [examples](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) for reference, and Oasis also provides a reprinted version For a quick overview, you can switch between different glTF models through the following **glTF List**.
 
 Go to [glTF resources](${docs}gltf) to learn more about glTF related designs.
 
