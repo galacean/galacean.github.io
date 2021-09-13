@@ -52,7 +52,7 @@ async function createDoc(graphql, actions) {
 
   edges.forEach((edge) => {
     const { slug } = edge.node.fields;
-    if (slug.includes('docs/') || slug.includes('/blog')) {
+    if (slug.includes('docs/')) {
       const createArticlePage = (path) => {
         return createPage({
           path: slug.includes('docs/') ? version + path : path,
@@ -60,7 +60,7 @@ async function createDoc(graphql, actions) {
           context: {
             slug,
             // if is docs page
-            type: slug.includes('docs/') ? '/docs/' : '/blog/',
+            type: '/docs/',
             locale: slug.includes('-cn') ? '/-cn/' : '//',
           },
         });
@@ -174,40 +174,4 @@ module.exports = async ({ graphql, actions }) => {
   await createDoc(graphql, actions);
   await createAPI(graphql, actions);
   await createPlayground(graphql, actions);
-
-  const blogEdges = await graphql(
-    `
-      {
-        allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/blog/" }, fields: { slug: {} } }
-          sort: { order: DESC, fields: [frontmatter___time] }
-          limit: 1
-        ) {
-          edges {
-            node {
-              id
-              fields {
-                slug
-              }
-            }
-          }
-        }
-      }
-    `,
-  );
-
-  const { node } = blogEdges.data.allMarkdownRemark.edges[0];
-  const blogPath = node.fields.slug.replace('-cn', '');
-
-  createRedirect({
-    fromPath: '/blog-cn',
-    redirectInBrowser: true,
-    toPath: `${blogPath}-cn`,
-  });
-
-  createRedirect({
-    fromPath: '/blog/',
-    redirectInBrowser: true,
-    toPath: blogPath,
-  });
 };

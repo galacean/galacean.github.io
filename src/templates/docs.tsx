@@ -133,7 +133,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: $type }, fields: { slug: { regex: $locale } } }
-      sort: { fields: [frontmatter___order, frontmatter___type, frontmatter___time], order: DESC }
+      sort: { fields: [frontmatter___order, frontmatter___type ], order: DESC }
     ) {
       edges {
         node {
@@ -141,7 +141,6 @@ export const pageQuery = graphql`
             title
             order
             type
-            time
             group
           }
           fields {
