@@ -47,8 +47,8 @@ PhysXPhysics.init().then(() => {
   boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
   boxRenderer.setMaterial(boxMtl);
 
-  const physicsBox = new BoxColliderShape()
-  physicsBox.extents = new Vector3(cubeSize, cubeSize, cubeSize)
+  const physicsBox = new BoxColliderShape();
+  physicsBox.extents = new Vector3(cubeSize, cubeSize, cubeSize);
   physicsBox.material.staticFriction = 0.1;
   physicsBox.material.dynamicFriction = 0.2;
   physicsBox.material.bounciness = 1;
@@ -82,13 +82,17 @@ PhysXPhysics.init().then(() => {
   class MoveScript extends Script {
     pos: Vector3 = new Vector3(-5, 0, 0);
     vel: number = 0.005;
+    velSign: number = -1;
 
     onUpdate(deltaTime: number) {
       super.onUpdate(deltaTime);
-      if (this.pos.x >= 5 || this.pos.x <= -5) {
-        this.vel *= -1;
+      if (this.pos.x >= 5) {
+        this.velSign = -1;
       }
-      this.pos.x += deltaTime * this.vel;
+      if (this.pos.x <= -5) {
+        this.velSign = 1;
+      }
+      this.pos.x += deltaTime * this.vel * this.velSign;
 
       this.entity.transform.position = this.pos;
     }

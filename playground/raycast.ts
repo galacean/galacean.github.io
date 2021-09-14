@@ -22,7 +22,7 @@ import {
   StaticCollider,
   WebGLEngine
 } from "oasis-engine";
-import { MathUtil, Quaternion, Vector2, Vector3 } from "@oasis-engine/math";
+import { Quaternion, Vector2, Vector3 } from "@oasis-engine/math";
 import { OrbitControl } from "@oasis-engine/controls";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
