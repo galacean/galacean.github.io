@@ -13,7 +13,6 @@ import {
   Layer,
   MeshRenderer,
   PhysicsMaterialCombineMode,
-  Plane,
   PlaneColliderShape,
   PointLight,
   PrimitiveMesh,
@@ -100,8 +99,7 @@ PhysXPhysics.init().then(() => {
   //--------------------------------------------------------------------------------------------------------------------
   // init scene
   function init() {
-    const plane = new Plane(new Vector3(0, 1, 0), 0);
-    addPlane(new Vector3(30, 0.1, 30), plane);
+    addPlane(new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 5; i++) {
       // eslint-disable-next-line no-plusplus
@@ -116,7 +114,7 @@ PhysXPhysics.init().then(() => {
   }
 
   //--------------------------------------------------------------------------------------------------------------------
-  function addPlane(size: Vector3, plane: Plane): Entity {
+  function addPlane(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
     const color = mtl.baseColor;
     color.r = 0.03179807202597362;
@@ -125,14 +123,12 @@ PhysXPhysics.init().then(() => {
     color.a = 1.0;
     const planeEntity = rootEntity.createChild();
     planeEntity.layer = Layer.Layer1;
-    const {position, rotationQuaternion} = planeEntity.transform
-    plane.transformFromPlaneEquation(position, rotationQuaternion);
-    planeEntity.transform.position = position
-    planeEntity.transform.rotationQuaternion = rotationQuaternion
 
     const renderer = planeEntity.addComponent(MeshRenderer);
     renderer.mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
     renderer.setMaterial(mtl);
+    planeEntity.transform.position = position;
+    planeEntity.transform.rotationQuaternion = rotation;
 
     const physicsPlane = new PlaneColliderShape();
     const planeCollider = planeEntity.addComponent(StaticCollider);
