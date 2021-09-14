@@ -217,10 +217,6 @@ PhysXPhysics.init().then(() => {
       const renderer = bodyEntity.addComponent(MeshRenderer);
       renderer.mesh = PrimitiveMesh.createCylinder(engine, radius, radius, height);
       renderer.setMaterial(mtl);
-
-      const quat = new Quaternion();
-      Quaternion.rotateZ(quat, MathUtil.degreeToRadian(90), quat);
-      bodyEntity.transform.rotationQuaternion = quat;
     }
 
     // foot
