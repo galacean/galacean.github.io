@@ -154,11 +154,11 @@ PhysXPhysics.init().then(() => {
     boxEntity.transform.rotationQuaternion = rotation;
 
     const physicsBox = new BoxColliderShape();
-    physicsBox.extents = size;
+    physicsBox.size = size;
     physicsBox.material.staticFriction = 1;
     physicsBox.material.dynamicFriction = 2;
     physicsBox.material.bounciness = 0.1;
-    physicsBox.isTrigger(false);
+    physicsBox.isTrigger = false;
 
     const boxCollider = boxEntity.addComponent(StaticCollider);
     boxCollider.addShape(physicsBox);

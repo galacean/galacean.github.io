@@ -48,11 +48,11 @@ PhysXPhysics.init().then(() => {
   boxRenderer.setMaterial(boxMtl);
 
   const physicsBox = new BoxColliderShape();
-  physicsBox.extents = new Vector3(cubeSize, cubeSize, cubeSize);
+  physicsBox.size = new Vector3(cubeSize, cubeSize, cubeSize);
   physicsBox.material.staticFriction = 0.1;
   physicsBox.material.dynamicFriction = 0.2;
   physicsBox.material.bounciness = 1;
-  physicsBox.isTrigger(true);
+  physicsBox.isTrigger = true;
 
   const boxCollider = boxEntity.addComponent(StaticCollider);
   boxCollider.addShape(physicsBox);
@@ -74,6 +74,7 @@ PhysXPhysics.init().then(() => {
   physicsSphere.material.staticFriction = 0.1;
   physicsSphere.material.dynamicFriction = 0.2;
   physicsSphere.material.bounciness = 1;
+  // sphereEntity.transform.setScale(3,3,3);
 
   const sphereCollider = sphereEntity.addComponent(DynamicCollider);
   sphereCollider.addShape(physicsSphere);
