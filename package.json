@@ -45,6 +45,7 @@
     "@oasis-engine/lottie": "^0.0.6",
     "@oasis-engine/spine": "^0.2.1",
     "@oasis-engine/stats": "^0.5.2",
+    "@oasis-engine/physics-physx": "^0.5.2",
     "@oasis-engine/touch": "^0.0.16",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "4.15.6",

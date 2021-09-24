@@ -56,7 +56,6 @@ PhysXPhysics.init().then(() => {
 
   const boxCollider = boxEntity.addComponent(StaticCollider);
   boxCollider.addShape(physicsBox);
-  engine.physicsManager.addCollider(boxCollider);
 
   // create sphere test entity
   const radius = 1.25;
@@ -78,7 +77,6 @@ PhysXPhysics.init().then(() => {
 
   const sphereCollider = sphereEntity.addComponent(DynamicCollider);
   sphereCollider.addShape(physicsSphere);
-  engine.physicsManager.addCollider(sphereCollider);
 
   class MoveScript extends Script {
     pos: Vector3 = new Vector3(-5, 0, 0);

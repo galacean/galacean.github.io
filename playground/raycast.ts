@@ -133,7 +133,6 @@ PhysXPhysics.init().then(() => {
     const physicsPlane = new PlaneColliderShape();
     const planeCollider = planeEntity.addComponent(StaticCollider);
     planeCollider.addShape(physicsPlane);
-    engine.physicsManager.addCollider(planeCollider);
 
     return planeEntity;
   }
@@ -162,7 +161,6 @@ PhysXPhysics.init().then(() => {
 
     const boxCollider = boxEntity.addComponent(StaticCollider);
     boxCollider.addShape(physicsBox);
-    engine.physicsManager.addCollider(boxCollider);
 
     return boxEntity;
   }
@@ -193,7 +191,6 @@ PhysXPhysics.init().then(() => {
 
     const sphereCollider = sphereEntity.addComponent(StaticCollider);
     sphereCollider.addShape(physicsSphere);
-    engine.physicsManager.addCollider(sphereCollider);
 
     return sphereEntity;
   }
@@ -243,7 +240,6 @@ PhysXPhysics.init().then(() => {
 
     const capsuleCollider = cubeEntity.addComponent(StaticCollider);
     capsuleCollider.addShape(physicsCapsule);
-    engine.physicsManager.addCollider(capsuleCollider);
 
     return cubeEntity;
   }
