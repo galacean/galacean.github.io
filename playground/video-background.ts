@@ -84,9 +84,9 @@ class UpdateVideoScript extends Script {
 }
 
 const dom: HTMLVideoElement = document.createElement("video");
-const width = 960;
-const height = 540;
-dom.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*NFiaQJid1XIAAAAAAAAAAAAAARQnAQ";
+const width = 3840;
+const height = 1920;
+dom.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*p_f5QYjE_2kAAAAAAAAAAAAAARQnAQ";
 dom.crossOrigin = "anonymous";
 dom.loop = true;
 dom.muted = true;
