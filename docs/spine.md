@@ -12,16 +12,16 @@ Oasis Engine implements spine animation rendering through [BufferMesh](${docs}bu
 
 ## Install
 
-_@oasis-engine/engine-spine_ is the second party package of Oasis Engine, you need to install it manually:
+_@oasis-engine/spine_ is the second party package of Oasis Engine, you need to install it manually:
 
 ```bash
-npm i @oasis-engine/engine-spine --save
+npm i @oasis-engine/spine --save
 ```
 
 ## Usage
 ### Resource loading
 
-When _@oasis-engine/engine-spine_ is imported, the loader of the spine resource will be automatically registered on the [resourceManager](${api}core/Engine#resourceManager) of [engine](${api}core/Engine) . The spine animation resource can be loaded through the [load](${api}core/ResourceManager/#load) method of resourceManager.
+When _@oasis-engine/spine_ is imported, the loader of the spine resource will be automatically registered on the [resourceManager](${api}core/Engine#resourceManager) of [engine](${api}core/Engine) . The spine animation resource can be loaded through the [load](${api}core/ResourceManager/#load) method of resourceManager.
 
 - When the passed parameter is url, the spine animation resource has the same baseUrl by default, and only the json file cdn needs to be passed.
 - When the passed parameter is the urls array, you need to pass the cdn addresses of the three resources json, atlas, image (png, jpg).
@@ -54,7 +54,7 @@ root.addChild(spineEntity);
 When you need to play the animation, you need to get the SpineAnimation component on the spine entity. The SpineAnimation component exposes [AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) and [Skeleton](http://zh.esotericsoftware.com/spine-api-reference#Skeleton) interfaces , you can use spine-core native API to play animation.For example:
 
 ```typescript
-import { SpineAnimation } from '@oasis-engine/engine-spine';
+import { SpineAnimation } from '@oasis-engine/spine';
 
 const spineEntity = await engine.resourceManager.load(
   {
