@@ -24,7 +24,7 @@
     },
     "@oasis-engine/lottie": {
       "version": "0.0.8",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/lottie/0.0.8/dist/browser.js",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/lottie/0.1.3/dist/browser.js",
       "dist": "dist/browser.js"
     },
     "dat.gui": {
