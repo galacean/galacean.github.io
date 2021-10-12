@@ -19,8 +19,8 @@ cameraEntity.addComponent(OrbitControl);
 
 engine.resourceManager.load<Entity>({
   urls: [
-    'https://gw.alipayobjects.com/os/bmw-prod/9ad65a42-9171-47ab-9218-54cf175f6201.json',
-    'https://gw.alipayobjects.com/os/bmw-prod/90779ce2-50f1-4780-ae74-725083eba852.atlas'
+    "https://gw.alipayobjects.com/os/bmw-prod/b46be138-e48b-4957-8071-7229661aba53.json",
+    "https://gw.alipayobjects.com/os/bmw-prod/6447fc36-db32-4834-9579-24fe33534f55.atlas"
   ],
   type: 'lottie'
 }).then((lottieEntity) => {
