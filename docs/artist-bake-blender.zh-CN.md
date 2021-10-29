@@ -1,25 +1,17 @@
-
-10月29日 10:26
 ---
-order: 5
+order: 3
 
-title: blender 烘焙
+title: Blender 烘焙
 
 type: 美术
 ---  
 
----
-order: 5
-
-title: blender 烘焙
-
-type: 美术
----  
+> ___特别感谢 马乐、李洋洋 提供本篇教程___
 
 美术在模型实际制作过程中，可能会使用较多的素材，材质等以达到更好的视觉效果。但在导出时会出现较大的渲染落差，有时还会丢失一些效果。  
 我们在最大程度还原3D模型渲染流程方面做了一些优化，希望能给大家带来帮助。  
 
-### Blender烘焙
+### Blender 烘焙
 
 1. 选择模型，目前这个建筑由很多不同的模型组成，我们需要把它们合并成为一个模型  
 
@@ -87,7 +79,7 @@ type: 美术
 
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/180065/1635165880957-933cc281-8848-436f-a2af-186d818202d1.png?x-oss-process=image%2Fresize%2Cw_1504%2Climit_0)   
 
-4. 放入glTF查看器预览效果
+4. 放入[glTF查看器](https://oasisengine.cn/gltf-viewer)预览效果
 
 ![image.png](https://cdn.nlark.com/yuque/0/2021/png/180065/1635166016557-59978f7f-6c91-4f13-99b3-9907e5c8cd44.png?x-oss-process=image%2Fresize%2Cw_1504%2Climit_0)
 
