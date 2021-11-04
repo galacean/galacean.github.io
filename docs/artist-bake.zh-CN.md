@@ -1,6 +1,6 @@
 ---
-order: 1
-title: 纹理烘焙
+order: 2
+title: C4D 烘焙
 type: 美术
 ---
 

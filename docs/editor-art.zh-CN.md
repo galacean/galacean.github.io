@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 1
 title: 场景规格
 type: 美术
 ---
