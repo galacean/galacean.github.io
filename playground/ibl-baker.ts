@@ -80,42 +80,42 @@ function debugIBL(bakedLDRCubeMap: TextureCubeMap, bakedHDRCubeMap: TextureCubeM
   Shader.create(
     "ibl debug test",
     `
-     attribute vec3 POSITION;
-     attribute vec2 TEXCOORD_0;
- 
-     uniform mat4 u_MVPMat;
-     varying vec2 v_uv;
- 
-     void main(){
-       gl_Position = u_MVPMat * vec4(POSITION, 1.0);
-       v_uv = TEXCOORD_0;
-   }
-   `,
+      attribute vec3 POSITION;
+      attribute vec2 TEXCOORD_0;
+  
+      uniform mat4 u_MVPMat;
+      varying vec2 v_uv;
+  
+      void main(){
+        gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+        v_uv = TEXCOORD_0;
+    }
+    `,
     `
-     uniform sampler2D u_env;
-     uniform int face;
-     varying vec2 v_uv;
- 
-     vec4 RGBMToLinear( in vec4 value, in float maxRange ) {
-      return vec4( value.rgb * value.a * maxRange, 1.0 );
-      }
-
- 
-     void main(){
-       vec2 uv = v_uv;
-       if(face == 2){
-         uv.x = v_uv.y;
-         uv.y= 1.0 - v_uv.x;
-       }else if(face == 3){
-         uv.x = 1.0 - v_uv.y;
-         uv.y=  v_uv.x;
+      uniform sampler2D u_env;
+      uniform int face;
+      varying vec2 v_uv;
+  
+      vec4 RGBMToLinear( in vec4 value, in float maxRange ) {
+       return vec4( value.rgb * value.a * maxRange, 1.0 );
        }
-
-       gl_FragColor = RGBMToLinear(texture2D(u_env, uv), 5.0);
  
-       gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
-     }
-     `
+  
+      void main(){
+        vec2 uv = v_uv;
+        if(face == 2){
+          uv.x = v_uv.y;
+          uv.y= 1.0 - v_uv.x;
+        }else if(face == 3){
+          uv.x = 1.0 - v_uv.y;
+          uv.y=  v_uv.x;
+        }
+ 
+        gl_FragColor = RGBMToLinear(texture2D(u_env, uv), 5.0);
+  
+        gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
+      }
+      `
   );
 
   let debugTexture = bakedHDRCubeMap;
