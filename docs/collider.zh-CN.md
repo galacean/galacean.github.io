@@ -35,10 +35,13 @@ type: 组件
 同时，Oasis支持多物理后端，所以首先需要根据您使用的物理特性，在引擎初始化时设置对应的物理后端，lite包更加轻量，但支持的物理特性较少，physX包强大，但打包后的提及较大， 代码如下：
 
 ```typescript
-import { SphereCollider, BoxCollider, CollisionDetection, Vector3 } from 'oasis-engine';
-import { SphereColliderShape } from "./SphereColliderShape";
-import { DynamicCollider } from "./DynamicCollider";
-import { BoxColliderShape } from "./BoxColliderShape";
+import {
+  Vector3,
+  SphereColliderShape,
+  BoxColliderShape,
+  DynamicCollider,
+  ColliderShape
+} from 'oasis-engine';
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 const engine = new WebGLEngine("canvas", PhysXPhysics);
@@ -60,7 +63,7 @@ boxColliderShape.setSize(2.0, 2.0, 2.0);
 boxCollider.addColliderShape(boxColliderShape);
 
 class CollisionScript extends Script {
-  onTriggerExit(other: ACollider) {
+  onTriggerExit(other: ColliderShape) {
     console.log('collision' + other.entity.name);
   }
 }

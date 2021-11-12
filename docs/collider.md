@@ -45,10 +45,13 @@ lightweight, but supports fewer physical features. The physX package is powerful
 larger, and the code is as follows:
 
 ```typescript
-import { SphereCollider, BoxCollider, CollisionDetection, Vector3 } from 'oasis-engine';
-import { SphereColliderShape } from "./SphereColliderShape";
-import { DynamicCollider } from "./DynamicCollider";
-import { BoxColliderShape } from "./BoxColliderShape";
+import {
+  Vector3,
+  SphereColliderShape,
+  BoxColliderShape,
+  DynamicCollider,
+  ColliderShape
+} from 'oasis-engine';
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 const engine = new WebGLEngine("canvas", PhysXPhysics);
@@ -70,7 +73,7 @@ boxColliderShape.setSize(2.0, 2.0, 2.0);
 boxCollider.addColliderShape(boxColliderShape);
 
 class CollisionScript extends Script {
-  onTriggerExit(other: ACollider) {
+  onTriggerExit(other: ColliderShape) {
     console.log('collision' + other.entity.name);
   }
 }
