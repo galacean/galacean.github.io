@@ -35,7 +35,7 @@ const material = new UnlitMaterial(engine);
 material.renderFace = RenderFace.Double;
 material.tilingOffset.setValue(30, 30, 0, 0);
 const planeEntity = rootEntity.createChild("ground");
-planeEntity.transform.setRotation(-85, 0, 0);
+planeEntity.transform.setRotation(5, 0, 0);
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
 planeRenderer.mesh = mesh;
 planeRenderer.setMaterial(material);

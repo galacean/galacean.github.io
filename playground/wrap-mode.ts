@@ -40,6 +40,7 @@ material.isTransparent = true;
 material.renderState.rasterState.cullMode = CullMode.Off;
 const planeEntity = rootEntity.createChild("plane");
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
+planeEntity.transform.setRotation(90, 0, 0);
 planeRenderer.mesh = mesh;
 planeRenderer.setMaterial(material);
 

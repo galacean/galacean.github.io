@@ -55,7 +55,7 @@ function createPlane(engine: Engine, entity: Entity): void {
       const meshRenderer = planeEntity.addComponent(MeshRenderer);
       const material = new Material(engine, shader);
 
-      planeEntity.transform.setRotation(-90, 0, 0);
+      // planeEntity.transform.setRotation(-90, 0, 0);
       meshRenderer.mesh = PrimitiveMesh.createPlane(engine, 1245, 1245, 100, 100, false);
       meshRenderer.setMaterial(material);
 
