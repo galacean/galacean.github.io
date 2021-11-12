@@ -9,7 +9,13 @@ type: 组件
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*sr_IRYSLugMAAAAAAAAAAAAAARQnAQ)
 （_图片来源于网络_）
 
-**Ray** 模块提供了方便好用的射线检测功能。
+Oasis 中的射线检测根据不同的物理后端采用不同的算法，目前支持的物理后端有：
+1. physics-lite
+2. physics-physx
+
+前者是过去里程碑中所使用的射线检测，直接遍历场景中的所有碰撞器求交。后者则是基于physx提供的碰撞检测算法，在有更多碰撞盒的情况下有更好的性能。
+
+为了适用不同的物理后端，就需要在初始化引擎时指定特定的后端，例如下面的例子所展示的，要传入 LitePhysics，对应的physx后端则需要传入 PhysXPhysics。
 
 ## 使用射线投射
 
@@ -19,8 +25,8 @@ type: 组件
 ```typescript
 // 加载 Raycast 模块
 import { WebGLEngine, HitResult, Ray } from 'oasis-engine';
-
-const engine = new WebGLEngine("canvas");
+import { LitePhysics } from "@oasis-engine/physics-lite";
+const engine = new WebGLEngine("canvas", LitePhysics);
 engine.canvas.resizeByClientSize();
 
 // 自定义 Ray
