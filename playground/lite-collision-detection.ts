@@ -1,19 +1,21 @@
 /**
- * @title Collision Detection
+ * @title Lite Collision Detection
  * @category Physics
  */
 /**
  * 本示例展示如何使用几何体渲染器功能、如何创建几何体资源对象、如何创建材质对象
  */
 import {
-  WebGLEngine, SphereCollider,
-  BoxCollider, Vector3,
+  WebGLEngine, SphereColliderShape,
+  BoxColliderShape, Vector3,
   MeshRenderer, BlinnPhongMaterial, PointLight,
-  PrimitiveMesh, Camera, CollisionDetection, Script
+  PrimitiveMesh, Camera, StaticCollider, Script, DynamicCollider
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 
-const engine = new WebGLEngine("canvas");
+import { LitePhysics } from "@oasis-engine/physics-lite";
+
+const engine = new WebGLEngine("canvas", LitePhysics);
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
@@ -28,7 +30,7 @@ cameraEntity.transform.setPosition(10, 10, 10);
 cameraEntity.addComponent(OrbitControl);
 
 // init point light
-let light = rootEntity.createChild("light");
+const light = rootEntity.createChild("light");
 light.transform.setPosition(0, 3, 0);
 const pointLight = light.addComponent(PointLight);
 pointLight.intensity = 0.3;
@@ -43,13 +45,15 @@ boxMtl.baseColor.setValue(0.6, 0.3, 0.3, 1.0);
 boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
 boxRenderer.setMaterial(boxMtl);
 
-const boxCollider = boxEntity.addComponent(BoxCollider);
-boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cubeSize));
+const boxCollider = boxEntity.addComponent(StaticCollider);
+const boxColliderShape = new BoxColliderShape()
+boxColliderShape.setSize(cubeSize, cubeSize, cubeSize);
+boxCollider.addShape(boxColliderShape);
 
 // create sphere test entity
 const radius = 1.25;
 const sphereEntity = rootEntity.createChild("SphereEntity");
-sphereEntity.transform.setPosition(-2, 0, 0);
+sphereEntity.transform.setPosition(-5, 0, 0);
 
 const sphereMtl = new BlinnPhongMaterial(engine);
 const sphereRenderer = sphereEntity.addComponent(MeshRenderer);
@@ -57,19 +61,25 @@ sphereMtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
 sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
 sphereRenderer.setMaterial(sphereMtl);
 
-const sphereCollider = sphereEntity.addComponent(SphereCollider);
-sphereCollider.setSphere(new Vector3(), radius);
+const sphereCollider = sphereEntity.addComponent(DynamicCollider);
+const sphereColliderShape = new SphereColliderShape();
+sphereColliderShape.radius = radius;
+sphereCollider.addShape(sphereColliderShape);
 
 class MoveScript extends Script {
   pos: Vector3 = new Vector3(-5, 0, 0);
   vel: number = 0.005;
+  velSign: number = -1;
 
   onUpdate(deltaTime: number) {
     super.onUpdate(deltaTime);
-    if (this.pos.x >= 5 || this.pos.x <= -5) {
-      this.vel *= -1;
+    if (this.pos.x >= 5) {
+      this.velSign = -1;
     }
-    this.pos.x += deltaTime * this.vel;
+    if (this.pos.x <= -5) {
+      this.velSign = 1;
+    }
+    this.pos.x += deltaTime * this.vel * this.velSign;
 
     this.entity.transform.position = this.pos;
   }
@@ -81,12 +91,15 @@ class CollisionScript extends Script {
     (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0)
   }
 
+  onTriggerStay() {
+    console.log("lalala")
+  }
+
   onTriggerEnter() {
     (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0)
   }
 }
 
-sphereEntity.addComponent(CollisionDetection);
 sphereEntity.addComponent(CollisionScript);
 sphereEntity.addComponent(MoveScript);
 

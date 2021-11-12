@@ -1,5 +1,5 @@
 /**
- * @title Raycast
+ * @title Lite Raycast
  * @category Physics
  */
 /**
@@ -7,21 +7,24 @@
  */
 import {
   BlinnPhongMaterial,
-  BoxCollider,
+  BoxColliderShape,
   Camera,
   HitResult,
   Layer,
   MeshRenderer,
   PrimitiveMesh,
   Ray,
-  SphereCollider,
+  SphereColliderShape,
+  StaticCollider,
   Vector2, Color,
-  Vector3, PointLight,
+  PointLight,
   WebGLEngine
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 
-const engine = new WebGLEngine("canvas");
+import { LitePhysics } from "@oasis-engine/physics-lite";
+
+const engine = new WebGLEngine("canvas", LitePhysics);
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
@@ -52,8 +55,10 @@ sphereMtl.baseColor.setValue(0.7, 0.1, 0.1, 1.0);
 sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
 sphereRenderer.setMaterial(sphereMtl);
 
-const sphereCollider = sphereEntity.addComponent(SphereCollider);
-sphereCollider.setSphere(new Vector3(), radius);
+const sphereCollider = sphereEntity.addComponent(StaticCollider);
+const sphereColliderShape = new SphereColliderShape();
+sphereColliderShape.radius = radius;
+sphereCollider.addShape(sphereColliderShape);
 
 // create box test entity
 const cubeSize = 2.0;
@@ -65,8 +70,10 @@ boxMtl.baseColor.setValue(0.1, 0.7, 0.1, 1.0);
 boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
 boxRenderer.setMaterial(boxMtl);
 
-const boxCollider = boxEntity.addComponent(BoxCollider);
-boxCollider.setBoxCenterSize(new Vector3(), new Vector3(cubeSize, cubeSize, cubeSize));
+const boxCollider = boxEntity.addComponent(StaticCollider);
+const boxColliderShape = new BoxColliderShape();
+boxColliderShape.setSize(cubeSize, cubeSize, cubeSize);
+boxCollider.addShape(boxColliderShape);
 
 // raycast logic
 let pickedMeshRenderer: MeshRenderer;
@@ -80,7 +87,7 @@ window.addEventListener("mousedown", (event: MouseEvent) => {
 
   const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Everything, hit);
   if (result) {
-    pickedMeshRenderer = hit.collider.entity.getComponent(MeshRenderer);
+    pickedMeshRenderer = hit.entity.getComponent(MeshRenderer);
     const material = (<BlinnPhongMaterial>pickedMeshRenderer.getMaterial());
     material.baseColor.cloneTo(originalColor);
     material.baseColor.setValue(0.3, 0.3, 0.3, 1.0);
