@@ -83,7 +83,7 @@ class Oasis {
     // Scene
     background: false,
     // Lights
-    env: "sunset",
+    env: "foot",
     addLights: true,
     lightColor: Oasis.colorToGui(new Color(1, 1, 1)),
     lightIntensity: 0.5
