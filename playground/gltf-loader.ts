@@ -5,8 +5,9 @@
 import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
 import {
-  Animator,
+  AmbientLight,
   AnimationClip,
+  Animator,
   AssetType,
   BackgroundMode,
   BoundingBox,
@@ -27,13 +28,9 @@ import {
   SkinnedMeshRenderer,
   SkyBoxMaterial,
   Texture2D,
-  TextureCubeMap,
   UnlitMaterial,
   Vector3,
-  WebGLEngine,
-  SphericalHarmonics3,
-  DiffuseMode,
-  AmbientLight
+  WebGLEngine
 } from "oasis-engine";
 
 Logger.enable();
