@@ -40,6 +40,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.0.5",
     "@babel/core": "^7.14.0",
+    "@oasis-engine/baker": "^1.0.0",
     "@oasis-engine/controls": "^0.5.2",
     "@oasis-engine/framebuffer-picker": "^0.5.2",
     "@oasis-engine/lottie": "^0.0.6",

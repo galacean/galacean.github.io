@@ -2,18 +2,11 @@
 /* eslint no-multi-assign: "off" */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
+import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@oasis-engine/baker";
 import { OrbitControl } from "@oasis-engine/controls";
-import type {
+import {
   AmbientLight,
   AnimationClip,
-  Entity,
-  GLTFResource,
-  Material,
-  Renderer,
-  Scene,
-  Texture2D
-} from "oasis-engine";
-import {
   Animator,
   AssetType,
   BackgroundMode,
@@ -21,13 +14,21 @@ import {
   Camera,
   Color,
   DirectLight,
+  Entity,
+  GLTFResource,
+  Material,
   MeshRenderer,
   PBRBaseMaterial,
   PBRMaterial,
   PBRSpecularMaterial,
   PrimitiveMesh,
+  Renderer,
+  Scene,
   SkinnedMeshRenderer,
   SkyBoxMaterial,
+  SphericalHarmonics3,
+  Texture2D,
+  TextureCubeMap,
   UnlitMaterial,
   Vector3,
   WebGLEngine
@@ -39,7 +40,8 @@ import "./gltf-viewer.less";
 const envList = {
   sunset: "https://gw.alipayobjects.com/os/bmw-prod/34986a5b-fa16-40f1-83c8-1885efe855d2.bin",
   pisa: "https://gw.alipayobjects.com/os/bmw-prod/258a783d-0673-4b47-907a-da17b882feee.bin",
-  foot: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
+  foot: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin",
+  park: "https://gw.alipayobjects.com/os/bmw-prod/bbb3be8f-8c65-4767-89b0-944394a61510.bin"
 };
 
 class Oasis {
@@ -79,11 +81,13 @@ class Oasis {
   gui = new window.dat.GUI();
   materialFolder = null;
   animationFolder = null;
+  sceneFolder = null;
+  lightFolder = null;
   state = {
     // Scene
-    background: false,
+    background: true,
     // Lights
-    env: "foot",
+    env: "park",
     addLights: true,
     lightColor: Oasis.colorToGui(new Color(1, 1, 1)),
     lightIntensity: 0.5
@@ -106,7 +110,7 @@ class Oasis {
     guiStyle.top = "68px";
     guiStyle.right = "-12px";
 
-    this.initResources().then(() => {
+    this.initEnv().then(() => {
       this.initScene();
       this.initDropZone();
       this.addSceneGUI();
@@ -114,7 +118,7 @@ class Oasis {
     });
   }
 
-  initResources() {
+  initEnv() {
     const names = Object.keys(envList);
 
     return new Promise((resolve) => {
@@ -161,13 +165,23 @@ class Oasis {
     this.scene.background.sky.material = this.skyMaterial;
     this.scene.background.sky.mesh = PrimitiveMesh.createCuboid(this.engine, 1, 1, 1);
     this.engine.run();
+
+    window.onresize = () => {
+      this.engine.canvas.resizeByClientSize();
+    };
   }
 
   addSceneGUI() {
     const { gui } = this;
     // Display controls.
-    const dispFolder = gui.addFolder("Scene");
-    dispFolder.add(this.state, "background").onChange((v: boolean) => {
+    if (this.sceneFolder) {
+      gui.removeFolder(this.sceneFolder);
+    }
+    if (this.sceneFolder) {
+      gui.removeFolder(this.lightFolder);
+    }
+    this.sceneFolder = gui.addFolder("Scene");
+    this.sceneFolder.add(this.state, "background").onChange((v: boolean) => {
       if (v) {
         this.scene.background.mode = BackgroundMode.Sky;
       } else {
@@ -176,8 +190,8 @@ class Oasis {
     });
 
     // Lighting controls.
-    const lightFolder = gui.addFolder("Lighting");
-    lightFolder
+    this.lightFolder = gui.addFolder("Lighting");
+    this.lightFolder
       .add(this.state, "env", [...Object.keys(this.env)])
       .name("IBL")
       .onChange((v) => {
@@ -185,31 +199,31 @@ class Oasis {
         this.skyMaterial.textureCubeMap = this.env[v].specularTexture;
       });
 
-    lightFolder
+    this.lightFolder
       .add(this.state, "addLights")
       .onChange((v) => {
         this.light1.enabled = this.light2.enabled = v;
       })
       .name("直接光");
-    lightFolder.addColor(this.state, "lightColor").onChange((v) => {
+    this.lightFolder.addColor(this.state, "lightColor").onChange((v) => {
       Oasis.guiToColor(v, this.light1.color);
       Oasis.guiToColor(v, this.light2.color);
     });
-    lightFolder
+    this.lightFolder
       .add(this.state, "lightIntensity", 0, 2)
       .onChange((v) => {
         this.light1.intensity = this.light2.intensity = v;
       })
       .name("直接光强度");
 
-    dispFolder.open();
-    lightFolder.open();
+    this.sceneFolder.open();
+    this.lightFolder.open();
   }
 
   initDefaultDebugMesh() {
     const mesh = PrimitiveMesh.createSphere(this.engine, 5, 64);
     const material = new PBRMaterial(this.engine);
-    material.metallic = 0;
+    material.metallic = 1;
     material.roughness = 0;
     material.name = "default";
     const renderer = this.gltfRootEntity.addComponent(MeshRenderer);
@@ -217,7 +231,7 @@ class Oasis {
     renderer.mesh = mesh;
     renderer.setMaterial(material);
 
-    this.loadMaterialGUI([material]);
+    this.addMaterialGUI([material]);
     this.setCenter([renderer]);
   }
 
@@ -258,8 +272,11 @@ class Oasis {
   loadFileMaps(files: Map<string, File>) {
     const modelReg = /\.(gltf|glb)$/i;
     const imgReg = /\.(jpg|jpeg|png)$/i;
+    const envReg = /\.(hdr|hdri)$/i;
+
     let mainFile: File;
     let type = "gltf";
+
     const filesMap = {}; // [fileName]:LocalUrl
     const fileArray: any = Array.from(files); // ['/*/*.*',obj:File]
 
@@ -282,6 +299,8 @@ class Oasis {
         filesMap[fileName] = url;
         if (imgReg.test(fileName)) {
           this.addTexture(fileName, url);
+        } else if (envReg.test(fileName)) {
+          this.addEnv(fileName, url);
         }
       }
     });
@@ -353,7 +372,7 @@ class Oasis {
     defaultSceneRoot.getComponentsIncludeChildren(SkinnedMeshRenderer, skinnedMeshRenderers);
 
     this.setCenter(meshRenderers.concat(skinnedMeshRenderers));
-    this.loadMaterialGUI(materials);
+    this.addMaterialGUI(materials);
     this.loadAnimationGUI(animations);
   }
 
@@ -370,9 +389,31 @@ class Oasis {
       })
       .then((texture) => {
         this.textures[name] = texture;
-        this.loadMaterialGUI();
+        this.addMaterialGUI();
         console.log("图片上传成功！", name);
       });
+  }
+
+  async addEnv(name: string, url: string) {
+    const texture = await this.engine.resourceManager.load<TextureCubeMap>({
+      url,
+      type: "HDR" // from baker
+    });
+
+    const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, DecodeMode.RGBE) as any;
+    const sh = new SphericalHarmonics3();
+    SphericalHarmonics3Baker.fromTextureCubeMap(texture, DecodeMode.RGBE, sh);
+    const arrayBuffer = toBuffer(bakedHDRCubeMap, sh);
+    downloadArrayBuffer(arrayBuffer, name);
+
+    // update debuger
+    const blob = new Blob([arrayBuffer], { type: "text/plain" });
+    const bakeUrl = URL.createObjectURL(blob);
+    envList[name] = bakeUrl;
+    this.state.env = name;
+    await this.initEnv();
+    this.addSceneGUI();
+    this.addMaterialGUI();
   }
 
   dropStart() {
@@ -394,7 +435,7 @@ class Oasis {
     this.gltfRootEntity.destroy();
   }
 
-  loadMaterialGUI(materials?: Material[]) {
+  addMaterialGUI(materials?: Material[]) {
     const { gui } = this;
     if (this.materialFolder) {
       gui.removeFolder(this.materialFolder);
@@ -588,7 +629,7 @@ export default function GLTFView(props: any) {
           <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
           <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
-            <p>Drag glTF2.0 and texture files or folder on the viewport</p>
+            <p>Drag glTF2.0、texture files or folder、hdrs on the viewport</p>
           </div>
           <div id="spinner" className="spinner hide" />
           <script type="module" src="./src/index.ts" />
