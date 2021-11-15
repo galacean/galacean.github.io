@@ -117,6 +117,61 @@ Page({
 - [Alipay Mini Program](https://opendocs.alipay.com/mini/introduce/release)
 - [Taobao Mini Program](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
 
+## Use OrbitControl
+
+1. Import library
+
+```shell
+npm install @oasis-engine/controls -S
+```
+
+```typescript
+import { OrbitControl } from '@oasis-engine/controls/dist/miniprogram';
+```
+
+2. Add Component
+
+`OrbitControl` should be added to camera entity.
+
+```typescript
+cameraEntity.addComponent(OrbitControl);
+```
+
+3. Mock event dispatch
+
+Because miniprogram doesn't support  `addEventListener` like dom, we have to mock event dispatch. We should add a view element whose size and position are the same to canvas to dispatch `touchstart`, `touchmove` and `touchend` events. For example:
+
+```html
+<view>
+  <canvas
+    onReady="onCanvasReady"
+    style="width:{{cw}}px;height:{{ch}}px"
+    type="webgl">
+  </canvas>
+  <view
+    style="width:{{cw}}px;height:{{ch}}px;top:0px;position:absolute;"
+    onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" >
+  </view>
+</view>
+```
+
+```typescript
+import { dispatchTouchStart, dispatchTouchMove, dispatchTouchEnd } from "@oasis-engine/miniprogram-adapter";
+
+Page({
+  ...
+  onTouchStart(e) {
+    dispatchTouchStart(e);
+  },
+  onTouchMove(e) {
+    dispatchTouchMove(e);
+  },
+  onTouchEnd(e) {
+    dispatchTouchEnd(e);
+  }
+})
+```
+
 ## More Oasis Mini Program Cases
 
 Coming soon...

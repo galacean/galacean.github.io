@@ -100,4 +100,4 @@ Unity 也可以导出动画切片，但是效率比较低。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1bfefe2b-ca58-4cca-a091-9efe8028a4df/1622552925151-16b86fcc-4680-4611-aa32-d3697bbe5086.png)
 
-12. 至此，制作的动画切片 gltf 文件导出完毕，可以访问 Oasis 的 [gltf 预览](https://oasisengine.cn/gltf-viewer) 进行功能校验。
+12. 至此，制作的动画切片 glTF 文件导出完毕，可以访问 Oasis 的 [glTF 预览](https://oasisengine.cn/gltf-viewer) 进行功能校验。

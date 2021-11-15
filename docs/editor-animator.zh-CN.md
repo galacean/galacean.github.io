@@ -14,11 +14,11 @@ group: 组件
 ![image-20210902230821166](https://gw.alipayobjects.com/zos/OasisHub/6f28e2a1-a062-49ff-bf6e-34eff1495183/image-20210902230821166.png)
 
 
-2. 为节点增加一个`GLTF模型`组件，并绑定上传的`.gltf` 资产，编辑器会自动帮你把  `AnimatorController` 资产也绑定上,这时一个默认的动画就开始播放了：
+2. 为节点增加一个`glTF 模型`组件，并绑定上传的`.gltf` 资产，编辑器会自动帮你把  `AnimatorController` 资产也绑定上,这时一个默认的动画就开始播放了：
    
 ![animationbindgltf](https://gw.alipayobjects.com/zos/OasisHub/b338d50c-5525-4967-a5cf-1d85497e3cae/animationbindgltf.gif)
 
-3. 如果需要预览其他动画可以切换 GLTF 模型组件的动画预览选项。通过修改 `speed` 可以调整动画的速度：
+3. 如果需要预览其他动画可以切换 glTF 模型组件的动画预览选项。通过修改 `speed` 可以调整动画的速度：
 
 ![animationpreview](https://gw.alipayobjects.com/zos/OasisHub/68092020-2638-418d-8283-ef410a305038/animationpreview.gif)
 

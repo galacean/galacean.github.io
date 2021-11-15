@@ -66,7 +66,7 @@ engine.resourceManager
     // Get sprite by spriteName.
     atlas.getSprite("spriteName");
     // If multiple sprites have the same name, we can get all like this.
-    const allSpritesWithSameName = atlas.getSprite("spriteName", []);
+    const allSpritesWithSameName = atlas.getSprites("spriteName", []);
   });
 ```
 

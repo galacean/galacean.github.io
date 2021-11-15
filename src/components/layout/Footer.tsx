@@ -1,6 +1,8 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Row, Col } from 'antd';
+import { ZhihuOutlined, TwitterOutlined, YuqueOutlined, WechatOutlined, DingtalkOutlined, GithubOutlined } from '@ant-design/icons';
+import { Icon } from './Icon';
 
 class Footer extends React.Component<{
   location: {
@@ -35,41 +37,34 @@ class Footer extends React.Component<{
                   <FormattedMessage id="app.footer.community" />
                 </h2>
                 <div>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.zhihu.com/column/c_1369047387231592448"
-                  >
-                    <FormattedMessage id="app.footer.zhihu" />
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.zhihu.com/column/c_1369047387231592448">
+                    <ZhihuOutlined />&nbsp;&nbsp;
+                    <FormattedMessage id="app.community.zhihu" />
                   </a>
                 </div>
                 <div>
                   <a target="_blank" rel="noopener noreferrer" href="https://juejin.cn/team/6930507995474313230/posts">
-                    <FormattedMessage id="app.footer.juejin" />
+                    <Icon type="icon-juejin" />&nbsp;&nbsp;
+                    <FormattedMessage id="app.community.juejin" />
                   </a>
                 </div>
                 <div>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://www.yuque.com/oasis-engine/blog"
-                  >
-                    <FormattedMessage id="app.footer.yuque" />
+                  <a target="_blank" rel="noopener noreferrer" href="https://www.yuque.com/oasis-engine/blog">
+                    <YuqueOutlined />&nbsp;&nbsp;
+                    <FormattedMessage id="app.community.yuque" />
                   </a>
                 </div>
                 <div>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://twitter.com/OasisEngine"
-                  >
-                    <FormattedMessage id="app.footer.twitter" />
+                  <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/OasisEngine">
+                    <TwitterOutlined />&nbsp;&nbsp;
+                    <FormattedMessage id="app.community.twitter" />
                   </a>
                 </div>
                 <div>
+                  <WechatOutlined />&nbsp;&nbsp;
                   <FormattedMessage id="app.footer.wechat" />
                 </div>
-                <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*dLIgTJhxjnEAAAAAAAAAAAAAARQnAQ" alt=""/>
+                <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*dLIgTJhxjnEAAAAAAAAAAAAAARQnAQ" alt="" />
               </div>
             </Col>
             <Col md={8} sm={24} xs={24}>
@@ -78,18 +73,16 @@ class Footer extends React.Component<{
                   <FormattedMessage id="app.footer.help" />
                 </h2>
                 <div>
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="https://github.com/oasis-engine/engine/issues"
-                  >
+                  <a target="_blank" rel="noopener noreferrer" href="https://github.com/oasis-engine/engine/issues">
+                    <GithubOutlined />&nbsp;&nbsp;
                     <FormattedMessage id="app.footer.issues" />
                   </a>
                 </div>
                 <div>
+                  <DingtalkOutlined />&nbsp;&nbsp;
                   <FormattedMessage id="app.footer.dingtalk" />
                 </div>
-                <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*i6JhSZk1EiEAAAAAAAAAAAAAARQnAQ" alt=""/>
+                <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*i6JhSZk1EiEAAAAAAAAAAAAAARQnAQ" alt="" />
               </div>
             </Col>
           </Row>

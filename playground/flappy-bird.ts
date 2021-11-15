@@ -439,7 +439,7 @@ class GameCtrl extends Script {
   private _touch: Touch;
 
   onAwake() {
-    //Init touchmanager.
+    //Init TouchManager.
     TouchManager.ins.initEngine(this.engine);
 
     engine.on(GameEvent.reStartGame, () => {

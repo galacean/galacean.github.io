@@ -1,10 +1,11 @@
 import React from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { Link } from 'gatsby';
-import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, PlayCircleOutlined, ReadOutlined, SearchOutlined } from '@ant-design/icons';
+import { AppstoreAddOutlined, HomeOutlined, MenuOutlined, NotificationOutlined, PlayCircleOutlined, ReadOutlined, SearchOutlined, ZhihuOutlined, TwitterOutlined, YuqueOutlined } from '@ant-design/icons';
 import { Row, Col, Select, Input, Menu, Popover, Button } from 'antd';
 import * as utils from '../utils';
 import { version } from '../../../siteconfig.json';
+import { Icon } from './Icon';
 
 const { Option } = Select;
 
@@ -208,9 +209,8 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       .slice(0, -1)
       .join('/');
     let activeMenuItem = module || 'home';
-    if (/^blog/.test(path)) {
-      activeMenuItem = 'blog';
-    } else if (/docs/.test(path)) {
+
+    if (/docs/.test(path)) {
       if (/docs\/editor[-]/.test(path)) {
         activeMenuItem = 'editor-docs';
       } else if (/docs\/artist[-]/.test(path)) {
@@ -310,13 +310,28 @@ class Header extends React.Component<HeaderProps, HeaderState> {
             </Menu.Item>
           </Menu.ItemGroup>
         </Menu.SubMenu>
-        {isZhCN &&
-          <Menu.Item key="blog" icon={<NotificationOutlined />}>
-            <Link to={utils.getLocalizedPathname('/blog/', isZhCN)}>
-              <FormattedMessage id="app.header.menu.blog" />
-            </Link>
+        <Menu.SubMenu key="community" icon={<NotificationOutlined />} title={formatMessage({ id: "app.header.menu.community" })}>
+          <Menu.Item key="zhihu" icon={<ZhihuOutlined />}>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.zhihu.com/column/c_1369047387231592448">
+              <FormattedMessage id="app.community.zhihu" />
+            </a>
           </Menu.Item>
-        }
+          <Menu.Item key="juejin" icon={<Icon type="icon-juejin" />}>
+            <a target="_blank" rel="noopener noreferrer" href="https://juejin.cn/team/6930507995474313230/posts">
+              <FormattedMessage id="app.community.juejin" />
+            </a>
+          </Menu.Item>
+          <Menu.Item key="yuque" icon={<YuqueOutlined />}>
+            <a target="_blank" rel="noopener noreferrer" href="https://www.yuque.com/oasis-engine/blog">
+              <FormattedMessage id="app.community.yuque" />
+            </a>
+          </Menu.Item>
+          <Menu.Item key="twitter" icon={<TwitterOutlined />}>
+            <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/OasisEngine">
+              <FormattedMessage id="app.community.twitter" />
+            </a>
+          </Menu.Item>
+        </Menu.SubMenu>
       </Menu>
     ];
 
@@ -364,7 +379,7 @@ class Header extends React.Component<HeaderProps, HeaderState> {
                     {this.state.versions.map((v) => {
                       return <Option value={v} key={v}>{`v${v}`}</Option>
                     })}
-                  </Select>: null}
+                  </Select> : null}
                 </div>
                 {menuMode === 'horizontal' ? <div id="menu">{menu}</div> : null}
               </div>
