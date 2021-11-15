@@ -49,28 +49,29 @@ import {
   Vector3,
   SphereColliderShape,
   BoxColliderShape,
+  StaticCollider,
   DynamicCollider,
   ColliderShape
 } from 'oasis-engine';
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { LitePhysics } from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas", PhysXPhysics);
+const engine = new WebGLEngine("canvas", LitePhysics);
 
 // create sphere test entity
 let sphereEntity = rootEntity.createChild('SphereEntity');
 sphereEntity.position = new Vector3(-2, 0, 0);
 
-let sphereCollider = sphereEntity.addComponent(StaitcCollider);
-let shphereColliderShape = new SphereColliderShape()
-shphereColliderShape.radius = 1.25;
-sphereCollider.addColliderShape(shphereColliderShape);
+let sphereCollider = sphereEntity.addComponent(StaticCollider);
+let sphhereColliderShape = new SphereColliderShape()
+sphhereColliderShape.radius = 1.25;
+sphereCollider.addShape(sphhereColliderShape);
 
 // create box test entity
 let boxEntity = rootEntity.createChild('BoxEntity');
 let boxCollider = boxEntity.addComponent(DynamicCollider);
 let boxColliderShape = new BoxColliderShape()
 boxColliderShape.setSize(2.0, 2.0, 2.0);
-boxCollider.addColliderShape(boxColliderShape);
+boxCollider.addShape(boxColliderShape);
 
 class CollisionScript extends Script {
   onTriggerExit(other: ColliderShape) {
