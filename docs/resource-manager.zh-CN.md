@@ -111,7 +111,25 @@ const textureCube = await this.engine.resourceManager
 [TextureCubeMap](${api}core/TextureCubeMap) 使用六张图片作为原始资源，用 urls 传递六张图片链接，type 使用 [AssetType.TextureCube](${api}core/AssetType#TextureCube) 。
 
 
-### 3. 压缩纹理
+### 3. Environment
+Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者[glTF Viewer](https://oasisengine.cn/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 \*.env
+
+![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
+
+拿到 env 后，我们可以通过 EnvLoader 加载环境光：
+
+```typescript
+engine.resourceManager
+  .load<AmbientLight>({
+    type: AssetType.Env,
+    url: "***.env"
+  })
+  .then((ambientLight) => {
+    scene.ambientLight = ambientLight;
+  });
+```
+
+### 4. 压缩纹理
 > 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-cn#压缩纹理)。
 
 ```typescript
@@ -122,7 +140,7 @@ const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("t
 压缩纹理后缀一般为 `ktx` ，使用时需注意平台支持的压缩纹理格式。压缩纹理加载后得到的也是 [Texture2D](${api}core/Texture2D) 。
 
 
-### 4. 压缩立方体纹理
+### 5. 压缩立方体纹理
 压缩的立方体纹理的加载和一般的立方体纹理加载不一样，是单独的一个二进制文件路径，而不需要 6 张图片的文件路径，但是需要指定为类型为 [AssetType.KTXCube](${api}core/AssetType#KTXCube)。因为 ResourceManager 无法根据后缀识别需要使用哪种特定类型的 Loader。
 
 ```typescript
@@ -131,7 +149,7 @@ import { TextureCubeMap } from "oasis-engine";
 const compressedTextureCube = await this.engine.resourceManager.load<TextureCubeMap>({url: "test.ktx", type: AssetType.KTXCube});
 ```
 
-### 5. glTF
+### 6. glTF
 
 资源加载后得到的是一个 [GLTFResource](${api}loader/GLTFResource) 资源，包含 [Scene](${api}core/Scene)、[Entity](${api}core/Entity)、[Texture](${api}core/Texture)、[Material](${api}core/Material) 和 [AnimationClip](${api}core/AnimationClip) 等对象。
 
@@ -145,7 +163,7 @@ const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 
 前往[ glTF 资源](${docs}gltf-cn) 了解更多 glTF 相关设计。
 
-### 6. 自定义加载器
+### 7. 自定义加载器
 用户也可以自定义加载器来加载自定义的资源：
 
 ```typescript

@@ -73,54 +73,49 @@ Promise.all([
 
   engine.run();
 
-  debugIBL(ldrCubeMap, hdrCubeMap, bakedLDRCubeMap, bakedHDRCubeMap);
+  debugIBL(bakedLDRCubeMap, bakedHDRCubeMap);
 });
 
-function debugIBL(
-  ldrCubeMap: TextureCubeMap,
-  hdrCubeMap: TextureCubeMap,
-  bakedLDRCubeMap: TextureCubeMap,
-  bakedHDRCubeMap: TextureCubeMap
-) {
+function debugIBL(bakedLDRCubeMap: TextureCubeMap, bakedHDRCubeMap: TextureCubeMap) {
   Shader.create(
     "ibl debug test",
     `
-     attribute vec3 POSITION;
-     attribute vec2 TEXCOORD_0;
- 
-     uniform mat4 u_MVPMat;
-     varying vec2 v_uv;
- 
-     void main(){
-       gl_Position = u_MVPMat * vec4(POSITION, 1.0);
-       v_uv = TEXCOORD_0;
-   }
-   `,
+      attribute vec3 POSITION;
+      attribute vec2 TEXCOORD_0;
+  
+      uniform mat4 u_MVPMat;
+      varying vec2 v_uv;
+  
+      void main(){
+        gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+        v_uv = TEXCOORD_0;
+    }
+    `,
     `
-     uniform sampler2D u_env;
-     uniform int face;
-     varying vec2 v_uv;
- 
-     vec4 RGBMToLinear( in vec4 value, in float maxRange ) {
-      return vec4( value.rgb * value.a * maxRange, 1.0 );
-      }
-
- 
-     void main(){
-       vec2 uv = v_uv;
-       if(face == 2){
-         uv.x = v_uv.y;
-         uv.y= 1.0 - v_uv.x;
-       }else if(face == 3){
-         uv.x = 1.0 - v_uv.y;
-         uv.y=  v_uv.x;
+      uniform sampler2D u_env;
+      uniform int face;
+      varying vec2 v_uv;
+  
+      vec4 RGBMToLinear( in vec4 value, in float maxRange ) {
+       return vec4( value.rgb * value.a * maxRange, 1.0 );
        }
-
-       gl_FragColor = RGBMToLinear(texture2D(u_env, uv), 5.0);
  
-       gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
-     }
-     `
+  
+      void main(){
+        vec2 uv = v_uv;
+        if(face == 2){
+          uv.x = v_uv.y;
+          uv.y= 1.0 - v_uv.x;
+        }else if(face == 3){
+          uv.x = 1.0 - v_uv.y;
+          uv.y=  v_uv.x;
+        }
+ 
+        gl_FragColor = RGBMToLinear(texture2D(u_env, uv), 5.0);
+  
+        gl_FragColor.rgb = pow(gl_FragColor.rgb, vec3(1.0 / 2.2));
+      }
+      `
   );
 
   let debugTexture = bakedHDRCubeMap;
@@ -142,6 +137,7 @@ function debugIBL(
 
   for (let i = 0; i < 6; i++) {
     const bakerEntity = rootEntity.createChild("IBL Baker Entity");
+    bakerEntity.transform.setRotation(90, 0, 0);
     const bakerMaterial = new Material(engine, Shader.find("ibl debug test"));
     bakerMaterial.renderState.rasterState.cullMode = CullMode.Off;
     const bakerRenderer = bakerEntity.addComponent(MeshRenderer);
@@ -166,10 +162,9 @@ function debugIBL(
     const mipSize = size >> mipLevel;
     for (let i = 0; i < 6; i++) {
       const material = planeMaterials[i];
-      const data = new Uint8Array(mipSize * mipSize * 4 * 4);
+      const data = new Uint8Array(mipSize * mipSize * 4);
       const planeTexture = new Texture2D(engine, mipSize, mipSize, undefined, false); // no mipmap
-
-      debugTexture.getPixelBuffer(TextureCubeFace.PositiveX + i, 0, 0, mipSize, mipSize, data, mipLevel);
+      debugTexture.getPixelBuffer(TextureCubeFace.PositiveX + i, 0, 0, mipSize, mipSize, mipLevel, data);
       planeTexture.setPixelBuffer(data);
       material.shaderData.setTexture("u_env", planeTexture);
       material.shaderData.setInt("face", i);
@@ -180,7 +175,6 @@ function debugIBL(
 
   const state = {
     mipLevel: 0,
-    bake: true,
     HDR: true
   };
 
@@ -188,22 +182,11 @@ function debugIBL(
     changeMip(mipLevel);
   });
 
-  gui.add(state, "bake").onChange((v) => {
-    if (v) {
-      debugTexture = state.HDR ? bakedHDRCubeMap : bakedLDRCubeMap;
-    } else {
-      debugTexture = state.HDR ? hdrCubeMap : ldrCubeMap;
-    }
-    ambientLight.specularTexture = debugTexture;
-
-    changeMip(state.mipLevel);
-  });
-
   gui.add(state, "HDR").onChange((v) => {
     if (v) {
-      debugTexture = state.bake ? bakedHDRCubeMap : hdrCubeMap;
+      debugTexture = bakedHDRCubeMap;
     } else {
-      debugTexture = state.bake ? bakedLDRCubeMap : ldrCubeMap;
+      debugTexture = bakedLDRCubeMap;
     }
 
     ambientLight.specularTexture = debugTexture;
