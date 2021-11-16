@@ -27,54 +27,31 @@ ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
 ambientLight.diffuseIntensity = 0.5;
 ```
 
-#### 球谐模式
+#### IBL 模式
 
-现实世界中，漫反射肯定不是纯色的，一般是比较**低频**的颜色变化，针对这种低频滤波，Oasis 通过 9 个[球谐系数](https://graphics.stanford.edu/papers/envmap/envmap.pdf)保存环境颜色，然后切换 `diffuseMode` 为球谐模式：
+一般 PBR 工作流不会使用纯色模式，而是使用一张 HDR 贴图用作环境反射，我们在这里称之为 IBL 模式。
 
-```typescript
-const ambientLight = scene.ambientLight;
+Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者[glTF Viewer](https://oasisengine.cn/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 \*.env
 
-// 球谐 漫反射
-ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-ambientLight.diffuseSphericalHarmonics = sh; // 通过烘焙等方式获取球谐系数
-```
+![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
-Oasis 提供了球谐烘焙的[工具库](https://github.com/oasis-engine/engine-baker)。可以先通过烘焙工具离线烘焙得到球谐系数，然后在运行时直接设置即可：
+拿到 env 后，我们可以通过 EnvLoader 加载环境光：
 
 ```typescript
-// -----------离线烘焙-----------
-import { SphericalHarmonics3Baker } from "@oasis-engine/baker";
+engine.resourceManager
+  .load<AmbientLight>({
+    type: AssetType.Env,
+    url: "***.env"
+  })
+  .then((ambientLight) => {
+    scene.ambientLight = ambientLight;
 
-const sh = new SphericalHarmonics3();
-
-// 离线烘焙 cubeTexture 到 sh
-SphericalHarmonics3Baker.fromTextureCubeMap(cubeTexture, sh);
-
-// 导出数组
-const arr = [];
-sh.toArray(arr);
-
-// -----------运行时-----------
-
-// 运行时可以直接使用，不用再进行上述烘焙过程
-ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-const sh = new SphericalHarmonics3();
-sh.setValueByArray(arr); // 通过上文导出的数组设置球谐
-ambientLight.diffuseSphericalHarmonics = sh;
+    // 如果希望添加天空盒，也可以方便地从 ambientLight 中拿到
+    skyMaterial.textureCubeMap = ambientLight.specularTexture;
+    // 由于烘焙贴图的编码方式是 RGBM，因此需要进行相应的解码设置
+    skyMaterial.textureDecodeRGBM = true;
+  });
 ```
-
-#### IBL 镜面反射
-
-为了模拟真实世界环境，引擎提供了 [IBL](https://www.wikiwand.com/en/Image-based_lighting) 技术，即加载一张能够体现周边环境的[立方体纹理](${docs}resouce-manager-cn#2-texturecube)。
-
-```typescript
-const ambientLight = scene.ambientLight;
-
-// IBL 镜面反射
-ambientLight.specularTexture = cubeTexture; // 加载相应立方体纹理
-```
-
-如果您使用了 PBR 材质，记得开启环境光的 IBL 模式～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
 
 <playground src="ambient-light.ts"></playground>
 
