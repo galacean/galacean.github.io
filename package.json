@@ -46,6 +46,7 @@
     "@oasis-engine/spine": "^0.2.1",
     "@oasis-engine/stats": "^0.5.2",
     "@oasis-engine/touch": "^0.0.16",
+    "@oasis-engine/baker": "^1.0.0",
     "@stackblitz/sdk": "^1.5.2",
     "antd": "4.15.6",
     "cheerio": "^1.0.0-rc.3",
