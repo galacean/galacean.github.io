@@ -33,7 +33,6 @@ const mesh = PrimitiveMesh.createPlane(engine, 100, 100);
 const material = new BlinnPhongMaterial(engine);
 
 material.renderFace = RenderFace.Double;
-groundEntity.transform.rotate(90, 0, 0);
 groundRenderer.mesh = mesh;
 groundRenderer.setMaterial(material);
 
