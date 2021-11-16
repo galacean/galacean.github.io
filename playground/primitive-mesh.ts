@@ -51,7 +51,7 @@ function init(): void {
     })
     .then((texture) => {
       const distanceX = 2.5;
-      const distanceY = 2.5;
+      const distanceY = 2.4;
       const position = new Vector3();
 
       // Create material
@@ -63,28 +63,38 @@ function init(): void {
         const posX = (i - 1) * distanceX;
 
         // Create cuboid
-        position.setValue(posX, distanceY * 2.5, 0);
+        position.setValue(posX, distanceY * 3, 0);
         generatePrimitiveEntity(rootEntity, "cuboid", position, material, PrimitiveMesh.createCuboid(engine));
 
         // Create sphere
-        position.setValue(posX, distanceY * 1.5, 0);
+        position.setValue(posX, distanceY * 2, 0);
         generatePrimitiveEntity(rootEntity, "sphere", position, material, PrimitiveMesh.createSphere(engine));
 
         // Create plane
-        position.setValue(posX, distanceY * 0.5, 0);
+        position.setValue(posX, distanceY * 1, 0);
         generatePrimitiveEntity(rootEntity, "plane", position, material, PrimitiveMesh.createPlane(engine));
 
         // Create cylinder
-        position.setValue(posX, -distanceY * 0.5, 0);
+        position.setValue(posX, -distanceY * 0, 0);
         generatePrimitiveEntity(rootEntity, "cylinder", position, material, PrimitiveMesh.createCylinder(engine));
 
         // Create cone
-        position.setValue(posX, -distanceY * 1.5, 0);
+        position.setValue(posX, -distanceY * 1, 0);
         generatePrimitiveEntity(rootEntity, "cone", position, material, PrimitiveMesh.createCone(engine));
 
         // Create turos
-        position.setValue(posX, -distanceY * 2.5, 0);
+        position.setValue(posX, -distanceY * 2, 0);
         generatePrimitiveEntity(rootEntity, "torus", position, material, PrimitiveMesh.createTorus(engine));
+
+        // Create capsule
+        position.setValue(posX, -distanceY * 3, 0);
+        generatePrimitiveEntity(
+          rootEntity,
+          "capsule",
+          position,
+          material,
+          PrimitiveMesh.createCapsule(engine, 0.5, 1, 24, 1)
+        );
       }
     });
 

@@ -38,14 +38,22 @@ You can set the data of the animation controller through the [animatorController
 animator.animatorController = new AnimatorController()；
 ```
 
-### Play the specified AnimationState
+### Play the specified AnimatorState
 
 <playground src="skeleton-animation-play.ts"></playground>
 
-You can use the [play](${api}core/Animator#play) method to play the specified AnimatorState. The parameter is the `name` of AnimatorState, and the description of other parameters is detailed in [API document](${api}core/Animator#play)
+You can use the [play](${api}core/Animator#play) method to play the specified AnimatorState. The parameter is the `name` of AnimatorState, and the description of other parameters is detailed in [API document](${api}core/Animator#play).
 
 ```typescript
-  animator.play("run");
+animator.play("run");
+```
+
+### Get the playing AnimatorState
+
+You can use the [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) method to get the AnimatorState currently playing. The parameter is the layer index `layerIndex` of the AnimatorState, see [API document](${api}core/Animator#getCurrentAnimatorState) for details.
+
+```typescript
+const currentState = animator.getCurrentAnimatorState(0)
 ```
 
 ### CrossFade
@@ -81,7 +89,7 @@ The Animator component of the animation system, used to control the playback of 
 #### [AnimatorController](${api}core/AnimatorController)
 Used to store the data of the  Animator component.
 
-#### AnimatorControllerParameter（0.6版本将会提供）
+#### AnimatorControllerParameter（In development）
 The variables used in the Animator are used to switch the state of the animation state machine.
 
 #### [AnimatorControllerLayer](${api}core/AnimatorControllerLayer)
@@ -137,3 +145,35 @@ In this way, every time you play the `walk` animation on the layer where the ani
 <playground src="skeleton-animation-additive.ts"></playground>
 
 Animation additive is the effect achieved by blending between AnimatorControllerLayers. The first layer is the basic animation layer. Modifying its weight and blending mode will not take effect. Add the AnimationState you want to make additive, add it to other layers and set its blending mode to `AnimatorLayerBlendingMode.Additive` to achieve the animation additive effect. The Oasis engine supports multi-layer animation additive.
+
+### StateMachineScript
+
+<playground src="animation-stateMachineScript.ts"></playground>
+
+The StateMachineScript provides users with the life cycle hook function of the AnimatorState to write their own game logic code. Users can use the script by inheriting the [StateMachineScript](${api}core/StateMachineScript) class.
+The script provides three AnimatorState cycles:
+`onStateEnter`: Call back when the AnimatorState starts to play.
+`onStateUpdate`: Call back when the AnimatorState is updated.
+`onStateExit`: callback when the AnimatorState ends.
+
+
+```typescript
+class theScript extends StateMachineScript {
+  // onStateEnter is called when a transition starts and the state machine starts to evaluate this state
+  onStateEnter(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateEnter', animator, stateInfo, layerIndex);
+  }
+
+  // onStateUpdate is called on each Update frame between onStateEnter and onStateExit callbacks
+  onStateUpdate(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateUpdate', animator, stateInfo, layerIndex);
+  }
+
+  // onStateExit is called when a transition ends and the state machine finishes evaluating this state
+  onStateExit(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateExit', animator, stateInfo, layerIndex);
+  }
+}
+
+animatorState.addStateMachineScript(theScript)
+```

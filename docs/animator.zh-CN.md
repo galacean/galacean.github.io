@@ -44,10 +44,18 @@ animator.animatorController = new AnimatorController()；
 
 <playground src="skeleton-animation-play.ts"></playground>
 
-你可以使用 [play](${api}core/Animator#play) 方法来播放指定的AnimatorState。参数为AnimatorState的`name`，其他参数说明详见[API文档](${api}core/Animator#play)
+你可以使用 [play](${api}core/Animator#play) 方法来播放指定的AnimatorState。参数为AnimatorState的`name`，其他参数说明详见[API文档](${api}core/Animator#play)。
 
 ```typescript
-  animator.play("run");
+animator.play("run");
+```
+
+### 获取当前在播放的动画状态
+
+你可以使用 [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) 方法来获取当前正在播放的AnimatorState。参数为动画状态所在层的序号`layerIndex`, 详见[API文档](${api}core/Animator#getCurrentAnimatorState)。
+
+```typescript
+const currentState = animator.getCurrentAnimatorState(0)
 ```
 
 ### 动画过渡
@@ -85,7 +93,7 @@ clip.addEvent(event);
 #### [AnimatorController](${api}core/AnimatorController)
 用于存储动画控制组件的动画数据。
 
-#### AnimatorControllerParameter（0.6版本将会提供）
+#### AnimatorControllerParameter（开发中）
 动画控制器中使用的变量，用于在动画状态机切换状态使用。
 
 #### [AnimatorControllerLayer](${api}core/AnimatorControllerLayer)
@@ -141,3 +149,35 @@ animator.play("walk");
 <playground src="skeleton-animation-additive.ts"></playground>
 
 动画叠加是通过AnimatorControllerLayer间的混合达到的效果。第一层是基础动画层，修改它的权重及混合模式将不会生效。将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，Oasis引擎支持多层的动画叠加。
+
+### 状态机脚本
+
+<playground src="animation-stateMachineScript.ts"></playground>
+
+状态机脚本为用户提供了动画状态的生命周期钩子函数来编写自己的游戏逻辑代码。用户可以通过继承 [StateMachineScript](${api}core/StateMachineScript) 类来使用状态机脚本。
+状态机脚本提供了三个动画状态周期：
+`onStateEnter`：动画状态开始播放时回调。
+`onStateUpdate`：动画状态更新时回调。
+`onStateExit`：动画状态结束时回调。
+
+```typescript
+class theScript extends StateMachineScript {
+  // onStateEnter is called when a transition starts and the state machine starts to evaluate this state
+  onStateEnter(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateEnter', animator, stateInfo, layerIndex);
+  }
+
+  // onStateUpdate is called on each Update frame between onStateEnter and onStateExit callbacks
+  onStateUpdate(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateUpdate', animator, stateInfo, layerIndex);
+  }
+
+  // onStateExit is called when a transition ends and the state machine finishes evaluating this state
+  onStateExit(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateExit', animator, stateInfo, layerIndex);
+  }
+}
+
+animatorState.addStateMachineScript(theScript)
+```
+

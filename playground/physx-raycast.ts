@@ -12,14 +12,13 @@ import {
   HitResult,
   Layer,
   MeshRenderer,
-  PhysicsMaterialCombineMode,
   PlaneColliderShape,
   PointLight,
   PrimitiveMesh,
   Ray,
-  Script,
   SphereColliderShape,
   StaticCollider,
+  DynamicCollider,
   WebGLEngine
 } from "oasis-engine";
 import { Quaternion, Vector2, Vector3 } from "@oasis-engine/math";
@@ -116,11 +115,7 @@ PhysXPhysics.init().then(() => {
   //--------------------------------------------------------------------------------------------------------------------
   function addPlane(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    const color = mtl.baseColor;
-    color.r = 0.03179807202597362;
-    color.g = 0.3939682161541871;
-    color.b = 0.41177952549087604;
-    color.a = 1.0;
+    mtl.baseColor.setValue(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
     const planeEntity = rootEntity.createChild();
     planeEntity.layer = Layer.Layer1;
 
@@ -131,6 +126,7 @@ PhysXPhysics.init().then(() => {
     planeEntity.transform.rotationQuaternion = rotation;
 
     const physicsPlane = new PlaneColliderShape();
+    physicsPlane.setPosition(0, size.y, 0);
     const planeCollider = planeEntity.addComponent(StaticCollider);
     planeCollider.addShape(physicsPlane);
 
@@ -139,11 +135,7 @@ PhysXPhysics.init().then(() => {
 
   function addBox(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    const color = mtl.baseColor;
-    color.r = Math.random();
-    color.g = Math.random();
-    color.b = Math.random();
-    color.a = 1.0;
+    mtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
     const boxEntity = rootEntity.createChild();
     const renderer = boxEntity.addComponent(MeshRenderer);
 
@@ -154,11 +146,7 @@ PhysXPhysics.init().then(() => {
 
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.material.staticFriction = 1;
-    physicsBox.material.dynamicFriction = 2;
-    physicsBox.material.bounciness = 0.1;
     physicsBox.isTrigger = false;
-
     const boxCollider = boxEntity.addComponent(StaticCollider);
     boxCollider.addShape(physicsBox);
 
@@ -167,15 +155,9 @@ PhysXPhysics.init().then(() => {
 
   function addSphere(radius: number, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    const color = mtl.baseColor;
-    color.r = Math.random();
-    color.g = Math.random();
-    color.b = Math.random();
-    color.a = 1.0;
+    mtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
     const sphereEntity = rootEntity.createChild();
     const renderer = sphereEntity.addComponent(MeshRenderer);
-
-    sphereEntity.addComponent(Script);
 
     renderer.mesh = PrimitiveMesh.createSphere(engine, radius);
     renderer.setMaterial(mtl);
@@ -184,12 +166,7 @@ PhysXPhysics.init().then(() => {
 
     const physicsSphere = new SphereColliderShape();
     physicsSphere.radius = radius;
-    physicsSphere.material.staticFriction = 0.1;
-    physicsSphere.material.dynamicFriction = 0.2;
-    physicsSphere.material.bounciness = 1;
-    physicsSphere.material.bounceCombine = PhysicsMaterialCombineMode.Minimum;
-
-    const sphereCollider = sphereEntity.addComponent(StaticCollider);
+    const sphereCollider = sphereEntity.addComponent(DynamicCollider);
     sphereCollider.addShape(physicsSphere);
 
     return sphereEntity;
@@ -197,50 +174,21 @@ PhysXPhysics.init().then(() => {
 
   function addCapsule(radius: number, height: number, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    const color = mtl.baseColor;
-    color.r = Math.random();
-    color.g = Math.random();
-    color.b = Math.random();
-    color.a = 1.0;
-    const cubeEntity = rootEntity.createChild();
-    cubeEntity.transform.position = position;
-    cubeEntity.transform.rotationQuaternion = rotation;
-    const bodyEntity = cubeEntity.createChild("body");
+    mtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    const capsuleEntity = rootEntity.createChild();
+    const renderer = capsuleEntity.addComponent(MeshRenderer);
 
-    // eslint-disable-next-line no-param-reassign
-    height -= radius * 2;
-    // body
-    {
-      const renderer = bodyEntity.addComponent(MeshRenderer);
-      renderer.mesh = PrimitiveMesh.createCylinder(engine, radius, radius, height);
-      renderer.setMaterial(mtl);
-    }
-
-    // foot
-    {
-      const foot = bodyEntity.createChild("foot");
-      const renderer = foot.addComponent(MeshRenderer);
-      renderer.mesh = PrimitiveMesh.createSphere(engine, radius);
-      renderer.setMaterial(mtl);
-      foot.transform.position = new Vector3(0, -height / 2, 0);
-    }
-
-    // head
-    {
-      const head = bodyEntity.createChild("foot");
-      const renderer = head.addComponent(MeshRenderer);
-      renderer.mesh = PrimitiveMesh.createSphere(engine, radius);
-      renderer.setMaterial(mtl);
-      head.transform.position = new Vector3(0, height / 2, 0);
-    }
+    renderer.mesh = PrimitiveMesh.createCapsule(engine, radius, height, 20)
+    renderer.setMaterial(mtl);
+    capsuleEntity.transform.position = position;
+    capsuleEntity.transform.rotationQuaternion = rotation;
 
     const physicsCapsule = new CapsuleColliderShape();
     physicsCapsule.radius = radius;
     physicsCapsule.height = height;
-
-    const capsuleCollider = cubeEntity.addComponent(StaticCollider);
+    const capsuleCollider = capsuleEntity.addComponent(DynamicCollider);
     capsuleCollider.addShape(physicsCapsule);
 
-    return cubeEntity;
+    return capsuleEntity;
   }
 });
