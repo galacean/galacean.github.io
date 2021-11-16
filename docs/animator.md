@@ -9,7 +9,7 @@ The [Animator](${api}core/Animator) can organize [AnimationClips](${api}core/Ani
 <playground src="skeleton-animation.ts"></playground>
 
 ## Basic usage
-After loading the GLTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation.
+After loading the glTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation.
 
 ```typescript
 engine.resourceManager
@@ -32,7 +32,7 @@ animator.speed = 2.0；
 
 ### Set animator data
 
-You can set the data of the animation controller through the [animatorController](${api}core/Animator#animatorController) property. The loaded GLTF model will automatically add a default AnimatorController.
+You can set the data of the animation controller through the [animatorController](${api}core/Animator#animatorController) property. The loaded glTF model will automatically add a default AnimatorController.
 
 ```typescript
 animator.animatorController = new AnimatorController()；

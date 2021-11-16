@@ -34,9 +34,8 @@ group: 基础操作
 工具栏主要是针对当前项目的一些操作。包括：
 
 **历史回溯（undo, redo）**   
-![image.png](https://img.alicdn.com/imgextra/i2/O1CN01FIFi1i1bmFhTNvw7e_!!6000000003507-1-tps-799-518.gif)​  
 
-![set2.gif](https://intranetproxy.alipay.com/skylark/lark/0/2021/gif/315574/1626936889436-a6f8dab6-8553-4158-b50a-75f07ff1e300.gif#clientId=u767de926-e2b6-4&from=drop&height=345&id=ucd2d2e31&margin=%5Bobject%20Object%5D&name=set2.gif&originHeight=518&originWidth=799&originalType=binary&ratio=1&size=128262&status=done&style=none&taskId=ud4c468cf-0038-41b9-96bb-74885cd3c85&width=532)
+![set2.gif](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*HxVUQZWboEkAAAAAAAAAAAAAARQnAQ)
 
 **生成预览二维码** <img src="https://img.alicdn.com/imgextra/i3/O1CN01NVpSCX1c5UKjuZtrH_!!6000000003549-2-tps-54-44.png" alt="image.png" style="zoom:50%;" />。鼠标悬浮在按钮上即可显示二维码
 
