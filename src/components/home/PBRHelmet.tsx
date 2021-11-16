@@ -53,7 +53,7 @@ function init(): WebGLEngine {
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/bbb3be8f-8c65-4767-89b0-944394a61510.bin"
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;

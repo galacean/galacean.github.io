@@ -1,5 +1,7 @@
 ---
-order: 13 title: RayCast type: Component
+order: 13
+title: RayCast
+type: Component
 ---
 
 A ray can be understood as an endless line emitted from a point in one direction in the 3D world. Ray casting is very

@@ -1,5 +1,7 @@
 ---
-order: 12 title: Collision Detection type: Component
+order: 12
+title: Collision Detection
+type: Component
 ---
 
 Collision detection is used to reflect the intersection between two objects in 3D space. The **Physics** module provides

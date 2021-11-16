@@ -65,6 +65,7 @@ Promise.all([
   const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(hdrCubeMap, DecodeMode.RGBE) as any;
 
   ambientLight.specularTexture = bakedHDRCubeMap;
+  ambientLight.specularTextureDecodeRGBM = true;
 
   const sh = new SphericalHarmonics3();
   SphericalHarmonics3Baker.fromTextureCubeMap(bakedHDRCubeMap, DecodeMode.RGBM, sh);
