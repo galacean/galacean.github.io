@@ -42,6 +42,7 @@ function init(): void {
 
       // Create plane
       const entity = rootEntity.createChild();
+      entity.transform.setRotation(90, 0, 0);
       const renderer = entity.addComponent(MeshRenderer);
       const mesh = PrimitiveMesh.createPlane(engine, 10, 10);
       const material = new UnlitMaterial(engine);

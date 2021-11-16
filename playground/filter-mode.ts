@@ -35,7 +35,7 @@ const mesh = PrimitiveMesh.createPlane(engine, 2, 2);
 const material = new UnlitMaterial(engine);
 material.renderFace = RenderFace.Double;
 const planeEntity = rootEntity.createChild("ground");
-planeEntity.transform.setRotation(-85, 0, 0);
+planeEntity.transform.setRotation(5, 0, 0);
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
 planeRenderer.mesh = mesh;
 planeRenderer.setMaterial(material);
