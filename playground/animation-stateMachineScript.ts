@@ -1,26 +1,25 @@
 /**
- * @title Animation Additive
+ * @title AnimatorStateScript
  * @category Animation
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
-  AnimationClip,
   Animator,
-  AnimatorController,
-  AnimatorControllerLayer,
-  AnimatorLayerBlendingMode,
-  AnimatorStateMachine,
   Camera,
   DirectLight,
-  GLTFResource,
   Logger,
   SystemInfo,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
+  AnimatorController,
+  AnimatorControllerLayer,
+  AnimatorStateMachine,
+  AnimationClip,
+  GLTFResource,
+  StateMachineScript
 } from "oasis-engine";
 
 Logger.enable();
-
 const engine = new WebGLEngine("canvas");
 engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
 engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
@@ -38,38 +37,52 @@ lightNode.addComponent(DirectLight).intensity = 0.6;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
+class theScript extends StateMachineScript {
+  // onStateEnter is called when a transition starts and the state machine starts to evaluate this state
+  onStateEnter(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateEnter', animator, stateInfo, layerIndex);
+  }
+
+  // onStateUpdate is called on each Update frame between onStateEnter and onStateExit callbacks
+  onStateUpdate(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateUpdate', animator, stateInfo, layerIndex);
+  }
+
+  // onStateExit is called when a transition ends and the state machine finishes evaluating this state
+  onStateExit(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateExit', animator, stateInfo, layerIndex);
+  }
+}
+
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
   .then((asset) => {
     const { animations, defaultSceneRoot } = asset;
-    const animator = defaultSceneRoot.getComponent(Animator)
+
+    const animator = defaultSceneRoot.getComponent(Animator);
     const animatorController = new AnimatorController();
     const layer = new AnimatorControllerLayer("layer");
-    const layer1 = new AnimatorControllerLayer("layer1");
     const animatorStateMachine = new AnimatorStateMachine();
-    const animatorStateMachine1 = new AnimatorStateMachine();
     animatorController.addLayer(layer);
-    animatorController.addLayer(layer1);
     animator.animatorController = animatorController;
     layer.stateMachine = animatorStateMachine;
-    layer1.stateMachine = animatorStateMachine1;
-    layer1.blendingMode = AnimatorLayerBlendingMode.Additive;
+    setTimeout(() => {
+      console.log("crossFade");
+      animator.crossFade("run", 0.5, 0, 0.1);
+    }, 3000);
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
-        if (clip.name === "agree") {
+        if (clip.name === "walk" || clip.name === "run") {
           const animatorState = animatorStateMachine.addState(clip.name);
           animatorState.clip = clip;
-        }
-        if (clip.name === "sneak_pose") {
-          const animatorState2 = animatorStateMachine1.addState(clip.name);
-          animatorState2.clip = clip;
-          animatorState2.clipStartTime = 1;
+          clip.name === "walk" && animatorState.addStateMachineScript(theScript)
         }
       });
     }
+    animator.play("walk");
+    animator.speed = 1
     rootEntity.addChild(defaultSceneRoot);
-    animator.play("agree", 0);
-    animator.play("sneak_pose", 1);
   });
 
 engine.run();
+

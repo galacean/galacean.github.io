@@ -12,16 +12,16 @@ Oasis Engine 通过 [BufferMesh](${docs}buffer-mesh-cn) 实现了 spine 动画�
 
 ## 安装
 
-_@oasis-engine/engine-spine_ 是 Oasis Engine 的二方包，需要手动安装一下：
+_@oasis-engine/spine_ 是 Oasis Engine 的二方包，需要手动安装一下：
 
 ```bash
-npm i @oasis-engine/engine-spine --save
+npm i @oasis-engine/spine --save
 ```
 
 ## 使用
 ### 资源加载
 
-当引入了 _@oasis-engine/engine-spine_ 后，会自动在 [engine](${api}core/Engine) 的 [resourceManager](${api}core/Engine#resourceManager) 上注册 spine 资源的loader。通过 resourceManager 的 [load](${api}core/ResourceManager/#load) 方法能够加载 spine 动画资源。
+当引入了 _@oasis-engine/spine_ 后，会自动在 [engine](${api}core/Engine) 的 [resourceManager](${api}core/Engine#resourceManager) 上注册 spine 资源的loader。通过 resourceManager 的 [load](${api}core/ResourceManager/#load) 方法能够加载 spine 动画资源。
 
 - 当传递参数为 url 时，默认 spine 动画的资源拥有同样的 baseUrl，仅需传递 json 文件cdn即可。
 - 当传递参数为 urls 数组时，需要传递 json, atlas, image（png，jpg）三个资源的 cdn 地址。
@@ -54,7 +54,7 @@ root.addChild(spineEntity);
 需要播放动画时，需要获取到 spine entity 的上的 SpineAnimation 组件。SpineAnimation 组件对外暴露 [AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) 以及 [Skeleton](http://zh.esotericsoftware.com/spine-api-reference#Skeleton) 接口，能够借助 spine-core 原生 API 来播放动画。
 
 ```typescript
-import { SpineAnimation } from '@oasis-engine/engine-spine';
+import { SpineAnimation } from '@oasis-engine/spine';
 
 const spineEntity = await engine.resourceManager.load(
   {

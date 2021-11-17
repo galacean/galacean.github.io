@@ -39,6 +39,7 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
                   "@oasis-engine/stats": "@oasisEngine/stats",
                   "@oasis-engine/spine": "oasisSpine",
                   "@oasis-engine/lottie": "engine-lottie",
+                  "@oasis-engine/baker": "@oasisEngine/baker",
                   "dat.gui": "dat",
                   "@tweenjs/tween.js": "TWEEN",
                   "@oasis-engine/touch": "@oasis-engine/touch",

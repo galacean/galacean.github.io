@@ -87,3 +87,16 @@ const material = new BlinnPhongMaterial(engine);
 material.emissiveColor.setValue(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
+
+- [createCapsule](${api}core/PrimitiveMesh#createCapsule) **Capsule**
+
+```typescript
+const entity = rootEntity.createChild('capsule');
+entity.transform.setPosition(0, 1, 0);
+const renderer = entity.addComponent(MeshRenderer);
+renderer.mesh = PrimitiveMesh.createCapsule(engine);
+// Create material
+const material = new BlinnPhongMaterial(engine);
+material.emissiveColor.setValue(1, 1, 1, 1);
+renderer.setMaterial(material);
+```

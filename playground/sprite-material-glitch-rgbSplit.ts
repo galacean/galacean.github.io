@@ -127,6 +127,7 @@ class AnimateScript extends Script {
    */
   onUpdate(deltaTime: number): void {
     this.time += deltaTime * 0.1;
+    this.time = this.time % 1;
     // Update material data.
     this.material.shaderData.setFloat("u_time", this.time);
   }
@@ -134,8 +135,6 @@ class AnimateScript extends Script {
 
 // Custom shader
 const spriteVertShader = `
-  precision highp float;
-
   uniform mat4 u_VPMat;
 
   attribute vec3 POSITION;
@@ -154,9 +153,6 @@ const spriteVertShader = `
 `;
 
 const spriteFragmentShader = `
-  precision mediump float;
-  precision mediump int;
-
   uniform sampler2D u_spriteTexture;
   uniform float u_time;
   uniform float u_indensity;
@@ -165,7 +161,7 @@ const spriteFragmentShader = `
   varying vec4 v_color;
 
   float randomNoise(float time) {
-    return fract(sin(dot(vec2(time, 2), vec2(12.9898, 78.233))) * 43758.5453);
+    return fract(sin(dot(vec2(time, 2), vec2(12.9898, 78.233))));
   }
 
   void main() {

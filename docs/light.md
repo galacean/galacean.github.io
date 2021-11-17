@@ -27,54 +27,31 @@ ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
 ambientLight.diffuseIntensity = 0.5;
 ```
 
-#### Spherical Harmonics mode
-
-In the real world, diffuse reflection is definitely not a solid color. It is generally a relatively low-frequency color change. For this kind of low-frequency filtering, Oasis passes 9 [spherical harmonic coefficients](https://graphics.stanford.edu/papers/envmap/envmap.pdf) to save the environment color, and then switch `diffuseMode` to spherical harmonic mode:
-
-```typescript
-const ambientLight = scene.ambientLight;
-
-// SH diffuse
-ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-ambientLight.diffuseSphericalHarmonics = sh; // get the spherical harmonic coefficients by baking and other methods
-```
-
-Oasis provides [baking tool](https://github.com/oasis-engine/engine-baker) for baking. You can first use the baking tool to bake off-line to get the spherical harmonic coefficient, and then set it directly at runtime:
-
-```typescript
-// -----------Baking off-line-----------
-import { SphericalHarmonics3Baker } from "@oasis-engine/baker";
-
-const sh = new SphericalHarmonics3();
-
-// bake sh
-SphericalHarmonics3Baker.fromTextureCubeMap(cubeTexture, sh);
-
-// export to array
-const arr = [];
-sh.toArray(arr);
-
-// -----------Runtime-----------
-
-// Can be used directly when running, no need to bake.
-ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-const sh = new SphericalHarmonics3();
-sh.setValueByArray(arr); // Set the spherical harmonic through the array derived above
-ambientLight.diffuseSphericalHarmonics = sh;
-```
-
 #### IBL
 
-In order to simulate the real world environment, Oasis engine provides [IBL](https://www.wikiwand.com/en/Image-based_lighting) technology, which loads a [cube texture](${docs}resource-manager#2-texturecube) resouce that can reflect the surrounding environment.
+Generally, the PBR workflow does not use the pure color mode, but uses an HDR texture as the environment reflection, which we call the IBL mode here.
+
+Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products \*.env
+
+![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
+
+After getting the env, we can load the ambient light through EnvLoader:
 
 ```typescript
-const ambientLight = scene.ambientLight;
+engine.resourceManager
+  .load<AmbientLight>({
+    type: AssetType.Env,
+    url: "***.env"
+  })
+  .then((ambientLight) => {
+    scene.ambientLight = ambientLight;
 
-// IBL
-ambientLight.specularTexture = cubeTexture;
+    // If you want to add a skybox, you can easily get it from ambientLight
+    skyMaterial.textureCubeMap = ambientLight.specularTexture;
+    // Since the encoding method of the baked texture is RGBM, the corresponding decoding settings are required
+    skyMaterial.textureDecodeRGBM = true;
+  });
 ```
-
-If use PBR material, don't forget to turn on [IBL mode of ambient light](${docs}light#ibl) ~ Only after adding it, the roughness, metallic, specular reflection, physical conservation and global illumination belonging to PBR will show the effect.
 
 <playground src="ambient-light.ts"></playground>
 

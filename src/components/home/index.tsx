@@ -7,7 +7,6 @@ import Features from './Features';
 import Cases from './Cases';
 import Advantage from './Advantage';
 import Partners from './Partners';
-import Footer from './Footer';
 
 function Home(props) {
   const { intl } = props;
@@ -31,7 +30,6 @@ function Home(props) {
         <Cases {...props} />
         <Partners {...props} />
       </div>
-      <Footer {...props} />
     </>
   );
 }

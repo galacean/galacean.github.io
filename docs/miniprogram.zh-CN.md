@@ -115,6 +115,61 @@ Page({
 - [支付宝小程序](https://opendocs.alipay.com/mini/introduce/release)
 - [淘宝小程序](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
 
+## 小程序项目使用 OrbitControl
+
+1. 引入二方库
+
+```shell
+npm install @oasis-engine/controls -S
+```
+
+```typescript
+import { OrbitControl } from '@oasis-engine/controls/dist/miniprogram';
+```
+
+2. 添加组件
+
+`OrbitControl` 组件需要添加到相机节点上。
+
+```typescript
+cameraEntity.addComponent(OrbitControl);
+```
+
+3. 事件模拟派发
+
+因为小程序不支持 `addEventListener` 添加监听事件，得手动添加事件的模拟，并且小程序的 canvas 的多指触控存在 bug，所以添加一个和 canvas 大小和位置一样的 view 层去派发触摸事件：
+
+```html
+<view>
+  <canvas
+    onReady="onCanvasReady"
+    style="width:{{cw}}px;height:{{ch}}px"
+    type="webgl">
+  </canvas>
+  <view
+    style="width:{{cw}}px;height:{{ch}}px;top:0px;position:absolute;"
+    onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" >
+  </view>
+</view>
+```
+
+```typescript
+import { dispatchTouchStart, dispatchTouchMove, dispatchTouchEnd } from "@oasis-engine/miniprogram-adapter";
+
+Page({
+  ...
+  onTouchStart(e) {
+    dispatchTouchStart(e);
+  },
+  onTouchMove(e) {
+    dispatchTouchMove(e);
+  },
+  onTouchEnd(e) {
+    dispatchTouchEnd(e);
+  }
+})
+```
+
 ## 更多 Oasis 小程序案例
 
 正在建设中...
