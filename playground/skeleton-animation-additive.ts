@@ -63,7 +63,7 @@ engine.resourceManager
         if (clip.name === "sneak_pose") {
           const animatorState2 = animatorStateMachine1.addState(clip.name);
           animatorState2.clip = clip;
-          animatorState2.clipStartTime = clip.length;
+          animatorState2.clipStartTime = 1;
         }
       });
     }
