@@ -86,14 +86,14 @@ class PlaneAnimation extends Script {
     const mesh = <ModelMesh>renderer.mesh;
     const { vertexCount } = mesh;
     const positions = mesh.getPositions();
-    const initZ = new Array<number>(vertexCount);
+    const initY = new Array<number>(vertexCount);
 
     for (var i = 0; i < vertexCount; i++) {
       const position = positions[i];
       position.y += Math.random() * 10 - 10;
-      initZ[i] = position.y;
+      initY[i] = position.y;
     }
-    this._initZ = initZ;
+    this._initZ = initY;
     this._planeMesh = mesh;
   }
 
