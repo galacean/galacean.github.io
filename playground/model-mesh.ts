@@ -90,8 +90,8 @@ class PlaneAnimation extends Script {
 
     for (var i = 0; i < vertexCount; i++) {
       const position = positions[i];
-      position.z += Math.random() * 10 - 10;
-      initZ[i] = position.z;
+      position.y += Math.random() * 10 - 10;
+      initZ[i] = position.y;
     }
     this._initZ = initZ;
     this._planeMesh = mesh;
@@ -108,7 +108,7 @@ class PlaneAnimation extends Script {
     const positions = mesh.getPositions();
     for (let i = 0, n = positions.length; i < n; i++) {
       const position = positions[i];
-      position.z = Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
+      position.y = Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
       counter += 0.1;
     }
     mesh.setPositions(positions);
@@ -143,12 +143,21 @@ const shader = Shader.create(
     varying vec2 v_uv;
     varying vec3 v_position;
     
+
+    vec4 linearToGamma(vec4 linearIn){
+      return vec4( pow(linearIn.rgb, vec3(1.0 / 2.2)), linearIn.a);
+    }
+    
     void main() {
       vec4 color = texture2D(u_baseColor, v_uv) * u_color;
       float fogDistance = length(v_position);
       float fogAmount = 1. - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
       fogAmount = clamp(fogAmount, 0., 1.);
       gl_FragColor = mix(color, u_fogColor, fogAmount); 
+
+      #ifndef OASIS_COLORSPACE_GAMMA
+        gl_FragColor = linearToGamma(gl_FragColor);
+      #endif
     }
     `
 );
