@@ -12,9 +12,9 @@ common collision detection functions.
 [Collider](${api}core/Collider) is used to detect the collision between the current collider
 on [Entity](${api}core/Entity) and other colliders in the scene. Oasis provides two types of colliders:
 
-1. StaticCollider: Static collider, mainly used for static objects in the scene
-2. DynamicCollider: Dynamic Collider, used for objects in the scene that need to be controlled by scripts or respond to
-   physical feedback
+1. [StaticCollider](${api}core/StaticCollider): Static collider, mainly used for static objects in the scene;
+2. [DynamicCollider](${api}core/DynamicCollider): Dynamic Collider, used for objects in the scene that need to be controlled by scripts or respond to
+   physical feedback.
 
 In fact, each type of Collider is a collection of [ColliderShape](${api}core/ColliderShape), that is, each type of
 Collider can set a composite collider shape by combining ColliderShape.
@@ -34,17 +34,14 @@ as follows:
 To use collision detection, you first need to add *Collider* to the *Entity* in the scene; this component will
 automatically trigger three functions in the script component:
 
-1. onTriggerEnter: called when the collision is triggered
-2. onTriggerStay: *loop* called during collision
-3. onTriggerExit: called when the collision ends
+1. [onTriggerEnter](${docs}script#ontriggerenter): called when the collision is triggered
+2. [onTriggerStay](${docs}script#ontriggerstay): *loop* called during collision
+3. [onTriggerExit](${docs}script#ontriggerexit): called when the collision ends
 
 It is important to emphasize that **no collision detection event will be triggered between two StaticColliders** unless
 one of them is DynamicCollider.
 
-At the same time, Oasis supports multiple physical backends, so you first need to set the corresponding physical
-backends when you initialize the engine according to the physical features you use. The lite package is more
-lightweight, but supports fewer physical features. The physX package is powerful, but packaged The latter mention is
-larger, and the code is as follows:
+At the same time, Oasis supports multiple physical backends, so you first need to set the corresponding physical backends when you initialize the engine according to the physical features you use. The lite package is more lightweight, but supports fewer physical features. The physX package is powerful, but packaged The latter mention is larger, and the code is as follows:
 
 ```typescript
 import {

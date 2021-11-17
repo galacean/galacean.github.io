@@ -155,10 +155,12 @@ animator.play("walk");
 <playground src="animation-stateMachineScript.ts"></playground>
 
 状态机脚本为用户提供了动画状态的生命周期钩子函数来编写自己的游戏逻辑代码。用户可以通过继承 [StateMachineScript](${api}core/StateMachineScript) 类来使用状态机脚本。
+
 状态机脚本提供了三个动画状态周期：
-`onStateEnter`：动画状态开始播放时回调。
-`onStateUpdate`：动画状态更新时回调。
-`onStateExit`：动画状态结束时回调。
+
+- `onStateEnter`：动画状态开始播放时回调。
+- `onStateUpdate`：动画状态更新时回调。
+- `onStateExit`：动画状态结束时回调。
 
 ```typescript
 class theScript extends StateMachineScript {

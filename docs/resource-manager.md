@@ -111,17 +111,17 @@ const textureCube = await this.engine.resourceManager.load<TextureCubeMap>({
 
 
 ### 3. Environment
-Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products \*.env
+Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
-After getting the env, we can load the ambient light through EnvLoader:
+After getting the `*.env`, we can load the ambient light through resourceManager:
 
 ```typescript
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "***.env"
+    url: "*.env"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;

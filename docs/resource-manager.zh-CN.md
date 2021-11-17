@@ -112,17 +112,17 @@ const textureCube = await this.engine.resourceManager
 
 
 ### 3. Environment
-Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者[glTF Viewer](https://oasisengine.cn/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 \*.env
+Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者 [glTF Viewer](https://oasisengine.cn/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
-拿到 env 后，我们可以通过 EnvLoader 加载环境光：
+拿到 `*.env` 后，我们可以通过 resourceManager 加载环境光：
 
 ```typescript
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "***.env"
+    url: "*.env"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;

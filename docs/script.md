@@ -36,105 +36,110 @@ Oasis provides users with a wealth of life cycle callback functions. As long as 
 ![脚本生命周期-en](https://gw.alipayobjects.com/zos/OasisHub/effcbf6c-5ca9-467a-bf37-b6ffc06e3984/%25E8%2584%259A%25E6%259C%25AC%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F-en.jpg)
 
 
-
 It is worth noting that only when **the entity is used as a camera**, that is, the camera component is added, [onBeginRender](${api}core/Script#onBeginRender) and [onEndRender](${api}core/Script #onEndRender) will be called.
 
 The callback function description of each life cycle:
 
-- [**onAwake**](${api}core/Script#onAwake)
-	If the [isActiveInHierarchy](${api}core/Entity#isactiveinhierarchy) of the entity to which the script is added is `true`, the callback function will be called when the script is initialized. If [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) is `false`, it is called when the entity is activated, that is, [isActive](${api}core/Entity#isActive) is set to `true`. `onAwake` will only be called once, and at the forefront of all life cycles, usually we will do some initialization related operations in `onAwake`:
+### [**onAwake**](${api}core/Script#onAwake)
 
-	```typescript
-	onAwake() {
-		this.child = this.entity.getChild(0);
-		this.child.isActive = false;
-	}
-	```
+If the [isActiveInHierarchy](${api}core/Entity#isactiveinhierarchy) of the entity to which the script is added is `true`, the callback function will be called when the script is initialized. If [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) is `false`, it is called when the entity is activated, that is, [isActive](${api}core/Entity#isActive) is set to `true`. `onAwake` will only be called once, and at the forefront of all life cycles, usually we will do some initialization related operations in `onAwake`:
 
-- [**onEnable**](${api}core/Script#onEnable)
-  When the script’s [enabled](${api}core/Component#enabled) attribute changes from `false` to `true`, or the entity’s [isActiveInHierarchy](${api}core/Entity#isactiveinhierarchy) attribute changes from `false` to `true`, the `onEnable` callback will be activated. If the entity is created for the first time and [enabled](${api}core/Component#enabled) is `true`, it will be called after `onAwake` but before `onStart`.
+```typescript
+onAwake() {
+	this.child = this.entity.getChild(0);
+	this.child.isActive = false;
+}
+```
 
--	[**onDisable**](${api}core/Script#ondisable)
-  When the component's [enabled](${api}core/Component#enabled) property changes from `true` to `false`, or the entity's [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) attribute changes from `true` to `false`, the `onDisable` callback will be activated.
-  Note: [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) determines that the entity is activated in the hierarchical tree, that is, only when the entity is active, and its father and father’s father until the root entity are all active [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) is `true`
+### [**onEnable**](${api}core/Script#onEnable)
 
-- [**onStart**](${api}core/Script#onStart)
-  The `onStart` callback function will be triggered when the script enters the frame loop for the first time, that is, before the first execution of `onUpdate`. `onStart` is usually used to initialize some data that needs to be modified frequently. These data may be used in `onUpdate`.	
-	
-  ```typescript
-	onStart() {
-		this.updateCount = 0
-	}
+When the script’s [enabled](${api}core/Component#enabled) attribute changes from `false` to `true`, or the entity’s [isActiveInHierarchy](${api}core/Entity#isactiveinhierarchy) attribute changes from `false` to `true`, the `onEnable` callback will be activated. If the entity is created for the first time and [enabled](${api}core/Component#enabled) is `true`, it will be called after `onAwake` but before `onStart`.
 
-	onUpdate() {
-		this.updateCount++;
-	}
-	```
+### [**onDisable**](${api}core/Script#ondisable)
+
+When the component's [enabled](${api}core/Component#enabled) property changes from `true` to `false`, or the entity's [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) attribute changes from `true` to `false`, the `onDisable` callback will be activated.
+Note: [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) determines that the entity is activated in the hierarchical tree, that is, only when the entity is active, and its father and father’s father until the root entity are all active [isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) is `true`
+
+### [**onStart**](${api}core/Script#onStart)
+
+The `onStart` callback function will be triggered when the script enters the frame loop for the first time, that is, before the first execution of `onUpdate`. `onStart` is usually used to initialize some data that needs to be modified frequently. These data may be used in `onUpdate`.	
+
+```typescript
+onStart() {
+	this.updateCount = 0
+}
+
+onUpdate() {
+	this.updateCount++;
+}
+```
   
-  It is worth noting that Oasis executes the onUpdate in batches after the onStart callback is executed in batches. The advantage of this is that the initialized values of other entities can be accessed in the onUpdate:
-	
-  ```typescript
-	import { TheScript } from './TheScript'
-	onStart() {
-		this.otherEntity = Entity.findByName('otherEntity');
-		this.otherEntityScript = this.otherEntity.getComponent(TheScript)
-	}
+It is worth noting that Oasis executes the onUpdate in batches after the onStart callback is executed in batches. The advantage of this is that the initialized values of other entities can be accessed in the onUpdate:
 
-	onUpdate() {
-		console.log(this.otherEntityScript.updateCount)
-	}
-	```
+```typescript
+import { TheScript } from './TheScript'
+onStart() {
+	this.otherEntity = Entity.findByName('otherEntity');
+	this.otherEntityScript = this.otherEntity.getComponent(TheScript)
+}
 
-- [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
-  `onTriggerEnter` will be called when the collider collides, which handle the logic when the colliders meet, 
-  such as deleting the entity when the collision occurs.
+onUpdate() {
+	console.log(this.otherEntityScript.updateCount)
+}
+```
 
-- [**onTriggerStay**](${api}core/Script#onTriggerStay)
-  `onTriggerStay` will be called continuously during the collision of the collider, once per frame.
+### [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
 
-- [**onTriggerExit**](${api}core/Script#onTriggerExit)
-  `onTriggerExit` will be called when the two colliders are separated, that is, 
-  when the collision relationship changes, it will be called only once.
+`onTriggerEnter` will be called when the collider collides, which handle the logic when the colliders meet, 
+such as deleting the entity when the collision occurs.
 
-- [**onUpdate**](${api}core/Script#onUpdate)
+### [**onTriggerStay**](${api}core/Script#onTriggerStay)
 
-  A key point in game/animation development is to update the behavior, state and orientation of the object before each frame is rendered. These update operations are usually placed in the `onUpdate` callback.
-	```typescript
-	onStart() {
-		this.rotationY = 0
-	}
+`onTriggerStay` will be called continuously during the collision of the collider, once per frame.
 
-	onUpdate() {
-		this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
-	}
-	```
+### [**onTriggerExit**](${api}core/Script#onTriggerExit)
 
-- [**onLateUpdate**](${api}core/Script#onLateUpdate)
+`onTriggerExit` will be called when the two colliders are separated, that is, 
+when the collision relationship changes, it will be called only once.
 
-  `onUpdate` will be executed before all animations are updated, but if we need to perform some additional operations after the animations (such as animations, particles, etc.) are updated, or if we want to perform other operations after all the components of `onUpdate` have been executed For example, if the camera follows, you need to use the `onLateUpdate` callback.
-	```typescript
-	onStart() {
-		this.rotationY = 0
-	}
+### [**onUpdate**](${api}core/Script#onUpdate)
 
-	onUpdate() {
-		this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
-	}
+A key point in game/animation development is to update the behavior, state and orientation of the object before each frame is rendered. These update operations are usually placed in the `onUpdate` callback.
+```typescript
+onStart() {
+	this.rotationY = 0
+}
 
-	onLateUpdate() {
-		this.rotationY %= 360;
-	}
-	```
+onUpdate() {
+	this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
+}
+```
 
+### [**onLateUpdate**](${api}core/Script#onLateUpdate)
 
-- [**onBeginRender**](${api}core/Script#onBeginRender)
+`onUpdate` will be executed before all animations are updated, but if we need to perform some additional operations after the animations (such as animations, particles, etc.) are updated, or if we want to perform other operations after all the components of `onUpdate` have been executed For example, if the camera follows, you need to use the `onLateUpdate` callback.
+```typescript
+onStart() {
+	this.rotationY = 0
+}
 
-  When the entity is used as a camera, that is, a camera component is added, the `onBeginRender` callback will be called before the camera component's [render](${api}core/Camera#render) method is called.
+onUpdate() {
+	this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
+}
 
-- [**onEndRender**](${api}core/Script#onEndRender)
+onLateUpdate() {
+	this.rotationY %= 360;
+}
+```
 
-  When the entity is used as a camera, that is, a camera component is added, the `onEndRender` callback will be called after the camera component's [render](${api}core/Camera#render) method is called.
+### [**onBeginRender**](${api}core/Script#onBeginRender)
 
-- [**onDestroy**](${api}core/Script#onDestroy)
+When the entity is used as a camera, that is, a camera component is added, the `onBeginRender` callback will be called before the camera component's [render](${api}core/Camera#render) method is called.
 
-  When the component or entity calls [destroy](${api}core/Entity#destroy), the `onDestroy` callback will be called, and the component will be recycled at the end of the frame.
+### [**onEndRender**](${api}core/Script#onEndRender)
+
+When the entity is used as a camera, that is, a camera component is added, the `onEndRender` callback will be called after the camera component's [render](${api}core/Camera#render) method is called.
+
+### [**onDestroy**](${api}core/Script#onDestroy)
+
+When the component or entity calls [destroy](${api}core/Entity#destroy), the `onDestroy` callback will be called, and the component will be recycled at the end of the frame.

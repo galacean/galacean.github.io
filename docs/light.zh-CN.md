@@ -29,19 +29,19 @@ ambientLight.diffuseIntensity = 0.5;
 
 #### IBL 模式
 
-一般 PBR 工作流不会使用纯色模式，而是使用一张 HDR 贴图用作环境反射，我们在这里称之为 IBL 模式。
+一般 PBR 工作流不会使用纯色模式，而是使用一张 HDR 贴图用作环境反射，我们在这里称之为 [IBL](https://developer.nvidia.cn/gpugems/gpugems/part-iii-materials/chapter-19-image-based-lighting) 模式。
 
-Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者[glTF Viewer](https://oasisengine.cn/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 \*.env
+Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者 [glTF Viewer](https://oasisengine.cn/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
-拿到 env 后，我们可以通过 EnvLoader 加载环境光：
+拿到 `*.env` 后，我们可以通过 resourceManager 加载环境光：
 
 ```typescript
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "***.env"
+    url: "*.env"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;

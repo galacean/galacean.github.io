@@ -219,6 +219,10 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     };
 
     const sortItems = (items) => {
+      if (!items) {
+        return;
+      }
+
       return (items as MenuDataItem[])
         .sort((a, b) => {
           if ('time' in a && 'time' in b) {

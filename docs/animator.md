@@ -151,10 +151,12 @@ Animation additive is the effect achieved by blending between AnimatorController
 <playground src="animation-stateMachineScript.ts"></playground>
 
 The StateMachineScript provides users with the life cycle hook function of the AnimatorState to write their own game logic code. Users can use the script by inheriting the [StateMachineScript](${api}core/StateMachineScript) class.
+
 The script provides three AnimatorState cycles:
-`onStateEnter`: Call back when the AnimatorState starts to play.
-`onStateUpdate`: Call back when the AnimatorState is updated.
-`onStateExit`: callback when the AnimatorState ends.
+
+- `onStateEnter`: Call back when the AnimatorState starts to play.
+- `onStateUpdate`: Call back when the AnimatorState is updated.
+- `onStateExit`: callback when the AnimatorState ends.
 
 
 ```typescript

@@ -10,16 +10,16 @@ type: 组件
 （_图片来源于网络_）
 
 Oasis 中的射线检测根据不同的物理后端采用不同的算法，目前支持的物理后端有：
-1. physics-lite
-2. physics-physx
+1. [physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)
+2. [physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)
 
-前者是过去里程碑中所使用的射线检测，直接遍历场景中的所有碰撞器求交。后者则是基于physx提供的碰撞检测算法，在有更多碰撞盒的情况下有更好的性能。
+前者是过去里程碑中所使用的射线检测，直接遍历场景中的所有碰撞器求交。后者则是基于 [PhysX](https://www.nvidia.cn/geforce/technologies/physx/) 提供的碰撞检测算法，在有更多碰撞盒的情况下有更好的性能。
 
-为了适用不同的物理后端，就需要在初始化引擎时指定特定的后端，例如下面的例子所展示的，要传入 LitePhysics，对应的physx后端则需要传入 PhysXPhysics。
+为了适用不同的物理后端，就需要在初始化引擎时指定特定的后端，例如下面的例子所展示的，要传入 LitePhysics，对应的PhysX 后端则需要传入 PhysXPhysics。
 
 ## 使用射线投射
 
-在使用射线投射，首先要在代码中引入 [Ray](${api}math/Ray) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${api}core/Camera#viewportPointToRay)）将屏幕输入转化成射线；最后调用 [PhysicsManager.raycast](${api}core/PhysicsManager#raycast)  方法即可检测射线投射命中的碰撞体。代码如下：
+在使用射线投射，首先要在代码中引入 [Ray](${api}math/Ray) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${api}core/Camera#viewportPointToRay)）将屏幕输入转化成射线；最后调用 [PhysicsManager.raycast](${api}core/PhysicsManager#raycast) 方法即可检测射线投射命中的碰撞体。代码如下：
 
 
 ```typescript
@@ -48,4 +48,4 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 });
 ```
 
-需要特别指出，如果想要对Entity启用射线投射，该Entity就必须拥有Collider，否则无法触发。
+需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。

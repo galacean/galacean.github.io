@@ -29,13 +29,13 @@ ambientLight.diffuseIntensity = 0.5;
 
 #### IBL
 
-Generally, the PBR workflow does not use the pure color mode, but uses an HDR texture as the environment reflection, which we call the IBL mode here.
+Generally, the PBR workflow does not use the pure color mode, but uses an HDR texture as the environment reflection, which we call the [IBL](https://developer.nvidia.cn/gpugems/gpugems/part-iii-materials/chapter-19-image-based-lighting) mode here.
 
-Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products \*.env
+Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
-After getting the env, we can load the ambient light through EnvLoader:
+After getting the `*.env`, we can load the ambient light through resourceManager:
 
 ```typescript
 engine.resourceManager
