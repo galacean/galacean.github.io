@@ -373,7 +373,7 @@ We can simply analyze the content of Restart and write a general process.
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/7c1c09ac-b801-428d-b67d-8f246bb0843b/image-20210901175201126.png" alt="image.png" style="zoom:50%;" />
 
-Here you can refer to the [Ray casting](${docs}ray) document. After obtaining the ray, we can directly use the Restart button to surround [bounds](${api}oasis-engine/SpriteRenderer#bounds) to intersect the ray Check [intersectBox](${api}oasis-engine/Ray#intersectBox) and notify GameCtrl to restart the game after a collision. Here I simply encapsulate a Touch component. We will improve the input capability of the engine at the next milestone.
+Here you can refer to the [Input](${docs}input) document.
 
 # Collision detection
 
