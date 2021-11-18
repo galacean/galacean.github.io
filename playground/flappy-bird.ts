@@ -4,7 +4,6 @@
  */
 import {
   AssetType,
-  BoxCollider,
   Camera,
   Entity,
   MeshRenderer,
@@ -17,10 +16,12 @@ import {
   UnlitMaterial,
   Vector2,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
+  StaticCollider,
+  BoxColliderShape
 } from "oasis-engine";
 import * as TWEEN from "@tweenjs/tween.js";
-import { Touch, TouchType, TouchManager } from "@oasis-engine/touch";
+import { LitePhysics } from "@oasis-engine/physics-lite";
 
 enum EnumBirdState {
   Alive = 0,
@@ -68,7 +69,7 @@ function fitWithHeight(aspectRatio: number) {
 // Design size.
 fitWithHeight(768 / 896);
 // Create engine object.
-const engine = new WebGLEngine("canvas");
+const engine = new WebGLEngine("canvas", LitePhysics);
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
@@ -133,6 +134,7 @@ engine.resourceManager
     // Ground.
     const nodeGround = rootEntity.createChild("nodeGround");
     nodeGround.transform.setPosition(0.3, -4.125, -2);
+    nodeGround.transform.setRotation(90, 0, 0);
     const groundRenderer = nodeGround.addComponent(MeshRenderer);
     groundRenderer.mesh = PrimitiveMesh.createPlane(engine, 7.68, 1.28);
     const groundMaterial = new UnlitMaterial(engine);
@@ -150,6 +152,7 @@ engine.resourceManager
     // Death Effect.
     const nodeDeathEff = rootEntity.createChild("nodeEff");
     nodeDeathEff.transform.setPosition(0, 0, -1);
+    nodeDeathEff.transform.setRotation(90, 0, 0);
     const effRenderer = nodeDeathEff.addComponent(MeshRenderer);
     effRenderer.mesh = PrimitiveMesh.createPlane(engine, 20, 20);
     const material = new UnlitMaterial(engine);
@@ -436,12 +439,8 @@ class ScriptGround extends Script {
 
 class GameCtrl extends Script {
   private _gameState: EnumGameState;
-  private _touch: Touch;
 
   onAwake() {
-    //Init TouchManager.
-    TouchManager.ins.initEngine(this.engine);
-
     engine.on(GameEvent.reStartGame, () => {
       this._setGameState(EnumGameState.Idel);
     });
@@ -450,9 +449,10 @@ class GameCtrl extends Script {
       this._setGameState(EnumGameState.End);
     });
 
-    const boxCollider: BoxCollider = this.entity.addComponent(BoxCollider);
-    boxCollider.setBoxCenterSize(new Vector3(), new Vector3(10, 10, 0.001));
-    this._touch = this.entity.addComponent(Touch);
+    const boxCollider: StaticCollider = this.entity.addComponent(StaticCollider);
+    const boxColliderShape = new BoxColliderShape();
+    boxColliderShape.setSize(10, 10, 0.001);
+    boxCollider.addShape(boxColliderShape);
   }
 
   onStart() {
@@ -465,7 +465,7 @@ class GameCtrl extends Script {
     TWEEN.update();
   }
 
-  private _onMouseDown = () => {
+  onPointerDown() {
     switch (this._gameState) {
       case EnumGameState.Idel:
         this._setGameState(EnumGameState.Start);
@@ -477,7 +477,7 @@ class GameCtrl extends Script {
       default:
         break;
     }
-  };
+  }
 
   /**
    * The status will be distributed to all objects in the game.
@@ -487,16 +487,6 @@ class GameCtrl extends Script {
     if (this._gameState != state) {
       this._gameState = state;
       engine.dispatch(GameEvent.stateChange, state);
-      switch (this._gameState) {
-        case EnumGameState.Idel:
-          this._touch.on(TouchType.MouseDown, this._onMouseDown);
-          break;
-        case EnumGameState.End:
-          this._touch.off(TouchType.MouseDown, this._onMouseDown);
-          break;
-        default:
-          break;
-      }
     }
   }
 }
@@ -507,12 +497,12 @@ class ScriptGUI extends Script {
     const resetBtnNode = entity.findByName("nodeRestart");
 
     // Add BoxCollider.
-    const boxCollider: BoxCollider = resetBtnNode.addComponent(BoxCollider);
-    boxCollider.setBoxCenterSize(new Vector3(), new Vector3(2.14, 0.75, 0.001));
-    // Add Touch.
-    const touch: Touch = resetBtnNode.addComponent(Touch);
-    const onMouseUp = () => {
-      engine.dispatch(GameEvent.reStartGame);
+    const boxCollider: StaticCollider = resetBtnNode.addComponent(StaticCollider);
+    const boxColliderShape = new BoxColliderShape();
+    boxColliderShape.setSize(2.14, 0.75, 0.001);
+    boxCollider.addShape(boxColliderShape);
+    resetBtnNode.addComponent(Script).onPointerClick = () => {
+      this.engine.dispatch(GameEvent.reStartGame);
     };
 
     // Control the performance of the GUI according to the change of the game state.
@@ -521,7 +511,6 @@ class ScriptGUI extends Script {
         case EnumGameState.Idel:
         case EnumGameState.Start:
           resetBtnNode.isActive = false;
-          touch.off(TouchType.MouseUp, onMouseUp);
           break;
         case EnumGameState.End:
           break;
@@ -532,7 +521,6 @@ class ScriptGUI extends Script {
 
     engine.on(GameEvent.showGui, () => {
       resetBtnNode.isActive = true;
-      touch.on(TouchType.MouseUp, onMouseUp);
     });
   }
 }
