@@ -378,7 +378,7 @@ onUpdate(deltaTime: number) {
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/352dbced-36c6-4ed9-b5d0-b7f096f9aa0e/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
 
-此处可以参考 [射线投影](${docs}ray-cn) 文档，获得射线后可以直接用 Restart 按钮的包围 [bounds](${api}oasis-engine/SpriteRenderer#bounds) 和射线做相交检测 [intersectBox](${api}oasis-engine/Ray#intersectBox) ，当发生碰撞后通知 GameCtrl 重新开始对局，此处我简单封装了一个 Touch 组件，下个里程碑我们将完善引擎的 Input 能力。
+此处可以参考 [输入交互](${docs}input-cn) 文档
 
 # 碰撞检测
 

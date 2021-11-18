@@ -1,7 +1,7 @@
 ---
-order: 9
+order: 6
 title: Script
-type: Component
+type: Core
 ---
 
 In addition to [built-in components](${docs}entity#Common\ components), the Oasis engine also provides a powerful scripting system. The script system is the link between engine capabilities and game logic. The script is extended from the base class [Script](${api}core/Script). You can use it to extend the engine’s functions, as well as the life cycle hook functions provided by script components. Write your own game logic code in.
@@ -143,3 +143,7 @@ When the entity is used as a camera, that is, a camera component is added, the `
 ### [**onDestroy**](${api}core/Script#onDestroy)
 
 When the component or entity calls [destroy](${api}core/Entity#destroy), the `onDestroy` callback will be called, and the component will be recycled at the end of the frame.
+
+### Interfaces of input system
+
+See [Input](${docs}input) for details。

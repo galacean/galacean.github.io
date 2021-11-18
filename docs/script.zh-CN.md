@@ -1,7 +1,7 @@
 ---
-order: 9
+order: 6
 title: 脚本
-type: 组件
+type: 核心
 ---
 
 除了[内置组件](${docs}entity-cn#常用组件)之外，Oasis 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
@@ -140,3 +140,6 @@ onLateUpdate() {
 
 当组件或者所在实体调用了 [destroy](${api}core/Entity#destroy)，则会调用 `onDestroy` 回调，并在当帧结束时统一回收组件。
 
+### 输入系统接口
+
+详见[输入交互](${docs}input-cn)。
