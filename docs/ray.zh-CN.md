@@ -49,3 +49,5 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 ```
 
 需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。
+
+<playground src="lite-raycast.ts"></playground>

@@ -2,9 +2,6 @@
  * @title Lite Collision Detection
  * @category Physics
  */
-/**
- * 本示例展示如何使用几何体渲染器功能、如何创建几何体资源对象、如何创建材质对象
- */
 import {
   WebGLEngine, SphereColliderShape,
   BoxColliderShape, Vector3,

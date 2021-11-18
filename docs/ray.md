@@ -51,3 +51,5 @@ document.getElementById("canvas").addEventListener("click", (e) => {
 ```
 
 It needs to be pointed out that if you want to enable ray casting on an Entity, the Entity must have a **Collider**, otherwise it cannot be triggered.
+
+<playground src="lite-raycast.ts"></playground>

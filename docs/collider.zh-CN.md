@@ -72,3 +72,5 @@ class CollisionScript extends Script {
 // add Script
 sphereEntity.addComponent(CollisionScript);
 ```
+
+<playground src="lite-collision-detection.ts"></playground>
