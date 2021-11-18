@@ -14,7 +14,12 @@ The ray detection in Oasis uses different algorithms according to different phys
 physical backends are:
 
 1. [physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)
+
+<playground src="lite-raycast.ts"></playground>
+
 2. [physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)
+
+<playground src="physx-raycast.ts"></playground>
 
 The former is the ray detection used in past milestones, which directly traverses all colliders in the scene to intersect. The latter is based on the collision detection algorithm provided by [PhysX](https://developer.nvidia.com/physx-sdk), which has better performance when there are more collision boxes.
 

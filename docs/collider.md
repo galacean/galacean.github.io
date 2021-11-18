@@ -29,6 +29,17 @@ as follows:
 | [PlaneColliderShape](${api}core/PlaneColliderShape) | Plane Collider | Physics-PhysX |
 | [CapsuleColliderShape](${api}core/CapsuleColliderShape) | Capsule Collider | Physics-PhysX |
 
+The collision detection in Oasis uses different algorithms according to different physical backends. The currently supported
+physical backends are:
+
+1. [physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)
+
+<playground src="lite-collision-detection.ts"></playground>
+
+2. [physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)
+
+<playground src="physx-collision-detection.ts"></playground>
+
 ## Instructions
 
 To use collision detection, you first need to add *Collider* to the *Entity* in the scene; this component will

@@ -19,9 +19,11 @@ import {
   SphereColliderShape,
   StaticCollider,
   DynamicCollider,
-  WebGLEngine
+  WebGLEngine,
+  Quaternion,
+  Vector2,
+  Vector3
 } from "oasis-engine";
-import { Quaternion, Vector2, Vector3 } from "@oasis-engine/math";
 import { OrbitControl } from "@oasis-engine/controls";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";

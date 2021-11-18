@@ -23,6 +23,16 @@ type: 组件
 | [PlaneColliderShape](${api}core/PlaneColliderShape) | 平面碰撞体 | Physics-PhysX |
 | [CapsuleColliderShape](${api}core/CapsuleColliderShape) | 胶囊碰撞体 | Physics-PhysX |
 
+Oasis 中的碰撞检测根据不同的物理后端采用不同的算法，目前支持的物理后端有：
+
+1. [physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)
+
+<playground src="lite-collision-detection.ts"></playground>
+
+2. [physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)
+
+<playground src="physx-collision-detection.ts"></playground>
+
 ## 使用方法
 
 使用碰撞检测，首先需要给场景中的 *Entity*  添加 *Collider* ；该组件会自动触发脚本组件当中的三个函数：
@@ -72,5 +82,3 @@ class CollisionScript extends Script {
 // add Script
 sphereEntity.addComponent(CollisionScript);
 ```
-
-<playground src="lite-collision-detection.ts"></playground>

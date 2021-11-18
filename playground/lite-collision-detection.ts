@@ -3,10 +3,18 @@
  * @category Physics
  */
 import {
-  WebGLEngine, SphereColliderShape,
-  BoxColliderShape, Vector3,
-  MeshRenderer, BlinnPhongMaterial, PointLight,
-  PrimitiveMesh, Camera, StaticCollider, Script, DynamicCollider
+  WebGLEngine,
+  SphereColliderShape,
+  BoxColliderShape,
+  Vector3,
+  MeshRenderer,
+  BlinnPhongMaterial,
+  PointLight,
+  PrimitiveMesh,
+  Camera,
+  StaticCollider,
+  Script,
+  DynamicCollider
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 

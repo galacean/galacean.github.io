@@ -10,8 +10,14 @@ type: 组件
 （_图片来源于网络_）
 
 Oasis 中的射线检测根据不同的物理后端采用不同的算法，目前支持的物理后端有：
+
 1. [physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)
+
+<playground src="lite-raycast.ts"></playground>
+
 2. [physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)
+
+<playground src="physx-raycast.ts"></playground>
 
 前者是过去里程碑中所使用的射线检测，直接遍历场景中的所有碰撞器求交。后者则是基于 [PhysX](https://www.nvidia.cn/geforce/technologies/physx/) 提供的碰撞检测算法，在有更多碰撞盒的情况下有更好的性能。
 
@@ -49,5 +55,3 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 ```
 
 需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。
-
-<playground src="lite-raycast.ts"></playground>
