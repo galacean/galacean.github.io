@@ -12,7 +12,7 @@ export type IMenuData = Record<string, IMenuData | MenuDataItem[]>;
 export function isZhCN() {
   if (typeof window !== 'undefined') {
     const local = window.localStorage.getItem('locale');
-    return local ? local === 'zh-CN' : window.navigator.language === 'zh-cn';
+    return local ? local === 'zh-CN' : (window.navigator.language && window.navigator.language.toLocaleLowerCase() === 'zh-cn');
   }
 }
 
