@@ -43,7 +43,7 @@
     "@oasis-engine/baker": "^1.0.3",
     "@oasis-engine/controls": "^0.6.2",
     "@oasis-engine/framebuffer-picker": "^0.6.2",
-    "@oasis-engine/lottie": "^0.6.0",
+    "@oasis-engine/lottie": "^0.6.5",
     "@oasis-engine/physics-lite": "^0.6.2",
     "@oasis-engine/physics-physx": "^0.6.2",
     "@oasis-engine/spine": "^0.2.1",

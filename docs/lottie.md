@@ -6,7 +6,6 @@ type: Second party packages
 
 This is the <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> runtime implemented with Oasis Engine. Currently, only the sprite elements in the lottie node tree can be rendered.
 
-<playground src="lottie.ts"></playground>
 
 ## Install
 
@@ -44,13 +43,54 @@ engine.resourceManager.load({
 });
 ```
 
-### 3D Rotation
+<playground src="lottie.ts"></playground>
 
-3D flipping often occurs in business scenarios, such as the entrance animation of some pop-up windows. The traditional lottie-web solution can only rotate elements along the **Z axis** (that is to say perpendicular to the screen normal direction). That's to say, even if we've implemented 3D flipping in AE, the rotation effect will also be ignored when playing by lottie-web.
+### Listen to the end of animation
+
+We often have the need to listen to the end of animation, for example, running some business logic at the end of animation. The `play` method of `LottieAnimation` returns a `Promise`, so you can easily monitor the timing of the end of the animation:
+
+```typescript
+  const lottie = lottieEntity.getComponent(LottieAnimation);
+  await lottie.play();
+  // do something next..
+```
+
+### Animation clips
+
+The Lottie file given by designer often contains multiple animation clips (an animation clip starts from a certain frame to the end of a certain frame), and the front end can slice the whole animation to some clips by adding the field `lolitaAnimations` to the Lottie protocol:
+
+```json
+"lolitaAnimations": [
+  {
+    "name": "beforePlay",
+    "start": 0,
+    "end": 71
+  },
+  {
+    "name": "onPlay",
+    "start": 72,
+    "end": 143
+  },
+  {
+    "name": "afterPlay",
+    "start": 144,
+    "end": 203
+  }
+]
+```
+
+The above code adds three clips to the protocol: `beforePlay` (0-71 frames), `onPlay` (72-143 frames), and `afterPlay` (114-203 frames). The following example plays `beforePlay` 3 times, then `onPlay` 2 times, and finally plays `afterPlay` once:
+
+<playground src="lottie-clips.ts"></playground>
+
+
+### 3D Transform
+
+3D flipping often occurs in business scenarios, such as the entrance animation of some pop-up windows. Take rotation as an example, the traditional lottie-web solution can only rotate elements along the **Z axis** (that is to say perpendicular to the screen normal direction). That's to say, even if we've implemented 3D flipping in AE, the rotation effect will also be ignored when playing by lottie-web.
 
 ![3D rotation](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ)
 
-Thanks to the advantages of the unified architecture of the Oasis Engine 2D/3D engine, the 3D rotation feature can be easily implemented with Oasis Engine.
+Thanks to the advantages of the 2D/3D-unified architecture of the Oasis Engine, the 3D transform feature can be easily implemented with Oasis Engine.
 
 <playground src="lottie-3d-rotation.ts"></playground>
 
@@ -66,5 +106,5 @@ Thanks to the advantages of the unified architecture of the Oasis Engine 2D/3D e
 
 | Methods | Explanation |
 | :--- | :--- |
-| `play` | play animation |
+| `play` | play animation. Passing a clip name parameter will play the certain animation clip. |
 | `pause` | pause animation |
