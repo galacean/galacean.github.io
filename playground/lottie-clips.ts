@@ -1,5 +1,5 @@
 /**
- * @title Lottie Animation
+ * @title Lottie Clips
  * @category 2D
  */
 import { OrbitControl } from "@oasis-engine/controls";

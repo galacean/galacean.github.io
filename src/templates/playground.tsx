@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import siteConfig from '../../siteconfig.json';
+import "regenerator-runtime/runtime";
 
 interface IScript {
   libs: any;
