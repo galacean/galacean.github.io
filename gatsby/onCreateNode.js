@@ -58,7 +58,7 @@ module.exports = exports.onCreateNode = async ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: 'source',
-        value: `${docSource}${version}${mdFilePath}`,
+        value: `${docSource}main${mdFilePath}`,
       });
 
       break;
