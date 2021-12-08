@@ -91,7 +91,6 @@
     "react-prism": "^4.3.2",
     "react-scroll": "^1.8.2",
     "rehype-react": "^6.2.0",
-    "remark-mdx": "2.0.0-next.9",
     "simple-dropzone": "^0.8.1"
   },
   "devDependencies": {
@@ -122,7 +121,8 @@
     "vite": "^2.3.7"
   },
   "resolutions": {
-    "@typescript-eslint/eslint-plugin": "^4.12.0"
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "remark-mdx": "2.0.0-next.9"
   },
   "title": "Oasis Engine"
 }
