@@ -8,19 +8,15 @@ import {
   AssetType,
   BackgroundMode,
   Camera,
-  CameraClearFlags,
   CompareFunction,
   DirectLight,
-  Entity,
   GLTFResource,
   Layer,
   Logger,
   Material,
+  MeshRenderer,
   PrimitiveMesh,
-  RenderPass,
-  RenderQueue,
   RenderQueueType,
-  Script,
   Shader,
   SkyBoxMaterial,
   StencilOperation,
@@ -66,7 +62,15 @@ Promise.all([
       for (let i = 0; i < 3; i++) {
         const clone = gltf.defaultSceneRoot.clone();
         if (i === 0) {
-          clone.layer = Layer.Layer25 + i;
+          const test = [];
+          clone.getComponentsIncludeChildren(MeshRenderer, test);
+          showBorder(test[0]);
+          setTimeout(() => {
+            hideBorder(test[0]);
+            setTimeout(() => {
+              showBorder(test[0]);
+            }, 1000);
+          }, 1000);
         }
         entity.addChild(clone);
         clone.transform.setPosition(i * 2, 0, 0);
@@ -87,109 +91,64 @@ Promise.all([
 });
 
 // test border
-class Border extends Script {
-  preRenderPass: RenderPass;
-  postRenderPass: RenderPass;
-  layer: Layer = Layer.Layer25;
 
-  private _camera: Camera;
+if (!Shader.find("border-shader")) {
+  const vertex = `
+  attribute vec3 POSITION;
 
-  /**
-   * Camera.
-   */
-  get camera(): Camera {
-    return this._camera;
+  uniform mat4 u_MVPMat;
+  
+  void main() {
+     gl_Position = u_MVPMat * vec4( POSITION * 1.1 , 1.0 );
   }
-
-  set camera(value: Camera) {
-    if (this._camera !== value) {
-      this._camera = value;
-      //@ts-ignore
-      this.camera._renderPipeline.addRenderPass(this.preRenderPass);
-      //@ts-ignore
-      this.camera._renderPipeline.addRenderPass(this.postRenderPass);
-    }
+  `;
+  const fragment = `
+  void main(){
+    gl_FragColor = vec4(1, 0, 0, 1);
   }
+  `;
 
-  constructor(entity: Entity) {
-    super(entity);
-    if (!Shader.find("border-shader")) {
-      const vertex = `
-      attribute vec3 POSITION;
+  Shader.create("border-shader", vertex, fragment);
+}
 
-      uniform mat4 u_MVPMat;
-      
-      void main() {
-         gl_Position = u_MVPMat * vec4( POSITION * 1.1 , 1.0 );
-      }
-      `;
-      const fragment = `
-      void main(){
-        gl_FragColor = vec4(1, 0, 0, 1);
-      }
-      `;
+const replaceMaterial = new Material(engine, Shader.find("border-shader"));
+replaceMaterial.renderQueueType = RenderQueueType.Transparent + 1;
+const stencilState = replaceMaterial.renderState.stencilState;
+stencilState.enabled = true;
+stencilState.referenceValue = 1;
+stencilState.compareFunctionFront = CompareFunction.NotEqual;
+stencilState.writeMask = 0x00;
 
-      Shader.create("border-shader", vertex, fragment);
-    }
-    const replaceMaterial = new Material(engine, Shader.find("border-shader"));
-    const preRenderPass = (this.preRenderPass = new RenderPass(
-      "pre-border-pass",
-      -1,
-      null,
-      replaceMaterial,
-      Layer.Layer25
-    ));
-    const postRenderPass = (this.postRenderPass = new RenderPass(
-      "post-border-pass",
-      1,
-      null,
-      replaceMaterial,
-      Layer.Layer25
-    ));
-    preRenderPass.enabled = false;
-    preRenderPass.preRender = (camera: Camera, opaqueQueue: RenderQueue) => {
-      for (let i = 0, length = opaqueQueue.items.length; i < length; i++) {
-        const item = opaqueQueue.items[i];
-        if (item.component.entity.layer & this.layer) {
-          const stencilState = item.material.renderState.stencilState;
-          stencilState.enabled = true;
-          stencilState.referenceValue = 1;
-          stencilState.passOperationFront = StencilOperation.Replace;
-        }
-      }
-    };
+function showBorder(renderer: MeshRenderer) {
+  const entity = renderer.entity;
+  const material = renderer.getMaterial();
+  const stencilState = material.renderState.stencilState;
 
-    postRenderPass.clearFlags = CameraClearFlags.None;
-    const stencilState = replaceMaterial.renderState.stencilState;
-    stencilState.enabled = true;
-    stencilState.referenceValue = 1;
-    stencilState.compareFunctionFront = CompareFunction.NotEqual;
-    stencilState.writeMask = 0x00;
-  }
+  stencilState.enabled = true;
+  stencilState.referenceValue = 1;
+  stencilState.passOperationFront = StencilOperation.Replace;
 
-  onDestroy() {
-    if (this.camera && !this.camera.destroyed) {
-      //@ts-ignore
-      this.camera._renderPipeline.removeRenderPass(this.preRenderPass);
-      //@ts-ignore
-      this.camera._renderPipeline.removeRenderPass(this.postRenderPass);
-    }
-  }
+  const renderers: MeshRenderer[] = [];
 
-  onDisable() {
-    this.preRenderPass.enabled = false;
-    this.postRenderPass.enabled = false;
-  }
-
-  onEnable() {
-    this.preRenderPass.enabled = true;
-    this.postRenderPass.enabled = true;
+  if (entity.getComponents(MeshRenderer, renderers).length === 1) {
+    const borderRenderer = entity.addComponent(MeshRenderer);
+    borderRenderer.mesh = renderer.mesh;
+    borderRenderer.setMaterial(replaceMaterial);
+    borderRenderer.enabled = true;
+  } else {
+    renderers[0].enabled = true;
   }
 }
 
-const border = rootEntity.addComponent(Border);
-border.camera = camera;
+function hideBorder(renderer: MeshRenderer) {
+  const entity = renderer.entity;
+  const material = renderer.getMaterial();
+  const stencilState = material.renderState.stencilState;
 
-setTimeout(() => {
-  // border.enabled = false;
-}, 2000);
+  stencilState.enabled = false;
+
+  const renderers: MeshRenderer[] = [];
+  if (entity.getComponents(MeshRenderer, renderers).length === 2) {
+    renderers[0].enabled = false;
+  }
+}
