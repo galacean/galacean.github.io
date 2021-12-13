@@ -54,7 +54,7 @@ sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 Promise.all([
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf")
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/3c72b69c-1d83-4ab7-ac61-8a6cbddbe226.glb")
     .then((gltf) => {
       const entity = rootEntity.createChild("");
       console.log(gltf);
@@ -65,12 +65,12 @@ Promise.all([
           const test = [];
           clone.getComponentsIncludeChildren(MeshRenderer, test);
           showBorder(test[0]);
-          setTimeout(() => {
-            hideBorder(test[0]);
-            setTimeout(() => {
-              showBorder(test[0]);
-            }, 1000);
-          }, 1000);
+          // setTimeout(() => {
+          //   hideBorder(test[0]);
+          //   setTimeout(() => {
+          //     showBorder(test[0]);
+          //   }, 1000);
+          // }, 1000);
         }
         entity.addChild(clone);
         clone.transform.setPosition(i * 2, 0, 0);
@@ -95,11 +95,12 @@ Promise.all([
 if (!Shader.find("border-shader")) {
   const vertex = `
   attribute vec3 POSITION;
+  attribute vec3 NORMAL;
 
   uniform mat4 u_MVPMat;
   
   void main() {
-     gl_Position = u_MVPMat * vec4( POSITION * 1.1 , 1.0 );
+     gl_Position = u_MVPMat * vec4( POSITION + NORMAL * 2.0 , 1.0 );
   }
   `;
   const fragment = `
