@@ -9,6 +9,7 @@ import {
   BackgroundMode,
   Camera,
   CompareFunction,
+  CullMode,
   DirectLight,
   GLTFResource,
   Layer,
@@ -54,7 +55,7 @@ sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 Promise.all([
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/3c72b69c-1d83-4ab7-ac61-8a6cbddbe226.glb")
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/e35f6b80-aa69-494a-aa95-44c602efd31e.glb")
     .then((gltf) => {
       const entity = rootEntity.createChild("");
       console.log(gltf);
@@ -105,7 +106,7 @@ if (!Shader.find("border-shader")) {
   `;
   const fragment = `
   void main(){
-    gl_FragColor = vec4(1, 0, 0, 1);
+    gl_FragColor = vec4(1, 1, 1, 1);
   }
   `;
 
@@ -114,6 +115,7 @@ if (!Shader.find("border-shader")) {
 
 const replaceMaterial = new Material(engine, Shader.find("border-shader"));
 replaceMaterial.renderQueueType = RenderQueueType.Transparent + 1;
+replaceMaterial.renderState.rasterState.cullMode = CullMode.Off;
 const stencilState = replaceMaterial.renderState.stencilState;
 stencilState.enabled = true;
 stencilState.referenceValue = 1;
