@@ -30,6 +30,7 @@ engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
+scene.background.solidColor.setValue(0, 0, 0, 0);
 
 // camera
 const cameraNode = rootEntity.createChild("camera_node");
@@ -49,7 +50,6 @@ engine.resourceManager
 
 // gltf model
 const models = [
-  "https://gw.alipayobjects.com/os/bmw-prod/8ba6b70e-9a92-4dfd-9342-8b23c0319b7b.glb",
   "https://gw.alipayobjects.com/os/bmw-prod/3869e495-2e04-4e80-9d22-13b37116379a.gltf" // 猴子
 ];
 
@@ -160,14 +160,16 @@ class Border extends Script {
     framebufferPicker.camera = camera;
     let lastRenderer = null;
     framebufferPicker.onPick = (obj) => {
-      if (obj) {
-        const { component } = obj;
-        lastRenderer && this.hideBorder(lastRenderer);
-        this.showBorder(component);
-        lastRenderer = component;
-      } else {
-        // lastRenderer && this.hideBorder(lastRenderer);
-      }
+      setTimeout(() => {
+        if (obj) {
+          const { component } = obj;
+          lastRenderer && this.hideBorder(lastRenderer);
+          this.showBorder(component);
+          lastRenderer = component;
+        } else {
+          lastRenderer && this.hideBorder(lastRenderer);
+        }
+      }, 0);
     };
 
     engine.canvas._webCanvas.addEventListener("mousedown", (e) => {
