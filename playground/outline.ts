@@ -4,10 +4,12 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
+import * as dat from "dat.gui";
 import {
   AmbientLight,
   AssetType,
   Camera,
+  Color,
   CompareFunction,
   CullMode,
   Engine,
@@ -21,6 +23,7 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
+const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
 engine.run();
 engine.canvas.resizeByClientSize();
@@ -34,16 +37,20 @@ cameraNode.transform.setPosition(0, 0, 15);
 const camera = cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
 
+// ambient light
+engine.resourceManager
+  .load<AmbientLight>({
+    type: AssetType.Env,
+    url: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
+  })
+  .then((ambientLight) => {
+    scene.ambientLight = ambientLight;
+  });
+
 // gltf model
 const models = [
   "https://gw.alipayobjects.com/os/bmw-prod/8ba6b70e-9a92-4dfd-9342-8b23c0319b7b.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/151ddae9-2800-491d-b5ee-f8849821b542.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/0777d299-12a1-42e2-8c27-7f0495b11a1b.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/f23efc3b-bf13-43e8-9a85-c4628c3007dd.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/19ff24f6-d40a-48e6-9eef-96f259def1b7.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/18484ae9-f4c5-486d-8ed7-2e387a5e1df0.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/25cfb56a-e345-4f49-b7ee-e7bcfd58745b.glb",
-  "https://gw.alipayobjects.com/os/bmw-prod/116ce28b-2c10-46af-92d8-e5b35a4909d2.glb"
+  "https://gw.alipayobjects.com/os/bmw-prod/3869e495-2e04-4e80-9d22-13b37116379a.gltf" // 猴子
 ];
 
 engine.resourceManager
@@ -57,7 +64,7 @@ engine.resourceManager
     gltfs.forEach((gltf, i) => {
       const { defaultSceneRoot } = gltf;
       rootEntity.addChild(defaultSceneRoot);
-      defaultSceneRoot.transform.setPosition(i - 4, 0, 0);
+      defaultSceneRoot.transform.setPosition(i - models.length / 2, 0, 0);
     });
   });
 
@@ -72,15 +79,25 @@ class Border extends Script {
                 attribute vec3 POSITION;
                 attribute vec3 NORMAL;
   
+                uniform float u_width;
                 uniform mat4 u_MVPMat;
+                uniform mat4 u_modelMat;
+                uniform mat4 u_viewMat;
+                uniform mat4 u_projMat;
+                uniform mat4 u_normalMat;
                 
                 void main() {
-                   gl_Position = u_MVPMat * vec4( POSITION + NORMAL * 3.0, 1.0 );
+                   vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
+                   vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
+                   mPosition.xyz += mNormal * u_width;
+                   gl_Position = u_projMat * u_viewMat * mPosition;
                 }
                 `;
         const fragment = `
+                uniform vec3 u_color;
+
                 void main(){
-                  gl_FragColor = vec4(1, 1, 1, 1);
+                  gl_FragColor = vec4(u_color, 1);
                 }
                 `;
 
@@ -96,6 +113,8 @@ class Border extends Script {
       stencilState.compareFunctionFront = CompareFunction.NotEqual;
       stencilState.compareFunctionBack = CompareFunction.NotEqual;
       stencilState.writeMask = 0x00;
+      material.shaderData.setFloat("u_width", 0.1);
+      material.shaderData.setColor("u_color", new Color(1, 1, 1, 1));
     }
 
     return this.material;
@@ -157,4 +176,21 @@ class Border extends Script {
   }
 }
 
-rootEntity.addComponent(Border);
+const borderEntity = rootEntity.createChild("border");
+borderEntity.addComponent(Border);
+
+const config = {
+  plan: "模版测试"
+};
+
+gui
+  .add(config, "plan", ["模版测试", "a"])
+  .onChange((v) => {
+    borderEntity.isActive = false;
+    if (v === "模版测试") {
+      borderEntity.isActive = true;
+    } else {
+      borderEntity.isActive = false;
+    }
+  })
+  .name("描边方案");
