@@ -3,7 +3,6 @@
  * @category Advance
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -13,6 +12,7 @@ import {
   CompareFunction,
   CullMode,
   Engine,
+  Entity,
   GLTFResource,
   Material,
   MeshRenderer,
@@ -34,44 +34,59 @@ scene.background.solidColor.setValue(0, 0, 0, 0);
 
 // camera
 const cameraNode = rootEntity.createChild("camera_node");
-cameraNode.transform.setPosition(0, 0, 15);
-const camera = cameraNode.addComponent(Camera);
-cameraNode.addComponent(OrbitControl);
+cameraNode.transform.setPosition(0, 1, 3);
+cameraNode.addComponent(Camera);
+cameraNode.addComponent(OrbitControl).target.setValue(0, 1, 0);
 
 // ambient light
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/34986a5b-fa16-40f1-83c8-1885efe855d2.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
+    ambientLight.specularIntensity = ambientLight.diffuseIntensity = 2;
   });
 
-// gltf model
-const models = [
-  "https://gw.alipayobjects.com/os/bmw-prod/3869e495-2e04-4e80-9d22-13b37116379a.gltf" // 猴子
-];
-
 engine.resourceManager
-  .load(
-    models.map((url) => ({
-      type: AssetType.Prefab,
-      url
-    }))
-  )
-  .then((gltfs: GLTFResource[]) => {
-    gltfs.forEach((gltf, i) => {
-      const { defaultSceneRoot } = gltf;
-      rootEntity.addChild(defaultSceneRoot);
-      defaultSceneRoot.transform.setPosition(i - models.length / 2, 0, 0);
-    });
+  .load({
+    type: AssetType.Prefab,
+    url: "https://gw.alipayobjects.com/os/OasisHub/440000554/3615/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+  })
+  .then((gltf: GLTFResource) => {
+    const { defaultSceneRoot } = gltf;
+    rootEntity.addChild(defaultSceneRoot);
+
+    openDebug();
   });
 
 /** ------------------ Border ------------------ */
 // 模版测试
 class Border extends Script {
   material: Material;
+  borderRenderer: MeshRenderer[] = [];
+
+  private _size: number = 0.003;
+  private _color: Color = new Color(1, 1, 1, 1);
+
+  get size(): number {
+    return this._size;
+  }
+
+  set size(value: number) {
+    this.material.shaderData.setFloat("u_width", value);
+    this._size = value;
+  }
+
+  get color(): Color {
+    return this._color;
+  }
+
+  set color(value: Color) {
+    this.material.shaderData.setColor("u_color", value);
+    this._color = value;
+  }
 
   getBorderMaterial(engine: Engine) {
     if (!this.material) {
@@ -114,8 +129,8 @@ class Border extends Script {
       stencilState.compareFunctionFront = CompareFunction.NotEqual;
       stencilState.compareFunctionBack = CompareFunction.NotEqual;
       stencilState.writeMask = 0x00;
-      material.shaderData.setFloat("u_width", 0.1);
-      material.shaderData.setColor("u_color", new Color(1, 1, 1, 1));
+      material.shaderData.setFloat("u_width", this.size);
+      material.shaderData.setColor("u_color", this.color);
     }
 
     return this.material;
@@ -130,58 +145,56 @@ class Border extends Script {
     stencilState.referenceValue = 1;
     stencilState.passOperationFront = StencilOperation.Replace;
 
-    const renderers: MeshRenderer[] = [];
     const borderMaterial = this.getBorderMaterial(entity.engine);
 
-    if (entity.getComponents(MeshRenderer, renderers).length === 1) {
-      const borderRenderer = entity.addComponent(MeshRenderer);
-      borderRenderer.mesh = renderer.mesh;
-      borderRenderer.setMaterial(borderMaterial);
-      borderRenderer.enabled = true;
-    } else {
-      renderers[0].enabled = true;
-    }
+    const borderRenderer = entity.addComponent(MeshRenderer);
+    borderRenderer.mesh = renderer.mesh;
+    borderRenderer.setMaterial(borderMaterial);
+
+    this.borderRenderer.push(borderRenderer);
   }
 
-  hideBorder(renderer: MeshRenderer) {
-    const entity = renderer.entity;
-    const material = renderer.getMaterial();
-    const stencilState = material.renderState.stencilState;
-
-    stencilState.enabled = false;
-
-    const renderers: MeshRenderer[] = [];
-    if (entity.getComponents(MeshRenderer, renderers).length === 2) {
-      renderers[0].enabled = false;
-    }
-  }
-
-  onStart() {
-    const framebufferPicker = this.entity.addComponent(FramebufferPicker);
-    framebufferPicker.camera = camera;
-    let lastRenderer = null;
-    framebufferPicker.onPick = (obj) => {
-      setTimeout(() => {
-        if (obj) {
-          const { component } = obj;
-          lastRenderer && this.hideBorder(lastRenderer);
-          this.showBorder(component);
-          lastRenderer = component;
-        } else {
-          lastRenderer && this.hideBorder(lastRenderer);
-        }
-      }, 0);
-    };
-
-    engine.canvas._webCanvas.addEventListener("mousedown", (e) => {
-      framebufferPicker.pick(e.offsetX, e.offsetY);
+  constructor(entity: Entity) {
+    super(entity);
+    const meshes: MeshRenderer[] = [];
+    rootEntity.getComponentsIncludeChildren(MeshRenderer, meshes);
+    meshes.forEach((mesh) => {
+      this.showBorder(mesh);
     });
+  }
+
+  onDestroy() {
+    this.borderRenderer.forEach((renderer) => {
+      renderer.destroy();
+    });
+    this.borderRenderer.length = 0;
   }
 }
 
 // 内描边
 class Border2 extends Script {
   material: Material;
+  borderRenderer: MeshRenderer[] = [];
+  private _size: number = 0.003;
+  private _color: Color = new Color(1, 1, 1, 1);
+
+  get size(): number {
+    return this._size;
+  }
+
+  set size(value: number) {
+    this.material.shaderData.setFloat("u_width", value);
+    this._size = value;
+  }
+
+  get color(): Color {
+    return this._color;
+  }
+
+  set color(value: Color) {
+    this.material.shaderData.setColor("u_color", value);
+    this._color = value;
+  }
 
   getBorderMaterial(engine: Engine) {
     if (!this.material) {
@@ -218,8 +231,8 @@ class Border2 extends Script {
       this.material = material;
       material.renderQueueType = RenderQueueType.Transparent + 1;
       material.renderState.rasterState.cullMode = CullMode.Front;
-      material.shaderData.setFloat("u_width", 0.03);
-      material.shaderData.setColor("u_color", new Color(1, 1, 1, 1));
+      material.shaderData.setFloat("u_width", this.size);
+      material.shaderData.setColor("u_color", this.color);
     }
 
     return this.material;
@@ -227,66 +240,65 @@ class Border2 extends Script {
 
   showBorder(renderer: MeshRenderer) {
     const entity = renderer.entity;
-    const renderers: MeshRenderer[] = [];
 
-    if (entity.getComponents(MeshRenderer, renderers).length === 1) {
-      const borderMaterial = this.getBorderMaterial(entity.engine);
-      const borderRenderer = entity.addComponent(MeshRenderer);
-      borderRenderer.mesh = renderer.mesh;
-      borderRenderer.setMaterial(borderMaterial);
-      borderRenderer.enabled = true;
-    } else {
-      renderers[0].enabled = true;
-    }
+    const borderMaterial = this.getBorderMaterial(entity.engine);
+    const borderRenderer = entity.addComponent(MeshRenderer);
+    borderRenderer.mesh = renderer.mesh;
+    borderRenderer.setMaterial(borderMaterial);
+
+    this.borderRenderer.push(borderRenderer);
   }
 
-  hideBorder(renderer: MeshRenderer) {
-    const entity = renderer.entity;
-
+  constructor(entity: Entity) {
+    super(entity);
     const renderers: MeshRenderer[] = [];
-    if (entity.getComponents(MeshRenderer, renderers).length === 2) {
-      renderers[0].enabled = false;
-    }
-  }
-
-  onStart() {
-    const framebufferPicker = this.entity.addComponent(FramebufferPicker);
-    framebufferPicker.camera = camera;
-    let lastRenderer = null;
-    framebufferPicker.onPick = (obj) => {
-      setTimeout(() => {
-        if (obj) {
-          const { component } = obj;
-          lastRenderer && this.hideBorder(lastRenderer);
-          this.showBorder(component);
-          lastRenderer = component;
-        } else {
-          lastRenderer && this.hideBorder(lastRenderer);
-        }
-      }, 0);
-    };
-
-    engine.canvas._webCanvas.addEventListener("mousedown", (e) => {
-      framebufferPicker.pick(e.offsetX, e.offsetY);
+    rootEntity.getComponentsIncludeChildren(MeshRenderer, renderers);
+    renderers.forEach((renderer) => {
+      this.showBorder(renderer);
     });
+  }
+
+  onDestroy() {
+    this.borderRenderer.forEach((renderer) => {
+      renderer.destroy();
+    });
+    this.borderRenderer.length = 0;
   }
 }
 
-const borderEntity = rootEntity.createChild("border");
-borderEntity.addComponent(Border2);
+function openDebug() {
+  const borderEntity = rootEntity.createChild("border");
+  const color = new Color();
+  let border: Border | Border2 = borderEntity.addComponent(Border);
 
-const config = {
-  plan: "模版测试"
-};
+  const config = {
+    plan: "模版测试",
+    size: 0.003,
+    color: [255, 255, 255]
+  };
 
-gui
-  .add(config, "plan", ["模版测试", "内描边"])
-  .onChange((v) => {
-    borderEntity.isActive = false;
-    if (v === "模版测试") {
-      borderEntity.isActive = true;
-    } else {
-      borderEntity.isActive = false;
-    }
-  })
-  .name("描边方案");
+  gui
+    .add(config, "plan", ["模版测试", "内描边"])
+    .onChange((v) => {
+      border.destroy();
+      if (v === "模版测试") {
+        border = borderEntity.addComponent(Border);
+        border.size = config.size;
+        border.color = color;
+      } else {
+        border = borderEntity.addComponent(Border2);
+        border.size = config.size;
+        border.color = color;
+      }
+    })
+    .name("描边方案");
+
+  gui.add(config, "size", 0, 0.01, 0.001).onChange((v) => {
+    border.size = v;
+  });
+
+  gui.addColor(config, "color").onChange((v) => {
+    color.setValue(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+    border.color = color;
+  });
+}
