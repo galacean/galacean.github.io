@@ -14,12 +14,18 @@ import {
   Engine,
   Entity,
   GLTFResource,
+  Layer,
   Material,
   MeshRenderer,
+  PrimitiveMesh,
+  RenderColorTexture,
+  RenderPass,
   RenderQueueType,
+  RenderTarget,
   Script,
   Shader,
   StencilOperation,
+  Vector2,
   WebGLEngine
 } from "oasis-engine";
 
@@ -30,12 +36,13 @@ engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
-scene.background.solidColor.setValue(0, 0, 0, 0);
+scene.background.solidColor.setValue(0, 0, 0, 1);
 
 // camera
 const cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.setPosition(0, 1, 3);
-cameraNode.addComponent(Camera);
+const camera = cameraNode.addComponent(Camera);
+camera.enableFrustumCulling = false;
 cameraNode.addComponent(OrbitControl).target.setValue(0, 1, 0);
 
 // ambient light
@@ -62,12 +69,12 @@ engine.resourceManager
   });
 
 /** ------------------ Border ------------------ */
-// 模版测试
+// 外描边-模版测试
 class Border extends Script {
   material: Material;
   borderRenderer: MeshRenderer[] = [];
 
-  private _size: number = 0.003;
+  private _size: number = 3;
   private _color: Color = new Color(1, 1, 1, 1);
 
   get size(): number {
@@ -75,7 +82,7 @@ class Border extends Script {
   }
 
   set size(value: number) {
-    this.material.shaderData.setFloat("u_width", value);
+    this.material.shaderData.setFloat("u_width", value * 0.001);
     this._size = value;
   }
 
@@ -129,8 +136,8 @@ class Border extends Script {
       stencilState.compareFunctionFront = CompareFunction.NotEqual;
       stencilState.compareFunctionBack = CompareFunction.NotEqual;
       stencilState.writeMask = 0x00;
-      material.shaderData.setFloat("u_width", this.size);
-      material.shaderData.setColor("u_color", this.color);
+      this.size = this._size;
+      this.color = this._color;
     }
 
     return this.material;
@@ -171,11 +178,11 @@ class Border extends Script {
   }
 }
 
-// 内描边
+// 内描边-背面剔除
 class Border2 extends Script {
   material: Material;
   borderRenderer: MeshRenderer[] = [];
-  private _size: number = 0.003;
+  private _size: number = 3;
   private _color: Color = new Color(1, 1, 1, 1);
 
   get size(): number {
@@ -183,7 +190,7 @@ class Border2 extends Script {
   }
 
   set size(value: number) {
-    this.material.shaderData.setFloat("u_width", value);
+    this.material.shaderData.setFloat("u_width", value * 0.001);
     this._size = value;
   }
 
@@ -231,8 +238,8 @@ class Border2 extends Script {
       this.material = material;
       material.renderQueueType = RenderQueueType.Transparent + 1;
       material.renderState.rasterState.cullMode = CullMode.Front;
-      material.shaderData.setFloat("u_width", this.size);
-      material.shaderData.setColor("u_color", this.color);
+      this.size = this._size;
+      this.color = this._color;
     }
 
     return this.material;
@@ -266,37 +273,202 @@ class Border2 extends Script {
   }
 }
 
+// 边缘检测-后处理
+class Border3 extends Script {
+  material: Material;
+  private _color: Color = new Color(1, 1, 1, 1);
+  private _camera: Camera;
+  private _renderPass: RenderPass;
+  private _screen: Entity;
+
+  get color(): Color {
+    return this._color;
+  }
+
+  set color(value: Color) {
+    this.material.shaderData.setColor("u_color", value);
+    this._color = value;
+  }
+
+  get camera(): Camera {
+    return this._camera;
+  }
+
+  set camera(value: Camera) {
+    if (this._camera !== value) {
+      this._camera = value;
+      //@ts-ignore
+      this.camera._renderPipeline.addRenderPass(this._renderPass);
+      //@ts-ignore
+      this.camera._renderPipeline.defaultRenderPass.mask = Layer.Layer0;
+    }
+  }
+
+  getScreenMaterial(engine: Engine) {
+    if (!this.material) {
+      if (!Shader.find("screen-shader")) {
+        const vertex = `
+        attribute vec3 POSITION;
+        attribute vec2 TEXCOORD_0;
+        
+        varying vec2 v_uv;
+        
+        void main(){
+            gl_Position = vec4( POSITION.xzy , 1.0);
+            gl_Position.y *= -1.0;
+            v_uv = TEXCOORD_0;
+            v_uv.y = 1.0 - v_uv.y;
+        }
+                `;
+        const fragment = `
+                uniform vec3 u_color;
+                uniform sampler2D u_texture;
+                uniform vec2 u_texSize;
+
+                varying vec2 v_uv;
+
+
+                float luminance(vec4 color) {
+                  return  0.2125 * color.r + 0.7154 * color.g + 0.0721 * color.b; 
+                }
+
+                float sobel() {
+                  float Gx[9] = float[](
+                              -1.0,  0.0,  1.0,
+                              -2.0,  0.0,  2.0,
+                              -1.0,  0.0,  1.0);
+                  float Gy[9] = float[](
+                              -1.0, -2.0, -1.0,
+                              0.0,  0.0,  0.0,
+                              1.0,  2.0,  1.0);		
+                  
+                  float texColor;
+                  float edgeX = 0.0;
+                  float edgeY = 0.0;
+                  vec2 uv[9];
+
+                  uv[0] = v_uv + u_texSize.xy * vec2(-1, -1);
+				          uv[1] = v_uv + u_texSize.xy * vec2(0, -1);
+				          uv[2] = v_uv + u_texSize.xy * vec2(1, -1);
+				          uv[3] = v_uv + u_texSize.xy * vec2(-1, 0);
+				          uv[4] = v_uv + u_texSize.xy * vec2(0, 0);
+				          uv[5] = v_uv + u_texSize.xy * vec2(1, 0);
+				          uv[6] = v_uv + u_texSize.xy * vec2(-1, 1);
+				          uv[7] = v_uv + u_texSize.xy * vec2(0, 1);
+				          uv[8] = v_uv + u_texSize.xy * vec2(1, 1);
+
+                  for (int i = 0; i < 9; i++) {
+                    texColor = luminance(texture2D(u_texture, uv[i]));
+                    edgeX += texColor * Gx[i];
+                    edgeY += texColor * Gy[i];
+                  }
+                  
+                  return edgeX + edgeY;
+                }
+
+                void main(){
+                  float sobelFactor = sobel();
+                  gl_FragColor = mix( texture2D(u_texture, v_uv), vec4(u_color,1.0), sobelFactor);
+                  // gl_FragColor = vec4(u_color,1.0) * sobelFactor;
+                }
+                `;
+
+        Shader.create("screen-shader", vertex, fragment);
+      }
+      const material = new Material(engine, Shader.find("screen-shader"));
+      this.material = material;
+      this.color = this._color;
+      const { width, height } = engine.canvas;
+      material.shaderData.setVector2("u_texSize", new Vector2(1 / width, 1 / height));
+    }
+
+    return this.material;
+  }
+
+  constructor(entity: Entity) {
+    super(entity);
+    const material = this.getScreenMaterial(this.engine);
+    const { width, height } = engine.canvas;
+    const renderPass = (this._renderPass = new RenderPass("border", 1, null, null, Layer.Layer1));
+    const renderColorTexture = new RenderColorTexture(engine, width, height);
+    const renderTarget = new RenderTarget(engine, width, height, renderColorTexture);
+    const screen = (this._screen = rootEntity.createChild("screen"));
+    const screenRenderer = screen.addComponent(MeshRenderer);
+
+    screen.layer = Layer.Layer1;
+    screenRenderer.mesh = PrimitiveMesh.createPlane(engine, 2, 2);
+    screenRenderer.setMaterial(material);
+    material.shaderData.setTexture("u_texture", renderColorTexture);
+
+    renderPass.preRender = () => {
+      camera.renderTarget = null;
+    };
+
+    renderPass.postRender = () => {
+      camera.renderTarget = renderTarget;
+    };
+  }
+
+  onDestroy() {
+    this._screen.destroy();
+    if (this.camera) {
+      //@ts-ignore
+      this.camera._renderPipeline.removeRenderPass(this._renderPass);
+      this.camera.renderTarget.destroy();
+      this.camera.renderTarget = null;
+    }
+  }
+}
+
 function openDebug() {
   const borderEntity = rootEntity.createChild("border");
   const color = new Color();
-  let border: Border | Border2 = borderEntity.addComponent(Border);
+  let border: Border | Border2 | Border3 = borderEntity.addComponent(Border);
 
   const config = {
-    plan: "模版测试",
-    size: 0.003,
+    plan: "外描边",
+    size: 3,
     color: [255, 255, 255]
   };
 
   gui
-    .add(config, "plan", ["模版测试", "内描边"])
+    .add(config, "plan", ["外描边", "内描边", "后处理"])
     .onChange((v) => {
       border.destroy();
-      if (v === "模版测试") {
+      if (v === "外描边") {
         border = borderEntity.addComponent(Border);
         border.size = config.size;
         border.color = color;
-      } else {
+        showSize();
+      } else if (v === "内描边") {
         border = borderEntity.addComponent(Border2);
         border.size = config.size;
         border.color = color;
+        showSize();
+      } else if (v === "后处理") {
+        border = borderEntity.addComponent(Border3);
+        border.camera = camera;
+        border.color = color;
+        hideSize();
       }
     })
     .name("描边方案");
 
-  gui.add(config, "size", 0, 0.01, 0.001).onChange((v) => {
-    border.size = v;
-  });
+  let size;
+  function showSize() {
+    hideSize();
+    size = gui.add(config, "size", 0, 5, 1).onChange((v) => {
+      if (!(border instanceof Border3)) {
+        border.size = v;
+      }
+    });
+  }
+  function hideSize() {
+    size && size.remove();
+    size = null;
+  }
 
+  showSize();
   gui.addColor(config, "color").onChange((v) => {
     color.setValue(v[0] / 255, v[1] / 255, v[2] / 255, 1);
     border.color = color;
