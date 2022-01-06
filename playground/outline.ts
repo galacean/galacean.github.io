@@ -363,12 +363,14 @@ class Border3 extends Script {
                     edgeY += texColor * Gy[i];
                   }
                   
-                  return edgeX + edgeY;
+                  return abs(edgeX) + abs(edgeY);
                 }
 
                 void main(){
+                  // float sobelFactor = step(1.0, sobel());
                   float sobelFactor = sobel();
                   gl_FragColor = mix( texture2D(u_texture, v_uv), vec4(u_color,1.0), sobelFactor);
+                  // gl_FragColor = mix( vec4(1.0), vec4(u_color,1.0), sobelFactor);
                   // gl_FragColor = vec4(u_color,1.0) * sobelFactor;
                 }
                 `;
