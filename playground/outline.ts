@@ -36,14 +36,14 @@ engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
-scene.background.solidColor.setValue(0, 0, 0, 1);
+scene.background.solidColor.setValue(1, 1, 1, 1);
 
 // camera
 const cameraNode = rootEntity.createChild("camera_node");
-cameraNode.transform.setPosition(0, 1, 3);
+cameraNode.transform.setPosition(0, 1.3, 1);
 const camera = cameraNode.addComponent(Camera);
 camera.enableFrustumCulling = false;
-cameraNode.addComponent(OrbitControl).target.setValue(0, 1, 0);
+cameraNode.addComponent(OrbitControl).target.setValue(0, 1.3, 0);
 
 // ambient light
 engine.resourceManager
@@ -75,7 +75,7 @@ class Border extends Script {
   borderRenderer: MeshRenderer[] = [];
 
   private _size: number = 3;
-  private _color: Color = new Color(1, 1, 1, 1);
+  private _color: Color = new Color(0, 0, 0, 1);
 
   get size(): number {
     return this._size;
@@ -183,7 +183,7 @@ class Border2 extends Script {
   material: Material;
   borderRenderer: MeshRenderer[] = [];
   private _size: number = 3;
-  private _color: Color = new Color(1, 1, 1, 1);
+  private _color: Color = new Color(0, 0, 0, 1);
 
   get size(): number {
     return this._size;
@@ -276,7 +276,7 @@ class Border2 extends Script {
 // 边缘检测-后处理
 class Border3 extends Script {
   material: Material;
-  private _color: Color = new Color(1, 1, 1, 1);
+  private _color: Color = new Color(0, 0, 0, 1);
   private _camera: Camera;
   private _renderPass: RenderPass;
   private _screen: Entity;
@@ -430,15 +430,18 @@ function openDebug() {
   const config = {
     plan: "外描边",
     size: 3,
-    color: [255, 255, 255]
+    color: [0, 0, 0]
   };
 
   gui
     .add(config, "plan", ["外描边", "内描边", "后处理"])
     .onChange((v) => {
+      color.setValue(config.color[0] / 255, config.color[1] / 255, config.color[2] / 255, 1);
+
       border.destroy();
       if (v === "外描边") {
         border = borderEntity.addComponent(Border);
+
         border.size = config.size;
         border.color = color;
         showSize();
