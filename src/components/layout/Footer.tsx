@@ -82,7 +82,7 @@ class Footer extends React.Component<{
                   <DingtalkOutlined />&nbsp;&nbsp;
                   <FormattedMessage id="app.footer.dingtalk" />
                 </div>
-                <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*i6JhSZk1EiEAAAAAAAAAAAAAARQnAQ" alt="" />
+                <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*j33pRI5vJo4AAAAAAAAAAAAAARQnAQ" alt="" />
               </div>
             </Col>
           </Row>
