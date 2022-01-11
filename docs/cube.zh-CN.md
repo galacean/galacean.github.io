@@ -18,7 +18,7 @@ type: 入门
 
 同时，我们为这个 *Canvas* 元素设置了一个全屏的样式（style）。
 
-> **注**：样式并不是 Canvas 的真实高宽，只是视觉上的高宽，比如把一个小的画布通过样式拉伸变大，画面就会变模。下文中将使用 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法根据样式重设 *Canvas* 的 width 和 height 属性值。详见 [画布](${docs}canvas-cn) 章节。
+> **注**：样式并不是 Canvas 的真实高宽，只是视觉上的高宽，比如把一个小的画布通过样式拉伸变大，画面就会变模糊。下文中将使用 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法根据样式重设 *Canvas* 的 width 和 height 属性值。详见 [画布](${docs}canvas-cn) 章节。
 
 ## 引入模块
 
