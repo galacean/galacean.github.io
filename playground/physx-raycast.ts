@@ -78,19 +78,21 @@ PhysXPhysics.init().then(() => {
   });
 
   window.addEventListener("mousedown", (event: MouseEvent) => {
+    const quat = new Quaternion(0, 0, 0.3, 0.7);
+    quat.normalize();
     if (event.button === 2) {
       if (Math.random() > 0.5) {
         addSphere(0.5, new Vector3(
           Math.floor(Math.random() * 6) - 2.5,
           5,
           Math.floor(Math.random() * 6) - 2.5
-        ), new Quaternion(0, 0, 0.3, 0.7));
+        ), quat);
       } else {
         addCapsule(0.5, 2.0, new Vector3(
           Math.floor(Math.random() * 6) - 2.5,
           5,
           Math.floor(Math.random() * 6) - 2.5
-        ), new Quaternion(0, 0, 0.3, 0.7));
+        ), quat);
       }
     }
   });
@@ -100,6 +102,8 @@ PhysXPhysics.init().then(() => {
   //--------------------------------------------------------------------------------------------------------------------
   // init scene
   function init() {
+    const quat = new Quaternion(0, 0, 0.3, 0.7);
+    quat.normalize();
     addPlane(new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
     // eslint-disable-next-line no-plusplus
     for (let i = 0; i < 5; i++) {
@@ -109,7 +113,7 @@ PhysXPhysics.init().then(() => {
           -2.5 + i + 0.1 * i,
           Math.floor(Math.random() * 6) + 1,
           -2.5 + j + 0.1 * j
-        ), new Quaternion(0, 0, 0.3, 0.7));
+        ), quat);
       }
     }
   }
