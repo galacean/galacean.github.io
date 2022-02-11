@@ -326,8 +326,8 @@ class Oasis {
           gltf.buffers.concat(gltf.images).forEach((item) => {
             if (!item) return;
             let { uri } = item;
-            let index = -1;
-            if ((index = uri.lastIndexOf("/")) > -1) {
+            let index = uri.lastIndexOf("/");
+            if (index > -1) {
               uri = uri.substr(index + 1);
             }
             if (filesMap[uri]) {
