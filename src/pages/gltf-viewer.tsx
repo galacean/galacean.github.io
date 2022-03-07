@@ -631,9 +631,13 @@ export default function GLTFView(props: any) {
       <WrapperLayout {...props}>
         <div className="page-gltf-view">
           <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
-          <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
-            <p>Drag glTF2.0、texture files or folder、hdrs on the viewport</p>
+            <img
+              className="upload"
+              src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*-sHKTYv5U94AAAAAAAAAAAAAARQnAQ"
+            />
+            <input id="input" type="file" className="input" multiple />
+            <p>Drop your glTF2.0、images、HDRs here!</p>
           </div>
           <div id="spinner" className="spinner hide" />
           <script type="module" src="./src/index.ts" />
