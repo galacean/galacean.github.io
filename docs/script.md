@@ -17,7 +17,7 @@ import {
 } from 'oasis-engine'
 
 // 1. Create entity
-const node = new Entity(engine);
+const entity = new Entity(engine);
 
 // 2. Inherit Script
 class MyScript extends Script {
