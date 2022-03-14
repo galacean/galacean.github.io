@@ -16,7 +16,7 @@ import {
 } from 'oasis-engine'
 
 // 1.创建实体
-const node = new Entity(engine);
+const entity = new Entity(engine);
 
 // 2. 继承Script
 class MyScript extends Script {
