@@ -1,5 +1,5 @@
 /**
- * @title Animation CrossFade
+ * @title AnimatorTransition
  * @category Animation
  */
 import { OrbitControl } from "@oasis-engine/controls";
@@ -15,10 +15,11 @@ import {
   Vector3,
   WebGLEngine,
   AnimationClip,
-  GLTFResource
+  GLTFResource,
+  AnimatorStateTransition,
+  AnimatorState,
+  AnimatorConditionMode
 } from "oasis-engine";
-import * as dat from "dat.gui";
-const gui = new dat.GUI();
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -34,7 +35,7 @@ cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
 const lightNode = rootEntity.createChild("light_node");
-lightNode.addComponent(DirectLight) .intensity = 0.6;
+lightNode.addComponent(DirectLight).intensity = 0.6;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
@@ -50,39 +51,43 @@ engine.resourceManager
     animatorController.addLayer(layer);
     animator.animatorController = animatorController;
     layer.stateMachine = animatorStateMachine;
-    let animationNames = [];
-    if (animations) {
-      animations.forEach((clip: AnimationClip) => {
-        if (clip.name !== "sad_pose" && clip.name !== "sneak_pose") {
-          animationNames.push(clip.name);
-          const animatorState = animatorStateMachine.addState(clip.name);
-          animatorState.clip = clip;
-        }
-      });
-    }
-    animator.play(animationNames[0]);
-
-    rootEntity.addChild(defaultSceneRoot);
-
-    const debugInfo = {
-      animation: animationNames[0],
-      crossFade: true,
-      normalizedTransitionDuration: 0.5,
-      normalizedTimeOffset: 0
-    };
-
-    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
-      const { crossFade, normalizedTransitionDuration, normalizedTimeOffset } = debugInfo;
-      if (crossFade) {
-        animator.crossFade(v, normalizedTransitionDuration, 0, normalizedTimeOffset);
-      } else {
-        animator.play(v);
+    let walkState: AnimatorState, runState: AnimatorState;
+    animations.forEach((clip: AnimationClip) => {
+      const animatorState = animatorStateMachine.addState(clip.name);
+      animatorState.clip = clip;
+      if (clip.name === "walk") {
+        walkState = animatorState;
+      }
+      if (clip.name === "run") {
+        runState = animatorState;
       }
     });
 
-    gui.add(debugInfo, "crossFade");
-    gui.add(debugInfo, "normalizedTransitionDuration", 0, 1).name("过渡时间");
-    gui.add(debugInfo, "normalizedTimeOffset", 0, 1).name("偏移时间");
+    animatorController.addParameter('test', 0)
+
+    const transition = new AnimatorStateTransition();
+    transition.duration = 1;
+    transition.offset = 0;
+    transition.exitTime = 0.5;
+    transition.destinationState = runState;
+    transition.addCondition(AnimatorConditionMode.Equals, 'test', 1);
+    transition.solo = true;
+    walkState.addTransition(transition);
+    const transition2 = new AnimatorStateTransition();
+    transition2.duration = 1;
+    transition2.offset = 0;
+    transition2.exitTime = 0.5;
+    transition2.destinationState = runState;
+    transition2.addCondition(AnimatorConditionMode.Equals, 'test', 0);
+    walkState.addTransition(transition2);
+
+    setTimeout(() => {
+      animatorController.setParameter('test', 1)
+    }, 3000);
+
+    animator.play("walk");
+    rootEntity.addChild(defaultSceneRoot);
   });
 
 engine.run();
+

@@ -18,6 +18,8 @@ import {
   Vector3,
   WebGLEngine
 } from "oasis-engine";
+import * as dat from "dat.gui";
+const gui = new dat.GUI();
 
 Logger.enable();
 
@@ -54,22 +56,48 @@ engine.resourceManager
     layer.stateMachine = animatorStateMachine;
     layer1.stateMachine = animatorStateMachine1;
     layer1.blendingMode = AnimatorLayerBlendingMode.Additive;
+
+    let animationNames = [];
+    let animationNames2 = [];
+
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
-        if (clip.name === "agree") {
-          const animatorState = animatorStateMachine.addState(clip.name);
-          animatorState.clip = clip;
-        }
-        if (clip.name === "sneak_pose") {
+        if (clip.name.includes("pose")) {
+          console.log(clip.name)
           const animatorState2 = animatorStateMachine1.addState(clip.name);
           animatorState2.clip = clip;
           animatorState2.clipStartTime = 1;
+          animationNames2.push(clip.name);
+        } else {
+          const animatorState = animatorStateMachine.addState(clip.name);
+          animatorState.clip = clip;
+          animationNames.push(clip.name);
+          console.log(clip.name)
+
         }
       });
     }
     rootEntity.addChild(defaultSceneRoot);
-    animator.play("agree", 0);
-    animator.play("sneak_pose", 1);
+    animator.play(animationNames[0], 0);
+    animator.play(animationNames2[1], 1);
+
+    const debugInfo = {
+      animation: animationNames[0],
+      additive_pose: animationNames2[1],
+      additive_weight: 1
+    };
+
+    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+      animator.play(v, 0);
+    });
+
+    gui.add(debugInfo, "additive_pose", animationNames2).onChange((v) => {
+      animator.play(v, 1);
+    });
+
+    gui.add(debugInfo, "additive_weight", 0, 1).onChange((v) => {
+      layer1.weight = v;
+    });
   });
 
 engine.run();
