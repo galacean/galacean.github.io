@@ -39,7 +39,7 @@ PhysXPhysics.init().then(() => {
   const cameraEntity = rootEntity.createChild("camera");
   cameraEntity.addComponent(Camera);
   const pos = cameraEntity.transform.position;
-  pos.setValue(10, 10, 10);
+  pos.setValue(20, 20, 20);
   cameraEntity.transform.position = pos;
   cameraEntity.addComponent(OrbitControl);
 
@@ -106,14 +106,37 @@ PhysXPhysics.init().then(() => {
     quat.normalize();
     addPlane(new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
     // eslint-disable-next-line no-plusplus
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 8; i++) {
       // eslint-disable-next-line no-plusplus
-      for (let j = 0; j < 5; j++) {
-        addBox(new Vector3(1, 1, 1), new Vector3(
-          -2.5 + i + 0.1 * i,
-          Math.floor(Math.random() * 6) + 1,
-          -2.5 + j + 0.1 * j
-        ), quat);
+      for (let j = 0; j < 8; j++) {
+        const random = Math.floor(Math.random() * 3) % 3;
+        switch (random) {
+          case 0:
+            addBox(new Vector3(1, 1, 1), new Vector3(
+              -2.5 + i + 0.1 * i,
+              Math.floor(Math.random() * 6) + 1,
+              -2.5 + j + 0.1 * j
+            ), quat);
+            break;
+          case 1:
+            addSphere(0.5, new Vector3(
+              Math.floor(Math.random() * 16) - 2.5,
+              5,
+              Math.floor(Math.random() * 16) - 2.5
+            ), quat);
+            break;
+          case 2:
+            addCapsule(0.5, 2.0, new Vector3(
+              Math.floor(Math.random() * 16) - 2.5,
+              5,
+              Math.floor(Math.random() * 16) - 2.5
+            ), quat);
+            break;
+          default:
+            break;
+        }
+
+
       }
     }
   }
@@ -153,7 +176,7 @@ PhysXPhysics.init().then(() => {
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
     physicsBox.isTrigger = false;
-    const boxCollider = boxEntity.addComponent(StaticCollider);
+    const boxCollider = boxEntity.addComponent(DynamicCollider);
     boxCollider.addShape(physicsBox);
 
     return boxEntity;
