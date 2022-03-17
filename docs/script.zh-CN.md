@@ -99,21 +99,21 @@ onUpdate() {
 
 ### [**onUpdate**](${api}core/Script#onUpdate)
 
-游戏/动画开发的一个关键点是在每一帧渲染前更新物体的行为，状态和方位。这些更新操作通常都放在 `onUpdate` 回调中。
+游戏/动画开发的一个关键点是在每一帧渲染前更新物体的行为，状态和方位。这些更新操作通常都放在 `onUpdate` 回调中。接收与上一次 `onUpdate` 执行时间差参数, 类型是 `number`
 
 ```typescript
 onStart() {
 	this.rotationY = 0
 }
 
-onUpdate() {
+onUpdate(deltaTime: number) {
 	this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
 }
 ```
 
 ### [**onLateUpdate**](${api}core/Script#onLateUpdate)
 
-`onUpdate` 会在所有动画更新前执行，但如果我们要在动效（如动画、粒子等）更新之后才进行一些额外操作，或者希望在所有组件的 `onUpdate` 都执行完之后才进行其它操作比如相机跟随，那就需要用到 `onLateUpdate` 回调。
+`onUpdate` 会在所有动画更新前执行，但如果我们要在动效（如动画、粒子等）更新之后才进行一些额外操作，或者希望在所有组件的 `onUpdate` 都执行完之后才进行其它操作比如相机跟随，那就需要用到 `onLateUpdate` 回调。接收与上一次 `onLateUpdate` 执行时间差参数, 类型是 `number`
 
 ```typescript
 onStart() {
@@ -124,7 +124,7 @@ onUpdate() {
 	this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
 }
 
-onLateUpdate() {
+onLateUpdate(deltaTime: number) {
 	this.rotationY %= 360;
 }
 ```
