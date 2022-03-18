@@ -11,8 +11,8 @@ type: 资源系统
 | 属性名 | 属性类型 | 描述 |
 | :--- | :--- | :--- |
 |[texture](${api}core/Sprite#texture)|[Texture2D](${api}core/Texture2D)|使用纹理的引用|
-|[pivot](${api}core/Sprite#pivot)|[Vector2](${api}math/Vector2)|精灵中心点在原始纹理上的region中的位置，范围 0～1|
 |[region](${api}core/Sprite#region)|[Rect](${api}math/Rect)|精灵在原始纹理上的位置，范围 0～1|
+|[pivot](${api}core/Sprite#pivot)|[Vector2](${api}math/Vector2)|精灵中心点在原始纹理上的region中的位置，范围 0～1|
 |[pixelsPerUnit](${api}core/Sprite#pixelsPerUnit)|number|精灵中对应于世界空间中一个单位的像素数|
 
 ## 纹理、pivot、region(Rect) 三者关系
