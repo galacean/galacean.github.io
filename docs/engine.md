@@ -9,6 +9,7 @@ type: Core
 - **Canvas**:Operations related to the main canvas, such as changing the width and height of the canvas.
 - **Rendering control**: Control rendering execution/pause/continue, vertical synchronization and other functions.
 - **Engine subsystem management**:[Scene Management](${docs}scene) and [Resource Management](${docs}resource-manager) etc.
+- **Rendering context management**: Control rendering context such as alpha and so on.
 
 ## initialization
 
@@ -29,6 +30,24 @@ In order to facilitate users to directly create a web-side engine, Oasis provide
 const engine = new WebGLEngine("canvas");
 ```
 
+
+## WebGL context
+The context management of WebGL can be managed through the third parameter [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) of [WebGLEngine](${api}rhi-webgl/WebGLEngine), take **canvas transparent** For example, the engine closes the transparent channel of the canvas by default, that is, the web page elements behind the canvas cannot be displayed, which helps to save GPU memory. If you need to open it, you can set it like this:
+
+```typescript
+const engine = new WebGLEngine("canvas", undefined, {
+  alpha: true
+});
+
+/**
+ * After opening the transparent channel, you also need to set the background color to decide how to blend with the web page background.
+ * Set to 0, 0, 0, 0 to fully display the web page background.
+ */
+const scene = engine.sceneManager.activeScene;
+scene.background.solidColor.setValue(0, 0, 0, 0);
+```
+
+Similarly, you can use `webGLMode` to control WebGL1/2, `antialias` to control antialiasing, etc.
 ## Properties
 
 | Property name | Interpretation |
