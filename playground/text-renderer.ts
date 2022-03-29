@@ -19,34 +19,34 @@ cameraEntity.transform.setPosition(0, 0, 10);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 
-// The text to display.
+// The text to display
 const text = "Oasis 文字第一版来啦～";
-// The position of text.
+// The position of text
 const pos = new Vector3();
-// The color of text.
+// The color of text
 const color = new Color();
 
-// Create text with default params.
+// Create text with default params
 pos.setValue(0, 1.25, 0);
 color.setValue(1, 1, 1, 1);
 createText();
-// Create text with cursive font family.
+// Create text with cursive font family
 pos.setValue(0, 0.75, 0);
 color.setValue(1, 1, 1, 1);
 createText("cursive");
-// Create text with font size 36.
+// Create text with font size 36
 pos.setValue(0, 0.25, 0);
 color.setValue(1, 0.5, 0.5, 1);
 createText("Arial", 36);
-// Create text with bold.
+// Create text with bold
 pos.setValue(0, -0.25, 0);
 color.setValue(1, 1, 1, 1);
 createText("Arial", 26, true);
-// Create text with italic.
+// Create text with italic
 pos.setValue(0, -0.75, 0);
 color.setValue(1, 1, 1, 1);
 createText("Arial", 26, false, true);
-// Create text with bold and italic.
+// Create text with bold and italic
 pos.setValue(0, -1.25, 0);
 color.setValue(1, 1, 1, 1);
 createText("Arial", 26, true, true);
@@ -66,21 +66,21 @@ function createText(
   bold: boolean = false,
   italic: boolean = false
 ): void {
-  // Create text entity.
+  // Create text entity
   const entity = rootEntity.createChild("text");
   entity.transform.position = pos;
-  // Add text renderer for text entity.
+  // Add text renderer for text entity
   const renderer = entity.addComponent(TextRenderer);
-  // Set text color.
+  // Set text color
   renderer.color = color;
-  // Set text to render.
+  // Set text to render
   renderer.text = text;
-  // Set font with font family.
+  // Set font with font family
   renderer.font = Font.createFromOS(entity.engine, fontFamily);
-  // Set font size.
+  // Set font size
   renderer.fontSize = fontSize;
-  // Set font whether bold.
+  // Set font whether bold
   bold && (renderer.fontStyle |= FontStyle.Bold);
-  // Set font whether italic.
+  // Set font whether italic
   italic && (renderer.fontStyle |= FontStyle.Italic);
 }
