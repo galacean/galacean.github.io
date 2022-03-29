@@ -18,7 +18,7 @@ type: 资源系统
 
 #### 2. 立方纹理
 
-立方纹理（[TextureCubeMap](${api}core/TextureCubeMap)）和 2D 纹理的区别是它有 6 个面，即用 6 张 2D 纹理组成了一个立方纹理。
+立方纹理（[TextureCube](${api}core/TextureCube)）和 2D 纹理的区别是它有 6 个面，即用 6 张 2D 纹理组成了一个立方纹理。
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Omw8Qo0WzfYAAAAAAAAAAAAAARQnAQ)
 
@@ -182,10 +182,10 @@ texture.anisoLevel = 4; // 1~16
 const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8A8, false); // 第 5 个参数
 ```
 
-立方纹理脚本写法，详见 [API](${api}core/TextureCubeMap#constructor)：
+立方纹理脚本写法，详见 [API](${api}core/TextureCube#constructor)：
 
 ```typescript
-const cubeTexture = new TextureCubeMap(engine, size, TextureFormat.R8G8B8A8, false); // 第 4 个参数
+const cubeTexture = new TextureCube(engine, size, TextureFormat.R8G8B8A8, false); // 第 4 个参数
 ```
 
 ### 5. flipY

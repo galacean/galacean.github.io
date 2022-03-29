@@ -92,10 +92,10 @@ this.engine.resourceManager.load({url: "test", type: AssetType.Texture2D});
 > 更多纹理相关文档可查阅[纹理资源](${docs}texture-cn)。
 
 ```typescript
-import { TextureCubeMap } from "oasis-engine";
+import { TextureCube } from "oasis-engine";
 
 const textureCube = await this.engine.resourceManager
-  .load<TextureCubeMap>({
+  .load<TextureCube>({
   urls: [
     "/static/env/papermill/specular/specular_right_0.jpg",
     "/static/env/papermill/specular/specular_left_0.jpg",
@@ -108,7 +108,7 @@ const textureCube = await this.engine.resourceManager
 })
 ```
 
-[TextureCubeMap](${api}core/TextureCubeMap) 使用六张图片作为原始资源，用 urls 传递六张图片链接，type 使用 [AssetType.TextureCube](${api}core/AssetType#TextureCube) 。
+[TextureCube](${api}core/TextureCube) 使用六张图片作为原始资源，用 urls 传递六张图片链接，type 使用 [AssetType.TextureCube](${api}core/AssetType#TextureCube) 。
 
 
 ### 3. Environment
@@ -144,9 +144,9 @@ const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("t
 压缩的立方体纹理的加载和一般的立方体纹理加载不一样，是单独的一个二进制文件路径，而不需要 6 张图片的文件路径，但是需要指定为类型为 [AssetType.KTXCube](${api}core/AssetType#KTXCube)。因为 ResourceManager 无法根据后缀识别需要使用哪种特定类型的 Loader。
 
 ```typescript
-import { TextureCubeMap } from "oasis-engine";
+import { TextureCube } from "oasis-engine";
 
-const compressedTextureCube = await this.engine.resourceManager.load<TextureCubeMap>({url: "test.ktx", type: AssetType.KTXCube});
+const compressedTextureCube = await this.engine.resourceManager.load<TextureCube>({url: "test.ktx", type: AssetType.KTXCube});
 ```
 
 ### 6. glTF

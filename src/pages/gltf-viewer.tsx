@@ -27,7 +27,7 @@ import {
   SkyBoxMaterial,
   SphericalHarmonics3,
   Texture2D,
-  TextureCubeMap,
+  TextureCube,
   UnlitMaterial,
   Vector3,
   WebGLEngine
@@ -385,7 +385,7 @@ class Oasis {
   }
 
   async addEnv(name: string, url: string) {
-    const texture = await this.engine.resourceManager.load<TextureCubeMap>({
+    const texture = await this.engine.resourceManager.load<TextureCube>({
       url,
       type: "HDR" // from baker
     });

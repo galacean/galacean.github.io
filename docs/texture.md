@@ -18,7 +18,7 @@ It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as 
 
 #### 2. Cube texture
 
-The difference between a cube texture ([TextureCubeMap](${api}core/TextureCubeMap)) and a 2D texture is that it has 6 faces, that is, a cube texture is composed of 6 2D textures.
+The difference between a cube texture ([TextureCube](${api}core/TextureCube)) and a 2D texture is that it has 6 faces, that is, a cube texture is composed of 6 2D textures.
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Omw8Qo0WzfYAAAAAAAAAAAAAARQnAQ)
 
@@ -180,10 +180,10 @@ If you need to close mipmap, you can do it through a script. For the parameters,
 const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8A8, false); // 5th parameters
 ```
 
-For the cube texture, please refer to [API](${api}core/TextureCubeMap#constructor):
+For the cube texture, please refer to [API](${api}core/TextureCube#constructor):
 
 ```typescript
-const cubeTexture = new TextureCubeMap(engine, size, TextureFormat.R8G8B8A8, false); // 4th parameters
+const cubeTexture = new TextureCube(engine, size, TextureFormat.R8G8B8A8, false); // 4th parameters
 ```
 
 ### 5. flipY
