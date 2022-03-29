@@ -13,12 +13,12 @@ import {
   Layer,
   MeshRenderer,
   PrimitiveMesh,
-  RenderColorTexture,
   RenderFace,
   RenderTarget,
   Script,
   SkyBoxMaterial,
-  TextureCubeMap,
+  Texture2D,
+  TextureCube,
   UnlitMaterial,
   WebGLEngine
 } from "oasis-engine";
@@ -65,7 +65,7 @@ sky.material = skyMaterial;
 sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 engine.resourceManager
-  .load<TextureCubeMap>({
+  .load<TextureCube>({
     urls: [
       "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*Gi7CTZqKuacAAAAAAAAAAABkARQnAQ",
       "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*iRRMQIExwKMAAAAAAAAAAABkARQnAQ",
@@ -94,12 +94,12 @@ engine.resourceManager
 
 // Add script to switch `camera.renderTarget`
 class switchRTScript extends Script {
-  renderColorTexture = new RenderColorTexture(engine, 1024, 1024);
+  renderColorTexture = new Texture2D(engine, 1024, 1024);
   renderTarget = new RenderTarget(engine, 1024, 1024, this.renderColorTexture);
 
   constructor(entity: Entity) {
     super(entity);
-    material.baseTexture = this.renderColorTexture as any;
+    material.baseTexture = this.renderColorTexture;
   }
 
   onBeginRender(camera: Camera) {
