@@ -10,9 +10,8 @@ import {
   Animator,
   AssetType,
   Camera,
-  GLTFResource,
-  RenderColorTexture,
-  RenderTarget,
+  GLTFResource, RenderTarget,
+  Texture2D,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
@@ -68,7 +67,7 @@ function screenshot(camera: Camera, width: number, height: number, flipY = true,
   engine.pause();
 
   const originalTarget = camera.renderTarget;
-  const renderColorTexture = new RenderColorTexture(engine, width, height);
+  const renderColorTexture = new Texture2D(engine, width, height);
   const renderTargetData = new Uint8Array(width * height * 4);
   const renderTarget = new RenderTarget(engine, width, height, renderColorTexture, undefined, 8);
 
@@ -77,7 +76,7 @@ function screenshot(camera: Camera, width: number, height: number, flipY = true,
   camera.aspectRatio = width / height;
   camera.render();
 
-  renderColorTexture.getPixelBuffer(null, 0, 0, width, height, 0, renderTargetData);
+  renderColorTexture.getPixelBuffer(0, 0, width, height, 0, renderTargetData);
 
   const imageData = context.createImageData(width, height);
   imageData.data.set(renderTargetData);

@@ -38,8 +38,8 @@ type: 资源系统
 
 | 类型 | 应用 |
 | :-- | :-- |
-| 颜色纹理（[RenderColorTexture](${api}core/RenderColorTexture)） | 颜色纹理、颜色立方纹理、 多张颜色纹理 （MRT） |
-| 深度纹理（[RendeDepthTexture](${api}core/RenderDepthTexture)） | 深度纹理、深度立方纹理 |
+| 颜色纹理（[Texture](${api}core/Texture)） | 颜色纹理、颜色立方纹理、 多张颜色纹理 （MRT） |
+| 深度纹理（[Texture](${api}core/Texture)） | 深度纹理、深度立方纹理 |
 | 纹理组合 | 颜色纹理 + 深度纹理、颜色立方体纹理 + 深度立方体纹理、多张颜色纹理 + 深度纹理  |
 
 ## 生成纹理
