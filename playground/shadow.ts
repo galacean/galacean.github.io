@@ -52,8 +52,8 @@ const rootEntity = scene.createRootEntity();
 // Logger.enable();
 function createCuboidGeometry(name, position, rotation, w, h, d, castShadow: boolean = false) {
   let obj = rootEntity.createChild(name);
-  obj.position = new Vector3(...position);
-  obj.transform.rotation = new Vector3(rotation[0], rotation[0], rotation[0]);
+  obj.transform.position = position;
+  obj.transform.rotation = rotation;
   let cubeRenderer = obj.addComponent(MeshRenderer);
   cubeRenderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, w, h, d);
   cubeRenderer.setMaterial(mtl);
@@ -80,11 +80,11 @@ sphereRenderer3.mesh = PrimitiveMesh.createSphere(engine, 0.1);
 sphereRenderer3.setMaterial(mtl);
 
 //-- create geometry
-createCuboidGeometry("cubiod1", [0, -3, 0], [0, 0, 0], 10, 0.1, 10);
-createCuboidGeometry("cubiod2", [5, -2, 0], [0, 0, 0], 0.1, 2, 10);
-createCuboidGeometry("cubiod3", [-5, -2, 0], [0, 0, 0], 0.1, 2, 10);
-createCuboidGeometry("cubiod4", [0, -2, -5], [0, 0, 0], 10, 2, 0.1);
-createCuboidGeometry("cubiod-cast-shadow", [0, -1, 0], [0, 0, 0], 1, 1, 1, true);
+createCuboidGeometry("cubiod1", new Vector3(0, -3, 0), new Vector3(0, 0, 0), 10, 0.1, 10);
+createCuboidGeometry("cubiod2", new Vector3(5, -2, 0), new Vector3(0, 0, 0), 0.1, 2, 10);
+createCuboidGeometry("cubiod3", new Vector3(-5, -2, 0), new Vector3(0, 0, 0), 0.1, 2, 10);
+createCuboidGeometry("cubiod4", new Vector3(0, -2, -5), new Vector3(0, 0, 0), 10, 2, 0.1);
+createCuboidGeometry("cubiod-cast-shadow", new Vector3(0, -1, 0), new Vector3(0, 0, 0), 1, 1, 1, true);
 
 //-- create camera
 let cameraNode = rootEntity.createChild("camera_node");
