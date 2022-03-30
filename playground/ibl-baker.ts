@@ -61,8 +61,8 @@ Promise.all([
 ]).then((textures: TextureCube[]) => {
   const ldrCubeMap = textures[0];
   const hdrCubeMap = textures[1];
-  const bakedLDRCubeMap = IBLBaker.fromTextureCubeMap(ldrCubeMap, DecodeMode.Gamma) as any;
-  const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(hdrCubeMap, DecodeMode.RGBE) as any;
+  const bakedLDRCubeMap = IBLBaker.fromTextureCubeMap(ldrCubeMap, DecodeMode.Gamma);
+  const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(hdrCubeMap, DecodeMode.RGBE);
 
   ambientLight.specularTexture = bakedHDRCubeMap;
   ambientLight.specularTextureDecodeRGBM = true;

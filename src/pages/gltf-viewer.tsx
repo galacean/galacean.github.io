@@ -390,7 +390,7 @@ class Oasis {
       type: "HDR" // from baker
     });
 
-    const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, DecodeMode.RGBE) as any;
+    const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, DecodeMode.RGBE);
     const sh = new SphericalHarmonics3();
     SphericalHarmonics3Baker.fromTextureCubeMap(texture, DecodeMode.RGBE, sh);
     const arrayBuffer = toBuffer(bakedHDRCubeMap, sh);
