@@ -61,6 +61,7 @@ engine.resourceManager
       });
     }
     animator.play(animationNames[0]);
+    animator.speed = -1;
 
     rootEntity.addChild(defaultSceneRoot);
 
@@ -68,7 +69,8 @@ engine.resourceManager
       animation: animationNames[0],
       crossFade: true,
       normalizedTransitionDuration: 0.5,
-      normalizedTimeOffset: 0
+      normalizedTimeOffset: 0,
+      speed: 1
     };
 
     gui.add(debugInfo, "animation", animationNames).onChange((v) => {
@@ -83,6 +85,9 @@ engine.resourceManager
     gui.add(debugInfo, "crossFade");
     gui.add(debugInfo, "normalizedTransitionDuration", 0, 1).name("过渡时间");
     gui.add(debugInfo, "normalizedTimeOffset", 0, 1).name("偏移时间");
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
+    });
   });
 
 engine.run();

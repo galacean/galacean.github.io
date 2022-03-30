@@ -38,11 +38,16 @@ engine.resourceManager
     animator.play(animationNames[0]);
 
     const debugInfo = {
-      animation: animationNames[0]
+      animation: animationNames[0],
+      speed: 1
     };
 
     gui.add(debugInfo, "animation", animationNames).onChange((v) => {
       animator.play(v);
+    });
+
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
     });
   });
 

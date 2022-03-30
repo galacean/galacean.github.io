@@ -84,7 +84,8 @@ engine.resourceManager
     const debugInfo = {
       animation: animationNames[0],
       additive_pose: animationNames2[1],
-      additive_weight: 1
+      additive_weight: 1,
+      speed: 1
     };
 
     gui.add(debugInfo, "animation", animationNames).onChange((v) => {
@@ -97,6 +98,10 @@ engine.resourceManager
 
     gui.add(debugInfo, "additive_weight", 0, 1).onChange((v) => {
       layer1.weight = v;
+    });
+
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
     });
   });
 
