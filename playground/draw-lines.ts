@@ -1,6 +1,6 @@
 /**
  * @title Draw Lines
- * @category Mesh
+ * @category input
  */
 import {
   Camera,
