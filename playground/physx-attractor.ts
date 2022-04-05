@@ -35,15 +35,16 @@ class Attractor extends Script {
     this.collider = this.entity.getComponent(DynamicCollider)
   }
 
-  onUpdate(deltaTime: number) {
+  onPhysicsUpdate() {
     this.entity.transform.worldPosition.cloneTo(this.force);
     this.collider.applyForce(this.force.normalize().scale(-10));
   }
 }
 
 
-PhysXPhysics.init().then(() => {
-  const engine = new WebGLEngine("canvas", PhysXPhysics);
+PhysXPhysics.initialize().then(() => {
+  const engine = new WebGLEngine("canvas");
+  engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;

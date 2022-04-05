@@ -15,8 +15,9 @@ import {
   PhysXPhysics
 } from "@oasis-engine/physics-physx";
 
-PhysXPhysics.init().then(() => {
-  const engine = new WebGLEngine("canvas", PhysXPhysics);
+PhysXPhysics.initialize().then(() => {
+  const engine = new WebGLEngine("canvas");
+  engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -79,21 +80,19 @@ PhysXPhysics.init().then(() => {
   sphereCollider.addShape(physicsSphere);
 
   class MoveScript extends Script {
-    pos: Vector3 = new Vector3(-5, 0, 0);
-    vel: number = 0.005;
+    pos: number = -5;
+    vel: number = 0.05;
     velSign: number = -1;
 
-    onUpdate(deltaTime: number) {
-      super.onUpdate(deltaTime);
-      if (this.pos.x >= 5) {
+    onPhysicsUpdate() {
+      if (this.pos >= 5) {
         this.velSign = -1;
       }
-      if (this.pos.x <= -5) {
+      if (this.pos <= -5) {
         this.velSign = 1;
       }
-      this.pos.x += deltaTime * this.vel * this.velSign;
-
-      this.entity.transform.position = this.pos;
+      this.pos += this.vel * this.velSign;
+      this.entity.transform.worldPosition.setValue(this.pos, 0, 0);
     }
   }
 

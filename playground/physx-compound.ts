@@ -108,8 +108,9 @@ class TableGenerator extends Script {
   }
 }
 
-PhysXPhysics.init().then(() => {
-  const engine = new WebGLEngine("canvas", PhysXPhysics);
+PhysXPhysics.initialize().then(() => {
+  const engine = new WebGLEngine("canvas");
+  engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;

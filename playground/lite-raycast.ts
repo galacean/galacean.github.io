@@ -21,7 +21,8 @@ import {OrbitControl} from "@oasis-engine/controls";
 
 import { LitePhysics } from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas", LitePhysics);
+const engine = new WebGLEngine("canvas");
+engine.physicsManager.initialize(LitePhysics);
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
