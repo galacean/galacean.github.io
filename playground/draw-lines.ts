@@ -158,17 +158,17 @@ engine.run();
  * @returns ModelMesh containing mesh information
  */
 function createLineMesh(startPos: Vector3, endPos: Vector3, forwardVec3: Vector3, lineWidth: number): Mesh {
-  // 得到方向向量
+  // Get direction vector.
   Vector3.subtract(endPos, startPos, tempLine);
-  // 得到垂直向量
+  // Get perpendicular vector.
   Vector3.cross(tempLine, forwardVec3, tempPerpendicular);
   tempPerpendicular.normalize().scale(lineWidth / 2);
-  // 求四个点
+  // Get four vertices.
   Vector3.add(startPos, tempPerpendicular, tempP1);
   Vector3.subtract(startPos, tempPerpendicular, tempP2);
   Vector3.add(tempP1, tempLine, tempP3);
   Vector3.add(tempP2, tempLine, tempP4);
-  // 构建两个三角形
+  // Draw two triangles.
   const mesh = new ModelMesh(engine);
   mesh.setPositions([tempP1, tempP2, tempP3, tempP4]);
   mesh.setIndices(new Uint16Array([0, 1, 2, 2, 1, 3]));
