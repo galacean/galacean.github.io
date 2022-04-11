@@ -49,7 +49,7 @@ cameraNode.addComponent(OrbitControl).target.setValue(0, 1.3, 0);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/34986a5b-fa16-40f1-83c8-1885efe855d2.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
