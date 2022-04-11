@@ -56,7 +56,7 @@ Promise.all([
     url: "https://gw.alipayobjects.com/os/bmw-prod/10c5d68d-8580-4bd9-8795-6f1035782b94.bin", // sunset_1K
     // url: "https://gw.alipayobjects.com/os/bmw-prod/20d58ffa-c7da-4c54-8980-4efaf91a0239.bin",// pisa_1K
     // url: "https://gw.alipayobjects.com/os/bmw-prod/59b28d9f-7589-4d47-86b0-52c50b973b10.bin", // footPrint_2K
-    type: "HDR"
+    type: AssetType.HDR
   })
 ]).then((textures: TextureCubeMap[]) => {
   const ldrCubeMap = textures[0];
@@ -68,7 +68,7 @@ Promise.all([
   ambientLight.specularTextureDecodeRGBM = true;
 
   const sh = new SphericalHarmonics3();
-  SphericalHarmonics3Baker.fromTextureCubeMap(bakedHDRCubeMap, DecodeMode.RGBM, sh);
+  SphericalHarmonics3Baker.fromTextureCubeMap(hdrCubeMap, DecodeMode.RGBE, sh);
   ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
   ambientLight.diffuseSphericalHarmonics = sh;
 
