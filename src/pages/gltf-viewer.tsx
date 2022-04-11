@@ -387,7 +387,7 @@ class Oasis {
   async addEnv(name: string, url: string) {
     const texture = await this.engine.resourceManager.load<TextureCube>({
       url,
-      type: "HDR" // from baker
+      type: AssetType.HDR // from baker
     });
 
     const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, DecodeMode.RGBE);
