@@ -314,12 +314,14 @@ class Oasis {
           gltf.buffers.concat(gltf.images).forEach((item) => {
             if (!item) return;
             let { uri } = item;
-            let index = uri.lastIndexOf("/");
-            if (index > -1) {
-              uri = uri.substr(index + 1);
-            }
-            if (filesMap[uri]) {
-              item.uri = filesMap[uri];
+            if (uri) {
+              let index = uri.lastIndexOf("/");
+              if (index > -1) {
+                uri = uri.substr(index + 1);
+              }
+              if (filesMap[uri]) {
+                item.uri = filesMap[uri];
+              }
             }
           });
           const blob = new Blob([JSON.stringify(gltf)]);
