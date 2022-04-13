@@ -77,6 +77,7 @@ PhysXPhysics.initialize().then(() => {
   // sphereEntity.transform.setScale(3,3,3);
 
   const sphereCollider = sphereEntity.addComponent(DynamicCollider);
+  sphereCollider.isKinematic = true;
   sphereCollider.addShape(physicsSphere);
 
   class MoveScript extends Script {
