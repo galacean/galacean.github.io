@@ -84,6 +84,6 @@ Text alignment is used to set how the text is displayed within the width and hei
 |[horizontalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextHorizontalAlignment](${api}core/TextHorizontalAlignment)|Horizontal Alignment: Left/Center/Right|
 |[verticalAlignment](${api}core/TextRenderer#verticalAlignment)|[TextVerticalAlignment](${api}core/TextVerticalAlignment)|Vertical Alignment：Top/Center/Bottom|
 
-## 多行文本示例
+## Example of multi-line text
 
 <playground src="text-wrap-alignment.ts"></playground>
