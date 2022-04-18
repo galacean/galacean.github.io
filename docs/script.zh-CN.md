@@ -85,17 +85,32 @@ onUpdate() {
 	console.log(this.otherEntityScript.updateCount)
 }
 ```
- 
+
+### [**onPhysicsUpdate**](${api}core/Script#onPhysicsUpdate)
+
+`onPhysicsUpdate` 回调函数调用频率与物理引擎更新频率保持一致。每个渲染帧可能会调用多次。
+
 ### [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
 
-`onTriggerEnter` 回调函数会在碰撞器碰撞时调用，以处理碰撞体相遇时的逻辑，例如在碰撞发生时删除实体。
+`onTriggerEnter` 回调函数会在触发器相互接触时调用，以处理触发器相遇时的逻辑，例如在触发发生时删除实体。
 
 ### [**onTriggerStay**](${api}core/Script#onTriggerStay)
 
-`onTriggerStay` 回调函数会在碰撞器碰撞过程中**持续**调用，每帧调用一次。
+`onTriggerStay` 回调函数会在触发器接触过程中**持续**调用，每帧调用一次。
 
 ### [**onTriggerExit**](${api}core/Script#onTriggerExit)
-`onTriggerExit` 回调函数会在两个碰撞器分离时被调用，即碰撞关系发生改变，只调用一次。
+`onTriggerExit` 回调函数会在两个触发器分离时被调用，即触发关系发生改变，只调用一次。
+
+### [**onCollisionEnter**](${api}core/Script#onCollisionEnter)
+
+`onCollisionEnter` 回调函数会在碰撞器碰撞时调用，以处理碰撞体相遇时的逻辑，例如在碰撞发生时删除实体。
+
+### [**onCollisionStay**](${api}core/Script#onCollisionStay)
+
+`onCollisionStay` 回调函数会在碰撞器碰撞过程中**持续**调用，每帧调用一次。
+
+### [**onCollisionExit**](${api}core/Script#onCollisionExit)
+`onCollisionExit` 回调函数会在两个碰撞器分离时被调用，即碰撞关系发生改变，只调用一次。
 
 ### [**onUpdate**](${api}core/Script#onUpdate)
 

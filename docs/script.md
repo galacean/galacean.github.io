@@ -88,18 +88,37 @@ onUpdate() {
 }
 ```
 
+### [**onPhysicsUpdate**](${api}core/Script#onPhysicsUpdate)
+
+The `onPhysicsUpdate` callback function is called at the same frequency as the physics engine update frequency. 
+It may be called multiple times per rendered frame.
+
 ### [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
 
-`onTriggerEnter` will be called when the collider collides, which handle the logic when the colliders meet, 
+`onTriggerEnter` will be called when the trigger collides, which handle the logic when the triggers meet, 
 such as deleting the entity when the collision occurs.
 
 ### [**onTriggerStay**](${api}core/Script#onTriggerStay)
 
-`onTriggerStay` will be called continuously during the collision of the collider, once per frame.
+`onTriggerStay` will be called continuously during the collision of the trigger, once per frame.
 
 ### [**onTriggerExit**](${api}core/Script#onTriggerExit)
 
-`onTriggerExit` will be called when the two colliders are separated, that is, 
+`onTriggerExit` will be called when the two triggers are separated, that is, 
+when the collision relationship changes, it will be called only once.
+
+### [**onCollisionEnter**](${api}core/Script#onCollisionEnter)
+
+`onCollisionEnter` will be called when the collider collides, which handle the logic when the colliders meet,
+such as deleting the entity when the collision occurs.
+
+### [**onCollisionStay**](${api}core/Script#onCollisionStay)
+
+`onCollisionStay` will be called continuously during the collision of the collider, once per frame.
+
+### [**onCollisionExit**](${api}core/Script#onCollisionExit)
+
+`onCollisionExit` will be called when the two colliders are separated, that is,
 when the collision relationship changes, it will be called only once.
 
 ### [**onUpdate**](${api}core/Script#onUpdate)
