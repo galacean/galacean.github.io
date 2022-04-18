@@ -61,7 +61,6 @@ engine.resourceManager
       });
     }
     animator.play(animationNames[0]);
-    animator.speed = -1;
 
     rootEntity.addChild(defaultSceneRoot);
 
