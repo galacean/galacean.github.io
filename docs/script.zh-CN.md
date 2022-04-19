@@ -32,7 +32,7 @@ entity.addComponent(MyScript);
 
 Oasis 为用户提供了丰富的生命周期回调函数，用户只要定义特定的回调函数，Oasis 就会在特定的时期自动执行相关脚本，用户不需要手工调用它们。目前提供给用户的生命周期回调函数如下:
 
-![脚本生命周期-zh](https://gw.alipayobjects.com/zos/OasisHub/170b9d73-5ed5-4eee-b44d-716bd7e7f8c6/%25E8%2584%259A%25E6%259C%25AC%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F-zh.jpg)
+![脚本生命周期-zh](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*gZuKQocCq9AAAAAAAAAAAAAAARQnAQ)
 
 值得注意的是，**只有当实体被作为相机使用**，也就是添加了相机组件，[onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 才会被调用的。  
 

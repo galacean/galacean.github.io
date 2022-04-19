@@ -13,7 +13,6 @@ import {
   MeshRenderer,
   PlaneColliderShape,
   Pointer,
-  PointLight,
   PrimitiveMesh,
   Quaternion,
   Script,
@@ -21,14 +20,16 @@ import {
   Vector2,
   Vector3,
   WebGLEngine,
-  CollisionDetectionMode
+  CollisionDetectionMode,
+  Texture2D,
+  DirectLight, AssetType
 } from "oasis-engine";
 
 import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+    const engine = new WebGLEngine("canvas");
+    engine.physicsManager.initialize(PhysXPhysics);
 
     engine.canvas.resizeByClientSize();
     const invCanvasWidth = 1 / engine.canvas.width;
@@ -37,7 +38,7 @@ PhysXPhysics.initialize().then(() => {
     const scene = engine.sceneManager.activeScene;
     const rootEntity = scene.createRootEntity("root");
 
-    scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+    scene.ambientLight.diffuseSolidColor.setValue(0.5, 0.5, 0.5, 1);
     scene.ambientLight.diffuseIntensity = 1.2;
 
     // init camera
@@ -48,9 +49,10 @@ PhysXPhysics.initialize().then(() => {
 
     // init point light
     const light = rootEntity.createChild("light");
-    light.transform.setPosition(0, 3, 0);
-    const pointLight = light.addComponent(PointLight);
-    pointLight.intensity = 0.3;
+    light.transform.setPosition(1, 2, 2);
+    light.transform.lookAt(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
+    const pointLight = light.addComponent(DirectLight);
+    pointLight.intensity = 3;
 
     class PanScript extends Script {
       private startPointerPos = new Vector3();
@@ -104,7 +106,7 @@ PhysXPhysics.initialize().then(() => {
     //--------------------------------------------------------------------------------------------------------------------
     function addPlane(size: Vector2, position: Vector3, rotation: Quaternion): Entity {
       const mtl = new BlinnPhongMaterial(engine);
-      mtl.baseColor.setValue(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+      mtl.baseColor.setValue(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
       const planeEntity = rootEntity.createChild();
       planeEntity.layer = Layer.Layer1;
 
@@ -124,68 +126,80 @@ PhysXPhysics.initialize().then(() => {
 
     addPlane(new Vector2(30, 30), new Vector3, new Quaternion);
 
-    function addVerticalBox(x: number, y: number, z: number): void {
-      const entity = rootEntity.createChild("entity");
-      entity.transform.setPosition(x, y, z);
+    Promise.all([
+      engine.resourceManager
+        .load<Texture2D>({
+          url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*W5azT5DjDAEAAAAAAAAAAAAAARQnAQ",
+          type: AssetType.Texture2D
+        }),
+      engine.resourceManager
+        .load<Texture2D>({
+          url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Wkn5QY0tpbcAAAAAAAAAAAAAARQnAQ",
+          type: AssetType.Texture2D
+        })
+    ]).then((asset: Texture2D[]) => {
+      function addVerticalBox(x: number, y: number, z: number): void {
+        const entity = rootEntity.createChild("entity");
+        entity.transform.setPosition(x, y, z);
 
-      const boxMtl = new BlinnPhongMaterial(engine);
-      const boxRenderer = entity.addComponent(MeshRenderer);
-      boxMtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
-      boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 0.5, 0.33, 2);
-      boxRenderer.setMaterial(boxMtl);
+        const boxMtl = new BlinnPhongMaterial(engine);
+        const boxRenderer = entity.addComponent(MeshRenderer);
+        boxMtl.baseTexture = asset[0];
+        boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 0.5, 0.33, 2, false);
+        boxRenderer.setMaterial(boxMtl);
 
-      const physicsBox = new BoxColliderShape();
-      physicsBox.size = new Vector3(0.5, 0.33, 2);
-      physicsBox.material.staticFriction = 0.4;
-      physicsBox.material.dynamicFriction = 0.4;
-      physicsBox.material.bounciness = 0.2;
+        const physicsBox = new BoxColliderShape();
+        physicsBox.size = new Vector3(0.5, 0.33, 2);
+        physicsBox.material.staticFriction = 0.4;
+        physicsBox.material.dynamicFriction = 0.4;
+        physicsBox.material.bounciness = 0.2;
 
-      const boxCollider = entity.addComponent(DynamicCollider);
-      boxCollider.addShape(physicsBox);
-      boxCollider.mass = 1.0;
-      boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+        const boxCollider = entity.addComponent(DynamicCollider);
+        boxCollider.addShape(physicsBox);
+        boxCollider.mass = 1.0;
+        boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
-      entity.addComponent(PanScript);
-    }
-
-    function addHorizontalBox(x: number, y: number, z: number): void {
-      const entity = rootEntity.createChild("entity");
-      entity.transform.setPosition(x, y, z);
-
-      const boxMtl = new BlinnPhongMaterial(engine);
-      const boxRenderer = entity.addComponent(MeshRenderer);
-      boxMtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
-      boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 2, 0.33, 0.5);
-      boxRenderer.setMaterial(boxMtl);
-
-      const physicsBox = new BoxColliderShape();
-      physicsBox.size = new Vector3(2, 0.33, 0.5);
-      physicsBox.material.staticFriction = 0.4;
-      physicsBox.material.dynamicFriction = 0.4;
-      physicsBox.material.bounciness = 0.2;
-
-      const boxCollider = entity.addComponent(DynamicCollider);
-      boxCollider.addShape(physicsBox);
-      boxCollider.mass = 1.0;
-      boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
-
-      entity.addComponent(PanScript);
-    }
-
-    function addBox(): void {
-      for (let i: number = 0; i < 8; i++) {
-        addVerticalBox(-0.65, 0.165 + i * 0.33 * 2, 0);
-        addVerticalBox(0, 0.165 + i * 0.33 * 2, 0);
-        addVerticalBox(0.65, 0.165 + i * 0.33 * 2, 0);
-
-        addHorizontalBox(0, 0.165 + 0.33 + i * 0.33 * 2, -0.65);
-        addHorizontalBox(0, 0.165 + 0.33 + i * 0.33 * 2, 0);
-        addHorizontalBox(0, 0.165 + 0.33 + i * 0.33 * 2, 0.65);
+        entity.addComponent(PanScript);
       }
-    }
 
-    addBox();
+      function addHorizontalBox(x: number, y: number, z: number): void {
+        const entity = rootEntity.createChild("entity");
+        entity.transform.setPosition(x, y, z);
 
+        const boxMtl = new BlinnPhongMaterial(engine);
+        const boxRenderer = entity.addComponent(MeshRenderer);
+        boxMtl.baseTexture = asset[1];
+        boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 2, 0.33, 0.5);
+        boxRenderer.setMaterial(boxMtl);
+
+        const physicsBox = new BoxColliderShape();
+        physicsBox.size = new Vector3(2, 0.33, 0.5);
+        physicsBox.material.staticFriction = 0.4;
+        physicsBox.material.dynamicFriction = 0.4;
+        physicsBox.material.bounciness = 0.2;
+
+        const boxCollider = entity.addComponent(DynamicCollider);
+        boxCollider.addShape(physicsBox);
+        boxCollider.mass = 1.0;
+        boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+
+        entity.addComponent(PanScript);
+      }
+
+      function addBox(): void {
+        for (let i: number = 0; i < 8; i++) {
+          addVerticalBox(-0.65, 0.165 + i * 0.33 * 2, 0);
+          addVerticalBox(0, 0.165 + i * 0.33 * 2, 0);
+          addVerticalBox(0.65, 0.165 + i * 0.33 * 2, 0);
+
+          addHorizontalBox(0, 0.165 + 0.33 + i * 0.33 * 2, -0.65);
+          addHorizontalBox(0, 0.165 + 0.33 + i * 0.33 * 2, 0);
+          addHorizontalBox(0, 0.165 + 0.33 + i * 0.33 * 2, 0.65);
+        }
+      }
+
+      addBox();
+    });
     // Run engine
     engine.run();
   }
