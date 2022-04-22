@@ -11,10 +11,10 @@ type: Component
 ## Basic usage
 
 1、Create [TextRenderer](${api}core/TextRenderer) to display text    
-2、Set [Font](${docs}font-cn) object by font    
-3、Set the text to be displayed by text    
-3、Set font size by fontSize    
-4、Set color by color    
+2、Set [Font](${docs}font-cn) object by [font](${api}core/TextRenderer#font)    
+3、Set the text to be displayed by [text](${api}core/TextRenderer#text)    
+3、Set font size by [fontSize](${api}core/TextRenderer#fontSize)    
+4、Set color by [color](${api}core/TextRenderer#color)    
 
 ```typescript
 import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "oasis-engine";
