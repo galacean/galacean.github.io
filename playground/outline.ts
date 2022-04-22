@@ -18,13 +18,13 @@ import {
   Material,
   MeshRenderer,
   PrimitiveMesh,
-  RenderColorTexture,
   RenderPass,
   RenderQueueType,
   RenderTarget,
   Script,
   Shader,
   StencilOperation,
+  Texture2D,
   Vector2,
   WebGLEngine
 } from "oasis-engine";
@@ -392,7 +392,7 @@ class Border3 extends Script {
     const material = this.getScreenMaterial(this.engine);
     const { width, height } = engine.canvas;
     const renderPass = (this._renderPass = new RenderPass("border", 1, null, null, Layer.Layer1));
-    const renderColorTexture = new RenderColorTexture(engine, width, height);
+    const renderColorTexture = new Texture2D(engine, width, height);
     const renderTarget = new RenderTarget(engine, width, height, renderColorTexture);
     const screen = (this._screen = rootEntity.createChild("screen"));
     const screenRenderer = screen.addComponent(MeshRenderer);

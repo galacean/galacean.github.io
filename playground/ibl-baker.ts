@@ -20,7 +20,7 @@ import {
   SphericalHarmonics3,
   Texture2D,
   TextureCubeFace,
-  TextureCubeMap,
+  TextureCube,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
@@ -41,7 +41,7 @@ cameraNode.transform.position = new Vector3(0, 0, 10);
 cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
 Promise.all([
-  engine.resourceManager.load<TextureCubeMap>({
+  engine.resourceManager.load<TextureCube>({
     urls: [
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5bs-Sb80qcUAAAAAAAAAAAAAARQnAQ",
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rLUCT4VPBeEAAAAAAAAAAAAAARQnAQ",
@@ -52,17 +52,17 @@ Promise.all([
     ],
     type: AssetType.TextureCube
   }),
-  engine.resourceManager.load<TextureCubeMap>({
+  engine.resourceManager.load<TextureCube>({
     url: "https://gw.alipayobjects.com/os/bmw-prod/10c5d68d-8580-4bd9-8795-6f1035782b94.bin", // sunset_1K
     // url: "https://gw.alipayobjects.com/os/bmw-prod/20d58ffa-c7da-4c54-8980-4efaf91a0239.bin",// pisa_1K
     // url: "https://gw.alipayobjects.com/os/bmw-prod/59b28d9f-7589-4d47-86b0-52c50b973b10.bin", // footPrint_2K
     type: "HDR-RGBE"
   })
-]).then((textures: TextureCubeMap[]) => {
+]).then((textures: TextureCube[]) => {
   const ldrCubeMap = textures[0];
   const hdrCubeMap = textures[1];
-  const bakedLDRCubeMap = IBLBaker.fromTextureCubeMap(ldrCubeMap, DecodeMode.Gamma) as any;
-  const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(hdrCubeMap, DecodeMode.RGBE) as any;
+  const bakedLDRCubeMap = IBLBaker.fromTextureCubeMap(ldrCubeMap, DecodeMode.Gamma);
+  const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(hdrCubeMap, DecodeMode.RGBE);
 
   ambientLight.specularTexture = bakedHDRCubeMap;
   ambientLight.specularTextureDecodeRGBM = true;
@@ -77,7 +77,7 @@ Promise.all([
   debugIBL(bakedLDRCubeMap, bakedHDRCubeMap);
 });
 
-function debugIBL(bakedLDRCubeMap: TextureCubeMap, bakedHDRCubeMap: TextureCubeMap) {
+function debugIBL(bakedLDRCubeMap: TextureCube, bakedHDRCubeMap: TextureCube) {
   Shader.create(
     "ibl debug test",
     `
