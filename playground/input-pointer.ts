@@ -20,7 +20,8 @@ import {
 } from "oasis-engine";
 import { LitePhysics } from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas", LitePhysics);
+const engine = new WebGLEngine("canvas");
+engine.physicsManager.initialize(LitePhysics);
 engine.canvas.resizeByClientSize();
 const invCanvasWidth = 1 / engine.canvas.width;
 const invCanvasHeight = 1 / engine.canvas.height;

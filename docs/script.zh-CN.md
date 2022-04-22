@@ -32,7 +32,7 @@ entity.addComponent(MyScript);
 
 Oasis 为用户提供了丰富的生命周期回调函数，用户只要定义特定的回调函数，Oasis 就会在特定的时期自动执行相关脚本，用户不需要手工调用它们。目前提供给用户的生命周期回调函数如下:
 
-![脚本生命周期-zh](https://gw.alipayobjects.com/zos/OasisHub/170b9d73-5ed5-4eee-b44d-716bd7e7f8c6/%25E8%2584%259A%25E6%259C%25AC%25E7%2594%259F%25E5%2591%25BD%25E5%2591%25A8%25E6%259C%259F-zh.jpg)
+![脚本生命周期-zh](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*gZuKQocCq9AAAAAAAAAAAAAAARQnAQ)
 
 值得注意的是，**只有当实体被作为相机使用**，也就是添加了相机组件，[onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 才会被调用的。  
 
@@ -85,17 +85,32 @@ onUpdate() {
 	console.log(this.otherEntityScript.updateCount)
 }
 ```
- 
+
+### [**onPhysicsUpdate**](${api}core/Script#onPhysicsUpdate)
+
+`onPhysicsUpdate` 回调函数调用频率与物理引擎更新频率保持一致。每个渲染帧可能会调用多次。
+
 ### [**onTriggerEnter**](${api}core/Script#onTriggerEnter)
 
-`onTriggerEnter` 回调函数会在碰撞器碰撞时调用，以处理碰撞体相遇时的逻辑，例如在碰撞发生时删除实体。
+`onTriggerEnter` 回调函数会在触发器相互接触时调用，以处理触发器相遇时的逻辑，例如在触发发生时删除实体。
 
 ### [**onTriggerStay**](${api}core/Script#onTriggerStay)
 
-`onTriggerStay` 回调函数会在碰撞器碰撞过程中**持续**调用，每帧调用一次。
+`onTriggerStay` 回调函数会在触发器接触过程中**持续**调用，每帧调用一次。
 
 ### [**onTriggerExit**](${api}core/Script#onTriggerExit)
-`onTriggerExit` 回调函数会在两个碰撞器分离时被调用，即碰撞关系发生改变，只调用一次。
+`onTriggerExit` 回调函数会在两个触发器分离时被调用，即触发关系发生改变，只调用一次。
+
+### [**onCollisionEnter**](${api}core/Script#onCollisionEnter)
+
+`onCollisionEnter` 回调函数会在碰撞器碰撞时调用，以处理碰撞体相遇时的逻辑，例如在碰撞发生时删除实体。
+
+### [**onCollisionStay**](${api}core/Script#onCollisionStay)
+
+`onCollisionStay` 回调函数会在碰撞器碰撞过程中**持续**调用，每帧调用一次。
+
+### [**onCollisionExit**](${api}core/Script#onCollisionExit)
+`onCollisionExit` 回调函数会在两个碰撞器分离时被调用，即碰撞关系发生改变，只调用一次。
 
 ### [**onUpdate**](${api}core/Script#onUpdate)
 

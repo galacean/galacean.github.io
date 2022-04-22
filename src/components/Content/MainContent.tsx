@@ -201,11 +201,12 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     );
     const lang = isZhCN() ? 'zh-CN' : 'en-US';
     const order = {
-      "zh-CN": ["入门", "核心", "组件", "资源系统", "工具库", "二方库", "美术", "编辑器", "小程序"],
+      "zh-CN": ["入门", "核心", "组件", "物理系统", "资源系统", "工具库", "二方库", "美术", "编辑器", "小程序"],
       "en-US": [
         "Introduction",
         "Core",
         "Component",
+        "Physics System",
         "Resource",
         "Tool",
         "Second party packages",
