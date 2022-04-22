@@ -6,6 +6,7 @@
 import {
   AssetType,
   BackgroundMode,
+  BaseMaterial,
   BlendFactor,
   BlendOperation,
   Camera,
@@ -14,6 +15,7 @@ import {
   Entity,
   Font,
   Material,
+  RenderFace,
   RenderQueueType,
   Script,
   Shader,
@@ -81,20 +83,11 @@ function createText(text: string, posX: number, posY: number): Entity {
 
 function addCustomMaterialAndAnimateScript(entity: Entity, time: number): AnimateScript {
   // Create material
-  const material = new Material(engine, Shader.find("TextKTVSubtitle"));
+  const material = new BaseMaterial(engine, Shader.find("TextKTVSubtitle"));
   entity.getComponent(TextRenderer).setMaterial(material);
   // Init state
-  const { renderState } = material;
-  const target = renderState.blendState.targetBlendState;
-  target.enabled = true;
-  target.sourceColorBlendFactor = BlendFactor.SourceAlpha;
-  target.destinationColorBlendFactor = BlendFactor.OneMinusSourceAlpha;
-  target.sourceAlphaBlendFactor = BlendFactor.One;
-  target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
-  target.colorBlendOperation = target.alphaBlendOperation = BlendOperation.Add;
-  renderState.depthState.writeEnabled = false;
-  renderState.rasterState.cullMode = CullMode.Off;
-  material.renderQueueType = RenderQueueType.Transparent;
+  material.isTransparent = true;
+  material.renderFace = RenderFace.Double;
   // Set uniform
   material.shaderData.setFloat("u_percent", 0);
   material.shaderData.setColor("u_subtitleColor", new Color(0, 1, 0.89, 1));
