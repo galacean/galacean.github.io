@@ -92,9 +92,9 @@ this.engine.resourceManager.load({ url: "test", type: AssetType.Texture2D });
 > For more texture related documents, please refer to [Texture Resources](${docs}texture).
 
 ```typescript
-import { TextureCubeMap } from "oasis-engine";
+import { TextureCube } from "oasis-engine";
 
-const textureCube = await this.engine.resourceManager.load<TextureCubeMap>({
+const textureCube = await this.engine.resourceManager.load<TextureCube>({
   urls: [
     "/static/env/papermill/specular/specular_right_0.jpg",
     "/static/env/papermill/specular/specular_left_0.jpg",
@@ -107,7 +107,7 @@ const textureCube = await this.engine.resourceManager.load<TextureCubeMap>({
 });
 ```
 
-[TextureCubeMap](${api}core/TextureCubeMap) uses six pictures as original resources, uses urls to pass the links of six pictures, and uses [AssetType.TextureCube](${api}core/AssetType#TextureCube) for type.
+[TextureCube](${api}core/TextureCube) uses six pictures as original resources, uses urls to pass the links of six pictures, and uses [AssetType.TextureCube](${api}core/AssetType#TextureCube) for type.
 
 
 ### 3. Environment
@@ -144,9 +144,9 @@ The suffix of compressed texture is generally `ktx`, and you need to pay attenti
 The loading of the compressed cube texture is different from the general cube texture. It is a separate binary file path, instead of the file path of 6 images, but it needs to be specified as [AssetType.KTXCube](${api}core/AssetType#KTXCube), because ResourceManager cannot identify which specific type of Loader needs to be used based on the suffix.
 
 ```typescript
-import { TextureCubeMap } from "oasis-engine";
+import { TextureCube } from "oasis-engine";
 
-const compressedTextureCube = await this.engine.resourceManager.load<TextureCubeMap>({
+const compressedTextureCube = await this.engine.resourceManager.load<TextureCube>({
   url: "test.ktx",
   type: AssetType.KTXCube
 });

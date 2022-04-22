@@ -19,7 +19,7 @@ import {
   PrimitiveMesh,
   Layer,
   Script,
-  TextureCubeMap
+  TextureCube
 } from "oasis-engine";
 import {OrbitControl} from "@oasis-engine/controls";
 import {SpineAnimation} from "@oasis-engine/spine";
@@ -99,7 +99,7 @@ engine.resourceManager
   });
 
 engine.resourceManager
-  .load<TextureCubeMap>({
+  .load<TextureCube>({
       urls: [
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
