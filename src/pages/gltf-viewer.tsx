@@ -59,7 +59,7 @@ class Oasis {
   textures: Record<string, Texture2D> = {};
   env: Record<string, AmbientLight> = {};
 
-  engine: WebGLEngine = new WebGLEngine("canvas-gltf-viewer", undefined, { alpha: true });
+  engine: WebGLEngine = new WebGLEngine("canvas-gltf-viewer", { alpha: true });
   scene: Scene = this.engine.sceneManager.activeScene;
   skyMaterial: SkyBoxMaterial = new SkyBoxMaterial(this.engine);
 
@@ -375,7 +375,7 @@ class Oasis {
   async addEnv(name: string, url: string) {
     const texture = await this.engine.resourceManager.load<TextureCube>({
       url,
-      type: AssetType.HDR // from baker
+      type: "HDR-RGBE" // from baker
     });
 
     const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, DecodeMode.RGBE);
