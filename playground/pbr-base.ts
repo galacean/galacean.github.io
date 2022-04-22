@@ -22,13 +22,9 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
-const { ambientLight, background } = scene;
 const rootEntity = scene.createRootEntity();
 
 const gui = new dat.GUI();
-const envFolder = gui.addFolder("EnvironmentMapLight");
-envFolder.add(ambientLight, "specularIntensity", 0, 1);
-envFolder.add(ambientLight, "diffuseIntensity", 0, 1);
 
 const directLightNode = rootEntity.createChild("dir_light");
 const directLight = directLightNode.addComponent(DirectLight);
@@ -47,9 +43,9 @@ const control = cameraNode.addComponent(OrbitControl);
 control.target.setValue(0.25, 0.25, 0);
 
 // Create sky
-const sky = background.sky;
+const sky = scene.background.sky;
 const skyMaterial = new SkyBoxMaterial(engine);
-background.mode = BackgroundMode.Sky;
+scene.background.mode = BackgroundMode.Sky;
 sky.material = skyMaterial;
 sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
@@ -66,12 +62,16 @@ Promise.all([
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/34986a5b-fa16-40f1-83c8-1885efe855d2.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;
       skyMaterial.textureCubeMap = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
+
+      const envFolder = gui.addFolder("EnvironmentMapLight");
+      envFolder.add(ambientLight, "specularIntensity", 0, 1);
+      envFolder.add(ambientLight, "diffuseIntensity", 0, 1);
     })
 ]).then(() => {
   engine.run();

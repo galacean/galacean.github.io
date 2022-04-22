@@ -42,7 +42,7 @@ sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 const lightEntity = rootEntity.createChild();
 lightEntity.addComponent(DirectLight).intensity = 0.5;
-lightEntity.transform.setPosition(5, 5, 5);
+lightEntity.transform.setPosition(-5, 5, 5);
 lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 
 // material ball
@@ -57,7 +57,7 @@ ballRender.setMaterial(material);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/258a783d-0673-4b47-907a-da17b882feee.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/871e960f-874f-4dc6-aa69-2e8fda8b5795.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
