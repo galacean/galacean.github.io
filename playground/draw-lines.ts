@@ -121,7 +121,8 @@ class DrawScript extends Script {
   }
 }
 
-const engine = new WebGLEngine("canvas", LitePhysics);
+const engine = new WebGLEngine("canvas");
+engine.physicsManager.initialize(LitePhysics);
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
@@ -220,7 +221,7 @@ function createCircleMesh(pos: Vector3, forwardVec3: Vector3, lineWidth: number,
 
 // Debug
 const debugInfo = {
-  drawAble: "绘制",
+  mode: "Draw",
   lineWidth: 0.1,
   precision: 15,
   depth: 10,
@@ -231,54 +232,36 @@ const debugInfo = {
   }
 };
 
-gui
-  .add(debugInfo, "drawAble", ["观察", "绘制"])
-  .onChange((v: string) => {
-    if (v === "绘制") {
-      planeScript.camera = camera;
-      planeScript.enabled = true;
-      cameraControl.enabled = false;
-    } else {
-      planeScript.enabled = false;
-      cameraControl.enabled = true;
-      cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-    }
-  })
-  .name("当前操作");
+gui.add(debugInfo, "mode", ["Observe", "Draw"]).onChange((v: string) => {
+  if (v === "Draw") {
+    planeScript.camera = camera;
+    planeScript.enabled = true;
+    cameraControl.enabled = false;
+  } else {
+    planeScript.enabled = false;
+    cameraControl.enabled = true;
+    cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+  }
+});
 
-gui
-  .add(debugInfo, "lineWidth", 0.01, 2, 0.02)
-  .onChange((v: number) => {
-    planeScript.lineWidth = v;
-  })
-  .name("线条宽度");
+gui.add(debugInfo, "lineWidth", 0.01, 2, 0.02).onChange((v: number) => {
+  planeScript.lineWidth = v;
+});
 
-gui
-  .add(debugInfo, "precision", 4, 40, 1)
-  .onChange((v: number) => {
-    planeScript.precision = v;
-  })
-  .name("圆润程度");
+gui.add(debugInfo, "precision", 4, 40, 1).onChange((v: number) => {
+  planeScript.precision = v;
+});
 
-gui
-  .add(debugInfo, "depth", 5, 15, 0.5)
-  .onChange((v: number) => {
-    planeScript.depth = v;
-  })
-  .name("绘制深度");
+gui.add(debugInfo, "depth", 5, 15, 0.5).onChange((v: number) => {
+  planeScript.depth = v;
+});
 
-gui
-  .add(debugInfo, "drawInterval", 15, 100, 1)
-  .onChange((v: number) => {
-    planeScript.drawInterval = v;
-  })
-  .name("绘制延迟");
+gui.add(debugInfo, "drawInterval", 15, 100, 1).onChange((v: number) => {
+  planeScript.drawInterval = v;
+});
 
-gui
-  .addColor(debugInfo, "lineColor")
-  .onChange((v: number) => {
-    planeScript.setColor(v[0] / 255, v[1] / 255, v[2] / 255, 1);
-  })
-  .name("线条颜色");
+gui.addColor(debugInfo, "lineColor").onChange((v: number) => {
+  planeScript.setColor(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+});
 
-gui.add(debugInfo, "resetView").name("重置视角");
+gui.add(debugInfo, "resetView");
