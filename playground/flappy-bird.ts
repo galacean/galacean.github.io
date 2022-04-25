@@ -69,7 +69,8 @@ function fitWithHeight(aspectRatio: number) {
 // Design size.
 fitWithHeight(768 / 896);
 // Create engine object.
-const engine = new WebGLEngine("canvas", LitePhysics);
+const engine = new WebGLEngine("canvas");
+engine.physicsManager.initialize(LitePhysics);
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;

@@ -6,31 +6,31 @@
   "typedocSource": "../engine",
   "packages": {
     "oasis-engine": {
-      "version": "0.6.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.6.2/dist/browser.min.js"
+      "version": "0.7.0-beta.1",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/0.7.0-beta.1/dist/browser.min.js"
     },
     "@oasis-engine/controls": {
-      "version": "0.6.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/controls/0.6.2/dist/browser.min.js"
+      "version": "0.7.0-beta.1",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/controls/0.7.0-beta.1/dist/browser.min.js"
     },
     "@oasis-engine/framebuffer-picker": {
-      "version": "0.6.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.6.2/dist/browser.js",
+      "version": "0.7.0-beta.1",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/framebuffer-picker/0.7.0-beta.1/dist/browser.min.js",
       "dist": "dist/browser.js"
     },
     "@oasis-engine/baker": {
-      "version": "1.0.4",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/baker/1.0.4/dist/index.browser.js",
+      "version": "1.1.0-beta.0",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/baker/1.1.0-beta.0/dist/index.browser.js",
       "dist": "dist/index.browser.js"
     },
     "@oasis-engine/physics-lite": {
-      "version": "0.6.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/physics-lite/0.6.2/dist/browser.js",
+      "version": "0.7.0-beta.1",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/physics-lite/0.7.0-beta.1/dist/browser.min.js",
       "dist": "dist/browser.js"
     },
     "@oasis-engine/physics-physx": {
-      "version": "0.6.2",
-      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/physics-physx/0.6.2/dist/browser.min.js"
+      "version": "0.7.0-beta.1",
+      "cdn": "https://gw.alipayobjects.com/os/lib/oasis-engine/physics-physx/0.7.0-beta.1/dist/browser.min.js"
     },
     "@oasis-engine/spine": {
       "version": "0.2.1",
