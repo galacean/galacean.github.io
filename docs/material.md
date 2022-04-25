@@ -24,7 +24,12 @@ Engine and editor have fully advocated the use of PBR materials. **PBR means phy
 | [emissiveTexture](${api}core/PBRBaseMaterial#emissiveTexture) | With the `emissiveColor`, it is a multiplied relationship. |
 | [normalTexture](${api}core/PBRBaseMaterial#normalTexture) | Normal texture can visually create a sense of bump, and the `normalIntensity` can also be used to control the degree of bumps. |
 | [occlusionTexture](${api}core/PBRBaseMaterial#occlusionTexture) | `occlusionTexture` can enhance the shadow details of the object. |
-| [tilingOffset](${api}core/PBRBaseMaterial#tilingOffset) | The scaling and offset of texture coordinates, is a `Vector4` data, which respectively controls the scaling and offset of texture coordinates in the uv direction. Refer to [playground](${examples}tiling-offset) |
+| [tilingOffset](${api}core/PBRBaseMaterial#tilingOffset) | The scaling and offset of texture coordinates, is a `Vector4` data, which respectively controls the scaling and offset of texture coordinates in the uv direction. Refer to [Playground](${examples}tiling-offset).|
+| [clearCoat](${api}core/PBRBaseMaterial#clearCoat) | The clear coat layer intensity, default 0, that is, do not turn on the clear coat effect. Refer to [Playground](${examples}pbr-clearcoat).|
+| [clearCoatTexture](${api}core/PBRBaseMaterial#clearCoatTexture) | The clear coat layer intensity texture, With the `clearCoat`, it is a multiplied relationship. |
+| [clearCoatRoughness](${api}core/PBRBaseMaterial#clearCoatRoughness) | The clear coat layer roughness.|
+| [clearCoatRoughnessTexture](${api}core/PBRBaseMaterial#clearCoatRoughnessTexture) | The clear coat layer roughness texture. With the `clearCoatRoughness`, it is a multiplied relationship. |
+| [clearCoatNormalTexture](${api}core/PBRBaseMaterial#clearCoatNormalTexture) | The clear coat normal texture, if not set it will share the normal of the original material. |
 
 In addition to the above general parameters, PBR provides two workflows: **Metal-Roughness** and **Specular-Glossiness**, corresponding to [PBRMaterial](${api}core/PBRMaterial) and [PBRSpecularMaterial](${api}core/PBRSpecularMaterial).
 
