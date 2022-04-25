@@ -3,32 +3,38 @@
  * @category Physics
  */
 
+import { OrbitControl } from "@oasis-engine/controls";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 import {
-  WebGLEngine,
-  DynamicCollider,
-  BoxColliderShape,
-  Vector3,
-  MeshRenderer,
   BlinnPhongMaterial,
-  PointLight,
-  PrimitiveMesh,
+  BoxColliderShape,
   Camera,
+  DirectLight,
+  DynamicCollider,
+  Entity,
+  MeshRenderer,
+  PlaneColliderShape,
+  PrimitiveMesh,
+  Quaternion,
+  Script,
   StaticCollider,
   Vector2,
-  Quaternion,
-  Entity,
-  PlaneColliderShape, Script,
+  Vector3,
+  WebGLEngine
 } from "oasis-engine";
-import {OrbitControl} from "@oasis-engine/controls";
-
-import {
-  PhysXPhysics
-} from "@oasis-engine/physics-physx";
 
 class TableGenerator extends Script {
-  totalTime: number = 0;
+  private _totalTime: number = 0;
 
-  addTable(): void {
+  onUpdate(deltaTime: number): void {
+    this._totalTime += deltaTime;
+    if (this._totalTime > 300) {
+      this._addTable();
+      this._totalTime = 0;
+    }
+  }
+
+  private _addTable(): void {
     const entity = this.entity.createChild("entity");
     entity.transform.setPosition(Math.random() * 16 - 8, 10, Math.random() * 16 - 8);
     entity.transform.setRotation(Math.random() * 360, Math.random() * 360, Math.random() * 360);
@@ -36,8 +42,9 @@ class TableGenerator extends Script {
     const boxCollider = entity.addComponent(DynamicCollider);
     boxCollider.mass = 10.0;
 
-    const boxMtl = new BlinnPhongMaterial(this.engine);
-    boxMtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    const boxMaterial = new BlinnPhongMaterial(this.engine);
+    boxMaterial.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    boxMaterial.shininess = 128;
     {
       const physicsBox = new BoxColliderShape();
       physicsBox.size = new Vector3(0.5, 0.4, 0.045);
@@ -47,63 +54,55 @@ class TableGenerator extends Script {
       child.transform.setPosition(0, 0, 0.125);
       const boxRenderer = child.addComponent(MeshRenderer);
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.5, 0.4, 0.045);
-      boxRenderer.setMaterial(boxMtl);
+      boxRenderer.setMaterial(boxMaterial);
     }
 
     {
       const physicsBox1 = new BoxColliderShape();
       physicsBox1.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox1.setPosition(-0.2, -0.148, -0.048);
+      physicsBox1.setPosition(-0.2, -0.15, -0.045);
       boxCollider.addShape(physicsBox1);
       const child = entity.createChild();
-      child.transform.setPosition(-0.2, -0.148, -0.048);
+      child.transform.setPosition(-0.2, -0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
-      boxRenderer.setMaterial(boxMtl);
+      boxRenderer.setMaterial(boxMaterial);
     }
 
     {
       const physicsBox2 = new BoxColliderShape();
       physicsBox2.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox2.setPosition(0.2, -0.148, -0.048);
+      physicsBox2.setPosition(0.2, -0.15, -0.045);
       boxCollider.addShape(physicsBox2);
       const child = entity.createChild();
-      child.transform.setPosition(0.2, -0.148, -0.048);
+      child.transform.setPosition(0.2, -0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
-      boxRenderer.setMaterial(boxMtl);
+      boxRenderer.setMaterial(boxMaterial);
     }
 
     {
       const physicsBox3 = new BoxColliderShape();
       physicsBox3.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox3.setPosition(-0.2, 0.153, -0.048);
+      physicsBox3.setPosition(-0.2, 0.15, -0.045);
       boxCollider.addShape(physicsBox3);
       const child = entity.createChild();
-      child.transform.setPosition(-0.2, 0.153, -0.048);
+      child.transform.setPosition(-0.2, 0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
-      boxRenderer.setMaterial(boxMtl);
+      boxRenderer.setMaterial(boxMaterial);
     }
 
     {
       const physicsBox4 = new BoxColliderShape();
       physicsBox4.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox4.setPosition(0.2, 0.153, -0.048);
+      physicsBox4.setPosition(0.2, 0.15, -0.045);
       boxCollider.addShape(physicsBox4);
       const child = entity.createChild();
-      child.transform.setPosition(0.2, 0.153, -0.048);
+      child.transform.setPosition(0.2, 0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
-      boxRenderer.setMaterial(boxMtl);
-    }
-  }
-
-  onUpdate(deltaTime: number) {
-    this.totalTime += deltaTime;
-    if (this.totalTime > 300) {
-      this.addTable();
-      this.totalTime = 0;
+      boxRenderer.setMaterial(boxMaterial);
     }
   }
 }
@@ -115,9 +114,7 @@ PhysXPhysics.initialize().then(() => {
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity("root");
-
-  scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
-  scene.ambientLight.diffuseIntensity = 1.2;
+  scene.ambientLight.diffuseSolidColor.setValue(0.5, 0.5, 0.5, 1);
 
   // init camera
   const cameraEntity = rootEntity.createChild("camera");
@@ -125,36 +122,36 @@ PhysXPhysics.initialize().then(() => {
   cameraEntity.transform.setPosition(10, 10, 10);
   cameraEntity.addComponent(OrbitControl);
 
-  // init point light
+  // init directional light
   const light = rootEntity.createChild("light");
-  light.transform.setPosition(0, 3, 0);
-  const pointLight = light.addComponent(PointLight);
-  pointLight.intensity = 0.3;
+  light.transform.setPosition(0.3, 1, 0.4);
+  light.transform.lookAt(new Vector3(0, 0, 0));
+  light.addComponent(DirectLight);
 
-  function addPlane(size: Vector2, position: Vector3, rotation: Quaternion): Entity {
-    const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
-    const planeEntity = rootEntity.createChild();
-
-    const renderer = planeEntity.addComponent(MeshRenderer);
-    renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
-    renderer.setMaterial(mtl);
-    planeEntity.transform.position = position;
-    planeEntity.transform.rotationQuaternion = rotation;
-
-    const physicsPlane = new PlaneColliderShape();
-    physicsPlane.setPosition(0, 0.1, 0);
-    const planeCollider = planeEntity.addComponent(StaticCollider);
-    planeCollider.addShape(physicsPlane);
-
-    return planeEntity;
-  }
-
-  addPlane(new Vector2(30, 30), new Vector3, new Quaternion);
+  addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
   rootEntity.addComponent(TableGenerator);
-
 
   // Run engine
   engine.run();
-
 });
+
+function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
+  const engine = rootEntity.engine;
+  const material = new BlinnPhongMaterial(engine);
+  material.baseColor.setValue(0.04, 0.42, 0.45, 1);
+  material.shininess = 128;
+
+  const entity = rootEntity.createChild();
+  const renderer = entity.addComponent(MeshRenderer);
+  entity.transform.position = position;
+  entity.transform.rotationQuaternion = rotation;
+  renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
+  renderer.setMaterial(material);
+
+  const physicsPlane = new PlaneColliderShape();
+  physicsPlane.setPosition(0, 0.1, 0);
+  const planeCollider = entity.addComponent(StaticCollider);
+  planeCollider.addShape(physicsPlane);
+
+  return entity;
+}

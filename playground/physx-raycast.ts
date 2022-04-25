@@ -22,7 +22,7 @@ import {
   WebGLEngine,
   Quaternion,
   Vector2,
-  Vector3
+  Vector3, DirectLight
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine/controls";
 
@@ -45,13 +45,13 @@ PhysXPhysics.initialize().then(() => {
   cameraEntity.addComponent(OrbitControl);
 
   // init light
-  scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
-  scene.ambientLight.diffuseIntensity = 1.2;
+  scene.ambientLight.diffuseSolidColor.setValue(0.5, 0.5, 0.5, 1);
 
+  // init directional light
   const light = rootEntity.createChild("light");
-  light.transform.position = new Vector3(0, 5, 0);
-  const p = light.addComponent(PointLight);
-  p.intensity = 0.3;
+  light.transform.setPosition(0.3, 1, 0.4);
+  light.transform.lookAt(new Vector3(0, 0, 0));
+  light.addComponent(DirectLight);
 
   init();
 
