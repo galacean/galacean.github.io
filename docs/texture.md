@@ -16,7 +16,11 @@ It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as 
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*tmTkSLi0XJ8AAAAAAAAAAAAAARQnAQ)
 
-#### 2. Cube texture
+### 2. 2D Texture Arrays
+
+Each mipmap level in a 2D texture array ([Texture2DArray](${api}core/Texture2DArray)) contains an image array of the same size, unlike `sampler2D u_texture[]`, it takes only one texture unit and is ideal for Implement those needs that require switching texture atlases, such as BlendShape's texture scheme.
+
+### 3. Cube texture
 
 The difference between a cube texture ([TextureCube](${api}core/TextureCube)) and a 2D texture is that it has 6 faces, that is, a cube texture is composed of 6 2D textures.
 
@@ -30,7 +34,7 @@ The sampling method of cube texture and 2D texture is slightly different. Textur
 
 Because of this sampling feature, cube texture can be used to achieve special effects such as skybox, environmental reflection and so on.
 
-### 3. Off-screen rendering texture
+### 4. Off-screen rendering texture
 
 Off-screen rendering texture, as the name suggests, the texture can be obtained by off-screen rendering. The bottom layer uses the [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) technology to output the rendering operation to the texture instead of the screen. The user can use this texture to realize post-processing special effects, refraction, reflection, dynamic environment mapping and other artistic creations.
 
@@ -166,7 +170,7 @@ Anisotropic filtering technology can make the texture clearer when viewed at an 
 texture.anisoLevel = 4; // 1~16
 ```
 
-#### 4. mipmap
+### 4. mipmap
 
 **Oasis enable [mipmap](${api}core/Texture#generateMipmaps) by default**, mipmap is used to solve the accuracy and performance problems when sampling high-resolution textures from low-resolution screens. That is, textures of different resolutions can be selected at a suitable distance, as shown in the following figure:
 
@@ -218,7 +222,7 @@ const material = new PBRMaterial(engine);
 material.baseTexture = texture;
 ```
 
-#### 2. Skybox
+### 2. Skybox
 
 The sky box needs a cube texture, the effect is as follows:
 
@@ -232,7 +236,7 @@ background.mode = BackgroundMode.Sky;
 skyMaterial.textureCubeMap = cubeTexture;
 ```
 
-#### 3. IBL
+### 3. IBL
 
 In PBR rendering, if we want to get realistic environment reflection phenomenon, we have to turn on [IBL in ambientLight](${docs}light#ibl). IBL needs cube textures as diffuse and specular textures, which can reflect the surrounding environment, with the following effects:
 

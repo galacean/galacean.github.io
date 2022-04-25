@@ -16,7 +16,13 @@ type: 资源系统
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*tmTkSLi0XJ8AAAAAAAAAAAAAARQnAQ)
 
-#### 2. 立方纹理
+
+### 2. 2D 纹理数组
+2D 纹理数组（[Texture2DArray](${api}core/Texture2DArray)）中的每个 mipmap 级别包含相同大小的图像数组，不同于 `sampler2D u_texture[]`, 它只占用一个纹理单元，非常适合用来实现那些需要切换纹理图集的需求，比如 BlendShape 的纹理方案。
+
+
+
+### 3. 立方纹理
 
 立方纹理（[TextureCube](${api}core/TextureCube)）和 2D 纹理的区别是它有 6 个面，即用 6 张 2D 纹理组成了一个立方纹理。
 
@@ -30,7 +36,7 @@ type: 资源系统
 
 正因为这种采样特性，所以立方纹理可以用来实现天空盒、环境反射等特效。
 
-### 3. 离屏渲染纹理
+### 4. 离屏渲染纹理
 
 离屏渲染纹理，顾名思义，该纹理可以通过离屏渲染得到。底层使用了 [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) 技术，将渲染操作不再输出到屏幕上，而是输出到纹理上，用户通过该纹理，可以用来实现后处理特效、折射、反射、动态环境贴图等一些艺术创作。
 
@@ -221,7 +227,7 @@ const texture = 生成纹理(); // 上文所示，不再赘述
 material.baseTexture = texture;
 ```
 
-#### 2. 天空盒
+### 2. 天空盒
 
 天空盒需要使用一张立方纹理,即将天空盒的 6 个面都赋予纹理，效果如下：
 
@@ -235,7 +241,7 @@ background.mode = BackgroundMode.Sky;
 skyMaterial.textureCubeMap = cubeTexture;
 ```
 
-#### 3. IBL
+### 3. IBL
 
 在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得开启[环境光的 IBL 模式](${docs}light-cn#ibl-模式)。而 IBL 需要立方纹理作为漫反射和镜面反射纹理，可以在不同的视角方向，渲染出周边环境的一些细节，如下效果：
 
