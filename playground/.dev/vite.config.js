@@ -14,14 +14,19 @@ fs.emptyDirSync(path.resolve(__dirname, OUT_PATH));
 // create mpa
 const demoList = fs
   .readdirSync(path.join(__dirname, "../"))
-  .filter((name) => name !== ".dev")
+  .filter((name) => /.ts$/.test(name))
   .map((name) => {
     const content = fs.readFileSync(path.join(__dirname, "../", name), "utf8");
-    const title = /@title\s+(.+)\b/.exec(content)[1];
-    const category = /@category\s+(.+)\b/.exec(content)[1];
+    const title = /@title\s+(.+)\b/.exec(content);
+    const category = /@category\s+(.+)\b/.exec(content);
+
+    if (!title || !category) {
+      throw new Error(`title and category must be set in playground[${name}]`);
+    }
+
     return {
-      title,
-      category,
+      title: title[1],
+      category: category[1],
       file: name.split(".ts")[0]
     };
   });
