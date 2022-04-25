@@ -4,15 +4,11 @@
  */
 import { OrbitControl } from "@oasis-engine/controls";
 import {
-  BoundingBox,
   BoxColliderShape,
   Camera,
   DirectLight,
-  Entity,
   GLTFResource,
-  Matrix,
   MeshRenderer,
-  Renderer,
   Script,
   StaticCollider,
   Vector3,
@@ -23,36 +19,31 @@ import { LitePhysics } from "@oasis-engine/physics-lite";
 class GlTFCollider extends Script {
   private _tempVec30: Vector3 = new Vector3();
   private _tempVec31: Vector3 = new Vector3();
-  private _tempMatrix: Matrix = new Matrix();
-  private _notMergeEntity: Entity[] = [];
 
   onStart(): void {
-    const { _notMergeEntity: notMergeEntity } = this;
     const renderers = this.entity.getComponentsIncludeChildren(MeshRenderer, []);
     for (let i = renderers.length - 1; i >= 0; i--) {
-      notMergeEntity.push(this._addBoundingBox(renderers[i].bounds, renderers[i]));
+      this._addBoundingBox(renderers[i]);
     }
   }
 
-  private _addBoundingBox(boundingBox: BoundingBox, renderer: Renderer): Entity {
-    const { entity, _tempVec30: worldSize, _tempVec31: worldPosition, _tempMatrix: worldMatrix } = this;
+  private _addBoundingBox(renderer: MeshRenderer): void {
+    const { _tempVec30: localSize, _tempVec31: localPosition } = this;
     // Calculate the position and size of the collider.
-    boundingBox.getCenter(worldPosition);
-    Vector3.subtract(boundingBox.max, boundingBox.min, worldSize);
-    // Add entity and calculate the world matrix of the collider.
-    const cubeEntity = entity.createChild("cube");
-    Matrix.translation(worldPosition, worldMatrix);
-    cubeEntity.transform.worldMatrix = worldMatrix;
+    const boundingBox = renderer.mesh.bounds;
+    const entity = renderer.entity;
+    boundingBox.getCenter(localPosition);
+    Vector3.subtract(boundingBox.max, boundingBox.min, localSize);
     // Add collider.
-    const boxCollider = cubeEntity.addComponent(StaticCollider);
+    const boxCollider = entity.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.setSize(worldSize.x, worldSize.y, worldSize.z);
+    boxColliderShape.setPosition(localPosition.x, localPosition.y, localPosition.z);
+    boxColliderShape.setSize(localSize.x, localSize.y, localSize.z);
     boxCollider.addShape(boxColliderShape);
     // Add click script.
-    cubeEntity.addComponent(Script).onPointerClick = () => {
-      window.alert("Click:" + renderer.entity.name);
+    entity.addComponent(Script).onPointerClick = () => {
+      window.alert("Click:" + entity.name);
     };
-    return cubeEntity;
   }
 }
 
