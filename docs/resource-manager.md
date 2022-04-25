@@ -109,8 +109,26 @@ const textureCube = await this.engine.resourceManager.load<TextureCube>({
 
 [TextureCube](${api}core/TextureCube) uses six pictures as original resources, uses urls to pass the links of six pictures, and uses [AssetType.TextureCube](${api}core/AssetType#TextureCube) for type.
 
+### 3. HDR
+```typescript
+import { TextureCube } from "oasis-engine";
 
-### 3. Environment
+engine.resourceManager
+  .load<TextureCube>({
+    type: AssetType.HDR,
+    url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin"
+  })
+  .then((texture) => {
+    skyMaterial.textureCubeMap = texture;
+    // HDR output is in RGBM format.
+    skyMaterial.textureDecodeRGBM = true;
+  });
+```
+
+HDR Loader use [AssetType.HDR](${api}core/AssetType#HDR) to load texture with .HDR format，The resulting product is also a cube texture.
+
+
+### 4. Environment
 Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
@@ -127,7 +145,7 @@ engine.resourceManager
     scene.ambientLight = ambientLight;
   });
 ```
-### 4. Compressed texture
+### 5. Compressed texture
 
 > For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture#Compressed Texture).
 
@@ -139,7 +157,7 @@ const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("t
 
 The suffix of compressed texture is generally `ktx`, and you need to pay attention to the compressed texture format supported by the platform when using it. After the compressed texture is loaded, the result is also [Texture2D](${api}core/Texture2D).
 
-### 5. Compressed Cube Texture
+### 6. Compressed Cube Texture
 
 The loading of the compressed cube texture is different from the general cube texture. It is a separate binary file path, instead of the file path of 6 images, but it needs to be specified as [AssetType.KTXCube](${api}core/AssetType#KTXCube), because ResourceManager cannot identify which specific type of Loader needs to be used based on the suffix.
 
@@ -152,7 +170,7 @@ const compressedTextureCube = await this.engine.resourceManager.load<TextureCube
 });
 ```
 
-### 6. glTF
+### 7. glTF
 
 What you get after the resource is loaded is a [GLTFResource](${api}loader/GLTFResource) resource, including [Scene](${api}core/Scene), [Entity](${api}core/Entity), [Texture ](${api}core/Texture), [Material](${api}core/Material) and [AnimationClip](${api}core/AnimationClip) and other objects.
 
@@ -166,7 +184,7 @@ const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 
 Go to [glTF resources](${docs}gltf) to learn more about glTF related designs.
 
-### 7. Custom Loader
+### 8. Custom Loader
 
 Users can also customize the loader to load custom resources:
 
