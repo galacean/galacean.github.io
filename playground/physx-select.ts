@@ -129,12 +129,12 @@ PhysXPhysics.initialize().then(() => {
     Promise.all([
       engine.resourceManager
         .load<Texture2D>({
-          url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*W5azT5DjDAEAAAAAAAAAAAAAARQnAQ",
+          url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Wkn5QY0tpbcAAAAAAAAAAAAAARQnAQ",
           type: AssetType.Texture2D
         }),
       engine.resourceManager
         .load<Texture2D>({
-          url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Wkn5QY0tpbcAAAAAAAAAAAAAARQnAQ",
+          url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*W5azT5DjDAEAAAAAAAAAAAAAARQnAQ",
           type: AssetType.Texture2D
         })
     ]).then((asset: Texture2D[]) => {
@@ -145,18 +145,19 @@ PhysXPhysics.initialize().then(() => {
         const boxMtl = new BlinnPhongMaterial(engine);
         const boxRenderer = entity.addComponent(MeshRenderer);
         boxMtl.baseTexture = asset[0];
+        boxMtl.baseTexture.anisoLevel = 12;
         boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 0.5, 0.33, 2, false);
         boxRenderer.setMaterial(boxMtl);
 
         const physicsBox = new BoxColliderShape();
         physicsBox.size = new Vector3(0.5, 0.33, 2);
-        physicsBox.material.staticFriction = 0.4;
-        physicsBox.material.dynamicFriction = 0.4;
-        physicsBox.material.bounciness = 0.2;
+        physicsBox.material.staticFriction = 1;
+        physicsBox.material.dynamicFriction = 1;
+        physicsBox.material.bounciness = 0.0;
 
         const boxCollider = entity.addComponent(DynamicCollider);
         boxCollider.addShape(physicsBox);
-        boxCollider.mass = 1.0;
+        boxCollider.mass = 1;
         boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
         entity.addComponent(PanScript);
@@ -169,18 +170,19 @@ PhysXPhysics.initialize().then(() => {
         const boxMtl = new BlinnPhongMaterial(engine);
         const boxRenderer = entity.addComponent(MeshRenderer);
         boxMtl.baseTexture = asset[1];
+        boxMtl.baseTexture.anisoLevel = 12;
         boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 2, 0.33, 0.5);
         boxRenderer.setMaterial(boxMtl);
 
         const physicsBox = new BoxColliderShape();
         physicsBox.size = new Vector3(2, 0.33, 0.5);
-        physicsBox.material.staticFriction = 0.4;
-        physicsBox.material.dynamicFriction = 0.4;
-        physicsBox.material.bounciness = 0.2;
+        physicsBox.material.staticFriction = 1;
+        physicsBox.material.dynamicFriction = 1;
+        physicsBox.material.bounciness = 0.0;
 
         const boxCollider = entity.addComponent(DynamicCollider);
         boxCollider.addShape(physicsBox);
-        boxCollider.mass = 1.0;
+        boxCollider.mass = 0.5;
         boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
 
         entity.addComponent(PanScript);

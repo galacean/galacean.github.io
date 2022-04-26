@@ -5,7 +5,7 @@
 
 import {
   BlinnPhongMaterial,
-  Camera,
+  Camera, DirectLight,
   DynamicCollider,
   Entity,
   Layer,
@@ -60,10 +60,9 @@ PhysXPhysics.initialize().then(() => {
 
   // init light
   scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
-  scene.ambientLight.diffuseIntensity = 1.2;
 
   const light = rootEntity.createChild("light");
-  light.transform.position = new Vector3(0, 5, 0);
+  light.transform.position = new Vector3(0, 0, 0);
   const p = light.addComponent(PointLight);
   p.intensity = 0.3;
 
