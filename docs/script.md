@@ -17,7 +17,7 @@ import {
 } from 'oasis-engine'
 
 // 1. Create entity
-const node = new Entity(engine);
+const entity = new Entity(engine);
 
 // 2. Inherit Script
 class MyScript extends Script {
@@ -123,20 +123,20 @@ when the collision relationship changes, it will be called only once.
 
 ### [**onUpdate**](${api}core/Script#onUpdate)
 
-A key point in game/animation development is to update the behavior, state and orientation of the object before each frame is rendered. These update operations are usually placed in the `onUpdate` callback.
+A key point in game/animation development is to update the behavior, state and orientation of the object before each frame is rendered. These update operations are usually placed in the `onUpdate` callback. Receive a time difference with previous `onUpdate`.
 ```typescript
 onStart() {
 	this.rotationY = 0
 }
 
-onUpdate() {
+onUpdate(deltaTime: number) {
 	this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
 }
 ```
 
 ### [**onLateUpdate**](${api}core/Script#onLateUpdate)
 
-`onUpdate` will be executed before all animations are updated, but if we need to perform some additional operations after the animations (such as animations, particles, etc.) are updated, or if we want to perform other operations after all the components of `onUpdate` have been executed For example, if the camera follows, you need to use the `onLateUpdate` callback.
+`onUpdate` will be executed before all animations are updated, but if we need to perform some additional operations after the animations (such as animations, particles, etc.) are updated, or if we want to perform other operations after all the components of `onUpdate` have been executed For example, if the camera follows, you need to use the `onLateUpdate` callback. Receive a time difference with previous `onLateUpdate`.
 ```typescript
 onStart() {
 	this.rotationY = 0
@@ -146,7 +146,7 @@ onUpdate() {
 	this.entity.transform.rotate(new Vector3(0, this.rotationY++, 0))
 }
 
-onLateUpdate() {
+onLateUpdate(deltaTime: number) {
 	this.rotationY %= 360;
 }
 ```

@@ -76,9 +76,9 @@ lightEntity.transform.setRotation(-45, -45, 0);
 ```typescript
 const lightEntity = rootEntity.createChild("light");
 
-lightEntity.addComponent(PointLight);
-lightEntity.distance = 100;
-lightEntity.color.setValue(0.3, 0.3, 1, 1);
+const pointLight = lightEntity.addComponent(PointLight);
+pointLight.distance = 100;
+pointLight.color.setValue(0.3, 0.3, 1, 1);
 lightEntity.transform.setPosition(-10, 10, 10);
 ```
 
@@ -89,11 +89,11 @@ lightEntity.transform.setPosition(-10, 10, 10);
 ```typescript
 const lightEntity = rootEntity.createChild("light");
 
-lightEntity.addComponent(SpotLight);
+const spotLight = lightEntity.addComponent(SpotLight);
 
-lightEntity.angle = Math.PI / 6;
-lightEntity.penumbra = Math.PI / 12;
-lightEntity.color.setValue(0.3, 0.3, 1, 1);
+spotLight.angle = Math.PI / 6; // 散射角度
+spotLight.penumbra = Math.PI / 12; // 半影衰减角度
+spotLight.color.setValue(0.3, 0.3, 1, 1);
 
 lightEntity.transform.setPosition(-10, 10, 10);
 lightEntity.transform.setRotation(-45, -45, 0);

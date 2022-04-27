@@ -11,8 +11,8 @@ type: Resource
 | parameter | type | description |
 | :--- | :--- | :--- |
 |[texture](${api}core/Sprite#texture)|[Texture2D](${api}core/Texture2D)|Use texture references|
-|[pivot](${api}core/Sprite#pivot)|[Vector2](${api}math/Vector2)|The position of the center point of the sprite in the region on the original texture, the range is 0～1|
 |[region](${api}core/Sprite#region)|[Rect](${api}math/Rect)|The position of the sprite on the original texture, the range is 0～1|
+|[pivot](${api}core/Sprite#pivot)|[Vector2](${api}math/Vector2)|The position of the center point of the sprite in the region on the original texture, the range is 0～1|
 |[pixelsPerUnit](${api}core/Sprite#pixelsPerUnit)|number|The number of pixels in the sprite that corresponds to a unit in world space|
 
 ## The relationship between texture、pivot、region(Rect)
