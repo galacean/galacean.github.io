@@ -99,7 +99,7 @@ class Camera {
     this._isViewMatrixDirty = this._transform.registerWorldChangeFlag();
   }
   get viewMatrix() {
-    // 当标记更新时，根据 worldmatrix 得到viewMatrix～
+    // 当标记更新时，根据 worldMatrix 得到viewMatrix～
   	if (this._isViewMatrixDirty.flag) {
       this._isViewMatrixDirty.flag = false;
       Matrix.invert(this._transform.worldMatrix, this._viewMatrix);

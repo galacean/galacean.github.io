@@ -88,8 +88,10 @@ class Oasis {
     // Lights
     env: "park",
     lights: true,
-    lightColor: Oasis.colorToGui(new Color(1, 1, 1)),
-    lightIntensity: 1
+    lightColor1: Oasis.colorToGui(new Color(1, 1, 1)),
+    lightColor2: Oasis.colorToGui(new Color(1, 1, 1)),
+    lightIntensity1: 1,
+    lightIntensity2: 1
   };
   _materials: Material[] = [];
 
@@ -146,9 +148,10 @@ class Oasis {
     if (!this.state.lights) {
       this.light1.enabled = this.light2.enabled = false;
     }
-    this.light1.intensity = this.light2.intensity = this.state.lightIntensity;
-    this.lightEntity1.transform.setRotation(30, 0, 0);
-    this.lightEntity2.transform.setRotation(-30, 180, 0);
+    this.light1.intensity = this.state.lightIntensity1;
+    this.light2.intensity = this.state.lightIntensity2;
+    this.lightEntity1.transform.setRotation(-45, 0, 0);
+    this.lightEntity2.transform.setRotation(-45, 180, 0);
     this.scene.background.solidColor = new Color(0, 0, 0, 0);
     this.scene.background.sky.material = this.skyMaterial;
     this.scene.background.sky.mesh = PrimitiveMesh.createCuboid(this.engine, 1, 1, 1);
@@ -189,12 +192,17 @@ class Oasis {
     this.lightFolder.add(this.state, "lights").onChange((v) => {
       this.light1.enabled = this.light2.enabled = v;
     });
-    this.lightFolder.addColor(this.state, "lightColor").onChange((v) => {
+    this.lightFolder.addColor(this.state, "lightColor1").onChange((v) => {
       Oasis.guiToColor(v, this.light1.color);
+    });
+    this.lightFolder.addColor(this.state, "lightColor2").onChange((v) => {
       Oasis.guiToColor(v, this.light2.color);
     });
-    this.lightFolder.add(this.state, "lightIntensity", 0, 2).onChange((v) => {
-      this.light1.intensity = this.light2.intensity = v;
+    this.lightFolder.add(this.state, "lightIntensity1", 0, 2).onChange((v) => {
+      this.light1.intensity = v;
+    });
+    this.lightFolder.add(this.state, "lightIntensity2", 0, 2).onChange((v) => {
+      this.light2.intensity = v;
     });
 
     this.sceneFolder.open();
@@ -302,12 +310,14 @@ class Oasis {
           gltf.buffers.concat(gltf.images).forEach((item) => {
             if (!item) return;
             let { uri } = item;
-            let index = uri.lastIndexOf("/");
-            if (index > -1) {
-              uri = uri.substr(index + 1);
-            }
-            if (filesMap[uri]) {
-              item.uri = filesMap[uri];
+            if (uri) {
+              let index = uri.lastIndexOf("/");
+              if (index > -1) {
+                uri = uri.substr(index + 1);
+              }
+              if (filesMap[uri]) {
+                item.uri = filesMap[uri];
+              }
             }
           });
           const blob = new Blob([JSON.stringify(gltf)]);

@@ -273,13 +273,28 @@ class Border2 extends Script {
   }
 }
 
+class PostScript extends Script {
+  renderTarget: RenderTarget;
+
+  onBeginRender(camera: Camera): void {
+    camera.renderTarget = this.renderTarget;
+    camera.cullingMask = Layer.Layer0;
+  }
+
+  onEndRender(camera: Camera): void {
+    camera.renderTarget = null;
+    camera.cullingMask = Layer.Layer1;
+    camera.render();
+  }
+}
+
 // 边缘检测-后处理
 class Border3 extends Script {
   material: Material;
   private _color: Color = new Color(0, 0, 0, 1);
   private _camera: Camera;
-  private _renderPass: RenderPass;
   private _screen: Entity;
+  private _postScript: PostScript;
 
   get color(): Color {
     return this._color;
@@ -297,10 +312,21 @@ class Border3 extends Script {
   set camera(value: Camera) {
     if (this._camera !== value) {
       this._camera = value;
-      //@ts-ignore
-      this.camera._renderPipeline.addRenderPass(this._renderPass);
-      //@ts-ignore
-      this.camera._renderPipeline.defaultRenderPass.mask = Layer.Layer0;
+      this._postScript = this.camera.entity.addComponent(PostScript);
+
+      const material = this.getScreenMaterial(this.engine);
+      const { width, height } = engine.canvas;
+
+      const renderColorTexture = new Texture2D(engine, width, height);
+      const renderTarget = new RenderTarget(engine, width, height, renderColorTexture);
+      const screen = (this._screen = rootEntity.createChild("screen"));
+      const screenRenderer = screen.addComponent(MeshRenderer);
+      this._postScript.renderTarget = renderTarget;
+
+      screen.layer = Layer.Layer1;
+      screenRenderer.mesh = PrimitiveMesh.createPlane(engine, 2, 2);
+      screenRenderer.setMaterial(material);
+      material.shaderData.setTexture("u_texture", renderColorTexture);
     }
   }
 
@@ -387,37 +413,13 @@ class Border3 extends Script {
     return this.material;
   }
 
-  constructor(entity: Entity) {
-    super(entity);
-    const material = this.getScreenMaterial(this.engine);
-    const { width, height } = engine.canvas;
-    const renderPass = (this._renderPass = new RenderPass("border", 1, null, null, Layer.Layer1));
-    const renderColorTexture = new Texture2D(engine, width, height);
-    const renderTarget = new RenderTarget(engine, width, height, renderColorTexture);
-    const screen = (this._screen = rootEntity.createChild("screen"));
-    const screenRenderer = screen.addComponent(MeshRenderer);
-
-    screen.layer = Layer.Layer1;
-    screenRenderer.mesh = PrimitiveMesh.createPlane(engine, 2, 2);
-    screenRenderer.setMaterial(material);
-    material.shaderData.setTexture("u_texture", renderColorTexture);
-
-    renderPass.preRender = () => {
-      camera.renderTarget = null;
-    };
-
-    renderPass.postRender = () => {
-      camera.renderTarget = renderTarget;
-    };
-  }
-
   onDestroy() {
     this._screen.destroy();
     if (this.camera) {
-      //@ts-ignore
-      this.camera._renderPipeline.removeRenderPass(this._renderPass);
-      this.camera.renderTarget.destroy();
-      this.camera.renderTarget = null;
+      this._postScript.renderTarget.destroy();
+      this._postScript.destroy();
+      this._postScript = null;
+      this.camera.cullingMask = Layer.Layer0;
     }
   }
 }
