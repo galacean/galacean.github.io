@@ -1,25 +1,23 @@
 ---
 order: 4
-title: MeshRenderer
-type: Graphics Rendering
-group: Basic Rendering
+title: Renderer
+type: Graphics
+group: Renderer
 ---
 
-[MeshRenderer](${api}core/MeshRenderer) is the mesh rendering component, and its data object is [Mesh](${api}core/Mesh). Developers generally use [ModelMesh](${api}core/ModelMesh) or [BufferMesh](${api}core/BufferMesh).
+[MeshRenderer](${api}core/MeshRenderer) is a mesh renderer component，when an entity mounts this, it only needs to set its `mesh` and `material` properties to start rendering.
+
+## How to use
 
 ``` TypeScript
-const meshRenderer = entity.addComponent(MeshRenderer);
-meshRenderer.mesh = new ModelMesh(engine);
-// or
-meshRenderer.mesh = new BufferMesh(engine);
+let cubeEntity = rootEntity.createChild('cube');
+let cube = cubeEntity.addComponent(MeshRenderer);
+cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
+cube.setMaterial(new BlinnPhongMaterial(engine));
 ```
+<playground src="scene-basic.ts"></playground>
 
-- `ModelMesh` encapsulates commonly used methods of setting vertex data and index data, which is very simple and easy to use. Developers can use this class if they want to quickly customize the geometry.
+## Data source
 
-- `BufferMesh` can freely manipulate vertex buffer and index buffer data, as well as some commands related to geometry rendering. It has the characteristics of high efficiency, flexibility and simplicity. Developers can use this class if they want to implement custom geometry efficiently and flexibly.
-
-Specific documents can be viewed:
-
-- [ModelMesh](${docs}model-mesh)
-- [BufferMesh](${docs}buffer-mesh)
-
+- [Mesh](${docs}mesh)
+- [Material](${docs}material)

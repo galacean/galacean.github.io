@@ -1,7 +1,7 @@
 ---
 order: 4
 title: 网格渲染器
-type: 图形渲染
+type: 图形
 group: 渲染器组件
 ---
 
@@ -19,5 +19,5 @@ cube.setMaterial(new BlinnPhongMaterial(engine));
 
 ## 数据源
 
-- [网格](${docs}model-mesh-cn)
-- [材质](${docs}buffer-mesh-cn)
+- [网格](${docs}mesh-cn)
+- [材质](${docs}material-cn)

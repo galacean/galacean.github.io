@@ -82,7 +82,7 @@ let camera = cameraEntity.addComponent(Camera);
 ```
 ## 创建光照
 
-同样的，光照也是通过组件形式挂载到实体上。创建完实体之后，添加直接光组件 `DirectLight`，设置直接光组件的颜色、强度属性和光照角度来获得合适的光照效果。
+同样的，光照也是通过组件形式挂载到实体上。创建完实体之后，添加直接光组件 `DirectLight`，设置直接光组件的颜色、强度属性和光照角度来获得合适的光照效果。
 
 ```typescript
 let lightEntity = rootEntity.createChild('light');

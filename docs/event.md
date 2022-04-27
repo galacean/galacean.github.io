@@ -1,8 +1,8 @@
 ---
-order: 3
+order: 4
 title: Event
 type: Function Modules
-group: Input and Events
+group: Interact
 ---
 
 The engine provides a basic event system, general communication between components, **game and business** communication will consider the use of event system. The engine provides [EventDispatcher](${api}core/EventDispatcher) as the event class, and [Engine](${api}core/Engine) and [Entity](${api}core/Entity) inherit from `EventDispatcher`.

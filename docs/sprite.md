@@ -1,8 +1,8 @@
 ---
 order: 2
 title: Sprite
-type: Graphics Rendering
-group: 2D Rendering
+type: Graphics
+group: 2D
 ---
 
 [Sprite](${api}core/Sprite) is a 2D graphic object used for characters, props, bullets and some other 2D game elements. These graphics are obtained from [Texture2D](${docs}texture). The [Sprite](${api}core/Sprite) class mainly identifies the part of the image applied to a specific Sprite. Then the [SpriteRenderer](${docs}sprite-renderer) component on [Entity](${docs}entity) can use this information to actually display the graphics.

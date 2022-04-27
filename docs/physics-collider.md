@@ -2,7 +2,7 @@
 order: 3 
 title: Collider 
 type: Function Modules
-group: Physics System
+group: Physics
 ---
 
 The biggest advantage of introducing a physics engine for interactive projects is that the objects in the scene have

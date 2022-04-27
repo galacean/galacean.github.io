@@ -1,5 +1,5 @@
 ---
-order: 11
+order: 5
 title: Particle
 type: Function Modules
 group: Animation

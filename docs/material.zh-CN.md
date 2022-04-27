@@ -1,16 +1,31 @@
 ---
 order: 1
 title: 材质总览
-type: 图形渲染
+type: 图形
 group: 材质
 ---
 
-Oasis 创建的三维世界与真实的世界一样包含各式各样的物体，这些物体的颜色，色泽亮度，透明度都是由材质决定的，引擎中内置了多种经典材质并支持开发者实现自定义材质，接下来就让我们大致了解一下材质的概况：
+Oasis 创建的三维世界与真实的世界一样包含各式各样的物体，这些物体的颜色，色泽亮度，透明度都是由材质决定的，引擎中内置了多种经典材质并支持开发者实现自定义材质。
 
-- [Unlit 材质]()
-- [Blinn-Phong 材质]()
-- [PBR 材质]()
-- [自定义材质]()
+## 分类
+
+| 类型                 | 描述                             |
+| :------------------- | :------------------------------- |
+| [Unlit 材质](${docs}material-unlit-cn)       | 仅使用颜色与纹理渲染，不计算光照 |
+| [Blinn-Phong 材质](${docs}material-blinn-phong-cn) | 光学基本齐全，渲染算法高效       |
+| [PBR 材质](${docs}material-pbr-cn)         | 遵循能量守恒，符合物理规则       |
+| [自定义材质](${docs}custom-material-cn)       | 可定制特殊的渲染需求             |
+
+## 通用属性
+
+以下属性都可以直接在 [UnlitMaterial](${api}core/UnlitMaterial)、[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)、[PBRMaterial](${api}core/PBRMaterial)、[PBRSpecularMaterial](${api}core/PBRSpecularMaterial) 材质中使用。
+
+| 参数 | 应用 |
+| :-- | :-- |
+| [isTransparent](${api}core/BaseMaterial#isTransparent) | 是否透明。可以设置材质是否透明。如果设置为透明，可以通过 [BlendMode](${api}core/BaseMaterial#blendMode) 来设置颜色混合模式。 |
+| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | 透明度裁剪值。可以设置裁剪值，来指定在着色器中，裁剪透明度小于此数值的片元。 |
+| [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
+| [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式，参考 [案例](${examples}blend-mode) |
 
 ## 使用
 
@@ -38,17 +53,6 @@ material.baseColor.r = 0;
 // 通过 `setMaterial` 设置当前 renderer 的第 i 个材质, 默认第 0 个。
 const material = renderer.setMaterial(material);
 ```
-
-## 通用属性
-
-以下属性都可以直接在 [UnlitMaterial](${api}core/UnlitMaterial)、[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)、[PBRMaterial](${api}core/PBRMaterial)、[PBRSpecularMaterial](${api}core/PBRSpecularMaterial) 材质中使用。
-
-| 参数 | 应用 |
-| :-- | :-- |
-| [isTransparent](${api}core/BaseMaterial#isTransparent) | 是否透明。可以设置材质是否透明。如果设置为透明，可以通过 [BlendMode](${api}core/BaseMaterial#blendMode) 来设置颜色混合模式。 |
-| [alphaCutoff](${api}core/BaseMaterial#alphaCutoff) | 透明度裁剪值。可以设置裁剪值，来指定在着色器中，裁剪透明度小于此数值的片元。 |
-| [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
-| [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式，参考 [案例](${examples}blend-mode) |
 
 ## 常见 QA
 

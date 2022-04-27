@@ -1,7 +1,7 @@
 ---
 order: 6
 title: 纹理压缩
-type: 图形渲染
+type: 图形
 group: 纹理
 ---
 

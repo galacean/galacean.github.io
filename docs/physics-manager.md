@@ -2,7 +2,7 @@
 order: 2 
 title: Physics Manager 
 type: Function Modules
-group: Physics System
+group: Physics
 ---
 
 PhysicsManager is used to manage all the physics components in the scene, and is responsible for communicating with the
@@ -115,4 +115,4 @@ It should be pointed out that if you want to enable ray casting on an Entity, th
 otherwise it will not trigger.
 
 At the same time, in Oasis, InputManager is also provided, which encapsulates the input source and provides more
-easy-to-use logic. The usage method can be [Reference](${docs}input-cn) .
+easy-to-use logic. The usage method can be [Reference](${docs}input) .

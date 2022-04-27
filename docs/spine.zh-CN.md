@@ -2,7 +2,7 @@
 order: 3
 title: Spine
 type: 功能模块
-group: 动画系统
+group: 动画
 ---
 
 Oasis Engine 通过 [BufferMesh](${docs}buffer-mesh-cn) 实现了 spine 动画的渲染。

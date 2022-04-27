@@ -1,7 +1,7 @@
 ---
 order: 2
 title: 相机控件
-type: 图形渲染
+type: 图形
 group: 摄像机
 ---
 

@@ -1,7 +1,7 @@
 ---
 order: 3
 title: Blinn-Phong 材质
-type: 图形渲染
+type: 图形
 group: 材质
 ---
 

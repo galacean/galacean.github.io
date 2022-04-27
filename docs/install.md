@@ -2,6 +2,7 @@
 order: 0
 title: 0. Install Oasis Engine
 type: Introduction
+group: Basic
 ---
 
 ## How to Install
@@ -33,7 +34,7 @@ If you just want to quickly create a project, it is recommended that you use [cr
 
 **Oasis Engine** is a mobile-first graphics engine, written using [Typescript](https://www.typescriptlang.org/). In order to minimize the size of the engine, we divide the engine package into:
 
-![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*p2UWTY3jkkIAAAAAAAAAAAAAARQnAQ)
+![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iQkKT7vurI4AAAAAAAAAAAAAARQnAQ)
 
 ### Main package
 Engine core architecture logic and core functions ([oasis-engine](https://www.npmjs.com/package/oasis-engine)), including the following sub-packages:
@@ -46,7 +47,6 @@ Engine core architecture logic and core functions ([oasis-engine](https://www.np
 |[@oasis-engine/math](https://www.npmjs.com/package/@oasis-engine/math)| Math Library |[API](${api}math/index)|
 |[@oasis-engine/design](https://www.npmjs.com/package/@oasis-engine/design)| Engine basic design specifications, such as cloning specifications, destruction specifications, RHI specifications|[API]($ {api}design/index)|
 
-
 ### Expansion Pack
 For non-core functions and partial business logic customization, the official extension packages provided by Oasis Engine include:
 
@@ -56,3 +56,5 @@ For non-core functions and partial business logic customization, the official ex
 |[@oasis-engine/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine/framebuffer-picker)| Framebuffer Picking|[API](${api}framebuffer-picker/ index)|
 |[@oasis-engine/stats](https://www.npmjs.com/package/@oasis-engine/stats)| Engine Statistics Panel |[API](${api}stats/index)|
 |[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco model compression |[API](${api}draco/index)|
+|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| Lightweight physics engine |[API](${api}physics-lite/index)|
+|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| Full-featured physics engine |[API](${api}physics-physx/index)|

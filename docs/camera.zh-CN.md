@@ -1,7 +1,7 @@
 ---
 order: 1
 title: 相机组件
-type: 图形渲染
+type: 图形
 group: 摄像机
 ---
 

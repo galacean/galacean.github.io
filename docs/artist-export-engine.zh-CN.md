@@ -51,11 +51,11 @@ Oasis 引擎目前有 3 种方式调试材质：
 
 #### 光照差异
 
-跟现实世界一样，3D 场景也可以添加[直接光](${docs}light-cn#%E6%96%B9%E5%90%91%E5%85%89)、[环境光](${docs}light-cn#%E7%8E%AF%E5%A2%83%E5%85%89)。Oasis 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
+跟现实世界一样，3D 场景也可以添加[直接光](${docs}light-cn#%E6%96%B9%E5%90%91%E5%85%89)、[环境光](${docs}ambient-light-cn)。Oasis 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/391e9bd9-945d-474d-b3fb-8cb0490e2b6f/1635434650361-60d7f40f-9f22-4e48-8865-141415d638f9.png)
 
-环境光基于 [IBL](${docs}light-cn#ibl-镜面反射) ，需要绑定一张 HDRI 贴图用来模拟周边环境，可以从[网上下载](https://polyhaven.com/hdris)。Oasis 场景中默认是没有绑定 HDRI 贴图的，而很多建模软件是自带了一张比较好看的周边环境的：
+环境光基于 [IBL](${docs}texture-cube-cn#ibl) ，需要绑定一张 HDRI 贴图用来模拟周边环境，可以从[网上下载](https://polyhaven.com/hdris)。Oasis 场景中默认是没有绑定 HDRI 贴图的，而很多建模软件是自带了一张比较好看的周边环境的：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/61c2287b-0793-4763-a5f5-70567fcdf106/1635477315862-08b0c680-029b-400b-8600-1d8cf7a20c60.png)
 

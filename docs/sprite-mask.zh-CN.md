@@ -1,7 +1,7 @@
 ---
 order: 4
 title: 精灵遮罩
-type: 图形渲染
+type: 图形
 group: 2D
 ---
 

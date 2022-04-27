@@ -1,7 +1,7 @@
 ---
-order: 5
+order: 6
 title: 克隆
-type: 核心概念
+type: 核心
 ---
 
 

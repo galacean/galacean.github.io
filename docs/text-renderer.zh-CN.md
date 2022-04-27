@@ -1,7 +1,7 @@
 ---
 order: 5
 title: 文字渲染器
-type: 图形渲染
+type: 图形
 group: 2D
 ---
 

@@ -1,7 +1,7 @@
 ---
 order: 3
 title: 精灵图集资源
-type: 图形渲染
+type: 图形
 group: 2D
 ---
 

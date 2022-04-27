@@ -1,7 +1,7 @@
 ---
 order: 3
 title: 实体与组件
-type: 核心概念
+type: 核心
 ---
 
 在 Oasis 引擎中，[Entity](${api}core/Entity) 不具备渲染模型等实际的功能，这些功能是通过加载 [Component](${api}core/Component) 组件类来实现的。例如，如果想让一个 *Entity* 变成一个相机，只需要在该 *Entity* 上添加相机组件 [Camera](${api}core/Camera)。这种基于组件的功能扩展方式注重将程序按照功能独立封装，在使用的时候按照需要组合添加，非常有利于降低程序耦合度并提升代码复用率。

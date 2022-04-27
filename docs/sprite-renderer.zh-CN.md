@@ -1,7 +1,7 @@
 ---
 order: 1
 title: 精灵渲染器
-type: 图形渲染
+type: 图形
 group: 2D
 ---
 

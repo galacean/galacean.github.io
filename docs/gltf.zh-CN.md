@@ -2,7 +2,7 @@
 order: 3
 title: glTF
 type: 功能模块
-group: 动画系统
+group: 动画
 ---
 
 ## 什么是 glTF?

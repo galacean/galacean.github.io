@@ -1,7 +1,7 @@
 ---
 order: 6
 title: 字体资源
-type: 图形渲染
+type: 图形
 group: 2D
 ---
 

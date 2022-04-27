@@ -1,7 +1,7 @@
 ---
 order: 2
 title: 精灵资源
-type: 图形渲染
+type: 图形
 group: 2D
 ---
 

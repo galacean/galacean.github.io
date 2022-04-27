@@ -1,7 +1,7 @@
 ---
 order: 5
 title: 离屏渲染纹理
-type: 图形渲染
+type: 图形
 group: 纹理
 ---
 

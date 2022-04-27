@@ -1,7 +1,7 @@
 ---
 order: 7
 title: 基础几何体
-type: 图形渲染
+type: 图形
 group: 网格
 ---
 

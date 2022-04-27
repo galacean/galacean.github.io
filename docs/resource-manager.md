@@ -148,7 +148,7 @@ engine.resourceManager
 ```
 ### 5. Compressed texture
 
-> For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture#Compressed Texture).
+> For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture-compression).
 
 ```typescript
 import { Texture2D } from "oasis-engine";

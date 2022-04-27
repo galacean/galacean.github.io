@@ -1,8 +1,8 @@
 ---
 order: 7
 title: Basic geometry
-type: Graphics Rendering
-group: Basic Rendering
+type: Graphics
+group: Mesh
 ---
 
 Basic geometry provide uniformly in [PrimitiveMesh](${api}core/PrimitiveMesh).

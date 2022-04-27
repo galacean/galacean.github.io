@@ -149,7 +149,7 @@ engine.resourceManager
 ```
 
 ### 5. 压缩纹理
-> 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-cn#压缩纹理)。
+> 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-compression-cn)。
 
 ```typescript
 import { Texture2D } from "oasis-engine";

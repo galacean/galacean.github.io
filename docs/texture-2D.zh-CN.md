@@ -1,7 +1,7 @@
 ---
 order: 2
 title: 2D 纹理
-type: 图形渲染
+type: 图形
 group: 纹理
 ---
 
@@ -9,7 +9,7 @@ group: 纹理
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*tmTkSLi0XJ8AAAAAAAAAAAAAARQnAQ)
 
-## 生成 2D 纹理
+## 创建
 
 ### 1. 加载网络图片
 

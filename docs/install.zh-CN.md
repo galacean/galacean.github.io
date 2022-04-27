@@ -34,7 +34,7 @@ import { WebGLEngine, Camera } from 'oasis-engine';
 
 **Oasis Engine** 是一套移动优先的图形引擎，使用 [Typescript](https://www.typescriptlang.org/) 编写。为了保证引擎的体积最小化，我们将引擎的包分为：
 
-![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*p2UWTY3jkkIAAAAAAAAAAAAAARQnAQ)
+![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iQkKT7vurI4AAAAAAAAAAAAAARQnAQ)
 
 ### 主包
 引擎核心架构逻辑和核心功能（[oasis-engine](https://www.npmjs.com/package/oasis-engine)），包含以下子包：
@@ -57,3 +57,5 @@ import { WebGLEngine, Camera } from 'oasis-engine';
 |[@oasis-engine/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine/framebuffer-picker)| 帧缓冲拾取 |[API](${api}framebuffer-picker/index)|
 |[@oasis-engine/stats](https://www.npmjs.com/package/@oasis-engine/stats)| 引擎统计面板 |[API](${api}stats/index)|
 |[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco 模型压缩 |[API](${api}draco/index)|
+|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| 轻量级物理引擎 |[API](${api}physics-lite/index)|
+|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| 全功能物理引擎 |[API](${api}physics-physx/index)|
