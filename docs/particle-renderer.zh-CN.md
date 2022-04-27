@@ -18,8 +18,8 @@ particles.velocity = new Vector3(1, 1, 1);
 particles.acceleration = new Vector3(-1, -1, -1);
 particles.accelerationRandomness = new Vector3(-3, -3, -3);
 particles.velocityRandomness = new Vector3(-1, -1, -1);
-particles.rotateRate = 1;
-particles.rotateRateRandomness = 1;
+particles.rotateVelocity = 1;
+particles.rotateVelocityRandomness = 1;
 particles.size = 1;
 particles.is2d = true;
 
