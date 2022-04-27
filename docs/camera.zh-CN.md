@@ -1,7 +1,8 @@
 ---
-order: 2
-title: 相机
-type: 组件
+order: 1
+title: 相机组件
+type: 图形渲染
+group: 摄像机
 ---
 
 相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。

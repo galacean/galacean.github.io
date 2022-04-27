@@ -1,7 +1,8 @@
 ---
 order: 3
 title: Light
-type: Component
+type: Graphics Rendering
+group: Advanced Rendering
 ---
 
 Lighting makes the scene more layered, and using lighting can create a more realistic 3D scene. Oasis Engine supports the following light type:
@@ -9,7 +10,7 @@ Lighting makes the scene more layered, and using lighting can create a more real
 | Type | Feature |
 | :-- | :-- |
 | [AmbientLight](${api}core/AmbientLight) | By default, the model is illuminated from various angles, and the diffuse reflection can be pure color or texture sampling. If the specular reflection texture is set, IBL is turned on to achieve global illumination |
-| [DirectLight](${api}core/DirectLight) | Light is emitted in one direction  |
+| [DirectLight](${api}core/DirectLight) | Light is emitted in one direction |
 | [PointLight](${api}core/PointLight) | From one point to all directions around, the light intensity attenuates with the distance of the light source |
 | [SpotLight](${api}core/SpotLight) | Light emitted from a specific position in a specific direction, the intensity of the light attenuates with the distance of the light source, the illuminated area is cone-shaped, and the edge of the cone attenuates with the opening angle |
 

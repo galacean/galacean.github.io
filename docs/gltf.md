@@ -1,7 +1,8 @@
 ---
 order: 5
-title: glTF Resource
-type: Resource
+title: glTF
+type: Function Modules
+group: Animation
 ---
 
 ## What is glTF?

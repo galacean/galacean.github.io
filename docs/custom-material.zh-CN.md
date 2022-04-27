@@ -1,7 +1,8 @@
 ---
 order: 4
 title: 自定义材质
-type: 资源系统
+type: 图形渲染
+group: 进阶渲染
 ---
 
 业务中可能有一些特殊的渲染需求，例如水流特效，这时候就需要“自定义材质”去实现。通过使用 __material__ 这个模块中的 [Material](${api}core/Material) 和 [Shader](${api}core/Shader) 这两个类，就可以将自己定义的 Shader 代码整合进入引擎的渲染流程。

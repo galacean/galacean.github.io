@@ -1,7 +1,8 @@
 ---
-order: 8
+order: 1
 title: 精灵渲染器
-type: 组件
+type: 图形渲染
+group: 2D
 ---
 
 [SpriteRenderer](${api}core/SpriteRenderer) 组件用于在 3D/2D 场景中显示图片。

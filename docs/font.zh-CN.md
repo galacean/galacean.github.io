@@ -1,7 +1,8 @@
 ---
-order: 2.1
+order: 6
 title: 字体资源
-type: 资源系统
+type: 图形渲染
+group: 2D
 ---
 
 [Font](${api}core/Font) 是字体资源，用于表示文本使用的字体。

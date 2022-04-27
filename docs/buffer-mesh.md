@@ -1,7 +1,8 @@
 ---
 order: 6
 title: Buffer Mesh
-type: Component
+type: Graphics Rendering
+group: Basic Rendering
 ---
 
 [BufferMesh]() can freely manipulate vertex buffer and index buffer data, as well as some commands related to geometry rendering. It has the characteristics of high efficiency, flexibility and simplicity. Developers can use this class if they want to implement custom geometry efficiently and flexibly.

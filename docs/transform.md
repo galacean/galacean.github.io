@@ -1,7 +1,7 @@
 ---
 order: 1
 title: transform
-type: Component
+type: Transform
 ---
 
 When a new entity is created, transform components are automatically added to it. The transform component can operate on the displacement, rotation, scaling, matrix, etc. of the node to complete the geometric transform of the node.

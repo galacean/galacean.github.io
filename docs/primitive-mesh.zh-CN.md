@@ -1,7 +1,8 @@
 ---
 order: 7
 title: 基础几何体
-type: 组件
+type: 图形渲染
+group: 网格
 ---
 
 常用几何体统一在 [PrimitiveMesh](${api}core/PrimitiveMesh) 中提供。

@@ -1,7 +1,8 @@
 ---
 order: 4
 title: MeshRenderer
-type: Component
+type: Graphics Rendering
+group: Basic Rendering
 ---
 
 [MeshRenderer](${api}core/MeshRenderer) is the mesh rendering component, and its data object is [Mesh](${api}core/Mesh). Developers generally use [ModelMesh](${api}core/ModelMesh) or [BufferMesh](${api}core/BufferMesh).

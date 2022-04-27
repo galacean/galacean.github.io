@@ -1,7 +1,8 @@
 ---
-order: 8.2
+order: 5
 title: 文字渲染器
-type: 组件
+type: 图形渲染
+group: 2D
 ---
 
 [TextRenderer](${api}core/TextRenderer) 组件用于在 3D/2D 场景中显示文本。

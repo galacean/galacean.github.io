@@ -1,7 +1,8 @@
 ---
 order: 0
 title: 0. 安装 Oasis Engine
-type: 入门
+type: 快速入门
+group: 基础
 ---
 
 ## 安装方式

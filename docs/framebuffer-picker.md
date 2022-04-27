@@ -1,7 +1,8 @@
 ---
 order: 2
 title: FrameBuffer Picker
-type: Second party packages
+type: Function Modules
+group: Input and Events
 ---
 
 In 3D applications, you often need to pick up the object in the scene, [RayCast-Collision](${docs}ray) is a common method, it will pick up in the CPU, **it's performance better, but the accuracy is poor** , because the bounding is relatively simple, the complex model cannot be picked up.

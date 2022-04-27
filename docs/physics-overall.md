@@ -1,7 +1,8 @@
 ---
 order: 1
 title: Physics Overall 
-type: Physics System
+type: Function Modules
+group: Physics System
 ---
 
 The physics engine is a very important part of the game engine. The industry generally adopts PhysX to introduce related

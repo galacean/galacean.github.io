@@ -1,7 +1,8 @@
 ---
 order: 3
 title: Material
-type: Resource
+type: Graphics Rendering
+group: Basic Rendering
 ---
 
 ## Material category

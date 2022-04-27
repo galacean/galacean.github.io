@@ -1,7 +1,8 @@
 ---
 order: 2.1
 title: Sprite Atlas
-type: Resource
+type: Graphics Rendering
+group: 2D Rendering
 ---
 
 [SpriteAtlas](${api}core/SpriteAtlas) is a collection of sprite resources. By packaging multiple sprite textures into a sprite atlas to combine drawing commands when drawing, it has the following advantages:

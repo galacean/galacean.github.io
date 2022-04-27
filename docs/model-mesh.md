@@ -1,7 +1,8 @@
 ---
 order: 5
 title: Model Mesh
-type: Component
+type: Graphics Rendering
+group: Basic Rendering
 ---
 
 `ModelMesh` is a mesh rendering data class used to describe the outline of a geometric body, which mainly contains data such as vertices (position, normal, UV, etc.), index, and mixed shape. Not only can you use modeling software to make and export glTF to analyze and restore in the engine, you can also use scripts to directly write data to create.

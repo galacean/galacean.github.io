@@ -1,7 +1,8 @@
 ---
 order: 7
-title: Input
-type: Core
+title: Pointer
+type: Function Modules
+group: Input and Events
 ---
 
 The engine provides a basic input system. Because of the cross-terminal and cross-platform characteristics of Oasis, our input system also needs the characteristics of the PC and mobile terminals, and includes keyboard, mouse and touch screen operations. The current version supports different devices on different terminals:
