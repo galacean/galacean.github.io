@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 3
 title: Entities and components
 type: Core
 ---

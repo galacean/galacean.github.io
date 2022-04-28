@@ -1,7 +1,8 @@
 ---
-order: 8.1
+order: 4
 title: SpriteMask
-type: Component
+type: Graphics
+group: 2D
 ---
 
 [SpriteMask](${api}core/SpriteMask) used to realize the masking effect on the sprites in the 3D/2D scene.

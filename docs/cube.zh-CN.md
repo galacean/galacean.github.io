@@ -1,28 +1,16 @@
 ---
-order: 1
-title: 1. 绘制一个立方体
-type: 入门
+order: 2
+title: 2. 绘制一个立方体
+type: 快速入门
+group: 基础
 ---
 
-这个教程将带你开发一个立方体示例：
+在初始化完毕画布后，我们趁热打铁开发一个立方体示例：
 
 <playground src="scene-basic.ts"></playground>
-
-## HTML 和 CSS
-
-无论你使用何种前端框架，[WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL) 引擎的渲染都离不开 *Canvas* 元素。请在 HTML 模板中插入一行 Canvas 标签代码：
-
-```html
-<canvas id="canvas" style="width: 100vw; height:100vh;" />
-```
-
-同时，我们为这个 *Canvas* 元素设置了一个全屏的样式（style）。
-
-> **注**：样式并不是 Canvas 的真实高宽，只是视觉上的高宽，比如把一个小的画布通过样式拉伸变大，画面就会变模糊。下文中将使用 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法根据样式重设 *Canvas* 的 width 和 height 属性值。详见 [画布](${docs}canvas-cn) 章节。
-
 ## 引入模块
 
-接下来，我们开始使用 [TypeScript](https://www.typescriptlang.org/) 编写引擎代码。如果你还不太适应 TypeScript，使用 JavaScript 也一样可以运行，并且同样可以享受到引擎 API 提示（通过使用 [VSCode](https://code.visualstudio.com/) 等 IDE 进行编程）。
+我们开始使用 [TypeScript](https://www.typescriptlang.org/) 编写引擎代码。如果你还不太适应 TypeScript，使用 JavaScript 也一样可以运行，并且同样可以享受到引擎 API 提示（通过使用 [VSCode](https://code.visualstudio.com/) 等 IDE 进行编程）。
 
 回到我们的编程，为了实现这样一个功能，需要在我们的工程里引入如下 Oasis 引擎的类：
 
@@ -94,7 +82,7 @@ let camera = cameraEntity.addComponent(Camera);
 ```
 ## 创建光照
 
-同样的，光照也是通过组件形式挂载到实体上。创建完实体之后，添加直接光组件 `DirectLight`，设置直接光组件的颜色、强度属性和光照角度来获得合适的光照效果。
+同样的，光照也是通过组件形式挂载到实体上。创建完实体之后，添加直接光组件 `DirectLight`，设置直接光组件的颜色、强度属性和光照角度来获得合适的光照效果。
 
 ```typescript
 let lightEntity = rootEntity.createChild('light');

@@ -1,25 +1,13 @@
 ---
-order: 1
-title: 1. Draw a Cube
+order: 2
+title: 2. Draw a Cube
 type: Introduction
+group: Basic
 ---
 
 This tutorial will take you to draw a cube example:
 
 <playground src="scene-basic.ts"></playground>
-
-## HTML and CSS
-
-The rendering of the [WebGL](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API/Tutorial/Getting_started_with_WebGL) engine is inseparable from the *Canvas* element no matter what front-end framework you use. Please insert a line of Canvas tag code in the HTML template:
-
-```html
-<canvas id="canvas" style="width: 100vw; height:100vh;" />
-```
-
-At the same time, we set a full-screen style for this *Canvas* element.
-
-> **Note**: The style is not the real height and width of the Canvas, but just the visual height and width. For example, if a small canvas is stretched to enlarge it through the style, the picture will be changed. In the following, the [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) method will be used to reset the width and height attribute values ​​of *Canvas* according to the style. See the [Canvas](${docs}canvas) chapter for details.
-
 ## Introduce Module
 
 Next, we start to use [TypeScript](https://www.typescriptlang.org/) to write engine code. If you are not too comfortable with TypeScript, you can run it with JavaScript, and you can also enjoy engine API prompts (by programming with IDEs such as [VSCode](https://code.visualstudio.com/)).

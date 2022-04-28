@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 3
 title: 实体与组件
 type: 核心
 ---

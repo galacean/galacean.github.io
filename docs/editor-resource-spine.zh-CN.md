@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 4
 title: Spine
 type: 编辑器
 group: 资产

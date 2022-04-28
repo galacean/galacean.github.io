@@ -1,7 +1,7 @@
 ---
 order: 3
 title: Spine
-type: Second party packages 
+type: Animation
 ---
 
 Oasis Engine implements spine animation rendering through [BufferMesh](${docs}buffer-mesh).

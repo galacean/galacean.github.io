@@ -1,7 +1,7 @@
 ---
 order: 1
 title: 资源管理与加载
-type: 资源系统
+type: 资源管理
 ---
 
 3D 资源一般与 Engine 挂钩，我们使用挂载在 Engine 实例中的 [resourceManager](${api}core/Engine#resourceManager) 管理与加载资源。
@@ -148,7 +148,7 @@ engine.resourceManager
 ```
 
 ### 5. 压缩纹理
-> 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-cn#压缩纹理)。
+> 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-compression-cn)。
 
 ```typescript
 import { Texture2D } from "oasis-engine";

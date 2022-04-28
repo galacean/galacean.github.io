@@ -1,7 +1,7 @@
 ---
 Order: 1
 title: Resource Management and Loading
-type: Resource
+type: Resource Management
 ---
 
 3D resources are generally linked to Engine. We use [resourceManager](${api}core/Engine#resourceManager) mounted in the Engine instance to manage and load resources.
@@ -147,7 +147,7 @@ engine.resourceManager
 ```
 ### 5. Compressed texture
 
-> For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture#Compressed Texture).
+> For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture-compression).
 
 ```typescript
 import { Texture2D } from "oasis-engine";

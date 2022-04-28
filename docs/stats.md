@@ -1,7 +1,7 @@
 ---
-order: 2
+order: 1
 title: stats
-type: Tool
+type: Performance
 ---
 
 The [@oasis-engine/stats](${api}stats/index) package is mainly used to display the current running status of the engine. To display the running status of the engine, you only need to import [Stats](${api}stats/Stats) and register:

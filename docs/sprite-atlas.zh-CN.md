@@ -1,7 +1,8 @@
 ---
-order: 2.1
+order: 3
 title: 精灵图集资源
-type: 资源系统
+type: 图形
+group: 2D
 ---
 
 [SpriteAtlas](${api}core/SpriteAtlas) 是一种精灵集合资源，通过将多个精灵纹理打包成一张精灵图集从而在绘制时合并绘制指令，它拥有以下优势：

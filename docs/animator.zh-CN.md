@@ -1,7 +1,7 @@
 ---
-order: 10
-title: 动画控制
-type: 组件
+order: 1
+title: 动画组件
+type: 动画
 ---
 
 动画控制组件（[Animator](${api}core/Animator)）可以通过状态机组织动画片段（[AnimationClip](${api}core/AnimationClip)）实现更加灵活丰富的动画效果。
@@ -133,7 +133,7 @@ AnimationEvent 可以让你在指定时间调用其同一实体绑定的脚本�
 const walkState = animatorStateMachine.addState('walk');
 walkState.clip = walkClip;
 const runState = animatorStateMachine.addState('run');
-walkState.clip = runClip;
+runState.clip = runClip;
 const transition = new AnimatorStateTransition();
 transition.duration = 1;
 transition.offset = 0;
