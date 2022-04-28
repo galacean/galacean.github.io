@@ -6,8 +6,6 @@ type: 动画
 
 动画控制组件（[Animator](${api}core/Animator)）可以通过状态机组织动画片段（[AnimationClip](${api}core/AnimationClip)）实现更加灵活丰富的动画效果。
 
-<playground src="skeleton-animation.ts"></playground>
-
 ## 基本使用
 在加载GLTF模型后引擎会自动为模型添加一个Animator组件，并将模型中的动画片段加入其中。可以直接在模型的根实体上获取Animator组件，并播放指定动画。
 ```typescript

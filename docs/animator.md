@@ -6,8 +6,6 @@ type: Animation
 
 The [Animator](${api}core/Animator) can organize [AnimationClips](${api}core/AnimationClip) through the state machine to achieve more flexible and rich animation effects.
 
-<playground src="skeleton-animation.ts"></playground>
-
 ## Basic usage
 After loading the glTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation. When the value is negative 
 
