@@ -1,14 +1,14 @@
 ---
-order: 8
-title: 键盘交互
-type: 核心
+order: 2
+title: 键盘
+type: 交互
 ---
 
 Oasis 支持开发者随时查询当前的键盘交互实况，不需引入额外包且调用接口十分简单。
 
 ## 方法
 
-| 属性名称                                               | 属性释义                     |
+| 方法名称                                               | 方法释义                     |
 | ------------------------------------------------------ | ---------------------------- |
 | [isKeyHeldDown](${api}core/InputManager#isKeyHeldDown) | 返回这个按键是否被持续按住 |
 | [isKeyDown](${api}core/InputManager#isKeyDown)         | 返回当前帧是否按下过此按键   |
