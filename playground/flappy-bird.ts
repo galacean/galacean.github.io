@@ -18,7 +18,8 @@ import {
   Vector3,
   WebGLEngine,
   StaticCollider,
-  BoxColliderShape
+  BoxColliderShape,
+  Keys
 } from "oasis-engine";
 import * as TWEEN from "@tweenjs/tween.js";
 import { LitePhysics } from "@oasis-engine/physics-lite";
@@ -464,9 +465,16 @@ class GameCtrl extends Script {
   onUpdate() {
     // Update TWEEN.
     TWEEN.update();
+    if (this.engine.inputManager.isKeyDown(Keys.Space)) {
+      this._dispatchFly();
+    }
   }
 
   onPointerDown() {
+    this._dispatchFly();
+  }
+
+  private _dispatchFly() {
     switch (this._gameState) {
       case EnumGameState.Idel:
         this._setGameState(EnumGameState.Start);
