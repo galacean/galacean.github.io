@@ -36,7 +36,7 @@ cameraEntity.addComponent(Camera);
 async function init() {
   // Set background
   const bgTex = await engine.resourceManager.load<Texture2D>({
-    url: "https://gw.alipayobjects.com/zos/OasisHub/440000983/6823/bannerWX.png?x-oss-process=image/format,webp",
+    url: "https://gw.alipayobjects.com/zos/OasisHub/440000983/3784/vcg_VCG211258128318_RF.jpg?x-oss-process=image/format,webp",
     type: AssetType.Texture2D
   });
   const background = engine.sceneManager.activeScene.background;
