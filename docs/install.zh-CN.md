@@ -57,5 +57,7 @@ import { WebGLEngine, Camera } from 'oasis-engine';
 |[@oasis-engine/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine/framebuffer-picker)| 帧缓冲拾取 |[API](${api}framebuffer-picker/index)|
 |[@oasis-engine/stats](https://www.npmjs.com/package/@oasis-engine/stats)| 引擎统计面板 |[API](${api}stats/index)|
 |[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco 模型压缩 |[API](${api}draco/index)|
+|[@oasis-engine/engine-spine](https://www.npmjs.com/package/@oasis-engine/engine-spine)| Spine 动画 |[Doc](${docs}spine-cn)|
+|[@oasis-engine/engine-lottie](https://www.npmjs.com/package/@oasis-engine/lottie)| Lottie 动画 |[Doc](${docs}lottie-cn)|
 |[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| 轻量级物理引擎 |[API](${api}physics-lite/index)|
 |[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| 全功能物理引擎 |[API](${api}physics-physx/index)|

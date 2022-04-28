@@ -56,5 +56,7 @@ For non-core functions and partial business logic customization, the official ex
 |[@oasis-engine/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine/framebuffer-picker)| Framebuffer Picking|[API](${api}framebuffer-picker/ index)|
 |[@oasis-engine/stats](https://www.npmjs.com/package/@oasis-engine/stats)| Engine Statistics Panel |[API](${api}stats/index)|
 |[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco model compression |[API](${api}draco/index)|
+|[@oasis-engine/engine-spine](https://www.npmjs.com/package/@oasis-engine/engine-spine)| Spine |[Doc](${docs}spine)|
+|[@oasis-engine/engine-lottie](https://www.npmjs.com/package/@oasis-engine/lottie)| Lottie |[Doc](${docs}lottie)|
 |[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| Lightweight physics engine |[API](${api}physics-lite/index)|
 |[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| Full-featured physics engine |[API](${api}physics-physx/index)|
