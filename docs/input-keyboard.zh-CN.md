@@ -8,7 +8,7 @@ Oasis 支持开发者随时查询当前的键盘交互实况，不需引入额�
 
 ## 方法
 
-| 属性名称                                               | 属性释义                     |
+| 方法名称                                               | 释义                     |
 | ------------------------------------------------------ | ---------------------------- |
 | [isKeyHeldDown](${api}core/InputManager#isKeyHeldDown) | 返回这个按键是否被持续按住 |
 | [isKeyDown](${api}core/InputManager#isKeyDown)         | 返回当前帧是否按下过此按键   |
