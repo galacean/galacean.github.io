@@ -73,7 +73,7 @@ engine.targetFrameRate = 120;
 
 ## 方法
 
-| 方法名称 | 释义 |
+| 方法名称 | 方法释义 |
 | --- | --- |
 | [run](${api}core/Engine#run) | 执行 |
 | [pause](${api}core/Engine#pause) | 暂停 |
