@@ -24,7 +24,6 @@ import {
   PrimitiveMesh,
   Renderer,
   Scene,
-  SkinnedMeshRenderer,
   SkyBoxMaterial,
   SphericalHarmonics3,
   Texture2D,
@@ -88,9 +87,11 @@ class Oasis {
     background: true,
     // Lights
     env: "park",
-    addLights: true,
-    lightColor: Oasis.colorToGui(new Color(1, 1, 1)),
-    lightIntensity: 0.5
+    lights: true,
+    lightColor1: Oasis.colorToGui(new Color(1, 1, 1)),
+    lightColor2: Oasis.colorToGui(new Color(1, 1, 1)),
+    lightIntensity1: 1,
+    lightIntensity2: 1
   };
   _materials: Material[] = [];
 
@@ -155,12 +156,13 @@ class Oasis {
     if (this.state.background) {
       this.scene.background.mode = BackgroundMode.Sky;
     }
-    if (!this.state.addLights) {
+    if (!this.state.lights) {
       this.light1.enabled = this.light2.enabled = false;
     }
-    this.light1.intensity = this.light2.intensity = this.state.lightIntensity;
-    this.lightEntity1.transform.setRotation(30, 0, 0);
-    this.lightEntity2.transform.setRotation(-30, 180, 0);
+    this.light1.intensity = this.state.lightIntensity1;
+    this.light2.intensity = this.state.lightIntensity2;
+    this.lightEntity1.transform.setRotation(-45, 0, 0);
+    this.lightEntity2.transform.setRotation(-45, 180, 0);
     this.scene.background.solidColor = new Color(0, 0, 0, 0);
     this.scene.background.sky.material = this.skyMaterial;
     this.scene.background.sky.mesh = PrimitiveMesh.createCuboid(this.engine, 1, 1, 1);
@@ -199,22 +201,21 @@ class Oasis {
         this.skyMaterial.textureCubeMap = this.env[v].specularTexture;
       });
 
-    this.lightFolder
-      .add(this.state, "addLights")
-      .onChange((v) => {
-        this.light1.enabled = this.light2.enabled = v;
-      })
-      .name("直接光");
-    this.lightFolder.addColor(this.state, "lightColor").onChange((v) => {
+    this.lightFolder.add(this.state, "lights").onChange((v) => {
+      this.light1.enabled = this.light2.enabled = v;
+    });
+    this.lightFolder.addColor(this.state, "lightColor1").onChange((v) => {
       Oasis.guiToColor(v, this.light1.color);
+    });
+    this.lightFolder.addColor(this.state, "lightColor2").onChange((v) => {
       Oasis.guiToColor(v, this.light2.color);
     });
-    this.lightFolder
-      .add(this.state, "lightIntensity", 0, 2)
-      .onChange((v) => {
-        this.light1.intensity = this.light2.intensity = v;
-      })
-      .name("直接光强度");
+    this.lightFolder.add(this.state, "lightIntensity1", 0, 2).onChange((v) => {
+      this.light1.intensity = v;
+    });
+    this.lightFolder.add(this.state, "lightIntensity2", 0, 2).onChange((v) => {
+      this.light2.intensity = v;
+    });
 
     this.sceneFolder.open();
     this.lightFolder.open();
@@ -254,12 +255,7 @@ class Oasis {
     this.cameraEntity.transform.setPosition(center.x, center.y, size * 3);
 
     this.camera.farClipPlane = size * 12;
-
-    if (this.camera.nearClipPlane > size) {
-      this.camera.nearClipPlane = size / 10;
-    } else {
-      this.camera.nearClipPlane = 0.1;
-    }
+    this.camera.nearClipPlane = size / 100;
 
     this.controler.maxDistance = size * 10;
   }
@@ -326,12 +322,14 @@ class Oasis {
           gltf.buffers.concat(gltf.images).forEach((item) => {
             if (!item) return;
             let { uri } = item;
-            let index = uri.lastIndexOf("/");
-            if (index > -1) {
-              uri = uri.substr(index + 1);
-            }
-            if (filesMap[uri]) {
-              item.uri = filesMap[uri];
+            if (uri) {
+              let index = uri.lastIndexOf("/");
+              if (index > -1) {
+                uri = uri.substr(index + 1);
+              }
+              if (filesMap[uri]) {
+                item.uri = filesMap[uri];
+              }
             }
           });
           const blob = new Blob([JSON.stringify(gltf)]);
@@ -371,11 +369,9 @@ class Oasis {
     this.rootEntity.addChild(defaultSceneRoot);
 
     const meshRenderers = [];
-    const skinnedMeshRenderers = [];
     defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, meshRenderers);
-    defaultSceneRoot.getComponentsIncludeChildren(SkinnedMeshRenderer, skinnedMeshRenderers);
 
-    this.setCenter(meshRenderers.concat(skinnedMeshRenderers));
+    this.setCenter(meshRenderers);
     this.addMaterialGUI(materials);
     this.loadAnimationGUI(animations);
   }
@@ -488,7 +484,7 @@ class Oasis {
 
       // metallic
       if (material instanceof PBRMaterial) {
-        const mode1 = f.addFolder("金属模式");
+        const mode1 = f.addFolder("Metallic-Roughness props");
         mode1.add(material, "metallic", 0, 1).step(0.01);
         mode1.add(material, "roughness", 0, 1).step(0.01);
         mode1
@@ -501,7 +497,7 @@ class Oasis {
       }
       // specular
       else if (material instanceof PBRSpecularMaterial) {
-        const mode2 = f.addFolder("高光模式");
+        const mode2 = f.addFolder("Specular-Glossiness props");
         mode2.add(material, "glossiness", 0, 1).step(0.01);
         mode2.addColor(state, "specularColor").onChange((v) => {
           Oasis.guiToColor(v, material.specularColor);
@@ -525,7 +521,7 @@ class Oasis {
 
       // common
       if (!(material instanceof UnlitMaterial)) {
-        const common = f.addFolder("通用");
+        const common = f.addFolder("Common props");
 
         common
           .add(state, "opacity", 0, 1)
@@ -631,9 +627,13 @@ export default function GLTFView(props: any) {
       <WrapperLayout {...props}>
         <div className="page-gltf-view">
           <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
-          <input id="input" type="file" className="hide" />
           <div id="dropZone" className="dropZone">
-            <p>Drag glTF2.0、texture files or folder、hdrs on the viewport</p>
+            <img
+              className="upload"
+              src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*-sHKTYv5U94AAAAAAAAAAAAAARQnAQ"
+            />
+            <input id="input" type="file" className="input" multiple />
+            <p>Drop your glTF2.0、images、HDRs here!</p>
           </div>
           <div id="spinner" className="spinner hide" />
           <script type="module" src="./src/index.ts" />

@@ -7,9 +7,9 @@ type: 核心
 `Engine` 在 Oasis engine 中扮演着总控制器的角色，主要包含了**画布**、**渲染控制**和**引擎子系统管理**等三大功能：
 
 - **画布**：主画布相关的操作，如修改画布宽高等。
-- **渲染控制：** 控制渲染的执行/暂停/继续、垂直同步等功能。
-- **引擎子系统管理：[场景管理](${docs}scene-cn)和[资源管理](${docs}resource-manager-cn)等。
-
+- **渲染控制**： 控制渲染的执行/暂停/继续、垂直同步等功能。
+- **引擎子系统管理**：[场景管理](${docs}scene-cn)和[资源管理](${docs}resource-manager-cn)等。
+- **执行环境的上下文管理**：控制 WebGL 等执行环境的上下文管理。
 
 ## 初始化
 
@@ -31,6 +31,26 @@ const engine = new Engine(webCanvas,webGLRenderer);
 ```typescript
 const engine = new WebGLEngine("canvas")
 ```
+
+## WebGL 上下文
+
+WebGL 的上下文管理可以通过 [WebGLEngine](${api}rhi-webgl/WebGLEngine) 的第三个参数 [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) 来进行管理，拿**画布透明**来举例，引擎默认是将画布的透明通道关闭的，即无法显示画布背后的网页元素，这样有助于节省显存，如果需要打开，可以这样设置：
+
+```typescript
+const engine = new WebGLEngine("canvas", undefined, {
+  alpha: true
+});
+
+/**
+ * 开启了透明通道后，还需要设置背景颜色来决定如何和网页背景融合。
+ * 设置为 0，0，0，0 可以完全显示网页背景。
+ */
+const scene = engine.sceneManager.activeScene;
+scene.background.solidColor.setValue(0, 0, 0, 0);
+```
+
+类似的，可以用 `webGLMode` 控制 WebGL1/2， `antialias` 控制是否抗锯齿等等。
+
 
 ## 属性
 | 属性名称 | 属性释义 |

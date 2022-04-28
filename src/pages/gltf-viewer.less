@@ -34,13 +34,24 @@
     margin-left: -250px;
     color: #333;
     font-weight: bold;
-    line-height:100px;
     text-align: center;
     background: #eeea;
     border-radius: 5px;
     box-shadow: 0 0 12px 4px #666;
-    user-select: none;
-    pointer-events: none;
+
+    .upload {
+      width: 50px;
+      margin: 15px;
+    }
+
+    .input {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      opacity: 0;
+    }
   }
 
   .closeIcon {

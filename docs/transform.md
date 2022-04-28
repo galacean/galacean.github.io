@@ -97,7 +97,7 @@ class Camera {
     this._isViewMatrixDirty = this._transform.registerWorldChangeFlag();
   }
   get viewMatrix() {
-    // When the mark is updated, the viewMatrix is ​​obtained according to the worldmatrix~
+    // When the mark is updated, the viewMatrix is ​​obtained according to the worldMatrix~
   	if (this._isViewMatrixDirty.flag) {
       this._isViewMatrixDirty.flag = false;
       Matrix.invert(this._transform.worldMatrix, this._viewMatrix);
