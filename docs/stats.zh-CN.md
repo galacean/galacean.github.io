@@ -1,7 +1,7 @@
 ---
-order: 2
+order: 1
 title: 统计面板
-type: 工具库
+type: 性能调试
 ---
 
 [@oasis-engine/stats](${api}stats/index) 包主要用来显示引擎当前的运行状态。要显示引擎运行状态只需要引入 [Stats](${api}stats/Stats) 并注册：

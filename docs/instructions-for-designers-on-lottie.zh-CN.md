@@ -4,6 +4,7 @@ order: 6
 title: AE && lottie —— 写给设计师
 
 type: 美术
+group: 教程
 ---
 <a name="LUKWX"></a>
 ### 1、lottie 简介

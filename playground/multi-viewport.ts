@@ -16,14 +16,14 @@ import {
   BackgroundMode,
   SkyBoxMaterial,
   PrimitiveMesh,
-  TextureCubeMap
+  TextureCube
 } from "oasis-engine";
-import {OrbitControl} from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
-const {background} = scene;
+const { background } = scene;
 const rootEntity = scene.createRootEntity();
 
 // init camera
@@ -58,22 +58,21 @@ renderer.setMaterial(material);
 engine.run();
 
 engine.resourceManager
-  .load<TextureCubeMap>({
-      urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
-      ],
-      type: AssetType.TextureCube
-    }
-  )
+  .load<TextureCube>({
+    urls: [
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
+    ],
+    type: AssetType.TextureCube
+  })
   .then((cubeMap1) => {
     // Add skybox background
     background.mode = BackgroundMode.Sky;
     const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine));
     skyMaterial.textureCubeMap = cubeMap1;
     background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
-  })
+  });

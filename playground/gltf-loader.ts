@@ -36,9 +36,9 @@ import {
 Logger.enable();
 
 const envList = {
-  sunset: "https://gw.alipayobjects.com/os/bmw-prod/34986a5b-fa16-40f1-83c8-1885efe855d2.bin",
-  pisa: "https://gw.alipayobjects.com/os/bmw-prod/258a783d-0673-4b47-907a-da17b882feee.bin",
-  foot: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
+  sunset: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin",
+  pisa: "https://gw.alipayobjects.com/os/bmw-prod/871e960f-874f-4dc6-aa69-2e8fda8b5795.bin",
+  foot_2K: "https://gw.alipayobjects.com/os/bmw-prod/f0a011c2-ffba-4f70-866e-63974fff4ba9.bin"
 };
 
 class Oasis {
@@ -146,37 +146,26 @@ class Oasis {
   _extent: Vector3 = new Vector3();
 
   constructor() {
-    this.initResources().then(() => {
+    this.loadEnv(this.state.env).then(() => {
       this.initScene();
       this.addGLTFList();
       this.addSceneGUI();
     });
   }
 
-  initResources() {
-    const names = Object.keys(envList);
-
+  loadEnv(envName: string) {
     return new Promise((resolve) => {
       this.engine.resourceManager
-        .load(
-          names.map((name) => {
-            return {
-              type: AssetType.Env,
-              url: envList[name]
-            };
-          })
-        )
-        .then((envs: AmbientLight[]) => {
-          envs.forEach((env: AmbientLight, index) => {
-            const name = names[index];
-            this.env[name] = env;
+        .load<AmbientLight>({
+          type: AssetType.Env,
+          url: envList[envName]
+        })
+        .then((env) => {
+          this.env[envName] = env;
 
-            if (name === this.state.env) {
-              this.scene.ambientLight = env;
-              this.skyMaterial.textureCubeMap = env.specularTexture;
-              this.skyMaterial.textureDecodeRGBM = true;
-            }
-          });
+          this.scene.ambientLight = env;
+          this.skyMaterial.textureCubeMap = env.specularTexture;
+          this.skyMaterial.textureDecodeRGBM = true;
           resolve(true);
         });
     });
@@ -227,11 +216,10 @@ class Oasis {
     // Lighting controls.
     const lightFolder = gui.addFolder("Lighting");
     lightFolder
-      .add(this.state, "env", [...Object.keys(this.env)])
+      .add(this.state, "env", [...Object.keys(envList)])
       .name("IBL")
       .onChange((v) => {
-        this.scene.ambientLight = this.env[v];
-        this.skyMaterial.textureCubeMap = this.env[v].specularTexture;
+        this.loadEnv(v);
       });
 
     lightFolder

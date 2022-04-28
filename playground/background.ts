@@ -9,7 +9,7 @@ import {
   Camera,
   PrimitiveMesh,
   SkyBoxMaterial,
-  TextureCubeMap,
+  TextureCube,
   WebGLEngine
 } from "oasis-engine";
 
@@ -33,7 +33,7 @@ engine.canvas._webCanvas.addEventListener("onresize", () => {
 
 engine.resourceManager
   //@ts-ignore
-  .load<[TextureCubeMap, TextureCubeMap, Texture2D]>([
+  .load<[TextureCube, TextureCube, Texture2D]>([
     {
       urls: [
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
@@ -74,7 +74,7 @@ engine.resourceManager
     addGUI(cubeMaps);
   });
 
-function addGUI(cubeMaps: TextureCubeMap[]) {
+function addGUI(cubeMaps: TextureCube[]) {
   const gui = new dat.GUI();
   let colorGUI = null;
   let cubeMapGUI = null;

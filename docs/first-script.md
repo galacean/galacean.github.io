@@ -1,7 +1,8 @@
 ---
-order: 3
-title: 3. The first script
+order: 4
+title: 4. The first script
 type: Introduction
+group: Basic
 ---
 
 In [Previous Tutorial](${docs}model), you have learned how to load a 3D model. At this time, you may ask: How to add a little animation to this duck? In Oasis Engine, functions are added to entities in the form of **components**, among which [script component](${docs}script) provides the most flexible extension capability. This tutorial will take you to develop a "uniform rotating duck" example:

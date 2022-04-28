@@ -1,7 +1,7 @@
 ---
-order: 5
-title: glTF 资源
-type: 资源系统
+order: 3
+title: glTF
+type: 动画
 ---
 
 ## 什么是 glTF?

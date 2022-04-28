@@ -1,7 +1,8 @@
 ---
-order: 8
+order: 1
 title: SpriteRenderer
-type: Component
+type: Graphics
+group: 2D
 ---
 
 [SpriteRenderer](${api}core/SpriteRenderer) Used to display images in 3D/2D scenes.

@@ -1,7 +1,8 @@
 ---
-order: 1
-title: Controls
-type: Second party packages
+order: 2
+title: Camera Control
+type: Graphics
+group: Camera
 ---
 
 The camera control, as the name implies, is a component that is used with the camera to display the 3D scene. This type of component customizes the corresponding parameters according to different functions, and controls the display of the 3D scene by affecting the properties of the camera.

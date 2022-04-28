@@ -1,7 +1,7 @@
 ---
-order: 2
+order: 5
 title: Making AnimationClip
-type: Artist
+type: Art
 ---
 
 The AnimationClip is **a combination of animations on a time axis**, which can be the rotation, translation, scaling, weight animation of multiple objects, such as **walking, running, jumping** can be exported separately 3 AnimationClips; Oasis engine can choose which AnimationClip to play, provided that the FBX or glTF exported by the modeling software contains multiple AnimationClips.

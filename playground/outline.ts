@@ -18,12 +18,13 @@ import {
   Material,
   MeshRenderer,
   PrimitiveMesh,
-  RenderColorTexture,
+  RenderPass,
   RenderQueueType,
   RenderTarget,
   Script,
   Shader,
   StencilOperation,
+  Texture2D,
   Vector2,
   WebGLEngine
 } from "oasis-engine";
@@ -48,7 +49,7 @@ cameraNode.addComponent(OrbitControl).target.setValue(0, 1.3, 0);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/34986a5b-fa16-40f1-83c8-1885efe855d2.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -98,30 +99,30 @@ class Border extends Script {
     if (!this.material) {
       if (!Shader.find("border-shader")) {
         const vertex = `
-                attribute vec3 POSITION;
-                attribute vec3 NORMAL;
-  
-                uniform float u_width;
-                uniform mat4 u_MVPMat;
-                uniform mat4 u_modelMat;
-                uniform mat4 u_viewMat;
-                uniform mat4 u_projMat;
-                uniform mat4 u_normalMat;
-                
-                void main() {
-                   vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
-                   vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
-                   mPosition.xyz += mNormal * u_width;
-                   gl_Position = u_projMat * u_viewMat * mPosition;
-                }
-                `;
+                 attribute vec3 POSITION;
+                 attribute vec3 NORMAL;
+   
+                 uniform float u_width;
+                 uniform mat4 u_MVPMat;
+                 uniform mat4 u_modelMat;
+                 uniform mat4 u_viewMat;
+                 uniform mat4 u_projMat;
+                 uniform mat4 u_normalMat;
+                 
+                 void main() {
+                    vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
+                    vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
+                    mPosition.xyz += mNormal * u_width;
+                    gl_Position = u_projMat * u_viewMat * mPosition;
+                 }
+                 `;
         const fragment = `
-                uniform vec3 u_color;
-
-                void main(){
-                  gl_FragColor = vec4(u_color, 1);
-                }
-                `;
+                 uniform vec3 u_color;
+ 
+                 void main(){
+                   gl_FragColor = vec4(u_color, 1);
+                 }
+                 `;
 
         Shader.create("border-shader", vertex, fragment);
       }
@@ -206,30 +207,30 @@ class Border2 extends Script {
     if (!this.material) {
       if (!Shader.find("border-shader")) {
         const vertex = `
-                attribute vec3 POSITION;
-                attribute vec3 NORMAL;
-  
-                uniform float u_width;
-                uniform mat4 u_MVPMat;
-                uniform mat4 u_modelMat;
-                uniform mat4 u_viewMat;
-                uniform mat4 u_projMat;
-                uniform mat4 u_normalMat;
-                
-                void main() {
-                   vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
-                   vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
-                   mPosition.xyz += mNormal * u_width;
-                   gl_Position = u_projMat * u_viewMat * mPosition;
-                }
-                `;
+                 attribute vec3 POSITION;
+                 attribute vec3 NORMAL;
+   
+                 uniform float u_width;
+                 uniform mat4 u_MVPMat;
+                 uniform mat4 u_modelMat;
+                 uniform mat4 u_viewMat;
+                 uniform mat4 u_projMat;
+                 uniform mat4 u_normalMat;
+                 
+                 void main() {
+                    vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
+                    vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
+                    mPosition.xyz += mNormal * u_width;
+                    gl_Position = u_projMat * u_viewMat * mPosition;
+                 }
+                 `;
         const fragment = `
-                uniform vec3 u_color;
-
-                void main(){
-                  gl_FragColor = vec4(u_color, 1);
-                }
-                `;
+                 uniform vec3 u_color;
+ 
+                 void main(){
+                   gl_FragColor = vec4(u_color, 1);
+                 }
+                 `;
 
         Shader.create("border-shader", vertex, fragment);
       }
@@ -316,7 +317,7 @@ class Border3 extends Script {
       const material = this.getScreenMaterial(this.engine);
       const { width, height } = engine.canvas;
 
-      const renderColorTexture = new RenderColorTexture(engine, width, height);
+      const renderColorTexture = new Texture2D(engine, width, height);
       const renderTarget = new RenderTarget(engine, width, height, renderColorTexture);
       const screen = (this._screen = rootEntity.createChild("screen"));
       const screenRenderer = screen.addComponent(MeshRenderer);
@@ -333,72 +334,72 @@ class Border3 extends Script {
     if (!this.material) {
       if (!Shader.find("screen-shader")) {
         const vertex = `
-        attribute vec3 POSITION;
-        attribute vec2 TEXCOORD_0;
-        
-        varying vec2 v_uv;
-        
-        void main(){
-            gl_Position = vec4( POSITION.xzy , 1.0);
-            gl_Position.y *= -1.0;
-            v_uv = TEXCOORD_0;
-            v_uv.y = 1.0 - v_uv.y;
-        }
-                `;
+         attribute vec3 POSITION;
+         attribute vec2 TEXCOORD_0;
+         
+         varying vec2 v_uv;
+         
+         void main(){
+             gl_Position = vec4( POSITION.xzy , 1.0);
+             gl_Position.y *= -1.0;
+             v_uv = TEXCOORD_0;
+             v_uv.y = 1.0 - v_uv.y;
+         }
+                 `;
         const fragment = `
-                uniform vec3 u_color;
-                uniform sampler2D u_texture;
-                uniform vec2 u_texSize;
-
-                varying vec2 v_uv;
-
-
-                float luminance(vec4 color) {
-                  return  0.2125 * color.r + 0.7154 * color.g + 0.0721 * color.b; 
-                }
-
-                float sobel() {
-                  float Gx[9] = float[](
-                              -1.0,  0.0,  1.0,
-                              -2.0,  0.0,  2.0,
-                              -1.0,  0.0,  1.0);
-                  float Gy[9] = float[](
-                              -1.0, -2.0, -1.0,
-                              0.0,  0.0,  0.0,
-                              1.0,  2.0,  1.0);		
-                  
-                  float texColor;
-                  float edgeX = 0.0;
-                  float edgeY = 0.0;
-                  vec2 uv[9];
-
-                  uv[0] = v_uv + u_texSize.xy * vec2(-1, -1);
-				          uv[1] = v_uv + u_texSize.xy * vec2(0, -1);
-				          uv[2] = v_uv + u_texSize.xy * vec2(1, -1);
-				          uv[3] = v_uv + u_texSize.xy * vec2(-1, 0);
-				          uv[4] = v_uv + u_texSize.xy * vec2(0, 0);
-				          uv[5] = v_uv + u_texSize.xy * vec2(1, 0);
-				          uv[6] = v_uv + u_texSize.xy * vec2(-1, 1);
-				          uv[7] = v_uv + u_texSize.xy * vec2(0, 1);
-				          uv[8] = v_uv + u_texSize.xy * vec2(1, 1);
-
-                  for (int i = 0; i < 9; i++) {
-                    texColor = luminance(texture2D(u_texture, uv[i]));
-                    edgeX += texColor * Gx[i];
-                    edgeY += texColor * Gy[i];
-                  }
-                  
-                  return abs(edgeX) + abs(edgeY);
-                }
-
-                void main(){
-                  // float sobelFactor = step(1.0, sobel());
-                  float sobelFactor = sobel();
-                  gl_FragColor = mix( texture2D(u_texture, v_uv), vec4(u_color,1.0), sobelFactor);
-                  // gl_FragColor = mix( vec4(1.0), vec4(u_color,1.0), sobelFactor);
-                  // gl_FragColor = vec4(u_color,1.0) * sobelFactor;
-                }
-                `;
+                 uniform vec3 u_color;
+                 uniform sampler2D u_texture;
+                 uniform vec2 u_texSize;
+ 
+                 varying vec2 v_uv;
+ 
+ 
+                 float luminance(vec4 color) {
+                   return  0.2125 * color.r + 0.7154 * color.g + 0.0721 * color.b; 
+                 }
+ 
+                 float sobel() {
+                   float Gx[9] = float[](
+                               -1.0,  0.0,  1.0,
+                               -2.0,  0.0,  2.0,
+                               -1.0,  0.0,  1.0);
+                   float Gy[9] = float[](
+                               -1.0, -2.0, -1.0,
+                               0.0,  0.0,  0.0,
+                               1.0,  2.0,  1.0);		
+                   
+                   float texColor;
+                   float edgeX = 0.0;
+                   float edgeY = 0.0;
+                   vec2 uv[9];
+ 
+                   uv[0] = v_uv + u_texSize.xy * vec2(-1, -1);
+                   uv[1] = v_uv + u_texSize.xy * vec2(0, -1);
+                   uv[2] = v_uv + u_texSize.xy * vec2(1, -1);
+                   uv[3] = v_uv + u_texSize.xy * vec2(-1, 0);
+                   uv[4] = v_uv + u_texSize.xy * vec2(0, 0);
+                   uv[5] = v_uv + u_texSize.xy * vec2(1, 0);
+                   uv[6] = v_uv + u_texSize.xy * vec2(-1, 1);
+                   uv[7] = v_uv + u_texSize.xy * vec2(0, 1);
+                   uv[8] = v_uv + u_texSize.xy * vec2(1, 1);
+ 
+                   for (int i = 0; i < 9; i++) {
+                     texColor = luminance(texture2D(u_texture, uv[i]));
+                     edgeX += texColor * Gx[i];
+                     edgeY += texColor * Gy[i];
+                   }
+                   
+                   return abs(edgeX) + abs(edgeY);
+                 }
+ 
+                 void main(){
+                   // float sobelFactor = step(1.0, sobel());
+                   float sobelFactor = sobel();
+                   gl_FragColor = mix( texture2D(u_texture, v_uv), vec4(u_color,1.0), sobelFactor);
+                   // gl_FragColor = mix( vec4(1.0), vec4(u_color,1.0), sobelFactor);
+                   // gl_FragColor = vec4(u_color,1.0) * sobelFactor;
+                 }
+                 `;
 
         Shader.create("screen-shader", vertex, fragment);
       }

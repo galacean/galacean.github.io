@@ -20,7 +20,9 @@ import {OrbitControl} from "@oasis-engine/controls";
 
 import { LitePhysics } from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas", LitePhysics);
+const engine = new WebGLEngine("canvas");
+engine.physicsManager.initialize(LitePhysics);
+
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
@@ -72,21 +74,19 @@ sphereColliderShape.radius = radius;
 sphereCollider.addShape(sphereColliderShape);
 
 class MoveScript extends Script {
-  pos: Vector3 = new Vector3(-5, 0, 0);
-  vel: number = 0.005;
+  pos: number = -5;
+  vel: number = 0.05;
   velSign: number = -1;
 
-  onUpdate(deltaTime: number) {
-    super.onUpdate(deltaTime);
-    if (this.pos.x >= 5) {
+  onPhysicsUpdate() {
+    if (this.pos >= 5) {
       this.velSign = -1;
     }
-    if (this.pos.x <= -5) {
+    if (this.pos <= -5) {
       this.velSign = 1;
     }
-    this.pos.x += deltaTime * this.vel * this.velSign;
-
-    this.entity.transform.position = this.pos;
+    this.pos += this.vel * this.velSign;
+    this.entity.transform.worldPosition.setValue(this.pos, 0, 0);
   }
 }
 

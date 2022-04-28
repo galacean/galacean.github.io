@@ -1,6 +1,6 @@
 ---
-order: 1
-title: 数学库
+order: 2
+title: 数学
 type: 工具库
 ---
 

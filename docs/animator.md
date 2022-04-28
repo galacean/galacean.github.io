@@ -1,7 +1,7 @@
 ---
-order: 10
-title: Animator
-type: Component
+order: 1
+title: Animator Component
+type: Animation
 ---
 
 The [Animator](${api}core/Animator) can organize [AnimationClips](${api}core/AnimationClip) through the state machine to achieve more flexible and rich animation effects.

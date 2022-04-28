@@ -2,25 +2,19 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-plusplus */
-import React from 'react';
-import { Link } from 'gatsby';
-import {
-  ExportOutlined,
-  LeftOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
-  RightOutlined,
-} from '@ant-design/icons';
-import { Badge, Row, Col, Menu } from 'antd';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import MobileMenu from 'rc-drawer-menu';
-import moment from 'moment';
-import Article from './Article';
-import type { MenuDataItem, IMenuData } from '../utils';
-import { isZhCN, getMenuItems } from '../utils';
-import type { IFrontmatterData } from '../../templates/docs';
-import { version } from '../../../siteconfig.json';
+import React from "react";
+import { Link } from "gatsby";
+import { ExportOutlined, LeftOutlined, MenuFoldOutlined, MenuUnfoldOutlined, RightOutlined } from "@ant-design/icons";
+import { Badge, Row, Col, Menu } from "antd";
+import PropTypes from "prop-types";
+import classNames from "classnames";
+import MobileMenu from "rc-drawer-menu";
+import moment from "moment";
+import Article from "./Article";
+import type { MenuDataItem, IMenuData } from "../utils";
+import { isZhCN, getMenuItems } from "../utils";
+import type { IFrontmatterData } from "../../templates/docs";
+import { version } from "../../../siteconfig.json";
 
 const { SubMenu } = Menu;
 
@@ -43,7 +37,7 @@ interface MainContentState {
 
 function getActiveMenuItem(props: MainContentProps) {
   const { pathname } = props.location;
-  if (pathname.endsWith('/')) {
+  if (pathname.endsWith("/")) {
     return pathname.substring(0, pathname.length - 1);
   }
   return pathname;
@@ -62,7 +56,7 @@ function getModuleDataWithProps(props: MainContentProps) {
 }
 
 function isNotTopLevel(level: string) {
-  return level !== 'topLevel';
+  return level !== "topLevel";
 }
 
 export default class MainContent extends React.PureComponent<MainContentProps, MainContentState> {
@@ -71,13 +65,13 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
   currentModule: string;
 
   static contextTypes = {
-    intl: PropTypes.object.isRequired,
+    intl: PropTypes.object.isRequired
   };
 
   constructor(props: MainContentProps) {
     super(props);
     this.state = {
-      openKeys: this.getSideBarOpenKeys(props) || [],
+      openKeys: this.getSideBarOpenKeys(props) || []
     };
   }
 
@@ -89,7 +83,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const openKeys = this.getSideBarOpenKeys(nextProps);
     if (openKeys) {
       this.setState({
-        openKeys,
+        openKeys
       });
     }
   }
@@ -98,9 +92,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     if (!window.location.hash) {
       return;
     }
-    const element = document.getElementById(
-      decodeURIComponent(window.location.hash.replace('#', '')),
-    );
+    const element = document.getElementById(decodeURIComponent(window.location.hash.replace("#", "")));
     setTimeout(() => {
       if (element) {
         element.scrollIntoView(true);
@@ -124,7 +116,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
 
   handleMenuOpenChange = (openKeys: string[]) => {
     this.setState({
-      openKeys,
+      openKeys
     });
   };
 
@@ -134,11 +126,11 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     // } = this.props;
     let newFilename = filename;
 
-    if (filename.includes('docs')) {
+    if (filename.includes("docs")) {
       newFilename = `/${version}${filename}`;
     }
 
-    if (isZhCN() && !newFilename.includes('-cn')) {
+    if (isZhCN() && !newFilename.includes("-cn")) {
       return `${newFilename}-cn`;
     }
     return newFilename;
@@ -149,19 +141,17 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
       return null;
     }
     const {
-      intl: { locale },
-    } =
-      this.context as
-      {
+      intl: { locale }
+    } = this.context as {
       intl: {
-          locale: 'zh-CN' | 'en-US';
+        locale: "zh-CN" | "en-US";
       };
     };
     const text = [
       <span key="english">{item.title}</span>,
       <span className="chinese" key="chinese">
-        {locale === 'zh-CN' && item.subtitle}
-      </span>,
+        {locale === "zh-CN" && item.subtitle}
+      </span>
     ];
 
     const { disabled } = item;
@@ -173,12 +163,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
         {after}
       </Link>
     ) : (
-      <a
-        href={item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="menu-item-link-outside"
-      >
+      <a href={item.link} target="_blank" rel="noopener noreferrer" className="menu-item-link-outside">
         {before}
         {text} <ExportOutlined />
         {after}
@@ -195,27 +180,49 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
   generateSubMenuItems = (obj?: IMenuData, footerNavIcons = {}) => {
     if (!obj) {
       return [];
-    };
-    const topLevel = ((obj.topLevel as MenuDataItem[]) || []).map(
-      this.generateMenuItem.bind(this, footerNavIcons),
-    );
-    const lang = isZhCN() ? 'zh-CN' : 'en-US';
+    }
+    const topLevel = ((obj.topLevel as MenuDataItem[]) || []).map(this.generateMenuItem.bind(this, footerNavIcons));
+    const lang = isZhCN() ? "zh-CN" : "en-US";
     const order = {
-      "zh-CN": ["入门", "核心", "组件", "资源系统", "工具库", "二方库", "美术", "编辑器", "小程序"],
+      "zh-CN": [
+        "快速入门",
+        "核心",
+        "图形",
+        "动画",
+        "物理",
+        "交互",
+        "资源管理",
+        "性能调试",
+        "工具库",
+        "平台适配",
+        "美术",
+        "编辑器"
+      ],
       "en-US": [
         "Introduction",
         "Core",
-        "Component",
-        "Resource",
+        "Graphics",
+        "Animation",
+        "Physics",
+        "Interact",
+        "Resource Management",
+        "Performance",
         "Tool",
-        "Second party packages",
-        "Artist",
-        "Miniprogram"
+        "Adaptation",
+        "Art",
+        "Editor"
       ]
     };
 
     const groupOrder = {
-      '编辑器': ['介绍', '基础操作', '资产', '组件', '脚本', '发布'],
+      快速入门: ["基础", "进阶"],
+      图形: ["摄像机", "渲染器组件", "网格", "材质", "纹理", "光照", "2D"],
+      美术: ["规范", "教程"],
+      编辑器: ["介绍", "基础操作", "资产", "组件", "脚本", "发布"],
+
+      Introduction: ["Basic", "Advanced"],
+      Graphics: ["Camera", "Renderer", "Mesh", "Material", "Texture", "Light", "2D"],
+      "Function Modules": ["Animation", "Physics", "Interact", "Resource Management"]
     };
 
     const sortItems = (items) => {
@@ -225,20 +232,20 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
 
       return (items as MenuDataItem[])
         .sort((a, b) => {
-          if ('time' in a && 'time' in b) {
+          if ("time" in a && "time" in b) {
             return moment(b.time).valueOf() - moment(a.time).valueOf();
           }
-          if ('order' in a && 'order' in b) {
+          if ("order" in a && "order" in b) {
             return a.order - b.order;
           }
           return a.title.charCodeAt(0) - b.title.charCodeAt(0);
         })
-        .map(this.generateMenuItem.bind(this, footerNavIcons))
-    }
+        .map(this.generateMenuItem.bind(this, footerNavIcons));
+    };
 
     const itemGroups = Object.keys(obj)
       .filter(isNotTopLevel)
-      .sort((a, b) => order[lang].findIndex(item => item === a) - order[lang].findIndex(item => item === b))
+      .sort((a, b) => order[lang].findIndex((item) => item === a) - order[lang].findIndex((item) => item === b))
       .map((type) => {
         const itemOrders = groupOrder[type];
         const items = obj[type];
@@ -258,17 +265,18 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
           const groupItems = itemOrders.map((group) => {
             const sortedItems = sortItems(itemsMap[group]);
 
-            return <Menu.ItemGroup key={group} title={group}>
+            return (
+              <Menu.ItemGroup key={group} title={group}>
                 {sortedItems}
               </Menu.ItemGroup>
-          })
+            );
+          });
 
           return (
             <SubMenu title={type} key={type}>
               {groupItems}
             </SubMenu>
           );
-
         }
 
         const groupItems = sortItems(items);
@@ -285,11 +293,10 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
   getMenuItems = (footerNavIcons = {}) => {
     const moduleData = getModuleDataWithProps(this.props);
     const {
-      intl: { locale },
+      intl: { locale }
     } = this.context;
     const menuItems: IMenuData = getMenuItems(moduleData, locale) || {};
-    const topLevel =
-      this.generateSubMenuItems(menuItems.topLevel as IMenuData, footerNavIcons) || [];
+    const topLevel = this.generateSubMenuItems(menuItems.topLevel as IMenuData, footerNavIcons) || [];
 
     const result = [...topLevel].filter(({ key }) => key);
     return result;
@@ -298,27 +305,22 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
   getPreAndNext = (menuItems: any) => {
     const {
       localizedPageData: {
-        meta: { filename },
-      },
+        meta: { filename }
+      }
     } = this.props;
 
     const list =
       menuItems.length && !menuItems[0].props.children.length
         ? menuItems
-        : Object.keys(menuItems).reduce(
-          (pre, key) => pre.concat(menuItems[key].props.children),
-          [],
-        );
-    const index = list.findIndex(
-      (item: { key: string }) => item.key === filename || item.key === `${filename}-cn`,
-    );
+        : Object.keys(menuItems).reduce((pre, key) => pre.concat(menuItems[key].props.children), []);
+    const index = list.findIndex((item: { key: string }) => item.key === filename || item.key === `${filename}-cn`);
 
     if (index === -1) {
       return {};
     }
     return {
       previous: list[index - 1],
-      next: list[index + 1],
+      next: list[index + 1]
     };
   };
 
@@ -329,7 +331,7 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const menuItems = this.getMenuItems();
     const currentItem = this.getPreAndNext(menuItems);
     const { next, previous } = currentItem;
-    const mainContainerClass = classNames('main-container', {});
+    const mainContainerClass = classNames("main-container", {});
     const { openKeys } = this.state;
     const menuChild = (
       <Menu
