@@ -28,43 +28,19 @@ export class Script extends Component {
    */
   onPhysicsUpdate(): void {
   }
-
-...
 }
 ```
 
-物理场景在更新时，除了调用该函数，还会同步 Collider 和其所挂载的 Entity 的姿态：
-```ts
-export class PhysicsManager {
-    /**
-     * Call on every frame to update pose of objects.
-     * @internal
-     */
-    _update(deltaTime: number): void {
-        const {fixedTimeStep: fixedTimeStep, _nativePhysicsManager: nativePhysicsManager} = this;
-        const componentsManager = this._engine._componentsManager;
+物理场景在更新时，除了调用该函数，还会同步 Collider 和其所挂载的 Entity 的姿态。物理更新的时序如下：
 
-        const simulateTime = deltaTime + this._restTime;
-        const step = Math.floor(Math.min(this.maxSumTimeStep, simulateTime) / fixedTimeStep);
-        this._restTime = simulateTime - step * fixedTimeStep;
-        for (let i = 0; i < step; i++) {
-            componentsManager.callScriptOnPhysicsUpdate();
-            componentsManager.callColliderOnUpdate();
-            nativePhysicsManager.update(fixedTimeStep);
-            componentsManager.callColliderOnLateUpdate();
-        }
-    }
-    
-    ...
-}
-```
-物理更新的时序如下：
 1. 调用 `onPhysicsUpdate` 中的用户逻辑
 2. `callColliderOnUpdate` 将被修改的 Entity 新姿态同步给物理碰撞器
 3. 更新物理场景
 4. `callColliderOnLateUpdate` 将所有 DynamicCollider 更新后的位置同步给对应的 Entity
 
 ## 使用射线检测
+
+<playground src="physx-raycast.ts"></playground>
 
 射线可以理解成 3D 世界中一个点向一个方向发射的一条无终点的线。射线投射在 3D 应用中非常广泛。通过射线投射，可以在用户点击屏幕时，拾取 3D 场景中的物体；也可以在射击游戏中，判断子弹能否射中目标。
 

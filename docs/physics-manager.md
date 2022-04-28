@@ -34,40 +34,11 @@ export class Script extends Component {
    */
   onPhysicsUpdate(): void {
   }
-
-...
 }
 ```
 
 When the physical scene is updated, in addition to calling this function, it will also synchronize the posture of the
-Collider and the Entity it is mounted on:
-
-```ts
-export class PhysicsManager {
-  /**
-   * Call on every frame to update pose of objects.
-   * @internal
-   */
-  _update(deltaTime: number): void {
-    const {fixedTimeStep: fixedTimeStep, _nativePhysicsManager: nativePhysicsManager} = this;
-    const componentsManager = this._engine._componentsManager;
-
-    const simulateTime = deltaTime + this._restTime;
-    const step = Math.floor(Math.min(this.maxSumTimeStep, simulateTime) / fixedTimeStep);
-    this._restTime = simulateTime - step * fixedTimeStep;
-    for (let i = 0; i < step; i++) {
-      componentsManager.callScriptOnPhysicsUpdate();
-      componentsManager.callColliderOnUpdate();
-      nativePhysicsManager.update(fixedTimeStep);
-      componentsManager.callColliderOnLateUpdate();
-    }
-  }
-
-...
-}
-```
-
-The sequence of physical updates is as follows:
+Collider and the Entity it is mounted on. The sequence of physical updates is as follows:
 
 1. Call the user logic in `onPhysicsUpdate`.
 2. `callColliderOnUpdate` synchronizes the new pose of the modified Entity to the physics collider.
@@ -75,6 +46,8 @@ The sequence of physical updates is as follows:
 4. `callColliderOnLateUpdate` synchronizes the updated positions of all DynamicColliders to the corresponding Entity.
 
 ## Raycast
+
+<playground src="physx-raycast.ts"></playground>
 
 A ray can be understood as an unending line emitted from a point in a 3D world in one direction. Raycast is widely
 used in 3D applications. Through ray casting, objects in the 3D scene can be picked up when the user taps the screen; it

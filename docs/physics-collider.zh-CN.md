@@ -16,7 +16,12 @@ type: 物理
 [Collider](${api}core/Collider) 用来检测当前 [Entity](${api}core/Entity)上的碰撞体与场景中其他碰撞体的碰撞情况。Oasis 提供了两种碰撞器：
 
 1. [StaticCollider](${api}core/StaticCollider)：静态碰撞器，主要用于场景中静止的物体；
+
+<playground src="physx-collision-detection.ts"></playground>
+
 2. [DynamicCollider](${api}core/DynamicCollider)：动态碰撞器，用于场景中需要受到脚本控制，或者响应物理反馈的物体。
+
+<playground src="physx-compound.ts"></playground>
 
 事实上，每一种 `Collider` 都是 [ColliderShape](${api}core/ColliderShape) 的集合，即每一种 `Collider` 都可以通过组合 `ColliderShape` 设置复合的碰撞器外形。
 

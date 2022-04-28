@@ -21,8 +21,13 @@ series of functions to set its own state, such as velocity, mass, etc.
 current [Entity](${api}core/Entity) and other colliders in the scene. Oasis provides two colliders:
 
 1. [StaticCollider](${api}core/StaticCollider): static collider, mainly used for static objects in the scene;
+
+<playground src="physx-collision-detection.ts"></playground>
+
 2. [DynamicCollider](${api}core/DynamicCollider): Dynamic Collider, used for objects in the scene that need to be
    controlled by scripts or respond to physical feedback.
+
+<playground src="physx-compound.ts"></playground>
 
 In fact, each `Collider` is a collection of [ColliderShape](${api}core/ColliderShape), that is, each `Collider` can set
 a composite collider shape by combining `ColliderShape`.
