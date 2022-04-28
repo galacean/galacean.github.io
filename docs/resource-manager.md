@@ -1,8 +1,7 @@
 ---
 Order: 1
 title: Resource Management and Loading
-type: Function Modules
-group: Resource Management
+type: Resource Management
 ---
 
 3D resources are generally linked to Engine. We use [resourceManager](${api}core/Engine#resourceManager) mounted in the Engine instance to manage and load resources.

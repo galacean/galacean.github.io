@@ -1,8 +1,7 @@
 ---
 order: 1
 title: 动画组件
-type: 功能模块
-group: 动画
+type: 动画
 ---
 
 动画控制组件（[Animator](${api}core/Animator)）可以通过状态机组织动画片段（[AnimationClip](${api}core/AnimationClip)）实现更加灵活丰富的动画效果。

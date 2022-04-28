@@ -184,12 +184,28 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const topLevel = ((obj.topLevel as MenuDataItem[]) || []).map(this.generateMenuItem.bind(this, footerNavIcons));
     const lang = isZhCN() ? "zh-CN" : "en-US";
     const order = {
-      "zh-CN": ["快速入门", "核心", "图形", "功能模块", "性能调试", "工具库", "平台适配", "美术", "编辑器"],
+      "zh-CN": [
+        "快速入门",
+        "核心",
+        "图形",
+        "动画",
+        "物理",
+        "交互",
+        "资源管理",
+        "性能调试",
+        "工具库",
+        "平台适配",
+        "美术",
+        "编辑器"
+      ],
       "en-US": [
         "Introduction",
         "Core",
         "Graphics",
-        "Function Modules",
+        "Animation",
+        "Physics",
+        "Interact",
+        "Resource Management",
         "Performance",
         "Tool",
         "Adaptation",
@@ -201,13 +217,12 @@ export default class MainContent extends React.PureComponent<MainContentProps, M
     const groupOrder = {
       快速入门: ["基础", "进阶"],
       图形: ["摄像机", "渲染器组件", "网格", "材质", "纹理", "光照", "2D"],
-      功能模块: ["动画", "物理", "交互", "资源管理"],
       美术: ["规范", "教程"],
       编辑器: ["介绍", "基础操作", "资产", "组件", "脚本", "发布"],
 
       Introduction: ["Basic", "Advanced"],
       Graphics: ["Camera", "Renderer", "Mesh", "Material", "Texture", "Light", "2D"],
-      "Function Modules": ["Animation", "Physics", "Interact", "Resource Management"],
+      "Function Modules": ["Animation", "Physics", "Interact", "Resource Management"]
     };
 
     const sortItems = (items) => {

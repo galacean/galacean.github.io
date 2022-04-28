@@ -1,8 +1,7 @@
 ---
 order: 1
 title: Pointer
-type: Function Modules
-group: Interact
+type: Interact
 ---
 
 The engine provides a basic input system. Because of the cross-terminal and cross-platform characteristics of Oasis, our input system also needs the characteristics of the PC and mobile terminals, and includes keyboard, mouse and touch screen operations. The current version supports different devices on different terminals:

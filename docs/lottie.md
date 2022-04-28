@@ -1,8 +1,7 @@
 ---
 order: 4
 title: Lottie
-type: Function Modules
-group: Animation
+type: Animation
 ---
 
 This is the <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> runtime implemented with Oasis Engine. Currently, only the sprite elements in the lottie node tree can be rendered.

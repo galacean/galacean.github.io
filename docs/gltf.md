@@ -1,8 +1,7 @@
 ---
 order: 3
 title: glTF
-type: Function Modules
-group: Animation
+type: Animation
 ---
 
 ## What is glTF?

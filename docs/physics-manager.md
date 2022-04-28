@@ -1,8 +1,7 @@
 ---
 order: 2 
 title: Physics Manager 
-type: Function Modules
-group: Physics
+type: Physics
 ---
 
 PhysicsManager is used to manage all the physics components in the scene, and is responsible for communicating with the
