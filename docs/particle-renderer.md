@@ -1,7 +1,7 @@
 ---
-order: 11
-title: Particle System
-type: Component
+order: 5
+title: Particle
+type: Animation
 ---
 
 Oasis Engine's particle renderer [ParticleRenderer](${api}core/ParticleRenderer) is a commonly used rendering component with rich properties. By adjusting each property value, it can achieve brilliant and colorful particle effects.

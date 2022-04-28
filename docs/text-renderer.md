@@ -1,7 +1,8 @@
 ---
-order: 8.2
+order: 5
 title: TextRenderer
-type: Component
+type: Graphics
+group: 2D
 ---
 
 [TextRenderer](${api}core/TextRenderer) Used to display texts in 3D/2D scenes.

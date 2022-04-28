@@ -1,7 +1,8 @@
 ---
 order: 7
 title: Basic geometry
-type: Component
+type: Graphics
+group: Mesh
 ---
 
 Basic geometry provide uniformly in [PrimitiveMesh](${api}core/PrimitiveMesh).

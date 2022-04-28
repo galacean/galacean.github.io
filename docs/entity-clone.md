@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 title: Clone
 type: Core
 ---

@@ -1,7 +1,7 @@
 ---
-order: 10
-title: Animator
-type: Component
+order: 1
+title: Animator Component
+type: Animation
 ---
 
 The [Animator](${api}core/Animator) can organize [AnimationClips](${api}core/AnimationClip) through the state machine to achieve more flexible and rich animation effects.
@@ -129,7 +129,7 @@ You can realize the crossFade between AnimationStates by adding AnimatorTransiti
 const walkState = animatorStateMachine.addState('walk');
 walkState.clip = walkClip;
 const runState = animatorStateMachine.addState('run');
-walkState.clip = runClip;
+runState.clip = runClip;
 const transition = new AnimatorStateTransition();
 transition.duration = 1;
 transition.offset = 0;

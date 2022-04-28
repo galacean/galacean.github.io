@@ -1,8 +1,8 @@
 ---
-order: 4
-
-title: 4. First game
+order: 5
+title: 5. First game
 type: Introduction
+group: Advanced
 ---
 
 > I believe everyone is familiar with **Flappy Bird**. Today we briefly describe how to use Oasis to replicate 2D games. The process is actually the same as the daily requirements. Original game link:[http://flappybird.io/](http://flappybird.io/)
@@ -53,7 +53,7 @@ After the analysis of the previous step, we have determined the display objects 
 
 ## Load resources
 
-After obtaining UI resources, you can refer to [Resource Management and Loading](${docs}resource-manager#1-texture2d) to load [Texture2D](${docs}texture#1-2d-texture).
+After obtaining UI resources, you can refer to [Resource Management and Loading](${docs}resource-manager#1-texture2d) to load [Texture2D](${docs}texture-2d).
 
 ## Interface construction
 

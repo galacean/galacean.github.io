@@ -1,7 +1,8 @@
 ---
-order: 2.1
+order: 6
 title: Font
-type: Resource
+type: Graphics
+group: 2D
 ---
 
 [Font](${api}core/Font) is a font resource that represents the font used by the text renderer.

@@ -1,7 +1,7 @@
 ---
-order: 3
+order: 4
 title: 事件系统
-type: 工具库
+type: 交互
 ---
 
 引擎中提供了基本的事件系统，一般组件间的通信，**游戏和业务**的通信会考虑采用事件系统。引擎提供了 [EventDispatcher](${api}core/EventDispatcher) 作为事件类，[Engine](${api}core/Engine) 和 [Entity](${api}core/Entity) 继承自 EventDispatcher。

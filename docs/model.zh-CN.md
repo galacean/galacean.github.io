@@ -1,7 +1,8 @@
 ---
-order: 2
-title: 2. 加载一个 3D 模型
-type: 入门
+order: 3
+title: 3. 加载一个 3D 模型
+type: 快速入门
+group: 基础
 ---
 
 glTF（GL Transmission Format）是 [khronos](https://www.khronos.org/) 发布的一种能高效传输和加载 3D 场景的规范，与 FBX、OBJ 等传统模型格式一样，基本支持 3D 场景中的所有特性，也是目前 Oasis 推荐的首选 3D 文件格式。

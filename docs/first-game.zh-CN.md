@@ -1,7 +1,8 @@
 ---
-order: 4
-title: 4. 第一个游戏
-type: 入门
+order: 5
+title: 5. 第一个游戏
+type: 快速入门
+group: 进阶
 ---
 
 > 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
@@ -52,7 +53,7 @@ type: 入门
 
 ## 加载 UI 资源
 
-在获取 UI 资源后，可以参考[资源管理与加载](${docs}resource-manager-cn#1-texture2d)中加载 [Texture2D](${docs}texture-cn#1-2d纹理) 的方式。
+在获取 UI 资源后，可以参考[资源管理与加载](${docs}resource-manager-cn#1-texture2d)中加载 [Texture2D](${docs}texture-2d-cn) 的方式。
 
 ## 界面搭建
 

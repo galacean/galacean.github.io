@@ -1,7 +1,8 @@
 ---
-order: 8.1
+order: 4
 title: 精灵遮罩
-type: 组件
+type: 图形
+group: 2D
 ---
 
 [SpriteMask](${api}core/SpriteMask) 组件用于对 3D/2D 场景中的精灵实现遮罩效果。

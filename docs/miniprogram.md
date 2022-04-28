@@ -1,7 +1,7 @@
 ---
 order: 0
 title: Mini Program
-type: Miniprogram
+type: Adaptation
 ---
 
 At present, Oasis has been adapted to Alipay and Taobao miniprogram. This tutorial defaults that the developer has a certain ability to develop miniprograms. If not, please read the following tutorial, download the miniprogram development tools and apply for AppId:
