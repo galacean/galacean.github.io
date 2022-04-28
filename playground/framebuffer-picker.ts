@@ -34,7 +34,6 @@ engine.resourceManager
     framebufferPicker.onPick = (obj) => {
       if (obj) {
         const { component, mesh } = obj;
-        console.log(component, mesh);
         material.baseColor.setValue(1, 0, 0, 1);
       } else {
         material.baseColor.setValue(1, 1, 1, 1);

@@ -97,7 +97,6 @@ class CollisionScript extends Script {
   }
 
   onTriggerStay() {
-    console.log("lalala")
   }
 
   onTriggerEnter() {

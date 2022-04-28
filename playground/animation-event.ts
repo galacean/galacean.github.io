@@ -42,17 +42,14 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 
 class EventHandlerScript extends Script {
   test() {
-    console.log(+new Date(), "EventHandlerScript test triggered");
   }
 }
 
 class EventHandlerScript2 extends Script {
   test() {
-    console.log(+new Date(), "EventHandlerScript2 test triggered");
   }
 
   test2() {
-    console.log(+new Date(), "EventHandlerScript2 test2 triggered");
   }
 }
 

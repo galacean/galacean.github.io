@@ -279,7 +279,6 @@ class Oasis {
       })
       .then((asset) => {
         const { defaultSceneRoot, materials, animations } = asset;
-        console.log(asset);
         this.gltfRootEntity = defaultSceneRoot;
         this.rootEntity.addChild(defaultSceneRoot);
 

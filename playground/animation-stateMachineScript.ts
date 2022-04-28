@@ -40,17 +40,14 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 class theScript extends StateMachineScript {
   // onStateEnter is called when a transition starts and the state machine starts to evaluate this state
   onStateEnter(animator: Animator, stateInfo: any, layerIndex: number) {
-    console.log('onStateEnter', animator, stateInfo, layerIndex);
   }
 
   // onStateUpdate is called on each Update frame between onStateEnter and onStateExit callbacks
   onStateUpdate(animator: Animator, stateInfo: any, layerIndex: number) {
-    console.log('onStateUpdate', animator, stateInfo, layerIndex);
   }
 
   // onStateExit is called when a transition ends and the state machine finishes evaluating this state
   onStateExit(animator: Animator, stateInfo: any, layerIndex: number) {
-    console.log('onStateExit', animator, stateInfo, layerIndex);
   }
 }
 
@@ -67,7 +64,6 @@ engine.resourceManager
     animator.animatorController = animatorController;
     layer.stateMachine = animatorStateMachine;
     setTimeout(() => {
-      console.log("crossFade");
       animator.crossFade("run", 0.5, 0, 0.1);
     }, 3000);
     if (animations) {

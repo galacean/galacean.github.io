@@ -53,11 +53,9 @@ Promise.all([
   engine.resourceManager
     .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/477b0093-7ee8-41af-a0dd-836608a4f130.gltf")
     .then((gltf) => {
-      const { defaultSceneRoot, entities, materials } = gltf;
+      const { defaultSceneRoot } = gltf;
       rootEntity.addChild(defaultSceneRoot);
       defaultSceneRoot.transform.setScale(100, 100, 100);
-      console.log(gltf);
-      // entities[57].isActive = false;
     }),
   engine.resourceManager
     .load<AmbientLight>({

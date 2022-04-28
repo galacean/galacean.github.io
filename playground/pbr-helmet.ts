@@ -51,7 +51,6 @@ Promise.all([
     .then((gltf) => {
       const entity = rootEntity.createChild("");
       entity.addChild(gltf.defaultSceneRoot);
-      console.log(gltf);
     }),
   engine.resourceManager
     .load<AmbientLight>({

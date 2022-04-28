@@ -108,7 +108,6 @@ PhysXPhysics.initialize().then(() => {
     }
 
     onTriggerStay(other: ColliderShape) {
-      console.log("hahaha");
     }
   }
 
