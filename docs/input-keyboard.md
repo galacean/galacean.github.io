@@ -1,7 +1,7 @@
 ---
-order: 8
+order: 2
 title: keyboard
-type: Core
+type: Interact
 ---
 
 Oasis supports developers to query the current keyboard interaction at any time without introducing additional packages and the calling interface is very simple。
