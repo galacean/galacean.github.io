@@ -19,6 +19,8 @@ import {
   Script,
   GLTFResource
 } from "oasis-engine";
+import * as dat from "dat.gui";
+const gui = new dat.GUI();
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -40,13 +42,17 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 
 class EventHandlerScript extends Script {
   test() {
-    console.log("EventHandlerScript test triggered");
+    console.log(+new Date(), "EventHandlerScript test triggered");
   }
 }
 
 class EventHandlerScript2 extends Script {
   test() {
-    console.log("EventHandlerScript2 test triggered");
+    console.log(+new Date(), "EventHandlerScript2 test triggered");
+  }
+
+  test2() {
+    console.log(+new Date(), "EventHandlerScript2 test2 triggered");
   }
 }
 
@@ -68,17 +74,30 @@ engine.resourceManager
       animations.forEach((clip: AnimationClip) => {
         if (clip.name === "run") {
           const animatorState = animatorStateMachine.addState(clip.name);
-          animatorState.clipStartTime = 0.1;
           animatorState.clip = clip;
           const event = new AnimationEvent();
           event.functionName = "test";
           event.time = 0.5;
+          const event2 = new AnimationEvent();
+          event2.functionName = "test2";
+          event2.time = clip.length;
           clip.addEvent(event);
+          clip.addEvent(event2);
         }
       });
     }
     rootEntity.addChild(defaultSceneRoot);
     animator.play("run", 0);
+
+
+    const debugInfo = {
+      speed: 1
+    };
+
+
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
+    });
   });
 
 engine.run();

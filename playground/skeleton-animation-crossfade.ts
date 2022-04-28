@@ -17,6 +17,8 @@ import {
   AnimationClip,
   GLTFResource
 } from "oasis-engine";
+import * as dat from "dat.gui";
+const gui = new dat.GUI();
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -32,7 +34,7 @@ cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
 const lightNode = rootEntity.createChild("light_node");
-lightNode.addComponent(DirectLight).intensity = 0.6;
+lightNode.addComponent(DirectLight) .intensity = 0.6;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
@@ -48,21 +50,43 @@ engine.resourceManager
     animatorController.addLayer(layer);
     animator.animatorController = animatorController;
     layer.stateMachine = animatorStateMachine;
-    setTimeout(() => {
-      console.log("crossFade");
-      animator.crossFade("run", 0.5, 0, 0.1);
-    }, 3000);
+    let animationNames = [];
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
-        if (clip.name === "walk" || clip.name === "run") {
+        if (clip.name !== "sad_pose" && clip.name !== "sneak_pose") {
+          animationNames.push(clip.name);
           const animatorState = animatorStateMachine.addState(clip.name);
           animatorState.clip = clip;
         }
       });
     }
-    animator.play("walk");
+    animator.play(animationNames[0]);
 
     rootEntity.addChild(defaultSceneRoot);
+
+    const debugInfo = {
+      animation: animationNames[0],
+      crossFade: true,
+      normalizedTransitionDuration: 0.5,
+      normalizedTimeOffset: 0,
+      speed: 1
+    };
+
+    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+      const { crossFade, normalizedTransitionDuration, normalizedTimeOffset } = debugInfo;
+      if (crossFade) {
+        animator.crossFade(v, normalizedTransitionDuration, 0, normalizedTimeOffset);
+      } else {
+        animator.play(v);
+      }
+    });
+
+    gui.add(debugInfo, "crossFade");
+    gui.add(debugInfo, "normalizedTransitionDuration", 0, 1).name("过渡时间");
+    gui.add(debugInfo, "normalizedTimeOffset", 0, 1).name("偏移时间");
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
+    });
   });
 
 engine.run();

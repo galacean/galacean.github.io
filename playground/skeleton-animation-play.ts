@@ -3,14 +3,9 @@
  * @category Animation
  */
 import { OrbitControl } from "@oasis-engine/controls";
-import {
-  Animator,
-  Camera,
-  DirectLight, GLTFResource, Logger,
-  SystemInfo,
-  Vector3,
-  WebGLEngine
-} from "oasis-engine";
+import { Animator, Camera, DirectLight, GLTFResource, Logger, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
+import * as dat from "dat.gui";
+const gui = new dat.GUI();
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -36,7 +31,24 @@ engine.resourceManager
     const { defaultSceneRoot } = asset;
     rootEntity.addChild(defaultSceneRoot);
     const animator = defaultSceneRoot.getComponent(Animator);
-    animator.play("run");
+    const animationNames = animator.animatorController.layers[0].stateMachine.states
+      .map((state) => state.name)
+      .filter((name) => !name.includes("pose"));
+
+    animator.play(animationNames[0]);
+
+    const debugInfo = {
+      animation: animationNames[0],
+      speed: 1
+    };
+
+    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+      animator.play(v);
+    });
+
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
+    });
   });
 
 engine.run();

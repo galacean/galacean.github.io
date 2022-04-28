@@ -9,7 +9,7 @@ The [Animator](${api}core/Animator) can organize [AnimationClips](${api}core/Ani
 <playground src="skeleton-animation.ts"></playground>
 
 ## Basic usage
-After loading the glTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation.
+After loading the glTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation. When the value is negative 
 
 ```typescript
 engine.resourceManager
@@ -24,7 +24,7 @@ engine.resourceManager
 
 ### Control playback speed
 
-You can control the playback speed of the animation through the [speed](${api}core/Animator#speed) property. The default value of `speed` is `1.0`, the larger the value, the faster the playback, the smaller the slower the playback.
+You can control the playback speed of the animation through the [speed](${api}core/Animator#speed) property. The default value of `speed` is `1.0`, the larger the value, the faster the playback, the smaller the slower the playback. When the value is negative, it will play backward.
 
 ```typescript
 animator.speed = 2.0；
@@ -50,10 +50,20 @@ animator.play("run");
 
 ### Get the playing AnimatorState
 
-You can use the [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) method to get the AnimatorState currently playing. The parameter is the layer index `layerIndex` of the AnimatorState, see [API document](${api}core/Animator#getCurrentAnimatorState) for details.
+You can use the [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) method to get the AnimatorState currently playing. The parameter is the layer index `layerIndex` of the AnimatorState, see [API document](${api}core/Animator#getCurrentAnimatorState) for detail,then you can set the properties of the AnimationState, such as changing the default loop playback to one time.
 
 ```typescript
-const currentState = animator.getCurrentAnimatorState(0)
+const currentState = animator.getCurrentAnimatorState(0);
+currentState.wrapMode = WrapMode.Once;
+```
+
+### Get the AnimatorState by name
+
+You can get the specified AnimatorState as follows, refer to [API documentation](${api}core/Animator#animatorController),then you can set the properties of the AnimationState, such as changing the default loop playback to one time.
+
+```typescript
+const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+state.wrapMode = WrapMode.Once;
 ```
 
 ### CrossFade

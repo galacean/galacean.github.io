@@ -23,7 +23,7 @@ engine.resourceManager
 
 ### 控制播放速度
 
-你可以通过 [speed](${api}core/Animator#speed)  属性来控制动画的播放速度。 `speed` 默认值为 `1.0` ，值越大播放的越快，越小播放的越慢。
+你可以通过 [speed](${api}core/Animator#speed)  属性来控制动画的播放速度。 `speed` 默认值为 `1.0` ，值越大播放的越快，越小播放的越慢。当值为负数时，进行倒播。
 
 
 ```typescript
@@ -52,10 +52,20 @@ animator.play("run");
 
 ### 获取当前在播放的动画状态
 
-你可以使用 [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) 方法来获取当前正在播放的AnimatorState。参数为动画状态所在层的序号`layerIndex`, 详见[API文档](${api}core/Animator#getCurrentAnimatorState)。
+你可以使用 [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) 方法来获取当前正在播放的AnimatorState。参数为动画状态所在层的序号`layerIndex`, 详见[API文档](${api}core/Animator#getCurrentAnimatorState)。获取之后可以设置动画状态的属性，比如将默认的循环播放改为一次。
 
 ```typescript
-const currentState = animator.getCurrentAnimatorState(0)
+const currentState = animator.getCurrentAnimatorState(0);
+currentState.wrapMode = WrapMode.Once;
+```
+
+### 获取动画状态
+
+你可以通过如下方式获取指定的动画状态, 参考[API文档](${api}core/Animator#animatorController)
+
+```typescript
+const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+state.wrapMode = WrapMode.Once;
 ```
 
 ### 动画过渡
