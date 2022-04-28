@@ -19,6 +19,8 @@ import {
   Script,
   GLTFResource
 } from "oasis-engine";
+import * as dat from "dat.gui";
+const gui = new dat.GUI();
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -86,6 +88,16 @@ engine.resourceManager
     }
     rootEntity.addChild(defaultSceneRoot);
     animator.play("run", 0);
+
+
+    const debugInfo = {
+      speed: 1
+    };
+
+
+    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+      animator.speed = v
+    });
   });
 
 engine.run();
