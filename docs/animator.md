@@ -50,10 +50,20 @@ animator.play("run");
 
 ### Get the playing AnimatorState
 
-You can use the [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) method to get the AnimatorState currently playing. The parameter is the layer index `layerIndex` of the AnimatorState, see [API document](${api}core/Animator#getCurrentAnimatorState) for details.
+You can use the [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) method to get the AnimatorState currently playing. The parameter is the layer index `layerIndex` of the AnimatorState, see [API document](${api}core/Animator#getCurrentAnimatorState) for detail,then you can set the properties of the AnimationState, such as changing the default loop playback to one time.
 
 ```typescript
-const currentState = animator.getCurrentAnimatorState(0)
+const currentState = animator.getCurrentAnimatorState(0);
+currentState.wrapMode = WrapMode.Once;
+```
+
+### Get the AnimatorState by name
+
+You can get the specified AnimatorState as follows, refer to [API documentation](${api}core/Animator#animatorController),then you can set the properties of the AnimationState, such as changing the default loop playback to one time.
+
+```typescript
+const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+state.wrapMode = WrapMode.Once;
 ```
 
 ### CrossFade
@@ -129,7 +139,7 @@ You can realize the crossFade between AnimationStates by adding AnimatorTransiti
 const walkState = animatorStateMachine.addState('walk');
 walkState.clip = walkClip;
 const runState = animatorStateMachine.addState('run');
-walkState.clip = runClip;
+runState.clip = runClip;
 const transition = new AnimatorStateTransition();
 transition.duration = 1;
 transition.offset = 0;
