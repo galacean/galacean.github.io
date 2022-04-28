@@ -19,7 +19,7 @@ function Banner(props) {
           <div className="description">
             <FormattedMessage id="app.home.slogan" />
             &nbsp;&nbsp;
-            <Tag color="geekblue">v{version}</Tag>
+            <Tag color="geekblue">v{version}-beta</Tag>
           </div>
           <div className="button-wrapper">
             <Link to={getLocalizedPathname(`${version}/docs/install`, isZhCN())}>
