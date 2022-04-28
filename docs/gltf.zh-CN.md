@@ -1,7 +1,7 @@
 ---
 order: 3
 title: glTF
-type: 动画
+type: 资源
 ---
 
 ## 什么是 glTF?
