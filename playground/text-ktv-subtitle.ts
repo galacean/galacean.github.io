@@ -7,16 +7,12 @@ import {
   AssetType,
   BackgroundMode,
   BaseMaterial,
-  BlendFactor,
-  BlendOperation,
   Camera,
   Color,
-  CullMode,
   Entity,
   Font,
   Material,
   RenderFace,
-  RenderQueueType,
   Script,
   Shader,
   TextRenderer,
@@ -40,7 +36,7 @@ cameraEntity.addComponent(Camera);
 async function init() {
   // Set background
   const bgTex = await engine.resourceManager.load<Texture2D>({
-    url: "https://gw.alipayobjects.com/zos/OasisHub/440000879/4935/src%3Dhttp___n.sinaimg.cn_sinakd10114_760_w960h600_20210213_d2fe-kiweitw9266876.jpg%26refer%3Dhttp___n.sinaimg.webp",
+    url: "https://gw.alipayobjects.com/zos/OasisHub/440000983/6823/bannerWX.png?x-oss-process=image/format,webp",
     type: AssetType.Texture2D
   });
   const background = engine.sceneManager.activeScene.background;
@@ -48,8 +44,8 @@ async function init() {
   background.texture = bgTex;
 
   // Create texts
-  const text1Entity = createText("去吗？去啊！以最卑微的梦", -2, -2);
-  const text2Entity = createText("战吗？战啊！以最孤高的梦", 0, -3);
+  const text1Entity = createText("听我说 谢谢你", -2, -2);
+  const text2Entity = createText("因为有你 温暖了四季", 0, -3);
 
   // Add KTV subtitle material and animate script
   const animateScript1 = addCustomMaterialAndAnimateScript(text1Entity, 5000);
