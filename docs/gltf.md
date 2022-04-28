@@ -1,7 +1,8 @@
 ---
 order: 3
 title: glTF
-type: Animation
+type: Resource
+
 ---
 
 ## What is glTF?
