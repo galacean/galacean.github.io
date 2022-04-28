@@ -9,7 +9,7 @@ The [Animator](${api}core/Animator) can organize [AnimationClips](${api}core/Ani
 <playground src="skeleton-animation.ts"></playground>
 
 ## Basic usage
-After loading the glTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation.
+After loading the glTF model, the engine will automatically add an Animator component to the model's root entity , and add the animation clips in the model to it. You can get the Animator component directly on the root entity of the model and play the specified animation. When the value is negative 
 
 ```typescript
 engine.resourceManager
@@ -24,7 +24,7 @@ engine.resourceManager
 
 ### Control playback speed
 
-You can control the playback speed of the animation through the [speed](${api}core/Animator#speed) property. The default value of `speed` is `1.0`, the larger the value, the faster the playback, the smaller the slower the playback.
+You can control the playback speed of the animation through the [speed](${api}core/Animator#speed) property. The default value of `speed` is `1.0`, the larger the value, the faster the playback, the smaller the slower the playback. When the value is negative, it will play backward.
 
 ```typescript
 animator.speed = 2.0；
