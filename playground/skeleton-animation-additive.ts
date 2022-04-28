@@ -63,7 +63,6 @@ engine.resourceManager
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
         if (clip.name.includes("pose")) {
-          console.log(clip.name)
           const animatorState2 = animatorStateMachine1.addState(clip.name);
           animatorState2.clip = clip;
           animatorState2.clipStartTime = 1;
@@ -72,8 +71,6 @@ engine.resourceManager
           const animatorState = animatorStateMachine.addState(clip.name);
           animatorState.clip = clip;
           animationNames.push(clip.name);
-          console.log(clip.name)
-
         }
       });
     }
