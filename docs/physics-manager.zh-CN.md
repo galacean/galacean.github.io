@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 物理管理器 
+title: 物理管理器
 type: 物理
 ---
 
@@ -18,8 +18,13 @@ fixedTimeStep: number = 1 / 60;
 maxSumTimeStep: number = 1 / 3;
 ```
 
-每一个渲染帧中，物理引擎都会按照固定时间步长进行更新 `fixedTimeStep`,
-不满一个固定时间步，则顺延到下一帧再处理。因此，每一个渲染帧，物理场景可能会更新多次，因此对于有关物理组件更新，都需要放在特定的更新函数，`Script`提供了这一接口：
+每一个渲染帧中，物理引擎都会按照固定时间步长进行更新 `fixedTimeStep`。
+
+如果时时间间隔大于 `fixedTimeStep`，则单步模拟的最大时间步长由 `maxSumTimeStep` 确定。此时，如果按照上面列出的默认参数，有可能会发生追帧现象。
+这时候可以通过调节 `maxSumTimeStep` 降低每帧物理模拟的更新次数。
+
+如果不满一个 `fixedTimeStep`，则顺延到下一帧再处理。因此，每一个渲染帧，物理场景可能会更新多次，也可能只更新一次，因此对于有关物理组件更新，都需要放在特定的更新函数，`Script`
+提供了这一接口：
 
 ```ts
 export class Script extends Component {

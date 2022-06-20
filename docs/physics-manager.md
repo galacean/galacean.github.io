@@ -1,6 +1,6 @@
 ---
-order: 2 
-title: Physics Manager 
+order: 2
+title: Physics Manager
 type: Physics
 ---
 
@@ -22,10 +22,13 @@ fixedTimeStep: number = 1 / 60;
 maxSumTimeStep: number = 1 / 3;
 ````
 
-Every rendered frame, the physics engine is updated with a fixed time step `fixedTimeStep`, If it is less than a fixed
-time step, it will be delayed to the next frame for processing. Therefore, each rendering frame, the physical scene may
-be updated multiple times, so for the physical component update, it needs to be placed in a specific update
-function, `Script` provides this interface:
+Every rendered frame, the physics engine updates `fixedTimeStep` with a fixed time step.
+
+If the time interval is greater than `fixedTimeStep`, the maximum time step size for a single-step simulation is determined by `maxSumTimeStep`. At this point, if you follow the default parameters listed above, frame tracking may occur.
+At this time, you can reduce the number of updates of physics simulation per frame by adjusting `maxSumTimeStep`.
+
+If there is less than one `fixedTimeStep`, it will be postponed to the next frame and processed. Therefore, in each rendering frame, the physical scene may be updated multiple times, or only once, so for the update of the physical component, it needs to be placed in a specific update function, `Script`
+This interface is provided:
 
 ```ts
 export class Script extends Component {
