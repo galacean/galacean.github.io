@@ -3,6 +3,10 @@
  * @category Animation
  */
 import { OrbitControl } from "@oasis-engine/controls";
+import type {
+  AnimationClip,
+  GLTFResource
+} from "oasis-engine";
 import {
   Animator,
   Camera,
@@ -11,13 +15,9 @@ import {
   SystemInfo,
   Vector3,
   WebGLEngine,
-  AnimatorController,
-  AnimatorControllerLayer,
   AnimatorStateMachine,
-  AnimationClip,
   AnimationEvent,
-  Script,
-  GLTFResource
+  Script
 } from "oasis-engine";
 import * as dat from "dat.gui";
 const gui = new dat.GUI();
@@ -57,15 +57,10 @@ engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
   .then((asset) => {
     const { animations, defaultSceneRoot } = asset;
-    const animator = defaultSceneRoot.addComponent(Animator);
+    const animator = defaultSceneRoot.getComponent(Animator);
     defaultSceneRoot.addComponent(EventHandlerScript);
     defaultSceneRoot.addComponent(EventHandlerScript2);
-    const animatorController = new AnimatorController();
-    const layer = new AnimatorControllerLayer("layer");
     const animatorStateMachine = new AnimatorStateMachine();
-    layer.stateMachine = animatorStateMachine;
-    animatorController.addLayer(layer);
-    animator.animatorController = animatorController;
 
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
