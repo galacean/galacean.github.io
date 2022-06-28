@@ -2,7 +2,7 @@
  * @title Animation BlendShape
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import {
   Animator,
   Camera,
@@ -31,7 +31,7 @@ cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 const lightNode = rootEntity.createChild("light_node");
 lightNode.addComponent(DirectLight).intensity = 1.0;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
-lightNode.transform.rotate(new Vector3(-45, -135, 0));
+lightNode.transform.rotate(new Vector3(45, -135, 0));
 
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/746da3e3-fdc9-4155-8fee-0e2a97de4e72.glb")

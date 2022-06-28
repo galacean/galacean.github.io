@@ -20,7 +20,7 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCuboid(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
@@ -33,7 +33,7 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createSphere(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
@@ -46,7 +46,7 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createPlane(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
@@ -59,7 +59,7 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCylinder(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
@@ -72,7 +72,7 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createTorus(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
@@ -85,7 +85,7 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCone(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```
 
@@ -98,6 +98,6 @@ const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCapsule(engine);
 // Create material
 const material = new BlinnPhongMaterial(engine);
-material.emissiveColor.setValue(1, 1, 1, 1);
+material.emissiveColor.set(1, 1, 1, 1);
 renderer.setMaterial(material);
 ```

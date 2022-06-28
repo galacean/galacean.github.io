@@ -2,7 +2,7 @@
  * @title Sprite Material Dissolve
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AssetType,

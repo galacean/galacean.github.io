@@ -2,7 +2,7 @@
  * @title Unlit Material
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import { Animator, Camera, GLTFResource, UnlitMaterial, Vector3, WebGLEngine } from "oasis-engine";
 const gui = new dat.GUI();
@@ -40,7 +40,7 @@ function addGUI(materials: UnlitMaterial[]) {
 
   gui.addColor(state, "baseColor").onChange((v) => {
     materials.forEach((material) => {
-      material.baseColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+      material.baseColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
     });
   });
 }

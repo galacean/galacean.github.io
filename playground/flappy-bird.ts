@@ -142,7 +142,7 @@ engine.resourceManager
     const groundMaterial = new UnlitMaterial(engine);
     groundRenderer.setMaterial(groundMaterial);
     groundMaterial.baseTexture = texture2DArr[2];
-    groundMaterial.tilingOffset.setValue(21, 1, 0, 0);
+    groundMaterial.tilingOffset.set(21, 1, 0, 0);
     nodeGround.addComponent(ScriptGround);
 
     // Bird.
@@ -161,7 +161,7 @@ engine.resourceManager
     effRenderer.setMaterial(material);
     // Can be transparent.
     material.isTransparent = true;
-    material.baseColor.setValue(0, 0, 0, 0);
+    material.baseColor.set(0, 0, 0, 0);
     nodeDeathEff.addComponent(ScriptDeathEff);
 
     // GUI.
@@ -706,7 +706,7 @@ class ScriptBird extends Script {
       this._curFrameIndex = frameIndex;
       const frameInfo = this._regions[frameIndex];
       const region = this._sprite.region;
-      region.setValue(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
+      region.set(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
       this._sprite.region = region;
     }
   }

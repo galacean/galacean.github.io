@@ -2,7 +2,7 @@
  * @title Sprite Flip
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import { AssetType, Camera, Entity, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.

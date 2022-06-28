@@ -13,7 +13,7 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -113,7 +113,7 @@ function addGUI(cubeMaps: TextureCube[]) {
   const solidColor = background.solidColor;
   let colorObj = { color: [solidColor.r / 255, solidColor.g / 255, solidColor.b / 255, solidColor.a] };
   colorGUI = gui.addColor(colorObj, "color").onChange((v) => {
-    background.solidColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, v[3] / 255);
+    background.solidColor.set(v[0] / 255, v[1] / 255, v[2] / 255, v[3] / 255);
   });
 
   const obj = {

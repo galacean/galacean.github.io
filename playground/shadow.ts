@@ -2,7 +2,6 @@
  * @title Shadow
  * @category Light
  */
-import { OrbitControl } from "@oasis-engine/controls";
 import {
   BlinnPhongMaterial,
   Camera,
@@ -14,6 +13,7 @@ import {
   Vector3,
   WebGLEngine
 } from "oasis-engine";
+import { OrbitControl } from "oasis-engine-toolkit";
 const target = new Vector3(0, -3, 0);
 const up = new Vector3(0, 1, 0);
 

@@ -12,7 +12,7 @@ group: 光照
 ```typescript
 const ambientLight = scene.ambientLight;
 // 设置环境光颜色
-ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
+ambientLight.diffuseSolidColor.set(1, 0, 0, 1);
 // 设置环境光强度
 ambientLight.diffuseIntensity = 0.5;
 ```

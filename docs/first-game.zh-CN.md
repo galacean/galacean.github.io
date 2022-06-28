@@ -269,7 +269,7 @@ if (subTime <= addToMaxUseTime) {
 已知草地资源宽度为 ”37“ ，背景大图宽度为 “768” ，为了底部衔接处宽度一致，可以设置草地的 tilingOffset 为：
 
 ```typescript
-groundMaterial.tilingOffset.setValue(768 / 37, 1, 0, 0);
+groundMaterial.tilingOffset.set(768 / 37, 1, 0, 0);
 ```
 
 紧接着只需要在每次更新的时候去改变 tilingOffset 的偏移即可（为了保证水管与草地运行的速度一致，此处需要做一个简单的转换）：

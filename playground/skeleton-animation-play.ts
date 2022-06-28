@@ -2,7 +2,7 @@
  * @title Animation Play
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import { Animator, Camera, DirectLight, GLTFResource, Logger, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
 import * as dat from "dat.gui";
 const gui = new dat.GUI();

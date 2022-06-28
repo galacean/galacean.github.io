@@ -2,7 +2,7 @@
  * @title Render Target
  * @category Camera
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import {
   Animator,
   AssetType,
@@ -35,7 +35,7 @@ cameraEntity.transform.setPosition(0, 0, 10);
 const control = cameraEntity.addComponent(OrbitControl);
 control.minDistance = 3;
 
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 // Create planes to mock mirror
 const planeEntity = rootEntity.createChild("mirror");

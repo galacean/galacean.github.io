@@ -2,7 +2,7 @@
  * @title Sprite Pivot
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -76,7 +76,7 @@ function addDataGUI(entity: Entity) {
     reset: () => {
       guiData.pivotX = 0.5;
       guiData.pivotY = 0.5;
-      pivot.setValue(0.5, 0.5);
+      pivot.set(0.5, 0.5);
       sprite.pivot = pivot;
     }
   };

@@ -74,7 +74,7 @@ const { background } = scene;
 
 // Add a solid color background
 background.mode = BackgroundMode.SolidColor; // That's the default value of mode
-background.solidColor.setValue(1, 1, 1, 1); // White
+background.solidColor.set(1, 1, 1, 1); // White
 
 // Add a skybox background
 background.mode = BackgroundMode.Sky;
@@ -93,7 +93,7 @@ AmbientLight setting of the scene:
 
 ```typescript
 const scene = engine.sceneManager.activeScene;
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 ```
 
