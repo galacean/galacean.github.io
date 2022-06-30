@@ -3,6 +3,9 @@
  * @category Animation
  */
 import { OrbitControl } from "@oasis-engine/controls";
+import type {
+  AnimationClip,
+  GLTFResource} from "oasis-engine";
 import {
   Animator,
   Camera,
@@ -11,11 +14,6 @@ import {
   SystemInfo,
   Vector3,
   WebGLEngine,
-  AnimatorController,
-  AnimatorControllerLayer,
-  AnimatorStateMachine,
-  AnimationClip,
-  GLTFResource,
   StateMachineScript
 } from "oasis-engine";
 
@@ -40,14 +38,17 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 class theScript extends StateMachineScript {
   // onStateEnter is called when a transition starts and the state machine starts to evaluate this state
   onStateEnter(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateEnter: ', stateInfo);
   }
 
   // onStateUpdate is called on each Update frame between onStateEnter and onStateExit callbacks
   onStateUpdate(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateUpdate: ', stateInfo);
   }
 
   // onStateExit is called when a transition ends and the state machine finishes evaluating this state
   onStateExit(animator: Animator, stateInfo: any, layerIndex: number) {
+    console.log('onStateExit: ', stateInfo);
   }
 }
 
@@ -55,23 +56,19 @@ engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
   .then((asset) => {
     const { animations, defaultSceneRoot } = asset;
-
     const animator = defaultSceneRoot.getComponent(Animator);
-    const animatorController = new AnimatorController();
-    const layer = new AnimatorControllerLayer("layer");
-    const animatorStateMachine = new AnimatorStateMachine();
-    animatorController.addLayer(layer);
-    animator.animatorController = animatorController;
-    layer.stateMachine = animatorStateMachine;
+    const animatorStateMachine = animator.animatorController.layers[0].stateMachine;
+
     setTimeout(() => {
       animator.crossFade("run", 0.5, 0, 0.1);
     }, 3000);
+
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
         if (clip.name === "walk" || clip.name === "run") {
           const animatorState = animatorStateMachine.addState(clip.name);
           animatorState.clip = clip;
-          clip.name === "walk" && animatorState.addStateMachineScript(theScript)
+          animatorState.addStateMachineScript(theScript)
         }
       });
     }
