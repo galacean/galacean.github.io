@@ -2,24 +2,21 @@
  * @title Animation Event
  * @category Animation
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import * as dat from "dat.gui";
 import {
+  AnimationClip,
+  AnimationEvent,
   Animator,
   Camera,
   DirectLight,
+  GLTFResource,
   Logger,
+  Script,
   SystemInfo,
   Vector3,
-  WebGLEngine,
-  AnimatorController,
-  AnimatorControllerLayer,
-  AnimatorStateMachine,
-  AnimationClip,
-  AnimationEvent,
-  Script,
-  GLTFResource
+  WebGLEngine
 } from "oasis-engine";
-import * as dat from "dat.gui";
+import { OrbitControl } from "oasis-engine-toolkit";
 const gui = new dat.GUI();
 
 Logger.enable();
@@ -40,45 +37,24 @@ lightNode.addComponent(DirectLight).intensity = 0.6;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
-class EventHandlerScript extends Script {
-  test() {
-  }
-}
-
-class EventHandlerScript2 extends Script {
-  test() {
-  }
-
-  test2() {
-  }
-}
-
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
-  .then((asset) => {
-    const { animations, defaultSceneRoot } = asset;
-    const animator = defaultSceneRoot.addComponent(Animator);
+  .then((gltfResource) => {
+    const { animations, defaultSceneRoot } = gltfResource;
+    const animator = defaultSceneRoot.getComponent(Animator);
     defaultSceneRoot.addComponent(EventHandlerScript);
-    defaultSceneRoot.addComponent(EventHandlerScript2);
-    const animatorController = new AnimatorController();
-    const layer = new AnimatorControllerLayer("layer");
-    const animatorStateMachine = new AnimatorStateMachine();
-    layer.stateMachine = animatorStateMachine;
-    animatorController.addLayer(layer);
-    animator.animatorController = animatorController;
 
     if (animations) {
       animations.forEach((clip: AnimationClip) => {
         if (clip.name === "run") {
-          const animatorState = animatorStateMachine.addState(clip.name);
-          animatorState.clip = clip;
           const event = new AnimationEvent();
-          event.functionName = "test";
+          event.functionName = "event0";
           event.time = 0.5;
-          const event2 = new AnimationEvent();
-          event2.functionName = "test2";
-          event2.time = clip.length;
           clip.addEvent(event);
+
+          const event2 = new AnimationEvent();
+          event2.functionName = "event1";
+          event2.time = clip.length;
           clip.addEvent(event2);
         }
       });
@@ -86,15 +62,23 @@ engine.resourceManager
     rootEntity.addChild(defaultSceneRoot);
     animator.play("run", 0);
 
-
     const debugInfo = {
       speed: 1
     };
 
-
     gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
-      animator.speed = v
+      animator.speed = v;
     });
   });
 
 engine.run();
+
+class EventHandlerScript extends Script {
+  event0(): void {
+    console.log("event0 called");
+  }
+
+  event1(): void {
+    console.log("event1 called");
+  }
+}
