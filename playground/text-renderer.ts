@@ -3,7 +3,7 @@
  * @category 2D
  */
 
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "oasis-engine";
 
 // Create engine object
@@ -27,28 +27,28 @@ const pos = new Vector3();
 const color = new Color();
 
 // Create text with default params
-pos.setValue(0, 1.25, 0);
-color.setValue(1, 1, 1, 1);
+pos.set(0, 1.25, 0);
+color.set(1, 1, 1, 1);
 createText();
 // Create text with cursive font family
-pos.setValue(0, 0.75, 0);
-color.setValue(1, 1, 1, 1);
+pos.set(0, 0.75, 0);
+color.set(1, 1, 1, 1);
 createText("cursive");
 // Create text with font size 36
-pos.setValue(0, 0.25, 0);
-color.setValue(1, 0.5, 0.5, 1);
+pos.set(0, 0.25, 0);
+color.set(1, 0.5, 0.5, 1);
 createText("Arial", 36);
 // Create text with bold
-pos.setValue(0, -0.25, 0);
-color.setValue(1, 1, 1, 1);
+pos.set(0, -0.25, 0);
+color.set(1, 1, 1, 1);
 createText("Arial", 26, true);
 // Create text with italic
-pos.setValue(0, -0.75, 0);
-color.setValue(1, 1, 1, 1);
+pos.set(0, -0.75, 0);
+color.set(1, 1, 1, 1);
 createText("Arial", 26, false, true);
 // Create text with bold and italic
-pos.setValue(0, -1.25, 0);
-color.setValue(1, 1, 1, 1);
+pos.set(0, -1.25, 0);
+color.set(1, 1, 1, 1);
 createText("Arial", 26, true, true);
 
 engine.run();

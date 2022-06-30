@@ -24,7 +24,7 @@ import {
   Vector2,
   Vector3, DirectLight
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
@@ -40,12 +40,12 @@ PhysXPhysics.initialize().then(() => {
   const cameraEntity = rootEntity.createChild("camera");
   cameraEntity.addComponent(Camera);
   const pos = cameraEntity.transform.position;
-  pos.setValue(20, 20, 20);
+  pos.set(20, 20, 20);
   cameraEntity.transform.position = pos;
   cameraEntity.addComponent(OrbitControl);
 
   // init light
-  scene.ambientLight.diffuseSolidColor.setValue(0.5, 0.5, 0.5, 1);
+  scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
 
   // init directional light
   const light = rootEntity.createChild("light");
@@ -145,7 +145,7 @@ PhysXPhysics.initialize().then(() => {
   //--------------------------------------------------------------------------------------------------------------------
   function addPlane(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+    mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
     const planeEntity = rootEntity.createChild();
     planeEntity.layer = Layer.Layer1;
 
@@ -165,7 +165,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addBox(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
     const boxEntity = rootEntity.createChild();
     const renderer = boxEntity.addComponent(MeshRenderer);
 
@@ -185,7 +185,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addSphere(radius: number, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
     const sphereEntity = rootEntity.createChild();
     const renderer = sphereEntity.addComponent(MeshRenderer);
 
@@ -204,7 +204,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addCapsule(radius: number, height: number, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
     const capsuleEntity = rootEntity.createChild();
     const renderer = capsuleEntity.addComponent(MeshRenderer);
 

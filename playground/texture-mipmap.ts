@@ -2,7 +2,7 @@
  * @title Mipmap
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import { Camera, MeshRenderer, PrimitiveMesh, RenderFace, Texture2D, UnlitMaterial, WebGLEngine } from "oasis-engine";
 const gui = new dat.GUI();
@@ -24,7 +24,7 @@ cameraEntity.addComponent(OrbitControl);
 const mesh = PrimitiveMesh.createPlane(engine, 2, 2);
 const material = new UnlitMaterial(engine);
 material.renderFace = RenderFace.Double;
-material.tilingOffset.setValue(30, 30, 0, 0);
+material.tilingOffset.set(30, 30, 0, 0);
 const planeEntity = rootEntity.createChild("ground");
 planeEntity.transform.setRotation(5, 0, 0);
 const planeRenderer = planeEntity.addComponent(MeshRenderer);

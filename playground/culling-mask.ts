@@ -15,7 +15,7 @@ const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 const cameraEntity = rootEntity.createChild("camera");
 const camera = cameraEntity.addComponent(o3.Camera);
 const pos = cameraEntity.transform.position;
-pos.setValue(10, 10, 10);
+pos.set(10, 10, 10);
 cameraEntity.transform.position = pos;
 cameraEntity.transform.lookAt(new o3.Vector3(0, 0, 0));
 

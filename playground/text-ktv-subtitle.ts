@@ -73,7 +73,7 @@ function createText(text: string, posX: number, posY: number): Entity {
   // Set text to display
   renderer.text = text;
   // Set position
-  textEntity.transform.position.setValue(posX, posY, 0);
+  textEntity.transform.position.set(posX, posY, 0);
   return textEntity;
 }
 

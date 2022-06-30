@@ -44,7 +44,7 @@ const engine = new WebGLEngine("canvas", undefined, {
  * Set to 0, 0, 0, 0 to fully display the web page background.
  */
 const scene = engine.sceneManager.activeScene;
-scene.background.solidColor.setValue(0, 0, 0, 0);
+scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
 Similarly, you can use `webGLMode` to control WebGL1/2, `antialias` to control antialiasing, etc.

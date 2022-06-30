@@ -36,7 +36,7 @@ class Attractor extends Script {
   }
 
   onPhysicsUpdate() {
-    this.entity.transform.worldPosition.cloneTo(this.force);
+    this.force.copyFrom( this.entity.transform.worldPosition);
     this.collider.applyForce(this.force.normalize().scale(-10));
   }
 }
@@ -54,12 +54,12 @@ PhysXPhysics.initialize().then(() => {
   const cameraEntity = rootEntity.createChild("camera");
   const camera = cameraEntity.addComponent(Camera);
   const pos = cameraEntity.transform.position;
-  pos.setValue(0, 0, -15);
+  pos.set(0, 0, -15);
   cameraEntity.transform.position = pos;
   cameraEntity.transform.lookAt(new Vector3());
 
   // init light
-  scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+  scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
   const light = rootEntity.createChild("light");
   light.transform.position = new Vector3(0, 0, 0);
@@ -69,7 +69,7 @@ PhysXPhysics.initialize().then(() => {
   {
     const attractorEntity = rootEntity.createChild();
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(1, 1, 1, 1.0);
+    mtl.baseColor.set(1, 1, 1, 1.0);
     const renderer = attractorEntity.addComponent(MeshRenderer);
     renderer.mesh = PrimitiveMesh.createSphere(engine, 2);
     // renderer.setMaterial(mtl);
@@ -137,7 +137,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addPlane(position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+    mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
     mtl.renderFace = RenderFace.Double;
     const planeEntity = rootEntity.createChild();
     planeEntity.layer = Layer.Layer1;
@@ -157,7 +157,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addSphere(radius: number, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.setValue(227/255, 168/255, 196/255, 1.0);
+    mtl.baseColor.set(227/255, 168/255, 196/255, 1.0);
     const sphereEntity = rootEntity.createChild();
     const renderer = sphereEntity.addComponent(MeshRenderer);
 

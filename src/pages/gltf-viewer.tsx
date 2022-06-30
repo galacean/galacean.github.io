@@ -3,7 +3,7 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
 import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@oasis-engine/baker";
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import {
   AmbientLight,
   AnimationClip,
@@ -45,7 +45,7 @@ const envList = {
 
 class Oasis {
   static guiToColor(gui: number[], color: Color) {
-    color.setValue(gui[0] / 255, gui[1] / 255, gui[2] / 255, color.a);
+    color.set(gui[0] / 255, gui[1] / 255, gui[2] / 255, color.a);
   }
 
   static colorToGui(color: Color = new Color(1, 1, 1)): number[] {
@@ -229,8 +229,8 @@ class Oasis {
     const center = this._center;
     const extent = this._extent;
 
-    boundingBox.min.setValue(0, 0, 0);
-    boundingBox.max.setValue(0, 0, 0);
+    boundingBox.min.set(0, 0, 0);
+    boundingBox.max.set(0, 0, 0);
 
     renderers.forEach((renderer) => {
       BoundingBox.merge(renderer.bounds, boundingBox, boundingBox);
@@ -239,7 +239,7 @@ class Oasis {
     const size = extent.length();
 
     boundingBox.getCenter(center);
-    this.controler.target.setValue(center.x, center.y, center.z);
+    this.controler.target.set(center.x, center.y, center.z);
     this.cameraEntity.transform.setPosition(center.x, center.y, size * 3);
 
     this.camera.farClipPlane = size * 12;

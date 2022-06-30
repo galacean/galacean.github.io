@@ -2,7 +2,7 @@
  * @title Sprite Region
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import { AssetType, Camera, Entity, Rect, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
@@ -31,19 +31,19 @@ engine.resourceManager
 
     const rect = new Rect();
     // Display normal.
-    rect.setValue(0, 0, 1, 1);
+    rect.set(0, 0, 1, 1);
     addRegionEntity(spriteEntity, texture, 0, 5, rect);
     // Display top left half.
-    rect.setValue(0, 0, 0.5, 0.5);
+    rect.set(0, 0, 0.5, 0.5);
     addRegionEntity(spriteEntity.clone(), texture, -7.5, -5, rect);
     // Display top right half.
-    rect.setValue(0.5, 0, 1, 0.5);
+    rect.set(0.5, 0, 1, 0.5);
     addRegionEntity(spriteEntity.clone(), texture, -2.5, -5, rect);
     // Display bottom left half.
-    rect.setValue(0, 0.5, 0.5, 0.5);
+    rect.set(0, 0.5, 0.5, 0.5);
     addRegionEntity(spriteEntity.clone(), texture, 2.5, -5, rect);
     // Display bottom right half.
-    rect.setValue(0.5, 0.5, 1, 1);
+    rect.set(0.5, 0.5, 1, 1);
     addRegionEntity(spriteEntity.clone(), texture, 7.5, -5, rect);
   });
 

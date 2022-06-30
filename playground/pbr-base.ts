@@ -2,7 +2,7 @@
  * @title PBR Base
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -40,7 +40,7 @@ const cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.position = new Vector3(0.25, 0.5, 1.5);
 cameraNode.addComponent(Camera);
 const control = cameraNode.addComponent(OrbitControl);
-control.target.setValue(0.25, 0.25, 0);
+control.target.set(0.25, 0.25, 0);
 
 // Create sky
 const sky = scene.background.sky;

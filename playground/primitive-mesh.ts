@@ -2,7 +2,7 @@
  * @title Primitive Mesh
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import {
   AssetType,
   BlinnPhongMaterial,
@@ -63,31 +63,31 @@ function init(): void {
         const posX = (i - 1) * distanceX;
 
         // Create cuboid
-        position.setValue(posX, distanceY * 3, 0);
+        position.set(posX, distanceY * 3, 0);
         generatePrimitiveEntity(rootEntity, "cuboid", position, material, PrimitiveMesh.createCuboid(engine));
 
         // Create sphere
-        position.setValue(posX, distanceY * 2, 0);
+        position.set(posX, distanceY * 2, 0);
         generatePrimitiveEntity(rootEntity, "sphere", position, material, PrimitiveMesh.createSphere(engine));
 
         // Create plane
-        position.setValue(posX, distanceY * 1, 0);
+        position.set(posX, distanceY * 1, 0);
         generatePrimitiveEntity(rootEntity, "plane", position, material, PrimitiveMesh.createPlane(engine));
 
         // Create cylinder
-        position.setValue(posX, -distanceY * 0, 0);
+        position.set(posX, -distanceY * 0, 0);
         generatePrimitiveEntity(rootEntity, "cylinder", position, material, PrimitiveMesh.createCylinder(engine));
 
         // Create cone
-        position.setValue(posX, -distanceY * 1, 0);
+        position.set(posX, -distanceY * 1, 0);
         generatePrimitiveEntity(rootEntity, "cone", position, material, PrimitiveMesh.createCone(engine));
 
         // Create turos
-        position.setValue(posX, -distanceY * 2, 0);
+        position.set(posX, -distanceY * 2, 0);
         generatePrimitiveEntity(rootEntity, "torus", position, material, PrimitiveMesh.createTorus(engine));
 
         // Create capsule
-        position.setValue(posX, -distanceY * 3, 0);
+        position.set(posX, -distanceY * 3, 0);
         generatePrimitiveEntity(
           rootEntity,
           "capsule",

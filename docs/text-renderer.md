@@ -30,7 +30,7 @@ textRenderer.text = "First text for Oasis！";
 // Set fontSize
 textRenderer.fontSize = 36;
 // Set color
-textRenderer.color.setValue(1, 0, 0, 1);
+textRenderer.color.set(1, 0, 0, 1);
 ```
 
 ## Set width and height

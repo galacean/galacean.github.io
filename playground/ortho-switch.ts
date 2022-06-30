@@ -2,18 +2,12 @@
  * @title Orthographic Camera
  * @category Camera
  */
-import {GUI} from "dat.gui";
+import { GUI } from "dat.gui";
 import {
-  WebGLEngine,
-  Camera,
-  MeshRenderer,
-  PrimitiveMesh,
-  BlinnPhongMaterial,
-  Color,
-  Vector3,
-  DirectLight
+  BlinnPhongMaterial, Camera, Color, DirectLight, MeshRenderer,
+  PrimitiveMesh, Vector3, WebGLEngine
 } from "oasis-engine";
-import {OrbitControl} from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

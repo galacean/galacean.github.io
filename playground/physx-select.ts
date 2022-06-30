@@ -38,7 +38,7 @@ PhysXPhysics.initialize().then(() => {
     const scene = engine.sceneManager.activeScene;
     const rootEntity = scene.createRootEntity("root");
 
-    scene.ambientLight.diffuseSolidColor.setValue(0.5, 0.5, 0.5, 1);
+    scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
     scene.ambientLight.diffuseIntensity = 1.2;
 
     // init camera
@@ -73,7 +73,7 @@ PhysXPhysics.initialize().then(() => {
         const {tempVec2, tempVec3} = this;
         // @ts-ignore
         this.getMergePointer(inputManager.pointers, tempVec2);
-        tempVec3.setValue(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+        tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
         camera.viewportToWorldPoint(tempVec3, this.startPointerPos);
 
         this.collider.linearVelocity = new Vector3();
@@ -85,15 +85,15 @@ PhysXPhysics.initialize().then(() => {
         const {transform} = this.entity;
         // @ts-ignore
         this.getMergePointer(inputManager.pointers, tempVec2);
-        this.tempVec3.setValue(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+        this.tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
         camera.viewportToWorldPoint(tempVec3, tempVec3);
         Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
         transform.worldPosition = transform.worldPosition.add(startPointerPos);
-        tempVec3.cloneTo(startPointerPos);
+        startPointerPos.copyFrom(tempVec3);
       }
 
       getMergePointer(pointers: Pointer[], out: Vector2) {
-        pointers[0].position.cloneTo(out);
+        out.copyFrom(pointers[0].position);
         const len = pointers.length;
         for (let i = 1; i < len; i++) {
           const pos = pointers[i].position;
@@ -106,7 +106,7 @@ PhysXPhysics.initialize().then(() => {
     //--------------------------------------------------------------------------------------------------------------------
     function addPlane(size: Vector2, position: Vector3, rotation: Quaternion): Entity {
       const mtl = new BlinnPhongMaterial(engine);
-      mtl.baseColor.setValue(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+      mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
       const planeEntity = rootEntity.createChild();
       planeEntity.layer = Layer.Layer1;
 

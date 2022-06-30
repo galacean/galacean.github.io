@@ -2,22 +2,21 @@
  * @title Framebuffer Picker
  * @category Advance
  */
-import { OrbitControl } from "@oasis-engine/controls";
-import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
+import { OrbitControl,FramebufferPicker } from "oasis-engine-toolkit";
 import { Camera, GLTFResource, PBRMaterial, Vector3, WebGLEngine } from "oasis-engine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootNode = scene.createRootEntity();
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 // Create camera
 const cameraNode = rootNode.createChild("camera_node");
 cameraNode.transform.position = new Vector3(10, 10, 30);
 const camera = cameraNode.addComponent(Camera);
 const control = cameraNode.addComponent(OrbitControl);
-control.target.setValue(0, 3, 0);
+control.target.set(0, 3, 0);
 
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/f40ef8dd-4c94-41d4-8fac-c1d2301b6e47.glb")
@@ -34,9 +33,9 @@ engine.resourceManager
     framebufferPicker.onPick = (obj) => {
       if (obj) {
         const { component, mesh } = obj;
-        material.baseColor.setValue(1, 0, 0, 1);
+        material.baseColor.set(1, 0, 0, 1);
       } else {
-        material.baseColor.setValue(1, 1, 1, 1);
+        material.baseColor.set(1, 1, 1, 1);
       }
     };
 

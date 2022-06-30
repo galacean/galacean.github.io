@@ -53,7 +53,7 @@ We can adjust the color by setting the [color](${api}core/SpriteRenderer#color) 
 
 
 ```typescript
-spriteRenderer.color.setValue(1, 0, 0, 1);
+spriteRenderer.color.set(1, 0, 0, 1);
 ```
 
 <playground src="sprite-color.ts"></playground>
