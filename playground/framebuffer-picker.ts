@@ -1,6 +1,6 @@
 /**
  * @title Framebuffer Picker
- * @category Toolkit
+ * @category Advance
  */
  import { FramebufferPicker, OrbitControl } from "oasis-engine-toolkit";
  import { Camera, GLTFResource, PBRMaterial, Vector3, WebGLEngine } from "oasis-engine";
