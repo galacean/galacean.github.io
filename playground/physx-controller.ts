@@ -137,7 +137,7 @@ class ControllerScript extends Script {
       this._camera.transform.getWorldForward(this._forward);
       this._forward.y = 0;
       this._forward.normalize();
-      this._cross.setValue(this._forward.z, 0, -this._forward.x);
+      this._cross.set(this._forward.z, 0, -this._forward.x);
 
       const animationSpeed: number = 0.02;
       const animationState = this._animationState;
@@ -160,11 +160,11 @@ class ControllerScript extends Script {
       }
       if (inputManager.isKeyDown(Keys.Space)) {
         animationState.setJumpKey();
-        displacement.setValue(0, 0.3, 0);
+        displacement.set(0, 0.3, 0);
       }
     } else {
       this._animationState.setMoveKey(null);
-      this._displacement.setValue(0, 0, 0);
+      this._displacement.set(0, 0, 0);
     }
     this._playAnimation();
   }
@@ -187,7 +187,7 @@ class ControllerScript extends Script {
     this._playAnimation();
 
     if (this._displacement.x != 0 || this._displacement.z != 0) {
-      this._character.transform.worldPosition.cloneTo(this._predictPosition);
+      this._predictPosition.copyFrom(this._character.transform.worldPosition);
       this._predictPosition.subtract(this._displacement);
       Matrix.lookAt(this._character.transform.worldPosition, this._predictPosition, new Vector3(0, 1, 0), this._rotMat);
       this._rotMat.getRotation(this._rotation).invert();
@@ -216,7 +216,7 @@ PhysXPhysics.initialize().then(() => {
 
   // camera
   const cameraEntity = rootEntity.createChild("camera_node");
-  cameraEntity.transform.position.setValue(4, 4, -4);
+  cameraEntity.transform.position.set(4, 4, -4);
   cameraEntity.addComponent(Camera);
   cameraEntity.addComponent(OrbitControl);
 
@@ -234,7 +234,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addPlane(size: Vector2, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new PBRMaterial(engine);
-    mtl.baseColor.setValue(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+    mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
     mtl.renderFace = RenderFace.Double;
     const planeEntity = rootEntity.createChild();
 
@@ -257,7 +257,7 @@ PhysXPhysics.initialize().then(() => {
   function addBox(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new PBRMaterial(engine);
     mtl.roughness = 0;
-    mtl.baseColor.setValue(1, 1, 0, 1.0);
+    mtl.baseColor.set(1, 1, 0, 1.0);
     const boxEntity = rootEntity.createChild();
     const renderer = boxEntity.addComponent(MeshRenderer);
 
@@ -282,7 +282,7 @@ PhysXPhysics.initialize().then(() => {
   function addStair(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new PBRMaterial(engine);
     mtl.roughness = 0.5;
-    mtl.baseColor.setValue(0.9, 0.9, 0.9, 1.0);
+    mtl.baseColor.set(0.9, 0.9, 0.9, 1.0);
     const mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
 
     const stairEntity = rootEntity.createChild();
