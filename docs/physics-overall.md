@@ -61,3 +61,27 @@ Choosing a physical backend requires considering three factors: functionality, p
    pure
    JavaScript version is similar), which increases the size of the package and reduces the speed of application
    initialization.
+
+## Debugging of physical components
+
+Physics colliders are composites of basic physics shapes, including spheres, boxes, capsules, and infinite planes. In
+practical applications, the shapes of these colliders rarely exactly coincide with the rendered objects, which brings
+great difficulties to visual debugging.
+There are two debugging methods:
+
+1. With the help of PhysX Visual Debugger (PVD), it is an official debugging tool developed by Nvidia, but to use this
+   tool, you need to compile the debug version of PhysX yourself, and use WebSocket to connect the browser and the
+   debugging tool.
+   For specific usage, please refer to the introduction of Readme
+   in [physx.js](https://github.com/oasis-engine/physX.js).
+2. We also provide a
+   lightweight [auxiliary-lines tool](https://github.com/oasis-engine/engine-toolkit/tree/main/packages/auxiliary-lines)
+   , which is based on the configuration of physical components Draw the corresponding wireframes to assist in
+   configuring and debugging physical components.
+   It is also very easy to use, just mount the `WireframeManager` script, and then set it to associate various physical
+   components, or directly associate nodes:
+
+```ts
+const wireframe = rootEntity.addComponent(WireframeManager);
+wireframe.addCollideWireframe(collider);
+````
