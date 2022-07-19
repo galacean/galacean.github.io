@@ -26,50 +26,50 @@ engine.resourceManager
     const to = new Vector3();
     // Draw the fence.
     let sprite = atlas.getSprite("terrains-5");
-    addGroupSpriteRenderer(sprite, from.setValue(-6, -6, 0), to.setValue(6, -6, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-6, 6, 0), to.setValue(6, 6, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-6, -5, 0), to.setValue(-6, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(6, -5, 0), to.setValue(6, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(-6, -6, 0), to.set(6, -6, 0));
+    addGroupSpriteRenderer(sprite, from.set(-6, 6, 0), to.set(6, 6, 0));
+    addGroupSpriteRenderer(sprite, from.set(-6, -5, 0), to.set(-6, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(6, -5, 0), to.set(6, 5, 0));
 
     // Draw the walls.
     sprite = atlas.getSprite("terrains-3");
-    addGroupSpriteRenderer(sprite, from.setValue(-5, -2, 0), to.setValue(-5, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-4, -3, 0), to.setValue(-4, -1, 0));
-    addSpriteRenderer(sprite, from.setValue(-3, -2, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-2, -3, 0), to.setValue(-2, -2, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-1, -2, 0), to.setValue(-1, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(5, -2, 0), to.setValue(5, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(4, -3, 0), to.setValue(4, -1, 0));
-    addSpriteRenderer(sprite, from.setValue(3, -2, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(2, -3, 0), to.setValue(2, -2, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(1, -2, 0), to.setValue(1, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(-5, -2, 0), to.set(-5, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(-4, -3, 0), to.set(-4, -1, 0));
+    addSpriteRenderer(sprite, from.set(-3, -2, 0));
+    addGroupSpriteRenderer(sprite, from.set(-2, -3, 0), to.set(-2, -2, 0));
+    addGroupSpriteRenderer(sprite, from.set(-1, -2, 0), to.set(-1, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(5, -2, 0), to.set(5, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(4, -3, 0), to.set(4, -1, 0));
+    addSpriteRenderer(sprite, from.set(3, -2, 0));
+    addGroupSpriteRenderer(sprite, from.set(2, -3, 0), to.set(2, -2, 0));
+    addGroupSpriteRenderer(sprite, from.set(1, -2, 0), to.set(1, 5, 0));
 
     // Draw the ground.
     sprite = atlas.getSprite("terrains-0");
-    addGroupSpriteRenderer(sprite, from.setValue(0, -5, 0), to.setValue(0, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-1, -3, 0), to.setValue(1, -3, 0));
+    addGroupSpriteRenderer(sprite, from.set(0, -5, 0), to.set(0, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(-1, -3, 0), to.set(1, -3, 0));
 
     // Draw the magma.
     sprite = atlas.getSprite("terrains-45");
-    addGroupSpriteRenderer(sprite, from.setValue(-5, -5, 0), to.setValue(-1, -4, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-4, -3, 0), to.setValue(-4, -3, 0));
-    addSpriteRenderer(sprite, from.setValue(-5, -3, 0));
-    addSpriteRenderer(sprite, from.setValue(-3, -3, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(1, -5, 0), to.setValue(5, -4, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(4, -3, 0), to.setValue(4, -3, 0));
-    addSpriteRenderer(sprite, from.setValue(5, -3, 0));
-    addSpriteRenderer(sprite, from.setValue(3, -3, 0));
+    addGroupSpriteRenderer(sprite, from.set(-5, -5, 0), to.set(-1, -4, 0));
+    addGroupSpriteRenderer(sprite, from.set(-4, -3, 0), to.set(-4, -3, 0));
+    addSpriteRenderer(sprite, from.set(-5, -3, 0));
+    addSpriteRenderer(sprite, from.set(-3, -3, 0));
+    addGroupSpriteRenderer(sprite, from.set(1, -5, 0), to.set(5, -4, 0));
+    addGroupSpriteRenderer(sprite, from.set(4, -3, 0), to.set(4, -3, 0));
+    addSpriteRenderer(sprite, from.set(5, -3, 0));
+    addSpriteRenderer(sprite, from.set(3, -3, 0));
 
     // Draw the river.
     sprite = atlas.getSprite("terrains-46");
-    addGroupSpriteRenderer(sprite, from.setValue(-4, 0, 0), to.setValue(-2, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(-3, -1, 0), to.setValue(-2, -1, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(2, 0, 0), to.setValue(4, 5, 0));
-    addGroupSpriteRenderer(sprite, from.setValue(2, -1, 0), to.setValue(3, -1, 0));
+    addGroupSpriteRenderer(sprite, from.set(-4, 0, 0), to.set(-2, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(-3, -1, 0), to.set(-2, -1, 0));
+    addGroupSpriteRenderer(sprite, from.set(2, 0, 0), to.set(4, 5, 0));
+    addGroupSpriteRenderer(sprite, from.set(2, -1, 0), to.set(3, -1, 0));
 
     // Draw the npcs.
-    addSpriteRenderer(atlas.getSprite("npcs-0"), from.setValue(0, -4, 1));
-    addSpriteRenderer(atlas.getSprite("npcs-7"), from.setValue(-1, -3, 1));
+    addSpriteRenderer(atlas.getSprite("npcs-0"), from.set(0, -4, 1));
+    addSpriteRenderer(atlas.getSprite("npcs-7"), from.set(-1, -3, 1));
   });
 
 /**
@@ -83,7 +83,7 @@ function addGroupSpriteRenderer(sprite: Sprite, from: Vector3, to: Vector3): voi
   const { x: toX, y: toY } = to;
   for (let i = fromX, n = toX; i <= n; i++) {
     for (let j = fromY, m = toY; j <= m; j++) {
-      addSpriteRenderer(sprite, from.setValue(i, j, 0));
+      addSpriteRenderer(sprite, from.set(i, j, 0));
     }
   }
 }
@@ -96,7 +96,7 @@ function addGroupSpriteRenderer(sprite: Sprite, from: Vector3, to: Vector3): voi
 function addSpriteRenderer(sprite: Sprite, position: Vector3): void {
   const spriteEntity = rootEntity.createChild();
   spriteEntity.transform.position = position;
-  spriteEntity.transform.scale.setValue(4, 4, 4);
+  spriteEntity.transform.scale.set(4, 4, 4);
   spriteEntity.addComponent(SpriteRenderer).sprite = sprite;
 }
 

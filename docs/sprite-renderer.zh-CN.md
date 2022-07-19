@@ -52,7 +52,7 @@ spriteRenderer.flipY = true;
 可以通过设置 [color](${api}core/SpriteRenderer#color) 属性来调整颜色，从而实现一些淡入淡出的效果，如下：
 
 ```typescript
-spriteRenderer.color.setValue(1, 0, 0, 1);
+spriteRenderer.color.set(1, 0, 0, 1);
 ```
 
 <playground src="sprite-color.ts"></playground>

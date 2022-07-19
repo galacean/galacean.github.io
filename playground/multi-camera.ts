@@ -3,26 +3,11 @@
  * @category Camera
  */
 
+import { SpineAnimation } from "@oasis-engine/spine";
 import {
-  CameraClearFlags,
-  DirectLight,
-  AssetType,
-  Entity,
-  Camera,
-  WebGLEngine,
-  Vector3,
-  MeshRenderer,
-  BlinnPhongMaterial,
-  Color,
-  BackgroundMode,
-  SkyBoxMaterial,
-  PrimitiveMesh,
-  Layer,
-  Script,
-  TextureCube
+  AssetType, BackgroundMode, BlinnPhongMaterial, Camera, CameraClearFlags, Color, DirectLight, Entity, Layer, MeshRenderer, PrimitiveMesh, Script, SkyBoxMaterial, TextureCube, Vector3, WebGLEngine
 } from "oasis-engine";
-import {OrbitControl} from "@oasis-engine/controls";
-import {SpineAnimation} from "@oasis-engine/spine";
+import { OrbitControl } from "oasis-engine-toolkit";
 
 /**
  * Script for rotate.
@@ -41,7 +26,7 @@ class RotateScript extends Script {
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
-const {background} = scene;
+const { background } = scene;
 const rootEntity = scene.createRootEntity();
 
 // init full screen camera
@@ -74,7 +59,7 @@ windowEntity.layer = Layer.Layer1;
 const windowCameraEntity = windowEntity.createChild("window-camera");
 const windowCamera = windowCameraEntity.addComponent(Camera);
 windowCamera.cullingMask = Layer.Layer1;
-windowCamera.viewport.setValue(0.5, 0.2, 0.3, 0.6);
+windowCamera.viewport.set(0.5, 0.2, 0.3, 0.6);
 windowCamera.clearFlags = CameraClearFlags.Depth;
 windowCamera.farClipPlane = 200;
 windowCameraEntity.transform.setPosition(0, 3, 20);
@@ -100,21 +85,20 @@ engine.resourceManager
 
 engine.resourceManager
   .load<TextureCube>({
-      urls: [
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
-      ],
-      type: AssetType.TextureCube
-    }
-  )
+    urls: [
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5w6_Rr6ML6IAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*TiT2TbN5cG4AAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
+    ],
+    type: AssetType.TextureCube
+  })
   .then((cubeMap1) => {
     // Add skybox background
     background.mode = BackgroundMode.Sky;
     const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine));
     skyMaterial.textureCubeMap = cubeMap1;
     background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
-  })
+  });

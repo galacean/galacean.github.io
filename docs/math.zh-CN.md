@@ -40,7 +40,7 @@ const v1 = new Vector3();
 const v2 = new Vector3(1, 2, 3); 
 
 // 设置指定值
-v1.setValue(1, 2, 2); 
+v1.set(1, 2, 2); 
 
 // 获取各个分量
 const x = v1.x;
@@ -88,7 +88,7 @@ const q1 = new Quaternion();
 const q2 = new Quaternion(1, 2, 3, 4); 
 
 // 设置指定值
-q1.setValue(1, 2, 3, 4); 
+q1.set(1, 2, 3, 4); 
 
 // 判断两个四元数的值是否相等
 const isEqual: boolean = Quaternion.equals(q1, q2);

@@ -1,4 +1,4 @@
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import { AmbientLight, AssetType, Camera, DirectLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
 import React, { useEffect } from "react";
 
@@ -34,7 +34,7 @@ function init(): WebGLEngine {
   const cameraNode = rootEntity.createChild("camera_node");
   cameraNode.transform.setPosition(0, 0, 3);
   cameraNode.addComponent(Camera);
-  scene.background.solidColor.setValue(51 / 255, 51 / 255, 51 / 255, 1);
+  scene.background.solidColor.set(51 / 255, 51 / 255, 51 / 255, 1);
   const controls = cameraNode.addComponent(OrbitControl);
   controls.enableZoom = false;
   controls.autoRotate = true;

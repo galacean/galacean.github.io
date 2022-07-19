@@ -2,7 +2,7 @@
  * @title Outline
  * @category Advance
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -36,14 +36,14 @@ engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
-scene.background.solidColor.setValue(1, 1, 1, 1);
+scene.background.solidColor.set(1, 1, 1, 1);
 
 // camera
 const cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.setPosition(0, 1.3, 1);
 const camera = cameraNode.addComponent(Camera);
 camera.enableFrustumCulling = false;
-cameraNode.addComponent(OrbitControl).target.setValue(0, 1.3, 0);
+cameraNode.addComponent(OrbitControl).target.set(0, 1.3, 0);
 
 // ambient light
 engine.resourceManager
@@ -438,7 +438,7 @@ function openDebug() {
   gui
     .add(config, "plan", ["外描边", "内描边", "后处理"])
     .onChange((v) => {
-      color.setValue(config.color[0] / 255, config.color[1] / 255, config.color[2] / 255, 1);
+      color.set(config.color[0] / 255, config.color[1] / 255, config.color[2] / 255, 1);
 
       border.destroy();
       if (v === "外描边") {
@@ -477,7 +477,7 @@ function openDebug() {
 
   showSize();
   gui.addColor(config, "color").onChange((v) => {
-    color.setValue(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+    color.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
     border.color = color;
   });
 }

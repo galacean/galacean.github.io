@@ -2,7 +2,7 @@
  * @title Lottie Animation
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import { Camera, Entity, WebGLEngine } from "oasis-engine";
 import { LottieAnimation } from "@oasis-engine/lottie";
 

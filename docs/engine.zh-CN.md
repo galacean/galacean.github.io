@@ -46,7 +46,7 @@ const engine = new WebGLEngine("canvas", undefined, {
  * 设置为 0，0，0，0 可以完全显示网页背景。
  */
 const scene = engine.sceneManager.activeScene;
-scene.background.solidColor.setValue(0, 0, 0, 0);
+scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
 类似的，可以用 `webGLMode` 控制 WebGL1/2， `antialias` 控制是否抗锯齿等等。

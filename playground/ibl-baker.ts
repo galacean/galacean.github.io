@@ -3,7 +3,7 @@
  * @category Material
  */
 import { DecodeMode, IBLBaker, SphericalHarmonics3Baker } from "@oasis-engine/baker";
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AssetType,

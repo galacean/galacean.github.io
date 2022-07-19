@@ -33,7 +33,7 @@ const entity = engine.createEntity();
 const script = entity.addComponent(CustomScript);
 script.a = true;
 script.b = 2;
-script.c.setValue(1,1,1);
+script.c.set(1,1,1);
 
 // clone logic.
 const cloneEntity = entity.clone();
@@ -78,8 +78,8 @@ const entity = engine.createEntity();
 const script = entity.addComponent(CustomScript);
 script.a = true;
 script.b = 2;
-script.c[0].setValue(1,1,1);
-script.d[0].setValue(1,1,1);
+script.c[0].set(1,1,1);
+script.d[0].set(1,1,1);
 
 // clone logic.
 const cloneEntity = entity.clone();
@@ -89,8 +89,8 @@ console.log(cloneScript.b);// output is 2,assignmentClone is just assignment the
 console.log(cloneScript.c[0]);// output is Vector3(1,1,1),shallowClone clone the array shell,but use the same element.
 console.log(cloneScript.d[0]);// output is Vector3(1,1,1),deepClone clone the array shell and also clone the element.
 
-cloneScript.c[0].setValue(2,2,2);// change the field c[0] value to (2,2,2).
-cloneScript.d[0].setValue(2,2,2);// change the field d[0] value to (2,2,2).
+cloneScript.c[0].set(2,2,2);// change the field c[0] value to (2,2,2).
+cloneScript.d[0].set(2,2,2);// change the field d[0] value to (2,2,2).
 
 console.log(script.c[0]);// output is (2,2,2). bacause shallowClone let c[0] use the same reference with cloneScript's c[0].
 console.log(script.d[0]);// output is (1,1,1). bacause deepClone let d[0] use the different reference with cloneScript's d[0].

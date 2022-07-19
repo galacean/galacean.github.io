@@ -22,7 +22,7 @@ Lighting makes the scene more layered, and using lighting can create a more real
 const lightEntity = rootEntity.createChild("light");
 const directLight = lightEntity.addComponent(DirectLight);
 
-directLight.color.setValue(0.3, 0.3, 1, 1);
+directLight.color.set(0.3, 0.3, 1, 1);
 
 // Adjust direction
 lightEntity.transform.setRotation(-45, -45, 0);
@@ -37,7 +37,7 @@ const lightEntity = rootEntity.createChild("light");
 
 const pointLight = lightEntity.addComponent(PointLight);
 pointLight.distance = 100;
-pointLight.color.setValue(0.3, 0.3, 1, 1);
+pointLight.color.set(0.3, 0.3, 1, 1);
 lightEntity.transform.setPosition(-10, 10, 10);
 ```
 
@@ -52,7 +52,7 @@ const spotLight = lightEntity.addComponent(SpotLight);
 
 spotLight.angle = Math.PI / 6; // 散射角度
 spotLight.penumbra = Math.PI / 12; // 半影衰减角度
-spotLight.color.setValue(0.3, 0.3, 1, 1);
+spotLight.color.set(0.3, 0.3, 1, 1);
 
 lightEntity.transform.setPosition(-10, 10, 10);
 lightEntity.transform.setRotation(-45, -45, 0);

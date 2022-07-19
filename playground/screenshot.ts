@@ -3,7 +3,7 @@
  * @category Camera
  */
 
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -21,7 +21,7 @@ const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
-scene.background.solidColor.setValue(0, 0, 0, 0);
+scene.background.solidColor.set(0, 0, 0, 0);
 const rootEntity = scene.createRootEntity();
 
 // camera
