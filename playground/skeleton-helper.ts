@@ -3,7 +3,7 @@
  * @category Toolkit
  */
 import { Animator, Camera, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
-import { OrbitControl, SkeletonManager } from "oasis-engine-toolkit";
+import { OrbitControl, SkeletonHelper } from "oasis-engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -18,8 +18,6 @@ cameraNode.addComponent(Camera);
 const control = cameraNode.addComponent(OrbitControl);
 control.target.set(0, 3, 0);
 
-const skeletonManager = rootNode.addComponent(SkeletonManager);
-
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/f40ef8dd-4c94-41d4-8fac-c1d2301b6e47.glb")
   .then((gltf) => {
@@ -29,7 +27,7 @@ engine.resourceManager
     rootNode.addChild(defaultSceneRoot);
     animator.play(animations[1].name);
 
-    skeletonManager.showSkin(defaultSceneRoot);
+    defaultSceneRoot.addComponent(SkeletonHelper);
   });
 
 // Run
