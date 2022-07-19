@@ -3,7 +3,7 @@
  * @category Toolkit
  */
 import { Animator, Camera, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
-import { OrbitControl, SkeletonHelper } from "oasis-engine-toolkit";
+import { OrbitControl, SkeletonViewer } from "oasis-engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -27,7 +27,7 @@ engine.resourceManager
     rootNode.addChild(defaultSceneRoot);
     animator.play(animations[1].name);
 
-    defaultSceneRoot.addComponent(SkeletonHelper);
+    defaultSceneRoot.addComponent(SkeletonViewer);
   });
 
 // Run
