@@ -63,28 +63,23 @@ PhysXPhysics.initialize().then(() => {
   }
 
   function createChain(position: Vector3, rotation: Quaternion, length: number, separation: number) {
+    const offset = new Vector3();
     let prevCollider: Collider = null;
     for (let i = 0; i < length; i++) {
       const localPosition = new Vector3(0, -separation / 2 * (2 * i + 1), 0);
       const localQuaternion = new Quaternion();
       transform(position, rotation, localPosition, localQuaternion);
-
-      if (prevCollider === null) {
-        const staticEntity = rootEntity.createChild();
-        staticEntity.transform.position = position;
-        staticEntity.transform.rotationQuaternion = rotation;
-
-        const physicsBox = new BoxColliderShape();
-        physicsBox.size = new Vector3(2.0, 2.0, 0.5);
-        prevCollider = staticEntity.addComponent(StaticCollider);
-        prevCollider.addShape(physicsBox);
-      }
-
       const currentEntity = addBox(new Vector3(2.0, 2.0, 0.5), localPosition, localQuaternion);
+
       const currentCollider = currentEntity.getComponent(DynamicCollider);
       const fixedJoint = currentEntity.addComponent(FixedJoint);
-      fixedJoint.connectedCollider = prevCollider;
-
+      if (prevCollider !== null) {
+        Vector3.subtract(currentEntity.transform.worldPosition, prevCollider.entity.transform.worldPosition, offset);
+        fixedJoint.connectedAnchor = offset;
+        fixedJoint.connectedCollider = prevCollider;
+      } else {
+        fixedJoint.connectedAnchor = position;
+      }
       prevCollider = currentCollider;
     }
   }

@@ -5,7 +5,7 @@
 
 import {
   BlinnPhongMaterial,
-  Camera, DirectLight,
+  Camera,
   DynamicCollider,
   Entity,
   Layer,
@@ -85,7 +85,7 @@ PhysXPhysics.initialize().then(() => {
         new Vector2(event.pageX * window.devicePixelRatio, event.pageY * window.devicePixelRatio), ray);
 
       const position = attractorEntity.transform.position;
-      ray.origin.cloneTo(position);
+      position.copyFrom(ray.origin);
       position.add(ray.direction.scale(18));
       attractorEntity.transform.position = position;
     });
