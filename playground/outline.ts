@@ -2,7 +2,6 @@
  * @title Outline
  * @category Advance
  */
-import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -18,7 +17,6 @@ import {
   Material,
   MeshRenderer,
   PrimitiveMesh,
-  RenderPass,
   RenderQueueType,
   RenderTarget,
   Script,
@@ -28,6 +26,7 @@ import {
   Vector2,
   WebGLEngine
 } from "oasis-engine";
+import { OrbitControl } from "oasis-engine-toolkit";
 
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
@@ -128,7 +127,6 @@ class Border extends Script {
       }
       const material = new Material(engine, Shader.find("border-shader"));
       this.material = material;
-      material.renderQueueType = RenderQueueType.Transparent + 1;
       material.renderState.rasterState.cullMode = CullMode.Off;
       const stencilState = material.renderState.stencilState;
       stencilState.enabled = true;
@@ -157,7 +155,7 @@ class Border extends Script {
     const borderRenderer = entity.addComponent(MeshRenderer);
     borderRenderer.mesh = renderer.mesh;
     borderRenderer.setMaterial(borderMaterial);
-
+    borderRenderer.priority = 1;
     this.borderRenderer.push(borderRenderer);
   }
 
@@ -236,7 +234,6 @@ class Border2 extends Script {
       }
       const material = new Material(engine, Shader.find("border-shader"));
       this.material = material;
-      material.renderQueueType = RenderQueueType.Transparent + 1;
       material.renderState.rasterState.cullMode = CullMode.Front;
       this.size = this._size;
       this.color = this._color;
@@ -252,7 +249,7 @@ class Border2 extends Script {
     const borderRenderer = entity.addComponent(MeshRenderer);
     borderRenderer.mesh = renderer.mesh;
     borderRenderer.setMaterial(borderMaterial);
-
+    borderRenderer.priority = 1;
     this.borderRenderer.push(borderRenderer);
   }
 
