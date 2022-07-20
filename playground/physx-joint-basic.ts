@@ -16,12 +16,16 @@ import {
   Quaternion,
   Entity,
   Collider,
-  StaticCollider,
   FixedJoint,
   SpringJoint,
-  SphereColliderShape, Script, Keys, HingeJoint
+  SphereColliderShape,
+  Script,
+  Keys,
+  HingeJoint,
+  TextRenderer,
+  Font,
+  Color
 } from "oasis-engine";
-import {OrbitControl} from "oasis-engine-toolkit";
 
 import {
   PhysXPhysics
@@ -36,6 +40,26 @@ PhysXPhysics.initialize().then(() => {
   const rootEntity = scene.createRootEntity("root");
 
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
+
+  function createText(
+    pos: Vector3,
+    fontSize: number,
+  ): void {
+    // Create text entity
+    const entity = rootEntity.createChild("text");
+    entity.transform.position = pos;
+    // Add text renderer for text entity
+    const renderer = entity.addComponent(TextRenderer);
+    // Set text color
+    renderer.color = new Color();
+    // Set text to render
+    renderer.text = "Use `Space Key` to Shoot balls";
+    // Set font with font family
+    renderer.font = Font.createFromOS(entity.engine, "Arial");
+    // Set font size
+    renderer.fontSize = fontSize;
+  }
+  createText(new Vector3(-5, 5), 50);
 
   function addBox(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
@@ -87,16 +111,16 @@ PhysXPhysics.initialize().then(() => {
   createChain(new Vector3(6.0, 10.0, 0.0), new Quaternion(), 10, 2.0);
 
   function createSpring(position: Vector3, rotation: Quaternion) {
-    const currentEntity = addBox(new Vector3(2.0, 2.0, 2), position, rotation);
+    const currentEntity = addBox(new Vector3(8, 1, 1), position, rotation);
     const springJoint = currentEntity.addComponent(SpringJoint);
     springJoint.connectedAnchor = position;
     springJoint.swingOffset = new Vector3(0, 1, 0);
     springJoint.maxDistance = 10;
     springJoint.stiffness = 0.2;
-    springJoint.damping = 0.1;
+    springJoint.damping = 1;
   }
 
-  createSpring(new Vector3(0.0, 10.0, 0.0), new Quaternion());
+  createSpring(new Vector3(2.0, 10.0, 1.0), new Quaternion());
 
   function createHinge(position: Vector3, rotation: Quaternion) {
     const currentEntity = addBox(new Vector3(4.0, 4.0, 0), position, rotation);
@@ -105,6 +129,7 @@ PhysXPhysics.initialize().then(() => {
     hingeJoint.swingOffset = new Vector3(0, 1, 0);
     hingeJoint.axis = new Vector3(0, 1, 0);
   }
+
   createHinge(new Vector3(0, 0, 0), new Quaternion());
 
   function addSphere(radius: number, position: Vector3, rotation: Quaternion, velocity: Vector3): Entity {
@@ -146,8 +171,8 @@ PhysXPhysics.initialize().then(() => {
   // init camera
   const cameraEntity = rootEntity.createChild("camera");
   cameraEntity.addComponent(Camera);
-  cameraEntity.transform.setPosition(15, 15, 15);
-  cameraEntity.addComponent(OrbitControl);
+  cameraEntity.transform.setPosition(3, 1, 22);
+  cameraEntity.transform.lookAt(new Vector3(3, 1, 0));
   cameraEntity.addComponent(ShootScript);
 
   // init direct light
