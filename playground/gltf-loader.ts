@@ -283,11 +283,9 @@ class Oasis {
         this.rootEntity.addChild(defaultSceneRoot);
 
         const meshRenderers = [];
-        const skinnedMeshRenderers = [];
         defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, meshRenderers);
-        defaultSceneRoot.getComponentsIncludeChildren(SkinnedMeshRenderer, skinnedMeshRenderers);
 
-        this.setCenter(meshRenderers.concat(skinnedMeshRenderers));
+        this.setCenter(meshRenderers);
         this.loadMaterialGUI(materials);
         this.loadAnimationGUI(animations);
       })
