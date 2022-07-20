@@ -85,3 +85,4 @@ There are two debugging methods:
 const wireframe = rootEntity.addComponent(WireframeManager);
 wireframe.addCollideWireframe(collider);
 ````
+<playground src="physics-debug-draw.ts"></playground>
