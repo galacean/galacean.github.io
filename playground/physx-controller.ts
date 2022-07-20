@@ -17,9 +17,10 @@ import {
   Camera,
   CapsuleColliderShape,
   CharacterController,
+  Color,
   ControllerCollisionFlag,
   DirectLight,
-  Entity,
+  Entity, Font,
   GLTFResource,
   InputManager,
   Keys,
@@ -35,6 +36,7 @@ import {
   SkyBoxMaterial,
   StaticCollider,
   SystemInfo,
+  TextRenderer,
   Texture2D,
   Vector2,
   Vector3,
@@ -224,6 +226,14 @@ PhysXPhysics.initialize().then(() => {
   lightNode.transform.setPosition(10, 10, 10);
   lightNode.transform.lookAt(new Vector3(0, 0, 0));
   lightNode.addComponent(DirectLight);
+
+  const entity = cameraEntity.createChild("text");
+  entity.transform.position = new Vector3(0, 3.5, -10);
+  const renderer = entity.addComponent(TextRenderer);
+  renderer.color = new Color();
+  renderer.text = "Use `WASD` to move character and `Space` to jump";
+  renderer.font = Font.createFromOS(entity.engine, "Arial");
+  renderer.fontSize = 40;
 
   // Create sky
   const sky = background.sky;
