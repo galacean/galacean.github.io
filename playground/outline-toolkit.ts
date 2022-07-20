@@ -3,7 +3,7 @@
  * @category Toolkit
  */
 import * as dat from "dat.gui";
-import { AmbientLight, AssetType, Camera, GLTFResource, Logger, WebGLEngine, WebGLMode } from "oasis-engine";
+import { AmbientLight, AssetType, Camera, Color, GLTFResource, Logger, WebGLEngine, WebGLMode } from "oasis-engine";
 import { FramebufferPicker, OrbitControl, OutlineManager } from "oasis-engine-toolkit";
 Logger.enable();
 const gui = new dat.GUI();
@@ -25,6 +25,15 @@ cameraEntity.addComponent(OrbitControl).target.set(0, 1.3, 0);
 
 const outlineManager = cameraEntity.addComponent(OutlineManager);
 gui.add(outlineManager, "size", 1, 6, 0.1);
+gui
+  .addColor(
+    { color: [outlineManager.color.r * 255, outlineManager.color.g * 255, outlineManager.color.b * 255] },
+    "color"
+  )
+  .onChange((v) => {
+    outlineManager.color.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+  });
+
 const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
 framebufferPicker.camera = camera;
 
@@ -57,7 +66,8 @@ engine.resourceManager
     url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
   })
   .then((gltf: GLTFResource) => {
-    const { defaultSceneRoot } = gltf;
+    const { defaultSceneRoot, materials } = gltf;
+    materials[0].roughness = 0;
     console.log(gltf);
     rootEntity.addChild(defaultSceneRoot);
     for (let i = 0; i < 10; i++) {
