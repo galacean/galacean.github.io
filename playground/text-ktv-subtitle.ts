@@ -72,8 +72,6 @@ function createText(text: string, posX: number, posY: number): Entity {
   renderer.font = Font.createFromOS(textEntity.engine);
   // Set text to display
   renderer.text = text;
-  // Close char cache
-  renderer.useCharCache = false;
   // Set position
   textEntity.transform.position.set(posX, posY, 0);
   return textEntity;
