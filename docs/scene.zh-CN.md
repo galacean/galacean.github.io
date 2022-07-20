@@ -74,7 +74,7 @@ const { background } = scene;
 
 // 添加纯色背景
 background.mode = BackgroundMode.SolidColor; // 默认纯色背景
-background.solidColor.setValue(1, 1, 1, 1); // 纯白色
+background.solidColor.set(1, 1, 1, 1); // 纯白色
 
 // 添加天空盒背景
 background.mode = BackgroundMode.Sky; // 默认纯色背景
@@ -112,7 +112,7 @@ Playground 示例如下：
 
 ```typescript
 const scene = engine.sceneManager.activeScene;
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 ```
 

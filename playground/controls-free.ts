@@ -5,7 +5,6 @@
 /**
  * 本示例展示如何使用几何体渲染器功能、如何创建几何体资源对象、如何创建材质对象
  */
-import { FreeControl } from "@oasis-engine/controls";
 import {
   BlinnPhongMaterial,
   Camera,
@@ -15,6 +14,7 @@ import {
   PrimitiveMesh,
   WebGLEngine
 } from "oasis-engine";
+import { FreeControl } from "oasis-engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

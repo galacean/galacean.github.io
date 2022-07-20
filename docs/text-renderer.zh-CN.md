@@ -30,7 +30,7 @@ textRenderer.text = "Oasis 会写字了！";
 // 通过 fontSize 设置字体大小
 textRenderer.fontSize = 36;
 // 通过 color 设置文本颜色
-textRenderer.color.setValue(1, 0, 0, 1);
+textRenderer.color.set(1, 0, 0, 1);
 ```
 
 ## 设置宽高

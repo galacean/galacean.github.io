@@ -263,7 +263,7 @@ Developers who are familiar with materials must be impressed by the tilingOffset
 It is known that the width of the grass resource is `37` and the width of the large background image is `768`. In order to have the same width at the bottom of the joint, we can set the tilingOffset of the grass to: offset
 
 ```typescript
-groundMaterial.tilingOffset.setValue(768 / 37, 1, 0, 0);
+groundMaterial.tilingOffset.set(768 / 37, 1, 0, 0);
 ```
 
 Then only need to change the offset of tilingOffset every time it is updated (in order to ensure that the running speed of the water pipe and the grass are consistent, a simple conversion is required here):

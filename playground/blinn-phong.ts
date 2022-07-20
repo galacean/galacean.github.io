@@ -2,7 +2,7 @@
  * @title Blinn Phong Material
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -94,13 +94,13 @@ function addGUI(materials: BlinnPhongMaterial[]): void {
 
   gui.addColor(state, "baseColor").onChange((v) => {
     materials.forEach((material) => {
-      material.baseColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, state.opacity);
+      material.baseColor.set(v[0] / 255, v[1] / 255, v[2] / 255, state.opacity);
     });
   });
 
   gui.addColor(state, "specularColor").onChange((v) => {
     materials.forEach((material) => {
-      material.specularColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+      material.specularColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
     });
   });
   gui.add(state, "shininess", 0, 100).onChange((v) => {

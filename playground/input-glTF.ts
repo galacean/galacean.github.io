@@ -2,7 +2,7 @@
  * @title glTF Pointer
  * @category input
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "oasis-engine-toolkit";
 import {
   BoxColliderShape,
   Camera,
