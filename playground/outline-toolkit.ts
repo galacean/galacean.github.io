@@ -66,8 +66,7 @@ engine.resourceManager
     url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
   })
   .then((gltf: GLTFResource) => {
-    const { defaultSceneRoot, materials } = gltf;
-    materials[0].roughness = 0;
+    const { defaultSceneRoot } = gltf;
     console.log(gltf);
     rootEntity.addChild(defaultSceneRoot);
     for (let i = 0; i < 10; i++) {
