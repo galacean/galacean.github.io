@@ -1,5 +1,5 @@
 /**
- * @title Skeleton Helper
+ * @title Skeleton Viewer
  * @category Toolkit
  */
 import { Animator, Camera, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
