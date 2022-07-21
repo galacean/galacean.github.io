@@ -36,9 +36,9 @@ import {
 Logger.enable();
 
 const envList = {
-  sunset: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin",
-  pisa: "https://gw.alipayobjects.com/os/bmw-prod/871e960f-874f-4dc6-aa69-2e8fda8b5795.bin",
-  foot_2K: "https://gw.alipayobjects.com/os/bmw-prod/f0a011c2-ffba-4f70-866e-63974fff4ba9.bin"
+  sunset: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+  pisa: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin",
+  foot_2K: "https://gw.alipayobjects.com/os/bmw-prod/23c1893a-fe29-4e91-bd6a-bb1c4201a876.bin"
 };
 
 class Oasis {
