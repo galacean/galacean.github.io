@@ -3,7 +3,7 @@
  * @category Toolkit
  */
 import * as dat from "dat.gui";
-import { AmbientLight, AssetType, Camera, Color, GLTFResource, Logger, WebGLEngine, WebGLMode } from "oasis-engine";
+import { AmbientLight, Animator, AssetType, Camera, GLTFResource, Logger, WebGLEngine, WebGLMode } from "oasis-engine";
 import { FramebufferPicker, OrbitControl, OutlineManager } from "oasis-engine-toolkit";
 Logger.enable();
 const gui = new dat.GUI();
@@ -52,7 +52,7 @@ document.getElementById("canvas").addEventListener("mousedown", (e) => {
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -63,15 +63,17 @@ engine.resourceManager
   .load({
     type: AssetType.Prefab,
     // url: "https://gw.alipayobjects.com/os/OasisHub/440000554/3615/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
-    url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+    // url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
   })
   .then((gltf: GLTFResource) => {
-    const { defaultSceneRoot } = gltf;
-    console.log(gltf);
-    rootEntity.addChild(defaultSceneRoot);
+    const { defaultSceneRoot, animations } = gltf;
+
     for (let i = 0; i < 10; i++) {
       const clone = defaultSceneRoot.clone();
       clone.transform.setPosition(i - 5, 0, 0);
       rootEntity.addChild(clone);
+      const animator = clone.getComponent(Animator);
+      animator.play(animations[0].name);
     }
   });
