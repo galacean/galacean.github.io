@@ -57,7 +57,7 @@ ballRender.setMaterial(material);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/871e960f-874f-4dc6-aa69-2e8fda8b5795.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
