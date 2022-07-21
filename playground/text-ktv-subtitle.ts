@@ -100,7 +100,8 @@ const vertShader = `
   precision highp float;
 
   uniform mat4 u_VPMat;
-  uniform float u_worldPosX;
+  uniform float u_startX;
+  uniform float u_endX;
 
   attribute vec3 POSITION;
   attribute vec2 TEXCOORD_0;
@@ -117,9 +118,8 @@ const vertShader = `
     gl_Position = u_VPMat * vec4(POSITION, 1.0);
     v_uv = TEXCOORD_0;
     v_color = COLOR_0;
-    float halfWidth = abs(u_worldPosX - POSITION.x);
-    v_startX = u_worldPosX - halfWidth;
-    v_width = halfWidth * 2.0;
+    v_startX = u_startX;
+    v_width = u_endX - u_startX;
     v_posX = POSITION.x;
   }
 `;
@@ -164,8 +164,10 @@ class AnimateScript extends Script {
       this._curTime += dt;
       const { _curTime: curTime, totalTime } = this;
       const { shaderData } = this.material;
+      const bounds = this.entity.getComponent(TextRenderer).bounds;
+      shaderData.setFloat("u_startX", bounds.min.x);
+      shaderData.setFloat("u_endX", bounds.max.x);
       shaderData.setFloat("u_percent", curTime / totalTime);
-      shaderData.setFloat("u_worldPosX", this.entity.transform.worldPosition.x);
       if (curTime >= totalTime) {
         this._isPlaying = false;
         this._cb && this._cb();
