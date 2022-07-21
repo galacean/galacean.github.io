@@ -2,13 +2,19 @@
  * @title Text Barrage
  * @category 2D
  */
-import { Camera, Color, Engine, Entity, Font, Script, TextHorizontalAlignment, TextRenderer, WebGLEngine } from "oasis-engine";
+import {
+  Camera,
+  Color,
+  Engine,
+  Entity,
+  Font,
+  Script,
+  TextHorizontalAlignment,
+  TextRenderer,
+  WebGLEngine
+} from "oasis-engine";
 
-const Colors = [
-  new Color(1, 1, 1, 1),
-  new Color(1, 0, 0, 1),
-  new Color(0, 1, 0.89, 1)
-];
+const Colors = [new Color(1, 1, 1, 1), new Color(1, 0, 0, 1), new Color(0, 1, 0.89, 1)];
 const ColorLastIndex = Colors.length - 1;
 
 const Words = [
@@ -101,8 +107,8 @@ class TextManager extends Script {
   public halfWidth: number = 0;
   public halfHeight: number = 0;
   public cd: number = 5;
-  public curTime: number = 0;
-  
+  public curTime: number = 5;
+
   private _textCount: number = 0;
   private _textEntityPool: TextEntityPool = null;
 
@@ -113,7 +119,7 @@ class TextManager extends Script {
   onUpdate(deltaTime: number): void {
     if (this.curTime < this.cd) {
       this.curTime++;
-      return ;
+      return;
     }
     this.curTime = 0;
     this._textCount++;
@@ -124,7 +130,9 @@ class TextManager extends Script {
     const { position } = entity.transform;
 
     const textRenderer = entity.getComponent(TextRenderer);
-    textRenderer.text = `${Words[this._getRandomNum(0, WordLastIndex)]} ${Words[this._getRandomNum(0, WordLastIndex)]} ${this._getRandomNum(0, 99)}`;
+    textRenderer.text = `${Words[this._getRandomNum(0, WordLastIndex)]} ${
+      Words[this._getRandomNum(0, WordLastIndex)]
+    } ${this._getRandomNum(0, 99)}`;
     textRenderer.color = Colors[this._getRandomNum(0, ColorLastIndex)];
     textRenderer.font = Font.createFromOS(entity.engine, "Arial");
     textRenderer.fontSize = 36;
@@ -147,10 +155,10 @@ class TextManager extends Script {
   }
 
   private _getRandomNum(min: number, max: number): number {
-		const range = max - min;
-		const rand = Math.random();
-		return (min + Math.round(rand * range));
-	}
+    const range = max - min;
+    const rand = Math.random();
+    return min + Math.round(rand * range);
+  }
 }
 
 // Create engine object
@@ -171,4 +179,3 @@ const textManager = rootEntity.addComponent(TextManager);
 const halfHeight = camera.orthographicSize;
 textManager.halfWidth = halfHeight * camera.aspectRatio;
 textManager.halfHeight = halfHeight;
-
