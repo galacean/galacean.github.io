@@ -123,8 +123,8 @@ class TextManager extends Script {
     }
     this.curTime = 0;
     this._textCount++;
-    const { halfWidth } = this;
-    const entity = this._textEntityPool.get();
+    const { halfWidth, _textEntityPool: textEntityPool } = this;
+    const entity = textEntityPool.get();
     entity.parent = this.entity;
     entity.isActive = true;
     const { position } = entity.transform;
@@ -150,7 +150,7 @@ class TextManager extends Script {
     textScript.play().then(() => {
       entity.parent = null;
       entity.isActive = false;
-      this._textEntityPool.put(entity);
+      textEntityPool.put(entity);
     });
   }
 
