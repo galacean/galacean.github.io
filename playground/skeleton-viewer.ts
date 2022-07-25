@@ -12,10 +12,10 @@ const rootNode = scene.createRootEntity();
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 // Create camera
-const cameraNode = rootNode.createChild("camera_node");
-cameraNode.transform.position = new Vector3(10, 10, 30);
-cameraNode.addComponent(Camera);
-const control = cameraNode.addComponent(OrbitControl);
+const cameraEntity = rootNode.createChild("camera_node");
+cameraEntity.transform.position = new Vector3(10, 10, 30);
+cameraEntity.addComponent(Camera);
+const control = cameraEntity.addComponent(OrbitControl);
 control.target.set(0, 3, 0);
 
 engine.resourceManager
