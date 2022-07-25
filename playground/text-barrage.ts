@@ -50,6 +50,10 @@ class TextBarrageAnimation extends Script {
   private _curFrame: number = 0;
   private _isPlayging: boolean = false;
 
+  onStart(): void {
+    this.reset();
+  }
+
   onUpdate(dt: number): void {
     if (this._isPlayging) {
       const { position } = this.entity.transform;
@@ -126,5 +130,4 @@ for (let i = 0; i < textCount; ++i) {
   barrage.textCount = textCount;
   barrage.range = -halfWidth;
   barrage.delayFrame = i * 5;
-  barrage.reset();
 }
