@@ -49,8 +49,10 @@ class TextBarrageAnimation extends Script {
   public delayFrame: number = 0;
   private _curFrame: number = 0;
   private _isPlayging: boolean = false;
+  private _textRenderer: TextRenderer = null;
 
   onStart(): void {
+    this._textRenderer = this.entity.getComponent(TextRenderer);
     this.reset();
   }
 
@@ -78,7 +80,7 @@ class TextBarrageAnimation extends Script {
   reset() {
     const { entity } = this;
     const { position } = entity.transform;
-    const textRenderer = entity.getComponent(TextRenderer);
+    const textRenderer = this._textRenderer;
     // Reset priority for renderer.
     textRenderer.priority += this.textCount;
     // Reset the text to render.
