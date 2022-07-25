@@ -2,32 +2,24 @@
  * @title Text Barrage
  * @category 2D
  */
-import {
-  Camera,
-  Color,
-  Engine,
-  Entity,
-  Font,
-  Script,
-  TextHorizontalAlignment,
-  TextRenderer,
-  WebGLEngine
-} from "oasis-engine";
+import { Camera, Color, Font, Script, TextHorizontalAlignment, TextRenderer, WebGLEngine } from "oasis-engine";
 
 const Colors = [new Color(1, 1, 1, 1), new Color(1, 0, 0, 1), new Color(0, 1, 0.89, 1)];
 const ColorLastIndex = Colors.length - 1;
 
 const Words = [
-  "Oasis",
+  "OASIS",
   "oasis",
-  "Hello",
+  "HELLO",
   "hello",
+  "WORLD",
   "world",
-  "World",
+  "TEXT",
   "text",
-  "Text",
-  "ABCabc",
-  "abcDEF",
+  "PEACE",
+  "peace",
+  "LOVE",
+  "love",
   "abcdefg",
   "hijklmn",
   "opqrst",
@@ -42,41 +34,21 @@ const Words = [
 ];
 const WordLastIndex = Words.length - 1;
 
-class TextEntityPool {
-  private _engine: Engine = null;
-  private _elements: Entity[] = [];
-
-  constructor(engine: Engine, count: number) {
-    this._engine = engine;
-    const elements = this._elements;
-    for (let i = 0; i < count; ++i) {
-      const entity = new Entity(engine);
-      elements[i] = entity;
-      entity.addComponent(TextRenderer);
-      entity.addComponent(TextBarrageAnimation);
-    }
-  }
-
-  get(): Entity {
-    if (this._elements.length > 0) {
-      return this._elements.pop();
-    }
-    const entity = new Entity(this._engine);
-    entity.addComponent(TextRenderer);
-    entity.addComponent(TextBarrageAnimation);
-    return entity;
-  }
-
-  put(entity: Entity): void {
-    this._elements.push(entity);
-  }
+function getRandomNum(min: number, max: number): number {
+  const range = max - min;
+  const rand = Math.random();
+  return min + Math.round(rand * range);
 }
 
 class TextBarrageAnimation extends Script {
+  public halfWidth: number = 0;
+  public halfHeight: number = 0;
+  public textCount: number = 0;
   public speed: number = 0;
   public range: number = 0;
+  public delayFrame: number = 0;
+  private _curFrame: number = 0;
   private _isPlayging: boolean = false;
-  private _cb: Function = null;
 
   onUpdate(dt: number): void {
     if (this._isPlayging) {
@@ -85,79 +57,38 @@ class TextBarrageAnimation extends Script {
       const targetPosX = curPosX + this.speed * dt;
       position.x = targetPosX;
       if (targetPosX < this.range) {
-        this.stop();
-        this._cb && this._cb();
+        this.reset();
+      }
+    } else {
+      this._curFrame++;
+      if (this._curFrame >= this.delayFrame) {
+        this.play();
       }
     }
   }
 
   play() {
     this._isPlayging = true;
-    return new Promise((resolve) => {
-      this._cb = resolve;
-    });
   }
 
-  stop() {
-    this._isPlayging = false;
-  }
-}
-
-class TextManager extends Script {
-  public halfWidth: number = 0;
-  public halfHeight: number = 0;
-  public cd: number = 5;
-  public curTime: number = 5;
-
-  private _textCount: number = 0;
-  private _textEntityPool: TextEntityPool = null;
-
-  onAwake(): void {
-    this._textEntityPool = new TextEntityPool(this.engine, 200);
-  }
-
-  onUpdate(deltaTime: number): void {
-    if (this.curTime < this.cd) {
-      this.curTime++;
-      return;
-    }
-    this.curTime = 0;
-    this._textCount++;
-    const { halfWidth, _textEntityPool: textEntityPool } = this;
-    const entity = textEntityPool.get();
-    entity.parent = this.entity;
-    entity.isActive = true;
+  reset() {
+    const { entity } = this;
     const { position } = entity.transform;
-
     const textRenderer = entity.getComponent(TextRenderer);
-    textRenderer.text = `${Words[this._getRandomNum(0, WordLastIndex)]} ${
-      Words[this._getRandomNum(0, WordLastIndex)]
-    } ${this._getRandomNum(0, 99)}`;
-    textRenderer.color = Colors[this._getRandomNum(0, ColorLastIndex)];
-    textRenderer.font = Font.createFromOS(entity.engine, "Arial");
-    textRenderer.fontSize = 36;
-    textRenderer.priority = this._textCount;
-    textRenderer.horizontalAlignment = TextHorizontalAlignment.Right;
+    // Reset priority for renderer.
+    textRenderer.priority += this.textCount;
+    // Reset the text to render.
+    textRenderer.text = `${Words[getRandomNum(0, WordLastIndex)]} ${
+      Words[getRandomNum(0, WordLastIndex)]
+    } ${getRandomNum(0, 99)}`;
+    // Reset position.
     const bounds = textRenderer.bounds;
     const textWidth = bounds.max.x - bounds.min.x;
-    position.x = halfWidth + textWidth;
-    const limitHeight = halfHeight * 100;
-    position.y = this._getRandomNum(-limitHeight, limitHeight) * 0.01;
-
-    const textScript = entity.getComponent(TextBarrageAnimation);
-    textScript.speed = -0.003 + this._getRandomNum(-200, 100) * 0.00001;
-    textScript.range = -halfWidth;
-    textScript.play().then(() => {
-      entity.parent = null;
-      entity.isActive = false;
-      textEntityPool.put(entity);
-    });
-  }
-
-  private _getRandomNum(min: number, max: number): number {
-    const range = max - min;
-    const rand = Math.random();
-    return min + Math.round(rand * range);
+    position.x = this.halfWidth + textWidth;
+    const limitHeight = this.halfHeight * 100;
+    position.y = getRandomNum(-limitHeight, limitHeight) * 0.01;
+    // Reset speed.
+    this.speed = -0.003 + getRandomNum(-200, 100) * 0.00001;
   }
 }
 
@@ -175,7 +106,25 @@ cameraEntity.transform.setPosition(0, 0, 10);
 const camera = cameraEntity.addComponent(Camera);
 camera.isOrthographic = true;
 
-const textManager = rootEntity.addComponent(TextManager);
+// Create text barrage.
 const halfHeight = camera.orthographicSize;
-textManager.halfWidth = halfHeight * camera.aspectRatio;
-textManager.halfHeight = halfHeight;
+const halfWidth = halfHeight * camera.aspectRatio;
+const textCount = 50;
+for (let i = 0; i < textCount; ++i) {
+  const textEntity = rootEntity.createChild();
+  // Init text renderer.
+  const textRenderer = textEntity.addComponent(TextRenderer);
+  textRenderer.color = Colors[getRandomNum(0, ColorLastIndex)];
+  textRenderer.font = Font.createFromOS(engine, "Arial");
+  textRenderer.fontSize = 36;
+  textRenderer.priority = i;
+  textRenderer.horizontalAlignment = TextHorizontalAlignment.Right;
+  // Init and reset text barrage animation.
+  const barrage = textEntity.addComponent(TextBarrageAnimation);
+  barrage.halfWidth = halfWidth;
+  barrage.halfHeight = halfHeight;
+  barrage.textCount = textCount;
+  barrage.range = -halfWidth;
+  barrage.delayFrame = i * 5;
+  barrage.reset();
+}
