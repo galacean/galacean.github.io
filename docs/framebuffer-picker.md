@@ -13,7 +13,7 @@ When the pick-up frequency is not high, you can consider [FramebufferPicker](${a
 ## Create FrameBufferPicker
 
 ```typescript
-import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
 
 const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
 framebufferPicker.camera = camera;
@@ -22,15 +22,21 @@ framebufferPicker.camera = camera;
 ## Register picking events
 
 ```typescript
-framebufferPicker.onPick = (obj) => {
-  if (obj) {
-    const { mesh, component } = obj;
-    // do something...
+class ClickScript extends Script {
+  onUpdate(): void {
+    const inputManager = this.engine.inputManager;
+    if (inputManager.isPointerDown(PointerButton.Primary)) {
+      const pointerPosition = inputManager.pointerPosition;
+      framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
+        if (renderElement) {
+          // ...
+        } else {
+          // ...
+        }
+      });
+    }
   }
-};
+}
 
-// Mouse click trigger pick
-document.getElementById("canvas").addEventListener("mousedown", (e) => {
-  framebufferPicker.pick(e.offsetX, e.offsetY);
-});
+cameraEntity.addComponent(ClickScript);
 ```
