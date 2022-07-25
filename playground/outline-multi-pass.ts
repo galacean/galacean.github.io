@@ -1,5 +1,5 @@
 /**
- * @title Outline
+ * @title Outline multi-pass
  * @category Advance
  */
 import * as dat from "dat.gui";
@@ -13,17 +13,11 @@ import {
   Engine,
   Entity,
   GLTFResource,
-  Layer,
   Material,
   MeshRenderer,
-  PrimitiveMesh,
-  RenderQueueType,
-  RenderTarget,
   Script,
   Shader,
   StencilOperation,
-  Texture2D,
-  Vector2,
   WebGLEngine
 } from "oasis-engine";
 import { OrbitControl } from "oasis-engine-toolkit";
@@ -270,161 +264,10 @@ class Border2 extends Script {
   }
 }
 
-class PostScript extends Script {
-  renderTarget: RenderTarget;
-
-  onBeginRender(camera: Camera): void {
-    camera.renderTarget = this.renderTarget;
-    camera.cullingMask = Layer.Layer0;
-  }
-
-  onEndRender(camera: Camera): void {
-    camera.renderTarget = null;
-    camera.cullingMask = Layer.Layer1;
-    camera.render();
-  }
-}
-
-// 边缘检测-后处理
-class Border3 extends Script {
-  material: Material;
-  private _color: Color = new Color(0, 0, 0, 1);
-  private _camera: Camera;
-  private _screen: Entity;
-  private _postScript: PostScript;
-
-  get color(): Color {
-    return this._color;
-  }
-
-  set color(value: Color) {
-    this.material.shaderData.setColor("u_color", value);
-    this._color = value;
-  }
-
-  get camera(): Camera {
-    return this._camera;
-  }
-
-  set camera(value: Camera) {
-    if (this._camera !== value) {
-      this._camera = value;
-      this._postScript = this.camera.entity.addComponent(PostScript);
-
-      const material = this.getScreenMaterial(this.engine);
-      const { width, height } = engine.canvas;
-
-      const renderColorTexture = new Texture2D(engine, width, height);
-      const renderTarget = new RenderTarget(engine, width, height, renderColorTexture);
-      const screen = (this._screen = rootEntity.createChild("screen"));
-      const screenRenderer = screen.addComponent(MeshRenderer);
-      this._postScript.renderTarget = renderTarget;
-
-      screen.layer = Layer.Layer1;
-      screenRenderer.mesh = PrimitiveMesh.createPlane(engine, 2, 2);
-      screenRenderer.setMaterial(material);
-      material.shaderData.setTexture("u_texture", renderColorTexture);
-    }
-  }
-
-  getScreenMaterial(engine: Engine) {
-    if (!this.material) {
-      if (!Shader.find("screen-shader")) {
-        const vertex = `
-         attribute vec3 POSITION;
-         attribute vec2 TEXCOORD_0;
-         
-         varying vec2 v_uv;
-         
-         void main(){
-             gl_Position = vec4( POSITION.xzy , 1.0);
-             gl_Position.y *= -1.0;
-             v_uv = TEXCOORD_0;
-             v_uv.y = 1.0 - v_uv.y;
-         }
-                 `;
-        const fragment = `
-                 uniform vec3 u_color;
-                 uniform sampler2D u_texture;
-                 uniform vec2 u_texSize;
- 
-                 varying vec2 v_uv;
- 
- 
-                 float luminance(vec4 color) {
-                   return  0.2125 * color.r + 0.7154 * color.g + 0.0721 * color.b; 
-                 }
- 
-                 float sobel() {
-                   float Gx[9] = float[](
-                               -1.0,  0.0,  1.0,
-                               -2.0,  0.0,  2.0,
-                               -1.0,  0.0,  1.0);
-                   float Gy[9] = float[](
-                               -1.0, -2.0, -1.0,
-                               0.0,  0.0,  0.0,
-                               1.0,  2.0,  1.0);		
-                   
-                   float texColor;
-                   float edgeX = 0.0;
-                   float edgeY = 0.0;
-                   vec2 uv[9];
- 
-                   uv[0] = v_uv + u_texSize.xy * vec2(-1, -1);
-                   uv[1] = v_uv + u_texSize.xy * vec2(0, -1);
-                   uv[2] = v_uv + u_texSize.xy * vec2(1, -1);
-                   uv[3] = v_uv + u_texSize.xy * vec2(-1, 0);
-                   uv[4] = v_uv + u_texSize.xy * vec2(0, 0);
-                   uv[5] = v_uv + u_texSize.xy * vec2(1, 0);
-                   uv[6] = v_uv + u_texSize.xy * vec2(-1, 1);
-                   uv[7] = v_uv + u_texSize.xy * vec2(0, 1);
-                   uv[8] = v_uv + u_texSize.xy * vec2(1, 1);
- 
-                   for (int i = 0; i < 9; i++) {
-                     texColor = luminance(texture2D(u_texture, uv[i]));
-                     edgeX += texColor * Gx[i];
-                     edgeY += texColor * Gy[i];
-                   }
-                   
-                   return abs(edgeX) + abs(edgeY);
-                 }
- 
-                 void main(){
-                   // float sobelFactor = step(1.0, sobel());
-                   float sobelFactor = sobel();
-                   gl_FragColor = mix( texture2D(u_texture, v_uv), vec4(u_color,1.0), sobelFactor);
-                   // gl_FragColor = mix( vec4(1.0), vec4(u_color,1.0), sobelFactor);
-                   // gl_FragColor = vec4(u_color,1.0) * sobelFactor;
-                 }
-                 `;
-
-        Shader.create("screen-shader", vertex, fragment);
-      }
-      const material = new Material(engine, Shader.find("screen-shader"));
-      this.material = material;
-      this.color = this._color;
-      const { width, height } = engine.canvas;
-      material.shaderData.setVector2("u_texSize", new Vector2(1 / width, 1 / height));
-    }
-
-    return this.material;
-  }
-
-  onDestroy() {
-    this._screen.destroy();
-    if (this.camera) {
-      this._postScript.renderTarget.destroy();
-      this._postScript.destroy();
-      this._postScript = null;
-      this.camera.cullingMask = Layer.Layer0;
-    }
-  }
-}
-
 function openDebug() {
   const borderEntity = rootEntity.createChild("border");
   const color = new Color();
-  let border: Border | Border2 | Border3 = borderEntity.addComponent(Border);
+  let border: Border | Border2 = borderEntity.addComponent(Border);
 
   const config = {
     plan: "外描边",
@@ -433,7 +276,7 @@ function openDebug() {
   };
 
   gui
-    .add(config, "plan", ["外描边", "内描边", "后处理"])
+    .add(config, "plan", ["外描边", "内描边"])
     .onChange((v) => {
       color.set(config.color[0] / 255, config.color[1] / 255, config.color[2] / 255, 1);
 
@@ -449,11 +292,6 @@ function openDebug() {
         border.size = config.size;
         border.color = color;
         showSize();
-      } else if (v === "后处理") {
-        border = borderEntity.addComponent(Border3);
-        border.camera = camera;
-        border.color = color;
-        hideSize();
       }
     })
     .name("描边方案");
@@ -462,9 +300,7 @@ function openDebug() {
   function showSize() {
     hideSize();
     size = gui.add(config, "size", 0, 5, 1).onChange((v) => {
-      if (!(border instanceof Border3)) {
-        border.size = v;
-      }
+      border.size = v;
     });
   }
   function hideSize() {
