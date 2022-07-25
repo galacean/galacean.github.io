@@ -15,28 +15,6 @@ import {
 } from "oasis-engine";
 import { FramebufferPicker, OrbitControl, OutlineManager } from "oasis-engine-toolkit";
 
-const gui = new dat.GUI();
-const engine = new WebGLEngine("canvas");
-engine.run();
-engine.canvas.resizeByClientSize();
-
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
-scene.background.solidColor.set(1, 1, 1, 1);
-
-// camera
-const cameraEntity = rootEntity.createChild("camera_entity");
-cameraEntity.transform.setPosition(0, 1.3, 10);
-
-const camera = cameraEntity.addComponent(Camera);
-cameraEntity.addComponent(OrbitControl).target.set(0, 1.3, 0);
-
-const outlineManager = cameraEntity.addComponent(OutlineManager);
-debug(outlineManager);
-
-const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
-framebufferPicker.camera = camera;
-
 class ClickScript extends Script {
   onUpdate(): void {
     const inputManager = this.engine.inputManager;
@@ -53,9 +31,26 @@ class ClickScript extends Script {
   }
 }
 
+const engine = new WebGLEngine("canvas");
+engine.run();
+engine.canvas.resizeByClientSize();
+
+const scene = engine.sceneManager.activeScene;
+const rootEntity = scene.createRootEntity();
+scene.background.solidColor.set(1, 1, 1, 1);
+
+const cameraEntity = rootEntity.createChild("camera_entity");
+const camera = cameraEntity.addComponent(Camera);
+cameraEntity.transform.setPosition(0, 1.3, 10);
+cameraEntity.addComponent(OrbitControl).target.set(0, 1.3, 0);
 cameraEntity.addComponent(ClickScript);
 
-// ambient light
+const outlineManager = cameraEntity.addComponent(OutlineManager);
+addDebugGUI(outlineManager);
+
+const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
+framebufferPicker.camera = camera;
+
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
@@ -67,11 +62,11 @@ engine.resourceManager
   });
 
 engine.resourceManager
-  .load({
+  .load<GLTFResource>({
     type: AssetType.Prefab,
     url: "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
   })
-  .then((gltf: GLTFResource) => {
+  .then((gltf) => {
     const { defaultSceneRoot, animations } = gltf;
 
     for (let i = 0; i < 10; i++) {
@@ -83,7 +78,9 @@ engine.resourceManager
     }
   });
 
-function debug(outlineManager) {
+function addDebugGUI(outlineManager: OutlineManager) {
+  const gui = new dat.GUI();
+
   gui.add(outlineManager, "size", 1, 6, 0.1);
   gui
     .addColor(
