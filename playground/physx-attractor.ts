@@ -60,7 +60,6 @@ class Interactor extends Script {
   }
 }
 
-//--------------------------------------------------------------------------------------------------------------------
 // init scene
 function init(rootEntity: Entity) {
   addPlane(rootEntity, new Vector3(0, -8, 0), new Quaternion);
@@ -140,6 +139,7 @@ function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotati
   return sphereEntity;
 }
 
+//--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
   engine.physicsManager.initialize(PhysXPhysics);

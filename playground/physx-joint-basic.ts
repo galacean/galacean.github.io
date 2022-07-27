@@ -157,6 +157,7 @@ class ShootScript extends Script {
   }
 }
 
+//----------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
   engine.physicsManager.initialize(PhysXPhysics);
