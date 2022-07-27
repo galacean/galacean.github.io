@@ -1,6 +1,6 @@
 /**
  * @title Planar Shadow
- * @category Light
+ * @category Toolkit
  */
 
 import {OrbitControl, PlanarShadowMaterial} from "oasis-engine-toolkit";
@@ -8,28 +8,25 @@ import {
   Animator,
   BlinnPhongMaterial,
   Camera,
-  Color,
   DirectLight,
   GLTFResource,
   Logger,
   MeshRenderer,
   PrimitiveMesh,
   SkinnedMeshRenderer,
-  SystemInfo,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
-engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
-engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
+engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
 // camera
 const cameraEntity = rootEntity.createChild("camera_node");
-cameraEntity.transform.position = new Vector3(0, 1, 5);
+cameraEntity.transform.setPosition(0, 1, 5);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
@@ -51,24 +48,20 @@ engine.resourceManager
     const {defaultSceneRoot} = asset;
     rootEntity.addChild(defaultSceneRoot);
     const animator = defaultSceneRoot.getComponent(Animator);
-    const animationNames = animator.animatorController.layers[0].stateMachine.states
-      .map((state) => state.name)
-      .filter((name) => !name.includes("pose"));
-
-    animator.play(animationNames[0]);
+    animator.play(asset.animations[0].name);
 
     const lightDir = new Vector3();
     lightNode.transform.getWorldForward(lightDir);
     const shadowMaterial = new PlanarShadowMaterial(engine);
     shadowMaterial.shadowFalloff = 0.2;
-    shadowMaterial.shadowColor = new Color(0, 0, 0, 1.0);
+    shadowMaterial.shadowColor.set(0, 0, 0, 1.0);
     shadowMaterial.planarHeight = 0.01;
     shadowMaterial.lightDirection = lightDir;
     const renderers: SkinnedMeshRenderer[] = [];
     defaultSceneRoot.getComponentsIncludeChildren(SkinnedMeshRenderer, renderers);
     for (let i = 0, n = renderers.length; i < n; i++) {
       const skinRenderer = renderers[i];
-      const shadowRenderer = defaultSceneRoot.addComponent(SkinnedMeshRenderer);
+      const shadowRenderer = skinRenderer.entity.addComponent(SkinnedMeshRenderer);
       shadowRenderer.mesh = skinRenderer.mesh;
       shadowRenderer.skin = skinRenderer.skin;
       shadowRenderer.setMaterial(shadowMaterial);
