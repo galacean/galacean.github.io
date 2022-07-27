@@ -85,7 +85,7 @@ Text alignment is used to set how the text is displayed within the width and hei
 |[horizontalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextHorizontalAlignment](${api}core/TextHorizontalAlignment)|Horizontal Alignment: Left/Center/Right|
 |[verticalAlignment](${api}core/TextRenderer#verticalAlignment)|[TextVerticalAlignment](${api}core/TextVerticalAlignment)|Vertical Alignment：Top/Center/Bottom|
 
-## Text Font Style
+## Text font style
 The font style is used to set whether the text is displayed in bold or italic, as follows:
 
 | parameter | type | description |
