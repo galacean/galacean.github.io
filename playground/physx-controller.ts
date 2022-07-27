@@ -20,10 +20,12 @@ import {
   Color,
   ControllerCollisionFlag,
   DirectLight,
+  Engine,
   Entity, Font,
   GLTFResource,
   Keys,
   Logger,
+  Material,
   Matrix,
   MeshRenderer,
   PBRMaterial,
@@ -190,7 +192,7 @@ class ControllerScript extends Script {
     }
   }
 
-  _playAnimation() {
+  private _playAnimation() {
     if (this._animationName !== this._animationState.state) {
       this._animator.crossFade(this._animationState.state, 0.1);
       this._animationName = this._animationState.state;
@@ -297,6 +299,96 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
   return stairEntity;
 }
 
+function textureAndAnimationLoader(engine: Engine, materials: Material[], animatorStateMachine: AnimatorStateMachine) {
+  engine.resourceManager
+    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/6990/T_Doggy_1_diffuse.png")
+    .then((res) => {
+      for (let i = 0, n = materials.length; i < n; i++) {
+        const material = materials[i];
+        (<PBRMaterial>material).baseTexture = res;
+      }
+    });
+  engine.resourceManager
+    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/3072/T_Doggy_normal.png")
+    .then((res) => {
+      for (let i = 0, n = materials.length; i < n; i++) {
+        const material = materials[i];
+        (<PBRMaterial>material).normalTexture = res;
+      }
+    });
+  engine.resourceManager
+    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/5917/T_Doggy_roughness.png")
+    .then((res) => {
+      for (let i = 0, n = materials.length; i < n; i++) {
+        const material = materials[i];
+        (<PBRMaterial>material).roughnessMetallicTexture = res;
+      }
+    });
+  engine.resourceManager
+    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/2547/T_Doggy_1_ao.png")
+    .then((res) => {
+      for (let i = 0, n = materials.length; i < n; i++) {
+        const material = materials[i];
+        (<PBRMaterial>material).occlusionTexture = res;
+      }
+    });
+  engine.resourceManager
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/7205/Anim_Run.gltf")
+    .then((res) => {
+      const animations = res.animations;
+      if (animations) {
+        animations.forEach((clip: AnimationClip) => {
+          const animatorState = animatorStateMachine.addState(clip.name);
+          animatorState.clip = clip;
+        });
+      }
+    });
+  engine.resourceManager
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/3380/Anim_Idle.gltf")
+    .then((res) => {
+      const animations = res.animations;
+      if (animations) {
+        animations.forEach((clip: AnimationClip) => {
+          const animatorState = animatorStateMachine.addState(clip.name);
+          animatorState.clip = clip;
+        });
+      }
+    });
+  engine.resourceManager
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/5703/Anim_Landing.gltf")
+    .then((res) => {
+      const animations = res.animations;
+      if (animations) {
+        animations.forEach((clip: AnimationClip) => {
+          const animatorState = animatorStateMachine.addState(clip.name);
+          animatorState.clip = clip;
+        });
+      }
+    });
+  engine.resourceManager
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/3275/Anim_Fall.gltf")
+    .then((res) => {
+      const animations = res.animations;
+      if (animations) {
+        animations.forEach((clip: AnimationClip) => {
+          const animatorState = animatorStateMachine.addState(clip.name);
+          animatorState.clip = clip;
+        });
+      }
+    });
+  engine.resourceManager
+    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/2749/Anim_Jump_In.gltf")
+    .then((res) => {
+      const animations = res.animations;
+      if (animations) {
+        animations.forEach((clip: AnimationClip) => {
+          const animatorState = animatorStateMachine.addState(clip.name);
+          animatorState.clip = clip;
+        });
+      }
+    });
+}
+
 //----------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
@@ -377,99 +469,9 @@ PhysXPhysics.initialize().then(() => {
       userController.targetCamera(cameraEntity);
       userController.targetCharacter(defaultSceneRoot);
 
-      engine.resourceManager
-        .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/6990/T_Doggy_1_diffuse.png")
-        .then((res) => {
-          const materials = asset.materials;
-          for (let i = 0, n = materials.length; i < n; i++) {
-            const material = materials[i];
-            (<PBRMaterial>material).baseTexture = res;
-          }
-        });
-      engine.resourceManager
-        .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/3072/T_Doggy_normal.png")
-        .then((res) => {
-          const materials = asset.materials;
-          for (let i = 0, n = materials.length; i < n; i++) {
-            const material = materials[i];
-            (<PBRMaterial>material).normalTexture = res;
-          }
-        });
-      engine.resourceManager
-        .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/5917/T_Doggy_roughness.png")
-        .then((res) => {
-          const materials = asset.materials;
-          for (let i = 0, n = materials.length; i < n; i++) {
-            const material = materials[i];
-            (<PBRMaterial>material).roughnessMetallicTexture = res;
-          }
-        });
-      engine.resourceManager
-        .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/2547/T_Doggy_1_ao.png")
-        .then((res) => {
-          const materials = asset.materials;
-          for (let i = 0, n = materials.length; i < n; i++) {
-            const material = materials[i];
-            (<PBRMaterial>material).occlusionTexture = res;
-          }
-        });
-      engine.resourceManager
-        .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/7205/Anim_Run.gltf")
-        .then((res) => {
-          const animations = res.animations;
-          if (animations) {
-            animations.forEach((clip: AnimationClip) => {
-              const animatorState = animatorStateMachine.addState(clip.name);
-              animatorState.clip = clip;
-            });
-          }
-        });
-      engine.resourceManager
-        .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/3380/Anim_Idle.gltf")
-        .then((res) => {
-          const animations = res.animations;
-          if (animations) {
-            animations.forEach((clip: AnimationClip) => {
-              const animatorState = animatorStateMachine.addState(clip.name);
-              animatorState.clip = clip;
-            });
-          }
-          animator.play("Idle");
-        });
-      engine.resourceManager
-        .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/5703/Anim_Landing.gltf")
-        .then((res) => {
-          const animations = res.animations;
-          if (animations) {
-            animations.forEach((clip: AnimationClip) => {
-              const animatorState = animatorStateMachine.addState(clip.name);
-              animatorState.clip = clip;
-            });
-          }
-        });
-      engine.resourceManager
-        .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/3275/Anim_Fall.gltf")
-        .then((res) => {
-          const animations = res.animations;
-          if (animations) {
-            animations.forEach((clip: AnimationClip) => {
-              const animatorState = animatorStateMachine.addState(clip.name);
-              animatorState.clip = clip;
-            });
-          }
-        });
-      engine.resourceManager
-        .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/2749/Anim_Jump_In.gltf")
-        .then((res) => {
-          const animations = res.animations;
-          if (animations) {
-            animations.forEach((clip: AnimationClip) => {
-              const animatorState = animatorStateMachine.addState(clip.name);
-              animatorState.clip = clip;
-            });
-          }
-        });
-    });
+      textureAndAnimationLoader(engine, asset.materials, animatorStateMachine);
+      animator.play("Idle");
 
-  engine.run();
+      engine.run();
+    });
 });
