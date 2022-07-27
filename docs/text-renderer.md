@@ -85,6 +85,25 @@ Text alignment is used to set how the text is displayed within the width and hei
 |[horizontalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextHorizontalAlignment](${api}core/TextHorizontalAlignment)|Horizontal Alignment: Left/Center/Right|
 |[verticalAlignment](${api}core/TextRenderer#verticalAlignment)|[TextVerticalAlignment](${api}core/TextVerticalAlignment)|Vertical Alignment：Top/Center/Bottom|
 
+## Text Font Style
+The font style is used to set whether the text is displayed in bold or italic, as follows:
+
+| parameter | type | description |
+| :--- | :--- | :--- |
+|[fontStyle](${api}core/TextRenderer#fontStyle)|[FontStyle](${api}core/FontStyle)|Font Style: None/Bold/Italic|
+
+It is used as follows:
+```typescript
+// Normal Display
+textRenderer.fontStyle = FontStyle.None;
+// Bold Display
+textRenderer.fontStyle = FontStyle.Bold;
+// Italic Display
+textRenderer.fontStyle = FontStyle.Italic;
+// Bold and Italic Display
+textRenderer.fontStyle = FontStyle.Bold | FontStyle.Italic;
+```
+
 ## Example of multi-line text
 
 <playground src="text-wrap-alignment.ts"></playground>
