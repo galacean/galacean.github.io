@@ -20,7 +20,6 @@ import {
   DynamicCollider,
   WebGLEngine,
   Quaternion,
-  Vector2,
   Vector3,
   DirectLight,
   Script,
@@ -54,6 +53,42 @@ class GeometryGenerator extends Script {
           5,
           Math.floor(Math.random() * 6) - 2.5
         ), quat);
+      }
+    }
+  }
+}
+
+class Raycast extends Script {
+  camera: Camera;
+  ray = new Ray();
+  hit = new HitResult();
+
+  onAwake() {
+    this.camera = this.entity.getComponent(Camera);
+  }
+
+  onUpdate(deltaTime: number) {
+    const engine = this.engine;
+    const ray = this.ray;
+    const hit = this.hit;
+    const inputManager = this.engine.inputManager;
+    if (inputManager.isPointerDown(PointerButton.Primary)) {
+      this.camera.screenPointToRay(inputManager.pointerPosition, ray);
+
+      const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Layer0, hit);
+      if (result) {
+        const mtl = new BlinnPhongMaterial(engine);
+        const color = mtl.baseColor;
+        color.r = Math.random();
+        color.g = Math.random();
+        color.b = Math.random();
+        color.a = 1.0;
+
+        const meshes: MeshRenderer[] = [];
+        hit.entity.getComponentsIncludeChildren(MeshRenderer, meshes);
+        meshes.forEach((mesh: MeshRenderer) => {
+          mesh.setMaterial(mtl);
+        });
       }
     }
   }
@@ -194,6 +229,7 @@ PhysXPhysics.initialize().then(() => {
   pos.set(20, 20, 20);
   cameraEntity.transform.lookAt(new Vector3());
   cameraEntity.addComponent(OrbitControl);
+  cameraEntity.addComponent(Raycast);
 
   // init light
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
@@ -205,29 +241,6 @@ PhysXPhysics.initialize().then(() => {
   light.addComponent(DirectLight);
 
   init(rootEntity);
-
-  const ray = new Ray();
-  window.addEventListener("mousedown", (event: MouseEvent) => {
-    cameraEntity.getComponent(Camera).screenPointToRay(
-      new Vector2(event.pageX * window.devicePixelRatio, event.pageY * window.devicePixelRatio), ray);
-
-    const hit = new HitResult();
-    const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Layer0, hit);
-    if (result) {
-      const mtl = new BlinnPhongMaterial(engine);
-      const color = mtl.baseColor;
-      color.r = Math.random();
-      color.g = Math.random();
-      color.b = Math.random();
-      color.a = 1.0;
-
-      const meshes: MeshRenderer[] = [];
-      hit.entity.getComponentsIncludeChildren(MeshRenderer, meshes);
-      meshes.forEach((mesh: MeshRenderer) => {
-        mesh.setMaterial(mtl);
-      });
-    }
-  });
 
   engine.run();
 });
