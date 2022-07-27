@@ -20,7 +20,6 @@ import {
   Script,
   SphereColliderShape,
   StaticCollider,
-  Vector2,
   Vector3,
   WebGLEngine,
 } from "oasis-engine";
@@ -36,11 +35,30 @@ class Attractor extends Script {
   }
 
   onPhysicsUpdate() {
-    this.force.copyFrom( this.entity.transform.worldPosition);
+    this.force.copyFrom(this.entity.transform.worldPosition);
     this.collider.applyForce(this.force.normalize().scale(-10));
   }
 }
 
+class Interactor extends Script {
+  ray = new Ray();
+  position = new Vector3();
+  rotation = new Quaternion();
+  camera: Camera;
+
+  onAwake() {
+    this.camera = this.entity.getComponent(Camera);
+  }
+
+  onUpdate(deltaTime: number) {
+    const ray = this.ray;
+    this.camera.screenPointToRay(this.engine.inputManager.pointerPosition, ray);
+
+    const position = this.entity.transform.position;
+    position.copyFrom(ray.origin);
+    position.add(ray.direction.scale(18));
+  }
+}
 
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
@@ -68,6 +86,7 @@ PhysXPhysics.initialize().then(() => {
 
   {
     const attractorEntity = rootEntity.createChild();
+    attractorEntity.addComponent(Interactor).camera = camera;
     const mtl = new BlinnPhongMaterial(engine);
     mtl.baseColor.set(1, 1, 1, 1.0);
     const renderer = attractorEntity.addComponent(MeshRenderer);
@@ -79,16 +98,6 @@ PhysXPhysics.initialize().then(() => {
     const attractorCollider = attractorEntity.addComponent(DynamicCollider);
     attractorCollider.isKinematic = true;
     attractorCollider.addShape(attractorSphere);
-    window.addEventListener("mousemove", (event: MouseEvent) => {
-      const ray = new Ray();
-      camera.screenPointToRay(
-        new Vector2(event.pageX * window.devicePixelRatio, event.pageY * window.devicePixelRatio), ray);
-
-      const position = attractorEntity.transform.position;
-      position.copyFrom(ray.origin);
-      position.add(ray.direction.scale(18));
-      attractorEntity.transform.position = position;
-    });
   }
 
 
@@ -157,7 +166,7 @@ PhysXPhysics.initialize().then(() => {
 
   function addSphere(radius: number, position: Vector3, rotation: Quaternion): Entity {
     const mtl = new BlinnPhongMaterial(engine);
-    mtl.baseColor.set(227/255, 168/255, 196/255, 1.0);
+    mtl.baseColor.set(227 / 255, 168 / 255, 196 / 255, 1.0);
     const sphereEntity = rootEntity.createChild();
     const renderer = sphereEntity.addComponent(MeshRenderer);
 
