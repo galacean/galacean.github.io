@@ -47,10 +47,16 @@ import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 Logger.enable();
 
-type State = "Run" | "Idle" | "Jump_In" | "Fall" | "Landing";
+enum State {
+  Run = "Run",
+  Idle = "Idle",
+  Jump = "Jump",
+  Fall = "Fall",
+  Landing = "Landing"
+}
 
 class AnimationState {
-  private _state: State = "Idle";
+  private _state: State = State.Idle;
   private _lastKey: Keys = null;
 
   get state(): State {
@@ -59,36 +65,36 @@ class AnimationState {
 
   setMoveKey(value: Keys) {
     this._lastKey = value;
-    if (this._state === "Fall" || this._state === "Jump_In") {
+    if (this._state === State.Fall || this._state === State.Jump) {
       return;
     }
 
-    if (this._lastKey === null && (this._state === "Run" || this._state === "Idle")) {
-      this._state = "Idle"
+    if (this._lastKey === null && (this._state === State.Run || this._state === State.Idle)) {
+      this._state = State.Idle;
     } else {
-      this._state = "Run";
+      this._state = State.Run;
     }
   }
 
   setJumpKey() {
-    this._state = "Jump_In";
+    this._state = State.Jump;
   }
 
   setFallKey() {
-    this._state = "Fall";
+    this._state = State.Fall;
   }
 
   setIdleKey() {
-    if (this._state == "Jump_In") {
+    if (this._state == State.Jump) {
       return;
     }
 
-    if (this._state === "Fall") {
-      this._state = "Landing";
+    if (this._state === State.Fall) {
+      this._state = State.Landing;
     }
 
-    if (this._state === "Landing") {
-      this._state = "Idle";
+    if (this._state === State.Landing) {
+      this._state = State.Idle;
     }
   }
 }
@@ -108,6 +114,8 @@ class ControllerScript extends Script {
   _rotMat = new Matrix();
   _rotation = new Quaternion();
   _newRotation = new Quaternion();
+  _yAxisMove = new Vector3();
+  _up = new Vector3(0, 1, 0);
 
   _animationState = new AnimationState();
   _animationName: State;
@@ -134,7 +142,7 @@ class ControllerScript extends Script {
       this._forward.normalize();
       this._cross.set(this._forward.z, 0, -this._forward.x);
 
-      const animationSpeed: number = 0.02;
+      const animationSpeed = 0.02;
       const animationState = this._animationState;
       const displacement = this._displacement;
       if (inputManager.isKeyHeldDown(Keys.KeyW)) {
@@ -171,8 +179,11 @@ class ControllerScript extends Script {
     this._fallAccumulateTime += fixedTimeStep;
     const character = this._controller;
     character.move(this._displacement, 0.0001, fixedTimeStep);
+    const transform = this._character.transform;
+    const yAxisMove = this._yAxisMove;
 
-    const flag = character.move(new Vector3(0, gravity.y * fixedTimeStep * this._fallAccumulateTime, 0), 0.0001, fixedTimeStep)
+    yAxisMove.set(0, gravity.y * fixedTimeStep * this._fallAccumulateTime, 0);
+    const flag = character.move(yAxisMove, 0.0001, fixedTimeStep)
     if (flag & ControllerCollisionFlag.Down) {
       this._fallAccumulateTime = 0;
       this._animationState.setIdleKey();
@@ -182,13 +193,13 @@ class ControllerScript extends Script {
     this._playAnimation();
 
     if (this._displacement.x != 0 || this._displacement.z != 0) {
-      this._predictPosition.copyFrom(this._character.transform.worldPosition);
+      this._predictPosition.copyFrom(transform.worldPosition);
       this._predictPosition.subtract(this._displacement);
-      Matrix.lookAt(this._character.transform.worldPosition, this._predictPosition, new Vector3(0, 1, 0), this._rotMat);
+      Matrix.lookAt(transform.worldPosition, this._predictPosition, this._up, this._rotMat);
       this._rotMat.getRotation(this._rotation).invert();
-      const currentRot = this._character.transform.rotationQuaternion;
+      const currentRot = transform.rotationQuaternion;
       Quaternion.slerp(currentRot, this._rotation, 0.1, this._newRotation);
-      this._character.transform.rotationQuaternion = this._newRotation;
+      transform.rotationQuaternion = this._newRotation;
     }
   }
 
@@ -470,7 +481,7 @@ PhysXPhysics.initialize().then(() => {
       userController.targetCharacter(defaultSceneRoot);
 
       textureAndAnimationLoader(engine, asset.materials, animatorStateMachine);
-      animator.play("Idle");
+      animator.play(State.Idle);
 
       engine.run();
     });
