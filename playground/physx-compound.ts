@@ -107,6 +107,28 @@ class TableGenerator extends Script {
   }
 }
 
+function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
+  const engine = rootEntity.engine;
+  const material = new BlinnPhongMaterial(engine);
+  material.baseColor.set(0.04, 0.42, 0.45, 1);
+  material.shininess = 128;
+
+  const entity = rootEntity.createChild();
+  const renderer = entity.addComponent(MeshRenderer);
+  entity.transform.position = position;
+  entity.transform.rotationQuaternion = rotation;
+  renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
+  renderer.setMaterial(material);
+
+  const physicsPlane = new PlaneColliderShape();
+  physicsPlane.setPosition(0, 0.1, 0);
+  const planeCollider = entity.addComponent(StaticCollider);
+  planeCollider.addShape(physicsPlane);
+
+  return entity;
+}
+
+//--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
   engine.physicsManager.initialize(PhysXPhysics);
@@ -134,24 +156,3 @@ PhysXPhysics.initialize().then(() => {
   // Run engine
   engine.run();
 });
-
-function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
-  const engine = rootEntity.engine;
-  const material = new BlinnPhongMaterial(engine);
-  material.baseColor.set(0.04, 0.42, 0.45, 1);
-  material.shininess = 128;
-
-  const entity = rootEntity.createChild();
-  const renderer = entity.addComponent(MeshRenderer);
-  entity.transform.position = position;
-  entity.transform.rotationQuaternion = rotation;
-  renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
-  renderer.setMaterial(material);
-
-  const physicsPlane = new PlaneColliderShape();
-  physicsPlane.setPosition(0, 0.1, 0);
-  const planeCollider = entity.addComponent(StaticCollider);
-  planeCollider.addShape(physicsPlane);
-
-  return entity;
-}
