@@ -4,32 +4,31 @@
  */
 
 import {
-  WebGLEngine,
-  DynamicCollider,
-  BoxColliderShape,
-  Vector3,
-  MeshRenderer,
   BlinnPhongMaterial,
-  PrimitiveMesh,
+  BoxColliderShape,
   Camera,
-  DirectLight,
-  Quaternion,
-  Entity,
   Collider,
+  Color,
+  DirectLight,
+  DynamicCollider,
+  Entity,
   FixedJoint,
-  SpringJoint,
-  SphereColliderShape,
-  Script,
-  Keys,
-  HingeJoint,
-  TextRenderer,
   Font,
-  Color
+  HingeJoint,
+  MeshRenderer,
+  PointerButton,
+  PrimitiveMesh,
+  Quaternion,
+  Ray,
+  Script,
+  SphereColliderShape,
+  SpringJoint,
+  TextRenderer,
+  Vector3,
+  WebGLEngine
 } from "oasis-engine";
 
-import {
-  PhysXPhysics
-} from "@oasis-engine/physics-physx";
+import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 function createText(
   rootEntity: Entity,
@@ -99,7 +98,7 @@ function createChain(rootEntity: Entity, position: Vector3, rotation: Quaternion
 }
 
 function createSpring(rootEntity: Entity, position: Vector3, rotation: Quaternion) {
-  const currentEntity = addBox(rootEntity, new Vector3(8, 1, 1), position, rotation);
+  const currentEntity = addBox(rootEntity, new Vector3(2, 2, 1), position, rotation);
   const springJoint = currentEntity.addComponent(SpringJoint);
   springJoint.connectedAnchor = position;
   springJoint.swingOffset = new Vector3(0, 1, 0);
@@ -138,16 +137,22 @@ function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotati
 }
 
 class ShootScript extends Script {
-  private _dir = new Vector3();
+  ray = new Ray();
+  position = new Vector3();
+  rotation = new Quaternion();
+  camera: Camera;
+
+  onAwake() {
+    this.camera = this.entity.getComponent(Camera);
+  }
 
   onUpdate(deltaTime: number) {
-    const transform = this.entity.transform;
-    const dir = this._dir;
-    transform.getWorldForward(this._dir);
-    dir.scale(50);
-
-    if (this.engine.inputManager.isKeyDown(Keys.Space)) {
-      addSphere(this.entity, 0.5, transform.worldPosition, transform.worldRotationQuaternion, dir);
+    const ray = this.ray;
+    const inputManager = this.engine.inputManager;
+    if (inputManager.isPointerDown(PointerButton.Primary)) {
+      this.camera.screenPointToRay(inputManager.pointerPosition, ray);
+      ray.direction.scale(50);
+      addSphere(this.entity, 0.5, this.position, this.rotation, ray.direction);
     }
   }
 }
@@ -163,8 +168,8 @@ PhysXPhysics.initialize().then(() => {
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
 
   createText(rootEntity, new Vector3(-5, 5), 50);
-  createChain(rootEntity, new Vector3(6.0, 10.0, 0.0), new Quaternion(), 10, 2.0);
-  createSpring(rootEntity, new Vector3(2.0, 10.0, 1.0), new Quaternion());
+  createChain(rootEntity, new Vector3(8.0, 10.0, 0.0), new Quaternion(), 10, 2.0);
+  createSpring(rootEntity, new Vector3(-4.0, 10.0, 1.0), new Quaternion());
   createHinge(rootEntity, new Vector3(0, 0, 0), new Quaternion());
 
   // init camera
