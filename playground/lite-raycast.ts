@@ -16,7 +16,7 @@ import {
   Vector2,
   Color,
   PointLight,
-  WebGLEngine, Script, PointerButton
+  WebGLEngine, Script, PointerButton, Vector3, TextRenderer, Font
 } from "oasis-engine";
 import { OrbitControl } from "oasis-engine-toolkit";
 
@@ -73,6 +73,14 @@ cameraEntity.addComponent(Camera);
 cameraEntity.transform.setPosition(10, 10, 10);
 cameraEntity.addComponent(OrbitControl);
 cameraEntity.addComponent(Raycast);
+
+const entity = cameraEntity.createChild("text");
+entity.transform.position = new Vector3(0, 3.5, -10);
+const renderer = entity.addComponent(TextRenderer);
+renderer.color = new Color();
+renderer.text = "Use mouse to click the entity";
+renderer.font = Font.createFromOS(entity.engine, "Arial");
+renderer.fontSize = 40;
 
 // init point light
 const lightEntity = rootEntity.createChild("light");

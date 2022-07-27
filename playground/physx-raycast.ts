@@ -23,7 +23,7 @@ import {
   Vector3,
   DirectLight,
   Script,
-  PointerButton
+  PointerButton, TextRenderer, Color, Font
 } from "oasis-engine";
 import {OrbitControl} from "oasis-engine-toolkit";
 
@@ -230,6 +230,14 @@ PhysXPhysics.initialize().then(() => {
   cameraEntity.transform.lookAt(new Vector3());
   cameraEntity.addComponent(OrbitControl);
   cameraEntity.addComponent(Raycast);
+
+  const entity = cameraEntity.createChild("text");
+  entity.transform.position = new Vector3(0, 3.5, -10);
+  const renderer = entity.addComponent(TextRenderer);
+  renderer.color = new Color();
+  renderer.text = "Use mouse to click the entity";
+  renderer.font = Font.createFromOS(entity.engine, "Arial");
+  renderer.fontSize = 40;
 
   // init light
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);

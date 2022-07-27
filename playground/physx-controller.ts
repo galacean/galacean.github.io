@@ -3,7 +3,7 @@
  * @category Physics
  */
 
-import { OrbitControl } from "oasis-engine-toolkit";
+import {OrbitControl} from "oasis-engine-toolkit";
 import {
   AmbientLight,
   AnimationClip,
@@ -22,7 +22,6 @@ import {
   DirectLight,
   Entity, Font,
   GLTFResource,
-  InputManager,
   Keys,
   Logger,
   Matrix,
@@ -89,14 +88,6 @@ class AnimationState {
     if (this._state === "Landing") {
       this._state = "Idle";
     }
-  }
-}
-
-InputManager.prototype.isKeyHeldDown = function (key?: Keys): boolean {
-  if (key === undefined) {
-    return this._keyboardManager._curFrameHeldDownList.length > 0;
-  } else {
-    return this._keyboardManager._curHeldDownKeyToIndexMap[key] != null;
   }
 }
 
@@ -207,6 +198,106 @@ class ControllerScript extends Script {
   }
 }
 
+function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+  mtl.renderFace = RenderFace.Double;
+  const planeEntity = rootEntity.createChild();
+
+  const renderer = planeEntity.addComponent(MeshRenderer);
+  renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
+  renderer.setMaterial(mtl);
+  planeEntity.transform.position = position;
+  planeEntity.transform.rotationQuaternion = rotation;
+
+  const physicsPlane = new PlaneColliderShape();
+  physicsPlane.isTrigger = false;
+  const planeCollider = planeEntity.addComponent(StaticCollider);
+  planeCollider.addShape(physicsPlane);
+
+  return planeEntity;
+}
+
+function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.roughness = 0;
+  mtl.baseColor.set(1, 1, 0, 1.0);
+  const boxEntity = rootEntity.createChild();
+  const renderer = boxEntity.addComponent(MeshRenderer);
+
+  renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
+  renderer.setMaterial(mtl);
+  boxEntity.transform.position = position;
+  boxEntity.transform.rotationQuaternion = rotation;
+
+  const physicsBox = new BoxColliderShape();
+  physicsBox.size = size;
+  physicsBox.isTrigger = false;
+  const boxCollider = boxEntity.addComponent(StaticCollider);
+  boxCollider.addShape(physicsBox);
+
+  return boxEntity;
+}
+
+function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.roughness = 0.5;
+  mtl.baseColor.set(0.9, 0.9, 0.9, 1.0);
+  const mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
+
+  const stairEntity = rootEntity.createChild();
+  stairEntity.transform.position = position;
+  stairEntity.transform.rotationQuaternion = rotation;
+  const boxCollider = stairEntity.addComponent(StaticCollider);
+  {
+    const level = stairEntity.createChild();
+    const renderer = level.addComponent(MeshRenderer);
+    renderer.mesh = mesh;
+    renderer.setMaterial(mtl);
+    const physicsBox = new BoxColliderShape();
+    physicsBox.size = size;
+    boxCollider.addShape(physicsBox);
+  }
+
+  {
+    const level = stairEntity.createChild();
+    level.transform.setPosition(0, 0.3, 0.5)
+    const renderer = level.addComponent(MeshRenderer);
+    renderer.mesh = mesh;
+    renderer.setMaterial(mtl);
+    const physicsBox = new BoxColliderShape();
+    physicsBox.size = size;
+    physicsBox.setPosition(0, 0.3, 0.5)
+    boxCollider.addShape(physicsBox);
+  }
+
+  {
+    const level = stairEntity.createChild();
+    level.transform.setPosition(0, 0.6, 1)
+    const renderer = level.addComponent(MeshRenderer);
+    renderer.mesh = mesh;
+    renderer.setMaterial(mtl);
+    const physicsBox = new BoxColliderShape();
+    physicsBox.size = size;
+    physicsBox.setPosition(0, 0.6, 1)
+    boxCollider.addShape(physicsBox);
+  }
+
+  {
+    const level = stairEntity.createChild();
+    level.transform.setPosition(0, 0.9, 1.5)
+    const renderer = level.addComponent(MeshRenderer);
+    renderer.mesh = mesh;
+    renderer.setMaterial(mtl);
+    const physicsBox = new BoxColliderShape();
+    physicsBox.size = size;
+    physicsBox.setPosition(0, 0.9, 1.5)
+    boxCollider.addShape(physicsBox);
+  }
+  return stairEntity;
+}
+
+//----------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
   engine.physicsManager.initialize(PhysXPhysics);
@@ -242,112 +333,11 @@ PhysXPhysics.initialize().then(() => {
   sky.material = skyMaterial;
   sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
-  function addPlane(size: Vector2, position: Vector3, rotation: Quaternion): Entity {
-    const mtl = new PBRMaterial(engine);
-    mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
-    mtl.renderFace = RenderFace.Double;
-    const planeEntity = rootEntity.createChild();
-
-    const renderer = planeEntity.addComponent(MeshRenderer);
-    renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
-    renderer.setMaterial(mtl);
-    planeEntity.transform.position = position;
-    planeEntity.transform.rotationQuaternion = rotation;
-
-    const physicsPlane = new PlaneColliderShape();
-    physicsPlane.isTrigger = false;
-    const planeCollider = planeEntity.addComponent(StaticCollider);
-    planeCollider.addShape(physicsPlane);
-
-    return planeEntity;
-  }
-
-  addPlane(new Vector2(10, 6), new Vector3(), new Quaternion);
-
-  function addBox(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
-    const mtl = new PBRMaterial(engine);
-    mtl.roughness = 0;
-    mtl.baseColor.set(1, 1, 0, 1.0);
-    const boxEntity = rootEntity.createChild();
-    const renderer = boxEntity.addComponent(MeshRenderer);
-
-    renderer.mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
-    renderer.setMaterial(mtl);
-    boxEntity.transform.position = position;
-    boxEntity.transform.rotationQuaternion = rotation;
-
-    const physicsBox = new BoxColliderShape();
-    physicsBox.size = size;
-    physicsBox.isTrigger = false;
-    const boxCollider = boxEntity.addComponent(StaticCollider);
-    boxCollider.addShape(physicsBox);
-
-    return boxEntity;
-  }
-
+  addPlane(rootEntity, new Vector2(10, 6), new Vector3(), new Quaternion);
   const slope = new Quaternion();
   Quaternion.rotationEuler(45, 0, 0, slope);
-  addBox(new Vector3(4, 4, 0.01), new Vector3(0, 0, 1), slope.normalize());
-
-  function addStair(size: Vector3, position: Vector3, rotation: Quaternion): Entity {
-    const mtl = new PBRMaterial(engine);
-    mtl.roughness = 0.5;
-    mtl.baseColor.set(0.9, 0.9, 0.9, 1.0);
-    const mesh = PrimitiveMesh.createCuboid(engine, size.x, size.y, size.z);
-
-    const stairEntity = rootEntity.createChild();
-    stairEntity.transform.position = position;
-    stairEntity.transform.rotationQuaternion = rotation;
-    const boxCollider = stairEntity.addComponent(StaticCollider);
-    {
-      const level = stairEntity.createChild();
-      const renderer = level.addComponent(MeshRenderer);
-      renderer.mesh = mesh;
-      renderer.setMaterial(mtl);
-      const physicsBox = new BoxColliderShape();
-      physicsBox.size = size;
-      boxCollider.addShape(physicsBox);
-    }
-
-    {
-      const level = stairEntity.createChild();
-      level.transform.setPosition(0, 0.3, 0.5)
-      const renderer = level.addComponent(MeshRenderer);
-      renderer.mesh = mesh;
-      renderer.setMaterial(mtl);
-      const physicsBox = new BoxColliderShape();
-      physicsBox.size = size;
-      physicsBox.setPosition(0, 0.3, 0.5)
-      boxCollider.addShape(physicsBox);
-    }
-
-    {
-      const level = stairEntity.createChild();
-      level.transform.setPosition(0, 0.6, 1)
-      const renderer = level.addComponent(MeshRenderer);
-      renderer.mesh = mesh;
-      renderer.setMaterial(mtl);
-      const physicsBox = new BoxColliderShape();
-      physicsBox.size = size;
-      physicsBox.setPosition(0, 0.6, 1)
-      boxCollider.addShape(physicsBox);
-    }
-
-    {
-      const level = stairEntity.createChild();
-      level.transform.setPosition(0, 0.9, 1.5)
-      const renderer = level.addComponent(MeshRenderer);
-      renderer.mesh = mesh;
-      renderer.setMaterial(mtl);
-      const physicsBox = new BoxColliderShape();
-      physicsBox.size = size;
-      physicsBox.setPosition(0, 0.9, 1.5)
-      boxCollider.addShape(physicsBox);
-    }
-    return stairEntity;
-  }
-
-  addStair(new Vector3(1, 0.3, 0.5), new Vector3(3, 0, 1), new Quaternion());
+  addBox(rootEntity, new Vector3(4, 4, 0.01), new Vector3(0, 0, 1), slope.normalize());
+  addStair(rootEntity, new Vector3(1, 0.3, 0.5), new Vector3(3, 0, 1), new Quaternion());
 
   engine.resourceManager
     .load<AmbientLight>({
