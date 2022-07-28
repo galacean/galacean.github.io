@@ -53,7 +53,7 @@ engine.resourceManager
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*H7nMRY2SuWcAAAAAAAAAAAAAARQnAQ"
     },
     {
-      type: AssetType.Perfab,
+      type: AssetType.Prefab,
       url: "https://gw.alipayobjects.com/os/bmw-prod/72a8e335-01da-4234-9e81-5f8b56464044.gltf"
     }
   ])
