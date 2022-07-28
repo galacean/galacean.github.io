@@ -48,13 +48,24 @@ animator.animatorController = new AnimatorController()；
 animator.play("run");
 ```
 
+如果需要在动画中的某一时刻开始播放可以通过以下方式
+
+```typescript
+const layerIndex = 0;
+const normalizedTimeOffset = 0.5; // 归一化的时间
+animator.play("run", layerIndex, normalizedTimeOffset);
+```
+
 ### 获取当前在播放的动画状态
 
 你可以使用 [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) 方法来获取当前正在播放的AnimatorState。参数为动画状态所在层的序号`layerIndex`, 详见[API文档](${api}core/Animator#getCurrentAnimatorState)。获取之后可以设置动画状态的属性，比如将默认的循环播放改为一次。
 
 ```typescript
 const currentState = animator.getCurrentAnimatorState(0);
+// 播放一次
 currentState.wrapMode = WrapMode.Once;
+// 循环播放
+currentState.wrapMode = WrapMode.Loop;
 ```
 
 ### 获取动画状态
@@ -64,6 +75,8 @@ currentState.wrapMode = WrapMode.Once;
 ```typescript
 const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
 state.wrapMode = WrapMode.Once;
+// 循环播放
+state.wrapMode = WrapMode.Loop;
 ```
 
 ### 动画过渡
