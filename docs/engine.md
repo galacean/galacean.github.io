@@ -56,7 +56,10 @@ Similarly, you can use `webGLMode` to control WebGL1/2, `antialias` to control a
 | [resourceManager](${api}core/Engine#resourceManager) | Resource management. |
 | [sceneManager](${api}core/Engine#sceneManager) | Scene management. _Engine_ is the main controller, _Scene_ is a scene unit, which can facilitate the entity management of large scenes; _Camera_ is mounted as a component under an entity in _Scene_, and it can be selected as a camera in reality. Take any entity in the _Scene_, and finally render it to an area on the screen or off-screen rendering. |
 
-If users use Oasis Engine to make high-speed games such as FPS, they may encounter screen tearing, inaccurate collision detection, etc. This is because the refresh rate of _Engine_ cannot keep up with the screen refresh rate. The user can turn off the vertical synchronization, that is, set [vSyncCount](${api}core/Engine#vSyncCount) to 0, and then set [targetFrameRate](${api}core/Engine#targetFrameRate) to the desired frame value, such as 120 120 frames, which means refreshing 120 times per second.
+### Frame rate
+
+By default, the engine adopts the vertical synchronization mode and uses [vSyncCount](${api}core/Engine#vSyncCount)  to control the rendering refresh rate. Only in this mode can the rendered frame wait for the vertical synchronization signal of the screen, [vSyncCount](${api}core/Engine#vSyncCount)  represents the expected number of screen synchronization signals between rendered frames. The default value is 1, and the value of this attribute must be an integer, For example, if we want to render 30 frames per second on a device with a screen refresh rate of 60 frames, we can set this value to 2.
+In addition, the user can also turn off vertical synchronization, that is, set [vsynccount] (${api}core/engine\vsynccount) to 0, and then set [targetFrameRate](${api}core/Engine#targetFrameRate) to the desired frame value. The rendering in this mode does not consider the vertical synchronization signal, but, for example, 120 indicates 120 frames, that is, it is expected to refresh 120 times per second.
 
 ```typescript
 // Vertical sync
@@ -70,8 +73,9 @@ engine.targetFrameRate = 120;
 
 ## Functions
 
-| Function Name                      | Interpretation |
-| ---------------------------------- | -------------- |
-| [run](${api}core/Engine#run)       | Start loop     |
-| [pause](${api}core/Engine#pause)   | Pause loop     |
-| [resume](${api}core/Engine#resume) | Resume loop    |
+| Function Name                        | Interpretation     |
+| ------------------------------------ | ------------------ |
+| [run](${api}core/Engine#run)         | Start engine loop  |
+| [pause](${api}core/Engine#pause)     | Pause  engine loop |
+| [resume](${api}core/Engine#resume)   | Resume engine loop |
+| [destroy](${api}core/Engine#destroy) | destroy the engine |
