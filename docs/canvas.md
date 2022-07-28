@@ -17,6 +17,8 @@ Insert a `<canvas>` tag in HTML and specify an id:
 <canvas id="canvas" style="width: 500px; height: 500px"/>
 ```
 
+> Developers should check the height and width of the canvas to avoid the value of **0**, which will cause the rendering to fail.
+
 When creating a WebGLEngine instance, a WebCanvas instance is automatically created:
 
 ```typescript
@@ -36,7 +38,7 @@ const engine = new Engine(webCanvas,webGLRenderer);
 
 ### Basic adaptation
 
-The following code will resize the canvas according to the css style of the canvas element:
+The following code will resize the canvas according to the css style of the canvas element. When the display size of the canvas changes(for example, when the browser window changes), the rendering may be stretched or compressed, `resizeByClientSize` can be called to return to normal.
 
 ```typescript
 engine.canvas.resizeByClientSize();

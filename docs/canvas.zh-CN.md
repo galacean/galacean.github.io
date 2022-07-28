@@ -17,6 +17,8 @@ Oasis Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl/We
 <canvas id="canvas" style="width: 500px; height: 500px"/>
 ```
 
+> 开发者要注意检查 canvas 的高度和宽度，避免出现高度或宽度的值为 **0** 导致渲染不出来。 
+
 创建 WebGLEngine 实例的时候会自动创建一个 WebCanvas 实例：
 
 ```typescript
@@ -36,7 +38,7 @@ const engine = new Engine(webCanvas,webGLRenderer);
 
 ### 基础适配
 
-以下代码会根据 canvas 元素的 css 样式自动适配：
+以下代码会根据 canvas 元素的 css 样式自动适配。当画布的显示尺寸发生变化时（比如浏览器窗口发生变化时），画面可能出现拉伸或压缩，也可以调用`resizeByClientSize` 来恢复正常。
 
 ```typescript
 engine.canvas.resizeByClientSize();
