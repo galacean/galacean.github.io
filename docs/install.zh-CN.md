@@ -54,7 +54,7 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 
 为了保证引擎的轻量化，我们将引擎包通过 monorepo 的形式划分为：
 
-![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iQkKT7vurI4AAAAAAAAAAAAAARQnAQ)
+![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*oqRcS6cRNP8AAAAAAAAAAAAAARQnAQ)
 
 ### 引擎包
 引擎核心架构逻辑和核心功能由 oasis-engine 提供，包含以下子包：

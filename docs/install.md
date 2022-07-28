@@ -54,7 +54,7 @@ If you just want to quickly create a project, it is recommended that you use [cr
 
 The core architecture logic and core functions of the engine are provided by oasis engine, including the following sub packages:
 
-![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*iQkKT7vurI4AAAAAAAAAAAAAARQnAQ)
+![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*oqRcS6cRNP8AAAAAAAAAAAAAARQnAQ)
 
 ### Engine package
 Engine core architecture logic and core functions ([oasis-engine](https://www.npmjs.com/package/oasis-engine)), including the following sub-packages:
