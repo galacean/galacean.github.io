@@ -74,6 +74,7 @@ currentState.wrapMode = WrapMode.Loop;
 
 ```typescript
 const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+// 播放一次
 state.wrapMode = WrapMode.Once;
 // 循环播放
 state.wrapMode = WrapMode.Loop;
@@ -109,43 +110,43 @@ clip.addEvent(event);
 ![image-20210830233452874](https://gw.alipayobjects.com/zos/OasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
 
 #### [Animator](${api}core/Animator)
-动画系统的控制器组件，用于控制动画的播放。
+动画控制器组件，用于控制动画的播放。Animator 组件读取 AnimatorController 作为动画数据。通过 AnimatorControllerParameter 设置该 Animator 中的变量。
 
 #### [AnimatorController](${api}core/AnimatorController)
-用于存储动画控制组件的动画数据。
+用于存储 Animator 组件的动画数据。一个 AnimatorController 包含多个 AnimatorControllerLayer，用于分层播放或动画叠加。
 
 #### AnimatorControllerParameter（开发中）
-动画控制器中使用的变量，用于在动画状态机切换状态使用。
+动画控制器中使用的变量，使用户可以通过在脚本中改变变量以控制动画状态的切换。
 
 #### [AnimatorControllerLayer](${api}core/AnimatorControllerLayer)
-存储该层的动画状态机数据，混合模式以及混合的权重。
+存储该层的动画状态机数据，混合模式以及混合的权重。多个 AnimatorControllerLayer 同时播放时可以通过设置 `blendingMode = AnimatorLayerBlendingMode.Additive` 实现动画叠加的效果。
 
 #### [AnimatorStateMachine](${api}core/AnimatorStateMachine)
-动画状态机，用于控制动画状态的播放逻辑，每个动画状态绑定一个AnimationClip
+每个 AnimatorControllerLayer 中有一个 AnimatorStateMachine，用于控制动画状态的播放及状态间的切换及过渡。
 
 #### [BlendingMode](${api}core/AnimatorControllerLayer#blendingMode)
-动画层的混合模式
+动画层的混合模式，默认为 `AnimatorLayerBlendingMode.Override` 既覆盖模式，可以通过将下面的层设置为 `AnimatorLayerBlendingMode.Additive` 实现动画叠加的效果。
 
 #### [AnimatorState](${api}core/AnimatorState)
-AnimatorState是动画状态机的基本构成。 每个状态都包含一个 AnimationClip，当角色处于该状态时，则会播放该AnimationClip。
+AnimatorState 是 AnimatorStateMachine 的基本构成。可以控制 AnimationClip 的速度，是否循环，开始结束时间。每个 AnimatorState 需绑定一个 AnimationClip，当处于该状态时，则会播放该AnimationClip。
 
 #### [AnimatorTransition](${api}core/AnimatorTransition)
-AnimatorTransition定义了状态机何时以及如何从一个状态过渡到另一个状态。
+AnimatorTransition定义了状态机何时以及如何从一个状态过渡到另一个状态。通过它可以设置两个动画状态的过渡开始时间 `exitTime`，目标状态的开始时间 `offset` 及过渡时长 `duration`。
 
 #### [AnimationClip](${api}core/AnimationClip)
-动画片段，存储基于关键帧的动画。
+动画片段，存储设计师制作的基于关键帧的动画数据。一个 AnimationClip 一般对应一个模型的特定动作，每个 AnimationClip 包含多个 AnimationCurve。
 
 #### [AnimationCurve](${api}core/AnimationCurve)
-存储在指定时间计算的关键帧集合。
+一个模型拥有多个骨骼，模型动画中每个骨骼实体的指定属性的动画关键帧数据存储于 AnimationCurve 中。一个 AnimationCurve 中包含多个 Keyframe 既关键帧数据。
 
 #### [AnimationEvent](${api}core/AnimationEvent)
 AnimationEvent 可以让你在指定时间调用其同一实体绑定的脚本的回调函数.
 
 #### [Keyframe](${api}core/KeyFrame)
-动画关键帧
+存储动画关键帧数据，既指定时间实体的属性的值应是多少。
 
 #### [Interpolation](${api}core/AnimationCurve#interpolation)
-动画曲线中关键帧的插值方式。
+动画曲线中关键帧的插值方式。既当时间在两个关键帧间时，属性的值该如何计算。
 
 ### 使用AnimatorTransition做动画过渡
 你可以通过为AnimatorState添加AnimatorTransition实现动画状态间的过渡。
