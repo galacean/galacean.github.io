@@ -16,6 +16,13 @@ It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as 
 | [2D Texture](${docs}texture-2d) | The most commonly used art resource, which uses two-dimensional UV coordinates for sampling |
 | [Cube Texture](${docs}texture-cube) | A cube texture is composed of 6 2D textures |
 | 2D Texture Arrays | Occupies only one texture unit, which is very suitable for the need to switch texture atlases |
+
+## Texture coordinates
+We need to use texture coordinates to sample textures in the fragment shader, which we generally call UV coordinates. The center of the picture can be sampled using (0.5, 0.5):
+```
+vec4 color = texture2D(u_texture, vec2(0.5, 0.5));
+```
+
 ## General properties
 
 After uploading the texture, we need to understand some basic properties of the texture:
@@ -73,7 +80,7 @@ texture.filterMode = TextureFilterMode.Bilinear;
 
 ### 3. Anisotropic level
 
-Anisotropic filtering technology can make the texture clearer when viewed at an oblique angle. As shown in the figure below, the end of the texture will become clearer as the anisotropic filtering level increases.
+Anisotropic filtering technology can make the texture clearer when viewed at an oblique angle. As shown in the figure below, the end of the texture will become clearer as the anisotropic filtering level increases. but please use it carefully, the larger the value, the greater the amount of GPU computation.
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*oqkqSJMAe7cAAAAAAAAAAAAAARQnAQ)
 
@@ -121,4 +128,11 @@ texture.setImageSource(img, 0, true); // 3th parameters
 ```typescript
 const texture = new Texture2D(engine, width, height);
 texture.setImageSource(img, 0, undefined, true); // 4th parameters
+```
+
+## Texture format
+The engine uses `TextureFormat.R8G8B8A8` as the texture format by default, that is, the red, blue, green and transparent channels each use 1 byte, and each channel is allowed to save the color value of the size of [0~255]. The engine supports configuring different texture formats. For details, please refer to [TextureFormat](${api}core/TextureFormat). For example, we don't need to use the transparent channel, that is, the A channel, then we can use `TextureFormat.R8G8B8`:
+
+```typescript
+const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8);
 ```
