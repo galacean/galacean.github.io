@@ -50,7 +50,7 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 ![npm-init](https://gw.alipayobjects.com/zos/OasisHub/b5bdc167-1d83-48a1-b826-bee43c2f1264/npm-init.gif)
 
 
-## 包
+## 包结构
 
 为了保证引擎的轻量化，我们将引擎包通过 monorepo 的形式划分为：
 
