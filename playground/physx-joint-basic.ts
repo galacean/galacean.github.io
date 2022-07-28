@@ -43,7 +43,7 @@ function createText(
   // Set text color
   renderer.color = new Color();
   // Set text to render
-  renderer.text = "Use `Space Key` to Shoot balls";
+  renderer.text = "Click Mouse to Shoot balls";
   // Set font with font family
   renderer.font = Font.createFromOS(entity.engine, "Arial");
   // Set font size
