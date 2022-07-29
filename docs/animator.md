@@ -50,7 +50,8 @@ If you need to start playing at a certain time in the animation, you can do the 
 
 ```typescript
 const layerIndex = 0;
-const normalizedTimeOffset = 0.5; // 归一化的时间
+// normalized time
+const normalizedTimeOffset = 0.5;
 animator.play("run", layerIndex, normalizedTimeOffset);
 ```
 
