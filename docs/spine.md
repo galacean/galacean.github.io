@@ -1,107 +1,91 @@
 ---
 order: 3
 title: Spine
-type: Animation
+type: Binary library
 ---
 
-Oasis Engine implements spine animation rendering through [BufferMesh](${docs}buffer-mesh).
+Spine animation is a kind of `2D skeleton animation` for game development. It can create animation by binding pictures to bones and control them.<br>
+Spine animation is excellent in `control` and `flexibility`, it also provide more efficient and concise workflow for art and design.
 
-> **PS**: The oasis spine runtime currently only supports spine 3.8 version and above.
+|  | Effects | Performance | Size | Flexibility | Complexity | Free |
+| --- | --- | --- | --- | --- | --- | --- |
+| Spine | Excellent | Excellent | Excellent | Excellent | Compliex | NO |
+| Lottie | Good | Good | Good | Good | Simple | YES |
+| Sequence | Bad | Bad | Bad | Bad | Simple | YES |
 
-<playground src="spine-animation.ts"></playground>
+Spine animation supports skin changing, blending and control animations with code.
 
-## Install
+## Preparation
 
-_@oasis-engine/spine_ is the second party package of Oasis Engine, you need to install it manually:
+### Designer
+Download spine editor and select version 3.8 or above.
+
+### Developer
+Add dependencies [@oasis-engine/spine](https://github.com/oasis-engine/engine-spine).
 
 ```bash
 npm i @oasis-engine/spine --save
 ```
 
 ## Usage
-### Resource loading
 
-When _@oasis-engine/spine_ is imported, the loader of the spine resource will be automatically registered on the [resourceManager](${api}core/Engine#resourceManager) of [engine](${api}core/Engine) . The spine animation resource can be loaded through the [load](${api}core/ResourceManager/#load) method of resourceManager.
+### Export Resource
+Export resource files via spine editor: 
+![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*jh0UTYlkKrIAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=xGebk&originHeight=1232&originWidth=1754&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-- When the passed parameter is url, the spine animation resource has the same baseUrl by default, and only the json file cdn needs to be passed.
-- When the passed parameter is the urls array, you need to pass the cdn addresses of the three resources json, atlas, image (png, jpg).
-- The resource type must be specified as spine.
+Oasis spine needs to use resource files of. JSON (or. Bin), Atlas, PNG on runtime. The file formats that can be used are as follows:
 
-After loading, a spine entity object will be returned synchronously, and the spine animation can be added to the scene directly through the `addChild` method.
+#### Export JSON
 
-```typescript
-const spineEntity = await engine.resourceManager.load(
-  {
-    url: 'Your spine animation file(.json or .bin).',
-    type: 'spine',
-  },
-  // {
-    // urls: [
-      // 'Your spine animation file(.json or .bin).',
-      // 'atlas file',
-      // 'texture image'
-    // ],
-    // type: 'spine',
-  // }
-);
+![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*VWQEQoiALSwAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=sIw42&originHeight=1342&originWidth=1726&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-root.addChild(spineEntity);
+#### Export Binary
 
-```
+![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*gs1HRId9wPcAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=q3yyW&originHeight=1180&originWidth=1710&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-### animation play
+After export, you will find resource files in three formats: JSON (or. Bin), Atlas and PNG in the target folder that Oasis spine can load and play the spine animation on runtime. It should be noted that oasis spine only supports loading a single texture at present, so when the map size is too large, it is neccssary to scale the image resources to control the number of maps in one.
 
-When you need to play the animation, you need to get the SpineAnimation component on the spine entity. The SpineAnimation component exposes [AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) and [Skeleton](http://zh.esotericsoftware.com/spine-api-reference#Skeleton) interfaces , you can use spine-core native API to play animation.For example:
+For detailed configuration of file export, please refer to the official file of spine：
+[http://zh.esotericsoftware.com/spine-export](http://zh.esotericsoftware.com/spine-export/)
 
-```typescript
-import { SpineAnimation } from '@oasis-engine/spine';
+### Import Resource
 
-const spineEntity = await engine.resourceManager.load(
-  {
-    url: 'Your spine animation file(.json or .bin).',
-    type: 'spine',
-  },
-);
-root.addChild(spineEntity);
+When the _@oasis-engine/spine_ is imported, the resource loader for the spine resource will be automatically registered on [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) at [engine]($%7Bapi%7Dcore/Engine) [resourceManager].
+Through the [load]($%7Bapi%7Dcore/ResourceManager/#load) method of ResourceManager, the spine animation resources can be loaded.
 
-const spineAnimation = spineEntity.getComponent(SpineAnimation);
-spineAnimation.state.setAnimation(0, 'your_animation_name', true);
+- When the transfer parameter is URL, the default spine animation resources have the same baseurl, just pass the CDN of JSON (or bin) file.
 
-```
+- If you want to pass three parameters (jspng, jspng), then you need to pass three parameters. 
 
-### Slot split
-The spine component merges all the vertices of the spine animation to generate a single `Mesh`. Use the `addSeparateSlot` method to split a slot by slot name into separate `SubMesh`, and then use the `hackSeparateSlotTexture` method to replace the texture of the submesh material.
-
-```
-// hackTexture: another texture
-const spineAnimation = spineEntity.getComponent(SpineAnimation);
-spineAnimation.addSeparateSlot('slot_name');
-spineAnimation.hackSeparateSlotTexture('slot_name', hackTexture);
-
-```
-The effect of skin mashup can be achieved through the above methods:
-<playground src="spine-hack-slot-texture.ts"></playground>
-
-### Common QA
-- How to obtain spine resources?
-The required json, atlas, png files can be exported through the export function of the spine editor.
-You can refer to the official spine document for export function: http://zh.esotericsoftware.com/spine-export/
-- How to perform animation control?
-You can refer to the document: http://zh.esotericsoftware.com/spine-api-reference#AnimationState
-Here are a few common examples:
-```
-// play animation once
-spineAnimation.state.setAnimation(0, 'your_animation_name', false);
-// looping animation
-spineAnimation.state.setAnimation(0, 'your_animation_name', true);
-// pause animation
-spineAnimation.state.timeScale = 0;
-// Looping Animation B after Animation A end
-spineAnimation.state.setAnimation(0, 'animationA', false);
-spineAnimation.state.addAnimation(0, 'animationA', true, 0);
-```
-The events and callbacks of spine animation can refer to the document:
-http://esotericsoftware.com/spine-unity-events
+- The resource's type must be specified as spine.
 
 
+After loading, a spine entity object will be returned synchronously, and the spine animation can be added to the scene directly through the addchild method.
 
+<playground src="spine-animation.ts"></playground>
+
+### Animation Play
+
+When you need to play the animation, you need to get the SpineAnimation component on the spine entity. SpineAnimation component external exposure [animationstate](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) And [skeleton](http://zh.esotericsoftware.com/spine-api-reference#Skeleton) Interface that can play animation with the help of spin core native API.
+
+#### Animation Control
+
+Through the animation state object exposed by SpineAnimation, animation control can be realized, such as loop playing animation,pause animation playback,etc.Here you can refer to the following example.
+
+For detailed API. please refer to the official documentation of AnimationState: [http://zh.esotericsoftware.com/spine-api-reference#AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState)
+
+#### Animation Event
+
+spine also provides some events for users to develop.The mechanism of animation events is shown in the following figure:
+![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*fC1NT5tTET8AAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=JUZeZ&originHeight=280&originWidth=640&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
+
+More Detail:
+[http://esotericsoftware.com/spine-unity-events](http://esotericsoftware.com/spine-unity-events)
+
+Through the addListener method of animationstate,you can add callback methods when different events are triggered.
+
+### Slot Split
+
+The spine component will merge all the vertices of the spine animation to generate a `Mesh`. The slot with the specified name can be split into separate `Submesh` by using the `addSeparateSlot` method, and then the material of the split slot can be replaced by the `hackSeparateSlotTexture` method.
+
+<playground src="spine-hack-slot-texture.ts"></playground> 
