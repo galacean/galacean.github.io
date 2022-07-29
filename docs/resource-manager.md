@@ -51,6 +51,11 @@ this.engine.resourceManager.cancelNotLoaded("test.gltf");
 
 > Note: Currently, unloading unfinished resources will throw an exception.
 
+
+### 4. Get loaded resource
+
+Loaded resources will be cached in *ResourceManager*, to get the loaded assets, you should call the `load` method again.
+
 ### 4. Resource Release
 
 In order to avoid reloading resources, when the resources are loaded, they will be cached in _ResourceManager_. The cache itself takes up memory and video memory. When developers no longer need the cached content, they need to manually release the cached content.
@@ -126,7 +131,6 @@ engine.resourceManager
 ```
 
 HDR Loader use [AssetType.HDR](${api}core/AssetType#HDR) to load texture with .HDR format，The resulting product is also a cube texture.
-
 
 ### 4. Environment
 Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products `*.env` file.
