@@ -10,7 +10,6 @@ type: 核心
 
 ```typescript
 const lightEntity = rootEntity.createChild("light");
-
 const directLight = lightEntity.addComponent(DirectLight);
 directLight.color = new Color(0.3, 0.3, 1);
 directLight.intensity = 1;
@@ -37,7 +36,7 @@ directLight.intensity = 1;
 
 #### 创建新实体
 
-在[场景](${docs}script-cn)中已经介绍了如何获取激活场景。在新场景中，我们通常会先添加场景根节点
+在[场景](${docs}script-cn)中已经介绍了如何获取激活场景。在新场景中，我们通常会先添加根节点：
 
 ```typescript
 const scene = engine.sceneManager.activeScene;
@@ -47,26 +46,25 @@ const rootEntity = scene.createRootEntity();
 一般以添加子实体的方式创建新实体：
 
 ```typescript
-const newEntity = rootEntity.createChild("first");
+const newEntity = rootEntity.createChild("firstEntity");
 ```
 
-当然，也可以直接创建实体，但这种实体是游离，在关联在层级树上的实体之前不显示在场景中
+当然，也可以直接创建实体。但这种实体是游离的，在关联层级树上的实体之前不显示在场景中。
 
 ```typescript
-const newEntity = new Entity(engine, "first");
-
+const newEntity = new Entity(engine, "firstEntity");
 rootEntity.addChild(newEntity);
 ```
 
 #### 删除实体
 
-在某个实体在场景中不再需要时，我们可以删除它
+某个实体在场景中不再需要时，我们可以删除它:
 
 ```typescript
 rootEntity.removeChild(newEntity);
 ```
 
-值得注意的是，这种方式仅仅是将物体从层级树上释放出来不在场景中显示，如果彻底销毁还需要
+值得注意的是，这种方式仅仅是将物体从层级树上释放出来，不在场景中显示。如果彻底销毁还需要：
 
 ```typescript
 newEntity.destroy();
@@ -74,28 +72,28 @@ newEntity.destroy();
 
 #### 查找子实体
 
-在已知父实体的情况下，通常我们可以通过父实体来获得所有的子物体：
+在已知父实体的情况下，通常我们通过父实体来获得子实体：
 
 ```typescript
-const childrenEntity = this.entity.children;
+const childrenEntity = newEntity.children;
 ```
 
 如果明确知道子实体在父实体中的 _index_ 可以直接使用 [getChild](${api}core/Entity#getChild)：
 
 ```typescript
-this.entity.getChild(0);
+newEntity.getChild(0);
 ```
 
-如果不清楚子实体的 index，可以使用 [findByName](${api}core/Entity#findByName) 通过实体的名字找到它, `findByName` 不仅会查找子实体，还会查找孙子实体
+如果不清楚子实体的 index，可以使用 [findByName](${api}core/Entity#findByName) 通过名字查找。`findByName` 不仅会查找子实体，还会查找孙子实体。
 
 ```typescript
-this.entity.findByName("model");
+newEntity.findByName("model");
 ```
 
 如果有同名的实体可以使用 [findByPath](${api}core/Entity#findByPath) 传入路径进行逐级查找，使用此 API 也会一定程度上提高查找效率。
 
 ```typescript
-this.entity.findByPath("parent/child/grandson");
+newEntity.findByPath("parent/child/grandson");
 ```
 
 #### 全局实体查找
@@ -112,24 +110,31 @@ Entity.findByPath("container/model");
 
 ### 组件
 
-#### 查找实体组件
+#### 查找实体上的组件
 
-当我们需要获取某一实体上的组件， [getComponent](${api}core/Entity#getComponent) 这个 API 会帮你查找你要的组件。
+当我们需要获取某一实体上的组件， [getComponent](${api}core/Entity#getComponent) 这个 API 会帮你查找目标组件。
 
 ```typescript
-const component = this.entity.getComponent(Animation);
+const component = newEntity.getComponent(Animation);
 ```
 
-有些时候可能会有多个同一类型的组件，上面的方法只会返回第一个找到的组件，如果需要找到所有组件可以用 [getComponents](${api}core/Entity#getComponents)。
+有些时候可能会有多个同一类型的组件，而上面的方法只会返回第一个找到的组件。如果需要找到所有组件可以用 [getComponents](${api}core/Entity#getComponents)：
 
 ```typescript
 const components = [];
-this.entity.getComponents(Animation, components);
+newEntity.getComponents(Animation, components);
+```
+
+在 glTF 这种资产得到的实体里，我们可能不知道目标组件位于哪个实体，这时可以使用[getComponentsIncludeChildren](${api}core/Entity#getComponentsIncludeChildren)进行查找。
+
+```typescript
+const components = [];
+newEntity.getComponentsIncludeChildren(Animation, components);
 ```
 
 #### 获得组件所在的实体
 
-继续开头添加组件的例子，可以直接获得组件所在的实体
+继续开头添加组件的例子。可以直接获得组件所在的实体：
 
 ```typescript
 const entity = directLight.entity;
@@ -137,7 +142,7 @@ const entity = directLight.entity;
 
 ### 状态
 
-暂时不使用某实体时，可以通过调用实体的 [isActive](${api}core/Entity#isActive) 停止激活。同时该实体下的组件被动 component.enabled = false
+暂时不使用某实体时，可以通过调用实体的 [isActive](${api}core/Entity#isActive) 停止激活。同时该实体下的组件被动`component.enabled = false`
 
 ```typescript
 newEntity.isActive = false;
