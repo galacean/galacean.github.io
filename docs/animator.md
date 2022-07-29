@@ -46,13 +46,24 @@ You can use the [play](${api}core/Animator#play) method to play the specified An
 animator.play("run");
 ```
 
+If you need to start playing at a certain time in the animation, you can do the following.
+
+```typescript
+const layerIndex = 0;
+const normalizedTimeOffset = 0.5; // 归一化的时间
+animator.play("run", layerIndex, normalizedTimeOffset);
+```
+
 ### Get the playing AnimatorState
 
 You can use the [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) method to get the AnimatorState currently playing. The parameter is the layer index `layerIndex` of the AnimatorState, see [API document](${api}core/Animator#getCurrentAnimatorState) for detail,then you can set the properties of the AnimationState, such as changing the default loop playback to one time.
 
 ```typescript
 const currentState = animator.getCurrentAnimatorState(0);
+// play once
 currentState.wrapMode = WrapMode.Once;
+// play loop
+currentState.wrapMode = WrapMode.Loop;
 ```
 
 ### Get the AnimatorState by name
@@ -61,7 +72,10 @@ You can get the specified AnimatorState as follows, refer to [API documentation]
 
 ```typescript
 const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+// play once
 state.wrapMode = WrapMode.Once;
+// play loop
+state.wrapMode = WrapMode.Loop;
 ```
 
 ### CrossFade
@@ -92,43 +106,43 @@ Before further introducing the usage method, let's briefly introduce the composi
 ![image-20210830233452874](https://gw.alipayobjects.com/zos/OasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
 
 #### [Animator](${api}core/Animator)
-The Animator component of the animation system, used to control the playback of the animation。
+Used to control the playback of animations. The Animator component reads the AnimatorController as animation data. Set the variables in this Animator via AnimatorControllerParameter.
 
 #### [AnimatorController](${api}core/AnimatorController)
-Used to store the data of the  Animator component.
+Used to store animation data for Animator components. An AnimatorController contains multiple AnimatorControllerLayer for layered playback or animation additive.
 
 #### AnimatorControllerParameter（In development）
-The variables used in the Animator are used to switch the state of the animation state machine.
+Parameters used in Animator that allow the user to control the switching of animation states by changing the parameters in the script.
 
 #### [AnimatorControllerLayer](${api}core/AnimatorControllerLayer)
-Store the animation state machine data, blending mode and blending weight of this layer.
+Stores the animation state machine data, blend mode, and blend weights for this layer. When multiple AnimatorControllerLayer are playing at the same time, the effect of animation additive can be achieved by setting `blendingMode = AnimatorLayerBlendingMode.Additive`.
 
 #### [AnimatorStateMachine](${api}core/AnimatorStateMachine)
-Animation state machine, used to control the playback logic of the animation state, each animation state contains an AnimationClip.
+There is an AnimatorStateMachine in each AnimatorControllerLayer, which is used to control the playback of AnimatorState and the switching and cross fade between states.
 
 #### [BlendingMode](${api}core/AnimatorControllerLayer#blendingMode)
-Blending mode of the animation layer
+The blending mode of the animation layer, the default is `AnimatorLayerBlendingMode.Override`, which is overlay mode. You can achieve the effect of animation additive by setting the next layer to `AnimatorLayerBlendingMode.Additive`.
 
 #### [AnimatorState](${api}core/AnimatorState)
-The AnimatorState is the basic structure of the state machine. Each AnimatorState contains an AnimationClip, when the character is in this state, the AnimationClip will be played.
+AnimatorState is the basic component of AnimatorStateMachine. You can control the speed of AnimationClip, whether to loop, start and end time. Each AnimatorState needs to bind an AnimationClip, and when in this state, the AnimationClip will be played.
 
 #### [AnimatorTransition](${api}core/AnimatorTransition)
-AnimatorTransition defines when and how the state machine transitions from one state to another.
+AnimatorTransition defines when and how a state machine transitions from one state to another. It can be used to set the transition start time `exitTime` of the two animation states, the start time `offset` of the target state and the transition duration `duration`.
 
 #### [AnimationClip](${api}core/AnimationClip)
-Store animation based on key frames.
+Which store keyframe-based animation data made by designers. An AnimationClip generally corresponds to a specific action of a model, and each AnimationClip contains multiple AnimationCurves.
 
 #### [AnimationCurve](${api}core/AnimationCurve)
-Store a collection of key frames evaluated at a specified time.
+A model has multiple bones entity, and the animation keyframe data of the specified properties of each bone entity in the model animation is stored in AnimationCurve. An AnimationCurve contains multiple Keyframe or keyframe data.
 
 #### [AnimationEvent](${api}core/AnimationEvent)
 AnimationEvent allows you to call the callback function of the script bound to the same entity at a specified time.
 
 #### [Keyframe](${api}core/KeyFrame)
-Animation key frames
+Stores animation keyframe data, which specifies what the value of the property of the time entity should be.
 
 #### [Interpolation](${api}core/AnimationCurve#interpolation)
-The interpolation method of the key frame in the AnimationCurve.
+How keyframe in the AnimationCurve are interpolated. That is, when the time is between two Keyframe, how should the value of the property be calculated.
 
 ### Use AnimatorTransition for animation crossFade
 You can realize the crossFade between AnimationStates by adding AnimatorTransition to AnimatorState.
