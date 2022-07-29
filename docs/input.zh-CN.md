@@ -14,6 +14,8 @@ type: 交互
 
 ## 如何使用
 
+### 生命周期回调
+
 输入系统的接口已经整合到引擎的[脚本组件生命周期](${docs}script-cn#组件生命周期函数)中，用户可以很方便地添加以下事件：
 
 | 接口 | 触发时机与频率 |
@@ -26,6 +28,17 @@ type: 交互
 | [onPointerDrag](${api}core/Script#onPointerDrag) | 当触控点在 Entity 的碰撞体范围内按下时**持续**触发，直至触控点解除按下状态 |
 
 触发时序如下： <img src="https://gw.alipayobjects.com/zos/OasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:67%;" />
+
+### 按键检测
+
+| 方法名称                                               | 方法释义                     |
+| ------------------------------------------------------ | ---------------------------- |
+| [pointers](${api}core/InputManager#pointers) | 返回当前活跃的光标 |
+| [pointerMovingDelta](${api}core/InputManager#pointerMovingDelta)         | 返回本帧光标移动的差值   |
+| [pointerPosition](${api}core/InputManager#pointerPosition)             | 但会本帧光标的位置   |
+| [isPointerHeldDown](${api}core/InputManager#isPointerHeldDown) | 返回这个光标按键是否被持续按住 |
+| [isPointerDown](${api}core/InputManager#isPointerDown)         | 返回当前帧是否按下过此光标按键   |
+| [isPointerUp](${api}core/InputManager#isPointerUp)             | 返回当前帧是否抬起过此光标按键   |
 
 如下示例：
 
@@ -51,5 +64,13 @@ type: 交互
 - Entity 添加碰撞体组件，且设置好合适的碰撞体形状。（请确定 Entity 被添加在三维空间中）
 - 画布监听 **PointerEvent** ，获取屏幕接收到点击事件携带的坐标信息并转换为三维空间中的一条射线，此处简单可理解为此点同时穿过 NDC 矩阵的远平面与近平面，因此只需要以近平面交点的三维空间坐标为起始点，远平面的三维空间左边为射线途经的点，即可得到这条射线，详细可见 Camera 中的 [viewportPointToRay](${api}core/Camera#viewportPointToRay) 函数。
 - 接下来只需要调用物理引擎的射线检测接口，便可以获取与射线发生碰撞的 Entity 实例，然后执行实例内相应的接口方法即可。
+
+#### 3. 兼容性
+
+截止 2022 年 7 月，不同平台对 PointerEvent 的兼容性已经达到了接近 95% 。
+
+<img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9_pmR6kKancAAAAAAAAAAAAAARQnAQ" alt="image-20211001164136273" style="zoom:67%;" />
+
+如果遇到不同平台的兼容性问题，可以在 https://github.com/oasis-engine/polyfill-pointer-event 为我们提 issue 。
 
 设计思路可参考：https://github.com/oasis-engine/engine/wiki/Input-system-design.
