@@ -33,8 +33,12 @@ engine.resourceManager
     const sprite = new Sprite(engine, texture);
     // Set the sprite.
     spriteRenderer.sprite = sprite;
+    spriteRenderer.width = 5;
+    spriteRenderer.height = 5;
   });
 ```
+
+## Draw Mode
 
 ## Image flip
 
