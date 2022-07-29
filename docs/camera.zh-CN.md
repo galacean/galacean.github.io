@@ -80,7 +80,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 详情请查看 [API 文档](${api}core/Camera)。
 
-### cullingMask ：
+### cullingMask
 
 相机可以选择性的渲染场景中的节点，只需要设置相机与节点对应的遮罩即可。（注意：通过节点的 createChild 方法得到的子节点会继承父节点的 Layer）
 

@@ -18,32 +18,15 @@ CullingMask case:
 const entity = root.createChild("cameraEntity");
 // Create Camera.
 const camera = entity.addComponent(Camera);
-
-// Set perspective projection properties.
 camera.nearClipPlane = 0.1;
 camera.farClipPlane = 100;
+
+// Set perspective projection properties.
 camera.fieldOfView = 60;
 
 // Get camera through the entity.
 entity.engine.sceneManager.activeScene._activeCameras[0];
 ```
-
-## Attributes
-
-| Type | Attributes | Meaning |
-| :-- | :-- | :-- |
-| Universal | [isOrthographic](${api}core/Camera#isOrthographic) | Whether it is an orthogonal projection, the default is `false` |
-|  | [aspectRatio](${api}core/Camera#aspectRatio) | The canvas aspect ratio is usually calculated automatically based on the canvas size, or it can be changed manually (not recommended) |
-|  | [cullingMask](${api}core/Camera#cullingMask) | The crop mask is used to selectively render the rendering components in the scene. |
-|  | [priority](${api}core/Camera#priority) | The rendering priority is used to determine the order in which the content contained in the camera is rendered in the case of multiple cameras. |
-|  | [renderTarget](${api}core/Camera#renderTarget) | The rendering target determines which target the content will be rendered to. |
-|  | [viewport](${api}core/Camera#viewport) | The viewport, which determines the scope of the content that is finally rendered to the target device. |
-| Perspective projection | [nearClipPlane](${api}core/Camera#nearClipPlane) | Near clipping plane |
-|  | [farClipPlane](${api}core/Camera#farClipPlane) | Far clipping plane |
-|  | [fieldOfView](${api}core/Camera#fieldOfView) | Field of view |
-| Orthogonal projection | [orthographicSize](${api}core/Camera#orthographicSize) | Half the size of the camera in orthographic mode |
-
-For details, please read [API documentation](${api}core/Camera)。
 
 ## Projection type
 
@@ -79,7 +62,42 @@ After comparing perspective projection and orthogonal projection, it can be intu
 
 Therefore, when used in actual projects, the type of projection is generally determined by the visual effect you want to obtain. For example, when you need to show 2D effects, you choose orthographic projection, and when you need to show 3D effects, you choose perspective projection.
 
+### isOrthographic
+
 <playground src="ortho-switch.ts"></playground>
+
+## Attributes
+
+| Type | Attributes | Meaning |
+| :-- | :-- | :-- |
+| Universal | [isOrthographic](${api}core/Camera#isOrthographic) | Whether it is an orthogonal projection, the default is `false` |
+|  | [aspectRatio](${api}core/Camera#aspectRatio) | The canvas aspect ratio is usually calculated automatically based on the canvas size, or it can be changed manually (not recommended) |
+|  | [cullingMask](${api}core/Camera#cullingMask) | The crop mask is used to selectively render the rendering components in the scene. |
+|  | [priority](${api}core/Camera#priority) | The rendering priority is used to determine the order in which the content contained in the camera is rendered in the case of multiple cameras. |
+|  | [renderTarget](${api}core/Camera#renderTarget) | The rendering target determines which target the content will be rendered to. |
+|  | [viewport](${api}core/Camera#viewport) | The viewport, which determines the scope of the content that is finally rendered to the target device. |
+|  | [nearClipPlane](${api}core/Camera#nearClipPlane) | Near clipping plane |
+|  | [farClipPlane](${api}core/Camera#farClipPlane) | Far clipping plane |
+| Perspective projection | [fieldOfView](${api}core/Camera#fieldOfView) | Field of view |
+| Orthogonal projection | [orthographicSize](${api}core/Camera#orthographicSize) | Half the size of the camera in orthographic mode |
+
+For details, please read [API documentation](${api}core/Camera)。
+
+### cullingMask
+
+The camera can selectively render the nodes in the scene, just set the mask corresponding to the camera and the node. (Note: The child node obtained by the node's createChild method will inherit the Layer of the parent node)
+
+<playground src="renderer-cull.ts"></playground>
+
+### `renderTarget` && `priority` && `clearFlags`
+
+In the case of multiple cameras, we can combine the camera's `renderTarget`,  `priority` and `clearFlags`, and we can complete many advanced implementations, such as using the rendering results of multiple cameras to achieve a picture-in-picture effect.
+
+<playground src="multi-camera.ts"></playground>
+
+### Camera orientation
+
+Since in Oasis, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
 
 ## Q&A
 
