@@ -13,6 +13,9 @@ The engine provides a basic input system. Because of the cross-terminal and cros
 <img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Y2DIRb1yJEEAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
 ## How to use
+
+### Lifecycle callback
+
 The interfaces of the input system have been integrated into [the life cycle of the script component](${docs}script#component-life-cycle-function) of the engine, and users can easily add the following events:
 
 |Interface|Trigger timing and frequency|
@@ -27,6 +30,17 @@ The interfaces of the input system have been integrated into [the life cycle of 
 This is represented in the schematic diagram below:
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:50%;" />
+
+### Pointer button
+
+| Function Name                                           | Interpretation                         |
+| ------------------------------------------------------ | ---------------------------- |
+| [pointers](${api}core/InputManager#pointers) | Returns the currently active cursor. |
+| [pointerMovingDelta](${api}core/InputManager#pointerMovingDelta)         | Returns the difference between the cursor movement in this frame.   |
+| [pointerPosition](${api}core/InputManager#pointerPosition)             | Returns the position of the cursor in this frame.   |
+| [isPointerHeldDown](${api}core/InputManager#isPointerHeldDown) | Returns whether this cursor key is held down. |
+| [isPointerDown](${api}core/InputManager#isPointerDown)         | Returns whether the pointer button has been pressed in the current frame.   |
+| [isPointerUp](${api}core/InputManager#isPointerUp)             | Returns whether the pointer button has been released in the current frame.    |
 
 
 The following example:
@@ -49,5 +63,13 @@ Click hits in three-dimensional space mainly rely on radiographic detection. The
 - Entity adds the collider component and sets the appropriate collider shape. (Please make sure the Entity is added in the three-dimensional space)
 - The canvas listens to **PointerEvent**, obtains the coordinate information carried by the click event received by the screen, and converts it into a ray in the three-dimensional space. Here, it can be simply understood that the point passes through the far plane and the near plane of the NDC matrix at the same time, so only the near plane intersects the point The three-dimensional space coordinates of is the starting point, and the left side of the three-dimensional space of the far plane is the point that the ray passes through, you can get this ray, see the [viewportPointToRay](${api}core/Camera#viewportPointToRay) function in Camera for details.
 - Next, you only need to call the ray detection interface of the physics engine to get the Entity instance that collided with the ray, and then execute the corresponding interface method in the instance.
+
+#### 3. Compatibility
+
+As of July 2022, the compatibility of PointerEvent on different platforms has reached nearly 95%.
+
+<img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9_pmR6kKancAAAAAAAAAAAAAARQnAQ" alt="image-20211001164136273" style="zoom:67%;" />
+
+If you encounter compatibility issues with different platforms, you can file an issue for us at https://github.com/oasis-engine/polyfill-pointer-event.
 
 You can refer to the design ideas：https://github.com/oasis-engine/engine/wiki/Input-system-design.
