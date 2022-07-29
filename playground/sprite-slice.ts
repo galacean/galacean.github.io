@@ -55,6 +55,60 @@ engine.resourceManager
 engine.run();
 
 /**
+ * Auxiliary display.
+ */
+class TriangleScript extends Script {
+  private triangleEntity: Entity;
+  private modelMesh: ModelMesh;
+  private targetSpriteRenderer: SpriteRenderer;
+
+  onAwake(): void {
+    const { engine, entity } = this;
+    const triangleEntity = (this.triangleEntity = entity.createChild("tag"));
+    const meshRenderer = triangleEntity.addComponent(MeshRenderer);
+    meshRenderer.mesh = this.modelMesh = new ModelMesh(engine, "tag");
+    const material = new UnlitMaterial(engine);
+    material.baseColor = new Color(1, 0, 0, 1);
+    meshRenderer.setMaterial(material);
+    this.targetSpriteRenderer = entity.getComponent(SpriteRenderer);
+  }
+
+  setShow(value: boolean) {
+    this.enabled = this.triangleEntity.isActive = value;
+  }
+
+  onUpdate(): void {
+    const { modelMesh, targetSpriteRenderer } = this;
+    // @ts-ignore
+    const { positions, vertexCount, triangles } = targetSpriteRenderer._renderData;
+    if (vertexCount > 0) {
+      const length = triangles.length * 2;
+      if (length <= 0) {
+        return;
+      }
+      const myTriangles = modelMesh.getIndices() || new Uint16Array(length);
+      const myPositions = modelMesh.getPositions() || [];
+      for (let i = 0; i < positions.length; i++) {
+        myPositions[i] = positions[i].clone();
+      }
+      for (let i = 0; i < triangles.length / 3; i++) {
+        myTriangles[6 * i] = triangles[i * 3];
+        myTriangles[6 * i + 1] = triangles[i * 3 + 1];
+        myTriangles[6 * i + 2] = triangles[i * 3 + 1];
+        myTriangles[6 * i + 3] = triangles[i * 3 + 2];
+        myTriangles[6 * i + 4] = triangles[i * 3 + 2];
+        myTriangles[6 * i + 5] = triangles[i * 3];
+      }
+      modelMesh.setPositions(myPositions);
+      modelMesh.setIndices(myTriangles);
+      modelMesh.clearSubMesh();
+      modelMesh.addSubMesh(new SubMesh(0, length, MeshTopology.Lines));
+      modelMesh.uploadData(false);
+    }
+  }
+}
+
+/**
  * Add data GUI.
  */
 function addDataGUI(entity: Entity) {
@@ -143,54 +197,4 @@ function addDataGUI(entity: Entity) {
   gui.add(guiData, "reset").name("重置");
 
   return guiData;
-}
-
-class TriangleScript extends Script {
-  private tagEntity: Entity;
-  private modelMesh: ModelMesh;
-  private targetSpriteRenderer: SpriteRenderer;
-  onAwake(): void {
-    const { engine, entity } = this;
-    const tagEntity = (this.tagEntity = entity.createChild("tag"));
-    const meshRenderer = tagEntity.addComponent(MeshRenderer);
-    meshRenderer.mesh = this.modelMesh = new ModelMesh(engine, "tag");
-    const material = new UnlitMaterial(engine);
-    material.baseColor = new Color(1, 0, 0, 1);
-    meshRenderer.setMaterial(material);
-    this.targetSpriteRenderer = entity.getComponent(SpriteRenderer);
-  }
-
-  setShow(value: boolean) {
-    this.enabled = this.tagEntity.isActive = value;
-  }
-
-  onUpdate(): void {
-    const { modelMesh, targetSpriteRenderer } = this;
-    // @ts-ignore
-    const { positions, vertexCount, triangles } = targetSpriteRenderer._renderData;
-    if (vertexCount > 0) {
-      const length = triangles.length * 2;
-      if (length <= 0) {
-        return;
-      }
-      const myTriangles = modelMesh.getIndices() || new Uint16Array(length);
-      const myPositions = modelMesh.getPositions() || [];
-      for (let i = 0; i < positions.length; i++) {
-        myPositions[i] = positions[i].clone();
-      }
-      for (let i = 0; i < triangles.length / 3; i++) {
-        myTriangles[6 * i] = triangles[i * 3];
-        myTriangles[6 * i + 1] = triangles[i * 3 + 1];
-        myTriangles[6 * i + 2] = triangles[i * 3 + 1];
-        myTriangles[6 * i + 3] = triangles[i * 3 + 2];
-        myTriangles[6 * i + 4] = triangles[i * 3 + 2];
-        myTriangles[6 * i + 5] = triangles[i * 3];
-      }
-      modelMesh.setPositions(myPositions);
-      modelMesh.setIndices(myTriangles);
-      modelMesh.clearSubMesh();
-      modelMesh.addSubMesh(new SubMesh(0, length, MeshTopology.Lines));
-      modelMesh.uploadData(false);
-    }
-  }
 }
