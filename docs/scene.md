@@ -6,16 +6,18 @@ type: Core
 
 Scene can manage the entity tree, especially large game scenes. For example, **scene1** and **scene2** are two different scenes and do not need to be loaded for activation and rendering at the same time. Then we can divide them into different scenes through modeling software or code logic. Activating the corresponding scenes separately or merging scenes at the appropriate time.
 
+Only one active scene `engine.sceneManager.activeScene` will be rendered under an Engine. Each Scene can have multiple root entities, and we manage the entire entity tree through the Scene object.
+
 ## Scene management
 
-|  Properties                                         | Explanation     |
-| :------------------------------------------------- | :------- |
+| Properties                                         | Explanation     |
+| :------------------------------------------------- | :-------------- |
 | [activeScene](${api}core/SceneManager#activeScene) | Activated scene |
 
-| Methods                                           | Explanation    |
-| :------------------------------------------------- | :------- |
-| [mergeScenes](${api}core/SceneManager#mergeScenes) | Merge scenes|
-| [loadScene](${api}core/SceneManager#loadScene)     | Load scene |
+| Methods                                            | Explanation  |
+| :------------------------------------------------- | :----------- |
+| [mergeScenes](${api}core/SceneManager#mergeScenes) | Merge scenes |
+| [loadScene](${api}core/SceneManager#loadScene)     | Load scene   |
 
 ### Basic usage
 
@@ -54,7 +56,7 @@ engine.sceneManager.activeScene = destScene;
 If you want to load the **Scene** asset in the application, you can pass an url to `engine.sceneManager.loadScene` method.
 
 ```typescript
-const sceneUrl = '...';
+const sceneUrl = "...";
 
 const scenePromise = engine.sceneManager.loadScene(sceneUrl);
 
@@ -64,7 +66,11 @@ scenePromise.then((scene) => {
 });
 ```
 
-#### 4. Set background of scene 
+#### 4. Destroy scene
+
+Call `scene.destroy()` will destroy the scene.
+
+#### 4. Set background of scene
 
 The scene background supports adding pure colors and sky:
 
@@ -78,7 +84,7 @@ background.solidColor.set(1, 1, 1, 1); // White
 
 // Add a skybox background
 background.mode = BackgroundMode.Sky;
-const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // Set the material of skybox 
+const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // Set the material of skybox
 skyMaterial.textureCubeMap = textureCube; // Set the cube texture of material
 background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // Set the mesh of the skybox
 ```
@@ -94,7 +100,6 @@ AmbientLight setting of the scene:
 ```typescript
 const scene = engine.sceneManager.activeScene;
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-
 ```
 
 ## Entity tree management
@@ -102,7 +107,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 ### Basic usage
 
 ```typescript
-const engine = new WebGLEngine('demo');
+const engine = new WebGLEngine("demo");
 const scene = engine.sceneManager.activeScene;
 
 // Create root entity
@@ -134,7 +139,7 @@ const entity2 = scene.getRootEntity(2);
 Note that if the rendered image is need to show on the screen or off-screen, the [Camera](${api}core/Camera) must be added on the entity in the current _scene_. The method of mounting the camera is as follows:
 
 ```typescript
-const cameraEntity = rootEntity.createChild('camera');
+const cameraEntity = rootEntity.createChild("camera");
 
 cameraEntity.addComponent(Camera);
 ```
