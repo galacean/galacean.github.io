@@ -29,16 +29,17 @@ type: 交互
 
 触发时序如下： <img src="https://gw.alipayobjects.com/zos/OasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:67%;" />
 
-### 按键检测
+### 光标按键检测
 
 | 方法名称                                               | 方法释义                     |
 | ------------------------------------------------------ | ---------------------------- |
 | [pointers](${api}core/InputManager#pointers) | 返回当前活跃的光标 |
 | [pointerMovingDelta](${api}core/InputManager#pointerMovingDelta)         | 返回本帧光标移动的差值   |
-| [pointerPosition](${api}core/InputManager#pointerPosition)             | 但会本帧光标的位置   |
+| [pointerPosition](${api}core/InputManager#pointerPosition)             | 返回本帧光标的位置   |
 | [isPointerHeldDown](${api}core/InputManager#isPointerHeldDown) | 返回这个光标按键是否被持续按住 |
 | [isPointerDown](${api}core/InputManager#isPointerDown)         | 返回当前帧是否按下过此光标按键   |
 | [isPointerUp](${api}core/InputManager#isPointerUp)             | 返回当前帧是否抬起过此光标按键   |
+
 
 如下示例：
 

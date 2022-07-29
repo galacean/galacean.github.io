@@ -12,7 +12,7 @@ group: 2D
 ## Basic usage
 
 1、Download image texture ([Texture](${docs}texture)), Please refer to the download method [resource load](${docs}resource-manager)  
-2、Create [Sprite](${docs}sprite)  object through texture  
+2、Create [Sprite](${docs}sprite) object through texture  
 3、Create [SpriteRenderer](${api}core/SpriteRenderer) to display image
 
 ```typescript
@@ -38,7 +38,21 @@ engine.resourceManager
   });
 ```
 
+Note: The sprite renderer places this patch on the XoY plane in the node's local coordinate system by default.
+
+![avatar](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_5fjTp0r2KEAAAAAAAAAAAAAARQnAQ)
+
 ## Draw Mode
+
+The sprite renderer currently provides two drawing modes, namely `Simple` and `Slice` (the default is normal drawing). In different drawing modes, you can intuitively feel the difference between the two drawing modes by modifying the drawing width and height, as follows:
+
+```typescript
+// Draw mode.
+spriteRenderer.drawMode = SpriteDrawMode.Sliced;
+sprite.border = new Vector4(0.1, 0.1, 0.1, 0.1);
+```
+
+<playground src="sprite-slice.ts"></playground>
 
 ## Image flip
 
@@ -49,12 +63,12 @@ In addition to basic image display, SpriteRenderer also supports image flipping,
 spriteRenderer.flipX = true;
 spriteRenderer.flipY = true;
 ```
+
 <playground src="sprite-flip.ts"></playground>
 
 ## Set color
 
 We can adjust the color by setting the [color](${api}core/SpriteRenderer#color) property to achieve some fade-in and fade-out effects, as follows:
-
 
 ```typescript
 spriteRenderer.color.set(1, 0, 0, 1);

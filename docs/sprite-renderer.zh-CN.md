@@ -42,7 +42,13 @@ engine.resourceManager
 
 ## 绘制模式
 
-精灵渲染器目前提供两种绘制模式，分别是普通绘制与九宫绘制（默认为普通绘制），在不同的绘制模式下，修改绘制宽高可以直观地感受到两种绘制模式的差异。
+精灵渲染器目前提供两种绘制模式，分别是普通绘制与九宫绘制（默认为普通绘制），在不同的绘制模式下，修改绘制宽高可以直观地感受到两种绘制模式的差异，如下：
+
+```typescript
+// 绘制模式
+spriteRenderer.drawMode = SpriteDrawMode.Sliced;
+sprite.border = new Vector4(0.1, 0.1, 0.1, 0.1);
+```
 
 <playground src="sprite-slice.ts"></playground>
 
