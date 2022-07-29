@@ -86,19 +86,17 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 <playground src="renderer-cull.ts"></playground>
 
-### renderTarget && priority && clearFlags
+### `renderTarget` && `priority` && `clearFlags`
 
 在多个相机的情况下，可以结合相机的渲染目标，渲染优先级与清理缓冲标记，我们可以完成许多高级的实现，比如用多个相机的渲染结果实现画中画的效果。
 
 <playground src="multi-camera.ts"></playground>
 
-### 相机的朝向与 lookAt
+### 相机的朝向
 
 由于在 Oasis 中，世界坐标系为右手系，因此任何节点的正方向朝向 -Z 轴，同理，相机的正方向（取景方向）也为 -Z 轴方向，以此类推，在 Unity 等世界坐标系为左手系的引擎中，相机的正方向为 +Z 轴。
 
 为了方便区分，我们可以使用人脸朝向法判断，无论在左手系或者右手系，将右手放在 +X 轴上，将头部放在 +Y 轴上，此时面部朝向即正方向。
-
-因此，调用相机的 lookAt 函数，我们会将相机的 -Z 轴朝向目标点。
 
 ## Q&A
 
