@@ -16,7 +16,6 @@ import {
 } from "oasis-engine";
 import * as TWEEN from "@tweenjs/tween.js";
 
-
 init();
 
 function init(): void {
@@ -41,7 +40,7 @@ function init(): void {
     })
     .then((texture) => {
       const spriteEntity = rootEntity.createChild("Sprite");
-      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture, null, null, 70);
+      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture, null, null, null);
       spriteEntity.addComponent(FrameSpriteScript);
     });
 
@@ -83,7 +82,7 @@ class FrameSpriteScript extends Script {
       }
     }
 
-    const {entity} = this;
+    const { entity } = this;
     this._sprite = entity.getComponent(SpriteRenderer).sprite;
     this._regions = regions;
     this._reciprocalSliceWidth = reciprocalSliceWidth;
