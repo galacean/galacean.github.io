@@ -72,16 +72,6 @@ class PanScript extends Script {
     transform.worldPosition.add(startPointerPos);
     startPointerPos.copyFrom(tempVec3);
   }
-
-  getMergePointer(pointers: Pointer[], out: Vector2) {
-    out.copyFrom(pointers[0].position);
-    const len = pointers.length;
-    for (let i = 1; i < len; i++) {
-      const pos = pointers[i].position;
-      out.x += pos.x;
-      out.y += pos.y;
-    }
-  }
 }
 
 class ClickScript extends Script {
