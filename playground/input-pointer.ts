@@ -52,16 +52,12 @@ class PanScript extends Script {
   private startPointerPos = new Vector3();
   private tempVec2: Vector2 = new Vector2();
   private tempVec3: Vector3 = new Vector3();
-  private tempVec4: Vector4 = new Vector4();
   private zValue: number = 0;
 
   onPointerDown() {
-    // get depth
-    camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec4).z;
-    this.zValue = (this.tempVec4.z + 1) / 2;
+    this.zValue = camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec3).z;
     const { tempVec2, tempVec3 } = this;
-    // @ts-ignore
-    this.getMergePointer(inputManager.pointers, tempVec2);
+    tempVec2.copyFrom(inputManager.pointerPosition);
     tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
     camera.viewportToWorldPoint(tempVec3, this.startPointerPos);
   }
@@ -69,23 +65,12 @@ class PanScript extends Script {
   onPointerDrag() {
     const { tempVec2, tempVec3, startPointerPos } = this;
     const { transform } = this.entity;
-    // @ts-ignore
-    this.getMergePointer(inputManager.pointers, tempVec2);
-    this.tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+    tempVec2.copyFrom(inputManager.pointerPosition);
+    tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
     camera.viewportToWorldPoint(tempVec3, tempVec3);
     Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
-    transform.worldPosition = transform.worldPosition.add(startPointerPos);
+    transform.worldPosition.add(startPointerPos);
     startPointerPos.copyFrom(tempVec3);
-  }
-
-  getMergePointer(pointers: Pointer[], out: Vector2) {
-    out.copyFrom(pointers[0].position);
-    const len = pointers.length;
-    for (let i = 1; i < len; i++) {
-      const pos = pointers[i].position;
-      out.x += pos.x;
-      out.y += pos.y;
-    }
   }
 }
 
