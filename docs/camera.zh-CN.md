@@ -7,10 +7,6 @@ group: 摄像机
 
 相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
 
-cullingMask 案例：
-
-<playground src="renderer-cull.ts"></playground>
-
 ## 基本用法
 
 ```typescript
@@ -18,36 +14,19 @@ cullingMask 案例：
 const entity = root.createChild("cameraEntity");
 // 创建相机组件
 const camera = entity.addComponent(Camera);
-
-// 设置透视投影属性
 camera.nearClipPlane = 0.1;
 camera.farClipPlane = 100;
+
+// 设置透视投影属性
 camera.fieldOfView = 60;
 
 // 通过 entity 获取相机
 entity.engine.sceneManager.activeScene._activeCameras[0];
 ```
 
-## 属性
-
-| 类型 | 属性 | 解释 |
-| :-- | :-- | :-- |
-| 通用 | [isOrthographic](${api}core/Camera#isOrthographic) | 是否正交投影，默认是 `false` |
-|  | [aspectRatio](${api}core/Camera#aspectRatio) | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
-|  | [cullingMask](${api}core/Camera#cullingMask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。 |
-|  | [priority](${api}core/Camera#priority) | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
-|  | [renderTarget](${api}core/Camera#renderTarget) | 渲染目标，确定内容最后被渲染到哪个目标上。 |
-|  | [viewport](${api}core/Camera#viewport) | 视口，确定内容最后被渲染到目标设备里的范围。 |
-| 透视投影 | [nearClipPlane](${api}core/Camera#nearClipPlane) | 近裁剪平面 |
-|  | [farClipPlane](${api}core/Camera#farClipPlane) | 远裁剪平面 |
-|  | [fieldOfView](${api}core/Camera#fieldOfView) | 视角 |
-| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize) | 正交模式下相机的一半尺寸 |
-
-详情请查看 [API 文档](${api}core/Camera)。
-
 ## 类型
 
-通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定采用透视投影或正交投影。
+开发者可以通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定采用透视投影或正交投影。
 
 ### 透视投影
 
@@ -79,15 +58,47 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 因此在实际项目中使用时，一般会以想要获得的视觉效果来确定投影的类型，比如当需要展示 2D 效果时，就选择正交投影，当需要展示 3D 效果时，就选择透视投影。
 
+### isOrthographic
+
 <playground src="ortho-switch.ts"></playground>
 
-## Q&A
+## 属性
 
-### 当场景中有多个相机时会如何渲染？
+| 类型 | 属性 | 解释 |
+| :-- | :-- | :-- |
+| 通用 | [isOrthographic](${api}core/Camera#isOrthographic) | 是否正交投影，默认是 `false` |
+|  | [aspectRatio](${api}core/Camera#aspectRatio) | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
+|  | [cullingMask](${api}core/Camera#cullingMask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。 |
+|  | [priority](${api}core/Camera#priority) | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
+|  | [renderTarget](${api}core/Camera#renderTarget) | 渲染目标，确定内容最后被渲染到哪个目标上。 |
+|  | [viewport](${api}core/Camera#viewport) | 视口，确定内容最后被渲染到目标设备里的范围。 |
+|  | [nearClipPlane](${api}core/Camera#nearClipPlane) | 近裁剪平面 |
+|  | [farClipPlane](${api}core/Camera#farClipPlane) | 远裁剪平面 |
+|  | [clearFlags](${api}core/Camera#clearFlags) | 在渲染这个相机前清理画布缓冲的标记 |
+| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView) | 视角 |
+| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize) | 正交模式下相机的一半尺寸 |
 
-首先回顾之前提到的属性 `priority` ，`renderTarget` 和 `viewport` ，当一个场景中同时有多个相机的时候，每次调用渲染时我们会根据 `priority` 来确定相机队列渲染的属性，根据 `viewport` 确定最后需要渲染到 `renderTarget` 的哪些范围内。
+详情请查看 [API 文档](${api}core/Camera)。
+
+### cullingMask
+
+相机可以选择性的渲染场景中的节点，只需要设置相机与节点对应的遮罩即可。（注意：通过节点的 createChild 方法得到的子节点会继承父节点的 Layer）
+
+<playground src="renderer-cull.ts"></playground>
+
+### `renderTarget` && `priority` && `clearFlags`
+
+在多个相机的情况下，可以结合相机的渲染目标，渲染优先级与清理缓冲标记，我们可以完成许多高级的实现，比如用多个相机的渲染结果实现画中画的效果。
 
 <playground src="multi-camera.ts"></playground>
+
+### 相机的朝向
+
+由于在 Oasis 中，世界坐标系为右手系，因此任何节点的正方向朝向 -Z 轴，同理，相机的正方向（取景方向）也为 -Z 轴方向，以此类推，在 Unity 等世界坐标系为左手系的引擎中，相机的正方向为 +Z 轴。
+
+为了方便区分，我们可以使用人脸朝向法判断，无论在左手系或者右手系，将右手放在 +X 轴上，将头部放在 +Y 轴上，此时面部朝向即正方向。
+
+## Q&A
 
 ### 相机和相机控件如何配合使用？
 

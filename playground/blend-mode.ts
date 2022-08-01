@@ -2,7 +2,7 @@
  * @title Blend Mode
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import { Camera, GLTFResource, PBRMaterial, Vector3, WebGLEngine } from "oasis-engine";
 const gui = new dat.GUI();
@@ -20,7 +20,7 @@ cameraEntity.transform.position = new Vector3(0, 3, 10);
 cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/d099b30b-59a3-42e4-99eb-b158afa8e65d.glb")

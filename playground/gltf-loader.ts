@@ -2,7 +2,7 @@
  * @title GLTF Loader
  * @category Advance
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -36,14 +36,14 @@ import {
 Logger.enable();
 
 const envList = {
-  sunset: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin",
-  pisa: "https://gw.alipayobjects.com/os/bmw-prod/871e960f-874f-4dc6-aa69-2e8fda8b5795.bin",
-  foot_2K: "https://gw.alipayobjects.com/os/bmw-prod/f0a011c2-ffba-4f70-866e-63974fff4ba9.bin"
+  sunset: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+  pisa: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin",
+  foot_2K: "https://gw.alipayobjects.com/os/bmw-prod/23c1893a-fe29-4e91-bd6a-bb1c4201a876.bin"
 };
 
 class Oasis {
   static guiToColor(gui: number[], color: Color) {
-    color.setValue(gui[0] / 255, gui[1] / 255, gui[2] / 255, color.a);
+    color.set(gui[0] / 255, gui[1] / 255, gui[2] / 255, color.a);
   }
 
   static colorToGui(color: Color = new Color(1, 1, 1)): number[] {
@@ -245,8 +245,8 @@ class Oasis {
     const center = this._center;
     const extent = this._extent;
 
-    boundingBox.min.setValue(0, 0, 0);
-    boundingBox.max.setValue(0, 0, 0);
+    boundingBox.min.set(0, 0, 0);
+    boundingBox.max.set(0, 0, 0);
 
     renderers.forEach((renderer) => {
       BoundingBox.merge(renderer.bounds, boundingBox, boundingBox);
@@ -255,7 +255,7 @@ class Oasis {
     const size = extent.length();
 
     boundingBox.getCenter(center);
-    this.controler.target.setValue(center.x, center.y, center.z);
+    this.controler.target.set(center.x, center.y, center.z);
     this.cameraEntity.transform.setPosition(center.x, center.y, size * 3);
 
     this.camera.farClipPlane = size * 12;
@@ -283,11 +283,9 @@ class Oasis {
         this.rootEntity.addChild(defaultSceneRoot);
 
         const meshRenderers = [];
-        const skinnedMeshRenderers = [];
         defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, meshRenderers);
-        defaultSceneRoot.getComponentsIncludeChildren(SkinnedMeshRenderer, skinnedMeshRenderers);
 
-        this.setCenter(meshRenderers.concat(skinnedMeshRenderers));
+        this.setCenter(meshRenderers);
         this.loadMaterialGUI(materials);
         this.loadAnimationGUI(animations);
       })

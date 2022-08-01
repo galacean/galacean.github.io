@@ -3,7 +3,7 @@
  * @category Camera
  */
 
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -21,7 +21,7 @@ const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
-scene.background.solidColor.setValue(0, 0, 0, 0);
+scene.background.solidColor.set(0, 0, 0, 0);
 const rootEntity = scene.createRootEntity();
 
 // camera
@@ -44,7 +44,7 @@ engine.resourceManager
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;

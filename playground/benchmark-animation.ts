@@ -3,7 +3,7 @@
  * @category Benchmark
  */
 
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { Animator, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
@@ -13,7 +13,7 @@ engine.canvas.resizeByClientSize();
 // Create root entity and get scene.
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 // Create camera.
 const cameraEntity = rootEntity.createChild("Camera");
@@ -40,7 +40,7 @@ engine.resourceManager
 
     glTF.materials.forEach((material: PBRMaterial) => {
       material.baseTexture = baseTexture;
-      material.baseColor.setValue(1, 1, 1, 1);
+      material.baseColor.set(1, 1, 1, 1);
     });
 
     for (let i = 0; i < 8; i++) {

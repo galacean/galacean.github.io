@@ -6,6 +6,8 @@ type: 核心
 
 Scene 作为场景单元，可以方便场景的实体树管理，尤其是大型游戏场景。如，**scene1** 和 **scene2** 作为两个不同的场景，不需要同时加载激活和渲染，那么我们完全可以通过建模软件或者代码逻辑，将之划分为不同的场景，在不同的时机分别地激活相应场景，或者合并场景。
 
+每个 Engine 下面只会渲染一个激活的场景 `engine.sceneManager.activeScene`。每个 Scene 可以有多个根实体，我们通过 Scene 对象去管理整个实体树。
+
 ## 场景管理
 
 | 属性名称                                           | 解释     |
@@ -51,20 +53,25 @@ engine.sceneManager.activeScene = destScene;
 
 #### 3. 加载 Scene
 
-如果想要加载 **Scene** 资产作为应用中的一个场景，可以使用 `engine.sceneManager.loadScene` 传入 url 即可。
+如果想要加载 **Scene** 资产作为应用中的一个场景，可以使用 `engine.resourceManager.load` 传入 url 即可。
 
 ```typescript
-const sceneUrl = '...';
+const sceneUrl = "...";
 
-const scenePromise = engine.sceneManager.loadScene(sceneUrl);
-
-// 至此，加载的场景已经激活，如果还想对加载到的 scene 进行后续操作,如下：
-scenePromise.then((scene) => {
-  console.log(scene);
+engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
+  engine.sceneManager.activeScene = scene;
 });
+
 ```
 
-#### 4. 设置场景背景
+> 此 api 更多在编辑器场景中使用，后续编辑器开放后，同时也会开放场景格式标准。
+
+#### 4. 场景销毁
+
+调用 `scene.destroy()` 即可销毁场景。
+
+
+#### 5. 设置场景背景
 
 目前场景背景支持添加纯色、天空和纹理背景。纯色和天空相对简单，代码示例如下：
 
@@ -74,7 +81,7 @@ const { background } = scene;
 
 // 添加纯色背景
 background.mode = BackgroundMode.SolidColor; // 默认纯色背景
-background.solidColor.setValue(1, 1, 1, 1); // 纯白色
+background.solidColor.set(1, 1, 1, 1); // 纯白色
 
 // 添加天空盒背景
 background.mode = BackgroundMode.Sky; // 默认纯色背景
@@ -94,11 +101,11 @@ background.texture = texture;
 
 目前纹理适配模式有以下三种：
 
-| 适配模式        | 说明                                               |
-| --------------- | -------------------------------------------------- |
-| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth)  | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
+| 适配模式 | 说明 |
+| --- | --- |
+| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth) | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
 | [AspectFitHeight](${api}core/BackgroundTextureFillMode#AspectFitHeight) | 保持宽高比，把纹理高缩放至 Canvas 的高，左右居中。 |
-| [Fill](${api}core/BackgroundTextureFillMode#Fill)            | 把纹理的宽高填满 Canvas 的宽高。                   |
+| [Fill](${api}core/BackgroundTextureFillMode#Fill) | 把纹理的宽高填满 Canvas 的宽高。 |
 
 默认的适配模式是 `BackgroundTextureFillMode.AspectFitHeight`。
 
@@ -106,14 +113,13 @@ Playground 示例如下：
 
 <playground src="background.ts"></playground>
 
-#### 5. 设置场景环境光
+#### 6. 设置场景环境光
 
 场景环境光（AmbientLight）设置：
 
 ```typescript
 const scene = engine.sceneManager.activeScene;
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
-
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 ```
 
 ## 实体树管理
@@ -121,7 +127,7 @@ scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
 ### 基本用法
 
 ```typescript
-const engine = new WebGLEngine('demo');
+const engine = new WebGLEngine("demo");
 const scene = engine.sceneManager.activeScene;
 
 // 创建根实体
@@ -153,7 +159,7 @@ const entity2 = scene.getRootEntity(2);
 需要注意的是，当我们熟悉了 [Engine](${api}core/Engine) 和 [Scene](${api}core/Scene) 之后，如果想要将渲染画面输出到屏幕上或者进行离屏渲染，我们还得确保当前 _scene_ 的实体树上挂载了 [Camera](${api}core/Camera)，挂载相机的方法如下：
 
 ```typescript
-const cameraEntity = rootEntity.createChild('camera');
+const cameraEntity = rootEntity.createChild("camera");
 
 cameraEntity.addComponent(Camera);
 ```

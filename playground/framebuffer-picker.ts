@@ -1,23 +1,43 @@
 /**
  * @title Framebuffer Picker
- * @category Advance
+ * @category Toolkit
  */
-import { OrbitControl } from "@oasis-engine/controls";
-import { FramebufferPicker } from "@oasis-engine/framebuffer-picker";
-import { Camera, GLTFResource, PBRMaterial, Vector3, WebGLEngine } from "oasis-engine";
+import { Camera, GLTFResource, PBRMaterial, PointerButton, Script, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+
+class ClickScript extends Script {
+  material: PBRMaterial;
+
+  onUpdate(): void {
+    const inputManager = this.engine.inputManager;
+    if (inputManager.isPointerDown(PointerButton.Primary)) {
+      const pointerPosition = inputManager.pointerPosition;
+      framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
+        if (renderElement) {
+          this.material.baseColor.set(1, 0, 0, 1);
+        } else {
+          this.material.baseColor.set(1, 1, 1, 1);
+        }
+      });
+    }
+  }
+}
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootNode = scene.createRootEntity();
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
-// Create camera
-const cameraNode = rootNode.createChild("camera_node");
-cameraNode.transform.position = new Vector3(10, 10, 30);
-const camera = cameraNode.addComponent(Camera);
-const control = cameraNode.addComponent(OrbitControl);
-control.target.setValue(0, 3, 0);
+const cameraEntity = rootNode.createChild("camera_node");
+const camera = cameraEntity.addComponent(Camera);
+const control = cameraEntity.addComponent(OrbitControl);
+cameraEntity.transform.position = new Vector3(10, 10, 30);
+control.target.set(0, 3, 0);
+
+const framebufferPicker = rootNode.addComponent(FramebufferPicker);
+framebufferPicker.camera = camera;
 
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/f40ef8dd-4c94-41d4-8fac-c1d2301b6e47.glb")
@@ -28,22 +48,8 @@ engine.resourceManager
     defaultSceneRoot.transform.setScale(0.1, 0.1, 0.1);
     rootNode.addChild(defaultSceneRoot);
 
-    // add framebuffer picker component
-    const framebufferPicker = rootNode.addComponent(FramebufferPicker);
-    framebufferPicker.camera = camera;
-    framebufferPicker.onPick = (obj) => {
-      if (obj) {
-        const { component, mesh } = obj;
-        material.baseColor.setValue(1, 0, 0, 1);
-      } else {
-        material.baseColor.setValue(1, 1, 1, 1);
-      }
-    };
-
-    document.getElementById("canvas").addEventListener("mousedown", (e) => {
-      framebufferPicker.pick(e.offsetX, e.offsetY);
-    });
+    const click = cameraEntity.addComponent(ClickScript);
+    click.material = material;
   });
 
-// Run
 engine.run();

@@ -2,7 +2,7 @@
  * @title PBR Base
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -40,7 +40,7 @@ const cameraNode = rootEntity.createChild("camera_node");
 cameraNode.transform.position = new Vector3(0.25, 0.5, 1.5);
 cameraNode.addComponent(Camera);
 const control = cameraNode.addComponent(OrbitControl);
-control.target.setValue(0.25, 0.25, 0);
+control.target.set(0.25, 0.25, 0);
 
 // Create sky
 const sky = scene.background.sky;
@@ -60,7 +60,7 @@ Promise.all([
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;

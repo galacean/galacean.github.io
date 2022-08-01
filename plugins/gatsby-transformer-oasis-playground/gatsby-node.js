@@ -33,19 +33,26 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
         [
           "@babel/plugin-transform-modules-umd",
           {
-              "globals": {
-                  "@oasis-engine/controls": "@oasisEngine/controls",
-                  "@oasis-engine/framebuffer-picker": "@oasisEngine/framebufferPicker",
-                  "@oasis-engine/stats": "@oasisEngine/stats",
-                  "@oasis-engine/physics-lite": "@oasisEngine/physicsLite",
-                  "@oasis-engine/physics-physx": "@oasisEngine/physicsPhysx",
-                  "@oasis-engine/spine": "oasisSpine",
-                  "@oasis-engine/lottie": "engine-lottie",
-                  "@oasis-engine/baker": "@oasisEngine/baker",
-                  "dat.gui": "dat",
-                  "@tweenjs/tween.js": "TWEEN"
-              },
-              exactGlobals: true
+            "globals": {
+              "oasis-engine-toolkit": "oasisEngineToolkit",
+              "@oasis-engine-toolkit/controls": "@oasisEngineToolkit/controls",
+              "@oasis-engine-toolkit/framebuffer-picker": "@oasisEngineToolkit/framebufferPicker",
+              "@oasis-engine-toolkit/stats": "@oasisEngineToolkit/stats",
+              "@oasis-engine-toolkit/auxiliary-lines": "@oasisEngineToolkit/auxiliaryLines",
+              "@oasis-engine-toolkit/skeleton-viewer": "@oasisEngineToolkit/skeletonViewer",
+              "@oasis-engine-toolkit/planar-shadow-material": "@oasisEngineToolkit/planarShadowMaterial",
+              "@oasis-engine-toolkit/lines": "@oasisEngineToolkit/lines",
+              "@oasis-engine-toolkit/gizmo": "@oasisEngineToolkit/gizmo",
+              "@oasis-engine-toolkit/outline": "@oasisEngineToolkit/outline",
+              "@oasis-engine/physics-lite": "@oasisEngine/physicsLite",
+              "@oasis-engine/physics-physx": "@oasisEngine/physicsPhysx",
+              "@oasis-engine/spine": "oasisSpine",
+              "@oasis-engine/lottie": "engine-lottie",
+              "@oasis-engine/baker": "@oasisEngine/baker",
+              "dat.gui": "dat",
+              "@tweenjs/tween.js": "TWEEN"
+            },
+            exactGlobals: true
           }
         ],
       ],
@@ -61,10 +68,10 @@ exports.onCreateNode = module.exports.onCreateNode = async function onCreateNode
       playgroundId: 'default',
       name: node.name,
       title: titleResult ? titleResult[1] : node.name,
-      category: categoryResult ? categoryResult[1]: 'Others',
+      category: categoryResult ? categoryResult[1] : 'Others',
       // order: orderResult ? orderResult[1] : 0,
       sourceCode: content,
-      formatedCode: Prism.highlight(content, Prism.languages.javascript, 'javascript'), 
+      formatedCode: Prism.highlight(content, Prism.languages.javascript, 'javascript'),
       internal: {
         content: result.code,
         type: `Playground`,

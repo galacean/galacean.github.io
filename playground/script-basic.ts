@@ -2,7 +2,7 @@
  * @title Script Basic
  * @category Basic
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { Camera, GLTFResource, Script, Vector3, WebGLEngine } from "oasis-engine";
 
 const engine = new WebGLEngine("canvas");
@@ -16,7 +16,7 @@ cameraEntity.transform.setPosition(3, 3, 3);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 cameraEntity.addComponent(OrbitControl);
 
-engine.sceneManager.activeScene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+engine.sceneManager.activeScene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 // Create Rotate Script
 class Rotate extends Script {

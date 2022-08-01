@@ -2,7 +2,7 @@
  * @title Filter Mode
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -47,7 +47,7 @@ engine.resourceManager
   })
   .then((texture) => {
     material.baseTexture = texture;
-    material.tilingOffset.setValue(30, 30, 0, 0);
+    material.tilingOffset.set(30, 30, 0, 0);
     addGUI(texture);
     engine.run();
   });

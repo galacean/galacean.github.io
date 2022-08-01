@@ -21,7 +21,7 @@ import {
 } from "oasis-engine";
 import * as dat from "dat.gui";
 import { LitePhysics } from "@oasis-engine/physics-lite";
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 const gui = new dat.GUI();
 const tempLine = new Vector3();
@@ -73,7 +73,7 @@ class DrawScript extends Script {
   setColor(r: number, g: number, b: number, a: number) {
     this._meshMaterial = new UnlitMaterial(this.engine);
     this._meshMaterial.renderFace = RenderFace.Double;
-    this._meshMaterial.baseColor = this._color.setValue(r, g, b, a);
+    this._meshMaterial.baseColor = this._color.set(r, g, b, a);
   }
 
   onStart(): void {
@@ -89,7 +89,7 @@ class DrawScript extends Script {
       this._preDrawTime = now;
       const { tempPointer: endPointer, _prePointer: startPointer } = this;
       const { x: screenX, y: screenY } = this.engine.inputManager.pointers[0].position;
-      this._camera.screenToWorldPoint(endPointer.setValue(screenX, screenY, this._depth), endPointer);
+      this._camera.screenToWorldPoint(endPointer.set(screenX, screenY, this._depth), endPointer);
       const { x: sx, y: sy, z: sz } = startPointer;
       const { x: ex, y: ey, z: ez } = endPointer;
       if (sx === ex && sy === ey && sz === ez) {
@@ -104,7 +104,7 @@ class DrawScript extends Script {
       const renderer = meshEntity.addComponent(MeshRenderer);
       renderer.mesh = createLineMesh(startPointer, endPointer, forward, lineWidth);
       renderer.setMaterial(meshMaterial);
-      startPointer.setValue(ex, ey, ez);
+      startPointer.set(ex, ey, ez);
     }
   }
 
@@ -113,7 +113,7 @@ class DrawScript extends Script {
     this._preDrawTime = this.engine.time.nowTime;
     const { x: screenX, y: screenY } = this.engine.inputManager.pointers[0].position;
     const { _prePointer: startPointer } = this;
-    this._camera.screenToWorldPoint(startPointer.setValue(screenX, screenY, this._depth), startPointer);
+    this._camera.screenToWorldPoint(startPointer.set(screenX, screenY, this._depth), startPointer);
     // Draw circle.
     const renderer = this._meshEntity.addComponent(MeshRenderer);
     renderer.mesh = createCircleMesh(this._prePointer, this._forward, this._lineWidth, this._precision);
@@ -128,7 +128,7 @@ const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 
 // init light
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 scene.ambientLight.diffuseIntensity = 1.2;
 
 // init camera

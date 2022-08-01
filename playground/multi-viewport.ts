@@ -18,7 +18,7 @@ import {
   PrimitiveMesh,
   TextureCube
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -29,7 +29,7 @@ const rootEntity = scene.createRootEntity();
 // init camera
 const leftCameraEntity = rootEntity.createChild("left-camera");
 const leftCamera = leftCameraEntity.addComponent(Camera);
-leftCamera.viewport.setValue(0, 0, 0.5, 1);
+leftCamera.viewport.set(0, 0, 0.5, 1);
 leftCamera.clearFlags = CameraClearFlags.Depth;
 leftCameraEntity.transform.setPosition(10, 10, 10);
 leftCameraEntity.transform.lookAt(new Vector3(0, 0, 0));
@@ -37,7 +37,7 @@ leftCameraEntity.addComponent(OrbitControl);
 
 const rightCameraEntity = rootEntity.createChild("right-camera");
 const rightCamera = rightCameraEntity.addComponent(Camera);
-rightCamera.viewport.setValue(0.5, 0, 0.5, 1);
+rightCamera.viewport.set(0.5, 0, 0.5, 1);
 rightCamera.clearFlags = CameraClearFlags.Depth;
 rightCameraEntity.transform.setPosition(10, 10, 10);
 rightCameraEntity.transform.lookAt(new Vector3(0, 0, 0));

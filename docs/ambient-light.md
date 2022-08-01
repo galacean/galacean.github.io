@@ -12,7 +12,7 @@ group: Light
 ```typescript
 const ambientLight = scene.ambientLight;
 // Set ambient light color with red
-ambientLight.diffuseSolidColor.setValue(1, 0, 0, 1);
+ambientLight.diffuseSolidColor.set(1, 0, 0, 1);
 // Set ambient light intensity
 ambientLight.diffuseIntensity = 0.5;
 ```

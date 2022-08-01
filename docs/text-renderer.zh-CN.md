@@ -30,7 +30,7 @@ textRenderer.text = "Oasis 会写字了！";
 // 通过 fontSize 设置字体大小
 textRenderer.fontSize = 36;
 // 通过 color 设置文本颜色
-textRenderer.color.setValue(1, 0, 0, 1);
+textRenderer.color.set(1, 0, 0, 1);
 ```
 
 ## 设置宽高
@@ -83,6 +83,25 @@ textRenderer.overflowMode = OverflowMode.Truncate;
 | :--- | :--- | :--- |
 |[horizontalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextHorizontalAlignment](${api}core/TextHorizontalAlignment)|水平方向对齐方式：Left/Center/Right 分别代表 左对齐/居中对齐/右对齐 显示|
 |[verticalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextVerticalAlignment](${api}core/TextVerticalAlignment)|竖直方向对齐方式：Top/Center/Bottom 分别代表 顶部开始显示/居中显示/底部开始显示|
+
+## 文本的字体样式
+文本的字体样式用来设置文本是否加粗显示，是否斜体显示，如下：
+
+| 属性名 | 属性类型 | 描述 |
+| :--- | :--- | :--- |
+|[fontStyle](${api}core/TextRenderer#fontStyle)|[FontStyle](${api}core/FontStyle)|字体样式：None/Bold/Italic 分别代表 正常/加粗/斜体 显示|
+
+使用方式如下：
+```typescript
+// 正常显示
+textRenderer.fontStyle = FontStyle.None;
+// 加粗显示
+textRenderer.fontStyle = FontStyle.Bold;
+// 斜体显示
+textRenderer.fontStyle = FontStyle.Italic;
+// 既加粗又斜体显示
+textRenderer.fontStyle = FontStyle.Bold | FontStyle.Italic;
+```
 
 ## 多行文本示例
 

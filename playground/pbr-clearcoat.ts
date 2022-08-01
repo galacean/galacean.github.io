@@ -2,7 +2,7 @@
  * @title PBR Clearcoat
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AmbientLight,
   AssetType,
@@ -53,7 +53,7 @@ Promise.all([
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;

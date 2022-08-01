@@ -9,7 +9,7 @@ import {
   MeshRenderer, BlinnPhongMaterial, PointLight,
   PrimitiveMesh, Camera, Script, StaticCollider, ColliderShape
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 import {
   PhysXPhysics
@@ -23,7 +23,7 @@ PhysXPhysics.initialize().then(() => {
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity("root");
 
-  scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+  scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
   scene.ambientLight.diffuseIntensity = 1.2;
 
   // init camera
@@ -44,7 +44,7 @@ PhysXPhysics.initialize().then(() => {
 
   const boxMtl = new BlinnPhongMaterial(engine);
   const boxRenderer = boxEntity.addComponent(MeshRenderer);
-  boxMtl.baseColor.setValue(0.6, 0.3, 0.3, 1.0);
+  boxMtl.baseColor.set(0.6, 0.3, 0.3, 1.0);
   boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
   boxRenderer.setMaterial(boxMtl);
 
@@ -65,7 +65,7 @@ PhysXPhysics.initialize().then(() => {
 
   const sphereMtl = new BlinnPhongMaterial(engine);
   const sphereRenderer = sphereEntity.addComponent(MeshRenderer);
-  sphereMtl.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+  sphereMtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
   sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
   sphereRenderer.setMaterial(sphereMtl);
 
@@ -93,18 +93,18 @@ PhysXPhysics.initialize().then(() => {
         this.velSign = 1;
       }
       this.pos += this.vel * this.velSign;
-      this.entity.transform.worldPosition.setValue(this.pos, 0, 0);
+      this.entity.transform.worldPosition.set(this.pos, 0, 0);
     }
   }
 
   // Collision Detection
   class CollisionScript extends Script {
     onTriggerExit(other: ColliderShape) {
-      (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+      (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
     }
 
     onTriggerEnter(other: ColliderShape) {
-      (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+      (<BlinnPhongMaterial>sphereRenderer.getMaterial()).baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
     }
 
     onTriggerStay(other: ColliderShape) {

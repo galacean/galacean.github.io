@@ -11,7 +11,7 @@ const useScript = (s: IScript) => {
   useEffect(() => {
     const promises: Promise<any>[] = [];
     const scripts: any[] = [];
-    
+
     const addLib = (lib: any): Promise<any> => {
       const promise = new Promise((resolve) => {
         if (lib.cdn) {
@@ -35,7 +35,21 @@ const useScript = (s: IScript) => {
     addLib(s.libs['oasis-engine']).then(() => {
       Object.keys(s.libs).forEach(name => {
         if (name !== 'oasis-engine') {
-          const promise = addLib(s.libs[name])
+          const lib = s.libs[name];
+          let promise;
+
+          // child packages
+          if (lib.packages) {
+            const childPromises = [];
+            for(const name in lib.packages) {
+              childPromises.push(addLib(lib.packages[name]));
+            }
+            promise = Promise.all(childPromises).then(() => addLib(lib));
+          }
+          else {
+            promise = addLib(lib)
+          }
+
           promises.push(promise);
         }
       });
@@ -53,15 +67,15 @@ const useScript = (s: IScript) => {
 
 
     return () => {
-      scripts.forEach((script)=>{
+      scripts.forEach((script) => {
         document.body.removeChild(script);
       });
     }
   }, [s]);
 };
 
-export default function Playground (props: any) {
-  const {content} = props.pageContext.node.internal;
+export default function Playground(props: any) {
+  const { content } = props.pageContext.node.internal;
 
   useScript({
     libs: siteConfig.packages,
@@ -70,7 +84,7 @@ export default function Playground (props: any) {
 
   return (
     <>
-      <canvas id="canvas" style={{width: '100vw', height: '100vh'}} />
+      <canvas id="canvas" style={{ width: '100vw', height: '100vh' }} />
     </>
   );
 }

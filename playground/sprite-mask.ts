@@ -2,7 +2,7 @@
  * @title Sprite Mask
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   Camera,
@@ -60,14 +60,14 @@ engine.resourceManager
     const maksSprite1 = new Sprite(engine, textures[2]);
 
     // Show inside mask.
-    pos.setValue(-5, 0, 0);
-    scale.setValue(2, 2, 2);
+    pos.set(-5, 0, 0);
+    scale.set(2, 2, 2);
     addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleInsideMask, SpriteMaskLayer.Layer0);
     addMask(pos, maskSprite0, SpriteMaskLayer.Layer0, ScaleScript);
 
     // Show outside mask.
-    pos.setValue(5, 0, 0);
-    scale.setValue(2, 2, 2);
+    pos.set(5, 0, 0);
+    scale.set(2, 2, 2);
     addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleOutsideMask, SpriteMaskLayer.Layer1);
     addMask(pos, maksSprite1, SpriteMaskLayer.Layer1, RotationScript);
   });

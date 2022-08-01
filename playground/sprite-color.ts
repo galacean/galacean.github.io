@@ -2,7 +2,7 @@
  * @title Sprite Color
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   Camera,
@@ -40,15 +40,15 @@ engine.resourceManager
     spriteRenderer.sprite = new Sprite(engine, texture);
     const color = new Color();
     // Display normal
-    addColorEntity(spriteEntity, -20, color.setValue(1, 1, 1, 1));
+    addColorEntity(spriteEntity, -20, color.set(1, 1, 1, 1));
     // Display red
-    addColorEntity(spriteEntity.clone(), -10, color.setValue(1, 0, 0, 1));
+    addColorEntity(spriteEntity.clone(), -10, color.set(1, 0, 0, 1));
     // Display green
-    addColorEntity(spriteEntity.clone(), 0, color.setValue(0, 1, 0, 1));
+    addColorEntity(spriteEntity.clone(), 0, color.set(0, 1, 0, 1));
     // Display blue
-    addColorEntity(spriteEntity.clone(), 10, color.setValue(0, 0, 1, 1));
+    addColorEntity(spriteEntity.clone(), 10, color.set(0, 0, 1, 1));
     // Display alpha
-    addColorEntity(spriteEntity.clone(), 20, color.setValue(1, 1, 1, 0.2));
+    addColorEntity(spriteEntity.clone(), 20, color.set(1, 1, 1, 0.2));
   });
 
 engine.run();

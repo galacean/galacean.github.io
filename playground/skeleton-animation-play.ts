@@ -2,9 +2,9 @@
  * @title Animation Play
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine/controls";
-import { Animator, Camera, DirectLight, GLTFResource, Logger, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
 import * as dat from "dat.gui";
+import { Animator, Camera, DirectLight, GLTFResource, Logger, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 const gui = new dat.GUI();
 
 Logger.enable();
@@ -27,13 +27,11 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
-  .then((asset) => {
-    const { defaultSceneRoot } = asset;
+  .then((gltfResource) => {
+    const { animations, defaultSceneRoot } = gltfResource;
     rootEntity.addChild(defaultSceneRoot);
     const animator = defaultSceneRoot.getComponent(Animator);
-    const animationNames = animator.animatorController.layers[0].stateMachine.states
-      .map((state) => state.name)
-      .filter((name) => !name.includes("pose"));
+    const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
 
     animator.play(animationNames[0]);
 
@@ -47,7 +45,7 @@ engine.resourceManager
     });
 
     gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
-      animator.speed = v
+      animator.speed = v;
     });
   });
 

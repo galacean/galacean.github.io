@@ -3,7 +3,7 @@
  * @category Physics
  */
 
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 import {
   BlinnPhongMaterial,
@@ -43,7 +43,7 @@ class TableGenerator extends Script {
     boxCollider.mass = 10.0;
 
     const boxMaterial = new BlinnPhongMaterial(this.engine);
-    boxMaterial.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    boxMaterial.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
     boxMaterial.shininess = 128;
     {
       const physicsBox = new BoxColliderShape();
@@ -107,6 +107,28 @@ class TableGenerator extends Script {
   }
 }
 
+function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
+  const engine = rootEntity.engine;
+  const material = new BlinnPhongMaterial(engine);
+  material.baseColor.set(0.04, 0.42, 0.45, 1);
+  material.shininess = 128;
+
+  const entity = rootEntity.createChild();
+  const renderer = entity.addComponent(MeshRenderer);
+  entity.transform.position = position;
+  entity.transform.rotationQuaternion = rotation;
+  renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
+  renderer.setMaterial(material);
+
+  const physicsPlane = new PlaneColliderShape();
+  physicsPlane.setPosition(0, 0.1, 0);
+  const planeCollider = entity.addComponent(StaticCollider);
+  planeCollider.addShape(physicsPlane);
+
+  return entity;
+}
+
+//--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
   engine.physicsManager.initialize(PhysXPhysics);
@@ -114,7 +136,7 @@ PhysXPhysics.initialize().then(() => {
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity("root");
-  scene.ambientLight.diffuseSolidColor.setValue(0.5, 0.5, 0.5, 1);
+  scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
 
   // init camera
   const cameraEntity = rootEntity.createChild("camera");
@@ -134,24 +156,3 @@ PhysXPhysics.initialize().then(() => {
   // Run engine
   engine.run();
 });
-
-function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
-  const engine = rootEntity.engine;
-  const material = new BlinnPhongMaterial(engine);
-  material.baseColor.setValue(0.04, 0.42, 0.45, 1);
-  material.shininess = 128;
-
-  const entity = rootEntity.createChild();
-  const renderer = entity.addComponent(MeshRenderer);
-  entity.transform.position = position;
-  entity.transform.rotationQuaternion = rotation;
-  renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
-  renderer.setMaterial(material);
-
-  const physicsPlane = new PlaneColliderShape();
-  physicsPlane.setPosition(0, 0.1, 0);
-  const planeCollider = entity.addComponent(StaticCollider);
-  planeCollider.addShape(physicsPlane);
-
-  return entity;
-}

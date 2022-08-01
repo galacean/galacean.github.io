@@ -2,7 +2,7 @@
  * @title Tiling Offset
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -82,7 +82,7 @@ function addDataGUI(material: UnlitMaterial, animationScript: AnimateScript): an
       guiData.tilingY = 1;
       guiData.offsetX = 0;
       guiData.offsetY = 0;
-      material.tilingOffset.setValue(1, 1, 0, 0);
+      material.tilingOffset.set(1, 1, 0, 0);
     },
     pause: function () {
       animationScript.enabled = false;

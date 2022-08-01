@@ -30,7 +30,7 @@ const inputManager = engine.inputManager;
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity("root");
 
-scene.ambientLight.diffuseSolidColor.setValue(1, 1, 1, 1);
+scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 scene.ambientLight.diffuseIntensity = 1.2;
 
 // init camera
@@ -52,40 +52,25 @@ class PanScript extends Script {
   private startPointerPos = new Vector3();
   private tempVec2: Vector2 = new Vector2();
   private tempVec3: Vector3 = new Vector3();
-  private tempVec4: Vector4 = new Vector4();
   private zValue: number = 0;
 
   onPointerDown() {
-    // get depth
-    camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec4).z;
-    this.zValue = (this.tempVec4.z + 1) / 2;
+    this.zValue = camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec3).z;
     const { tempVec2, tempVec3 } = this;
-    // @ts-ignore
-    this.getMergePointer(inputManager.pointers, tempVec2);
-    tempVec3.setValue(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+    tempVec2.copyFrom(inputManager.pointerPosition);
+    tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
     camera.viewportToWorldPoint(tempVec3, this.startPointerPos);
   }
 
   onPointerDrag() {
     const { tempVec2, tempVec3, startPointerPos } = this;
     const { transform } = this.entity;
-    // @ts-ignore
-    this.getMergePointer(inputManager.pointers, tempVec2);
-    this.tempVec3.setValue(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+    tempVec2.copyFrom(inputManager.pointerPosition);
+    tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
     camera.viewportToWorldPoint(tempVec3, tempVec3);
     Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
-    transform.worldPosition = transform.worldPosition.add(startPointerPos);
-    tempVec3.cloneTo(startPointerPos);
-  }
-
-  getMergePointer(pointers: Pointer[], out: Vector2) {
-    pointers[0].position.cloneTo(out);
-    const len = pointers.length;
-    for (let i = 1; i < len; i++) {
-      const pos = pointers[i].position;
-      out.x += pos.x;
-      out.y += pos.y;
-    }
+    transform.worldPosition.add(startPointerPos);
+    startPointerPos.copyFrom(tempVec3);
   }
 }
 
@@ -96,7 +81,7 @@ class ClickScript extends Script {
   }
 
   onPointerClick() {
-    this.material.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    this.material.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
   }
 }
 
@@ -107,11 +92,11 @@ class EnterExitScript extends Script {
   }
 
   onPointerEnter() {
-    this.material.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    this.material.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
   }
 
   onPointerExit() {
-    this.material.baseColor.setValue(Math.random(), Math.random(), Math.random(), 1.0);
+    this.material.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
   }
 }
 
@@ -123,7 +108,7 @@ function createBox(x: number, y: number, z: number): Entity {
 
   const boxMtl = new BlinnPhongMaterial(engine);
   const boxRenderer = boxEntity.addComponent(MeshRenderer);
-  boxMtl.baseColor.setValue(0.6, 0.3, 0.3, 1.0);
+  boxMtl.baseColor.set(0.6, 0.3, 0.3, 1.0);
   boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
   boxRenderer.setMaterial(boxMtl);
 

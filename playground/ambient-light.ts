@@ -2,7 +2,6 @@
  * @title AmbientLight
  * @category Light
  */
-import { OrbitControl } from "@oasis-engine/controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -19,6 +18,7 @@ import {
   Vector3,
   WebGLEngine
 } from "oasis-engine";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -57,7 +57,7 @@ ballRender.setMaterial(material);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/871e960f-874f-4dc6-aa69-2e8fda8b5795.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -83,7 +83,7 @@ function openDebug(specularTexture) {
   });
 
   gui.addColor(info, "diffuseSolidColor").onChange((v) => {
-    scene.ambientLight.diffuseSolidColor.setValue(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+    scene.ambientLight.diffuseSolidColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
   });
 
   gui.add(info, "specularTexture").onChange((v) => {
