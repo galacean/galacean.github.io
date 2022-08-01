@@ -52,7 +52,7 @@ class Raycast extends Script {
       }
     }
 
-    if (inputManager.isPointerUp(PointerButton.Primary)) {
+    if (this.pickedMeshRenderer && inputManager.isPointerUp(PointerButton.Primary)) {
       (<BlinnPhongMaterial>this.pickedMeshRenderer.getMaterial()).baseColor = originalColor;
     }
   }
