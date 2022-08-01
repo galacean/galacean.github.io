@@ -50,7 +50,7 @@ Logger.enable();
 enum State {
   Run = "Run",
   Idle = "Idle",
-  Jump = "Jump",
+  Jump = "Jump_In",
   Fall = "Fall",
   Landing = "Landing"
 }

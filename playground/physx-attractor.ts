@@ -52,11 +52,14 @@ class Interactor extends Script {
 
   onUpdate(deltaTime: number) {
     const ray = this.ray;
-    this.camera.screenPointToRay(this.engine.inputManager.pointerPosition, ray);
+    const pointer = this.engine.inputManager.pointerPosition;
+    if (pointer) {
+      this.camera.screenPointToRay(pointer, ray);
 
-    const position = this.entity.transform.position;
-    position.copyFrom(ray.origin);
-    position.add(ray.direction.scale(18));
+      const position = this.entity.transform.position;
+      position.copyFrom(ray.origin);
+      position.add(ray.direction.scale(18));
+    }
   }
 }
 
