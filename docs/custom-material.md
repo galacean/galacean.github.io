@@ -226,12 +226,18 @@ For more options about the rendering state, please refer to the corresponding [A
 
 ## Rendering queue
 
-So far, the custom material has been very perfect, but maybe we need to do some processing on the rendering order of the objects. For example, the transparent objects is generally rendered behind the opaque queue. Therefore, the engine provides [RenderQueueType](${api}core/RenderQueueType), the rendering queue of the material can determine the rendering order of this material in the current scene, and the bottom layer of the engine will perform some special processing on the rendering queue of different ranges, such as [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) will render **from far to near**. It is worth noting that the value of the render queue can be an enumerated value plus any custom number.
+So far, the custom material has been very perfect, but maybe we need to do some processing on the rendering order of the objects. For example, the transparent objects is generally rendered behind the opaque queue. Therefore, the engine provides [RenderQueueType](${api}core/RenderQueueType), the rendering queue of the material can determine the rendering order of this material in the current scene, and the bottom layer of the engine will perform some special processing on the rendering queue of different ranges, such as [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) will render **from far to near**.
 
 i.e.
 
 ```typescript
-material.renderQueueType = RenderQueueType.Opaque + 1;
+material.renderQueueType = RenderQueueType.Opaque;
+```
+
+For the same rendering queue, we can also set the `priority` property of [Renderer](${api}core/Renderer) to force the rendering order, the default is 0, the higher the number, the later rendering, such as:
+
+```typescript
+renderer.priority = -1; // render first
 ```
 
 ## Package custom material

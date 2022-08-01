@@ -59,7 +59,11 @@ scene.background.solidColor.set(0, 0, 0, 0);
 | [resourceManager](${api}core/Engine#resourceManager) | 资源管理 |
 | [sceneManager](${api}core/Engine#sceneManager) | 场景管理。*Engine* 是总控制器，*Scene* 作为场景单元，可以方便大型场景的实体管理；*Camera* 作为组件挂载在 *Scene* 中的某一实体下，和现实中的摄像机一样，可以选择拍摄 *Scene* 中的任何实体 ，最后渲染到屏幕上的一块区域或者离屏渲染。|
 
-如果用户使用 Oasis Engine 制作 FPS 等高速游戏，可能会遇到画面撕裂，碰撞检测不精确等结果，这是因为 *Engine* 的刷新速度跟不上屏幕刷新速度。用户可以关闭垂直同步，即将 [vSyncCount](${api}core/Engine#vSyncCount) 设置为 0，然后设置 [targetFrameRate](${api}core/Engine#targetFrameRate)  为期望的帧数值，如 120 表示 120 帧，即每秒刷新 120 次。
+### 刷新率
+
+默认情况下引擎采用垂直同步模式并使用 [vSyncCount](${api}core/Engine#vSyncCount) 控制渲染刷新率，该模式才渲染帧会等待屏幕的垂直同步信号， [vSyncCount](${api}core/Engine#vSyncCount) 代表了渲染帧之间期望的屏幕同步信号次数，默认值为 1，该属性的值必须为整数，例如我们想在一个屏幕刷新率为 60 帧的设备上期望每秒渲染 30 帧，则可以将该值设置为 2。
+
+另外用户还可以关闭垂直同步，即将 [vSyncCount](${api}core/Engine#vSyncCount) 设置为 0，然后设置 [targetFrameRate](${api}core/Engine#targetFrameRate)  为期望的帧数值，该模式下的渲染不考虑垂直同步信号，而是，如 120 表示 120 帧，即每秒期望刷新 120 次。
 
 ```typescript
 // 垂直同步
@@ -75,6 +79,7 @@ engine.targetFrameRate = 120;
 
 | 方法名称 | 方法释义 |
 | --- | --- |
-| [run](${api}core/Engine#run) | 执行 |
-| [pause](${api}core/Engine#pause) | 暂停 |
-| [resume](${api}core/Engine#resume) | 继续 |
+| [run](${api}core/Engine#run) | 执行引擎渲染帧循环 |
+| [pause](${api}core/Engine#pause) | 暂停引擎渲染帧循环 |
+| [resume](${api}core/Engine#resume) | 恢复引擎渲染帧玄幻 |
+| [destroy](${api}core/Engine#destroy) | 销毁引擎 |

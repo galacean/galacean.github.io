@@ -96,7 +96,7 @@ function addGroupSpriteRenderer(sprite: Sprite, from: Vector3, to: Vector3): voi
 function addSpriteRenderer(sprite: Sprite, position: Vector3): void {
   const spriteEntity = rootEntity.createChild();
   spriteEntity.transform.position = position;
-  spriteEntity.transform.scale.set(4, 4, 4);
+  spriteEntity.transform.scale.set(100 / 32, 100 / 32, 100 / 32);
   spriteEntity.addComponent(SpriteRenderer).sprite = sprite;
 }
 

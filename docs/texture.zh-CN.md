@@ -16,6 +16,13 @@ group: 纹理
 | [立方纹理](${docs}texture-cube-cn) | 6 张 2D 纹理组成了一个立方纹理，可以用来实现天空盒、环境反射等特效 |
 | 2D 纹理数组| 只占用一个纹理单元，非常适合用来实现需要切换纹理图集的需求 |
 
+
+## 纹理坐标
+我们在片元着色器中采样纹理需要用到纹理坐标，我们一般称之 UV坐标，纹理坐标的（0，0）位于图片的左下角，（1，1）对应于图片的右上角,比如我们可以使用 （0.5，0.5）对图片的中心进行采样：
+```
+vec4 color = texture2D(u_texture, vec2(0.5, 0.5));
+```
+
 ## 通用属性
 
 > 虽然纹理类型多样，但他们都有一些相似的基本属性与设置：
@@ -73,7 +80,7 @@ texture.filterMode = TextureFilterMode.Bilinear;
 
 ### 3. 各向异性过滤等级
 
-各向异性过滤技术可以使纹理在倾斜角度下观看会更加清晰。如下图，纹理的尽头随着各向异性过滤等级的增加会愈加清晰。
+各向异性过滤技术可以使纹理在倾斜角度下观看会更加清晰。如下图，纹理的尽头随着各向异性过滤等级的增加会愈加清晰。但请慎重使用，数值越大，GPU的计算量就会越大。
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*oqkqSJMAe7cAAAAAAAAAAAAAARQnAQ)
 
@@ -127,4 +134,11 @@ premultiplyAlpha 用来控制纹理是否预乘 alpha(透明) 通道，**引擎�
 ```typescript
 const texture = new Texture2D(engine, width, height);
 texture.setImageSource(img, 0, undefined, true); // 第 4 个参数
+```
+
+## 纹理格式
+引擎默认使用 `TextureFormat.R8G8B8A8` 作为纹理格式, 即红蓝绿、透明通道分别使用1个字节，每个通道允许保存 【0～255】 大小的颜色值。引擎支持配置不同的纹理格式，具体可以参考 [TextureFormat](${api}core/TextureFormat)。比如我们不需要使用透明通道，即 A 通道，那么我们可以使用 `TextureFormat.R8G8B8`：
+
+```typescript
+const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8);
 ```

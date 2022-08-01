@@ -222,9 +222,15 @@ material.renderQueueType = RenderQueueType.Transparent;
 
 
 ## 渲染队列
-至此，自定义材质已经非常完善了，但是也许我们还需要对物体的渲染顺序做一些处理，比如透明物体的渲染一般都是放在非透明队列后面的，因此，引擎提供了 [渲染队列（RenderQueueType）](${api}core/RenderQueueType) ，我们设置材质的渲染队列，可以决定这个材质在当前场景中的渲染顺序，引擎底层会对不同范围的渲染队列进行一些特殊处理，如 [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) 会从远到近进行渲染。值得注意的是渲染队列的值可以是枚举值加上任何自定义数字。
+至此，自定义材质已经非常完善了，但是也许我们还需要对物体的渲染顺序做一些处理，比如透明物体的渲染一般都是放在非透明队列后面的，因此，引擎提供了 [渲染队列（RenderQueueType）](${api}core/RenderQueueType) ，我们设置材质的渲染队列，可以决定这个材质在当前场景中的渲染顺序，引擎底层会对不同范围的渲染队列进行一些特殊处理，如 [RenderQueueType.Transparent](${api}core/RenderQueueType#transparent) 会从远到近进行渲染。
+
 ```typescript
-material.renderQueueType = RenderQueueType.Opaque + 1;
+material.renderQueueType = RenderQueueType.Opaque;
+```
+
+针对相同的渲染队列，我们还可以设置 [Renderer](${api}core/Renderer)  的 `priority` 属性来强制决定渲染顺序，默认为0，数字越大越后面渲染，如：
+```typescript
+renderer.priority = -1; // 优先渲染
 ```
 
 

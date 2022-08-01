@@ -8,6 +8,8 @@ type: 资源
 
 正如 [glTF 官网](https://www.khronos.org/gltf/) 所介绍，**glTF**（GL Transmission Format）是 [khronos ](https://www.khronos.org/)发布的一种能高效传输和加载 3D 场景的规范，是 3D 领域中的 "JPEG" 格式，其功能涵盖了 FBX、OBJ 等传统模型格式，基本支持 3D 场景中的所有特性，其[插件机制](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos)也使用户可以灵活地自定义实现想要的功能。
 
+glTF 的产物一般分为（.gltf + .bin + png）或者 (.glb)，前者适合图片体积大的场景，所以将图片和模型拆分开来，可以异步加载模型和纹理；后者适合模型文件较大的场景，会将所有数据进行二进制保存，需要等所有数据解析完毕才能展示模型。
+
 glTF 是目前 Oasis 推荐的首选 3D 场景传输格式，Oasis 对 glTF 的核心功能和插件都做了很好的支持。
 
 <playground src="gltf-loader.ts"></playground>

@@ -102,7 +102,7 @@ function createSpring(rootEntity: Entity, position: Vector3, rotation: Quaternio
   const springJoint = currentEntity.addComponent(SpringJoint);
   springJoint.connectedAnchor = position;
   springJoint.swingOffset = new Vector3(0, 1, 0);
-  springJoint.maxDistance = 10;
+  springJoint.maxDistance = 2;
   springJoint.stiffness = 0.2;
   springJoint.damping = 1;
 }
@@ -170,7 +170,7 @@ PhysXPhysics.initialize().then(() => {
 
   createText(rootEntity, new Vector3(-5, 5), 50);
   createChain(rootEntity, new Vector3(8.0, 10.0, 0.0), new Quaternion(), 10, 2.0);
-  createSpring(rootEntity, new Vector3(-4.0, 10.0, 1.0), new Quaternion());
+  createSpring(rootEntity, new Vector3(-4.0, 4.0, 1.0), new Quaternion());
   createHinge(rootEntity, new Vector3(0, 0, 0), new Quaternion());
 
   // init camera

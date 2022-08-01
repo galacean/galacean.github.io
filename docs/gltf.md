@@ -2,12 +2,15 @@
 order: 3
 title: glTF
 type: Resource
-
 ---
 
 ## What is glTF?
 
-As [glTF Official Website](https://www.khronos.org/gltf/) described, **glTF**（GL Transmission Format）It is a specification that can efficiently transmit and load 3D scenes in [khronos ](https://www.khronos.org/), which is a "JPEG" format in the 3D field, which features traditional models such as FBX, OBJ. Format, basically support all features in 3D scenes,Its [Plug-in mechanism](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos) also enables users to flexibly customize the desired features. glTF is currently the preferred 3D scene transmission format recommended by Oasis. Oasis has made good support for the core functions and plugins of glTF.
+As [glTF Official Website](https://www.khronos.org/gltf/) described, **glTF**（GL Transmission Format）It is a specification that can efficiently transmit and load 3D scenes in [khronos ](https://www.khronos.org/), which is a "JPEG" format in the 3D field, which features traditional models such as FBX, OBJ. Format, basically support all features in 3D scenes,Its [Plug-in mechanism](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos) also enables users to flexibly customize the desired features.
+
+The products of glTF are generally divided into (.gltf + .bin + png) or (.glb), the former is suitable for scenes with large pictures, so the pictures and models are separated, and models and textures can be loaded asynchronously; the latter is suitable for models For scenarios with large files, all data will be stored in binary, and the model needs to be parsed after all data is parsed.
+
+glTF is currently the preferred 3D scene transmission format recommended by Oasis. Oasis has made good support for the core functions and plugins of glTF.
 
 <playground src="gltf-loader.ts"></playground>
 

@@ -50,7 +50,7 @@ Logger.enable();
 enum State {
   Run = "Run",
   Idle = "Idle",
-  Jump = "Jump",
+  Jump = "Jump_In",
   Fall = "Fall",
   Landing = "Landing"
 }
@@ -163,7 +163,7 @@ class ControllerScript extends Script {
       }
       if (inputManager.isKeyDown(Keys.Space)) {
         animationState.setJumpKey();
-        displacement.set(0, 0.3, 0);
+        displacement.set(0, 0.05, 0);
       }
     } else {
       this._animationState.setMoveKey(null);
@@ -310,7 +310,7 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
   return stairEntity;
 }
 
-function textureAndAnimationLoader(engine: Engine, materials: Material[], animatorStateMachine: AnimatorStateMachine) {
+function textureAndAnimationLoader(engine: Engine, materials: Material[], animator: Animator, animatorStateMachine: AnimatorStateMachine) {
   engine.resourceManager
     .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/6990/T_Doggy_1_diffuse.png")
     .then((res) => {
@@ -363,6 +363,8 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
           const animatorState = animatorStateMachine.addState(clip.name);
           animatorState.clip = clip;
         });
+        animator.play(State.Idle);
+        engine.run();
       }
     });
   engine.resourceManager
@@ -472,17 +474,14 @@ PhysXPhysics.initialize().then(() => {
 
       // controller
       const physicsCapsule = new CapsuleColliderShape();
-      physicsCapsule.radius = 0.2;
-      physicsCapsule.height = 0.1;
+      physicsCapsule.radius = 0.15;
+      physicsCapsule.height = 0.2;
       const characterController = controllerEntity.addComponent(CharacterController);
       characterController.addShape(physicsCapsule);
       const userController = controllerEntity.addComponent(ControllerScript);
       userController.targetCamera(cameraEntity);
       userController.targetCharacter(defaultSceneRoot);
 
-      textureAndAnimationLoader(engine, asset.materials, animatorStateMachine);
-      animator.play(State.Idle);
-
-      engine.run();
+      textureAndAnimationLoader(engine, asset.materials, animator, animatorStateMachine);
     });
 });

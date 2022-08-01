@@ -19,7 +19,8 @@ import {
   WebGLEngine,
   StaticCollider,
   BoxColliderShape,
-  Keys
+  Keys,
+  Engine
 } from "oasis-engine";
 import * as TWEEN from "@tweenjs/tween.js";
 import { LitePhysics } from "@oasis-engine/physics-lite";
@@ -50,29 +51,26 @@ const GameEvent = {
 };
 
 let gameResArray: Texture2D[];
-
-/**
- * We can customize the size of the interface that is finally presented to the player.
- * @param designWidth - Design width
- * @param designHeight - Design height
- */
-function fitWithHeight(aspectRatio: number) {
-  const canvas = document.getElementById("canvas");
-  const parentEle = canvas.parentElement;
-  const style = canvas.style;
-  const designHeight = parentEle.clientHeight;
-  const designWidth = designHeight * aspectRatio;
-  style.width = designWidth + "px";
-  style.height = designHeight + "px";
-  style.marginLeft = (parentEle.clientWidth - designWidth) / 2 + "px";
+// We can customize the size of the interface that is finally presented to the player.
+const designWidth = 768;
+const designHeight = 896;
+const aspectRatio = designWidth / designHeight;
+const canvas = document.getElementById("canvas");
+const parentEle = canvas.parentElement;
+let { clientWidth, clientHeight } = parentEle;
+if (clientWidth / clientHeight > aspectRatio) {
+  clientWidth = clientHeight * aspectRatio;
+  canvas.style.width = clientWidth + "px";
+  canvas.style.marginLeft = (parentEle.clientWidth - clientWidth) / 2 + "px";
+} else {
+  clientHeight = clientWidth / aspectRatio;
+  canvas.style.height = clientHeight + "px";
+  canvas.style.marginTop = (parentEle.clientHeight - clientHeight) / 2 + "px";
 }
-
-// Design size.
-fitWithHeight(768 / 896);
 // Create engine object.
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
-engine.canvas.resizeByClientSize();
+engine.canvas.resizeByClientSize(designHeight / clientHeight);
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
@@ -83,7 +81,7 @@ cameraEntity.transform.setPosition(0.3, 0, 5);
 const camera = cameraEntity.addComponent(Camera);
 // 2D is more suitable for orthographic cameras.
 camera.isOrthographic = true;
-camera.orthographicSize = 4.5;
+camera.orthographicSize = engine.canvas.height / Engine._pixelsPerUnit / 2;
 
 // Load the resources needed by the game.
 engine.resourceManager
@@ -104,7 +102,7 @@ engine.resourceManager
       type: AssetType.Texture2D
     },
     {
-      // Bird.
+      // Bird.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png",
       type: AssetType.Texture2D
     },
@@ -126,7 +124,7 @@ engine.resourceManager
     // Background.
     const nodeBg = rootEntity.createChild("nodeBg");
     nodeBg.transform.setPosition(0.3, 0, -10);
-    nodeBg.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[0], null, null, 100);
+    nodeBg.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[0]);
 
     // Pipe.
     const nodePipe = rootEntity.createChild("nodePipe");
@@ -148,7 +146,7 @@ engine.resourceManager
     // Bird.
     const nodeBird = rootEntity.createChild("nodeBird");
     nodeBird.transform.setPosition(-1, 1.15, 0);
-    nodeBird.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[3], null, null, 100);
+    nodeBird.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[3]);
     nodeBird.addComponent(ScriptBird);
 
     // Death Effect.
@@ -169,7 +167,7 @@ engine.resourceManager
     nodeGui.transform.setPosition(0.3, 0, 1);
     // Restart.
     const nodeRestart = nodeGui.createChild("nodeRestart");
-    nodeRestart.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[4], null, null, 100);
+    nodeRestart.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[4]);
     // Score.
     const nodeScore = nodeGui.createChild("nodeScore");
     nodeScore.transform.setPosition(0, 3.2, 0);
@@ -214,8 +212,8 @@ class ScriptPipe extends Script {
     node1.transform.setPosition(0, -verticalDis / 2, 0);
     node2.transform.setPosition(0, verticalDis / 2, 0);
     node2.transform.setScale(1, -1, 1);
-    node1.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1], null, null, 100);
-    node2.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1], null, null, 100);
+    node1.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1]);
+    node2.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1]);
     this._pipePool.push(pipe);
 
     // Control the performance of the pipe according to the change of the game state.
@@ -340,7 +338,7 @@ class ScriptScore extends Script {
     const spriteArray = this._spriteArray;
     // Cut digital resources into ten.
     for (var i = 0; i < 10; i++) {
-      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1), null, 75));
+      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1)));
     }
 
     engine.on(GameEvent.addScore, () => {
@@ -618,7 +616,7 @@ class ScriptBird extends Script {
   private _initDataAndUI() {
     const { entity } = this;
     const renderer = entity.getComponent(SpriteRenderer);
-    renderer.sprite = this._sprite = new Sprite(engine, gameResArray[3], null, null, 100);
+    renderer.sprite = this._sprite = new Sprite(engine, gameResArray[3]);
     this._setFrameIndex(0);
   }
 
