@@ -2,7 +2,7 @@
  * @title Particle Sprite Sheet
  * @category Particle
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   Camera,

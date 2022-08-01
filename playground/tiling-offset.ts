@@ -2,7 +2,7 @@
  * @title Tiling Offset
  * @category Material
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AssetType,

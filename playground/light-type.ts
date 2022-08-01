@@ -2,7 +2,7 @@
  * @title Light Type
  * @category Light
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   BlinnPhongMaterial,

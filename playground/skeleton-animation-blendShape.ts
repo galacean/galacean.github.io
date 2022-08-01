@@ -2,7 +2,7 @@
  * @title Animation BlendShape
  * @category Animation
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   Animator,
   Camera,

@@ -14,7 +14,7 @@ import {
   Vector3,
   WebGLEngine
 } from "oasis-engine";
-import { FreeControl } from "oasis-engine-toolkit";
+import { FreeControl } from "@oasis-engine-toolkit/controls";
 const gui = new dat.GUI();
 
 //-- create engine object

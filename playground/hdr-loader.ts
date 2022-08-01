@@ -2,7 +2,7 @@
  * @title HDR Background
  * @category Scene
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   BackgroundMode,

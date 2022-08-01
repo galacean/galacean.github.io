@@ -9,7 +9,7 @@ import {
   MeshRenderer, BlinnPhongMaterial, PointLight,
   PrimitiveMesh, Camera, Script, StaticCollider, ColliderShape
 } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 import {
   PhysXPhysics

@@ -25,9 +25,9 @@ import {
   Script,
   PointerButton, TextRenderer, Color, Font
 } from "oasis-engine";
-import {OrbitControl} from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
-import {PhysXPhysics} from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 class GeometryGenerator extends Script {
   quat: Quaternion;

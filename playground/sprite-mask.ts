@@ -2,7 +2,7 @@
  * @title Sprite Mask
  * @category 2D
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   Camera,

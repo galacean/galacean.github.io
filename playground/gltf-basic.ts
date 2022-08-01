@@ -2,7 +2,7 @@
  * @title GLTF Basic
  * @category Basic
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { Camera, GLTFResource, WebGLEngine } from "oasis-engine";
 
 const engine = new WebGLEngine("canvas");

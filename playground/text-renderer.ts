@@ -3,7 +3,7 @@
  * @category 2D
  */
 
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "oasis-engine";
 
 // Create engine object

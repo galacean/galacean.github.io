@@ -21,7 +21,7 @@ import {
 } from "oasis-engine";
 import * as dat from "dat.gui";
 import { LitePhysics } from "@oasis-engine/physics-lite";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 const gui = new dat.GUI();
 const tempLine = new Vector3();

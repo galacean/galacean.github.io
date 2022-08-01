@@ -2,7 +2,7 @@
  * @title OBJ Loader Use Model Mesh
  * @category Mesh
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   BlinnPhongMaterial,
   Camera,

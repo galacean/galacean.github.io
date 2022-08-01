@@ -3,7 +3,8 @@
  * @category Toolkit
  */
 import { Camera, GLTFResource, PBRMaterial, PointerButton, Script, Vector3, WebGLEngine } from "oasis-engine";
-import { FramebufferPicker, OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
 
 class ClickScript extends Script {
   material: PBRMaterial;

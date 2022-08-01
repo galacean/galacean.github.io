@@ -3,7 +3,7 @@
  * @category Physics
  */
 
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 import {
   BlinnPhongMaterial,

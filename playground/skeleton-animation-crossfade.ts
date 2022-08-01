@@ -2,7 +2,7 @@
  * @title Animation CrossFade
  * @category Animation
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   Animator,
   AnimatorController,
@@ -18,6 +18,7 @@ import {
   GLTFResource
 } from "oasis-engine";
 import * as dat from "dat.gui";
+
 const gui = new dat.GUI();
 
 Logger.enable();

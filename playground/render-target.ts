@@ -2,7 +2,7 @@
  * @title Render Target
  * @category Camera
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   Animator,
   AssetType,

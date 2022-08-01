@@ -2,7 +2,7 @@
  * @title Sprite Region
  * @category 2D
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { AssetType, Camera, Entity, Rect, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.

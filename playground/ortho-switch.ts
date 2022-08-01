@@ -7,7 +7,7 @@ import {
   BlinnPhongMaterial, Camera, Color, DirectLight, MeshRenderer,
   PrimitiveMesh, Vector3, WebGLEngine
 } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

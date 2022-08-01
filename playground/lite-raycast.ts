@@ -18,7 +18,7 @@ import {
   PointLight,
   WebGLEngine, Script, PointerButton, Vector3, TextRenderer, Font
 } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 import { LitePhysics } from "@oasis-engine/physics-lite";
 

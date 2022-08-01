@@ -2,7 +2,7 @@
  * @title Mipmap
  * @category Texture
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import { Camera, MeshRenderer, PrimitiveMesh, RenderFace, Texture2D, UnlitMaterial, WebGLEngine } from "oasis-engine";
 const gui = new dat.GUI();

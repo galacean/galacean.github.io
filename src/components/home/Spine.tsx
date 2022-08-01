@@ -1,7 +1,7 @@
 import type { Entity } from 'oasis-engine';
 import { Camera, Vector3, WebGLEngine } from 'oasis-engine';
 import { SpineAnimation } from '@oasis-engine/spine';
-import { OrbitControl } from 'oasis-engine-toolkit';
+import { OrbitControl } from '@oasis-engine-toolkit/controls';
 import React, { useEffect } from 'react';
 
 export default function PBRHelmet() {

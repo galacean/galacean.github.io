@@ -7,7 +7,7 @@ import { SpineAnimation } from "@oasis-engine/spine";
 import {
   AssetType, BackgroundMode, BlinnPhongMaterial, Camera, CameraClearFlags, Color, DirectLight, Entity, Layer, MeshRenderer, PrimitiveMesh, Script, SkyBoxMaterial, TextureCube, Vector3, WebGLEngine
 } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 /**
  * Script for rotate.

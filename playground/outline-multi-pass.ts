@@ -20,7 +20,7 @@ import {
   StencilOperation,
   WebGLEngine
 } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");

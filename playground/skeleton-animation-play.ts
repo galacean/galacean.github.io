@@ -4,7 +4,7 @@
  */
 import * as dat from "dat.gui";
 import { Animator, Camera, DirectLight, GLTFResource, Logger, SystemInfo, Vector3, WebGLEngine } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 const gui = new dat.GUI();
 
 Logger.enable();

@@ -2,7 +2,7 @@
  * @title Blend Mode
  * @category Material
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import { Camera, GLTFResource, PBRMaterial, Vector3, WebGLEngine } from "oasis-engine";
 const gui = new dat.GUI();

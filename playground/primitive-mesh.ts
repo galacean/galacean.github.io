@@ -2,7 +2,7 @@
  * @title Primitive Mesh
  * @category Mesh
  */
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   BlinnPhongMaterial,

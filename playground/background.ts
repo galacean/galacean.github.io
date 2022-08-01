@@ -13,7 +13,7 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
-import { OrbitControl } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

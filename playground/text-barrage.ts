@@ -3,7 +3,7 @@
  * @category Benchmark
  */
 import { Camera, Color, Engine, Font, Script, TextHorizontalAlignment, TextRenderer, WebGLEngine } from "oasis-engine";
-import { Stats } from "oasis-engine-toolkit";
+import { Stats } from "@oasis-engine-toolkit/stats";
 Engine.registerFeature(Stats);
 
 class TextBarrageAnimation extends Script {

@@ -3,7 +3,8 @@
  * @category Toolkit
  */
 import { Animator, Camera, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
-import { OrbitControl, SkeletonViewer } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { SkeletonViewer } from "@oasis-engine-toolkit/skeleton-viewer";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
