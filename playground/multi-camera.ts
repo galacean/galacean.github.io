@@ -5,7 +5,7 @@
 
 import { SpineAnimation } from "@oasis-engine/spine";
 import {
-  AssetType, BackgroundMode, BlinnPhongMaterial, Camera, CameraClearFlags, Color, DirectLight, Entity, Layer, MeshRenderer, PrimitiveMesh, Script, SkyBoxMaterial, TextureCube, Vector3, WebGLEngine
+  AssetType, BackgroundMode, BlinnPhongMaterial, Camera, Color, DirectLight, Entity, Layer, MeshRenderer, PrimitiveMesh, Script, SkyBoxMaterial, TextureCube, Vector3, WebGLEngine
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
@@ -33,7 +33,6 @@ const rootEntity = scene.createRootEntity();
 const cameraEntity = rootEntity.createChild("fullscreen-camera");
 const camera = cameraEntity.addComponent(Camera);
 camera.cullingMask = Layer.Layer0;
-camera.clearFlags = CameraClearFlags.DepthColor;
 cameraEntity.transform.setPosition(10, 10, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 cameraEntity.addComponent(OrbitControl);
@@ -60,7 +59,6 @@ const windowCameraEntity = windowEntity.createChild("window-camera");
 const windowCamera = windowCameraEntity.addComponent(Camera);
 windowCamera.cullingMask = Layer.Layer1;
 windowCamera.viewport.set(0.5, 0.2, 0.3, 0.6);
-windowCamera.clearFlags = CameraClearFlags.Depth;
 windowCamera.farClipPlane = 200;
 windowCameraEntity.transform.setPosition(0, 3, 20);
 
