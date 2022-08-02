@@ -5,7 +5,6 @@
 
 import {
   WebGLEngine,
-  CameraClearFlags,
   DirectLight,
   AssetType,
   Camera,
@@ -30,7 +29,6 @@ const rootEntity = scene.createRootEntity();
 const leftCameraEntity = rootEntity.createChild("left-camera");
 const leftCamera = leftCameraEntity.addComponent(Camera);
 leftCamera.viewport.set(0, 0, 0.5, 1);
-leftCamera.clearFlags = CameraClearFlags.Depth;
 leftCameraEntity.transform.setPosition(10, 10, 10);
 leftCameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 leftCameraEntity.addComponent(OrbitControl);
@@ -38,7 +36,6 @@ leftCameraEntity.addComponent(OrbitControl);
 const rightCameraEntity = rootEntity.createChild("right-camera");
 const rightCamera = rightCameraEntity.addComponent(Camera);
 rightCamera.viewport.set(0.5, 0, 0.5, 1);
-rightCamera.clearFlags = CameraClearFlags.Depth;
 rightCameraEntity.transform.setPosition(10, 10, 10);
 rightCameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 rightCameraEntity.addComponent(OrbitControl);
