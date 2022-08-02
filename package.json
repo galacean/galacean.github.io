@@ -41,7 +41,7 @@
     "@ant-design/icons": "^4.0.5",
     "@babel/core": "^7.14.0",
     "@oasis-engine/baker": "^1.2.0",
-    "@oasis-engine/lottie": "^0.6.5",
+    "@oasis-engine/lottie": "^0.8.0",
     "@oasis-engine/physics-lite": "^0.8.0-beta.2",
     "@oasis-engine/physics-physx": "^0.8.0-beta.2",
     "@oasis-engine/spine": "^0.2.1",
