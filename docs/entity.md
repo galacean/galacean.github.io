@@ -116,21 +116,21 @@ Entity.findByPath("container/model");
 Use [getComponent](${api}core/Entity#getComponent) API to get components of an entity,
 
 ```typescript
-const component = newEntity.getComponent(Animation);
+const component = newEntity.getComponent(Animator);
 ```
 
 There could be multiple components of the same type. The above method will only return the first component found. Use [getComponents](${api}core/Entity#getComponents) to find all the components of a certain entity.
 
 ```typescript
 const components = [];
-newEntity.getComponents(Animation, components);
+newEntity.getComponents(Animator, components);
 ```
 
 Sometimes it's hard to locate the entity that component belongs to, e.g. entity generated from glTF. Use [getComponentsIncludeChildren](${api}core/Entity#getComponentsIncludeChildren).
 
 ```typescript
 const components = [];
-newEntity.getComponentsIncludeChildren(Animation, components);
+newEntity.getComponentsIncludeChildren(Animator, components);
 ```
 
 #### Get Entity of a Component
