@@ -54,11 +54,11 @@ In addition to `defaultSceneRoot`, there are many commonly used analytical produ
 
 ### Play animation
 
-Let's get [Animation](${api}core/Animation) from the root node first, then you can choose which animation clip playing.
+Let's get [Animator](${api}core/Animator) from the root node first, then you can choose which animation clip playing.
 
 ```typescript
 const { animations, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
-const animation = defaultSceneRoot.getComponent(Animation);
+const animation = defaultSceneRoot.getComponent(Animator);
 
 rootEntity.addChild(defaultSceneRoot);
 animation.playAnimationClip(animations[0].name);

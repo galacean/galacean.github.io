@@ -54,11 +54,11 @@ rootEntity.addChild(defaultSceneRoot);
 
 ### 播放动画
 
-我们先从根节点上获取 [Animation](${api}core/Animation) 组件，然后可以选择播放哪一个动画片段。
+我们先从根节点上获取 [Animator](${api}core/Animator) 组件，然后可以选择播放哪一个动画片段。
 
 ```typescript
 const { animations, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
-const animation = defaultSceneRoot.getComponent(Animation);
+const animation = defaultSceneRoot.getComponent(Animator);
 
 rootEntity.addChild(defaultSceneRoot);
 animation.playAnimationClip(animations[0].name);

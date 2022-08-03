@@ -115,21 +115,21 @@ Entity.findByPath("container/model");
 当我们需要获取某一实体上的组件， [getComponent](${api}core/Entity#getComponent) 这个 API 会帮你查找目标组件。
 
 ```typescript
-const component = newEntity.getComponent(Animation);
+const component = newEntity.getComponent(Animator);
 ```
 
 有些时候可能会有多个同一类型的组件，而上面的方法只会返回第一个找到的组件。如果需要找到所有组件可以用 [getComponents](${api}core/Entity#getComponents)：
 
 ```typescript
 const components = [];
-newEntity.getComponents(Animation, components);
+newEntity.getComponents(Animator, components);
 ```
 
 在 glTF 这种资产得到的实体里，我们可能不知道目标组件位于哪个实体，这时可以使用[getComponentsIncludeChildren](${api}core/Entity#getComponentsIncludeChildren)进行查找。
 
 ```typescript
 const components = [];
-newEntity.getComponentsIncludeChildren(Animation, components);
+newEntity.getComponentsIncludeChildren(Animator, components);
 ```
 
 #### 获得组件所在的实体
