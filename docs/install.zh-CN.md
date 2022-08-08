@@ -22,7 +22,7 @@ npm install --save oasis-engine
 ​	  Engine toolkit 
 
 ```bash
-npm install --save oasis-engine-tookit
+npm install --save oasis-engine-toolkit
 ```
 
 
