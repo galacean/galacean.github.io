@@ -5,7 +5,8 @@
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 // import { PlanarShadowMaterial } from "@oasis-engine-toolkit/planar-shadow-material";
 import {
-  Animator,
+  Animator, BlendFactor,
+  BlendOperation,
   BlinnPhongMaterial,
   Camera,
   DirectLight,
@@ -13,7 +14,9 @@ import {
   Logger,
   MeshRenderer,
   PBRMaterial,
-  PrimitiveMesh, ShaderPass,
+  PrimitiveMesh,
+  RenderQueueType,
+  ShaderPass,
   SkinnedMeshRenderer,
   Vector3,
   WebGLEngine
@@ -206,6 +209,7 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
+scene.background.solidColor = new Color(0.9, 0.2, 0.2, 1.0);
 
 // camera
 const cameraEntity = rootEntity.createChild("camera_node");
@@ -249,7 +253,16 @@ engine.resourceManager
       shaderData.setVector3(PlanarShadowMaterial._lightDirProp, lightDir);
 
       const shadowRenderState = material.renderStates[1];
-      shadowRenderState.blendState.targetBlendState.enabled = true;
+      shadowRenderState.depthState.writeEnabled = false;
+
+      const targetBlendState = shadowRenderState.blendState.targetBlendState;
+      targetBlendState.enabled = true;
+      targetBlendState.sourceColorBlendFactor = BlendFactor.SourceAlpha;
+      targetBlendState.destinationColorBlendFactor = BlendFactor.OneMinusSourceAlpha;
+      targetBlendState.sourceAlphaBlendFactor = BlendFactor.One;
+      targetBlendState.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
+      targetBlendState.colorBlendOperation = targetBlendState.alphaBlendOperation = BlendOperation.Add;
+      shadowRenderState.renderQueueType = RenderQueueType.Transparent;
 
       const { stencilState } = shadowRenderState;
       stencilState.enabled = true;
