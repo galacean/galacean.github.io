@@ -8,15 +8,15 @@ import {
   AssetType,
   BaseMaterial,
   Camera,
-  Color,
+  Color, DiffuseMode,
   DirectLight,
   Engine,
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
-  RenderFace,
+  RenderFace, Script,
   Shader,
-  ShadowCascadesMode,
+  ShadowCascadesMode, ShadowMode,
   ShadowResolution,
   Vector3,
   WebGLEngine,
@@ -92,13 +92,20 @@ void main() {
 `
 );
 
-/**
- * Cascade ShadowMap Visual Material
- */
-export class CSSMVisualMaterial extends BaseMaterial {
+class CSSMVisualMaterial extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("shadow-map-visual"));
     this.shaderData.enableMacro("O3_SHADOW_MAP_COUNT", "1");
+  }
+}
+
+class Rotation extends Script {
+  private _time = 0;
+
+  onUpdate(deltaTime: number) {
+    this._time += deltaTime / 1000;
+    this.entity.transform.setPosition(10 * Math.sin(this._time), 10, 10 * Math.cos(this._time));
+    this.entity.transform.lookAt(new Vector3());
   }
 }
 
@@ -111,10 +118,9 @@ const camera = cameraEntity.addComponent(Camera);
 camera.farClipPlane = 1000;
 
 const light = rootEntity.createChild("light");
-light.transform.setPosition(10, 10, 0);
-light.transform.lookAt(new Vector3());
+light.addComponent(Rotation);
 const directLight = light.addComponent(DirectLight);
-directLight.intensity = 1.0;
+directLight.shadowStrength = 1.0;
 directLight.enableShadow = true;
 
 // create box test entity
@@ -132,6 +138,7 @@ for (let i = 0; i < 40; i++) {
   boxRenderer.mesh = boxMesh;
   boxRenderer.setMaterial(boxMtl);
   boxRenderer.castShadows = true;
+  // boxRenderer.receiveShadows = true;
   boxRenderers.push(boxRenderer);
 }
 
@@ -156,6 +163,7 @@ engine.resourceManager
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
+    scene.ambientLight.specularIntensity = scene.ambientLight.diffuseIntensity = 0.5;
     openDebug();
     engine.run();
   });
@@ -163,6 +171,10 @@ engine.resourceManager
 function openDebug() {
   const info = {
     debugMode: false,
+    cascadeMode: ShadowCascadesMode.FourCascades,
+    resolution: ShadowResolution.VeryHigh,
+    shadowMode: ShadowMode.SoftLow,
+    shadowCascadeSplitRatio: 0.95
   }
 
   gui.add(info, "debugMode").onChange((v) => {
@@ -181,4 +193,34 @@ function openDebug() {
     }
   });
 
+  gui.add(directLight, "shadowStrength", 0, 1);
+  gui.add(directLight, "shadowRadius", 0, 1);
+  gui.add(info, "shadowMode", {
+    None: ShadowMode.None,
+    Hard: ShadowMode.Hard,
+    SoftLow: ShadowMode.SoftLow,
+    SoftHigh: ShadowMode.SoftHigh
+  }).onChange((v) => {
+    engine.shadowMode = v;
+  });
+
+  gui.add(info, "cascadeMode", {
+    NoCascades: ShadowCascadesMode.NoCascades,
+    TwoCascades: ShadowCascadesMode.TwoCascades,
+    FourCascades: ShadowCascadesMode.FourCascades
+  }).onChange((v) => {
+    engine.shadowCascades = v;
+  });
+
+  gui.add(info, "resolution", {
+    Low: ShadowResolution.Low,
+    Medium: ShadowResolution.Medium,
+    High: ShadowResolution.High,
+    VeryHigh: ShadowResolution.VeryHigh
+  }).onChange((v) => {
+    engine.shadowResolution = v;
+  });
+  gui.add(info, "shadowCascadeSplitRatio").onChange((v) => {
+    engine.shadowCascadeSplitRatio = v;
+  });
 }
