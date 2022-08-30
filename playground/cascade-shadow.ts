@@ -8,15 +8,17 @@ import {
   AssetType,
   BaseMaterial,
   Camera,
-  Color, DiffuseMode,
+  Color,
   DirectLight,
   Engine,
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
-  RenderFace, Script,
+  RenderFace,
+  Script,
   Shader,
-  ShadowCascadesMode, ShadowMode,
+  ShadowCascadesMode,
+  ShadowMode,
   ShadowResolution,
   Vector3,
   WebGLEngine,
@@ -26,10 +28,11 @@ import {OrbitControl} from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 
 const gui = new dat.GUI();
-const engine = new WebGLEngine("canvas", {webGLMode: WebGLMode.WebGL1});
+const engine = new WebGLEngine("canvas", {webGLMode: WebGLMode.WebGL2});
 engine.canvas.resizeByClientSize();
 engine.shadowCascades = ShadowCascadesMode.FourCascades;
 engine.shadowResolution = ShadowResolution.VeryHigh;
+engine.shadowMode = ShadowMode.Soft;
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
@@ -100,12 +103,16 @@ class CSSMVisualMaterial extends BaseMaterial {
 }
 
 class Rotation extends Script {
+  pause = true;
   private _time = 0;
+  private _center = new Vector3();
 
   onUpdate(deltaTime: number) {
-    this._time += deltaTime / 1000;
-    this.entity.transform.setPosition(10 * Math.sin(this._time), 10, 10 * Math.cos(this._time));
-    this.entity.transform.lookAt(new Vector3());
+    if (!this.pause) {
+      this._time += deltaTime / 1000;
+      this.entity.transform.setPosition(10 * Math.sin(this._time), 10, 10 * Math.cos(this._time));
+      this.entity.transform.lookAt(this._center);
+    }
   }
 }
 
@@ -118,7 +125,9 @@ const camera = cameraEntity.addComponent(Camera);
 camera.farClipPlane = 1000;
 
 const light = rootEntity.createChild("light");
-light.addComponent(Rotation);
+light.transform.setPosition(0, 10, 10);
+light.transform.lookAt(new Vector3());
+const rotation = light.addComponent(Rotation);
 const directLight = light.addComponent(DirectLight);
 directLight.shadowStrength = 1.0;
 directLight.enableShadow = true;
@@ -170,12 +179,17 @@ engine.resourceManager
 
 function openDebug() {
   const info = {
+    rotation: false,
     debugMode: false,
     cascadeMode: ShadowCascadesMode.FourCascades,
     resolution: ShadowResolution.VeryHigh,
-    shadowMode: ShadowMode.SoftLow,
+    shadowMode: ShadowMode.Soft,
     shadowCascadeSplitRatio: 0.95
   }
+
+  gui.add(info, "rotation").onChange((v) => {
+    rotation.pause = !!v;
+  });
 
   gui.add(info, "debugMode").onChange((v) => {
     if (v) {
@@ -193,13 +207,14 @@ function openDebug() {
     }
   });
 
+  gui.add(directLight, "shadowBias", 0, 1);
+  gui.add(directLight, "shadowNormalBias", 0, 1);
   gui.add(directLight, "shadowStrength", 0, 1);
   gui.add(directLight, "shadowRadius", 0, 1);
   gui.add(info, "shadowMode", {
     None: ShadowMode.None,
     Hard: ShadowMode.Hard,
-    SoftLow: ShadowMode.SoftLow,
-    SoftHigh: ShadowMode.SoftHigh
+    Soft: ShadowMode.Soft,
   }).onChange((v) => {
     engine.shadowMode = v;
   });
