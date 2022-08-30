@@ -1,0 +1,184 @@
+/**
+ * @title Cascaded Stable Shadow
+ * @category Light
+ */
+
+import {
+  AmbientLight,
+  AssetType,
+  BaseMaterial,
+  Camera,
+  Color,
+  DirectLight,
+  Engine,
+  MeshRenderer,
+  PBRMaterial,
+  PrimitiveMesh,
+  RenderFace,
+  Shader,
+  ShadowCascadesMode,
+  ShadowResolution,
+  Vector3,
+  WebGLEngine,
+  WebGLMode,
+} from "oasis-engine";
+import {OrbitControl} from "@oasis-engine-toolkit/controls";
+import * as dat from "dat.gui";
+
+const gui = new dat.GUI();
+const engine = new WebGLEngine("canvas", {webGLMode: WebGLMode.WebGL1});
+engine.canvas.resizeByClientSize();
+engine.shadowCascades = ShadowCascadesMode.FourCascades;
+engine.shadowResolution = ShadowResolution.VeryHigh;
+
+const scene = engine.sceneManager.activeScene;
+const rootEntity = scene.createRootEntity();
+
+Shader.create(
+  "shadow-map-visual",
+  `
+#include <common>
+#include <common_vert>
+#include <blendShape_input>
+#include <uv_share>
+#include <color_share>
+#include <normal_share>
+#include <worldpos_share>
+#include <shadow_share>
+
+#include <fog_share>
+#include <shadow_vert_share>
+
+void main() {
+
+    #include <begin_position_vert>
+    #include <begin_normal_vert>
+    #include <blendShape_vert>
+    #include <skinning_vert>
+    #include <uv_vert>
+    #include <color_vert>
+    #include <normal_vert>
+    #include <worldpos_vert>
+    #include <position_vert>
+
+    #include <shadow_vert>
+
+    #include <fog_vert>
+
+}`,
+  `
+uniform vec4 u_cascade;
+varying vec3 view_pos;
+
+void main() {
+    // Get cascade index for the current fragment's view position
+    int cascadeIndex = 0;
+    for (int i = 0; i < 4 - 1; ++i) {
+        if (view_pos.z < u_cascade[i]) {
+            cascadeIndex = i + 1;
+        }
+    }
+
+    if (cascadeIndex == 0) {
+        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    } else if (cascadeIndex == 1) {
+        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+    } else if (cascadeIndex == 2) {
+        gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+    } else if (cascadeIndex == 3) {
+        gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+    }
+}
+`
+);
+
+/**
+ * Cascade ShadowMap Visual Material
+ */
+export class CSSMVisualMaterial extends BaseMaterial {
+  constructor(engine: Engine) {
+    super(engine, Shader.find("shadow-map-visual"));
+    this.shaderData.enableMacro("O3_SHADOW_MAP_COUNT", "1");
+  }
+}
+
+// init camera
+const cameraEntity = rootEntity.createChild("camera");
+cameraEntity.transform.setPosition(0, 10, 50);
+cameraEntity.transform.lookAt(new Vector3());
+cameraEntity.addComponent(OrbitControl)
+const camera = cameraEntity.addComponent(Camera);
+camera.farClipPlane = 1000;
+
+const light = rootEntity.createChild("light");
+light.transform.setPosition(10, 10, 0);
+light.transform.lookAt(new Vector3());
+const directLight = light.addComponent(DirectLight);
+directLight.intensity = 1.0;
+directLight.enableShadow = true;
+
+// create box test entity
+const cubeSize = 2.0;
+const boxMesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
+const boxMtl = new PBRMaterial(engine);
+boxMtl.roughness = 0;
+boxMtl.metallic = 1;
+const boxRenderers: MeshRenderer[] = [];
+for (let i = 0; i < 40; i++) {
+  const boxEntity = rootEntity.createChild("BoxEntity");
+  boxEntity.transform.setPosition(0, 2, i * 10 - 200);
+
+  const boxRenderer = boxEntity.addComponent(MeshRenderer);
+  boxRenderer.mesh = boxMesh;
+  boxRenderer.setMaterial(boxMtl);
+  boxRenderer.castShadows = true;
+  boxRenderers.push(boxRenderer);
+}
+
+const planeEntity = rootEntity.createChild("PlaneEntity");
+const planeMtl = new PBRMaterial(engine);
+planeMtl.baseColor = new Color(1.0, 0.2, 0, 1.0);
+planeMtl.roughness = 0;
+planeMtl.metallic = 0;
+planeMtl.renderFace = RenderFace.Double;
+
+const planeRenderer = planeEntity.addComponent(MeshRenderer);
+planeRenderer.receiveShadows = true;
+planeRenderer.mesh = PrimitiveMesh.createPlane(engine, 10, 400);
+planeRenderer.setMaterial(planeMtl);
+
+const visualMtl = new CSSMVisualMaterial(engine);
+
+engine.resourceManager
+  .load<AmbientLight>({
+    type: AssetType.Env,
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+  })
+  .then((ambientLight) => {
+    scene.ambientLight = ambientLight;
+    openDebug();
+    engine.run();
+  });
+
+function openDebug() {
+  const info = {
+    debugMode: false,
+  }
+
+  gui.add(info, "debugMode").onChange((v) => {
+    if (v) {
+      planeRenderer.setMaterial(visualMtl);
+      for (let i = 0; i < boxRenderers.length; i++) {
+        const boxRenderer = boxRenderers[i];
+        boxRenderer.setMaterial(visualMtl);
+      }
+    } else {
+      planeRenderer.setMaterial(planeMtl);
+      for (let i = 0; i < boxRenderers.length; i++) {
+        const boxRenderer = boxRenderers[i];
+        boxRenderer.setMaterial(boxMtl);
+      }
+    }
+  });
+
+}
