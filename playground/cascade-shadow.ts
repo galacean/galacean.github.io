@@ -110,7 +110,7 @@ class Rotation extends Script {
   onUpdate(deltaTime: number) {
     if (!this.pause) {
       this._time += deltaTime / 1000;
-      this.entity.transform.setPosition(10 * Math.sin(this._time), 10, 10 * Math.cos(this._time));
+      this.entity.transform.setPosition(10 * Math.cos(this._time), 10, 10 * Math.sin(this._time));
       this.entity.transform.lookAt(this._center);
     }
   }
@@ -125,7 +125,7 @@ const camera = cameraEntity.addComponent(Camera);
 camera.farClipPlane = 1000;
 
 const light = rootEntity.createChild("light");
-light.transform.setPosition(0, 10, 10);
+light.transform.setPosition(10, 10, 0);
 light.transform.lookAt(new Vector3());
 const rotation = light.addComponent(Rotation);
 const directLight = light.addComponent(DirectLight);
@@ -188,7 +188,7 @@ function openDebug() {
   }
 
   gui.add(info, "rotation").onChange((v) => {
-    rotation.pause = !!v;
+    rotation.pause = !v;
   });
 
   gui.add(info, "debugMode").onChange((v) => {
@@ -216,6 +216,18 @@ function openDebug() {
     Hard: ShadowMode.Hard,
     Soft: ShadowMode.Soft,
   }).onChange((v) => {
+    switch (v) {
+      case "None":
+        engine.shadowMode = ShadowMode.None;
+        break;
+      case "Hard":
+        engine.shadowMode = ShadowMode.Hard;
+        break;
+      case "Soft":
+        engine.shadowMode = ShadowMode.Soft;
+        break;
+    }
+
     engine.shadowMode = v;
   });
 
@@ -224,7 +236,17 @@ function openDebug() {
     TwoCascades: ShadowCascadesMode.TwoCascades,
     FourCascades: ShadowCascadesMode.FourCascades
   }).onChange((v) => {
-    engine.shadowCascades = v;
+    switch (v) {
+      case "NoCascades":
+        engine.shadowCascades = ShadowCascadesMode.NoCascades;
+        break;
+      case "TwoCascades":
+        engine.shadowCascades = ShadowCascadesMode.TwoCascades;
+        break;
+      case "FourCascades":
+        engine.shadowCascades = ShadowCascadesMode.FourCascades;
+        break;
+    }
   });
 
   gui.add(info, "resolution", {
@@ -233,7 +255,20 @@ function openDebug() {
     High: ShadowResolution.High,
     VeryHigh: ShadowResolution.VeryHigh
   }).onChange((v) => {
-    engine.shadowResolution = v;
+    switch (v) {
+      case "Low":
+        engine.shadowResolution = ShadowResolution.Low;
+        break;
+      case "Medium":
+        engine.shadowResolution = ShadowResolution.Medium;
+        break;
+      case "High":
+        engine.shadowResolution = ShadowResolution.High;
+        break;
+      case "VeryHigh":
+        engine.shadowResolution = ShadowResolution.VeryHigh;
+        break;
+    }
   });
   gui.add(info, "shadowCascadeSplitRatio").onChange((v) => {
     engine.shadowCascadeSplitRatio = v;
