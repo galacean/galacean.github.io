@@ -238,7 +238,8 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
 
 function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
   const mtl = new PBRMaterial(rootEntity.engine);
-  mtl.roughness = 0;
+  mtl.roughness = 0.2;
+  mtl.metallic = 0.8;
   mtl.baseColor.set(1, 1, 0, 1.0);
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
@@ -433,13 +434,13 @@ PhysXPhysics.initialize().then(() => {
   cameraEntity.addComponent(OrbitControl);
 
   const lightNode = rootEntity.createChild("light_node");
-  lightNode.transform.setPosition(10, 10, 10);
+  lightNode.transform.setPosition(8, 10, 10);
   lightNode.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = lightNode.addComponent(DirectLight);
   directLight.intensity = 1;
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
-  directLight.shadowBias = -0.02;
+  directLight.shadowBias = -0.08;
   directLight.shadowRadius = 0.2;
 
   const entity = cameraEntity.createChild("text");
