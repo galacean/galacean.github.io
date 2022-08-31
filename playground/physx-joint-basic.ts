@@ -4,7 +4,8 @@
  */
 
 import {
-  BlinnPhongMaterial,
+  AmbientLight,
+  AssetType,
   BoxColliderShape,
   Camera,
   Collider,
@@ -16,11 +17,15 @@ import {
   Font,
   HingeJoint,
   MeshRenderer,
+  PBRMaterial,
   PointerButton,
   PrimitiveMesh,
   Quaternion,
   Ray,
   Script,
+  ShadowCascadesMode,
+  ShadowMode,
+  ShadowResolution,
   SphereColliderShape,
   SpringJoint,
   TextRenderer,
@@ -51,11 +56,14 @@ function createText(
 }
 
 function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
+  const mtl = new PBRMaterial(rootEntity.engine);
   mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+  mtl.roughness = 0.5;
+  mtl.metallic = 0.0;
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-
+  renderer.castShadows = true;
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
   renderer.setMaterial(mtl);
   boxEntity.transform.position = position;
@@ -116,11 +124,13 @@ function createHinge(rootEntity: Entity, position: Vector3, rotation: Quaternion
 }
 
 function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotation: Quaternion, velocity: Vector3): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
+  const mtl = new PBRMaterial(rootEntity.engine);
   mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+  mtl.roughness = 0.5;
+  mtl.metallic = 0.0;
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-
+  renderer.castShadows = true;
   renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;
@@ -160,6 +170,9 @@ class ShootScript extends Script {
 //----------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
+  engine.shadowCascades = ShadowCascadesMode.FourCascades;
+  engine.shadowResolution = ShadowResolution.VeryHigh;
+  engine.shadowMode = ShadowMode.Soft;
   engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
@@ -184,9 +197,20 @@ PhysXPhysics.initialize().then(() => {
   const light = rootEntity.createChild("light");
   light.transform.setPosition(-10, 10, 10);
   light.transform.lookAt(new Vector3());
-  light.addComponent(DirectLight);
+  const directLight = light.addComponent(DirectLight);
+  directLight.intensity = 1;
+  directLight.enableShadow = true;
+  directLight.shadowStrength = 1;
+  directLight.shadowBias = -0.5;
+  directLight.shadowRadius = 0.5;
 
-  // Run engine
-  engine.run();
-
+  engine.resourceManager
+    .load<AmbientLight>({
+      type: AssetType.Env,
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    })
+    .then((ambientLight) => {
+      scene.ambientLight = ambientLight;
+      engine.run();
+    });
 });

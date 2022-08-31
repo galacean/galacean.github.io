@@ -216,7 +216,7 @@ PhysXPhysics.initialize().then(() => {
     // init camera
     const cameraEntity = rootEntity.createChild("camera");
     const camera = cameraEntity.addComponent(Camera);
-    cameraEntity.transform.setPosition(8, 5, 8);
+    cameraEntity.transform.setPosition(7, 7, 7);
     cameraEntity.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
 
     const entity = cameraEntity.createChild("text");

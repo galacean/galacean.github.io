@@ -31,12 +31,14 @@ import {
   PBRMaterial,
   PlaneColliderShape,
   PrimitiveMesh,
-  Quaternion,
+  Quaternion, Renderer,
   RenderFace,
   Script,
+  ShadowCascadesMode,
+  ShadowMode,
+  ShadowResolution,
   SkyBoxMaterial,
   StaticCollider,
-  SystemInfo,
   TextRenderer,
   Texture2D,
   Vector2,
@@ -213,13 +215,16 @@ class ControllerScript extends Script {
 
 function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
   const mtl = new PBRMaterial(rootEntity.engine);
-  mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+  mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+  mtl.roughness = 0.0;
+  mtl.metallic = 0.0;
   mtl.renderFace = RenderFace.Double;
   const planeEntity = rootEntity.createChild();
 
   const renderer = planeEntity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
+  renderer.receiveShadows = true;
   planeEntity.transform.position = position;
   planeEntity.transform.rotationQuaternion = rotation;
 
@@ -237,7 +242,8 @@ function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: 
   mtl.baseColor.set(1, 1, 0, 1.0);
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-
+  renderer.receiveShadows = true;
+  renderer.castShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
   renderer.setMaterial(mtl);
   boxEntity.transform.position = position;
@@ -265,6 +271,8 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
   {
     const level = stairEntity.createChild();
     const renderer = level.addComponent(MeshRenderer);
+    renderer.receiveShadows = true;
+    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -276,6 +284,8 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
     const level = stairEntity.createChild();
     level.transform.setPosition(0, 0.3, 0.5)
     const renderer = level.addComponent(MeshRenderer);
+    renderer.receiveShadows = true;
+    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -288,6 +298,8 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
     const level = stairEntity.createChild();
     level.transform.setPosition(0, 0.6, 1)
     const renderer = level.addComponent(MeshRenderer);
+    renderer.receiveShadows = true;
+    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -300,6 +312,8 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
     const level = stairEntity.createChild();
     level.transform.setPosition(0, 0.9, 1.5)
     const renderer = level.addComponent(MeshRenderer);
+    renderer.receiveShadows = true;
+    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -405,9 +419,12 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
 //----------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
+  engine.shadowCascades = ShadowCascadesMode.FourCascades;
+  engine.shadowResolution = ShadowResolution.VeryHigh;
+  engine.shadowMode = ShadowMode.Soft;
   engine.physicsManager.initialize(PhysXPhysics);
-  engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
-  engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
+  engine.canvas.resizeByClientSize();
+
   const scene = engine.sceneManager.activeScene;
   const {background} = scene;
   const rootEntity = scene.createRootEntity();
@@ -421,7 +438,12 @@ PhysXPhysics.initialize().then(() => {
   const lightNode = rootEntity.createChild("light_node");
   lightNode.transform.setPosition(10, 10, 10);
   lightNode.transform.lookAt(new Vector3(0, 0, 0));
-  lightNode.addComponent(DirectLight);
+  const directLight = lightNode.addComponent(DirectLight);
+  directLight.intensity = 1;
+  directLight.enableShadow = true;
+  directLight.shadowStrength = 1;
+  directLight.shadowBias = -0.2;
+  directLight.shadowRadius = 0.2;
 
   const entity = cameraEntity.createChild("text");
   entity.transform.position = new Vector3(0, 3.5, -10);
@@ -461,6 +483,14 @@ PhysXPhysics.initialize().then(() => {
       const {defaultSceneRoot} = asset;
       const controllerEntity = rootEntity.createChild("controller");
       controllerEntity.addChild(defaultSceneRoot);
+
+      const renderers:Renderer[] = []
+      defaultSceneRoot.getComponentsIncludeChildren(Renderer, renderers);
+      for (let i = 0; i < renderers.length; i++) {
+        const renderer = renderers[i];
+        renderer.castShadows = true;
+        renderer.receiveShadows = true;
+      }
 
       // animator
       defaultSceneRoot.transform.setPosition(0, -0.35, 0);
