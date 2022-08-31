@@ -6,17 +6,17 @@
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 import {
-  BlinnPhongMaterial,
+  AmbientLight, AssetType,
   BoxColliderShape,
   Camera,
   DirectLight,
   DynamicCollider,
   Entity,
-  MeshRenderer,
+  MeshRenderer, PBRMaterial,
   PlaneColliderShape,
   PrimitiveMesh,
   Quaternion,
-  Script,
+  Script, ShadowCascadesMode, ShadowMode, ShadowResolution,
   StaticCollider,
   Vector2,
   Vector3,
@@ -42,9 +42,10 @@ class TableGenerator extends Script {
     const boxCollider = entity.addComponent(DynamicCollider);
     boxCollider.mass = 10.0;
 
-    const boxMaterial = new BlinnPhongMaterial(this.engine);
+    const boxMaterial = new PBRMaterial(this.engine);
     boxMaterial.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
-    boxMaterial.shininess = 128;
+    boxMaterial.metallic = 0;
+    boxMaterial.roughness = 0.5;
     {
       const physicsBox = new BoxColliderShape();
       physicsBox.size = new Vector3(0.5, 0.4, 0.045);
@@ -53,6 +54,8 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0, 0, 0.125);
       const boxRenderer = child.addComponent(MeshRenderer);
+      boxRenderer.receiveShadows = true;
+      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.5, 0.4, 0.045);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -65,6 +68,8 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(-0.2, -0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
+      boxRenderer.receiveShadows = true;
+      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -77,6 +82,8 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0.2, -0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
+      boxRenderer.receiveShadows = true;
+      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -89,6 +96,8 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(-0.2, 0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
+      boxRenderer.receiveShadows = true;
+      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -101,6 +110,8 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0.2, 0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
+      boxRenderer.receiveShadows = true;
+      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -109,12 +120,14 @@ class TableGenerator extends Script {
 
 function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
   const engine = rootEntity.engine;
-  const material = new BlinnPhongMaterial(engine);
-  material.baseColor.set(0.04, 0.42, 0.45, 1);
-  material.shininess = 128;
+  const material = new PBRMaterial(engine);
+  material.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+  material.roughness = 0.0;
+  material.metallic = 0.0;
 
   const entity = rootEntity.createChild();
   const renderer = entity.addComponent(MeshRenderer);
+  renderer.receiveShadows = true;
   entity.transform.position = position;
   entity.transform.rotationQuaternion = rotation;
   renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);
@@ -131,6 +144,9 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
 //--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
+  engine.shadowCascades = ShadowCascadesMode.FourCascades;
+  engine.shadowResolution = ShadowResolution.VeryHigh;
+  engine.shadowMode = ShadowMode.Soft;
   engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
@@ -148,11 +164,23 @@ PhysXPhysics.initialize().then(() => {
   const light = rootEntity.createChild("light");
   light.transform.setPosition(0.3, 1, 0.4);
   light.transform.lookAt(new Vector3(0, 0, 0));
-  light.addComponent(DirectLight);
+  const directLight = light.addComponent(DirectLight);
+  directLight.intensity = 1;
+  directLight.enableShadow = true;
+  directLight.shadowStrength = 1;
+  directLight.shadowBias = -0.2;
+  directLight.shadowRadius = 0.2;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
   rootEntity.addComponent(TableGenerator);
 
-  // Run engine
-  engine.run();
+  engine.resourceManager
+    .load<AmbientLight>({
+      type: AssetType.Env,
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    })
+    .then((ambientLight) => {
+      scene.ambientLight = ambientLight;
+      engine.run();
+    });
 });
