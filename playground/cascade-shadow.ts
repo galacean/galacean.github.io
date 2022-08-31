@@ -30,9 +30,6 @@ import * as dat from "dat.gui";
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas", {webGLMode: WebGLMode.WebGL2});
 engine.canvas.resizeByClientSize();
-engine.shadowCascades = ShadowCascadesMode.FourCascades;
-engine.shadowResolution = ShadowResolution.VeryHigh;
-engine.shadowMode = ShadowMode.Soft;
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();

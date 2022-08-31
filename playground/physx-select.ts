@@ -199,9 +199,6 @@ function addBox(rootEntity: Entity, texture1: Texture2D, texture2: Texture2D,
 //--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
     const engine = new WebGLEngine("canvas");
-    engine.shadowCascades = ShadowCascadesMode.FourCascades;
-    engine.shadowResolution = ShadowResolution.VeryHigh;
-    engine.shadowMode = ShadowMode.Soft;
     engine.physicsManager.initialize(PhysXPhysics);
 
     engine.canvas.resizeByClientSize();

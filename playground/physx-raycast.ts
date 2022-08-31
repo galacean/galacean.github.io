@@ -233,9 +233,6 @@ function addCapsule(rootEntity: Entity, radius: number, height: number, position
 //----------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
-  engine.shadowCascades = ShadowCascadesMode.FourCascades;
-  engine.shadowResolution = ShadowResolution.VeryHigh;
-  engine.shadowMode = ShadowMode.Soft;
   engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();

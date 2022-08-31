@@ -158,9 +158,6 @@ function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotati
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
   engine.physicsManager.initialize(PhysXPhysics);
-  engine.shadowCascades = ShadowCascadesMode.FourCascades;
-  engine.shadowResolution = ShadowResolution.VeryHigh;
-  engine.shadowMode = ShadowMode.Soft;
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;

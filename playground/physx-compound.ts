@@ -144,9 +144,6 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
 //--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
-  engine.shadowCascades = ShadowCascadesMode.FourCascades;
-  engine.shadowResolution = ShadowResolution.VeryHigh;
-  engine.shadowMode = ShadowMode.Soft;
   engine.physicsManager.initialize(PhysXPhysics);
 
   engine.canvas.resizeByClientSize();
