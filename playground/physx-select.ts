@@ -4,7 +4,6 @@
  */
 
 import {
-  BlinnPhongMaterial,
   BoxColliderShape,
   Camera,
   DynamicCollider,
@@ -22,7 +21,16 @@ import {
   WebGLEngine,
   CollisionDetectionMode,
   Texture2D,
-  DirectLight, AssetType, TextRenderer, Color, Font
+  DirectLight,
+  AssetType,
+  TextRenderer,
+  Color,
+  Font,
+  PBRMaterial,
+  AmbientLight,
+  ShadowCascadesMode,
+  ShadowResolution,
+  ShadowMode
 } from "oasis-engine";
 
 import {PhysXPhysics} from "@oasis-engine/physics-physx";
@@ -80,12 +88,16 @@ class PanScript extends Script {
 }
 
 function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
+  const mtl = new PBRMaterial(rootEntity.engine);
   mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+  mtl.roughness = 0.0;
+  mtl.metallic = 0.0;
+
   const planeEntity = rootEntity.createChild();
   planeEntity.layer = Layer.Layer1;
 
   const renderer = planeEntity.addComponent(MeshRenderer);
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
   planeEntity.transform.position = position;
@@ -104,12 +116,16 @@ function addVerticalBox(rootEntity: Entity, texture: Texture2D, x: number, y: nu
   const entity = rootEntity.createChild("entity");
   entity.transform.setPosition(x, y, z);
 
-  const boxMtl = new BlinnPhongMaterial(rootEntity.engine);
+  const boxMtl = new PBRMaterial(rootEntity.engine);
+  boxMtl.roughness = 0.5;
+  boxMtl.metallic = 0.0;
   const boxRenderer = entity.addComponent(MeshRenderer);
   boxMtl.baseTexture = texture;
   boxMtl.baseTexture.anisoLevel = 12;
   boxRenderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, 0.5, 0.33, 2, false);
   boxRenderer.setMaterial(boxMtl);
+  boxRenderer.receiveShadows = true;
+  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(0.5, 0.33, 2);
@@ -133,12 +149,16 @@ function addHorizontalBox(rootEntity: Entity, texture: Texture2D, x: number, y: 
   const entity = rootEntity.createChild("entity");
   entity.transform.setPosition(x, y, z);
 
-  const boxMtl = new BlinnPhongMaterial(rootEntity.engine);
+  const boxMtl = new PBRMaterial(rootEntity.engine);
+  boxMtl.roughness = 0.5;
+  boxMtl.metallic = 0.0;
   const boxRenderer = entity.addComponent(MeshRenderer);
   boxMtl.baseTexture = texture;
   boxMtl.baseTexture.anisoLevel = 12;
   boxRenderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, 2, 0.33, 0.5);
   boxRenderer.setMaterial(boxMtl);
+  boxRenderer.receiveShadows = true;
+  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(2, 0.33, 0.5);
@@ -179,6 +199,9 @@ function addBox(rootEntity: Entity, texture1: Texture2D, texture2: Texture2D,
 //--------------------------------------------------------------------------------------------------------------------
 PhysXPhysics.initialize().then(() => {
     const engine = new WebGLEngine("canvas");
+    engine.shadowCascades = ShadowCascadesMode.FourCascades;
+    engine.shadowResolution = ShadowResolution.VeryHigh;
+    engine.shadowMode = ShadowMode.Soft;
     engine.physicsManager.initialize(PhysXPhysics);
 
     engine.canvas.resizeByClientSize();
@@ -196,20 +219,24 @@ PhysXPhysics.initialize().then(() => {
     cameraEntity.transform.setPosition(8, 5, 8);
     cameraEntity.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
 
-  const entity = cameraEntity.createChild("text");
-  entity.transform.position = new Vector3(0, 3.5, -10);
-  const renderer = entity.addComponent(TextRenderer);
-  renderer.color = new Color();
-  renderer.text = "Use mouse to move the bricks";
-  renderer.font = Font.createFromOS(entity.engine, "Arial");
-  renderer.fontSize = 40;
+    const entity = cameraEntity.createChild("text");
+    entity.transform.position = new Vector3(0, 3.5, -10);
+    const renderer = entity.addComponent(TextRenderer);
+    renderer.color = new Color();
+    renderer.text = "Use mouse to move the bricks";
+    renderer.font = Font.createFromOS(entity.engine, "Arial");
+    renderer.fontSize = 40;
 
     // init point light
     const light = rootEntity.createChild("light");
-    light.transform.setPosition(1, 2, 2);
-    light.transform.lookAt(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
-    const pointLight = light.addComponent(DirectLight);
-    pointLight.intensity = 3;
+    light.transform.setPosition(0, 5, 8);
+    light.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
+    const directLight = light.addComponent(DirectLight);
+    directLight.intensity = 1;
+    directLight.enableShadow = true;
+    directLight.shadowStrength = 1;
+    directLight.shadowBias = -0.1;
+    directLight.shadowRadius = 0.2;
 
     addPlane(rootEntity, new Vector2(30, 30), new Vector3, new Quaternion);
 
@@ -226,7 +253,16 @@ PhysXPhysics.initialize().then(() => {
         })
     ]).then((asset: Texture2D[]) => {
       addBox(rootEntity, asset[0], asset[1], camera, invCanvasWidth, invCanvasHeight);
-      engine.run();
+
+      engine.resourceManager
+        .load<AmbientLight>({
+          type: AssetType.Env,
+          url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+        })
+        .then((ambientLight) => {
+          scene.ambientLight = ambientLight;
+          engine.run();
+        });
     });
   }
 )
