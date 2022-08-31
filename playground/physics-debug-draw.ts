@@ -15,7 +15,6 @@ import {  WireframeManager } from "@oasis-engine-toolkit/auxiliary-lines";
 import {
   PhysXPhysics
 } from "@oasis-engine/physics-physx";
-import Pbr from "../../engine/packages/core/src/shaderlib/pbr";
 
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");

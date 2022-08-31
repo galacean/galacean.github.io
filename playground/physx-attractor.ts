@@ -22,9 +22,6 @@ import {
   Ray,
   RenderFace,
   Script,
-  ShadowCascadesMode,
-  ShadowMode,
-  ShadowResolution,
   SphereColliderShape,
   StaticCollider,
   TextRenderer,
@@ -88,7 +85,7 @@ function init(rootEntity: Entity) {
 
   const quatFront90 = new Quaternion;
   quatFront90.rotateX(MathUtil.degreeToRadian(-90));
-  addPlane(rootEntity, new Vector3(0, 0, 20), quatFront90);
+  addPlane(rootEntity, new Vector3(0, 0, 10), quatFront90);
 
   const quatNegaFront90 = new Quaternion;
   quatNegaFront90.rotateX(MathUtil.degreeToRadian(90));

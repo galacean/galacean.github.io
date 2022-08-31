@@ -29,9 +29,6 @@ import {
   PBRMaterial,
   AmbientLight,
   AssetType,
-  ShadowCascadesMode,
-  ShadowResolution,
-  ShadowMode
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 

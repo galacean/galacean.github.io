@@ -28,9 +28,6 @@ import {
   Font,
   PBRMaterial,
   AmbientLight,
-  ShadowCascadesMode,
-  ShadowResolution,
-  ShadowMode
 } from "oasis-engine";
 
 import {PhysXPhysics} from "@oasis-engine/physics-physx";

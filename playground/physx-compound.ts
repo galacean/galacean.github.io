@@ -16,7 +16,7 @@ import {
   PlaneColliderShape,
   PrimitiveMesh,
   Quaternion,
-  Script, ShadowCascadesMode, ShadowMode, ShadowResolution,
+  Script,
   StaticCollider,
   Vector2,
   Vector3,
