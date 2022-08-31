@@ -207,11 +207,11 @@ function openDebug() {
   gui.add(directLight, "shadowBias", 0, 1);
   gui.add(directLight, "shadowNormalBias", 0, 1);
   gui.add(directLight, "shadowStrength", 0, 1);
-  gui.add(directLight, "shadowRadius", 0, 1);
   gui.add(info, "shadowMode", {
     None: ShadowMode.None,
     Hard: ShadowMode.Hard,
     Soft: ShadowMode.Soft,
+    VerySoft: ShadowMode.VerySoft
   }).onChange((v) => {
     engine.shadowMode = parseInt(v);
   });

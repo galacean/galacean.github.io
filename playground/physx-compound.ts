@@ -166,7 +166,6 @@ PhysXPhysics.initialize().then(() => {
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
   directLight.shadowBias = 0.2;
-  directLight.shadowRadius = 0.2;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
   rootEntity.addComponent(TableGenerator);

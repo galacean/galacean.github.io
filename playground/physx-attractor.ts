@@ -183,7 +183,6 @@ PhysXPhysics.initialize().then(() => {
   p.intensity = 1;
   p.enableShadow = true;
   p.shadowStrength = 1;
-  p.shadowRadius = 0.2;
   {
     const attractorEntity = rootEntity.createChild();
     attractorEntity.addComponent(Interactor).camera = camera;
