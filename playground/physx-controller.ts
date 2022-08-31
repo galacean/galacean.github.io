@@ -440,7 +440,7 @@ PhysXPhysics.initialize().then(() => {
   directLight.intensity = 1;
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
-  directLight.shadowBias = -0.08;
+  directLight.shadowBias = 0.08;
   directLight.shadowRadius = 0.2;
 
   const entity = cameraEntity.createChild("text");
