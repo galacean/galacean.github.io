@@ -13,7 +13,9 @@ import {
   Script,
   WebGLEngine
 } from "oasis-engine";
-import { FramebufferPicker, OrbitControl, OutlineManager } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+import { OutlineManager } from "@oasis-engine-toolkit/outline";
 
 class ClickScript extends Script {
   onUpdate(): void {
@@ -84,10 +86,10 @@ function addDebugGUI(outlineManager: OutlineManager) {
   gui.add(outlineManager, "size", 1, 6, 0.1);
   gui
     .addColor(
-      { color: [outlineManager.color.r * 255, outlineManager.color.g * 255, outlineManager.color.b * 255] },
+      { color: [outlineManager.mainColor.r * 255, outlineManager.mainColor.g * 255, outlineManager.mainColor.b * 255] },
       "color"
     )
     .onChange((v) => {
-      outlineManager.color.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+      outlineManager.mainColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
     });
 }

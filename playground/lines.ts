@@ -8,7 +8,7 @@
   Vector3,
   WebGLEngine
 } from "oasis-engine";
-import { Line, DashLine, LineCap, LineJoin } from "oasis-engine-toolkit";
+import { Line, DashLine, LineCap, LineJoin } from "@oasis-engine-toolkit/lines";
 import * as dat from 'dat.gui';
 
 const lines: Line[] = [];
@@ -18,7 +18,7 @@ const controls = {
 	join: LineJoin.Round,
 }
 const colors = [
-	new Color(91 / 255, 143 / 255, 249 / 255), 
+	new Color(91 / 255, 143 / 255, 249 / 255),
 	new Color(92 / 255, 206 / 255, 161 / 255),
 	new Color(246 / 255, 189 / 255, 22 / 255),
 	new Color(170 / 255, 0 / 255, 97 / 255),
@@ -81,7 +81,7 @@ function showDebug() {
 	capControl.onChange(change)
 	joinControl.onChange(change)
 
-	
+
 	function change() {
 		if(lines.length) {
 			lines.forEach(line => {
