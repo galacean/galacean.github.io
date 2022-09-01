@@ -195,7 +195,7 @@ PhysXPhysics.initialize().then(() => {
   directLight.intensity = 1;
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
-  directLight.shadowBias = 0.5;
+  directLight.shadowBias = 2;
 
   engine.resourceManager
     .load<AmbientLight>({

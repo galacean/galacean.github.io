@@ -134,7 +134,6 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
   renderer.setMaterial(material);
 
   const physicsPlane = new PlaneColliderShape();
-  physicsPlane.setPosition(0, 0.1, 0);
   const planeCollider = entity.addComponent(StaticCollider);
   planeCollider.addShape(physicsPlane);
 
@@ -159,13 +158,13 @@ PhysXPhysics.initialize().then(() => {
 
   // init directional light
   const light = rootEntity.createChild("light");
-  light.transform.setPosition(0.3, 1, 0.4);
+  light.transform.setPosition(-0.3, 1, 0.4);
   light.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = light.addComponent(DirectLight);
   directLight.intensity = 1;
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
-  directLight.shadowBias = 0.2;
+  directLight.shadowBias = 3;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
   rootEntity.addComponent(TableGenerator);

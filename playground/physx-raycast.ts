@@ -4,35 +4,35 @@
  */
 
 import {
+  AmbientLight,
+  AssetType,
   BoxColliderShape,
   Camera,
   CapsuleColliderShape,
+  Color,
+  DirectLight,
+  DynamicCollider,
   Entity,
+  Font,
   HitResult,
   Layer,
   MeshRenderer,
+  PBRMaterial,
   PlaneColliderShape,
+  PointerButton,
   PrimitiveMesh,
+  Quaternion,
   Ray,
+  Script,
   SphereColliderShape,
   StaticCollider,
-  DynamicCollider,
-  WebGLEngine,
-  Quaternion,
-  Vector3,
-  DirectLight,
-  Script,
-  PointerButton,
   TextRenderer,
-  Color,
-  Font,
-  PBRMaterial,
-  AmbientLight,
-  AssetType,
+  Vector3,
+  WebGLEngine,
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import {OrbitControl} from "@oasis-engine-toolkit/controls";
 
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 class GeometryGenerator extends Script {
   quat: Quaternion;
@@ -101,7 +101,7 @@ class Raycast extends Script {
 function init(rootEntity: Entity) {
   const quat = new Quaternion(0, 0, 0.3, 0.7);
   quat.normalize();
-  addPlane(rootEntity, new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
+  addPlane(rootEntity, new Vector3(30, 0.0, 30), new Vector3, new Quaternion);
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 8; i++) {
     // eslint-disable-next-line no-plusplus
@@ -110,23 +110,23 @@ function init(rootEntity: Entity) {
       switch (random) {
         case 0:
           addBox(rootEntity, new Vector3(1, 1, 1), new Vector3(
-            -2.5 + i + 0.1 * i,
+            -4 + i,
             Math.floor(Math.random() * 6) + 1,
-            -2.5 + j + 0.1 * j
+            -4 + j
           ), quat);
           break;
         case 1:
           addSphere(rootEntity, 0.5, new Vector3(
-            Math.floor(Math.random() * 16) - 2.5,
+            Math.floor(Math.random() * 16) - 4,
             5,
-            Math.floor(Math.random() * 16) - 2.5
+            Math.floor(Math.random() * 16) - 4
           ), quat);
           break;
         case 2:
           addCapsule(rootEntity, 0.5, 2.0, new Vector3(
-            Math.floor(Math.random() * 16) - 2.5,
+            Math.floor(Math.random() * 16) - 4,
             5,
-            Math.floor(Math.random() * 16) - 2.5
+            Math.floor(Math.random() * 16) - 4
           ), quat);
           break;
         default:
@@ -256,13 +256,13 @@ PhysXPhysics.initialize().then(() => {
 
   // init directional light
   const light = rootEntity.createChild("light");
-  light.transform.setPosition(0.3, 1, 0.4);
+  light.transform.setPosition(-0.3, 1, 0.4);
   light.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = light.addComponent(DirectLight);
   directLight.intensity = 1;
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
-  directLight.shadowBias = 0.5;
+  directLight.shadowBias = 5;
 
   init(rootEntity);
 

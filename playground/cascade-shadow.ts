@@ -67,17 +67,28 @@ void main() {
 
 }`,
   `
-uniform vec4 u_cascade;
-varying vec3 view_pos;
+uniform vec4 u_shadowSplitSpheres[4];
+varying vec3 v_pos;
+
+mediump int computeCascadeIndex(vec3 positionWS) {
+    vec3 fromCenter0 = positionWS - u_shadowSplitSpheres[0].xyz;
+    vec3 fromCenter1 = positionWS - u_shadowSplitSpheres[1].xyz;
+    vec3 fromCenter2 = positionWS - u_shadowSplitSpheres[2].xyz;
+    vec3 fromCenter3 = positionWS - u_shadowSplitSpheres[3].xyz;
+
+    mediump vec4 comparison = vec4(
+        dot(fromCenter0, fromCenter0) < u_shadowSplitSpheres[0].w,
+        dot(fromCenter1, fromCenter1) < u_shadowSplitSpheres[1].w,
+        dot(fromCenter2, fromCenter2) < u_shadowSplitSpheres[2].w,
+        dot(fromCenter3, fromCenter3) < u_shadowSplitSpheres[3].w);
+    comparison.yzw = clamp(comparison.yzw - comparison.xyz,0.0,1.0);//keep the nearest
+    mediump vec4 indexCoefficient = vec4(4.0, 3.0, 2.0, 1.0);
+    mediump int index = 4 - int(dot(comparison, indexCoefficient));
+    return index;
+}
 
 void main() {
-    // Get cascade index for the current fragment's view position
-    int cascadeIndex = 0;
-    for (int i = 0; i < 4 - 1; ++i) {
-        if (view_pos.z < u_cascade[i]) {
-            cascadeIndex = i + 1;
-        }
-    }
+    int cascadeIndex = computeCascadeIndex(v_pos);
 
     if (cascadeIndex == 0) {
         gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
@@ -96,6 +107,7 @@ class CSSMVisualMaterial extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("shadow-map-visual"));
     this.shaderData.enableMacro("O3_SHADOW_MAP_COUNT", "1");
+    this.shaderData.enableMacro("O3_NEED_WORLDPOS");
   }
 }
 
@@ -204,8 +216,8 @@ function openDebug() {
     }
   });
 
-  gui.add(directLight, "shadowBias", 0, 1);
-  gui.add(directLight, "shadowNormalBias", 0, 1);
+  gui.add(directLight, "shadowBias", 0, 10);
+  gui.add(directLight, "shadowNormalBias", 0, 10);
   gui.add(directLight, "shadowStrength", 0, 1);
   gui.add(info, "shadowMode", {
     None: ShadowMode.None,
