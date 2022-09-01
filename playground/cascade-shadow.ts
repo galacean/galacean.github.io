@@ -67,38 +67,39 @@ void main() {
 
 }`,
   `
-uniform vec4 u_shadowSplitSpheres[4];
-varying vec3 v_pos;
+#include <common>
+#include <common_frag>
 
-mediump int computeCascadeIndex(vec3 positionWS) {
-    vec3 fromCenter0 = positionWS - u_shadowSplitSpheres[0].xyz;
-    vec3 fromCenter1 = positionWS - u_shadowSplitSpheres[1].xyz;
-    vec3 fromCenter2 = positionWS - u_shadowSplitSpheres[2].xyz;
-    vec3 fromCenter3 = positionWS - u_shadowSplitSpheres[3].xyz;
+#include <uv_share>
+#include <normal_share>
+#include <color_share>
+#include <worldpos_share>
 
-    mediump vec4 comparison = vec4(
-        dot(fromCenter0, fromCenter0) < u_shadowSplitSpheres[0].w,
-        dot(fromCenter1, fromCenter1) < u_shadowSplitSpheres[1].w,
-        dot(fromCenter2, fromCenter2) < u_shadowSplitSpheres[2].w,
-        dot(fromCenter3, fromCenter3) < u_shadowSplitSpheres[3].w);
-    comparison.yzw = clamp(comparison.yzw - comparison.xyz,0.0,1.0);//keep the nearest
-    mediump vec4 indexCoefficient = vec4(4.0, 3.0, 2.0, 1.0);
-    mediump int index = 4 - int(dot(comparison, indexCoefficient));
-    return index;
-}
+#include <light_frag_define>
+#include <shadow_frag_share>
+#include <mobile_material_frag>
 
 void main() {
-    int cascadeIndex = computeCascadeIndex(v_pos);
+    vec4 emission = u_emissiveColor;
+    vec4 diffuse = u_baseColor;
+    vec4 specular = u_specularColor;
+    vec4 ambient = vec4(u_envMapLight.diffuse * u_envMapLight.diffuseIntensity, 1.0) * diffuse;
 
+#ifdef CASCADED_SHADOW_MAP_COUNT
+    int cascadeIndex = computeCascadeIndex(v_pos);
     if (cascadeIndex == 0) {
-        gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        diffuse = vec4(1.0, 1.0, 1.0, 1.0);
     } else if (cascadeIndex == 1) {
-        gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        diffuse = vec4(1.0, 0.0, 0.0, 1.0);
     } else if (cascadeIndex == 2) {
-        gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+        diffuse = vec4(0.0, 1.0, 0.0, 1.0);
     } else if (cascadeIndex == 3) {
-        gl_FragColor = vec4(0.0, 0.0, 1.0, 1.0);
+        diffuse = vec4(0.0, 0.0, 1.0, 1.0);
     }
+#endif
+
+    gl_FragColor = emission + ambient + diffuse + specular;
+    gl_FragColor.a = diffuse.a;
 }
 `
 );
