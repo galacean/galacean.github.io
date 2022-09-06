@@ -7,7 +7,7 @@ import {
   WebGLEngine, SphereColliderShape, DynamicCollider,
   BoxColliderShape, Vector3,
   MeshRenderer, PointLight,
-  PrimitiveMesh, Camera, Script, StaticCollider, ColliderShape, PBRMaterial, AmbientLight, AssetType
+  PrimitiveMesh, Camera, Script, StaticCollider, ColliderShape, PBRMaterial, AmbientLight, AssetType, BlinnPhongMaterial
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {  WireframeManager } from "@oasis-engine-toolkit/auxiliary-lines";

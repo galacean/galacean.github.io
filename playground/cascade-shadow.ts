@@ -193,7 +193,7 @@ function openDebug() {
     debugMode: false,
     cascadeMode: ShadowCascadesMode.FourCascades,
     resolution: ShadowResolution.VeryHigh,
-    shadowMode: ShadowMode.Soft,
+    shadowMode: ShadowMode.SoftLow,
     shadowCascadeSplitRatio: 0.95
   }
 
@@ -223,10 +223,10 @@ function openDebug() {
   gui.add(info, "shadowMode", {
     None: ShadowMode.None,
     Hard: ShadowMode.Hard,
-    Soft: ShadowMode.Soft,
-    VerySoft: ShadowMode.VerySoft
+    Soft: ShadowMode.SoftLow,
+    VerySoft: ShadowMode.SoftHigh
   }).onChange((v) => {
-    engine.shadowMode = parseInt(v);
+    engine.settings.shadowMode = parseInt(v);
   });
 
   gui.add(info, "cascadeMode", {
@@ -234,7 +234,7 @@ function openDebug() {
     TwoCascades: ShadowCascadesMode.TwoCascades,
     FourCascades: ShadowCascadesMode.FourCascades
   }).onChange((v) => {
-    engine.shadowCascades = parseInt(v);
+    engine.settings.shadowCascades = parseInt(v);
   });
 
   gui.add(info, "resolution", {
@@ -243,9 +243,9 @@ function openDebug() {
     High: ShadowResolution.High,
     VeryHigh: ShadowResolution.VeryHigh
   }).onChange((v) => {
-    engine.shadowResolution = parseInt(v);
+    engine.settings.shadowResolution = parseInt(v);
   });
   gui.add(info, "shadowCascadeSplitRatio").onChange((v) => {
-    engine.shadowCascadeSplitRatio = v;
+    engine.settings.shadowCascadeSplitRatio = v;
   });
 }

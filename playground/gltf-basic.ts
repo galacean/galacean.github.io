@@ -27,10 +27,10 @@ import {
 
 const engine = new WebGLEngine("canvas", {webGLMode: WebGLMode.WebGL1});
 engine.canvas.resizeByClientSize();
-engine.shadowResolution = ShadowResolution.VeryHigh;
+engine.settings.shadowResolution = ShadowResolution.VeryHigh;
 // engine.shadowCascadeSplitRatio = 0.9;
-engine.shadowCascades = ShadowCascadesMode.FourCascades;
-engine.shadowMode = ShadowMode.Soft;
+engine.settings.shadowCascades = ShadowCascadesMode.FourCascades;
+engine.settings.shadowMode = ShadowMode.SoftLow;
 const scene = engine.sceneManager.activeScene;
 
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
