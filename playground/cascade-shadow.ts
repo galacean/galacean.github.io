@@ -85,7 +85,7 @@ void main() {
     vec4 specular = u_specularColor;
     vec4 ambient = vec4(u_envMapLight.diffuse * u_envMapLight.diffuseIntensity, 1.0) * diffuse;
 
-#ifdef CASCADED_SHADOW_MAP_COUNT
+#ifdef CASCADED_SHADOW_MAP
     int cascadeIndex = computeCascadeIndex(v_pos);
     if (cascadeIndex == 0) {
         diffuse = vec4(1.0, 1.0, 1.0, 1.0);
@@ -194,7 +194,10 @@ function openDebug() {
     cascadeMode: ShadowCascadesMode.FourCascades,
     resolution: ShadowResolution.VeryHigh,
     shadowMode: ShadowMode.SoftLow,
-    shadowCascadeSplitRatio: 0.95
+    shadowTwoCascadeSplitRatio: 1.0 / 3,
+    shadowFourCascadeSplitRatioX: 1.0 / 15,
+    shadowFourCascadeSplitRatioY: 3.0 / 15.0,
+    shadowFourCascadeSplitRatioZ: 7.0 / 15.0,
   }
 
   gui.add(info, "rotation").onChange((v) => {
@@ -245,7 +248,16 @@ function openDebug() {
   }).onChange((v) => {
     engine.settings.shadowResolution = parseInt(v);
   });
-  gui.add(info, "shadowCascadeSplitRatio").onChange((v) => {
-    engine.settings.shadowCascadeSplitRatio = v;
+  gui.add(info, "shadowTwoCascadeSplitRatio", 0, 1).onChange((v) => {
+    engine.settings.shadowTwoCascadeSplits = v;
+  });
+  gui.add(info, "shadowFourCascadeSplitRatioX", 0, 1).onChange((v) => {
+    engine.settings.shadowFourCascadeSplits.x = v;
+  });
+  gui.add(info, "shadowFourCascadeSplitRatioY", 0, 1).onChange((v) => {
+    engine.settings.shadowFourCascadeSplits.y = v;
+  });
+  gui.add(info, "shadowFourCascadeSplitRatioZ", 0, 1).onChange((v) => {
+    engine.settings.shadowFourCascadeSplits.z = v;
   });
 }
