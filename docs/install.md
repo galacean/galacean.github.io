@@ -63,12 +63,12 @@ Engine core architecture logic and core functions ([oasis-engine](https://www.np
 |:--|:--|--|
 |[@oasis-engine/core](https://www.npmjs.com/package/@oasis-engine/core)| Engine core, such as component system |[API](${api}core/index)|
 |[@oasis-engine/loader](https://www.npmjs.com/package/@oasis-engine/loader)| Resource loading |[API](${api}loader/index)|
-|[@oasis-engine/rhi-webgl](https://www.npmjs.com/package/@oasis-engine/rhi-webgl)| WebGL Rendering Hardware Interface|[API](${ api}rhi-webgl/index)|
+|[@oasis-engine/rhi-webgl](https://www.npmjs.com/package/@oasis-engine/rhi-webgl)| WebGL Rendering Hardware Interface|[API](${api}rhi-webgl/index)|
 |[@oasis-engine/math](https://www.npmjs.com/package/@oasis-engine/math)| Math Library |[API](${api}math/index)|
-|[@oasis-engine/design](https://www.npmjs.com/package/@oasis-engine/design)| Engine basic design specifications, such as cloning specifications, destruction specifications, RHI specifications|[API]($ {api}design/index)|
-|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| Lightweight physics engine |API|
-|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| Full-featured physics engine |API|
-|[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco model compression |API|
+|[@oasis-engine/design](https://www.npmjs.com/package/@oasis-engine/design)| Engine basic design specifications, such as cloning specifications, destruction specifications, RHI specifications|[API](${api}design/index)|
+|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| Lightweight physics engine |[API](${api}physics-lite/index)|
+|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| Full-featured physics engine |[API](${api}physics-physx/index)|
+|[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco model compression |[API](${api}draco/index)|
 
 
 
@@ -80,9 +80,9 @@ Please check the list of completed functions https://github.com/oasis-engine/eng
 
 |Expansion Pack|Explanation|API|
 |:--|:--|:--|
-|[@oasis-engine/controls](https://www.npmjs.com/package/@oasis-engine/controls)| Controller |[API](${api}controls/index)|
-|[@oasis-engine/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine/framebuffer-picker)| Framebuffer Picking|[API](${api}framebuffer-picker/ index)|
-|[@oasis-engine/stats](https://www.npmjs.com/package/@oasis-engine/stats)| Engine Statistics Panel |[API](${api}stats/index)|
+|[@oasis-engine-toolkit/controls](https://www.npmjs.com/package/@oasis-engine-toolkit/controls)| Controller |[Doc](${docs}controls)|
+|[@oasis-engine-toolkit/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine-toolkit/framebuffer-picker)| Framebuffer Picking|[Doc](${docs}framebuffer-picker)|
+|[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats)| Engine Statistics Panel |[Doc](${docs}stats)|
 |......|  ||
 
 
@@ -92,4 +92,4 @@ Please check the list of completed functions https://github.com/oasis-engine/eng
 | Expansion Pack                                               | Explanation      | API                  |
 | :----------------------------------------------------------- | :--------------- | :------------------- |
 | [@oasis-engine/engine-spine](https://www.npmjs.com/package/@oasis-engine/engine-spine) | Spine Animation  | [Doc](${docs}spine)  |
-| [@oasis-engine/engine-lottie](https://www.npmjs.com/package/@oasis-engine/lottie) | Lottie Animation | [Doc](${docs}lottie) |
+| [@oasis-engine/lottie](https://www.npmjs.com/package/@oasis-engine/lottie) | Lottie Animation | [Doc](${docs}lottie) |
