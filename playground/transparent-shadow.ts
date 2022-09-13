@@ -23,7 +23,6 @@ import {
   ShadowResolution,
   Vector3,
   WebGLEngine,
-  WebGLMode
 } from "oasis-engine";
 import * as dat from "dat.gui";
 
