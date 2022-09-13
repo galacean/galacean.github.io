@@ -11,7 +11,6 @@ import {
   Color,
   DirectLight,
   Engine,
-  Entity,
   GLTFResource,
   MeshRenderer,
   PBRMaterial,
@@ -22,11 +21,11 @@ import {
   ShadowCascadesMode,
   ShadowMode,
   ShadowResolution,
-  Vector2,
   Vector3,
   WebGLEngine,
   WebGLMode
 } from "oasis-engine";
+import * as dat from "dat.gui";
 
 Shader.create("transparent-shadow", `
 #include <common_vert>
@@ -64,9 +63,7 @@ void main() {
     #endif
 #endif
 
-     vec4 baseColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
-
-    gl_FragColor = baseColor;
+    gl_FragColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
 
     #include <fog_frag>
 }
@@ -95,7 +92,20 @@ class TransparentShadow extends BaseMaterial {
   }
 }
 
-const engine = new WebGLEngine("canvas", {webGLMode: WebGLMode.WebGL1});
+class Rotation extends Script {
+  pause = false;
+  private _time = 0;
+
+  onUpdate(deltaTime: number) {
+    if (!this.pause) {
+      this._time += deltaTime / 1000;
+      this.entity.transform.setRotation(0, this._time * 50, 0);
+    }
+  }
+}
+
+const gui = new dat.GUI();
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 engine.settings.shadowResolution = ShadowResolution.VeryHigh;
 engine.settings.shadowCascades = ShadowCascadesMode.FourCascades;
@@ -112,47 +122,26 @@ camera.enableFrustumCulling = false;
 camera.farClipPlane = 1000;
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
-function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Vector3): Entity {
-  const mtl = new TransparentShadow(rootEntity.engine);
-  mtl.baseColor.set(9 / 255, 8 / 255, 9 / 255, 1);
-  const planeEntity = rootEntity.createChild();
+const transparentShadowMtl = new TransparentShadow(engine);
+transparentShadowMtl.baseColor.set(9 / 255, 8 / 255, 9 / 255, 1);
+const debugMtl = new PBRMaterial(engine);
+debugMtl.baseColor.set(1, 0, 0, 0.5);
+debugMtl.isTransparent = true;
 
-  const debugMtl = new PBRMaterial(engine);
-  debugMtl.baseColor.set(1, 0, 0, 0.5);
-  debugMtl.isTransparent = true;
-
-  const renderer = planeEntity.addComponent(MeshRenderer);
-  renderer.receiveShadows = true;
-  renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
-  renderer.setMaterial(mtl);
-  planeEntity.transform.position = position;
-  planeEntity.transform.rotation = rotation;
-
-  return planeEntity;
-}
-
-addPlane(rootEntity, new Vector2(300, 2000), new Vector3(0, 0, 0), new Vector3(0, 0, 0));
-
-class Rotation extends Script {
-  pause = false;
-  private _time = 0;
-
-  onUpdate(deltaTime: number) {
-    if (!this.pause) {
-      this._time += deltaTime / 1000;
-      this.entity.transform.setRotation(0, this._time * 50, 0);
-    }
-  }
-}
+const planeEntity = rootEntity.createChild();
+const planeRenderer = planeEntity.addComponent(MeshRenderer);
+planeRenderer.receiveShadows = true;
+planeRenderer.mesh = PrimitiveMesh.createPlane(engine, 300, 2000);
+planeRenderer.setMaterial(transparentShadowMtl);
 
 // init direct light
 const light = rootEntity.createChild("light");
 light.transform.setPosition(-140, 1000, -1020);
-light.transform.lookAt(new Vector3(100, 0, 300));
+light.transform.lookAt(new Vector3(30, 0, 300));
 const directLight = light.addComponent(DirectLight);
 directLight.intensity = 1;
 directLight.enableShadow = true;
-directLight.shadowStrength = 1;
+directLight.shadowStrength = 0.75;
 directLight.shadowBias = 5;
 
 engine.resourceManager
@@ -189,5 +178,21 @@ engine.resourceManager
     scene.background.texture = background;
 
     scene.ambientLight = ambientLight;
+    scene.ambientLight.specularIntensity = 0.1;
+    openDebug();
     engine.run();
   });
+
+function openDebug() {
+  const info = {
+    debug: false,
+  }
+
+  gui.add(info, "debug").onChange((v) => {
+    if (v) {
+      planeRenderer.setMaterial(debugMtl);
+    } else {
+      planeRenderer.setMaterial(transparentShadowMtl);
+    }
+  });
+}
