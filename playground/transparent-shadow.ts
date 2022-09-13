@@ -155,7 +155,7 @@ engine.resourceManager
       type: AssetType.Env
     },
     {
-      url: "http://30.46.128.39:8000/sanmiguel-cover.png",
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*X0IjQ5E1OUEAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D
     },
   ])
