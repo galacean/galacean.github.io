@@ -1,5 +1,5 @@
 /**
- * @title Shadow
+ * @title Shadow Basic
  * @category Light
  */
 
