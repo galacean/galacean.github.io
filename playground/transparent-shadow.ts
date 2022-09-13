@@ -2,30 +2,27 @@
  * @title Transparent Shadow
  * @category Light
  */
-import {OrbitControl} from "@oasis-engine-toolkit/controls";
 import {
   AmbientLight,
   AssetType,
   BackgroundMode,
   BaseMaterial,
-  BlendMode,
   Camera,
   Color,
   DirectLight,
   Engine,
   Entity,
   GLTFResource,
-  Layer,
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
-  Quaternion,
   Renderer,
   Script,
   Shader,
   ShadowCascadesMode,
   ShadowMode,
   ShadowResolution,
+  Vector2,
   Vector3,
   WebGLEngine,
   WebGLMode
@@ -35,6 +32,7 @@ Shader.create("transparent-shadow", `
 #include <common_vert>
 #include <blendShape_input>
 #include <uv_share>
+#include <worldpos_share>
 #include <fog_share>
 
 void main() {
@@ -43,6 +41,7 @@ void main() {
     #include <blendShape_vert>
     #include <skinning_vert>
     #include <uv_vert>
+    #include <worldpos_vert>
     #include <position_vert>
 
     #include <fog_vert>
@@ -50,14 +49,15 @@ void main() {
 `, `
 #include <common>
 #include <uv_share>
-#include <fog_share>
+#include <worldpos_share>
 #include <shadow_frag_share>
+#include <fog_share>
 
 uniform vec4 u_baseColor;
 uniform float u_alphaCutoff;
 
 void main() {
-     shadowAttenuation = 1.0;
+     float shadowAttenuation = 1.0;
 #ifdef OASIS_CALCULATE_SHADOWS
     #ifdef CASCADED_SHADOW_MAP
         shadowAttenuation *= sampleShadowMap();
@@ -65,17 +65,6 @@ void main() {
 #endif
 
      vec4 baseColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
-
-    #ifdef ALPHA_CUTOFF
-        if( baseColor.a < u_alphaCutoff ) {
-            discard;
-        }
-    #endif
-
-
-    #ifndef OASIS_COLORSPACE_GAMMA
-        baseColor = linearToGamma(baseColor);
-    #endif
 
     gl_FragColor = baseColor;
 
@@ -101,8 +90,8 @@ class TransparentShadow extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("transparent-shadow"));
     this.isTransparent = true;
-    this.blendMode = BlendMode.Additive;
     this.shaderData.setColor(TransparentShadow._baseColorProp, new Color(0, 0, 0, 1));
+    this.shaderData.enableMacro("O3_NEED_WORLDPOS");
   }
 }
 
@@ -116,32 +105,33 @@ const scene = engine.sceneManager.activeScene;
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 const cameraEntity = rootEntity.createChild("camera");
-cameraEntity.transform.setPosition(0, 1.5, 1);
-cameraEntity.addComponent(OrbitControl).target.set(0, 1.5, 0);
+cameraEntity.transform.setPosition(-140, 210, 1020);
+cameraEntity.transform.setRotation(0, -16, 0)
 const camera = cameraEntity.addComponent(Camera);
 camera.enableFrustumCulling = false;
-camera.farClipPlane = 7;
+camera.farClipPlane = 1000;
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
-function addPlane(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new PBRMaterial(rootEntity.engine);
-  mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
-  mtl.roughness = 0.5;
-  mtl.metallic = 0.0;
+function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Vector3): Entity {
+  const mtl = new TransparentShadow(rootEntity.engine);
+  mtl.baseColor.set(9 / 255, 8 / 255, 9 / 255, 1);
   const planeEntity = rootEntity.createChild();
-  planeEntity.layer = Layer.Layer1;
+
+  const debugMtl = new PBRMaterial(engine);
+  debugMtl.baseColor.set(1, 0, 0, 0.5);
+  debugMtl.isTransparent = true;
 
   const renderer = planeEntity.addComponent(MeshRenderer);
   renderer.receiveShadows = true;
-  renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
+  renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
   planeEntity.transform.position = position;
-  planeEntity.transform.rotationQuaternion = rotation;
+  planeEntity.transform.rotation = rotation;
 
   return planeEntity;
 }
 
-// addPlane(rootEntity, new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
+addPlane(rootEntity, new Vector2(300, 2000), new Vector3(0, 0, 0), new Vector3(0, 0, 0));
 
 class Rotation extends Script {
   pause = false;
@@ -150,34 +140,43 @@ class Rotation extends Script {
   onUpdate(deltaTime: number) {
     if (!this.pause) {
       this._time += deltaTime / 1000;
-      this.entity.transform.setRotation(0, this._time * 50,0);
+      this.entity.transform.setRotation(0, this._time * 50, 0);
     }
   }
 }
 
 // init direct light
 const light = rootEntity.createChild("light");
-light.transform.setPosition(5, 10, 5);
-light.transform.lookAt(new Vector3(), new Vector3(1, 0, 0));
+light.transform.setPosition(-140, 1000, -1020);
+light.transform.lookAt(new Vector3(100, 0, 300));
 const directLight = light.addComponent(DirectLight);
 directLight.intensity = 1;
 directLight.enableShadow = true;
 directLight.shadowStrength = 1;
-directLight.shadowBias = 15;
+directLight.shadowBias = 5;
 
 engine.resourceManager
   //@ts-ignore
   .load<[GLTFResource, AmbientLight, Texture2D]>([
-    {url: "https://gw.alipayobjects.com/os/OasisHub/694000084/4848/YouthFemaleNormal_Clothes_Default.gltf",
-    type: AssetType.Prefab},
-    {url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
-    type: AssetType.Env},
-    {url: "http://30.46.128.39:8000/sanmiguel-cover.png",
-    type: AssetType.Texture2D},
+    {
+      url: "https://gw.alipayobjects.com/os/bmw-prod/93196534-bab3-4559-ae9f-bcb3e36a6419.glb",
+      type: AssetType.Prefab
+    },
+    {
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+      type: AssetType.Env
+    },
+    {
+      url: "http://30.46.128.39:8000/sanmiguel-cover.png",
+      type: AssetType.Texture2D
+    },
   ])
   .then(([gltf, ambientLight, background]) => {
     gltf.defaultSceneRoot.addComponent(Rotation);
-    rootEntity.addChild(gltf.defaultSceneRoot);
+    const character = rootEntity.createChild("gltf");
+    character.transform.setScale(20, 20, 20);
+    character.transform.setPosition(100, 0, 300);
+    character.addChild(gltf.defaultSceneRoot);
     const renderers: Renderer[] = []
     gltf.defaultSceneRoot.getComponentsIncludeChildren(Renderer, renderers);
     for (let i = 0; i < renderers.length; i++) {
