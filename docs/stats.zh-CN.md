@@ -4,11 +4,11 @@ title: 统计面板
 type: 性能调试
 ---
 
-[@oasis-engine/stats](${api}stats/index) 包主要用来显示引擎当前的运行状态。要显示引擎运行状态只需要引入 [Stats](${api}stats/Stats) 并注册：
+[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats) 包主要用来显示引擎当前的运行状态。要显示引擎运行状态只需要引入 `Stats` 并注册：
 
 ```typescript
 import { Engine } from 'oasis-engine';
-import { Stats } from '@oasis-engine/stats';
+import { Stats } from '@oasis-engine-toolkit/stats';
 
 Engine.registerFeature(Stats);
 ```

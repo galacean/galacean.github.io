@@ -122,11 +122,11 @@ Page({
 1. Import library
 
 ```shell
-npm install @oasis-engine/controls -S
+npm install @oasis-engine-toolkit/controls -S
 ```
 
 ```typescript
-import { OrbitControl } from '@oasis-engine/controls/dist/miniprogram';
+import { OrbitControl } from "@oasis-engine-toolkit/controls/dist/miniprogram";
 ```
 
 2. Add Component
@@ -139,35 +139,38 @@ cameraEntity.addComponent(OrbitControl);
 
 3. Mock event dispatch
 
-Because miniprogram doesn't support  `addEventListener` like dom, we have to mock event dispatch. We should add a view element whose size and position are the same to canvas to dispatch `touchstart`, `touchmove` and `touchend` events. For example:
+Because miniprogram doesn't support `addEventListener` like dom, we have to mock event dispatch. We should add a view element whose size and position are the same to canvas to dispatch `touchstart`, `touchmove` and `touchend` events. For example:
 
 ```html
 <view>
-  <canvas
-    onReady="onCanvasReady"
-    style="width:{{cw}}px;height:{{ch}}px"
-    type="webgl">
-  </canvas>
+  <canvas onReady="onCanvasReady" style="width:{{cw}}px;height:{{ch}}px" type="webgl"> </canvas>
   <view
     style="width:{{cw}}px;height:{{ch}}px;top:0px;position:absolute;"
-    onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" >
+    onTouchCancel="onTouchCancel"
+    onTouchStart="onTouchStart"
+    onTouchMove="onTouchMove"
+    onTouchEnd="onTouchEnd"
+  >
   </view>
 </view>
 ```
 
 ```typescript
-import { dispatchTouchStart, dispatchTouchMove, dispatchTouchEnd } from "@oasis-engine/miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@oasis-engine/miniprogram-adapter";
 
 Page({
   ...
+  onTouchEnd(e) {
+    dispatchPointerUp(e);
+  },
   onTouchStart(e) {
-    dispatchTouchStart(e);
+    dispatchPointerDown(e);
   },
   onTouchMove(e) {
-    dispatchTouchMove(e);
+    dispatchPointerMove(e);
   },
-  onTouchEnd(e) {
-    dispatchTouchEnd(e);
+  onTouchCancel(e) {
+    dispatchPointerOut(e);
   }
 })
 ```
