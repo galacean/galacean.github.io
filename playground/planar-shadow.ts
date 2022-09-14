@@ -17,7 +17,8 @@ import {
 } from "oasis-engine";
 
 import { Color } from "oasis-engine";
-import { PlanarShadowMaterial } from "oasis-engine-toolkit";
+import { PlanarShadowShaderFactory } from "oasis-engine-toolkit";
+
 /**
  * Planar Shadow
  */
@@ -62,16 +63,12 @@ engine.resourceManager
     defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, renderers);
 
     for (let i = 0, n = renderers.length; i < n; i++) {
-      const renderer = renderers[i];
-      const shadowMaterial = new PlanarShadowMaterial(engine);
-      // copy origin material shader data to shadow material shader data.
-      renderer.getMaterial().shaderData.cloneTo(shadowMaterial.shaderData);
-      shadowMaterial.shadowFalloff = 0.2;
-      shadowMaterial.shadowColor.set(0, 0, 0, 1.0);
-      shadowMaterial.planarHeight = 0.01;
-      shadowMaterial.lightDirection = lightDirection;
-
-      renderer.setMaterial(shadowMaterial);
+      const material = renderers[i].getMaterial();
+      PlanarShadowShaderFactory.replaceShader(material);
+      PlanarShadowShaderFactory.setShadowFalloff(material, 0.2);
+      PlanarShadowShaderFactory.setPlanarHeight(material, 0.01);
+      PlanarShadowShaderFactory.setLightDirection(material, lightDirection);
+      PlanarShadowShaderFactory.setShadowColor(material, new Color(0, 0, 0, 1.0));
     }
   });
 
