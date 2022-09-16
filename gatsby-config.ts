@@ -1,12 +1,14 @@
-const DTS = require('./scripts/typedoc/tsfiles');
-const { version, typedocSource } = require('./siteconfig.json')
+import type { GatsbyConfig } from "gatsby";
 
-module.exports = {
+const DTS = require("./scripts/typedoc/tsfiles");
+const { version, typedocSource } = require("./siteconfig.json");
+
+const config: GatsbyConfig = {
   siteMetadata: {
-    title: 'OASIS ENGINE',
-    description: 'Out-of-box UI solution for enterprise applications',
-    author: 'Oasis Engine',
-    siteUrl: 'https://oasisengine.cn',
+    title: "OASIS ENGINE",
+    description: "Out-of-box UI solution for enterprise applications",
+    author: "Oasis Engine",
+    siteUrl: "https://oasisengine.cn"
   },
   assetPrefix: `/${version}/asset`,
   plugins: [
@@ -16,59 +18,60 @@ module.exports = {
         removeMapFiles: true,
         fileTypes: ["js", "css", "txt", "chunk-map.json"],
         files: ["chunk-map.json", "webpack.stats.json"]
-      },
+      }
     },
     {
-      resolve: 'gatsby-plugin-less',
+      resolve: "gatsby-plugin-less",
       options: {
         lessOptions: {
-          javascriptEnabled: true,
-        },
-      },
+          javascriptEnabled: true
+        }
+      }
     },
-    'gatsby-plugin-typescript',
+    "gatsby-plugin-typescript",
+    "gatsby-plugin-postcss",
     {
-      resolve: 'gatsby-plugin-antd',
+      resolve: "gatsby-plugin-antd",
       options: {
-        style: true,
-      },
+        style: true
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'images',
+        name: "images",
         path: `${__dirname}/src/images`,
-        ignore: [`**/\.*`],
-      },
+        ignore: [`**/\.*`]
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: '/docs',
+        name: "/docs",
         path: `${__dirname}/docs/`,
-        ignore: [`**/\.*`],
-      },
+        ignore: [`**/\.*`]
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: '/playground',
+        name: "/playground",
         path: `${__dirname}/playground/`,
-        ignore: [`**/\.*`],
-      },
+        ignore: [`**/\.*`]
+      }
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
-          'gatsby-remark-autolink-headers',
-          'gatsby-remark-img-warpper-p',
+          "gatsby-remark-autolink-headers",
+          "gatsby-remark-img-warpper-p",
           {
-            resolve: 'gatsby-remark-oasis',
+            resolve: "gatsby-remark-oasis",
             options: {
               api: `/${version}/api/`,
               playground: `/${version}/examples#`,
-              docs: `/${version}/docs/`,
+              docs: `/${version}/docs/`
             }
           },
           {
@@ -79,19 +82,18 @@ module.exports = {
             }
           },
           {
-            resolve: 'gatsby-remark-prismjs',
+            resolve: "gatsby-remark-prismjs",
             options: {
-              noInlineHighlight: true,
-            },
-          },
-        ],
-      },
+              noInlineHighlight: true
+            }
+          }
+        ]
+      }
     },
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-source-typedoc",
       options: {
-
         // Array of Typescript files to
         // include
         src: DTS,
@@ -107,6 +109,7 @@ module.exports = {
         }
       }
     },
-    'gatsby-transformer-oasis-playground'
-  ],
+    "gatsby-transformer-oasis-playground"
+  ]
 };
+export default config;

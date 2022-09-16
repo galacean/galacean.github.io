@@ -24,6 +24,8 @@ export function getLocalizedPathname(path: string, zhCN: boolean) {
   let pathname = path.startsWith('/') ? path : `/${path}`;
   pathname = pathname.replace('-cn', '');
 
+  if (pathname === '/docs') return pathname
+
   if (pathname === '/' || pathname === '/index') {
     if (zhCN) {
       return '/index-cn';

@@ -21,6 +21,8 @@ npm run b:types
   "typedocSource": "{ENGINE_REPOSITORY_PATH}",
 ```
 
+Create a Github token following this [instruction](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) and fill it in the `siteconfig.json` file.
+
 Then run:
 
 ```bash

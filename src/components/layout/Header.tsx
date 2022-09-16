@@ -119,6 +119,10 @@ class Header extends React.Component<HeaderProps, HeaderState> {
       return;
     }
 
+    if (pathname === '/docs'){
+      return
+    }
+
     if (isZhCN !== isPathNameZhCN) {
       this.replacePathName(pathname, isZhCN);
     }

@@ -5,7 +5,6 @@
 /* eslint-disable no-multi-assign */
 const path = require('path');
 const fs = require('fs');
-const fetch = require('node-fetch');
 const slash = require('slash2');
 const { version, docSource } = require('../siteconfig.json');
 
