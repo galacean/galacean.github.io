@@ -8,6 +8,7 @@ import { ServerDataProps } from "../../pages/docs";
 interface DocProps {
   isMobile: boolean;
   serverData: ServerDataProps[];
+  queryParamObj: any;
 }
 type MenuItem = {
   type: string;
@@ -57,11 +58,12 @@ const Doc: React.FC<DocProps> = (props) => {
   const onOpenChange = () => {
     console.log("test");
   };
+  const locale = props.queryParamObj.lang === "en" ? "en" : "cn";
   const mainContainerClass = classNames("main-container", {});
 
   const menuItems: MenuItem[] = [];
   props.serverData
-    .filter((data) => data.lang === "cn")
+    .filter((data) => data.lang === locale)
     .forEach((data) => {
       const {
         frontmatter: { order, type, title, group }
@@ -97,14 +99,20 @@ const Doc: React.FC<DocProps> = (props) => {
         }
       }
     });
-  let openKeys: Array<string> = ["1"];
-  let selectedKeys: Array<string> = ["sub1"];
+
+  const defaultSelectedKeys: Array<string> = [Object.values(menuItems[0].groups)[0][0].key];
 
   const menuComponent = (
-    <Menu mode="inline" defaultSelectedKeys={selectedKeys} defaultOpenKeys={openKeys} className="aside-container">
+    <Menu
+      mode="inline"
+      defaultOpenKeys={[menuItems[0].type]}
+      defaultSelectedKeys={defaultSelectedKeys}
+      className="aside-container"
+    >
       {generateMenuItem(menuItems)}
     </Menu>
   );
+
   return (
     <div className="main-wrapper">
       <Row>

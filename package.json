@@ -81,6 +81,7 @@
     "postcss": "^8.4.16",
     "prop-types": "^15.7.2",
     "qrcode.react": "^3",
+    "qs": "^6.11.0",
     "rc-drawer-menu": "^1.1.0",
     "rc-queue-anim": "^2",
     "rc-scroll-anim": "^2.0.2",

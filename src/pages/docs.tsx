@@ -6,6 +6,7 @@ import React from "react";
 import Media from "react-media";
 import Doc from "../components/Doc/Doc";
 import { Layout } from "../components/layout/index";
+import qs from 'qs';
 
 const { token } = require("../../siteconfig.json");
 export interface ServerDataProps {
@@ -29,6 +30,7 @@ export interface ServerDataProps {
 }
 
 const DocPage: React.FC = (props: PageProps<object, object, WindowLocation["state"], ServerDataProps[]>) => {
+  const queryParamObj = qs.parse(props.location.search.slice(1))
   return (
     <Media query="(max-width: 996px)">
       {(isMobile) => {
@@ -38,7 +40,7 @@ const DocPage: React.FC = (props: PageProps<object, object, WindowLocation["stat
             <Layout
               {...props}
               isMobile={isMobile}
-              children={<Doc isMobile={isMobile} serverData={props.serverData} />}
+              children={<Doc isMobile={isMobile} serverData={props.serverData} queryParamObj={queryParamObj}/>}
             />
           )
         );
