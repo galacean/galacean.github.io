@@ -169,7 +169,7 @@ sky.material = skyMaterial;
 sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 // control
-cameraEntity.addComponent(OrbitControl);
+const orbitControl = cameraEntity.addComponent(OrbitControl);
 
 const lightEntity = rootEntity.createChild("Light");
 lightEntity.transform.setRotation(-30, 0, 0);
@@ -180,6 +180,7 @@ const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
 navigationGizmo.layer = LayerSetting.NavigationGizmo;
 navigationGizmo.camera = camera;
 navigationGizmo.viewport = new Vector4(0, 0, 0.2, 0.2);
+navigationGizmo.controls = orbitControl;
 
 // add gizmo
 rootEntity.addComponent(ControlScript);
