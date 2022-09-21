@@ -24,7 +24,6 @@ import {
   Script,
   SkyBoxMaterial,
   Vector3,
-  Vector4,
   WebGLEngine
 } from "oasis-engine";
 import { LitePhysics } from "@oasis-engine/physics-lite";
@@ -62,10 +61,8 @@ export class ControlScript extends Script {
 
     // add navigation gizmo
     const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
-    navigationGizmo.layer = LayerSetting.NavigationGizmo;
     navigationGizmo.camera = this.sceneCamera;
-    navigationGizmo.viewport = new Vector4(0, 0, 0.2, 0.2);
-    navigationGizmo.controls = this.orbitControl;
+    navigationGizmo.layer = LayerSetting.NavigationGizmo;
 
     // GizmoControls
     const gizmoEntity = this.entity.createChild("editor-gizmo");
@@ -158,7 +155,6 @@ const rootEntity = scene.createRootEntity();
 // init full screen camera
 const cameraEntity = rootEntity.createChild("fullscreen-camera");
 const camera = cameraEntity.addComponent(Camera);
-camera.cullingMask = LayerSetting.Entity | LayerSetting.Gizmo;
 
 cameraEntity.transform.setPosition(0, 10, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
