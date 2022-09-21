@@ -44,24 +44,28 @@ const gui = new dat.GUI();
 
 export class ControlScript extends Script {
   private sceneCamera: Camera;
-  private rootEntity: Entity;
   private framebufferPicker: FramebufferPicker;
   private gizmoControls: GizmoControls;
   private orbitControl: OrbitControl;
 
   constructor(entity: Entity) {
     super(entity);
-
-    this.rootEntity = this.entity.engine.sceneManager.activeScene.getRootEntity();
-    this.sceneCamera = this.rootEntity.findByName("fullscreen-camera").getComponent(Camera);
-
-    // orbit Controls
-    this.orbitControl = this.sceneCamera.entity.getComponent(OrbitControl);
+    this.sceneCamera = entity.findByName("fullscreen-camera").getComponent(Camera);
 
     // FramebufferPicker
     this.framebufferPicker = entity.addComponent(FramebufferPicker);
     this.framebufferPicker.camera = this.sceneCamera;
     this.framebufferPicker.colorRenderPass.mask = LayerSetting.Entity | LayerSetting.Gizmo;
+
+    // orbit Controls
+    this.orbitControl = this.sceneCamera.entity.addComponent(OrbitControl);
+
+    // add navigation gizmo
+    const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
+    navigationGizmo.layer = LayerSetting.NavigationGizmo;
+    navigationGizmo.camera = this.sceneCamera;
+    navigationGizmo.viewport = new Vector4(0, 0, 0.2, 0.2);
+    navigationGizmo.controls = this.orbitControl;
 
     // GizmoControls
     const gizmoEntity = this.entity.createChild("editor-gizmo");
@@ -71,8 +75,7 @@ export class ControlScript extends Script {
     this.gizmoControls.onGizmoChange(GizmoState.translate);
     this.gizmoControls.onToggleGizmoAnchor(true);
     this.gizmoControls.onToggleGizmoOrient(true);
-
-    this.gizmoControls.entity.isActive = false;
+    gizmoEntity.isActive = false;
 
     this.addGUI();
   }
@@ -160,7 +163,7 @@ camera.cullingMask = LayerSetting.Entity | LayerSetting.Gizmo;
 cameraEntity.transform.setPosition(0, 10, 10);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 
-// Create sky
+// setup scene
 const sky = background.sky;
 const skyMaterial = new SkyBoxMaterial(engine);
 background.mode = BackgroundMode.Sky;
@@ -168,24 +171,10 @@ background.mode = BackgroundMode.Sky;
 sky.material = skyMaterial;
 sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
-// control
-const orbitControl = cameraEntity.addComponent(OrbitControl);
-
 const lightEntity = rootEntity.createChild("Light");
 lightEntity.transform.setRotation(-30, 0, 0);
 lightEntity.addComponent(DirectLight);
 
-// add navigation gizmo
-const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
-navigationGizmo.layer = LayerSetting.NavigationGizmo;
-navigationGizmo.camera = camera;
-navigationGizmo.viewport = new Vector4(0, 0, 0.2, 0.2);
-navigationGizmo.controls = orbitControl;
-
-// add gizmo
-rootEntity.addComponent(ControlScript);
-
-// add entity
 const bigEntity = rootEntity.createChild("parent");
 bigEntity.transform.setPosition(-2, 0, 0);
 const bigRenderer = bigEntity.addComponent(MeshRenderer);
@@ -195,11 +184,13 @@ mat.baseColor.set(0.2, 0.6, 0.8, 1);
 bigRenderer.setMaterial(mat);
 
 const smallEntity = bigEntity.createChild("small");
-
 smallEntity.transform.setPosition(0, 3, 0);
 const smallRenderer = smallEntity.addComponent(MeshRenderer);
 smallRenderer.mesh = PrimitiveMesh.createSphere(engine, 0.3);
 smallRenderer.setMaterial(mat);
+
+// add controls
+rootEntity.addComponent(ControlScript);
 
 Promise.all([
   engine.resourceManager
