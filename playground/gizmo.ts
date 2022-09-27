@@ -25,7 +25,7 @@ import {
   SkyBoxMaterial,
   Vector3,
   WebGLEngine,
-  RenderElement
+  MeshRenderElement
 } from "oasis-engine";
 import { LitePhysics } from "@oasis-engine/physics-lite";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
@@ -139,7 +139,7 @@ export class ControlScript extends Script {
       .setValue("center");
   }
 
-  _singleSelectHandler(result: RenderElement) {
+  _singleSelectHandler(result: MeshRenderElement) {
     const selectedEntity = result?.component?.entity;
     switch (selectedEntity?.layer) {
       case undefined: {
@@ -161,7 +161,7 @@ export class ControlScript extends Script {
     }
   }
 
-  _multiSelectHandler(result: RenderElement) {
+  _multiSelectHandler(result: MeshRenderElement) {
     const selectedEntity = result?.component?.entity;
     switch (selectedEntity?.layer) {
       case LayerSetting.Entity: {
