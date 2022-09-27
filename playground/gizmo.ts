@@ -24,13 +24,15 @@ import {
   Script,
   SkyBoxMaterial,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
+  RenderElement
 } from "oasis-engine";
 import { LitePhysics } from "@oasis-engine/physics-lite";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import { NavigationGizmo } from "./navigation-gizmo/src";
-import { GizmoControls, GizmoState } from "./gizmo/src";
+import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
+import { AnchorType, CoordinateType, GizmoControls, GizmoState } from "@oasis-engine-toolkit/gizmo";
+
 import * as dat from "dat.gui";
 
 enum LayerSetting {
@@ -67,11 +69,12 @@ export class ControlScript extends Script {
     // GizmoControls
     const gizmoEntity = this.entity.createChild("editor-gizmo");
     gizmoEntity.layer = LayerSetting.Gizmo;
+
     this.gizmoControls = gizmoEntity.addComponent(GizmoControls);
-    this.gizmoControls.initGizmoControl(this.sceneCamera);
-    this.gizmoControls.onGizmoChange(GizmoState.translate);
-    this.gizmoControls.onToggleGizmoAnchor(true);
-    this.gizmoControls.onToggleGizmoOrient(true);
+    this.gizmoControls.camera = this.sceneCamera;
+    this.gizmoControls.layer = LayerSetting.Gizmo;
+    this.gizmoControls.gizmoState = GizmoState.translate;
+
     gizmoEntity.isActive = false;
 
     this.addGUI();
@@ -80,46 +83,74 @@ export class ControlScript extends Script {
   addGUI() {
     const info = {
       Gizmo: GizmoState.translate,
-      Orientation: "Global",
-      PivotPoint: "Center"
+      Coordinate: CoordinateType.Local,
+      Anchor: AnchorType.Center
     };
-    const gizmoConfig = [GizmoState.translate, GizmoState.rotate, GizmoState.scale];
-    const orientationConfig = ["Global", "Local"];
-    const pivotConfig = ["Center", "Pivot"];
+    const gizmoConfig = ["null", "translate", "rotate", "scale"];
+    const orientationConfig = ["global", "local"];
+    const pivotConfig = ["center", "pivot"];
 
-    gui.add(info, "Gizmo", gizmoConfig).onChange((v: GizmoState) => {
-      this.gizmoControls.onGizmoChange(v);
-    });
+    gui
+      .add(info, "Gizmo", gizmoConfig)
+      .onChange((v: string) => {
+        switch (v) {
+          case "null":
+            this.gizmoControls.gizmoState = GizmoState.null;
+            break;
+          case "translate":
+            this.gizmoControls.gizmoState = GizmoState.translate;
+            break;
+          case "rotate":
+            this.gizmoControls.gizmoState = GizmoState.rotate;
+            break;
+          case "scale":
+            this.gizmoControls.gizmoState = GizmoState.scale;
+            break;
+        }
+      })
+      .setValue("translate");
 
-    gui.add(info, "Orientation", orientationConfig).onChange((v) => {
-      if (v === "Global") {
-        this.gizmoControls.onToggleGizmoOrient(true);
-      } else {
-        this.gizmoControls.onToggleGizmoOrient(false);
-      }
-    });
+    gui
+      .add(info, "Coordinate", orientationConfig)
+      .onChange((v: string) => {
+        switch (v) {
+          case "global":
+            this.gizmoControls.gizmoCoord = CoordinateType.Global;
+            break;
+          case "local":
+            this.gizmoControls.gizmoCoord = CoordinateType.Local;
+            break;
+        }
+      })
+      .setValue("local");
 
-    gui.add(info, "PivotPoint", pivotConfig).onChange((v) => {
-      if (v === "Center") {
-        this.gizmoControls.onToggleGizmoAnchor(true);
-      } else {
-        this.gizmoControls.onToggleGizmoAnchor(false);
-      }
-    });
+    gui
+      .add(info, "Anchor", pivotConfig)
+      .onChange((v: string) => {
+        switch (v) {
+          case "center":
+            this.gizmoControls.gizmoAnchor = AnchorType.Center;
+            break;
+          case "pivot":
+            this.gizmoControls.gizmoAnchor = AnchorType.Pivot;
+            break;
+        }
+      })
+      .setValue("center");
   }
 
-  _selectHandler(result) {
+  _singleSelectHandler(result: RenderElement) {
     const selectedEntity = result?.component?.entity;
     switch (selectedEntity?.layer) {
       case undefined: {
         this.orbitControl.enabled = true;
-        this.gizmoControls.onEntitySelected(null);
+        this.gizmoControls.selectEntity(null);
         this.gizmoControls.entity.isActive = false;
         break;
       }
       case LayerSetting.Entity: {
         this.orbitControl.enabled = true;
-        this.gizmoControls.onEntitySelected(selectedEntity);
+        this.gizmoControls.selectEntity(selectedEntity);
         this.gizmoControls.entity.isActive = true;
         break;
       }
@@ -130,14 +161,37 @@ export class ControlScript extends Script {
     }
   }
 
+  _multiSelectHandler(result: RenderElement) {
+    const selectedEntity = result?.component?.entity;
+    switch (selectedEntity?.layer) {
+      case LayerSetting.Entity: {
+        this.orbitControl.enabled = true;
+        this.gizmoControls.getIndexOf(selectedEntity) === -1
+          ? this.gizmoControls.addEntity(selectedEntity)
+          : this.gizmoControls.deselectEntity(selectedEntity);
+        this.gizmoControls.entity.isActive = true;
+        break;
+      }
+    }
+  }
+
   onUpdate(deltaTime: number): void {
     const { inputManager } = this.engine;
-    // Handle select.
+    // single select.
     if (inputManager.isPointerDown(PointerButton.Primary)) {
       const { pointerPosition } = inputManager;
       if (pointerPosition) {
         this.framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
-          this._selectHandler(result);
+          this._singleSelectHandler(result);
+        });
+      }
+    }
+    // multi select
+    if (inputManager.isPointerDown(PointerButton.Secondary)) {
+      const { pointerPosition } = inputManager;
+      if (pointerPosition) {
+        this.framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
+          this._multiSelectHandler(result);
         });
       }
     }
