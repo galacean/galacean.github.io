@@ -5,6 +5,8 @@ type: 图形
 group: 光照
 ---
 
+**test webhook**
+
 **环境光**已经内置在了[场景](${api}core/Scene)中，提供了纯色模式和 IBL 模式
 
 ## 纯色模式
