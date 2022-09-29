@@ -23,7 +23,7 @@ import { LitePhysics } from "@oasis-engine/physics-lite";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
 import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
-import { AnchorType, CoordinateType, GizmoControls, GizmoState } from "@oasis-engine-toolkit/gizmo";
+import { AnchorType, CoordinateType, Gizmo, GizmoState } from "@oasis-engine-toolkit/gizmo";
 
 import * as dat from "dat.gui";
 
@@ -38,7 +38,7 @@ const gui = new dat.GUI();
 export class ControlScript extends Script {
   private _sceneCamera: Camera;
   private _framebufferPicker: FramebufferPicker;
-  private _gizmo: GizmoControls;
+  private _gizmo: Gizmo;
   private _orbitControl: OrbitControl;
 
   constructor(entity: Entity) {
@@ -60,11 +60,11 @@ export class ControlScript extends Script {
 
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
-    const gizmo = gizmoEntity.addComponent(GizmoControls);
-    gizmo.camera = this._sceneCamera;
-    gizmo.state = GizmoState.scale;
-    gizmo.layer = LayerSetting.Gizmo;
-    this._gizmo = gizmo;
+    const gizmoComponent = gizmoEntity.addComponent(Gizmo);
+    gizmoComponent.camera = this._sceneCamera;
+    gizmoComponent.state = GizmoState.scale;
+    gizmoComponent.layer = LayerSetting.Gizmo;
+    this._gizmo = gizmoComponent;
 
     gizmoEntity.isActive = false;
 
