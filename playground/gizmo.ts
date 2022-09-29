@@ -8,24 +8,16 @@
  */
 
 import {
-  AmbientLight,
-  AssetType,
-  BackgroundMode,
-  BlinnPhongMaterial,
   Camera,
   Color,
   DirectLight,
   Entity,
   GLTFResource,
   Layer,
-  MeshRenderer,
   PointerButton,
-  PrimitiveMesh,
   Script,
-  SkyBoxMaterial,
   Vector3,
-  WebGLEngine,
-  MeshRenderElement
+  WebGLEngine
 } from "oasis-engine";
 import { LitePhysics } from "@oasis-engine/physics-lite";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
@@ -36,51 +28,111 @@ import { AnchorType, CoordinateType, GizmoControls, GizmoState } from "@oasis-en
 import * as dat from "dat.gui";
 
 enum LayerSetting {
-  Entity = Layer.Layer0,
-  Gizmo = Layer.Layer22,
+  Entity = Layer.Layer22,
+  Gizmo = Layer.Layer29,
   NavigationGizmo = Layer.Layer30
 }
 
 const gui = new dat.GUI();
 
 export class ControlScript extends Script {
-  private sceneCamera: Camera;
-  private framebufferPicker: FramebufferPicker;
-  private gizmoControls: GizmoControls;
-  private orbitControl: OrbitControl;
+  private _sceneCamera: Camera;
+  private _framebufferPicker: FramebufferPicker;
+  private _gizmo: GizmoControls;
+  private _orbitControl: OrbitControl;
 
   constructor(entity: Entity) {
     super(entity);
-    this.sceneCamera = entity.findByName("fullscreen-camera").getComponent(Camera);
+    this._sceneCamera = entity.findByName("fullscreen-camera").getComponent(Camera);
 
-    // FramebufferPicker
-    this.framebufferPicker = entity.addComponent(FramebufferPicker);
-    this.framebufferPicker.camera = this.sceneCamera;
-    this.framebufferPicker.colorRenderPass.mask = LayerSetting.Entity | LayerSetting.Gizmo;
+    // add framebufferPicker
+    this._framebufferPicker = entity.addComponent(FramebufferPicker);
+    this._framebufferPicker.camera = this._sceneCamera;
+    this._framebufferPicker.colorRenderPass.mask = LayerSetting.Entity | LayerSetting.Gizmo;
 
-    // orbit Controls
-    this.orbitControl = this.sceneCamera.entity.addComponent(OrbitControl);
+    // add orbit control
+    this._orbitControl = this._sceneCamera.entity.addComponent(OrbitControl);
 
     // add navigation gizmo
     const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
-    navigationGizmo.camera = this.sceneCamera;
+    navigationGizmo.camera = this._sceneCamera;
     navigationGizmo.layer = LayerSetting.NavigationGizmo;
 
-    // GizmoControls
+    // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
-    gizmoEntity.layer = LayerSetting.Gizmo;
-
-    this.gizmoControls = gizmoEntity.addComponent(GizmoControls);
-    this.gizmoControls.camera = this.sceneCamera;
-    this.gizmoControls.layer = LayerSetting.Gizmo;
-    this.gizmoControls.gizmoState = GizmoState.translate;
+    const gizmo = gizmoEntity.addComponent(GizmoControls);
+    gizmo.camera = this._sceneCamera;
+    gizmo.state = GizmoState.scale;
+    gizmo.layer = LayerSetting.Gizmo;
+    this._gizmo = gizmo;
 
     gizmoEntity.isActive = false;
 
-    this.addGUI();
+    this._addGUI();
   }
 
-  addGUI() {
+  onUpdate(deltaTime: number): void {
+    const { inputManager } = this.engine;
+    // single select.
+    if (inputManager.isPointerDown(PointerButton.Primary)) {
+      const { pointerPosition } = inputManager;
+      if (pointerPosition) {
+        this._framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
+          this._singleSelectHandler(result);
+        });
+      }
+    }
+    // multi select
+    if (inputManager.isPointerDown(PointerButton.Secondary)) {
+      const { pointerPosition } = inputManager;
+      if (pointerPosition) {
+        this._framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
+          this._multiSelectHandler(result);
+        });
+      }
+    }
+  }
+
+  // left mouse for single selection
+  private _singleSelectHandler(result: RenderElement) {
+    const selectedEntity = result?.component?.entity;
+    switch (selectedEntity?.layer) {
+      case undefined: {
+        this._orbitControl.enabled = true;
+        this._gizmo.clearEntity();
+        this._gizmo.entity.isActive = false;
+        break;
+      }
+      case LayerSetting.Entity: {
+        this._orbitControl.enabled = true;
+        this._gizmo.clearEntity();
+        this._gizmo.addEntity(selectedEntity);
+        this._gizmo.entity.isActive = true;
+        break;
+      }
+      case LayerSetting.Gizmo: {
+        this._orbitControl.enabled = false;
+        break;
+      }
+    }
+  }
+
+  // right mouse for multiply selection
+  private _multiSelectHandler(result: RenderElement) {
+    const selectedEntity = result?.component?.entity;
+    switch (selectedEntity?.layer) {
+      case LayerSetting.Entity: {
+        this._orbitControl.enabled = true;
+        if (!this._gizmo.addEntity(selectedEntity)) {
+          this._gizmo.removeEntity(selectedEntity);
+        }
+        this._gizmo.entity.isActive = true;
+        break;
+      }
+    }
+  }
+
+  private _addGUI() {
     const info = {
       Gizmo: GizmoState.translate,
       Coordinate: CoordinateType.Local,
@@ -95,16 +147,16 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "null":
-            this.gizmoControls.gizmoState = GizmoState.null;
+            this._gizmo.state = GizmoState.null;
             break;
           case "translate":
-            this.gizmoControls.gizmoState = GizmoState.translate;
+            this._gizmo.state = GizmoState.translate;
             break;
           case "rotate":
-            this.gizmoControls.gizmoState = GizmoState.rotate;
+            this._gizmo.state = GizmoState.rotate;
             break;
           case "scale":
-            this.gizmoControls.gizmoState = GizmoState.scale;
+            this._gizmo.state = GizmoState.scale;
             break;
         }
       })
@@ -115,10 +167,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "global":
-            this.gizmoControls.gizmoCoord = CoordinateType.Global;
+            this._gizmo.coordType = CoordinateType.Global;
             break;
           case "local":
-            this.gizmoControls.gizmoCoord = CoordinateType.Local;
+            this._gizmo.coordType = CoordinateType.Local;
             break;
         }
       })
@@ -129,74 +181,23 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "center":
-            this.gizmoControls.gizmoAnchor = AnchorType.Center;
+            this._gizmo.anchorType = AnchorType.Center;
             break;
           case "pivot":
-            this.gizmoControls.gizmoAnchor = AnchorType.Pivot;
+            this._gizmo.anchorType = AnchorType.Pivot;
             break;
         }
       })
       .setValue("center");
   }
-
-  _singleSelectHandler(result: MeshRenderElement) {
-    const selectedEntity = result?.component?.entity;
-    switch (selectedEntity?.layer) {
-      case undefined: {
-        this.orbitControl.enabled = true;
-        this.gizmoControls.selectEntity(null);
-        this.gizmoControls.entity.isActive = false;
-        break;
-      }
-      case LayerSetting.Entity: {
-        this.orbitControl.enabled = true;
-        this.gizmoControls.selectEntity(selectedEntity);
-        this.gizmoControls.entity.isActive = true;
-        break;
-      }
-      case LayerSetting.Gizmo: {
-        this.orbitControl.enabled = false;
-        break;
-      }
-    }
-  }
-
-  _multiSelectHandler(result: MeshRenderElement) {
-    const selectedEntity = result?.component?.entity;
-    switch (selectedEntity?.layer) {
-      case LayerSetting.Entity: {
-        this.orbitControl.enabled = true;
-        this.gizmoControls.getIndexOf(selectedEntity) === -1
-          ? this.gizmoControls.addEntity(selectedEntity)
-          : this.gizmoControls.deselectEntity(selectedEntity);
-        this.gizmoControls.entity.isActive = true;
-        break;
-      }
-    }
-  }
-
-  onUpdate(deltaTime: number): void {
-    const { inputManager } = this.engine;
-    // single select.
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const { pointerPosition } = inputManager;
-      if (pointerPosition) {
-        this.framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
-          this._singleSelectHandler(result);
-        });
-      }
-    }
-    // multi select
-    if (inputManager.isPointerDown(PointerButton.Secondary)) {
-      const { pointerPosition } = inputManager;
-      if (pointerPosition) {
-        this.framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
-          this._multiSelectHandler(result);
-        });
-      }
-    }
-  }
 }
+
+const traverseEntity = (entity: Entity, callback: (entity: Entity) => any) => {
+  callback(entity);
+  for (const child of entity.children) {
+    traverseEntity(child, callback);
+  }
+};
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -209,57 +210,33 @@ const rootEntity = scene.createRootEntity();
 // init full screen camera
 const cameraEntity = rootEntity.createChild("fullscreen-camera");
 const camera = cameraEntity.addComponent(Camera);
-
-cameraEntity.transform.setPosition(0, 10, 10);
+cameraEntity.transform.setPosition(15, 9, 15);
 cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 
 // setup scene
-const sky = background.sky;
-const skyMaterial = new SkyBoxMaterial(engine);
-background.mode = BackgroundMode.Sky;
-
-sky.material = skyMaterial;
-sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
-
 const lightEntity = rootEntity.createChild("Light");
-lightEntity.transform.setRotation(-30, 0, 0);
+lightEntity.transform.setPosition(20, 20, 20);
+lightEntity.transform.setRotation(-45, 0, 0);
 lightEntity.addComponent(DirectLight);
 
-const bigEntity = rootEntity.createChild("parent");
-bigEntity.transform.setPosition(-2, 0, 0);
-const bigRenderer = bigEntity.addComponent(MeshRenderer);
-bigRenderer.mesh = PrimitiveMesh.createSphere(engine, 0.5);
-const mat = new BlinnPhongMaterial(engine);
-mat.baseColor.set(0.2, 0.6, 0.8, 1);
-bigRenderer.setMaterial(mat);
-
-const smallEntity = bigEntity.createChild("small");
-smallEntity.transform.setPosition(0, 3, 0);
-const smallRenderer = smallEntity.addComponent(MeshRenderer);
-smallRenderer.mesh = PrimitiveMesh.createSphere(engine, 0.3);
-smallRenderer.setMaterial(mat);
+const ambientLight = scene.ambientLight;
+ambientLight.diffuseSolidColor.set(0.8, 0.8, 1, 1);
+ambientLight.diffuseIntensity = 0.5;
 
 // add controls
 rootEntity.addComponent(ControlScript);
 
-Promise.all([
-  engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/477b0093-7ee8-41af-a0dd-836608a4f130.gltf")
-    .then((gltf) => {
-      const { defaultSceneRoot } = gltf;
-      rootEntity.addChild(defaultSceneRoot);
-      defaultSceneRoot.transform.setScale(100, 100, 100);
-    }),
-  engine.resourceManager
-    .load<AmbientLight>({
-      type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
-    })
-    .then((ambientLight) => {
-      scene.ambientLight = ambientLight;
-      skyMaterial.textureCubeMap = ambientLight.specularTexture;
-      skyMaterial.textureDecodeRGBM = true;
-    })
-]).then(() => {
-  engine.run();
-});
+engine.resourceManager
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/OasisHub/34156c78-ed78-4792-a027-f6b790ac5bd1/oasis-file/1664436920180/medieval_fantasy_tavern.gltf"
+  )
+  .then((gltf) => {
+    const { defaultSceneRoot } = gltf;
+    rootEntity.addChild(defaultSceneRoot);
+    traverseEntity(defaultSceneRoot, (entity) => {
+      entity.layer = LayerSetting.Entity;
+    });
+  })
+  .then(() => {
+    engine.run();
+  });
