@@ -23,7 +23,7 @@ import { LitePhysics } from "@oasis-engine/physics-lite";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
 import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
-import { AnchorType, CoordinateType, Gizmo, GizmoState } from "@oasis-engine-toolkit/gizmo";
+import { AnchorType, CoordinateType, Gizmo, State } from "@oasis-engine-toolkit/gizmo";
 
 import * as dat from "dat.gui";
 
@@ -60,11 +60,11 @@ export class ControlScript extends Script {
 
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
-    const gizmoComponent = gizmoEntity.addComponent(Gizmo);
-    gizmoComponent.camera = this._sceneCamera;
-    gizmoComponent.state = GizmoState.scale;
-    gizmoComponent.layer = LayerSetting.Gizmo;
-    this._gizmo = gizmoComponent;
+    const gizmo = gizmoEntity.addComponent(Gizmo);
+    gizmo.camera = this._sceneCamera;
+    gizmo.state = State.scale;
+    gizmo.layer = LayerSetting.Gizmo;
+    this._gizmo = gizmo;
 
     gizmoEntity.isActive = false;
 
@@ -134,7 +134,7 @@ export class ControlScript extends Script {
 
   private _addGUI() {
     const info = {
-      Gizmo: GizmoState.translate,
+      Gizmo: State.translate,
       Coordinate: CoordinateType.Local,
       Anchor: AnchorType.Center
     };
@@ -147,20 +147,23 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "null":
-            this._gizmo.state = GizmoState.null;
+            this._gizmo.state = null;
             break;
           case "translate":
-            this._gizmo.state = GizmoState.translate;
+            this._gizmo.state = State.translate;
             break;
           case "rotate":
-            this._gizmo.state = GizmoState.rotate;
+            this._gizmo.state = State.rotate;
             break;
           case "scale":
-            this._gizmo.state = GizmoState.scale;
+            this._gizmo.state = State.scale;
+            break;
+          case "all":
+            this._gizmo.state = State.all;
             break;
         }
       })
-      .setValue("translate");
+      .setValue("all");
 
     gui
       .add(info, "Coordinate", orientationConfig)
