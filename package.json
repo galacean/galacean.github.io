@@ -53,7 +53,7 @@
     "vite": "^3.1.6"
   },
   "scripts": {
-    "start": "vite --host",
+    "dev": "vite --host",
     "build": "vite build",
     "test": "node scripts/test.js",
     "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
