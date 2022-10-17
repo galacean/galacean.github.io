@@ -33,7 +33,8 @@ import {
   WebGLEngine
 } from "oasis-engine";
 import React, { useEffect } from "react";
-import WrapperLayout from "../components/layout";
+import * as dat from 'dat.gui';
+import { SimpleDropzone } from 'simple-dropzone';
 import "./gltf-viewer.less";
 
 const envList = {
@@ -77,7 +78,7 @@ class Oasis {
   light2: DirectLight = this.lightEntity2.addComponent(DirectLight);
 
   // Debug
-  gui = new window.dat.GUI();
+  gui = new dat.GUI();
   materialFolder = null;
   animationFolder = null;
   sceneFolder = null;
@@ -249,7 +250,7 @@ class Oasis {
   }
 
   initDropZone() {
-    const dropCtrl = new window.SimpleDropzone.SimpleDropzone(document.body, this.$input);
+    const dropCtrl = new SimpleDropzone(document.body, this.$input);
     dropCtrl.on("drop", ({ files }) => this.loadFileMaps(files));
   }
 
@@ -575,58 +576,28 @@ class Oasis {
 
 export default function GLTFView(props: any) {
   useEffect(() => {
-    let oasis: Oasis;
-    const scripts = [
-      { dom: null, url: "https://gw.alipayobjects.com/os/lib/dat.gui/0.7.7/build/dat.gui.min.js" },
-      {
-        dom: null,
-        url: "https://gw.alipayobjects.com/os/lib/simple-dropzone/0.8.1/dist/simple-dropzone.umd.js"
-      }
-    ];
-    Promise.all(
-      scripts.map((item) => {
-        return new Promise((resolve) => {
-          const script = document.createElement("script");
-          script.type = "text/javascript";
-          document.body.appendChild(script);
-
-          script.onload = () => {
-            resolve(undefined);
-          };
-
-          script.src = item.url;
-          item.dom = script;
-        });
-      })
-    ).then(() => {
-      oasis = new Oasis();
-    });
+    let oasis = new Oasis();
 
     return () => {
-      scripts.forEach((script) => {
-        document.body.removeChild(script.dom);
-      });
-      oasis.gui.destroy();
-      oasis.engine.destroy();
+      if (oasis) {
+        oasis.gui.destroy();
+        oasis.engine.destroy();
+      }
     };
   });
   return (
-    <>
-      <WrapperLayout {...props}>
-        <div className="page-gltf-view">
-          <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
-          <div id="dropZone" className="dropZone">
-            <img
-              className="upload"
-              src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*-sHKTYv5U94AAAAAAAAAAAAAARQnAQ"
-            />
-            <input id="input" type="file" className="input" multiple />
-            <p>Drop your glTF2.0、images、HDRs here!</p>
-          </div>
-          <div id="spinner" className="spinner hide" />
-          <script type="module" src="./src/index.ts" />
-        </div>
-      </WrapperLayout>
-    </>
+    <div className="page-gltf-view">
+      <canvas id="canvas-gltf-viewer" style={{ width: "100%", height: "calc(100vh - 64px)" }} />
+      <div id="dropZone" className="dropZone">
+        <img
+          className="upload"
+          src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*-sHKTYv5U94AAAAAAAAAAAAAARQnAQ"
+        />
+        <input id="input" type="file" className="input" multiple />
+        <p>Drop your glTF2.0、images、HDRs here!</p>
+      </div>
+      <div id="spinner" className="spinner hide" />
+      <script type="module" src="./src/index.ts" />
+    </div>
   );
 }

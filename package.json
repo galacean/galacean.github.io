@@ -7,9 +7,10 @@
     "@babel/core": "^7.16.0",
     "@babel/standalone": "^7.19.3",
     "@jsdevtools/rehype-toc": "^3.0.2",
+    "@oasis-engine/baker": "^1.3.0-beta.0",
     "@oasis-engine/lottie": "^0.7.2",
-    "@oasis-engine/physics-lite": "^0.7.5",
-    "@oasis-engine/physics-physx": "^0.7.5",
+    "@oasis-engine/physics-lite": "^0.8.0-beta.31",
+    "@oasis-engine/physics-physx": "^0.8.0-beta.31",
     "@oasis-engine/spine": "^0.2.1",
     "@stackblitz/sdk": "^1.8.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -22,9 +23,10 @@
     "@types/react-dom": "^18.0.6",
     "@vitejs/plugin-react": "^2.1.0",
     "antd": "^4.23.2",
+    "dat.gui": "^0.7.9",
     "hast-util-to-html": "^8.0.3",
     "lz-string": "^1.4.4",
-    "oasis-engine": "^0.7.5",
+    "oasis-engine": "0.8.0-beta.31",
     "oasis-engine-toolkit": "^0.8.0-beta.3",
     "prismjs": "^1.29.0",
     "qrcode.react": "^3.1.0",
@@ -44,6 +46,7 @@
     "remark-frontmatter": "^4.0.1",
     "remark-gfm": "^3.0.1",
     "remark-toc": "^8.0.1",
+    "simple-dropzone": "^0.8.1",
     "typescript": "^4.8.3",
     "unist-util-visit": "^4.1.1",
     "vite": "^3.1.6"
@@ -76,9 +79,9 @@
     "@types/lz-string": "^1.3.34",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/react-helmet": "^6.1.5",
-    "less": "^4.1.3",
     "@types/react-scroll": "^1.8.4",
-    "@types/react-syntax-highlighter": "^15.5.5"
+    "@types/react-syntax-highlighter": "^15.5.5",
+    "less": "^4.1.3"
   },
   "jest": {
     "roots": [

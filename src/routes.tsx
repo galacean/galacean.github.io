@@ -5,6 +5,7 @@ import Doc from './components/doc';
 import Example from './components/Example';
 import Examples from './components/Examples';
 import Footer from './components/footer';
+import GLTFView from './components/GLTFViewer/gltf-viewer';
 import Header from './components/header';
 import Home from './components/home';
 import LabelManager from './components/LabelManager';
@@ -98,6 +99,16 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <Api></Api>
+        <Footer></Footer>
+      </>
+    ),
+  },
+  {
+    path: '/gltf-viewer',
+    element: (
+      <>
+        <Header></Header>
+        <GLTFView></GLTFView>
         <Footer></Footer>
       </>
     ),
