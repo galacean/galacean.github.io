@@ -15,7 +15,7 @@ function compress(string: string) {
 }
 
 function CodeSandbox (props: any) {
-  const iconRef = useRef(null);
+  const iconRef = useRef<HTMLFormElement>(null);
   const indexJsContent = `import './index.css';
   ${props.sourceCode}
   `;
@@ -62,7 +62,7 @@ function CodeSandbox (props: any) {
           target="_blank"
           ref={iconRef}
           onClick={() => {
-            iconRef.current.submit();
+            iconRef.current?.submit();
           }}
           >
             <input type="hidden" name="parameters" value={compress(JSON.stringify(codesanboxPrefillConfig))} />
