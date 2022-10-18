@@ -15,6 +15,7 @@ import { useContext, useEffect } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../contextProvider';
+import "./index.less";
 
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
@@ -134,7 +135,7 @@ function Header() {
   ];
 
   return (
-    <div>
+    <div className="header">
       <Row>
         <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
           <Link id='logo' to='/'>
