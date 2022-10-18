@@ -118,8 +118,6 @@ for (const name in packages) {
   }
 }
 
-console.log('packageGlobals', packageGlobals)
-
 const transformTsToJs = (ts: string) => {
   var output = Babel.transform(ts, {
     presets: [
