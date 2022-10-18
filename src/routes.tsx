@@ -1,18 +1,17 @@
-import React from 'react';
 import { createHashRouter } from 'react-router-dom';
 import Api from './components/Api';
 import Doc from './components/doc';
 import Example from './components/Example';
 import Examples from './components/Examples';
 import Footer from './components/footer';
-import GLTFView from './components/GLTFViewer/gltf-viewer';
+import GLTFView from './components/GltfViewer/gltf-viewer';
 import Header from './components/header';
 import Home from './components/home';
 import LabelManager from './components/LabelManager';
 
 export const router = createHashRouter([
   {
-    path: '/label',
+    path: '/label/:type',
     element: (
       <>
         <Header></Header>

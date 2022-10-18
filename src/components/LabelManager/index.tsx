@@ -1,7 +1,8 @@
 import { Button, Form, Input, InputNumber, Popconfirm, Table, Typography } from 'antd';
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import './index.less';
-import { deleteLabel, fetchLabelList, LabelDetails, updateLabel } from './labelUtils';
+import { addLabel, deleteLabel, fetchLabelList, LabelDetails, updateLabel } from './labelUtils';
 
 interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
   editing: boolean;
@@ -11,6 +12,7 @@ interface EditableCellProps extends React.HTMLAttributes<HTMLElement> {
   record: LabelDetails;
   index: number;
   children: React.ReactNode;
+  col: { dataIndex: string };
 }
 const layout = {
   labelCol: { span: 8 },
@@ -19,8 +21,12 @@ const layout = {
 
 const EditableCell: React.FC<EditableCellProps> = (props) => {
   const { editing, dataIndex, title, inputType, record, index, children, ...restProps } = props;
-  const inputNode = inputType === 'number' ? <InputNumber /> : <Input />;
-
+  const inputNode =
+    inputType === 'number' ? (
+      <InputNumber disabled={props?.dataIndex === 'id'} />
+    ) : (
+      <Input disabled={props?.dataIndex === 'id'} />
+    );
   return (
     <td {...restProps}>
       {editing ? (
@@ -44,6 +50,7 @@ const EditableCell: React.FC<EditableCellProps> = (props) => {
 };
 
 const LabelManager: React.FC = () => {
+  const type = useParams().type || 'markdown';
   const [labelsForm] = Form.useForm();
   const [newLabelForm] = Form.useForm();
   const [data, setData] = useState<LabelDetails[]>([]);
@@ -65,7 +72,7 @@ const LabelManager: React.FC = () => {
       const updatedLabel = (await labelsForm.validateFields()) as LabelDetails;
       await updateLabel({ ...updatedLabel, parent_id: updatedLabel.parent_id || null });
       setEditingLabelId('');
-      fetchLabelList('markdown').then((res) => {
+      fetchLabelList(type).then((res) => {
         setData(res);
       });
     } catch (errInfo) {
@@ -75,15 +82,15 @@ const LabelManager: React.FC = () => {
 
   const deleteLabelHandler = async (label: any) => {
     await deleteLabel({ name: label.name });
-    fetchLabelList('markdown').then((res) => {
+    fetchLabelList(type).then((res) => {
       setData(res);
     });
   };
 
-  const updateLabelHanlder = async (value: any) => {
+  const addLabelHanlder = async (value: any) => {
     newLabelForm.resetFields();
-    await updateLabel({ ...value, tag: 'markdown', parent_id: value.parent_id || null });
-    fetchLabelList('markdown').then((res) => {
+    await addLabel({ ...value, tag: type, parent_id: value.parent_id || null });
+    fetchLabelList(type).then((res) => {
       setData(res);
     });
   };
@@ -148,7 +155,7 @@ const LabelManager: React.FC = () => {
   ];
 
   const mergedColumns = columns.map((col) => {
-    if (!col.editable) {
+    if (!col.editable && col.dataIndex !== 'id') {
       return col;
     }
     return {
@@ -159,6 +166,7 @@ const LabelManager: React.FC = () => {
         dataIndex: col.dataIndex,
         title: col.title,
         editing: isEditing(label),
+        col,
       }),
     };
   });
@@ -175,7 +183,7 @@ const LabelManager: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchLabelList('markdown').then((res) => {
+    fetchLabelList(type).then((res) => {
       setData(res);
     });
   }, []);
@@ -187,7 +195,7 @@ const LabelManager: React.FC = () => {
         {...layout}
         name='new-label-form'
         validateMessages={validateMessages}
-        onFinish={updateLabelHanlder}
+        onFinish={addLabelHanlder}
       >
         <Form.Item name={'name'} label='Name' rules={[{ required: true }]}>
           <Input />
