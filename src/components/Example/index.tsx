@@ -220,9 +220,5 @@ export default function Example() {
 
   useScript(packages, exampleId);
 
-  return (
-    <>
-      <canvas id='canvas' style={{ width: '100vw', height: '100vh' }} />
-    </>
-  );
+  return <canvas id='canvas' style={{ width: '100vw', height: '100vh' }} />
 }
