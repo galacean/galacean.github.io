@@ -1,8 +1,5 @@
 {
   "token": "Github access token",
   "name": "oasis-engine",
-  "version": "0.8",
-  "engineSource": "https://github.com/oasis-engine/engine/blob/main/",
-  "docSource": "https://github.com/oasis-engine/oasis-engine.github.io/blob/",
-  "typedocSource": "../engine",
+  "version": "0.8"
 }
