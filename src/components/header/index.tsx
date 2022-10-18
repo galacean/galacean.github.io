@@ -2,6 +2,7 @@ import {
   AppstoreAddOutlined,
   createFromIconfontCN,
   HomeOutlined,
+  MenuOutlined,
   NotificationOutlined,
   PlayCircleOutlined,
   ReadOutlined,
@@ -10,11 +11,12 @@ import {
   YuqueOutlined,
   ZhihuOutlined,
 } from '@ant-design/icons';
-import { Button, Col, Input, Menu, Row, Select } from 'antd';
+import { Button, Col, Input, Menu, Popover, Row, Select } from 'antd';
 import { useContext, useEffect } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../contextProvider';
+import Media from 'react-media';
 import "./index.less";
 
 const Icon = createFromIconfontCN({
@@ -29,8 +31,9 @@ function Header() {
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
   const isZhCN = context.lang === 'zh-CN';
-  const menu = [
-    <Menu id='nav' key='nav' mode='horizontal'>
+
+  const getMenu = (isMobile: boolean) =>
+    <Menu mode={isMobile ? 'inline' : 'horizontal'} id='nav' key='nav'>
       <Menu.Item key='home' icon={<HomeOutlined />}>
         <Link to='/'>
           <FormattedMessage id='app.header.menu.home' />
@@ -131,49 +134,64 @@ function Header() {
           </a>
         </Menu.Item>
       </Menu.SubMenu>
-    </Menu>,
-  ];
+    </Menu>
 
   return (
-    <div className="header">
-      <Row>
-        <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
-          <Link id='logo' to='/'>
-            <img src={LOGO_URL} alt='Oasis Engine' />
-          </Link>
-        </Col>
-        <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
-          <div id='search-box'>
-            <SearchOutlined />
-            <Input />
-          </div>
-          <div className='header-meta'>
-            <div className='right-header'>
-              <div id='lang'>
-                <Button
-                  size='small'
-                  onClick={() => {
-                    context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
-                  }}
-                >
-                  <FormattedMessage id='app.header.lang' />
-                </Button>
+    <Media query="(max-width: 768px)">
+      {(isMobile) =>
+        <div className="header">
+          {isMobile && <Popover
+            overlayClassName="popover-menu"
+            placement="bottomRight"
+            content={getMenu(true)}
+            trigger="click"
+            arrowPointAtCenter
+          >
+            <MenuOutlined className="nav-phone-icon" />
+          </Popover>
+          }
+          <Row>
+            <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
+              <Link id='logo' to='/'>
+                <img src={LOGO_URL} alt='Oasis Engine' />
+              </Link>
+            </Col>
+            <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
+              {!isMobile && <div id='search-box'>
+                <SearchOutlined />
+                <Input />
+              </div>}
+              <div className='header-meta'>
+                {!isMobile && <div className='right-header'>
+                  <div id='lang'>
+                    <Button
+                      size='small'
+                      onClick={() => {
+                        context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
+                      }}
+                    >
+                      <FormattedMessage id='app.header.lang' />
+                    </Button>
+                  </div>
+                  <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
+                    {versions.map((v) => {
+                      return (
+                        <Option value={v} key={v}>
+                          {v}
+                        </Option>
+                      );
+                    })}
+                  </Select>
+                </div>}
+                <div id='menu'>
+                  {getMenu(false)}_
+                </div>
               </div>
-              <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
-                {versions.map((v) => {
-                  return (
-                    <Option value={v} key={v}>
-                      {v}
-                    </Option>
-                  );
-                })}
-              </Select>
-            </div>
-            <div id='menu'>{menu}</div>
-          </div>
-        </Col>
-      </Row>
-    </div>
+            </Col>
+          </Row>
+        </div>
+      }
+    </Media>
   );
 }
 
