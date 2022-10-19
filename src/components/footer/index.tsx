@@ -9,6 +9,7 @@ import Icon, {
 import { Col, Row } from 'antd';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import "./index.less"
 
 class Footer extends React.Component<{}> {
   render() {
