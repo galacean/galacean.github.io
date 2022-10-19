@@ -1,5 +1,6 @@
-import { serverAddress } from '../../config';
+import config from '../../siteconfig.json';
 
+const { serverAddress, versions } = config;
 export interface LabelDetails {
   /**
    * [标签名]

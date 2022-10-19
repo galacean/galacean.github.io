@@ -14,10 +14,11 @@ import * as _ from 'lodash';
 import { useContext, useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link, useNavigate } from 'react-router-dom';
-import { versions } from '../../config';
 import { AppContext } from '../contextProvider';
 import { APISearchResponse, DocSearchResponse, searchAPI, searchDoc } from './headerUtils';
+import config from '../../siteconfig.json';
 
+const { serverAddress, versions } = config;
 import './index.less';
 
 const Icon = createFromIconfontCN({
