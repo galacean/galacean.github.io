@@ -87,3 +87,42 @@ footer {
     color: #ffffff;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  #footer {
+    text-align: center;
+
+    .footer-wrap {
+      padding: 20px 0;
+
+      .ant-col {
+        padding-bottom: 20px;
+        border-bottom : 1px solid rgba(255, 255, 255, 0.25);
+
+        &:last-child {
+          padding-bottom: 0;
+          border-bottom : none;
+        }
+      }
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 16px;
+    }
+
+    .bottom-bar {
+      text-align: center;
+
+      .translate-button {
+        width        : auto;
+        margin-bottom: 16px;
+        text-align   : center;
+      }
+    }
+
+  }
+}

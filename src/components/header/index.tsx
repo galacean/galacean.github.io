@@ -184,7 +184,7 @@ function Header() {
                   </Select>
                 </div>}
                 <div id='menu'>
-                  {getMenu(false)}_
+                  {getMenu(false)}
                 </div>
               </div>
             </Col>
