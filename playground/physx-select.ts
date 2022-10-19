@@ -101,7 +101,7 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
   planeEntity.transform.rotationQuaternion = rotation;
 
   const physicsPlane = new PlaneColliderShape();
-  physicsPlane.setPosition(0, 0, 0);
+  physicsPlane.position.set(0, 0, 0);
   const planeCollider = planeEntity.addComponent(StaticCollider);
   planeCollider.addShape(physicsPlane);
 

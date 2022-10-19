@@ -49,7 +49,7 @@ class TableGenerator extends Script {
     {
       const physicsBox = new BoxColliderShape();
       physicsBox.size = new Vector3(0.5, 0.4, 0.045);
-      physicsBox.setPosition(0, 0, 0.125);
+      physicsBox.position.set(0, 0, 0.125);
       boxCollider.addShape(physicsBox);
       const child = entity.createChild();
       child.transform.setPosition(0, 0, 0.125);
@@ -63,7 +63,7 @@ class TableGenerator extends Script {
     {
       const physicsBox1 = new BoxColliderShape();
       physicsBox1.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox1.setPosition(-0.2, -0.15, -0.045);
+      physicsBox1.position.set(-0.2, -0.15, -0.045);
       boxCollider.addShape(physicsBox1);
       const child = entity.createChild();
       child.transform.setPosition(-0.2, -0.15, -0.045);
@@ -77,7 +77,7 @@ class TableGenerator extends Script {
     {
       const physicsBox2 = new BoxColliderShape();
       physicsBox2.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox2.setPosition(0.2, -0.15, -0.045);
+      physicsBox2.position.set(0.2, -0.15, -0.045);
       boxCollider.addShape(physicsBox2);
       const child = entity.createChild();
       child.transform.setPosition(0.2, -0.15, -0.045);
@@ -91,7 +91,7 @@ class TableGenerator extends Script {
     {
       const physicsBox3 = new BoxColliderShape();
       physicsBox3.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox3.setPosition(-0.2, 0.15, -0.045);
+      physicsBox3.position.set(-0.2, 0.15, -0.045);
       boxCollider.addShape(physicsBox3);
       const child = entity.createChild();
       child.transform.setPosition(-0.2, 0.15, -0.045);
@@ -105,7 +105,7 @@ class TableGenerator extends Script {
     {
       const physicsBox4 = new BoxColliderShape();
       physicsBox4.size = new Vector3(0.1, 0.1, 0.3);
-      physicsBox4.setPosition(0.2, 0.15, -0.045);
+      physicsBox4.position.set(0.2, 0.15, -0.045);
       boxCollider.addShape(physicsBox4);
       const child = entity.createChild();
       child.transform.setPosition(0.2, 0.15, -0.045);

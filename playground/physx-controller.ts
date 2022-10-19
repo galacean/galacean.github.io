@@ -288,7 +288,7 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.setPosition(0, 0.3, 0.5)
+    physicsBox.position.set(0, 0.3, 0.5)
     boxCollider.addShape(physicsBox);
   }
 
@@ -302,7 +302,7 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.setPosition(0, 0.6, 1)
+    physicsBox.position.set(0, 0.6, 1)
     boxCollider.addShape(physicsBox);
   }
 
@@ -316,7 +316,7 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.setPosition(0, 0.9, 1.5)
+    physicsBox.position.set(0, 0.9, 1.5)
     boxCollider.addShape(physicsBox);
   }
   return stairEntity;
