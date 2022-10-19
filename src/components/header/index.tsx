@@ -2,24 +2,26 @@ import {
   AppstoreAddOutlined,
   createFromIconfontCN,
   HomeOutlined,
+  MenuOutlined,
   NotificationOutlined,
   PlayCircleOutlined,
   ReadOutlined,
   TwitterOutlined,
   YuqueOutlined,
-  ZhihuOutlined,
+  ZhihuOutlined
 } from '@ant-design/icons';
-import { Button, Col, Input, Menu, Row, Select, Tabs } from 'antd';
+import { Button, Col, Input, Menu, Popover, Row, Select, Tabs } from 'antd';
 import * as _ from 'lodash';
 import { useContext, useState } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
+import Media from 'react-media';
 import { Link, useNavigate } from 'react-router-dom';
+import config from '../../siteconfig.json';
 import { AppContext } from '../contextProvider';
 import { APISearchResponse, DocSearchResponse, searchAPI, searchDoc } from './headerUtils';
-import config from '../../siteconfig.json';
+import './index.less';
 
 const { serverAddress, versions } = config;
-import './index.less';
 
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
@@ -72,8 +74,9 @@ function Header() {
   const context = useContext(AppContext);
   const isZhCN = context.lang === 'zh-CN';
   const navigate = useNavigate();
-  const menu = [
-    <Menu id='nav' key='nav' mode='horizontal'>
+
+  const getMenu = (isMobile: boolean) => (
+    <Menu mode={isMobile ? 'inline' : 'horizontal'} id='nav' key='nav'>
       <Menu.Item key='home' icon={<HomeOutlined />}>
         <Link to='/'>
           <FormattedMessage id='app.header.menu.home' />
@@ -174,8 +177,8 @@ function Header() {
           </a>
         </Menu.Item>
       </Menu.SubMenu>
-    </Menu>,
-  ];
+    </Menu>
+  );
 
   const searchResultTab = (
     <>
@@ -230,77 +233,102 @@ function Header() {
   );
 
   return (
-    <div>
-      <Row>
-        <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
-          <Link id='logo' to='/'>
-            <img src={LOGO_URL} alt='Oasis Engine' />
-          </Link>
-        </Col>
-        <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
-          <div id='search-box'>
-            <Input.Search
-              placeholder='search docs/APIs'
-              allowClear
-              size='small'
-              onChange={async (e) => {
-                console.log(e.target.value);
-                if (!e.target.value) {
-                  setSearchData(null);
-                  return;
-                }
-                const res = await debouncedFetchSearchResult(e.target.value, context.version, context.lang);
-                console.log(res);
-                res &&
-                  setSearchData((data) => {
-                    return { ...data, doc: res.doc, api: res.api };
-                  });
-              }}
-              onSearch={async (e) => {
-                console.log(e);
-                if (!e) {
-                  setSearchData(null);
-                  return;
-                }
-                const res = await debouncedLeadingFetchSearchResult(e, context.version, context.lang);
-                setSearchData((data) => {
-                  return { ...data, doc: res.doc, api: res.api };
-                });
-              }}
-            />
-            {searchData?.doc || searchData?.api ? (
-              <>
-                <div id='header-search-result'>{searchResultTab}</div>
-              </>
-            ) : null}
-          </div>
-          <div className='header-meta'>
-            <div className='right-header'>
-              <div id='lang'>
-                <Button
-                  size='large'
-                  onClick={() => {
-                    context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
-                  }}
-                >
-                  <FormattedMessage id='app.header.lang' />
-                </Button>
+    <Media query='(max-width: 768px)'>
+      {(isMobile) => (
+        <div className='header'>
+          {isMobile && (
+            <Popover
+              overlayClassName='popover-menu'
+              placement='bottomRight'
+              content={getMenu(true)}
+              trigger='click'
+              arrowPointAtCenter
+            >
+              <MenuOutlined className='nav-phone-icon' />
+            </Popover>
+          )}
+          <Row>
+            <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
+              <Link id='logo' to='/'>
+                <img src={LOGO_URL} alt='Oasis Engine' />
+              </Link>
+            </Col>
+            <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
+              {!isMobile && (
+                <div id='search-box'>
+                  <div id='search-box'>
+                    <Input.Search
+                      placeholder='search docs/APIs'
+                      allowClear
+                      size='small'
+                      onChange={async (e) => {
+                        console.log(e.target.value);
+                        if (!e.target.value) {
+                          setSearchData(null);
+                          return;
+                        }
+                        const res = await debouncedFetchSearchResult(
+                          e.target.value,
+                          context.version,
+                          context.lang
+                        );
+                        console.log(res);
+                        res &&
+                          setSearchData((data) => {
+                            return { ...data, doc: res.doc, api: res.api };
+                          });
+                      }}
+                      onSearch={async (e) => {
+                        console.log(e);
+                        if (!e) {
+                          setSearchData(null);
+                          return;
+                        }
+                        const res = await debouncedLeadingFetchSearchResult(e, context.version, context.lang);
+                        setSearchData((data) => {
+                          return { ...data, doc: res.doc, api: res.api };
+                        });
+                      }}
+                    />
+                    {searchData?.doc || searchData?.api ? (
+                      <>
+                        <div id='header-search-result'>{searchResultTab}</div>
+                      </>
+                    ) : null}
+                  </div>
+                </div>
+              )}
+              <div className='header-meta'>
+                {!isMobile && (
+                  <div className='right-header'>
+                    <div id='lang'>
+                      <Button
+                        size='small'
+                        onClick={() => {
+                          context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
+                        }}
+                      >
+                        <FormattedMessage id='app.header.lang' />
+                      </Button>
+                    </div>
+                    <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
+                      {versions.map((v) => {
+                        return (
+                          <Option value={v} key={v}>
+                            {v}
+                          </Option>
+                        );
+                      })}
+                    </Select>
+                  </div>
+                )}
+                <div id='menu'>{getMenu(false)}</div>
               </div>
-              <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
-                {versions.map((v) => {
-                  return (
-                    <Option value={v} key={v}>
-                      {v}
-                    </Option>
-                  );
-                })}
-              </Select>
-            </div>
-            <div id='menu'>{menu}</div>
-          </div>
-        </Col>
-      </Row>
-    </div>
+            </Col>
+          </Row>
+        </div>
+      )}
+    </Media>
   );
 }
 

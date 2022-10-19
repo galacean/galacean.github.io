@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { IntlProvider } from 'react-intl';
 import { RouterProvider } from 'react-router-dom';
-import './App.css';
+import './App.less';
 import { AppContext } from './components/contextProvider';
 import { translationsData } from './constants/locale';
 import { router } from './routes';
