@@ -16,10 +16,18 @@ function Doc() {
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
 
   useEffect(() => {
-    navigate(`/docs/${context.lang}`);
+    const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+    navigate(
+      `/docs/${context.lang}/${
+        context.lang === 'en'
+          ? currentSelectedDocTitle?.replace('.zh-CN', '')
+          : currentSelectedDocTitle + '.zh-CN'
+      }`
+    );
   }, [context.lang]);
 
   useEffect(() => {
+    menuKeyTitleMapRef.current.clear();
     fetchMenuList('markdown', context.version).then((list) => {
       const itemRes: ItemType[] = [];
       list
@@ -57,22 +65,23 @@ function Doc() {
           });
           itemRes.push(newRootMenu);
         });
-      if (!selectedDocId) {
-        // init routing from path params
-        if (docTitle) {
-          for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
-            if (value === docTitle) {
-              setSelectedDocId(key);
-              break;
-            }
+      // init routing from path params
+      if (docTitle && Array.from(menuKeyTitleMapRef.current.values()).includes(docTitle)) {
+        for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
+          if (value === docTitle) {
+            console.log(key, value);
+            setSelectedDocId(key);
+            break;
           }
-          // init routing by default first doc
-        } else {
-          const defaultSelectedDocId =
-            (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0].key;
-          if (defaultSelectedDocId) {
-            setSelectedDocId(defaultSelectedDocId);
-          }
+        }
+        // init routing by default first doc
+      } else {
+        const defaultSelectedDocId =
+          (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0].key;
+        if (defaultSelectedDocId) {
+          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
+          setSelectedDocId(defaultSelectedDocId);
+          navigate(`/docs/${context.lang}/${selectedDocTitle}`);
         }
       }
       setItems(itemRes);
