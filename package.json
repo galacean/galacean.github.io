@@ -26,6 +26,7 @@
     "antd": "^4.23.2",
     "dat.gui": "^0.7.9",
     "hast-util-to-html": "^8.0.3",
+    "lodash": "^4.17.21",
     "lz-string": "^1.4.4",
     "oasis-engine": "0.8.0-beta.31",
     "oasis-engine-toolkit": "^0.8.0-beta.3",
@@ -77,6 +78,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.186",
     "@types/babel__standalone": "^7.1.4",
     "@types/lz-string": "^1.3.34",
     "@types/react-copy-to-clipboard": "^5.0.4",

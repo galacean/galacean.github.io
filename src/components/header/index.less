@@ -1,28 +1,28 @@
 .header {
-  position        : relative;
-  z-index         : 10;
-  height          : 64px;
+  position: relative;
+  z-index: 10;
+  height: 64px;
   background-color: #fff;
-  box-shadow      : 0 2px 8px #f0f1f2;
+  box-shadow: 0 2px 8px #f0f1f2;
 }
 
 #logo {
-  float          : left;
-  height         : 64px;
-  padding-left   : 40px;
-  overflow       : hidden;
-  line-height    : 64px;
+  float: left;
+  height: 64px;
+  padding-left: 40px;
+  overflow: hidden;
+  line-height: 64px;
   text-decoration: none;
 
   img {
-    width  : 200px;
+    width: 200px;
     opacity: 0.9;
   }
 
-  >span {
-    color      : rgba(0, 0, 0, 0.85);
+  > span {
+    color: rgba(0, 0, 0, 0.85);
     font-weight: 500;
-    font-size  : 18px;
+    font-size: 18px;
   }
 }
 
@@ -37,30 +37,30 @@
 
 .header-meta::after {
   display: table;
-  clear  : both;
+  clear: both;
   content: '';
 }
 
 #search-box {
-  float       : left;
-  height      : 22px;
-  margin      : 22px auto 0;
+  float: left;
+  height: 22px;
+  margin: 22px auto 0;
   padding-left: 16px;
-  line-height : 22px;
-  border-left : 1px solid #ebedf0;
+  line-height: 22px;
+  border-left: 1px solid #ebedf0;
 
   .anticon {
     position: relative;
-    top     : 0.5px;
-    color   : #ced4d9;
+    top: 0.5px;
+    color: #ced4d9;
   }
 
   input {
-    width     : 200px;
+    width: 200px;
     margin-top: -5px;
-    font-size : 14px;
+    font-size: 14px;
     background: transparent;
-    border    : 0;
+    border: 0;
     box-shadow: none;
   }
 
@@ -80,24 +80,24 @@
 }
 
 .right-header {
-  float   : right;
-  padding : 20px;
+  float: right;
+  padding: 20px;
   overflow: hidden;
 
-  &>* {
-    display     : inline-block;
+  & > * {
+    display: inline-block;
     margin-right: 16px;
   }
 }
 
 @media only screen and (max-width: 768px) {
   #logo {
-    display     : block;
-    float       : none;
-    width       : 200px;
+    display: block;
+    float: none;
+    width: 200px;
     margin-right: auto;
-    margin-left : auto;
-    padding     : 0;
+    margin-left: auto;
+    padding: 0;
   }
 
   .nav-phone-icon {
@@ -108,9 +108,19 @@
     width: 16px;
     height: 22px;
     cursor: pointer;
-}
+  }
 
   .header-meta {
     padding-right: 80px;
   }
+}
+
+#header-search-result {
+  position: relative;
+  max-height: 400px;
+  width: 500px;
+  overflow: scroll;
+  z-index: 9;
+  background-color: white;
+  border-radius: 2px;
 }
