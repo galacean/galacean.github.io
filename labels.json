@@ -1,0 +1,250 @@
+[
+  {
+    "uuid": "Binary library",
+    "name": "Binary library",
+    "parent_uuid": null,
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "二方库"
+  },
+  {
+    "uuid": "Spine",
+    "name": "Spine",
+    "parent_uuid": "Binary library",
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "Spine"
+  },
+  {
+    "uuid": "Introduction",
+    "name": "Introduction",
+    "parent_uuid": null,
+    "weight": 2,
+    "tag": "markdown",
+    "cn_name": "快速入门"
+  },
+  {
+    "uuid": "Basic",
+    "name": "Basic",
+    "parent_uuid": "Introduction",
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "基础"
+  },
+  {
+    "uuid": "Advanced",
+    "name": "Advanced",
+    "parent_uuid": "Introduction",
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "进阶"
+  },
+  {
+    "uuid": "Core",
+    "name": "Core",
+    "parent_uuid": null,
+    "weight": 2,
+    "tag": "markdown",
+    "cn_name": "核心"
+  },
+  {
+    "uuid": "Graphics",
+    "name": "Graphics",
+    "parent_uuid": null,
+    "weight": 4,
+    "tag": "markdown",
+    "cn_name": "图形"
+  },
+  {
+    "uuid": "Interact",
+    "name": "Interact",
+    "parent_uuid": null,
+    "weight": 7,
+    "tag": "markdown",
+    "cn_name": "交互"
+  },
+  {
+    "uuid": "Resource",
+    "name": "Resource",
+    "parent_uuid": null,
+    "weight": 8,
+    "tag": "markdown",
+    "cn_name": "资源"
+  },
+  {
+    "uuid": "Performance",
+    "name": "Performance",
+    "parent_uuid": null,
+    "weight": 9,
+    "tag": "markdown",
+    "cn_name": "性能调试"
+  },
+  {
+    "uuid": "Tool",
+    "name": "Tool",
+    "parent_uuid": null,
+    "weight": 10,
+    "tag": "markdown",
+    "cn_name": "工具库"
+  },
+  {
+    "uuid": "Adaption",
+    "name": "Adaption",
+    "parent_uuid": null,
+    "weight": 11,
+    "tag": "markdown",
+    "cn_name": "平台适配"
+  },
+  {
+    "uuid": "Art",
+    "name": "Art",
+    "parent_uuid": null,
+    "weight": 12,
+    "tag": "markdown",
+    "cn_name": "美术"
+  },
+  {
+    "uuid": "编辑器",
+    "name": "编辑器",
+    "parent_uuid": null,
+    "weight": 13,
+    "tag": "markdown",
+    "cn_name": "编辑器"
+  },
+  {
+    "uuid": "Basic",
+    "name": "Basic",
+    "parent_uuid": "300008",
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "基础"
+  },
+  {
+    "uuid": "Advanced",
+    "name": "Advanced",
+    "parent_uuid": "300008",
+    "weight": 2,
+    "tag": "markdown",
+    "cn_name": "进阶"
+  },
+  {
+    "uuid": "Scene",
+    "name": "Scene",
+    "parent_uuid": null,
+    "weight": 1,
+    "tag": "ts",
+    "cn_name": "Scene"
+  },
+  {
+    "uuid": "Benchmark",
+    "name": "Benchmark",
+    "parent_uuid": null,
+    "weight": 3,
+    "tag": "ts",
+    "cn_name": "Benchmark"
+  },
+  {
+    "uuid": "Animation",
+    "name": "Animation",
+    "parent_uuid": null,
+    "weight": 4,
+    "tag": "ts",
+    "cn_name": "Animation"
+  },
+  {
+    "uuid": "Physics",
+    "name": "Physics",
+    "parent_uuid": null,
+    "weight": 14,
+    "tag": "ts",
+    "cn_name": "Physics"
+  },
+  {
+    "uuid": "Mesh",
+    "name": "Mesh",
+    "parent_uuid": null,
+    "weight": 5,
+    "tag": "ts",
+    "cn_name": "Mesh"
+  },
+  {
+    "uuid": "Material",
+    "name": "Material",
+    "parent_uuid": null,
+    "weight": 6,
+    "tag": "ts",
+    "cn_name": "Material"
+  },
+  {
+    "uuid": "Texture",
+    "name": "Texture",
+    "parent_uuid": null,
+    "weight": 7,
+    "tag": "ts",
+    "cn_name": "Texture"
+  },
+  {
+    "uuid": "Camera",
+    "name": "Camera",
+    "parent_uuid": null,
+    "weight": 8,
+    "tag": "ts",
+    "cn_name": "Camera"
+  },
+  {
+    "uuid": "2D",
+    "name": "2D",
+    "parent_uuid": null,
+    "weight": 9,
+    "tag": "ts",
+    "cn_name": "2D"
+  },
+  {
+    "uuid": "Input",
+    "name": "Input",
+    "parent_uuid": null,
+    "weight": 10,
+    "tag": "ts",
+    "cn_name": "Input"
+  },
+  {
+    "uuid": "Basic",
+    "name": "Basic",
+    "parent_uuid": null,
+    "weight": 11,
+    "tag": "ts",
+    "cn_name": "Basic"
+  },
+  {
+    "uuid": "Toolkit",
+    "name": "Toolkit",
+    "parent_uuid": null,
+    "weight": 12,
+    "tag": "ts",
+    "cn_name": "Toolkit"
+  },
+  {
+    "uuid": "Advance",
+    "name": "Advance",
+    "parent_uuid": null,
+    "weight": 13,
+    "tag": "ts",
+    "cn_name": "Advance"
+  },
+  {
+    "uuid": "Particle",
+    "name": "Particle",
+    "parent_uuid": null,
+    "weight": 15,
+    "tag": "ts",
+    "cn_name": "Particle"
+  },
+  {
+    "uuid": "Light",
+    "name": "Light",
+    "parent_uuid": null,
+    "weight": 16,
+    "tag": "ts",
+    "cn_name": "Light"
+  }
+]
