@@ -23,7 +23,6 @@ function DocMenu(props: PropsWithChildren<DocMenuProps>) {
     <>
       <Menu
         onClick={onClick}
-        style={{ width: 256 }}
         defaultSelectedKeys={[props.defaultOpenKeys]}
         defaultOpenKeys={[props.defaultOpenKeys]}
         mode='inline'

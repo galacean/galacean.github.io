@@ -1,6 +1,7 @@
 import React from 'react';
 import { toHtml } from 'hast-util-to-html';
 import { Affix } from 'antd';
+import "./DocToc.less"
 
 const DocToc: React.FC = (props: any) => {
   return (

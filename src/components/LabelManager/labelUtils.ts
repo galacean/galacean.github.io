@@ -1,5 +1,6 @@
-import { serverAddress } from '../doc/util/docUtil';
+import config from '../../siteconfig.json';
 
+const { serverAddress, versions } = config;
 export interface LabelDetails {
   /**
    * [标签名]
@@ -56,6 +57,32 @@ export const fetchLabelList: (tag: string) => Promise<LabelDetails[]> = async (t
 };
 
 export const updateLabel: (newLable: {
+  id: string;
+  name: string;
+  weight: number;
+  tag: string;
+  parent_id?: string | null;
+}) => Promise<LabelDetails[]> = async (newLabel) => {
+  return await fetch(`http://${serverAddress}/api2/doc/label/update`, {
+    method: 'POST',
+    credentials: 'include',
+    mode: 'cors',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newLabel),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      if (res?.success) {
+        return res.data;
+      } else {
+        throw new Error('');
+      }
+    });
+};
+
+export const addLabel: (newLable: {
   name: string;
   weight: number;
   tag: string;

@@ -8,6 +8,7 @@ import Advantage from './Advantage';
 import Partners from './Partners';
 import Header from '../header';
 import Footer from '../footer';
+import "./index.less"
 
 function Home() {
   const intl = useIntl();

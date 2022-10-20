@@ -1,4 +1,7 @@
-export const serverAddress = 'oasisbe-afx-38287.gz00b.dev.alipay.net';
+import config from '../../../siteconfig.json';
+
+const { serverAddress, versions } = config;
+
 export interface DocData {
   /**
    * [文件名]

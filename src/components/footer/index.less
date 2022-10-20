@@ -1,0 +1,128 @@
+footer {
+  position        : relative;
+  z-index         : 100;
+  clear           : both;
+  color           : rgba(255, 255, 255, 0.65);
+  font-size       : 14px;
+  background-color: #000;
+
+  .ant-row {
+    text-align: center;
+  }
+
+  .ant-row .footer-center {
+    display   : inline-block;
+    text-align: left;
+  }
+
+  .ant-row .footer-center>h2 {
+    position   : relative;
+    margin     : 0 auto 24px;
+    font-weight: 500;
+    font-size  : 16px;
+  }
+
+  .ant-row .footer-center>h2>.title-icon {
+    width       : 27px;
+    margin-right: 16px;
+  }
+
+  .ant-row .footer-center>h2>.anticon {
+    position : absolute;
+    top      : 3px;
+    left     : -22px;
+    color    : #aaa;
+    font-size: 16px;
+  }
+
+  .ant-row .footer-center>div {
+    margin: 12px 0;
+  }
+
+  .footer-wrap {
+    position     : relative;
+    padding      : 86px 144px 93px 144px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+
+  .bottom-bar {
+    margin   : 0;
+    padding  : 10px 0 30px;
+    overflow : hidden;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+      sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    font-variant: tabular-nums;
+    line-height : 32px;
+    text-align  : center;
+  }
+
+  .bottom-bar a {
+    margin-left: 4px;
+    color      : rgba(255, 255, 255, 0.65);
+  }
+
+  .bottom-bar a:hover {
+    color: #fff;
+  }
+
+  .bottom-bar .translate-button {
+    text-align: left;
+  }
+
+  .bottom-bar .heart {
+    color    : #f73f51;
+    font-size: 22px;
+  }
+
+  a {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  h2 {
+    color: #ffffff;
+  }
+
+  h2>span {
+    color: #ffffff;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #footer {
+    text-align: center;
+
+    .footer-wrap {
+      padding: 20px 0;
+
+      .ant-col {
+        padding-bottom: 20px;
+        border-bottom : 1px solid rgba(255, 255, 255, 0.25);
+
+        &:last-child {
+          padding-bottom: 0;
+          border-bottom : none;
+        }
+      }
+    }
+
+    .footer-center {
+      text-align: center;
+    }
+
+    h2 {
+      margin-top: 16px;
+    }
+
+    .bottom-bar {
+      text-align: center;
+
+      .translate-button {
+        width        : auto;
+        margin-bottom: 16px;
+        text-align   : center;
+      }
+    }
+
+  }
+}

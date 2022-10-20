@@ -1,4 +1,4 @@
-import { Col, Row } from 'antd';
+import { Col, Popover, Row } from 'antd';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import { useContext, useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -6,6 +6,8 @@ import { AppContext } from '../contextProvider';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
 import { fetchMenuList } from './util/docUtil';
+import Media from 'react-media';
+import { MenuUnfoldOutlined } from '@ant-design/icons';
 
 function Doc() {
   const context = useContext(AppContext);
@@ -106,24 +108,45 @@ function Doc() {
   if (items.length === 0) {
     return null;
   }
+
+  const menu = <DocMenu
+    {...{
+      selectedDocId,
+      setSelectedDocId,
+      items,
+      defaultOpenKeys: items[0]?.key as string,
+    }}
+  ></DocMenu>
+
+  const docDetail = <DocDetail selectedDocId={selectedDocId}></DocDetail>
+
   return (
-    <>
-      <Row>
-        <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24} className='main-menu'>
-          <DocMenu
-            {...{
-              selectedDocId,
-              setSelectedDocId,
-              items,
-              defaultOpenKeys: items[0]?.key as string,
-            }}
-          ></DocMenu>
-        </Col>
-        <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24}>
-          <DocDetail selectedDocId={selectedDocId}></DocDetail>
-        </Col>
-      </Row>
-    </>
+    <Media query="(max-width: 768px)">
+      {(isMobile) =>
+        isMobile ?
+          <>
+            <Popover
+              placement="bottomRight"
+              content={menu}
+              trigger="click"
+              arrowPointAtCenter
+            >
+              <MenuUnfoldOutlined className="nav-phone-icon" style={{zIndex: 20, top: "25px", left: "30px"}}/>
+            </Popover>
+
+            {docDetail}
+          </>
+          : <Row>
+            <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24} className='main-menu'>
+              {menu}
+            </Col>
+            { }
+            <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24}>
+              {docDetail}
+            </Col>
+          </Row>
+      }
+    </Media>
   );
 }
 
