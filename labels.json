@@ -56,6 +56,22 @@
     "cn_name": "图形"
   },
   {
+    "uuid": "Camera",
+    "name": "Camera",
+    "parent_uuid": "Graphics",
+    "weight": 4,
+    "tag": "markdown",
+    "cn_name": "摄像机"
+  },
+  {
+    "uuid": "Renderer",
+    "name": "Renderer",
+    "parent_uuid": "Graphics",
+    "weight": 4,
+    "tag": "markdown",
+    "cn_name": "渲染器组件"
+  },
+  {
     "uuid": "Interact",
     "name": "Interact",
     "parent_uuid": null,
@@ -110,22 +126,6 @@
     "weight": 13,
     "tag": "markdown",
     "cn_name": "编辑器"
-  },
-  {
-    "uuid": "Basic",
-    "name": "Basic",
-    "parent_uuid": "300008",
-    "weight": 1,
-    "tag": "markdown",
-    "cn_name": "基础"
-  },
-  {
-    "uuid": "Advanced",
-    "name": "Advanced",
-    "parent_uuid": "300008",
-    "weight": 2,
-    "tag": "markdown",
-    "cn_name": "进阶"
   },
   {
     "uuid": "Scene",
