@@ -12,7 +12,6 @@ interface DocMenuProps {
 
 function DocMenu(props: PropsWithChildren<DocMenuProps>) {
   const onClick: MenuProps['onClick'] = (e) => {
-    console.log('click menu event: ', e);
     props.setSelectedDocId(e.key);
   };
   if (!props.defaultOpenKeys) {
