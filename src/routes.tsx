@@ -7,19 +7,8 @@ import Footer from './components/footer';
 import GLTFView from './components/GltfViewer/gltf-viewer';
 import Header from './components/header';
 import Home from './components/home';
-import LabelManager from './components/LabelManager';
 
 export const router = createHashRouter([
-  {
-    path: '/label/:type',
-    element: (
-      <>
-        <Header></Header>
-        <LabelManager></LabelManager>
-        <Footer></Footer>
-      </>
-    ),
-  },
   {
     path: '/docs/:lang',
     element: (
