@@ -2,6 +2,7 @@
 order: 1
 title: 动画组件
 type: 动画
+label: Animation/Animator Component
 ---
 
 动画控制组件（[Animator](${api}core/Animator)）可以通过状态机组织动画片段（[AnimationClip](${api}core/AnimationClip)）实现更加灵活丰富的动画效果。

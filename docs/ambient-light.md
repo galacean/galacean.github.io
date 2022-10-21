@@ -1,7 +1,7 @@
 ---
 order: 4
 title: Ambient Light
-lable: Core
+label: Graphics/Light
 ---
 
 **test by sway update**
