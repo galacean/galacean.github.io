@@ -3,6 +3,7 @@ order: 3
 title: Blinn-Phong Material
 type: Graphics
 group: Material
+label: Graphics/Material
 ---
 
 Although [BlinnPhongMaterial](${api}core/BlinnPhongMaterial) is not based on physical rendering, its efficient rendering algorithm and basic complete optical part, there are still a lot of application scene.

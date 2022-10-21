@@ -2,6 +2,7 @@
 order: 2
 title: Physics Manager
 type: Physics
+label: Physics
 ---
 
 PhysicsManager is used to manage all the physics components in the scene, and is responsible for communicating with the

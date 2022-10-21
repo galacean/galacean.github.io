@@ -3,6 +3,7 @@ order: 1
 title: 1. Init canvas
 type: Introduction
 group: Basic
+label: Introduction/Basic
 ---
 
 Oasis Engine packs canvases of different platforms, such as [WebCanvas](${api}rhi-webgl/WebCanvas). We can control [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) or [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) through [Engine](${api}core/Engine) instance.

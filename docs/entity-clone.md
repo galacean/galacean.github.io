@@ -2,6 +2,7 @@
 order: 6
 title: Clone
 type: Core
+label: Core
 ---
 
 Entity cloning is a common function at runtime, and entity cloning will also clone its bound components. For example, in the initialization phase, a certain number of identical entities are dynamically created according to the configuration, and then placed in different positions in the scene according to logic rules. Here we will explain the details of the script clone in detail.

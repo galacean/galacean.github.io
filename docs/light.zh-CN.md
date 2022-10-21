@@ -3,6 +3,7 @@ order: 3
 title: 光照
 type: 图形
 group: 光照
+label: Graphics/Light
 ---
 
 光照使场景更有层次感，使用光照，能建立更真实的三维场景。Oasis Engine 支持以下几种光源：

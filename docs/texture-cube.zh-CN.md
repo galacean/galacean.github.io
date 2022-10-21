@@ -3,6 +3,7 @@ order: 4
 title: 立方纹理
 type: 图形
 group: 纹理
+label: Graphics/Texture
 ---
 
 立方纹理（[TextureCube](${api}core/TextureCube)）和 2D 纹理的区别是它有 6 个面，即用 6 张 2D 纹理组成了一个立方纹理。

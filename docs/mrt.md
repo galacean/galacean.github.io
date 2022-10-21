@@ -3,6 +3,7 @@ order: 5
 title: Off-screen rendering texture
 type: Graphics
 group: Texture
+label: Graphics/Texture
 ---
 
 Off-screen rendering texture, as the name suggests, the texture can be obtained by off-screen rendering. The bottom layer uses the [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) technology to output the rendering operation to the texture instead of the screen. The user can use this texture to realize post-processing special effects, refraction, reflection, dynamic environment mapping and other artistic creations.

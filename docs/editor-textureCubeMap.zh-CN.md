@@ -3,6 +3,7 @@ order: 2
 title: 立方体纹理
 type: 编辑器
 group: 资产
+label: 编辑器/资产
 ---
 
 ## 介绍

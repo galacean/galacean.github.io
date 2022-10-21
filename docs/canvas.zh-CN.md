@@ -3,6 +3,7 @@ order: 1
 title: 1. 初始化画布
 type: 快速入门
 group: 基础
+label: Introduction/Basic
 ---
 
 Oasis Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl/WebCanvas) 支持用 [Engine](${api}core/Engine) 控制 [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) 或者 [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) 。
