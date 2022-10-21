@@ -71,6 +71,13 @@ export const router = createHashRouter([
         <Footer></Footer>
       </>
     ),
+    errorElement: (
+      <>
+        <Header></Header>
+        <ErrorPage />
+        <Footer></Footer>
+      </>
+    ),
   },
   {
     path: '/api/:pkg/',

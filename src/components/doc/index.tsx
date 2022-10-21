@@ -85,9 +85,9 @@ function Doc() {
         const defaultSelectedDocId =
           (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0]?.key;
         if (defaultSelectedDocId) {
-          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
           setSelectedDocId(defaultSelectedDocId);
-          navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
+          selectedDocTitle && navigate(`/docs/${context.lang}/${selectedDocTitle}`);
         }
       }
       setItems(itemRes);
@@ -99,6 +99,9 @@ function Doc() {
       return;
     }
     const selectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+    if (!selectedDocTitle) {
+      return;
+    }
     if (!docTitle && selectedDocId) {
       navigate(`/docs/${context.lang}/${selectedDocTitle}`);
       return;
