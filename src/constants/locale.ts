@@ -1,5 +1,6 @@
 export const translationsData: { [lang: string]: any } = {
   'zh-CN': {
+    'app.content.loading': '努力加载中...',
     'app.header.search': '搜索...',
     'app.header.search.all': '全文本搜索：',
     'app.header.search.doc': '文档',
@@ -112,6 +113,7 @@ export const translationsData: { [lang: string]: any } = {
     'app.publish.old-version-tips': '，也可通过点击页面右上角的 v1 菜单查看。',
   },
   en: {
+    'app.content.loading': 'Loading...',
     'app.header.search': 'Search...',
     'app.header.search.all': 'Search in Google: ',
     'app.header.search.doc': 'Docs',

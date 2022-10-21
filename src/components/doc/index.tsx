@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../contextProvider';
+import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
 import { fetchMenuList } from './util/docUtil';
@@ -26,6 +27,7 @@ function Doc() {
           : currentSelectedDocTitle + '.zh-CN'
       }`
     );
+    setItems([]);
   }, [context.lang]);
 
   useEffect(() => {
@@ -108,7 +110,7 @@ function Doc() {
   }, [selectedDocId, items.length]);
 
   if (items.length === 0) {
-    return null;
+    return <LoadingIcon></LoadingIcon>;
   }
 
   const menu = (
