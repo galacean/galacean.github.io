@@ -1,6 +1,7 @@
 import { createHashRouter } from 'react-router-dom';
 import Api from './components/Api';
 import Doc from './components/doc';
+import ErrorPage from './components/ErrorPage';
 import Example from './components/Example';
 import Examples from './components/Examples';
 import Footer from './components/footer';
@@ -104,5 +105,12 @@ export const router = createHashRouter([
   {
     path: '/',
     element: <Home></Home>,
+    errorElement: (
+      <>
+        <Header></Header>
+        <ErrorPage />
+        <Footer></Footer>
+      </>
+    ),
   },
 ]);

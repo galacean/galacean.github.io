@@ -1,5 +1,7 @@
 export const translationsData: { [lang: string]: any } = {
   'zh-CN': {
+    'app.content.error.button': '回到首页',
+    'app.content.error.subtitle': '页面异常',
     'app.content.loading': '努力加载中...',
     'app.header.search': '搜索...',
     'app.header.search.all': '全文本搜索：',
@@ -113,6 +115,8 @@ export const translationsData: { [lang: string]: any } = {
     'app.publish.old-version-tips': '，也可通过点击页面右上角的 v1 菜单查看。',
   },
   en: {
+    'app.content.error.button': 'Back Home',
+    'app.content.error.subtitle': 'Something went wrong...',
     'app.content.loading': 'Loading...',
     'app.header.search': 'Search...',
     'app.header.search.all': 'Search in Google: ',

@@ -3,6 +3,7 @@ import { Breadcrumb, Layout, Popover } from 'antd';
 import { useEffect, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import LoadingIcon from '../Loading';
 import Menu from './components/Menu';
 import Module from './components/Module';
 import Package from './components/Package';
@@ -12,7 +13,7 @@ import {
   fetchPkgChildrenDetail,
   fetchPkgList,
   PkgChild,
-  PkgChildDetail
+  PkgChildDetail,
 } from './util/apiUtil';
 
 const pkgListRes = fetchPkgList();
@@ -80,7 +81,8 @@ const Api = () => {
       setChildrenDetail(res);
     });
     navigate(
-      `/api/${selectedPkg}${selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
+      `/api/${selectedPkg}${
+        selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
       }`
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -105,28 +107,30 @@ const Api = () => {
   }, [pkg]);
 
   if (pkgList.length === 0 || pkgChildren.length === 0) {
-    return null;
+    return <LoadingIcon></LoadingIcon>;
   }
 
-  const menu = <Menu
-    {...{
-      pkgList,
-      pkgChildren,
-      selectedPkg,
-      childrenDetail,
-      onPkgClick: (pkg: string) => {
-        if (pkg !== selectedPkg) {
-          setSelectedPkg(pkg);
-          setSelectedItem(undefined);
-          setChildrenDetail(null);
-        }
-      },
-    }}
-  ></Menu>
+  const menu = (
+    <Menu
+      {...{
+        pkgList,
+        pkgChildren,
+        selectedPkg,
+        childrenDetail,
+        onPkgClick: (pkg: string) => {
+          if (pkg !== selectedPkg) {
+            setSelectedPkg(pkg);
+            setSelectedItem(undefined);
+            setChildrenDetail(null);
+          }
+        },
+      }}
+    ></Menu>
+  );
 
   return (
-    <Media query="(max-width: 768px)">
-      {(isMobile) =>
+    <Media query='(max-width: 768px)'>
+      {(isMobile) => (
         <Layout hasSider={true}>
           <Content className='api' style={{ padding: '20px', backgroundColor: '#fff' }}>
             <article className='tsc-content'>
@@ -171,22 +175,18 @@ const Api = () => {
               )}
             </article>
           </Content>
-          {isMobile ?
-            <Popover
-              placement="bottomRight"
-              content={menu}
-              trigger="click"
-              arrowPointAtCenter
-            >
-              <MenuUnfoldOutlined className="nav-phone-icon" style={{zIndex: 20, top: "25px", left: "30px"}}/>
+          {isMobile ? (
+            <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
+              <MenuUnfoldOutlined
+                className='nav-phone-icon'
+                style={{ zIndex: 20, top: '25px', left: '30px' }}
+              />
             </Popover>
-            :
-            <Sider style={{ width: '300px!important' }}>
-              {menu}
-            </Sider>
-          }
+          ) : (
+            <Sider style={{ width: '300px!important' }}>{menu}</Sider>
+          )}
         </Layout>
-      }
+      )}
     </Media>
   );
 };
