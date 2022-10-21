@@ -4,6 +4,7 @@ order: 4
 title: Export Unlit Material
 
 type: Art
+label: Art
 ---
 
 Such as [Baking Tutorial](${docs}artist-bake) described, if we have already made a baking texture, I hope there is a **convenient material**, the color is only affected by baking texture, do not have to add lights, do not debug the normal, don't have to debug metal roughness and other high-order properties, then you can try [UnlitMaterial](${api}core/UnlitMaterial) of Oasis, glTF has special [KHR_materials_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) Plugin, Oasis will resolve the plugin to generate Unlit material.

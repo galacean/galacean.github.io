@@ -16,7 +16,7 @@
     "cn_name": "快速入门"
   },
   {
-    "uuid": "markdown-markdown-Basic",
+    "uuid": "markdown-Introduction-basic",
     "name": "Basic",
     "parent_uuid": "markdown-Introduction",
     "weight": 1,
@@ -24,7 +24,7 @@
     "cn_name": "基础"
   },
   {
-    "uuid": "markdown-Advanced",
+    "uuid": "markdown-Introduction-advanced",
     "name": "Advanced",
     "parent_uuid": "markdown-Introduction",
     "weight": 1,
@@ -65,7 +65,7 @@
   },
   {
     "uuid": "markdown-Mesh",
-    "name": "Renderer",
+    "name": "Mesh",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -73,7 +73,7 @@
   },
   {
     "uuid": "markdown-Material",
-    "name": "Renderer",
+    "name": "Material",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -81,7 +81,7 @@
   },
   {
     "uuid": "markdown-Texture",
-    "name": "Renderer",
+    "name": "Graphics",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -89,7 +89,7 @@
   },
   {
     "uuid": "markdown-Light",
-    "name": "Renderer",
+    "name": "Light",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -97,7 +97,7 @@
   },
   {
     "uuid": "markdown-2D",
-    "name": "Renderer",
+    "name": "2D",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -105,7 +105,7 @@
   },
   {
     "uuid": "markdown-Animation",
-    "name": "Renderer",
+    "name": "Animation",
     "parent_uuid": null,
     "weight": 4,
     "tag": "markdown",
@@ -113,7 +113,7 @@
   },
   {
     "uuid": "markdown-Physics",
-    "name": "Renderer",
+    "name": "Physics",
     "parent_uuid": null,
     "weight": 4,
     "tag": "markdown",
