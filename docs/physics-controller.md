@@ -2,6 +2,7 @@
 order: 4
 title: Character Controller
 type: Physics
+label: Physics
 ---
 
 The character controller is a very important component provided by the physics engine. Through the character

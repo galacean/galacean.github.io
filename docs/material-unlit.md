@@ -3,6 +3,7 @@ order: 2
 title: Unlit Material
 type: Graphics
 group: Material
+label: Graphics/Material
 ---
 
 In some simple scenes, you may not want to calculate lighting. Oasis engine provides [UnlitMaterial](${api}core/UnlitMaterial), which uses the most streamlined shader code, and only needs to provide colors or textures to render.

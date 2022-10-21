@@ -2,6 +2,7 @@
 order: 1
 title: stats
 type: Performance
+label: Performance
 ---
 
 The [@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats) package is mainly used to display the current running status of the engine. To display the running status of the engine, you only need to import `Stats` and register:

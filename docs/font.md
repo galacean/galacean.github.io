@@ -3,6 +3,7 @@ order: 6
 title: Font
 type: Graphics
 group: 2D
+label: Graphics/2D
 ---
 
 [Font](${api}core/Font) is a font resource that represents the font used by the text renderer.

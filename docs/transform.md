@@ -2,6 +2,7 @@
 order: 5
 title: Transform
 type: Core
+label: Core
 ---
 
 <playground src="transform-basic.ts"></playground>

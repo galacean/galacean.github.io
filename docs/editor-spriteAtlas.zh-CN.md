@@ -3,6 +3,7 @@ order: 3.1
 title: 精灵图集
 type: 编辑器
 group: 资产
+label: 编辑器/资产
 ---
 
 ## 介绍

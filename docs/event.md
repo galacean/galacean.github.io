@@ -2,6 +2,7 @@
 order: 4
 title: Event
 type: Interact
+label: Interact
 ---
 
 The engine provides a basic event system, general communication between components, **game and business** communication will consider the use of event system. The engine provides [EventDispatcher](${api}core/EventDispatcher) as the event class, and [Engine](${api}core/Engine) and [Entity](${api}core/Entity) inherit from `EventDispatcher`.

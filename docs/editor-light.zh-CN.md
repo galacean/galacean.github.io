@@ -3,6 +3,7 @@ order: 1.3
 title: 光照
 type: 编辑器
 group: 组件
+label: 编辑器/组件
 ---
 
 ## 介绍

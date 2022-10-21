@@ -3,6 +3,7 @@ order: 0
 title: 0. 安装 Oasis Engine
 type: 快速入门
 group: 基础
+label: Introduction/Basic
 ---
 
 ## 安装方式

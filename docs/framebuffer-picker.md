@@ -2,6 +2,7 @@
 order: 3
 title: FrameBuffer Picker
 type: Interact
+label: Interact
 ---
 
 In 3D applications, you often need to pick up the object in the scene, [RayCast-Collision](${docs}physics-manager#raycast) is a common method, it will pick up in the CPU, **it's performance better, but the accuracy is poor** , because the bounding is relatively simple, the complex model cannot be picked up.
