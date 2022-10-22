@@ -13,7 +13,7 @@ const { Sider, Content } = Layout;
 
 // init menu data
 // Ref: https://beta.reactjs.org/learn/synchronizing-with-effects#not-an-effect-initializing-the-application
-const menuListRes = fetchMenuList('ts');
+export const tsMenuListRes = fetchMenuList('ts');
 
 export default function Examples() {
   const [items, setItems] = useState<ItemType[]>([]);
@@ -38,7 +38,7 @@ export default function Examples() {
   );
 
   useEffect(() => {
-    menuListRes.then((list) => {
+    tsMenuListRes.then((list) => {
       const itemRes: ItemType[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
