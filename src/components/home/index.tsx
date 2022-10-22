@@ -1,14 +1,14 @@
-import React from 'react';
-import { injectIntl, useIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
+import { injectIntl, useIntl } from 'react-intl';
 
+import Footer from '../footer';
+import Header from '../header';
+import Advantage from './Advantage';
 import Banner from './Banner';
 import Cases from './Cases';
-import Advantage from './Advantage';
+import Features from './Features';
+import './index.less';
 import Partners from './Partners';
-import Header from '../header';
-import Footer from '../footer';
-import "./index.less"
 
 function Home() {
   const intl = useIntl();
@@ -29,6 +29,7 @@ function Home() {
       <div className='home-wrapper'>
         <Banner />
         <Advantage />
+        <Features />
         <Cases />
         <Partners />
       </div>
