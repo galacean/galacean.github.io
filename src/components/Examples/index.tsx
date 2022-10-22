@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchMenuList } from '../doc/util/docUtil';
+import Footer from '../footer';
 import Header from '../header';
 import Playground from '../Playground';
 import './index.less';
@@ -165,6 +166,7 @@ export default function Examples() {
                 <Playground id={selectedExampleId} />
               </Content>
             </Layout>
+            <Footer></Footer>
           </>
         )}
       </Media>

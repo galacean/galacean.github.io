@@ -4,6 +4,7 @@ import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
 import DemoActions from './DemoActions';
 import './index.less';
+import './highlight.less';
 
 interface IPlayground {
   id: string;
