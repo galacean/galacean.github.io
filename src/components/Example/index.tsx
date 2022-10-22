@@ -108,11 +108,11 @@ const packages = {
 const packageGlobals: Record<string, string> = {};
 
 for (const name in packages) {
-  const pkg = packages[name];
+  const pkg = packages[name as keyof typeof packages];
   packageGlobals[name] = pkg.global;
-  if (pkg.packages) {
+  if ('packages' in pkg) {
     for (const name in pkg.packages) {
-      const childPkg = pkg.packages[name];
+      const childPkg = pkg.packages[name as keyof typeof pkg.packages];
       packageGlobals[name] = childPkg.global;
     }
   }

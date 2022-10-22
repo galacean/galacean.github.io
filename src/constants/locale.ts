@@ -115,6 +115,7 @@ export const translationsData: { [lang: string]: any } = {
     'app.publish.old-version-tips': '，也可通过点击页面右上角的 v1 菜单查看。',
   },
   en: {
+    'app.docs.source': 'Source',
     'app.content.error.button': 'Back Home',
     'app.content.error.subtitle': 'Something went wrong...',
     'app.content.loading': 'Loading...',
