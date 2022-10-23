@@ -1,7 +1,6 @@
 import { visit } from "unist-util-visit";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+export default function() {
   return (markdownAST: any) => {
     visit(markdownAST, 'html', (node, i, parent) => {
       if (node.value.includes('<playground')) {

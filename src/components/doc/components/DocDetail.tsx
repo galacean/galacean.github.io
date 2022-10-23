@@ -1,5 +1,5 @@
 import toc from '@jsdevtools/rehype-toc';
-import { PropsWithChildren, useEffect, useRef, useState } from 'react';
+import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
@@ -17,12 +17,18 @@ import { tsMenuListRes } from '../../Examples/index';
 import { DocData, fetchDocDataById } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
+import { Link, useParams } from 'react-router-dom';
+import { AppContext } from '../../contextProvider';
 
 interface DocDetailProps {
   selectedDocId: string;
+  setSelectedDocId: React.Dispatch<React.SetStateAction<string>>;
+  menuKeyTitleMapRef: React.MutableRefObject<Map<string, string>>;
 }
 
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
+  const { lang } = useContext(AppContext);
+  const { docTitle } = useParams();
   const [docData, setDocData] = useState<DocData | null>(null);
   const idTitleMapRef = useRef<Map<string, string>>(new Map());
   const getIdByTitle = (title: string) => {
@@ -33,6 +39,15 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
     }
     return null;
   };
+
+  useEffect(() => {
+    for (let [key, value] of props.menuKeyTitleMapRef.current.entries()) {
+      if (value === docTitle) {
+        props.setSelectedDocId(key);
+        break;
+      }
+    }
+  }, [docTitle]);
 
   useEffect(() => {
     tsMenuListRes.then((list) => {
@@ -77,6 +92,23 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
         rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
         components={{
+          a(param) {
+            const linkHref = param.href;
+            const title = param.children[0];
+
+            if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
+              return <Link to={`/docs/${lang}/${linkHref.replace('/#/docs/', '')}`}>{title}</Link>;
+            } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/examples/')) {
+              return <Link to={`${linkHref.replace('/#', '')}`}>{title}</Link>;
+            } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/api/')) {
+              return <Link to={`${linkHref.replace('/#', '')}`}>{title}</Link>;
+            }
+            return (
+              <a href={linkHref as string} target='_blank'>
+                {title}
+              </a>
+            );
+          },
           ol: 'ul',
           //@ts-ignore
           nav: DocToc,
