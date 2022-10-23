@@ -1,25 +1,15 @@
 import { createHashRouter } from 'react-router-dom';
 import Api from './components/Api';
 import Doc from './components/doc';
+import ErrorPage from './components/ErrorPage';
 import Example from './components/Example';
 import Examples from './components/Examples';
 import Footer from './components/footer';
 import GLTFView from './components/GltfViewer/gltf-viewer';
 import Header from './components/header';
 import Home from './components/home';
-import LabelManager from './components/LabelManager';
 
 export const router = createHashRouter([
-  {
-    path: '/label/:type',
-    element: (
-      <>
-        <Header></Header>
-        <LabelManager></LabelManager>
-        <Footer></Footer>
-      </>
-    ),
-  },
   {
     path: '/docs/:lang',
     element: (
@@ -81,6 +71,13 @@ export const router = createHashRouter([
         <Footer></Footer>
       </>
     ),
+    errorElement: (
+      <>
+        <Header></Header>
+        <ErrorPage />
+        <Footer></Footer>
+      </>
+    ),
   },
   {
     path: '/api/:pkg/',
@@ -115,5 +112,12 @@ export const router = createHashRouter([
   {
     path: '/',
     element: <Home></Home>,
+    errorElement: (
+      <>
+        <Header></Header>
+        <ErrorPage />
+        <Footer></Footer>
+      </>
+    ),
   },
 ]);

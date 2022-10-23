@@ -5,6 +5,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../contextProvider';
+import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
 import { fetchMenuList } from './util/docUtil';
@@ -26,6 +27,7 @@ function Doc() {
           : currentSelectedDocTitle + '.zh-CN'
       }`
     );
+    setItems([]);
   }, [context.lang]);
 
   useEffect(() => {
@@ -83,9 +85,9 @@ function Doc() {
         const defaultSelectedDocId =
           (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0]?.key;
         if (defaultSelectedDocId) {
-          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
           setSelectedDocId(defaultSelectedDocId);
-          navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
+          selectedDocTitle && navigate(`/docs/${context.lang}/${selectedDocTitle}`);
         }
       }
       setItems(itemRes);
@@ -97,6 +99,9 @@ function Doc() {
       return;
     }
     const selectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+    if (!selectedDocTitle) {
+      return;
+    }
     if (!docTitle && selectedDocId) {
       navigate(`/docs/${context.lang}/${selectedDocTitle}`);
       return;
@@ -108,7 +113,7 @@ function Doc() {
   }, [selectedDocId, items.length]);
 
   if (items.length === 0) {
-    return null;
+    return <LoadingIcon></LoadingIcon>;
   }
 
   const menu = (

@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { fetchMenuList } from '../doc/util/docUtil';
+import Footer from '../footer';
 import Header from '../header';
 import Playground from '../Playground';
 import './index.less';
@@ -13,7 +14,7 @@ const { Sider, Content } = Layout;
 
 // init menu data
 // Ref: https://beta.reactjs.org/learn/synchronizing-with-effects#not-an-effect-initializing-the-application
-const menuListRes = fetchMenuList('ts');
+export const tsMenuListRes = fetchMenuList('ts');
 
 export default function Examples() {
   const [items, setItems] = useState<ItemType[]>([]);
@@ -38,7 +39,7 @@ export default function Examples() {
   );
 
   useEffect(() => {
-    menuListRes.then((list) => {
+    tsMenuListRes.then((list) => {
       const itemRes: ItemType[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
@@ -165,6 +166,7 @@ export default function Examples() {
                 <Playground id={selectedExampleId} />
               </Content>
             </Layout>
+            <Footer></Footer>
           </>
         )}
       </Media>

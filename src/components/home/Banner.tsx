@@ -1,14 +1,13 @@
-import React from 'react';
-import QueueAnim from 'rc-queue-anim';
-import { Button, Tag } from 'antd';
-import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
-import { isZhCN, getLocalizedPathname } from '../../utils';
 import { GithubOutlined } from '@ant-design/icons';
-
-const version = '0.8';
+import { Button, Tag } from 'antd';
+import QueueAnim from 'rc-queue-anim';
+import { useContext } from 'react';
+import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../contextProvider';
 
 function Banner() {
+  const context = useContext(AppContext);
   return (
     <section className='home-section home-section-banner'>
       <div className='home-flex'>
@@ -22,21 +21,21 @@ function Banner() {
           <div className='description'>
             <FormattedMessage id='app.home.slogan' />
             &nbsp;&nbsp;
-            <Tag color='geekblue'>v{version}-beta</Tag>
+            <Tag color='geekblue'>{context.version}</Tag>
           </div>
           <div className='button-wrapper'>
-            <Link to={getLocalizedPathname(`${version}/docs/install`, false)}>
+            <Link to={`/docs/${context.lang}`}>
               <Button type='primary'>
                 <FormattedMessage id='app.home.start' />
               </Button>
             </Link>
             &nbsp; &nbsp;
-            <Link to='https://github.com/oasis-engine/engine' target='_blank'>
+            <a href='https://github.com/oasis-engine/engine' target='_blank'>
               <Button type='primary' ghost>
                 <GithubOutlined />
                 Github
               </Button>
-            </Link>
+            </a>
           </div>
         </QueueAnim>
       </div>

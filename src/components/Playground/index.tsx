@@ -1,9 +1,10 @@
 import Prism from 'prismjs';
 import { createRef, useEffect, useState } from 'react';
-import { fetchDocDetailById } from '../doc/util/docUtil';
+import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
 import DemoActions from './DemoActions';
 import './index.less';
+import './highlight.less';
 
 interface IPlayground {
   id: string;
@@ -18,11 +19,11 @@ export default function Playground(props: IPlayground) {
   const iframe = createRef<HTMLIFrameElement>();
 
   const fetchCode = async () => {
-    const res = await fetchDocDetailById(props.id);
+    const res = await fetchDocDataById(props.id);
 
-    const code = Prism.highlight(res, Prism.languages.javascript, 'javascript');
+    const code = Prism.highlight(res?.content || '', Prism.languages.javascript, 'javascript');
     setCode(code);
-    setSrc(res);
+    setSrc(res?.content || '');
   };
 
   useEffect(() => {

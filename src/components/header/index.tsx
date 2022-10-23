@@ -122,15 +122,15 @@ function Header() {
             <Link to={`/gltf-viewer`}>{formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}</Link>
           </Menu.Item>
           <Menu.Item key='createapp'>
-            <Link to='https://github.com/oasis-engine/create-oasis-app' target='_blank'>
+            <a href='https://github.com/oasis-engine/create-oasis-app' target='_blank'>
               {formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}
-            </Link>
+            </a>
           </Menu.Item>
           {isZhCN && (
             <Menu.Item key='editor'>
-              <Link to='https://oasis.alipay.com/editor' target='_blank'>
+              <a href='https://oasis.alipay.com/editor' target='_blank'>
                 {formatMessage({ id: 'app.header.menu.ecosystem.editor' })}
-              </Link>
+              </a>
             </Menu.Item>
           )}
         </Menu.ItemGroup>

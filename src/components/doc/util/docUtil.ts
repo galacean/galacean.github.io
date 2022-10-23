@@ -182,11 +182,17 @@ export interface FileDataRes {
   pageNo: number;
   pageSize: number;
 }
-export function getDocIdByMenuKey(menuKey: string) {
-  return menuKey.split('-').pop() as string;
+export function getDocIdByMenuKey(menuKey: string): string | undefined {
+  if (!menuKey || menuKey === 'undefined') {
+    return undefined;
+  }
+  return menuKey.split('-').pop();
 }
-export async function fetchDocDataById(id: string): Promise<DocData> {
+export async function fetchDocDataById(id: string): Promise<DocData | null> {
   const docId = getDocIdByMenuKey(id);
+  if (!docId) {
+    return new Promise((resolve) => resolve(null));
+  }
   const searchQuery = new URLSearchParams({
     id: docId,
   });
@@ -206,33 +212,7 @@ export async function fetchDocDataById(id: string): Promise<DocData> {
       }
     });
 }
-export async function fetchDocDetailById(id?: string): Promise<string> {
-  if (!id) {
-    return new Promise((resolve) => resolve(''));
-  }
-  const docId = getDocIdByMenuKey(id);
-  if (!docId) {
-    return new Promise((resolve) => resolve(''));
-  }
-  const searchQuery = new URLSearchParams({
-    id: docId,
-  });
-  return await fetch(`http://${serverAddress}/api2/doc/detail?${searchQuery}`, {
-    credentials: 'include',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      if (res?.success) {
-        return res.data.content;
-      } else {
-        throw new Error('');
-      }
-    });
-}
+
 export async function fetchDocDetailByTitle(title: string): Promise<DocData> {
   const searchQuery = new URLSearchParams({
     title,
