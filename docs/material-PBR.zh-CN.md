@@ -3,6 +3,7 @@ order: 4
 title: PBR 材质
 type: 图形
 group: 材质
+label: Graphics/Material
 ---
 
 引擎和编辑器全面提倡使用 PBR 材质 。PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。

@@ -3,6 +3,7 @@ order: 0
 title: 项目
 type: 编辑器
 group: 基础操作
+label: 编辑器/基础操作
 ---
 
 ## 创建项目

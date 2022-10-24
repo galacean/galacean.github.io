@@ -1,42 +1,63 @@
-import React from 'react';
-import './index.less';
-import DemoActions from './DemoActions';
+import Prism from 'prismjs';
+import { createRef, useEffect, useState } from 'react';
+import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
-import siteConfig from '../../../siteconfig.json';
+import DemoActions from './DemoActions';
+import './index.less';
+import './highlight.less';
 
-export default function Playground (props: any) {
-  let {sourceCode} = props;
+interface IPlayground {
+  id: string;
+}
 
-  if (props.children && props.children[0] && props.children[0].type === 'textarea') {
-    const texts = props.children[0].props.children;
-    if (texts) {
-      sourceCode = texts.join('');
-    }
+export default function Playground(props: IPlayground) {
+  const [code, setCode] = useState('');
+  const [src, setSrc] = useState('');
 
-    props.children.shift();
-  }
+  const name = src.replace('.ts', '');
+  const url = `/#/example/${props.id}`;
+  const iframe = createRef<HTMLIFrameElement>();
 
-  const name = props.name.replace('.ts', '');
-  const url = `/${siteConfig.version}/playground/${name}`;
-  const {version} = siteConfig.packages['oasis-engine'];
+  const fetchCode = async () => {
+    const res = await fetchDocDataById(props.id);
+
+    const code = Prism.highlight(res?.content || '', Prism.languages.javascript, 'javascript');
+    setCode(code);
+    setSrc(res?.content || '');
+  };
+
+  useEffect(() => {
+    fetchCode();
+
+    // fix: iframe not reload when url hash changes
+    iframe.current?.contentWindow?.location.reload();
+  }, [props.id]);
 
   return (
-    <div className="code-box">
-      <div className="code-box-demo">
-        <iframe src={url} width="100%" height="100%" frameBorder="0" />
+    <div className='code-box'>
+      <div className='code-box-demo'>
+        <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
       </div>
-      <div className="code-box-source">
+      <div className='code-box-source'>
         <pre>
-          {props.children && <code>{props.children}</code>}
-          {props.formatedCode && <code
+          <code
             dangerouslySetInnerHTML={{
-              __html: props.formatedCode,
-            }} />
-          }
+              __html: code,
+            }}
+          />
         </pre>
       </div>
-      {sourceCode && <CodeActions sourceCode={sourceCode} engineName={siteConfig.name} name={name} url={url} version={version} packages={siteConfig.packages}/>}
-      {url && <DemoActions url={`https://oasisengine.cn${url}`}/>}
+      {src && (
+        <CodeActions
+          sourceCode={src}
+          engineName={'oasis-engine'}
+          name={name}
+          url={url}
+          version={'0.0.1'}
+          packages={[]}
+        />
+      )}
+      {url && <DemoActions url={window.location.protocol + window.location.hostname + url} />}
     </div>
   );
 }

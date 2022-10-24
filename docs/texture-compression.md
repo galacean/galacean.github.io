@@ -3,6 +3,7 @@ order: 6
 title: Texture Compression
 type: Graphics
 group: Texture
+label: Graphics/Texture
 ---
 
 Oasis supports compressed textures in **DXT/PVR/ETC/ASTC** format, and supports the use of **KTX**([Khronos Texture](https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/)) container format loading.

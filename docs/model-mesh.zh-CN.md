@@ -3,6 +3,7 @@ order: 5
 title: Model Mesh
 type: 图形
 group: 网格
+label: Graphics/Mesh
 ---
 
 [ModelMesh](${api}core/ModelMesh) 是一个用于描述几何体轮廓的网状渲染数据类，主要包含了顶点（位置、法线和 UV 等）、索引和混合形状等数据。不仅可以使用建模软件制作并导出 glTF 在引擎中解析还原，还可以方便的使用脚本直接写入数据创建。

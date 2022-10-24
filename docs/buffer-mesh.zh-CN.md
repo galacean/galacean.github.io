@@ -3,6 +3,7 @@ order: 6
 title: Buffer Mesh
 type: 图形
 group: 网格
+label: Graphics/Mesh
 ---
 
 [BufferMesh](${api}core/BufferMesh) 可以自由操作顶点缓冲和索引缓冲数据，以及一些与几何体绘制相关的指令。具备高效、灵活、简洁等特点。开发者如果想高效灵活的实现自定义几何体就可以使用该类。

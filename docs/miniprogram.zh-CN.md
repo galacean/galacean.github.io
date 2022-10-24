@@ -2,6 +2,7 @@
 order: 0
 title: 支付宝/淘宝小程序
 type: 平台适配
+label: Adaptation
 ---
 
 目前 Oasis 已经适配到支付宝和淘宝小程序。本教程默认开发者已经具备一定的小程序开发能力，如果没有，请阅读下面教程，下载小程序开发工具及申请 AppId：
@@ -79,10 +80,12 @@ yarn add @oasis-engine/miniprogram-adapter
 4. 在页面的 `.js` 代码文件里添加回调函数，使用 `my._createCanvas` 创建所需的 canvas 上下文，之后在 `success` 回调里使用 oasis 即可.
 
 注意：
-  1. 使用 `import * as OASIS from "oasis-engine/dist/miniprogram"` 引入小程序依赖。
-  2. 需要使用『@oasis-engine/miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
+
+1. 使用 `import * as OASIS from "oasis-engine/dist/miniprogram"` 引入小程序依赖。
+2. 需要使用『@oasis-engine/miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
 
 详情可以参考下面代码：
+
 ```js
 import * as OASIS from "oasis-engine/dist/miniprogram";
 import { registerCanvas } from "@oasis-engine/miniprogram-adapter";
@@ -120,11 +123,11 @@ Page({
 1. 引入二方库
 
 ```shell
-npm install @oasis-engine/controls -S
+npm install @oasis-engine-toolkit/controls -S
 ```
 
 ```typescript
-import { OrbitControl } from '@oasis-engine/controls/dist/miniprogram';
+import { OrbitControl } from "@oasis-engine-toolkit/controls/dist/miniprogram";
 ```
 
 2. 添加组件
@@ -148,24 +151,30 @@ cameraEntity.addComponent(OrbitControl);
   </canvas>
   <view
     style="width:{{cw}}px;height:{{ch}}px;top:0px;position:absolute;"
-    onTouchStart="onTouchStart" onTouchMove="onTouchMove" onTouchEnd="onTouchEnd" >
+    onTouchCancel="onTouchCancel"
+    onTouchStart="onTouchStart"
+    onTouchMove="onTouchMove"
+    onTouchEnd="onTouchEnd"
   </view>
 </view>
 ```
 
 ```typescript
-import { dispatchTouchStart, dispatchTouchMove, dispatchTouchEnd } from "@oasis-engine/miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@oasis-engine/miniprogram-adapter";
 
 Page({
   ...
+  onTouchEnd(e) {
+    dispatchPointerUp(e);
+  },
   onTouchStart(e) {
-    dispatchTouchStart(e);
+    dispatchPointerDown(e);
   },
   onTouchMove(e) {
-    dispatchTouchMove(e);
+    dispatchPointerMove(e);
   },
-  onTouchEnd(e) {
-    dispatchTouchEnd(e);
+  onTouchCancel(e) {
+    dispatchPointerOut(e);
   }
 })
 ```

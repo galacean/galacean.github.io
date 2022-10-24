@@ -2,6 +2,7 @@
 order: 1
 title: Engine
 type: Core
+label: Core
 ---
 
 `Engine` plays the role of the master controller in the Oasis engine, which mainly includes three functions: **canvas**, **rendering control**, and **engine subsystem management**:

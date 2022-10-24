@@ -3,6 +3,7 @@ order: 2
 title: C4D 烘焙
 type: 美术
 group: 教程
+label: Art/教程
 ---
 
 以 C4D-OC 渲染器的烘培（windows）为例讲解。

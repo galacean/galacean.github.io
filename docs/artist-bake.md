@@ -2,6 +2,7 @@
 order: 2
 title: Baking texture
 type: Art
+label: Art
 ---
 
 Taking the bake of the C4D-OC renderer under the Windows platform as an example.

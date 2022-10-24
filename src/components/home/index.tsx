@@ -1,35 +1,39 @@
-import React from 'react';
-import { injectIntl } from 'react-intl';
 import { Helmet } from 'react-helmet';
+import { injectIntl, useIntl } from 'react-intl';
 
-import Banner from './Banner';
-import Features from './Features';
-import Cases from './Cases';
+import Footer from '../footer';
+import Header from '../header';
 import Advantage from './Advantage';
+import Banner from './Banner';
+import Cases from './Cases';
+import Features from './Features';
+import './index.less';
 import Partners from './Partners';
 
-function Home(props) {
-  const { intl } = props;
+function Home() {
+  const intl = useIntl();
   return (
     <>
+      <Header></Header>
       <Helmet>
         <title>{`Oasis Engine - ${intl.formatMessage({
           id: 'app.home.slogan',
         })}`}</title>
         <meta
-          name="description"
+          name='description'
           content={`Oasis Engine - ${intl.formatMessage({
             id: 'app.home.slogan',
           })}`}
         />
       </Helmet>
-      <div className="home-wrapper">
-        <Banner {...props} />
-        <Advantage {...props} />
-        <Features {...props} />
-        <Cases {...props} />
-        <Partners {...props} />
+      <div className='home-wrapper'>
+        <Banner />
+        <Advantage />
+        <Features />
+        <Cases />
+        <Partners />
       </div>
+      <Footer></Footer>
     </>
   );
 }
