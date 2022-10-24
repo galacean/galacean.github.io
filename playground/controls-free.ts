@@ -14,7 +14,7 @@ import {
   PrimitiveMesh,
   WebGLEngine
 } from "oasis-engine";
-import { FreeControl } from "oasis-engine-toolkit";
+import { FreeControl } from "@oasis-engine-toolkit/controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

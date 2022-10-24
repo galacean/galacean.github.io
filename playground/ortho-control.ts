@@ -3,7 +3,7 @@
  * @category Camera
  */
 import { AssetType, Camera, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
-import { OrthoControl } from "oasis-engine-toolkit";
+import { OrthoControl } from "@oasis-engine-toolkit/controls";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");

@@ -16,7 +16,9 @@ import {
   Script,
   WebGLEngine
 } from "oasis-engine";
-import { FramebufferPicker, OrbitControl, OutlineManager } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+import { OutlineManager } from "@oasis-engine-toolkit/outline";
 
 class ClickScript extends Script {
   onUpdate(): void {

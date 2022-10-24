@@ -3,7 +3,6 @@
  * @category Physics
  */
 import {
-  BlinnPhongMaterial,
   BoxColliderShape,
   Camera,
   HitResult,
@@ -16,7 +15,7 @@ import {
   Vector2,
   Color,
   PointLight,
-  WebGLEngine, Script, PointerButton, Vector3, TextRenderer, Font
+  WebGLEngine, Script, PointerButton, Vector3, TextRenderer, Font, PBRMaterial, AmbientLight, AssetType
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
@@ -46,14 +45,14 @@ class Raycast extends Script {
       const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Everything, hit);
       if (result) {
         this.pickedMeshRenderer = hit.entity.getComponent(MeshRenderer);
-        const material = <BlinnPhongMaterial>this.pickedMeshRenderer.getMaterial();
+        const material = <PBRMaterial>this.pickedMeshRenderer.getMaterial();
         originalColor.copyFrom(material.baseColor);
         material.baseColor.set(0.3, 0.3, 0.3, 1.0);
       }
     }
 
     if (this.pickedMeshRenderer && inputManager.isPointerUp(PointerButton.Primary)) {
-      (<BlinnPhongMaterial>this.pickedMeshRenderer.getMaterial()).baseColor = originalColor;
+      (<PBRMaterial>this.pickedMeshRenderer.getMaterial()).baseColor = originalColor;
     }
   }
 }
@@ -85,17 +84,18 @@ renderer.fontSize = 40;
 // init point light
 const lightEntity = rootEntity.createChild("light");
 lightEntity.transform.setPosition(0, 3, 0);
-const pointLight = lightEntity.addComponent(PointLight);
-pointLight.intensity = 0.3;
+lightEntity.addComponent(PointLight);
 
 // create sphere test entity
 const radius = 1.25;
 const sphereEntity = rootEntity.createChild("SphereEntity");
 sphereEntity.transform.setPosition(-3, 0, 0);
 
-const sphereMtl = new BlinnPhongMaterial(engine);
+const sphereMtl = new PBRMaterial(engine);
 const sphereRenderer = sphereEntity.addComponent(MeshRenderer);
 sphereMtl.baseColor.set(0.7, 0.1, 0.1, 1.0);
+sphereMtl.roughness = 0.5;
+sphereMtl.metallic = 0.0;
 sphereRenderer.mesh = PrimitiveMesh.createSphere(engine, radius);
 sphereRenderer.setMaterial(sphereMtl);
 
@@ -108,9 +108,11 @@ sphereCollider.addShape(sphereColliderShape);
 const cubeSize = 2.0;
 const boxEntity = rootEntity.createChild("BoxEntity");
 
-const boxMtl = new BlinnPhongMaterial(engine);
+const boxMtl = new PBRMaterial(engine);
 const boxRenderer = boxEntity.addComponent(MeshRenderer);
 boxMtl.baseColor.set(0.1, 0.7, 0.1, 1.0);
+boxMtl.roughness = 0.5;
+boxMtl.metallic = 0.0;
 boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
 boxRenderer.setMaterial(boxMtl);
 
@@ -119,5 +121,12 @@ const boxColliderShape = new BoxColliderShape();
 boxColliderShape.setSize(cubeSize, cubeSize, cubeSize);
 boxCollider.addShape(boxColliderShape);
 
-// Run engine
-engine.run();
+engine.resourceManager
+  .load<AmbientLight>({
+    type: AssetType.Env,
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+  })
+  .then((ambientLight) => {
+    scene.ambientLight = ambientLight;
+    engine.run();
+  });
