@@ -127,7 +127,7 @@ function Doc() {
     ></DocMenu>
   );
 
-  const docDetail = <DocDetail selectedDocId={selectedDocId}></DocDetail>;
+  const docDetail = <DocDetail {...{ selectedDocId, setSelectedDocId, menuKeyTitleMapRef }}></DocDetail>;
 
   return (
     <Media query='(max-width: 768px)'>
