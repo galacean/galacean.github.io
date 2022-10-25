@@ -5,9 +5,11 @@
 
 import {
   BlinnPhongMaterial,
-  Camera, Color,
+  Camera,
+  Color,
   DynamicCollider,
-  Entity, Font,
+  Entity,
+  Font,
   Layer,
   MathUtil,
   MeshRenderer,
@@ -19,19 +21,20 @@ import {
   RenderFace,
   Script,
   SphereColliderShape,
-  StaticCollider, TextRenderer,
+  StaticCollider,
+  TextRenderer,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
 
-import {PhysXPhysics} from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 class Attractor extends Script {
   private collider: DynamicCollider;
   private force: Vector3 = new Vector3();
 
   onAwake() {
-    this.collider = this.entity.getComponent(DynamicCollider)
+    this.collider = this.entity.getComponent(DynamicCollider);
   }
 
   onPhysicsUpdate() {
@@ -52,10 +55,10 @@ class Interactor extends Script {
 
   onUpdate(deltaTime: number) {
     const ray = this.ray;
-    const pointer = this.engine.inputManager.pointerPosition;
-    if (pointer) {
+    const { pointers } = this.engine.inputManager;
+    if (pointers.length > 0) {
+      const pointer = this.engine.inputManager.pointers[0].position;
       this.camera.screenPointToRay(pointer, ray);
-
       const position = this.entity.transform.position;
       position.copyFrom(ray.origin);
       position.add(ray.direction.scale(18));
@@ -65,24 +68,24 @@ class Interactor extends Script {
 
 // init scene
 function init(rootEntity: Entity) {
-  addPlane(rootEntity, new Vector3(0, -8, 0), new Quaternion);
-  const quat180 = new Quaternion;
+  addPlane(rootEntity, new Vector3(0, -8, 0), new Quaternion());
+  const quat180 = new Quaternion();
   quat180.rotateZ(MathUtil.degreeToRadian(180));
   addPlane(rootEntity, new Vector3(0, 8, 0), quat180);
 
-  const quat90 = new Quaternion;
+  const quat90 = new Quaternion();
   quat90.rotateZ(MathUtil.degreeToRadian(90));
   addPlane(rootEntity, new Vector3(10, 0, 0), quat90);
 
-  const quatNega90 = new Quaternion;
+  const quatNega90 = new Quaternion();
   quatNega90.rotateZ(MathUtil.degreeToRadian(-90));
   addPlane(rootEntity, new Vector3(-10, 0, 0), quatNega90);
 
-  const quatFront90 = new Quaternion;
+  const quatFront90 = new Quaternion();
   quatFront90.rotateX(MathUtil.degreeToRadian(-90));
   addPlane(rootEntity, new Vector3(0, 0, 20), quatFront90);
 
-  const quatNegaFront90 = new Quaternion;
+  const quatNegaFront90 = new Quaternion();
   quatNegaFront90.rotateX(MathUtil.degreeToRadian(90));
   addPlane(rootEntity, new Vector3(0, 0, 0), quatNegaFront90);
 
@@ -91,11 +94,7 @@ function init(rootEntity: Entity) {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
       for (let k = 0; k < 4; k++) {
-        addSphere(rootEntity, 1, new Vector3(
-          -4 + 2 * i,
-          -4 + 2 * j,
-          -4 + 2 * k
-        ), quat);
+        addSphere(rootEntity, 1, new Vector3(-4 + 2 * i, -4 + 2 * j, -4 + 2 * k), quat);
       }
     }
   }

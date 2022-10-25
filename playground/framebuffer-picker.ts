@@ -12,14 +12,17 @@ class ClickScript extends Script {
   onUpdate(): void {
     const inputManager = this.engine.inputManager;
     if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const pointerPosition = inputManager.pointerPosition;
-      framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
-        if (renderElement) {
-          this.material.baseColor.set(1, 0, 0, 1);
-        } else {
-          this.material.baseColor.set(1, 1, 1, 1);
-        }
-      });
+      const { pointers } = inputManager;
+      if (pointers.length > 0) {
+        const pointerPosition = pointers[0].position;
+        framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
+          if (renderElement) {
+            this.material.baseColor.set(1, 0, 0, 1);
+          } else {
+            this.material.baseColor.set(1, 1, 1, 1);
+          }
+        });
+      }
     }
   }
 }

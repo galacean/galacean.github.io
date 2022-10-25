@@ -73,7 +73,8 @@ class Raycast extends Script {
     const hit = this.hit;
     const inputManager = this.engine.inputManager;
     if (inputManager.isPointerDown(PointerButton.Primary)) {
-      this.camera.screenPointToRay(inputManager.pointerPosition, ray);
+      const pointerPosition = inputManager.pointers[0].position;
+      this.camera.screenPointToRay(pointerPosition, ray);
 
       const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Layer0, hit);
       if (result) {
@@ -146,7 +147,7 @@ function addPlane(rootEntity: Entity, size: Vector3, position: Vector3, rotation
   planeEntity.transform.rotationQuaternion = rotation;
 
   const physicsPlane = new PlaneColliderShape();
-  physicsPlane.setPosition(0, size.y, 0);
+  physicsPlane.position = new Vector3(0, size.y, 0);
   const planeCollider = planeEntity.addComponent(StaticCollider);
   planeCollider.addShape(physicsPlane);
 
@@ -228,7 +229,7 @@ PhysXPhysics.initialize().then(() => {
   const pos = cameraEntity.transform.position;
   pos.set(20, 20, 20);
   cameraEntity.transform.lookAt(new Vector3());
-  cameraEntity.addComponent(OrbitControl);
+  // cameraEntity.addComponent(OrbitControl);
   cameraEntity.addComponent(Raycast);
 
   const entity = cameraEntity.createChild("text");

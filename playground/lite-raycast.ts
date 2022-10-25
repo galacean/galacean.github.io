@@ -16,7 +16,12 @@ import {
   Vector2,
   Color,
   PointLight,
-  WebGLEngine, Script, PointerButton, Vector3, TextRenderer, Font
+  WebGLEngine,
+  Script,
+  Vector3,
+  TextRenderer,
+  Font,
+  PointerPhase
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
@@ -24,7 +29,6 @@ import { LitePhysics } from "@oasis-engine/physics-lite";
 
 class Raycast extends Script {
   camera: Camera;
-  pickedMeshRenderer: MeshRenderer;
   originalColor: Color = new Color();
   point = new Vector2();
   ray = new Ray();
@@ -35,25 +39,29 @@ class Raycast extends Script {
   }
 
   onUpdate(deltaTime: number) {
-    const engine = this.engine;
-    const ray = this.ray;
-    const hit = this.hit;
-    const originalColor = this.originalColor;
-    const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      this.camera.screenPointToRay(inputManager.pointerPosition, ray);
-
+    const { engine, ray, hit, originalColor } = this;
+    const { inputManager } = engine;
+    const { pointers } = inputManager;
+    for (let i = pointers.length - 1; i >= 0; i--) {
+      const pointer = pointers[i];
+      this.camera.screenPointToRay(pointer.position, ray);
       const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Everything, hit);
       if (result) {
-        this.pickedMeshRenderer = hit.entity.getComponent(MeshRenderer);
-        const material = <BlinnPhongMaterial>this.pickedMeshRenderer.getMaterial();
-        originalColor.copyFrom(material.baseColor);
-        material.baseColor.set(0.3, 0.3, 0.3, 1.0);
+        const pickedMeshRenderer = hit.entity.getComponent(MeshRenderer);
+        switch (pointer.phase) {
+          case PointerPhase.Down:
+            const material = <BlinnPhongMaterial>pickedMeshRenderer.getMaterial();
+            originalColor.copyFrom(material.baseColor);
+            material.baseColor = new Color(0.3, 0.3, 0.3, 1);
+            break;
+          case PointerPhase.Up:
+          case PointerPhase.Leave:
+            (<BlinnPhongMaterial>pickedMeshRenderer.getMaterial()).baseColor = originalColor;
+            break;
+          default:
+            break;
+        }
       }
-    }
-
-    if (this.pickedMeshRenderer && inputManager.isPointerUp(PointerButton.Primary)) {
-      (<BlinnPhongMaterial>this.pickedMeshRenderer.getMaterial()).baseColor = originalColor;
     }
   }
 }
