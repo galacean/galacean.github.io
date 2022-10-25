@@ -8,7 +8,7 @@ import {
   ReadOutlined,
   TwitterOutlined,
   YuqueOutlined,
-  ZhihuOutlined
+  ZhihuOutlined,
 } from '@ant-design/icons';
 import { Button, Col, Input, Menu, Popover, Row, Select, Tabs } from 'antd';
 import * as _ from 'lodash';
@@ -232,6 +232,46 @@ function Header() {
     </>
   );
 
+  const searchBox = (
+    <div id='search-box'>
+      <Input.Search
+        placeholder={formatMessage({ id: 'app.header.search.box' })}
+        loading
+        allowClear
+        size='large'
+        onChange={async (e) => {
+          console.log(e.target.value);
+          if (!e.target.value) {
+            setSearchData(null);
+            return;
+          }
+          const res = await debouncedFetchSearchResult(e.target.value, context.version, context.lang);
+          console.log(res);
+          res &&
+            setSearchData((data) => {
+              return { ...data, doc: res.doc, api: res.api };
+            });
+        }}
+        onSearch={async (e) => {
+          console.log(e);
+          if (!e) {
+            setSearchData(null);
+            return;
+          }
+          const res = await debouncedLeadingFetchSearchResult(e, context.version, context.lang);
+          setSearchData((data) => {
+            return { ...data, doc: res.doc, api: res.api };
+          });
+        }}
+      />
+      {searchData?.doc || searchData?.api ? (
+        <>
+          <div id='header-search-result'>{searchResultTab}</div>
+        </>
+      ) : null}
+    </div>
+  );
+
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
@@ -254,50 +294,7 @@ function Header() {
               </Link>
             </Col>
             <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
-              {!isMobile && (
-                <div id='search-box'>
-                  <div id='search-box'>
-                    <Input.Search
-                      placeholder='search docs/APIs'
-                      allowClear
-                      size='small'
-                      onChange={async (e) => {
-                        console.log(e.target.value);
-                        if (!e.target.value) {
-                          setSearchData(null);
-                          return;
-                        }
-                        const res = await debouncedFetchSearchResult(
-                          e.target.value,
-                          context.version,
-                          context.lang
-                        );
-                        console.log(res);
-                        res &&
-                          setSearchData((data) => {
-                            return { ...data, doc: res.doc, api: res.api };
-                          });
-                      }}
-                      onSearch={async (e) => {
-                        console.log(e);
-                        if (!e) {
-                          setSearchData(null);
-                          return;
-                        }
-                        const res = await debouncedLeadingFetchSearchResult(e, context.version, context.lang);
-                        setSearchData((data) => {
-                          return { ...data, doc: res.doc, api: res.api };
-                        });
-                      }}
-                    />
-                    {searchData?.doc || searchData?.api ? (
-                      <>
-                        <div id='header-search-result'>{searchResultTab}</div>
-                      </>
-                    ) : null}
-                  </div>
-                </div>
-              )}
+              {!isMobile && searchBox}
               <div className='header-meta'>
                 {!isMobile && (
                   <div className='right-header'>
