@@ -4,10 +4,10 @@
  */
 
 import {
-  Camera,
-  Color,
   AmbientLight,
   AssetType,
+  Camera,
+  Color,
   DirectLight,
   DynamicCollider,
   Entity,

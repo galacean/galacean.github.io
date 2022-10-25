@@ -11,8 +11,8 @@ class ClickScript extends Script {
 
   onUpdate(): void {
     const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const { pointers } = inputManager;
+    const { pointers } = inputManager;
+    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       if (pointers.length > 0) {
         const pointerPosition = pointers[0].position;
         framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {

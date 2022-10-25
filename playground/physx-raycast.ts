@@ -77,11 +77,8 @@ class Raycast extends Script {
     const ray = this.ray;
     const hit = this.hit;
     const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const pointers = inputManager.pointers;
-      if(!pointers) {
-        return;
-      }
+    const pointers = inputManager.pointers;
+    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       const pointerPosition = pointers[0].position;
       this.camera.screenPointToRay(pointerPosition, ray);
 

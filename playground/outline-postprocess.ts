@@ -23,8 +23,9 @@ import { OutlineManager } from "@oasis-engine-toolkit/outline";
 class ClickScript extends Script {
   onUpdate(): void {
     const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const pointerPosition = inputManager.pointers[0].position;
+    const { pointers } = inputManager;
+    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+      const pointerPosition = pointers[0].position;
       framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
         if (renderElement) {
           console.log(renderElement.component.entity.parent);
