@@ -156,8 +156,9 @@ class ShootScript extends Script {
   onUpdate(deltaTime: number) {
     const ray = this.ray;
     const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      this.camera.screenPointToRay(inputManager.pointerPosition, ray);
+    if (inputManager.pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+      const pointerPosition = inputManager.pointers[0].position;
+      this.camera.screenPointToRay(pointerPosition, ray);
       ray.direction.scale(50);
       addSphere(this.entity, 0.5, this.position, this.rotation, ray.direction);
     }

@@ -54,18 +54,18 @@ class PanScript extends Script {
   private tempVec3: Vector3 = new Vector3();
   private zValue: number = 0;
 
-  onPointerDown() {
+  onPointerDown(pointer: Pointer) {
     this.zValue = camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec3).z;
     const { tempVec2, tempVec3 } = this;
-    tempVec2.copyFrom(inputManager.pointerPosition);
+    tempVec2.copyFrom(pointer.position);
     tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
     camera.viewportToWorldPoint(tempVec3, this.startPointerPos);
   }
 
-  onPointerDrag() {
+  onPointerDrag(pointer: Pointer) {
     const { tempVec2, tempVec3, startPointerPos } = this;
     const { transform } = this.entity;
-    tempVec2.copyFrom(inputManager.pointerPosition);
+    tempVec2.copyFrom(pointer.position);
     tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
     camera.viewportToWorldPoint(tempVec3, tempVec3);
     Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
