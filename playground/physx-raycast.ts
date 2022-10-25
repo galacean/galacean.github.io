@@ -245,7 +245,7 @@ PhysXPhysics.initialize().then(() => {
   const pos = cameraEntity.transform.position;
   pos.set(20, 20, 20);
   cameraEntity.transform.lookAt(new Vector3());
-  // cameraEntity.addComponent(OrbitControl);
+  cameraEntity.addComponent(OrbitControl);
   cameraEntity.addComponent(Raycast);
 
   const entity = cameraEntity.createChild("text");
