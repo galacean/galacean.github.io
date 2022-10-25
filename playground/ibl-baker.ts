@@ -94,7 +94,7 @@ function debugIBL(bakedLDRCubeMap: TextureCube, bakedHDRCubeMap: TextureCube) {
     `,
     `
       uniform sampler2D u_env;
-      uniform int face;
+      uniform int u_face;
       varying vec2 v_uv;
   
       vec4 RGBMToLinear( in vec4 value, in float maxRange ) {
@@ -104,10 +104,10 @@ function debugIBL(bakedLDRCubeMap: TextureCube, bakedHDRCubeMap: TextureCube) {
   
       void main(){
         vec2 uv = v_uv;
-        if(face == 2){
+        if(u_face == 2){
           uv.x = v_uv.y;
           uv.y= 1.0 - v_uv.x;
-        }else if(face == 3){
+        }else if(u_face == 3){
           uv.x = 1.0 - v_uv.y;
           uv.y=  v_uv.x;
         }
@@ -168,7 +168,7 @@ function debugIBL(bakedLDRCubeMap: TextureCube, bakedHDRCubeMap: TextureCube) {
       debugTexture.getPixelBuffer(TextureCubeFace.PositiveX + i, 0, 0, mipSize, mipSize, mipLevel, data);
       planeTexture.setPixelBuffer(data);
       material.shaderData.setTexture("u_env", planeTexture);
-      material.shaderData.setInt("face", i);
+      material.shaderData.setInt("u_face", i);
     }
   }
 
