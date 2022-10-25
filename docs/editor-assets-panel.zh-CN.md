@@ -3,6 +3,7 @@ order: 5
 title: 上传资产
 type: 编辑器
 group: 基础操作
+label: 编辑器/基础操作
 ---
 
 ### 使用上传按钮

@@ -2,6 +2,7 @@
 order: 3
 title: glTF
 type: 资源
+label: Resource
 ---
 
 ## 什么是 glTF?

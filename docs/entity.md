@@ -2,6 +2,7 @@
 order: 3
 title: Entities and components
 type: Core
+label: Core
 ---
 
 In Oasis engine, [Entity](${api}core/Entity) does not have actual functions such as rendering. These functions are implemented by loading [Component](${api}core/Component) component class. For example, if you want an `Entity` to become a camera, you only need to add the [Camera](${api}core/Camera) component to the `Entity`. This component-based extension method focuses on encapsulating the program independently according to the function, and could be combined and added freely, which is very helpful to reduce coupling and improve reuse.

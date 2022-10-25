@@ -4,7 +4,6 @@
  */
 
 import {
-  BlinnPhongMaterial,
   BoxColliderShape,
   Camera,
   DynamicCollider,
@@ -26,7 +25,9 @@ import {
   AssetType,
   TextRenderer,
   Color,
-  Font
+  Font,
+  PBRMaterial,
+  AmbientLight,
 } from "oasis-engine";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
@@ -47,10 +48,20 @@ class PanScript extends Script {
 
   onPointerDown(pointer: Pointer) {
     // get depth
-    this.camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec3);
-    this.zValue = this.camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec3).z;
+    this.camera.worldToViewportPoint(
+      this.entity.transform.worldPosition,
+      this.tempVec3
+    );
+    this.zValue = this.camera.worldToViewportPoint(
+      this.entity.transform.worldPosition,
+      this.tempVec3
+    ).z;
     const { tempVec3 } = this;
-    tempVec3.set(pointer.position.x * this.invCanvasWidth, pointer.position.y * this.invCanvasHeight, this.zValue);
+    tempVec3.set(
+      pointer.position.x * this.invCanvasWidth,
+      pointer.position.y * this.invCanvasHeight,
+      this.zValue
+    );
     this.camera.viewportToWorldPoint(tempVec3, this.startPointerPos);
     this.collider.linearVelocity = new Vector3();
     this.collider.angularVelocity = new Vector3();
@@ -59,7 +70,11 @@ class PanScript extends Script {
   onPointerDrag(pointer: Pointer) {
     const { tempVec3, startPointerPos } = this;
     const { transform } = this.entity;
-    this.tempVec3.set(pointer.position.x * this.invCanvasWidth, pointer.position.y * this.invCanvasHeight, this.zValue);
+    this.tempVec3.set(
+      pointer.position.x * this.invCanvasWidth,
+      pointer.position.y * this.invCanvasHeight,
+      this.zValue
+    );
     this.camera.viewportToWorldPoint(tempVec3, tempVec3);
     Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
     transform.worldPosition = transform.worldPosition.add(startPointerPos);
@@ -67,20 +82,34 @@ class PanScript extends Script {
   }
 }
 
-function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
-  mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+function addPlane(
+  rootEntity: Entity,
+  size: Vector2,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.baseColor.set(
+    0.2179807202597362,
+    0.2939682161541871,
+    0.31177952549087604,
+    1
+  );
+  mtl.roughness = 0.0;
+  mtl.metallic = 0.0;
+
   const planeEntity = rootEntity.createChild();
   planeEntity.layer = Layer.Layer1;
 
   const renderer = planeEntity.addComponent(MeshRenderer);
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
   planeEntity.transform.position = position;
   planeEntity.transform.rotationQuaternion = rotation;
 
   const physicsPlane = new PlaneColliderShape();
-  physicsPlane.position = new Vector3(0, 0, 0);
+  physicsPlane.position.set(0, 0, 0);
   const planeCollider = planeEntity.addComponent(StaticCollider);
   planeCollider.addShape(physicsPlane);
 
@@ -100,12 +129,22 @@ function addVerticalBox(
   const entity = rootEntity.createChild("entity");
   entity.transform.setPosition(x, y, z);
 
-  const boxMtl = new BlinnPhongMaterial(rootEntity.engine);
+  const boxMtl = new PBRMaterial(rootEntity.engine);
+  boxMtl.roughness = 0.5;
+  boxMtl.metallic = 0.0;
   const boxRenderer = entity.addComponent(MeshRenderer);
   boxMtl.baseTexture = texture;
   boxMtl.baseTexture.anisoLevel = 12;
-  boxRenderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, 0.5, 0.33, 2, false);
+  boxRenderer.mesh = PrimitiveMesh.createCuboid(
+    rootEntity.engine,
+    0.5,
+    0.33,
+    2,
+    false
+  );
   boxRenderer.setMaterial(boxMtl);
+  boxRenderer.receiveShadows = true;
+  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(0.5, 0.33, 2);
@@ -116,7 +155,8 @@ function addVerticalBox(
   const boxCollider = entity.addComponent(DynamicCollider);
   boxCollider.addShape(physicsBox);
   boxCollider.mass = 1;
-  boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+  boxCollider.collisionDetectionMode =
+    CollisionDetectionMode.ContinuousSpeculative;
 
   const pan = entity.addComponent(PanScript);
   pan.camera = camera;
@@ -137,12 +177,21 @@ function addHorizontalBox(
   const entity = rootEntity.createChild("entity");
   entity.transform.setPosition(x, y, z);
 
-  const boxMtl = new BlinnPhongMaterial(rootEntity.engine);
+  const boxMtl = new PBRMaterial(rootEntity.engine);
+  boxMtl.roughness = 0.5;
+  boxMtl.metallic = 0.0;
   const boxRenderer = entity.addComponent(MeshRenderer);
   boxMtl.baseTexture = texture;
   boxMtl.baseTexture.anisoLevel = 12;
-  boxRenderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, 2, 0.33, 0.5);
+  boxRenderer.mesh = PrimitiveMesh.createCuboid(
+    rootEntity.engine,
+    2,
+    0.33,
+    0.5
+  );
   boxRenderer.setMaterial(boxMtl);
+  boxRenderer.receiveShadows = true;
+  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(2, 0.33, 0.5);
@@ -153,7 +202,8 @@ function addHorizontalBox(
   const boxCollider = entity.addComponent(DynamicCollider);
   boxCollider.addShape(physicsBox);
   boxCollider.mass = 0.5;
-  boxCollider.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+  boxCollider.collisionDetectionMode =
+    CollisionDetectionMode.ContinuousSpeculative;
 
   const pan = entity.addComponent(PanScript);
   pan.camera = camera;
@@ -170,9 +220,36 @@ function addBox(
   invCanvasHeight: number
 ): void {
   for (let i: number = 0; i < 8; i++) {
-    addVerticalBox(rootEntity, texture1, -0.65, 0.165 + i * 0.33 * 2, 0, camera, invCanvasWidth, invCanvasHeight);
-    addVerticalBox(rootEntity, texture1, 0, 0.165 + i * 0.33 * 2, 0, camera, invCanvasWidth, invCanvasHeight);
-    addVerticalBox(rootEntity, texture1, 0.65, 0.165 + i * 0.33 * 2, 0, camera, invCanvasWidth, invCanvasHeight);
+    addVerticalBox(
+      rootEntity,
+      texture1,
+      -0.65,
+      0.165 + i * 0.33 * 2,
+      0,
+      camera,
+      invCanvasWidth,
+      invCanvasHeight
+    );
+    addVerticalBox(
+      rootEntity,
+      texture1,
+      0,
+      0.165 + i * 0.33 * 2,
+      0,
+      camera,
+      invCanvasWidth,
+      invCanvasHeight
+    );
+    addVerticalBox(
+      rootEntity,
+      texture1,
+      0.65,
+      0.165 + i * 0.33 * 2,
+      0,
+      camera,
+      invCanvasWidth,
+      invCanvasHeight
+    );
 
     addHorizontalBox(
       rootEntity,
@@ -184,7 +261,16 @@ function addBox(
       invCanvasWidth,
       invCanvasHeight
     );
-    addHorizontalBox(rootEntity, texture2, 0, 0.165 + 0.33 + i * 0.33 * 2, 0, camera, invCanvasWidth, invCanvasHeight);
+    addHorizontalBox(
+      rootEntity,
+      texture2,
+      0,
+      0.165 + 0.33 + i * 0.33 * 2,
+      0,
+      camera,
+      invCanvasWidth,
+      invCanvasHeight
+    );
     addHorizontalBox(
       rootEntity,
       texture2,
@@ -215,7 +301,7 @@ PhysXPhysics.initialize().then(() => {
   // init camera
   const cameraEntity = rootEntity.createChild("camera");
   const camera = cameraEntity.addComponent(Camera);
-  cameraEntity.transform.setPosition(8, 5, 8);
+  cameraEntity.transform.setPosition(7, 7, 7);
   cameraEntity.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
 
   const entity = cameraEntity.createChild("text");
@@ -228,24 +314,42 @@ PhysXPhysics.initialize().then(() => {
 
   // init point light
   const light = rootEntity.createChild("light");
-  light.transform.setPosition(1, 2, 2);
-  light.transform.lookAt(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
-  const pointLight = light.addComponent(DirectLight);
-  pointLight.intensity = 3;
+  light.transform.setPosition(0, 5, 8);
+  light.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
+  const directLight = light.addComponent(DirectLight);
+  directLight.intensity = 1;
+  directLight.enableShadow = true;
+  directLight.shadowStrength = 1;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
 
   Promise.all([
     engine.resourceManager.load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Wkn5QY0tpbcAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     }),
     engine.resourceManager.load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*W5azT5DjDAEAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
-    })
+      type: AssetType.Texture2D,
+    }),
   ]).then((asset: Texture2D[]) => {
-    addBox(rootEntity, asset[0], asset[1], camera, invCanvasWidth, invCanvasHeight);
-    engine.run();
+    addBox(
+      rootEntity,
+      asset[0],
+      asset[1],
+      camera,
+      invCanvasWidth,
+      invCanvasHeight
+    );
+
+    engine.resourceManager
+      .load<AmbientLight>({
+        type: AssetType.Env,
+        url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+      })
+      .then((ambientLight) => {
+        scene.ambientLight = ambientLight;
+        engine.run();
+      });
   });
 });

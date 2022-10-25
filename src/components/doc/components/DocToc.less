@@ -1,0 +1,72 @@
+.toc {
+  margin     : 0;
+  font-size  : 12px;
+  list-style : none;
+  border-left: 1px solid #ebedf0;
+
+  .toc-item {
+    margin-left: 10px;
+    list-style: none;
+  }
+
+  .anchor {
+    display: none;
+  }
+
+  .toc-item>.toc-level {
+    font-size  : 12px;
+    text-indent: 8px;
+    border-left: none;
+  }
+
+  .toc-item>.toc-level .toc-item>.toc-level {
+    text-indent: 16px;
+  }
+
+  a {
+    display      : block;
+    width        : 110px;
+    overflow     : hidden;
+    color        : #314659;
+    white-space  : nowrap;
+    text-overflow: ellipsis;
+    transition   : all 0.3s ease;
+
+    &:hover {
+      color: #1890ff;
+    }
+
+    &.current {
+      color       : #1890ff;
+      border-color: #1890ff;
+    }
+  }
+}
+
+.toc-affix {
+  position: absolute;
+  top     : 8px;
+  right   : 20px;
+
+  .ant-affix {
+    max-height: 80vh;
+    overflow  : auto;
+    background: #fff;
+  }
+}
+
+.toc-affix-bottom {
+  position: absolute;
+  right   : 20px;
+  bottom  : 88px;
+
+  .ant-affix {
+    background: #fff;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .toc {
+    display: none;
+  }
+}

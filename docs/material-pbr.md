@@ -3,6 +3,7 @@ order: 4
 title: PBR Material
 type: Graphics
 group: Material
+label: Graphics/Material
 ---
 
 Engine and editor have fully advocated the use of PBR materials. **PBR means physically based rendering**, It was first proposed by Disney in 2012 and was later widely used in the game industry. Compared with traditional rendering methods such as **Blinn-Phong**, PBR follows the conservation of energy and conforms to the physical rules. Artists only need to adjust a few simple parameters to ensure the correct rendering effect even in complex scenes.

@@ -3,6 +3,7 @@ order: 0
 title: 网格总览
 type: 图形
 group: 网格
+label: Graphics/Mesh
 ---
 
 Mesh 是 MeshRenderer 的数据对象，它的职责可以类比为市面上较为流行的填色本，描述了顶点的各种信息（位置，拓扑，顶点颜色，UV 等），同样的，在 Oasis 中我们可以使用 [ModelMesh](${api}core/ModelMesh) 或 [BufferMesh](${api}core/BufferMesh) 来描述待渲染物体的几何信息。

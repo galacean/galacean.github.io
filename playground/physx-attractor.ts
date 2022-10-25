@@ -4,17 +4,19 @@
  */
 
 import {
-  BlinnPhongMaterial,
   Camera,
   Color,
+  AmbientLight,
+  AssetType,
+  DirectLight,
   DynamicCollider,
   Entity,
   Font,
   Layer,
   MathUtil,
   MeshRenderer,
+  PBRMaterial,
   PlaneColliderShape,
-  PointLight,
   PrimitiveMesh,
   Quaternion,
   Ray,
@@ -24,7 +26,7 @@ import {
   StaticCollider,
   TextRenderer,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
@@ -56,8 +58,8 @@ class Interactor extends Script {
   onUpdate(deltaTime: number) {
     const ray = this.ray;
     const { pointers } = this.engine.inputManager;
-    if (pointers.length > 0) {
-      const pointer = this.engine.inputManager.pointers[0].position;
+    if (pointers && pointers.length > 0) {
+      const pointer = pointers[0].position;
       this.camera.screenPointToRay(pointer, ray);
       const position = this.entity.transform.position;
       position.copyFrom(ray.origin);
@@ -83,7 +85,7 @@ function init(rootEntity: Entity) {
 
   const quatFront90 = new Quaternion();
   quatFront90.rotateX(MathUtil.degreeToRadian(-90));
-  addPlane(rootEntity, new Vector3(0, 0, 20), quatFront90);
+  addPlane(rootEntity, new Vector3(0, 0, 10), quatFront90);
 
   const quatNegaFront90 = new Quaternion();
   quatNegaFront90.rotateX(MathUtil.degreeToRadian(90));
@@ -94,15 +96,29 @@ function init(rootEntity: Entity) {
   for (let i = 0; i < 4; i++) {
     for (let j = 0; j < 4; j++) {
       for (let k = 0; k < 4; k++) {
-        addSphere(rootEntity, 1, new Vector3(-4 + 2 * i, -4 + 2 * j, -4 + 2 * k), quat);
+        addSphere(
+          rootEntity,
+          1,
+          new Vector3(-4 + 2 * i, -4 + 2 * j, -4 + 2 * k),
+          quat
+        );
       }
     }
   }
 }
 
-function addPlane(rootEntity: Entity, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
-  mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+function addPlane(
+  rootEntity: Entity,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.baseColor.set(
+    0.03179807202597362,
+    0.3939682161541871,
+    0.41177952549087604,
+    1
+  );
   mtl.renderFace = RenderFace.Double;
   const planeEntity = rootEntity.createChild();
   planeEntity.layer = Layer.Layer1;
@@ -120,13 +136,22 @@ function addPlane(rootEntity: Entity, position: Vector3, rotation: Quaternion): 
   return planeEntity;
 }
 
-function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
-  mtl.baseColor.set(227 / 255, 168 / 255, 196 / 255, 1.0);
+function addSphere(
+  rootEntity: Entity,
+  radius: number,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.baseColor.set(1.0, 168 / 255, 196 / 255, 1.0);
+  mtl.roughness = 0.8;
+  mtl.metallic = 0.4;
+
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-
-  renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius);
+  renderer.castShadows = true;
+  renderer.receiveShadows = true;
+  renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius, 60);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;
   sphereEntity.transform.rotationQuaternion = rotation;
@@ -166,18 +191,17 @@ PhysXPhysics.initialize().then(() => {
   renderer.font = Font.createFromOS(entity.engine, "Arial");
   renderer.fontSize = 40;
 
-  // init light
-  scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-
   const light = rootEntity.createChild("light");
-  light.transform.position = new Vector3(0, 0, 0);
-  const p = light.addComponent(PointLight);
-  p.intensity = 0.3;
-
+  light.transform.setPosition(5, 0, -10);
+  light.transform.lookAt(new Vector3(0, 0, 0));
+  const p = light.addComponent(DirectLight);
+  p.intensity = 1;
+  p.enableShadow = true;
+  p.shadowStrength = 1;
   {
     const attractorEntity = rootEntity.createChild();
     attractorEntity.addComponent(Interactor).camera = camera;
-    const mtl = new BlinnPhongMaterial(engine);
+    const mtl = new PBRMaterial(engine);
     mtl.baseColor.set(1, 1, 1, 1.0);
     const renderer = attractorEntity.addComponent(MeshRenderer);
     renderer.mesh = PrimitiveMesh.createSphere(engine, 2);
@@ -192,5 +216,15 @@ PhysXPhysics.initialize().then(() => {
 
   engine.physicsManager.gravity = new Vector3();
   init(rootEntity);
-  engine.run();
+
+  engine.resourceManager
+    .load<AmbientLight>({
+      type: AssetType.Env,
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+    })
+    .then((ambientLight) => {
+      scene.ambientLight = ambientLight;
+
+      engine.run();
+    });
 });

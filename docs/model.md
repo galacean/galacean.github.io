@@ -3,6 +3,7 @@ order: 3
 title: 3. Load a 3D Model
 type: Introduction
 group: Basic
+label: Introduction/Basic
 ---
 
 glTF (GL Transmission Format) is a specification released by [khronos](https://www.khronos.org/) that can efficiently transmit and load 3D scenes. Like traditional model formats such as FBX and OBJ, it basically supports 3D scenes. All the features in Oasis are currently the preferred 3D file format recommended by Oasis.

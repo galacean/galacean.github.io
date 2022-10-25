@@ -3,6 +3,7 @@ order: 3
 title: Blinn-Phong 材质
 type: 图形
 group: 材质
+label: Graphics/Material
 ---
 
 [BlinnPhongMaterial](${api}core/BlinnPhongMaterial) 虽然不是基于物理渲染，但是其高效的渲染算法和基本齐全的光学部分，还是有很多的应用场景。

@@ -2,6 +2,7 @@
 order: 3
 title: glTF
 type: Resource
+label: Resource
 ---
 
 ## What is glTF?

@@ -3,6 +3,7 @@ order: 4
 title: Cube Texture
 type: Graphics
 group: Texture
+label: Graphics/Texture
 ---
 
 The difference between a cube texture ([TextureCube](${api}core/TextureCube)) and a 2D texture is that it has 6 faces, that is, a cube texture is composed of 6 2D textures.

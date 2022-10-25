@@ -2,6 +2,7 @@
 order: 2
 title: Scene
 type: Core
+label: Core
 ---
 
 Scene can manage the entity tree, especially large game scenes. For example, **scene1** and **scene2** are two different scenes and do not need to be loaded for activation and rendering at the same time. Then we can divide them into different scenes through modeling software or code logic. Activating the corresponding scenes separately or merging scenes at the appropriate time.

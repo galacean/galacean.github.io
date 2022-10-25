@@ -3,6 +3,7 @@ order: 3.4
 title: 动画编辑
 type: 编辑器
 group: 组件
+label: 编辑器/组件
 ---
 
 通过 Animator 编辑器，你可以在上面方便的为动画添加过渡和混合：

@@ -3,6 +3,7 @@ order: 1
 title: Material
 type: Graphics
 group: Material
+label: Graphics/Material
 ---
 
 ## Material category

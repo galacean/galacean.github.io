@@ -3,6 +3,7 @@ order: 0
 title: 0. 安装 Oasis Engine
 type: 快速入门
 group: 基础
+label: Introduction/Basic
 ---
 
 ## 安装方式
@@ -66,9 +67,9 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 |[@oasis-engine/rhi-webgl](https://www.npmjs.com/package/@oasis-engine/rhi-webgl)| WebGL 渲染硬件接口（Rendering Hardware Interface）|[API](${api}rhi-webgl/index)|
 |[@oasis-engine/math](https://www.npmjs.com/package/@oasis-engine/math)| 数学库 |[API](${api}math/index)|
 |[@oasis-engine/design](https://www.npmjs.com/package/@oasis-engine/design)| 引擎基础设计规范，如克隆规范、销毁规范、RHI规范 |[API](${api}design/index)|
-|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| 轻量级物理引擎 |API|
-|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| 全功能物理引擎 |API|
-|[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco 模型压缩 |API|
+|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| 轻量级物理引擎 |[API](${api}physics-lite/index)|
+|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| 全功能物理引擎 |[API](${api}physics-physx/index)|
+|[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco 模型压缩 |[API](${api}draco/index)|
 
 
 
@@ -80,9 +81,9 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 
 |功能|解释|API|
 |:--|:--|:--|
-|[@oasis-engine-toolkit/controls](https://www.npmjs.com/package/@oasis-engine/controls)| 控制器 |[API](${api}controls/index)|
-|[@oasis-engine-toolkit/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine/framebuffer-picker)| 帧缓冲拾取 |[API](${api}framebuffer-picker/index)|
-|[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine/stats)| 引擎统计面板 |[API](${api}stats/index)|
+|[@oasis-engine-toolkit/controls](https://www.npmjs.com/package/@oasis-engine-toolkit/controls)| 控制器 |[Doc](${docs}controls)|
+|[@oasis-engine-toolkit/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine-toolkit/framebuffer-picker)| 帧缓冲拾取 |[Doc](${docs}framebuffer-picker)|
+|[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats)| 引擎统计面板 |[Doc](${docs}stats)|
 |......|  ||
 
 
@@ -92,4 +93,4 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 | 功能                                                         | 解释        | API                     |
 | :----------------------------------------------------------- | :---------- | :---------------------- |
 | [@oasis-engine/engine-spine](https://www.npmjs.com/package/@oasis-engine/engine-spine) | Spine 动画  | [Doc](${docs}spine-cn)  |
-| [@oasis-engine/engine-lottie](https://www.npmjs.com/package/@oasis-engine/lottie) | Lottie 动画 | [Doc](${docs}lottie-cn) |
+| [@oasis-engine/lottie](https://www.npmjs.com/package/@oasis-engine/lottie) | Lottie 动画 | [Doc](${docs}lottie-cn) |

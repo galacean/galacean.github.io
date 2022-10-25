@@ -3,6 +3,7 @@ order: 2
 title: Unlit 材质
 type: 图形
 group: 材质
+label: Graphics/Material
 ---
 
 在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。

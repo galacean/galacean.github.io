@@ -78,7 +78,7 @@ function addCustomMaterial(engine: Engine): Material {
   target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
   renderState.depthState.writeEnabled = false;
   renderState.rasterState.cullMode = CullMode.Off;
-  material.renderQueueType = RenderQueueType.Transparent;
+  renderState.renderQueueType = RenderQueueType.Transparent;
 
   // Set material shader data.
   const { shaderData } = material;

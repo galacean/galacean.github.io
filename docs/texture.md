@@ -3,6 +3,7 @@ order: 1
 title: Texture
 type: Graphics
 group: Texture
+label: Graphics/Texture
 ---
 
 Texture ([Texture](${api}core/Texture)), is the most commonly used resource in 3D rendering. When we color the model, we need to set a color value for each fragment. In addition to setting this color value directly, we can also choose to read texels from the texture for coloring to achieve a richer art effect.

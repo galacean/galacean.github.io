@@ -1,40 +1,40 @@
-import React from 'react';
 import { Button } from 'antd';
-import { Link } from 'gatsby';
+import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { isZhCN, getLocalizedPathname } from '../utils';
-import { version } from '../../../siteconfig.json';
-import Spine from './Spine';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../contextProvider';
 import PBRHelmet from './PBRHelmet';
+import Spine from './Spine';
 
-export default function Features () {
+export default function Features() {
+  const { lang } = useContext(AppContext);
   return (
-    <section className="home-section home-section-features">
-      <div className="home-section-inner">
+    <section className='home-section home-section-features'>
+      <div className='home-section-inner'>
         <div className='home-flex home-flex-feature'>
-          <PBRHelmet /> 
+          <PBRHelmet />
           <h2>3D</h2>
-          <p className="home-flex-intro">
-            <FormattedMessage id="app.home.3d.intro" />
+          <p className='home-flex-intro'>
+            <FormattedMessage id='app.home.3d.intro' />
           </p>
-          <div className="button-wrapper">
-            <Link to={getLocalizedPathname(`${version}/docs/mesh-renderer`, isZhCN())}>
-              <Button type="primary" size="small" ghost>
-                <FormattedMessage id="app.home.more" />
+          <div className='button-wrapper'>
+            <Link to={`/docs/${lang}/mesh-renderer`}>
+              <Button type='primary' size='small' ghost>
+                <FormattedMessage id='app.home.more' />
               </Button>
             </Link>
           </div>
         </div>
         <div className='home-flex home-flex-feature'>
-          <Spine /> 
+          <Spine />
           <h2>2D</h2>
-          <p className="home-flex-intro">
-            <FormattedMessage id="app.home.2d.intro" />
+          <p className='home-flex-intro'>
+            <FormattedMessage id='app.home.2d.intro' />
           </p>
-          <div className="button-wrapper">
-            <Link to={getLocalizedPathname(`${version}/docs/sprite-renderer`, isZhCN())}>
-              <Button type="primary" size="small" ghost>
-                <FormattedMessage id="app.home.more" />
+          <div className='button-wrapper'>
+            <Link to={`/docs/${lang}/mesh-renderer`}>
+              <Button type='primary' size='small' ghost>
+                <FormattedMessage id='app.home.more' />
               </Button>
             </Link>
           </div>
