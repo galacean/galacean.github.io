@@ -73,23 +73,20 @@ export class ControlScript extends Script {
 
   onUpdate(deltaTime: number): void {
     const { inputManager } = this.engine;
+    const { pointers } = inputManager;
     // single select.
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const { pointerPosition } = inputManager;
-      if (pointerPosition) {
-        this._framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
-          this._singleSelectHandler(result);
-        });
-      }
+    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+      const { position } = pointers[0];
+      this._framebufferPicker.pick(position.x, position.y).then((result) => {
+        this._singleSelectHandler(result);
+      });
     }
     // multi select
-    if (inputManager.isPointerDown(PointerButton.Secondary)) {
-      const { pointerPosition } = inputManager;
-      if (pointerPosition) {
-        this._framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((result) => {
-          this._multiSelectHandler(result);
-        });
-      }
+    if (pointers && inputManager.isPointerDown(PointerButton.Secondary)) {
+      const { position } = pointers[0];
+      this._framebufferPicker.pick(position.x, position.y).then((result) => {
+        this._multiSelectHandler(result);
+      });
     }
   }
 
