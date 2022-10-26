@@ -8,17 +8,17 @@ import {
   ReadOutlined,
   TwitterOutlined,
   YuqueOutlined,
-  ZhihuOutlined
+  ZhihuOutlined,
 } from '@ant-design/icons';
-import { Button, Col, Input, Menu, Popover, Row, Select, Tabs } from 'antd';
-import * as _ from 'lodash';
-import { useContext, useState } from 'react';
+import { Button, Col, Menu, Popover, Row, Select } from 'antd';
+import { useContext } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Media from 'react-media';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
 import { AppContext } from '../contextProvider';
-import { APISearchResponse, DocSearchResponse, searchAPI, searchDoc } from './headerUtils';
+import SearchBox from './components/SearchBox';
+
 import './index.less';
 
 const { serverAddress, versions } = config;
@@ -30,50 +30,10 @@ const { Option } = Select;
 
 const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
 
-const debouncedFetchSearchResult = _.debounce(
-  async (key: string, version: string, lang: string) => {
-    const res = await Promise.all([
-      searchDoc({
-        version,
-        title: key,
-        content: key,
-        pageSize: '10',
-        pageNo: '0',
-        lang,
-      }),
-      searchAPI({ version, key, pageSize: '10', pageNo: '0' }),
-    ]);
-    return { doc: res[0], api: res[1] };
-  },
-  1000,
-  { leading: false, trailing: true }
-);
-const debouncedLeadingFetchSearchResult = _.debounce(
-  async (key: string, version: string, lang: string) => {
-    const res = await Promise.all([
-      searchDoc({
-        version,
-        title: key,
-        content: key,
-        pageSize: '10',
-        pageNo: '0',
-        lang,
-      }),
-      searchAPI({ version, key, pageSize: '10', pageNo: '0' }),
-    ]);
-    return { doc: res[0], api: res[1] };
-  },
-  1000,
-  { leading: true, trailing: false }
-);
 function Header() {
-  const [searchData, setSearchData] = useState<{ doc: DocSearchResponse[]; api: APISearchResponse } | null>(
-    null
-  );
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
   const isZhCN = context.lang === 'zh-CN';
-  const navigate = useNavigate();
 
   const getMenu = (isMobile: boolean) => (
     <Menu mode={isMobile ? 'inline' : 'horizontal'} id='nav' key='nav'>
@@ -180,58 +140,6 @@ function Header() {
     </Menu>
   );
 
-  const searchResultTab = (
-    <>
-      <Tabs
-        defaultActiveKey={searchData?.doc ? '1' : '2'}
-        onChange={() => {}}
-        items={[
-          {
-            label: `Docs`,
-            key: '1',
-            children: (
-              <>
-                {searchData?.doc &&
-                  searchData.doc.map((data) => {
-                    return (
-                      <p
-                        onClick={() => {
-                          console.log(data);
-                          navigate(`/docs/${context.lang}/${data.filename.slice(0, -3)}`);
-                        }}
-                      >
-                        {data.title}
-                      </p>
-                    );
-                  })}
-              </>
-            ),
-          },
-          {
-            label: `API`,
-            key: '2',
-            children: (
-              <>
-                {searchData?.api?.list?.map((data) => {
-                  return (
-                    <>
-                      <h6>{data.name}</h6>
-                      <ul>
-                        {data?.children?.map((child) => {
-                          return <li key={child.id}>{child.name}</li>;
-                        })}
-                      </ul>
-                    </>
-                  );
-                })}
-              </>
-            ),
-          },
-        ]}
-      />
-    </>
-  );
-
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
@@ -254,50 +162,7 @@ function Header() {
               </Link>
             </Col>
             <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
-              {!isMobile && (
-                <div id='search-box'>
-                  <div id='search-box'>
-                    <Input.Search
-                      placeholder='search docs/APIs'
-                      allowClear
-                      size='small'
-                      onChange={async (e) => {
-                        console.log(e.target.value);
-                        if (!e.target.value) {
-                          setSearchData(null);
-                          return;
-                        }
-                        const res = await debouncedFetchSearchResult(
-                          e.target.value,
-                          context.version,
-                          context.lang
-                        );
-                        console.log(res);
-                        res &&
-                          setSearchData((data) => {
-                            return { ...data, doc: res.doc, api: res.api };
-                          });
-                      }}
-                      onSearch={async (e) => {
-                        console.log(e);
-                        if (!e) {
-                          setSearchData(null);
-                          return;
-                        }
-                        const res = await debouncedLeadingFetchSearchResult(e, context.version, context.lang);
-                        setSearchData((data) => {
-                          return { ...data, doc: res.doc, api: res.api };
-                        });
-                      }}
-                    />
-                    {searchData?.doc || searchData?.api ? (
-                      <>
-                        <div id='header-search-result'>{searchResultTab}</div>
-                      </>
-                    ) : null}
-                  </div>
-                </div>
-              )}
+              {!isMobile && <SearchBox></SearchBox>}
               <div className='header-meta'>
                 {!isMobile && (
                   <div className='right-header'>

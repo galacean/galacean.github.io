@@ -30,7 +30,7 @@ export interface APISearchResponse {
   pageNo: number;
   pageSize: number;
 }
-export interface DocSearchResponse {
+export interface MatchedDocs {
   /**
    * [文件名]
    */
@@ -96,6 +96,18 @@ export interface DocSearchResponse {
    */
   gmtModified: string;
 }
+export interface DocSearchResponse {
+  /**
+   * [符合查询条件的总记录数]
+   */
+  total: number;
+  list: MatchedDocs[];
+  /**
+   * [页码, 下标从0开始]
+   */
+  pageNo: number;
+  pageSize: number;
+}
 export async function searchAPI(opts: APISearchOptions): Promise<APISearchResponse> {
   return await fetch(`http://${serverAddress}/api2/doc/apis/search?` + new URLSearchParams({ ...opts }), {
     credentials: 'include',
@@ -114,7 +126,7 @@ export async function searchAPI(opts: APISearchOptions): Promise<APISearchRespon
     });
 }
 
-export async function searchDoc(opts: DocSearchOptions): Promise<DocSearchResponse[]> {
+export async function searchDoc(opts: DocSearchOptions): Promise<DocSearchResponse> {
   return await fetch(`http://${serverAddress}/api2/doc/search?` + new URLSearchParams({ ...opts }), {
     credentials: 'include',
     mode: 'cors',
@@ -123,9 +135,9 @@ export async function searchDoc(opts: DocSearchOptions): Promise<DocSearchRespon
     },
   })
     .then((res) => res.json())
-    .then((res: { data: DocSearchResponse[]; success: any }) => {
+    .then((res: { data: DocSearchResponse; success: any }) => {
       if (res?.success) {
-        return res.data.filter((data) => data.type === 'markdown');
+        return res.data;
       } else {
         throw new Error('');
       }
