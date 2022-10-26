@@ -50,7 +50,7 @@ const SearchBox = () => {
       <>
         {searchText ? (
           <div id='header-search-result'>
-            <SearchResult {...{ searchText }}></SearchResult>
+            <SearchResult {...{ searchText,setLoadingSearchResult }}></SearchResult>
           </div>
         ) : null}
       </>
