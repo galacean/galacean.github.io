@@ -25,11 +25,9 @@ const SearchResult = (props: ISearchResProps) => {
   const pageNoRef = useRef(0);
   const hasMoreRef = useRef(true);
   const isLoadingRef = useRef(false);
-  console.log(props.searchText);
 
   const onloadMore = (pageNo: number) => {
     pageNoRef.current = Math.max(pageNo, pageNoRef.current);
-    console.log('requesting: ', pageNo - 1);
 
     if (isLoadingRef.current) {
       return;
@@ -43,12 +41,10 @@ const SearchResult = (props: ISearchResProps) => {
       pageNo: (pageNo - 1).toString(),
       lang: context.lang,
     }).then(({ list, pageNo, total }) => {
-      console.log('load more res: ', list);
       if (total === 0 || list.length === 0) {
         hasMoreRef.current = false;
       }
       isLoadingRef.current = false;
-      console.log('has more res: ', hasMoreRef.current);
       setSearchData((prev) => {
         const newDocData = prev.doc ? [...prev?.doc, ...list].sort() : [...list];
         return { doc: newDocData, api: prev?.api };
@@ -75,7 +71,6 @@ const SearchResult = (props: ISearchResProps) => {
           key={data.id}
           style={{ cursor: 'pointer' }}
           onClick={() => {
-            console.log(data);
             navigate(`/docs/${context.lang}/${data.filename.slice(0, -3)}`);
           }}
         >
