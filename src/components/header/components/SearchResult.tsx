@@ -1,4 +1,4 @@
-import { Divider, Tabs } from 'antd';
+import { Divider, Spin, Tabs } from 'antd';
 import { useContext, useEffect, useRef, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { useIntl } from 'react-intl';
@@ -10,6 +10,7 @@ import { APISearchResponse, MatchedDocs, searchDoc } from '../headerUtils';
 
 interface ISearchResProps {
   searchText: string;
+  setLoadingSearchResult: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const PAGE_SIZE = '10';
 
@@ -26,13 +27,18 @@ const SearchResult = (props: ISearchResProps) => {
   const hasMoreRef = useRef(true);
   const isLoadingRef = useRef(false);
 
+  const setLoadingStatus = (loading: boolean) => {
+    props.setLoadingSearchResult(loading);
+    isLoadingRef.current = loading;
+  };
+
   const onloadMore = (pageNo: number) => {
     pageNoRef.current = Math.max(pageNo, pageNoRef.current);
 
     if (isLoadingRef.current) {
       return;
     }
-    isLoadingRef.current = true;
+    setLoadingStatus(true);
     searchDoc({
       version: context.version,
       title: props.searchText,
@@ -44,9 +50,9 @@ const SearchResult = (props: ISearchResProps) => {
       if (total === 0 || list.length === 0) {
         hasMoreRef.current = false;
       }
-      isLoadingRef.current = false;
+      setLoadingStatus(false);
       setSearchData((prev) => {
-        const newDocData = prev.doc ? [...prev?.doc, ...list].sort() : [...list];
+        const newDocData = prev.doc ? [...prev?.doc, ...list] : [...list];
         return { doc: newDocData, api: prev?.api };
       });
     });
@@ -71,7 +77,11 @@ const SearchResult = (props: ISearchResProps) => {
           key={data.id}
           style={{ cursor: 'pointer' }}
           onClick={() => {
-            navigate(`/docs/${context.lang}/${data.filename.slice(0, -3)}`);
+            navigate(
+              type === 'ts'
+                ? `/examples/${data.filename.slice(0, -3)}`
+                : `/docs/${context.lang}/${data.filename.slice(0, -3)}`
+            );
           }}
         >
           {data.title}
@@ -101,7 +111,7 @@ const SearchResult = (props: ISearchResProps) => {
                   pageStart={0}
                   loadMore={onloadMore}
                   hasMore={hasMoreRef.current}
-                  loader={<Loading></Loading>}
+                  loader={<Spin size='small' />}
                 >
                   {getdocList('markdown')}
                 </InfiniteScroll>
@@ -119,7 +129,7 @@ const SearchResult = (props: ISearchResProps) => {
                   pageStart={0}
                   loadMore={onloadMore}
                   hasMore={hasMoreRef.current}
-                  loader={<Loading></Loading>}
+                  loader={<Spin size='small' />}
                 >
                   {getdocList('ts')}
                 </InfiniteScroll>

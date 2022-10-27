@@ -4,7 +4,6 @@ title: Ambient Light
 label: Graphics/Light
 ---
 
-**test by sway update**
 
 **Ambient light** has been built into [Scene](${api}core/Scene), providing solid color mode and texture mode for **diffuse**.
 
