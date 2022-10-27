@@ -1,4 +1,4 @@
-import { Divider, Tabs } from 'antd';
+import { Divider, Spin, Tabs } from 'antd';
 import { useContext, useEffect, useRef, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { useIntl } from 'react-intl';
@@ -52,7 +52,7 @@ const SearchResult = (props: ISearchResProps) => {
       }
       setLoadingStatus(false);
       setSearchData((prev) => {
-        const newDocData = prev.doc ? [...prev?.doc, ...list].sort() : [...list];
+        const newDocData = prev.doc ? [...prev?.doc, ...list] : [...list];
         return { doc: newDocData, api: prev?.api };
       });
     });
@@ -111,7 +111,7 @@ const SearchResult = (props: ISearchResProps) => {
                   pageStart={0}
                   loadMore={onloadMore}
                   hasMore={hasMoreRef.current}
-                  loader={<Loading></Loading>}
+                  loader={<Spin size='small' />}
                 >
                   {getdocList('markdown')}
                 </InfiniteScroll>
@@ -129,7 +129,7 @@ const SearchResult = (props: ISearchResProps) => {
                   pageStart={0}
                   loadMore={onloadMore}
                   hasMore={hasMoreRef.current}
-                  loader={<Loading></Loading>}
+                  loader={<Spin size='small' />}
                 >
                   {getdocList('ts')}
                 </InfiniteScroll>
