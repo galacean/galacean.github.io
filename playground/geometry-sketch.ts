@@ -108,8 +108,6 @@ export class SketchSelection extends Script {
                                 sketch.skin = null;
                                 sketch.shaderData.disableMacro("O3_HAS_SKIN");
                                 if (renderer instanceof SkinnedMeshRenderer) {
-                                    // @ts-ignore
-                                    sketch._hasInitJoints = false;
                                     sketch.skin = renderer.skin;
                                 }
                             } else {
