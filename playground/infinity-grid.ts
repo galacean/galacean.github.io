@@ -9,7 +9,7 @@ import {
     WebGLEngine,
     Vector3,
 } from "oasis-engine";
-import {OrbitControl, GridControl} from "oasis-engine-toolkit";
+import { OrbitControl, GridControl } from "oasis-engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
