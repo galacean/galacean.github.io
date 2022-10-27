@@ -81,7 +81,7 @@
   },
   {
     "uuid": "markdown-Texture",
-    "name": "Graphics",
+    "name": "Texture",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -110,6 +110,14 @@
     "weight": 4,
     "tag": "markdown",
     "cn_name": "动画"
+  },
+  {
+    "uuid": "markdown-Animator Component",
+    "name": "Animator Component",
+    "parent_uuid": "markdown-Animation",
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "Animator Component"
   },
   {
     "uuid": "markdown-Physics",
