@@ -103,9 +103,9 @@ engine.resourceManager
     // curve can be reused
     colorClip.addCurveBinding('', Transform, "rotation", rotateCurve)
 
-
     lightAnimator.play('colorAnim', 0)
     animator.play("rotate", 0);
+
     initDatGUI(animator, animations);
   });
 
