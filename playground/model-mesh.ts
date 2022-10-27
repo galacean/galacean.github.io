@@ -62,7 +62,7 @@ function createPlane(engine: Engine, entity: Entity): void {
       planeEntity.addComponent(PlaneAnimation);
 
       const { shaderData } = material;
-      shaderData.setTexture("u_baseColor", texture);
+      shaderData.setTexture("u_baseTexture", texture);
       shaderData.setColor("u_fogColor", new Color(0.25, 0.25, 0.25, 1));
       shaderData.setFloat("u_fogDensity", 0.004);
       shaderData.setColor("u_color", new Color(86 / 255, 182 / 255, 194 / 255, 1));
@@ -135,7 +135,7 @@ const shader = Shader.create(
     }`,
 
   `
-    uniform sampler2D u_baseColor;
+    uniform sampler2D u_baseTexture;
     uniform vec4 u_color;
     uniform vec4 u_fogColor;
     uniform float u_fogDensity;
@@ -149,7 +149,7 @@ const shader = Shader.create(
     }
     
     void main() {
-      vec4 color = texture2D(u_baseColor, v_uv) * u_color;
+      vec4 color = texture2D(u_baseTexture, v_uv) * u_color;
       float fogDistance = length(v_position);
       float fogAmount = 1. - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
       fogAmount = clamp(fogAmount, 0., 1.);

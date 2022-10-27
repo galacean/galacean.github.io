@@ -33,13 +33,6 @@ cameraNode.transform.position = new Vector3(0, 0, 3);
 cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
 
-// Create sky
-const sky = scene.background.sky;
-const skyMaterial = new SkyBoxMaterial(engine);
-scene.background.mode = BackgroundMode.Sky;
-sky.material = skyMaterial;
-sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
-
 const lightEntity = rootEntity.createChild();
 lightEntity.addComponent(DirectLight).intensity = 0.5;
 lightEntity.transform.setPosition(-5, 5, 5);

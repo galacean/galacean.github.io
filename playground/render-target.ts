@@ -64,34 +64,6 @@ background.mode = BackgroundMode.Sky;
 sky.material = skyMaterial;
 sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
-engine.resourceManager
-  .load<TextureCube>({
-    urls: [
-      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*Gi7CTZqKuacAAAAAAAAAAABkARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*iRRMQIExwKMAAAAAAAAAAABkARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ZIcPQZo20sAAAAAAAAAAAABkARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*SPYuTbHT-KgAAAAAAAAAAABkARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*mGUERbY77roAAAAAAAAAAABkARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ilkPS7A1_JsAAAAAAAAAAABkARQnAQ"
-    ],
-    type: AssetType.TextureCube
-  })
-  .then((cubeMap) => {
-    scene.ambientLight.specularTexture = cubeMap;
-    skyMaterial.textureCubeMap = cubeMap;
-  });
-
-// Load glTF
-engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/8cc524dd-2481-438d-8374-3c933adea3b6.gltf")
-  .then((gltf) => {
-    const { animations, defaultSceneRoot } = gltf;
-
-    rootEntity.addChild(defaultSceneRoot);
-    const animator = defaultSceneRoot.getComponent(Animator);
-    animator.play(animations[0].name);
-  });
-
 // Add script to switch `camera.renderTarget`
 class switchRTScript extends Script {
   renderColorTexture = new Texture2D(engine, 1024, 1024);
@@ -113,4 +85,31 @@ class switchRTScript extends Script {
 
 cameraEntity.addComponent(switchRTScript);
 
-engine.run();
+engine.resourceManager
+    .load<TextureCube>({
+      urls: [
+        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*Gi7CTZqKuacAAAAAAAAAAABkARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*iRRMQIExwKMAAAAAAAAAAABkARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ZIcPQZo20sAAAAAAAAAAAABkARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*SPYuTbHT-KgAAAAAAAAAAABkARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*mGUERbY77roAAAAAAAAAAABkARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ilkPS7A1_JsAAAAAAAAAAABkARQnAQ"
+      ],
+      type: AssetType.TextureCube
+    })
+    .then((cubeMap) => {
+      // Load glTF
+      engine.resourceManager
+          .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/8cc524dd-2481-438d-8374-3c933adea3b6.gltf")
+          .then((gltf) => {
+            const { animations, defaultSceneRoot } = gltf;
+
+            rootEntity.addChild(defaultSceneRoot);
+            const animator = defaultSceneRoot.getComponent(Animator);
+            animator.play(animations[0].name);
+          });
+
+      scene.ambientLight.specularTexture = cubeMap;
+      skyMaterial.textureCubeMap = cubeMap;
+      engine.run();
+    });
