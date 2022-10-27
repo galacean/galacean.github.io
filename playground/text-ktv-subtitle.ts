@@ -69,7 +69,7 @@ function createText(text: string, posX: number, posY: number): Entity {
   // Set font size
   renderer.fontSize = 48;
   // Set font with font family
-  renderer.font = Font.createFromOS(textEntity.engine);
+  renderer.font = Font.createFromOS(textEntity.engine, "Arial");
   // Set text to display
   renderer.text = text;
   // Set position

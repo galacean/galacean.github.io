@@ -4,7 +4,6 @@
  */
 import { Camera, Color, Engine, Font, Script, TextHorizontalAlignment, TextRenderer, WebGLEngine } from "oasis-engine";
 import { Stats } from "@oasis-engine-toolkit/stats";
-Engine.registerFeature(Stats);
 
 class TextBarrageAnimation extends Script {
   // prettier-ignore
@@ -85,6 +84,7 @@ const cameraEntity = rootEntity.createChild("camera_entity");
 const camera = cameraEntity.addComponent(Camera);
 cameraEntity.transform.setPosition(0, 0, 10);
 camera.isOrthographic = true;
+cameraEntity.addComponent(Stats);
 
 // Create text barrage.
 const textCount = 50;

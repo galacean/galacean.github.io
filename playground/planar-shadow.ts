@@ -28,7 +28,6 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
-scene.background.solidColor = new Color(0.9, 0.2, 0.2, 1.0);
 
 const cameraEntity = rootEntity.createChild("camera_node");
 cameraEntity.transform.setPosition(0, 1, 5);
