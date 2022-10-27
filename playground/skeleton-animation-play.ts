@@ -28,25 +28,29 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 engine.resourceManager
   .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
   .then((gltfResource) => {
-    const { animations, defaultSceneRoot } = gltfResource;
+    const { animations = [], defaultSceneRoot } = gltfResource;
     rootEntity.addChild(defaultSceneRoot);
     const animator = defaultSceneRoot.getComponent(Animator);
-    const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
+    animator.play('agree');
 
-    animator.play(animationNames[0]);
-
-    const debugInfo = {
-      animation: animationNames[0],
-      speed: 1
-    };
-
-    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
-      animator.play(v);
-    });
-
-    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
-      animator.speed = v;
-    });
+    initDatGUI(animator, animations);
   });
 
 engine.run();
+
+
+const initDatGUI = (animator, animations) => {
+  const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
+  const debugInfo = {
+    animation: animationNames[0],
+    speed: 1
+  };
+
+  gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+    animator.play(v);
+  });
+
+  gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+    animator.speed = v;
+  });
+}
