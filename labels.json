@@ -81,7 +81,7 @@
   },
   {
     "uuid": "markdown-Texture",
-    "name": "Graphics",
+    "name": "Texture",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "markdown",
@@ -104,12 +104,28 @@
     "cn_name": "2D"
   },
   {
+    "uuid": "markdown-Mask",
+    "name": "Mask",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 4,
+    "tag": "markdown",
+    "cn_name": "Mask"
+  },
+  {
     "uuid": "markdown-Animation",
     "name": "Animation",
     "parent_uuid": null,
     "weight": 4,
     "tag": "markdown",
     "cn_name": "动画"
+  },
+  {
+    "uuid": "markdown-Animator Component",
+    "name": "Animator Component",
+    "parent_uuid": "markdown-Animation",
+    "weight": 1,
+    "tag": "markdown",
+    "cn_name": "Animator Component"
   },
   {
     "uuid": "markdown-Physics",
@@ -152,8 +168,8 @@
     "cn_name": "工具库"
   },
   {
-    "uuid": "markdown-Adaption",
-    "name": "Adaption",
+    "uuid": "markdown-Adaptation",
+    "name": "Adaptation",
     "parent_uuid": null,
     "weight": 11,
     "tag": "markdown",
