@@ -14,22 +14,18 @@ export interface PkgChildDetail {
   kindString: string;
   flags: any;
   type: any;
-  groups: [
-    {
-      title: string;
-      children: [number];
-    }
-  ];
-  sources: [
-    {
-      fileName: string;
-      line: number;
-      character: number;
-      url: string;
-    }
-  ];
+  groups: {
+    title: string;
+    children: number[];
+  }[];
+  sources: {
+    fileName: string;
+    line: number;
+    character: number;
+    url: string;
+  }[];
   children?: Array<PkgChildDetail>;
-  comment?: any;
+  comment?: { summary: Array<{ kind: string; text: string }> };
   extendedTypes?: any;
   signatures: any;
   getSignature: any;

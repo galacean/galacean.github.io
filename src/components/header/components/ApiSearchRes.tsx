@@ -1,18 +1,70 @@
-import { Divider, Spin } from 'antd';
+import { Button, Divider, List, Space, Spin } from 'antd';
+import * as _ from 'lodash';
 import { useContext, useRef, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
-import { useIntl } from 'react-intl';
+import { FormattedMessage, useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
 import { PkgChildDetail } from '../../Api/util/apiUtil';
 import { AppContext } from '../../contextProvider';
+import Source from '../../doc/components/Source';
 import { searchAPI } from '../headerUtils';
-import * as _ from 'lodash';
 
 const PAGE_SIZE = '10';
 interface IApiSearchResProps {
   searchText: string;
   setLoadingSearchResult: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+const ResultList = (props: { dataSource: PkgChildDetail[]; type: string }) => {
+  const { type, dataSource } = props;
+  const [pageSize, setPageSize] = useState(5);
+
+  const onLoadMore = () => {
+    setPageSize((prev) => 2 * prev);
+  };
+  const loadMore =
+    pageSize < dataSource.length ? (
+      <div
+        style={{
+          textAlign: 'center',
+          marginTop: 12,
+          height: 32,
+          lineHeight: '32px',
+        }}
+      >
+        <Button onClick={onLoadMore}>
+          <FormattedMessage id='app.header.search.more'></FormattedMessage>
+        </Button>
+      </div>
+    ) : null;
+  return (
+    <div key={type}>
+      <Divider orientation='left'>{type}</Divider>
+      <List
+        itemLayout='vertical'
+        dataSource={dataSource.slice(0, pageSize)}
+        loadMore={loadMore}
+        renderItem={(item) => (
+          <List.Item>
+            <List.Item.Meta
+              title={
+                <>
+                  <Space>
+                    <a href={item.sources[0].url} target='_blank'>
+                      {item.name}
+                    </a>
+                    <Source src={item.sources[0].url} />
+                  </Space>
+                </>
+              }
+              description={item.comment?.summary.map((item) => item.text).join()}
+            />
+          </List.Item>
+        )}
+      />
+    </div>
+  );
+};
 
 const ApiSearchRes = (props: IApiSearchResProps) => {
   const intl = useIntl();
@@ -61,39 +113,10 @@ const ApiSearchRes = (props: IApiSearchResProps) => {
     }
 
     const groupData = _.groupBy(searchData, (item) => item.kindString);
-    console.log(groupData);
 
     return Object.keys(groupData).map((type) => {
-      return (
-        <div key={type}>
-          <h2>{type}</h2>
-          {groupData[type].map((item) => {
-            return (
-              <>
-                <p>{item.name}</p>
-              </>
-            );
-          })}
-          <Divider></Divider>
-        </div>
-      );
+      return <ResultList dataSource={groupData[type]} type={type}></ResultList>;
     });
-
-    return searchData.map((data) => (
-      <div key={data.id}>
-        <span
-          style={{ cursor: 'pointer' }}
-          // onClick={() => {
-          //   navigate(`/docs/${context.lang}/${data.filename.slice(0, -3)}`);
-          // }}
-        >
-          {data.kindString}
-          <Divider type='vertical' />
-          {data.name}
-        </span>
-        <Divider />
-      </div>
-    ));
   };
 
   return (
