@@ -37,17 +37,22 @@ const ApiSearchRes = (props: IApiSearchResProps) => {
         key: props.searchText,
         pageSize: PAGE_SIZE,
         pageNo: apiPageNoRef.current.toString(),
-      }).then(({ list, pageNo, total }) => {
-        apiPageNoRef.current = pageNo + 1;
-        if (total === 0 || list.length === 0) {
-          hasMoreRef.current = false;
-          apiPageNoRef.current = 0;
-        }
-        setLoadingStatus(false);
-        setSearchData((prev) => {
-          return prev ? [...prev, ...list] : [...list];
+      })
+        .then(({ list, pageNo, total }) => {
+          apiPageNoRef.current = pageNo + 1;
+          if (total === 0 || list.length === 0) {
+            hasMoreRef.current = false;
+            apiPageNoRef.current = 0;
+          }
+          setLoadingStatus(false);
+          setSearchData((prev) => {
+            return prev ? [...prev, ...list] : [...list];
+          });
+        })
+        .catch(() => {
+          // on request error: retry
+          setLoadingStatus(false);
         });
-      });
     }
   };
   const getApiList = () => {

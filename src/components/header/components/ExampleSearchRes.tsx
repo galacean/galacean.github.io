@@ -38,17 +38,22 @@ const ExampleSearchRes = (props: IExampleSearchResProps) => {
         pageSize: PAGE_SIZE,
         pageNo: examplePageNoRef.current.toString(),
         lang: context.lang,
-      }).then(({ list, pageNo, total }) => {
-        examplePageNoRef.current = pageNo + 1;
-        if (total === 0 || list.length === 0) {
-          hasMoreExampleRef.current = false;
-          examplePageNoRef.current = 0;
-        }
-        setLoadingStatus(false);
-        setSearchData((prev) => {
-          return prev ? [...prev, ...list] : [...list];
+      })
+        .then(({ list, pageNo, total }) => {
+          examplePageNoRef.current = pageNo + 1;
+          if (total === 0 || list.length === 0) {
+            hasMoreExampleRef.current = false;
+            examplePageNoRef.current = 0;
+          }
+          setLoadingStatus(false);
+          setSearchData((prev) => {
+            return prev ? [...prev, ...list] : [...list];
+          });
+        })
+        .catch(() => {
+          // on request error: retry
+          setLoadingStatus(false);
         });
-      });
     }
   };
   const getdocList = () => {
