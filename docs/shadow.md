@@ -3,6 +3,7 @@ order: 5
 title: Shadow
 type: Graphics
 group: Light
+label: Graphics/Light
 ---
 
 Shadows can effectively enhance the three-dimensionality and realism of rendered images. In real-time rendering, the

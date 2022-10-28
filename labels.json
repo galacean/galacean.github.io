@@ -104,6 +104,14 @@
     "cn_name": "2D"
   },
   {
+    "uuid": "markdown-Mask",
+    "name": "Mask",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 4,
+    "tag": "markdown",
+    "cn_name": "Mask"
+  },
+  {
     "uuid": "markdown-Animation",
     "name": "Animation",
     "parent_uuid": null,
@@ -160,8 +168,8 @@
     "cn_name": "工具库"
   },
   {
-    "uuid": "markdown-Adaption",
-    "name": "Adaption",
+    "uuid": "markdown-Adaptation",
+    "name": "Adaptation",
     "parent_uuid": null,
     "weight": 11,
     "tag": "markdown",
