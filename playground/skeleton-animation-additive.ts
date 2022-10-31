@@ -15,7 +15,7 @@ import {
   Logger,
   SystemInfo,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 
@@ -41,9 +41,11 @@ lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
+  )
   .then((gltfResource) => {
-    const { animations, defaultSceneRoot } = gltfResource;
+    const { animations = [], defaultSceneRoot } = gltfResource;
     const animator = defaultSceneRoot.getComponent(Animator);
     const { animatorController } = animator;
 
@@ -53,45 +55,55 @@ engine.resourceManager
     additiveLayer.blendingMode = AnimatorLayerBlendingMode.Additive;
     animatorController.addLayer(additiveLayer);
 
-    const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
-    const animationNames2 = [];
+    const additivePoseNames = animations
+      .filter((clip) => clip.name.includes("pose"))
+      .map((clip) => clip.name);
 
-    if (animations) {
-      animations.forEach((clip: AnimationClip) => {
-        if (clip.name.includes("pose")) {
-          const animatorState2 = animatorStateMachine.addState(clip.name);
-          animatorState2.clip = clip;
-          animatorState2.clipStartTime = 1;
-          animationNames2.push(clip.name);
-        }
-      });
-    }
+    additivePoseNames.forEach((name) => {
+      const clip = animator.findAnimatorState(name).clip;
+      const newState = animatorStateMachine.addState(name);
+      newState.clipStartTime = 1;
+      newState.clip = clip;
+    });
+
     rootEntity.addChild(defaultSceneRoot);
-    animator.play(animationNames[0], 0);
-    animator.play(animationNames2[1], 1);
 
-    const debugInfo = {
-      animation: animationNames[0],
-      additive_pose: animationNames2[1],
-      additive_weight: 1,
-      speed: 1
-    };
+    animator.play("walk", 0);
+    animator.play("sad_pose", 1);
 
-    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
-      animator.play(v, 0);
-    });
-
-    gui.add(debugInfo, "additive_pose", animationNames2).onChange((v) => {
-      animator.play(v, 1);
-    });
-
-    gui.add(debugInfo, "additive_weight", 0, 1).onChange((v) => {
-      additiveLayer.weight = v;
-    });
-
-    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
-      animator.speed = v;
-    });
+    initDatGUI(animator, animations, additiveLayer);
   });
 
 engine.run();
+
+const initDatGUI = (animator, animations, additiveLayer) => {
+  const animationNames = animations
+    .filter((clip) => !clip.name.includes("pose"))
+    .map((clip) => clip.name);
+  const additivePoseNames = animations
+    .filter((clip) => clip.name.includes("pose"))
+    .map((clip) => clip.name);
+
+  const debugInfo = {
+    animation: animationNames[4],
+    additive_pose: additivePoseNames[0],
+    additive_weight: 1,
+    speed: 1,
+  };
+
+  gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+    animator.play(v, 0);
+  });
+
+  gui.add(debugInfo, "additive_pose", additivePoseNames).onChange((v) => {
+    animator.play(v, 1);
+  });
+
+  gui.add(debugInfo, "additive_weight", 0, 1).onChange((v) => {
+    additiveLayer.weight = v;
+  });
+
+  gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+    animator.speed = v;
+  });
+};
