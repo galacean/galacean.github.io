@@ -38,6 +38,7 @@ function Parameter(props: IParameter) {
 
 function GetSignature(props: ISignature) {
   const { type } = props;
+  if (!type) return null;
 
   return (
     <div className='tsd-signature'>
