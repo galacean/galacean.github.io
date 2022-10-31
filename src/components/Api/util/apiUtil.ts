@@ -1,6 +1,4 @@
-import config from '../../../siteconfig.json';
-
-const { serverAddress, versions } = config;
+const serverAddress = (import.meta as any).env.VITE_SERVER_ADDRESS;
 
 export interface PkgChild {
   id: number;

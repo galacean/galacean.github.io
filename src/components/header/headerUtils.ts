@@ -1,7 +1,5 @@
-import config from '../../siteconfig.json';
-
 import { PkgChildDetail } from '../Api/util/apiUtil';
-const { serverAddress, versions } = config;
+const serverAddress = (import.meta as any).env.VITE_SERVER_ADDRESS;
 
 interface APISearchOptions {
   key: string;
