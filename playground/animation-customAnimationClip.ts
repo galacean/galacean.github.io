@@ -71,7 +71,7 @@ engine.resourceManager
     rotateCurve.addKey(key1);
     rotateCurve.addKey(key2);
     rotateClip.addCurveBinding('', Transform, "rotation", rotateCurve)
-
+                           
 
     //custom light animation
     const lightAnimator = lightNode.addComponent(Animator);
