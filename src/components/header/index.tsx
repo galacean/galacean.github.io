@@ -21,7 +21,7 @@ import SearchBox from './components/SearchBox';
 
 import './index.less';
 
-const { versions } = config;
+const { serverAddress, versions } = config;
 
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
