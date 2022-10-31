@@ -81,3 +81,28 @@ export function ping(callback: (arg0: any) => void) {
   img.src = url;
   return setTimeout(() => finish('timeout'), 1500);
 }
+
+export enum Env {
+  local = 'local',
+  dev = 'dev',
+  test = 'test',
+  pre = 'pre',
+  prod = 'prod',
+}
+
+export function getEnv() {
+  const host = window.location.host;
+  if (host.indexOf('local.alipay.net') > -1 || host.indexOf('localhost') > -1) {
+    return Env.local;
+  }
+
+  if (/dev.*alipay/.test(host)) {
+    return Env.dev;
+  }
+
+  if (/pre/.test(host)) {
+    return Env.pre;
+  }
+
+  return Env.prod;
+}

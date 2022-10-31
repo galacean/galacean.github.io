@@ -1,8 +1,10 @@
 import config from '../../siteconfig.json';
+import { getEnv } from '../../utils';
 
 import { PkgChildDetail } from '../Api/util/apiUtil';
-const { serverAddress, versions } = config;
 
+const { serverConfig } = config;
+const serverAddress = serverConfig[getEnv() as keyof typeof serverConfig];
 interface APISearchOptions {
   key: string;
   version: string;

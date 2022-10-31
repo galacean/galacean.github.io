@@ -1,6 +1,8 @@
 import config from '../../../siteconfig.json';
+import { getEnv } from '../../../utils';
 
-const { serverAddress, versions } = config;
+const { serverConfig } = config;
+const serverAddress = serverConfig[getEnv() as keyof typeof serverConfig];
 
 export interface DocData {
   /**
