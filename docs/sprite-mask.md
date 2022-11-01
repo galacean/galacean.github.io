@@ -3,7 +3,7 @@ order: 4
 title: SpriteMask
 type: Graphics
 group: 2D
-label: Graphics/mask
+label: Graphics/Mask
 ---
 
 [SpriteMask](${api}core/SpriteMask) used to realize the masking effect on the sprites in the 3D/2D scene.

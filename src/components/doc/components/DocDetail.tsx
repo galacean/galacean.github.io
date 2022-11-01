@@ -13,12 +13,12 @@ import playgroundPlugin from '../plugins/playground';
 
 import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
+import { Link, useParams } from 'react-router-dom';
+import { AppContext } from '../../contextProvider';
 import { tsMenuListRes } from '../../Examples/index';
 import { DocData, fetchDocDataById } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
-import { Link, useParams } from 'react-router-dom';
-import { AppContext } from '../../contextProvider';
 
 interface DocDetailProps {
   selectedDocId: string;
@@ -31,6 +31,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   const { docTitle } = useParams();
   const [docData, setDocData] = useState<DocData | null>(null);
   const idTitleMapRef = useRef<Map<string, string>>(new Map());
+
   const getIdByTitle = (title: string) => {
     for (const [key, value] of idTitleMapRef.current.entries()) {
       if (value === title) {
@@ -96,20 +97,29 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             const linkHref = param.href;
             const title = param.children[0];
 
+            // for links within the SPA: need to use <Link /> to properly handle routing.
             if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
-              return <Link to={`/docs/${lang}/${linkHref.replace('/#/docs/', '')}`}>{title}</Link>;
+              return (
+                <Link
+                  to={`/docs/${lang}/${linkHref.replace('/#/docs/', '')}${
+                    lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''
+                  }`}
+                >
+                  {title}
+                </Link>
+              );
             } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/examples/')) {
               return <Link to={`${linkHref.replace('/#', '')}`}>{title}</Link>;
             } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/api/')) {
               return <Link to={`${linkHref.replace('/#', '')}`}>{title}</Link>;
             }
+            // for links to other websites: use <a />
             return (
               <a href={linkHref as string} target='_blank'>
                 {title}
               </a>
             );
           },
-          ol: 'ul',
           //@ts-ignore
           nav: DocToc,
           blockquote({ className, src }: any) {

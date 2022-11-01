@@ -106,6 +106,20 @@ export default function Examples() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedExampleId, items.length]);
 
+  // update selected items when url changes
+  useEffect(() => {
+    if (!exampleTitle) {
+      return;
+    }
+    for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
+      if (value === exampleTitle) {
+        setSelectedExampleId(key);
+        break;
+      }
+    }
+
+  }, [exampleTitle]);
+
   // filter items
   useEffect(() => {
     const filtered: Array<ItemType> = [];
