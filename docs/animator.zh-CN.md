@@ -29,6 +29,24 @@ engine.resourceManager
 animator.speed = 2.0；
 ```
 
+### 暂停/恢复播放
+
+你可以通过设置 Animator 的 [enabled](${api}core/Animator#enabled) 来控制动画的暂停和播放.
+
+```typescript
+// 暂停
+animator.enabled = false;
+// 恢复
+animator.enabled = false;
+```
+
+如果你只想针对某一个动画状态进行暂停，可以通过将它的速度设置为0来实现。
+
+```typescript
+const state = animator.findAnimatorState('xxx');
+state.speed = 0;
+```
+
 ### 设置动画数据
 
 你可以通过 [animatorController](${api}core/Animator#animatorController)  属性来设置动画控制器的动画数据，加载完成的GLTF模型会自动添加一个默认的AnimatorController。
@@ -71,10 +89,10 @@ currentState.wrapMode = WrapMode.Loop;
 
 ### 获取动画状态
 
-你可以通过如下方式获取指定的动画状态, 参考[API文档](${api}core/Animator#animatorController)
+你可以使用 [findAnimatorState](${api}core/Animator#findAnimatorState) 方法来获取指定名称的AnimatorState。详见[API文档](${api}core/Animator#getCurrentAnimatorState)。获取之后可以设置动画状态的属性，比如将默认的循环播放改为一次。
 
 ```typescript
-const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+const state = animator.findAnimatorState('xxx');
 // 播放一次
 state.wrapMode = WrapMode.Once;
 // 循环播放
@@ -100,6 +118,47 @@ event.functionName = "test";
 event.time = 0.5;
 clip.addEvent(event);
 ```
+
+### 自定义动画片段
+
+<playground src="animation-customAnimationClip.ts"></playground>
+
+你可以自己创建一个 [AnimationClip](${api}core/AnimationClip) 并通过 [addCurveBinding](${api}core/AnimationClip#addCurveBinding) 为它绑定 [AnimationCurve](${api}core/AnimationCurve)。
+
+```typescript
+//custom rotate clip
+const rotateClip = new AnimationClip('rotate');
+const rotateState = animator.animatorController.layers[0].stateMachine.addState('rotate');
+rotateState.clip = rotateClip;
+
+const rotateCurve = new AnimationVector3Curve();
+const key1 = new Keyframe<Vector3>();
+key1.time = 0;
+key1.value = new Vector3(0,0,0);
+const key2 = new Keyframe<Vector3>();
+key2.time = 10;
+key2.value = new Vector3(0,360,0);
+rotateCurve.addKey(key1);
+rotateCurve.addKey(key2);
+rotateClip.addCurveBinding('', Transform, "rotation", rotateCurve);
+
+//custom color clip
+const colorClip = new AnimationClip('color');
+const colorState = animator.animatorController.layers[0].stateMachine.addState('color');
+colorState.clip = colorClip;
+
+const colorCurve = new AnimationFloatCurve();
+const key1 = new Keyframe<number>();
+key1.time = 0;
+key1.value = 0;
+const key2 = new Keyframe<number>();
+key2.time = 10;
+key2.value = 1;
+colorCurve.addKey(key1);
+colorCurve.addKey(key2);
+colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
+```
+注：就像上面的第二个例子，你同样可以为你的子实体 `/light` 绑定 AnimationCurve，同时 `addCurveBinding` 的第三个参数并不局限于组件的属性，它是一个能索引到值的路径。
 
 ## 使用动画状态机控制动画
 
@@ -173,7 +232,18 @@ animator.play("walk");
 
 动画叠加是通过AnimatorControllerLayer间的混合达到的效果。第一层是基础动画层，修改它的权重及混合模式将不会生效。将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，Oasis引擎支持多层的动画叠加。
 
-### 状态机脚本
+### 默认播放
+
+你可以通过设置AnimatorStateMachine的[defaultState](${api}core/AnimatorStateMachine#defaultState) 来设置所在层的默认播放动画，这样当Animator `enabled=true` 时你不需要调用 `play` 方法即可默认播放。
+
+```typescript
+const layers = animator.animatorController.layers;
+layers[0].stateMachine.defaultState = animator.findAnimatorState('walk');
+layers[1].stateMachine.defaultState = animator.findAnimatorState('sad_pose');
+layers[1].blendingMode = AnimatorLayerBlendingMode.Additive;
+```
+
+### 状态机脚本(动画状态的开始/更新/结束)
 
 <playground src="animation-stateMachineScript.ts"></playground>
 
@@ -206,3 +276,30 @@ class theScript extends StateMachineScript {
 animatorState.addStateMachineScript(theScript)
 ```
 
+如果你的脚本不用复用的话你也可以这么写:
+
+```typescript
+state.addStateMachineScript(
+  class extends StateMachineScript {
+    onStateEnter(
+      animator: Animator,
+      animatorState: AnimatorState,
+      layerIndex: number
+    ): void {
+      console.log("onStateEnter: ", animatorState);
+    }
+  }
+);
+```
+
+### 动画数据复用
+有的时候模型的动画数据存储在其他模型中，可以用如下的方式引入使用：
+
+<playground src="skeleton-animation-reuse.ts"></playground>
+
+除此以外还有一种方式，Animator的 [AnimatorController](${api}core/AnimatorController) 就是一个数据存储的类，它不会包含运行时的数据，基于这种设计只要绑定Animator组件的模型的**骨骼节点的层级结构和命名相同**，我们就可以对动画数据进行复用。
+
+```typescript
+const animator = model1.getComponent(Animator);
+animator.animatorController = model2.getComponent(Animator).animatorController;
+```

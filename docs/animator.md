@@ -29,6 +29,16 @@ You can control the playback speed of the animation through the [speed](${api}co
 animator.speed = 2.0；
 ```
 
+### Pause/Resume
+You can control the pausing and resuming of the animation by setting the animator's [enabled](${api}core/ Animator#enabled).
+
+```typescript
+// pause
+animator.enabled = false;
+// resume
+animator.enabled = false;
+```
+
 ### Set animator data
 
 You can set the data of the animation controller through the [animatorController](${api}core/Animator#animatorController) property. The loaded glTF model will automatically add a default AnimatorController.
@@ -70,10 +80,11 @@ currentState.wrapMode = WrapMode.Loop;
 
 ### Get the AnimatorState by name
 
-You can get the specified AnimatorState as follows, refer to [API documentation](${api}core/Animator#animatorController),then you can set the properties of the AnimationState, such as changing the default loop playback to one time.
+You can use the [findAnimatorState](${api}core/Animator#findAnimatorState) method to obtain the AnimatorState with the specified name. See [API](${api}core/Animator#getCurrentAnimatorState). Properties that can be used to set the AnimatorState, such as changing the default loop to play once.
 
 ```typescript
-const state = animator.animatorController.layers[layerIndex].stateMachine.findStateByName('xxx');
+const state = animator.findAnimatorState('xxx');
+
 // play once
 state.wrapMode = WrapMode.Once;
 // play loop
@@ -98,6 +109,48 @@ event.functionName = "test";
 event.time = 0.5;
 clip.addEvent(event);
 ```
+
+### Custom AnimationClip
+
+<playground src="animation-customAnimationClip.ts"></playground>
+
+You can create your own [AnimationClip](${api}core/AnimationClip) and bind [AnimationCurve](${api}core/AnimationCurve) to it by use [addCurveBinding](${api}core/AnimationClip#addCurveBinding).
+
+```typescript
+//custom rotate clip
+const rotateClip = new AnimationClip('rotate');
+const rotateState = animator.animatorController.layers[0].stateMachine.addState('rotate');
+rotateState.clip = rotateClip;
+
+const rotateCurve = new AnimationVector3Curve();
+const key1 = new Keyframe<Vector3>();
+key1.time = 0;
+key1.value = new Vector3(0,0,0);
+const key2 = new Keyframe<Vector3>();
+key2.time = 10;
+key2.value = new Vector3(0,360,0);
+rotateCurve.addKey(key1);
+rotateCurve.addKey(key2);
+rotateClip.addCurveBinding('', Transform, "rotation", rotateCurve);
+
+//custom color clip
+const colorClip = new AnimationClip('color');
+const colorState = animator.animatorController.layers[0].stateMachine.addState('color');
+colorState.clip = colorClip;
+
+const colorCurve = new AnimationFloatCurve();
+const key1 = new Keyframe<number>();
+key1.time = 0;
+key1.value = 0;
+const key2 = new Keyframe<number>();
+key2.time = 10;
+key2.value = 1;
+colorCurve.addKey(key1);
+colorCurve.addKey(key2);
+colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
+```
+Note: As in the second example above, you can also bind the AnimationCurve to then child entity `/light`, and the third parameter of `addCurveBinding` is not limited to component properties, it is a path that can index to the value.
+
 
 ## Use AnimationStateMachine to control animation
 
@@ -170,6 +223,17 @@ In this way, every time you play the `walk` animation on the layer where the ani
 
 Animation additive is the effect achieved by blending between AnimatorControllerLayers. The first layer is the basic animation layer. Modifying its weight and blending mode will not take effect. Add the AnimationState you want to make additive, add it to other layers and set its blending mode to `AnimatorLayerBlendingMode.Additive` to achieve the animation additive effect. The Oasis engine supports multi-layer animation additive.
 
+### Default play
+
+You can set the AnimatorStateMachine's [defaultState](${api}core/AnimatorStateMachine#defaultState) to play the animation by default. This allows you to default to play without calling the `play` method when animator be set 'enabled=true'.
+
+```typescript
+const layers = animator.animatorController.layers;
+layers[0].stateMachine.defaultState = animator.findAnimatorState('walk');
+layers[1].stateMachine.defaultState = animator.findAnimatorState('sad_pose');
+layers[1].blendingMode = AnimatorLayerBlendingMode.Additive;
+```
+
 ### StateMachineScript
 
 <playground src="animation-stateMachineScript.ts"></playground>
@@ -202,4 +266,32 @@ class theScript extends StateMachineScript {
 }
 
 animatorState.addStateMachineScript(theScript)
+```
+
+You can also write like this if you don't need to reuse your script:
+
+```typescript
+state.addStateMachineScript(
+  class extends StateMachineScript {
+    onStateEnter(
+      animator: Animator,
+      animatorState: AnimatorState,
+      layerIndex: number
+    ): void {
+      console.log("onStateEnter: ", animatorState);
+    }
+  }
+);
+```
+### Animation data reuse
+
+Sometimes the animation data of the model is stored in other models , you can use it in the following way:
+
+<playground src="skeleton-animation-reuse.ts"></playground>
+
+In addition to this, there is another way, Animator's [AnimatorController](${api}core/AnimatorController) is a data storage class, it does not contain runtime data, based on this design, as long as the model's  **  hierarchy and naming of the skeleton nodes are the same**, we can reuse the animation data.
+
+```typescript
+const animator = model1.getComponent(Animator);
+animator.animatorController = model2.getComponent(Animator).animatorController;
 ```
