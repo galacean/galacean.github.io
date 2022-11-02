@@ -1,4 +1,4 @@
-import { GithubOutlined } from '@ant-design/icons';
+import { ArrowRightOutlined, GithubOutlined, HeartFilled } from '@ant-design/icons';
 import { Button, Tag } from 'antd';
 import QueueAnim from 'rc-queue-anim';
 import { useContext } from 'react';
@@ -20,20 +20,30 @@ function Banner() {
           </h1>
           <div className='description'>
             <FormattedMessage id='app.home.slogan' />
-            &nbsp;&nbsp;
-            <Tag color='geekblue'>{context.version}</Tag>
+            <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank' style={{ marginLeft: "10px" }} >
+              <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
+            </a>
+            <a href="https://www.npmjs.com/package/oasis-engine" target='_blank' style={{ marginLeft: "10px" }} >
+              <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
+            </a>
           </div>
           <div className='button-wrapper'>
             <Link to={`/docs/${context.lang}`}>
               <Button type='primary'>
                 <FormattedMessage id='app.home.start' />
+                <ArrowRightOutlined style={{ marginLeft: "5px" }} />
               </Button>
             </Link>
-            &nbsp; &nbsp;
-            <a href='https://github.com/oasis-engine/engine' target='_blank'>
+            <a href='https://github.com/oasis-engine/engine' target='_blank' style={{ marginLeft: "10px" }}>
               <Button type='primary' ghost>
                 <GithubOutlined />
                 Github
+              </Button>
+            </a>
+            <a href='https://github.com/sponsors/ant-galaxy' target='_blank' style={{ marginLeft: "10px" }}>
+              <Button>
+                <HeartFilled style={{ color: "hotpink" }} />
+                Sponsoring
               </Button>
             </a>
           </div>
