@@ -34,16 +34,16 @@ function Banner() {
                 <ArrowRightOutlined style={{ marginLeft: "5px" }} />
               </Button>
             </Link>
-            <a href='https://github.com/oasis-engine/engine' target='_blank' style={{ marginLeft: "10px" }}>
+            <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank' style={{ marginLeft: "10px" }}>
               <Button type='primary' ghost>
-                <GithubOutlined />
-                Github
+                <GithubOutlined style={{ marginRight: "5px" }} />
+                <FormattedMessage id='app.home.discussion' />
               </Button>
             </a>
-            <a href='https://github.com/sponsors/ant-galaxy' target='_blank' style={{ marginLeft: "10px" }}>
+            <a href='https://opencollective.com/oasis' target='_blank' style={{ marginLeft: "10px" }}>
               <Button>
-                <HeartFilled style={{ color: "hotpink" }} />
-                Sponsoring
+                <HeartFilled style={{ color: "hotpink", marginRight: "5px" }} />
+                <FormattedMessage id='app.home.sponsoring' />
               </Button>
             </a>
           </div>
