@@ -16,7 +16,7 @@ label: Graphics/Camera
 
 ### 轨道控制器
 
-`OrbitControl` 用来模拟轨道交互，适用于围绕一个目标对象进行 360旋转交互：
+`OrbitControl` 用来模拟轨道交互，适用于围绕一个目标对象进行 360 度旋转交互，需要注意的是，**请务必在添加相机组件后再添加轨道控制器**。
 
 <playground src="gltf-basic.ts"></playground>
 
@@ -42,7 +42,7 @@ label: Graphics/Camera
 
 ### 自由控制器
 
-`FreeControl` 一般用于漫游控制，常见于游戏场景：
+`FreeControl` 一般用于漫游控制，常见于游戏场景，需要注意的是，**请务必在添加相机组件后再添加自由控制器**。
 
 <playground src="controls-free.ts"></playground>
 
