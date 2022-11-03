@@ -2,6 +2,7 @@
 order: 2
 title: 物理管理器
 type: 物理
+label: Physics
 ---
 
 物理管理器（PhysicsManager）用于管理场景中所有的物理组件，并且负责与物理后端通信，实现有关物理场景的全局操作，例如更新和射线检测等等。
@@ -49,7 +50,7 @@ export class Script extends Component {
 
 射线可以理解成 3D 世界中一个点向一个方向发射的一条无终点的线。射线投射在 3D 应用中非常广泛。通过射线投射，可以在用户点击屏幕时，拾取 3D 场景中的物体；也可以在射击游戏中，判断子弹能否射中目标。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*sr_IRYSLugMAAAAAAAAAAAAAARQnAQ)
+![image.png](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*SHM1RI49Bd4AAAAAAAAAAAAAARQnAQ)
 （_图片来源于网络_）
 
 在使用射线投射，首先要在代码中引入 [Ray](${api}math/Ray) 模块；然后生成射线，射线可以自定义生成，也可以通过相机（[camera](${api}core/Camera#viewportPointToRay)

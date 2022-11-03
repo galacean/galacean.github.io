@@ -5,6 +5,7 @@ title: 导出 Unlit 材质
 
 type: 美术
 group: 教程
+label: Art/教程
 ---
 
 如[烘焙教程](${docs}artist-bake-cn)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Oasis 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR\_materials\_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，oasis 会解析插件，生成 Unlit 材质。

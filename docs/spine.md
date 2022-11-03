@@ -2,6 +2,7 @@
 order: 3
 title: Spine
 type: Animation
+label: Animation
 ---
 
 Spine animation is a kind of `2D skeleton animation` for game development. It can create animation by binding pictures to bones and control them.<br>

@@ -3,6 +3,7 @@ order: 6
 title: 资产库
 type: 编辑器
 group: 资产
+label: 编辑器/资产
 ---
 
 资产库面板能够检索 [Oasis 资产库](https://oasis.alipay.com/store)内的资产。通过拖拽，能够将这些资产添加到项目的[资产面板](${docs}editor-store-panel-cn)中。

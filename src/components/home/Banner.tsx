@@ -1,40 +1,51 @@
-import React from 'react';
-import QueueAnim from 'rc-queue-anim';
+import { ArrowRightOutlined, GithubOutlined, HeartFilled } from '@ant-design/icons';
 import { Button, Tag } from 'antd';
-import { Link } from 'gatsby';
+import QueueAnim from 'rc-queue-anim';
+import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
-import { isZhCN, getLocalizedPathname } from '../utils';
-import { version } from '../../../siteconfig.json';
-import { GithubOutlined } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import { AppContext } from '../contextProvider';
 
-function Banner(props) {
-  const { isMobile } = props;
+function Banner() {
+  const context = useContext(AppContext);
   return (
-    <section className="home-section home-section-banner">
+    <section className='home-section home-section-banner'>
       <div className='home-flex'>
-        <QueueAnim type={isMobile ? 'bottom' : 'right'}>
+        <QueueAnim type={'right'}>
           <h1>
-            <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ" alt="Oasis Engine" />
+            <img
+              src='https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ'
+              alt='Oasis Engine'
+            />
           </h1>
-          <div className="description">
-            <FormattedMessage id="app.home.slogan" />
-            &nbsp;&nbsp;
-            <Tag color="geekblue">v{version}-beta</Tag>
+          <div className='description'>
+            <FormattedMessage id='app.home.slogan' />
+            <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank' style={{ marginLeft: "10px" }} >
+              <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
+            </a>
+            <a href="https://www.npmjs.com/package/oasis-engine" target='_blank' style={{ marginLeft: "10px" }} >
+              <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
+            </a>
           </div>
-          <div className="button-wrapper">
-            <Link to={getLocalizedPathname(`${version}/docs/install`, isZhCN())}>
-              <Button type="primary">
-                <FormattedMessage id="app.home.start" />
+          <div className='button-wrapper'>
+            <Link to={`/docs/${context.lang}`}>
+              <Button type='primary'>
+                <FormattedMessage id='app.home.start' />
+                <ArrowRightOutlined style={{ marginLeft: "5px" }} />
               </Button>
             </Link>
-            &nbsp;
-            &nbsp;
-            <Link to="https://github.com/oasis-engine/engine" target="_blank">
-              <Button type="primary" ghost>
-                <GithubOutlined />
-                Github
+            <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank' style={{ marginLeft: "10px" }}>
+              <Button type='primary' ghost>
+                <GithubOutlined style={{ marginRight: "5px" }} />
+                <FormattedMessage id='app.home.discussion' />
               </Button>
-            </Link>
+            </a>
+            <a href='https://opencollective.com/oasis' target='_blank' style={{ marginLeft: "10px" }}>
+              <Button>
+                <HeartFilled style={{ color: "hotpink", marginRight: "5px" }} />
+                <FormattedMessage id='app.home.sponsoring' />
+              </Button>
+            </a>
           </div>
         </QueueAnim>
       </div>

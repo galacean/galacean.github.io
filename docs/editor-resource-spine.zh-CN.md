@@ -3,6 +3,7 @@ order: 4
 title: Spine
 type: 编辑器
 group: 资产
+label: 编辑器/资产
 ---
 
 spine 资产包含 spine 动画的 json 文件，atlas 图集文件，image 贴图文件。用于渲染 spine 动画效果。

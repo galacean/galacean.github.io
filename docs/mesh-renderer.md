@@ -3,6 +3,7 @@ order: 4
 title: Renderer
 type: Graphics
 group: Renderer
+label: Graphics/Renderer
 ---
 
 [MeshRenderer](${api}core/MeshRenderer) is a mesh renderer component，when an entity mounts this, it only needs to set its `mesh` and `material` properties to start rendering.

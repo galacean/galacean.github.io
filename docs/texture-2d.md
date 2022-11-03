@@ -3,6 +3,7 @@ order: 2
 title: 2D Texture
 type: Graphics
 group: Texture
+label: Graphics/Texture
 ---
 
 2D texture ([Texture2D](${api}core/Texture2D)) is the most commonly used art resource, which uses two-dimensional UV coordinates for sampling, as shown below:

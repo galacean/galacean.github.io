@@ -16,13 +16,16 @@ import {
   Script,
   WebGLEngine
 } from "oasis-engine";
-import { FramebufferPicker, OrbitControl, OutlineManager } from "oasis-engine-toolkit";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+import { OutlineManager } from "@oasis-engine-toolkit/outline";
 
 class ClickScript extends Script {
   onUpdate(): void {
     const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      const pointerPosition = inputManager.pointerPosition;
+    const { pointers } = inputManager;
+    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+      const pointerPosition = pointers[0].position;
       framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
         if (renderElement) {
           console.log(renderElement.component.entity.parent);

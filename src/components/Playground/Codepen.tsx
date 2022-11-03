@@ -6,7 +6,7 @@ import { Tooltip } from 'antd';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
 function Codepen (props: any) {
-  const iconRef = useRef(null);
+  const iconRef = useRef<HTMLFormElement>(null);
   const jsExternal: string[] = [];
 
   Object.keys(props.packages).forEach(lib => {
@@ -36,9 +36,9 @@ function Codepen (props: any) {
           action="https://codepen.io/pen/define"
           method="POST"
           target="_blank"
-          ref={iconRef}
+          ref={() =>iconRef}
           onClick={() => {
-            iconRef.current.submit();
+            iconRef.current?.submit();
           }}
           >
             <input type="hidden" name="data" value={JSON.stringify(codepenPrefillConfig)} />

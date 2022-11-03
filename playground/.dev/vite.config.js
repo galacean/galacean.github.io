@@ -61,14 +61,20 @@ module.exports = {
   optimizeDeps: {
     exclude: [
       "oasis-engine",
-      "@oasis-engine/stats",
       "@oasis-engine/draco",
-      "@oasis-engine/controls",
-      "@oasis-engine/framebuffer-picker",
-      "@oasis-engine/touch",
       "@oasis-engine/lottie",
       "@oasis-engine/spine",
-      "@oasis-engine/baker"
+      "@oasis-engine/baker",
+      "oasis-engine-toolkit",
+      "@oasis-engine-toolkit/auxiliary-lines",
+      "@oasis-engine-toolkit/controls",
+      "@oasis-engine-toolkit/framebuffer-picker",
+      "@oasis-engine-toolkit/gizmo",
+      "@oasis-engine-toolkit/lines",
+      "@oasis-engine-toolkit/outline",
+      "@oasis-engine-toolkit/planar-shadow-material",
+      "@oasis-engine-toolkit/skeleton-viewer",
+      "@oasis-engine-toolkit/stats"
     ]
   }
 };

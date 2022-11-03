@@ -2,6 +2,7 @@
 order: 4
 title: Lottie
 type: 动画
+label: Animation
 ---
 
 这是用 Oasis Engine 实现的 <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> 运行时。目前只支持 Lottie 节点树中的**精灵元素**（Sprite Elements）的绘制。

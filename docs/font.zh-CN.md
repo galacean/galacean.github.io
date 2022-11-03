@@ -3,6 +3,7 @@ order: 6
 title: 字体资源
 type: 图形
 group: 2D
+label: Graphics/2D
 ---
 
 [Font](${api}core/Font) 是字体资源，用于表示文本使用的字体。

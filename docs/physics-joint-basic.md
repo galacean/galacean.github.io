@@ -2,6 +2,7 @@
 order: 5
 title: Joint Basic
 type: Physics
+label: Physics
 ---
 
 The physical constraint component is a very important physical component. Through the constraint, you can better control

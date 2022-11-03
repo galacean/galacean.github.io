@@ -2,9 +2,9 @@
  * @title Animation Event
  * @category Animation
  */
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
-  AnimationClip,
   AnimationEvent,
   Animator,
   Camera,
@@ -13,10 +13,10 @@ import {
   Logger,
   Script,
   SystemInfo,
+  TextRenderer,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 const gui = new dat.GUI();
 
 Logger.enable();
@@ -37,48 +37,69 @@ lightNode.addComponent(DirectLight).intensity = 0.6;
 lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(0, 90, 0));
 
+// initText
+const textEntity = rootEntity.createChild("text");
+const textRenderer = textEntity.addComponent(TextRenderer);
+textEntity.transform.setPosition(0, 2, 0)
+textRenderer.fontSize = 12
+textRenderer.text = ""
+
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
+  )
   .then((gltfResource) => {
-    const { animations, defaultSceneRoot } = gltfResource;
-    const animator = defaultSceneRoot.getComponent(Animator);
-    defaultSceneRoot.addComponent(EventHandlerScript);
-
-    if (animations) {
-      animations.forEach((clip: AnimationClip) => {
-        if (clip.name === "run") {
-          const event = new AnimationEvent();
-          event.functionName = "event0";
-          event.time = 0.5;
-          clip.addEvent(event);
-
-          const event2 = new AnimationEvent();
-          event2.functionName = "event1";
-          event2.time = clip.length;
-          clip.addEvent(event2);
-        }
-      });
-    }
+    const { defaultSceneRoot, animations } = gltfResource;
     rootEntity.addChild(defaultSceneRoot);
-    animator.play("run", 0);
+    const animator = defaultSceneRoot.getComponent(Animator);
 
+    const state = animator.findAnimatorState("walk");
+    const clip = state.clip;
+
+    const event0 = new AnimationEvent();
+    event0.functionName = "event0";
+    event0.time = 0.5;
+    clip.addEvent(event0);
+
+    const event1 = new AnimationEvent();
+    event1.functionName = "event1";
+    event1.time = clip.length;
+    clip.addEvent(event1);
+
+    defaultSceneRoot.addComponent(
+      class extends Script {
+        event0(): void {
+          textRenderer.text = "event0 called"
+        }
+
+        event1(): void {
+          textRenderer.text = "event1 called"
+        }
+      }
+    );
+
+    animator.play("walk", 0);
+
+
+    initDatGUI(animator, animations);
+  });
+
+  engine.run();
+
+  const initDatGUI = (animator, animations) => {
+    const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
     const debugInfo = {
+      animation: animationNames[4],
       speed: 1
     };
-
+  
+    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+      textRenderer.text = ""
+      animator.play(v);
+    });
+  
     gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
       animator.speed = v;
     });
-  });
-
-engine.run();
-
-class EventHandlerScript extends Script {
-  event0(): void {
-    console.log("event0 called");
   }
-
-  event1(): void {
-    console.log("event1 called");
-  }
-}
+  

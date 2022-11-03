@@ -2,6 +2,7 @@
 order: 1
 title: 统计面板
 type: 性能调试
+label: Performance
 ---
 
 [@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats) 包主要用来显示引擎当前的运行状态。要显示引擎运行状态只需要引入 `Stats` 并注册：

@@ -3,6 +3,7 @@ order: 0
 title: 关于 Oasis Editor
 type: 编辑器
 group: 介绍
+label: 编辑器/介绍
 ---
 
 ## 什么是 Oasis Editor？

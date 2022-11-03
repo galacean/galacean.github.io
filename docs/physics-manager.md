@@ -2,6 +2,7 @@
 order: 2
 title: Physics Manager
 type: Physics
+label: Physics
 ---
 
 PhysicsManager is used to manage all the physics components in the scene, and is responsible for communicating with the
@@ -56,7 +57,7 @@ A ray can be understood as an unending line emitted from a point in a 3D world i
 used in 3D applications. Through ray casting, objects in the 3D scene can be picked up when the user taps the screen; it
 can also be judged whether the bullet can hit the target in a shooting game.
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*sr_IRYSLugMAAAAAAAAAAAAAARQnAQ)
+![image.png](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*SHM1RI49Bd4AAAAAAAAAAAAAARQnAQ)
 (_The picture comes from the network_)
 
 When using ray casting, first introduce the [Ray](${api}math/Ray) module in the code; then generate rays, which can be

@@ -4,30 +4,35 @@
  */
 
 import {
-  BlinnPhongMaterial,
+  AmbientLight,
+  AssetType,
   BoxColliderShape,
   Camera,
   CapsuleColliderShape,
+  Color,
+  DirectLight,
+  DynamicCollider,
   Entity,
+  Font,
   HitResult,
   Layer,
   MeshRenderer,
+  PBRMaterial,
   PlaneColliderShape,
+  PointerButton,
   PrimitiveMesh,
+  Quaternion,
   Ray,
+  Script,
   SphereColliderShape,
   StaticCollider,
-  DynamicCollider,
-  WebGLEngine,
-  Quaternion,
+  TextRenderer,
   Vector3,
-  DirectLight,
-  Script,
-  PointerButton, TextRenderer, Color, Font
+  WebGLEngine,
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import {OrbitControl} from "@oasis-engine-toolkit/controls";
 
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 class GeometryGenerator extends Script {
   quat: Quaternion;
@@ -72,17 +77,17 @@ class Raycast extends Script {
     const ray = this.ray;
     const hit = this.hit;
     const inputManager = this.engine.inputManager;
-    if (inputManager.isPointerDown(PointerButton.Primary)) {
-      this.camera.screenPointToRay(inputManager.pointerPosition, ray);
+    const pointers = inputManager.pointers;
+    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+      const pointerPosition = pointers[0].position;
+      this.camera.screenPointToRay(pointerPosition, ray);
 
       const result = engine.physicsManager.raycast(ray, Number.MAX_VALUE, Layer.Layer0, hit);
       if (result) {
-        const mtl = new BlinnPhongMaterial(engine);
-        const color = mtl.baseColor;
-        color.r = Math.random();
-        color.g = Math.random();
-        color.b = Math.random();
-        color.a = 1.0;
+        const mtl = new PBRMaterial(engine);
+        mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+        mtl.metallic = 0.0;
+        mtl.roughness = 0.5;
 
         const meshes: MeshRenderer[] = [];
         hit.entity.getComponentsIncludeChildren(MeshRenderer, meshes);
@@ -98,7 +103,7 @@ class Raycast extends Script {
 function init(rootEntity: Entity) {
   const quat = new Quaternion(0, 0, 0.3, 0.7);
   quat.normalize();
-  addPlane(rootEntity, new Vector3(30, 0.1, 30), new Vector3, new Quaternion);
+  addPlane(rootEntity, new Vector3(30, 0.0, 30), new Vector3, new Quaternion);
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < 8; i++) {
     // eslint-disable-next-line no-plusplus
@@ -107,23 +112,23 @@ function init(rootEntity: Entity) {
       switch (random) {
         case 0:
           addBox(rootEntity, new Vector3(1, 1, 1), new Vector3(
-            -2.5 + i + 0.1 * i,
+            -4 + i,
             Math.floor(Math.random() * 6) + 1,
-            -2.5 + j + 0.1 * j
+            -4 + j
           ), quat);
           break;
         case 1:
           addSphere(rootEntity, 0.5, new Vector3(
-            Math.floor(Math.random() * 16) - 2.5,
+            Math.floor(Math.random() * 16) - 4,
             5,
-            Math.floor(Math.random() * 16) - 2.5
+            Math.floor(Math.random() * 16) - 4
           ), quat);
           break;
         case 2:
           addCapsule(rootEntity, 0.5, 2.0, new Vector3(
-            Math.floor(Math.random() * 16) - 2.5,
+            Math.floor(Math.random() * 16) - 4,
             5,
-            Math.floor(Math.random() * 16) - 2.5
+            Math.floor(Math.random() * 16) - 4
           ), quat);
           break;
         default:
@@ -134,19 +139,22 @@ function init(rootEntity: Entity) {
 }
 
 function addPlane(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
-  mtl.baseColor.set(0.03179807202597362, 0.3939682161541871, 0.41177952549087604, 1);
+  const mtl = new PBRMaterial(rootEntity.engine);
+  mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+  mtl.roughness = 0.0;
+  mtl.metallic = 0.0;
   const planeEntity = rootEntity.createChild();
   planeEntity.layer = Layer.Layer1;
 
   const renderer = planeEntity.addComponent(MeshRenderer);
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
   renderer.setMaterial(mtl);
   planeEntity.transform.position = position;
   planeEntity.transform.rotationQuaternion = rotation;
 
   const physicsPlane = new PlaneColliderShape();
-  physicsPlane.setPosition(0, size.y, 0);
+  physicsPlane.position.set(0, size.y, 0);
   const planeCollider = planeEntity.addComponent(StaticCollider);
   planeCollider.addShape(physicsPlane);
 
@@ -154,11 +162,14 @@ function addPlane(rootEntity: Entity, size: Vector3, position: Vector3, rotation
 }
 
 function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
+  const mtl = new PBRMaterial(rootEntity.engine);
   mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+  mtl.metallic = 0.0;
+  mtl.roughness = 0.5;
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-
+  renderer.castShadows = true;
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
   renderer.setMaterial(mtl);
   boxEntity.transform.position = position;
@@ -174,11 +185,14 @@ function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: 
 }
 
 function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
+  const mtl = new PBRMaterial(rootEntity.engine);
   mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+  mtl.metallic = 0.0;
+  mtl.roughness = 0.5;
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-
+  renderer.castShadows = true;
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;
@@ -193,11 +207,14 @@ function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotati
 }
 
 function addCapsule(rootEntity: Entity, radius: number, height: number, position: Vector3, rotation: Quaternion): Entity {
-  const mtl = new BlinnPhongMaterial(rootEntity.engine);
+  const mtl = new PBRMaterial(rootEntity.engine);
   mtl.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+  mtl.metallic = 0.0;
+  mtl.roughness = 0.5;
   const capsuleEntity = rootEntity.createChild();
   const renderer = capsuleEntity.addComponent(MeshRenderer);
-
+  renderer.castShadows = true;
+  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createCapsule(rootEntity.engine, radius, height, 20)
   renderer.setMaterial(mtl);
   capsuleEntity.transform.position = position;
@@ -239,16 +256,25 @@ PhysXPhysics.initialize().then(() => {
   renderer.font = Font.createFromOS(entity.engine, "Arial");
   renderer.fontSize = 40;
 
-  // init light
-  scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
-
   // init directional light
   const light = rootEntity.createChild("light");
-  light.transform.setPosition(0.3, 1, 0.4);
+  light.transform.setPosition(-0.3, 1, 0.4);
   light.transform.lookAt(new Vector3(0, 0, 0));
-  light.addComponent(DirectLight);
+  const directLight = light.addComponent(DirectLight);
+  directLight.intensity = 1;
+  directLight.enableShadow = true;
+  directLight.shadowStrength = 1;
+  directLight.shadowBias = 5;
 
   init(rootEntity);
 
-  engine.run();
+  engine.resourceManager
+    .load<AmbientLight>({
+      type: AssetType.Env,
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    })
+    .then((ambientLight) => {
+      scene.ambientLight = ambientLight;
+      engine.run();
+    });
 });

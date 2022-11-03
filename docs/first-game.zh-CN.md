@@ -3,6 +3,7 @@ order: 5
 title: 5. 第一个游戏
 type: 快速入门
 group: 进阶
+label: Introduction/Advanced
 ---
 
 > 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
@@ -180,7 +181,7 @@ PS：每个显示对象在不同游戏状态时都会展示对应的表现
 
 ### tweenjs
 
-为了实现小鸟的抬头与低头，我们引入[缓动库](https://github.com/tweenjs/tween.js)，抬头的时候逆时针旋转小鸟至 20 度，低头的时候缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件]（${docs}transform-cn）的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
+为了实现小鸟的抬头与低头，我们引入[缓动库](https://github.com/tweenjs/tween.js)，抬头的时候逆时针旋转小鸟至 20 度，低头的时候缓动小鸟的旋转角至 -90 度，翻阅缓动组件的源码可以发现，他是通过递归去更新值的，熟悉 [变换组件](${docs}transform-cn) 的同学会发现这种递归方式实现逐个改变坐标信息中的分量是无法让 `Entity` 实时改变位置的。
 
 ```typescript
 private _updateProperties(
