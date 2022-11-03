@@ -38,6 +38,7 @@ const gui = new dat.GUI();
 export class ControlScript extends Script {
   private _sceneCamera: Camera;
   private _framebufferPicker: FramebufferPicker;
+  private _navigator: NavigationGizmo;
   private _gizmo: Gizmo;
   private _orbitControl: OrbitControl;
 
@@ -57,6 +58,7 @@ export class ControlScript extends Script {
     const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
     navigationGizmo.camera = this._sceneCamera;
     navigationGizmo.layer = LayerSetting.NavigationGizmo;
+    this._navigator = navigationGizmo;
 
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
@@ -72,6 +74,7 @@ export class ControlScript extends Script {
   }
 
   onUpdate(deltaTime: number): void {
+    this._navigator.target = this._orbitControl.target;
     const { inputManager } = this.engine;
     // single select.
     if (inputManager.isPointerDown(PointerButton.Primary)) {
