@@ -90,8 +90,12 @@ const texture2D = await this.engine.resourceManager.load<Texture2D>("test.png");
 The loader will use suffixes such as png and jpg as the basis for judging Texture2D. If you use the CDN address without the suffix, you need to use type to specify the loading type. For example:
 
 ```typescript
-this.engine.resourceManager.load({ url: "test", type: AssetType.Texture2D });
+this.engine.resourceManager.load({ url: "test", type: AssetType.Texture2D, params: { format, mipmap } });
 ```
+
+#### Additional Params
+- format([TextureFormat](${api}core/TextureFormat)): Texture format, default is [TextureFormat.RGBA](${api}core/TextureFormat#RGBA).
+- mipmap(boolean): Whether to generate mipmap, default is true.
 
 ### 2. TextureCube
 
