@@ -17,20 +17,25 @@ import {
   PointerButton,
   Script,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 import { LitePhysics } from "@oasis-engine/physics-lite";
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
 import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
-import { AnchorType, CoordinateType, Gizmo, State } from "@oasis-engine-toolkit/gizmo";
+import {
+  AnchorType,
+  CoordinateType,
+  Gizmo,
+  State,
+} from "@oasis-engine-toolkit/gizmo";
 
 import * as dat from "dat.gui";
 
 enum LayerSetting {
   Entity = Layer.Layer22,
   Gizmo = Layer.Layer29,
-  NavigationGizmo = Layer.Layer30
+  NavigationGizmo = Layer.Layer30,
 }
 
 const gui = new dat.GUI();
@@ -38,17 +43,21 @@ const gui = new dat.GUI();
 export class ControlScript extends Script {
   private _sceneCamera: Camera;
   private _framebufferPicker: FramebufferPicker;
+  private _navigator: NavigationGizmo;
   private _gizmo: Gizmo;
   private _orbitControl: OrbitControl;
 
   constructor(entity: Entity) {
     super(entity);
-    this._sceneCamera = entity.findByName("fullscreen-camera").getComponent(Camera);
+    this._sceneCamera = entity
+      .findByName("fullscreen-camera")
+      .getComponent(Camera);
 
     // add framebufferPicker
     this._framebufferPicker = entity.addComponent(FramebufferPicker);
     this._framebufferPicker.camera = this._sceneCamera;
-    this._framebufferPicker.colorRenderPass.mask = LayerSetting.Entity | LayerSetting.Gizmo;
+    this._framebufferPicker.colorRenderPass.mask =
+      LayerSetting.Entity | LayerSetting.Gizmo;
 
     // add orbit control
     this._orbitControl = this._sceneCamera.entity.addComponent(OrbitControl);
@@ -57,6 +66,7 @@ export class ControlScript extends Script {
     const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
     navigationGizmo.camera = this._sceneCamera;
     navigationGizmo.layer = LayerSetting.NavigationGizmo;
+    this._navigator = navigationGizmo;
 
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
@@ -72,6 +82,7 @@ export class ControlScript extends Script {
   }
 
   onUpdate(deltaTime: number): void {
+    this._navigator.target = this._orbitControl.target;
     const { inputManager } = this.engine;
     const { pointers } = inputManager;
     // single select.
@@ -133,7 +144,7 @@ export class ControlScript extends Script {
     const info = {
       Gizmo: State.translate,
       Coordinate: CoordinateType.Local,
-      Anchor: AnchorType.Center
+      Anchor: AnchorType.Center,
     };
     const gizmoConfig = ["null", "translate", "rotate", "scale"];
     const orientationConfig = ["global", "local"];
