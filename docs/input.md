@@ -34,15 +34,24 @@ This is represented in the schematic diagram below:
 
 ### Pointer button
 
+InputManager manages all Pointers, and can obtain the current global cursor information and key operation records by calling related methods.
+
 | Function Name                                           | Interpretation                         |
 | ------------------------------------------------------ | ---------------------------- |
 | [pointers](${api}core/InputManager#pointers) | Returns the currently active cursor. |
-| [pointerMovingDelta](${api}core/InputManager#pointerMovingDelta)         | Returns the difference between the cursor movement in this frame.   |
-| [pointerPosition](${api}core/InputManager#pointerPosition)             | Returns the position of the cursor in this frame.   |
 | [isPointerHeldDown](${api}core/InputManager#isPointerHeldDown) | Returns whether this cursor key is held down. |
 | [isPointerDown](${api}core/InputManager#isPointerDown)         | Returns whether the pointer button has been pressed in the current frame.   |
 | [isPointerUp](${api}core/InputManager#isPointerUp)             | Returns whether the pointer button has been released in the current frame.    |
 
+Pointer represents each independent cursor instance. By calling the relevant method, the cursor's state, pose, key position and the movement difference of the current frame can be accurately obtained.
+
+| Function Name                                           | Interpretation                         |
+| ------------------------------------------------------ | ---------------------------- |
+| [phase](${api}core/Pointer#phase)         | Returns the state of the pointer at the moment, such as down, move, stationary or up, etc.  |
+| [button](${api}core/Pointer#button)             | Returns the pointer button that trigger this state, such as primary, secondary, auxiliary, etc.   |
+| [pressedButtons](${api}core/Pointer#pressedButtons) | Returns the buttons that the pointer is holding down at the moment |
+| [deltaPosition](${api}core/Pointer#deltaPosition)         | Returns the difference between the pointer movement in this frame   |
+| [pointerPosition](${api}core/Pointer#pointerPosition)             | Returns the position of the pointer in this frame   |
 
 The following example:
 - The leftmost cube adds responses to Enter and Exit, and when the mouse moves to the top, it will trigger its color change.
