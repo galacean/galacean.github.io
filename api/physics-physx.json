@@ -1,41 +1,209 @@
 {
 	"id": 0,
-	"name": "@oasis-engine/physics-lite",
+	"name": "@oasis-engine/physics-physx",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
 	"originalName": "",
 	"children": [
 		{
+			"id": 93,
+			"name": "PhysXRuntimeMode",
+			"kind": 8,
+			"kindString": "Enumeration",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "PhysX runtime mode."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 94,
+					"name": "Auto",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Use webAssembly mode first, if WebAssembly mode is not supported, roll back to JavaScript mode."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "enum/PhysXRuntimeMode.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 0
+					}
+				},
+				{
+					"id": 96,
+					"name": "JavaScript",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "JavaScript mode."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "enum/PhysXRuntimeMode.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 2
+					}
+				},
+				{
+					"id": 95,
+					"name": "WebAssembly",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "WebAssembly mode."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "enum/PhysXRuntimeMode.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 1
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration Members",
+					"children": [
+						94,
+						96,
+						95
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "enum/PhysXRuntimeMode.ts",
+					"line": 4,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
+				}
+			]
+		},
+		{
 			"id": 1,
-			"name": "LitePhysics",
+			"name": "PhysXPhysics",
 			"kind": 128,
 			"kindString": "Class",
 			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "PhysX object creation."
+					}
+				]
+			},
 			"children": [
 				{
-					"id": 80,
+					"id": 91,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 81,
-							"name": "new LitePhysics",
+							"id": 92,
+							"name": "new PhysXPhysics",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"type": {
 								"type": "reference",
 								"id": 1,
-								"name": "LitePhysics"
+								"name": "PhysXPhysics"
 							}
 						}
 					]
 				},
 				{
-					"id": 51,
+					"id": 88,
+					"name": "_init",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 217,
+							"character": 17,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L217"
+						}
+					],
+					"signatures": [
+						{
+							"id": 89,
+							"name": "_init",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 90,
+									"name": "PHYSX",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 59,
 					"name": "createBoxColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -44,15 +212,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 86,
+							"fileName": "PhysXPhysics.ts",
+							"line": 162,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L86"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L162"
 						}
 					],
 					"signatures": [
 						{
-							"id": 52,
+							"id": 60,
 							"name": "createBoxColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -68,7 +236,7 @@
 							},
 							"parameters": [
 								{
-									"id": 53,
+									"id": 61,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -79,7 +247,7 @@
 									}
 								},
 								{
-									"id": 54,
+									"id": 62,
 									"name": "size",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -90,14 +258,14 @@
 									}
 								},
 								{
-									"id": 55,
+									"id": 63,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LitePhysicsMaterial"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
@@ -109,7 +277,7 @@
 					]
 				},
 				{
-					"id": 65,
+					"id": 73,
 					"name": "createCapsuleColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -118,15 +286,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 111,
+							"fileName": "PhysXPhysics.ts",
+							"line": 187,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L111"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L187"
 						}
 					],
 					"signatures": [
 						{
-							"id": 66,
+							"id": 74,
 							"name": "createCapsuleColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -142,7 +310,7 @@
 							},
 							"parameters": [
 								{
-									"id": 67,
+									"id": 75,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -153,7 +321,7 @@
 									}
 								},
 								{
-									"id": 68,
+									"id": 76,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -164,7 +332,7 @@
 									}
 								},
 								{
-									"id": 69,
+									"id": 77,
 									"name": "height",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -175,14 +343,14 @@
 									}
 								},
 								{
-									"id": 70,
+									"id": 78,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LitePhysicsMaterial"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
@@ -194,7 +362,7 @@
 					]
 				},
 				{
-					"id": 42,
+					"id": 50,
 					"name": "createCharacterController",
 					"kind": 2048,
 					"kindString": "Method",
@@ -203,15 +371,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 66,
+							"fileName": "PhysXPhysics.ts",
+							"line": 142,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L66"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L142"
 						}
 					],
 					"signatures": [
 						{
-							"id": 43,
+							"id": 51,
 							"name": "createCharacterController",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -233,7 +401,7 @@
 					]
 				},
 				{
-					"id": 38,
+					"id": 46,
 					"name": "createDynamicCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -242,15 +410,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 59,
+							"fileName": "PhysXPhysics.ts",
+							"line": 135,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L59"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L135"
 						}
 					],
 					"signatures": [
 						{
-							"id": 39,
+							"id": 47,
 							"name": "createDynamicCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -266,7 +434,7 @@
 							},
 							"parameters": [
 								{
-									"id": 40,
+									"id": 48,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -277,7 +445,7 @@
 									}
 								},
 								{
-									"id": 41,
+									"id": 49,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -296,7 +464,7 @@
 					]
 				},
 				{
-					"id": 71,
+					"id": 79,
 					"name": "createFixedJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -305,15 +473,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 123,
+							"fileName": "PhysXPhysics.ts",
+							"line": 199,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L123"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L199"
 						}
 					],
 					"signatures": [
 						{
-							"id": 72,
+							"id": 80,
 							"name": "createFixedJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -329,14 +497,14 @@
 							},
 							"parameters": [
 								{
-									"id": 73,
+									"id": 81,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LiteCollider"
+										"name": "PhysXCollider"
 									}
 								}
 							],
@@ -348,7 +516,7 @@
 					]
 				},
 				{
-					"id": 74,
+					"id": 82,
 					"name": "createHingeJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -357,15 +525,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 130,
+							"fileName": "PhysXPhysics.ts",
+							"line": 206,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L130"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L206"
 						}
 					],
 					"signatures": [
 						{
-							"id": 75,
+							"id": 83,
 							"name": "createHingeJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -381,14 +549,14 @@
 							},
 							"parameters": [
 								{
-									"id": 76,
+									"id": 84,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LiteCollider"
+										"name": "PhysXCollider"
 									}
 								}
 							],
@@ -400,7 +568,7 @@
 					]
 				},
 				{
-					"id": 2,
+					"id": 10,
 					"name": "createPhysicsManager",
 					"kind": 2048,
 					"kindString": "Method",
@@ -409,15 +577,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 31,
+							"fileName": "PhysXPhysics.ts",
+							"line": 107,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L31"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L107"
 						}
 					],
 					"signatures": [
 						{
-							"id": 3,
+							"id": 11,
 							"name": "createPhysicsManager",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -433,7 +601,7 @@
 							},
 							"parameters": [
 								{
-									"id": 4,
+									"id": 12,
 									"name": "onContactBegin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -443,29 +611,29 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 5,
+											"id": 13,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "LitePhysics.ts",
-													"line": 32,
+													"fileName": "PhysXPhysics.ts",
+													"line": 108,
 													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L32"
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L108"
 												}
 											],
 											"signatures": [
 												{
-													"id": 6,
+													"id": 14,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 7,
+															"id": 15,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -476,7 +644,7 @@
 															}
 														},
 														{
-															"id": 8,
+															"id": 16,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -497,7 +665,7 @@
 									}
 								},
 								{
-									"id": 9,
+									"id": 17,
 									"name": "onContactEnd",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -507,29 +675,29 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 10,
+											"id": 18,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "LitePhysics.ts",
-													"line": 33,
+													"fileName": "PhysXPhysics.ts",
+													"line": 109,
 													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L33"
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L109"
 												}
 											],
 											"signatures": [
 												{
-													"id": 11,
+													"id": 19,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 12,
+															"id": 20,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -540,7 +708,7 @@
 															}
 														},
 														{
-															"id": 13,
+															"id": 21,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -561,8 +729,8 @@
 									}
 								},
 								{
-									"id": 14,
-									"name": "onContactPersist",
+									"id": 22,
+									"name": "onContactStay",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {
@@ -571,29 +739,29 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 15,
+											"id": 23,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "LitePhysics.ts",
-													"line": 34,
-													"character": 23,
-													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L34"
+													"fileName": "PhysXPhysics.ts",
+													"line": 110,
+													"character": 20,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L110"
 												}
 											],
 											"signatures": [
 												{
-													"id": 16,
+													"id": 24,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 17,
+															"id": 25,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -604,7 +772,7 @@
 															}
 														},
 														{
-															"id": 18,
+															"id": 26,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -625,7 +793,7 @@
 									}
 								},
 								{
-									"id": 19,
+									"id": 27,
 									"name": "onTriggerBegin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -635,29 +803,29 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 20,
+											"id": 28,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "LitePhysics.ts",
-													"line": 35,
+													"fileName": "PhysXPhysics.ts",
+													"line": 111,
 													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L35"
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L111"
 												}
 											],
 											"signatures": [
 												{
-													"id": 21,
+													"id": 29,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 22,
+															"id": 30,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -668,7 +836,7 @@
 															}
 														},
 														{
-															"id": 23,
+															"id": 31,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -689,7 +857,7 @@
 									}
 								},
 								{
-									"id": 24,
+									"id": 32,
 									"name": "onTriggerEnd",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -699,29 +867,29 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 25,
+											"id": 33,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "LitePhysics.ts",
-													"line": 36,
+													"fileName": "PhysXPhysics.ts",
+													"line": 112,
 													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L36"
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L112"
 												}
 											],
 											"signatures": [
 												{
-													"id": 26,
+													"id": 34,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 27,
+															"id": 35,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -732,7 +900,7 @@
 															}
 														},
 														{
-															"id": 28,
+															"id": 36,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -753,8 +921,8 @@
 									}
 								},
 								{
-									"id": 29,
-									"name": "onTriggerPersist",
+									"id": 37,
+									"name": "onTriggerStay",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {
@@ -763,29 +931,29 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 30,
+											"id": 38,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
-													"fileName": "LitePhysics.ts",
-													"line": 37,
-													"character": 23,
-													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L37"
+													"fileName": "PhysXPhysics.ts",
+													"line": 113,
+													"character": 20,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L113"
 												}
 											],
 											"signatures": [
 												{
-													"id": 31,
+													"id": 39,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 32,
+															"id": 40,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -796,7 +964,7 @@
 															}
 														},
 														{
-															"id": 33,
+															"id": 41,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -825,7 +993,7 @@
 					]
 				},
 				{
-					"id": 44,
+					"id": 52,
 					"name": "createPhysicsMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -834,15 +1002,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 73,
+							"fileName": "PhysXPhysics.ts",
+							"line": 149,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L73"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L149"
 						}
 					],
 					"signatures": [
 						{
-							"id": 45,
+							"id": 53,
 							"name": "createPhysicsMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -858,7 +1026,7 @@
 							},
 							"parameters": [
 								{
-									"id": 46,
+									"id": 54,
 									"name": "staticFriction",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -869,7 +1037,7 @@
 									}
 								},
 								{
-									"id": 47,
+									"id": 55,
 									"name": "dynamicFriction",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -880,7 +1048,7 @@
 									}
 								},
 								{
-									"id": 48,
+									"id": 56,
 									"name": "bounciness",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -891,7 +1059,7 @@
 									}
 								},
 								{
-									"id": 49,
+									"id": 57,
 									"name": "frictionCombine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -902,7 +1070,7 @@
 									}
 								},
 								{
-									"id": 50,
+									"id": 58,
 									"name": "bounceCombine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -921,7 +1089,7 @@
 					]
 				},
 				{
-					"id": 61,
+					"id": 69,
 					"name": "createPlaneColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -930,15 +1098,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 104,
+							"fileName": "PhysXPhysics.ts",
+							"line": 180,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L104"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L180"
 						}
 					],
 					"signatures": [
 						{
-							"id": 62,
+							"id": 70,
 							"name": "createPlaneColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -954,7 +1122,7 @@
 							},
 							"parameters": [
 								{
-									"id": 63,
+									"id": 71,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -965,14 +1133,14 @@
 									}
 								},
 								{
-									"id": 64,
+									"id": 72,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LitePhysicsMaterial"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
@@ -984,7 +1152,7 @@
 					]
 				},
 				{
-					"id": 56,
+					"id": 64,
 					"name": "createSphereColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -993,15 +1161,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 93,
+							"fileName": "PhysXPhysics.ts",
+							"line": 169,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L93"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L169"
 						}
 					],
 					"signatures": [
 						{
-							"id": 57,
+							"id": 65,
 							"name": "createSphereColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1017,7 +1185,7 @@
 							},
 							"parameters": [
 								{
-									"id": 58,
+									"id": 66,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1028,7 +1196,7 @@
 									}
 								},
 								{
-									"id": 59,
+									"id": 67,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1039,14 +1207,14 @@
 									}
 								},
 								{
-									"id": 60,
+									"id": 68,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LitePhysicsMaterial"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
@@ -1058,7 +1226,7 @@
 					]
 				},
 				{
-					"id": 77,
+					"id": 85,
 					"name": "createSpringJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1067,15 +1235,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 137,
+							"fileName": "PhysXPhysics.ts",
+							"line": 213,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L137"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L213"
 						}
 					],
 					"signatures": [
 						{
-							"id": 78,
+							"id": 86,
 							"name": "createSpringJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1091,14 +1259,14 @@
 							},
 							"parameters": [
 								{
-									"id": 79,
+									"id": 87,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "LiteCollider"
+										"name": "PhysXCollider"
 									}
 								}
 							],
@@ -1110,7 +1278,7 @@
 					]
 				},
 				{
-					"id": 34,
+					"id": 42,
 					"name": "createStaticCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1119,15 +1287,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "LitePhysics.ts",
-							"line": 52,
+							"fileName": "PhysXPhysics.ts",
+							"line": 128,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L52"
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L128"
 						}
 					],
 					"signatures": [
 						{
-							"id": 35,
+							"id": 43,
 							"name": "createStaticCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1143,7 +1311,7 @@
 							},
 							"parameters": [
 								{
-									"id": 36,
+									"id": 44,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1154,7 +1322,7 @@
 									}
 								},
 								{
-									"id": 37,
+									"id": 45,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1171,44 +1339,173 @@
 							}
 						}
 					]
+				},
+				{
+					"id": 8,
+					"name": "destroy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 99,
+							"character": 16,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L99"
+						}
+					],
+					"signatures": [
+						{
+							"id": 9,
+							"name": "destroy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Destroy PhysXPhysics."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 5,
+					"name": "initialize",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 50,
+							"character": 16,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L50"
+						}
+					],
+					"signatures": [
+						{
+							"id": 6,
+							"name": "initialize",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Initialize PhysXPhysics."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Promise object"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 7,
+									"name": "runtimeMode",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Runtime mode"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 93,
+										"name": "PhysXRuntimeMode"
+									},
+									"defaultValue": "PhysXRuntimeMode.Auto"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
 				}
 			],
 			"groups": [
 				{
 					"title": "Constructors",
 					"children": [
-						80
+						91
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						51,
-						65,
+						88,
+						59,
+						73,
+						50,
+						46,
+						79,
+						82,
+						10,
+						52,
+						69,
+						64,
+						85,
 						42,
-						38,
-						71,
-						74,
-						2,
-						44,
-						61,
-						56,
-						77,
-						34
+						8,
+						5
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "LitePhysics.ts",
-					"line": 27,
+					"fileName": "PhysXPhysics.ts",
+					"line": 37,
 					"character": 13,
-					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L27"
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/PhysXPhysics.ts#L37"
 				}
 			]
 		}
 	],
 	"groups": [
+		{
+			"title": "Enumerations",
+			"children": [
+				93
+			]
+		},
 		{
 			"title": "Classes",
 			"children": [
@@ -1221,7 +1518,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/index.ts#L1"
+			"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-physx/src/index.ts#L1"
 		}
 	]
 }
