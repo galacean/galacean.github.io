@@ -36,7 +36,7 @@ const engine = new WebGLEngine("canvas");
 The context management of WebGL can be managed through the third parameter [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) of [WebGLEngine](${api}rhi-webgl/WebGLEngine), take **canvas transparent** For example, the engine closes the transparent channel of the canvas by default, that is, the web page elements behind the canvas cannot be displayed, which helps to save GPU memory. If you need to open it, you can set it like this:
 
 ```typescript
-const engine = new WebGLEngine("canvas", undefined, {
+const engine = new WebGLEngine("canvas", {
   alpha: true
 });
 
