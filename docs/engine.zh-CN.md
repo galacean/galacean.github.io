@@ -50,8 +50,7 @@ const scene = engine.sceneManager.activeScene;
 scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
-类似的，可以用 `webGLMode` 控制 WebGL1/2， `antialias` 控制是否抗锯齿等等。
-
+类似的，可以用 `webGLMode` 控制 WebGL1/2，除 `webGLMode` 外的属性将透传给上下文，详情可参考 [getContext 参数释义](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#parameters)。
 
 ## 属性
 | 属性名称 | 属性释义 |

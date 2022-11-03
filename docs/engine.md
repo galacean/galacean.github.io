@@ -48,7 +48,7 @@ const scene = engine.sceneManager.activeScene;
 scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
-Similarly, you can use `webGLMode` to control WebGL1/2, `antialias` to control antialiasing, etc.
+Similarly, you can use `webGLMode` to control WebGL1/2, attributes other than `webGLMode` will be transparently transmitted to the context. For details, please refer to [getContext](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#parameters).
 ## Properties
 
 | Property name | Interpretation |
