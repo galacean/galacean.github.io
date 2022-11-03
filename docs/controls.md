@@ -16,7 +16,7 @@ The camera control inherits a powerful script and is mounted on the `Entity` con
 
 ### OrbitControl
 
-`OrbitControl` is used to simulate orbital interaction, suitable for 360 rotation interaction around a target object:
+`OrbitControl` is used to simulate orbital interaction, suitable for 360 rotation interaction around a target object, **be sure to add the `OrbitControl` after adding the `Camera` component**.
 
 <playground src="gltf-basic.ts"></playground>
 
@@ -42,7 +42,7 @@ The camera control inherits a powerful script and is mounted on the `Entity` con
 
 ### FreeControl
 
-`FreeControl` are generally used for roaming control, often in game scenes:
+`FreeControl` are generally used for roaming control, often in game scenes, **be sure to add the `FreeControl` after adding the `Camera` component**.
 
 <playground src="controls-free.ts"></playground>
 
