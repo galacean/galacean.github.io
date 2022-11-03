@@ -87,8 +87,12 @@ const texture2D = await this.engine.resourceManager.load<Texture2D>("test.png");
 ```
 加载器会使用 png、jpg 等后缀作为判断是 Texture2D 的依据，若使用 cdn 地址不带后缀，需要使用 type 去指定加载类型。例如
 ```typescript
-this.engine.resourceManager.load({url: "test", type: AssetType.Texture2D});
+this.engine.resourceManager.load({url: "test", type: AssetType.Texture2D, params: {format, mipmap}});
 ```
+
+#### 额外参数
+- format([TextureFormat](${api}core/TextureFormat)): 纹理格式, 默认为 [TextureFormat.RGBA](${api}core/TextureFormat#RGBA).
+- mipmap(boolean): 是否生成 mipmap, 默认是 `true`.
 
 
 ### 2. TextureCube
