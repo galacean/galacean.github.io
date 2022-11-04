@@ -71,8 +71,8 @@ const ExampleSearchRes = (props: IExampleSearchResProps) => {
         >
           {data.title}
           <Divider type='vertical' />
-          <Source src={data.htmlUrl} />
         </span>
+        <Source src={data.htmlUrl} />
         <Divider />
       </div>
     ));
