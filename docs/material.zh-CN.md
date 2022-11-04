@@ -55,6 +55,21 @@ material.baseColor.r = 0;
 const material = renderer.setMaterial(material);
 ```
 
+我们也可以直接替换材质的贴图，比如给 blinn-phong 材质替换基础颜色贴图：
+
+```typescript
+// 获取想要修改的 renderer
+const renderer = entity.getComponent(MeshRenderer);
+// 获取材质
+const material = renderer.getMaterial();
+// 设置贴图
+material.baseTexture = await engine.resourceManager
+  .load<Texture2D>({
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
+    type: AssetType.Texture2D
+  });
+```
+
 ## 常见 QA
 
 ### 1. 透明渲染异常？
