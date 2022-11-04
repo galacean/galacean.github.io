@@ -111,7 +111,7 @@ export interface DocSearchResponse {
   pageSize: number;
 }
 export async function searchAPI(opts: APISearchOptions): Promise<APISearchResponse> {
-  return await fetch(`http://${serverAddress}/api2/doc/apis/search?` + new URLSearchParams({ ...opts }), {
+  return await fetch(`${serverAddress}/api2/doc/apis/search?` + new URLSearchParams({ ...opts }), {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -129,7 +129,7 @@ export async function searchAPI(opts: APISearchOptions): Promise<APISearchRespon
 }
 
 export async function searchDoc(opts: DocSearchOptions): Promise<DocSearchResponse> {
-  return await fetch(`http://${serverAddress}/api2/doc/search?` + new URLSearchParams({ ...opts }), {
+  return await fetch(`${serverAddress}/api2/doc/search?` + new URLSearchParams({ ...opts }), {
     credentials: 'include',
     mode: 'cors',
     headers: {

@@ -1,12 +1,13 @@
 {
   "name": "oasis-engine",
-  "version": "0.8",
-  "versions": ["latest", "0.8", "0.7", "0.6", "0.5", "0.4", "0.3", "0.2"],
+  "version": "0.9",
+  "versions": ["latest"],
   "serverConfig": {
-    "local": "oasisbe-afx-38287.gz00b.dev.alipay.net",
-    "dev": "oasisbe-afx-38287.gz00b.dev.alipay.net",
+    "local": "http://oasisbe-afx-38287.gz00b.dev.alipay.net",
+    "dev": "http://oasisbe-afx-38287.gz00b.dev.alipay.net",
     "test": "http://oasisbe.test.alipay.net",
-    "pre": "http://oasisbe-pre.alipay.com"
+    "pre": "https://oasisbe-pre.alipay.com",
+    "prod": "https://oasisbe-pre.alipay.com"
   },
   "packages": {
     "oasis-engine": {
