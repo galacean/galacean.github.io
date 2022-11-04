@@ -15,8 +15,7 @@ import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
 import { Link, useParams } from 'react-router-dom';
 import { AppContext } from '../../contextProvider';
-import { tsMenuListRes } from '../../Examples/index';
-import { DocData, fetchDocDataById } from '../util/docUtil';
+import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
 
@@ -27,7 +26,7 @@ interface DocDetailProps {
 }
 
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
-  const { lang } = useContext(AppContext);
+  const { lang, version } = useContext(AppContext);
   const { docTitle } = useParams();
   const [docData, setDocData] = useState<DocData | null>(null);
   const idTitleMapRef = useRef<Map<string, string>>(new Map());
@@ -51,7 +50,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   }, [docTitle]);
 
   useEffect(() => {
-    tsMenuListRes.then((list) => {
+    fetchMenuList('ts', version).then((list) => {
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -67,7 +66,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           }
         });
     });
-  }, []);
+  }, [version]);
 
   useEffect(() => {
     if (!!props.selectedDocId) {
@@ -124,7 +123,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           nav: DocToc,
           blockquote({ className, src }: any) {
             if (className === 'playground-in-doc') {
-              return <Playground id={getIdByTitle(src) || ''} />;
+              return <Playground id={getIdByTitle(src) || ''} title={docTitle} />;
             }
             return null;
           },

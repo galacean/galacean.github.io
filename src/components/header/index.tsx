@@ -10,7 +10,7 @@ import {
   YuqueOutlined,
   ZhihuOutlined,
 } from '@ant-design/icons';
-import { Button, Col, Menu, Popover, Row, Select } from 'antd';
+import { Button, Menu, Popover, Select } from 'antd';
 import { useContext } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Media from 'react-media';
@@ -53,13 +53,17 @@ function Header() {
         </Menu.ItemGroup>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.artist' })}>
           <Menu.Item key='artist-docs'>
-            <Link to={'/temp'}>{formatMessage({ id: 'app.header.menu.artist.docs' })}</Link>
+            <Link to={`/docs/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`}>
+              {formatMessage({ id: 'app.header.menu.artist.docs' })}
+            </Link>
           </Menu.Item>
         </Menu.ItemGroup>
         {isZhCN && (
           <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.editor' })}>
             <Menu.Item key='editor-docs'>
-              <Link to={'temp'}>{formatMessage({ id: 'app.header.menu.editor.docs' })}</Link>
+              <Link to={'/docs/zh-CN/editor.zh-CN'}>
+                {formatMessage({ id: 'app.header.menu.editor.docs' })}
+              </Link>
             </Menu.Item>
           </Menu.ItemGroup>
         )}
@@ -76,7 +80,9 @@ function Header() {
       >
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.ecosystem.tool' })}>
           <Menu.Item key='miniprogram'>
-            <Link to={'temp'}>{formatMessage({ id: 'app.header.menu.ecosystem.miniprogram' })}</Link>
+            <Link to={`/docs/${context.lang}/miniprogram${context.lang === 'en' ? '' : '.zh-CN'}`}>
+              {formatMessage({ id: 'app.header.menu.ecosystem.miniprogram' })}
+            </Link>
           </Menu.Item>
           <Menu.Item key='gltfviewer'>
             <Link to={`/gltf-viewer`}>{formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}</Link>
@@ -96,10 +102,10 @@ function Header() {
         </Menu.ItemGroup>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.ecosystem.animation' })}>
           <Menu.Item key='spine'>
-            <Link to={'temp'}>Spine</Link>
+            <Link to={`/docs/zh-CN/editor-component-spine.zh-CN`}>Spine</Link>
           </Menu.Item>
           <Menu.Item key='lottie'>
-            <Link to={'temp'}>Lottie</Link>
+            <Link to={`/docs/zh-CN/editor-lottie.zh-CN`}>Lottie</Link>
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>
@@ -155,7 +161,7 @@ function Header() {
               <MenuOutlined className='nav-phone-icon' />
             </Popover>
           )}
-          <div className="header-left">
+          <div className='header-left'>
             <Link id='logo' to='/'>
               <img src={LOGO_URL} alt='Oasis Engine' />
             </Link>
