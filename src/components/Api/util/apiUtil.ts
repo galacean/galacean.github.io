@@ -35,7 +35,7 @@ export interface PkgChildDetail {
 }
 
 export async function fetchPkgList(): Promise<string[]> {
-  return await fetch(`http://${serverAddress}/api2/doc/apis/package/list`, {
+  return await fetch(`${serverAddress}/api2/doc/apis/package/list`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -52,7 +52,7 @@ export async function fetchPkgList(): Promise<string[]> {
     });
 }
 export async function fetchPkgChildren(pkg: string): Promise<PkgChild[]> {
-  return await fetch(`http://${serverAddress}/api2/doc/apis/package/${pkg}/children`, {
+  return await fetch(`${serverAddress}/api2/doc/apis/package/${pkg}/children`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -75,7 +75,7 @@ export async function fetchPkgChildrenDetail(
   if (!id) {
     return new Promise((resolve) => resolve(null));
   }
-  return await fetch(`http://${serverAddress}/api2/doc/apis/${pkg}/child/detail/${id}`, {
+  return await fetch(`${serverAddress}/api2/doc/apis/${pkg}/child/detail/${id}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {

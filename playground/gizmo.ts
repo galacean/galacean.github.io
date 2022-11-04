@@ -146,7 +146,7 @@ export class ControlScript extends Script {
       Coordinate: CoordinateType.Local,
       Anchor: AnchorType.Center,
     };
-    const gizmoConfig = ["null", "translate", "rotate", "scale"];
+    const gizmoConfig = ["null", "translate", "rotate", "scale", "all"];
     const orientationConfig = ["global", "local"];
     const pivotConfig = ["center", "pivot"];
 

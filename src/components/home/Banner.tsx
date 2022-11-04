@@ -18,29 +18,29 @@ function Banner() {
               alt='Oasis Engine'
             />
           </h1>
-          <div className='description'>
+          <div className='home-description'>
             <FormattedMessage id='app.home.slogan' />
-            <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank' style={{ marginLeft: "10px" }} >
+            <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
               <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
             </a>
-            <a href="https://www.npmjs.com/package/oasis-engine" target='_blank' style={{ marginLeft: "10px" }} >
+            <a href="https://www.npmjs.com/package/oasis-engine" target='_blank'>
               <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
             </a>
           </div>
-          <div className='button-wrapper'>
+          <div className='home-button-wrapper'>
             <Link to={`/docs/${context.lang}`}>
               <Button type='primary'>
                 <FormattedMessage id='app.home.start' />
                 <ArrowRightOutlined style={{ marginLeft: "5px" }} />
               </Button>
             </Link>
-            <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank' style={{ marginLeft: "10px" }}>
+            <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank'>
               <Button type='primary' ghost>
                 <GithubOutlined style={{ marginRight: "5px" }} />
                 <FormattedMessage id='app.home.discussion' />
               </Button>
             </a>
-            <a href='https://opencollective.com/oasis' target='_blank' style={{ marginLeft: "10px" }}>
+            <a href='https://opencollective.com/oasis' target='_blank'>
               <Button>
                 <HeartFilled style={{ color: "hotpink", marginRight: "5px" }} />
                 <FormattedMessage id='app.home.sponsoring' />

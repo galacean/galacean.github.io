@@ -155,42 +155,34 @@ function Header() {
               <MenuOutlined className='nav-phone-icon' />
             </Popover>
           )}
-          <Row>
-            <Col xxl={4} xl={5} lg={8} md={8} sm={24} xs={24}>
-              <Link id='logo' to='/'>
-                <img src={LOGO_URL} alt='Oasis Engine' />
-              </Link>
-            </Col>
-            <Col xxl={20} xl={19} lg={16} md={16} sm={0} xs={0}>
-              {!isMobile && <SearchBox></SearchBox>}
-              <div className='header-meta'>
-                {!isMobile && (
-                  <div className='right-header'>
-                    <div id='lang'>
-                      <Button
-                        size='small'
-                        onClick={() => {
-                          context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
-                        }}
-                      >
-                        <FormattedMessage id='app.header.lang' />
-                      </Button>
-                    </div>
-                    <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
-                      {versions.map((v) => {
-                        return (
-                          <Option value={v} key={v}>
-                            {v}
-                          </Option>
-                        );
-                      })}
-                    </Select>
-                  </div>
-                )}
-                <div id='menu'>{getMenu(false)}</div>
+          <Link id='logo' to='/'>
+            <img src={LOGO_URL} alt='Oasis Engine' />
+          </Link>
+          {!isMobile && <SearchBox></SearchBox>}
+          {!isMobile && <div id='menu'>{getMenu(false)}</div>}
+          {!isMobile && (
+            <div className='right-header'>
+              <div id='lang'>
+                <Button
+                  size='small'
+                  onClick={() => {
+                    context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
+                  }}
+                >
+                  <FormattedMessage id='app.header.lang' />
+                </Button>
               </div>
-            </Col>
-          </Row>
+              <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
+                {versions.map((v) => {
+                  return (
+                    <Option value={v} key={v}>
+                      {v}
+                    </Option>
+                  );
+                })}
+              </Select>
+            </div>
+          )}
         </div>
       )}
     </Media>

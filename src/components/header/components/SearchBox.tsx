@@ -46,8 +46,6 @@ const SearchBox = () => {
             debouncedLeadingSetSearchText(e);
           }}
         />
-      </div>
-      <>
         {searchText ? (
           <div
             id='header-search-result'
@@ -68,7 +66,7 @@ const SearchBox = () => {
             <SearchResult {...{ searchText, setLoadingSearchResult }}></SearchResult>
           </div>
         ) : null}
-      </>
+      </div>
     </>
   );
   return searchBox;

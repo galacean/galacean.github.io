@@ -127,7 +127,7 @@ export const translationsData: { [lang: string]: any } = {
     'app.content.loading': 'Loading...',
     'app.header.search': 'Search...',
     'app.header.search.loading': 'Loading...',
-    'app.header.search.box': 'Search Documenation/Examples/API',
+    'app.header.search.box': 'Search Docs/Examples/API',
     'app.header.search.no-matching':'No matching result',
     'app.header.search.all': 'Search in Google: ',
     'app.header.search.doc': 'Docs',
