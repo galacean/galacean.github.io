@@ -198,7 +198,7 @@ export async function fetchDocDataById(id: string): Promise<DocData | null> {
   const searchQuery = new URLSearchParams({
     id: docId,
   });
-  return await fetch(`http://${serverAddress}/api2/doc/detail?${searchQuery}`, {
+  return await fetch(`${serverAddress}/api2/doc/detail?${searchQuery}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -219,7 +219,7 @@ export async function fetchDocDetailByTitle(title: string): Promise<DocData> {
   const searchQuery = new URLSearchParams({
     title,
   });
-  return await fetch(`http://${serverAddress}/api2/doc/detail?${searchQuery}`, {
+  return await fetch(`${serverAddress}/api2/doc/detail?${searchQuery}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -245,7 +245,7 @@ export async function fetchMenuList(
   type?: 'ts' | 'markdown',
   version: string = 'latest'
 ): Promise<MenuData[]> {
-  return await fetch(`http://${serverAddress}/api2/doc/label/all/?tag=${type}&version=${version}`, {
+  return await fetch(`${serverAddress}/api2/doc/label/all/?tag=${type}&version=${version}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -262,7 +262,7 @@ export async function fetchMenuList(
     });
 }
 export async function fetchAllPlaygroundFiles(): Promise<FileData> {
-  return await fetch(`http://${serverAddress}/api2/doc/dir/playground?pageSize=1000`, {
+  return await fetch(`${serverAddress}/api2/doc/dir/playground?pageSize=1000`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
