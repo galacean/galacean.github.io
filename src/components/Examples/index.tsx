@@ -1,9 +1,10 @@
 import { MenuUnfoldOutlined, SearchOutlined } from '@ant-design/icons';
 import { Input, Layout, Menu, Popover } from 'antd';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { AppContext } from '../contextProvider';
 import { fetchMenuList } from '../doc/util/docUtil';
 import Footer from '../footer';
 import Header from '../header';
@@ -12,11 +13,8 @@ import './index.less';
 
 const { Sider, Content } = Layout;
 
-// init menu data
-// Ref: https://beta.reactjs.org/learn/synchronizing-with-effects#not-an-effect-initializing-the-application
-export const tsMenuListRes = fetchMenuList('ts');
-
 export default function Examples() {
+  const context = useContext(AppContext);
   const [items, setItems] = useState<ItemType[]>([]);
   const [filteredItems, setFilteredItems] = useState<ItemType[]>([]);
   const [selectedExampleId, setSelectedExampleId] = useState('');
@@ -39,7 +37,7 @@ export default function Examples() {
   );
 
   useEffect(() => {
-    tsMenuListRes.then((list) => {
+    fetchMenuList('ts', context.version).then((list) => {
       const itemRes: ItemType[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
@@ -87,7 +85,7 @@ export default function Examples() {
       setItems(itemRes);
       setFilteredItems(itemRes);
     });
-  }, []);
+  }, [context.version]);
 
   // update URL address
   useEffect(() => {
