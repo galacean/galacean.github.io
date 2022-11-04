@@ -8,7 +8,7 @@ import {
   ReadOutlined,
   TwitterOutlined,
   YuqueOutlined,
-  ZhihuOutlined
+  ZhihuOutlined,
 } from '@ant-design/icons';
 import { Button, Col, Menu, Popover, Row, Select } from 'antd';
 import { useContext } from 'react';
@@ -166,7 +166,9 @@ function Header() {
                 <Button
                   size='small'
                   onClick={() => {
-                    context.setLang(context.lang === 'zh-CN' ? 'en' : 'zh-CN');
+                    const newLang = context.lang === 'zh-CN' ? 'en' : 'zh-CN';
+                    context.setLang(newLang);
+                    localStorage.setItem('lang', newLang);
                   }}
                 >
                   <FormattedMessage id='app.header.lang' />

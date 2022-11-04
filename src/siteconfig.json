@@ -1,7 +1,7 @@
 {
   "name": "oasis-engine",
   "version": "0.9",
-  "versions": ["latest"],
+  "versions": ["latest", "0.8"],
   "serverConfig": {
     "local": "http://oasisbe-afx-38287.gz00b.dev.alipay.net",
     "dev": "http://oasisbe-afx-38287.gz00b.dev.alipay.net",
