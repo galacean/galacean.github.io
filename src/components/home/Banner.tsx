@@ -18,8 +18,10 @@ function Banner() {
               alt='Oasis Engine'
             />
           </h1>
-          <div className='home-description'>
+          <p>
             <FormattedMessage id='app.home.slogan' />
+          </p>
+          <div className='home-description'>
             <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
               <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
             </a>
