@@ -1,0 +1,5870 @@
+{
+	"id": 0,
+	"name": "@oasis-engine/loader",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 152,
+			"name": "InterpolableValueType",
+			"kind": 8,
+			"kindString": "Enumeration",
+			"flags": {},
+			"children": [
+				{
+					"id": 160,
+					"name": "Array",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 32,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L32"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 7
+					}
+				},
+				{
+					"id": 161,
+					"name": "Boolean",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 33,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L33"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 8
+					}
+				},
+				{
+					"id": 159,
+					"name": "Color",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 31,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L31"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 6
+					}
+				},
+				{
+					"id": 153,
+					"name": "Float",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 25,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L25"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 0
+					}
+				},
+				{
+					"id": 154,
+					"name": "FloatArray",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 26,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L26"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 1
+					}
+				},
+				{
+					"id": 158,
+					"name": "Quaternion",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 30,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L30"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 5
+					}
+				},
+				{
+					"id": 155,
+					"name": "Vector2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 27,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L27"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 2
+					}
+				},
+				{
+					"id": 156,
+					"name": "Vector3",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 28,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L28"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 3
+					}
+				},
+				{
+					"id": 157,
+					"name": "Vector4",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 29,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L29"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 4
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration Members",
+					"children": [
+						160,
+						161,
+						159,
+						153,
+						154,
+						158,
+						155,
+						156,
+						157
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+					"line": 24,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L24"
+				}
+			]
+		},
+		{
+			"id": 162,
+			"name": "AnimationClipDecoder",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 167,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 168,
+							"name": "new AnimationClipDecoder",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 162,
+								"name": "AnimationClipDecoder"
+							}
+						}
+					]
+				},
+				{
+					"id": 163,
+					"name": "decode",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+							"line": 38,
+							"character": 16,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L38"
+						}
+					],
+					"signatures": [
+						{
+							"id": 164,
+							"name": "decode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 165,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 166,
+									"name": "bufferReader",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BufferReader"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "AnimationClip"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						167
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						163
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts",
+					"line": 37,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/AnimationClipDecoder.ts#L37"
+				}
+			]
+		},
+		{
+			"id": 257,
+			"name": "EditorTextureLoader",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 271,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 29,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 272,
+							"name": "new EditorTextureLoader",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 273,
+									"name": "useCache",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 257,
+								"name": "EditorTextureLoader"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Loader<Texture2D>.constructor"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader<Texture2D>.constructor"
+					}
+				},
+				{
+					"id": 279,
+					"name": "request",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 27,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 280,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "core/types/asset/Loader.d.ts",
+									"line": 27,
+									"character": 13
+								}
+							],
+							"signatures": [
+								{
+									"id": 281,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 282,
+											"name": "U",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 283,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 284,
+											"name": "config",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "RequestConfig"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 254,
+												"name": "U"
+											}
+										],
+										"name": "AssetPromise"
+									}
+								}
+							]
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.request"
+					}
+				},
+				{
+					"id": 278,
+					"name": "useCache",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 9,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.useCache"
+					}
+				},
+				{
+					"id": 274,
+					"name": "load",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/scene/EditorTextureLoader.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/scene/EditorTextureLoader.ts#L12"
+						}
+					],
+					"signatures": [
+						{
+							"id": 275,
+							"name": "load",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 276,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LoadItem"
+									}
+								},
+								{
+									"id": 277,
+									"name": "resourceManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ResourceManager"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Texture2D"
+									}
+								],
+								"name": "AssetPromise"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "Loader.load"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "Loader.load"
+					}
+				},
+				{
+					"id": 265,
+					"name": "getClass",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 23,
+							"character": 11
+						}
+					],
+					"signatures": [
+						{
+							"id": 266,
+							"name": "getClass",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Get the class object by class name."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "class object"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 267,
+									"name": "className",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 268,
+									"name": "__type",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core/types/asset/Loader.d.ts",
+											"line": 23,
+											"character": 40
+										}
+									],
+									"signatures": [
+										{
+											"id": 269,
+											"name": "new getClass",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 270,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Loader.getClass"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.getClass"
+					}
+				},
+				{
+					"id": 258,
+					"name": "registerClass",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 15,
+							"character": 11
+						}
+					],
+					"signatures": [
+						{
+							"id": 259,
+							"name": "registerClass",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Register a class with a string name for serialization and deserialization."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 260,
+									"name": "className",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 261,
+									"name": "classDefine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 262,
+											"name": "__type",
+											"kind": 512,
+											"kindString": "Constructor",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core/types/asset/Loader.d.ts",
+													"line": 15,
+													"character": 57
+												}
+											],
+											"signatures": [
+												{
+													"id": 263,
+													"name": "new classDefine",
+													"kind": 16384,
+													"kindString": "Constructor signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 264,
+															"name": "args",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isRest": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "any"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Loader.registerClass"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.registerClass"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						271
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						279,
+						278
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						274,
+						265,
+						258
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/scene/EditorTextureLoader.ts",
+					"line": 11,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/scene/EditorTextureLoader.ts#L11"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"typeArguments": [
+						{
+							"type": "reference",
+							"name": "Texture2D"
+						}
+					],
+					"name": "Loader"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"name": "GLTFResource",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Product after GLTF parser, usually, "
+					},
+					{
+						"kind": "code",
+						"text": "`defaultSceneRoot`"
+					},
+					{
+						"kind": "text",
+						"text": " is only needed to use."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 5,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 19,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 6,
+							"name": "new GLTFResource",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 7,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 4,
+								"name": "GLTFResource"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "EngineObject.constructor"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject.constructor"
+					}
+				},
+				{
+					"id": 28,
+					"name": "_destroyed",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 10,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject._destroyed"
+					}
+				},
+				{
+					"id": 27,
+					"name": "_engine",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 9,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Engine"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject._engine"
+					}
+				},
+				{
+					"id": 15,
+					"name": "animations",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis AnimationClip after AnimationParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 34,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L34"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "AnimationClip"
+						}
+					}
+				},
+				{
+					"id": 10,
+					"name": "buffers",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "ArrayBuffer after BufferParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 24,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L24"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "ArrayBuffer",
+							"qualifiedName": "ArrayBuffer",
+							"package": "_typescript@4.8.4@typescript"
+						}
+					}
+				},
+				{
+					"id": 17,
+					"name": "cameras",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis Camera after SceneParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 38,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L38"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Camera"
+						}
+					}
+				},
+				{
+					"id": 20,
+					"name": "defaultSceneRoot",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis RootEntity after SceneParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 44,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L44"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Entity"
+					}
+				},
+				{
+					"id": 16,
+					"name": "entities",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis Entity after EntityParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 36,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L36"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Entity"
+						}
+					}
+				},
+				{
+					"id": 9,
+					"name": "gltf",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "GLTF file content."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 22,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L22"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IGLTF"
+					}
+				},
+				{
+					"id": 26,
+					"name": "instanceId",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Engine unique id."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 8,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject.instanceId"
+					}
+				},
+				{
+					"id": 18,
+					"name": "lights",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "GLTF can export lights in extension KHR_lights_punctual"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 40,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L40"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Light"
+						}
+					}
+				},
+				{
+					"id": 12,
+					"name": "materials",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis Material after MaterialParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 28,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L28"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Material"
+						}
+					}
+				},
+				{
+					"id": 13,
+					"name": "meshes",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis ModelMesh after MeshParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 30,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L30"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "array",
+							"elementType": {
+								"type": "reference",
+								"name": "ModelMesh"
+							}
+						}
+					}
+				},
+				{
+					"id": 19,
+					"name": "sceneRoots",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis RootEntities after SceneParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 42,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L42"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Entity"
+						}
+					}
+				},
+				{
+					"id": 14,
+					"name": "skins",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis Skin after SkinParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 32,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L32"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Skin"
+						}
+					}
+				},
+				{
+					"id": 11,
+					"name": "textures",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Oasis Texture2D after TextureParser."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 26,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L26"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Texture2D"
+						}
+					}
+				},
+				{
+					"id": 8,
+					"name": "url",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "GLTF file url."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 20,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L20"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 21,
+					"name": "variants",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Renderer can replace material by "
+							},
+							{
+								"kind": "code",
+								"text": "`renderer.setMaterial`"
+							},
+							{
+								"kind": "text",
+								"text": " if gltf use plugin-in KHR_materials_variants."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/gltf/GLTFResource.ts",
+							"line": 46,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L46"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reflection",
+							"declaration": {
+								"id": 22,
+								"name": "__type",
+								"kind": 65536,
+								"kindString": "Type literal",
+								"flags": {},
+								"children": [
+									{
+										"id": 24,
+										"name": "material",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/gltf/GLTFResource.ts",
+												"line": 46,
+												"character": 35,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L46"
+											}
+										],
+										"type": {
+											"type": "reference",
+											"name": "Material"
+										}
+									},
+									{
+										"id": 23,
+										"name": "renderer",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/gltf/GLTFResource.ts",
+												"line": 46,
+												"character": 15,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L46"
+											}
+										],
+										"type": {
+											"type": "reference",
+											"name": "Renderer"
+										}
+									},
+									{
+										"id": 25,
+										"name": "variants",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/gltf/GLTFResource.ts",
+												"line": 46,
+												"character": 55,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L46"
+											}
+										],
+										"type": {
+											"type": "array",
+											"elementType": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										}
+									}
+								],
+								"groups": [
+									{
+										"title": "Properties",
+										"children": [
+											24,
+											23,
+											25
+										]
+									}
+								],
+								"sources": [
+									{
+										"fileName": "loader/src/gltf/GLTFResource.ts",
+										"line": 46,
+										"character": 13,
+										"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L46"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"id": 31,
+					"name": "destroyed",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 18,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 32,
+						"name": "destroyed",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Whether it has been destroyed."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "EngineObject.destroyed"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject.destroyed"
+					}
+				},
+				{
+					"id": 29,
+					"name": "engine",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 14,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 30,
+						"name": "engine",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Get the engine which the object belongs."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "Engine"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "EngineObject.engine"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject.engine"
+					}
+				},
+				{
+					"id": 33,
+					"name": "destroy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/base/EngineObject.d.ts",
+							"line": 23,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 34,
+							"name": "destroy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Destroy self."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "EngineObject.destroy"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineObject.destroy"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						5
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						28,
+						27,
+						15,
+						10,
+						17,
+						20,
+						16,
+						9,
+						26,
+						18,
+						12,
+						13,
+						19,
+						14,
+						11,
+						8,
+						21
+					]
+				},
+				{
+					"title": "Accessors",
+					"children": [
+						31,
+						29
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						33
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/gltf/GLTFResource.ts",
+					"line": 18,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/gltf/GLTFResource.ts#L18"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "EngineObject"
+				}
+			]
+		},
+		{
+			"id": 45,
+			"name": "MeshDecoder",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 50,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 51,
+							"name": "new MeshDecoder",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 45,
+								"name": "MeshDecoder"
+							}
+						}
+					]
+				},
+				{
+					"id": 46,
+					"name": "decode",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPublic": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/MeshDecoder.ts",
+							"line": 12,
+							"character": 16,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/MeshDecoder.ts#L12"
+						}
+					],
+					"signatures": [
+						{
+							"id": 47,
+							"name": "decode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 48,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 49,
+									"name": "bufferReader",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BufferReader"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ModelMesh"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						50
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						46
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/mesh/MeshDecoder.ts",
+					"line": 11,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/MeshDecoder.ts#L11"
+				}
+			]
+		},
+		{
+			"id": 229,
+			"name": "MeshLoader",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 243,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 29,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 244,
+							"name": "new MeshLoader",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 245,
+									"name": "useCache",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 229,
+								"name": "MeshLoader"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Loader<ModelMesh>.constructor"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader<ModelMesh>.constructor"
+					}
+				},
+				{
+					"id": 251,
+					"name": "request",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 27,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 252,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "core/types/asset/Loader.d.ts",
+									"line": 27,
+									"character": 13
+								}
+							],
+							"signatures": [
+								{
+									"id": 253,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"typeParameter": [
+										{
+											"id": 254,
+											"name": "U",
+											"kind": 131072,
+											"kindString": "Type parameter",
+											"flags": {}
+										}
+									],
+									"parameters": [
+										{
+											"id": 255,
+											"name": "url",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "intrinsic",
+												"name": "string"
+											}
+										},
+										{
+											"id": 256,
+											"name": "config",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "RequestConfig"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 254,
+												"name": "U"
+											}
+										],
+										"name": "AssetPromise"
+									}
+								}
+							]
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.request"
+					}
+				},
+				{
+					"id": 250,
+					"name": "useCache",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 9,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.useCache"
+					}
+				},
+				{
+					"id": 246,
+					"name": "load",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/scene/MeshLoader.ts",
+							"line": 15,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/scene/MeshLoader.ts#L15"
+						}
+					],
+					"signatures": [
+						{
+							"id": 247,
+							"name": "load",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 248,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LoadItem"
+									}
+								},
+								{
+									"id": 249,
+									"name": "resourceManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ResourceManager"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "ModelMesh"
+									}
+								],
+								"name": "AssetPromise"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "Loader.load"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "Loader.load"
+					}
+				},
+				{
+					"id": 237,
+					"name": "getClass",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 23,
+							"character": 11
+						}
+					],
+					"signatures": [
+						{
+							"id": 238,
+							"name": "getClass",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Get the class object by class name."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "class object"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 239,
+									"name": "className",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 240,
+									"name": "__type",
+									"kind": 512,
+									"kindString": "Constructor",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "core/types/asset/Loader.d.ts",
+											"line": 23,
+											"character": 40
+										}
+									],
+									"signatures": [
+										{
+											"id": 241,
+											"name": "new getClass",
+											"kind": 16384,
+											"kindString": "Constructor signature",
+											"flags": {},
+											"parameters": [
+												{
+													"id": 242,
+													"name": "args",
+													"kind": 32768,
+													"kindString": "Parameter",
+													"flags": {
+														"isRest": true
+													},
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											],
+											"type": {
+												"type": "intrinsic",
+												"name": "any"
+											}
+										}
+									]
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Loader.getClass"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.getClass"
+					}
+				},
+				{
+					"id": 230,
+					"name": "registerClass",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "core/types/asset/Loader.d.ts",
+							"line": 15,
+							"character": 11
+						}
+					],
+					"signatures": [
+						{
+							"id": 231,
+							"name": "registerClass",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Register a class with a string name for serialization and deserialization."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 232,
+									"name": "className",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 233,
+									"name": "classDefine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 234,
+											"name": "__type",
+											"kind": 512,
+											"kindString": "Constructor",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "core/types/asset/Loader.d.ts",
+													"line": 15,
+													"character": 57
+												}
+											],
+											"signatures": [
+												{
+													"id": 235,
+													"name": "new classDefine",
+													"kind": 16384,
+													"kindString": "Constructor signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 236,
+															"name": "args",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {
+																"isRest": true
+															},
+															"type": {
+																"type": "intrinsic",
+																"name": "any"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "any"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Loader.registerClass"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Loader.registerClass"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						243
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						251,
+						250
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						246,
+						237,
+						230
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/scene/MeshLoader.ts",
+					"line": 14,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/scene/MeshLoader.ts#L14"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"typeArguments": [
+						{
+							"type": "reference",
+							"name": "ModelMesh"
+						}
+					],
+					"name": "Loader"
+				}
+			]
+		},
+		{
+			"id": 99,
+			"name": "PrefabParser",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 111,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L6"
+						}
+					],
+					"signatures": [
+						{
+							"id": 112,
+							"name": "new PrefabParser",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 113,
+									"name": "_engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 99,
+								"name": "PrefabParser"
+							}
+						}
+					]
+				},
+				{
+					"id": 114,
+					"name": "_engine",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+							"line": 6,
+							"character": 22,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L6"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Engine"
+					}
+				},
+				{
+					"id": 115,
+					"name": "parse",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L8"
+						}
+					],
+					"signatures": [
+						{
+							"id": 116,
+							"name": "parse",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 117,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 169,
+										"name": "IPrefabFile"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Entity"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 100,
+					"name": "parseChildren",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+							"line": 28,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L28"
+						}
+					],
+					"signatures": [
+						{
+							"id": 101,
+							"name": "parseChildren",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 102,
+									"name": "entitiesConfig",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 103,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+													"line": 29,
+													"character": 20,
+													"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L29"
+												}
+											],
+											"indexSignature": {
+												"id": 104,
+												"name": "__index",
+												"kind": 8192,
+												"kindString": "Index signature",
+												"flags": {},
+												"parameters": [
+													{
+														"id": 105,
+														"name": "key",
+														"kind": 32768,
+														"flags": {},
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													}
+												],
+												"type": {
+													"type": "reference",
+													"id": 187,
+													"name": "IEntity"
+												}
+											}
+										}
+									}
+								},
+								{
+									"id": 106,
+									"name": "entities",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 107,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+													"line": 30,
+													"character": 14,
+													"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L30"
+												}
+											],
+											"indexSignature": {
+												"id": 108,
+												"name": "__index",
+												"kind": 8192,
+												"kindString": "Index signature",
+												"flags": {},
+												"parameters": [
+													{
+														"id": 109,
+														"name": "key",
+														"kind": 32768,
+														"flags": {},
+														"type": {
+															"type": "intrinsic",
+															"name": "string"
+														}
+													}
+												],
+												"type": {
+													"type": "reference",
+													"name": "Entity"
+												}
+											}
+										}
+									}
+								},
+								{
+									"id": 110,
+									"name": "parentId",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						111
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						114
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						115,
+						100
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabParser.ts",
+					"line": 5,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabParser.ts#L5"
+				}
+			]
+		},
+		{
+			"id": 59,
+			"name": "ReflectionParser",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 97,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 98,
+							"name": "new ReflectionParser",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 59,
+								"name": "ReflectionParser"
+							}
+						}
+					]
+				},
+				{
+					"id": 91,
+					"name": "_isClass",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 129,
+							"character": 17,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L129"
+						}
+					],
+					"signatures": [
+						{
+							"id": 92,
+							"name": "_isClass",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 93,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "predicate",
+								"name": "value",
+								"asserts": false,
+								"targetType": {
+									"type": "reference",
+									"id": 205,
+									"name": "IClassObject"
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 94,
+					"name": "_isRef",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 133,
+							"character": 17,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L133"
+						}
+					],
+					"signatures": [
+						{
+							"id": 95,
+							"name": "_isRef",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 96,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "predicate",
+								"name": "value",
+								"asserts": false,
+								"targetType": {
+									"type": "reference",
+									"id": 218,
+									"name": "IReferenceType"
+								}
+							}
+						}
+					]
+				},
+				{
+					"id": 64,
+					"name": "getEntityByConfig",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true,
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 36,
+							"character": 17,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L36"
+						}
+					],
+					"signatures": [
+						{
+							"id": 65,
+							"name": "getEntityByConfig",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 66,
+									"name": "entityConfig",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 187,
+										"name": "IEntity"
+									}
+								},
+								{
+									"id": 67,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Entity"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 73,
+					"name": "parseBasicType",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 59,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L59"
+						}
+					],
+					"signatures": [
+						{
+							"id": 74,
+							"name": "parseBasicType",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 75,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 217,
+										"name": "IBasicType"
+									}
+								},
+								{
+									"id": 76,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 77,
+									"name": "resourceManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"defaultValue": "engine.resourceManager"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 68,
+					"name": "parseClassObject",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 48,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L48"
+						}
+					],
+					"signatures": [
+						{
+							"id": 69,
+							"name": "parseClassObject",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 70,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 205,
+										"name": "IClassObject"
+									}
+								},
+								{
+									"id": 71,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 72,
+									"name": "resourceManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"defaultValue": "engine.resourceManager"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 60,
+					"name": "parseEntity",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 5,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L5"
+						}
+					],
+					"signatures": [
+						{
+							"id": 61,
+							"name": "parseEntity",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 62,
+									"name": "entityConfig",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 187,
+										"name": "IEntity"
+									}
+								},
+								{
+									"id": 63,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Entity"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 84,
+					"name": "parseMethod",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 115,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L115"
+						}
+					],
+					"signatures": [
+						{
+							"id": 85,
+							"name": "parseMethod",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 86,
+									"name": "instance",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 87,
+									"name": "methodName",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 88,
+									"name": "methodParams",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 217,
+											"name": "IBasicType"
+										}
+									}
+								},
+								{
+									"id": 89,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 90,
+									"name": "resourceManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"defaultValue": "engine.resourceManager"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 78,
+					"name": "parsePropsAndMethods",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+							"line": 82,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L82"
+						}
+					],
+					"signatures": [
+						{
+							"id": 79,
+							"name": "parsePropsAndMethods",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 80,
+									"name": "instance",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 81,
+									"name": "item",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"typeArguments": [
+											{
+												"type": "reference",
+												"id": 205,
+												"name": "IClassObject"
+											},
+											{
+												"type": "literal",
+												"value": "class"
+											}
+										],
+										"name": "Omit",
+										"qualifiedName": "Omit",
+										"package": "_typescript@4.8.4@typescript"
+									}
+								},
+								{
+									"id": 82,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 83,
+									"name": "resourceManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									},
+									"defaultValue": "engine.resourceManager"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						97
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						91,
+						94,
+						64,
+						73,
+						68,
+						60,
+						84,
+						78
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts",
+					"line": 4,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/ReflectionParser.ts#L4"
+				}
+			]
+		},
+		{
+			"id": 222,
+			"name": "SceneParser",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 227,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 228,
+							"name": "new SceneParser",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 222,
+								"name": "SceneParser"
+							}
+						}
+					]
+				},
+				{
+					"id": 223,
+					"name": "parse",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/scene/SceneParser.ts",
+							"line": 7,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/scene/SceneParser.ts#L7"
+						}
+					],
+					"signatures": [
+						{
+							"id": 224,
+							"name": "parse",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 225,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 226,
+									"name": "sceneData",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 171,
+										"name": "IScene"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Scene"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						227
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						223
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/scene/SceneParser.ts",
+					"line": 6,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/scene/SceneParser.ts#L6"
+				}
+			]
+		},
+		{
+			"id": 52,
+			"name": "Texture2DDecoder",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 57,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 58,
+							"name": "new Texture2DDecoder",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 52,
+								"name": "Texture2DDecoder"
+							}
+						}
+					]
+				},
+				{
+					"id": 53,
+					"name": "decode",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/texture2D/TextureDecoder.ts",
+							"line": 7,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/texture2D/TextureDecoder.ts#L7"
+						}
+					],
+					"signatures": [
+						{
+							"id": 54,
+							"name": "decode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 55,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 56,
+									"name": "bufferReader",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BufferReader"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "Texture2D"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						57
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						53
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/texture2D/TextureDecoder.ts",
+					"line": 6,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/texture2D/TextureDecoder.ts#L6"
+				}
+			]
+		},
+		{
+			"id": 35,
+			"name": "GLTFParams",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "GlTF loader params."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 36,
+					"name": "keepMeshData",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Keep raw mesh data for glTF parser, default is false."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/GLTFLoader.ts",
+							"line": 68,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/GLTFLoader.ts#L68"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						36
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/GLTFLoader.ts",
+					"line": 66,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/GLTFLoader.ts#L66"
+				}
+			]
+		},
+		{
+			"id": 177,
+			"name": "IBasicEntity",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 185,
+					"name": "children",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 20,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L20"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				},
+				{
+					"id": 180,
+					"name": "components",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 15,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L15"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 200,
+							"name": "IComponent"
+						}
+					}
+				},
+				{
+					"id": 179,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 14,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L14"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 181,
+					"name": "isActive",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 16,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L16"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 178,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 13,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L13"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 186,
+					"name": "parent",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 21,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L21"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 182,
+					"name": "position",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 17,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L17"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 173,
+						"name": "IVector3"
+					}
+				},
+				{
+					"id": 183,
+					"name": "rotation",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 18,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L18"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 173,
+						"name": "IVector3"
+					}
+				},
+				{
+					"id": 184,
+					"name": "scale",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L19"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 173,
+						"name": "IVector3"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						185,
+						180,
+						179,
+						181,
+						178,
+						186,
+						182,
+						183,
+						184
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 12,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L12"
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 188,
+					"name": "IRefEntity"
+				}
+			]
+		},
+		{
+			"id": 118,
+			"name": "IModelMesh",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 133,
+					"name": "blendShapes",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 126,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L126"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reflection",
+							"declaration": {
+								"id": 134,
+								"name": "__type",
+								"kind": 65536,
+								"kindString": "Type literal",
+								"flags": {},
+								"children": [
+									{
+										"id": 136,
+										"name": "frames",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+												"line": 128,
+												"character": 4,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L128"
+											}
+										],
+										"type": {
+											"type": "array",
+											"elementType": {
+												"type": "reflection",
+												"declaration": {
+													"id": 137,
+													"name": "__type",
+													"kind": 65536,
+													"kindString": "Type literal",
+													"flags": {},
+													"children": [
+														{
+															"id": 140,
+															"name": "deltaNormals",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+																	"line": 131,
+																	"character": 6,
+																	"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L131"
+																}
+															],
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "IVector3"
+																}
+															}
+														},
+														{
+															"id": 139,
+															"name": "deltaPositions",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+																	"line": 130,
+																	"character": 6,
+																	"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L130"
+																}
+															],
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "IVector3"
+																}
+															}
+														},
+														{
+															"id": 141,
+															"name": "deltaTangents",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+																	"line": 132,
+																	"character": 6,
+																	"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L132"
+																}
+															],
+															"type": {
+																"type": "array",
+																"elementType": {
+																	"type": "reference",
+																	"name": "IVector4"
+																}
+															}
+														},
+														{
+															"id": 138,
+															"name": "weight",
+															"kind": 1024,
+															"kindString": "Property",
+															"flags": {},
+															"sources": [
+																{
+																	"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+																	"line": 129,
+																	"character": 6,
+																	"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L129"
+																}
+															],
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"groups": [
+														{
+															"title": "Properties",
+															"children": [
+																140,
+																139,
+																141,
+																138
+															]
+														}
+													],
+													"sources": [
+														{
+															"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+															"line": 128,
+															"character": 12,
+															"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L128"
+														}
+													]
+												}
+											}
+										}
+									},
+									{
+										"id": 135,
+										"name": "name",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+												"line": 127,
+												"character": 4,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L127"
+											}
+										],
+										"type": {
+											"type": "intrinsic",
+											"name": "string"
+										}
+									}
+								],
+								"groups": [
+									{
+										"title": "Properties",
+										"children": [
+											136,
+											135
+										]
+									}
+								],
+								"sources": [
+									{
+										"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+										"line": 126,
+										"character": 16,
+										"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L126"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"id": 132,
+					"name": "boneIndices",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 125,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L125"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector4"
+						}
+					}
+				},
+				{
+					"id": 131,
+					"name": "boneWeights",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 124,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L124"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector4"
+						}
+					}
+				},
+				{
+					"id": 129,
+					"name": "colors",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 122,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L122"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IColor"
+						}
+					}
+				},
+				{
+					"id": 142,
+					"name": "indices",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 135,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L135"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				},
+				{
+					"id": 120,
+					"name": "normals",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 113,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L113"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector3"
+						}
+					}
+				},
+				{
+					"id": 119,
+					"name": "positions",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 112,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L112"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector3"
+						}
+					}
+				},
+				{
+					"id": 143,
+					"name": "subMeshes",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 136,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L136"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reflection",
+							"declaration": {
+								"id": 144,
+								"name": "__type",
+								"kind": 65536,
+								"kindString": "Type literal",
+								"flags": {},
+								"children": [
+									{
+										"id": 147,
+										"name": "count",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+												"line": 139,
+												"character": 4,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L139"
+											}
+										],
+										"type": {
+											"type": "intrinsic",
+											"name": "number"
+										}
+									},
+									{
+										"id": 145,
+										"name": "start",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+												"line": 137,
+												"character": 4,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L137"
+											}
+										],
+										"type": {
+											"type": "intrinsic",
+											"name": "number"
+										}
+									},
+									{
+										"id": 146,
+										"name": "topology",
+										"kind": 1024,
+										"kindString": "Property",
+										"flags": {},
+										"sources": [
+											{
+												"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+												"line": 138,
+												"character": 4,
+												"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L138"
+											}
+										],
+										"type": {
+											"type": "reference",
+											"name": "MeshTopology"
+										}
+									}
+								],
+								"groups": [
+									{
+										"title": "Properties",
+										"children": [
+											147,
+											145,
+											146
+										]
+									}
+								],
+								"sources": [
+									{
+										"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+										"line": 136,
+										"character": 13,
+										"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L136"
+									}
+								]
+							}
+						}
+					}
+				},
+				{
+					"id": 130,
+					"name": "tangents",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 123,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L123"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector4"
+						}
+					}
+				},
+				{
+					"id": 122,
+					"name": "uv1",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 115,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L115"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 123,
+					"name": "uv2",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 116,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L116"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 124,
+					"name": "uv3",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 117,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L117"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 125,
+					"name": "uv4",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 118,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L118"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 126,
+					"name": "uv5",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 119,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L119"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 127,
+					"name": "uv6",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 120,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L120"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 128,
+					"name": "uv7",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 121,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L121"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				},
+				{
+					"id": 121,
+					"name": "uvs",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+							"line": 114,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L114"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "IVector2"
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						133,
+						132,
+						131,
+						129,
+						142,
+						120,
+						119,
+						143,
+						130,
+						122,
+						123,
+						124,
+						125,
+						126,
+						127,
+						128,
+						121
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts",
+					"line": 111,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/mesh/IModelMesh.d.ts#L111"
+				}
+			]
+		},
+		{
+			"id": 169,
+			"name": "IPrefabFile",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 170,
+					"name": "entities",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 2,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L2"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 187,
+							"name": "IEntity"
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						170
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 1,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L1"
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 171,
+					"name": "IScene"
+				}
+			]
+		},
+		{
+			"id": 188,
+			"name": "IRefEntity",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 189,
+					"name": "assetRefId",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 27,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L27"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 198,
+					"name": "children",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 20,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L20"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 185,
+						"name": "IBasicEntity.children"
+					}
+				},
+				{
+					"id": 193,
+					"name": "components",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 15,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L15"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 200,
+							"name": "IComponent"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 180,
+						"name": "IBasicEntity.components"
+					}
+				},
+				{
+					"id": 192,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 14,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L14"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 179,
+						"name": "IBasicEntity.id"
+					}
+				},
+				{
+					"id": 194,
+					"name": "isActive",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 16,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L16"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 181,
+						"name": "IBasicEntity.isActive"
+					}
+				},
+				{
+					"id": 190,
+					"name": "key",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 28,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L28"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 191,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 13,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L13"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 178,
+						"name": "IBasicEntity.name"
+					}
+				},
+				{
+					"id": 199,
+					"name": "parent",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 21,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L21"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 186,
+						"name": "IBasicEntity.parent"
+					}
+				},
+				{
+					"id": 195,
+					"name": "position",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 17,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L17"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 173,
+						"name": "IVector3"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 182,
+						"name": "IBasicEntity.position"
+					}
+				},
+				{
+					"id": 196,
+					"name": "rotation",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 18,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L18"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 173,
+						"name": "IVector3"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 183,
+						"name": "IBasicEntity.rotation"
+					}
+				},
+				{
+					"id": 197,
+					"name": "scale",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L19"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 173,
+						"name": "IVector3"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 184,
+						"name": "IBasicEntity.scale"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						189,
+						198,
+						193,
+						192,
+						194,
+						190,
+						191,
+						199,
+						195,
+						196,
+						197
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 26,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L26"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 177,
+					"name": "IBasicEntity"
+				}
+			]
+		},
+		{
+			"id": 171,
+			"name": "IScene",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 172,
+					"name": "entities",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 2,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L2"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 187,
+							"name": "IEntity"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 170,
+						"name": "IPrefabFile.entities"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						172
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 5,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L5"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 169,
+					"name": "IPrefabFile"
+				}
+			]
+		},
+		{
+			"id": 173,
+			"name": "IVector3",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 174,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 175,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 9,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L9"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 176,
+					"name": "z",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L10"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						174,
+						175,
+						176
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 7,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L7"
+				}
+			]
+		},
+		{
+			"id": 37,
+			"name": "Texture2DParams",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Texture2D loader params interface."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 38,
+					"name": "format",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Texture format. default  "
+							},
+							{
+								"kind": "code",
+								"text": "`TextureFormat.R8G8B8A8`"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/Texture2DLoader.ts",
+							"line": 52,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/Texture2DLoader.ts#L52"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "TextureFormat"
+					}
+				},
+				{
+					"id": 39,
+					"name": "mipmap",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Whether to use multi-level texture, default is true."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "loader/src/Texture2DLoader.ts",
+							"line": 54,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/Texture2DLoader.ts#L54"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						38,
+						39
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "loader/src/Texture2DLoader.ts",
+					"line": 50,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/Texture2DLoader.ts#L50"
+				}
+			]
+		},
+		{
+			"id": 217,
+			"name": "IBasicType",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 42,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L42"
+				}
+			],
+			"type": {
+				"type": "union",
+				"types": [
+					{
+						"type": "intrinsic",
+						"name": "string"
+					},
+					{
+						"type": "intrinsic",
+						"name": "number"
+					},
+					{
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					{
+						"type": "literal",
+						"value": null
+					},
+					{
+						"type": "intrinsic",
+						"name": "undefined"
+					},
+					{
+						"type": "reference",
+						"id": 218,
+						"name": "IReferenceType"
+					},
+					{
+						"type": "reference",
+						"id": 205,
+						"name": "IClassObject"
+					},
+					{
+						"type": "reference",
+						"id": 204,
+						"name": "IMethodParams"
+					}
+				]
+			}
+		},
+		{
+			"id": 205,
+			"name": "IClassObject",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 35,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L35"
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 206,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"children": [
+						{
+							"id": 207,
+							"name": "class",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 36,
+									"character": 2,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L36"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 208,
+							"name": "constructParams",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 37,
+									"character": 2,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L37"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 204,
+								"name": "IMethodParams"
+							}
+						},
+						{
+							"id": 209,
+							"name": "methods",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 38,
+									"character": 2,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L38"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 210,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+											"line": 38,
+											"character": 12,
+											"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L38"
+										}
+									],
+									"indexSignature": {
+										"id": 211,
+										"name": "__index",
+										"kind": 8192,
+										"kindString": "Index signature",
+										"flags": {},
+										"parameters": [
+											{
+												"id": 212,
+												"name": "methodName",
+												"kind": 32768,
+												"flags": {},
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										],
+										"type": {
+											"type": "array",
+											"elementType": {
+												"type": "reference",
+												"id": 204,
+												"name": "IMethodParams"
+											}
+										}
+									}
+								}
+							}
+						},
+						{
+							"id": 213,
+							"name": "props",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 39,
+									"character": 2,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L39"
+								}
+							],
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 214,
+									"name": "__type",
+									"kind": 65536,
+									"kindString": "Type literal",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+											"line": 39,
+											"character": 10,
+											"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L39"
+										}
+									],
+									"indexSignature": {
+										"id": 215,
+										"name": "__index",
+										"kind": 8192,
+										"kindString": "Index signature",
+										"flags": {},
+										"parameters": [
+											{
+												"id": 216,
+												"name": "key",
+												"kind": 32768,
+												"flags": {},
+												"type": {
+													"type": "intrinsic",
+													"name": "string"
+												}
+											}
+										],
+										"type": {
+											"type": "union",
+											"types": [
+												{
+													"type": "reference",
+													"id": 217,
+													"name": "IBasicType"
+												},
+												{
+													"type": "reference",
+													"id": 204,
+													"name": "IMethodParams"
+												}
+											]
+										}
+									}
+								}
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								207,
+								208,
+								209,
+								213
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 35,
+							"character": 27,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L35"
+						}
+					]
+				}
+			}
+		},
+		{
+			"id": 200,
+			"name": "IComponent",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 31,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L31"
+				}
+			],
+			"type": {
+				"type": "intersection",
+				"types": [
+					{
+						"type": "reflection",
+						"declaration": {
+							"id": 201,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"children": [
+								{
+									"id": 202,
+									"name": "id",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {},
+									"sources": [
+										{
+											"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+											"line": 31,
+											"character": 27,
+											"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L31"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 203,
+									"name": "refId",
+									"kind": 1024,
+									"kindString": "Property",
+									"flags": {
+										"isOptional": true
+									},
+									"sources": [
+										{
+											"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+											"line": 31,
+											"character": 39,
+											"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L31"
+										}
+									],
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"groups": [
+								{
+									"title": "Properties",
+									"children": [
+										202,
+										203
+									]
+								}
+							],
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 31,
+									"character": 25,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L31"
+								}
+							]
+						}
+					},
+					{
+						"type": "reference",
+						"id": 205,
+						"name": "IClassObject"
+					}
+				]
+			}
+		},
+		{
+			"id": 187,
+			"name": "IEntity",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 24,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L24"
+				}
+			],
+			"type": {
+				"type": "union",
+				"types": [
+					{
+						"type": "reference",
+						"id": 177,
+						"name": "IBasicEntity"
+					},
+					{
+						"type": "reference",
+						"id": 188,
+						"name": "IRefEntity"
+					}
+				]
+			}
+		},
+		{
+			"id": 204,
+			"name": "IMethodParams",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 33,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L33"
+				}
+			],
+			"type": {
+				"type": "array",
+				"elementType": {
+					"type": "reference",
+					"id": 217,
+					"name": "IBasicType"
+				}
+			}
+		},
+		{
+			"id": 218,
+			"name": "IReferenceType",
+			"kind": 4194304,
+			"kindString": "Type alias",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+					"line": 44,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L44"
+				}
+			],
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 219,
+					"name": "__type",
+					"kind": 65536,
+					"kindString": "Type literal",
+					"flags": {},
+					"children": [
+						{
+							"id": 220,
+							"name": "key",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {
+								"isOptional": true
+							},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 44,
+									"character": 31,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L44"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
+							"id": 221,
+							"name": "refId",
+							"kind": 1024,
+							"kindString": "Property",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+									"line": 44,
+									"character": 45,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L44"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								220,
+								221
+							]
+						}
+					],
+					"sources": [
+						{
+							"fileName": "loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts",
+							"line": 44,
+							"character": 29,
+							"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/prefab/PrefabDesign.ts#L44"
+						}
+					]
+				}
+			}
+		},
+		{
+			"id": 148,
+			"name": "ComponentMap",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/resources/animationClip/ComponentMap.ts",
+					"line": 18,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/ComponentMap.ts#L18"
+				}
+			],
+			"type": {
+				"type": "reference",
+				"typeArguments": [
+					{
+						"type": "intrinsic",
+						"name": "string"
+					},
+					{
+						"type": "reflection",
+						"declaration": {
+							"id": 149,
+							"name": "__type",
+							"kind": 512,
+							"kindString": "Constructor",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "loader/src/resource-deserialize/resources/animationClip/ComponentMap.ts",
+									"line": 18,
+									"character": 42,
+									"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/resources/animationClip/ComponentMap.ts#L18"
+								}
+							],
+							"signatures": [
+								{
+									"id": 150,
+									"name": "__type",
+									"kind": 16384,
+									"kindString": "Constructor signature",
+									"flags": {},
+									"parameters": [
+										{
+											"id": 151,
+											"name": "entity",
+											"kind": 32768,
+											"kindString": "Parameter",
+											"flags": {},
+											"type": {
+												"type": "reference",
+												"name": "Entity"
+											}
+										}
+									],
+									"type": {
+										"type": "reference",
+										"name": "Component"
+									}
+								}
+							]
+						}
+					}
+				],
+				"name": "Record",
+				"qualifiedName": "Record",
+				"package": "_typescript@4.8.4@typescript"
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 40,
+			"name": "decode",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/resource-deserialize/index.ts",
+					"line": 19,
+					"character": 16,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/resource-deserialize/index.ts#L19"
+				}
+			],
+			"signatures": [
+				{
+					"id": 41,
+					"name": "decode",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Decode engine binary resource."
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@returns",
+								"content": []
+							}
+						]
+					},
+					"typeParameter": [
+						{
+							"id": 42,
+							"name": "T",
+							"kind": 131072,
+							"kindString": "Type parameter",
+							"flags": {}
+						}
+					],
+					"parameters": [
+						{
+							"id": 43,
+							"name": "arrayBuffer",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "array buffer of decode binary file"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "ArrayBuffer",
+								"qualifiedName": "ArrayBuffer",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						},
+						{
+							"id": 44,
+							"name": "engine",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "engine"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "Engine"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"id": 42,
+								"name": "T"
+							}
+						],
+						"name": "Promise",
+						"qualifiedName": "Promise",
+						"package": "_typescript@4.8.4@typescript"
+					}
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "parseSingleKTX",
+			"kind": 64,
+			"kindString": "Function",
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loader/src/compressed-texture/index.ts",
+					"line": 5,
+					"character": 16,
+					"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/compressed-texture/index.ts#L5"
+				}
+			],
+			"signatures": [
+				{
+					"id": 2,
+					"name": "parseSingleKTX",
+					"kind": 4096,
+					"kindString": "Call signature",
+					"flags": {},
+					"parameters": [
+						{
+							"id": 3,
+							"name": "data",
+							"kind": 32768,
+							"kindString": "Parameter",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"name": "ArrayBuffer",
+								"qualifiedName": "ArrayBuffer",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "CompressedTextureData"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Enumerations",
+			"children": [
+				152
+			]
+		},
+		{
+			"title": "Classes",
+			"children": [
+				162,
+				257,
+				4,
+				45,
+				229,
+				99,
+				59,
+				222,
+				52
+			]
+		},
+		{
+			"title": "Interfaces",
+			"children": [
+				35,
+				177,
+				118,
+				169,
+				188,
+				171,
+				173,
+				37
+			]
+		},
+		{
+			"title": "Type Aliases",
+			"children": [
+				217,
+				205,
+				200,
+				187,
+				204,
+				218
+			]
+		},
+		{
+			"title": "Variables",
+			"children": [
+				148
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				40,
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "loader/src/index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/oasis-engine/engine/blob/c9c6dd9/packages/loader/src/index.ts#L1"
+		}
+	]
+}
