@@ -1,9 +1,11 @@
 .header {
   position: relative;
   z-index: 10;
-  height: 64px;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 2px 8px #f0f1f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #logo {
@@ -26,21 +28,6 @@
   }
 }
 
-.header-meta {
-  padding-right: 40px;
-}
-
-.header-meta::before {
-  display: table;
-  content: '';
-}
-
-.header-meta::after {
-  display: table;
-  clear: both;
-  content: '';
-}
-
 #search-box {
   float: left;
   height: 22px;
@@ -56,7 +43,7 @@
   }
 
   input {
-    width:240px;
+    width:200px;
     font-size: 14px;
     background: transparent;
     border: 0;
@@ -69,24 +56,22 @@
 }
 
 #menu {
-  .ant-menu {
-    line-height: 64px;
-  }
-
+  margin-left: 20px;
   .ant-menu-horizontal {
     border-bottom: none;
+  }
+  .ant-menu-item,
+  .ant-menu-submenu {
+    padding: 0 10px;
   }
 }
 
 .right-header {
-  float: right;
-  padding: 20px;
-  overflow: hidden;
-
-  & > * {
-    display: inline-block;
-    margin-right: 16px;
-  }
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 @media only screen and (max-width: 768px) {
