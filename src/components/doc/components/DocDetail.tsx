@@ -66,7 +66,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           }
         });
     });
-  }, []);
+  }, [version]);
 
   useEffect(() => {
     if (!!props.selectedDocId) {
