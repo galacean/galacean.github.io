@@ -1,0 +1,404 @@
+{
+	"id": 0,
+	"name": "@oasis-engine/draco",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "DRACODecoder",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 2,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 21,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L21"
+						}
+					],
+					"signatures": [
+						{
+							"id": 3,
+							"name": "new DRACODecoder",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "config",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "IDecoderConfig"
+									},
+									"defaultValue": "..."
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 1,
+								"name": "DRACODecoder"
+							}
+						}
+					]
+				},
+				{
+					"id": 8,
+					"name": "currentTaskId",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 17,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L17"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "1"
+				},
+				{
+					"id": 10,
+					"name": "loadLibPromise",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 19,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L19"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "any"
+							}
+						],
+						"name": "Promise",
+						"qualifiedName": "Promise",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 5,
+					"name": "pool",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 14,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L14"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "DRACOWorker"
+						}
+					},
+					"defaultValue": "[]"
+				},
+				{
+					"id": 9,
+					"name": "taskCache",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 18,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L18"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "object"
+							},
+							{
+								"type": "intrinsic",
+								"name": "any"
+							}
+						],
+						"name": "WeakMap",
+						"qualifiedName": "WeakMap",
+						"package": "typescript"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 7,
+					"name": "useJS",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 16,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L16"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 6,
+					"name": "workerLimit",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 15,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L15"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 15,
+					"name": "decode",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 79,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L79"
+						}
+					],
+					"signatures": [
+						{
+							"id": 16,
+							"name": "decode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 17,
+									"name": "buffer",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ArrayBuffer",
+										"qualifiedName": "ArrayBuffer",
+										"package": "typescript"
+									}
+								},
+								{
+									"id": 18,
+									"name": "taskConfig",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "ITaskConfig"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 13,
+					"name": "getWorker",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 65,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L65"
+						}
+					],
+					"signatures": [
+						{
+							"id": 14,
+							"name": "getWorker",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "DRACOWorker"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 11,
+					"name": "preloadLib",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "decoder.ts",
+							"line": 31,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L31"
+						}
+					],
+					"signatures": [
+						{
+							"id": 12,
+							"name": "preloadLib",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "any"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						2
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						8,
+						10,
+						5,
+						9,
+						7,
+						6
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						15,
+						13,
+						11
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "decoder.ts",
+					"line": 13,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/decoder.ts#L13"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Classes",
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/oasis-engine/engine/blob/ba48ff90/packages/draco/src/index.ts#L1"
+		}
+	]
+}
