@@ -18,3 +18,11 @@ label: Graphics/2D
 ```typescript
 const font = Font.createFromOS(engine, "Arial");
 ```
+
+## 使用自定义 Font，目前支持格式：ttf/otf/woff
+```typescript
+const font = await engine.resourceManager.load({
+  url: "https://gw.alipayobjects.com/os/bmw-prod/109b0cd8-8762-4919-bb0c-ed969d6144c9.ttf",
+  type: AssetType.SourceFont
+});
+```

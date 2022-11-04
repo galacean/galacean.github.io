@@ -8,7 +8,7 @@ import {
   ReadOutlined,
   TwitterOutlined,
   YuqueOutlined,
-  ZhihuOutlined,
+  ZhihuOutlined
 } from '@ant-design/icons';
 import { Button, Col, Menu, Popover, Row, Select } from 'antd';
 import { useContext } from 'react';
@@ -21,7 +21,7 @@ import SearchBox from './components/SearchBox';
 
 import './index.less';
 
-const { serverAddress, versions } = config;
+const { versions } = config;
 
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成

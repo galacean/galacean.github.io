@@ -1,10 +1,7 @@
-
-import React, { useRef } from 'react';
-import {
-  CodeSandboxOutlined,
-} from '@ant-design/icons';
-import LZString from 'lz-string';
+import { CodeSandboxOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
+import LZString from 'lz-string';
+import { useRef } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
 function compress(string: string) {
@@ -14,7 +11,7 @@ function compress(string: string) {
     .replace(/=+$/, ''); // Remove ending '='
 }
 
-function CodeSandbox (props: any) {
+function CodeSandbox(props: any) {
   const iconRef = useRef<HTMLFormElement>(null);
   const indexJsContent = `import './index.css';
   ${props.sourceCode}
@@ -22,7 +19,7 @@ function CodeSandbox (props: any) {
 
   const dependencies: any = {};
 
-  Object.keys(props.packages).forEach(p => {
+  Object.keys(props.packages).forEach((p) => {
     dependencies[p] = props.packages[p].version;
   });
 
@@ -54,23 +51,23 @@ function CodeSandbox (props: any) {
   };
 
   return (
-      <div className="code-box-action">
-        <form
-          className="code-box-code-action"
-          action="https://codesandbox.io/api/v1/sandboxes/define"
-          method="POST"
-          target="_blank"
-          ref={iconRef}
-          onClick={() => {
-            iconRef.current?.submit();
-          }}
-          >
-            <input type="hidden" name="parameters" value={compress(JSON.stringify(codesanboxPrefillConfig))} />
-            <Tooltip title={<FormattedMessage id="app.demo.codesandbox"/>}>
-              <CodeSandboxOutlined />
-            </Tooltip>
-        </form>
-      </div>
+    <div className='code-box-action'>
+      <form
+        className='code-box-code-action'
+        action='https://codesandbox.io/api/v1/sandboxes/define'
+        method='POST'
+        target='_blank'
+        ref={iconRef}
+        onClick={() => {
+          iconRef.current?.submit();
+        }}
+      >
+        <input type='hidden' name='parameters' value={compress(JSON.stringify(codesanboxPrefillConfig))} />
+        <Tooltip title={<FormattedMessage id='app.demo.codesandbox' />}>
+          <CodeSandboxOutlined />
+        </Tooltip>
+      </form>
+    </div>
   );
 }
 export default injectIntl(CodeSandbox);
