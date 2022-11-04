@@ -161,9 +161,9 @@ function Header() {
             </Link>
             {!isMobile && <SearchBox></SearchBox>}
           </div>
-          {!isMobile && <div id='menu'>{getMenu(false)}</div>}
           {!isMobile && (
             <div className='right-header'>
+              <div id='menu'>{getMenu(false)}</div>
               <div id='lang'>
                 <Button
                   size='small'
