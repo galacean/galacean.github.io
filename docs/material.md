@@ -53,6 +53,21 @@ material.baseColor.r = 0;
 const material = renderer.setMaterial(material);
 ```
 
+We can also directly replace the texture of the material, such as replacing the base color map for the blinn-phong material:
+
+```typescript
+// Get renderer
+const renderer = entity.getComponent(MeshRenderer);
+// Get material
+const material = renderer.getMaterial();
+// Set base texture
+material.baseTexture = await engine.resourceManager
+  .load<Texture2D>({
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
+    type: AssetType.Texture2D
+  });
+```
+
 ## QA
 
 ### 1. Transparent rendering is abnormal?
