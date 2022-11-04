@@ -37,7 +37,7 @@ animator.speed = 2.0；
 // 暂停
 animator.enabled = false;
 // 恢复
-animator.enabled = false;
+animator.enabled = true;
 ```
 
 如果你只想针对某一个动画状态进行暂停，可以通过将它的速度设置为0来实现。

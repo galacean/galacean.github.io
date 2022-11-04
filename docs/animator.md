@@ -36,7 +36,7 @@ You can control the pausing and resuming of the animation by setting the animato
 // pause
 animator.enabled = false;
 // resume
-animator.enabled = false;
+animator.enabled = true;
 ```
 
 ### Set animator data
