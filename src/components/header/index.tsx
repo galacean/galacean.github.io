@@ -155,10 +155,12 @@ function Header() {
               <MenuOutlined className='nav-phone-icon' />
             </Popover>
           )}
-          <Link id='logo' to='/'>
-            <img src={LOGO_URL} alt='Oasis Engine' />
-          </Link>
-          {!isMobile && <SearchBox></SearchBox>}
+          <div className="header-left">
+            <Link id='logo' to='/'>
+              <img src={LOGO_URL} alt='Oasis Engine' />
+            </Link>
+            {!isMobile && <SearchBox></SearchBox>}
+          </div>
           {!isMobile && <div id='menu'>{getMenu(false)}</div>}
           {!isMobile && (
             <div className='right-header'>
