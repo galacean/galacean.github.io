@@ -23,7 +23,7 @@ class Footer extends React.Component<{}> {
                   <FormattedMessage id='app.footer.resources' />
                 </h2>
                 <div>
-                  <a target='_blank ' href='https://github.com/oasis-engine'>
+                  <a target='_blank ' href='https://github.com/ant-galaxy/oasis-engine'>
                     GitHub
                   </a>
                 </div>
