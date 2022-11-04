@@ -1,20 +1,21 @@
 import Prism from 'prismjs';
 import { createRef, useEffect, useState } from 'react';
+import siteConfig from '../../siteconfig.json';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
 import DemoActions from './DemoActions';
-import './index.less';
 import './highlight.less';
+import './index.less';
 
 interface IPlayground {
   id: string;
+  title: string | undefined;
 }
 
 export default function Playground(props: IPlayground) {
   const [code, setCode] = useState('');
   const [src, setSrc] = useState('');
 
-  const name = src.replace('.ts', '');
   const url = `/#/example/${props.id}`;
   const iframe = createRef<HTMLIFrameElement>();
 
@@ -50,11 +51,11 @@ export default function Playground(props: IPlayground) {
       {src && (
         <CodeActions
           sourceCode={src}
-          engineName={'oasis-engine'}
-          name={name}
+          engineName={siteConfig.name}
+          name={props.title || ''}
           url={url}
-          version={'0.0.1'}
-          packages={[]}
+          version={siteConfig.packages['oasis-engine']}
+          packages={siteConfig.packages}
         />
       )}
       {url && <DemoActions url={window.location.protocol + window.location.hostname + url} />}
