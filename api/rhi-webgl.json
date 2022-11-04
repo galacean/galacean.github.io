@@ -1,0 +1,5757 @@
+{
+	"id": 0,
+	"name": "@oasis-engine/rhi-webgl",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "GLCompressedTextureInternalFormat",
+			"kind": 8,
+			"kindString": "Enumeration",
+			"flags": {},
+			"comment": {
+				"summary": [],
+				"blockTags": [
+					{
+						"tag": "@deprecated",
+						"content": []
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 31,
+					"name": "R11_EAC",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 92,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L92"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37488
+					}
+				},
+				{
+					"id": 33,
+					"name": "RG11_EAC",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 94,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L94"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37490
+					}
+				},
+				{
+					"id": 35,
+					"name": "RGB8_ETC2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 96,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L96"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37492
+					}
+				},
+				{
+					"id": 37,
+					"name": "RGB8_PUNCHTHROUGH_ALPHA1_ETC2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 98,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L98"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37494
+					}
+				},
+				{
+					"id": 39,
+					"name": "RGBA8_ETC2_EAC",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 100,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L100"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37496
+					}
+				},
+				{
+					"id": 13,
+					"name": "RGBA_ASTC_10X10_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 70,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L70"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37819
+					}
+				},
+				{
+					"id": 10,
+					"name": "RGBA_ASTC_10X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 67,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L67"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37816
+					}
+				},
+				{
+					"id": 11,
+					"name": "RGBA_ASTC_10X6_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 68,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L68"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37817
+					}
+				},
+				{
+					"id": 12,
+					"name": "RGBA_ASTC_10X8_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 69,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L69"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37818
+					}
+				},
+				{
+					"id": 14,
+					"name": "RGBA_ASTC_12X10_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 71,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L71"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37820
+					}
+				},
+				{
+					"id": 15,
+					"name": "RGBA_ASTC_12X12_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 72,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L72"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37821
+					}
+				},
+				{
+					"id": 2,
+					"name": "RGBA_ASTC_4X4_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 59,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L59"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37808
+					}
+				},
+				{
+					"id": 3,
+					"name": "RGBA_ASTC_5X4_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 60,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L60"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37809
+					}
+				},
+				{
+					"id": 4,
+					"name": "RGBA_ASTC_5X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 61,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L61"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37810
+					}
+				},
+				{
+					"id": 5,
+					"name": "RGBA_ASTC_6X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 62,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L62"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37811
+					}
+				},
+				{
+					"id": 6,
+					"name": "RGBA_ASTC_6X6_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 63,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L63"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37812
+					}
+				},
+				{
+					"id": 7,
+					"name": "RGBA_ASTC_8X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 64,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L64"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37813
+					}
+				},
+				{
+					"id": 8,
+					"name": "RGBA_ASTC_8X6_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 65,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L65"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37814
+					}
+				},
+				{
+					"id": 9,
+					"name": "RGBA_ASTC_8X8_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 66,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L66"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37815
+					}
+				},
+				{
+					"id": 44,
+					"name": "RGBA_PVRTC_2BPPV1_IMG",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 107,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L107"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 35843
+					}
+				},
+				{
+					"id": 43,
+					"name": "RGBA_PVRTC_4BPPV1_IMG",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 106,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L106"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 35842
+					}
+				},
+				{
+					"id": 46,
+					"name": "RGBA_S3TC_DXT1_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 111,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L111"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 33777
+					}
+				},
+				{
+					"id": 47,
+					"name": "RGBA_S3TC_DXT3_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 112,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L112"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 33778
+					}
+				},
+				{
+					"id": 48,
+					"name": "RGBA_S3TC_DXT5_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 113,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L113"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 33779
+					}
+				},
+				{
+					"id": 30,
+					"name": "RGB_ETC1_WEBGL",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 89,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L89"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 36196
+					}
+				},
+				{
+					"id": 42,
+					"name": "RGB_PVRTC_2BPPV1_IMG",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 105,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L105"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 35841
+					}
+				},
+				{
+					"id": 41,
+					"name": "RGB_PVRTC_4BPPV1_IMG",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 104,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L104"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 35840
+					}
+				},
+				{
+					"id": 45,
+					"name": "RGB_S3TC_DXT1_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 110,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L110"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 33776
+					}
+				},
+				{
+					"id": 32,
+					"name": "SIGNED_R11_EAC",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 93,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L93"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37489
+					}
+				},
+				{
+					"id": 34,
+					"name": "SIGNED_RG11_EAC",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 95,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L95"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37491
+					}
+				},
+				{
+					"id": 27,
+					"name": "SRGB8_ALPHA8_ASTC_10X10_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 84,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L84"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37851
+					}
+				},
+				{
+					"id": 24,
+					"name": "SRGB8_ALPHA8_ASTC_10X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 81,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L81"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37848
+					}
+				},
+				{
+					"id": 25,
+					"name": "SRGB8_ALPHA8_ASTC_10X6_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 82,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L82"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37849
+					}
+				},
+				{
+					"id": 26,
+					"name": "SRGB8_ALPHA8_ASTC_10X8_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 83,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L83"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37850
+					}
+				},
+				{
+					"id": 28,
+					"name": "SRGB8_ALPHA8_ASTC_12X10_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 85,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L85"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37852
+					}
+				},
+				{
+					"id": 29,
+					"name": "SRGB8_ALPHA8_ASTC_12X12_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 86,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L86"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37853
+					}
+				},
+				{
+					"id": 16,
+					"name": "SRGB8_ALPHA8_ASTC_4X4_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 73,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L73"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37840
+					}
+				},
+				{
+					"id": 17,
+					"name": "SRGB8_ALPHA8_ASTC_5X4_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 74,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L74"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37841
+					}
+				},
+				{
+					"id": 18,
+					"name": "SRGB8_ALPHA8_ASTC_5X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 75,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L75"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37842
+					}
+				},
+				{
+					"id": 19,
+					"name": "SRGB8_ALPHA8_ASTC_6X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 76,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L76"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37843
+					}
+				},
+				{
+					"id": 20,
+					"name": "SRGB8_ALPHA8_ASTC_6X6_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 77,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L77"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37844
+					}
+				},
+				{
+					"id": 21,
+					"name": "SRGB8_ALPHA8_ASTC_8X5_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 78,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L78"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37845
+					}
+				},
+				{
+					"id": 22,
+					"name": "SRGB8_ALPHA8_ASTC_8X6_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 79,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L79"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37846
+					}
+				},
+				{
+					"id": 23,
+					"name": "SRGB8_ALPHA8_ASTC_8X8_KHR",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 80,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L80"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37847
+					}
+				},
+				{
+					"id": 40,
+					"name": "SRGB8_ALPHA8_ETC2_EAC",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 101,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L101"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37497
+					}
+				},
+				{
+					"id": 36,
+					"name": "SRGB8_ETC2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 97,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L97"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37493
+					}
+				},
+				{
+					"id": 38,
+					"name": "SRGB8_PUNCHTHROUGH_ALPHA1_ETC2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"line": 99,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L99"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 37495
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration Members",
+					"children": [
+						31,
+						33,
+						35,
+						37,
+						39,
+						13,
+						10,
+						11,
+						12,
+						14,
+						15,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						44,
+						43,
+						46,
+						47,
+						48,
+						30,
+						42,
+						41,
+						45,
+						32,
+						34,
+						27,
+						24,
+						25,
+						26,
+						28,
+						29,
+						16,
+						17,
+						18,
+						19,
+						20,
+						21,
+						22,
+						23,
+						40,
+						36,
+						38
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "engine/packages/rhi-webgl/src/type.ts",
+					"line": 57,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/type.ts#L57"
+				}
+			]
+		},
+		{
+			"id": 172,
+			"name": "WebGLMode",
+			"kind": 8,
+			"kindString": "Enumeration",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "WebGL mode."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 173,
+					"name": "Auto",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Auto, use WebGL2.0 if support, or will fallback to WebGL1.0."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 38,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L38"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 0
+					}
+				},
+				{
+					"id": 175,
+					"name": "WebGL1",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "WebGL1.0,"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 42,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L42"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 2
+					}
+				},
+				{
+					"id": 174,
+					"name": "WebGL2",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "WebGL2.0."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 40,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L40"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 1
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Enumeration Members",
+					"children": [
+						173,
+						175,
+						174
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+					"line": 36,
+					"character": 12,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L36"
+				}
+			]
+		},
+		{
+			"id": 49,
+			"name": "WebCanvas",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The canvas used on the web, which can support HTMLCanvasElement and OffscreenCanvas."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 50,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 83,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L83"
+						}
+					],
+					"signatures": [
+						{
+							"id": 51,
+							"name": "new WebCanvas",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create a web canvas."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 52,
+									"name": "webCanvas",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Web native canvas"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 49,
+								"name": "WebCanvas"
+							}
+						}
+					]
+				},
+				{
+					"id": 55,
+					"name": "_height",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 13,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L13"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 56,
+					"name": "_scale",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 14,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L14"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Vector2"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 53,
+					"name": "_webCanvas",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L10"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				},
+				{
+					"id": 54,
+					"name": "_width",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 12,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 61,
+					"name": "height",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 33,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L33"
+						},
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 37,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L37"
+						}
+					],
+					"getSignature": {
+						"id": 62,
+						"name": "height",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [],
+							"blockTags": [
+								{
+									"tag": "@inheritDoc",
+									"content": []
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						},
+						"implementationOf": {
+							"type": "reference",
+							"name": "Canvas.height"
+						}
+					},
+					"setSignature": {
+						"id": 63,
+						"name": "height",
+						"kind": 1048576,
+						"kindString": "Set signature",
+						"flags": {},
+						"parameters": [
+							{
+								"id": 64,
+								"name": "value",
+								"kind": 32768,
+								"kindString": "Parameter",
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						},
+						"implementationOf": {
+							"type": "reference",
+							"name": "Canvas.height"
+						}
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Canvas.height"
+					}
+				},
+				{
+					"id": 65,
+					"name": "scale",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 48,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L48"
+						},
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 59,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L59"
+						}
+					],
+					"getSignature": {
+						"id": 66,
+						"name": "scale",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "The scale of canvas, the value is visible width/height divide the render width/height."
+								}
+							],
+							"blockTags": [
+								{
+									"tag": "@remarks",
+									"content": [
+										{
+											"kind": "text",
+											"text": "Need to re-assign after modification to ensure that the modification takes effect."
+										}
+									]
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "Vector2"
+						}
+					},
+					"setSignature": {
+						"id": 67,
+						"name": "scale",
+						"kind": 1048576,
+						"kindString": "Set signature",
+						"flags": {},
+						"parameters": [
+							{
+								"id": 68,
+								"name": "value",
+								"kind": 32768,
+								"kindString": "Parameter",
+								"flags": {},
+								"type": {
+									"type": "reference",
+									"name": "Vector2"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						}
+					}
+				},
+				{
+					"id": 57,
+					"name": "width",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 19,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L19"
+						},
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 23,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L23"
+						}
+					],
+					"getSignature": {
+						"id": 58,
+						"name": "width",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [],
+							"blockTags": [
+								{
+									"tag": "@inheritDoc",
+									"content": []
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						},
+						"implementationOf": {
+							"type": "reference",
+							"name": "Canvas.width"
+						}
+					},
+					"setSignature": {
+						"id": 59,
+						"name": "width",
+						"kind": 1048576,
+						"kindString": "Set signature",
+						"flags": {},
+						"parameters": [
+							{
+								"id": 60,
+								"name": "value",
+								"kind": 32768,
+								"kindString": "Parameter",
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						},
+						"implementationOf": {
+							"type": "reference",
+							"name": "Canvas.width"
+						}
+					},
+					"implementationOf": {
+						"type": "reference",
+						"name": "Canvas.width"
+					}
+				},
+				{
+					"id": 69,
+					"name": "resizeByClientSize",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 71,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L71"
+						}
+					],
+					"signatures": [
+						{
+							"id": 70,
+							"name": "resizeByClientSize",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Resize the rendering size according to the clientWidth and clientHeight of the canvas."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 71,
+									"name": "pixelRatio",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Pixel ratio"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									},
+									"defaultValue": "window.devicePixelRatio"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 72,
+					"name": "setScale",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"line": 96,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L96"
+						}
+					],
+					"signatures": [
+						{
+							"id": 73,
+							"name": "setScale",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Set scale."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 74,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Scale along the X axis"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 75,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Scale along the Y axis"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						50
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						55,
+						56,
+						53,
+						54
+					]
+				},
+				{
+					"title": "Accessors",
+					"children": [
+						61,
+						65,
+						57
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						69,
+						72
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+					"line": 9,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebCanvas.ts#L9"
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "Canvas"
+				}
+			]
+		},
+		{
+			"id": 76,
+			"name": "WebGLEngine",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "WebGL platform engine,support includes WebGL1.0 and WebGL2.0."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 77,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLEngine.ts",
+							"line": 16,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLEngine.ts#L16"
+						}
+					],
+					"signatures": [
+						{
+							"id": 78,
+							"name": "new WebGLEngine",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create an engine suitable for the WebGL platform."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 79,
+									"name": "canvas",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Native web canvas"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 80,
+									"name": "webGLRendererOptions",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "WebGL renderer options"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 269,
+										"name": "WebGLRendererOptions"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 76,
+								"name": "WebGLEngine"
+							},
+							"overwrites": {
+								"type": "reference",
+								"name": "Engine.constructor"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"name": "Engine.constructor"
+					}
+				},
+				{
+					"id": 96,
+					"name": "_canvas",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 39,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Canvas"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._canvas"
+					}
+				},
+				{
+					"id": 86,
+					"name": "_componentsManager",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 29,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ComponentsManager"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._componentsManager"
+					}
+				},
+				{
+					"id": 87,
+					"name": "_hardwareRenderer",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 30,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IHardwareRenderer"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._hardwareRenderer"
+					}
+				},
+				{
+					"id": 88,
+					"name": "_lastRenderState",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 31,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "RenderState"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._lastRenderState"
+					}
+				},
+				{
+					"id": 85,
+					"name": "_lightManager",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 28,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "LightManager"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._lightManager"
+					}
+				},
+				{
+					"id": 95,
+					"name": "_renderContext",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 38,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "RenderContext"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._renderContext"
+					}
+				},
+				{
+					"id": 89,
+					"name": "_renderElementPool",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 32,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "MeshRenderElement"
+							}
+						],
+						"name": "ClassPool"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._renderElementPool"
+					}
+				},
+				{
+					"id": 93,
+					"name": "_spriteDefaultMaterial",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 36,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Material"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._spriteDefaultMaterial"
+					}
+				},
+				{
+					"id": 90,
+					"name": "_spriteElementPool",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 33,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "SpriteElement"
+							}
+						],
+						"name": "ClassPool"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._spriteElementPool"
+					}
+				},
+				{
+					"id": 94,
+					"name": "_spriteMaskDefaultMaterial",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 37,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Material"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._spriteMaskDefaultMaterial"
+					}
+				},
+				{
+					"id": 91,
+					"name": "_spriteMaskElementPool",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 34,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "SpriteMaskElement"
+							}
+						],
+						"name": "ClassPool"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._spriteMaskElementPool"
+					}
+				},
+				{
+					"id": 92,
+					"name": "_textElementPool",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 35,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "reference",
+								"name": "TextRenderElement"
+							}
+						],
+						"name": "ClassPool"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._textElementPool"
+					}
+				},
+				{
+					"id": 84,
+					"name": "inputManager",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isReadonly": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 27,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "InputManager"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.inputManager"
+					}
+				},
+				{
+					"id": 83,
+					"name": "physicsManager",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Physics manager of Engine."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 26,
+							"character": 13
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "PhysicsManager"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.physicsManager"
+					}
+				},
+				{
+					"id": 81,
+					"name": "canvas",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLEngine.ts",
+							"line": 27,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLEngine.ts#L27"
+						}
+					],
+					"getSignature": {
+						"id": 82,
+						"name": "canvas",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Web canvas."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"id": 49,
+							"name": "WebCanvas"
+						},
+						"overwrites": {
+							"type": "reference",
+							"name": "Engine.canvas"
+						}
+					},
+					"overwrites": {
+						"type": "reference",
+						"name": "Engine.canvas"
+					}
+				},
+				{
+					"id": 115,
+					"name": "destroyed",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 95,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 116,
+						"name": "destroyed",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Indicates whether the engine is destroyed."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.destroyed"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.destroyed"
+					}
+				},
+				{
+					"id": 105,
+					"name": "isPaused",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 77,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 106,
+						"name": "isPaused",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Whether the engine is paused."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.isPaused"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.isPaused"
+					}
+				},
+				{
+					"id": 99,
+					"name": "resourceManager",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 65,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 100,
+						"name": "resourceManager",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Get the resource manager."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "ResourceManager"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.resourceManager"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.resourceManager"
+					}
+				},
+				{
+					"id": 101,
+					"name": "sceneManager",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 69,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 102,
+						"name": "sceneManager",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Get the scene manager."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "SceneManager"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.sceneManager"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.sceneManager"
+					}
+				},
+				{
+					"id": 97,
+					"name": "settings",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 57,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 98,
+						"name": "settings",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Settings of Engine."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "EngineSettings"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.settings"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.settings"
+					}
+				},
+				{
+					"id": 111,
+					"name": "targetFrameRate",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 90,
+							"character": 8
+						},
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 91,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 112,
+						"name": "targetFrameRate",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Set the target frame rate you want to achieve."
+								}
+							],
+							"blockTags": [
+								{
+									"tag": "@remarks",
+									"content": [
+										{
+											"kind": "text",
+											"text": "It only takes effect when vSyncCount = 0 (ie, vertical synchronization is turned off).\nThe larger the value, the higher the target frame rate, Number.POSITIVE_INFINITY represents the infinite target frame rate."
+										}
+									]
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.targetFrameRate"
+						}
+					},
+					"setSignature": {
+						"id": 113,
+						"name": "targetFrameRate",
+						"kind": 1048576,
+						"kindString": "Set signature",
+						"flags": {},
+						"parameters": [
+							{
+								"id": 114,
+								"name": "value",
+								"kind": 32768,
+								"kindString": "Parameter",
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.targetFrameRate"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.targetFrameRate"
+					}
+				},
+				{
+					"id": 103,
+					"name": "time",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 73,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 104,
+						"name": "time",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Get the Time class."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "Time"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.time"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.time"
+					}
+				},
+				{
+					"id": 107,
+					"name": "vSyncCount",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 82,
+							"character": 8
+						},
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 83,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 108,
+						"name": "vSyncCount",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "The number of vertical synchronization means the number of vertical blanking for one frame."
+								}
+							],
+							"blockTags": [
+								{
+									"tag": "@remarks",
+									"content": [
+										{
+											"kind": "text",
+											"text": "0 means that the vertical synchronization is turned off."
+										}
+									]
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.vSyncCount"
+						}
+					},
+					"setSignature": {
+						"id": 109,
+						"name": "vSyncCount",
+						"kind": 1048576,
+						"kindString": "Set signature",
+						"flags": {},
+						"parameters": [
+							{
+								"id": 110,
+								"name": "value",
+								"kind": 32768,
+								"kindString": "Parameter",
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.vSyncCount"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.vSyncCount"
+					}
+				},
+				{
+					"id": 130,
+					"name": "_render",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 130,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 131,
+							"name": "_render",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 132,
+									"name": "scene",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Scene"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine._render"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine._render"
+					}
+				},
+				{
+					"id": 153,
+					"name": "addEventListener",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 54,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 154,
+							"name": "addEventListener",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [],
+								"blockTags": [
+									{
+										"tag": "@deprecated",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Use "
+											},
+											{
+												"kind": "code",
+												"text": "`on/once`"
+											},
+											{
+												"kind": "text",
+												"text": " instead.\nAdd a listener function with the specified event name."
+											}
+										]
+									},
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "this"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 155,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 156,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Function"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Function",
+										"qualifiedName": "Function",
+										"package": "_typescript@4.8.4@typescript"
+									}
+								},
+								{
+									"id": 157,
+									"name": "once",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Is it a one-time listener"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "EventDispatcher"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.addEventListener"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.addEventListener"
+					}
+				},
+				{
+					"id": 117,
+					"name": "createEntity",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 108,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 118,
+							"name": "createEntity",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create an entity."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Entity"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 119,
+									"name": "name",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The name of the entity"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "Entity"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.createEntity"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.createEntity"
+					}
+				},
+				{
+					"id": 128,
+					"name": "destroy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 129,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 129,
+							"name": "destroy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Destroy engine."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@remarks",
+										"content": [
+											{
+												"kind": "text",
+												"text": "The timing of engine destruction is at the end of the current frame"
+											}
+										]
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.destroy"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.destroy"
+					}
+				},
+				{
+					"id": 141,
+					"name": "dispatch",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 31,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 142,
+							"name": "dispatch",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Dispatch the event with the specified event name."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "- Whether the dispatching is successful"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 143,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 144,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Data"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.dispatch"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.dispatch"
+					}
+				},
+				{
+					"id": 136,
+					"name": "eventNames",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 18,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 137,
+							"name": "eventNames",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Returns the names of all registered events."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "All event names"
+											}
+										]
+									}
+								]
+							},
+							"type": {
+								"type": "array",
+								"elementType": {
+									"type": "intrinsic",
+									"name": "string"
+								}
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.eventNames"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.eventNames"
+					}
+				},
+				{
+					"id": 133,
+					"name": "hasEvent",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 13,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 134,
+							"name": "hasEvent",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Determine whether there is event listening."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Returns whether there is a corresponding event"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 135,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.hasEvent"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.hasEvent"
+					}
+				},
+				{
+					"id": 138,
+					"name": "listenerCount",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 24,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 139,
+							"name": "listenerCount",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Returns the number of listeners with the specified event name."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "The count of listeners"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 140,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.listenerCount"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.listenerCount"
+					}
+				},
+				{
+					"id": 158,
+					"name": "off",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 60,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 159,
+							"name": "off",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Remove the event listener(s) of the specified event name."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 160,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 161,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Function, If is undefined, delete all corresponding event listeners."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Function",
+										"qualifiedName": "Function",
+										"package": "_typescript@4.8.4@typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "EventDispatcher"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.off"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.off"
+					}
+				},
+				{
+					"id": 145,
+					"name": "on",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 38,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 146,
+							"name": "on",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Add a listener/"
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "This"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 147,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 148,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Function"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Function",
+										"qualifiedName": "Function",
+										"package": "_typescript@4.8.4@typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "EventDispatcher"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.on"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.on"
+					}
+				},
+				{
+					"id": 149,
+					"name": "once",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 45,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 150,
+							"name": "once",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Add a one-time listener."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "This"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 151,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 152,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Function"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Function",
+										"qualifiedName": "Function",
+										"package": "_typescript@4.8.4@typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "EventDispatcher"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.once"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.once"
+					}
+				},
+				{
+					"id": 120,
+					"name": "pause",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 112,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 121,
+							"name": "pause",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Pause the engine."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.pause"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.pause"
+					}
+				},
+				{
+					"id": 166,
+					"name": "removeAllEventListeners",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 72,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 167,
+							"name": "removeAllEventListeners",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Remove all event listeners."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 168,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name, delete all events if not passed"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.removeAllEventListeners"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.removeAllEventListeners"
+					}
+				},
+				{
+					"id": 162,
+					"name": "removeEventListener",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 67,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 163,
+							"name": "removeEventListener",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [],
+								"blockTags": [
+									{
+										"tag": "@deprecated",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Use "
+											},
+											{
+												"kind": "code",
+												"text": "`off`"
+											},
+											{
+												"kind": "text",
+												"text": " instead.\nRemove the event listener(s) of the specified event name."
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 164,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Event name"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 165,
+									"name": "fn",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Function, If is undefined, delete all corresponding event listeners."
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Function",
+										"qualifiedName": "Function",
+										"package": "_typescript@4.8.4@typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "EventDispatcher"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.removeEventListener"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.removeEventListener"
+					}
+				},
+				{
+					"id": 122,
+					"name": "resume",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 116,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 123,
+							"name": "resume",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Resume the engine."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.resume"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.resume"
+					}
+				},
+				{
+					"id": 126,
+					"name": "run",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 124,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 127,
+							"name": "run",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Execution engine loop."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.run"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.run"
+					}
+				},
+				{
+					"id": 169,
+					"name": "trigger",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 76,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 170,
+							"name": "trigger",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [],
+								"blockTags": [
+									{
+										"tag": "@deprecated",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Use "
+											},
+											{
+												"kind": "code",
+												"text": "`dispatch`"
+											},
+											{
+												"kind": "text",
+												"text": " instead."
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 171,
+									"name": "e",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Event"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.trigger"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.trigger"
+					}
+				},
+				{
+					"id": 124,
+					"name": "update",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/core/types/Engine.d.ts",
+							"line": 120,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 125,
+							"name": "update",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Update the engine loop manually. If you call engine.run(), you generally don't need to call this function."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.update"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.update"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						77
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						96,
+						86,
+						87,
+						88,
+						85,
+						95,
+						89,
+						93,
+						90,
+						94,
+						91,
+						92,
+						84,
+						83
+					]
+				},
+				{
+					"title": "Accessors",
+					"children": [
+						81,
+						115,
+						105,
+						99,
+						101,
+						97,
+						111,
+						103,
+						107
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						130,
+						153,
+						117,
+						128,
+						141,
+						136,
+						133,
+						138,
+						158,
+						145,
+						149,
+						120,
+						166,
+						162,
+						122,
+						126,
+						169,
+						124
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "engine/packages/rhi-webgl/src/WebGLEngine.ts",
+					"line": 10,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLEngine.ts#L10"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "Engine"
+				}
+			]
+		},
+		{
+			"id": 176,
+			"name": "WebGLRenderer",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "WebGL renderer, including WebGL1.0 and WebGL2.0."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 177,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 107,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L107"
+						}
+					],
+					"signatures": [
+						{
+							"id": 178,
+							"name": "new WebGLRenderer",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 179,
+									"name": "options",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 269,
+										"name": "WebGLRendererOptions"
+									},
+									"defaultValue": "{}"
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 176,
+								"name": "WebGLRenderer"
+							}
+						}
+					]
+				},
+				{
+					"id": 190,
+					"name": "_activeTextureID",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 71,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L71"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 191,
+					"name": "_activeTextures",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 72,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L72"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "GLTexture"
+						}
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 186,
+					"name": "_capability",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 66,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L66"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "GLCapability"
+					}
+				},
+				{
+					"id": 181,
+					"name": "_currentBind",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 60,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L60"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				},
+				{
+					"id": 185,
+					"name": "_extensions",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 65,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L65"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				},
+				{
+					"id": 183,
+					"name": "_gl",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 63,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L63"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intersection",
+								"types": [
+									{
+										"type": "reference",
+										"name": "WebGLRenderingContext",
+										"qualifiedName": "WebGLRenderingContext",
+										"package": "_typescript@4.8.4@typescript"
+									},
+									{
+										"type": "reference",
+										"name": "WebGLExtension"
+									}
+								]
+							},
+							{
+								"type": "reference",
+								"name": "WebGL2RenderingContext",
+								"qualifiedName": "WebGL2RenderingContext",
+								"package": "_typescript@4.8.4@typescript"
+							}
+						]
+					}
+				},
+				{
+					"id": 187,
+					"name": "_isWebGL2",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 67,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L67"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 193,
+					"name": "_lastClearColor",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 76,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L76"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Color"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 192,
+					"name": "_lastViewport",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 75,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L75"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Vector4"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 182,
+					"name": "_options",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 62,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L62"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 269,
+						"name": "WebGLRendererOptions"
+					}
+				},
+				{
+					"id": 184,
+					"name": "_renderStates",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 64,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L64"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "any"
+					}
+				},
+				{
+					"id": 188,
+					"name": "_renderer",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 68,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L68"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 194,
+					"name": "_scissorEnable",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 77,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L77"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"defaultValue": "false"
+				},
+				{
+					"id": 189,
+					"name": "_webCanvas",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 69,
+							"character": 10,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L69"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 49,
+						"name": "WebCanvas"
+					}
+				},
+				{
+					"id": 205,
+					"name": "canIUseMoreJoints",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 103,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L103"
+						}
+					],
+					"getSignature": {
+						"id": 206,
+						"name": "canIUseMoreJoints",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						}
+					}
+				},
+				{
+					"id": 203,
+					"name": "capability",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 99,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L99"
+						}
+					],
+					"getSignature": {
+						"id": 204,
+						"name": "capability",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"type": {
+							"type": "reference",
+							"name": "GLCapability"
+						}
+					}
+				},
+				{
+					"id": 199,
+					"name": "gl",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 91,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L91"
+						}
+					],
+					"getSignature": {
+						"id": 200,
+						"name": "gl",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "GL Context"
+								}
+							],
+							"blockTags": [
+								{
+									"tag": "@member",
+									"content": []
+								}
+							]
+						},
+						"type": {
+							"type": "union",
+							"types": [
+								{
+									"type": "intersection",
+									"types": [
+										{
+											"type": "reference",
+											"name": "WebGLRenderingContext",
+											"qualifiedName": "WebGLRenderingContext",
+											"package": "_typescript@4.8.4@typescript"
+										},
+										{
+											"type": "reference",
+											"name": "WebGLExtension"
+										}
+									]
+								},
+								{
+									"type": "reference",
+									"name": "WebGL2RenderingContext",
+									"qualifiedName": "WebGL2RenderingContext",
+									"package": "_typescript@4.8.4@typescript"
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 195,
+					"name": "isWebGL2",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 79,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L79"
+						}
+					],
+					"getSignature": {
+						"id": 196,
+						"name": "isWebGL2",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						}
+					}
+				},
+				{
+					"id": 201,
+					"name": "renderStates",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 95,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L95"
+						}
+					],
+					"getSignature": {
+						"id": 202,
+						"name": "renderStates",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"type": {
+							"type": "reference",
+							"name": "GLRenderStates"
+						}
+					}
+				},
+				{
+					"id": 197,
+					"name": "renderer",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 83,
+							"character": 6,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L83"
+						}
+					],
+					"getSignature": {
+						"id": 198,
+						"name": "renderer",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"type": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				},
+				{
+					"id": 256,
+					"name": "activeRenderTarget",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 269,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L269"
+						}
+					],
+					"signatures": [
+						{
+							"id": 257,
+							"name": "activeRenderTarget",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 258,
+									"name": "renderTarget",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RenderTarget"
+									}
+								},
+								{
+									"id": 259,
+									"name": "viewport",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector4"
+									}
+								},
+								{
+									"id": 260,
+									"name": "mipLevel",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 263,
+					"name": "activeTexture",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 289,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L289"
+						}
+					],
+					"signatures": [
+						{
+							"id": 264,
+							"name": "activeTexture",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 265,
+									"name": "textureID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 266,
+					"name": "bindTexture",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 296,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L296"
+						}
+					],
+					"signatures": [
+						{
+							"id": 267,
+							"name": "bindTexture",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 268,
+									"name": "texture",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "GLTexture"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 228,
+					"name": "canIUse",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 186,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L186"
+						}
+					],
+					"signatures": [
+						{
+							"id": 229,
+							"name": "canIUse",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 230,
+									"name": "capabilityType",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "GLCapabilityType"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 231,
+					"name": "canIUseCompressedTextureInternalFormat",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 190,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L190"
+						}
+					],
+					"signatures": [
+						{
+							"id": 232,
+							"name": "canIUseCompressedTextureInternalFormat",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 233,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 246,
+					"name": "clearRenderTarget",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 219,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L219"
+						}
+					],
+					"signatures": [
+						{
+							"id": 247,
+							"name": "clearRenderTarget",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 248,
+									"name": "engine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Engine"
+									}
+								},
+								{
+									"id": 249,
+									"name": "clearFlags",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "CameraClearFlags"
+									}
+								},
+								{
+									"id": 250,
+									"name": "clearColor",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Color"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 240,
+					"name": "colorMask",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 215,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L215"
+						}
+					],
+					"signatures": [
+						{
+							"id": 241,
+							"name": "colorMask",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 242,
+									"name": "r",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 243,
+									"name": "g",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 244,
+									"name": "b",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								},
+								{
+									"id": 245,
+									"name": "a",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 210,
+					"name": "createPlatformPrimitive",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 162,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L162"
+						}
+					],
+					"signatures": [
+						{
+							"id": 211,
+							"name": "createPlatformPrimitive",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 212,
+									"name": "primitive",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Mesh"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlatformPrimitive"
+							}
+						}
+					]
+				},
+				{
+					"id": 222,
+					"name": "createPlatformRenderTarget",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 178,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L178"
+						}
+					],
+					"signatures": [
+						{
+							"id": 223,
+							"name": "createPlatformRenderTarget",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 224,
+									"name": "target",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "RenderTarget"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlatformRenderTarget"
+							}
+						}
+					]
+				},
+				{
+					"id": 213,
+					"name": "createPlatformTexture2D",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 166,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L166"
+						}
+					],
+					"signatures": [
+						{
+							"id": 214,
+							"name": "createPlatformTexture2D",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 215,
+									"name": "texture2D",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Texture2D"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlatformTexture2D"
+							}
+						}
+					]
+				},
+				{
+					"id": 216,
+					"name": "createPlatformTexture2DArray",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 170,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L170"
+						}
+					],
+					"signatures": [
+						{
+							"id": 217,
+							"name": "createPlatformTexture2DArray",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 218,
+									"name": "texture2D",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Texture2DArray"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "GLTexture2DArray"
+							}
+						}
+					]
+				},
+				{
+					"id": 219,
+					"name": "createPlatformTextureCube",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 174,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L174"
+						}
+					],
+					"signatures": [
+						{
+							"id": 220,
+							"name": "createPlatformTextureCube",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 221,
+									"name": "textureCube",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "TextureCube"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlatformTextureCube"
+							}
+						}
+					]
+				},
+				{
+					"id": 261,
+					"name": "destroy",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 287,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L287"
+						}
+					],
+					"signatures": [
+						{
+							"id": 262,
+							"name": "destroy",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 251,
+					"name": "drawPrimitive",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 259,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L259"
+						}
+					],
+					"signatures": [
+						{
+							"id": 252,
+							"name": "drawPrimitive",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 253,
+									"name": "primitive",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Mesh"
+									}
+								},
+								{
+									"id": 254,
+									"name": "subPrimitive",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "SubMesh"
+									}
+								},
+								{
+									"id": 255,
+									"name": "shaderProgram",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 207,
+					"name": "init",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 111,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L111"
+						}
+					],
+					"signatures": [
+						{
+							"id": 208,
+							"name": "init",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 209,
+									"name": "canvas",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Canvas"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 225,
+					"name": "requireExtension",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 182,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L182"
+						}
+					],
+					"signatures": [
+						{
+							"id": 226,
+							"name": "requireExtension",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 227,
+									"name": "ext",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					]
+				},
+				{
+					"id": 234,
+					"name": "viewport",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 194,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L194"
+						}
+					],
+					"signatures": [
+						{
+							"id": 235,
+							"name": "viewport",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 236,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 237,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 238,
+									"name": "width",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 239,
+									"name": "height",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						177
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						190,
+						191,
+						186,
+						181,
+						185,
+						183,
+						187,
+						193,
+						192,
+						182,
+						184,
+						188,
+						194,
+						189
+					]
+				},
+				{
+					"title": "Accessors",
+					"children": [
+						205,
+						203,
+						199,
+						195,
+						201,
+						197
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						256,
+						263,
+						266,
+						228,
+						231,
+						246,
+						240,
+						210,
+						222,
+						213,
+						216,
+						219,
+						261,
+						251,
+						207,
+						225,
+						234
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+					"line": 56,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L56"
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "IHardwareRenderer"
+				}
+			]
+		},
+		{
+			"id": 269,
+			"name": "WebGLRendererOptions",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "WebGL renderer options."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 271,
+					"name": "alpha",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1860,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.alpha"
+					}
+				},
+				{
+					"id": 272,
+					"name": "antialias",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1861,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.antialias"
+					}
+				},
+				{
+					"id": 273,
+					"name": "depth",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1862,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.depth"
+					}
+				},
+				{
+					"id": 274,
+					"name": "desynchronized",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1863,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.desynchronized"
+					}
+				},
+				{
+					"id": 275,
+					"name": "failIfMajorPerformanceCaveat",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1864,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.failIfMajorPerformanceCaveat"
+					}
+				},
+				{
+					"id": 276,
+					"name": "powerPreference",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1865,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "WebGLPowerPreference",
+						"qualifiedName": "WebGLPowerPreference",
+						"package": "_typescript@4.8.4@typescript"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.powerPreference"
+					}
+				},
+				{
+					"id": 277,
+					"name": "premultipliedAlpha",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1866,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.premultipliedAlpha"
+					}
+				},
+				{
+					"id": 278,
+					"name": "preserveDrawingBuffer",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1867,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.preserveDrawingBuffer"
+					}
+				},
+				{
+					"id": 279,
+					"name": "stencil",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isExternal": true,
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "oasis-engine.github.io/node_modules/_typescript@4.8.4@typescript/lib/lib.dom.d.ts",
+							"line": 1868,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "WebGLContextAttributes.stencil"
+					}
+				},
+				{
+					"id": 270,
+					"name": "webGLMode",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "WebGL mode."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+							"line": 50,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L50"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 172,
+						"name": "WebGLMode"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						271,
+						272,
+						273,
+						274,
+						275,
+						276,
+						277,
+						278,
+						279,
+						270
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
+					"line": 48,
+					"character": 17,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/WebGLRenderer.ts#L48"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "WebGLContextAttributes",
+					"qualifiedName": "WebGLContextAttributes",
+					"package": "_typescript@4.8.4@typescript"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Enumerations",
+			"children": [
+				1,
+				172
+			]
+		},
+		{
+			"title": "Classes",
+			"children": [
+				49,
+				76,
+				176
+			]
+		},
+		{
+			"title": "Interfaces",
+			"children": [
+				269
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "engine/packages/rhi-webgl/src/index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/rhi-webgl/src/index.ts#L1"
+		}
+	]
+}

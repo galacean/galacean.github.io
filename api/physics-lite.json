@@ -1,0 +1,1227 @@
+{
+	"id": 0,
+	"name": "@oasis-engine/physics-lite",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "LitePhysics",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 80,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 81,
+							"name": "new LitePhysics",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 1,
+								"name": "LitePhysics"
+							}
+						}
+					]
+				},
+				{
+					"id": 51,
+					"name": "createBoxColliderShape",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 86,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L86"
+						}
+					],
+					"signatures": [
+						{
+							"id": 52,
+							"name": "createBoxColliderShape",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createBoxColliderShape"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 53,
+									"name": "uniqueID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 54,
+									"name": "size",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								},
+								{
+									"id": 55,
+									"name": "material",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LitePhysicsMaterial"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IBoxColliderShape"
+							}
+						}
+					]
+				},
+				{
+					"id": 65,
+					"name": "createCapsuleColliderShape",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 111,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L111"
+						}
+					],
+					"signatures": [
+						{
+							"id": 66,
+							"name": "createCapsuleColliderShape",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createCapsuleColliderShape"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 67,
+									"name": "uniqueID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 68,
+									"name": "radius",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 69,
+									"name": "height",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 70,
+									"name": "material",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LitePhysicsMaterial"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ICapsuleColliderShape"
+							}
+						}
+					]
+				},
+				{
+					"id": 42,
+					"name": "createCharacterController",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 66,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L66"
+						}
+					],
+					"signatures": [
+						{
+							"id": 43,
+							"name": "createCharacterController",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createCharacterController"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "ICharacterController"
+							}
+						}
+					]
+				},
+				{
+					"id": 38,
+					"name": "createDynamicCollider",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 59,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L59"
+						}
+					],
+					"signatures": [
+						{
+							"id": 39,
+							"name": "createDynamicCollider",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createDynamicCollider"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 40,
+									"name": "position",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								},
+								{
+									"id": 41,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Quaternion"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IDynamicCollider"
+							}
+						}
+					]
+				},
+				{
+					"id": 71,
+					"name": "createFixedJoint",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 123,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L123"
+						}
+					],
+					"signatures": [
+						{
+							"id": 72,
+							"name": "createFixedJoint",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createFixedJoint"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 73,
+									"name": "collider",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LiteCollider"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IFixedJoint"
+							}
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "createHingeJoint",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 130,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L130"
+						}
+					],
+					"signatures": [
+						{
+							"id": 75,
+							"name": "createHingeJoint",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createHingeJoint"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 76,
+									"name": "collider",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LiteCollider"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IHingeJoint"
+							}
+						}
+					]
+				},
+				{
+					"id": 2,
+					"name": "createPhysicsManager",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 31,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L31"
+						}
+					],
+					"signatures": [
+						{
+							"id": 3,
+							"name": "createPhysicsManager",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPhysicsManager"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 4,
+									"name": "onContactBegin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 5,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "LitePhysics.ts",
+													"line": 32,
+													"character": 21,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L32"
+												}
+											],
+											"signatures": [
+												{
+													"id": 6,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 7,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 8,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 9,
+									"name": "onContactEnd",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 10,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "LitePhysics.ts",
+													"line": 33,
+													"character": 19,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L33"
+												}
+											],
+											"signatures": [
+												{
+													"id": 11,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 12,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 13,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 14,
+									"name": "onContactPersist",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 15,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "LitePhysics.ts",
+													"line": 34,
+													"character": 23,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L34"
+												}
+											],
+											"signatures": [
+												{
+													"id": 16,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 17,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 18,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 19,
+									"name": "onTriggerBegin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 20,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "LitePhysics.ts",
+													"line": 35,
+													"character": 21,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L35"
+												}
+											],
+											"signatures": [
+												{
+													"id": 21,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 22,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 23,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 24,
+									"name": "onTriggerEnd",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 25,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "LitePhysics.ts",
+													"line": 36,
+													"character": 19,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L36"
+												}
+											],
+											"signatures": [
+												{
+													"id": 26,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 27,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 28,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 29,
+									"name": "onTriggerPersist",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 30,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "LitePhysics.ts",
+													"line": 37,
+													"character": 23,
+													"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L37"
+												}
+											],
+											"signatures": [
+												{
+													"id": 31,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 32,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 33,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPhysicsManager"
+							}
+						}
+					]
+				},
+				{
+					"id": 44,
+					"name": "createPhysicsMaterial",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 73,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L73"
+						}
+					],
+					"signatures": [
+						{
+							"id": 45,
+							"name": "createPhysicsMaterial",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPhysicsMaterial"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 46,
+									"name": "staticFriction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 47,
+									"name": "dynamicFriction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 48,
+									"name": "bounciness",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 49,
+									"name": "frictionCombine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 50,
+									"name": "bounceCombine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPhysicsMaterial"
+							}
+						}
+					]
+				},
+				{
+					"id": 61,
+					"name": "createPlaneColliderShape",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 104,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L104"
+						}
+					],
+					"signatures": [
+						{
+							"id": 62,
+							"name": "createPlaneColliderShape",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPlaneColliderShape"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 63,
+									"name": "uniqueID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 64,
+									"name": "material",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LitePhysicsMaterial"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlaneColliderShape"
+							}
+						}
+					]
+				},
+				{
+					"id": 56,
+					"name": "createSphereColliderShape",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 93,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L93"
+						}
+					],
+					"signatures": [
+						{
+							"id": 57,
+							"name": "createSphereColliderShape",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createSphereColliderShape"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 58,
+									"name": "uniqueID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 59,
+									"name": "radius",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 60,
+									"name": "material",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LitePhysicsMaterial"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ISphereColliderShape"
+							}
+						}
+					]
+				},
+				{
+					"id": 77,
+					"name": "createSpringJoint",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 137,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L137"
+						}
+					],
+					"signatures": [
+						{
+							"id": 78,
+							"name": "createSpringJoint",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createSpringJoint"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 79,
+									"name": "collider",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "LiteCollider"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ISpringJoint"
+							}
+						}
+					]
+				},
+				{
+					"id": 34,
+					"name": "createStaticCollider",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "LitePhysics.ts",
+							"line": 52,
+							"character": 9,
+							"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L52"
+						}
+					],
+					"signatures": [
+						{
+							"id": 35,
+							"name": "createStaticCollider",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createStaticCollider"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 36,
+									"name": "position",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								},
+								{
+									"id": 37,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Quaternion"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IStaticCollider"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						80
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						51,
+						65,
+						42,
+						38,
+						71,
+						74,
+						2,
+						44,
+						61,
+						56,
+						77,
+						34
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "LitePhysics.ts",
+					"line": 27,
+					"character": 13,
+					"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/LitePhysics.ts#L27"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Classes",
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/oasis-engine/engine/blob/e508168e/packages/physics-lite/src/index.ts#L1"
+		}
+	]
+}
