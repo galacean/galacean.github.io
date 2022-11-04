@@ -8,7 +8,7 @@ label: Interact
 引擎中提供了基本的输入系统，正因为 Oasis 跨端跨平台的特性，我们的输入系统也需要兼容 PC 端与移动端，并且包含键盘，鼠标与触屏等操作，当前版本已支持不同端不同设备的点击输入：
 
 - **统一事件**：抹平了 [MouseEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent) 与 [TouchEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent) 的差异，统一使用 **PointerEvent**，使得点击事件在概念上和接口上都得到统一。
-- **多触控点**：为了不在一帧内执行有过多的射线检测，即使在一帧内存在多个 Pointer ，我们也会将其取平均并整合成一个虚拟的 [Pointer](${api}core/Pointer)，并以此为射线检测的输入源。
+- **多触控点**：当开启多触控点开关 [multiPointerEnabled](${api}core/InputManager#multiPointerEnabled) 时，一帧内可同时存在多个 Pointer ，每个 Pointer 互相独立，响应对应的事件并回调相应的钩子函数。
 - **多相机**：当出现多相机时，会依次检查渲染范围包含了点击点的所有相机，并根据相机的渲染顺序进行排序（后渲染优先），如果当前比较的相机渲染场景内没有命中 Entity 且相机的背景透明，我们会把点击事件继续传递至上一个渲染的相机，直到命中 Entity 或者遍历完相机。
 
   <img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Y2DIRb1yJEEAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
@@ -17,7 +17,7 @@ label: Interact
 
 ### 生命周期回调
 
-输入系统的接口已经整合到引擎的[脚本组件生命周期](${docs}script-cn#组件生命周期函数)中，用户可以很方便地添加以下事件：
+输入系统的接口已经整合到引擎的[脚本组件生命周期](${docs}script-cn#组件生命周期函数)中，用户可以很方便地添加以下事件，同时钩子函数中会携带触发此回调的 Pointer 实例。
 
 | 接口 | 触发时机与频率 |
 | :-- | :-- |
@@ -32,15 +32,28 @@ label: Interact
 
 ### 光标按键检测
 
+#### InputManager
+
+InputManager 管理全局的 Pointer，通过调用相关的方法可以获取当前全局的光标信息以及键位操作记录。
+
 | 方法名称                                               | 方法释义                     |
 | ------------------------------------------------------ | ---------------------------- |
 | [pointers](${api}core/InputManager#pointers) | 返回当前活跃的光标 |
-| [pointerMovingDelta](${api}core/InputManager#pointerMovingDelta)         | 返回本帧光标移动的差值   |
-| [pointerPosition](${api}core/InputManager#pointerPosition)             | 返回本帧光标的位置   |
 | [isPointerHeldDown](${api}core/InputManager#isPointerHeldDown) | 返回这个光标按键是否被持续按住 |
 | [isPointerDown](${api}core/InputManager#isPointerDown)         | 返回当前帧是否按下过此光标按键   |
 | [isPointerUp](${api}core/InputManager#isPointerUp)             | 返回当前帧是否抬起过此光标按键   |
 
+#### Pointer
+
+Pointer 则表示每个独立的光标实例，通过调用相关的方法可以精确地拿到此光标在此刻的状态，位姿，键位以及本帧的移动差值。
+
+| 方法名称                                               | 方法释义                     |
+| ------------------------------------------------------ | ---------------------------- |
+| [phase](${api}core/Pointer#phase)         | 返回此刻光标的状态，如抬起，按下，静止或移动等  |
+| [button](${api}core/Pointer#button)             | 返回触发此状态的光标按键，如鼠标左，中，右键等   |
+| [pressedButtons](${api}core/Pointer#pressedButtons) | 返回此刻光标持续按住的键位 |
+| [deltaPosition](${api}core/Pointer#deltaPosition)         | 返回本帧光标移动的差值   |
+| [pointerPosition](${api}core/Pointer#pointerPosition)             | 返回本帧光标的位置   |
 
 如下示例：
 

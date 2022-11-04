@@ -36,7 +36,7 @@ const engine = new WebGLEngine("canvas");
 The context management of WebGL can be managed through the third parameter [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) of [WebGLEngine](${api}rhi-webgl/WebGLEngine), take **canvas transparent** For example, the engine closes the transparent channel of the canvas by default, that is, the web page elements behind the canvas cannot be displayed, which helps to save GPU memory. If you need to open it, you can set it like this:
 
 ```typescript
-const engine = new WebGLEngine("canvas", undefined, {
+const engine = new WebGLEngine("canvas", {
   alpha: true
 });
 
@@ -48,7 +48,7 @@ const scene = engine.sceneManager.activeScene;
 scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
-Similarly, you can use `webGLMode` to control WebGL1/2, `antialias` to control antialiasing, etc.
+Similarly, you can use `webGLMode` to control WebGL1/2, attributes other than `webGLMode` will be transparently transmitted to the context. For details, please refer to [getContext](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#parameters).
 ## Properties
 
 | Property name | Interpretation |

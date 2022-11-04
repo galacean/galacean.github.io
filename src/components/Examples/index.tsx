@@ -117,7 +117,6 @@ export default function Examples() {
         break;
       }
     }
-
   }, [exampleTitle]);
 
   // filter items
@@ -177,7 +176,7 @@ export default function Examples() {
                     />
                   </Popover>
                 )}
-                <Playground id={selectedExampleId} />
+                <Playground id={selectedExampleId} title={exampleTitle} />
               </Content>
             </Layout>
             <Footer></Footer>

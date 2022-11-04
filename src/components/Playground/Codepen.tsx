@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
-import {
-  CodepenOutlined,
-} from '@ant-design/icons';
+import { CodepenOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import { FormattedMessage, injectIntl } from 'react-intl';
 
-function Codepen (props: any) {
+function Codepen(props: any) {
   const iconRef = useRef<HTMLFormElement>(null);
   const jsExternal: string[] = [];
 
-  Object.keys(props.packages).forEach(lib => {
-    jsExternal.push(`${lib}@${props.packages[lib].version}/${(props.packages[lib].dist || 'dist/browser.min.js')}`);
+  Object.keys(props.packages).forEach((lib) => {
+    jsExternal.push(
+      `${lib}@${props.packages[lib].version}/${props.packages[lib].dist || 'dist/browser.min.js'}`
+    );
   });
 
   let js: string = props.sourceCode;
@@ -25,28 +25,28 @@ function Codepen (props: any) {
     js,
     css: props.css,
     editors: '001',
-    js_external: jsExternal.map(url => `https://unpkg.com/${url}`).join(';'),
+    js_external: jsExternal.map((url) => `https://unpkg.com/${url}`).join(';'),
     js_pre_processor: 'typescript',
   };
 
   return (
-      <div className="code-box-action">
-        <form
-          className="code-box-code-action"
-          action="https://codepen.io/pen/define"
-          method="POST"
-          target="_blank"
-          ref={() =>iconRef}
-          onClick={() => {
-            iconRef.current?.submit();
-          }}
-          >
-            <input type="hidden" name="data" value={JSON.stringify(codepenPrefillConfig)} />
-            <Tooltip title={<FormattedMessage id="app.demo.codepen"/>}>
-              <CodepenOutlined />
-            </Tooltip>
-        </form>
-      </div>
+    <div className='code-box-action'>
+      <form
+        className='code-box-code-action'
+        action='https://codepen.io/pen/define'
+        method='POST'
+        target='_blank'
+        ref={iconRef}
+        onClick={() => {
+          iconRef.current?.submit();
+        }}
+      >
+        <input type='hidden' name='data' value={JSON.stringify(codepenPrefillConfig)} />
+        <Tooltip title={<FormattedMessage id='app.demo.codepen' />}>
+          <CodepenOutlined />
+        </Tooltip>
+      </form>
+    </div>
   );
 }
 
