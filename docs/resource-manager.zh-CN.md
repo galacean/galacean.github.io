@@ -2,6 +2,7 @@
 order: 1
 title: 资源管理与加载
 type: 资源
+label: Resource
 ---
 
 3D 资源一般与 Engine 挂钩，我们使用挂载在 Engine 实例中的 [resourceManager](${api}core/Engine#resourceManager) 管理与加载资源。

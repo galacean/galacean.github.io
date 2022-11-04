@@ -1,7 +1,7 @@
 ---
 order: 2
 title: Math
-type: Tool
+label: Tool
 ---
 
 In a rendering scene, we often perform operations such as translation, rotation, scale, etc. (these operations are collectively referred to as [transform](${docs}transform)) to achieve the interactive effects we want. The calculation of these transformations is generally realized by vectors, quaternions, matrices, etc. For this reason, we provide a mathematical library to complete related operations such as *vector*, *quaternion*, and *matrix*. In addition, the mathematics library also provides richer classes to help us describe *points* *lines* *surfaces* *geometry* in space, as well as judge their intersection and positional relationship in three-dimensional space.

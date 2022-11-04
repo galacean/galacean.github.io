@@ -2,6 +2,7 @@
 order: 2
 title: 键盘
 type: 交互
+label: Interact
 ---
 
 Oasis 支持开发者随时查询当前的键盘交互实况，不需引入额外包且调用接口十分简单。

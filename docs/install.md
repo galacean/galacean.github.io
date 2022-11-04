@@ -1,8 +1,7 @@
 ---
 order: 0
 title: 0. Install Oasis Engine
-type: Introduction
-group: Basic
+label: Introduction/Basic
 ---
 
 ## How to Install

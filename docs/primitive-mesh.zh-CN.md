@@ -3,6 +3,7 @@ order: 7
 title: 基础几何体
 type: 图形
 group: 网格
+label: Graphics/Mesh
 ---
 
 常用几何体统一在 [PrimitiveMesh](${api}core/PrimitiveMesh) 中提供。

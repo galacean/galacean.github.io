@@ -3,6 +3,7 @@ order: 1
 title: 纹理总览
 type: 图形
 group: 纹理
+label: Graphics/Texture
 ---
 
 纹理（[Texture](${api}core/Texture)）, 是在 3D 渲染中最常用到的资源。我们在给模型着色时，需要给每个片元设置一个颜色值，这个色值除了直接手动设置，我们还可以选择从纹理中读取纹素来进行着色，来达到更加丰富的美术效果。

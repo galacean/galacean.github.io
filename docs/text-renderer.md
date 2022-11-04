@@ -1,8 +1,7 @@
 ---
 order: 5
 title: TextRenderer
-type: Graphics
-group: 2D
+label: Graphics/2D
 ---
 
 [TextRenderer](${api}core/TextRenderer) Used to display texts in 3D/2D scenes.

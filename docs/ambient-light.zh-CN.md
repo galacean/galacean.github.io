@@ -3,6 +3,7 @@ order: 4
 title: 环境光
 type: 图形
 group: 光照
+lable: Graphics/Light
 ---
 
 **test webhook**

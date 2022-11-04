@@ -3,6 +3,8 @@ order: 5
 title: 5. First game
 type: Introduction
 group: Advanced
+label: Introduction/Advanced
+
 ---
 
 > I believe everyone is familiar with **Flappy Bird**. Today we briefly describe how to use Oasis to replicate 2D games. The process is actually the same as the daily requirements. Original game link:[http://flappybird.io/](http://flappybird.io/)

@@ -3,6 +3,7 @@ order: 5
 title: 5. 第一个游戏
 type: 快速入门
 group: 进阶
+label: Introduction/Advanced
 ---
 
 > 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)

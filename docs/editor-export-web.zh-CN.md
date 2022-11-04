@@ -3,6 +3,7 @@ order: 1
 title: 导出 Web 平台包
 type: 编辑器
 group: 发布
+label: 编辑器/发布
 ---
 
 ## 使用

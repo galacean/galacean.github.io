@@ -3,6 +3,7 @@ order: 2
 title: 2. 绘制一个立方体
 type: 快速入门
 group: 基础
+label: Introduction/Basic
 ---
 
 在初始化完毕画布后，我们趁热打铁开发一个立方体示例：
