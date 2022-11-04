@@ -5,6 +5,7 @@ title: Blender 烘焙
 
 type: 美术
 group: 教程
+label: Art/教程
 ---  
 
 

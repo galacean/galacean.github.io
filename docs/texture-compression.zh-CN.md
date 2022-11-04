@@ -3,6 +3,7 @@ order: 6
 title: 纹理压缩
 type: 图形
 group: 纹理
+label: Graphics/Texture
 ---
 
 Oasis 支持 **DXT/PVR/ETC/ASTC** 格式的压缩纹理，并且支持通过 [KTX1.0](https://registry.khronos.org/KTX/specs/1.0/ktxspec_v1.html) 容器格式加载。

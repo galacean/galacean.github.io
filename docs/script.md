@@ -1,7 +1,7 @@
 ---
 order: 4
 title: Script
-type: Core
+label: Core
 ---
 
 In addition to [built-in components](${docs}entity#Common\ components), the Oasis engine also provides a powerful scripting system. The script system is the link between engine capabilities and game logic. The script is extended from the base class [Script](${api}core/Script). You can use it to extend the engine’s functions, as well as the life cycle hook functions provided by script components. Write your own game logic code in.

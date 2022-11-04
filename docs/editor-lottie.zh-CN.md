@@ -3,6 +3,7 @@ order: 3.6
 title: Lottie
 type: 编辑器
 group: 组件
+label: 编辑器/组件
 ---
 
 [Lottie](https://airbnb.design/lottie/) 是广受设计师和前端开发者欢迎的动画格式，用户可以在 Oasis Editor 中轻松完成 Lottie 资产的处理和组件添加。

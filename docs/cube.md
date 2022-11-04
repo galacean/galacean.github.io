@@ -3,6 +3,7 @@ order: 2
 title: 2. Draw a Cube
 type: Introduction
 group: Basic
+label: Introduction/Basic
 ---
 
 This tutorial will take you to draw a cube example:

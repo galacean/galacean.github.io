@@ -2,6 +2,7 @@
 order: 5
 title: 变换
 type: 核心
+label: Core
 ---
 
 <playground src="transform-basic.ts"></playground>

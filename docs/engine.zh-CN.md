@@ -2,6 +2,7 @@
 order: 1
 title: 引擎
 type: 核心
+label: Core
 ---
 
 `Engine` 在 Oasis engine 中扮演着总控制器的角色，主要包含了**画布**、**渲染控制**和**引擎子系统管理**等三大功能：

@@ -3,6 +3,7 @@ order: 3.4
 title: Mars
 type: 编辑器
 group: 组件
+label: 编辑器/组件
 ---
 
 Mars 是一个非常强大、能帮助我们制作 Web 特效的工具，包含一个[特效编辑器](https://render.alipay.com/p/s/mars-editor/)和一个特效播放库。如果想了解更多关于 Mars 的内容，请跳转至 [Mars](https://yuque.antfin-inc.com/oasisgroup/mars)。

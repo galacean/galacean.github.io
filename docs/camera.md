@@ -3,6 +3,7 @@ order: 1
 title: Camera Component
 type: Graphics
 group: Camera
+label: Graphics/Camera
 ---
 
 The camera is an abstract concept of [3D projection](https://en.wikipedia.org/wiki/3D_projection) that a graphics engine acts like a camera or eyes in the real world. The camera of Oasis Engine implements automatic frustum culling, and only renders objects inside the frustum.

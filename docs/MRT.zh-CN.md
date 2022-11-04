@@ -3,6 +3,7 @@ order: 5
 title: 离屏渲染纹理
 type: 图形
 group: 纹理
+label: Graphics/Texture
 ---
 
 离屏渲染纹理，顾名思义，该纹理可以通过离屏渲染得到。底层使用了 [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) 技术，将渲染操作不再输出到屏幕上，而是输出到纹理上，用户通过该纹理，可以用来实现后处理特效、折射、反射、动态环境贴图等一些艺术创作。

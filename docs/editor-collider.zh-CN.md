@@ -3,6 +3,7 @@ order: 1.4
 title: 碰撞体
 type: 编辑器
 group: 组件
+label: 编辑器/组件
 ---
 
 ## 介绍

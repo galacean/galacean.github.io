@@ -1,8 +1,7 @@
 ---
 order: 0
 title: Mesh
-type: Graphics
-group: Mesh
+label: Graphics/Mesh
 ---
 
 Mesh is the data object of MeshRenderer, which describes various information of vertices (position, topology, vertex color, UV, etc.). Similarly, in Oasis we can use [ModelMesh](${api}core/ModelMesh) or [BufferMesh](${api}core/BufferMesh) to describe the geometric information of the object to be rendered

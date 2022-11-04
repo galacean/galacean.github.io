@@ -3,6 +3,8 @@ order: 6
 title: Buffer Mesh
 type: Graphics
 group: Mesh
+label: Graphics/Mesh
+
 ---
 
 [BufferMesh](${api}core/BufferMesh) can freely manipulate vertex buffer and index buffer data, as well as some commands related to geometry rendering. It has the characteristics of high efficiency, flexibility and simplicity. Developers can use this class if they want to implement custom geometry efficiently and flexibly.
