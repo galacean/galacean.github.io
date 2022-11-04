@@ -7,7 +7,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 292,
+			"id": 295,
 			"name": "IBoxColliderShape",
 			"kind": 256,
 			"kindString": "Interface",
@@ -22,7 +22,7 @@
 			},
 			"children": [
 				{
-					"id": 314,
+					"id": 320,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -30,14 +30,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 47,
+							"line": 53,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L53"
 						}
 					],
 					"signatures": [
 						{
-							"id": 315,
+							"id": 321,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -56,19 +56,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 291,
+								"id": 294,
 								"name": "IColliderShape.destroy"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 290,
+						"id": 293,
 						"name": "IColliderShape.destroy"
 					}
 				},
 				{
-					"id": 302,
+					"id": 308,
 					"name": "setContactOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -76,14 +76,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 24,
+							"line": 30,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
 						{
-							"id": 303,
+							"id": 309,
 							"name": "setContactOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -98,7 +98,7 @@
 							},
 							"parameters": [
 								{
-									"id": 304,
+									"id": 310,
 									"name": "offset",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -123,19 +123,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 279,
+								"id": 282,
 								"name": "IColliderShape.setContactOffset"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 278,
+						"id": 281,
 						"name": "IColliderShape.setContactOffset"
 					}
 				},
 				{
-					"id": 311,
+					"id": 317,
 					"name": "setIsSceneQuery",
 					"kind": 2048,
 					"kindString": "Method",
@@ -143,14 +143,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 42,
+							"line": 48,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L48"
 						}
 					],
 					"signatures": [
 						{
-							"id": 312,
+							"id": 318,
 							"name": "setIsSceneQuery",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -165,7 +165,7 @@
 							},
 							"parameters": [
 								{
-									"id": 313,
+									"id": 319,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -190,19 +190,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 288,
+								"id": 291,
 								"name": "IColliderShape.setIsSceneQuery"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 287,
+						"id": 290,
 						"name": "IColliderShape.setIsSceneQuery"
 					}
 				},
 				{
-					"id": 308,
+					"id": 314,
 					"name": "setIsTrigger",
 					"kind": 2048,
 					"kindString": "Method",
@@ -210,14 +210,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 36,
+							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 309,
+							"id": 315,
 							"name": "setIsTrigger",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -232,7 +232,7 @@
 							},
 							"parameters": [
 								{
-									"id": 310,
+									"id": 316,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -257,19 +257,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 285,
+								"id": 288,
 								"name": "IColliderShape.setIsTrigger"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 284,
+						"id": 287,
 						"name": "IColliderShape.setIsTrigger"
 					}
 				},
 				{
-					"id": 305,
+					"id": 311,
 					"name": "setMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -277,14 +277,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 30,
+							"line": 36,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 306,
+							"id": 312,
 							"name": "setMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -299,7 +299,7 @@
 							},
 							"parameters": [
 								{
-									"id": 307,
+									"id": 313,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -325,19 +325,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 282,
+								"id": 285,
 								"name": "IColliderShape.setMaterial"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 281,
+						"id": 284,
 						"name": "IColliderShape.setMaterial"
 					}
 				},
 				{
-					"id": 296,
+					"id": 302,
 					"name": "setPosition",
 					"kind": 2048,
 					"kindString": "Method",
@@ -345,14 +345,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 12,
+							"line": 18,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
 						{
-							"id": 297,
+							"id": 303,
 							"name": "setPosition",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -367,7 +367,7 @@
 							},
 							"parameters": [
 								{
-									"id": 298,
+									"id": 304,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -392,19 +392,86 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 273,
+								"id": 276,
 								"name": "IColliderShape.setPosition"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 272,
+						"id": 275,
 						"name": "IColliderShape.setPosition"
 					}
 				},
 				{
-					"id": 293,
+					"id": 299,
+					"name": "setRotation",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "physics/shape/IColliderShape.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L12"
+						}
+					],
+					"signatures": [
+						{
+							"id": 300,
+							"name": "setRotation",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Set local rotation."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 301,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The local rotation"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 273,
+								"name": "IColliderShape.setRotation"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 272,
+						"name": "IColliderShape.setRotation"
+					}
+				},
+				{
+					"id": 296,
 					"name": "setSize",
 					"kind": 2048,
 					"kindString": "Method",
@@ -414,12 +481,12 @@
 							"fileName": "physics/shape/IBoxColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
 						{
-							"id": 294,
+							"id": 297,
 							"name": "setSize",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -434,7 +501,7 @@
 							},
 							"parameters": [
 								{
-									"id": 295,
+									"id": 298,
 									"name": "size",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -461,7 +528,7 @@
 					]
 				},
 				{
-					"id": 299,
+					"id": 305,
 					"name": "setWorldScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -469,14 +536,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 18,
+							"line": 24,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
 						{
-							"id": 300,
+							"id": 306,
 							"name": "setWorldScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -491,7 +558,7 @@
 							},
 							"parameters": [
 								{
-									"id": 301,
+									"id": 307,
 									"name": "scale",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -516,14 +583,14 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 276,
+								"id": 279,
 								"name": "IColliderShape.setWorldScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 275,
+						"id": 278,
 						"name": "IColliderShape.setWorldScale"
 					}
 				}
@@ -532,14 +599,15 @@
 				{
 					"title": "Methods",
 					"children": [
-						314,
-						302,
-						311,
+						320,
 						308,
-						305,
+						317,
+						314,
+						311,
+						302,
+						299,
 						296,
-						293,
-						299
+						305
 					]
 				}
 			],
@@ -548,7 +616,7 @@
 					"fileName": "physics/shape/IBoxColliderShape.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IBoxColliderShape.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IBoxColliderShape.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -560,7 +628,7 @@
 			]
 		},
 		{
-			"id": 316,
+			"id": 322,
 			"name": "ICapsuleColliderShape",
 			"kind": 256,
 			"kindString": "Interface",
@@ -575,7 +643,7 @@
 			},
 			"children": [
 				{
-					"id": 344,
+					"id": 353,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -583,14 +651,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 47,
+							"line": 53,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L53"
 						}
 					],
 					"signatures": [
 						{
-							"id": 345,
+							"id": 354,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -609,19 +677,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 291,
+								"id": 294,
 								"name": "IColliderShape.destroy"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 290,
+						"id": 293,
 						"name": "IColliderShape.destroy"
 					}
 				},
 				{
-					"id": 332,
+					"id": 341,
 					"name": "setContactOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -629,14 +697,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 24,
+							"line": 30,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
 						{
-							"id": 333,
+							"id": 342,
 							"name": "setContactOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -651,7 +719,7 @@
 							},
 							"parameters": [
 								{
-									"id": 334,
+									"id": 343,
 									"name": "offset",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -676,19 +744,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 279,
+								"id": 282,
 								"name": "IColliderShape.setContactOffset"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 278,
+						"id": 281,
 						"name": "IColliderShape.setContactOffset"
 					}
 				},
 				{
-					"id": 320,
+					"id": 326,
 					"name": "setHeight",
 					"kind": 2048,
 					"kindString": "Method",
@@ -698,12 +766,12 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 321,
+							"id": 327,
 							"name": "setHeight",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -718,7 +786,7 @@
 							},
 							"parameters": [
 								{
-									"id": 322,
+									"id": 328,
 									"name": "height",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -745,7 +813,7 @@
 					]
 				},
 				{
-					"id": 341,
+					"id": 350,
 					"name": "setIsSceneQuery",
 					"kind": 2048,
 					"kindString": "Method",
@@ -753,14 +821,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 42,
+							"line": 48,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L48"
 						}
 					],
 					"signatures": [
 						{
-							"id": 342,
+							"id": 351,
 							"name": "setIsSceneQuery",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -775,7 +843,7 @@
 							},
 							"parameters": [
 								{
-									"id": 343,
+									"id": 352,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -800,19 +868,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 288,
+								"id": 291,
 								"name": "IColliderShape.setIsSceneQuery"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 287,
+						"id": 290,
 						"name": "IColliderShape.setIsSceneQuery"
 					}
 				},
 				{
-					"id": 338,
+					"id": 347,
 					"name": "setIsTrigger",
 					"kind": 2048,
 					"kindString": "Method",
@@ -820,14 +888,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 36,
+							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 339,
+							"id": 348,
 							"name": "setIsTrigger",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -842,7 +910,7 @@
 							},
 							"parameters": [
 								{
-									"id": 340,
+									"id": 349,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -867,19 +935,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 285,
+								"id": 288,
 								"name": "IColliderShape.setIsTrigger"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 284,
+						"id": 287,
 						"name": "IColliderShape.setIsTrigger"
 					}
 				},
 				{
-					"id": 335,
+					"id": 344,
 					"name": "setMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -887,14 +955,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 30,
+							"line": 36,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 336,
+							"id": 345,
 							"name": "setMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -909,7 +977,7 @@
 							},
 							"parameters": [
 								{
-									"id": 337,
+									"id": 346,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -935,19 +1003,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 282,
+								"id": 285,
 								"name": "IColliderShape.setMaterial"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 281,
+						"id": 284,
 						"name": "IColliderShape.setMaterial"
 					}
 				},
 				{
-					"id": 326,
+					"id": 335,
 					"name": "setPosition",
 					"kind": 2048,
 					"kindString": "Method",
@@ -955,14 +1023,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 12,
+							"line": 18,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
 						{
-							"id": 327,
+							"id": 336,
 							"name": "setPosition",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -977,7 +1045,7 @@
 							},
 							"parameters": [
 								{
-									"id": 328,
+									"id": 337,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1002,19 +1070,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 273,
+								"id": 276,
 								"name": "IColliderShape.setPosition"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 272,
+						"id": 275,
 						"name": "IColliderShape.setPosition"
 					}
 				},
 				{
-					"id": 317,
+					"id": 323,
 					"name": "setRadius",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1024,12 +1092,12 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 318,
+							"id": 324,
 							"name": "setRadius",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1044,7 +1112,7 @@
 							},
 							"parameters": [
 								{
-									"id": 319,
+									"id": 325,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1071,7 +1139,74 @@
 					]
 				},
 				{
-					"id": 323,
+					"id": 332,
+					"name": "setRotation",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "physics/shape/IColliderShape.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L12"
+						}
+					],
+					"signatures": [
+						{
+							"id": 333,
+							"name": "setRotation",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Set local rotation."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 334,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The local rotation"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 273,
+								"name": "IColliderShape.setRotation"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 272,
+						"name": "IColliderShape.setRotation"
+					}
+				},
+				{
+					"id": 329,
 					"name": "setUpAxis",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1081,12 +1216,12 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 23,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
 						}
 					],
 					"signatures": [
 						{
-							"id": 324,
+							"id": 330,
 							"name": "setUpAxis",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1101,7 +1236,7 @@
 							},
 							"parameters": [
 								{
-									"id": 325,
+									"id": 331,
 									"name": "upAxis",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1128,7 +1263,7 @@
 					]
 				},
 				{
-					"id": 329,
+					"id": 338,
 					"name": "setWorldScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1136,14 +1271,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 18,
+							"line": 24,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
 						{
-							"id": 330,
+							"id": 339,
 							"name": "setWorldScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1158,7 +1293,7 @@
 							},
 							"parameters": [
 								{
-									"id": 331,
+									"id": 340,
 									"name": "scale",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1183,14 +1318,14 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 276,
+								"id": 279,
 								"name": "IColliderShape.setWorldScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 275,
+						"id": 278,
 						"name": "IColliderShape.setWorldScale"
 					}
 				}
@@ -1199,16 +1334,17 @@
 				{
 					"title": "Methods",
 					"children": [
-						344,
-						332,
-						320,
+						353,
 						341,
-						338,
-						335,
 						326,
-						317,
+						350,
+						347,
+						344,
+						335,
 						323,
-						329
+						332,
+						329,
+						338
 					]
 				}
 			],
@@ -1217,7 +1353,7 @@
 					"fileName": "physics/shape/ICapsuleColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L6"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -1254,7 +1390,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -1322,7 +1458,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -1368,7 +1504,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L26"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L26"
 						}
 					],
 					"signatures": [
@@ -1425,7 +1561,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L14"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L14"
 						}
 					],
 					"signatures": [
@@ -1520,7 +1656,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -1588,7 +1724,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L38"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L38"
 						}
 					],
 					"signatures": [
@@ -1645,7 +1781,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L50"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L50"
 						}
 					],
 					"signatures": [
@@ -1702,7 +1838,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L32"
 						}
 					],
 					"signatures": [
@@ -1759,7 +1895,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L44"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L44"
 						}
 					],
 					"signatures": [
@@ -1816,7 +1952,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L20"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L20"
 						}
 					],
 					"signatures": [
@@ -1885,7 +2021,7 @@
 					"fileName": "physics/ICharacterController.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICharacterController.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICharacterController.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -1922,7 +2058,7 @@
 							"fileName": "IClone.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/IClone.ts#L9"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/IClone.ts#L9"
 						}
 					],
 					"signatures": [
@@ -1971,7 +2107,7 @@
 							"fileName": "IClone.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/IClone.ts#L15"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/IClone.ts#L15"
 						}
 					],
 					"signatures": [
@@ -2034,7 +2170,7 @@
 					"fileName": "IClone.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/IClone.ts#L4"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/IClone.ts#L4"
 				}
 			]
 		},
@@ -2064,7 +2200,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -2122,7 +2258,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -2158,7 +2294,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -2221,7 +2357,7 @@
 					"fileName": "physics/ICollider.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L6"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L6"
 				}
 			],
 			"extendedBy": [
@@ -2258,7 +2394,7 @@
 			},
 			"children": [
 				{
-					"id": 290,
+					"id": 293,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2266,14 +2402,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 47,
+							"line": 53,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L53"
 						}
 					],
 					"signatures": [
 						{
-							"id": 291,
+							"id": 294,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2294,7 +2430,7 @@
 					]
 				},
 				{
-					"id": 278,
+					"id": 281,
 					"name": "setContactOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2302,14 +2438,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 24,
+							"line": 30,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
 						{
-							"id": 279,
+							"id": 282,
 							"name": "setContactOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2324,7 +2460,7 @@
 							},
 							"parameters": [
 								{
-									"id": 280,
+									"id": 283,
 									"name": "offset",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2351,7 +2487,7 @@
 					]
 				},
 				{
-					"id": 287,
+					"id": 290,
 					"name": "setIsSceneQuery",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2359,14 +2495,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 42,
+							"line": 48,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L48"
 						}
 					],
 					"signatures": [
 						{
-							"id": 288,
+							"id": 291,
 							"name": "setIsSceneQuery",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2381,7 +2517,7 @@
 							},
 							"parameters": [
 								{
-									"id": 289,
+									"id": 292,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2408,7 +2544,7 @@
 					]
 				},
 				{
-					"id": 284,
+					"id": 287,
 					"name": "setIsTrigger",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2416,14 +2552,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 36,
+							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 285,
+							"id": 288,
 							"name": "setIsTrigger",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2438,7 +2574,7 @@
 							},
 							"parameters": [
 								{
-									"id": 286,
+									"id": 289,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2465,7 +2601,7 @@
 					]
 				},
 				{
-					"id": 281,
+					"id": 284,
 					"name": "setMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2473,14 +2609,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 30,
+							"line": 36,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 282,
+							"id": 285,
 							"name": "setMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2495,7 +2631,7 @@
 							},
 							"parameters": [
 								{
-									"id": 283,
+									"id": 286,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2523,7 +2659,7 @@
 					]
 				},
 				{
-					"id": 272,
+					"id": 275,
 					"name": "setPosition",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2531,14 +2667,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 12,
+							"line": 18,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
 						{
-							"id": 273,
+							"id": 276,
 							"name": "setPosition",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2553,7 +2689,7 @@
 							},
 							"parameters": [
 								{
-									"id": 274,
+									"id": 277,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2580,7 +2716,64 @@
 					]
 				},
 				{
-					"id": 275,
+					"id": 272,
+					"name": "setRotation",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "physics/shape/IColliderShape.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L12"
+						}
+					],
+					"signatures": [
+						{
+							"id": 273,
+							"name": "setRotation",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Set local rotation."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 274,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The local rotation"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 278,
 					"name": "setWorldScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -2588,14 +2781,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 18,
+							"line": 24,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
 						{
-							"id": 276,
+							"id": 279,
 							"name": "setWorldScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2610,7 +2803,7 @@
 							},
 							"parameters": [
 								{
-									"id": 277,
+									"id": 280,
 									"name": "scale",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2641,13 +2834,14 @@
 				{
 					"title": "Methods",
 					"children": [
+						293,
+						281,
 						290,
-						278,
 						287,
 						284,
-						281,
+						275,
 						272,
-						275
+						278
 					]
 				}
 			],
@@ -2656,28 +2850,28 @@
 					"fileName": "physics/shape/IColliderShape.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L7"
 				}
 			],
 			"extendedBy": [
 				{
 					"type": "reference",
-					"id": 292,
+					"id": 295,
 					"name": "IBoxColliderShape"
 				},
 				{
 					"type": "reference",
-					"id": 316,
+					"id": 322,
 					"name": "ICapsuleColliderShape"
 				},
 				{
 					"type": "reference",
-					"id": 346,
+					"id": 355,
 					"name": "ISphereColliderShape"
 				},
 				{
 					"type": "reference",
-					"id": 370,
+					"id": 382,
 					"name": "IPlaneColliderShape"
 				}
 			]
@@ -2708,7 +2902,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 110,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L110"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L110"
 						}
 					],
 					"signatures": [
@@ -2765,7 +2959,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -2833,7 +3027,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 116,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L116"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L116"
 						}
 					],
 					"signatures": [
@@ -2890,7 +3084,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -2936,7 +3130,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L20"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L20"
 						}
 					],
 					"signatures": [
@@ -3012,7 +3206,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 123,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L123"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L123"
 						}
 					],
 					"signatures": [
@@ -3099,7 +3293,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -3167,7 +3361,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L32"
 						}
 					],
 					"signatures": [
@@ -3224,7 +3418,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L44"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L44"
 						}
 					],
 					"signatures": [
@@ -3281,7 +3475,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L56"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L56"
 						}
 					],
 					"signatures": [
@@ -3338,7 +3532,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 92,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L92"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L92"
 						}
 					],
 					"signatures": [
@@ -3395,7 +3589,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 104,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L104"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L104"
 						}
 					],
 					"signatures": [
@@ -3452,7 +3646,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 62,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L62"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L62"
 						}
 					],
 					"signatures": [
@@ -3509,7 +3703,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 98,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L98"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L98"
 						}
 					],
 					"signatures": [
@@ -3566,7 +3760,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L26"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L26"
 						}
 					],
 					"signatures": [
@@ -3623,7 +3817,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L38"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L38"
 						}
 					],
 					"signatures": [
@@ -3680,7 +3874,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L50"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L50"
 						}
 					],
 					"signatures": [
@@ -3737,7 +3931,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L68"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L68"
 						}
 					],
 					"signatures": [
@@ -3794,7 +3988,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L74"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L74"
 						}
 					],
 					"signatures": [
@@ -3851,7 +4045,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 80,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L80"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L80"
 						}
 					],
 					"signatures": [
@@ -3908,7 +4102,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 86,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L86"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L86"
 						}
 					],
 					"signatures": [
@@ -3965,7 +4159,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 13,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L13"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L13"
 						}
 					],
 					"signatures": [
@@ -4041,7 +4235,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 128,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L128"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L128"
 						}
 					],
 					"signatures": [
@@ -4077,7 +4271,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L133"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L133"
 						}
 					],
 					"signatures": [
@@ -4139,7 +4333,7 @@
 					"fileName": "physics/IDynamicCollider.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IDynamicCollider.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IDynamicCollider.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -4151,7 +4345,7 @@
 			]
 		},
 		{
-			"id": 419,
+			"id": 431,
 			"name": "IFixedJoint",
 			"kind": 256,
 			"kindString": "Interface",
@@ -4166,7 +4360,7 @@
 			},
 			"children": [
 				{
-					"id": 438,
+					"id": 450,
 					"name": "setBreakForce",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4176,12 +4370,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 439,
+							"id": 451,
 							"name": "setBreakForce",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4196,7 +4390,7 @@
 							},
 							"parameters": [
 								{
-									"id": 440,
+									"id": 452,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4213,19 +4407,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 414,
+								"id": 426,
 								"name": "IJoint.setBreakForce"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 413,
+						"id": 425,
 						"name": "IJoint.setBreakForce"
 					}
 				},
 				{
-					"id": 441,
+					"id": 453,
 					"name": "setBreakTorque",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4235,12 +4429,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
 						{
-							"id": 442,
+							"id": 454,
 							"name": "setBreakTorque",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4255,7 +4449,7 @@
 							},
 							"parameters": [
 								{
-									"id": 443,
+									"id": 455,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4272,19 +4466,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 417,
+								"id": 429,
 								"name": "IJoint.setBreakTorque"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 416,
+						"id": 428,
 						"name": "IJoint.setBreakTorque"
 					}
 				},
 				{
-					"id": 423,
+					"id": 435,
 					"name": "setConnectedAnchor",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4294,12 +4488,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 424,
+							"id": 436,
 							"name": "setConnectedAnchor",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4325,7 +4519,7 @@
 							},
 							"parameters": [
 								{
-									"id": 425,
+									"id": 437,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4342,19 +4536,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 399,
+								"id": 411,
 								"name": "IJoint.setConnectedAnchor"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 398,
+						"id": 410,
 						"name": "IJoint.setConnectedAnchor"
 					}
 				},
 				{
-					"id": 420,
+					"id": 432,
 					"name": "setConnectedCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4364,12 +4558,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 421,
+							"id": 433,
 							"name": "setConnectedCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4384,7 +4578,7 @@
 							},
 							"parameters": [
 								{
-									"id": 422,
+									"id": 434,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4402,19 +4596,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 396,
+								"id": 408,
 								"name": "IJoint.setConnectedCollider"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 395,
+						"id": 407,
 						"name": "IJoint.setConnectedCollider"
 					}
 				},
 				{
-					"id": 429,
+					"id": 441,
 					"name": "setConnectedInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4424,12 +4618,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
 						{
-							"id": 430,
+							"id": 442,
 							"name": "setConnectedInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4444,7 +4638,7 @@
 							},
 							"parameters": [
 								{
-									"id": 431,
+									"id": 443,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4461,19 +4655,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 405,
+								"id": 417,
 								"name": "IJoint.setConnectedInertiaScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 404,
+						"id": 416,
 						"name": "IJoint.setConnectedInertiaScale"
 					}
 				},
 				{
-					"id": 426,
+					"id": 438,
 					"name": "setConnectedMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4483,12 +4677,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
 						{
-							"id": 427,
+							"id": 439,
 							"name": "setConnectedMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4503,7 +4697,7 @@
 							},
 							"parameters": [
 								{
-									"id": 428,
+									"id": 440,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4520,19 +4714,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 402,
+								"id": 414,
 								"name": "IJoint.setConnectedMassScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 401,
+						"id": 413,
 						"name": "IJoint.setConnectedMassScale"
 					}
 				},
 				{
-					"id": 435,
+					"id": 447,
 					"name": "setInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4542,12 +4736,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
 						{
-							"id": 436,
+							"id": 448,
 							"name": "setInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4562,7 +4756,7 @@
 							},
 							"parameters": [
 								{
-									"id": 437,
+									"id": 449,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4579,19 +4773,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 411,
+								"id": 423,
 								"name": "IJoint.setInertiaScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 410,
+						"id": 422,
 						"name": "IJoint.setInertiaScale"
 					}
 				},
 				{
-					"id": 432,
+					"id": 444,
 					"name": "setMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4601,12 +4795,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
 						{
-							"id": 433,
+							"id": 445,
 							"name": "setMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4621,7 +4815,7 @@
 							},
 							"parameters": [
 								{
-									"id": 434,
+									"id": 446,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4638,14 +4832,14 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 408,
+								"id": 420,
 								"name": "IJoint.setMassScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 407,
+						"id": 419,
 						"name": "IJoint.setMassScale"
 					}
 				}
@@ -4654,14 +4848,14 @@
 				{
 					"title": "Methods",
 					"children": [
-						438,
-						441,
-						423,
-						420,
-						429,
-						426,
+						450,
+						453,
 						435,
-						432
+						432,
+						441,
+						438,
+						447,
+						444
 					]
 				}
 			],
@@ -4670,19 +4864,19 @@
 					"fileName": "physics/joints/IFixedJoint.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IFixedJoint.ts#L6"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IFixedJoint.ts#L6"
 				}
 			],
 			"extendedTypes": [
 				{
 					"type": "reference",
-					"id": 394,
+					"id": 406,
 					"name": "IJoint"
 				}
 			]
 		},
 		{
-			"id": 444,
+			"id": 456,
 			"name": "IHingeJoint",
 			"kind": 256,
 			"kindString": "Interface",
@@ -4697,7 +4891,7 @@
 			},
 			"children": [
 				{
-					"id": 451,
+					"id": 463,
 					"name": "getAngle",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4707,12 +4901,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L21"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L21"
 						}
 					],
 					"signatures": [
 						{
-							"id": 452,
+							"id": 464,
 							"name": "getAngle",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4733,7 +4927,7 @@
 					]
 				},
 				{
-					"id": 453,
+					"id": 465,
 					"name": "getVelocity",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4743,12 +4937,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L26"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L26"
 						}
 					],
 					"signatures": [
 						{
-							"id": 454,
+							"id": 466,
 							"name": "getVelocity",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4777,7 +4971,7 @@
 					]
 				},
 				{
-					"id": 445,
+					"id": 457,
 					"name": "setAxis",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4787,12 +4981,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 446,
+							"id": 458,
 							"name": "setAxis",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4807,7 +5001,7 @@
 							},
 							"parameters": [
 								{
-									"id": 447,
+									"id": 459,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4826,7 +5020,7 @@
 					]
 				},
 				{
-					"id": 497,
+					"id": 509,
 					"name": "setBreakForce",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4836,12 +5030,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 498,
+							"id": 510,
 							"name": "setBreakForce",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4856,7 +5050,7 @@
 							},
 							"parameters": [
 								{
-									"id": 499,
+									"id": 511,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4873,19 +5067,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 414,
+								"id": 426,
 								"name": "IJoint.setBreakForce"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 413,
+						"id": 425,
 						"name": "IJoint.setBreakForce"
 					}
 				},
 				{
-					"id": 500,
+					"id": 512,
 					"name": "setBreakTorque",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4895,12 +5089,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
 						{
-							"id": 501,
+							"id": 513,
 							"name": "setBreakTorque",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4915,7 +5109,7 @@
 							},
 							"parameters": [
 								{
-									"id": 502,
+									"id": 514,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4932,19 +5126,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 417,
+								"id": 429,
 								"name": "IJoint.setBreakTorque"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 416,
+						"id": 428,
 						"name": "IJoint.setBreakTorque"
 					}
 				},
 				{
-					"id": 482,
+					"id": 494,
 					"name": "setConnectedAnchor",
 					"kind": 2048,
 					"kindString": "Method",
@@ -4954,12 +5148,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 483,
+							"id": 495,
 							"name": "setConnectedAnchor",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -4985,7 +5179,7 @@
 							},
 							"parameters": [
 								{
-									"id": 484,
+									"id": 496,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5002,19 +5196,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 399,
+								"id": 411,
 								"name": "IJoint.setConnectedAnchor"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 398,
+						"id": 410,
 						"name": "IJoint.setConnectedAnchor"
 					}
 				},
 				{
-					"id": 479,
+					"id": 491,
 					"name": "setConnectedCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5024,12 +5218,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 480,
+							"id": 492,
 							"name": "setConnectedCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5044,7 +5238,7 @@
 							},
 							"parameters": [
 								{
-									"id": 481,
+									"id": 493,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5062,19 +5256,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 396,
+								"id": 408,
 								"name": "IJoint.setConnectedCollider"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 395,
+						"id": 407,
 						"name": "IJoint.setConnectedCollider"
 					}
 				},
 				{
-					"id": 488,
+					"id": 500,
 					"name": "setConnectedInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5084,12 +5278,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
 						{
-							"id": 489,
+							"id": 501,
 							"name": "setConnectedInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5104,7 +5298,7 @@
 							},
 							"parameters": [
 								{
-									"id": 490,
+									"id": 502,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5121,19 +5315,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 405,
+								"id": 417,
 								"name": "IJoint.setConnectedInertiaScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 404,
+						"id": 416,
 						"name": "IJoint.setConnectedInertiaScale"
 					}
 				},
 				{
-					"id": 485,
+					"id": 497,
 					"name": "setConnectedMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5143,12 +5337,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
 						{
-							"id": 486,
+							"id": 498,
 							"name": "setConnectedMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5163,7 +5357,7 @@
 							},
 							"parameters": [
 								{
-									"id": 487,
+									"id": 499,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5180,19 +5374,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 402,
+								"id": 414,
 								"name": "IJoint.setConnectedMassScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 401,
+						"id": 413,
 						"name": "IJoint.setConnectedMassScale"
 					}
 				},
 				{
-					"id": 469,
+					"id": 481,
 					"name": "setDriveForceLimit",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5202,12 +5396,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 55,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L55"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L55"
 						}
 					],
 					"signatures": [
 						{
-							"id": 470,
+							"id": 482,
 							"name": "setDriveForceLimit",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5222,7 +5416,7 @@
 							},
 							"parameters": [
 								{
-									"id": 471,
+									"id": 483,
 									"name": "limit",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5249,7 +5443,7 @@
 					]
 				},
 				{
-					"id": 472,
+					"id": 484,
 					"name": "setDriveGearRatio",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5259,12 +5453,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 61,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L61"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L61"
 						}
 					],
 					"signatures": [
 						{
-							"id": 473,
+							"id": 485,
 							"name": "setDriveGearRatio",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5279,7 +5473,7 @@
 							},
 							"parameters": [
 								{
-									"id": 474,
+									"id": 486,
 									"name": "ratio",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5306,7 +5500,7 @@
 					]
 				},
 				{
-					"id": 466,
+					"id": 478,
 					"name": "setDriveVelocity",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5316,12 +5510,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 49,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L49"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L49"
 						}
 					],
 					"signatures": [
 						{
-							"id": 467,
+							"id": 479,
 							"name": "setDriveVelocity",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5336,7 +5530,7 @@
 							},
 							"parameters": [
 								{
-									"id": 468,
+									"id": 480,
 									"name": "velocity",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5363,7 +5557,7 @@
 					]
 				},
 				{
-					"id": 455,
+					"id": 467,
 					"name": "setHardLimit",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5373,12 +5567,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 34,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L34"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L34"
 						}
 					],
 					"signatures": [
 						{
-							"id": 456,
+							"id": 468,
 							"name": "setHardLimit",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5393,7 +5587,7 @@
 							},
 							"parameters": [
 								{
-									"id": 457,
+									"id": 469,
 									"name": "lowerLimit",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5412,7 +5606,7 @@
 									}
 								},
 								{
-									"id": 458,
+									"id": 470,
 									"name": "upperLimit",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5431,7 +5625,7 @@
 									}
 								},
 								{
-									"id": 459,
+									"id": 471,
 									"name": "contactDist",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5458,7 +5652,7 @@
 					]
 				},
 				{
-					"id": 475,
+					"id": 487,
 					"name": "setHingeJointFlag",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5468,12 +5662,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L68"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L68"
 						}
 					],
 					"signatures": [
 						{
-							"id": 476,
+							"id": 488,
 							"name": "setHingeJointFlag",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5488,7 +5682,7 @@
 							},
 							"parameters": [
 								{
-									"id": 477,
+									"id": 489,
 									"name": "flag",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5507,7 +5701,7 @@
 									}
 								},
 								{
-									"id": 478,
+									"id": 490,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5534,7 +5728,7 @@
 					]
 				},
 				{
-					"id": 494,
+					"id": 506,
 					"name": "setInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5544,12 +5738,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
 						{
-							"id": 495,
+							"id": 507,
 							"name": "setInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5564,7 +5758,7 @@
 							},
 							"parameters": [
 								{
-									"id": 496,
+									"id": 508,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5581,19 +5775,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 411,
+								"id": 423,
 								"name": "IJoint.setInertiaScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 410,
+						"id": 422,
 						"name": "IJoint.setInertiaScale"
 					}
 				},
 				{
-					"id": 491,
+					"id": 503,
 					"name": "setMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5603,12 +5797,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
 						{
-							"id": 492,
+							"id": 504,
 							"name": "setMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5623,7 +5817,7 @@
 							},
 							"parameters": [
 								{
-									"id": 493,
+									"id": 505,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5640,19 +5834,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 408,
+								"id": 420,
 								"name": "IJoint.setMassScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 407,
+						"id": 419,
 						"name": "IJoint.setMassScale"
 					}
 				},
 				{
-					"id": 460,
+					"id": 472,
 					"name": "setSoftLimit",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5662,12 +5856,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 43,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L43"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L43"
 						}
 					],
 					"signatures": [
 						{
-							"id": 461,
+							"id": 473,
 							"name": "setSoftLimit",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5682,7 +5876,7 @@
 							},
 							"parameters": [
 								{
-									"id": 462,
+									"id": 474,
 									"name": "lowerLimit",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5701,7 +5895,7 @@
 									}
 								},
 								{
-									"id": 463,
+									"id": 475,
 									"name": "upperLimit",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5720,7 +5914,7 @@
 									}
 								},
 								{
-									"id": 464,
+									"id": 476,
 									"name": "stiffness",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5739,7 +5933,7 @@
 									}
 								},
 								{
-									"id": 465,
+									"id": 477,
 									"name": "damping",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5766,7 +5960,7 @@
 					]
 				},
 				{
-					"id": 448,
+					"id": 460,
 					"name": "setSwingOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5776,12 +5970,12 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 16,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L16"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L16"
 						}
 					],
 					"signatures": [
 						{
-							"id": 449,
+							"id": 461,
 							"name": "setSwingOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5796,7 +5990,7 @@
 							},
 							"parameters": [
 								{
-									"id": 450,
+									"id": 462,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5819,24 +6013,24 @@
 				{
 					"title": "Methods",
 					"children": [
-						451,
-						453,
-						445,
-						497,
-						500,
-						482,
-						479,
-						488,
-						485,
-						469,
-						472,
-						466,
-						455,
-						475,
+						463,
+						465,
+						457,
+						509,
+						512,
 						494,
 						491,
-						460,
-						448
+						500,
+						497,
+						481,
+						484,
+						478,
+						467,
+						487,
+						506,
+						503,
+						472,
+						460
 					]
 				}
 			],
@@ -5845,19 +6039,19 @@
 					"fileName": "physics/joints/IHingeJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IHingeJoint.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IHingeJoint.ts#L7"
 				}
 			],
 			"extendedTypes": [
 				{
 					"type": "reference",
-					"id": 394,
+					"id": 406,
 					"name": "IJoint"
 				}
 			]
 		},
 		{
-			"id": 394,
+			"id": 406,
 			"name": "IJoint",
 			"kind": 256,
 			"kindString": "Interface",
@@ -5872,7 +6066,7 @@
 			},
 			"children": [
 				{
-					"id": 413,
+					"id": 425,
 					"name": "setBreakForce",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5882,12 +6076,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 414,
+							"id": 426,
 							"name": "setBreakForce",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5902,7 +6096,7 @@
 							},
 							"parameters": [
 								{
-									"id": 415,
+									"id": 427,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5921,7 +6115,7 @@
 					]
 				},
 				{
-					"id": 416,
+					"id": 428,
 					"name": "setBreakTorque",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5931,12 +6125,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
 						{
-							"id": 417,
+							"id": 429,
 							"name": "setBreakTorque",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5951,7 +6145,7 @@
 							},
 							"parameters": [
 								{
-									"id": 418,
+									"id": 430,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5970,7 +6164,7 @@
 					]
 				},
 				{
-					"id": 398,
+					"id": 410,
 					"name": "setConnectedAnchor",
 					"kind": 2048,
 					"kindString": "Method",
@@ -5980,12 +6174,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 399,
+							"id": 411,
 							"name": "setConnectedAnchor",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -6011,7 +6205,7 @@
 							},
 							"parameters": [
 								{
-									"id": 400,
+									"id": 412,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6030,7 +6224,7 @@
 					]
 				},
 				{
-					"id": 395,
+					"id": 407,
 					"name": "setConnectedCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -6040,12 +6234,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 396,
+							"id": 408,
 							"name": "setConnectedCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -6060,7 +6254,7 @@
 							},
 							"parameters": [
 								{
-									"id": 397,
+									"id": 409,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6080,7 +6274,7 @@
 					]
 				},
 				{
-					"id": 404,
+					"id": 416,
 					"name": "setConnectedInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -6090,12 +6284,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
 						{
-							"id": 405,
+							"id": 417,
 							"name": "setConnectedInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -6110,7 +6304,7 @@
 							},
 							"parameters": [
 								{
-									"id": 406,
+									"id": 418,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6129,7 +6323,7 @@
 					]
 				},
 				{
-					"id": 401,
+					"id": 413,
 					"name": "setConnectedMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -6139,12 +6333,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
 						{
-							"id": 402,
+							"id": 414,
 							"name": "setConnectedMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -6159,7 +6353,7 @@
 							},
 							"parameters": [
 								{
-									"id": 403,
+									"id": 415,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6178,7 +6372,7 @@
 					]
 				},
 				{
-					"id": 410,
+					"id": 422,
 					"name": "setInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -6188,12 +6382,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
 						{
-							"id": 411,
+							"id": 423,
 							"name": "setInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -6208,7 +6402,7 @@
 							},
 							"parameters": [
 								{
-									"id": 412,
+									"id": 424,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6227,7 +6421,7 @@
 					]
 				},
 				{
-					"id": 407,
+					"id": 419,
 					"name": "setMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -6237,12 +6431,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
 						{
-							"id": 408,
+							"id": 420,
 							"name": "setMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -6257,7 +6451,7 @@
 							},
 							"parameters": [
 								{
-									"id": 409,
+									"id": 421,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -6280,14 +6474,14 @@
 				{
 					"title": "Methods",
 					"children": [
-						413,
-						416,
-						398,
-						395,
-						404,
-						401,
+						425,
+						428,
 						410,
-						407
+						407,
+						416,
+						413,
+						422,
+						419
 					]
 				}
 			],
@@ -6296,23 +6490,23 @@
 					"fileName": "physics/joints/IJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L7"
 				}
 			],
 			"extendedBy": [
 				{
 					"type": "reference",
-					"id": 419,
+					"id": 431,
 					"name": "IFixedJoint"
 				},
 				{
 					"type": "reference",
-					"id": 444,
+					"id": 456,
 					"name": "IHingeJoint"
 				},
 				{
 					"type": "reference",
-					"id": 503,
+					"id": 515,
 					"name": "ISpringJoint"
 				}
 			]
@@ -6343,7 +6537,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L74"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L74"
 						}
 					],
 					"signatures": [
@@ -6423,7 +6617,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 292,
+								"id": 295,
 								"name": "IBoxColliderShape"
 							}
 						}
@@ -6440,7 +6634,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 98,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L98"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L98"
 						}
 					],
 					"signatures": [
@@ -6539,7 +6733,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 316,
+								"id": 322,
 								"name": "ICapsuleColliderShape"
 							}
 						}
@@ -6556,7 +6750,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L50"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L50"
 						}
 					],
 					"signatures": [
@@ -6593,7 +6787,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L38"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L38"
 						}
 					],
 					"signatures": [
@@ -6670,7 +6864,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 109,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L109"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L109"
 						}
 					],
 					"signatures": [
@@ -6712,7 +6906,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 419,
+								"id": 431,
 								"name": "IFixedJoint"
 							}
 						}
@@ -6729,7 +6923,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 115,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L115"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L115"
 						}
 					],
 					"signatures": [
@@ -6771,7 +6965,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 444,
+								"id": 456,
 								"name": "IHingeJoint"
 							}
 						}
@@ -6788,7 +6982,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L24"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L24"
 						}
 					],
 					"signatures": [
@@ -6836,7 +7030,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 25,
 													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L25"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L25"
 												}
 											],
 											"signatures": [
@@ -6908,7 +7102,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 26,
 													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L26"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L26"
 												}
 											],
 											"signatures": [
@@ -6980,7 +7174,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 27,
 													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L27"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L27"
 												}
 											],
 											"signatures": [
@@ -7052,7 +7246,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 28,
 													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L28"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L28"
 												}
 											],
 											"signatures": [
@@ -7124,7 +7318,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 29,
 													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L29"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L29"
 												}
 											],
 											"signatures": [
@@ -7196,7 +7390,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 30,
 													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L30"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L30"
 												}
 											],
 											"signatures": [
@@ -7259,7 +7453,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 60,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L60"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L60"
 						}
 					],
 					"signatures": [
@@ -7393,7 +7587,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 89,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L89"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L89"
 						}
 					],
 					"signatures": [
@@ -7454,7 +7648,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 370,
+								"id": 382,
 								"name": "IPlaneColliderShape"
 							}
 						}
@@ -7471,7 +7665,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 82,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L82"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L82"
 						}
 					],
 					"signatures": [
@@ -7551,7 +7745,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 346,
+								"id": 355,
 								"name": "ISphereColliderShape"
 							}
 						}
@@ -7568,7 +7762,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 121,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L121"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L121"
 						}
 					],
 					"signatures": [
@@ -7610,7 +7804,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 503,
+								"id": 515,
 								"name": "ISpringJoint"
 							}
 						}
@@ -7627,7 +7821,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 45,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L45"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L45"
 						}
 					],
 					"signatures": [
@@ -7718,7 +7912,7 @@
 					"fileName": "physics/IPhysics.ts",
 					"line": 14,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysics.ts#L14"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysics.ts#L14"
 				}
 			]
 		},
@@ -7748,7 +7942,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L44"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L44"
 						}
 					],
 					"signatures": [
@@ -7806,7 +8000,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L32"
 						}
 					],
 					"signatures": [
@@ -7864,7 +8058,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L20"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L20"
 						}
 					],
 					"signatures": [
@@ -7922,7 +8116,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 65,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L65"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L65"
 						}
 					],
 					"signatures": [
@@ -8019,7 +8213,7 @@
 													"fileName": "physics/IPhysicsManager.ts",
 													"line": 68,
 													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L68"
+													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L68"
 												}
 											],
 											"signatures": [
@@ -8103,7 +8297,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L50"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L50"
 						}
 					],
 					"signatures": [
@@ -8161,7 +8355,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L38"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L38"
 						}
 					],
 					"signatures": [
@@ -8219,7 +8413,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L26"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L26"
 						}
 					],
 					"signatures": [
@@ -8277,7 +8471,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L14"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L14"
 						}
 					],
 					"signatures": [
@@ -8334,7 +8528,7 @@
 							"fileName": "physics/IPhysicsManager.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L56"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L56"
 						}
 					],
 					"signatures": [
@@ -8402,7 +8596,7 @@
 					"fileName": "physics/IPhysicsManager.ts",
 					"line": 9,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsManager.ts#L9"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsManager.ts#L9"
 				}
 			]
 		},
@@ -8432,7 +8626,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L38"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L38"
 						}
 					],
 					"signatures": [
@@ -8468,7 +8662,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L27"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L27"
 						}
 					],
 					"signatures": [
@@ -8525,7 +8719,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L9"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L9"
 						}
 					],
 					"signatures": [
@@ -8582,7 +8776,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L15"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L15"
 						}
 					],
 					"signatures": [
@@ -8639,7 +8833,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 33,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L33"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L33"
 						}
 					],
 					"signatures": [
@@ -8696,7 +8890,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L21"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L21"
 						}
 					],
 					"signatures": [
@@ -8761,12 +8955,12 @@
 					"fileName": "physics/IPhysicsMaterial.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IPhysicsMaterial.ts#L4"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IPhysicsMaterial.ts#L4"
 				}
 			]
 		},
 		{
-			"id": 370,
+			"id": 382,
 			"name": "IPlaneColliderShape",
 			"kind": 256,
 			"kindString": "Interface",
@@ -8781,7 +8975,7 @@
 			},
 			"children": [
 				{
-					"id": 392,
+					"id": 404,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -8789,14 +8983,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 47,
+							"line": 53,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L53"
 						}
 					],
 					"signatures": [
 						{
-							"id": 393,
+							"id": 405,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -8815,19 +9009,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 291,
+								"id": 294,
 								"name": "IColliderShape.destroy"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 290,
+						"id": 293,
 						"name": "IColliderShape.destroy"
 					}
 				},
 				{
-					"id": 380,
+					"id": 392,
 					"name": "setContactOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -8835,14 +9029,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 24,
+							"line": 30,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
 						{
-							"id": 381,
+							"id": 393,
 							"name": "setContactOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -8857,7 +9051,7 @@
 							},
 							"parameters": [
 								{
-									"id": 382,
+									"id": 394,
 									"name": "offset",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -8882,19 +9076,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 279,
+								"id": 282,
 								"name": "IColliderShape.setContactOffset"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 278,
+						"id": 281,
 						"name": "IColliderShape.setContactOffset"
 					}
 				},
 				{
-					"id": 389,
+					"id": 401,
 					"name": "setIsSceneQuery",
 					"kind": 2048,
 					"kindString": "Method",
@@ -8902,14 +9096,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 42,
+							"line": 48,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L48"
 						}
 					],
 					"signatures": [
 						{
-							"id": 390,
+							"id": 402,
 							"name": "setIsSceneQuery",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -8924,7 +9118,7 @@
 							},
 							"parameters": [
 								{
-									"id": 391,
+									"id": 403,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -8949,19 +9143,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 288,
+								"id": 291,
 								"name": "IColliderShape.setIsSceneQuery"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 287,
+						"id": 290,
 						"name": "IColliderShape.setIsSceneQuery"
 					}
 				},
 				{
-					"id": 386,
+					"id": 398,
 					"name": "setIsTrigger",
 					"kind": 2048,
 					"kindString": "Method",
@@ -8969,14 +9163,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 36,
+							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 387,
+							"id": 399,
 							"name": "setIsTrigger",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -8991,7 +9185,7 @@
 							},
 							"parameters": [
 								{
-									"id": 388,
+									"id": 400,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9016,19 +9210,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 285,
+								"id": 288,
 								"name": "IColliderShape.setIsTrigger"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 284,
+						"id": 287,
 						"name": "IColliderShape.setIsTrigger"
 					}
 				},
 				{
-					"id": 383,
+					"id": 395,
 					"name": "setMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9036,14 +9230,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 30,
+							"line": 36,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 384,
+							"id": 396,
 							"name": "setMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9058,7 +9252,7 @@
 							},
 							"parameters": [
 								{
-									"id": 385,
+									"id": 397,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9084,19 +9278,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 282,
+								"id": 285,
 								"name": "IColliderShape.setMaterial"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 281,
+						"id": 284,
 						"name": "IColliderShape.setMaterial"
 					}
 				},
 				{
-					"id": 374,
+					"id": 386,
 					"name": "setPosition",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9104,14 +9298,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 12,
+							"line": 18,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
 						{
-							"id": 375,
+							"id": 387,
 							"name": "setPosition",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9126,7 +9320,7 @@
 							},
 							"parameters": [
 								{
-									"id": 376,
+									"id": 388,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9151,34 +9345,34 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 273,
+								"id": 276,
 								"name": "IColliderShape.setPosition"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 272,
+						"id": 275,
 						"name": "IColliderShape.setPosition"
 					}
 				},
 				{
-					"id": 371,
+					"id": 383,
 					"name": "setRotation",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "physics/shape/IPlaneColliderShape.ts",
+							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IPlaneColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
 						{
-							"id": 372,
+							"id": 384,
 							"name": "setRotation",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9193,8 +9387,8 @@
 							},
 							"parameters": [
 								{
-									"id": 373,
-									"name": "normal",
+									"id": 385,
+									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
@@ -9215,12 +9409,22 @@
 							"type": {
 								"type": "intrinsic",
 								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 273,
+								"name": "IColliderShape.setRotation"
 							}
 						}
-					]
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 272,
+						"name": "IColliderShape.setRotation"
+					}
 				},
 				{
-					"id": 377,
+					"id": 389,
 					"name": "setWorldScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9228,14 +9432,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 18,
+							"line": 24,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
 						{
-							"id": 378,
+							"id": 390,
 							"name": "setWorldScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9250,7 +9454,7 @@
 							},
 							"parameters": [
 								{
-									"id": 379,
+									"id": 391,
 									"name": "scale",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9275,14 +9479,14 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 276,
+								"id": 279,
 								"name": "IColliderShape.setWorldScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 275,
+						"id": 278,
 						"name": "IColliderShape.setWorldScale"
 					}
 				}
@@ -9291,23 +9495,23 @@
 				{
 					"title": "Methods",
 					"children": [
+						404,
 						392,
-						380,
-						389,
+						401,
+						398,
+						395,
 						386,
 						383,
-						374,
-						371,
-						377
+						389
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "physics/shape/IPlaneColliderShape.ts",
-					"line": 7,
+					"line": 6,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IPlaneColliderShape.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IPlaneColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -9319,7 +9523,7 @@
 			]
 		},
 		{
-			"id": 546,
+			"id": 558,
 			"name": "IPlatformPrimitive",
 			"kind": 256,
 			"kindString": "Interface",
@@ -9334,7 +9538,7 @@
 			},
 			"children": [
 				{
-					"id": 551,
+					"id": 563,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9344,12 +9548,12 @@
 							"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L15"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L15"
 						}
 					],
 					"signatures": [
 						{
-							"id": 552,
+							"id": 564,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9370,7 +9574,7 @@
 					]
 				},
 				{
-					"id": 547,
+					"id": 559,
 					"name": "draw",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9380,12 +9584,12 @@
 							"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L10"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L10"
 						}
 					],
 					"signatures": [
 						{
-							"id": 548,
+							"id": 560,
 							"name": "draw",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9400,7 +9604,7 @@
 							},
 							"parameters": [
 								{
-									"id": 549,
+									"id": 561,
 									"name": "tech",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9419,7 +9623,7 @@
 									}
 								},
 								{
-									"id": 550,
+									"id": 562,
 									"name": "subPrimitive",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9450,8 +9654,8 @@
 				{
 					"title": "Methods",
 					"children": [
-						551,
-						547
+						563,
+						559
 					]
 				}
 			],
@@ -9460,12 +9664,12 @@
 					"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L4"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L4"
 				}
 			]
 		},
 		{
-			"id": 346,
+			"id": 355,
 			"name": "ISphereColliderShape",
 			"kind": 256,
 			"kindString": "Interface",
@@ -9480,7 +9684,7 @@
 			},
 			"children": [
 				{
-					"id": 368,
+					"id": 380,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9488,14 +9692,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 47,
+							"line": 53,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L53"
 						}
 					],
 					"signatures": [
 						{
-							"id": 369,
+							"id": 381,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9514,19 +9718,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 291,
+								"id": 294,
 								"name": "IColliderShape.destroy"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 290,
+						"id": 293,
 						"name": "IColliderShape.destroy"
 					}
 				},
 				{
-					"id": 356,
+					"id": 368,
 					"name": "setContactOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9534,14 +9738,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 24,
+							"line": 30,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
 						{
-							"id": 357,
+							"id": 369,
 							"name": "setContactOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9556,7 +9760,7 @@
 							},
 							"parameters": [
 								{
-									"id": 358,
+									"id": 370,
 									"name": "offset",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9581,19 +9785,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 279,
+								"id": 282,
 								"name": "IColliderShape.setContactOffset"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 278,
+						"id": 281,
 						"name": "IColliderShape.setContactOffset"
 					}
 				},
 				{
-					"id": 365,
+					"id": 377,
 					"name": "setIsSceneQuery",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9601,14 +9805,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 42,
+							"line": 48,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L48"
 						}
 					],
 					"signatures": [
 						{
-							"id": 366,
+							"id": 378,
 							"name": "setIsSceneQuery",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9623,7 +9827,7 @@
 							},
 							"parameters": [
 								{
-									"id": 367,
+									"id": 379,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9648,19 +9852,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 288,
+								"id": 291,
 								"name": "IColliderShape.setIsSceneQuery"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 287,
+						"id": 290,
 						"name": "IColliderShape.setIsSceneQuery"
 					}
 				},
 				{
-					"id": 362,
+					"id": 374,
 					"name": "setIsTrigger",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9668,14 +9872,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 36,
+							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 363,
+							"id": 375,
 							"name": "setIsTrigger",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9690,7 +9894,7 @@
 							},
 							"parameters": [
 								{
-									"id": 364,
+									"id": 376,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9715,19 +9919,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 285,
+								"id": 288,
 								"name": "IColliderShape.setIsTrigger"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 284,
+						"id": 287,
 						"name": "IColliderShape.setIsTrigger"
 					}
 				},
 				{
-					"id": 359,
+					"id": 371,
 					"name": "setMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9735,14 +9939,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 30,
+							"line": 36,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 360,
+							"id": 372,
 							"name": "setMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9757,7 +9961,7 @@
 							},
 							"parameters": [
 								{
-									"id": 361,
+									"id": 373,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9783,19 +9987,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 282,
+								"id": 285,
 								"name": "IColliderShape.setMaterial"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 281,
+						"id": 284,
 						"name": "IColliderShape.setMaterial"
 					}
 				},
 				{
-					"id": 350,
+					"id": 362,
 					"name": "setPosition",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9803,14 +10007,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 12,
+							"line": 18,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
 						{
-							"id": 351,
+							"id": 363,
 							"name": "setPosition",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9825,7 +10029,7 @@
 							},
 							"parameters": [
 								{
-									"id": 352,
+									"id": 364,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9850,19 +10054,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 273,
+								"id": 276,
 								"name": "IColliderShape.setPosition"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 272,
+						"id": 275,
 						"name": "IColliderShape.setPosition"
 					}
 				},
 				{
-					"id": 347,
+					"id": 356,
 					"name": "setRadius",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9872,12 +10076,12 @@
 							"fileName": "physics/shape/ISphereColliderShape.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 348,
+							"id": 357,
 							"name": "setRadius",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9892,7 +10096,7 @@
 							},
 							"parameters": [
 								{
-									"id": 349,
+									"id": 358,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9919,7 +10123,74 @@
 					]
 				},
 				{
-					"id": 353,
+					"id": 359,
+					"name": "setRotation",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "physics/shape/IColliderShape.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L12"
+						}
+					],
+					"signatures": [
+						{
+							"id": 360,
+							"name": "setRotation",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Set local rotation."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 361,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The local rotation"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"id": 273,
+								"name": "IColliderShape.setRotation"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 272,
+						"name": "IColliderShape.setRotation"
+					}
+				},
+				{
+					"id": 365,
 					"name": "setWorldScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9927,14 +10198,14 @@
 					"sources": [
 						{
 							"fileName": "physics/shape/IColliderShape.ts",
-							"line": 18,
+							"line": 24,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
 						{
-							"id": 354,
+							"id": 366,
 							"name": "setWorldScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9949,7 +10220,7 @@
 							},
 							"parameters": [
 								{
-									"id": 355,
+									"id": 367,
 									"name": "scale",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9974,14 +10245,14 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 276,
+								"id": 279,
 								"name": "IColliderShape.setWorldScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 275,
+						"id": 278,
 						"name": "IColliderShape.setWorldScale"
 					}
 				}
@@ -9990,14 +10261,15 @@
 				{
 					"title": "Methods",
 					"children": [
+						380,
 						368,
-						356,
-						365,
+						377,
+						374,
+						371,
 						362,
+						356,
 						359,
-						350,
-						347,
-						353
+						365
 					]
 				}
 			],
@@ -10006,7 +10278,7 @@
 					"fileName": "physics/shape/ISphereColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/shape/ISphereColliderShape.ts#L6"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/shape/ISphereColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -10018,7 +10290,7 @@
 			]
 		},
 		{
-			"id": 503,
+			"id": 515,
 			"name": "ISpringJoint",
 			"kind": 256,
 			"kindString": "Interface",
@@ -10033,7 +10305,7 @@
 			},
 			"children": [
 				{
-					"id": 540,
+					"id": 552,
 					"name": "setBreakForce",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10043,12 +10315,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
 						{
-							"id": 541,
+							"id": 553,
 							"name": "setBreakForce",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10063,7 +10335,7 @@
 							},
 							"parameters": [
 								{
-									"id": 542,
+									"id": 554,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10080,19 +10352,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 414,
+								"id": 426,
 								"name": "IJoint.setBreakForce"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 413,
+						"id": 425,
 						"name": "IJoint.setBreakForce"
 					}
 				},
 				{
-					"id": 543,
+					"id": 555,
 					"name": "setBreakTorque",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10102,12 +10374,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
 						{
-							"id": 544,
+							"id": 556,
 							"name": "setBreakTorque",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10122,7 +10394,7 @@
 							},
 							"parameters": [
 								{
-									"id": 545,
+									"id": 557,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10139,19 +10411,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 417,
+								"id": 429,
 								"name": "IJoint.setBreakTorque"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 416,
+						"id": 428,
 						"name": "IJoint.setBreakTorque"
 					}
 				},
 				{
-					"id": 525,
+					"id": 537,
 					"name": "setConnectedAnchor",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10161,12 +10433,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 526,
+							"id": 538,
 							"name": "setConnectedAnchor",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10192,7 +10464,7 @@
 							},
 							"parameters": [
 								{
-									"id": 527,
+									"id": 539,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10209,19 +10481,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 399,
+								"id": 411,
 								"name": "IJoint.setConnectedAnchor"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 398,
+						"id": 410,
 						"name": "IJoint.setConnectedAnchor"
 					}
 				},
 				{
-					"id": 522,
+					"id": 534,
 					"name": "setConnectedCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10231,12 +10503,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 523,
+							"id": 535,
 							"name": "setConnectedCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10251,7 +10523,7 @@
 							},
 							"parameters": [
 								{
-									"id": 524,
+									"id": 536,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10269,19 +10541,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 396,
+								"id": 408,
 								"name": "IJoint.setConnectedCollider"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 395,
+						"id": 407,
 						"name": "IJoint.setConnectedCollider"
 					}
 				},
 				{
-					"id": 531,
+					"id": 543,
 					"name": "setConnectedInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10291,12 +10563,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
 						{
-							"id": 532,
+							"id": 544,
 							"name": "setConnectedInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10311,7 +10583,7 @@
 							},
 							"parameters": [
 								{
-									"id": 533,
+									"id": 545,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10328,19 +10600,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 405,
+								"id": 417,
 								"name": "IJoint.setConnectedInertiaScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 404,
+						"id": 416,
 						"name": "IJoint.setConnectedInertiaScale"
 					}
 				},
 				{
-					"id": 528,
+					"id": 540,
 					"name": "setConnectedMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10350,12 +10622,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
 						{
-							"id": 529,
+							"id": 541,
 							"name": "setConnectedMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10370,7 +10642,7 @@
 							},
 							"parameters": [
 								{
-									"id": 530,
+									"id": 542,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10387,19 +10659,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 402,
+								"id": 414,
 								"name": "IJoint.setConnectedMassScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 401,
+						"id": 413,
 						"name": "IJoint.setConnectedMassScale"
 					}
 				},
 				{
-					"id": 519,
+					"id": 531,
 					"name": "setDamping",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10409,12 +10681,12 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 41,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L41"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L41"
 						}
 					],
 					"signatures": [
 						{
-							"id": 520,
+							"id": 532,
 							"name": "setDamping",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10429,7 +10701,7 @@
 							},
 							"parameters": [
 								{
-									"id": 521,
+									"id": 533,
 									"name": "damping",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10456,7 +10728,7 @@
 					]
 				},
 				{
-					"id": 537,
+					"id": 549,
 					"name": "setInertiaScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10466,12 +10738,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
 						{
-							"id": 538,
+							"id": 550,
 							"name": "setInertiaScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10486,7 +10758,7 @@
 							},
 							"parameters": [
 								{
-									"id": 539,
+									"id": 551,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10503,19 +10775,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 411,
+								"id": 423,
 								"name": "IJoint.setInertiaScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 410,
+						"id": 422,
 						"name": "IJoint.setInertiaScale"
 					}
 				},
 				{
-					"id": 534,
+					"id": 546,
 					"name": "setMassScale",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10525,12 +10797,12 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
 						{
-							"id": 535,
+							"id": 547,
 							"name": "setMassScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10545,7 +10817,7 @@
 							},
 							"parameters": [
 								{
-									"id": 536,
+									"id": 548,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10562,19 +10834,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"id": 408,
+								"id": 420,
 								"name": "IJoint.setMassScale"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"id": 407,
+						"id": 419,
 						"name": "IJoint.setMassScale"
 					}
 				},
 				{
-					"id": 510,
+					"id": 522,
 					"name": "setMaxDistance",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10584,12 +10856,12 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 23,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L23"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L23"
 						}
 					],
 					"signatures": [
 						{
-							"id": 511,
+							"id": 523,
 							"name": "setMaxDistance",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10604,7 +10876,7 @@
 							},
 							"parameters": [
 								{
-									"id": 512,
+									"id": 524,
 									"name": "distance",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10631,7 +10903,7 @@
 					]
 				},
 				{
-					"id": 507,
+					"id": 519,
 					"name": "setMinDistance",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10641,12 +10913,12 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 508,
+							"id": 520,
 							"name": "setMinDistance",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10661,7 +10933,7 @@
 							},
 							"parameters": [
 								{
-									"id": 509,
+									"id": 521,
 									"name": "distance",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10688,7 +10960,7 @@
 					]
 				},
 				{
-					"id": 516,
+					"id": 528,
 					"name": "setStiffness",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10698,12 +10970,12 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 35,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L35"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L35"
 						}
 					],
 					"signatures": [
 						{
-							"id": 517,
+							"id": 529,
 							"name": "setStiffness",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10718,7 +10990,7 @@
 							},
 							"parameters": [
 								{
-									"id": 518,
+									"id": 530,
 									"name": "stiffness",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10745,7 +11017,7 @@
 					]
 				},
 				{
-					"id": 504,
+					"id": 516,
 					"name": "setSwingOffset",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10755,12 +11027,12 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 505,
+							"id": 517,
 							"name": "setSwingOffset",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10775,7 +11047,7 @@
 							},
 							"parameters": [
 								{
-									"id": 506,
+									"id": 518,
 									"name": "value",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10794,7 +11066,7 @@
 					]
 				},
 				{
-					"id": 513,
+					"id": 525,
 					"name": "setTolerance",
 					"kind": 2048,
 					"kindString": "Method",
@@ -10804,12 +11076,12 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 29,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L29"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L29"
 						}
 					],
 					"signatures": [
 						{
-							"id": 514,
+							"id": 526,
 							"name": "setTolerance",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -10824,7 +11096,7 @@
 							},
 							"parameters": [
 								{
-									"id": 515,
+									"id": 527,
 									"name": "tolerance",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -10855,20 +11127,20 @@
 				{
 					"title": "Methods",
 					"children": [
-						540,
-						543,
-						525,
-						522,
-						531,
-						528,
-						519,
+						552,
+						555,
 						537,
 						534,
-						510,
-						507,
+						543,
+						540,
+						531,
+						549,
+						546,
+						522,
+						519,
+						528,
 						516,
-						504,
-						513
+						525
 					]
 				}
 			],
@@ -10877,13 +11149,13 @@
 					"fileName": "physics/joints/ISpringJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/joints/ISpringJoint.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/joints/ISpringJoint.ts#L7"
 				}
 			],
 			"extendedTypes": [
 				{
 					"type": "reference",
-					"id": 394,
+					"id": 406,
 					"name": "IJoint"
 				}
 			]
@@ -10914,7 +11186,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -10982,7 +11254,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -11028,7 +11300,7 @@
 							"fileName": "physics/IStaticCollider.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IStaticCollider.ts#L20"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IStaticCollider.ts#L20"
 						}
 					],
 					"signatures": [
@@ -11104,7 +11376,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -11172,7 +11444,7 @@
 							"fileName": "physics/IStaticCollider.ts",
 							"line": 13,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IStaticCollider.ts#L13"
+							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IStaticCollider.ts#L13"
 						}
 					],
 					"signatures": [
@@ -11255,7 +11527,7 @@
 					"fileName": "physics/IStaticCollider.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/physics/IStaticCollider.ts#L7"
+					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/physics/IStaticCollider.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -11271,23 +11543,23 @@
 		{
 			"title": "Interfaces",
 			"children": [
-				292,
-				316,
+				295,
+				322,
 				239,
 				1,
 				122,
 				271,
 				148,
-				419,
-				444,
-				394,
+				431,
+				456,
+				406,
 				7,
 				86,
 				221,
-				370,
-				546,
-				346,
-				503,
+				382,
+				558,
+				355,
+				515,
 				131
 			]
 		}
@@ -11297,7 +11569,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/oasis-engine/engine/blob/b391c74/packages/design/src/index.ts#L1"
+			"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/design/src/index.ts#L1"
 		}
 	]
 }
