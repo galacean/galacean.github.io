@@ -128,48 +128,20 @@
     font-size: 20px;
   }
 
-  .github-btn {
-    display: inline-block;
-    height : 28px;
-
-    .gh-btn {
-      display      : flex;
-      align-items  : center;
-      height       : 28px;
-      padding      : 0 12px;
-      font-size    : 13px;
-      background   : #f3f3f3;
-      background   : linear-gradient(to bottom, #ffffff 0%, #f3f3f3 100%);
-      border       : 1px solid #ebedf0;
-      border-radius: 4px;
-
-      &:hover {
-        color: #1890ff;
-
-      }
-
-      .gh-ico {
-        margin-right: 8px;
-      }
-    }
-
-    .gh-count {
-      height       : 28px;
-      padding      : 2px 8px;
-      font-size    : 13px;
-      line-height  : 22px;
-      background   : #fff;
-      border       : 1px solid #ebedf0;
-      border-radius: 4px;
-    }
-  }
-
-  .button-wrapper {
+  .home-button-wrapper {
     display        : flex;
     align-items    : center;
     justify-content: center;
+    gap            : 10px;
     margin-top     : 40px;
     line-height    : 40px;
+  }
+
+  .home-description {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    gap            : 10px;
   }
 }
 
@@ -183,9 +155,20 @@
     width  : auto;
   }
 
-  .home-section-banner h1 img {
-    width: 100%;
+  .home-section-banner {
+    h1 {
+      font-size: 28px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    p {
+      font-size: 16px;
+    }
   }
+
 
   .home-section-advantage .home-flex {
     padding     : 20px 70px;
@@ -195,15 +178,15 @@
 
   .home-section-features {
     flex-direction: row;
+
+    .home-flex-feature {
+      padding: 20px 0;
+    }
   }
 
   .home-section-features canvas {
     width : 100vw !important;
     height: 100vw !important;
-  }
-
-  .home-section-features .home-flex-feature {
-    padding: 20px 0;
   }
 
   .home-banner-image {
@@ -216,18 +199,6 @@
 
   .home-page {
     width: 90%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .home-section-banner {
-    h1 {
-      font-size: 28px;
-    }
-
-    p {
-      font-size: 16px;
-    }
   }
 
   .home-section {
@@ -244,5 +215,15 @@
 
   .home-section-partners {
     padding: 2rem 0;
+  }
+
+  .home-section-banner {
+    .home-button-wrapper {
+      flex-direction: column;
+    }
+  }
+
+  .home-description {
+    flex-direction: column;
   }
 }
