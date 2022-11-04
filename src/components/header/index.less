@@ -1,14 +1,20 @@
 .header {
+  padding: 0 20px;
   position: relative;
   z-index: 10;
   background-color: #ffffff;
   box-shadow: 0 2px 8px #f0f1f2;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
 }
 
 #logo {
+  height: 64px;
   line-height: 64px;
   text-decoration: none;
 
@@ -69,9 +75,8 @@
 }
 
 @media only screen and (max-width: 768px) {
-  #logo {
+  .header-left {
     display: block;
-    float: none;
     width: 200px;
     margin-right: auto;
     margin-left: auto;
