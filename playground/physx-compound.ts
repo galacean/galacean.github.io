@@ -6,13 +6,15 @@
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
 import {
-  AmbientLight, AssetType,
+  AmbientLight,
+  AssetType,
   BoxColliderShape,
   Camera,
   DirectLight,
   DynamicCollider,
   Entity,
-  MeshRenderer, PBRMaterial,
+  MeshRenderer,
+  PBRMaterial,
   PlaneColliderShape,
   PrimitiveMesh,
   Quaternion,
@@ -20,7 +22,7 @@ import {
   StaticCollider,
   Vector2,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 
 class TableGenerator extends Script {
@@ -36,8 +38,16 @@ class TableGenerator extends Script {
 
   private _addTable(): void {
     const entity = this.entity.createChild("entity");
-    entity.transform.setPosition(Math.random() * 16 - 8, 10, Math.random() * 16 - 8);
-    entity.transform.setRotation(Math.random() * 360, Math.random() * 360, Math.random() * 360);
+    entity.transform.setPosition(
+      Math.random() * 16 - 8,
+      10,
+      Math.random() * 16 - 8
+    );
+    entity.transform.setRotation(
+      Math.random() * 360,
+      Math.random() * 360,
+      Math.random() * 360
+    );
     entity.transform.setScale(3, 3, 3);
     const boxCollider = entity.addComponent(DynamicCollider);
     boxCollider.mass = 10.0;
@@ -54,7 +64,12 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0, 0, 0.125);
       const boxRenderer = child.addComponent(MeshRenderer);
-      boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.5, 0.4, 0.045);
+      boxRenderer.mesh = PrimitiveMesh.createCuboid(
+        this.engine,
+        0.5,
+        0.4,
+        0.045
+      );
       boxRenderer.setMaterial(boxMaterial);
     }
 
@@ -108,10 +123,20 @@ class TableGenerator extends Script {
   }
 }
 
-function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
+function addPlane(
+  rootEntity: Entity,
+  size: Vector2,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
   const engine = rootEntity.engine;
   const material = new PBRMaterial(engine);
-  material.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+  material.baseColor.set(
+    0.2179807202597362,
+    0.2939682161541871,
+    0.31177952549087604,
+    1
+  );
   material.roughness = 0.0;
   material.metallic = 0.0;
 
@@ -138,6 +163,7 @@ PhysXPhysics.initialize().then(() => {
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity("root");
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
+  scene.shadowDistance = 30;
 
   // init camera
   const cameraEntity = rootEntity.createChild("camera");
@@ -150,10 +176,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(-0.3, 1, 0.4);
   light.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = light.addComponent(DirectLight);
-  directLight.intensity = 1;
   directLight.enableShadow = true;
-  directLight.shadowStrength = 1;
-  directLight.shadowBias = 3;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
   rootEntity.addComponent(TableGenerator);
@@ -161,7 +184,7 @@ PhysXPhysics.initialize().then(() => {
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;

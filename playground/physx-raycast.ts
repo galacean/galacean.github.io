@@ -332,7 +332,6 @@ PhysXPhysics.initialize().then(() => {
   directLight.intensity = 1;
   directLight.enableShadow = true;
   directLight.shadowStrength = 1;
-  directLight.shadowBias = 5;
 
   init(rootEntity);
 

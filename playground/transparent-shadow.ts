@@ -143,10 +143,8 @@ const light = rootEntity.createChild("light");
 light.transform.setPosition(-140, 1000, -1020);
 light.transform.lookAt(new Vector3(30, 0, 300));
 const directLight = light.addComponent(DirectLight);
-directLight.intensity = 1;
 directLight.enableShadow = true;
 directLight.shadowStrength = 0.75;
-directLight.shadowBias = 5;
 
 engine.resourceManager
   //@ts-ignore

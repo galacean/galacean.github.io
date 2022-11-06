@@ -194,9 +194,8 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(5, 0, -10);
   light.transform.lookAt(new Vector3(0, 0, 0));
   const p = light.addComponent(DirectLight);
-  p.intensity = 1;
   p.enableShadow = true;
-  p.shadowStrength = 1;
+  
   {
     const attractorEntity = rootEntity.createChild();
     attractorEntity.addComponent(Interactor).camera = camera;

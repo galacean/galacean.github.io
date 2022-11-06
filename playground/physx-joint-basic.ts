@@ -190,10 +190,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(-10, 10, 10);
   light.transform.lookAt(new Vector3());
   const directLight = light.addComponent(DirectLight);
-  directLight.intensity = 1;
   directLight.enableShadow = true;
-  directLight.shadowStrength = 1;
-  directLight.shadowBias = 2;
 
   engine.resourceManager
     .load<AmbientLight>({
