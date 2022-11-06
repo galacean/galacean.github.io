@@ -68,7 +68,6 @@ function main() {
   planeMaterial.renderFace = RenderFace.Double;
 
   planeRenderer.setMaterial(planeMaterial);
-  planeRenderer.receiveShadows = true;
 
   // Create box
   const boxRenderers = new Array<MeshRenderer>();

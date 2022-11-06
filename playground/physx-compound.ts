@@ -117,7 +117,6 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
 
   const entity = rootEntity.createChild();
   const renderer = entity.addComponent(MeshRenderer);
-  renderer.receiveShadows = true;
   entity.transform.position = position;
   entity.transform.rotationQuaternion = rotation;
   renderer.mesh = PrimitiveMesh.createPlane(engine, size.x, size.y);

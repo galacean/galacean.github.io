@@ -2,6 +2,7 @@
  * @title Transparent Shadow
  * @category Light
  */
+import * as dat from "dat.gui";
 import {
   AmbientLight,
   AssetType,
@@ -15,18 +16,18 @@ import {
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
-  Renderer,
   Script,
   Shader,
   ShadowCascadesMode,
   ShadowMode,
   ShadowResolution,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
-import * as dat from "dat.gui";
 
-Shader.create("transparent-shadow", `
+Shader.create(
+  "transparent-shadow",
+  `
 #include <common_vert>
 #include <blendShape_input>
 #include <uv_share>
@@ -44,7 +45,8 @@ void main() {
 
     #include <fog_vert>
 }
-`, `
+`,
+  `
 #include <common>
 #include <uv_share>
 #include <worldpos_share>
@@ -66,7 +68,8 @@ void main() {
 
     #include <fog_frag>
 }
-`)
+`
+);
 
 class TransparentShadow extends BaseMaterial {
   /**
@@ -77,7 +80,9 @@ class TransparentShadow extends BaseMaterial {
   }
 
   set baseColor(value: Color) {
-    const baseColor = this.shaderData.getColor(TransparentShadow._baseColorProp);
+    const baseColor = this.shaderData.getColor(
+      TransparentShadow._baseColorProp
+    );
     if (value !== baseColor) {
       baseColor.copyFrom(value);
     }
@@ -86,7 +91,10 @@ class TransparentShadow extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("transparent-shadow"));
     this.isTransparent = true;
-    this.shaderData.setColor(TransparentShadow._baseColorProp, new Color(0, 0, 0, 1));
+    this.shaderData.setColor(
+      TransparentShadow._baseColorProp,
+      new Color(0, 0, 0, 1)
+    );
     this.shaderData.enableMacro("O3_NEED_WORLDPOS");
   }
 }
@@ -106,19 +114,20 @@ class Rotation extends Script {
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
-engine.settings.shadowResolution = ShadowResolution.VeryHigh;
-engine.settings.shadowCascades = ShadowCascadesMode.FourCascades;
-engine.settings.shadowMode = ShadowMode.SoftLow;
+
 const scene = engine.sceneManager.activeScene;
+scene.shadowResolution = ShadowResolution.VeryHigh;
+scene.shadowCascades = ShadowCascadesMode.FourCascades;
+scene.shadowMode = ShadowMode.SoftLow;
+scene.shadowDistance = 800;
 
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 const cameraEntity = rootEntity.createChild("camera");
 cameraEntity.transform.setPosition(-140, 210, 1020);
-cameraEntity.transform.setRotation(0, -16, 0)
+cameraEntity.transform.setRotation(0, -16, 0);
 const camera = cameraEntity.addComponent(Camera);
-camera.enableFrustumCulling = false;
-camera.farClipPlane = 1000;
+camera.farClipPlane = 800;
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 const transparentShadowMtl = new TransparentShadow(engine);
@@ -129,7 +138,6 @@ debugMtl.isTransparent = true;
 
 const planeEntity = rootEntity.createChild();
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
-planeRenderer.receiveShadows = true;
 planeRenderer.mesh = PrimitiveMesh.createPlane(engine, 300, 2000);
 planeRenderer.setMaterial(transparentShadowMtl);
 
@@ -148,15 +156,15 @@ engine.resourceManager
   .load<[GLTFResource, AmbientLight, Texture2D]>([
     {
       url: "https://gw.alipayobjects.com/os/bmw-prod/93196534-bab3-4559-ae9f-bcb3e36a6419.glb",
-      type: AssetType.Prefab
+      type: AssetType.Prefab,
     },
     {
       url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
-      type: AssetType.Env
+      type: AssetType.Env,
     },
     {
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*X0IjQ5E1OUEAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
   ])
   .then(([gltf, ambientLight, background]) => {
@@ -178,7 +186,7 @@ engine.resourceManager
 function openDebug() {
   const info = {
     debug: false,
-  }
+  };
 
   gui.add(info, "debug").onChange((v) => {
     if (v) {

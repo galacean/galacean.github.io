@@ -102,7 +102,6 @@ function addPlane(
   planeEntity.layer = Layer.Layer1;
 
   const renderer = planeEntity.addComponent(MeshRenderer);
-  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
   planeEntity.transform.position = position;
