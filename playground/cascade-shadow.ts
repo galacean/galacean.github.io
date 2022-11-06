@@ -30,12 +30,14 @@ import {
 function main() {
   const engine = new WebGLEngine("canvas", { webGLMode: WebGLMode.WebGL2 });
   engine.canvas.resizeByClientSize();
-  engine.settings.shadowResolution = ShadowResolution.High;
-
-  const scene = engine.sceneManager.activeScene;
-  const rootEntity = scene.createRootEntity();
 
   createShadowMapVisualShader();
+
+  const scene = engine.sceneManager.activeScene;
+  scene.shadowResolution = ShadowResolution.High;
+  scene.shadowDistance = 1000;
+
+  const rootEntity = scene.createRootEntity();
 
   // Create camera
   const cameraEntity = rootEntity.createChild("camera");
@@ -53,7 +55,6 @@ function main() {
   const directLight = light.addComponent(DirectLight);
   directLight.shadowStrength = 1.0;
   directLight.enableShadow = true;
-  directLight.shadowDistance = 1000;
 
   // Create plane
   const planeEntity = rootEntity.createChild("PlaneEntity");
@@ -144,7 +145,7 @@ function main() {
         VerySoft: ShadowMode.SoftHigh,
       })
       .onChange((v) => {
-        engine.settings.shadowMode = parseInt(v);
+        scene.shadowMode = parseInt(v);
       });
 
     gui
@@ -154,7 +155,7 @@ function main() {
         FourCascades: ShadowCascadesMode.FourCascades,
       })
       .onChange((v) => {
-        engine.settings.shadowCascades = parseInt(v);
+        scene.shadowCascades = parseInt(v);
       });
 
     gui
@@ -165,19 +166,19 @@ function main() {
         VeryHigh: ShadowResolution.VeryHigh,
       })
       .onChange((v) => {
-        engine.settings.shadowResolution = parseInt(v);
+        scene.shadowResolution = parseInt(v);
       });
     gui.add(info, "shadowTwoCascadeSplitRatio", 0, 1).onChange((v) => {
-      engine.settings.shadowTwoCascadeSplits = v;
+      scene.shadowTwoCascadeSplits = v;
     });
     gui.add(info, "shadowFourCascadeSplitRatioX", 0, 1).onChange((v) => {
-      engine.settings.shadowFourCascadeSplits.x = v;
+      scene.shadowFourCascadeSplits.x = v;
     });
     gui.add(info, "shadowFourCascadeSplitRatioY", 0, 1).onChange((v) => {
-      engine.settings.shadowFourCascadeSplits.y = v;
+      scene.shadowFourCascadeSplits.y = v;
     });
     gui.add(info, "shadowFourCascadeSplitRatioZ", 0, 1).onChange((v) => {
-      engine.settings.shadowFourCascadeSplits.z = v;
+      scene.shadowFourCascadeSplits.z = v;
     });
   }
 

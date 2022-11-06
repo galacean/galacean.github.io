@@ -19,6 +19,7 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
+scene.shadowDistance = 20;
 
 // Create root entity
 const rootEntity = scene.createRootEntity();
@@ -36,7 +37,7 @@ lightEntity.transform.setPosition(0.5, 1, 0);
 lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 const directLight = lightEntity.addComponent(DirectLight);
 directLight.enableShadow = true;
-directLight.shadowDistance = 20;
+
 
 engine.resourceManager
   .load<GLTFResource>(
