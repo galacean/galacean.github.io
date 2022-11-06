@@ -10,9 +10,8 @@ import {
   Camera,
   DirectLight,
   GLTFResource,
-  MeshRenderer,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
 
 const engine = new WebGLEngine("canvas");

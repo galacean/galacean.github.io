@@ -18,7 +18,6 @@ import {
   PrimitiveMesh,
   Script,
   Shader,
-  ShadowCascadesMode,
   ShadowMode,
   ShadowResolution,
   Vector3,
@@ -116,8 +115,7 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
-scene.shadowResolution = ShadowResolution.VeryHigh;
-scene.shadowCascades = ShadowCascadesMode.FourCascades;
+scene.shadowResolution = ShadowResolution.High;
 scene.shadowMode = ShadowMode.SoftLow;
 scene.shadowDistance = 800;
 
@@ -128,7 +126,6 @@ cameraEntity.transform.setPosition(-140, 210, 1020);
 cameraEntity.transform.setRotation(0, -16, 0);
 const camera = cameraEntity.addComponent(Camera);
 camera.farClipPlane = 800;
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 const transparentShadowMtl = new TransparentShadow(engine);
 transparentShadowMtl.baseColor.set(9 / 255, 8 / 255, 9 / 255, 1);
