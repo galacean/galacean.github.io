@@ -56,12 +56,10 @@ uniform vec4 u_baseColor;
 uniform float u_alphaCutoff;
 
 void main() {
-     float shadowAttenuation = 1.0;
-#ifdef OASIS_CALCULATE_SHADOWS
-    #ifdef CASCADED_SHADOW_MAP
-        shadowAttenuation *= sampleShadowMap();
+    float shadowAttenuation = 1.0;
+    #ifdef OASIS_CALCULATE_SHADOWS
+      shadowAttenuation *= sampleShadowMap();
     #endif
-#endif
 
     gl_FragColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
 

@@ -232,7 +232,7 @@ function main() {
         vec4 specular = u_specularColor;
         vec4 ambient = vec4(u_envMapLight.diffuse * u_envMapLight.diffuseIntensity, 1.0) * diffuse;
     
-    #ifdef CASCADED_SHADOW_MAP
+    #ifdef OASIS_CALCULATE_SHADOWS
         int cascadeIndex = computeCascadeIndex(v_pos);
         if (cascadeIndex == 0) {
             diffuse = vec4(1.0, 1.0, 1.0, 1.0);
