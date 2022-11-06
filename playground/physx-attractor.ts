@@ -173,6 +173,7 @@ PhysXPhysics.initialize().then(() => {
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
+  scene.shadowDistance = 20;
   const rootEntity = scene.createRootEntity();
 
   // init camera
