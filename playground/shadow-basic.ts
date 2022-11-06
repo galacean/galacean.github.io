@@ -12,7 +12,7 @@ import {
   GLTFResource,
   MeshRenderer,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 
 const engine = new WebGLEngine("canvas");
@@ -38,29 +38,22 @@ lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 const directLight = lightEntity.addComponent(DirectLight);
 directLight.enableShadow = true;
 
+const glTFResource = await engine.resourceManager.load<GLTFResource>(
+  "https://gw.alipayobjects.com/os/bmw-prod/ca50859b-d736-4a3e-9fc3-241b0bd2afef.gltf"
+);
+const glTFRoot = glTFResource.defaultSceneRoot;
+const renderers = glTFRoot.getComponentsIncludeChildren(MeshRenderer, []);
+for (let i = 0; i < renderers.length; i++) {
+  const renderer = renderers[i];
+  renderer.receiveShadows = true;
+  renderer.castShadows = true;
+}
+rootEntity.addChild(glTFRoot);
 
-engine.resourceManager
-  .load<GLTFResource>(
-    "https://gw.alipayobjects.com/os/bmw-prod/ca50859b-d736-4a3e-9fc3-241b0bd2afef.gltf"
-  )
-  .then((gltf) => {
-    const root = gltf.defaultSceneRoot;
-    rootEntity.addChild(root);
+const ambientLight = await engine.resourceManager.load<AmbientLight>({
+  type: AssetType.Env,
+  url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin",
+});
+scene.ambientLight = ambientLight;
 
-    const renderers = root.getComponentsIncludeChildren(MeshRenderer, []);
-    for (let i = 0; i < renderers.length; i++) {
-      const renderer = renderers[i];
-      renderer.receiveShadows = true;
-      renderer.castShadows = true;
-    }
-
-    engine.resourceManager
-      .load<AmbientLight>({
-        type: AssetType.Env,
-        url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin",
-      })
-      .then((ambientLight) => {
-        scene.ambientLight = ambientLight;
-        engine.run();
-      });
-  });
+engine.run();
