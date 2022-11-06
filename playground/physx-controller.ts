@@ -265,8 +265,6 @@ function addBox(
   mtl.baseColor.set(1, 1, 0, 1.0);
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-  renderer.receiveShadows = true;
-  renderer.castShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(
     rootEntity.engine,
     size.x,
@@ -309,8 +307,6 @@ function addStair(
   {
     const level = stairEntity.createChild();
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -322,8 +318,6 @@ function addStair(
     const level = stairEntity.createChild();
     level.transform.setPosition(0, 0.3, 0.5);
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -336,8 +330,6 @@ function addStair(
     const level = stairEntity.createChild();
     level.transform.setPosition(0, 0.6, 1);
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -350,8 +342,6 @@ function addStair(
     const level = stairEntity.createChild();
     level.transform.setPosition(0, 0.9, 1.5);
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -552,14 +542,6 @@ PhysXPhysics.initialize().then(() => {
       const { defaultSceneRoot } = asset;
       const controllerEntity = rootEntity.createChild("controller");
       controllerEntity.addChild(defaultSceneRoot);
-
-      const renderers: Renderer[] = [];
-      defaultSceneRoot.getComponentsIncludeChildren(Renderer, renderers);
-      for (let i = 0; i < renderers.length; i++) {
-        const renderer = renderers[i];
-        renderer.castShadows = true;
-        renderer.receiveShadows = true;
-      }
 
       // animator
       defaultSceneRoot.transform.setPosition(0, -0.35, 0);

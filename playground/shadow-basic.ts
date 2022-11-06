@@ -19,6 +19,7 @@ const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
+// Set shadow distance
 scene.shadowDistance = 20;
 
 // Create root entity
@@ -36,19 +37,14 @@ const lightEntity = rootEntity.createChild("light");
 lightEntity.transform.setPosition(0.5, 1, 0);
 lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 const directLight = lightEntity.addComponent(DirectLight);
+
+// Enable shadow
 directLight.enableShadow = true;
 
 const glTFResource = await engine.resourceManager.load<GLTFResource>(
   "https://gw.alipayobjects.com/os/bmw-prod/ca50859b-d736-4a3e-9fc3-241b0bd2afef.gltf"
 );
-const glTFRoot = glTFResource.defaultSceneRoot;
-const renderers = glTFRoot.getComponentsIncludeChildren(MeshRenderer, []);
-for (let i = 0; i < renderers.length; i++) {
-  const renderer = renderers[i];
-  renderer.receiveShadows = true;
-  renderer.castShadows = true;
-}
-rootEntity.addChild(glTFRoot);
+rootEntity.addChild(glTFResource.defaultSceneRoot);
 
 const ambientLight = await engine.resourceManager.load<AmbientLight>({
   type: AssetType.Env,

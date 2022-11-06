@@ -83,7 +83,6 @@ function main() {
     const boxRenderer = boxEntity.addComponent(MeshRenderer);
     boxRenderer.mesh = boxMesh;
     boxRenderer.setMaterial(boxMaterial);
-    boxRenderer.castShadows = true;
     boxRenderers.push(boxRenderer);
   }
 

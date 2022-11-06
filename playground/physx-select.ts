@@ -143,8 +143,6 @@ function addVerticalBox(
     false
   );
   boxRenderer.setMaterial(boxMtl);
-  boxRenderer.receiveShadows = true;
-  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(0.5, 0.33, 2);
@@ -190,8 +188,6 @@ function addHorizontalBox(
     0.5
   );
   boxRenderer.setMaterial(boxMtl);
-  boxRenderer.receiveShadows = true;
-  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(2, 0.33, 0.5);
@@ -293,6 +289,7 @@ PhysXPhysics.initialize().then(() => {
   const invCanvasWidth = 1 / engine.canvas.width;
   const invCanvasHeight = 1 / engine.canvas.height;
   const scene = engine.sceneManager.activeScene;
+  scene.shadowDistance = 20;
   const rootEntity = scene.createRootEntity("root");
 
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);

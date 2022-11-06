@@ -165,13 +165,6 @@ engine.resourceManager
     character.transform.setScale(20, 20, 20);
     character.transform.setPosition(100, 0, 300);
     character.addChild(gltf.defaultSceneRoot);
-    const renderers: Renderer[] = []
-    gltf.defaultSceneRoot.getComponentsIncludeChildren(Renderer, renderers);
-    for (let i = 0; i < renderers.length; i++) {
-      const renderer = renderers[i];
-      renderer.castShadows = true;
-      renderer.receiveShadows = true;
-    }
 
     scene.background.mode = BackgroundMode.Texture;
     scene.background.texture = background;

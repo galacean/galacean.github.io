@@ -54,8 +54,6 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0, 0, 0.125);
       const boxRenderer = child.addComponent(MeshRenderer);
-      boxRenderer.receiveShadows = true;
-      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.5, 0.4, 0.045);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -68,8 +66,6 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(-0.2, -0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
-      boxRenderer.receiveShadows = true;
-      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -82,8 +78,6 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0.2, -0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
-      boxRenderer.receiveShadows = true;
-      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -96,8 +90,6 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(-0.2, 0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
-      boxRenderer.receiveShadows = true;
-      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }
@@ -110,8 +102,6 @@ class TableGenerator extends Script {
       const child = entity.createChild();
       child.transform.setPosition(0.2, 0.15, -0.045);
       const boxRenderer = child.addComponent(MeshRenderer);
-      boxRenderer.receiveShadows = true;
-      boxRenderer.castShadows = true;
       boxRenderer.mesh = PrimitiveMesh.createCuboid(this.engine, 0.1, 0.1, 0.3);
       boxRenderer.setMaterial(boxMaterial);
     }

@@ -149,8 +149,6 @@ function addSphere(
 
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-  renderer.castShadows = true;
-  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius, 60);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;

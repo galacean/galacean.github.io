@@ -59,8 +59,6 @@ function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: 
   mtl.metallic = 0.0;
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-  renderer.castShadows = true;
-  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
   renderer.setMaterial(mtl);
   boxEntity.transform.position = position;
@@ -127,7 +125,6 @@ function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotati
   mtl.metallic = 0.0;
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-  renderer.castShadows = true;
   renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;
