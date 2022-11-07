@@ -69,7 +69,7 @@ function Header() {
         )}
       </Menu.SubMenu>
       <Menu.Item key='examples' icon={<PlayCircleOutlined />}>
-        <Link to={`/examples`}>
+        <Link to={`/examples/${context.version}`}>
           <FormattedMessage id='app.header.menu.engine.examples' />
         </Link>
       </Menu.Item>

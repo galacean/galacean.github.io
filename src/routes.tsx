@@ -37,7 +37,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/examples/:exampleTitle',
+    path: '/examples/:version/:exampleTitle',
     element: (
       <>
         <Examples />
@@ -45,7 +45,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/examples',
+    path: '/examples/:version',
     element: (
       <>
         <Examples />
