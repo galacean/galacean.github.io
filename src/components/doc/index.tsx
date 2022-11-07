@@ -1,10 +1,11 @@
 import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { Col, Popover, Row } from 'antd';
+import { Affix, Col, Popover, Row } from 'antd';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../contextProvider';
+import Footer from '../footer';
 import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
@@ -22,10 +23,9 @@ function Doc() {
   useEffect(() => {
     const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
     navigate(
-      `/docs/${context.lang === 'en' ? 'en' : 'zh'}/${
-        context.lang === 'en'
-          ? currentSelectedDocTitle?.replace('.zh-CN', '')
-          : currentSelectedDocTitle + '.zh-CN'
+      `/docs/${context.lang === 'en' ? 'en' : 'zh'}/${context.lang === 'en'
+        ? currentSelectedDocTitle?.replace('.zh-CN', '')
+        : currentSelectedDocTitle + '.zh-CN'
       }`
     );
     setItems([]);
@@ -141,16 +141,19 @@ function Doc() {
                 style={{ zIndex: 20, top: '25px', left: '30px' }}
               />
             </Popover>
-
             {docDetail}
+            <Footer></Footer>
           </>
         ) : (
           <Row>
             <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24} className='main-menu'>
-              {menu}
+              <Affix style={{ maxHeight: "100vh", overflow: "auto" }}>
+                {menu}
+              </Affix>
             </Col>
             <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24}>
               {docDetail}
+              <Footer></Footer>
             </Col>
           </Row>
         )

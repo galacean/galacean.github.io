@@ -16,7 +16,6 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <Doc></Doc>
-        <Footer></Footer>
       </>
     ),
   },
@@ -58,7 +57,6 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <Doc></Doc>
-        <Footer></Footer>
       </>
     ),
   },
@@ -68,7 +66,6 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <Api></Api>
-        <Footer></Footer>
       </>
     ),
     errorElement: (
@@ -85,7 +82,6 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <Api></Api>
-        <Footer></Footer>
       </>
     ),
   },
@@ -95,7 +91,6 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <Api></Api>
-        <Footer></Footer>
       </>
     ),
   },
@@ -105,7 +100,6 @@ export const router = createHashRouter([
       <>
         <Header></Header>
         <GLTFView></GLTFView>
-        <Footer></Footer>
       </>
     ),
   },
