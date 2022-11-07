@@ -14,7 +14,7 @@ label: Graphics/Mesh
 
 ### 代码示例
 
-```TypeScript
+```typescript
 const entity = rootEntity.createChild('mesh-example');
 const meshRenderer = entity.addComponent(MeshRenderer);
 
@@ -49,7 +49,7 @@ meshRenderer.setMaterial(new UnlitMaterial(engine));
 
 通过 `setPositions（）`、 `setColors（）`等方法设置顶点数据
 
-```TypeScript
+```typescript
 modelMesh.setPositions([
   new Vector3(-1.0, -1.0,  1.0),
   new Vector3( 1.0, -1.0,  1.0),
@@ -88,7 +88,7 @@ modelMesh.setColors([
 
 [SubMesh](${api}core/SubMesh) 主要包含了绘制范围和绘制方式等信息。调用 [addSubMesh](${api}core/ModelMesh#addSubMesh) 添加。
 
-```TypeScript
+```typescript
 modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 ```
 
@@ -98,13 +98,13 @@ modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 
 如果不再需要修改 `ModelMesh` 数据，`noLongerAccessible` 参数设置为 `true`：
 
-```TypeScript
+```typescript
 modelMesh.uploadData(true);
 ```
 
 如果需要持续修改 `ModelMesh` 数据，`noLongerAccessible` 参数设置为 `false`：
 
-```TypeScript
+```typescript
 modelMesh.uploadData(false);
 ```
 
