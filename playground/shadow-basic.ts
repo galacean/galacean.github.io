@@ -10,8 +10,9 @@ import {
   Camera,
   DirectLight,
   GLTFResource,
+  ShadowType,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 
 const engine = new WebGLEngine("canvas");
@@ -38,7 +39,7 @@ lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 const directLight = lightEntity.addComponent(DirectLight);
 
 // Enable shadow
-directLight.enableShadow = true;
+directLight.shadowType = ShadowType.SoftLow;
 
 const glTFResource = await engine.resourceManager.load<GLTFResource>(
   "https://gw.alipayobjects.com/os/bmw-prod/ca50859b-d736-4a3e-9fc3-241b0bd2afef.gltf"

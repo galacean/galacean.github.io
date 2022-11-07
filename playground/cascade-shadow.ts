@@ -20,8 +20,8 @@ import {
   Script,
   Shader,
   ShadowCascadesMode,
-  ShadowMode,
   ShadowResolution,
+  ShadowType,
   Vector3,
   WebGLEngine,
   WebGLMode
@@ -36,6 +36,7 @@ function main() {
   const scene = engine.sceneManager.activeScene;
   scene.shadowResolution = ShadowResolution.High;
   scene.shadowDistance = 1000;
+  scene.shadowCascades = ShadowCascadesMode.FourCascades;
 
   const rootEntity = scene.createRootEntity();
 
@@ -54,7 +55,7 @@ function main() {
   const rotation = light.addComponent(Rotation);
   const directLight = light.addComponent(DirectLight);
   directLight.shadowStrength = 1.0;
-  directLight.enableShadow = true;
+  directLight.shadowType = ShadowType.SoftLow;
 
   // Create plane
   const planeEntity = rootEntity.createChild("PlaneEntity");
@@ -102,9 +103,9 @@ function main() {
     const info = {
       rotation: false,
       debugMode: false,
-      cascadeMode: ShadowCascadesMode.NoCascades,
+      cascadeMode: ShadowCascadesMode.FourCascades,
       resolution: ShadowResolution.High,
-      shadowMode: ShadowMode.SoftLow,
+      shadowType: ShadowType.SoftLow,
       shadowTwoCascadeSplitRatio: 1.0 / 3,
       shadowFourCascadeSplitRatioX: 1.0 / 15,
       shadowFourCascadeSplitRatioY: 3.0 / 15.0,
@@ -136,14 +137,14 @@ function main() {
     gui.add(directLight, "shadowNormalBias", 0, 10);
     gui.add(directLight, "shadowStrength", 0, 1);
     gui
-      .add(info, "shadowMode", {
-        None: ShadowMode.None,
-        Hard: ShadowMode.Hard,
-        SoftLow: ShadowMode.SoftLow,
-        VerySoft: ShadowMode.SoftHigh,
+      .add(info, "shadowType", {
+        None: ShadowType.None,
+        Hard: ShadowType.Hard,
+        SoftLow: ShadowType.SoftLow,
+        VerySoft: ShadowType.SoftHigh,
       })
       .onChange((v) => {
-        scene.shadowMode = parseInt(v);
+        directLight.shadowType = parseInt(v);
       });
 
     gui

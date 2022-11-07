@@ -28,6 +28,7 @@ import {
   Font,
   PBRMaterial,
   AmbientLight,
+  ShadowType,
 } from "oasis-engine";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
@@ -313,7 +314,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(0, 5, 8);
   light.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
   const directLight = light.addComponent(DirectLight);
-  directLight.enableShadow = true;
+  directLight.shadowType = ShadowType.SoftLow;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
 

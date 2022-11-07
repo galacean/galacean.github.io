@@ -24,6 +24,7 @@ import {
   Quaternion,
   Ray,
   Script,
+  ShadowType,
   SphereColliderShape,
   StaticCollider,
   TextRenderer,
@@ -330,7 +331,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = light.addComponent(DirectLight);
   directLight.intensity = 1;
-  directLight.enableShadow = true;
+  directLight.shadowType = ShadowType.SoftLow;
   directLight.shadowStrength = 1;
 
   init(rootEntity);
