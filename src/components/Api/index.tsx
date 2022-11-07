@@ -27,7 +27,7 @@ const Api = () => {
   const [selectedItem, setSelectedItem] = useState<number>();
   const navigate = useNavigate();
   const { ver, pkg, item } = useParams();
-  const { version } = useContext(AppContext);
+  const { version, setVersion } = useContext(AppContext);
 
   const pkgSet = new Set<string>();
   pkgChildren.forEach((item) => {
@@ -38,6 +38,11 @@ const Api = () => {
 
   // page init: get package list; set selected package
   useEffect(() => {
+    navigate(
+      `/api/${version}/${selectedPkg}${
+        selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
+      }`
+    );
     fetchPkgList(version).then((res) => {
       if (res?.length === 0) {
         return;
@@ -52,7 +57,7 @@ const Api = () => {
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [version]);
 
   useEffect(() => {
     // skip running this effect if data is not ready yet.
@@ -71,7 +76,7 @@ const Api = () => {
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedPkg]);
+  }, [selectedPkg, version]);
 
   useEffect(() => {
     // skip running this effect if data is not ready yet.
@@ -82,12 +87,12 @@ const Api = () => {
       setChildrenDetail(res);
     });
     navigate(
-      `/api/${ver}/${selectedPkg}${
+      `/api/${version}/${selectedPkg}${
         selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
       }`
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedItem]);
+  }, [selectedItem, version]);
 
   useEffect(() => {
     const chosenItemId = pkgChildren.find((i) => i.name === item)?.id;
@@ -106,6 +111,10 @@ const Api = () => {
     }
     pkg && setSelectedPkg(pkg);
   }, [pkg]);
+
+  useEffect(() => {
+    setVersion(ver);
+  }, [ver]);
 
   if (pkgList.length === 0 || pkgChildren.length === 0) {
     return <LoadingIcon></LoadingIcon>;
