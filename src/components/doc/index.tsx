@@ -15,13 +15,14 @@ function Doc() {
   const [selectedDocId, setSelectedDocId] = useState('');
   const [items, setItems] = useState<ItemType[]>([]);
   const { docTitle, lang } = useParams();
+  const languageCode = lang === 'en' ? 'en' : 'zh-CN';
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
 
   useEffect(() => {
     const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
     navigate(
-      `/docs/${context.lang}/${
+      `/docs/${context.lang === 'en' ? 'en' : 'zh'}/${
         context.lang === 'en'
           ? currentSelectedDocTitle?.replace('.zh-CN', '')
           : currentSelectedDocTitle + '.zh-CN'
@@ -48,7 +49,7 @@ function Doc() {
           if (files?.length > 0) {
             files
               .sort((a, b) => a.weight - b.weight)
-              .filter((file) => lang === file.lang && file.type === 'markdown')
+              .filter((file) => file.lang === languageCode && file.type === 'markdown')
               .forEach((file) => {
                 menuKeyTitleMapRef.current.set(id + '-' + file.id, file.filename.slice(0, -3));
                 newRootMenu.children.push({
@@ -63,7 +64,7 @@ function Doc() {
               let newGroup: any = { type: 'group', label: lang === 'en' ? child.name : child.cn_name };
               newGroup.children = child.files
                 .sort((a, b) => a.weight - b.weight)
-                .filter((file) => file.lang === lang && file.type === 'markdown')
+                .filter((file) => file.lang === languageCode && file.type === 'markdown')
                 .map((item, index) => {
                   menuKeyTitleMapRef.current.set(`${id}-${child.id}-${item.id}`, item.filename.slice(0, -3));
                   return { label: item.title, key: `${id}-${child.id}-${item.id}`, lang: item.lang };
@@ -87,7 +88,7 @@ function Doc() {
         if (defaultSelectedDocId) {
           setSelectedDocId(defaultSelectedDocId);
           const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
-          selectedDocTitle && navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+          selectedDocTitle && navigate(`/docs/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
         }
       }
       setItems(itemRes);
@@ -103,12 +104,12 @@ function Doc() {
       return;
     }
     if (!docTitle && selectedDocId) {
-      navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+      navigate(`/docs/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
       return;
     }
     if (docTitle && docTitle !== selectedDocTitle) {
       setSelectedDocId(selectedDocId);
-      navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+      navigate(`/docs/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
     }
   }, [selectedDocId, items.length]);
 
