@@ -17,7 +17,7 @@ Mesh is the data object of MeshRenderer, which describes various information of 
 
 ## How to use
 
-```TypeScript
+```typescript
 const meshRenderer = entity.addComponent(MeshRenderer);
 meshRenderer.mesh = new ModelMesh(engine);
 // or
