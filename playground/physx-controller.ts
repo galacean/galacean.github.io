@@ -3,7 +3,7 @@
  * @category Physics
  */
 
-import {OrbitControl} from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AmbientLight,
   AnimationClip,
@@ -21,7 +21,8 @@ import {
   ControllerCollisionFlag,
   DirectLight,
   Engine,
-  Entity, Font,
+  Entity,
+  Font,
   GLTFResource,
   Keys,
   Logger,
@@ -31,18 +32,20 @@ import {
   PBRMaterial,
   PlaneColliderShape,
   PrimitiveMesh,
-  Quaternion, Renderer,
+  Quaternion,
+  Renderer,
   RenderFace,
   Script,
+  ShadowType,
   SkyBoxMaterial,
   StaticCollider,
   TextRenderer,
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
-import {PhysXPhysics} from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 Logger.enable();
 
@@ -51,7 +54,7 @@ enum State {
   Idle = "Idle",
   Jump = "Jump_In",
   Fall = "Fall",
-  Landing = "Landing"
+  Landing = "Landing",
 }
 
 class AnimationState {
@@ -68,7 +71,10 @@ class AnimationState {
       return;
     }
 
-    if (this._lastKey === null && (this._state === State.Run || this._state === State.Idle)) {
+    if (
+      this._lastKey === null &&
+      (this._state === State.Run || this._state === State.Idle)
+    ) {
       this._state = State.Idle;
     } else {
       this._state = State.Run;
@@ -182,7 +188,7 @@ class ControllerScript extends Script {
     const yAxisMove = this._yAxisMove;
 
     yAxisMove.set(0, gravity.y * fixedTimeStep * this._fallAccumulateTime, 0);
-    const flag = character.move(yAxisMove, 0.0001, fixedTimeStep)
+    const flag = character.move(yAxisMove, 0.0001, fixedTimeStep);
     if (flag & ControllerCollisionFlag.Down) {
       this._fallAccumulateTime = 0;
       this._animationState.setIdleKey();
@@ -194,7 +200,12 @@ class ControllerScript extends Script {
     if (this._displacement.x != 0 || this._displacement.z != 0) {
       this._predictPosition.copyFrom(transform.worldPosition);
       this._predictPosition.subtract(this._displacement);
-      Matrix.lookAt(transform.worldPosition, this._predictPosition, this._up, this._rotMat);
+      Matrix.lookAt(
+        transform.worldPosition,
+        this._predictPosition,
+        this._up,
+        this._rotMat
+      );
       this._rotMat.getRotation(this._rotation).invert();
       const currentRot = transform.rotationQuaternion;
       Quaternion.slerp(currentRot, this._rotation, 0.1, this._newRotation);
@@ -210,9 +221,19 @@ class ControllerScript extends Script {
   }
 }
 
-function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation: Quaternion): Entity {
+function addPlane(
+  rootEntity: Entity,
+  size: Vector2,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
   const mtl = new PBRMaterial(rootEntity.engine);
-  mtl.baseColor.set(0.2179807202597362, 0.2939682161541871, 0.31177952549087604, 1);
+  mtl.baseColor.set(
+    0.2179807202597362,
+    0.2939682161541871,
+    0.31177952549087604,
+    1
+  );
   mtl.roughness = 0.0;
   mtl.metallic = 0.0;
   mtl.renderFace = RenderFace.Double;
@@ -221,7 +242,6 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
   const renderer = planeEntity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
-  renderer.receiveShadows = true;
   planeEntity.transform.position = position;
   planeEntity.transform.rotationQuaternion = rotation;
 
@@ -233,16 +253,24 @@ function addPlane(rootEntity: Entity, size: Vector2, position: Vector3, rotation
   return planeEntity;
 }
 
-function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
+function addBox(
+  rootEntity: Entity,
+  size: Vector3,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
   const mtl = new PBRMaterial(rootEntity.engine);
   mtl.roughness = 0.2;
   mtl.metallic = 0.8;
   mtl.baseColor.set(1, 1, 0, 1.0);
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-  renderer.receiveShadows = true;
-  renderer.castShadows = true;
-  renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
+  renderer.mesh = PrimitiveMesh.createCuboid(
+    rootEntity.engine,
+    size.x,
+    size.y,
+    size.z
+  );
   renderer.setMaterial(mtl);
   boxEntity.transform.position = position;
   boxEntity.transform.rotationQuaternion = rotation;
@@ -256,11 +284,21 @@ function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: 
   return boxEntity;
 }
 
-function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation: Quaternion): Entity {
+function addStair(
+  rootEntity: Entity,
+  size: Vector3,
+  position: Vector3,
+  rotation: Quaternion
+): Entity {
   const mtl = new PBRMaterial(rootEntity.engine);
   mtl.roughness = 0.5;
   mtl.baseColor.set(0.9, 0.9, 0.9, 1.0);
-  const mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
+  const mesh = PrimitiveMesh.createCuboid(
+    rootEntity.engine,
+    size.x,
+    size.y,
+    size.z
+  );
 
   const stairEntity = rootEntity.createChild();
   stairEntity.transform.position = position;
@@ -269,8 +307,6 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
   {
     const level = stairEntity.createChild();
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
@@ -280,51 +316,52 @@ function addStair(rootEntity: Entity, size: Vector3, position: Vector3, rotation
 
   {
     const level = stairEntity.createChild();
-    level.transform.setPosition(0, 0.3, 0.5)
+    level.transform.setPosition(0, 0.3, 0.5);
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.position.set(0, 0.3, 0.5)
+    physicsBox.position.set(0, 0.3, 0.5);
     boxCollider.addShape(physicsBox);
   }
 
   {
     const level = stairEntity.createChild();
-    level.transform.setPosition(0, 0.6, 1)
+    level.transform.setPosition(0, 0.6, 1);
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.position.set(0, 0.6, 1)
+    physicsBox.position.set(0, 0.6, 1);
     boxCollider.addShape(physicsBox);
   }
 
   {
     const level = stairEntity.createChild();
-    level.transform.setPosition(0, 0.9, 1.5)
+    level.transform.setPosition(0, 0.9, 1.5);
     const renderer = level.addComponent(MeshRenderer);
-    renderer.receiveShadows = true;
-    renderer.castShadows = true;
     renderer.mesh = mesh;
     renderer.setMaterial(mtl);
     const physicsBox = new BoxColliderShape();
     physicsBox.size = size;
-    physicsBox.position.set(0, 0.9, 1.5)
+    physicsBox.position.set(0, 0.9, 1.5);
     boxCollider.addShape(physicsBox);
   }
   return stairEntity;
 }
 
-function textureAndAnimationLoader(engine: Engine, materials: Material[], animator: Animator, animatorStateMachine: AnimatorStateMachine) {
+function textureAndAnimationLoader(
+  engine: Engine,
+  materials: Material[],
+  animator: Animator,
+  animatorStateMachine: AnimatorStateMachine
+) {
   engine.resourceManager
-    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/6990/T_Doggy_1_diffuse.png")
+    .load<Texture2D>(
+      "https://gw.alipayobjects.com/zos/OasisHub/440001585/6990/T_Doggy_1_diffuse.png"
+    )
     .then((res) => {
       for (let i = 0, n = materials.length; i < n; i++) {
         const material = materials[i];
@@ -332,7 +369,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/3072/T_Doggy_normal.png")
+    .load<Texture2D>(
+      "https://gw.alipayobjects.com/zos/OasisHub/440001585/3072/T_Doggy_normal.png"
+    )
     .then((res) => {
       for (let i = 0, n = materials.length; i < n; i++) {
         const material = materials[i];
@@ -340,7 +379,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/5917/T_Doggy_roughness.png")
+    .load<Texture2D>(
+      "https://gw.alipayobjects.com/zos/OasisHub/440001585/5917/T_Doggy_roughness.png"
+    )
     .then((res) => {
       for (let i = 0, n = materials.length; i < n; i++) {
         const material = materials[i];
@@ -348,7 +389,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<Texture2D>("https://gw.alipayobjects.com/zos/OasisHub/440001585/2547/T_Doggy_1_ao.png")
+    .load<Texture2D>(
+      "https://gw.alipayobjects.com/zos/OasisHub/440001585/2547/T_Doggy_1_ao.png"
+    )
     .then((res) => {
       for (let i = 0, n = materials.length; i < n; i++) {
         const material = materials[i];
@@ -356,7 +399,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/7205/Anim_Run.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/440001585/7205/Anim_Run.gltf"
+    )
     .then((res) => {
       const animations = res.animations;
       if (animations) {
@@ -367,7 +412,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/3380/Anim_Idle.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/440001585/3380/Anim_Idle.gltf"
+    )
     .then((res) => {
       const animations = res.animations;
       if (animations) {
@@ -380,7 +427,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/5703/Anim_Landing.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/440001585/5703/Anim_Landing.gltf"
+    )
     .then((res) => {
       const animations = res.animations;
       if (animations) {
@@ -391,7 +440,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/3275/Anim_Fall.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/440001585/3275/Anim_Fall.gltf"
+    )
     .then((res) => {
       const animations = res.animations;
       if (animations) {
@@ -402,7 +453,9 @@ function textureAndAnimationLoader(engine: Engine, materials: Material[], animat
       }
     });
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/2749/Anim_Jump_In.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/440001585/2749/Anim_Jump_In.gltf"
+    )
     .then((res) => {
       const animations = res.animations;
       if (animations) {
@@ -421,7 +474,8 @@ PhysXPhysics.initialize().then(() => {
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
-  const {background} = scene;
+  scene.shadowDistance = 10;
+  const { background } = scene;
   const rootEntity = scene.createRootEntity();
 
   // camera
@@ -434,10 +488,7 @@ PhysXPhysics.initialize().then(() => {
   lightNode.transform.setPosition(8, 10, 10);
   lightNode.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = lightNode.addComponent(DirectLight);
-  directLight.intensity = 1;
-  directLight.enableShadow = true;
-  directLight.shadowStrength = 1;
-  directLight.shadowBias = 5;
+  directLight.shadowType = ShadowType.SoftLow;
 
   const entity = cameraEntity.createChild("text");
   entity.transform.position = new Vector3(0, 3.5, -10);
@@ -454,37 +505,41 @@ PhysXPhysics.initialize().then(() => {
   sky.material = skyMaterial;
   sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
-  addPlane(rootEntity, new Vector2(10, 6), new Vector3(), new Quaternion);
+  addPlane(rootEntity, new Vector2(10, 6), new Vector3(), new Quaternion());
   const slope = new Quaternion();
   Quaternion.rotationEuler(45, 0, 0, slope);
-  addBox(rootEntity, new Vector3(4, 4, 0.01), new Vector3(0, 0, 1), slope.normalize());
-  addStair(rootEntity, new Vector3(1, 0.3, 0.5), new Vector3(3, 0, 1), new Quaternion());
+  addBox(
+    rootEntity,
+    new Vector3(4, 4, 0.01),
+    new Vector3(0, 0, 1),
+    slope.normalize()
+  );
+  addStair(
+    rootEntity,
+    new Vector3(1, 0.3, 0.5),
+    new Vector3(3, 0, 1),
+    new Quaternion()
+  );
 
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/09904c03-0d23-4834-aa73-64e11e2287b0.bin",
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;
       skyMaterial.textureCubeMap = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
-    })
+    });
 
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/440001585/5407/Doggy_Demo.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/440001585/5407/Doggy_Demo.gltf"
+    )
     .then((asset) => {
-      const {defaultSceneRoot} = asset;
+      const { defaultSceneRoot } = asset;
       const controllerEntity = rootEntity.createChild("controller");
       controllerEntity.addChild(defaultSceneRoot);
-
-      const renderers:Renderer[] = []
-      defaultSceneRoot.getComponentsIncludeChildren(Renderer, renderers);
-      for (let i = 0; i < renderers.length; i++) {
-        const renderer = renderers[i];
-        renderer.castShadows = true;
-        renderer.receiveShadows = true;
-      }
 
       // animator
       defaultSceneRoot.transform.setPosition(0, -0.35, 0);
@@ -500,12 +555,18 @@ PhysXPhysics.initialize().then(() => {
       const physicsCapsule = new CapsuleColliderShape();
       physicsCapsule.radius = 0.15;
       physicsCapsule.height = 0.2;
-      const characterController = controllerEntity.addComponent(CharacterController);
+      const characterController =
+        controllerEntity.addComponent(CharacterController);
       characterController.addShape(physicsCapsule);
       const userController = controllerEntity.addComponent(ControllerScript);
       userController.targetCamera(cameraEntity);
       userController.targetCharacter(defaultSceneRoot);
 
-      textureAndAnimationLoader(engine, asset.materials, animator, animatorStateMachine);
+      textureAndAnimationLoader(
+        engine,
+        asset.materials,
+        animator,
+        animatorStateMachine
+      );
     });
 });
