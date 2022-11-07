@@ -18,8 +18,8 @@ import {
   PrimitiveMesh,
   Script,
   Shader,
-  ShadowMode,
   ShadowResolution,
+  ShadowType,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
@@ -114,7 +114,6 @@ engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 scene.shadowResolution = ShadowResolution.High;
-scene.shadowMode = ShadowMode.SoftLow;
 scene.shadowDistance = 800;
 
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
@@ -141,7 +140,7 @@ const light = rootEntity.createChild("light");
 light.transform.setPosition(-140, 1000, -1020);
 light.transform.lookAt(new Vector3(30, 0, 300));
 const directLight = light.addComponent(DirectLight);
-directLight.enableShadow = true;
+directLight.shadowType = ShadowType.SoftLow;
 directLight.shadowStrength = 0.75;
 
 engine.resourceManager
