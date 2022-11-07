@@ -112,7 +112,7 @@ function createSpring(rootEntity: Entity, position: Vector3, rotation: Quaternio
 }
 
 function createHinge(rootEntity: Entity, position: Vector3, rotation: Quaternion) {
-  const currentEntity = addBox(rootEntity, new Vector3(4.0, 4.0, 0), position, rotation);
+  const currentEntity = addBox(rootEntity, new Vector3(4.0, 4.0, 0.5), position, rotation);
   const hingeJoint = currentEntity.addComponent(HingeJoint);
   hingeJoint.connectedAnchor = position;
   hingeJoint.swingOffset = new Vector3(0, 1, 0);
