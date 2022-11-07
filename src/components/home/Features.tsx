@@ -32,7 +32,7 @@ export default function Features() {
             <FormattedMessage id='app.home.2d.intro' />
           </p>
           <div className='button-wrapper'>
-            <Link to={`/docs/${lang}/mesh-renderer`}>
+            <Link to={`/docs/latest/${lang}/mesh-renderer`}>
               <Button type='primary' size='small' ghost>
                 <FormattedMessage id='app.home.more' />
               </Button>
