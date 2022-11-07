@@ -19,7 +19,7 @@ export default function Examples() {
   const [filteredItems, setFilteredItems] = useState<ItemType[]>([]);
   const [selectedExampleId, setSelectedExampleId] = useState('');
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
-  const { exampleTitle } = useParams();
+  const { version, exampleTitle } = useParams();
   const navigate = useNavigate();
 
   const [menuVisible, toggleMenu] = useState(false);
@@ -35,6 +35,10 @@ export default function Examples() {
       style={{ width: '300px!important', height: 'calc(100vh - 124px)', overflow: 'auto' }}
     ></Menu>
   );
+
+  useEffect(() => {
+    context.setVersion(version);
+  }, [version]);
 
   useEffect(() => {
     fetchMenuList('ts', context.version).then((list) => {
@@ -94,12 +98,12 @@ export default function Examples() {
     }
     const selectedExampleTitle = menuKeyTitleMapRef.current.get(selectedExampleId);
     if (!exampleTitle && selectedExampleId) {
-      navigate(`/examples/${selectedExampleTitle}`);
+      navigate(`/examples/${context.version}/${selectedExampleTitle}`);
       return;
     }
     if (exampleTitle && exampleTitle !== selectedExampleTitle) {
       setSelectedExampleId(selectedExampleId);
-      navigate(`/examples/${selectedExampleTitle}`);
+      navigate(`/examples/${context.version}/${selectedExampleTitle}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedExampleId, items.length]);

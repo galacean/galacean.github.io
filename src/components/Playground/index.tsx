@@ -1,6 +1,8 @@
 import Prism from 'prismjs';
-import { createRef, useEffect, useState } from 'react';
+import { createRef, useContext, useEffect, useState } from 'react';
 import siteConfig from '../../siteconfig.json';
+import { fetchEngineDataConfig } from '../../utils';
+import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
 import DemoActions from './DemoActions';
@@ -15,6 +17,8 @@ interface IPlayground {
 export default function Playground(props: IPlayground) {
   const [code, setCode] = useState('');
   const [src, setSrc] = useState('');
+  const { lang, version } = useContext(AppContext);
+  const [packages, setPackage] = useState<any>(null);
 
   const url = `/#/example/${props.id}`;
   const iframe = createRef<HTMLIFrameElement>();
@@ -33,6 +37,19 @@ export default function Playground(props: IPlayground) {
     // fix: iframe not reload when url hash changes
     iframe.current?.contentWindow?.location.reload();
   }, [props.id]);
+
+  const fetchDependencies = async () => {
+    const configRes = await fetchEngineDataConfig();
+    const packages = JSON.parse(configRes.find((config) => config.version === version)?.packages || '');
+
+    setPackage(packages);
+  };
+
+  useEffect(() => {
+    fetchDependencies();
+  }, [version]);
+
+  if (!packages) return null;
 
   return (
     <div className='code-box'>
@@ -54,8 +71,8 @@ export default function Playground(props: IPlayground) {
           engineName={siteConfig.name}
           name={props.title || ''}
           url={url}
-          version={siteConfig.packages['oasis-engine']}
-          packages={siteConfig.packages}
+          version={packages['oasis-engine']}
+          packages={packages}
         />
       )}
       {url && <DemoActions url={window.location.protocol + window.location.hostname + url} />}

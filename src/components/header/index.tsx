@@ -45,15 +45,17 @@ function Header() {
       <Menu.SubMenu key='docs' icon={<ReadOutlined />} title={formatMessage({ id: 'app.header.menu.docs' })}>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.engine' })}>
           <Menu.Item key='engine-docs'>
-            <Link to={`/docs/${context.lang}`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
+            <Link to={`/docs/${context.version}/${context.lang}`}>
+              {formatMessage({ id: 'app.header.menu.engine.docs' })}
+            </Link>
           </Menu.Item>
           <Menu.Item key='api'>
-            <Link to={`/api`}>API</Link>
+            <Link to={`/api/${context.version}`}>API</Link>
           </Menu.Item>
         </Menu.ItemGroup>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.artist' })}>
           <Menu.Item key='artist-docs'>
-            <Link to={`/docs/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`}>
+            <Link to={`/docs/latest/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`}>
               {formatMessage({ id: 'app.header.menu.artist.docs' })}
             </Link>
           </Menu.Item>
@@ -61,7 +63,7 @@ function Header() {
         {isZhCN && (
           <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.editor' })}>
             <Menu.Item key='editor-docs'>
-              <Link to={'/docs/zh-CN/editor.zh-CN'}>
+              <Link to={'/docs/latest/zh/editor.zh-CN'}>
                 {formatMessage({ id: 'app.header.menu.editor.docs' })}
               </Link>
             </Menu.Item>
@@ -69,7 +71,7 @@ function Header() {
         )}
       </Menu.SubMenu>
       <Menu.Item key='examples' icon={<PlayCircleOutlined />}>
-        <Link to={`/examples`}>
+        <Link to={`/examples/${context.version}`}>
           <FormattedMessage id='app.header.menu.engine.examples' />
         </Link>
       </Menu.Item>
@@ -80,7 +82,7 @@ function Header() {
       >
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.ecosystem.tool' })}>
           <Menu.Item key='miniprogram'>
-            <Link to={`/docs/${context.lang}/miniprogram${context.lang === 'en' ? '' : '.zh-CN'}`}>
+            <Link to={`/docs/latest/${context.lang}/miniprogram${context.lang === 'en' ? '' : '.zh-CN'}`}>
               {formatMessage({ id: 'app.header.menu.ecosystem.miniprogram' })}
             </Link>
           </Menu.Item>
@@ -102,10 +104,10 @@ function Header() {
         </Menu.ItemGroup>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.ecosystem.animation' })}>
           <Menu.Item key='spine'>
-            <Link to={`/docs/zh-CN/editor-component-spine.zh-CN`}>Spine</Link>
+            <Link to={`/docs/latest/zh/editor-component-spine.zh-CN`}>Spine</Link>
           </Menu.Item>
           <Menu.Item key='lottie'>
-            <Link to={`/docs/zh-CN/editor-lottie.zh-CN`}>Lottie</Link>
+            <Link to={`/docs/latest/zh/editor-lottie.zh-CN`}>Lottie</Link>
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>
