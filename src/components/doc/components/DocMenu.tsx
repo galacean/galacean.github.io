@@ -27,6 +27,7 @@ function DocMenu(props: PropsWithChildren<DocMenuProps>) {
         mode='inline'
         items={props.items}
         selectedKeys={[props.selectedDocId]}
+        style={{ maxHeight: "100vh", overflow: "auto" }}
       />
     </>
   );
