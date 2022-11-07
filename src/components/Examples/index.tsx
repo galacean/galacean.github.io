@@ -41,6 +41,7 @@ export default function Examples() {
   }, [version]);
 
   useEffect(() => {
+    navigate(`/examples/${context.version}`);
     fetchMenuList('ts', context.version).then((list) => {
       const itemRes: ItemType[] = [];
       list
