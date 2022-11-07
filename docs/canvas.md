@@ -79,6 +79,15 @@ webcanvas.height = window.innerHeight * pixelRatio / scale;
 webcanvas.setScale(scale, scale); // Stretch the canvas
 ```
 
+If the canvas height and width have been set through CSS (for example: `width: 100vw; height: 100vh;`), you can pass a parameter to `resizeByClientSize` to stretch the canvas：
+
+```typescript
+const canvas = document.getElementById('canvas');
+const webcanvas = new WebCanvas(canvas);
+const scale = 2 / 3; // 3x HD screen, calculate the canvas size by 2x screen
+
+webcanvas.resizeByClientSiz(scale); // Stretch the canvas
+
 ### Fixed width mode
 
 In some cases, such as when the design layout has a fixed width of 750, developers can hard code the canvas width to reduce the cost of adaptation.

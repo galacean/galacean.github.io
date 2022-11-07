@@ -78,6 +78,17 @@ webcanvas.height = window.innerHeight * pixelRatio / scale;
 webcanvas.setScale(scale, scale); // 拉伸画布
 ```
 
+如果已经通过 CSS 设置了画布高宽（比如 `width: 100vw; height: 100vh;`），那么可以通过 `resizeByClientSize` 传参实现画布的缩放：
+
+```typescript
+const canvas = document.getElementById('canvas');
+const webcanvas = new WebCanvas(canvas);
+const scale = 2 / 3; // 3 倍高清屏按 2 倍屏来计算画布尺寸
+
+webcanvas.resizeByClientSiz(scale); // 拉伸画布
+```
+
+
 ### 固定宽度模式
 
 某些情况下，比如设计稿固定 750 宽度的情况，开发者有可能会写死画布宽度来降低适配成本。代码如下：
