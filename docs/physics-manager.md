@@ -15,7 +15,7 @@ during the program execution. Therefore, as with scripts, the timing of synchron
 Generally speaking, the update frequency of the physical scene is different from that of the rendering scene, which can
 be set in the physics manager:
 
-```ts
+```typescript
 /** The fixed time step in seconds at which physics are performed. */
 fixedTimeStep: number = 1 / 60;
 
@@ -31,7 +31,7 @@ At this time, you can reduce the number of updates of physics simulation per fra
 If there is less than one `fixedTimeStep`, it will be postponed to the next frame and processed. Therefore, in each rendering frame, the physical scene may be updated multiple times, or only once, so for the update of the physical component, it needs to be placed in a specific update function, `Script`
 This interface is provided:
 
-```ts
+```typescript
 export class Script extends Component {
   /**
    * Called before physics calculations, the number of times is related to the physical update frequency.

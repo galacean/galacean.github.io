@@ -16,7 +16,7 @@ label: Adaptation
 
 使用 yarn 创建
 
-```shell
+```bash
 yarn create @oasis-engine/oasis-app --template miniprogram
 ```
 
@@ -46,7 +46,7 @@ npm init @oasis-engine/oasis-app -- --template miniprogram
 
 1. 在项目目录中打开 `Terminal`，安装依赖：
 
-```shell
+```bash
 # 使用 npm
 npm install oasis-engine --save
 npm install @oasis-engine/miniprogram-adapter --save
@@ -122,7 +122,7 @@ Page({
 
 1. 引入二方库
 
-```shell
+```bash
 npm install @oasis-engine-toolkit/controls -S
 ```
 

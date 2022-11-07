@@ -20,7 +20,7 @@ It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as 
 
 ## Texture coordinates
 We need to use texture coordinates to sample textures in the fragment shader, which we generally call UV coordinates. The center of the picture can be sampled using (0.5, 0.5):
-```
+```glsl
 vec4 color = texture2D(u_texture, vec2(0.5, 0.5));
 ```
 

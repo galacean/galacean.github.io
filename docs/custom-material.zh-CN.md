@@ -119,7 +119,7 @@ shader 中变量的类型和调用的接口对应关系如下:
 | `sampler2D[]` 、 `samplerCube[]` | setTextureArray( value:Texture[] ) |
 
 代码演示如下：
-```
+```glsl
 // shader
 
 uniform float u_float;
@@ -163,7 +163,7 @@ shaderData.setTextureArray("u_samplerArray",[texture2D,textureCube]);
 除了uniform 变量之外，引擎将 shader 中的[宏定义](https://www.wikiwand.com/en/OpenGL_Shading_Language)也视为一种变量，因为宏定义的开启/关闭 将生成不同的着色器变种，也会影响渲染结果。
 
 如 shader 中有这些宏相关的操作：
-```
+```glsl
 #ifdef DISCARD
 	discard;
 #endif

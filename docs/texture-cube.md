@@ -20,7 +20,7 @@ Because of this sampling feature, cube texture can be used to achieve special ef
 
 ## Create
 
-```
+```typescript
 const cubeTextureResource = {
   type: AssetType.TextureCube,
   urls: [

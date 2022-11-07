@@ -16,19 +16,19 @@ At present, Oasis has been adapted to Alipay and Taobao miniprogram. This tutori
 
 Create with yarn
 
-```shell
+```bash
 yarn create @oasis-engine/oasis-app --template miniprogram
 ```
 
 Created with npm **6.x** version
 
-```
+```bash
 npm init @oasis-engine/oasis-app --template miniprogram
 ```
 
 Created with npm **7.x** version
 
-```shell
+```bash
 npm init @oasis-engine/oasis-app -- --template miniprogram
 ```
 
@@ -46,7 +46,7 @@ This tutorial assumes that you already have certain development capabilities. If
 
 1. Open `Terminal` in the project directory and install dependencies:
 
-```shell
+```bash
 # use npm
 npm install oasis-engine --save
 npm install @oasis-engine/miniprogram-adapter --save
@@ -122,7 +122,7 @@ Page({
 
 1. Import library
 
-```shell
+```bash
 npm install @oasis-engine-toolkit/controls -S
 ```
 

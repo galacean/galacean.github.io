@@ -119,7 +119,7 @@ renderer2ShaderData.setFloat("u_progross", 0.8);
 
 The code demo is as follows:
 
-```
+```glsl
 // shader
 
 uniform float u_float;
@@ -166,7 +166,7 @@ In addition to uniform variables, the engine also regards [macro definition](htt
 
 For example, these macros have been related to Shader:
 
-```
+```glsl
 #ifdef DISCARD
 	discard;
 #endif

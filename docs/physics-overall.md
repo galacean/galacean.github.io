@@ -24,7 +24,7 @@ engine backend implementations:
 
 Initialization only needs to bind the static objects of these two backends to `physicsManager`:
 
-```ts
+```typescript
 import {LitePhysics} from "@oasis-engine/physics-lite";
 
 const engine = new WebGLEngine("canvas");
@@ -36,7 +36,7 @@ engine.physicsManager.initialize(LitePhysics);
 Since WASM needs to be loaded asynchronously, the initialization of the engine needs to be done in the callback of
 Promise.
 
-```ts
+```typescript
 import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 PhysXPhysics.initialize().then(() => {
@@ -82,7 +82,7 @@ There are two debugging methods:
    It is also very easy to use, just mount the `WireframeManager` script, and then set it to associate various physical
    components, or directly associate nodes:
 
-```ts
+```typescript
 const wireframe = rootEntity.addComponent(WireframeManager);
 wireframe.addCollideWireframe(collider);
 ````
