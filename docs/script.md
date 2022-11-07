@@ -34,7 +34,7 @@ entity.addComponent(MyScript);
 
 Oasis provides users with a wealth of life cycle callback functions. As long as the user defines a specific callback function, Oasis will automatically execute related scripts in a specific period, and the user does not need to manually call them. The life cycle callback functions currently provided to users are as follows:
 
-![脚本生命周期-en](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*-PrCQ7FP2WsAAAAAAAAAAAAAARQnAQ)
+![脚本生命周期-en](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*BFg7QZuCAy4AAAAAAAAAAAAAARQnAQ)
 
 
 It is worth noting that only when **the entity is used as a camera**, that is, the camera component is added, [onBeginRender](${api}core/Script#onBeginRender) and [onEndRender](${api}core/Script #onEndRender) will be called.
