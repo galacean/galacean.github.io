@@ -104,10 +104,10 @@ function Header() {
         </Menu.ItemGroup>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.ecosystem.animation' })}>
           <Menu.Item key='spine'>
-            <Link to={`/docs/latest/zh-CN/editor-component-spine.zh-CN`}>Spine</Link>
+            <Link to={`/docs/latest/zh/editor-component-spine.zh-CN`}>Spine</Link>
           </Menu.Item>
           <Menu.Item key='lottie'>
-            <Link to={`/docs/latest/zh-CN/editor-lottie.zh-CN`}>Lottie</Link>
+            <Link to={`/docs/latest/zh/editor-lottie.zh-CN`}>Lottie</Link>
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>
