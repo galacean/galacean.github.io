@@ -3,8 +3,6 @@ import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'reac
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeSlug from 'rehype-slug';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import Playground from '../../Playground';
@@ -15,6 +13,7 @@ import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
 import { Link, useParams } from 'react-router-dom';
 import { AppContext } from '../../contextProvider';
+import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
@@ -90,7 +89,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
       </div>
       <ReactMarkdown
         remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
-        rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
+        // temporarily remove <a /> in toc
+        // rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
+        rehypePlugins={[toc, customeToc]}
         components={{
           a(param) {
             const linkHref = param.href;
