@@ -66,7 +66,7 @@ const ExampleSearchRes = (props: IExampleSearchResProps) => {
         <span
           style={{ cursor: 'pointer' }}
           onClick={() => {
-            navigate(`/examples/${data.filename.slice(0, -3)}`);
+            navigate(`/examples/${context.version}/${data.filename.slice(0, -3)}`);
           }}
         >
           {data.title}

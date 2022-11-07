@@ -41,6 +41,7 @@ export default function Examples() {
   }, [version]);
 
   useEffect(() => {
+    navigate(`/examples/${context.version}`);
     fetchMenuList('ts', context.version).then((list) => {
       const itemRes: ItemType[] = [];
       list
@@ -106,7 +107,7 @@ export default function Examples() {
       navigate(`/examples/${context.version}/${selectedExampleTitle}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedExampleId, items.length]);
+  }, [selectedExampleId, items.length, context.version]);
 
   // update selected items when url changes
   useEffect(() => {
@@ -119,7 +120,7 @@ export default function Examples() {
         break;
       }
     }
-  }, [exampleTitle]);
+  }, [exampleTitle, context.version]);
 
   // filter items
   useEffect(() => {
