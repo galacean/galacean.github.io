@@ -177,7 +177,6 @@ export default function Examples() {
                 <Playground id={selectedExampleId} title={exampleTitle} />
               </Content>
             </Layout>
-            <Footer></Footer>
           </>
         )}
       </Media>
