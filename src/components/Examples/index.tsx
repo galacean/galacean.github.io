@@ -126,7 +126,7 @@ export default function Examples() {
       items.forEach((group: any) => {
         let newGroup: any = Object.assign({}, group);
         newGroup.children = (group as any).children.filter((i: { label: string }) =>
-          i.label.includes(search)
+          i.label?.toLocaleLowerCase().includes(search?.toLocaleLowerCase())
         );
         filtered.push(newGroup);
       });
