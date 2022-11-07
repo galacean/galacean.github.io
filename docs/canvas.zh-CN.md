@@ -85,7 +85,7 @@ const canvas = document.getElementById('canvas');
 const webcanvas = new WebCanvas(canvas);
 const scale = 2 / 3; // 3 倍高清屏按 2 倍屏来计算画布尺寸
 
-webcanvas.resizeByClientSiz(scale); // 拉伸画布
+webcanvas.resizeByClientSize(scale); // 拉伸画布
 ```
 
 

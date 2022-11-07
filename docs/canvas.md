@@ -86,7 +86,7 @@ const canvas = document.getElementById('canvas');
 const webcanvas = new WebCanvas(canvas);
 const scale = 2 / 3; // 3x HD screen, calculate the canvas size by 2x screen
 
-webcanvas.resizeByClientSiz(scale); // Stretch the canvas
+webcanvas.resizeByClientSize(scale); // Stretch the canvas
 
 ### Fixed width mode
 
