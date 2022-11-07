@@ -2,6 +2,7 @@
  * @title Transparent Shadow
  * @category Light
  */
+import * as dat from "dat.gui";
 import {
   AmbientLight,
   AssetType,
@@ -15,18 +16,17 @@ import {
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
-  Renderer,
   Script,
   Shader,
-  ShadowCascadesMode,
   ShadowMode,
   ShadowResolution,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
-import * as dat from "dat.gui";
 
-Shader.create("transparent-shadow", `
+Shader.create(
+  "transparent-shadow",
+  `
 #include <common_vert>
 #include <blendShape_input>
 #include <uv_share>
@@ -44,7 +44,8 @@ void main() {
 
     #include <fog_vert>
 }
-`, `
+`,
+  `
 #include <common>
 #include <uv_share>
 #include <worldpos_share>
@@ -55,18 +56,17 @@ uniform vec4 u_baseColor;
 uniform float u_alphaCutoff;
 
 void main() {
-     float shadowAttenuation = 1.0;
-#ifdef OASIS_CALCULATE_SHADOWS
-    #ifdef CASCADED_SHADOW_MAP
-        shadowAttenuation *= sampleShadowMap();
+    float shadowAttenuation = 1.0;
+    #ifdef OASIS_CALCULATE_SHADOWS
+      shadowAttenuation *= sampleShadowMap();
     #endif
-#endif
 
     gl_FragColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
 
     #include <fog_frag>
 }
-`)
+`
+);
 
 class TransparentShadow extends BaseMaterial {
   /**
@@ -77,7 +77,9 @@ class TransparentShadow extends BaseMaterial {
   }
 
   set baseColor(value: Color) {
-    const baseColor = this.shaderData.getColor(TransparentShadow._baseColorProp);
+    const baseColor = this.shaderData.getColor(
+      TransparentShadow._baseColorProp
+    );
     if (value !== baseColor) {
       baseColor.copyFrom(value);
     }
@@ -86,7 +88,10 @@ class TransparentShadow extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("transparent-shadow"));
     this.isTransparent = true;
-    this.shaderData.setColor(TransparentShadow._baseColorProp, new Color(0, 0, 0, 1));
+    this.shaderData.setColor(
+      TransparentShadow._baseColorProp,
+      new Color(0, 0, 0, 1)
+    );
     this.shaderData.enableMacro("O3_NEED_WORLDPOS");
   }
 }
@@ -106,20 +111,19 @@ class Rotation extends Script {
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
-engine.settings.shadowResolution = ShadowResolution.VeryHigh;
-engine.settings.shadowCascades = ShadowCascadesMode.FourCascades;
-engine.settings.shadowMode = ShadowMode.SoftLow;
+
 const scene = engine.sceneManager.activeScene;
+scene.shadowResolution = ShadowResolution.High;
+scene.shadowMode = ShadowMode.SoftLow;
+scene.shadowDistance = 800;
 
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
 const cameraEntity = rootEntity.createChild("camera");
 cameraEntity.transform.setPosition(-140, 210, 1020);
-cameraEntity.transform.setRotation(0, -16, 0)
+cameraEntity.transform.setRotation(0, -16, 0);
 const camera = cameraEntity.addComponent(Camera);
-camera.enableFrustumCulling = false;
-camera.farClipPlane = 1000;
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
+camera.farClipPlane = 800;
 
 const transparentShadowMtl = new TransparentShadow(engine);
 transparentShadowMtl.baseColor.set(9 / 255, 8 / 255, 9 / 255, 1);
@@ -129,7 +133,6 @@ debugMtl.isTransparent = true;
 
 const planeEntity = rootEntity.createChild();
 const planeRenderer = planeEntity.addComponent(MeshRenderer);
-planeRenderer.receiveShadows = true;
 planeRenderer.mesh = PrimitiveMesh.createPlane(engine, 300, 2000);
 planeRenderer.setMaterial(transparentShadowMtl);
 
@@ -138,25 +141,23 @@ const light = rootEntity.createChild("light");
 light.transform.setPosition(-140, 1000, -1020);
 light.transform.lookAt(new Vector3(30, 0, 300));
 const directLight = light.addComponent(DirectLight);
-directLight.intensity = 1;
 directLight.enableShadow = true;
 directLight.shadowStrength = 0.75;
-directLight.shadowBias = 5;
 
 engine.resourceManager
   //@ts-ignore
   .load<[GLTFResource, AmbientLight, Texture2D]>([
     {
       url: "https://gw.alipayobjects.com/os/bmw-prod/93196534-bab3-4559-ae9f-bcb3e36a6419.glb",
-      type: AssetType.Prefab
+      type: AssetType.Prefab,
     },
     {
       url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
-      type: AssetType.Env
+      type: AssetType.Env,
     },
     {
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*X0IjQ5E1OUEAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
   ])
   .then(([gltf, ambientLight, background]) => {
@@ -165,13 +166,6 @@ engine.resourceManager
     character.transform.setScale(20, 20, 20);
     character.transform.setPosition(100, 0, 300);
     character.addChild(gltf.defaultSceneRoot);
-    const renderers: Renderer[] = []
-    gltf.defaultSceneRoot.getComponentsIncludeChildren(Renderer, renderers);
-    for (let i = 0; i < renderers.length; i++) {
-      const renderer = renderers[i];
-      renderer.castShadows = true;
-      renderer.receiveShadows = true;
-    }
 
     scene.background.mode = BackgroundMode.Texture;
     scene.background.texture = background;
@@ -185,7 +179,7 @@ engine.resourceManager
 function openDebug() {
   const info = {
     debug: false,
-  }
+  };
 
   gui.add(info, "debug").onChange((v) => {
     if (v) {

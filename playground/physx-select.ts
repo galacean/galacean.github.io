@@ -102,7 +102,6 @@ function addPlane(
   planeEntity.layer = Layer.Layer1;
 
   const renderer = planeEntity.addComponent(MeshRenderer);
-  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createPlane(rootEntity.engine, size.x, size.y);
   renderer.setMaterial(mtl);
   planeEntity.transform.position = position;
@@ -143,8 +142,6 @@ function addVerticalBox(
     false
   );
   boxRenderer.setMaterial(boxMtl);
-  boxRenderer.receiveShadows = true;
-  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(0.5, 0.33, 2);
@@ -190,8 +187,6 @@ function addHorizontalBox(
     0.5
   );
   boxRenderer.setMaterial(boxMtl);
-  boxRenderer.receiveShadows = true;
-  boxRenderer.castShadows = true;
 
   const physicsBox = new BoxColliderShape();
   physicsBox.size = new Vector3(2, 0.33, 0.5);
@@ -293,6 +288,7 @@ PhysXPhysics.initialize().then(() => {
   const invCanvasWidth = 1 / engine.canvas.width;
   const invCanvasHeight = 1 / engine.canvas.height;
   const scene = engine.sceneManager.activeScene;
+  scene.shadowDistance = 20;
   const rootEntity = scene.createRootEntity("root");
 
   scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
@@ -317,9 +313,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(0, 5, 8);
   light.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
   const directLight = light.addComponent(DirectLight);
-  directLight.intensity = 1;
   directLight.enableShadow = true;
-  directLight.shadowStrength = 1;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
 
