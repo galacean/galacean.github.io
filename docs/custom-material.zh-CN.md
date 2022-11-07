@@ -106,7 +106,7 @@ renderer2ShaderData.setFloat("u_progross",0.8);
 shader 中变量的类型和调用的接口对应关系如下:
 
 | shader 类型 | ShaderData API |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | `bool` 、 `int`  | setInt( value: number ) |
 | `float` | setFloat( value: number )` |
 | `bvec2`、`ivec2`、`vec2` | setVector2( value:Vector2 ) |
