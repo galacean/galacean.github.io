@@ -8,7 +8,7 @@ import remarkGfm from 'remark-gfm';
 import Playground from '../../Playground';
 import linkPlugin from '../plugins/link';
 import playgroundPlugin from '../plugins/playground';
-
+import rehypeRaw from 'rehype-raw';
 import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
 import { Link, useParams } from 'react-router-dom';
@@ -91,7 +91,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
         // temporarily remove <a /> in toc
         // rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
-        rehypePlugins={[toc, customeToc]}
+        rehypePlugins={[toc, customeToc, rehypeRaw]}
+        skipHtml={false}
         components={{
           a(param) {
             const linkHref = param.href;

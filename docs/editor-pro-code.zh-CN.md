@@ -23,7 +23,7 @@ label: 编辑器/发布
 
 只拉取场景文件：
 
-```shell
+```bash
 tnpm run pull
 ```
 
@@ -33,6 +33,6 @@ tnpm run pull
 
 同步所有脚本文件：
 
-```shell
+```bash
 tnpm run push:script
 ```

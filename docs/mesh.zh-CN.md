@@ -17,7 +17,7 @@ Mesh 是 MeshRenderer 的数据对象，它的职责可以类比为市面上较�
 
 ## 使用
 
-```TypeScript
+```typescript
 const meshRenderer = entity.addComponent(MeshRenderer);
 meshRenderer.mesh = new ModelMesh(engine);
 // or

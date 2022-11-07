@@ -10,7 +10,7 @@ label: Graphics/Renderer
 
 ## 使用
 
-``` TypeScript
+```typescript
 let cubeEntity = rootEntity.createChild('cube');
 let cube = cubeEntity.addComponent(MeshRenderer);
 cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);

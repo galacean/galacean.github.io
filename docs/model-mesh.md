@@ -14,7 +14,7 @@ label: Graphics/Mesh
 
 ### Code example
 
-```TypeScript
+```typescript
 const entity = rootEntity.createChild('mesh-example');
 const meshRenderer = entity.addComponent(MeshRenderer);
 
@@ -49,7 +49,7 @@ The use of `ModelMesh` is divided into three steps:
 
 Set vertex data by `setPositions()`, `setColors()` and other methods
 
-```TypeScript
+```typescript
 modelMesh.setPositions([
   new Vector3(-1.0, -1.0,  1.0),
   new Vector3( 1.0, -1.0,  1.0),
@@ -88,7 +88,7 @@ It can be set selectively according to needs (note that location is necessary da
 
 [SubMesh](${api}core/SubMesh) mainly contains information such as drawing range and drawing method. Call [addSubMesh](${api}core/ModelMesh#addSubMesh) to add.
 
-```TypeScript
+```typescript
 modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 ```
 
@@ -98,13 +98,13 @@ Call the [uploadData()](${api}core/ModelMesh#uploadData) method.
 
 If you no longer need to modify the `ModelMesh` data, set the `noLongerAccessible` parameter to `true`:
 
-```TypeScript
+```typescript
 modelMesh.uploadData(true);
 ```
 
 If you need to continuously modify the `ModelMesh` data, set the `noLongerAccessible` parameter to `false`:
 
-```TypeScript
+```typescript
 modelMesh.uploadData(false);
 ```
 
