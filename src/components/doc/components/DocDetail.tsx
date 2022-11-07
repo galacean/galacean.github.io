@@ -1,16 +1,8 @@
 import toc from '@jsdevtools/rehype-toc';
-import {
-  PropsWithChildren,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeSlug from 'rehype-slug';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import Playground from '../../Playground';
@@ -21,6 +13,7 @@ import moment from 'moment';
 import { FormattedMessage } from 'react-intl';
 import { Link, useParams } from 'react-router-dom';
 import { AppContext } from '../../contextProvider';
+import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
@@ -95,13 +88,10 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         {moment(docData.gmtModified).format('YYYY-MM-DD HH:mm:SS')}
       </div>
       <ReactMarkdown
-        remarkPlugins={[
-          playgroundPlugin,
-          linkPlugin,
-          remarkGfm,
-          remarkFrontmatter,
-        ]}
-        rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc, rehypeRaw]}
+        remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
+        // temporarily remove <a /> in toc
+        // rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
+        rehypePlugins={[toc, customeToc, rehypeRaw]}
         skipHtml={false}
         components={{
           a(param) {
@@ -109,30 +99,19 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             const title = param.children[0];
 
             // for links within the SPA: need to use <Link /> to properly handle routing.
-            if (
-              typeof linkHref === 'string' &&
-              linkHref.startsWith('/#/docs/')
-            ) {
+            if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
               return (
                 <Link
-                  to={`/docs/${lang}/${linkHref.replace('/#/docs/', '')}${
-                    lang === 'zh-CN' && !linkHref.endsWith('.zh-CN')
-                      ? '.zh-CN'
-                      : ''
+                  to={`/docs/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${
+                    lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''
                   }`}
                 >
                   {title}
                 </Link>
               );
-            } else if (
-              typeof linkHref === 'string' &&
-              linkHref.startsWith('/#/examples/')
-            ) {
+            } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/examples/')) {
               return <Link to={`${linkHref.replace('/#', '')}`}>{title}</Link>;
-            } else if (
-              typeof linkHref === 'string' &&
-              linkHref.startsWith('/#/api/')
-            ) {
+            } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/api/')) {
               return <Link to={`${linkHref.replace('/#', '')}`}>{title}</Link>;
             }
             // for links to other websites: use <a />
@@ -146,9 +125,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           nav: DocToc,
           blockquote({ className, src }: any) {
             if (className === 'playground-in-doc') {
-              return (
-                <Playground id={getIdByTitle(src) || ''} title={docTitle} />
-              );
+              return <Playground id={getIdByTitle(src) || ''} title={docTitle} />;
             }
             return null;
           },
