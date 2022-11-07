@@ -24,7 +24,7 @@ constraint (the physical constraint component is mounted on this node), and the 
 constraint is mounted or another dynamic collider (via component configuration).
 Therefore, these components are used in a similar way, taking the fixed constraint component `FixedJoint` as an example:
 
-```ts
+```typescript
 const fixedJoint = currentEntity.addComponent(FixedJoint);
 fixedJoint.connectedCollider = prevCollider;
 ````

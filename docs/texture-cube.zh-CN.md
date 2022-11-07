@@ -20,7 +20,7 @@ label: Graphics/Texture
 
 ## 创建
 
-```
+```typescript
 const cubeTextureResource = {
   type: AssetType.TextureCube,
   urls: [

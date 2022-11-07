@@ -29,7 +29,7 @@ label: 编辑器/发布
 ### 调试
 下载完成成，解压 zip 文件夹，在**工程目录下**内执行：
 
-```shell
+```bash
 tnpm install
 tnpm run dev
 ```

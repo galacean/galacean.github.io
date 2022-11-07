@@ -11,7 +11,7 @@ label: Physics
 
 物理场景和渲染场景相互独立，但在程序运行过程中不断同步各自的数据。因此，和脚本一样，同步的时序也非常重要。一般来说，物理场景的更新频率和渲染场景不同，在物理管理器中可以对其进行设置：
 
-```ts
+```typescript
 /** The fixed time step in seconds at which physics are performed. */
 fixedTimeStep: number = 1 / 60;
 
@@ -27,7 +27,7 @@ maxSumTimeStep: number = 1 / 3;
 如果不满一个 `fixedTimeStep`，则顺延到下一帧再处理。因此，每一个渲染帧，物理场景可能会更新多次，也可能只更新一次，因此对于有关物理组件更新，都需要放在特定的更新函数，`Script`
 提供了这一接口：
 
-```ts
+```typescript
 export class Script extends Component {
   /**
    * Called before physics calculations, the number of times is related to the physical update frequency.
