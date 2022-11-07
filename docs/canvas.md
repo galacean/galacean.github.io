@@ -87,8 +87,8 @@ const webcanvas = new WebCanvas(canvas);
 const scale = 2 / 3; // 3x HD screen, calculate the canvas size by 2x screen
 
 webcanvas.resizeByClientSize(scale); // Stretch the canvas
-
 ```
+
 ### Fixed width mode
 
 In some cases, such as when the design layout has a fixed width of 750, developers can hard code the canvas width to reduce the cost of adaptation.
