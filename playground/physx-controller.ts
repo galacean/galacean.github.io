@@ -36,6 +36,7 @@ import {
   Renderer,
   RenderFace,
   Script,
+  ShadowType,
   SkyBoxMaterial,
   StaticCollider,
   TextRenderer,
@@ -487,7 +488,7 @@ PhysXPhysics.initialize().then(() => {
   lightNode.transform.setPosition(8, 10, 10);
   lightNode.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = lightNode.addComponent(DirectLight);
-  directLight.enableShadow = true;
+  directLight.shadowType = ShadowType.SoftLow;
 
   const entity = cameraEntity.createChild("text");
   entity.transform.position = new Vector3(0, 3.5, -10);

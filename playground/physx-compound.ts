@@ -19,6 +19,7 @@ import {
   PrimitiveMesh,
   Quaternion,
   Script,
+  ShadowType,
   StaticCollider,
   Vector2,
   Vector3,
@@ -176,7 +177,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(-0.3, 1, 0.4);
   light.transform.lookAt(new Vector3(0, 0, 0));
   const directLight = light.addComponent(DirectLight);
-  directLight.enableShadow = true;
+  directLight.shadowType = ShadowType.SoftLow;
 
   addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
   rootEntity.addComponent(TableGenerator);

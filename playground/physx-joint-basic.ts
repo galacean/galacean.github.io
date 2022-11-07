@@ -23,6 +23,7 @@ import {
   Quaternion,
   Ray,
   Script,
+  ShadowType,
   SphereColliderShape,
   SpringJoint,
   TextRenderer,
@@ -190,7 +191,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(-10, 10, 10);
   light.transform.lookAt(new Vector3());
   const directLight = light.addComponent(DirectLight);
-  directLight.enableShadow = true;
+  directLight.shadowType = ShadowType.SoftLow;
 
   engine.resourceManager
     .load<AmbientLight>({
