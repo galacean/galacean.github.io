@@ -7,7 +7,7 @@ interface AppContext {
   setVersion: Function;
 }
 
-const defaultValue: AppContext = { lang: 'zh-CN', version: '0.8', setLang: () => {}, setVersion: () => {} };
+const defaultValue: AppContext = { lang: 'zh-CN', version: 'latest', setLang: () => {}, setVersion: () => {} };
 export const AppContext = createContext<AppContext>(defaultValue);
 AppContext.displayName = 'AppContext';
 

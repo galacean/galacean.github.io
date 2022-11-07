@@ -11,7 +11,16 @@ import Home from './components/home';
 
 export const router = createHashRouter([
   {
-    path: '/docs/:lang',
+    path: '/docs/:ver/:lang/:docTitle',
+    element: (
+      <>
+        <Header></Header>
+        <Doc></Doc>
+      </>
+    ),
+  },
+  {
+    path: '/docs/:ver/:lang',
     element: (
       <>
         <Header></Header>
@@ -21,14 +30,6 @@ export const router = createHashRouter([
   },
   {
     path: '/example/:exampleId',
-    element: (
-      <>
-        <Example />
-      </>
-    ),
-  },
-  {
-    path: '/example',
     element: (
       <>
         <Example />
@@ -52,16 +53,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/docs/:lang/:docTitle',
-    element: (
-      <>
-        <Header></Header>
-        <Doc></Doc>
-      </>
-    ),
-  },
-  {
-    path: '/api/:pkg/:item',
+    path: '/api/:ver/:pkg/:item',
     element: (
       <>
         <Header></Header>
@@ -77,7 +69,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/api/:pkg/',
+    path: '/api/:ver/:pkg/',
     element: (
       <>
         <Header></Header>
@@ -86,7 +78,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/api',
+    path: '/api/:ver',
     element: (
       <>
         <Header></Header>

@@ -1,8 +1,9 @@
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Breadcrumb, Layout, Popover } from 'antd';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { AppContext } from '../contextProvider';
 import LoadingIcon from '../Loading';
 import Menu from './components/Menu';
 import Module from './components/Module';
@@ -16,7 +17,6 @@ import {
   PkgChildDetail,
 } from './util/apiUtil';
 
-const pkgListRes = fetchPkgList();
 const { Sider, Content } = Layout;
 
 const Api = () => {
@@ -26,7 +26,8 @@ const Api = () => {
   const [selectedPkg, setSelectedPkg] = useState('');
   const [selectedItem, setSelectedItem] = useState<number>();
   const navigate = useNavigate();
-  const { pkg, item } = useParams();
+  const { ver, pkg, item } = useParams();
+  const { version } = useContext(AppContext);
 
   const pkgSet = new Set<string>();
   pkgChildren.forEach((item) => {
@@ -37,7 +38,7 @@ const Api = () => {
 
   // page init: get package list; set selected package
   useEffect(() => {
-    pkgListRes.then((res) => {
+    fetchPkgList(version).then((res) => {
       if (res?.length === 0) {
         return;
       }
@@ -58,15 +59,15 @@ const Api = () => {
     if (pkgList.length === 0) {
       return;
     }
-    fetchPkgChildren(selectedPkg).then((res) => {
+    fetchPkgChildren(selectedPkg, version).then((res) => {
       setPkgChildren(res);
       const chosenItem = res.find((i) => i.name === item);
       if (item && chosenItem) {
         setSelectedItem(chosenItem.id);
-        navigate(`/api/${selectedPkg}/${item}`);
+        navigate(`/api/${version}/${selectedPkg}/${item}`);
       } else {
         setSelectedItem(undefined);
-        navigate(`/api/${selectedPkg}`);
+        navigate(`/api/${version}/${selectedPkg}`);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -77,11 +78,11 @@ const Api = () => {
     if (pkgChildren.length === 0) {
       return;
     }
-    fetchPkgChildrenDetail(selectedPkg, selectedItem).then((res) => {
+    fetchPkgChildrenDetail(selectedPkg, selectedItem, version).then((res) => {
       setChildrenDetail(res);
     });
     navigate(
-      `/api/${selectedPkg}${
+      `/api/${ver}/${selectedPkg}${
         selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
       }`
     );

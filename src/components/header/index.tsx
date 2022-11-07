@@ -45,10 +45,12 @@ function Header() {
       <Menu.SubMenu key='docs' icon={<ReadOutlined />} title={formatMessage({ id: 'app.header.menu.docs' })}>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.engine' })}>
           <Menu.Item key='engine-docs'>
-            <Link to={`/docs/${context.lang}`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
+            <Link to={`/docs/${context.version}/${context.lang}`}>
+              {formatMessage({ id: 'app.header.menu.engine.docs' })}
+            </Link>
           </Menu.Item>
           <Menu.Item key='api'>
-            <Link to={`/api`}>API</Link>
+            <Link to={`/api/${context.version}`}>API</Link>
           </Menu.Item>
         </Menu.ItemGroup>
         <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.artist' })}>

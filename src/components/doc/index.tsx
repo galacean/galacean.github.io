@@ -15,7 +15,7 @@ function Doc() {
   const context = useContext(AppContext);
   const [selectedDocId, setSelectedDocId] = useState('');
   const [items, setItems] = useState<ItemType[]>([]);
-  const { docTitle, lang } = useParams();
+  const { ver, docTitle, lang } = useParams();
   const languageCode = lang === 'en' ? 'en' : 'zh-CN';
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
@@ -23,13 +23,18 @@ function Doc() {
   useEffect(() => {
     const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
     navigate(
-      `/docs/${context.lang === 'en' ? 'en' : 'zh'}/${context.lang === 'en'
-        ? currentSelectedDocTitle?.replace('.zh-CN', '')
-        : currentSelectedDocTitle + '.zh-CN'
+      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'zh'}/${
+        context.lang === 'en'
+          ? currentSelectedDocTitle?.replace('.zh-CN', '')
+          : currentSelectedDocTitle + '.zh-CN'
       }`
     );
     setItems([]);
-  }, [context.lang]);
+  }, [context.lang, context.version]);
+
+  useEffect(() => {
+    context.setVersion(ver);
+  }, [ver]);
 
   useEffect(() => {
     menuKeyTitleMapRef.current.clear();
@@ -88,7 +93,8 @@ function Doc() {
         if (defaultSelectedDocId) {
           setSelectedDocId(defaultSelectedDocId);
           const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
-          selectedDocTitle && navigate(`/docs/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
+          selectedDocTitle &&
+            navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
         }
       }
       setItems(itemRes);
@@ -104,12 +110,12 @@ function Doc() {
       return;
     }
     if (!docTitle && selectedDocId) {
-      navigate(`/docs/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
+      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
       return;
     }
     if (docTitle && docTitle !== selectedDocTitle) {
       setSelectedDocId(selectedDocId);
-      navigate(`/docs/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
+      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
     }
   }, [selectedDocId, items.length]);
 
@@ -147,9 +153,7 @@ function Doc() {
         ) : (
           <Row>
             <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24} className='main-menu'>
-              <Affix style={{ maxHeight: "100vh", overflow: "auto" }}>
-                {menu}
-              </Affix>
+              <Affix style={{ maxHeight: '100vh', overflow: 'auto' }}>{menu}</Affix>
             </Col>
             <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24}>
               {docDetail}
