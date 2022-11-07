@@ -1,4 +1,3 @@
-import { fetchData } from '@alipay/h5data';
 // matchMedia polyfill for
 // https://github.com/WickyNilliams/enquire.js/issues/82
 
@@ -108,17 +107,12 @@ export function getEnv() {
   return Env.prod;
 }
 
-const cache = {};
-
-async function getH5Data(path) {
-  let env = getEnv();
-  if (env === Env.local) {
-    env = Env.dev;
-  }
+const cache: any = {};
+async function getH5Data(path: string) {
   if (!cache[path]) {
-    const data = await fetchData(path, {
-      env: 'prod',
-    });
+    const data = await fetch(
+      'https://render.alipay.com/p/h5data/oasis-version_site-doc-versions-h5data.json'
+    ).then((res) => res.json());
     cache[path] = data;
   }
   return cache[path];

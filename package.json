@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@alipay/h5data": "^2.0.6",
     "@ant-design/icons": "^4.7.0",
     "@babel/core": "^7.16.0",
     "@babel/standalone": "^7.19.3",
