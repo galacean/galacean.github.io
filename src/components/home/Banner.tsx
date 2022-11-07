@@ -30,7 +30,7 @@ function Banner() {
             </a>
           </div>
           <div className='home-button-wrapper'>
-            <Link to={`/docs/${context.lang}`}>
+            <Link to={`/docs/latest/${context.lang}`}>
               <Button type='primary'>
                 <FormattedMessage id='app.home.start' />
                 <ArrowRightOutlined style={{ marginLeft: "5px" }} />
