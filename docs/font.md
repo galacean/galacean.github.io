@@ -21,8 +21,5 @@ const font = Font.createFromOS(engine, "Arial");
 
 ## Custom Font usage，support format: ttf/otf/woff
 ```typescript
-const font = await engine.resourceManager.load({
-  url: "https://gw.alipayobjects.com/os/bmw-prod/109b0cd8-8762-4919-bb0c-ed969d6144c9.ttf",
-  type: AssetType.SourceFont
-});
+const font = await engine.resourceManager.load({url: "https://lg-2fw0hhsc-1256786476.cos.ap-shanghai.myqcloud.com/Avelia.otf"});
 ```
