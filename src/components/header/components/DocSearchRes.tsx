@@ -66,7 +66,7 @@ const DocSearchRes = (props: IDocSearchResProps) => {
         <span
           style={{ cursor: 'pointer' }}
           onClick={() => {
-            navigate(`/docs/${context.lang}/${data.filename.slice(0, -3)}`);
+            navigate(`/docs/${context.version}/${context.lang}/${data.filename.slice(0, -3)}`);
           }}
         >
           {data.title}
