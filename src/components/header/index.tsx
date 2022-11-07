@@ -63,7 +63,7 @@ function Header() {
         {isZhCN && (
           <Menu.ItemGroup title={formatMessage({ id: 'app.header.menu.editor' })}>
             <Menu.Item key='editor-docs'>
-              <Link to={'/docs/latest/zh-CN/editor.zh-CN'}>
+              <Link to={'/docs/latest/zh/editor.zh-CN'}>
                 {formatMessage({ id: 'app.header.menu.editor.docs' })}
               </Link>
             </Menu.Item>
