@@ -38,6 +38,10 @@ const Api = () => {
 
   // page init: get package list; set selected package
   useEffect(() => {
+    setSelectedItem(undefined);
+    setPkgChildren([]);
+    setChildrenDetail(null);
+    setPkgList([]);
     navigate(
       `/api/${version}/${selectedPkg}${
         selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''

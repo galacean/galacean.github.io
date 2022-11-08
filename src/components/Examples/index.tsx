@@ -41,6 +41,10 @@ export default function Examples() {
   }, [version]);
 
   useEffect(() => {
+    setSelectedExampleId('');
+    setItems([]);
+    setFilteredItems([]);
+    menuKeyTitleMapRef.current.clear();
     navigate(`/examples/${context.version}`);
     fetchMenuList('ts', context.version).then((list) => {
       const itemRes: ItemType[] = [];
@@ -69,22 +73,20 @@ export default function Examples() {
           }
           itemRes.push(newRootMenu);
         });
-      if (!selectedExampleId) {
-        // init routing from path params
-        if (exampleTitle) {
-          for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
-            if (value === exampleTitle) {
-              setSelectedExampleId(key);
-              break;
-            }
+      // init routing from path params
+      if (exampleTitle && Array.from(menuKeyTitleMapRef.current.values()).includes(exampleTitle)) {
+        for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
+          if (value === exampleTitle) {
+            setSelectedExampleId(key);
+            break;
           }
-          // init routing by default first doc
-        } else {
-          const defaultSelectedDocId =
-            (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0].key;
-          if (defaultSelectedDocId) {
-            setSelectedExampleId(defaultSelectedDocId);
-          }
+        }
+        // init routing by default first doc
+      } else {
+        const defaultSelectedDocId =
+          (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0].key;
+        if (defaultSelectedDocId) {
+          setSelectedExampleId(defaultSelectedDocId);
         }
       }
       setItems(itemRes);

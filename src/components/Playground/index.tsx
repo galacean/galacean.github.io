@@ -23,8 +23,8 @@ export default function Playground(props: IPlayground) {
   const url = `/#/example/${props.id}`;
   const iframe = createRef<HTMLIFrameElement>();
 
-  const fetchCode = async () => {
-    const res = await fetchDocDataById(props.id);
+  const fetchCode = async (id: string) => {
+    const res = await fetchDocDataById(id);
 
     const code = Prism.highlight(res?.content || '', Prism.languages.javascript, 'javascript');
     setCode(code);
@@ -32,7 +32,8 @@ export default function Playground(props: IPlayground) {
   };
 
   useEffect(() => {
-    fetchCode();
+    if (!props.id) return;
+    fetchCode(props.id);
 
     // fix: iframe not reload when url hash changes
     iframe.current?.contentWindow?.location.reload();
@@ -49,7 +50,7 @@ export default function Playground(props: IPlayground) {
     fetchDependencies();
   }, [version]);
 
-  if (!packages) return null;
+  if (!packages || !props.id) return null;
 
   return (
     <div className='code-box'>
