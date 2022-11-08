@@ -76,7 +76,7 @@ export default function Playground(props: IPlayground) {
           packages={packages}
         />
       )}
-      {url && <DemoActions url={window.location.protocol + window.location.hostname + url} />}
+      {url && <DemoActions url={url} />}
     </div>
   );
 }
