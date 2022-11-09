@@ -1,6 +1,6 @@
 import * as Babel from '@babel/standalone';
 import { Spin } from 'antd';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'regenerator-runtime/runtime';
 import { fetchEngineDataConfig } from '../../utils';
@@ -31,28 +31,29 @@ const useScript = async (libs: any) => {
     return promise;
   };
 
-  addLib(libs['oasis-engine']).then(() => {
-    Object.keys(libs).forEach((name) => {
-      if (name !== 'oasis-engine') {
-        const lib = libs[name];
-        let promise;
+  await addLib(libs['oasis-engine']);
 
-        // child packages
-        if (lib.packages) {
-          const childPromises = [];
-          for (const name in lib.packages) {
-            childPromises.push(addLib(lib.packages[name]));
-          }
-          promise = Promise.all(childPromises).then(() => addLib(lib));
-        } else {
-          promise = addLib(lib);
+  Object.keys(libs).forEach((name) => {
+    if (name !== 'oasis-engine') {
+      const lib = libs[name];
+      let promise;
+
+      // child packages
+      if (lib.packages) {
+        const childPromises = [];
+        for (const name in lib.packages) {
+          childPromises.push(addLib(lib.packages[name]));
         }
-
-        promises.push(promise);
+        promise = Promise.all(childPromises).then(() => addLib(lib));
+      } else {
+        promise = addLib(lib);
       }
-    });
 
+      promises.push(promise);
+    }
   });
+
+  await Promise.all(promises);
 
   return () => {
     scripts.forEach((script) => {
@@ -154,8 +155,8 @@ export default function Example() {
     }
   }, []);
 
-  return <div style={{ width: '100vw', height: '100vh'}}>
-    {loading && <Spin style={{position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}/>}
+  return <div style={{ width: '100vw', height: '100vh' }}>
+    {loading && <Spin style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />}
     <canvas id='canvas' style={{ width: '100%', height: '100%' }} />;
   </div>
 }
