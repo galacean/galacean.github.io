@@ -39,12 +39,11 @@ attribute vec3 POSITION;
 attribute vec2 TEXCOORD_0;
 varying vec2 v_uv;
 
-uniform mat4 u_mvpNoscale;
+uniform mat4 u_VPMat;
 
 void main() {
     v_uv = TEXCOORD_0;
-    gl_Position = u_mvpNoscale * vec4( POSITION, 1.0 );
-    gl_Position.z = gl_Position.w;
+    gl_Position = u_VPMat * vec4( POSITION, 1.0 );
 }
   `,
   `
