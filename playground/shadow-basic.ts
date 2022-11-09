@@ -34,7 +34,7 @@ cameraEntity.addComponent(FreeControl).floorMock = false;
 
 // Create light entity and component
 const lightEntity = rootEntity.createChild("light");
-lightEntity.transform.setPosition(0.5, 1, 0);
+lightEntity.transform.setPosition(0.5, 0.9, 0);
 lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 const directLight = lightEntity.addComponent(DirectLight);
 
