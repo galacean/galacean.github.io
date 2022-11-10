@@ -1,4 +1,3 @@
-import * as Babel from '@babel/standalone';
 import { Spin } from 'antd';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -64,10 +63,12 @@ const useScript = async (libs: any) => {
 
 type PackageGlobals = Record<string, string>;
 
-const transformTsToJs = (ts: string, packageGlobals: PackageGlobals) => {
+const transformTsToJs = async (ts: string, packageGlobals: PackageGlobals) => {
   if (!ts) {
     return '';
   }
+
+  const Babel = await import('@babel/standalone');
 
   var output = Babel.transform(ts, {
     presets: [
@@ -135,8 +136,8 @@ export default function Example() {
       await useScript(packages);
 
       if (exampleId) {
-        fetchDocDataById(exampleId).then((res) => {
-          const code = transformTsToJs(res?.content || '', packageGlobals);
+        fetchDocDataById(exampleId).then(async(res) => {
+          const code = await transformTsToJs(res?.content || '', packageGlobals);
           if (code) {
             script = document.createElement('script');
             script.text = code;
