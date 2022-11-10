@@ -5,6 +5,7 @@ import 'regenerator-runtime/runtime';
 import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
+import * as Babel from '@babel/standalone';
 
 const useScript = async (libs: any) => {
   const promises: Promise<any>[] = [];
@@ -67,8 +68,6 @@ const transformTsToJs = async (ts: string, packageGlobals: PackageGlobals) => {
   if (!ts) {
     return '';
   }
-
-  const Babel = await import('@babel/standalone');
 
   var output = Babel.transform(ts, {
     presets: [
