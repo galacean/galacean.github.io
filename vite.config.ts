@@ -18,6 +18,8 @@ function replaceCDN() {
       fs.writeFileSync(entryHTML, text, {
         encoding: 'utf8'
       });
+
+      fs.copyFileSync('CNAME', 'dist/CNAME')
     }
   }
 }

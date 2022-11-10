@@ -17,6 +17,10 @@ yarn playground
 ```bash
 $ yarn build
 ```
+## Deploy
+```bash
+$ yarn deploy
+```
 
 ## Q&A
 #### How to insert a playground in markdown
