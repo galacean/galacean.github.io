@@ -137,7 +137,7 @@ export default function Example() {
 
       if (exampleId) {
         fetchDocDataById(exampleId).then(async(res) => {
-          const code = await transformTsToJs(res?.content || '', packageGlobals);
+          const code = await transformTsToJs(res?.content ?? '', packageGlobals);
           if (code) {
             script = document.createElement('script');
             script.text = code;
