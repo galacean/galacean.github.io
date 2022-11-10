@@ -1,8 +1,7 @@
 import toc from '@jsdevtools/rehype-toc';
 import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
+import Prism from 'prismjs';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
 import Playground from '../../Playground';
@@ -102,9 +101,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
               return (
                 <Link
-                  to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${
-                    lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''
-                  }`}
+                  to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''}`}
                 >
                   {title}
                 </Link>
@@ -132,12 +129,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           code({ node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
-              <SyntaxHighlighter
-                style={prism as any}
-                children={String(children).replace(/\n$/, '')}
-                language={match[1]}
-                PreTag='div'
-                {...props}
+              <code dangerouslySetInnerHTML={{
+                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+                }}
               />
             ) : (
               <code className={className} {...props}>

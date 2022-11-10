@@ -13,7 +13,16 @@ export default ({ mode }) => {
       "process.env.NODE_ENV": `"${mode}"`,
     },
     build: {
-      emptyOutDir: true
+      emptyOutDir: true,
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            antd: ['antd'],
+            'oasis-engine': ['oasis-engine'],
+            '@oasis-engine/spine': ['@oasis-engine/spine'],
+          }
+        }
+      }
     }
   })
 }
