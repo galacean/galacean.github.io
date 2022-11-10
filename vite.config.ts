@@ -47,6 +47,9 @@ export default ({ mode }) => {
             'oasis-engine': ['oasis-engine'],
             '@oasis-engine/spine': ['@oasis-engine/spine'],
             '@babel/standalone': ['@babel/standalone']
+          },
+          chunkFileNames() {
+            return 'assets/modules/[name]-[hash].js'
           }
         },
       }
