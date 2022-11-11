@@ -13,12 +13,9 @@ $ yarn dev
 ```bash
 yarn playground
 ```
-## Build
-```bash
-$ yarn build
-```
 ## Deploy
 ```bash
+$ yarn build
 $ yarn deploy
 ```
 
