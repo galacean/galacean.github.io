@@ -51,7 +51,7 @@ Pointer represents each independent cursor instance. By calling the relevant met
 | [button](${api}core/Pointer#button)             | Returns the pointer button that trigger this state, such as primary, secondary, auxiliary, etc.   |
 | [pressedButtons](${api}core/Pointer#pressedButtons) | Returns the buttons that the pointer is holding down at the moment |
 | [deltaPosition](${api}core/Pointer#deltaPosition)         | Returns the difference between the pointer movement in this frame   |
-| [pointerPosition](${api}core/Pointer#pointerPosition)             | Returns the position of the pointer in this frame   |
+| [position](${api}core/Pointer#position)             | Returns the position of the pointer in this frame   |
 
 The following example:
 - The leftmost cube adds responses to Enter and Exit, and when the mouse moves to the top, it will trigger its color change.
