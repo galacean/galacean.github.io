@@ -25,7 +25,6 @@ const Api = () => {
   const [childrenDetail, setChildrenDetail] = useState<PkgChildDetail | null>(null);
   const [selectedPkg, setSelectedPkg] = useState('');
   const [selectedItem, setSelectedItem] = useState<number>();
-  const navigate = useNavigate();
   const { ver, pkg, item } = useParams();
   const { version, setVersion } = useContext(AppContext);
 
@@ -42,11 +41,7 @@ const Api = () => {
     setPkgChildren([]);
     setChildrenDetail(null);
     setPkgList([]);
-    navigate(
-      `/api/${version}/${selectedPkg}${
-        selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
-      }`
-    );
+
     fetchPkgList(version).then((res) => {
       if (res?.length === 0) {
         return;
@@ -73,10 +68,8 @@ const Api = () => {
       const chosenItem = res.find((i) => i.name === item);
       if (item && chosenItem) {
         setSelectedItem(chosenItem.id);
-        navigate(`/api/${version}/${selectedPkg}/${item}`);
       } else {
         setSelectedItem(undefined);
-        navigate(`/api/${version}/${selectedPkg}`);
       }
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -90,11 +83,7 @@ const Api = () => {
     fetchPkgChildrenDetail(selectedPkg, selectedItem, version).then((res) => {
       setChildrenDetail(res);
     });
-    navigate(
-      `/api/${version}/${selectedPkg}${
-        selectedItem ? '/' + pkgChildren.find((child) => child.id === selectedItem)?.name : ''
-      }`
-    );
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedItem, version]);
 

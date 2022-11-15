@@ -107,9 +107,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
                 </Link>
               );
             } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/examples/')) {
-              return <Link to={`${linkHref.replace('/#/examples/', `/examples/${version}/`)}`}>{title}</Link>;
+              return <Link to={linkHref.replace('/#/examples/', `/examples/${version}/`)}>{title}</Link>;
             } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/api/')) {
-              return <Link to={`${linkHref.replace('/#/api/', `/api/${version}`)}`}>{title}</Link>;
+              return <Link to={linkHref.replace('/#/api/', `/api/${version}/`)}>{title}</Link>;
             }
             // for links to other websites: use <a />
             return (
