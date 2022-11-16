@@ -16,7 +16,10 @@ import { FormattedMessage, useIntl } from 'react-intl';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 import { AppContext } from '../contextProvider';
+import NavigationMenu from './components/NavigationMenu';
 import SearchBox from './components/SearchBox';
 
 import './index.less';
@@ -148,10 +151,17 @@ function Header() {
     </Menu>
   );
 
+  const Header = styled(Flex, {
+    padding: "0 20px",
+    position: "relative",
+    zIndex: 10,
+    borderBottom: "1px solid $slate5"
+  });
+
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
-        <div className='header'>
+        <Header justifyContent="between">
           {isMobile && (
             <Popover
               overlayClassName='popover-menu'
@@ -163,15 +173,17 @@ function Header() {
               <MenuOutlined className='nav-phone-icon' />
             </Popover>
           )}
-          <div className='header-left'>
+          <Flex css={{flex: 1}}>
             <Link id='logo' to='/'>
               <img src={LOGO_URL} alt='Oasis Engine' />
             </Link>
             {!isMobile && <SearchBox></SearchBox>}
-          </div>
+          </Flex>
           {!isMobile && (
             <div className='right-header'>
-              <div id='menu'>{getMenu(false)}</div>
+              <div id='menu'>
+                <NavigationMenu />
+              </div>
               <div id='lang'>
                 <Button
                   size='small'
@@ -195,7 +207,7 @@ function Header() {
               </Select>
             </div>
           )}
-        </div>
+        </Header>
       )}
     </Media>
   );
