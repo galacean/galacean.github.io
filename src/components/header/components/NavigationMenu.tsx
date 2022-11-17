@@ -110,10 +110,9 @@ const StyledNavArrowDown = styled(NavArrowDown, {
 });
 
 const StyledTrigger = styled(NavigationMenu.Trigger, {
-  padding: "8px $2",
+  padding: "$1 $2",
+  fontSize: "$2",
   userSelect: "none",
-  lineHeight: 1,
-  color: "$slate11",
   display: "flex",
   alignItems: "center",
   borderRadius: "$1",
@@ -134,19 +133,16 @@ const StyledTrigger = styled(NavigationMenu.Trigger, {
   }
 });
 
-const StyledLink = styled(NavigationMenu.Link, {
-  padding: "8px 12px",
+const StyledLink = styled(Link, {
+  padding: "$1 $2",
+  fontSize: "$2",
   outline: "none",
   userSelect: "none",
-  lineHeight: 1,
   borderRadius: "4px",
-  fontSize: "15px",
   display: "block",
   textDecoration: "none",
   alignItems: "center",
-  "& a": {
-    color: "$slate11"
-  },
+  color: "$slate12",
   "&:focus": {
     boxShadow: "0 0 0 2px var(--violet7)"
   },
@@ -161,7 +157,7 @@ const StyledContent = styled(NavigationMenu.Content, {
   position: "absolute",
   top: 0,
   left: 0,
-  width: "100%",
+  padding: "$4",
   animationDuration: "250ms",
   animationTimingFunction: "ease",
   "&[data-motion='from-start']": {
@@ -198,7 +194,7 @@ const StyledIndicator = styled(NavigationMenu.Indicator, {
 const StyledIndicatorArrow = styled("div", {
   position: "relative",
   top: "70%",
-  backgroundColor: "white",
+  backgroundColor: "$slate1",
   width: "10px",
   height: "10px",
   transform: "rotate(45deg)",
@@ -209,13 +205,13 @@ const StyledViewport = styled(NavigationMenu.Viewport, {
   position: "relative",
   transformOrigin: "top center",
   marginTop: "10px",
-  width: "100%",
-  backgroundColor: "white",
-  borderRadius: "6px",
+  backgroundColor: "$slate1",
+  borderRadius: "$1",
   overflow: "hidden",
-  boxShadow: "hsl(206 22% 7% / 35%) 0px 10px 38px -10px, hsl(206 22% 7% / 20%) 0px 10px 20px -15px",
+  boxShadow: "$default",
   height: "var(--radix-navigation-menu-viewport-height)",
   transition: "width, height, 300ms ease",
+  width: "var(--radix-navigation-menu-viewport-width)",
   "&[data-state='open']": {
     animation: `${scaleIn} 200ms ease`
   },
@@ -228,59 +224,62 @@ const StyledViewportPosition = styled("div", {
   position: "absolute",
   display: "flex",
   justifyContent: "center",
-  width: "100%",
+  minWidth: "100%",
   top: "100%",
   left: 0,
   perspective: "2000px"
 });
 
-const StyledListItemLink = styled(Link, {
+const StyledListItem = styled("div", {
   display: "block",
   outline: "none",
   textDecoration: "none",
   userSelect: "none",
-  padding: "12px",
-  borderRadius: "6px",
-  fontSize: "15px",
+  padding: "$3",
+  borderRadius: "$2",
   lineHeight: 1,
+  color: "$slate12",
+  fontSize: "$2",
   "&:focus": {
     boxShadow: "0 0 0 2px var(--violet7)"
   },
   "&:hover": {
-    backgroundColor: "var(--mauve3)"
+    backgroundColor: "$slate3",
+    color: "$slate12",
   }
 });
 
 const StyledListItemHeading = styled("div", {
   fontWeight: 500,
-  lineHeight: 1.2,
-  marginBottom: "5px",
-  color: "var(--violet12)"
+  lineHeight: 1.4,
+  marginBottom: "5px"
 });
 
 const StyledListItemText = styled("p", {
-  color: "var(--mauve11)",
+  color: "$slate11",
+  fontSize: "$1",
   lineHeight: 1.4,
   fontWeight: "initial"
 });
 
 const StyledContentList = styled("ul", {
   display: "grid",
-  padding: "22px",
   margin: 0,
-  columnGap: "10px",
-  listStyle: "none"
+  columnGap: "$2",
+  listStyle: "none",
+  gridAutoFlow: "column",
+  gridTemplateRows: "repeat(2, 1fr)"
 })
 
 const ListItem = React.forwardRef(({ children, title, to }: { children: any, title: string, to: string }, forwardedRef) => (
-  <li ref={forwardedRef}>
-    <NavigationMenu.Link asChild>
-      <StyledListItemLink to={to}>
+  <Link to={to}>
+    <li ref={forwardedRef}>
+      <StyledListItem>
         <StyledListItemHeading>{title}</StyledListItemHeading>
         <StyledListItemText>{children}</StyledListItemText>
-      </StyledListItemLink>
-    </NavigationMenu.Link>
-  </li>
+      </StyledListItem>
+    </li>
+  </Link>
 ));
 
 const StyledNavigationMenu = () => {
@@ -292,10 +291,13 @@ const StyledNavigationMenu = () => {
     <StyledRoot>
       <StyledList>
         <NavigationMenu.Item>
-          <StyledLink>
-            <Link to='/'>
-              <FormattedMessage id='app.header.menu.home' />
-            </Link>
+          <StyledLink to='/'>
+            <FormattedMessage id='app.header.menu.home' />
+          </StyledLink>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <StyledLink to={`/examples/${context.version}`}>
+            <FormattedMessage id='app.header.menu.engine.examples' />
           </StyledLink>
         </NavigationMenu.Item>
         <NavigationMenu.Item>
@@ -303,42 +305,51 @@ const StyledNavigationMenu = () => {
             {formatMessage({ id: 'app.header.menu.docs' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
           </StyledTrigger>
           <StyledContent>
-            <StyledContentList>
-              <ListItem to={`/docs/${context.version}/${context.lang}`} title={formatMessage({ id: 'app.header.menu.engine' })}>
+            <StyledContentList css={{width: "400px"}}>
+              <ListItem to={`/docs/${context.version}/${context.lang}`} title={formatMessage({ id: 'app.header.menu.engine.docs' })}>
+                CSS-in-JS with best-in-class developer experience.
+              </ListItem>
+              <ListItem to={`/api/${context.version}`} title={formatMessage({ id: 'app.header.menu.engine.api' })}>
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
               <ListItem to={`/docs/latest/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`} title={formatMessage({ id: 'app.header.menu.artist' })}>
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
-              {isZhCN && <ListItem to={'/docs/latest/zh/editor.zh-CN'} title={formatMessage({ id: 'app.header.menu.editor' })}>
+              <ListItem to={'/docs/latest/zh/editor.zh-CN'} title={formatMessage({ id: 'app.header.menu.editor' })}>
                 CSS-in-JS with best-in-class developer experience.
-              </ListItem>}
+              </ListItem>
             </StyledContentList>
           </StyledContent>
         </NavigationMenu.Item>
         <NavigationMenu.Item>
           <StyledTrigger>
-            {formatMessage({ id: 'app.header.menu.docs' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
+            {formatMessage({ id: 'app.header.menu.ecosystem' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
           </StyledTrigger>
           <StyledContent>
-            <StyledContentList>
-              <ListItem to={`/docs/${context.version}/${context.lang}`} title={formatMessage({ id: 'app.header.menu.engine' })}>
+            <StyledContentList css={{width: "400px"}}>
+              <ListItem to={`/gltf-viewer`} title={formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}>
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
-              <ListItem to={`/docs/latest/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`} title={formatMessage({ id: 'app.header.menu.artist' })}>
+              <ListItem to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
                 CSS-in-JS with best-in-class developer experience.
               </ListItem>
-              {isZhCN && <ListItem to={'/docs/latest/zh/editor.zh-CN'} title={formatMessage({ id: 'app.header.menu.editor' })}>
+              <ListItem to={`https://oasis.alipay.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
                 CSS-in-JS with best-in-class developer experience.
-              </ListItem>}
+              </ListItem>
             </StyledContentList>
           </StyledContent>
         </NavigationMenu.Item>
+        {/* <NavigationMenu.Item>
+          <StyledTrigger>
+            {formatMessage({ id: 'app.header.menu.community' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
+          </StyledTrigger>
+          <StyledContent>
+          </StyledContent>
+        </NavigationMenu.Item> */}
         <StyledIndicator>
           <StyledIndicatorArrow />
         </StyledIndicator>
       </StyledList>
-
       <StyledViewportPosition>
         <StyledViewport />
       </StyledViewportPosition>

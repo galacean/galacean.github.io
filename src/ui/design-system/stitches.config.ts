@@ -257,7 +257,10 @@ export const lightTheme = createTheme("light-theme", {
     tooltipbg: "black",
     tooltipcolor: "white",
     white: "white"
-  }
+  },
+  shadows: {
+    default: "$colors$slate8 0px 10px 38px -10px, $colors$slate10 0px 10px 20px -15px"
+  },
 });
 
 document.querySelector('body')?.classList.add(lightTheme.className);
