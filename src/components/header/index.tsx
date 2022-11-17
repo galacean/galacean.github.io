@@ -151,17 +151,25 @@ function Header() {
     </Menu>
   );
 
-  const Header = styled(Flex, {
-    padding: "0 20px",
+  const StyledHeader = styled(Flex, {
+    padding: "$2 $4",
     position: "relative",
     zIndex: 10,
     borderBottom: "1px solid $slate5"
   });
 
+  const StyledLogo = styled(Link, {
+    textDecoration: "none",
+    "& img": {
+      width: "200px",
+      opacity: 0.9
+    }
+  });
+
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
-        <Header justifyContent="between">
+        <StyledHeader justifyContent="between" align="both">
           {isMobile && (
             <Popover
               overlayClassName='popover-menu'
@@ -173,17 +181,15 @@ function Header() {
               <MenuOutlined className='nav-phone-icon' />
             </Popover>
           )}
-          <Flex css={{flex: 1}}>
-            <Link id='logo' to='/'>
+          <Flex css={{ flex: 1 }}>
+            <StyledLogo to='/'>
               <img src={LOGO_URL} alt='Oasis Engine' />
-            </Link>
+            </StyledLogo>
             {!isMobile && <SearchBox></SearchBox>}
           </Flex>
           {!isMobile && (
             <div className='right-header'>
-              <div id='menu'>
-                <NavigationMenu />
-              </div>
+              <NavigationMenu />
               <div id='lang'>
                 <Button
                   size='small'
@@ -207,7 +213,7 @@ function Header() {
               </Select>
             </div>
           )}
-        </Header>
+        </StyledHeader>
       )}
     </Media>
   );
