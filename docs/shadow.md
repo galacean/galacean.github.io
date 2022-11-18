@@ -44,8 +44,10 @@ In addition to the shadow configuration above in the `Light` component, there ar
 | [shadowTwoCascadeSplits](${api}core/Scene#shadowTwoCascadeSplits) | The splits of two cascade distribution                  |
 | [shadowFourCascadeSplits](${api}core/Scene#shadowFourCascadeSplits) | The splits of four cascade distribution                 |
 | [shadowDistance](${api}core/Scene#shadowDistance)            | Max Shadow distance                                     |
-| The above parameters can be understood by debugging in the Playground example: |                                                         |
-| <playground src="cascaded-shadow.ts"></playground>           |                                                         |
+
+The above parameters can be understood by debugging in the Playground example:  
+
+<playground src="cascaded-shadow.ts"></playground>
 
 Currently, the engine only supports opening shadows for single `DirectLight`. This is mainly because the rendering of shadows
 doubles the DrawCall, which will seriously affect the rendering performance.
