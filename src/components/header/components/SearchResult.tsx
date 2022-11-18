@@ -1,5 +1,5 @@
-import { Tabs } from 'antd';
 import { useIntl } from 'react-intl';
+import { Tabs, TabsContent, TabsList } from '../../../ui/Tabs';
 import ApiSearchRes from './ApiSearchRes';
 import DocSearchRes from './DocSearchRes';
 import ExampleSearchRes from './ExampleSearchRes';
@@ -14,56 +14,57 @@ const SearchResult = (props: ISearchResProps) => {
   const formatMessage = intl.formatMessage;
 
   const searchResultTab = (
-    <div id='search-res-container'>
-      <Tabs
-        defaultActiveKey={'1'}
-        items={[
+    <Tabs defaultValue="docs" closable>
+      <TabsList
+        tabs={[
           {
-            label: formatMessage({ id: 'app.header.menu.engine.docs' }),
-            key: '1',
-            children: (
-              <DocSearchRes
-                {...{
-                  // force reset state
-                  // Ref: https://beta.reactjs.org/learn/preserving-and-resetting-state#resetting-a-form-with-a-key
-                  key: props.searchText,
-                  searchText: props.searchText,
-                  setLoadingSearchResult: props.setLoadingSearchResult,
-                }}
-              ></DocSearchRes>
-            ),
+            value: "docs",
+            label: formatMessage({ id: 'app.header.menu.engine.docs' })
           },
           {
-            label: formatMessage({ id: 'app.header.menu.engine.examples' }),
-            key: '2',
-            children: (
-              <ExampleSearchRes
-                {...{
-                  // force reset state
-                  // Ref: https://beta.reactjs.org/learn/preserving-and-resetting-state#resetting-a-form-with-a-key
-                  key: props.searchText,
-                  searchText: props.searchText,
-                  setLoadingSearchResult: props.setLoadingSearchResult,
-                }}
-              ></ExampleSearchRes>
-            ),
+            value: "examples",
+            label: formatMessage({ id: 'app.header.menu.engine.examples' })
           },
           {
-            label: `API`,
-            key: '3',
-            children: (
-              <ApiSearchRes
-                {...{
-                  key: props.searchText,
-                  searchText: props.searchText,
-                  setLoadingSearchResult: props.setLoadingSearchResult,
-                }}
-              ></ApiSearchRes>
-            ),
-          },
+            value: "api",
+            label: "API"
+          }
         ]}
       />
-    </div>
+      <TabsContent value="docs">
+        <DocSearchRes
+          {...{
+            // force reset state
+            // Ref: https://beta.reactjs.org/learn/preserving-and-resetting-state#resetting-a-form-with-a-key
+            key: props.searchText,
+            searchText: props.searchText,
+            setLoadingSearchResult: props.setLoadingSearchResult,
+          }}
+        ></DocSearchRes>
+      </TabsContent>
+      <TabsContent value="examples">
+        <ExampleSearchRes
+          {...{
+            // force reset state
+            // Ref: https://beta.reactjs.org/learn/preserving-and-resetting-state#resetting-a-form-with-a-key
+            key: props.searchText,
+            searchText: props.searchText,
+            setLoadingSearchResult: props.setLoadingSearchResult,
+          }}
+        ></ExampleSearchRes>
+
+      </TabsContent>
+      <TabsContent value="api">
+
+        <ApiSearchRes
+          {...{
+            key: props.searchText,
+            searchText: props.searchText,
+            setLoadingSearchResult: props.setLoadingSearchResult,
+          }}
+        ></ApiSearchRes>
+      </TabsContent>
+    </Tabs>
   );
   return searchResultTab;
 };

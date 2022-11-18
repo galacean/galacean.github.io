@@ -6,6 +6,21 @@ import SearchResult from './SearchResult';
 import { Search } from 'iconoir-react';
 import { Spin } from '../../../ui/Spin';
 import { Flex } from '../../../ui/Flex';
+import { styled } from '../../../ui/design-system';
+
+const StyledSearchResult = styled("div", {
+  position: "absolute",
+  top: "40px",
+  left: "0",
+  maxHeight: "400px",
+  width: "500px",
+  overflow: "auto",
+  zIndex: "9",
+  backgroundColor: "$slate1",
+  borderRadius: "$2",
+  boxShadow: "$default",
+  padding: "$2"
+});
 
 const SearchBox = () => {
   const intl = useIntl();
@@ -23,19 +38,9 @@ const SearchBox = () => {
     ),
     []
   );
-  const debouncedLeadingSetSearchText = useCallback(
-    _.debounce(
-      (text: string) => {
-        setSearchText(text);
-      },
-      1000,
-      { leading: true, trailing: false }
-    ),
-    []
-  );
 
   const searchBox = (
-    <Flex align="both" css={{paddingLeft: "$2", flex: 1}}>
+    <Flex align="both" css={{marginLeft: "$2", flex: 1, position: "relative"}}>
       <Input
         placeholder={formatMessage({ id: 'app.header.search.box' })}
         startSlot={<Search />}
@@ -44,13 +49,9 @@ const SearchBox = () => {
         onChange={(e) => {
           debouncedSetSearchText(e.target.value);
         }}
-      // onSearch={(e) => {
-      //   debouncedLeadingSetSearchText(e);
-      // }}
       ></Input>
       {searchText ? (
-        <div
-          id='header-search-result'
+        <StyledSearchResult
           onBlur={(e) => {
             // DO NOT MODIFY THIS METHOD
             // Ref: https://gist.github.com/pstoica/4323d3e6e37e8a23dd59
@@ -66,7 +67,7 @@ const SearchBox = () => {
           }}
         >
           <SearchResult {...{ searchText, setLoadingSearchResult }}></SearchResult>
-        </div>
+        </StyledSearchResult>
       ) : null}
     </Flex>
   );

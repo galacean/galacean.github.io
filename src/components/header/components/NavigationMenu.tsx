@@ -3,7 +3,6 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NavArrowDown } from 'iconoir-react';
-// import './style.css';
 import { keyframes, styled } from '../../../ui/design-system';
 import { AppContext } from '../../contextProvider';
 

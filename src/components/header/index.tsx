@@ -5,7 +5,7 @@ import {
   MenuOutlined, PlayCircleOutlined,
   ReadOutlined
 } from '@ant-design/icons';
-import { Menu, Popover } from 'antd';
+// import { Menu, Popover } from 'antd';
 import { Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
@@ -15,7 +15,7 @@ import config from '../../siteconfig.json';
 import { ActionButton } from '../../ui/ActionButton';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
-import { Item as Option, Select } from '../../ui/Select';
+import { Item, Select } from '../../ui/Select';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import SearchBox from './components/SearchBox';
@@ -130,6 +130,8 @@ function Header() {
     }
   });
 
+  console.log('versions:', versions)
+
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
@@ -152,7 +154,7 @@ function Header() {
             {!isMobile && <SearchBox></SearchBox>}
           </Flex>
           {!isMobile && (
-            <div className='right-header'>
+            <Flex align="both" gap="sm">
               <NavigationMenu />
               <Socials />
               <ThemeButton />
@@ -166,16 +168,15 @@ function Header() {
               >
                 <Translate />
               </ActionButton>
-              <Select size='sm' onSelectionChange={(e) => context.setVersion(e)} defaultSelectedKey={context.version}>
-                {versions.map((v) => {
-                  return (
-                    <Option key={v}>
-                      {v}
-                    </Option>
-                  );
-                })}
+              <Select size='sm'
+                onSelectionChange={(e) => {
+                  context.setVersion(e)
+                }}
+                selectedKey={context.version}
+              >
+                {versions.map((v) => <Item key={v}>{v}</Item>)}
               </Select>
-            </div>
+            </Flex>
           )}
         </StyledHeader>
       )}

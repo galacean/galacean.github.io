@@ -12,7 +12,8 @@ export const resetCSS = {
       verticalAlign: "baseline"
     },
   "html, body": {
-    color: "var(--colors-slate12)"
+    color: "var(--colors-slate12)",
+    fontSize: "14px"
   },
   "article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section": {
     display: "block"
