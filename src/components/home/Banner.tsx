@@ -18,6 +18,11 @@ const StyledHeading = styled("h1", {
   }
 });
 
+const StyledSlogan = styled("p", {
+  fontSize: "1.2rem",
+  color: "$slate11"
+});
+
 
 function Banner() {
   const context = useContext(AppContext);
@@ -29,9 +34,9 @@ function Banner() {
           alt='Oasis Engine'
         />
       </StyledHeading>
-      <p>
+      <StyledSlogan>
         <FormattedMessage id='app.home.slogan' />
-      </p>
+      </StyledSlogan>
       <Flex gap="md">
         <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
           <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
@@ -40,7 +45,7 @@ function Banner() {
           <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
         </a>
       </Flex>
-      <Flex gap="md">
+      <Flex gap="lg" css={{marginTop: "$4"}}>
         <Link to={`/docs/latest/${context.lang}`}>
           <Button variant="primary">
             <FormattedMessage id='app.home.start' />
