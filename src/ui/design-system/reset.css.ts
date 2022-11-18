@@ -71,5 +71,11 @@ export const resetCSS = {
   },
   'div[data-panel-type="L"], div[data-panel-type="R"]': {
     minWidth: 0
+  },
+  'a': {
+    color: "$slate11",
+    '&:hover': {
+      color: "$blue10"
+    }
   }
 };

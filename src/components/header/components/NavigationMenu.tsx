@@ -339,13 +339,6 @@ const StyledNavigationMenu = () => {
             </StyledContentList>
           </StyledContent>
         </NavigationMenu.Item>
-        {/* <NavigationMenu.Item>
-          <StyledTrigger>
-            {formatMessage({ id: 'app.header.menu.community' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
-          </StyledTrigger>
-          <StyledContent>
-          </StyledContent>
-        </NavigationMenu.Item> */}
         <StyledIndicator>
           <StyledIndicatorArrow />
         </StyledIndicator>

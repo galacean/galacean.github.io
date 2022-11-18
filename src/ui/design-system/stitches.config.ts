@@ -263,8 +263,6 @@ export const lightTheme = createTheme("light-theme", {
   },
 });
 
-document.querySelector('body')?.classList.add(lightTheme.className);
-
 type StitchesComponent<T> = ComponentProps<T> & VariantProps<T> & { css?: CSS };
 
 export type { VariantProps, CSS, StitchesComponent };

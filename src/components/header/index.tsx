@@ -2,26 +2,25 @@ import {
   AppstoreAddOutlined,
   createFromIconfontCN,
   HomeOutlined,
-  MenuOutlined,
-  NotificationOutlined,
-  PlayCircleOutlined,
-  ReadOutlined,
-  TwitterOutlined,
-  YuqueOutlined,
-  ZhihuOutlined,
+  MenuOutlined, PlayCircleOutlined,
+  ReadOutlined
 } from '@ant-design/icons';
-import { Button, Menu, Popover, Select } from 'antd';
+import { Menu, Popover } from 'antd';
+import { Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
+import { ActionButton } from '../../ui/ActionButton';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
+import { Item as Option, Select } from '../../ui/Select';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import SearchBox from './components/SearchBox';
-
+import Socials from './components/Socials';
+import ThemeButton from './components/ThemeButton';
 import './index.less';
 
 const { versions } = config;
@@ -29,7 +28,6 @@ const { versions } = config;
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
 });
-const { Option } = Select;
 
 const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
 
@@ -114,40 +112,6 @@ function Header() {
           </Menu.Item>
         </Menu.ItemGroup>
       </Menu.SubMenu>
-      <Menu.SubMenu
-        key='community'
-        icon={<NotificationOutlined />}
-        title={formatMessage({ id: 'app.header.menu.community' })}
-      >
-        <Menu.Item key='zhihu' icon={<ZhihuOutlined />}>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://www.zhihu.com/column/c_1369047387231592448'
-          >
-            <FormattedMessage id='app.community.zhihu' />
-          </a>
-        </Menu.Item>
-        <Menu.Item key='juejin' icon={<Icon type='icon-juejin' />}>
-          <a
-            target='_blank'
-            rel='noopener noreferrer'
-            href='https://juejin.cn/team/6930507995474313230/posts'
-          >
-            <FormattedMessage id='app.community.juejin' />
-          </a>
-        </Menu.Item>
-        <Menu.Item key='yuque' icon={<YuqueOutlined />}>
-          <a target='_blank' rel='noopener noreferrer' href='https://www.yuque.com/oasis-engine/blog'>
-            <FormattedMessage id='app.community.yuque' />
-          </a>
-        </Menu.Item>
-        <Menu.Item key='twitter' icon={<TwitterOutlined />}>
-          <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/OasisEngine'>
-            <FormattedMessage id='app.community.twitter' />
-          </a>
-        </Menu.Item>
-      </Menu.SubMenu>
     </Menu>
   );
 
@@ -190,22 +154,22 @@ function Header() {
           {!isMobile && (
             <div className='right-header'>
               <NavigationMenu />
-              <div id='lang'>
-                <Button
-                  size='small'
-                  onClick={() => {
-                    const newLang = context.lang === 'zh-CN' ? 'en' : 'zh-CN';
-                    context.setLang(newLang);
-                    localStorage.setItem('lang', newLang);
-                  }}
-                >
-                  <FormattedMessage id='app.header.lang' />
-                </Button>
-              </div>
-              <Select size='small' onChange={(e) => context.setVersion(e)} value={context.version}>
+              <Socials />
+              <ThemeButton />
+              <ActionButton
+                size="sm"
+                onClick={() => {
+                  const newLang = context.lang === 'zh-CN' ? 'en' : 'zh-CN';
+                  context.setLang(newLang);
+                  localStorage.setItem('lang', newLang);
+                }}
+              >
+                <Translate />
+              </ActionButton>
+              <Select size='sm' onSelectionChange={(e) => context.setVersion(e)} defaultSelectedKey={context.version}>
                 {versions.map((v) => {
                   return (
-                    <Option value={v} key={v}>
+                    <Option key={v}>
                       {v}
                     </Option>
                   );
