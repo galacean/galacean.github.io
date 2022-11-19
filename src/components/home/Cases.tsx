@@ -1,7 +1,20 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 
-export default function Cases () {
+const StyledCases = styled("div", {
+  borderTop: "1px solid $slate5",
+  marginTop: "$8",
+  "& h2": {
+    color: "$slate12",
+    textAlign: "center",
+    padding: "$8 0 $4",
+    fontSize: "3rem"
+  }
+});
+
+export default function Cases() {
   const videos = [
     {
       src: 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/file/A*RyNURrY3jjwAAAAAAAAAAAAAARQnAQ',
@@ -22,17 +35,15 @@ export default function Cases () {
   ];
 
   return (
-    <section className="home-section home-section-cases">
+    <StyledCases>
       <h2>
         <FormattedMessage id="app.home.cases" />
       </h2>
-      <div className="home-section-inner">
-        {videos.map(({src, poster}) => {
-          return <div className='home-flex home-flex-case' key={src}>
-            <video width="250" height="540" playsInline autoPlay muted loop poster={poster}><source src={src} type="video/mp4"/></video>
-          </div>
+      <Flex align="both" gap="lg">
+        {videos.map(({ src, poster }) => {
+          return <video key={src} width="250" height="540" playsInline autoPlay muted loop poster={poster}><source src={src} type="video/mp4" /></video>
         })}
-      </div>
-    </section>
+      </Flex>
+    </StyledCases>
   );
 }

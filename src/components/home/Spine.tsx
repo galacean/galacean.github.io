@@ -1,4 +1,4 @@
-import type { Entity } from 'oasis-engine';
+import { BackgroundMode, Entity } from 'oasis-engine';
 import { Camera, Vector3, WebGLEngine } from 'oasis-engine';
 import { SpineAnimation } from '@oasis-engine/spine';
 import { OrbitControl } from '@oasis-engine-toolkit/controls';
@@ -17,15 +17,18 @@ export default function PBRHelmet() {
 }
 
 function init(): WebGLEngine {
-  const engine = new WebGLEngine('canvas-spine');
+  const engine = new WebGLEngine('canvas-spine', { alpha: true, antialias: true });
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
+  const { background } = scene;
+  background.mode = BackgroundMode.SolidColor;
+  background.solidColor.set(1, 1, 1, 0);
+
   const rootEntity = scene.createRootEntity();
 
   // camera
   const cameraEntity = rootEntity.createChild('camera_node');
   cameraEntity.addComponent(Camera);
-  scene.background.solidColor.set(51 / 255, 51 / 255, 51 / 255, 1);
   cameraEntity.transform.position = new Vector3(0, 0, 50);
   const controls = cameraEntity.addComponent(OrbitControl);
   controls.enableZoom = false;
