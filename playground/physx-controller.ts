@@ -4,12 +4,11 @@
  */
 
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 import {
   AmbientLight,
   AnimationClip,
   Animator,
-  AnimatorController,
-  AnimatorControllerLayer,
   AnimatorStateMachine,
   AssetType,
   BackgroundMode,
@@ -33,7 +32,6 @@ import {
   PlaneColliderShape,
   PrimitiveMesh,
   Quaternion,
-  Renderer,
   RenderFace,
   Script,
   ShadowType,
@@ -43,9 +41,8 @@ import {
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
 Logger.enable();
 
@@ -543,13 +540,7 @@ PhysXPhysics.initialize().then(() => {
 
       // animator
       defaultSceneRoot.transform.setPosition(0, -0.35, 0);
-      const animator = defaultSceneRoot.addComponent(Animator);
-      const animatorController = new AnimatorController();
-      const layer = new AnimatorControllerLayer("layer");
-      const animatorStateMachine = new AnimatorStateMachine();
-      animatorController.addLayer(layer);
-      animator.animatorController = animatorController;
-      layer.stateMachine = animatorStateMachine;
+      const animator = defaultSceneRoot.getComponent(Animator);
 
       // controller
       const physicsCapsule = new CapsuleColliderShape();
@@ -566,7 +557,7 @@ PhysXPhysics.initialize().then(() => {
         engine,
         asset.materials,
         animator,
-        animatorStateMachine
+        animator.animatorController.layers[0].stateMachine
       );
     });
 });
