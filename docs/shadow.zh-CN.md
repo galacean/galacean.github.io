@@ -14,7 +14,7 @@ label: Graphics/Light
 
 | 参数 | 应用 |
 | :-- | :-- |
-| [enableShadow](${api}core/Light#enableShadow) | 是否投射阴影 |
+| [enableShadow](${api}core/Light#shadowType) | 阴影投射类型 |
 | [shadowBias](${api}core/Light#shadowBias) | 阴影的偏移 |
 | [shadowNormalBias](${api}core/Light#shadowNormalBias) | 阴影的法向偏移 |
 | [shadowNearPlane](${api}core/Light#shadowNearPlane) | 渲染深度图时的近裁面 |
@@ -25,14 +25,15 @@ label: Graphics/Light
 因为深度的精度问题，因此从相机出发采样的时候会产生伪影，因此往往都需要设置阴影的偏移量，使得采样出右图这样比较干净的阴影。
 但是如果偏移如果过大，就会使得阴影偏离了投射物，如右图这样影子和脚后跟分离。因此这个参数是在使用阴影的时候最需要仔细调整的参数。
 
-出来上述位于 Light 组件当中的阴影配置外，还有一些有关阴影的全局配置位于 `EngineSettings` 当中:
+出来上述位于 Light 组件当中的阴影配置外，还有一些有关阴影的全局配置位于 `Scene` 当中:
 | 参数 | 应用 |
 | :-- | :-- |
-| [shadowMode](${api}core/EngineSettings#shadowMode) | 阴影的模式，硬阴影还是基于 PCF 的软阴影 |
-| [shadowResolution](${api}core/EngineSettings#shadowResolution) | 阴影的分辨率 |
-| [shadowCascades](${api}core/EngineSettings#shadowCascades) | 级联阴影的数量 |
-| [shadowTwoCascadeSplits](${api}core/EngineSettings#shadowTwoCascadeSplits) | 划分二级级联阴影的参数 |
-| [shadowFourCascadeSplits](${api}core/EngineSettings#shadowFourCascadeSplits) | 划分四级级联阴影的参数 |
+| [castShadows](${api}core/Scene#castShadows) | 是否投射阴影 |
+| [shadowResolution](${api}core/Scene#shadowResolution) | 阴影的分辨率 |
+| [shadowCascades](${api}core/Scene#shadowCascades) | 级联阴影的数量 |
+| [shadowTwoCascadeSplits](${api}core/Scene#shadowTwoCascadeSplits) | 划分二级级联阴影的参数 |
+| [shadowFourCascadeSplits](${api}core/Scene#shadowFourCascadeSplits) | 划分四级级联阴影的参数 |
+| [shadowDistance](${api}core/Scene#shadowDistance) | 最大阴影距离 |
 上述参数可以通过在 Playground 的例子中进行调试进行理解：
 <playground src="cascaded-shadow.ts"></playground>
 
