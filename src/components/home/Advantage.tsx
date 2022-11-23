@@ -25,7 +25,7 @@ const StyledFeature = styled("div", {
 
 export default function Features() {
   return (
-    <Flex align="h" gap="lg" css={{ padding: "$10 0" }}>
+    <Flex align="h" gap="lg" css={{ paddingBottom: "$10" }}>
       <StyledFeature>
         <h3>
           <FormattedMessage id="app.home.features.component" />

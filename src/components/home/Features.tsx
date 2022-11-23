@@ -23,7 +23,7 @@ const StyledFeature = styled(Flex, {
 export default function Features() {
   const { lang } = useContext(AppContext);
   return (
-    <Flex align="both" gap="lg" css={{borderTop: "1px solid $slate5"}}>
+    <Flex align="both" gap="lg" css={{borderTop: "1px solid $slate5", padding: "$8 0"}}>
       <StyledFeature dir="column" gap="md" align="v">
         <PBRHelmet />
         <h2>3D</h2>

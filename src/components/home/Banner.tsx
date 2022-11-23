@@ -9,7 +9,7 @@ import { AppContext } from '../contextProvider';
 
 const StyledSection = styled(Flex, {
   maxWidth: "1500px",
-  padding: "30px 0"
+  padding: "$24 0"
 });
 
 const StyledHeading = styled("h1", {

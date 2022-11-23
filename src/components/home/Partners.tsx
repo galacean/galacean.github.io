@@ -5,11 +5,11 @@ import { Flex } from '../../ui/Flex';
 
 const StyledPartnerContainer = styled(Flex, {
   padding: "$10 0",
+  borderTop: "1px solid $slate5",
   "& h2": {
     color: "$slate12",
     fontSize: "3rem",
-    textAlign: "center",
-    padding: "$4 0"
+    textAlign: "center"
   },
 });
 

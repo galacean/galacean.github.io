@@ -5,11 +5,11 @@ import { Flex } from '../../ui/Flex';
 
 const StyledCases = styled("div", {
   borderTop: "1px solid $slate5",
-  marginTop: "$8",
+  padding: "$8 0",
   "& h2": {
     color: "$slate12",
     textAlign: "center",
-    padding: "$8 0 $4",
+    padding: "0 0 $4",
     fontSize: "3rem"
   }
 });
