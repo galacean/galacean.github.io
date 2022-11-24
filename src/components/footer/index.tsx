@@ -40,7 +40,12 @@ const StyledGroup = styled("div", {
 
 const StyledIcon = styled("span", {
   marginRight: "$2"
-})
+});
+
+const StyledHeart = styled("span", {
+  padding: "0 $1",
+  fontSize: "$4"
+});
 
 class Footer extends React.Component<{}> {
   render() {
@@ -137,8 +142,8 @@ class Footer extends React.Component<{}> {
             </ul>
           </StyledGroup>
         </StyledFooter>
-        <Flex align="both" css={{ padding: "$4", borderTop: "1px solid $slate5" }}>
-          Made with &nbsp;<span className='heart'>❤</span>&nbsp; by &nbsp;
+        <Flex align="both" css={{ padding: "$4", borderTop: "1px solid $slate5", fontSize: "$1" }}>
+          Made with <StyledHeart>❤</StyledHeart> by &nbsp;
           <a target='_blank' rel='noopener noreferrer' href='https://www.zhihu.com/org/ma-yi-richlab-qian-duan-tuan-dui-76' style={{fontStyle: "italic"}}>
             <FormattedMessage id='app.footer.company' />
           </a>

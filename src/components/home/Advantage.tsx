@@ -18,7 +18,8 @@ const StyledFeature = styled("div", {
   },
   "& p": {
     color: "$slate11",
-    lineHeight: 1.5
+    lineHeight: 1.5,
+    fontSize: "$2"
   }
 });
 
