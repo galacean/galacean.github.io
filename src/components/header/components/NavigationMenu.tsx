@@ -291,16 +291,6 @@ const StyledNavigationMenu = () => {
     <StyledRoot>
       <StyledList>
         <NavigationMenu.Item>
-          <StyledLink to='/'>
-            <FormattedMessage id='app.header.menu.home' />
-          </StyledLink>
-        </NavigationMenu.Item>
-        <NavigationMenu.Item>
-          <StyledLink to={`/examples/${context.version}`}>
-            <FormattedMessage id='app.header.menu.engine.examples' />
-          </StyledLink>
-        </NavigationMenu.Item>
-        <NavigationMenu.Item>
           <StyledTrigger>
             {formatMessage({ id: 'app.header.menu.docs' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
           </StyledTrigger>
@@ -338,6 +328,11 @@ const StyledNavigationMenu = () => {
               </ListItem>
             </StyledContentList>
           </StyledContent>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <StyledLink to={`/examples/${context.version}`}>
+            <FormattedMessage id='app.header.menu.engine.examples' />
+          </StyledLink>
         </NavigationMenu.Item>
         <StyledIndicator>
           <StyledIndicatorArrow />
