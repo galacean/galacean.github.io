@@ -8,7 +8,6 @@ import { Flex } from '../../ui/Flex';
 import { AppContext } from '../contextProvider';
 
 const StyledSection = styled(Flex, {
-  maxWidth: "1500px",
   padding: "$24 0"
 });
 

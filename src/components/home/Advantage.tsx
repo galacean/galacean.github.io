@@ -5,7 +5,6 @@ import { Flex } from '../../ui/Flex';
 
 const StyledFeature = styled("div", {
   flex: 1,
-  maxWidth: "340px",
   padding: "0 2rem",
   borderRight: "1px solid $slate5",
   "&:last-child": {
@@ -23,33 +22,41 @@ const StyledFeature = styled("div", {
   }
 });
 
+const StyleWrap = styled("div", {
+});
+
 export default function Features() {
   return (
-    <Flex align="h" gap="lg" css={{ paddingBottom: "$10" }}>
-      <StyledFeature>
-        <h3>
-          <FormattedMessage id="app.home.features.component" />
-        </h3>
-        <p>
-          <FormattedMessage id="app.home.features.component.intro" />
-        </p>
-      </StyledFeature>
-      <StyledFeature>
-        <h3>
-          <FormattedMessage id="app.home.features.mobile" />
-        </h3>
-        <p>
-          <FormattedMessage id="app.home.features.mobile.intro" />
-        </p>
-      </StyledFeature>
-      <StyledFeature>
-        <h3>
-          <FormattedMessage id="app.home.features.f2e" />
-        </h3>
-        <p>
-          <FormattedMessage id="app.home.features.f2e.intro" />
-        </p>
-      </StyledFeature>
+    <Flex align="both">
+      <Flex align="h" gap="lg" css={{
+        paddingBottom: "$10",
+        maxWidth: "1200px"
+      }}>
+        <StyledFeature>
+          <h3>
+            <FormattedMessage id="app.home.features.component" />
+          </h3>
+          <p>
+            <FormattedMessage id="app.home.features.component.intro" />
+          </p>
+        </StyledFeature>
+        <StyledFeature>
+          <h3>
+            <FormattedMessage id="app.home.features.mobile" />
+          </h3>
+          <p>
+            <FormattedMessage id="app.home.features.mobile.intro" />
+          </p>
+        </StyledFeature>
+        <StyledFeature>
+          <h3>
+            <FormattedMessage id="app.home.features.f2e" />
+          </h3>
+          <p>
+            <FormattedMessage id="app.home.features.f2e.intro" />
+          </p>
+        </StyledFeature>
+      </Flex>
     </Flex>
   );
 }

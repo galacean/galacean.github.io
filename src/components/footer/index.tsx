@@ -31,6 +31,9 @@ const StyledGroup = styled("div", {
     lineHeight: 1.8,
     "& a": {
       display: "block"
+    },
+    "& img": {
+      marginTop: "$1"
     }
   }
 });
@@ -135,8 +138,8 @@ class Footer extends React.Component<{}> {
           </StyledGroup>
         </StyledFooter>
         <Flex align="both" css={{ padding: "$4", borderTop: "1px solid $slate5" }}>
-          Made with <span className='heart'>❤</span> by
-          <a target='_blank' rel='noopener noreferrer' href='https://www.zhihu.com/org/ma-yi-richlab-qian-duan-tuan-dui-76'>
+          Made with &nbsp;<span className='heart'>❤</span>&nbsp; by &nbsp;
+          <a target='_blank' rel='noopener noreferrer' href='https://www.zhihu.com/org/ma-yi-richlab-qian-duan-tuan-dui-76' style={{fontStyle: "italic"}}>
             <FormattedMessage id='app.footer.company' />
           </a>
         </Flex>
