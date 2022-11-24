@@ -17,7 +17,8 @@ const StyledFeature = styled(Flex, {
   },
   "& p": {
     color: "$slate11",
-    fontSize: "$2"
+    fontSize: "$2",
+    lineHeight: 1.8
   }
 });
 

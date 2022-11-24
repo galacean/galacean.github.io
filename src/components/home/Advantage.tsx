@@ -18,7 +18,7 @@ const StyledFeature = styled("div", {
   },
   "& p": {
     color: "$slate11",
-    lineHeight: 1.5,
+    lineHeight: 1.8,
     fontSize: "$2"
   }
 });
@@ -31,7 +31,7 @@ export default function Features() {
     <Flex align="both">
       <Flex align="h" gap="lg" css={{
         paddingBottom: "$10",
-        maxWidth: "1200px"
+        maxWidth: "1000px"
       }}>
         <StyledFeature>
           <h3>
