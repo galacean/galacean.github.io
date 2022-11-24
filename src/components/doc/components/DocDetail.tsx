@@ -16,12 +16,160 @@ import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
+import { styled } from '../../../ui/design-system';
+import { Flex } from '../../../ui/Flex';
 
 interface DocDetailProps {
   selectedDocId: string;
   setSelectedDocId: React.Dispatch<React.SetStateAction<string>>;
   menuKeyTitleMapRef: React.MutableRefObject<Map<string, string>>;
 }
+
+const StyledMarkdown = styled("div", {
+  padding: "0 194px 84px 64px",
+  position: "relative",
+  minHeight: "500px",
+  marginLeft: "-1px",
+  overflow: "hidden",
+  background: "$slate1",
+  fontSize: "$2",
+  lineHeight: 2,
+  "& ul": {
+    padding: 0,
+    "> li": {
+      marginTop: "0.2em",
+      marginBottom: "0.2em",
+      marginLeft: "20px",
+      paddingLeft: "4px",
+      listStyleType: "circle",
+      "&:empty": {
+        display: "none"
+      },
+      "& > p": {
+        margin: "0.2em 0"
+      }
+    }
+  },
+  "& ol": {
+    padding: 0,
+    "& > li": {
+      marginLeft: "20px",
+      paddingLeft: "4px",
+      listStyleType: "decimal",
+      "& > p": {
+        margin: "0.2em 0"
+      }
+    },
+  },
+  "& img": {
+    maxWidth: "calc(100% - 32px)"
+  },
+  "& h1": {
+    margin: "20px 0",
+    color: "$slate12",
+    fontWeight: 500,
+    fontSize: "30px",
+    lineHeight: "38px",
+    "&.subtitle": {
+      marginLeft: "12px"
+    },
+  },
+  "& h2": {
+    fontSize: "24px",
+    lineHeight: 3
+  },
+  "& h3": {
+    fontSize: "18px",
+    lineHeight: 3,
+  },
+
+  "& h4": {
+    fontSize: "16px",
+    lineHeight: 3
+  },
+  "& h5": {
+    fontSize: "14px",
+    lineHeight: 3
+  },
+  "& h6": {
+    fontSize: "12px",
+    lineHeight: 3
+  },
+  "& hr": {
+    height: "1px",
+    margin: "16px 0",
+    border: 0
+  },
+  "& code": {
+    margin: "0 1px",
+    padding: "0.2em 0.4em",
+    fontSize: "0.9em",
+    background: "$slate2",
+    border: "1px solid $slate4",
+    borderRadius: "$2",
+    fontStyle: "italic",
+  },
+  "& pre": {
+    margin: "$2 0",
+    overflow: "auto",
+    fontFamily: "'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace",
+    borderRadius: "$2",
+    "& code": {
+      fontStyle: "normal",
+      margin: 0,
+      padding: "$3 $4",
+      overflow: "auto",
+      color: "$slate11",
+      lineHeight: 2,
+      background: "$slate3",
+      border: "none"
+    }
+  },
+  "& strong": {
+    fontWeight: 500
+  },
+  "& b": {
+    fontWeight: 500
+  },
+  "& table": {
+    width: "100%",
+    margin: "$4 0 $8",
+    emptyCells: "show",
+    border: "1px solid $slate6",
+    borderCollapse: "collapse",
+    borderSpacing: 0,
+    "& th": {
+      fontWeight: 500,
+      whiteSpace: "nowrap",
+      padding: "$1 $2",
+      textAlign: "left",
+      border: "1px solid $slate6"
+    },
+    "& td": {
+      padding: "$1 $2",
+      textAlign: "left",
+      color: "$slate11",
+      border: "1px solid $slate6"
+    },
+    "& blockquote": {
+      margin: "$1 0",
+      paddingLeft: "$2",
+      color: "$slate10",
+      borderLeft: "4px solid $slate4",
+      "& p": {
+        margin: 0
+      }
+    }
+  }
+});
+
+const StyledModifiedTime = styled(Flex, {
+  margin: "$4 0",
+  textDecoration: "ButtonFace",
+  fontSize: "$1",
+  textAlign: "right",
+  color: "$slate11"
+});
 
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   const { lang, version } = useContext(AppContext);
@@ -78,14 +226,15 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
     return null;
   }
 
+
   return (
-    <div className='markdown'>
+    <StyledMarkdown>
       <h1>{docData.title}</h1>
-      <div className='modifiedTime'>
+      <StyledModifiedTime gap="sm">
         <Source src={docData.htmlUrl} />
         <FormattedMessage id='app.content.modifiedTime' />
         {moment(docData.gmtModified).format('YYYY-MM-DD HH:mm:SS')}
-      </div>
+      </StyledModifiedTime>
       <ReactMarkdown
         remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
         // temporarily remove <a /> in toc
@@ -130,8 +279,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             const match = /language-(\w+)/.exec(className || '');
             return !inline && match ? (
               <code dangerouslySetInnerHTML={{
-                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
-                }}
+                __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+              }}
               />
             ) : (
               <code className={className} {...props}>
@@ -143,7 +292,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
       >
         {docData.content}
       </ReactMarkdown>
-    </div>
+    </StyledMarkdown>
   );
 }
 
