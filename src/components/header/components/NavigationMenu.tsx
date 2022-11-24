@@ -119,6 +119,7 @@ const StyledTrigger = styled(NavigationMenu.Trigger, {
   gap: "$0_5",
   border: "none",
   backgroundColor: "transparent",
+  color: "$slate12",
   '&[data-state="open"]': {
     [`> ${StyledNavArrowDown}`]: {
       transform: "rotate(-180deg)"

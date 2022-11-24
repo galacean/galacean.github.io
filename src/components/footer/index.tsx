@@ -24,10 +24,11 @@ const StyledFooter = styled(Flex, {
 
 const StyledGroup = styled("div", {
   "& h2": {
-    lineHeight: 4
+    lineHeight: 3
   },
   "& ul": {
-    lineHeight: 1.6,
+    fontSize: "$2",
+    lineHeight: 1.8,
     "& a": {
       display: "block"
     }

@@ -26,9 +26,10 @@ const StyledSlogan = styled("p", {
 
 function Banner() {
   const context = useContext(AppContext);
+
   return (
     <StyledSection align="both" dir="column" gap="lg">
-      <StyledHeading>
+      <StyledHeading css={context.theme === 'dark-theme' ? {filter: "invert(0.9)"} : {}}>
         <img
           src='https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ'
           alt='Oasis Engine'

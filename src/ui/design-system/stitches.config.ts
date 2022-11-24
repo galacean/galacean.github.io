@@ -220,7 +220,8 @@ export const globalCSS = () => {
       backgroundColor: "$slate1"
     },
     body: {
-      backgroundColor: "$slate1"
+      backgroundColor: "$slate1",
+      color: "$slate12"
     }
   });
   reset();

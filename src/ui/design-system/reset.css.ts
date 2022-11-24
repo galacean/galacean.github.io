@@ -74,7 +74,7 @@ export const resetCSS = {
   },
   'a': {
     textDecoration: "none",
-    color: "$slate11",
+    color: "$slate12",
     '&:hover': {
       color: "$blue10"
     }
