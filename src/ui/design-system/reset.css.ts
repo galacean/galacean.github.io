@@ -48,13 +48,13 @@ export const resetCSS = {
     "-moz-appearance": "textfield"
   },
   "::-webkit-scrollbar": {
-    background: "#252525",
-    width: "6px",
-    height: 0
+    // background: "#252525",
+    // width: "6px",
+    // height: 0
   },
   "::-webkit-scrollbar-thumb": {
-    background: "#050505",
-    borderRadius: "3px"
+    // background: "#050505",
+    // borderRadius: "3px"
   },
   ":root": {
     "--panel-manager-border-color": "var(--colors-slate6) !important",

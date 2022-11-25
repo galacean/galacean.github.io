@@ -1,15 +1,31 @@
 import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { Affix, Col, Popover, Row } from 'antd';
+import { Popover } from 'antd';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 import { AppContext } from '../contextProvider';
 import Footer from '../footer';
 import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
 import { fetchMenuList } from './util/docUtil';
+
+const StyledDocContent = styled('div', {
+  flex: 1
+});
+
+const StyledMenu = styled('div', {
+  minWidth: "250px",
+  maxHeight: '100vh',
+  overflowY: 'auto',
+  position: 'sticky',
+  top: 0,
+  borderRight: '1px solid $slate5',
+  zIndex: 1
+});
 
 function Doc() {
   const context = useContext(AppContext);
@@ -23,10 +39,9 @@ function Doc() {
   useEffect(() => {
     const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
     navigate(
-      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'zh'}/${
-        context.lang === 'en'
-          ? currentSelectedDocTitle?.replace('.zh-CN', '')
-          : currentSelectedDocTitle + '.zh-CN'
+      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'zh'}/${context.lang === 'en'
+        ? currentSelectedDocTitle?.replace('.zh-CN', '')
+        : currentSelectedDocTitle + '.zh-CN'
       }`
     );
     setItems([]);
@@ -151,15 +166,13 @@ function Doc() {
             <Footer></Footer>
           </>
         ) : (
-          <Row>
-            <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24} className='main-menu'>
-              <Affix style={{ maxHeight: '100vh', overflow: 'auto' }}>{menu}</Affix>
-            </Col>
-            <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24}>
+          <Flex wrap={false}>
+            <StyledMenu>{menu}</StyledMenu>
+            <StyledDocContent>
               {docDetail}
               <Footer></Footer>
-            </Col>
-          </Row>
+            </StyledDocContent>
+          </Flex>
         )
       }
     </Media>

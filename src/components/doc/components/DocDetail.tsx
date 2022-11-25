@@ -25,8 +25,7 @@ interface DocDetailProps {
   menuKeyTitleMapRef: React.MutableRefObject<Map<string, string>>;
 }
 
-const StyledMarkdown = styled("div", {
-  padding: "0 194px 84px 64px",
+const StyledMarkdown = styled(Flex, {
   position: "relative",
   minHeight: "500px",
   marginLeft: "-1px",
@@ -34,13 +33,14 @@ const StyledMarkdown = styled("div", {
   background: "$slate1",
   fontSize: "$2",
   lineHeight: 2,
+  "& p": {
+    padding: "$2 0"
+  },
   "& ul": {
     padding: 0,
     "> li": {
-      marginTop: "0.2em",
-      marginBottom: "0.2em",
-      marginLeft: "20px",
-      paddingLeft: "4px",
+      margin: "$1 0 $1 $4",
+      paddingLeft: "$4",
       listStyleType: "circle",
       "&:empty": {
         display: "none"
@@ -52,13 +52,9 @@ const StyledMarkdown = styled("div", {
   },
   "& ol": {
     padding: 0,
+    listStyleType: "decimal",
     "& > li": {
-      marginLeft: "20px",
-      paddingLeft: "4px",
-      listStyleType: "decimal",
-      "& > p": {
-        margin: "0.2em 0"
-      }
+      marginLeft: "$4",
     },
   },
   "& img": {
@@ -171,6 +167,11 @@ const StyledModifiedTime = styled(Flex, {
   color: "$slate11"
 });
 
+const StyledReactMarkdown = styled("div", {
+  maxWidth: "780px",
+  margin: "$8 200px $16 0"
+});
+
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   const { lang, version } = useContext(AppContext);
   const { docTitle } = useParams();
@@ -228,70 +229,72 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
 
 
   return (
-    <StyledMarkdown>
-      <h1>{docData.title}</h1>
-      <StyledModifiedTime gap="sm">
-        <Source src={docData.htmlUrl} />
-        <FormattedMessage id='app.content.modifiedTime' />
-        {moment(docData.gmtModified).format('YYYY-MM-DD HH:mm:SS')}
-      </StyledModifiedTime>
-      <ReactMarkdown
-        remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
-        // temporarily remove <a /> in toc
-        // rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
-        rehypePlugins={[toc, customeToc, rehypeRaw]}
-        skipHtml={false}
-        components={{
-          a(param) {
-            const linkHref = param.href;
-            const title = param.children[0];
+    <StyledMarkdown align="both">
+      <StyledReactMarkdown>
+        <h1>{docData.title}</h1>
+        <StyledModifiedTime gap="sm">
+          <Source src={docData.htmlUrl} />
+          <FormattedMessage id='app.content.modifiedTime' />
+          {moment(docData.gmtModified).format('YYYY-MM-DD HH:mm:SS')}
+        </StyledModifiedTime>
+        <ReactMarkdown
+          remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
+          // temporarily remove <a /> in toc
+          // rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
+          rehypePlugins={[toc, customeToc, rehypeRaw]}
+          skipHtml={false}
+          components={{
+            a(param) {
+              const linkHref = param.href;
+              const title = param.children[0];
 
-            // for links within the SPA: need to use <Link /> to properly handle routing.
-            if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
+              // for links within the SPA: need to use <Link /> to properly handle routing.
+              if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
+                return (
+                  <Link
+                    to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''}`}
+                  >
+                    {title}
+                  </Link>
+                );
+              } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/examples/')) {
+                return <Link to={linkHref.replace('/#/examples/', `/examples/${version}/`)}>{title}</Link>;
+              } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/api/')) {
+                return <Link to={linkHref.replace('/#/api/', `/api/${version}/`)}>{title}</Link>;
+              }
+              // for links to other websites: use <a />
               return (
-                <Link
-                  to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''}`}
-                >
+                <a href={linkHref as string} target='_blank'>
                   {title}
-                </Link>
+                </a>
               );
-            } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/examples/')) {
-              return <Link to={linkHref.replace('/#/examples/', `/examples/${version}/`)}>{title}</Link>;
-            } else if (typeof linkHref === 'string' && linkHref.startsWith('/#/api/')) {
-              return <Link to={linkHref.replace('/#/api/', `/api/${version}/`)}>{title}</Link>;
-            }
-            // for links to other websites: use <a />
-            return (
-              <a href={linkHref as string} target='_blank'>
-                {title}
-              </a>
-            );
-          },
-          //@ts-ignore
-          nav: DocToc,
-          blockquote({ className, src }: any) {
-            if (className === 'playground-in-doc') {
-              return <Playground id={getIdByTitle(src) || ''} title={docTitle} />;
-            }
-            return null;
-          },
-          code({ node, inline, className, children, ...props }) {
-            const match = /language-(\w+)/.exec(className || '');
-            return !inline && match ? (
-              <code dangerouslySetInnerHTML={{
-                __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
-              }}
-              />
-            ) : (
-              <code className={className} {...props}>
-                {children}
-              </code>
-            );
-          },
-        }}
-      >
-        {docData.content}
-      </ReactMarkdown>
+            },
+            //@ts-ignore
+            nav: DocToc,
+            blockquote({ className, src }: any) {
+              if (className === 'playground-in-doc') {
+                return <Playground id={getIdByTitle(src) || ''} title={docTitle} />;
+              }
+              return null;
+            },
+            code({ node, inline, className, children, ...props }) {
+              const match = /language-(\w+)/.exec(className || '');
+              return !inline && match ? (
+                <code dangerouslySetInnerHTML={{
+                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+                }}
+                />
+              ) : (
+                <code className={className} {...props}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
+          {docData.content}
+        </ReactMarkdown>
+      </StyledReactMarkdown>
     </StyledMarkdown>
   );
 }

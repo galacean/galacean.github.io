@@ -1,17 +1,35 @@
 import React from 'react';
 import { toHtml } from 'hast-util-to-html';
 import { Affix } from 'antd';
-import "./DocToc.less"
+import { styled } from '../../../ui/design-system';
+
+const StyledToc = styled("div", {
+  position: "fixed",
+  top: "$16",
+  right: 0,
+  zIndex: 10,
+  padding: "$4",
+  margin: "$2 $4 $2 $2",
+  fontSize: "$1",
+  color: "$slate11",
+  maxWidth: "200px",
+  "& ol": {
+    "& > li": {
+      listStyle: "none",
+      marginLeft: "$3",
+      "& p": {
+        padding: "$0_5 0"
+      }
+    }
+  }
+});
 
 const DocToc: React.FC = (props: any) => {
   return (
-    <Affix className='toc-affix' offsetTop={16}>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: toHtml(props.node),
-        }}
-      />
-    </Affix>
+    <StyledToc dangerouslySetInnerHTML={{
+      __html: toHtml(props.node),
+    }}>
+    </StyledToc>
   );
 };
 export default DocToc;
