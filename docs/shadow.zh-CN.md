@@ -16,7 +16,7 @@ label: Graphics/Light
 
 | 参数 | 应用 |
 | :-- | :-- |
-| [enableShadow](${api}core/Light#shadowType) | 阴影投射类型 |
+| [shadowType](${api}core/Light#shadowType) | 阴影投射类型 |
 | [shadowBias](${api}core/Light#shadowBias) | 阴影的偏移 |
 | [shadowNormalBias](${api}core/Light#shadowNormalBias) | 阴影的法向偏移 |
 | [shadowNearPlane](${api}core/Light#shadowNearPlane) | 渲染深度图时的近裁面 |
