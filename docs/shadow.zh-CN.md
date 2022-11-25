@@ -13,13 +13,13 @@ label: Graphics/Light
 
 基于这样的原理就比较好理解在 `Light` 组件中有关阴影的各项属性设置：
 
-| 参数                                                  | 应用                 |
-| :---------------------------------------------------- | :------------------- |
-| [shadowType](${api}core/Light#shadowType)             | 阴影投射类型         |
-| [shadowBias](${api}core/Light#shadowBias)             | 阴影的偏移           |
-| [shadowNormalBias](${api}core/Light#shadowNormalBias) | 阴影的法向偏移       |
-| [shadowNearPlane](${api}core/Light#shadowNearPlane)   | 渲染深度图时的近裁面 |
-| [shadowStrength](${api}core/Light#shadowStrength)     | 阴影强度             |
+| 参数 | 应用 |
+| :-- | :-- |
+| [enableShadow](${api}core/Light#shadowType) | 阴影投射类型 |
+| [shadowBias](${api}core/Light#shadowBias) | 阴影的偏移 |
+| [shadowNormalBias](${api}core/Light#shadowNormalBias) | 阴影的法向偏移 |
+| [shadowNearPlane](${api}core/Light#shadowNearPlane) | 渲染深度图时的近裁面 |
+| [shadowStrength](${api}core/Light#shadowStrength) | 阴影强度 |
 
 这里需要特别说明一下阴影偏移：
 ![shadow-bias](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8q5MTbrlC7QAAAAAAAAAAAAAARQnAQ)
@@ -35,8 +35,7 @@ label: Graphics/Light
 | [shadowCascades](${api}core/Scene#shadowCascades)            | 级联阴影的数量         |
 | [shadowTwoCascadeSplits](${api}core/Scene#shadowTwoCascadeSplits) | 划分二级级联阴影的参数 |
 | [shadowFourCascadeSplits](${api}core/Scene#shadowFourCascadeSplits) | 划分四级级联阴影的参数 |
-| [shadowDistance](${api}core/Scene#shadowDistance)            | 最大阴影距离           |
-
+| [shadowDistance](${api}core/Scene#shadowDistance) | 最大阴影距离 |
 上述参数可以通过在 Playground 的例子中进行调试进行理解：
 <playground src="cascaded-shadow.ts"></playground>
 
