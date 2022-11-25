@@ -14,7 +14,7 @@ label: Graphics/Light
 
 | 参数 | 应用 |
 | :-- | :-- |
-| [enableShadow](${api}core/Light#shadowType) | 阴影投射类型 |
+| [shadowType](${api}core/Light#shadowType) | 阴影投射类型 |
 | [shadowBias](${api}core/Light#shadowBias) | 阴影的偏移 |
 | [shadowNormalBias](${api}core/Light#shadowNormalBias) | 阴影的法向偏移 |
 | [shadowNearPlane](${api}core/Light#shadowNearPlane) | 渲染深度图时的近裁面 |
@@ -34,6 +34,7 @@ label: Graphics/Light
 | [shadowTwoCascadeSplits](${api}core/Scene#shadowTwoCascadeSplits) | 划分二级级联阴影的参数 |
 | [shadowFourCascadeSplits](${api}core/Scene#shadowFourCascadeSplits) | 划分四级级联阴影的参数 |
 | [shadowDistance](${api}core/Scene#shadowDistance) | 最大阴影距离 |
+
 上述参数可以通过在 Playground 的例子中进行调试进行理解：
 <playground src="cascaded-shadow.ts"></playground>
 
