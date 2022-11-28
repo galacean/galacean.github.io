@@ -2,9 +2,9 @@
   "name": "oasis-engine",
   "versions": ["latest", "0.8"],
   "serverConfig": {
-    "local": "http://oasisbe-afx-38287.gz00b.dev.alipay.net",
-    "dev": "http://oasisbe-afx-38287.gz00b.dev.alipay.net",
-    "test": "http://oasisbe.test.alipay.net",
+    "local": "https://oasisbe.test.alipay.net",
+    "dev": "https://oasisbe.test.alipay.net",
+    "test": "https://oasisbe.test.alipay.net",
     "pre": "https://oasisbe-pre.alipay.com",
     "prod": "https://oasisbe.alipay.com"
   }
