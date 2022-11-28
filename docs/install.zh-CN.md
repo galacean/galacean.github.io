@@ -17,7 +17,7 @@ label: Introduction/Basic
    Engine 
 
 ```bash
-npm install --save oasis-engine 22
+npm install --save oasis-engine
 ```
 
 ​	  Engine toolkit 
