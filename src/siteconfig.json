@@ -5,7 +5,7 @@
     "local": "https://oasisbe.test.alipay.net",
     "dev": "https://oasisbe.test.alipay.net",
     "test": "https://oasisbe.test.alipay.net",
-    "pre": "httpss://oasisbe-pre.alipay.com",
+    "pre": "https://oasisbe-pre.alipay.com",
     "prod": "https://oasisbe.alipay.com"
   }
 }
