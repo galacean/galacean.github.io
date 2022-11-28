@@ -1,8 +1,10 @@
 import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Popover } from 'antd';
 import { useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Breadcrumb, BreadcrumbItem } from '../../ui/Breadcrumb';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 import { AppContext } from '../contextProvider';
 import LoadingIcon from '../Loading';
 import Menu from './components/Menu';
@@ -16,8 +18,6 @@ import {
   PkgChild,
   PkgChildDetail,
 } from './util/apiUtil';
-
-const { Sider, Content } = Layout;
 
 const Api = () => {
   const [pkgList, setPkgList] = useState<Array<string>>([]);
@@ -131,53 +131,80 @@ const Api = () => {
     ></Menu>
   );
 
+  const StyledContent = styled("article", {
+    padding: '$4',
+    backgroundColor: '$slate1',
+    fontSize: "$2",
+    flex: 1
+  });
+
+  const StyledBreadcrumb = styled("div", {
+    marginBottom: "$2"
+  });
+
+  const StyledPanel = styled("section", {
+    padding: "0 $4 $4 $4",
+    border: "1px solid $slate5",
+    borderRadius: "$2",
+    "& h2": {
+      margin: "0 -$4 0",
+      padding: "$2 $4 $2",
+      fontSize: "$4"
+    },
+    "& h3": {
+      fontSize: "$3",
+      margin: "$2 -$4 0"
+    },
+    "& h4": {
+      fontSize: "$2"
+    }
+  });
+
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
-        <Layout hasSider={true}>
-          <Content className='api' style={{ padding: '20px', backgroundColor: '#fff' }}>
-            <article className='tsc-content'>
-              <div className='tsc-nav'>
-                <Breadcrumb>
-                  <Breadcrumb.Item className='docsearch-lvl0'>API</Breadcrumb.Item>
-                  <Breadcrumb.Item>
-                    <span
-                      onClick={() => {
-                        setSelectedItem(undefined);
-                        setChildrenDetail(null);
+        <Flex wrap="false">
+          <StyledContent>
+            <StyledBreadcrumb>
+              <Breadcrumb>
+                <BreadcrumbItem>API</BreadcrumbItem>
+                <BreadcrumbItem>
+                  <span
+                    onClick={() => {
+                      setSelectedItem(undefined);
+                      setChildrenDetail(null);
+                    }}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {selectedPkg}
+                  </span>
+                </BreadcrumbItem>
+                {selectedItem && (
+                  <BreadcrumbItem>
+                    <span>{pkgChildren.find((child) => child.id === selectedItem)?.name}</span>
+                  </BreadcrumbItem>
+                )}
+              </Breadcrumb>
+            </StyledBreadcrumb>
+            {selectedItem ? (
+              <>{childrenDetail && <Module {...childrenDetail} />}</>
+            ) : (
+              <StyledPanel >
+                {Array.from(pkgSet).map((kind) => {
+                  return (
+                    <Package
+                      key={kind}
+                      {...{
+                        setSelectedItem,
+                        kind,
+                        pgkChildren: pkgChildren.filter((child) => child.kind === kind),
                       }}
-                      style={{ cursor: 'pointer' }}
-                    >
-                      {selectedPkg}
-                    </span>
-                  </Breadcrumb.Item>
-                  {selectedItem && (
-                    <Breadcrumb.Item>
-                      <span>{pkgChildren.find((child) => child.id === selectedItem)?.name}</span>
-                    </Breadcrumb.Item>
-                  )}
-                </Breadcrumb>
-              </div>
-              {selectedItem ? (
-                <>{childrenDetail && <Module {...childrenDetail} />}</>
-              ) : (
-                <section className='tsd-panel tsd-index-panel'>
-                  {Array.from(pkgSet).map((kind) => {
-                    return (
-                      <Package
-                        key={kind}
-                        {...{
-                          setSelectedItem,
-                          kind,
-                          pgkChildren: pkgChildren.filter((child) => child.kind === kind),
-                        }}
-                      />
-                    );
-                  })}
-                </section>
-              )}
-            </article>
-          </Content>
+                    />
+                  );
+                })}
+              </StyledPanel>
+            )}
+          </StyledContent>
           {isMobile ? (
             <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
               <MenuUnfoldOutlined
@@ -186,11 +213,12 @@ const Api = () => {
               />
             </Popover>
           ) : (
-            <Sider style={{ width: '300px!important' }}>{menu}</Sider>
+            <nav>{menu}</nav>
           )}
-        </Layout>
-      )}
-    </Media>
+        </Flex>
+      )
+      }
+    </Media >
   );
 };
 
