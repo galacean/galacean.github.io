@@ -164,7 +164,9 @@ const StyledModifiedTime = styled(Flex, {
   textDecoration: "ButtonFace",
   fontSize: "$1",
   textAlign: "right",
-  color: "$slate11"
+  color: "$slate10",
+  borderBottom: "1px solid $slate4",
+  padding: "0 0 $1 $1"
 });
 
 const StyledReactMarkdown = styled("div", {
