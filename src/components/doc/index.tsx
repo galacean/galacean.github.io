@@ -1,3 +1,4 @@
+import mermaid from 'mermaid'
 import { MenuUnfoldOutlined } from '@ant-design/icons';
 import { Affix, Col, Popover, Row } from 'antd';
 import { ItemType } from 'antd/lib/menu/hooks/useItems';
@@ -20,6 +21,13 @@ function Doc() {
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
 
+  useEffect(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+    })
+  }, [])
+  
+  
   useEffect(() => {
     const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
     navigate(
