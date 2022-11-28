@@ -27,6 +27,7 @@ const StyledSubList = styled("ul", {
 
 const StyledSubItem = styled("li", {
   lineHeight: 2.5,
+  fontSize: "13px",
   cursor: "pointer",
   whiteSpace: "nowrap",
   variants: {
