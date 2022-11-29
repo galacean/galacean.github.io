@@ -1,3 +1,4 @@
+import { styled } from '../../../ui/design-system';
 import { PkgChild } from '../util/apiUtil';
 import Kind from './Kind';
 
@@ -7,11 +8,25 @@ interface IPackage {
   setSelectedItem: React.Dispatch<React.SetStateAction<number | undefined>>;
 }
 
+const StyledSectionPackage = styled("div", {
+  padding: 0,
+  "& h3": {
+    padding: "$2 $4"
+  }
+});
+
+const StyledPackage = styled("ul", {
+  padding: 0,
+  columnCount: 4,
+  columnGap: "20px",
+  listStyle: "none"
+});
+
 export default function Package(props: IPackage) {
   return (
-    <section className='tsd-index-section'>
+    <StyledSectionPackage>
       <h3>{props.kind}</h3>
-      <ul className='tsd-index-list'>
+      <StyledPackage>
         {props.pgkChildren.map((child) => {
           return (
             <li key={child.id}>
@@ -19,7 +34,7 @@ export default function Package(props: IPackage) {
             </li>
           );
         })}
-      </ul>
-    </section>
+      </StyledPackage>
+    </StyledSectionPackage>
   );
 }

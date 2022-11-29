@@ -10,7 +10,7 @@ import LoadingIcon from '../Loading';
 import Menu from './components/Menu';
 import Module from './components/Module';
 import Package from './components/Package';
-import './index.less';
+
 import {
   fetchPkgChildren,
   fetchPkgChildrenDetail,
@@ -18,6 +18,36 @@ import {
   PkgChild,
   PkgChildDetail,
 } from './util/apiUtil';
+
+const StyledContent = styled("article", {
+  padding: '$8',
+  backgroundColor: '$slate1',
+  fontSize: "$2",
+  flex: 1
+});
+
+const StyledBreadcrumb = styled("div", {
+  margin: "0 $2 $4"
+});
+
+const StyledPanel = styled("section", {
+  padding: "0 $4 $4 $4",
+  border: "1px solid $slate5",
+  borderRadius: "$2",
+  "& h2": {
+    margin: "0 -$4 0",
+    padding: "$2 $4 $2",
+    fontSize: "$4"
+  },
+  "& h3": {
+    fontSize: "$3",
+    margin: "$2 -$4 0"
+  },
+  "& h4": {
+    fontSize: "$2"
+  }
+});
+
 
 const Api = () => {
   const [pkgList, setPkgList] = useState<Array<string>>([]);
@@ -130,35 +160,6 @@ const Api = () => {
       }}
     ></Menu>
   );
-
-  const StyledContent = styled("article", {
-    padding: '$4',
-    backgroundColor: '$slate1',
-    fontSize: "$2",
-    flex: 1
-  });
-
-  const StyledBreadcrumb = styled("div", {
-    marginBottom: "$2"
-  });
-
-  const StyledPanel = styled("section", {
-    padding: "0 $4 $4 $4",
-    border: "1px solid $slate5",
-    borderRadius: "$2",
-    "& h2": {
-      margin: "0 -$4 0",
-      padding: "$2 $4 $2",
-      fontSize: "$4"
-    },
-    "& h3": {
-      fontSize: "$3",
-      margin: "$2 -$4 0"
-    },
-    "& h4": {
-      fontSize: "$2"
-    }
-  });
 
   return (
     <Media query='(max-width: 768px)'>
