@@ -17,17 +17,16 @@ interface IPlayground {
 
 export const StyledCodeBox = styled(Flex, {
   position: "relative",
-  marginBottom: "20px",
-  border: "1px solid $slate5"
+  marginBottom: "20px"
 });
 
 const StyledDemo = styled("div", {
-  flex: 1,
+  width: "50%",
   paddingTop: "37px"
 });
 
 export const StyledSource = styled("div", {
-  flex: 1,
+  width: "50%",
   maxHeight: "500px",
   margin: 0,
   paddingTop: "37px",
@@ -83,7 +82,7 @@ export default function Playground(props: IPlayground) {
   if (!packages || !props.id) return null;
 
   return (
-    <StyledCodeBox>
+    <StyledCodeBox wrap="false">
       <StyledDemo>
         <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
       </StyledDemo>

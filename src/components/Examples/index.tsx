@@ -17,7 +17,9 @@ const StyledSearchBar = styled("div", {
 });
 
 const StyledContent = styled("div", {
+  flex: 1,
   height: 'calc(100vh - 64px)',
+  width: "calc(100vw - 300px)",
   [`& ${StyledCodeBox}`]: {
     height: "100%"
   },
@@ -25,6 +27,10 @@ const StyledContent = styled("div", {
     maxHeight: "100%"
   }
 });
+
+const StyledNav = styled("nav", {
+  borderRight: "1px solid $slate5"
+})
 
 export default function Examples() {
   const context = useContext(AppContext);
@@ -166,7 +172,7 @@ export default function Examples() {
             <Header></Header>
             <Flex wrap="false">
               {!isMobile && (
-                <nav>
+                <StyledNav>
                   <StyledSearchBar>
                     <Input
                       size='md'
@@ -178,7 +184,7 @@ export default function Examples() {
                     />
                   </StyledSearchBar>
                   {menu}
-                </nav>
+                </StyledNav>
               )}
               <StyledContent>
                 {isMobile && (

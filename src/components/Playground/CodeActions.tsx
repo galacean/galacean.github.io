@@ -16,8 +16,7 @@ export const StyledActions = styled("div", {
   padding: "2px 0",
   lineHeight: "33px",
   textAlign: "center",
-  backgroundColor: "$slate4",
-  borderBottom: "1px dashed $slate5"
+  backgroundColor: "$slate3"
 });
 
 export const StyledAction = styled("div", {
