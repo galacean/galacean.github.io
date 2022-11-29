@@ -5,22 +5,30 @@ import {
 } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import QRCode from 'qrcode.react';
+import { StyledAction, StyledActions } from './CodeActions';
+import { styled } from '../../ui/design-system';
+
+const StyledDemoActions = styled(StyledActions, {
+    right: "initial",
+    left: 0,
+    borderRight: "1px solid $slate6"
+});
 
 export default function DemoActions (props: any) {
   // const [copy, setCopy] = useState('Copy');
 
   return (
-    <div className="code-box-actions code-box-actions-demo">
-      <div className="code-box-action code-box-qrcode">
+    <StyledDemoActions>
+      <StyledAction>
         <Tooltip title={<QRCode value={props.url} />} color="#fff" placement="bottom">
           <QrcodeOutlined />
         </Tooltip>
-      </div>
-      <div className="code-box-action">
+      </StyledAction>
+      <StyledAction>
         <Tooltip title="在浏览器中打开">
           <a href={props.url} target="_blank"><ChromeOutlined /></a>
         </Tooltip>
-      </div>
-    </div>
+      </StyledAction>
+    </StyledDemoActions>
   );
 }

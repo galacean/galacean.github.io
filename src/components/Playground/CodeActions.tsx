@@ -5,6 +5,38 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Codepen from './Codepen';
 import CodeSandbox from './CodeSandbox';
 import Stackblitz from './Stackblitz';
+import { styled } from '../../ui/design-system';
+
+export const StyledActions = styled("div", {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  width: "50%",
+  height: "37px",
+  padding: "2px 0",
+  lineHeight: "33px",
+  textAlign: "center",
+  backgroundColor: "$slate4",
+  borderBottom: "1px dashed $slate5"
+});
+
+export const StyledAction = styled("div", {
+  display: "inline-block",
+  marginRight: "16px",
+  fontSize: "16px",
+  cursor: "pointer",
+  opacity: 0.8,
+  transition: "opacity 0.5s",
+  "&:last-child": {
+    marginRight: 0
+  },
+  "& a": {
+    color: "#314659"
+  },
+  "&:hover": {
+    opacity: 1
+  }
+})
 
 interface ICodeActionProps {
   sourceCode: string;
@@ -36,7 +68,7 @@ export default function CodeActions(props: ICodeActionProps) {
   const { sourceCode, version, name, packages, engineName } = props;
 
   return (
-    <div className='code-box-actions'>
+    <StyledActions>
       <Codepen
         sourceCode={sourceCode}
         version={version}
@@ -65,7 +97,6 @@ export default function CodeActions(props: ICodeActionProps) {
         css={css}
       />
       <Tooltip
-        className='code-box-action'
         title={copy}
         onVisibleChange={(s) => {
           if (s) {
@@ -73,10 +104,12 @@ export default function CodeActions(props: ICodeActionProps) {
           }
         }}
       >
-        <CopyToClipboard text={sourceCode} onCopy={() => setCopy('Copied')}>
-          <CopyOutlined />
-        </CopyToClipboard>
+        <StyledAction>
+          <CopyToClipboard text={sourceCode} onCopy={() => setCopy('Copied')}>
+            <CopyOutlined />
+          </CopyToClipboard>
+        </StyledAction>
       </Tooltip>
-    </div>
+    </StyledActions>
   );
 }

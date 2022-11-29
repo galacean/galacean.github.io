@@ -3,6 +3,7 @@ import { Tooltip } from 'antd';
 import LZString from 'lz-string';
 import { useRef } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { StyledAction } from './CodeActions';
 
 function compress(string: string) {
   return LZString.compressToBase64(string)
@@ -51,9 +52,8 @@ function CodeSandbox(props: any) {
   };
 
   return (
-    <div className='code-box-action'>
+    <StyledAction>
       <form
-        className='code-box-code-action'
         action='https://codesandbox.io/api/v1/sandboxes/define'
         method='POST'
         target='_blank'
@@ -67,7 +67,7 @@ function CodeSandbox(props: any) {
           <CodeSandboxOutlined />
         </Tooltip>
       </form>
-    </div>
+    </StyledAction>
   );
 }
 export default injectIntl(CodeSandbox);

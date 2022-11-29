@@ -86,7 +86,7 @@ export default (props: IProps) => {
     )
   });
 
-  return <StyledRoot>
+  return <StyledRoot css={props.css}>
     <StyledList>
       {menuItems}
     </StyledList>

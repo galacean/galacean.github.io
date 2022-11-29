@@ -1,18 +1,48 @@
 import Prism from 'prismjs';
 import { createRef, useContext, useEffect, useState } from 'react';
 import siteConfig from '../../siteconfig.json';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
 import DemoActions from './DemoActions';
 import './highlight.less';
-import './index.less';
 
 interface IPlayground {
   id: string;
   title: string | undefined;
 }
+
+export const StyledCodeBox = styled(Flex, {
+  position: "relative",
+  marginBottom: "20px",
+  border: "1px solid $slate5"
+});
+
+const StyledDemo = styled("div", {
+  flex: 1,
+  paddingTop: "37px"
+});
+
+export const StyledSource = styled("div", {
+  flex: 1,
+  maxHeight: "500px",
+  margin: 0,
+  paddingTop: "37px",
+  overflow: "auto",
+  backgroundColor: "$slate2",
+  "& pre": {
+    margin: 0,
+    backgroundColor: "$slate2",
+    "& code": {
+      fontSize: "13px",
+      padding: "$4",
+      backgroundColor: "$slate2",
+    }
+  }
+});
 
 export default function Playground(props: IPlayground) {
   const [code, setCode] = useState('');
@@ -53,11 +83,11 @@ export default function Playground(props: IPlayground) {
   if (!packages || !props.id) return null;
 
   return (
-    <div className='code-box'>
-      <div className='code-box-demo'>
+    <StyledCodeBox>
+      <StyledDemo>
         <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
-      </div>
-      <div className='code-box-source'>
+      </StyledDemo>
+      <StyledSource>
         <pre>
           <code
             dangerouslySetInnerHTML={{
@@ -65,7 +95,7 @@ export default function Playground(props: IPlayground) {
             }}
           />
         </pre>
-      </div>
+      </StyledSource>
       {src && (
         <CodeActions
           sourceCode={src}
@@ -77,6 +107,6 @@ export default function Playground(props: IPlayground) {
         />
       )}
       {url && <DemoActions url={url} />}
-    </div>
+    </StyledCodeBox>
   );
 }

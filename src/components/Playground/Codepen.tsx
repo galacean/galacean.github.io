@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { CodepenOutlined } from '@ant-design/icons';
 import { Tooltip } from 'antd';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { StyledAction } from './CodeActions';
 
 function Codepen(props: any) {
   const iconRef = useRef<HTMLFormElement>(null);
@@ -30,9 +31,8 @@ function Codepen(props: any) {
   };
 
   return (
-    <div className='code-box-action'>
+    <StyledAction>
       <form
-        className='code-box-code-action'
         action='https://codepen.io/pen/define'
         method='POST'
         target='_blank'
@@ -46,7 +46,7 @@ function Codepen(props: any) {
           <CodepenOutlined />
         </Tooltip>
       </form>
-    </div>
+    </StyledAction>
   );
 }
 

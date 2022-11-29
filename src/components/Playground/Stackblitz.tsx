@@ -6,6 +6,7 @@ import {
 import { Tooltip } from 'antd';
 import stackblitzSdk from '@stackblitz/sdk';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { StyledAction } from './CodeActions';
 
 function Stackblitz (props: any) {
   const indexJsContent = `import './index.css';
@@ -30,7 +31,7 @@ function Stackblitz (props: any) {
   };
 
   return (
-      <div className="code-box-action">
+      <StyledAction>
         <Tooltip title={<FormattedMessage id="app.demo.stackblitz"/>}>
           <span onClick={() => {
               stackblitzSdk.openProject(stackblitzPrefillConfig);
@@ -39,7 +40,7 @@ function Stackblitz (props: any) {
             <ThunderboltOutlined />
           </span>
         </Tooltip>
-      </div>
+      </StyledAction>
   );
 }
 
