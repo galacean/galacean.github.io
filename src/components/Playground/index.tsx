@@ -13,11 +13,20 @@ import './highlight.less';
 interface IPlayground {
   id: string;
   title: string | undefined;
+  embed?: boolean;
 }
 
 export const StyledCodeBox = styled(Flex, {
   position: "relative",
-  marginBottom: "20px"
+  marginBottom: "20px",
+  variants: {
+    embed: {
+      true: {
+        border: "1px solid $slate5",
+        borderRadius: "$1"
+      }
+    }
+  }
 });
 
 const StyledDemo = styled("div", {
@@ -82,7 +91,7 @@ export default function Playground(props: IPlayground) {
   if (!packages || !props.id) return null;
 
   return (
-    <StyledCodeBox wrap="false">
+    <StyledCodeBox wrap="false" embed={props.embed}>
       <StyledDemo>
         <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
       </StyledDemo>
