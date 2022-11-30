@@ -205,7 +205,7 @@ const StyledViewport = styled(NavigationMenu.Viewport, {
   position: "relative",
   transformOrigin: "top center",
   marginTop: "10px",
-  backgroundColor: "$slate1",
+  backgroundColor: "$slate2",
   borderRadius: "$1",
   overflow: "hidden",
   border: "1px solid $slate5",
@@ -240,11 +240,10 @@ const StyledListItem = styled("div", {
   lineHeight: 1,
   color: "$slate12",
   fontSize: "$2",
-  "&:focus": {
-    boxShadow: "0 0 0 2px var(--violet7)"
-  },
+  border: "2px solid $slate2",
+  transition: "border-color 0.2s",
   "&:hover": {
-    backgroundColor: "$slate3",
+    borderColor: "$blue10",
     color: "$slate12",
   }
 });

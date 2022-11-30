@@ -40,7 +40,7 @@ const SearchBox = () => {
   );
 
   const searchBox = (
-    <Flex align="both" css={{margin: "0 $6", flex: 1, position: "relative"}}>
+    <Flex align="both" css={{margin: "0 $12", flex: 1, position: "relative"}}>
       <Input
         placeholder={formatMessage({ id: 'app.header.search.box' })}
         startSlot={<Search />}
