@@ -1,5 +1,4 @@
 import { MenuUnfoldOutlined, SearchOutlined } from '@ant-design/icons';
-import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -34,8 +33,8 @@ const StyledNav = styled("nav", {
 
 export default function Examples() {
   const context = useContext(AppContext);
-  const [items, setItems] = useState<ItemType[]>([]);
-  const [filteredItems, setFilteredItems] = useState<ItemType[]>([]);
+  const [items, setItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<any[]>([]);
   const [selectedExampleId, setSelectedExampleId] = useState('');
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
   const { version, exampleTitle } = useParams();
@@ -70,7 +69,7 @@ export default function Examples() {
     menuKeyTitleMapRef.current.clear();
     navigate(`/examples/${context.version}`);
     fetchMenuList('ts', context.version).then((list) => {
-      const itemRes: ItemType[] = [];
+      const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -149,7 +148,7 @@ export default function Examples() {
 
   // filter items
   useEffect(() => {
-    const filtered: Array<ItemType> = [];
+    const filtered: Array<any> = [];
     if (!search) {
       setFilteredItems([...items]);
     } else {

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { CopyOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Codepen from './Codepen';
 import CodeSandbox from './CodeSandbox';
 import Stackblitz from './Stackblitz';
 import { styled } from '../../ui/design-system';
+import { Tooltip } from '../../ui/Tooltip';
 
 export const StyledActions = styled("div", {
   position: "absolute",
@@ -96,7 +96,7 @@ export default function CodeActions(props: ICodeActionProps) {
         css={css}
       />
       <Tooltip
-        title={copy}
+        content={copy}
         onVisibleChange={(s) => {
           if (s) {
             setCopy('Copy');

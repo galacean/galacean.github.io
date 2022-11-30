@@ -1,7 +1,7 @@
+import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { useContext, useEffect } from 'react';
 import { IntlProvider } from 'react-intl';
 import { RouterProvider } from 'react-router-dom';
-import './App.less';
 import { AppContext } from './components/contextProvider';
 import LoadingIcon from './components/Loading';
 import { translationsData } from './constants/locale';
@@ -17,7 +17,9 @@ function App() {
 
   return (
     <IntlProvider locale={context.lang} messages={translationsData[context.lang]}>
-      <RouterProvider router={router} fallbackElement={<LoadingIcon />}></RouterProvider>
+      <TooltipProvider>
+        <RouterProvider router={router} fallbackElement={<LoadingIcon />}></RouterProvider>
+      </TooltipProvider>
     </IntlProvider>
   );
 }

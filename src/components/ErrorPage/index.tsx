@@ -1,7 +1,7 @@
-import { Button, Result } from 'antd';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../../ui/Button';
 
 const ErrorPage: React.FC = () => {
   const navigate = useNavigate();
@@ -15,20 +15,14 @@ const ErrorPage: React.FC = () => {
         justifyContent: 'center',
       }}
     >
-      <Result
-        status='404'
-        title='404'
-        subTitle={useIntl().formatMessage({ id: 'app.content.error.subtitle' })}
-        extra={
-          <Button
-            type='primary'
-            onClick={() => {
-              navigate('/');
-            }}
-          >
-            {useIntl().formatMessage({ id: 'app.content.error.button' })}
-          </Button>
-        }
+      <Button
+        variant='primary'
+        onClick={() => {
+          navigate('/');
+        }}
+      >
+        {useIntl().formatMessage({ id: 'app.content.error.button' })}
+      </Button>
       />
     </div>
   );

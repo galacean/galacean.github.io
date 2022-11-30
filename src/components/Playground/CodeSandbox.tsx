@@ -1,8 +1,8 @@
 import { CodeSandboxOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
 import LZString from 'lz-string';
 import { useRef } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { Tooltip } from '../../ui/Tooltip';
 import { StyledAction } from './CodeActions';
 
 function compress(string: string) {
@@ -63,7 +63,7 @@ function CodeSandbox(props: any) {
         }}
       >
         <input type='hidden' name='parameters' value={compress(JSON.stringify(codesanboxPrefillConfig))} />
-        <Tooltip title={<FormattedMessage id='app.demo.codesandbox' />}>
+        <Tooltip content={<FormattedMessage id='app.demo.codesandbox' />}>
           <CodeSandboxOutlined />
         </Tooltip>
       </form>

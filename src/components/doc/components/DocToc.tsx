@@ -1,6 +1,5 @@
 import React from 'react';
 import { toHtml } from 'hast-util-to-html';
-import { Affix } from 'antd';
 import { styled } from '../../../ui/design-system';
 
 const StyledToc = styled("div", {

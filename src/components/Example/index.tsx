@@ -1,4 +1,3 @@
-import { Spin } from 'antd';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'regenerator-runtime/runtime';
@@ -6,6 +5,8 @@ import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import * as Babel from '@babel/standalone';
+import { Spin } from '../../ui/Spin';
+import { Flex } from '../../ui/Flex';
 
 const useScript = async (libs: any) => {
   const promises: Promise<any>[] = [];
@@ -156,7 +157,7 @@ export default function Example() {
   }, []);
 
   return <div style={{ width: '100vw', height: '100vh' }}>
-    {loading && <Spin style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }} />}
+    {loading && <Flex align="both"css={{height: "100%"}}><Spin /></Flex>}
     <canvas id='canvas' style={{ width: '100%', height: '100%' }} />;
   </div>
 }

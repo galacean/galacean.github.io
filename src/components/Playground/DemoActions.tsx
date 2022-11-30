@@ -3,10 +3,10 @@ import {
   QrcodeOutlined,
   ChromeOutlined 
 } from '@ant-design/icons';
-import { Tooltip } from 'antd';
 import QRCode from 'qrcode.react';
 import { StyledAction, StyledActions } from './CodeActions';
 import { styled } from '../../ui/design-system';
+import { Tooltip } from '../../ui/Tooltip';
 
 const StyledDemoActions = styled(StyledActions, {
     right: "initial",
@@ -20,12 +20,12 @@ export default function DemoActions (props: any) {
   return (
     <StyledDemoActions>
       <StyledAction>
-        <Tooltip title={<QRCode value={props.url} />} color="#fff" placement="bottom">
+        <Tooltip content={<QRCode value={props.url} />}>
           <QrcodeOutlined />
         </Tooltip>
       </StyledAction>
       <StyledAction>
-        <Tooltip title="在浏览器中打开">
+        <Tooltip content="在浏览器中打开">
           <a href={props.url} target="_blank"><ChromeOutlined /></a>
         </Tooltip>
       </StyledAction>

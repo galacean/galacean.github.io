@@ -3,10 +3,10 @@ import React from 'react';
 import {
   ThunderboltOutlined,
 } from '@ant-design/icons';
-import { Tooltip } from 'antd';
 import stackblitzSdk from '@stackblitz/sdk';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { StyledAction } from './CodeActions';
+import { Tooltip } from '../../ui/Tooltip';
 
 function Stackblitz (props: any) {
   const indexJsContent = `import './index.css';
@@ -32,7 +32,7 @@ function Stackblitz (props: any) {
 
   return (
       <StyledAction>
-        <Tooltip title={<FormattedMessage id="app.demo.stackblitz"/>}>
+        <Tooltip content={<FormattedMessage id="app.demo.stackblitz"/>}>
           <span onClick={() => {
               stackblitzSdk.openProject(stackblitzPrefillConfig);
             }}

@@ -1,8 +1,9 @@
-import { Divider, Spin } from 'antd';
 import { useContext, useRef, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
+import { Divider } from '../../../ui/Divider';
+import { Spin } from '../../../ui/Spin';
 import { AppContext } from '../../contextProvider';
 import Source from '../../doc/components/Source';
 import { MatchedDocs, searchDoc } from '../headerUtils';
@@ -85,7 +86,7 @@ const ExampleSearchRes = (props: IExampleSearchResProps) => {
         pageStart={0}
         loadMore={onloadMore}
         hasMore={hasMoreExampleRef.current}
-        loader={<Spin size='small' />}
+        loader={<Spin />}
       >
         {getdocList()}
       </InfiniteScroll>

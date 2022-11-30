@@ -1,11 +1,10 @@
 import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { Popover } from 'antd';
-import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
+import { Popover } from '../../ui/Popover';
 import { AppContext } from '../contextProvider';
 import Footer from '../footer';
 import LoadingIcon from '../Loading';
@@ -30,7 +29,7 @@ const StyledMenu = styled('div', {
 function Doc() {
   const context = useContext(AppContext);
   const [selectedDocId, setSelectedDocId] = useState('');
-  const [items, setItems] = useState<ItemType[]>([]);
+  const [items, setItems] = useState<any[]>([]);
   const { ver, docTitle, lang } = useParams();
   const languageCode = lang === 'en' ? 'en' : 'zh-CN';
   const navigate = useNavigate();
@@ -54,7 +53,7 @@ function Doc() {
   useEffect(() => {
     menuKeyTitleMapRef.current.clear();
     fetchMenuList('markdown', context.version).then((list) => {
-      const itemRes: ItemType[] = [];
+      const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
         .filter((item) => item.files.length > 0 || item.children.length > 0)

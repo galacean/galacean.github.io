@@ -43,7 +43,6 @@ export default ({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            antd: ['antd'],
             'oasis-engine': ['oasis-engine'],
             '@oasis-engine/spine': ['@oasis-engine/spine'],
             '@babel/standalone': ['@babel/standalone']

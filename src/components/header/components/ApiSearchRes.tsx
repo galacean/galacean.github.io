@@ -1,9 +1,10 @@
-import { Button, Divider, List, Space, Spin } from 'antd';
 import * as _ from 'lodash';
 import { useContext, useRef, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
+import { Button } from '../../../ui/Button';
+import { Spin } from '../../../ui/Spin';
 import { PkgChildDetail } from '../../Api/util/apiUtil';
 import { AppContext } from '../../contextProvider';
 import Source from '../../doc/components/Source';
@@ -39,27 +40,17 @@ const ResultList = (props: { dataSource: PkgChildDetail[]; type: string }) => {
     ) : null;
   return (
     <div key={type}>
-      <Divider orientation='left'>{type}</Divider>
-      <List
-        itemLayout='vertical'
+      <ul
         dataSource={dataSource.slice(0, pageSize)}
         loadMore={loadMore}
         renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              title={
-                <>
-                  <Space>
-                    <a href={item.sources[0].url} target='_blank'>
-                      {item.name}
-                    </a>
-                    <Source src={item.sources[0].url} />
-                  </Space>
-                </>
-              }
-              description={item.comment?.summary.map((item) => item.text).join()}
-            />
-          </List.Item>
+          <li>
+            <a href={item.sources[0].url} target='_blank'>
+              {item.name}
+            </a>
+            <Source src={item.sources[0].url} />
+            <p>{item.comment?.summary.map((item) => item.text).join()}</p>
+          </li>
         )}
       />
     </div>
@@ -126,7 +117,7 @@ const ApiSearchRes = (props: IApiSearchResProps) => {
         pageStart={0}
         loadMore={onloadMore}
         hasMore={hasMoreRef.current}
-        loader={<Spin size='small' />}
+        loader={<Spin />}
       >
         {getApiList()}
       </InfiniteScroll>

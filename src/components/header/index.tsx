@@ -5,7 +5,6 @@ import {
   MenuOutlined, PlayCircleOutlined,
   ReadOutlined
 } from '@ant-design/icons';
-// import { Menu, Popover } from 'antd';
 import { Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import { FormattedMessage, useIntl } from 'react-intl';
