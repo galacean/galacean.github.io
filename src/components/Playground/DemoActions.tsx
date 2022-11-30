@@ -1,32 +1,33 @@
 import React from 'react';
 import {
   QrcodeOutlined,
-  ChromeOutlined 
+  ChromeOutlined
 } from '@ant-design/icons';
 import QRCode from 'qrcode.react';
 import { StyledAction, StyledActions } from './CodeActions';
 import { styled } from '../../ui/design-system';
 import { Tooltip } from '../../ui/Tooltip';
+import { FormattedMessage } from 'react-intl';
+import { Flex } from '../../ui/Flex';
 
 const StyledDemoActions = styled(StyledActions, {
-    right: "initial",
-    left: 0,
-    borderRight: "1px solid $slate6"
+  right: "initial",
+  left: 0
 });
 
-export default function DemoActions (props: any) {
-  // const [copy, setCopy] = useState('Copy');
-
+export default function DemoActions(props: any) {
   return (
-    <StyledDemoActions>
+    <StyledDemoActions gap="lg" align="both">
       <StyledAction>
-        <Tooltip content={<QRCode value={props.url} />}>
+        <Tooltip side="bottom" content={<Flex align="both">
+          <QRCode value={props.url} />
+        </Flex>}>
           <QrcodeOutlined />
         </Tooltip>
       </StyledAction>
       <StyledAction>
-        <Tooltip content="在浏览器中打开">
-          <a href={props.url} target="_blank"><ChromeOutlined /></a>
+        <Tooltip side="bottom" content={<FormattedMessage id="app.home.openbrowser" />}>
+          <ChromeOutlined onClick={() => { window.open(props.url) }} />
         </Tooltip>
       </StyledAction>
     </StyledDemoActions>

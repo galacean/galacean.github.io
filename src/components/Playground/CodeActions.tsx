@@ -6,8 +6,11 @@ import CodeSandbox from './CodeSandbox';
 import Stackblitz from './Stackblitz';
 import { styled } from '../../ui/design-system';
 import { Tooltip } from '../../ui/Tooltip';
+import { Flex } from '../../ui/Flex';
+import { FormattedMessage } from 'react-intl';
+import { toast } from '../../ui/Toast';
 
-export const StyledActions = styled("div", {
+export const StyledActions = styled(Flex, {
   position: "absolute",
   top: 0,
   right: 0,
@@ -15,23 +18,15 @@ export const StyledActions = styled("div", {
   height: "37px",
   padding: "2px 0",
   lineHeight: "33px",
-  textAlign: "center",
   backgroundColor: "$slate3"
 });
 
 export const StyledAction = styled("div", {
   display: "inline-block",
-  marginRight: "16px",
-  fontSize: "16px",
+  fontSize: "$3",
   cursor: "pointer",
   opacity: 0.8,
   transition: "opacity 0.5s",
-  "&:last-child": {
-    marginRight: 0
-  },
-  "& a": {
-    color: "#314659"
-  },
   "&:hover": {
     opacity: 1
   }
@@ -49,8 +44,6 @@ interface ICodeActionProps {
   packages: any;
 }
 export default function CodeActions(props: ICodeActionProps) {
-  const [copy, setCopy] = useState('Copy');
-
   const html = `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -67,7 +60,7 @@ export default function CodeActions(props: ICodeActionProps) {
   const { sourceCode, version, name, packages, engineName } = props;
 
   return (
-    <StyledActions>
+    <StyledActions align="both" gap="lg">
       <Codepen
         sourceCode={sourceCode}
         version={version}
@@ -95,16 +88,11 @@ export default function CodeActions(props: ICodeActionProps) {
         html={html}
         css={css}
       />
-      <Tooltip
-        content={copy}
-        onVisibleChange={(s) => {
-          if (s) {
-            setCopy('Copy');
-          }
-        }}
-      >
+      <Tooltip content={<FormattedMessage id="app.demo.copy" />} side="bottom">
         <StyledAction>
-          <CopyToClipboard text={sourceCode} onCopy={() => setCopy('Copied')}>
+          <CopyToClipboard text={sourceCode} onCopy={() => {
+            toast.success(<FormattedMessage id="app.demo.copied" />, {duration: 1000});
+          }}>
             <CopyOutlined />
           </CopyToClipboard>
         </StyledAction>

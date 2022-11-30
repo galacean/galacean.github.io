@@ -176,6 +176,7 @@ export const translationsData: { [lang: string]: any } = {
     'app.demo.codepen': 'Open in CodePen',
     'app.demo.riddle': 'Open in Riddle',
     'app.demo.codesandbox': 'Open in CodeSandbox',
+    'app.demo.stackblitz': 'Open in Stackblitz',
     'app.home.slogan': 'Mobile first high performance web interactive engine',
     'app.home.preview': 'Preview',
     'app.home.start': 'Getting Started',

@@ -42,7 +42,7 @@ function Codepen(props: any) {
         }}
       >
         <input type='hidden' name='data' value={JSON.stringify(codepenPrefillConfig)} />
-        <Tooltip content={<FormattedMessage id='app.demo.codepen' />}>
+        <Tooltip side="bottom" content={<FormattedMessage id='app.demo.codepen' />}>
           <CodepenOutlined />
         </Tooltip>
       </form>

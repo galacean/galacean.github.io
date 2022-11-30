@@ -10,6 +10,7 @@ import { fetchMenuList } from '../doc/util/docUtil';
 import Header from '../header';
 import Playground, { StyledCodeBox, StyledSource } from '../Playground';
 import { styled } from '../../ui/design-system';
+import { Toaster } from '../../ui/Toast';
 
 const StyledSearchBar = styled("div", {
   padding: "$4 $4 0"
@@ -206,6 +207,7 @@ export default function Examples() {
                 <Playground id={selectedExampleId} title={exampleTitle} />
               </StyledContent>
             </Flex>
+            <Toaster />
           </>
         )}
       </Media>

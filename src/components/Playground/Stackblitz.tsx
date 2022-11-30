@@ -32,7 +32,7 @@ function Stackblitz (props: any) {
 
   return (
       <StyledAction>
-        <Tooltip content={<FormattedMessage id="app.demo.stackblitz"/>}>
+        <Tooltip side="bottom" content={<FormattedMessage id="app.demo.stackblitz"/>}>
           <span onClick={() => {
               stackblitzSdk.openProject(stackblitzPrefillConfig);
             }}

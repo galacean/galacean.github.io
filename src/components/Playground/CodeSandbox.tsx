@@ -63,7 +63,7 @@ function CodeSandbox(props: any) {
         }}
       >
         <input type='hidden' name='parameters' value={compress(JSON.stringify(codesanboxPrefillConfig))} />
-        <Tooltip content={<FormattedMessage id='app.demo.codesandbox' />}>
+        <Tooltip side="bottom" content={<FormattedMessage id='app.demo.codesandbox' />}>
           <CodeSandboxOutlined />
         </Tooltip>
       </form>
