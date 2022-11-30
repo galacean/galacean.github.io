@@ -10,15 +10,15 @@ import { styled } from '../../../ui/design-system';
 
 const StyledSearchResult = styled("div", {
   position: "absolute",
-  top: "40px",
+  top: "$10",
   left: "0",
   maxHeight: "400px",
-  width: "500px",
+  width: "100%",
   overflow: "auto",
-  zIndex: "9",
-  backgroundColor: "$slate1",
+  zIndex: 9,
+  backgroundColor: "$slate3",
   borderRadius: "$2",
-  boxShadow: "$default",
+  border: "1px solid $slate5",
   padding: "$2"
 });
 
@@ -40,7 +40,7 @@ const SearchBox = () => {
   );
 
   const searchBox = (
-    <Flex align="both" css={{marginLeft: "$2", flex: 1, position: "relative"}}>
+    <Flex align="both" css={{margin: "0 $6", flex: 1, position: "relative"}}>
       <Input
         placeholder={formatMessage({ id: 'app.header.search.box' })}
         startSlot={<Search />}

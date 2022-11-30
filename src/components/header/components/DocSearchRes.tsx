@@ -2,10 +2,10 @@ import { useContext, useRef, useState } from 'react';
 import InfiniteScroll from 'react-infinite-scroller';
 import { useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
+import { styled } from '../../../ui/design-system';
 import { Divider } from '../../../ui/Divider';
 import { Spin } from '../../../ui/Spin';
 import { AppContext } from '../../contextProvider';
-import Source from '../../doc/components/Source';
 import { MatchedDocs, searchDoc } from '../headerUtils';
 
 const PAGE_SIZE = '10';
@@ -13,6 +13,24 @@ interface IDocSearchResProps {
   searchText: string;
   setLoadingSearchResult: React.Dispatch<React.SetStateAction<boolean>>;
 }
+
+const StyledList = styled("ul", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$2",
+  margin: "0 $2"
+});
+
+const StyledItem = styled("li", {
+   cursor: "pointer",
+   backgroundColor: "$slate5",
+   borderRadius: "$2",
+   padding: "$2",
+   fontSize: "$2",
+   "&:hover": {
+     backgroundColor: "$blue10"
+   }
+});
 
 const DocSearchRes = (props: IDocSearchResProps) => {
   const intl = useIntl();
@@ -63,34 +81,26 @@ const DocSearchRes = (props: IDocSearchResProps) => {
       return <p>{formatMessage({ id: 'app.header.search.no-matching' })}</p>;
     }
     return docList.map((data) => (
-      <div key={data.id}>
-        <span
-          style={{ cursor: 'pointer' }}
-          onClick={() => {
+      <StyledItem key={data.id} onClick={() => {
             navigate(`/docs/${context.version}/${context.lang}/${data.filename.slice(0, -3)}`);
-          }}
-        >
+          }}>
           {data.title}
-          <Divider type='vertical' />
-        </span>
-        <Source src={data.htmlUrl} />
-        <Divider />
-      </div>
+      </StyledItem>
     ));
   };
 
   return (
-    <>
-      <InfiniteScroll
-        useWindow={false}
-        pageStart={0}
-        loadMore={onloadMore}
-        hasMore={hasMoreDocRef.current}
-        loader={<Spin />}
-      >
+    <InfiniteScroll
+      useWindow={false}
+      pageStart={0}
+      loadMore={onloadMore}
+      hasMore={hasMoreDocRef.current}
+      loader={<Spin />}
+    >
+      <StyledList>
         {getdocList()}
-      </InfiniteScroll>
-    </>
+      </StyledList>
+    </InfiniteScroll>
   );
 };
 export default DocSearchRes;
