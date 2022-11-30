@@ -13,7 +13,7 @@ const LoadingIcon: React.FC = (props) => {
         justifyContent: 'center',
       }}
     >
-      <Spin>{useIntl().formatMessage({ id: 'app.content.loading' })}</Spin>
+      <Spin size="elg" />
     </div>
   );
 };

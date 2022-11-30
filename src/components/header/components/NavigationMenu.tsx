@@ -208,7 +208,7 @@ const StyledViewport = styled(NavigationMenu.Viewport, {
   backgroundColor: "$slate1",
   borderRadius: "$1",
   overflow: "hidden",
-  boxShadow: "$default",
+  border: "1px solid $slate5",
   height: "var(--radix-navigation-menu-viewport-height)",
   transition: "width, height, 300ms ease",
   width: "var(--radix-navigation-menu-viewport-width)",
@@ -297,16 +297,13 @@ const StyledNavigationMenu = () => {
           <StyledContent>
             <StyledContentList css={{width: "400px"}}>
               <ListItem to={`/docs/${context.version}/${context.lang}`} title={formatMessage({ id: 'app.header.menu.engine.docs' })}>
-                CSS-in-JS with best-in-class developer experience.
+                <FormattedMessage id='app.header.menu.engine.docs.description' />
               </ListItem>
-              <ListItem to={`/api/${context.version}`} title={formatMessage({ id: 'app.header.menu.engine.api' })}>
-                CSS-in-JS with best-in-class developer experience.
+              <ListItem to={`/docs/latest/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`} title={formatMessage({ id: 'app.header.menu.artist.docs' })}>
+                <FormattedMessage id='app.header.menu.artist.docs.description' />
               </ListItem>
-              <ListItem to={`/docs/latest/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`} title={formatMessage({ id: 'app.header.menu.artist' })}>
-                CSS-in-JS with best-in-class developer experience.
-              </ListItem>
-              <ListItem to={'/docs/latest/zh/editor.zh-CN'} title={formatMessage({ id: 'app.header.menu.editor' })}>
-                CSS-in-JS with best-in-class developer experience.
+              <ListItem to={'/docs/latest/zh/editor.zh-CN'} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
+                <FormattedMessage id='app.header.menu.editor.docs.description' />
               </ListItem>
             </StyledContentList>
           </StyledContent>
@@ -318,16 +315,21 @@ const StyledNavigationMenu = () => {
           <StyledContent>
             <StyledContentList css={{width: "400px"}}>
               <ListItem to={`/gltf-viewer`} title={formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}>
-                CSS-in-JS with best-in-class developer experience.
+                <FormattedMessage id='app.header.menu.ecosystem.gltfviewer.description' />
               </ListItem>
               <ListItem to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
-                CSS-in-JS with best-in-class developer experience.
+                <FormattedMessage id='app.header.menu.ecosystem.createapp.description' />
               </ListItem>
               <ListItem to={`https://oasis.alipay.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
-                CSS-in-JS with best-in-class developer experience.
+                <FormattedMessage id='app.header.menu.ecosystem.editor.description' />
               </ListItem>
             </StyledContentList>
           </StyledContent>
+        </NavigationMenu.Item>
+        <NavigationMenu.Item>
+          <StyledLink to={`/api/${context.version}`}>
+            <FormattedMessage id='app.header.menu.engine.api' />
+          </StyledLink>
         </NavigationMenu.Item>
         <NavigationMenu.Item>
           <StyledLink to={`/examples/${context.version}`}>

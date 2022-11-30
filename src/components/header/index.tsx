@@ -1,13 +1,6 @@
-import {
-  AppstoreAddOutlined,
-  createFromIconfontCN,
-  HomeOutlined,
-  MenuOutlined, PlayCircleOutlined,
-  ReadOutlined
-} from '@ant-design/icons';
 import { Translate } from 'iconoir-react';
 import { useContext } from 'react';
-import { FormattedMessage, useIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
@@ -22,11 +15,6 @@ import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
 
 const { versions } = config;
-
-const Icon = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
-});
-
 const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
 
 function Header() {
@@ -48,8 +36,6 @@ function Header() {
       opacity: 0.9
     }
   });
-
-  console.log('versions:', versions)
 
   return (
     <Media query='(max-width: 768px)'>
