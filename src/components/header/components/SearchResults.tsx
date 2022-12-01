@@ -17,7 +17,7 @@ const StyledTabList = styled(TabsList, {
   gap: "$8",
   "& button": {
     transition: "border-color 0.2s",
-    borderBottom: "4px solid $slate2",
+    borderBottom: "4px solid transparent",
     "&[data-state='active']": {
       borderColor: "$blue10"
     }
