@@ -1,6 +1,6 @@
 import { Cancel, Search } from 'iconoir-react';
 import * as _ from 'lodash';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { ActionButton } from '../../../ui/ActionButton';
 import { styled } from '../../../ui/design-system';
@@ -54,7 +54,7 @@ const SearchBox = () => {
     endSlot = <Spin size="sm" />
   }
   else if (searchText) {
-    endSlot = <ActionButton>
+    endSlot = <ActionButton size="md">
       <Cancel onClick={() => {
         clearText();
       }} />
