@@ -158,6 +158,6 @@ export default function Example() {
 
   return <div style={{ width: '100vw', height: '100vh' }}>
     {loading && <Flex align="both" css={{ height: "100%" }}><Spin /></Flex>}
-    <canvas id='canvas' style={{ width: '100%', height: '100%' }} />;
+    <canvas id='canvas' style={{ width: '100%', height: '100%' }} />
   </div>
 }
