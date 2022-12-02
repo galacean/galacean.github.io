@@ -10,7 +10,7 @@ import Spine from './Spine';
 
 const StyledFeature = styled(Flex, {
   maxWidth: "400px",
-  margin: "0 3rem",
+  margin: "0 $10",
   "& h2": {
     color: "$slate12",
     fontSize: "2rem"

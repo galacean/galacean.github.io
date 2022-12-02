@@ -1,16 +1,16 @@
-import { MenuUnfoldOutlined, SearchOutlined } from '@ant-design/icons';
+import { SearchOutlined } from '@ant-design/icons';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
-import MenuBar from '../../ui/MenuBar';
 import { Input } from '../../ui/Input';
+import { MenuBar } from '../../ui/MenuBar';
+import { Toaster } from '../../ui/Toast';
 import { AppContext } from '../contextProvider';
 import { fetchMenuList } from '../doc/util/docUtil';
 import Header from '../header';
 import Playground, { StyledCodeBox, StyledSource } from '../Playground';
-import { styled } from '../../ui/design-system';
-import { Toaster } from '../../ui/Toast';
 
 const StyledSearchBar = styled("div", {
   padding: "$4 $4 0"
@@ -166,7 +166,7 @@ export default function Examples() {
 
   return (
     <>
-      <Media query='(max-width: 599px)'>
+      <Media query='(max-width: 768px)'>
         {(isMobile) => (
           <>
             <Header></Header>
@@ -188,21 +188,22 @@ export default function Examples() {
               )}
               <StyledContent>
                 {isMobile && (
-                  <Popover
-                    className='examples-popover-menu'
-                    placement='bottomRight'
-                    content={menu}
-                    trigger='click'
-                    visible={menuVisible}
-                    arrowPointAtCenter
-                  >
-                    <MenuUnfoldOutlined
-                      className='nav-phone-icon'
-                      onClick={() => {
-                        toggleMenu(!menuVisible);
-                      }}
-                    />
-                  </Popover>
+                  null
+                  // <Popover
+                  //   className='examples-popover-menu'
+                  //   placement='bottomRight'
+                  //   content={menu}
+                  //   trigger='click'
+                  //   visible={menuVisible}
+                  //   arrowPointAtCenter
+                  // >
+                  //   <MenuUnfoldOutlined
+                  //     className='nav-phone-icon'
+                  //     onClick={() => {
+                  //       toggleMenu(!menuVisible);
+                  //     }}
+                  //   />
+                  // </Popover>
                 )}
                 <Playground id={selectedExampleId} title={exampleTitle} />
               </StyledContent>

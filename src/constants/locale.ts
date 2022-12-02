@@ -192,7 +192,7 @@ export const translationsData: { [lang: string]: any } = {
     'app.demo.stackblitz': 'Open in Stackblitz',
     'app.home.slogan': 'Mobile first high performance web interactive engine',
     'app.home.preview': 'Preview',
-    'app.home.start': 'Getting Started',
+    'app.home.start': 'Get Started',
     'app.home.discussion': 'Discussion',
     'app.home.sponsoring': 'Sponsoring',
     'app.home.download': 'Download',

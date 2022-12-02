@@ -17,7 +17,10 @@ const StyledPartners = styled("div", {
   display: "grid",
   columnGap: "$2",
   gridAutoFlow: "column",
-  gridTemplateRows: "repeat(2, 1fr)"
+  gridTemplateRows: "repeat(2, 1fr)",
+  '@media (max-width: 768px)': {
+    gridTemplateRows: "repeat(8, 1fr)",
+  }
 });
 
 const StyledPartner = styled(Flex, {

@@ -20,6 +20,9 @@ const StyledToc = styled("div", {
         padding: "$0_5 0"
       }
     }
+  },
+  '@media (max-width: 768px)': {
+    display: "none"
   }
 });
 

@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import MenuBar from '../../../ui/MenuBar';
+import { MenuBar } from '../../../ui/MenuBar';
 
 interface DocMenuProps {
   items: any;

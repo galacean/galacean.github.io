@@ -8,18 +8,28 @@ import { Flex } from '../../ui/Flex';
 import { AppContext } from '../contextProvider';
 
 const StyledSection = styled(Flex, {
-  padding: "$24 0"
+  padding: "$24 0",
+  '@media (max-width: 768px)': {
+    padding: "$20 0"
+  }
 });
 
 const StyledHeading = styled("h1", {
+  textAlign: "center",
   "& img": {
-    width: "40rem"
+    width: "40rem",
+    '@media (max-width: 768px)': {
+      maxWidth: "90%"
+    }
   }
 });
 
 const StyledSlogan = styled("p", {
   fontSize: "1.2rem",
-  color: "$slate11"
+  color: "$slate11",
+  '@media (max-width: 768px)': {
+    fontSize: "$2"
+  }
 });
 
 
@@ -28,7 +38,7 @@ function Banner() {
 
   return (
     <StyledSection align="both" dir="column" gap="lg">
-      <StyledHeading css={context.theme === 'dark-theme' ? {filter: "invert(0.9)"} : {}}>
+      <StyledHeading css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
         <img
           src='https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ'
           alt='Oasis Engine'
@@ -45,7 +55,13 @@ function Banner() {
           <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
         </a>
       </Flex>
-      <Flex gap="lg" css={{marginTop: "$4"}}>
+      <Flex gap="lg" css={{
+        marginTop: "$4",
+        '@media (max-width: 768px)': {
+          flexDirection: "column",
+          textAlign: "center"
+        }
+      }}>
         <Link to={`/docs/latest/${context.lang}`}>
           <Button variant="primary">
             <FormattedMessage id='app.home.start' />

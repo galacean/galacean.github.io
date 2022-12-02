@@ -11,7 +11,7 @@ export default function PBRHelmet() {
     };
   }, []);
 
-  return <canvas id="canvas-pbr-helmet" style={{ width: "400px", height: "400px" }} />;
+  return <canvas id="canvas-pbr-helmet" style={{ width: "350px", height: "350px" }} />;
 }
 
 function init(): WebGLEngine {

@@ -13,7 +13,7 @@ export default function PBRHelmet() {
     };
   }, []);
 
-  return <canvas id="canvas-spine" style={{ width: '300px', height: '400px' }} />;
+  return <canvas id="canvas-spine" style={{ width: '350px', height: '350px' }} />;
 }
 
 function init(): WebGLEngine {

@@ -1,5 +1,6 @@
 import Prism from 'prismjs';
 import { createRef, useContext, useEffect, useState } from 'react';
+import Media from 'react-media';
 import siteConfig from '../../siteconfig.json';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
@@ -19,6 +20,7 @@ interface IPlayground {
 export const StyledCodeBox = styled(Flex, {
   position: "relative",
   marginBottom: "20px",
+  backgroundColor: "$slate2",
   variants: {
     embed: {
       true: {
@@ -30,12 +32,15 @@ export const StyledCodeBox = styled(Flex, {
 });
 
 const StyledDemo = styled("div", {
-  width: "50%",
-  paddingTop: "37px"
+  flex: 1,
+  paddingTop: "37px",
+  '@media (max-width: 768px)': {
+    paddingTop: 0,
+  }
 });
 
 export const StyledSource = styled("div", {
-  width: "50%",
+  flex: 1,
   maxHeight: "500px",
   margin: 0,
   paddingTop: "37px",
@@ -91,30 +96,35 @@ export default function Playground(props: IPlayground) {
   if (!packages || !props.id) return null;
 
   return (
-    <StyledCodeBox wrap="false" embed={props.embed}>
-      <StyledDemo>
-        <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
-      </StyledDemo>
-      <StyledSource>
-        <pre>
-          <code
-            dangerouslySetInnerHTML={{
-              __html: code,
-            }}
-          />
-        </pre>
-      </StyledSource>
-      {src && (
-        <CodeActions
-          sourceCode={src}
-          engineName={siteConfig.name}
-          name={props.title || ''}
-          url={url}
-          version={packages['oasis-engine']}
-          packages={packages}
-        />
+    <Media query='(max-width: 768px)'>
+      {(isMobile) => (
+        <StyledCodeBox wrap="false" embed={props.embed}>
+          <StyledDemo>
+            <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
+          </StyledDemo>
+          {!isMobile && <StyledSource>
+            <pre>
+              <code
+                dangerouslySetInnerHTML={{
+                  __html: code,
+                }}
+              />
+            </pre>
+          </StyledSource>
+          }
+          {!isMobile && src && (
+            <CodeActions
+              sourceCode={src}
+              engineName={siteConfig.name}
+              name={props.title || ''}
+              url={url}
+              version={packages['oasis-engine']}
+              packages={packages}
+            />
+          )}
+          {!isMobile && url && <DemoActions url={url} />}
+        </StyledCodeBox>
       )}
-      {url && <DemoActions url={url} />}
-    </StyledCodeBox>
+    </Media>
   );
 }

@@ -19,7 +19,7 @@ const Icon = createFromIconfontCN({
 const StyledFooter = styled(Flex, {
   justifyContent: "space-evenly",
   padding: "$8 0",
-  borderTop: "1px solid $slate5"
+  borderTop: "1px solid $slate5",
 });
 
 const StyledGroup = styled("div", {
@@ -51,7 +51,12 @@ class Footer extends React.Component<{}> {
   render() {
     return (
       <footer>
-        <StyledFooter gap="lg">
+        <StyledFooter gap="lg" css={{
+          '@media (max-width: 768px)': {
+            flexDirection: "column",
+            textAlign: "center"
+          }
+        }}>
           <StyledGroup>
             <h2>
               <FormattedMessage id='app.footer.resources' />
@@ -144,7 +149,7 @@ class Footer extends React.Component<{}> {
         </StyledFooter>
         <Flex align="both" css={{ padding: "$4", borderTop: "1px solid $slate5", fontSize: "$1" }}>
           Made with <StyledHeart>❤</StyledHeart> by &nbsp;
-          <a target='_blank' rel='noopener noreferrer' href='https://www.zhihu.com/org/ma-yi-richlab-qian-duan-tuan-dui-76' style={{fontStyle: "italic"}}>
+          <a target='_blank' rel='noopener noreferrer' href='https://www.zhihu.com/org/ma-yi-richlab-qian-duan-tuan-dui-76' style={{ fontStyle: "italic" }}>
             <FormattedMessage id='app.footer.company' />
           </a>
         </Flex>

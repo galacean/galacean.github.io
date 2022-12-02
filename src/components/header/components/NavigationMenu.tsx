@@ -284,7 +284,6 @@ const ListItem = React.forwardRef(({ children, title, to }: { children: any, tit
 const StyledNavigationMenu = () => {
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
-  const isZhCN = context.lang === 'zh-CN';
 
   return (
     <StyledRoot>

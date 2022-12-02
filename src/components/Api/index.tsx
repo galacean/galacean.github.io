@@ -23,11 +23,14 @@ const StyledContent = styled("article", {
   padding: '$8',
   backgroundColor: '$slate1',
   fontSize: "$2",
-  flex: 1
+  flex: 1,
+  '@media (max-width: 768px)': {
+    padding: '$4',
+  }
 });
 
 const StyledBreadcrumb = styled("div", {
-  margin: "0 $2 $4"
+  marginBottom: "$2"
 });
 
 const StyledPanel = styled("section", {
@@ -207,12 +210,13 @@ const Api = () => {
             )}
           </StyledContent>
           {isMobile ? (
-            <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
-              <MenuUnfoldOutlined
-                className='nav-phone-icon'
-                style={{ zIndex: 20, top: '25px', left: '30px' }}
-              />
-            </Popover>
+            null
+            // <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
+            //   <MenuUnfoldOutlined
+            //     className='nav-phone-icon'
+            //     style={{ zIndex: 20, top: '25px', left: '30px' }}
+            //   />
+            // </Popover>
           ) : (
             <nav>{menu}</nav>
           )}

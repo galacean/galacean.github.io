@@ -19,7 +19,10 @@ const StyledPackage = styled("ul", {
   padding: 0,
   columnCount: 4,
   columnGap: "20px",
-  listStyle: "none"
+  listStyle: "none",
+  '@media (max-width: 768px)': {
+    columnCount: 1
+  }
 });
 
 export default function Package(props: IPackage) {

@@ -25,7 +25,7 @@ interface DocDetailProps {
   menuKeyTitleMapRef: React.MutableRefObject<Map<string, string>>;
 }
 
-const StyledMarkdown = styled(Flex, {
+const StyledMarkdown = styled("div", {
   position: "relative",
   minHeight: "500px",
   marginLeft: "-1px",
@@ -33,6 +33,12 @@ const StyledMarkdown = styled(Flex, {
   background: "$slate1",
   fontSize: "$2",
   lineHeight: 2,
+  "& a": {
+    color: "$blue10",
+    "&:hover":{
+      borderBottom: "2px solid $blueA9"
+    }
+  },
   "& p": {
     padding: "$2 0"
   },
@@ -170,8 +176,13 @@ const StyledModifiedTime = styled(Flex, {
 });
 
 const StyledReactMarkdown = styled("div", {
-  maxWidth: "780px",
-  margin: "$8 200px $16 0"
+  maxWidth: "980px",
+  margin: "$8 auto $16 auto",
+  padding: "0 200px 0 $16",
+  '@media (max-width: 768px)': {
+    margin: 0,
+    padding: "0 $4"
+  }
 });
 
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
@@ -231,7 +242,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
 
 
   return (
-    <StyledMarkdown align="both">
+    <StyledMarkdown>
       <StyledReactMarkdown>
         <h1>{docData.title}</h1>
         <StyledModifiedTime gap="sm">
