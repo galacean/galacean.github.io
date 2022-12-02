@@ -17,7 +17,7 @@ export const translationsData: { [lang: string]: any } = {
     'app.header.menu.engine': '引擎',
     'app.header.menu.engine.docs': '引擎文档',
     'app.header.menu.engine.docs.description': '面向开发，介绍如何快速上手、引擎基础概念和使用方法',
-    'app.header.menu.engine.api': '引擎 API',
+    'app.header.menu.engine.api': 'API',
     'app.header.menu.engine.examples': '示例',
     'app.header.menu.artist': '美术',
     'app.header.menu.artist.docs': '美术文档',

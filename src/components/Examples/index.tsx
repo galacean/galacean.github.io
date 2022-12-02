@@ -18,7 +18,7 @@ const StyledSearchBar = styled("div", {
 
 const StyledContent = styled("div", {
   flex: 1,
-  height: 'calc(100vh - 64px)',
+  height: 'calc(100vh - 61px)',
   width: "calc(100vw - 300px)",
   [`& ${StyledCodeBox}`]: {
     height: "100%"
@@ -29,6 +29,8 @@ const StyledContent = styled("div", {
 });
 
 const StyledNav = styled("nav", {
+  height: 'calc(100vh - 61px)',
+  overflow: "auto",
   borderRight: "1px solid $slate5"
 })
 

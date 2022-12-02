@@ -23,9 +23,11 @@ function Header() {
 
   const StyledHeader = styled(Flex, {
     padding: "$2 $4",
-    position: "relative",
     zIndex: 10,
-    borderBottom: "1px solid $slate5"
+    borderBottom: "1px solid $slate5",
+    backgroundColor: "$slate1",
+    position: "sticky",
+    top: 0
   });
 
   const StyledLogo = styled(Link, {
@@ -65,7 +67,10 @@ function Header() {
         <ActionButton>
           <Menu />
         </ActionButton>
-      }>
+      }
+        sideOffset={6}
+        css={{ marginRight: "$4" }}
+      >
         <NavigationMenuMobile />
       </Popover>
       }

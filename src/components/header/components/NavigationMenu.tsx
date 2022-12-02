@@ -270,16 +270,25 @@ const StyledContentList = styled("ul", {
   gridTemplateRows: "repeat(2, 1fr)"
 })
 
-const ListItem = React.forwardRef(({ children, title, to }: { children: any, title: string, to: string }, forwardedRef) => (
-  <Link to={to}>
+const ListItem = React.forwardRef(({ children, title, to, absolute }: { children: any, title: string, to: string, absolute?: boolean }, forwardedRef) => {
+  const item = <StyledListItem>
+    <StyledListItemHeading>{title}</StyledListItemHeading>
+    <StyledListItemText>{children}</StyledListItemText>
+  </StyledListItem>
+
+  return (
     <li ref={forwardedRef}>
-      <StyledListItem>
-        <StyledListItemHeading>{title}</StyledListItemHeading>
-        <StyledListItemText>{children}</StyledListItemText>
-      </StyledListItem>
+      {absolute ?
+        <a href={to} target="_blank">
+          {item}
+        </a>
+        : <Link to={to}>
+          {item}
+        </Link>
+      }
     </li>
-  </Link>
-));
+  );
+});
 
 const StyledNavigationMenu = () => {
   const formatMessage = useIntl().formatMessage;
@@ -293,7 +302,7 @@ const StyledNavigationMenu = () => {
             {formatMessage({ id: 'app.header.menu.docs' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
           </StyledTrigger>
           <StyledContent>
-            <StyledContentList css={{width: "400px"}}>
+            <StyledContentList css={{ width: "400px" }}>
               <ListItem to={`/docs/${context.version}/${context.lang}`} title={formatMessage({ id: 'app.header.menu.engine.docs' })}>
                 <FormattedMessage id='app.header.menu.engine.docs.description' />
               </ListItem>
@@ -311,11 +320,11 @@ const StyledNavigationMenu = () => {
             {formatMessage({ id: 'app.header.menu.ecosystem' })} <StyledNavArrowDown aria-hidden fontSize={"10px"} />
           </StyledTrigger>
           <StyledContent>
-            <StyledContentList css={{width: "400px"}}>
+            <StyledContentList css={{ width: "400px" }}>
               <ListItem to={`/gltf-viewer`} title={formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.gltfviewer.description' />
               </ListItem>
-              <ListItem to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
+              <ListItem absolute={true} to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.createapp.description' />
               </ListItem>
               <ListItem to={`https://oasis.alipay.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
