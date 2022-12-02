@@ -136,7 +136,7 @@ export default function Example() {
       await useScript(packages);
 
       if (exampleId) {
-        fetchDocDataById(exampleId).then(async(res) => {
+        fetchDocDataById(exampleId).then(async (res) => {
           const code = await transformTsToJs(res?.content ?? '', packageGlobals);
           if (code) {
             script = document.createElement('script');
@@ -157,7 +157,7 @@ export default function Example() {
   }, []);
 
   return <div style={{ width: '100vw', height: '100vh' }}>
-    {loading && <Flex align="both"css={{height: "100%"}}><Spin /></Flex>}
+    {loading && <Flex align="both" css={{ height: "100%" }}><Spin /></Flex>}
     <canvas id='canvas' style={{ width: '100%', height: '100%' }} />;
   </div>
 }
