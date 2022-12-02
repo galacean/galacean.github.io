@@ -1,11 +1,14 @@
 import { SearchOutlined } from '@ant-design/icons';
+import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { ActionButton } from '../../ui/ActionButton';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
 import { Input } from '../../ui/Input';
 import { MenuBar } from '../../ui/MenuBar';
+import { Popover } from '../../ui/Popover';
 import { Toaster } from '../../ui/Toast';
 import { AppContext } from '../contextProvider';
 import { fetchMenuList } from '../doc/util/docUtil';
@@ -189,25 +192,27 @@ export default function Examples() {
                 </StyledNav>
               )}
               <StyledContent>
-                {isMobile && (
-                  null
-                  // <Popover
-                  //   className='examples-popover-menu'
-                  //   placement='bottomRight'
-                  //   content={menu}
-                  //   trigger='click'
-                  //   visible={menuVisible}
-                  //   arrowPointAtCenter
-                  // >
-                  //   <MenuUnfoldOutlined
-                  //     className='nav-phone-icon'
-                  //     onClick={() => {
-                  //       toggleMenu(!menuVisible);
-                  //     }}
-                  //   />
-                  // </Popover>
-                )}
                 <Playground id={selectedExampleId} title={exampleTitle} />
+                {isMobile && (
+                  <Popover trigger={
+                    <ActionButton size="lg" css={{
+                      position: "fixed",
+                      right: "$4",
+                      bottom: "$16",
+                      zIndex: 11,
+                    }}>
+                      <List />
+                    </ActionButton>
+                  }
+                    sideOffset={6}
+                    css={{
+                      marginRight: "$4",
+                      maxHeight: "70vh",
+                      overflow: "auto"
+                    }}>
+                    {menu}
+                  </Popover>
+                )}
               </StyledContent>
             </Flex>
             <Toaster />
