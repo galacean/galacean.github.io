@@ -1,7 +1,37 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 
-export default function Partners () {
+const StyledPartnerContainer = styled(Flex, {
+  padding: "$10 0",
+  borderTop: "1px solid $slate5",
+  "& h2": {
+    color: "$slate12",
+    fontSize: "3rem",
+    textAlign: "center"
+  },
+});
+
+const StyledPartners = styled("div", {
+  display: "grid",
+  columnGap: "$2",
+  gridAutoFlow: "column",
+  gridTemplateRows: "repeat(2, 1fr)",
+  '@media (max-width: 768px)': {
+    gridTemplateRows: "repeat(8, 1fr)",
+  }
+});
+
+const StyledPartner = styled(Flex, {
+  width: "8rem",
+  height: "4rem",
+  backgroundColor: "$white",
+  borderRadius: "$1",
+  marginTop: "$2"
+});
+
+export default function Partners() {
   const partners = [
     {
       logo: 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cQdHQYgR6LcAAAAAAAAAAAAAARQnAQ',
@@ -70,15 +100,17 @@ export default function Partners () {
   ];
 
   return (
-    <section className="home-section home-section-partners">
+    <StyledPartnerContainer dir="column" align="both">
       <h2>
         <FormattedMessage id="app.home.partners" />
       </h2>
-      {partners.map((partner)=> {
-        return <div className="partner" key={partner.logo}>
-          <img src={partner.logo} width={partner.width} />
-        </div>
-      })}
-    </section>
+      <StyledPartners>
+        {partners.map((partner) => {
+          return <StyledPartner key={partner.logo} align="both">
+            <img src={partner.logo} width={partner.width} />
+          </StyledPartner>
+        })}
+      </StyledPartners>
+    </StyledPartnerContainer>
   );
 }

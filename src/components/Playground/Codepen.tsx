@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import { CodepenOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
 import { FormattedMessage, injectIntl } from 'react-intl';
+import { StyledAction } from './CodeActions';
+import { Tooltip } from '../../ui/Tooltip';
 
 function Codepen(props: any) {
   const iconRef = useRef<HTMLFormElement>(null);
@@ -30,9 +31,8 @@ function Codepen(props: any) {
   };
 
   return (
-    <div className='code-box-action'>
+    <StyledAction>
       <form
-        className='code-box-code-action'
         action='https://codepen.io/pen/define'
         method='POST'
         target='_blank'
@@ -42,11 +42,11 @@ function Codepen(props: any) {
         }}
       >
         <input type='hidden' name='data' value={JSON.stringify(codepenPrefillConfig)} />
-        <Tooltip title={<FormattedMessage id='app.demo.codepen' />}>
+        <Tooltip side="bottom" content={<FormattedMessage id='app.demo.codepen' />}>
           <CodepenOutlined />
         </Tooltip>
       </form>
-    </div>
+    </StyledAction>
   );
 }
 

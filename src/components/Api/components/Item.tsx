@@ -4,7 +4,69 @@ import type { IItem, IParameter, ISignature, IType } from '../util/apiUtil';
 import { PkgChildDetail } from '../util/apiUtil';
 import Source from './Source';
 import Comment from './Comment';
-import { Col, Row } from 'antd';
+import { styled } from '../../../ui/design-system';
+import { StyledKind, StyledKindIcon } from './KindModule';
+
+const StyledDescription = styled("div", {
+  margin: "$2 0"
+});
+
+const StyledSignature = styled("div", {
+  padding: "$2 $4",
+  overflowX: "auto",
+  fontSize: "$1",
+  margin: "0 -$4",
+  fontFamily: "Menlo, Monaco, Consolas, courier new, monospace",
+  backgroundColor: "$slate3"
+});
+
+const StyledPanel = styled("section", {
+  padding: "0 $4 0 $4",
+  border: "1px solid $slate5",
+  borderRadius: "$2",
+  "& h2": {
+    margin: "0 -$4 0",
+    padding: "$2 $4 $2",
+    fontSize: "$3"
+  },
+  "& h3": {
+    fontSize: "$2",
+    margin: "0",
+    color: "$slate"
+  },
+  "& h4": {
+    fontSize: "$1"
+  }
+});
+
+const StyledElement = styled(Element, {
+  padding: "$2 0"
+});
+
+const StyledParameter = styled("div", {
+  color: "$slate11",
+  fontSize: "$1",
+  lineHeight: 1.8
+});
+
+const StyledParameterList = styled("ul", {
+  margin: 0,
+  paddingLeft: "$2",
+  listStyle: "square"
+});
+
+const StyledTag = styled("span", {
+  display: "inline-block",
+  marginRight: "$1",
+  padding: "$1",
+  lineHeight: "$1",
+  color: "$slate12",
+  fontWeight: 400,
+  fontSize: "$1",
+  textIndent: 0,
+  backgroundColor: "$slate5",
+  borderRadius: "$1"
+});
 
 function Type(props: IType) {
   const reference = props.id ? (
@@ -28,7 +90,7 @@ function Parameter(props: IParameter) {
   return (
     <li>
       <h4 title={props.name}>
-        {props.flags.isOptional && <span className='tsd-flag'>optional</span>}
+        {props.flags.isOptional && <StyledTag>optional</StyledTag>}
         <strong>{props.name}</strong>
       </h4>
       {props.comment && <p> {props.comment?.text}</p>}
@@ -41,17 +103,17 @@ function GetSignature(props: ISignature) {
   if (!type) return null;
 
   return (
-    <div className='tsd-signature'>
-      <span className='tsd-signature-symbol'>get </span>
+    <StyledSignature>
+      <span>get </span>
       {props.name}(): {type.type === 'typeOperator' ? <TypeOperator {...type} /> : <Type {...type} />}
-    </div>
+    </StyledSignature>
   );
 }
 
 function TypeOperator(props: IType) {
   return (
     <span>
-      <i className='tsd-signature-type'>{props.operator} </i>
+      <i>{props.operator} </i>
       {props.target &&
         (props.target.type === 'array' ? (
           <span>
@@ -68,29 +130,29 @@ function TypeOperator(props: IType) {
 
 function SetSignature(props: ISignature) {
   return (
-    <div className='tsd-signature'>
-      <span className='tsd-signature-symbol'>set </span>
+    <StyledSignature>
+      <span>set </span>
       {props.name}({props.parameters && <Type {...props.parameters[0].type} />}): void
-    </div>
+    </StyledSignature>
   );
 }
 
 function Property(props: IItem) {
   return (
-    <div className='tsd-signature'>
+    <StyledSignature>
       {props.type && (
         <>
           <strong>{props.name}</strong>: {props.type && <Type {...props.type} />}
           {props.defaultValue && <span> = {props.defaultValue}</span>}
         </>
       )}
-    </div>
+    </StyledSignature>
   );
 }
 
 function ConstructorSignature(props: ISignature) {
   return (
-    <div className='tsd-signature'>
+    <StyledSignature>
       <strong>{props.name}</strong>(
       {props.parameters?.map((p, i) => {
         return (
@@ -101,24 +163,25 @@ function ConstructorSignature(props: ISignature) {
         );
       })}
       )
-    </div>
+    </StyledSignature>
   );
 }
+
 function Description(props: ISignature) {
   const { parameters, comment, kind } = props;
 
   return (
-    <div className='tsd-description'>
+    <StyledDescription>
       {kind !== Kinds.SET_SIGNATURE && comment && <Comment {...comment} />}
       {parameters && (
-        <div className='tsd-parameters'>
+        <StyledParameter>
           <h3>Parameters</h3>
-          <ul className='tsd-parameters-list'>
+          <StyledParameterList>
             {parameters.map((p) => {
               return <Parameter key={p.id} {...p} />;
             })}
-          </ul>
-        </div>
+          </StyledParameterList>
+        </StyledParameter>
       )}
       {comment && comment.returns && (
         <div>
@@ -126,19 +189,19 @@ function Description(props: ISignature) {
           {comment.returns}
         </div>
       )}
-    </div>
+    </StyledDescription>
   );
 }
 function MethodSignature(props: ISignature) {
   return (
-    <div className='tsd-signature'>
+    <StyledSignature>
       <strong>{props.name}</strong>
       {props.typeParameter && props.typeParameter[0] && <TypeParameter {...props.typeParameter[0].type} />}(
       {props.parameters?.map((p, i) => {
         return <ParameterElement key={p.id} {...p} index={i} />;
       })}
       ): <ReturnElement {...props} />
-    </div>
+    </StyledSignature>
   );
 }
 
@@ -195,22 +258,16 @@ function ReturnElement(props: ISignature) {
 export default function Item(props: PkgChildDetail) {
   const { kind } = props;
   return (
-    <Element name={props.name} className='tsd-panel-anchor'>
-      <section className='tsd-panel' key={props.id}>
+    <StyledElement name={props.name}>
+      <StyledPanel key={props.id}>
         <h2 title={props.name}>
-          <span
-            className={`tsd-parent-kind-module tsd-kind-${props.kindString
-              .replaceAll(' ', '-')
-              .toLowerCase()}`}
-          >
-            <span id={props.name} className='tsd-kind-icon'>
+          <StyledKind type={props.kindString.replaceAll(' ', '-').toLowerCase()} css={{paddingRight: "$1"}}>
+            <StyledKindIcon id={props.name}>
               {props.name}
-            </span>
-          </span>
-          {props.flags?.isReadonly && <span className='tsd-flag'>ReadOnly</span>}
-          {props.sources?.map((source) => {
-            return <Source key={source.fileName} {...source} />;
-          })}
+            </StyledKindIcon>
+          </StyledKind>
+          {props.flags?.isReadonly && <StyledTag>ReadOnly</StyledTag>}
+          {props.sources[0]&& <Source key={props.sources[0].fileName} {...props.sources[0]} />}
         </h2>
         {(kind === Kinds.CONSTRUCTOR || kind === Kinds.FUNCTION) &&
           props.signatures?.map((signature: any) => {
@@ -230,21 +287,19 @@ export default function Item(props: PkgChildDetail) {
               </div>
             );
           })}
-        <Row>
           {props.getSignature && (
-            <Col span={12}>
+            <div>
               <GetSignature {...props.getSignature[0]} />
               <Description {...props.getSignature[0]} />
-            </Col>
+            </div>
           )}
           {props.setSignature && (
-            <Col span={12}>
+            <div>
               <SetSignature {...props.setSignature[0]} />
-            </Col>
+            </div>
           )}
-        </Row>
         {!props.getSignature && props.comment && <Comment {...props.comment} />}
-      </section>
-    </Element>
+      </StyledPanel>
+    </StyledElement>
   );
 }

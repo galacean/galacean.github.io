@@ -1,6 +1,6 @@
 import React from 'react';
-import { Space, Spin } from 'antd';
 import { useIntl } from 'react-intl';
+import { Spin } from '../../ui/Spin';
 
 const LoadingIcon: React.FC = (props) => {
   return (
@@ -13,7 +13,7 @@ const LoadingIcon: React.FC = (props) => {
         justifyContent: 'center',
       }}
     >
-      <Spin size='large' tip={useIntl().formatMessage({ id: 'app.content.loading' })} />
+      <Spin size="elg" />
     </div>
   );
 };

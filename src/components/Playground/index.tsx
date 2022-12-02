@@ -1,18 +1,62 @@
 import Prism from 'prismjs';
 import { createRef, useContext, useEffect, useState } from 'react';
+import Media from 'react-media';
 import siteConfig from '../../siteconfig.json';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
 import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import CodeActions from './CodeActions';
 import DemoActions from './DemoActions';
 import './highlight.less';
-import './index.less';
 
 interface IPlayground {
   id: string;
   title: string | undefined;
+  embed?: boolean;
 }
+
+export const StyledCodeBox = styled(Flex, {
+  position: "relative",
+  marginBottom: "20px",
+  backgroundColor: "$slate2",
+  variants: {
+    embed: {
+      true: {
+        border: "1px solid $slate5",
+        borderRadius: "$1",
+        minHeight: "300px"
+      }
+    }
+  }
+});
+
+const StyledDemo = styled("div", {
+  flex: 1,
+  paddingTop: "37px",
+  '@media (max-width: 768px)': {
+    paddingTop: 0,
+  }
+});
+
+export const StyledSource = styled("div", {
+  flex: 1,
+  maxHeight: "500px",
+  margin: 0,
+  paddingTop: "37px",
+  overflow: "auto",
+  backgroundColor: "$slate2",
+  "& pre": {
+    margin: 0,
+    backgroundColor: "$slate2",
+    "& code": {
+      fontSize: "13px",
+      padding: "$4",
+      backgroundColor: "$slate2",
+    }
+  }
+});
 
 export default function Playground(props: IPlayground) {
   const [code, setCode] = useState('');
@@ -53,30 +97,35 @@ export default function Playground(props: IPlayground) {
   if (!packages || !props.id) return null;
 
   return (
-    <div className='code-box'>
-      <div className='code-box-demo'>
-        <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
-      </div>
-      <div className='code-box-source'>
-        <pre>
-          <code
-            dangerouslySetInnerHTML={{
-              __html: code,
-            }}
-          />
-        </pre>
-      </div>
-      {src && (
-        <CodeActions
-          sourceCode={src}
-          engineName={siteConfig.name}
-          name={props.title || ''}
-          url={url}
-          version={packages['oasis-engine']}
-          packages={packages}
-        />
+    <Media query='(max-width: 768px)'>
+      {(isMobile) => (
+        <StyledCodeBox wrap="false" embed={props.embed}>
+          <StyledDemo>
+            <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
+          </StyledDemo>
+          {!isMobile && <StyledSource>
+            <pre>
+              <code
+                dangerouslySetInnerHTML={{
+                  __html: code,
+                }}
+              />
+            </pre>
+          </StyledSource>
+          }
+          {!isMobile && src && (
+            <CodeActions
+              sourceCode={src}
+              engineName={siteConfig.name}
+              name={props.title || ''}
+              url={url}
+              version={packages['oasis-engine']}
+              packages={packages}
+            />
+          )}
+          {!isMobile && url && <DemoActions url={url} />}
+        </StyledCodeBox>
       )}
-      {url && <DemoActions url={url} />}
-    </div>
+    </Media>
   );
 }

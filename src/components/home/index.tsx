@@ -1,13 +1,11 @@
 import { Helmet } from 'react-helmet';
 import { injectIntl, useIntl } from 'react-intl';
-
 import Footer from '../footer';
 import Header from '../header';
 import Advantage from './Advantage';
 import Banner from './Banner';
 import Cases from './Cases';
 import Features from './Features';
-import './index.less';
 import Partners from './Partners';
 
 function Home() {
@@ -26,13 +24,11 @@ function Home() {
           })}`}
         />
       </Helmet>
-      <div className='home-wrapper'>
-        <Banner />
-        <Advantage />
-        <Features />
-        <Cases />
-        <Partners />
-      </div>
+      <Banner />
+      <Advantage />
+      <Features />
+      <Cases />
+      <Partners />
       <Footer></Footer>
     </>
   );
