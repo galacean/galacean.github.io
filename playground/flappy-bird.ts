@@ -24,6 +24,7 @@ import {
 } from "oasis-engine";
 import * as TWEEN from "@tweenjs/tween.js";
 import { LitePhysics } from "@oasis-engine/physics-lite";
+import { registerEngineForE2E } from './e2eHelper';
 
 enum EnumBirdState {
   Alive = 0,
@@ -180,6 +181,8 @@ engine.resourceManager
   });
 
 engine.run();
+
+registerEngineForE2E(engine);
 
 class ScriptPipe extends Script {
   /** When there is no pipe in the pool, use this instance to clone. */

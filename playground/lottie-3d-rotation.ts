@@ -5,6 +5,7 @@
  import { OrbitControl } from "@oasis-engine-toolkit/controls";
  import { Camera, Entity, WebGLEngine } from "oasis-engine";
  import { LottieAnimation } from "@oasis-engine/lottie";
+import { registerEngineForE2E } from './e2eHelper';
  
  const engine = new WebGLEngine("canvas");
  engine.canvas.resizeByClientSize();
@@ -32,3 +33,5 @@
 });
  
  engine.run();
+
+ registerEngineForE2E(engine);

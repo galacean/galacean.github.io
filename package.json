@@ -59,7 +59,10 @@
     "dev": "vite --host",
     "build": "vite build",
     "test": "node scripts/test.js",
-    "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
+    "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js",
+    "e2e": "cypress run --browser chrome --headless",
+    "e2e:open": "cypress open",
+    "e2e:pull-fixtures": "node ./e2eFixtures pull"
   },
   "eslintConfig": {
     "extends": [
@@ -90,7 +93,11 @@
     "@types/react-syntax-highlighter": "^15.5.5",
     "fs-extra": "^10.1.0",
     "less": "^4.1.3",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "cypress": "11.1.0",
+    "cypress-recurse": "^1.23.0",
+    "odiff-bin": "^2.5.0",
+    "@types/cypress": "^1.1.3"
   },
   "babel": {
     "presets": [
