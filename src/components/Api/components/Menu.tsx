@@ -25,11 +25,11 @@ const SubMenu = (props: { id?: string; className: string; name?: string }) => {
 
 const StyledNav = styled("nav", {
   position: "sticky",
-  top: 0,
-  height: "100vh",
+  top: "$16",
   padding: "$4",
   overflow: "auto",
-  fontSize: "$1"
+  fontSize: "$1",
+  maxHeight: "100vh"
 });
 
 const StyledNavList = styled("ul", {

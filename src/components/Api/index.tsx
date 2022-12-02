@@ -1,22 +1,23 @@
-import { MenuUnfoldOutlined } from '@ant-design/icons';
+import { List } from 'iconoir-react';
 import { useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { ActionButton } from '../../ui/ActionButton';
 import { Breadcrumb, BreadcrumbItem } from '../../ui/Breadcrumb';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
+import { Popover } from '../../ui/Popover';
 import { AppContext } from '../contextProvider';
 import LoadingIcon from '../Loading';
 import Menu from './components/Menu';
 import Module from './components/Module';
 import Package from './components/Package';
-
 import {
   fetchPkgChildren,
   fetchPkgChildrenDetail,
   fetchPkgList,
   PkgChild,
-  PkgChildDetail,
+  PkgChildDetail
 } from './util/apiUtil';
 
 const StyledContent = styled("article", {
@@ -210,13 +211,24 @@ const Api = () => {
             )}
           </StyledContent>
           {isMobile ? (
-            null
-            // <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
-            //   <MenuUnfoldOutlined
-            //     className='nav-phone-icon'
-            //     style={{ zIndex: 20, top: '25px', left: '30px' }}
-            //   />
-            // </Popover>
+            <Popover trigger={
+              <ActionButton size="lg" css={{
+                position: "fixed",
+                right: "$4",
+                bottom: "$16",
+                zIndex: 11,
+              }}>
+                <List />
+              </ActionButton>
+            }
+            sideOffset={6}
+            css={{
+              marginRight: "$4",
+              maxHeight: "70vh",
+              overflow: "auto"
+            }}>
+              {menu}
+            </Popover>
           ) : (
             <nav>{menu}</nav>
           )}

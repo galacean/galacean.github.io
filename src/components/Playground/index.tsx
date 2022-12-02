@@ -25,7 +25,8 @@ export const StyledCodeBox = styled(Flex, {
     embed: {
       true: {
         border: "1px solid $slate5",
-        borderRadius: "$1"
+        borderRadius: "$1",
+        minHeight: "300px"
       }
     }
   }

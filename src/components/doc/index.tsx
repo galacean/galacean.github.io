@@ -1,7 +1,8 @@
-import { MenuUnfoldOutlined } from '@ant-design/icons';
+import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { ActionButton } from '../../ui/ActionButton';
 import { styled } from '../../ui/design-system';
 import { Flex } from '../../ui/Flex';
 import { Popover } from '../../ui/Popover';
@@ -154,16 +155,28 @@ function Doc() {
     <Media query='(max-width: 768px)'>
       {(isMobile) =>
         isMobile ? (
-          <>
-            <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
-              <MenuUnfoldOutlined
-                className='nav-phone-icon'
-                style={{ zIndex: 20, top: '25px', left: '30px' }}
-              />
-            </Popover>
+          <StyledDocContent>
             {docDetail}
+            <Popover trigger={
+              <ActionButton size="lg" css={{
+                position: "fixed",
+                right: "$4",
+                bottom: "$16",
+                zIndex: 11,
+              }}>
+                <List />
+              </ActionButton>
+            }
+            sideOffset={6}
+            css={{
+              marginRight: "$4",
+              maxHeight: "70vh",
+              overflow: "auto"
+            }}>
+              {menu}
+            </Popover>
             <Footer></Footer>
-          </>
+          </StyledDocContent>
         ) : (
           <Flex wrap={false}>
             <StyledMenu>{menu}</StyledMenu>
