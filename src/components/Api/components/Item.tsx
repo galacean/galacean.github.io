@@ -267,7 +267,7 @@ export default function Item(props: PkgChildDetail) {
             </StyledKindIcon>
           </StyledKind>
           {props.flags?.isReadonly && <StyledTag>ReadOnly</StyledTag>}
-          {props.sources[0]&& <Source key={props.sources[0].fileName} {...props.sources[0]} />}
+          {props.sources && props.sources[0] && <Source key={props.sources[0].fileName} {...props.sources[0]} />}
         </h2>
         {(kind === Kinds.CONSTRUCTOR || kind === Kinds.FUNCTION) &&
           props.signatures?.map((signature: any) => {
