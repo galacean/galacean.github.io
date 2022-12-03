@@ -1,5 +1,5 @@
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { AmbientLight, AssetType, Camera, DirectLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
+import { AmbientLight, AssetType, BackgroundMode, Camera, Color, DirectLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
 import React, { useEffect } from "react";
 
 export default function PBRHelmet() {
@@ -11,15 +11,18 @@ export default function PBRHelmet() {
     };
   }, []);
 
-  return <canvas id="canvas-pbr-helmet" style={{ width: "400px", height: "400px" }} />;
+  return <canvas id="canvas-pbr-helmet" style={{ width: "350px", height: "350px" }} />;
 }
 
 function init(): WebGLEngine {
   // -- create engine object
-  const engine = new WebGLEngine("canvas-pbr-helmet");
+  const engine = new WebGLEngine("canvas-pbr-helmet", { alpha: true, antialias: true });
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
+  const { background } = scene;
+  background.mode = BackgroundMode.SolidColor;
+  background.solidColor.set(1, 1, 1, 0);
   const rootEntity = scene.createRootEntity();
 
   const directLightNode = rootEntity.createChild("dir_light");
@@ -34,7 +37,6 @@ function init(): WebGLEngine {
   const cameraNode = rootEntity.createChild("camera_node");
   cameraNode.transform.setPosition(0, 0, 3);
   cameraNode.addComponent(Camera);
-  scene.background.solidColor.set(51 / 255, 51 / 255, 51 / 255, 1);
   const controls = cameraNode.addComponent(OrbitControl);
   controls.enableZoom = false;
   controls.autoRotate = true;

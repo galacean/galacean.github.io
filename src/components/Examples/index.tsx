@@ -1,22 +1,46 @@
-import { MenuUnfoldOutlined, SearchOutlined } from '@ant-design/icons';
-import { Input, Layout, Menu, Popover } from 'antd';
-import { ItemType } from 'antd/lib/menu/hooks/useItems';
+import { SearchOutlined } from '@ant-design/icons';
+import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { ActionButton } from '../../ui/ActionButton';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
+import { Input } from '../../ui/Input';
+import { MenuBar } from '../../ui/MenuBar';
+import { Popover } from '../../ui/Popover';
+import { Toaster } from '../../ui/Toast';
 import { AppContext } from '../contextProvider';
 import { fetchMenuList } from '../doc/util/docUtil';
-import Footer from '../footer';
 import Header from '../header';
-import Playground from '../Playground';
-import './index.less';
+import Playground, { StyledCodeBox, StyledSource } from '../Playground';
 
-const { Sider, Content } = Layout;
+const StyledSearchBar = styled("div", {
+  padding: "$4 $4 0"
+});
+
+const StyledContent = styled("div", {
+  flex: 1,
+  height: 'calc(100vh - 61px)',
+  width: "calc(100vw - 300px)",
+  [`& ${StyledCodeBox}`]: {
+    height: "100%"
+  },
+  [`& ${StyledSource}`]: {
+    maxHeight: "100%"
+  }
+});
+
+const StyledNav = styled("nav", {
+  height: 'calc(100vh - 61px)',
+  overflow: "auto",
+  borderRight: "1px solid $slate5"
+})
 
 export default function Examples() {
   const context = useContext(AppContext);
-  const [items, setItems] = useState<ItemType[]>([]);
-  const [filteredItems, setFilteredItems] = useState<ItemType[]>([]);
+  const [items, setItems] = useState<any[]>([]);
+  const [filteredItems, setFilteredItems] = useState<any[]>([]);
   const [selectedExampleId, setSelectedExampleId] = useState('');
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
   const { version, exampleTitle } = useParams();
@@ -26,14 +50,18 @@ export default function Examples() {
   const [search, setSearch] = useState('');
 
   const menu = (
-    <Menu
+    <MenuBar
       items={filteredItems}
       selectedKeys={[selectedExampleId]}
-      onSelect={(item) => {
+      onClick={(item) => {
         setSelectedExampleId(item.key);
       }}
-      style={{ width: '300px!important', height: 'calc(100vh - 124px)', overflow: 'auto' }}
-    ></Menu>
+      css={{
+        width: '300px',
+        height: 'calc(100vh - 124px)',
+        overflow: 'auto'
+      }}
+    ></MenuBar>
   );
 
   useEffect(() => {
@@ -47,7 +75,7 @@ export default function Examples() {
     menuKeyTitleMapRef.current.clear();
     navigate(`/examples/${context.version}`);
     fetchMenuList('ts', context.version).then((list) => {
-      const itemRes: ItemType[] = [];
+      const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -126,7 +154,7 @@ export default function Examples() {
 
   // filter items
   useEffect(() => {
-    const filtered: Array<ItemType> = [];
+    const filtered: Array<any> = [];
     if (!search) {
       setFilteredItems([...items]);
     } else {
@@ -143,47 +171,51 @@ export default function Examples() {
 
   return (
     <>
-      <Media query='(max-width: 599px)'>
+      <Media query='(max-width: 768px)'>
         {(isMobile) => (
           <>
             <Header></Header>
-            <Layout hasSider={true}>
+            <Flex wrap="false">
               {!isMobile && (
-                <Sider>
-                  <div className='examples-search'>
+                <StyledNav>
+                  <StyledSearchBar>
                     <Input
-                      size='large'
+                      size='md'
                       placeholder='Search...'
-                      prefix={<SearchOutlined />}
+                      startSlot={<SearchOutlined />}
                       onChange={(e) => {
                         setSearch(e.currentTarget.value);
                       }}
                     />
-                  </div>
+                  </StyledSearchBar>
                   {menu}
-                </Sider>
+                </StyledNav>
               )}
-              <Content style={{ height: 'calc(100vh - 64px)' }} className='examples-content'>
+              <StyledContent>
+                <Playground id={selectedExampleId} title={exampleTitle} />
                 {isMobile && (
-                  <Popover
-                    className='examples-popover-menu'
-                    placement='bottomRight'
-                    content={menu}
-                    trigger='click'
-                    visible={menuVisible}
-                    arrowPointAtCenter
-                  >
-                    <MenuUnfoldOutlined
-                      className='nav-phone-icon'
-                      onClick={() => {
-                        toggleMenu(!menuVisible);
-                      }}
-                    />
+                  <Popover trigger={
+                    <ActionButton size="lg" css={{
+                      position: "fixed",
+                      right: "$4",
+                      bottom: "$16",
+                      zIndex: 11,
+                    }}>
+                      <List />
+                    </ActionButton>
+                  }
+                    sideOffset={6}
+                    css={{
+                      marginRight: "$4",
+                      maxHeight: "70vh",
+                      overflow: "auto"
+                    }}>
+                    {menu}
                   </Popover>
                 )}
-                <Playground id={selectedExampleId} title={exampleTitle} />
-              </Content>
-            </Layout>
+              </StyledContent>
+            </Flex>
+            <Toaster />
           </>
         )}
       </Media>
