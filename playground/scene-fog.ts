@@ -16,7 +16,7 @@ import {
   Scene,
   ShadowType,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
 
 async function init() {
@@ -26,13 +26,14 @@ async function init() {
   const scene = engine.sceneManager.activeScene;
 
   // Set background color to cornflowerblue
-  scene.background.solidColor = new Color(130 / 255, 163 / 255, 255 / 255);
+  const cornflowerblue = new Color(130 / 255, 163 / 255, 255 / 255);
+  scene.background.solidColor = cornflowerblue;
 
   // Set fog
   scene.fogMode = FogMode.ExponentialSquared;
   scene.fogDensity = 0.025;
   scene.fogEnd = 120;
-  scene.fogColor = new Color(0.7,0.7,0.8);
+  scene.fogColor = cornflowerblue;
 
   const rootEntity = scene.createRootEntity();
 
