@@ -31,8 +31,8 @@ async function init() {
 
   // Set fog
   scene.fogMode = FogMode.ExponentialSquared;
-  scene.fogDensity = 0.02;
-  scene.fogEnd = 150;
+  scene.fogDensity = 0.015;
+  scene.fogEnd = 200;
   scene.fogColor = cornflowerblue;
 
   const rootEntity = scene.createRootEntity();
