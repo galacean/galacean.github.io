@@ -1,5 +1,6 @@
 import toc from '@jsdevtools/rehype-toc';
 import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
+import MermaidBlock from './MermaidBlock';
 import ReactMarkdown from 'react-markdown';
 import Prism from 'prismjs';
 import remarkFrontmatter from 'remark-frontmatter';
@@ -295,12 +296,16 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             },
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
+              if (!inline && match) {
+                if (className?.indexOf('mermaid') !== -1) {
+                  return <MermaidBlock>{children[0]}</MermaidBlock>;
+                }
                 <code dangerouslySetInnerHTML={{
-                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
-                }}
+                    __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+                  }}
                 />
-              ) : (
+              }
+              return (
                 <code className={className} {...props}>
                   {children}
                 </code>
