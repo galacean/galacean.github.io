@@ -12,7 +12,7 @@ label: 编辑器/组件
 
 1. 将带动画的模型上传到编辑器上，编辑器会自动加载其上的动画片段到资源面板中
 
-![image-20210902230821166](https://gw.alipayobjects.com/zos/OasisHub/a3932972-d52f-4e85-918f-830f1ab4f14a/1667457123966-0e930468-2054-4ff2-b6b0-e023f0cc748d.png)
+   ![4](https://gw.alipayobjects.com/zos/OasisHub/2ee85519-4f48-4e65-8dcc-b6afe9d1f7d9/4.jpg)
 
 
 2. 当我们把模型拖入到场景中，模型以初始姿态展示出来，但是并不会播放任何动画，我们需要在模型实体上添加Animator组件，来控制动画的播放。
@@ -22,8 +22,8 @@ label: 编辑器/组件
    ![image](https://gw.alipayobjects.com/zos/OasisHub/35f5788a-7544-4231-b11e-373fcce31267/1667457702054-45c9d61a-1e9b-49b5-a719-36724471aaa2.png)
    ![image](https://gw.alipayobjects.com/zos/OasisHub/68de5813-be5f-4669-91bc-d8d3f4077c5a/1667457755170-565aaa77-ec4b-462a-9a38-dc7ad66e9c19.png)
 
-4. 刚创建的AnimatorController中没有任何数据，我们需要对他进行编辑， 双击资产, 并为它添加一个AnimatorState：
-   ![image](https://gw.alipayobjects.com/zos/OasisHub/32ec949f-e877-4694-9ab0-0d2a03b2b0d9/1667457913962-d7859d4d-4879-44de-9e09-7dee51371a68.png)
+4. 刚创建的AnimatorController中没有任何数据，我们需要对他进行编辑， 双击资产, 并为它添加一个AnimatorState
+   ![3](https://gw.alipayobjects.com/zos/OasisHub/4f4139aa-eaaf-4b9d-b077-1570e783843d/3.jpg)
 
 5. 点击AnimatorState为它绑定一个AnimationClip：
    ![image](https://gw.alipayobjects.com/zos/OasisHub/8e29b9fa-eeed-4e5c-84c1-ea68f9732a92/1667457999371-e0ed9c57-d44c-4f2a-abda-12eba6e3a934.png)
@@ -42,7 +42,7 @@ label: 编辑器/组件
 ## 默认播放
 
 将AnimatorState连接到`entry`上你导出的项目运行时就会自动播放其上的动画，而不需再调用 `animator.play`。同时你也会看到编辑器的模型也开始播放动画了。
-![image](https://gw.alipayobjects.com/zos/OasisHub/2ca7efa6-6aa8-4c1a-b30a-ff183bede08a/1667458538130-56a01f2c-1602-4709-a29f-2b3eee903105.png)
+![2](https://gw.alipayobjects.com/zos/OasisHub/de60a906-0d3c-4578-8d50-aa2ce050e560/2.jpg)
 
 
 ## 动画过渡
@@ -67,7 +67,7 @@ label: 编辑器/组件
 
 有的时候你想要得到一个固定的姿势，需要裁减设计师给到的动画切片，可以向上图一样修改 `AnimatorState` 的`StartTime` 及 `EndTime`，点击 `AnimatorState` 即可对其进行编辑:
 
-![image-20210903000900986](https://gw.alipayobjects.com/zos/OasisHub/08e348a1-b87a-4be6-8551-07e40d2e70ae/1667459589837-ed583296-d2c6-43bc-a162-81bfc66cf4f3.png)
+![1](https://gw.alipayobjects.com/zos/OasisHub/cc0db4c9-95f9-48d7-a3ac-48d69e94a31d/1.jpg)
 
 
 ### 动画状态参数说明
