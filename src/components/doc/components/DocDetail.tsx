@@ -260,7 +260,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             a(param) {
               const linkHref = param.href;
               if (linkHref?.length == 0 && !param.children) {
-                return <div></div>;
+                return <span></span>;
               }
               const title = param.children[0];
 
