@@ -259,6 +259,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           components={{
             a(param) {
               const linkHref = param.href;
+              if (linkHref?.length == 0 && !param.children) {
+                return <div></div>;
+              }
               const title = param.children[0];
 
               // for links within the SPA: need to use <Link /> to properly handle routing.
