@@ -16,7 +16,7 @@ import {
   Scene,
   ShadowType,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 
 async function init() {
@@ -25,27 +25,27 @@ async function init() {
 
   const scene = engine.sceneManager.activeScene;
 
-  // Set shadow distance
-  scene.shadowDistance = 20;
+  // Set background color to cornflowerblue
+  scene.background.solidColor = new Color(130 / 255, 163 / 255, 255 / 255);
 
   // Set fog
   scene.fogMode = FogMode.ExponentialSquared;
-  scene.fogDensity = 0.1;
-  scene.fogEnd = 30;
-  scene.fogColor = new Color(0.5, 0.5, 0.5);
+  scene.fogDensity = 0.025;
+  scene.fogEnd = 120;
+  scene.fogColor = new Color(0.7,0.7,0.8);
 
   const rootEntity = scene.createRootEntity();
 
-  // Create camera entity and component
+  // Create camera entity and components
   const cameraEntity = rootEntity.createChild("camera");
-  cameraEntity.transform.setPosition(3, 2.5, 0);
-  cameraEntity.transform.lookAt(new Vector3(0, 2, 0));
+  cameraEntity.transform.setPosition(-6, 2, -22);
+  cameraEntity.transform.rotate(new Vector3(0, -110, 0));
   cameraEntity.addComponent(Camera);
   cameraEntity.addComponent(FreeControl).floorMock = false;
 
   // Create light entity and component
   const lightEntity = rootEntity.createChild("light");
-  lightEntity.transform.setPosition(0.5, 0.9, 0);
+  lightEntity.transform.setPosition(0, 0.7, 0.5);
   lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 
   // Enable light cast shadow
@@ -61,7 +61,7 @@ async function init() {
 
   // Add model
   const glTFResource = await engine.resourceManager.load<GLTFResource>(
-    "https://gw.alipayobjects.com/os/bmw-prod/ca50859b-d736-4a3e-9fc3-241b0bd2afef.gltf"
+    "https://gw.alipayobjects.com/os/OasisHub/19748279-7b9b-4c17-abdf-2c84f93c54c8/oasis-file/1670226408346/low_poly_scene_forest_waterfall.gltf"
   );
   rootEntity.addChild(glTFResource.defaultSceneRoot);
 
