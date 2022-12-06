@@ -91,7 +91,8 @@ const DocSearchRes = (props: IDocSearchResProps) => {
   docList.forEach((data: any) => {
     let category = props.category;
 
-    if (category) {
+    // TODO:  && !data.content 兼容老搜索接口
+    if (category && !data.content) {
       const type = data[category];
 
       if (!typedDocs[type]) {

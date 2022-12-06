@@ -45,7 +45,8 @@ export default ({ mode }) => {
           manualChunks: {
             'oasis-engine': ['oasis-engine'],
             '@oasis-engine/spine': ['@oasis-engine/spine'],
-            '@babel/standalone': ['@babel/standalone']
+            '@babel/standalone': ['@babel/standalone'],
+            'mermaid': ['mermaid']
           },
           chunkFileNames() {
             return 'assets/modules/[name]-[hash].js'
