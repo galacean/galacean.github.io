@@ -14,10 +14,11 @@ interface APISearchOptions {
 interface DocSearchOptions {
   content: string;
   title: string;
-  lang: string;
   version: string;
   pageNo: string;
   pageSize: string;
+  type: string;
+  lang?: string;
 }
 
 export interface APISearchResponse {

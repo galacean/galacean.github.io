@@ -62,7 +62,8 @@ const SearchResult = (props: ISearchResProps) => {
               content: props.searchText,
               pageSize: PAGE_SIZE,
               pageNo: "0",
-              lang: context.lang,
+              type: "markdown",
+              lang: context.lang
             }),
             categoryReg: /\ntype:(.+)\n/,
             link: (data: any) => `/docs/${context.version}/${context.lang}/${data.filename.slice(0, -3)}`,
@@ -84,7 +85,7 @@ const SearchResult = (props: ISearchResProps) => {
               content: props.searchText,
               pageSize: PAGE_SIZE,
               pageNo: "0",
-              lang: context.lang,
+              type: "ts"
             }),
             categoryReg: /\n\s?[*]\s?@category(.+)\n/,
             link: (data: any) => `/examples/${context.version}/${data.filename.slice(0, -3)}`,

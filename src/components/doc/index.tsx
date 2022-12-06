@@ -1,6 +1,3 @@
-import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { Affix, Col, Popover, Row } from 'antd';
-import { ItemType } from 'antd/lib/menu/hooks/useItems';
 import mermaid from 'mermaid'
 import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';

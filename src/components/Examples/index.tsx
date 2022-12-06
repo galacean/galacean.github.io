@@ -33,6 +33,7 @@ const StyledContent = styled("div", {
 
 const StyledNav = styled("nav", {
   height: 'calc(100vh - 61px)',
+  width: "250px",
   overflow: "auto",
   borderRight: "1px solid $slate5"
 })
@@ -163,7 +164,10 @@ export default function Examples() {
         newGroup.children = (group as any).children.filter((i: { label: string }) =>
           i.label?.toLocaleLowerCase().includes(search?.toLocaleLowerCase())
         );
-        filtered.push(newGroup);
+
+        if (newGroup.children.length > 0) {
+          filtered.push(newGroup);
+        }
       });
       setFilteredItems(filtered);
     }
