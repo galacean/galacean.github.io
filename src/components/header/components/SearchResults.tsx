@@ -65,6 +65,7 @@ const SearchResult = (props: ISearchResProps) => {
               type: "markdown",
               lang: context.lang
             }),
+            category: "category",
             categoryReg: /\ntype:(.+)\n/,
             link: (data: any) => `/docs/${context.version}/${context.lang}/${data.filename.slice(0, -3)}`,
             setLoadingSearchResult: props.setLoadingSearchResult,
@@ -87,6 +88,7 @@ const SearchResult = (props: ISearchResProps) => {
               pageNo: "0",
               type: "ts"
             }),
+            category: "category",
             categoryReg: /\n\s?[*]\s?@category(.+)\n/,
             link: (data: any) => `/examples/${context.version}/${data.filename.slice(0, -3)}`,
             setLoadingSearchResult: props.setLoadingSearchResult,
