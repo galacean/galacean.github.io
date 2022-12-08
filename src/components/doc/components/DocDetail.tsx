@@ -47,7 +47,6 @@ const StyledMarkdown = styled("div", {
     padding: 0,
     "> li": {
       margin: "$1 0 $1 $4",
-      paddingLeft: "$4",
       listStyleType: "circle",
       "&:empty": {
         display: "none"
