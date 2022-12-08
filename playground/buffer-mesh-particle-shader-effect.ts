@@ -1,3 +1,7 @@
+/**
+ * @title Buffer Mesh Particle Shader Effect
+ * @category Mesh
+ */
 import {
   Camera,
   MeshRenderer,
@@ -23,7 +27,7 @@ uniform sampler2D texture2;
 
 varying vec2 v_uv;
 
-// 此处也可以参照gltransition添加各种各样效果
+// This function could be changed. Some great effects could be referred to https://gl-transitions.com/gallery
 vec4 transition(vec2 p, float progress) {
   vec2 dir = p - vec2(.5);
   float dist = length(dir);
@@ -56,7 +60,7 @@ void main() {
   vec4 position = vec4(POSITION , 1.0);
   float distance = length(INDEX.xy);
   float maxDistance = 40. * 1.414;
-  float wait = distance / maxDistance * 0.5; // 根据距离等待0到0.5progress
+  float wait = distance / maxDistance * 0.5;
 
   float p = clamp(progress-wait, 0., 2.0);
   position.z += sin(p * PI * 6.) * 3. * (maxDistance - distance * 0.5) / maxDistance * (2. - progress) * 0.5;
@@ -112,8 +116,9 @@ class AnimationComponent extends Script {
   }
 }
 
+// segmentX and segmentY handle how many particles we create
 function createPlaneParticleMesh(engine: WebGLEngine, width: number, height: number, segmentX: number, segmentY: number, isIn: boolean) {
-  const triangleCount = segmentX * segmentY * 2; // 一共有多少三边形，一个四边形2个三角形组成
+  const triangleCount = segmentX * segmentY * 2; // we create segmentX * segmentY rectangles, each rectangle has 2 triangles
   const vertexCount = triangleCount * 3;
 
   const halfWidth = width * 0.5;
@@ -121,17 +126,15 @@ function createPlaneParticleMesh(engine: WebGLEngine, width: number, height: num
   const segmentWidth = width / segmentX;
   const segmentHeight = height / segmentY;
 
-  // 一个需要3个buffer
   let positionBuffer = new Float32Array(vertexCount * 3);
   let uvBuffer = new Float32Array(vertexCount * 2);
   let indexBuffer = new Float32Array(vertexCount * 3);
 
-  // 初始化位置和uv, 先横着依次创建三角形
   let i = 0;
   for (let y = 0; y < segmentY; y++) {
     for (let x = 0; x < segmentX; x++) {
+      // create vertex attribute buffer according to each square seperated by segemntX and segmentY
       let index = i * 3 * 3;
-      // position设置
       positionBuffer[index] = -halfWidth + x * segmentWidth;
       positionBuffer[index + 1] = -halfHeight + y * segmentHeight;
       positionBuffer[index + 2] = 0;
@@ -171,7 +174,6 @@ function createPlaneParticleMesh(engine: WebGLEngine, width: number, height: num
       indexBuffer[index + 17] = i + 1;
 
       index = i * 2 * 3;
-      // uv设置
       uvBuffer[index] = x / segmentX;
       uvBuffer[index + 1] = 1 - y / segmentY;
       uvBuffer[index + 2] = (x + 1) / segmentX;
@@ -223,7 +225,7 @@ engine.resourceManager.load([
   "https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg"]).then(assets => {
     const entity = rootEntity.createChild("plane");
     const renderer = entity.addComponent(MeshRenderer);
-    const mesh = createPlaneParticleMesh(engine, 20, 20, 80, 80, true); // 修改此处可以拆分不同数量粒子
+    const mesh = createPlaneParticleMesh(engine, 20, 20, 80, 80, true);
     const mtl = new ParticleMeshMaterial(engine);
     renderer.setMaterial(mtl);
     renderer.mesh = mesh;
