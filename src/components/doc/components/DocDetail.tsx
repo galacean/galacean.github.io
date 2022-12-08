@@ -300,7 +300,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
                 if (className?.indexOf('mermaid') !== -1) {
                   return <MermaidBlock>{children[0]}</MermaidBlock>;
                 }
-                <code dangerouslySetInnerHTML={{
+                return <code dangerouslySetInnerHTML={{
                     __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
                   }}
                 />
