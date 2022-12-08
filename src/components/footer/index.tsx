@@ -9,8 +9,8 @@ import {
 } from '@ant-design/icons';
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
+import { styled } from  "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成

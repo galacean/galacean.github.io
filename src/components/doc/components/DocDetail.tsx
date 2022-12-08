@@ -17,8 +17,8 @@ import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
-import { styled } from '../../../ui/design-system';
-import { Flex } from '../../../ui/Flex';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 
 interface DocDetailProps {
   selectedDocId: string;

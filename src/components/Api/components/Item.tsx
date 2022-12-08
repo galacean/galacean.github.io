@@ -4,7 +4,7 @@ import type { IItem, IParameter, ISignature, IType } from '../util/apiUtil';
 import { PkgChildDetail } from '../util/apiUtil';
 import Source from './Source';
 import Comment from './Comment';
-import { styled } from '../../../ui/design-system';
+import { styled } from "@oasis-engine/editor-design-system";
 import { StyledKind, StyledKindIcon } from './KindModule';
 
 const StyledDescription = styled("div", {

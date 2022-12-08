@@ -5,8 +5,8 @@ import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import * as Babel from '@babel/standalone';
-import { Spin } from '../../ui/Spin';
-import { Flex } from '../../ui/Flex';
+import { Spin } from '@oasis-engine/editor-components';
+import { Flex } from '@oasis-engine/editor-components';
 
 const useScript = async (libs: any) => {
   const promises: Promise<any>[] = [];

@@ -3,11 +3,11 @@ import { useContext } from 'react';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
-import { ActionButton } from '../../ui/ActionButton';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
-import { Popover } from '../../ui/Popover';
-import { Item, Select } from '../../ui/Select';
+import { ActionButton } from '@oasis-engine/editor-components';
+import { styled } from  "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
+import { Popover } from '@oasis-engine/editor-components';
+import { Option, Select } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import { NavigationMenuMobile } from './components/NavigationMenuMobile';
@@ -61,7 +61,7 @@ function Header() {
         }}
         selectedKey={context.version}
       >
-        {versions.map((v) => <Item key={v}>{v}</Item>)}
+        {versions.map((v) => <Option key={v}>{v}</Option>)}
       </Select>
       {isMobile && <Popover trigger={
         <ActionButton>

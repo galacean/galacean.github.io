@@ -2,8 +2,8 @@ import { InfoEmpty } from "iconoir-react";
 import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
-import { styled } from '../../../ui/design-system';
-import { Flex } from '../../../ui/Flex';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 import { MatchedDocs } from '../headerUtils';
 
 interface IDocSearchResProps {

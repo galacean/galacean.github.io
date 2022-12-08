@@ -1,6 +1,6 @@
 import React from 'react';
 import { toHtml } from 'hast-util-to-html';
-import { styled } from '../../../ui/design-system';
+import { styled } from "@oasis-engine/editor-design-system";
 
 const StyledToc = styled("div", {
   position: "fixed",

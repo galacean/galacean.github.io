@@ -1,5 +1,5 @@
 import { GithubOutlined } from '@ant-design/icons';
-import { styled } from '../../../ui/design-system';
+import { styled } from "@oasis-engine/editor-design-system";
 
 interface ISource {
   fileName: string;

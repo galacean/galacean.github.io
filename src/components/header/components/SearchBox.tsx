@@ -2,11 +2,11 @@ import { Cancel, Search } from 'iconoir-react';
 import * as _ from 'lodash';
 import React, { useCallback, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
-import { ActionButton } from '../../../ui/ActionButton';
-import { styled } from '../../../ui/design-system';
-import { Flex } from '../../../ui/Flex';
-import { Input } from '../../../ui/Input';
-import { Spin } from '../../../ui/Spin';
+import { ActionButton } from '@oasis-engine/editor-components';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
+import { Input } from '@oasis-engine/editor-components';
+import { Spin } from '@oasis-engine/editor-components';
 import SearchResult from './SearchResults';
 
 const StyledSearchResult = styled("div", {

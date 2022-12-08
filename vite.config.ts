@@ -45,6 +45,7 @@ export default ({ mode }) => {
           manualChunks: {
             'oasis-engine': ['oasis-engine'],
             '@oasis-engine/spine': ['@oasis-engine/spine'],
+            '@oasis-engine/editor-components': ['@oasis-engine/editor-components'],
             '@babel/standalone': ['@babel/standalone'],
             'mermaid': ['mermaid']
           },
