@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { lightTheme } from "../../../ui/design-system";
+import { lightTheme } from "@oasis-engine/editor-design-system";
 import { SunLight, HalfMoon } from 'iconoir-react';
-import { ActionButton } from "../../../ui/ActionButton";
+import { ActionButton } from "@oasis-engine/editor-components";
 import { AppContext } from "../../contextProvider";
 
 export default function ThemeButton() {

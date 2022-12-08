@@ -8,6 +8,8 @@
     "@babel/standalone": "^7.19.3",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@oasis-engine/baker": "^1.3.0-beta.0",
+    "@oasis-engine/editor-components": "^0.0.3",
+    "@oasis-engine/editor-design-system": "^0.0.2",
     "@oasis-engine/lottie": "0.8.3",
     "@oasis-engine/physics-lite": "0.9.0-beta.9",
     "@oasis-engine/physics-physx": "0.9.0-beta.9",

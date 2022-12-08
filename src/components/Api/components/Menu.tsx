@@ -1,4 +1,4 @@
-import { styled } from '../../../ui/design-system';
+import { styled } from "@oasis-engine/editor-design-system";
 import { PkgChild, PkgChildDetail } from '../util/apiUtil';
 import { StyledKind, StyledKindIcon } from './KindModule';
 
