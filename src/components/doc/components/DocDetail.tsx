@@ -36,7 +36,7 @@ const StyledMarkdown = styled("div", {
   lineHeight: 2,
   "& a": {
     color: "$blue10",
-    "&:hover":{
+    "&:hover": {
       borderBottom: "2px solid $blueA9"
     }
   },
@@ -47,7 +47,6 @@ const StyledMarkdown = styled("div", {
     padding: 0,
     "> li": {
       margin: "$1 0 $1 $4",
-      paddingLeft: "$4",
       listStyleType: "circle",
       "&:empty": {
         display: "none"
@@ -300,9 +299,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
                 if (className?.indexOf('mermaid') !== -1) {
                   return <MermaidBlock>{children[0]}</MermaidBlock>;
                 }
-                <code dangerouslySetInnerHTML={{
-                    __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
-                  }}
+                return <code dangerouslySetInnerHTML={{
+                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+                }}
                 />
               }
               return (
