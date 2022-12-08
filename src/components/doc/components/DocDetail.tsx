@@ -36,7 +36,7 @@ const StyledMarkdown = styled("div", {
   lineHeight: 2,
   "& a": {
     color: "$blue10",
-    "&:hover":{
+    "&:hover": {
       borderBottom: "2px solid $blueA9"
     }
   },
@@ -301,8 +301,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
                   return <MermaidBlock>{children[0]}</MermaidBlock>;
                 }
                 return <code dangerouslySetInnerHTML={{
-                    __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
-                  }}
+                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+                }}
                 />
               }
               return (
