@@ -13,19 +13,20 @@ import {
   DirectLight,
   Engine,
   GLTFResource,
+  Logger,
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
   Script,
   Shader,
+  ShaderPass,
   ShadowResolution,
   ShadowType,
   Vector3,
   WebGLEngine
 } from "oasis-engine";
 
-Shader.create(
-  "transparent-shadow",
+const customForwardPass = new ShaderPass(
   `
 #include <common_vert>
 #include <blendShape_input>
@@ -67,8 +68,14 @@ void main() {
         gl_FragColor = linearToGamma(gl_FragColor);
     #endif
 }
-`
+`,
+  "Forward"
 );
+
+Shader.create("transparent-shadow", [
+  customForwardPass,
+  Shader.find("pbr").subShaders[0].passes[1], // PBR shader builtin shadow caster pass
+]);
 
 class TransparentShadow extends BaseMaterial {
   /**
