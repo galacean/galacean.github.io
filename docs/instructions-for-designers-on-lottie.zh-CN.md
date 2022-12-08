@@ -7,13 +7,13 @@ type: 美术
 group: 教程
 label: Art/教程
 ---
-<a name="LUKWX"></a>
+
 ### 1、lottie 简介
 [lottie](https://airbnb.io/lottie/) 是 Airbnb 于 2017 年前后发布的一款跨平台的动画解决方案，可应用于 iOS，Android，React Native 和 web，通过 Bodymovin 插件解析 [AE](https://www.adobe.com/products/aftereffects.html) 动画，并导出可在移动端和 web 端渲染动画的 json 文件。设计师通过 AE 来制作动画，再用 Bodymovin 导出相应的 json 文件给到前端，前端可以使用这个 json 文件直接生成 100% 还原的动画。<br />
 
 ![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01hwDRHF1D8MQ1AewTj_!!6000000000171-2-tps-485-204.png#align=left&display=inline&height=495&margin=%5Bobject%20Object%5D&name=image.png) <br />
 
-<a name="Cbszs"></a>
+
 ### 2、为什么选择 lottie
 
 - 对于设计师：可以充分发挥创意和设计，可以不用费力讲解复杂的函数曲线和细致的效果，开发能直接 100% 还原动画；不会像 GIF 等手段一样带来超大文件和锯齿边缘，可以流畅实现高清动画。
@@ -22,11 +22,11 @@ label: Art/教程
 
 
 
-<a name="PhTdf"></a>
+
 ### 3、使用 lottie 的步骤
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/050e54cd-3968-4364-807a-1e6bfc5a2825/1597657251435-a5f7cd47-b7f9-41fb-8196-705c8ee94370.png)
 
-<a name="wozti"></a>
+
 ### 4、使用 Bodymovin 和洛丽塔导出动画
 4.1、 什么是 Bodymovin
 
@@ -87,7 +87,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 
 
-<a name="IyIyt"></a>
+
 ### 5、支持度和兼容性方面的重要建议
 
 - 不使用表达式和特效。lottie 暂不支持。
@@ -101,7 +101,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 - 图层命名尽量用英文。**如果你使用了渐变，那么工程名（包括aep文件名）以及渐变图层、到其父级图层、到根级图层这条链路中的每一层都要用英文，包括变换属性命名，否则会出现渲染错误。
 
 
-<a name="DjBmt"></a>
+
 ### 6、其他兼容性上的建议
 
 - 滤镜效果在客户端上不全支持；颜色滤镜的试用对客户端的运行上存在额外的性能损耗。
@@ -115,7 +115,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 
 
-<a name="P9v7j"></a>
+
 ### 7、性能方面的建议
 
 - 动画简单化。创建动画时需时刻记着保持 json 文件的精简，比如尽量不使用占用空间最多的路径关键帧动画。诸如自动跟踪描绘、颤动之类的技术会使得 json 文件变得非常大且耗性能。
@@ -140,7 +140,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 
 
-<a name="00b87"></a>
+
 ### 8、更换文字和图片
 
 - 在 svg 渲染模式下，开发人员需要一个 id 进行元素查找，设计这边只需要在AE对应图层名字前加上“ # ” 即可。并将命名以后的字符告知到开发人员。并在导出 json 的时候，取消 “Glyphs” 的选中。
@@ -151,7 +151,7 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 <br />导出完成以后，会出现询问字体样式的弹窗，可以不设置，配置以后点击“save”自动生成完毕。<br />![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01X9AQ7R1Emx8ek1DcV_!!6000000000395-2-tps-640-496.png) <br />
 <br /> 
-<a name="mNn9O"></a>
+
 ### 9、动画被导入 AE 的时候尽量重新绘制图片
 动画的图片我们一般都是使用sketch或者AI画好以后再导进去AE。但是最好的解决方案把图片重新在AE里面重新绘制。而在AE里面重新绘制就需要用到「从矢量图层创建形状」这个了。因为设计师把图片“画”进AE之后，连图片包都不需要了，直接一个动画一段代码就完成了。这样就省去很多沟通时间和解决适配的问题了。这里提供两个方法。<br />      
 1. sketch 导出 svg 格式后转成 .ai 文件<br />第一种方法比较复杂，但不会踩雷。其实就是把切图转成 ai 格式导进去 ae 再创建形状。可是这样处理后导入AE，形状可以保留更多编辑。具体步骤如下：
@@ -163,6 +163,6 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 2. 使用「AEUX」插件<br />
    - 这个对于比较简单的图形还是支持导出的。但是遇到相对应复杂的图形，例如使用了布尔运算绘制的图形，就会有一些效果缺失等奇奇怪怪的问题。插件链接下载和教程网址：[https://oursketch.com/plugin/aeux](https://oursketch.com/plugin/aeux) <br />
 
-<a name="KE8oQ"></a>
+
 ### 10、官方提供的属性支持度
 ![image.png](https://gw.alicdn.com/imgextra/i4/O1CN01hoo8Nt1U5vmjDCPJS_!!6000000002467-2-tps-593-2336.png)

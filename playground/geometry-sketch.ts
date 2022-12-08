@@ -104,10 +104,14 @@ export class SketchSelection extends Script {
 
                                 const renderer = renderElement.component;
                                 sketch.targetMesh = renderElement.mesh;
-                                sketch.worldTransform = renderer.entity.transform;
                                 sketch.skin = null;
                                 sketch.shaderData.disableMacro("O3_HAS_SKIN");
+                                sketch.worldMatrix = renderer.entity.transform.worldMatrix;
                                 if (renderer instanceof SkinnedMeshRenderer) {
+                                    const rootBone = renderer.rootBone;
+                                    if (rootBone) {
+                                        sketch.worldMatrix = renderer.rootBone.transform.worldMatrix;
+                                    }
                                     sketch.skin = renderer.skin;
                                 }
                             } else {

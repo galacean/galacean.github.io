@@ -13,7 +13,7 @@ character, and so on. In fact, the character controller is just an advanced enca
 implements various advanced character control behaviors through collision detection.
 For this reason, the creation and use of the character controller component is very similar to the collider component.
 
-```ts
+```typescript
 const physicsCapsule = new CapsuleColliderShape();
 physicsCapsule.radius = radius;
 physicsCapsule.height = height;
@@ -31,7 +31,7 @@ it to the component. But two points need to be emphasized here:
 The behavior of subsequent character controllers is controlled by various parameters and methods
 of `CharacterController`, the most important of which is the `move` function:
 
-```ts
+```typescript
 class Controller extends Script {
     onPhysicsUpdate() {
         const fixedTimeStep = this.engine.physicsManager.fixedTimeStep;
@@ -49,7 +49,7 @@ Character displacement can be specified in the `move` method, and this method re
 enumeration type `ControllerCollisionFlag` to determine whether the character controller encounters other collider
 components:
 
-```ts
+```typescript
 export enum ControllerCollisionFlag {
   /** Character is colliding to the sides. */
   Sides = 1,

@@ -108,3 +108,6 @@ textRenderer.fontStyle = FontStyle.Bold | FontStyle.Italic;
 ## Example of multi-line text
 
 <playground src="text-wrap-alignment.ts"></playground>
+
+## Example of custom font
+<playground src="text-renderer-font.ts"></playground>

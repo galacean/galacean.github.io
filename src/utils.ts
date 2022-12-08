@@ -106,3 +106,21 @@ export function getEnv() {
 
   return Env.prod;
 }
+
+const cache: any = {};
+async function getH5Data(path: string) {
+  if (!cache[path]) {
+    const data = await fetch(
+      'https://render.alipay.com/p/h5data/oasis-version_site-doc-versions-h5data.json'
+    ).then((res) => res.json());
+    cache[path] = data;
+  }
+  return cache[path];
+}
+
+export async function fetchEngineDataConfig() {
+  const dependencyConfig: { version: string; packages: string }[] = await getH5Data(
+    'oasis-version/site-doc-versions-h5data'
+  );
+  return dependencyConfig;
+}

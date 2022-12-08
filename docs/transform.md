@@ -8,31 +8,17 @@ label: Core
 <playground src="transform-basic.ts"></playground>
 
 ## Transform
-Transform is closely related to the whole rendering process of webgl. Each entity in the scene, including the camera, has its own transform.
-<br>
-When rendering a scene, it is necessary to prepare the object and put it in a proper position. This process is model transformation.
-<br>
-Then we need to prepare the camera and put it in the right position. This process is view transformation.
-<br>
-After that, adjust the parameters of the camera, such as focal length and scale. This process is projection transformation.
-<br>
-The final result of this transformation is to determine the overall size of the drawing.
-<br>
-Among them, model transformation, view transformation and projection transformation are defined and implemented in our own shaders.
-<br>
-When you create a new entity, including the camera, a transform component is automatically added to the entity.The transformation component can help us realize the transformation process mentioned above very conveniently.
-<br>
-In the process of transformation,we often encounter the transformation of coordinate system space.
-<br>
-Usually, we make the root coordinate system of the whole scene into the world coordinate system. If we do not transform the model after creating the entity in the scene, the model will be placed at the origin.Similarly, if you create a camera without model transformation,the camera will be placed at the origin.
-<br>
-In order to make the camera capture things, we need to model the camera or other entities in the scene, move or rotate, so that the object appears in the camera's shooting range. At the same time, adjust the camera parameters (projection transformation) so that the camera can capture things~
-<br>
-In addition to directly adding entities in the scene, you can also add entities to an entity, that is, to establish a parent-child relationship between two entities.
-<br>
-At this time, the coordinate system of the child entity is no longer the world coordinate system, but the model coordinate system of the parent entity. The transformation of a child entity is affected by the parent entity.
-<br>
-Although it sounds complicated, the transformation component has done all the calculations for us.The following describes the basic usage of transform components.
+Transform is closely related to the whole rendering process of WebGL. Each entity in the scene, including the camera, has its own transform.
+
+When rendering a scene, it is necessary to prepare the object and put it in a proper position. This process is model transformation. Then we need to prepare the camera and put it in the right position. This process is view transformation. After that, adjust the parameters of the camera, such as focal length and scale. This process is projection transformation. The final result of this transformation is to determine the overall size of the drawing. Among them, model transformation, view transformation and projection transformation are defined and implemented in the shaders of engine.
+
+When you create a new entity, including the camera, a transform component is automatically added to the entity.The transformation component can help us realize the transformation process mentioned above very conveniently. In the process of transformation,we often encounter the transformation of coordinate system space. Usually, we make the root coordinate system of the whole scene into the world coordinate system. If we do not transform the model after creating the entity in the scene, the model will be placed at the origin.Similarly, if you create a camera without model transformation,the camera will be placed at the origin.
+
+In order to make the camera capture things, we need to model the camera or other entities in the scene, move or rotate, so that the object appears in the camera's shooting range. At the same time, adjust the camera parameters (projection transformation) so that the camera can capture things.
+
+In addition to directly adding entities in the scene, you can also add entities to an entity, that is, to establish a parent-child relationship between two entities. At this time, the coordinate system of the child entity is no longer the world coordinate system, but the model coordinate system of the parent entity. The transformation of a child entity is affected by the parent entity. Although it sounds complicated, the transformation component has done all the calculations for us.
+
+The following describes the basic usage of transform components.
 
 ## Usage
 

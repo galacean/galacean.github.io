@@ -3,6 +3,7 @@ order: 5
 title: Shadow
 type: Graphics
 group: Light
+
 label: Graphics/Light
 ---
 
@@ -17,13 +18,13 @@ objects, thereby rendering the shadow.
 
 Based on this principle, it is better to understand the property settings related to shadows in the `Light` component:
 
-| Parameters | Application |
-| :-- | :-- |
-| [enableShadow](${api}core/Light#enableShadow) | Whether to cast shadows |
-| [shadowBias](${api}core/Light#shadowBias) | shadow bias |
-| [shadowNormalBias](${api}core/Light#shadowNormalBias) | normal bias of shadow |
-| [shadowNearPlane](${api}core/Light#shadowNearPlane) | Near plane when rendering depth map |
-| [shadowStrength](${api}core/Light#shadowStrength) | shadow strength |
+| Parameters                                            | Application                         |
+| :---------------------------------------------------- | :---------------------------------- |
+| [shadowType](${api}core/Light#shadowType)             | How this light casts shadows        |
+| [shadowBias](${api}core/Light#shadowBias)             | shadow bias                         |
+| [shadowNormalBias](${api}core/Light#shadowNormalBias) | normal bias of shadow               |
+| [shadowNearPlane](${api}core/Light#shadowNearPlane)   | Near plane when rendering depth map |
+| [shadowStrength](${api}core/Light#shadowStrength)     | shadow strength                     |
 
 A special note about shadow bias is required here:
 ![shadow-bias](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8q5MTbrlC7QAAAAAAAAAAAAAARQnAQ)
@@ -34,17 +35,19 @@ shadow and the heel are separated. Therefore, this parameter is the parameter th
 using shadows.
 
 In addition to the shadow configuration above in the `Light` component, there are some global shadow configurations in
-`EngineSettings`:
-| Parameters | Application |
-| :-- | :-- |
-| [shadowMode](${api}core/EngineSettings#shadowMode) | Shadow mode, hard shadow or PCF-based soft shadow |
-| [shadowResolution](${api}core/EngineSettings#shadowResolution) | shadow resolution |
-| [shadowCascades](${api}core/EngineSettings#shadowCascades) | Number of cascading shadows |
-| [shadowTwoCascadeSplits](${api}core/EngineSettings#shadowTwoCascadeSplits) | Parameters for dividing secondary cascade
-shadows |
-| [shadowFourCascadeSplits](${api}core/EngineSettings#shadowFourCascadeSplits) | Parameters for dividing four-level
-cascade shadows |
-The above parameters can be understood by debugging in the Playground example:
+`Scene`:
+
+| Parameters                                                   | Application                                             |
+| :----------------------------------------------------------- | :------------------------------------------------------ |
+| [castShadows](${api}core/Scene#castShadows)                  | If cast shadows                                         |
+| [shadowResolution](${api}core/Scene#shadowResolution)        | The resolution of the shadow maps                       |
+| [shadowCascades](${api}core/Scene#shadowCascades)            | Number of cascades to use for directional light shadows |
+| [shadowTwoCascadeSplits](${api}core/Scene#shadowTwoCascadeSplits) | The splits of two cascade distribution                  |
+| [shadowFourCascadeSplits](${api}core/Scene#shadowFourCascadeSplits) | The splits of four cascade distribution                 |
+| [shadowDistance](${api}core/Scene#shadowDistance)            | Max Shadow distance                                     |
+
+The above parameters can be understood by debugging in the Playground example:  
+
 <playground src="cascaded-shadow.ts"></playground>
 
 Currently, the engine only supports opening shadows for single `DirectLight`. This is mainly because the rendering of shadows
@@ -60,7 +63,7 @@ light source.
 And if the depth map is only rendered once in the whole scene, then the distant objects are small, which will seriously
 waste the depth map, resulting in a lot of blank space. So the engine uses Cascaded Stable ShadowsMap (CSSM):
 
-![shadow-cascade](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*R_ESQpQuP3wAAAAAAAAAAAAAAAARQnAQ)
+![shadow-cascade](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*R_ESQpQuP3wAAAAAAAAAAAAAARQnAQ)
 
 This technique divides the camera's view frustum into two or four blocks, and then renders the scene twice or four times
 along the direction of the light, and determines the size of each block through the division parameters, thereby
@@ -81,10 +84,11 @@ brightness value using the `Hue-Saturation-Brightness` formula.
 Configuring enableShadow in lighting can only control whether the depth map is rendered, and you also need the
 corresponding options in the Renderer to control whether the object casts shadows, or whether it accepts shadows from
 other objects.
-| Parameters | Application |
-| :-- | :-- |
-| [receiveShadows](${api}core/Renderer#receiveShadows) | Whether the object accepts shadows |
-| [castShadows](${api}core/Renderer#castShadows) | Whether the object will cast shadows |
+
+| Parameters                                           | Application                          |
+| :--------------------------------------------------- | :----------------------------------- |
+| [receiveShadows](${api}core/Renderer#receiveShadows) | Whether the object accepts shadows   |
+| [castShadows](${api}core/Renderer#castShadows)       | Whether the object will cast shadows |
 
 Open the Renderer of receiveShadows, if it is occluded by other objects, it will render shadows. Turn on the Renderer of
 castShadows to cast shadows to other objects.

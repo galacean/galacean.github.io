@@ -1,16 +1,16 @@
 import { PkgChild } from '../util/apiUtil';
+import { StyledKind, StyledKindIcon } from './KindModule';
 
 export default function Kind(props: PkgChild & { setSelectedItem: Function }) {
   return (
-    <span className={`tsd-parent-kind-module tsd-kind-${props.kind.toLowerCase().replaceAll(' ', '-')}`}>
-      <span
+    <StyledKind type={props.kind.toLowerCase().replaceAll(' ', '-')}>
+      <StyledKindIcon
         style={{ cursor: 'pointer' }}
         onClick={() => props.setSelectedItem(props.id)}
         id={props.name}
-        className='tsd-kind-icon'
       >
         {props.name}
-      </span>
-    </span>
+      </StyledKindIcon>
+    </StyledKind>
   );
 }

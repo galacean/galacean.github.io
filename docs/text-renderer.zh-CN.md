@@ -107,3 +107,6 @@ textRenderer.fontStyle = FontStyle.Bold | FontStyle.Italic;
 ## 多行文本示例
 
 <playground src="text-wrap-alignment.ts"></playground>
+
+## 自定义字体示例
+<playground src="text-renderer-font.ts"></playground>

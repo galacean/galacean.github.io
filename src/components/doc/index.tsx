@@ -1,39 +1,68 @@
-import { MenuUnfoldOutlined } from '@ant-design/icons';
-import { Col, Popover, Row } from 'antd';
-import { ItemType } from 'antd/lib/menu/hooks/useItems';
+import mermaid from 'mermaid'
+import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
+import { ActionButton } from '../../ui/ActionButton';
+import { styled } from '../../ui/design-system';
+import { Flex } from '../../ui/Flex';
+import { Popover } from '../../ui/Popover';
 import { AppContext } from '../contextProvider';
+import Footer from '../footer';
 import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
 import { fetchMenuList } from './util/docUtil';
 
+const StyledDocContent = styled('div', {
+  flex: 1
+});
+
+const StyledMenu = styled('div', {
+  minWidth: "250px",
+  maxHeight: '100vh',
+  overflowY: 'auto',
+  position: 'sticky',
+  top: 0,
+  borderRight: '1px solid $slate5',
+  zIndex: 1
+});
+
 function Doc() {
   const context = useContext(AppContext);
   const [selectedDocId, setSelectedDocId] = useState('');
-  const [items, setItems] = useState<ItemType[]>([]);
-  const { docTitle, lang } = useParams();
+  const [items, setItems] = useState<any[]>([]);
+  const { ver, docTitle, lang } = useParams();
+  const languageCode = lang === 'en' ? 'en' : 'zh-CN';
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
 
   useEffect(() => {
+    mermaid.initialize({
+      startOnLoad: true,
+    })
+  }, [])
+  
+  
+  useEffect(() => {
     const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
     navigate(
-      `/docs/${context.lang}/${
-        context.lang === 'en'
-          ? currentSelectedDocTitle?.replace('.zh-CN', '')
-          : currentSelectedDocTitle + '.zh-CN'
+      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'zh'}/${context.lang === 'en'
+        ? currentSelectedDocTitle?.replace('.zh-CN', '')
+        : currentSelectedDocTitle + '.zh-CN'
       }`
     );
     setItems([]);
-  }, [context.lang]);
+  }, [context.lang, context.version]);
+
+  useEffect(() => {
+    context.setVersion(ver);
+  }, [ver]);
 
   useEffect(() => {
     menuKeyTitleMapRef.current.clear();
     fetchMenuList('markdown', context.version).then((list) => {
-      const itemRes: ItemType[] = [];
+      const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
         .filter((item) => item.files.length > 0 || item.children.length > 0)
@@ -48,7 +77,7 @@ function Doc() {
           if (files?.length > 0) {
             files
               .sort((a, b) => a.weight - b.weight)
-              .filter((file) => lang === file.lang && file.type === 'markdown')
+              .filter((file) => file.lang === languageCode && file.type === 'markdown')
               .forEach((file) => {
                 menuKeyTitleMapRef.current.set(id + '-' + file.id, file.filename.slice(0, -3));
                 newRootMenu.children.push({
@@ -63,7 +92,7 @@ function Doc() {
               let newGroup: any = { type: 'group', label: lang === 'en' ? child.name : child.cn_name };
               newGroup.children = child.files
                 .sort((a, b) => a.weight - b.weight)
-                .filter((file) => file.lang === lang && file.type === 'markdown')
+                .filter((file) => file.lang === languageCode && file.type === 'markdown')
                 .map((item, index) => {
                   menuKeyTitleMapRef.current.set(`${id}-${child.id}-${item.id}`, item.filename.slice(0, -3));
                   return { label: item.title, key: `${id}-${child.id}-${item.id}`, lang: item.lang };
@@ -87,7 +116,8 @@ function Doc() {
         if (defaultSelectedDocId) {
           setSelectedDocId(defaultSelectedDocId);
           const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
-          selectedDocTitle && navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+          selectedDocTitle &&
+            navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
         }
       }
       setItems(itemRes);
@@ -103,12 +133,12 @@ function Doc() {
       return;
     }
     if (!docTitle && selectedDocId) {
-      navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
       return;
     }
     if (docTitle && docTitle !== selectedDocTitle) {
       setSelectedDocId(selectedDocId);
-      navigate(`/docs/${context.lang}/${selectedDocTitle}`);
+      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
     }
   }, [selectedDocId, items.length]);
 
@@ -133,25 +163,36 @@ function Doc() {
     <Media query='(max-width: 768px)'>
       {(isMobile) =>
         isMobile ? (
-          <>
-            <Popover placement='bottomRight' content={menu} trigger='click' arrowPointAtCenter>
-              <MenuUnfoldOutlined
-                className='nav-phone-icon'
-                style={{ zIndex: 20, top: '25px', left: '30px' }}
-              />
-            </Popover>
-
+          <StyledDocContent>
             {docDetail}
-          </>
-        ) : (
-          <Row>
-            <Col xxl={4} xl={5} lg={6} md={24} sm={24} xs={24} className='main-menu'>
+            <Popover trigger={
+              <ActionButton size="lg" css={{
+                position: "fixed",
+                right: "$4",
+                bottom: "$16",
+                zIndex: 11,
+              }}>
+                <List />
+              </ActionButton>
+            }
+            sideOffset={6}
+            css={{
+              marginRight: "$4",
+              maxHeight: "70vh",
+              overflow: "auto"
+            }}>
               {menu}
-            </Col>
-            <Col xxl={20} xl={19} lg={18} md={24} sm={24} xs={24}>
+            </Popover>
+            <Footer></Footer>
+          </StyledDocContent>
+        ) : (
+          <Flex wrap={false}>
+            <StyledMenu>{menu}</StyledMenu>
+            <StyledDocContent>
               {docDetail}
-            </Col>
-          </Row>
+              <Footer></Footer>
+            </StyledDocContent>
+          </Flex>
         )
       }
     </Media>

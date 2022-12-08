@@ -1,10 +1,36 @@
 import React, { useState } from 'react';
 import { CopyOutlined } from '@ant-design/icons';
-import { Tooltip } from 'antd';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Codepen from './Codepen';
 import CodeSandbox from './CodeSandbox';
 import Stackblitz from './Stackblitz';
+import { styled } from '../../ui/design-system';
+import { Tooltip } from '../../ui/Tooltip';
+import { Flex } from '../../ui/Flex';
+import { FormattedMessage } from 'react-intl';
+import { toast } from '../../ui/Toast';
+
+export const StyledActions = styled(Flex, {
+  position: "absolute",
+  top: 0,
+  right: 0,
+  width: "50%",
+  height: "37px",
+  padding: "2px 0",
+  lineHeight: "33px",
+  backgroundColor: "$slate3"
+});
+
+export const StyledAction = styled("div", {
+  display: "inline-block",
+  fontSize: "$3",
+  cursor: "pointer",
+  opacity: 0.8,
+  transition: "opacity 0.5s",
+  "&:hover": {
+    opacity: 1
+  }
+})
 
 interface ICodeActionProps {
   sourceCode: string;
@@ -18,8 +44,6 @@ interface ICodeActionProps {
   packages: any;
 }
 export default function CodeActions(props: ICodeActionProps) {
-  const [copy, setCopy] = useState('Copy');
-
   const html = `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -36,7 +60,7 @@ export default function CodeActions(props: ICodeActionProps) {
   const { sourceCode, version, name, packages, engineName } = props;
 
   return (
-    <div className='code-box-actions'>
+    <StyledActions align="both" gap="lg">
       <Codepen
         sourceCode={sourceCode}
         version={version}
@@ -64,19 +88,15 @@ export default function CodeActions(props: ICodeActionProps) {
         html={html}
         css={css}
       />
-      <Tooltip
-        className='code-box-action'
-        title={copy}
-        onVisibleChange={(s) => {
-          if (s) {
-            setCopy('Copy');
-          }
-        }}
-      >
-        <CopyToClipboard text={sourceCode} onCopy={() => setCopy('Copied')}>
-          <CopyOutlined />
-        </CopyToClipboard>
+      <Tooltip content={<FormattedMessage id="app.demo.copy" />} side="bottom">
+        <StyledAction>
+          <CopyToClipboard text={sourceCode} onCopy={() => {
+            toast.success(<FormattedMessage id="app.demo.copied" />, {duration: 1000});
+          }}>
+            <CopyOutlined />
+          </CopyToClipboard>
+        </StyledAction>
       </Tooltip>
-    </div>
+    </StyledActions>
   );
 }

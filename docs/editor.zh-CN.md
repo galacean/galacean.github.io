@@ -8,7 +8,7 @@ label: 编辑器/介绍
 
 ## 什么是 Oasis Editor？
 
-[Oasis Editor](https://oasis.alipay.com/editor) （**目前未对外开放**）是一个基于移动优先的高性能图形开源引擎 [Oasis Engine](https://github.com/oasis-engine/engine) 的云端 Web 互动内容创作平台，可以在线完成一个互动项目的创建、编辑、导出。我们推荐使用 [Chrome 浏览器](https://www.google.com/chrome/) 打开它。
+[Oasis Editor](https://oasis.alipay.com/editor) （**目前未对外开放**）是一个基于移动优先的高性能开源互动引擎 [Oasis Engine](https://github.com/oasis-engine/engine) 的云端 Web 互动内容创作平台，可以在线完成一个互动项目的创建、编辑、导出。我们推荐使用 [Chrome 浏览器](https://www.google.com/chrome/) 打开它。
 
 ## 工作流
 

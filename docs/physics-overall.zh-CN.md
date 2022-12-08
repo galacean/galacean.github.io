@@ -17,7 +17,7 @@ label: Physics
 
 初始化只需要将这两个后端的静态对象，绑定到 `physicsManager` 中即可：
 
-```ts
+```typescript
 import {LitePhysics} from "@oasis-engine/physics-lite";
 
 const engine = new WebGLEngine("canvas");
@@ -28,7 +28,7 @@ engine.physicsManager.initialize(LitePhysics);
 
 由于WASM需要异步加载，因此引擎的初始化需要放在 Promise 的回调中进行。
 
-```ts
+```typescript
 import {PhysXPhysics} from "@oasis-engine/physics-physx";
 
 PhysXPhysics.initialize().then(() => {
@@ -52,7 +52,7 @@ PhysXPhysics.initialize().then(() => {
 具体的使用方法，可以参考 [physx.js](https://github.com/oasis-engine/physX.js) 的Readme种的介绍。
 2. 我们还提供了轻量级的[辅助线工具](https://github.com/oasis-engine/engine-toolkit/tree/main/packages/auxiliary-lines)，该工具根据物理组件的配置绘制对应的线框，辅助配置和调试物理组件。
 使用起来也非常容易，只需要在挂载 `WireframeManager` 脚本，然后设置其关联各种物理组件，或者直接关联节点即可：
-```ts
+```typescript
 const wireframe = rootEntity.addComponent(WireframeManager);
 wireframe.addCollideWireframe(collider);
 ```

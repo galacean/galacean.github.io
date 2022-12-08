@@ -34,8 +34,11 @@ export interface PkgChildDetail {
   setSignature: any;
 }
 
-export async function fetchPkgList(): Promise<string[]> {
-  return await fetch(`${serverAddress}/api2/doc/apis/package/list`, {
+export async function fetchPkgList(version:string): Promise<string[]> {
+  const searchQuery = new URLSearchParams({
+    version,
+  });
+  return await fetch(`${serverAddress}/api2/doc/apis/package/list?${searchQuery}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -51,8 +54,11 @@ export async function fetchPkgList(): Promise<string[]> {
       }
     });
 }
-export async function fetchPkgChildren(pkg: string): Promise<PkgChild[]> {
-  return await fetch(`${serverAddress}/api2/doc/apis/package/${pkg}/children`, {
+export async function fetchPkgChildren(pkg: string, version: string): Promise<PkgChild[]> {
+  const searchQuery = new URLSearchParams({
+    version,
+  });
+  return await fetch(`${serverAddress}/api2/doc/apis/package/${pkg}/children?${searchQuery}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {
@@ -70,12 +76,16 @@ export async function fetchPkgChildren(pkg: string): Promise<PkgChild[]> {
 }
 export async function fetchPkgChildrenDetail(
   pkg: string,
-  id: number | undefined
+  id: number | undefined,
+  version: string
 ): Promise<PkgChildDetail | null> {
   if (!id) {
     return new Promise((resolve) => resolve(null));
   }
-  return await fetch(`${serverAddress}/api2/doc/apis/${pkg}/child/detail/${id}`, {
+  const searchQuery = new URLSearchParams({
+    version,
+  });
+  return await fetch(`${serverAddress}/api2/doc/apis/${pkg}/child/detail/${id}?${searchQuery}`, {
     credentials: 'include',
     mode: 'cors',
     headers: {

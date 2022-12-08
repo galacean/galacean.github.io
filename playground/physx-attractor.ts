@@ -22,6 +22,7 @@ import {
   Ray,
   RenderFace,
   Script,
+  ShadowType,
   SphereColliderShape,
   StaticCollider,
   TextRenderer,
@@ -149,8 +150,6 @@ function addSphere(
 
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-  renderer.castShadows = true;
-  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius, 60);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;
@@ -173,6 +172,7 @@ PhysXPhysics.initialize().then(() => {
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
+  scene.shadowDistance = 20;
   const rootEntity = scene.createRootEntity();
 
   // init camera
@@ -195,9 +195,8 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(5, 0, -10);
   light.transform.lookAt(new Vector3(0, 0, 0));
   const p = light.addComponent(DirectLight);
-  p.intensity = 1;
-  p.enableShadow = true;
-  p.shadowStrength = 1;
+  p.shadowType = ShadowType.SoftLow;
+
   {
     const attractorEntity = rootEntity.createChild();
     attractorEntity.addComponent(Interactor).camera = camera;

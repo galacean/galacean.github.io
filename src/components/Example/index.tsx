@@ -1,124 +1,75 @@
-import React, { useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import 'regenerator-runtime/runtime';
+import { fetchEngineDataConfig } from '../../utils';
+import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
 import * as Babel from '@babel/standalone';
-import { useParams } from 'react-router-dom';
+import { Spin } from '../../ui/Spin';
+import { Flex } from '../../ui/Flex';
 
-const packages = {
-  'oasis-engine': {
-    version: '0.8.0-beta.2',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine/0.8.0-beta.2/dist/browser.min.js',
-    global: 'oasisEngine',
-  },
-  'oasis-engine-toolkit': {
-    version: '0.8.0-beta.1',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/0.8.0-beta.1/dist/browser.min.js',
-    global: 'oasisEngineToolkit',
-    packages: {
-      '@oasis-engine-toolkit/controls': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/controls/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/controls',
-      },
-      '@oasis-engine-toolkit/framebuffer-picker': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/framebuffer-picker/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/framebufferPicker',
-      },
-      '@oasis-engine-toolkit/stats': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/stats/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/stats',
-      },
-      '@oasis-engine-toolkit/auxiliary-lines': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/auxiliary-lines/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/auxiliaryLines',
-      },
-      '@oasis-engine-toolkit/skeleton-viewer': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/skeleton-viewer/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/skeletonViewer',
-      },
-      '@oasis-engine-toolkit/planar-shadow-material': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/planar-shadow-material/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/planarShadowMaterial',
-      },
-      '@oasis-engine-toolkit/lines': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/lines/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/lines',
-      },
-      '@oasis-engine-toolkit/gizmo': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/gizmo/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/gizmo',
-      },
-      '@oasis-engine-toolkit/outline': {
-        version: '0.8.0-beta.1',
-        cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine-toolkit/outline/0.8.0-beta.1/dist/browser.min.js',
-        global: '@oasisEngineToolkit/outline',
-      },
-    },
-  },
-  '@oasis-engine/baker': {
-    version: '1.2.0',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine/baker/1.2.0/dist/index.browser.js',
-    dist: 'dist/index.browser.js',
-    global: '@oasisEngine/baker',
-  },
-  '@oasis-engine/physics-lite': {
-    version: '0.8.0-beta.2',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine/physics-lite/0.8.0-beta.2/dist/browser.min.js',
-    global: '@oasisEngine/physicsLite',
-    dist: 'dist/browser.js',
-  },
-  '@oasis-engine/physics-physx': {
-    version: '0.8.0-beta.2',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine/physics-physx/0.8.0-beta.2/dist/browser.min.js',
-    global: '@oasisEngine/physicsPhysx',
-  },
-  '@oasis-engine/spine': {
-    version: '0.2.1',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine/spine/0.2.1/dist/browser.js',
-    global: 'oasisSpine',
-    dist: 'dist/browser.js',
-  },
-  '@oasis-engine/lottie': {
-    version: '0.8.0',
-    cdn: 'https://gw.alipayobjects.com/os/lib/oasis-engine/lottie/0.8.0/dist/browser.js',
-    global: 'engine-lottie',
-    dist: 'dist/browser.js',
-  },
-  'dat.gui': {
-    version: '0.7.7',
-    cdn: 'https://gw.alipayobjects.com/os/lib/dat.gui/0.7.7/build/dat.gui.min.js',
-    global: 'dat',
-    dist: 'build/dat.gui.min.js',
-  },
-  '@tweenjs/tween.js': {
-    version: '18.6.4',
-    cdn: 'https://gw.alipayobjects.com/os/lib/tweenjs/tween.js/18.6.4/dist/tween.umd.js',
-    global: 'TWEEN',
-    dist: 'dist/tween.umd.js',
-  },
+const useScript = async (libs: any) => {
+  const promises: Promise<any>[] = [];
+  const scripts: any[] = [];
+
+
+  const addLib = (lib: any): Promise<any> => {
+    const promise = new Promise((resolve) => {
+      if (lib.cdn) {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+
+        script.onload = () => {
+          scripts.push(script);
+          resolve(script);
+        };
+
+        script.src = lib.cdn;
+      }
+    });
+
+    return promise;
+  };
+
+  await addLib(libs['oasis-engine']);
+
+  Object.keys(libs).forEach((name) => {
+    if (name !== 'oasis-engine') {
+      const lib = libs[name];
+      let promise;
+
+      // child packages
+      if (lib.packages) {
+        const childPromises = [];
+        for (const name in lib.packages) {
+          childPromises.push(addLib(lib.packages[name]));
+        }
+        promise = Promise.all(childPromises).then(() => addLib(lib));
+      } else {
+        promise = addLib(lib);
+      }
+
+      promises.push(promise);
+    }
+  });
+
+  await Promise.all(promises);
+
+  return () => {
+    scripts.forEach((script) => {
+      document.body.removeChild(script);
+    });
+  };
 };
 
-const packageGlobals: Record<string, string> = {};
+type PackageGlobals = Record<string, string>;
 
-for (const name in packages) {
-  const pkg = packages[name as keyof typeof packages];
-  packageGlobals[name] = pkg.global;
-  if ('packages' in pkg) {
-    for (const name in pkg.packages) {
-      const childPkg = pkg.packages[name as keyof typeof pkg.packages];
-      packageGlobals[name] = childPkg.global;
-    }
+const transformTsToJs = async (ts: string, packageGlobals: PackageGlobals) => {
+  if (!ts) {
+    return '';
   }
-}
 
-const transformTsToJs = (ts: string) => {
   var output = Babel.transform(ts, {
     presets: [
       [
@@ -144,80 +95,69 @@ const transformTsToJs = (ts: string) => {
   });
 
   return output.code;
-};
+}
 
-const useScript = async (libs: any, id?: string) => {
-  useEffect(() => {
-    const promises: Promise<any>[] = [];
-    const scripts: any[] = [];
+type Packages = Record<string, {
+  version: string,
+  global: string,
+  packages: Packages
+}>
 
-    id &&
-      fetchDocDataById(id).then((res) => {
-        const code = transformTsToJs(res?.content || '');
+function getPackageGlobals(packages: Packages): PackageGlobals {
+  const packageGlobals: PackageGlobals = {};
 
-        const addLib = (lib: any): Promise<any> => {
-          const promise = new Promise((resolve) => {
-            if (lib.cdn) {
-              const script = document.createElement('script');
-              script.type = 'text/javascript';
-              document.body.appendChild(script);
+  for (const name in packages) {
+    const pkg = packages[name as keyof typeof packages];
+    packageGlobals[name] = pkg.global;
+    if ('packages' in pkg) {
+      for (const name in pkg.packages) {
+        const childPkg = pkg.packages[name as keyof typeof pkg.packages];
+        packageGlobals[name] = childPkg.global;
+      }
+    }
+  }
 
-              script.onload = () => {
-                scripts.push(script);
-                resolve(script);
-              };
+  return packageGlobals;
+}
 
-              script.src = lib.cdn;
-            }
-          });
-
-          return promise;
-        };
-
-        addLib(libs['oasis-engine']).then(() => {
-          Object.keys(libs).forEach((name) => {
-            if (name !== 'oasis-engine') {
-              const lib = libs[name];
-              let promise;
-
-              // child packages
-              if (lib.packages) {
-                const childPromises = [];
-                for (const name in lib.packages) {
-                  childPromises.push(addLib(lib.packages[name]));
-                }
-                promise = Promise.all(childPromises).then(() => addLib(lib));
-              } else {
-                promise = addLib(lib);
-              }
-
-              promises.push(promise);
-            }
-          });
-
-          Promise.all(promises).then(() => {
-            const script = document.createElement('script');
-            if (code) {
-              script.text = code;
-              document.body.appendChild(script);
-              scripts.push(script);
-            }
-          });
-        });
-      });
-
-    return () => {
-      scripts.forEach((script) => {
-        document.body.removeChild(script);
-      });
-    };
-  }, [id]);
-};
+type VersionConfig = Array<{ version: string, packages: string }>;
 
 export default function Example() {
   const { exampleId } = useParams();
+  const { version } = useContext(AppContext);
+  let script: HTMLScriptElement;
+  const [loading, setLoading] = useState(true);
 
-  useScript(packages, exampleId);
+  useEffect(() => {
+    fetchEngineDataConfig().then(async (res: VersionConfig) => {
+      const packages = JSON.parse(res.find((config) => config.version === version)?.packages || '');
+      const packageGlobals = getPackageGlobals(packages);
 
-  return <canvas id='canvas' style={{ width: '100vw', height: '100vh' }} />;
+      await useScript(packages);
+
+      if (exampleId) {
+        fetchDocDataById(exampleId).then(async (res) => {
+          const code = await transformTsToJs(res?.content ?? '', packageGlobals);
+          if (code) {
+            script = document.createElement('script');
+            script.text = code;
+            document.body.appendChild(script);
+
+            setLoading(false);
+          }
+        });
+      }
+    });
+
+    return () => {
+      if (script) {
+        document.body.removeChild(script);
+      }
+    }
+  }, []);
+
+  return <div style={{ width: '100vw', height: '100vh' }}>
+    {loading && <Flex align="both" css={{ height: "100%" }}><Spin /></Flex>}
+    <canvas id='canvas' style={{ width: '100%', height: '100%' }} />
+  </div>
 }

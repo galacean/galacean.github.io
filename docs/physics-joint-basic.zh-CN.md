@@ -20,7 +20,7 @@ label: Physics
 所有的物理约束都有两个作用对象，其中代表受到物理约束作用的动态碰撞器（在该节点上挂载物理约束组件），另外一个是约束挂载的位置或者是另外一个动态碰撞器（通过组件配置来设置）。
 因此，这些组件的使用方法类似，以固定约束组件`FixedJoint`为例：
 
-```ts
+```typescript
 const fixedJoint = currentEntity.addComponent(FixedJoint);
 fixedJoint.connectedCollider = prevCollider;
 ```

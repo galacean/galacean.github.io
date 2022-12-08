@@ -23,6 +23,7 @@ import {
   Quaternion,
   Ray,
   Script,
+  ShadowType,
   SphereColliderShape,
   SpringJoint,
   TextRenderer,
@@ -59,8 +60,6 @@ function addBox(rootEntity: Entity, size: Vector3, position: Vector3, rotation: 
   mtl.metallic = 0.0;
   const boxEntity = rootEntity.createChild();
   const renderer = boxEntity.addComponent(MeshRenderer);
-  renderer.castShadows = true;
-  renderer.receiveShadows = true;
   renderer.mesh = PrimitiveMesh.createCuboid(rootEntity.engine, size.x, size.y, size.z);
   renderer.setMaterial(mtl);
   boxEntity.transform.position = position;
@@ -113,7 +112,7 @@ function createSpring(rootEntity: Entity, position: Vector3, rotation: Quaternio
 }
 
 function createHinge(rootEntity: Entity, position: Vector3, rotation: Quaternion) {
-  const currentEntity = addBox(rootEntity, new Vector3(4.0, 4.0, 0), position, rotation);
+  const currentEntity = addBox(rootEntity, new Vector3(4.0, 4.0, 0.5), position, rotation);
   const hingeJoint = currentEntity.addComponent(HingeJoint);
   hingeJoint.connectedAnchor = position;
   hingeJoint.swingOffset = new Vector3(0, 1, 0);
@@ -127,7 +126,6 @@ function addSphere(rootEntity: Entity, radius: number, position: Vector3, rotati
   mtl.metallic = 0.0;
   const sphereEntity = rootEntity.createChild();
   const renderer = sphereEntity.addComponent(MeshRenderer);
-  renderer.castShadows = true;
   renderer.mesh = PrimitiveMesh.createSphere(rootEntity.engine, radius);
   renderer.setMaterial(mtl);
   sphereEntity.transform.position = position;
@@ -193,10 +191,7 @@ PhysXPhysics.initialize().then(() => {
   light.transform.setPosition(-10, 10, 10);
   light.transform.lookAt(new Vector3());
   const directLight = light.addComponent(DirectLight);
-  directLight.intensity = 1;
-  directLight.enableShadow = true;
-  directLight.shadowStrength = 1;
-  directLight.shadowBias = 2;
+  directLight.shadowType = ShadowType.SoftLow;
 
   engine.resourceManager
     .load<AmbientLight>({
