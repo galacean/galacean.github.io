@@ -69,7 +69,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/api/:ver/:pkg/',
+    path: '/api/:ver/:pkg/:item',
     element: (
       <>
         <Header></Header>

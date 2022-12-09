@@ -33,7 +33,7 @@ export default function Package(props: IPackage) {
         {props.pgkChildren.map((child) => {
           return (
             <li key={child.id}>
-              <Kind {...{ setSelectedItem: props.setSelectedItem, ...child }} />
+              <Kind setSelectedItem={props.setSelectedItem} {...child} />
             </li>
           );
         })}

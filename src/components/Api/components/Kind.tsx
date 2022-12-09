@@ -1,15 +1,17 @@
 import { PkgChild } from '../util/apiUtil';
 import { StyledKind, StyledKindIcon } from './KindModule';
 
-export default function Kind(props: PkgChild & { setSelectedItem: Function }) {
+export default function Kind(props: PkgChild & { setSelectedItem: Function, name: string, kind: string }) {
+  const kind = props.kind.toLowerCase().replaceAll(' ', '-');
+  const { name } = props;
   return (
-    <StyledKind type={props.kind.toLowerCase().replaceAll(' ', '-')}>
+    <StyledKind type={kind}>
       <StyledKindIcon
         style={{ cursor: 'pointer' }}
-        onClick={() => props.setSelectedItem(props.id)}
-        id={props.name}
+        onClick={() => props.setSelectedItem(props.id, name, kind)}
+        id={name}
       >
-        {props.name}
+        {name}
       </StyledKindIcon>
     </StyledKind>
   );

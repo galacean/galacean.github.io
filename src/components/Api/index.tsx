@@ -1,10 +1,10 @@
 import { List } from 'iconoir-react';
 import { useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ActionButton } from '@oasis-engine/editor-components';
 import { Breadcrumb, BreadcrumbItem } from '@oasis-engine/editor-components';
-import { styled } from  "@oasis-engine/editor-design-system";
+import { styled } from "@oasis-engine/editor-design-system";
 import { Flex } from '@oasis-engine/editor-components';
 import { Popover } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
@@ -61,6 +61,7 @@ const Api = () => {
   const [selectedItem, setSelectedItem] = useState<number>();
   const { ver, pkg, item } = useParams();
   const { version, setVersion } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const pkgSet = new Set<string>();
   pkgChildren.forEach((item) => {
@@ -97,6 +98,7 @@ const Api = () => {
     if (pkgList.length === 0) {
       return;
     }
+
     fetchPkgChildren(selectedPkg, version).then((res) => {
       setPkgChildren(res);
       const chosenItem = res.find((i) => i.name === item);
@@ -165,50 +167,51 @@ const Api = () => {
     ></Menu>
   );
 
+  const breadcrumb = <StyledBreadcrumb>
+    <Breadcrumb>
+      <BreadcrumbItem>API</BreadcrumbItem>
+      <BreadcrumbItem>
+        <span
+          onClick={() => {
+            setSelectedItem(undefined);
+            setChildrenDetail(null);
+          }}
+          style={{ cursor: 'pointer' }}
+        >
+          {selectedPkg}
+        </span>
+      </BreadcrumbItem>
+      {selectedItem && (
+        <BreadcrumbItem>
+          <span>{pkgChildren.find((child) => child.id === selectedItem)?.name}</span>
+        </BreadcrumbItem>
+      )}
+    </Breadcrumb>
+  </StyledBreadcrumb>
+
+  const indexPage = <StyledPanel >
+    {Array.from(pkgSet).map((kind) => {
+      return (
+        <Package
+          key={kind}
+          setSelectedItem={(id: number, name: string) => {
+            setSelectedItem(id);
+            navigate(`/api/${version}/${selectedPkg}/${name}`);
+          }}
+          kind={kind}
+          pgkChildren={pkgChildren.filter((child) => child.kind === kind)}
+        />
+      );
+    })}
+  </StyledPanel>
+
   return (
     <Media query='(max-width: 768px)'>
       {(isMobile) => (
         <Flex wrap="false">
           <StyledContent>
-            <StyledBreadcrumb>
-              <Breadcrumb>
-                <BreadcrumbItem>API</BreadcrumbItem>
-                <BreadcrumbItem>
-                  <span
-                    onClick={() => {
-                      setSelectedItem(undefined);
-                      setChildrenDetail(null);
-                    }}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    {selectedPkg}
-                  </span>
-                </BreadcrumbItem>
-                {selectedItem && (
-                  <BreadcrumbItem>
-                    <span>{pkgChildren.find((child) => child.id === selectedItem)?.name}</span>
-                  </BreadcrumbItem>
-                )}
-              </Breadcrumb>
-            </StyledBreadcrumb>
-            {selectedItem ? (
-              <>{childrenDetail && <Module {...childrenDetail} />}</>
-            ) : (
-              <StyledPanel >
-                {Array.from(pkgSet).map((kind) => {
-                  return (
-                    <Package
-                      key={kind}
-                      {...{
-                        setSelectedItem,
-                        kind,
-                        pgkChildren: pkgChildren.filter((child) => child.kind === kind),
-                      }}
-                    />
-                  );
-                })}
-              </StyledPanel>
-            )}
+            {breadcrumb}
+            {selectedItem ? (childrenDetail && <Module {...childrenDetail} />) : indexPage}
           </StyledContent>
           {isMobile ? (
             <Popover trigger={
@@ -221,12 +224,12 @@ const Api = () => {
                 <List />
               </ActionButton>
             }
-            sideOffset={6}
-            css={{
-              marginRight: "$4",
-              maxHeight: "70vh",
-              overflow: "auto"
-            }}>
+              sideOffset={6}
+              css={{
+                marginRight: "$4",
+                maxHeight: "70vh",
+                overflow: "auto"
+              }}>
               {menu}
             </Popover>
           ) : (
