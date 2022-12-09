@@ -13,7 +13,7 @@ const LoadingIcon: React.FC = (props) => {
         justifyContent: 'center',
       }}
     >
-      <Spin size="elg" />
+      <Spin size="lg" />
     </div>
   );
 };
