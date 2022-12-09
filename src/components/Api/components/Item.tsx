@@ -289,13 +289,13 @@ export default function Item(props: PkgChildDetail) {
           })}
           {props.getSignature && (
             <div>
-              <GetSignature {...props.getSignature[0]} />
-              <Description {...props.getSignature[0]} />
+              <GetSignature {...props.getSignature} />
+              <Description {...props.getSignature} />
             </div>
           )}
           {props.setSignature && (
             <div>
-              <SetSignature {...props.setSignature[0]} />
+              <SetSignature {...props.setSignature} />
             </div>
           )}
         {!props.getSignature && props.comment && <Comment {...props.comment} />}
