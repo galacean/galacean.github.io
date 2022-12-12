@@ -6,8 +6,6 @@ group: 光照
 label: Graphics/Light
 ---
 
-**test webhook**
-
 **环境光**已经内置在了[场景](${api}core/Scene)中，提供了纯色模式和 IBL 模式
 
 ## 纯色模式
@@ -34,7 +32,7 @@ Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者 [glTF Viewe
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "*.env"
+    url: '*.env',
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -47,5 +45,3 @@ engine.resourceManager
 ```
 
 <playground src="ambient-light.ts"></playground>
-
-
