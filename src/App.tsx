@@ -12,7 +12,10 @@ function App() {
   const context = useContext(AppContext);
 
   useEffect(() => {
-    globalCSS();
+    globalCSS({body: {
+      backgroundColor: "$slate1",
+      minHeight: "100vh"
+    }});
   }, []);
 
   return (

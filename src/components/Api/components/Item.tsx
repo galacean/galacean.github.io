@@ -69,18 +69,10 @@ const StyledTag = styled("span", {
 });
 
 function Type(props: IType) {
-  const reference = props.id ? (
-    <a href={props.name}>{props.name}</a>
-  ) : (
-    // Link to MDN Doc if it is a native API.
-    <a href={`https://developer.mozilla.org/en-US/search?q=${props.name}`} target='_blank'>
-      {props.name}
-    </a>
-  );
 
   return (
     <span>
-      <i>{props.type === 'reference' ? reference : props.name}</i>
+      <i>{props.name}</i>
       {props.type === 'array' && <span>[]</span>}
     </span>
   );
@@ -289,13 +281,13 @@ export default function Item(props: PkgChildDetail) {
           })}
           {props.getSignature && (
             <div>
-              <GetSignature {...props.getSignature[0]} />
-              <Description {...props.getSignature[0]} />
+              <GetSignature {...props.getSignature} />
+              <Description {...props.getSignature} />
             </div>
           )}
           {props.setSignature && (
             <div>
-              <SetSignature {...props.setSignature[0]} />
+              <SetSignature {...props.setSignature} />
             </div>
           )}
         {!props.getSignature && props.comment && <Comment {...props.comment} />}

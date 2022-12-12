@@ -327,7 +327,7 @@ const StyledNavigationMenu = () => {
               <ListItem absolute={true} to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.createapp.description' />
               </ListItem>
-              <ListItem to={`https://oasis.alipay.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
+              <ListItem absolute={true} to={`https://oasis.alipay.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.editor.description' />
               </ListItem>
             </StyledContentList>
