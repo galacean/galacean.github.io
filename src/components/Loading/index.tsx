@@ -1,6 +1,6 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
-import { Spin } from '../../ui/Spin';
+import { Spin } from '@oasis-engine/editor-components';
 
 const LoadingIcon: React.FC = (props) => {
   return (
@@ -13,7 +13,7 @@ const LoadingIcon: React.FC = (props) => {
         justifyContent: 'center',
       }}
     >
-      <Spin size="elg" />
+      <Spin size="lg" />
     </div>
   );
 };

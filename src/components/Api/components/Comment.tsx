@@ -1,4 +1,4 @@
-import { styled } from "../../../ui/design-system";
+import { styled } from "@oasis-engine/editor-design-system";
 
 const StyledTag = styled("span", {
   display: "inline-block",

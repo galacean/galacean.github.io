@@ -6,13 +6,16 @@ import { AppContext } from './components/contextProvider';
 import LoadingIcon from './components/Loading';
 import { translationsData } from './constants/locale';
 import { router } from './routes';
-import { globalCSS } from './ui/design-system';
+import { globalCSS } from '@oasis-engine/editor-design-system';
 
 function App() {
   const context = useContext(AppContext);
 
   useEffect(() => {
-    globalCSS();
+    globalCSS({body: {
+      backgroundColor: "$slate1",
+      minHeight: "100vh"
+    }});
   }, []);
 
   return (

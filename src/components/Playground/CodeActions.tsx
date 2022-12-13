@@ -4,11 +4,11 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Codepen from './Codepen';
 import CodeSandbox from './CodeSandbox';
 import Stackblitz from './Stackblitz';
-import { styled } from '../../ui/design-system';
-import { Tooltip } from '../../ui/Tooltip';
-import { Flex } from '../../ui/Flex';
+import { styled } from  "@oasis-engine/editor-design-system";
+import { Tooltip } from '@oasis-engine/editor-components';
+import { Flex } from '@oasis-engine/editor-components';
 import { FormattedMessage } from 'react-intl';
-import { toast } from '../../ui/Toast';
+import { toast } from '@oasis-engine/editor-components';
 
 export const StyledActions = styled(Flex, {
   position: "absolute",

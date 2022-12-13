@@ -31,7 +31,8 @@ Shader.create(
 #include <blendShape_input>
 #include <uv_share>
 #include <worldpos_share>
-#include <fog_share>
+
+#include <ShadowVertexDeclaration>
 
 void main() {
 
@@ -42,15 +43,14 @@ void main() {
     #include <worldpos_vert>
     #include <position_vert>
 
-    #include <fog_vert>
+    #include <ShadowVertex>
 }
 `,
   `
 #include <common>
 #include <uv_share>
 #include <worldpos_share>
-#include <shadow_frag_share>
-#include <fog_share>
+#include <ShadowFragmentDeclaration>
 
 uniform vec4 u_baseColor;
 uniform float u_alphaCutoff;
@@ -62,8 +62,10 @@ void main() {
     #endif
 
     gl_FragColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
-
-    #include <fog_frag>
+    
+    #ifndef OASIS_COLORSPACE_GAMMA
+        gl_FragColor = linearToGamma(gl_FragColor);
+    #endif
 }
 `
 );

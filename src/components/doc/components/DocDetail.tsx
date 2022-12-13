@@ -17,8 +17,8 @@ import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
-import { styled } from '../../../ui/design-system';
-import { Flex } from '../../../ui/Flex';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 
 interface DocDetailProps {
   selectedDocId: string;
@@ -36,7 +36,7 @@ const StyledMarkdown = styled("div", {
   lineHeight: 2,
   "& a": {
     color: "$blue10",
-    "&:hover":{
+    "&:hover": {
       borderBottom: "2px solid $blueA9"
     }
   },
@@ -47,7 +47,6 @@ const StyledMarkdown = styled("div", {
     padding: 0,
     "> li": {
       margin: "$1 0 $1 $4",
-      paddingLeft: "$4",
       listStyleType: "circle",
       "&:empty": {
         display: "none"
@@ -177,7 +176,7 @@ const StyledModifiedTime = styled(Flex, {
 });
 
 const StyledReactMarkdown = styled("div", {
-  maxWidth: "980px",
+  maxWidth: "1400px",
   margin: "$8 auto $16 auto",
   padding: "0 200px 0 $16",
   '@media (max-width: 768px)': {
@@ -300,9 +299,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
                 if (className?.indexOf('mermaid') !== -1) {
                   return <MermaidBlock>{children[0]}</MermaidBlock>;
                 }
-                <code dangerouslySetInnerHTML={{
-                    __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
-                  }}
+                return <code dangerouslySetInnerHTML={{
+                  __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
+                }}
                 />
               }
               return (

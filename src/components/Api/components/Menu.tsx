@@ -1,4 +1,4 @@
-import { styled } from '../../../ui/design-system';
+import { styled } from "@oasis-engine/editor-design-system";
 import { PkgChild, PkgChildDetail } from '../util/apiUtil';
 import { StyledKind, StyledKindIcon } from './KindModule';
 
@@ -13,13 +13,11 @@ interface IPackage {
 const SubMenu = (props: { id?: string; className: string; name?: string }) => {
   if (!props.name) return null;
   return (
-    <a href={'#' + props.id}>
-      <StyledKind type={props.className}>
-        <StyledKindIcon id={props.name}>
-          {props.name}
-        </StyledKindIcon>
-      </StyledKind>
-    </a>
+    <StyledKind type={props.className}>
+      <StyledKindIcon id={props.name}>
+        {props.name}
+      </StyledKindIcon>
+    </StyledKind>
   );
 };
 
@@ -29,7 +27,8 @@ const StyledNav = styled("nav", {
   padding: "$4",
   overflow: "auto",
   fontSize: "$1",
-  maxHeight: "100vh"
+  maxHeight: "100vh",
+  width: "200px"
 });
 
 const StyledNavList = styled("ul", {

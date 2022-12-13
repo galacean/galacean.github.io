@@ -1,7 +1,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
+import { styled } from  "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 
 const StyledCases = styled("div", {
   borderTop: "1px solid $slate5",
