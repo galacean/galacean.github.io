@@ -170,3 +170,8 @@ function initCustomShader(): Shader {
   );
   return shader;
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

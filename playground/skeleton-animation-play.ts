@@ -54,3 +54,8 @@ const initDatGUI = (animator, animations) => {
     animator.speed = v;
   });
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

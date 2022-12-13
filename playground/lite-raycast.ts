@@ -155,3 +155,8 @@ engine.resourceManager
     scene.ambientLight = ambientLight;
     engine.run();
   });
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

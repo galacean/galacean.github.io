@@ -106,3 +106,8 @@ function addDebugGUI(outlineManager: OutlineManager) {
     outlineManager.subColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
   });
 }
+
+ // @ts-ignore
+window.cypressEnv = {
+  engine,
+}

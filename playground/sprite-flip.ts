@@ -51,3 +51,8 @@ function addFlipEntity(entity: Entity, posX: number, flipX: boolean, flipY: bool
   flipRenderer.flipX = flipX;
   flipRenderer.flipY = flipY;
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

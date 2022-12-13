@@ -113,3 +113,8 @@ engine.resourceManager
       skyMaterial.textureCubeMap = cubeMap;
       engine.run();
     });
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

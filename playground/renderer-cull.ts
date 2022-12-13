@@ -87,3 +87,8 @@ const folder = gui.addFolder("移动视角，观察视锥体裁剪情况");
 folder.add(state, "cube1").name("红色立方体").listen();
 folder.add(state, "cube2").name("蓝色球体").listen();
 folder.open();
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

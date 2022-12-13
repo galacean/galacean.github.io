@@ -86,3 +86,8 @@ class SpriteController extends Script {
     transform.setRotation(0, 0, _curRotation);
   }
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

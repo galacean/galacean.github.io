@@ -314,3 +314,8 @@ function openDebug() {
     border.color = color;
   });
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

@@ -49,3 +49,8 @@ cube.setMaterial(new BlinnPhongMaterial(engine));
 
 // Run Engine
 engine.run();
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

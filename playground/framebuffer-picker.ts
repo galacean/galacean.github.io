@@ -56,3 +56,8 @@ engine.resourceManager
   });
 
 engine.run();
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+};

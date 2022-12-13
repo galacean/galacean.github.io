@@ -101,3 +101,8 @@ function addSpriteRenderer(sprite: Sprite, position: Vector3): void {
 }
 
 engine.run();
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

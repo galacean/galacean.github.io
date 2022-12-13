@@ -4,7 +4,6 @@
  */
 import { Camera, Logger, Vector3, WebGLEngine, Entity } from "oasis-engine";
 import { SpineAnimation } from "@oasis-engine/spine";
-import { registerEngineForE2E } from "./e2eHelper";
 
 Logger.enable();
 
@@ -38,4 +37,7 @@ engine.resourceManager
 
 engine.run();
 
-registerEngineForE2E(engine);
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

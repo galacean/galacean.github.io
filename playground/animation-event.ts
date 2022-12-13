@@ -103,3 +103,7 @@ engine.resourceManager
     });
   }
   
+  // @ts-ignore
+  window.cypressEnv = {
+    engine,
+  }

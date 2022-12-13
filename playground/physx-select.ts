@@ -79,6 +79,7 @@ class PanScript extends Script {
     this.camera.viewportToWorldPoint(tempVec3, tempVec3);
     Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
     transform.worldPosition = transform.worldPosition.add(startPointerPos);
+    console.log(33398989, pointer.position, tempVec3)
     startPointerPos.copyFrom(tempVec3);
   }
 }
@@ -347,4 +348,9 @@ PhysXPhysics.initialize().then(() => {
         engine.run();
       });
   });
+
+  // @ts-ignore
+  window.cypressEnv = {
+    engine,
+  };
 });

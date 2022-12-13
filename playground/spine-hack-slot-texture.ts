@@ -1,4 +1,3 @@
-import { registerEngineForE2E } from './e2eHelper';
 /**
  * @title Spine Hack Slot Texture
  * @category 2D
@@ -78,7 +77,6 @@ engine.resourceManager
 
 engine.run();
 
-registerEngineForE2E(engine);
 
 function generateSkinResource(): LoadItem[] {
   const skinImgs = [
@@ -131,4 +129,9 @@ function changeSlotTexture(selectItem, textures, spineAnimation) {
   const slotName = slotNameMap[slotKey];
   const index = selectItem.split('_')[1];
   spineAnimation.hackSeparateSlotTexture(slotName, textures[index]);
+}
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
 }

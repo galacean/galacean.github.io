@@ -19,6 +19,11 @@ cameraEntity.addComponent(Camera);
 
 engine.run();
 
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}
+
 const particleEntity = rootEntity.createChild("particle");
 
 let particles: ParticleRenderer = particleEntity.addComponent(ParticleRenderer);

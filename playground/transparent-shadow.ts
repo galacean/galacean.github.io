@@ -188,3 +188,8 @@ function openDebug() {
     }
   });
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

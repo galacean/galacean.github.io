@@ -198,3 +198,8 @@ function addDataGUI(entity: Entity) {
 
   return guiData;
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

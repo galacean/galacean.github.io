@@ -62,3 +62,8 @@ async function createText(text: string, fontUrl: string = ""): Promise<void> {
   // Set font size
   renderer.fontSize = 30;
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

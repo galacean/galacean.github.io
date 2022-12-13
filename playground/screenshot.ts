@@ -154,3 +154,8 @@ function openDebug() {
 }
 
 openDebug();
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

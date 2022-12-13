@@ -105,3 +105,8 @@ class RotateScript extends Script {
     this.entity.transform.rotate(0, 0, 1);
   }
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

@@ -60,3 +60,8 @@ function addRegionEntity(entity: Entity, texture: Texture2D, posX: number, posY:
   sprite.region = region;
   regionRenderer.sprite = sprite;
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine
+}

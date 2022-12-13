@@ -71,6 +71,11 @@ function init(): void {
     });
 
   engine.run();
+
+  // @ts-ignore
+  window.cypressEnv = {
+    engine
+  }
 }
 
 function addCustomMaterial(engine: Engine, noiseTexture: Texture2D, rampTexture: Texture2D): Material {
@@ -213,3 +218,4 @@ const spriteFragmentShader = `
 `;
 
 Shader.create("SpriteDissolve", spriteVertShader, spriteFragmentShader);
+

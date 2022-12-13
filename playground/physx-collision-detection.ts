@@ -126,4 +126,9 @@ PhysXPhysics.initialize().then(() => {
       scene.ambientLight = ambientLight;
       engine.run();
     });
+
+  // @ts-ignore
+  window.cypressEnv = {
+    engine,
+  }
 });

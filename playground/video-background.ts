@@ -111,3 +111,8 @@ if ("requestVideoFrameCallback" in dom) {
   script.video = dom;
   script.texture = texture;
 }
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

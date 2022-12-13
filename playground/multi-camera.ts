@@ -100,3 +100,8 @@ engine.resourceManager
     skyMaterial.textureCubeMap = cubeMap1;
     background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
   });
+
+// @ts-ignore
+window.cypressEnv = {
+  engine,
+}

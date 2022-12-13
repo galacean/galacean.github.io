@@ -92,6 +92,11 @@ function init() {
 
   // Run engine.
   engine.run();
+
+  // @ts-ignore
+  window.cypressEnv = {
+    engine,
+  }
 }
 
 /**

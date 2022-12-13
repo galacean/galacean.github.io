@@ -560,4 +560,9 @@ PhysXPhysics.initialize().then(() => {
         animator.animatorController.layers[0].stateMachine
       );
     });
+
+  // @ts-ignore
+  window.cypressEnv = {
+    engine,
+  }
 });

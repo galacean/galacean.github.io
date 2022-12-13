@@ -32,3 +32,8 @@ yarn.lock
 
 # playground
 playground/.dev/mpa
+
+cypress/fixtures
+cypress/downloads
+cypress/diff
+cypress/screenshots
