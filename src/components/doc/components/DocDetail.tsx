@@ -176,7 +176,7 @@ const StyledModifiedTime = styled(Flex, {
 });
 
 const StyledReactMarkdown = styled("div", {
-  maxWidth: "980px",
+  maxWidth: "1400px",
   margin: "$8 auto $16 auto",
   padding: "0 200px 0 $16",
   '@media (max-width: 768px)': {
