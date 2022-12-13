@@ -42,16 +42,16 @@ describe("Camera", () => {
   })
 
   it("Multi Camera", () => {
-    cy.screenShotOnly("Camera", "multi-camera", 100, .84);
+    cy.screenShotOnly("Camera", "multi-camera", 100, .85);
   })
 
   //TODO error
   it("Ortho Controls", () => {
-    cy.screenShotAndCompare("Camera", "ortho-control");
+    cy.screenShotWithoutPause("Camera", "ortho-control");
   })
 
   it("Orthographic Camera", () => {
-    cy.screenShotAndCompare("Camera", "ortho-switch");
+    cy.screenShotWithoutPause("Camera", "ortho-switch");
 
   })
 

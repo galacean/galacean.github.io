@@ -1,26 +1,26 @@
 describe("Material", () => {
   it("Blend Mode", () => {
-    cy.screenShotAndCompare("Material", "blend-mode");
+    cy.screenShotWithoutPause("Material", "blend-mode");
   });
 
   it("Blinn Phong Material", () => {
-    cy.screenShotAndCompare("Material", "blinn-phong");
+    cy.screenShotWithoutPause("Material", "blinn-phong");
   });
 
   it("IBL Baker", () => {
-    cy.screenShotAndCompare("Material", "ibl-baker");
+    cy.screenShotWithoutPause("Material", "ibl-baker");
   });
 
   it("PBR Base", () => {
-    cy.screenShotAndCompare("Material", "pbr-base");
+    cy.screenShotWithoutPause("Material", "pbr-base");
   });
 
   it("PBR Clearcoat", () => {
-    cy.screenShotAndCompare("Material", "pbr-clearcoat");
+    cy.screenShotWithoutPause("Material", "pbr-clearcoat");
   });
 
   it("PBR Helmet", () => {
-    cy.screenShotAndCompare("Material", "pbr-helmet");
+    cy.screenShotWithoutPause("Material", "pbr-helmet");
   });
 
   it("Shader Water", () => {

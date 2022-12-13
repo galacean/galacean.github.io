@@ -59,7 +59,7 @@ function addColorEntity(entity: Entity, posX: number, color: Color): void {
   entity.getComponent(SpriteRenderer).color = color;
 }
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine
 }

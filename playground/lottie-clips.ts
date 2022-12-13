@@ -38,7 +38,7 @@ engine.resourceManager.load<Entity>({
 
 engine.run();
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine
 }

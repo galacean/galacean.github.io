@@ -50,7 +50,7 @@ cube.setMaterial(new BlinnPhongMaterial(engine));
 // Run Engine
 engine.run();
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine,
 }

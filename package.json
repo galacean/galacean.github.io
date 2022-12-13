@@ -77,6 +77,7 @@
     "test": "node scripts/test.js",
     "e2e": "cypress run --browser chrome --headless",
     "e2e:open": "cypress open",
+    "e2e:push-fixtures": "node ./e2eFixtures push",
     "e2e:pull-fixtures": "node ./e2eFixtures pull",
     "deploy": "gh-pages -d dist",
     "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"

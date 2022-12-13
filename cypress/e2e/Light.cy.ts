@@ -2,19 +2,19 @@ import { recurse } from "cypress-recurse";
 
 describe("Light", () => {
   it("AmbientLight", () => {
-    cy.screenShotAndCompare("Light", "ambient-light");
+    cy.screenShotWithoutPause("Light", "ambient-light");
   });
 
   it("Cascaded Stable Shadow", () => {
-    cy.screenShotAndCompare("Light", "cascade-shadow");
+    cy.screenShotWithoutPause("Light", "cascade-shadow");
   });
 
   it("Light Type", () => {
-    cy.screenShotAndCompare("Light", "light-type");
+    cy.screenShotWithoutPause("Light", "light-type");
   });
 
   it("Shadow Basic", () => {
-    cy.screenShotAndCompare("Light", "shadow-basic", 3000);
+    cy.screenShotWithoutPause("Light", "shadow-basic", 0, 12000);
   });
 
   it("Transparent Shadow", () => {

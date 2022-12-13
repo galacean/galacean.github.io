@@ -2,11 +2,11 @@ import { recurse } from "cypress-recurse";
 
 describe("Scene", () => {
   it("Scene Background", () => {
-    cy.screenShotAndCompare("Scene", "background");
+    cy.screenShotWithoutPause("Scene", "background");
   });
 
   it("HDR Background", () => {
-    cy.screenShotAndCompare("Scene", "hdr-loader", 3000);
+    cy.screenShotWithoutPause("Scene", "hdr-loader", 0, 3000);
   });
 
   it("Video Background", () => {

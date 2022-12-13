@@ -63,7 +63,7 @@ fetch("https://gw.alipayobjects.com/os/bmw-prod/b885a803-5315-44f0-af54-6787ec47
 
 engine.run();
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine,
 }

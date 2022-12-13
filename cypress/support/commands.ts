@@ -36,6 +36,12 @@ declare global {
         threshold?: number,
         delay?: number
       ): Chainable<Element>;
+      screenShotWithoutPause(
+        category: string,
+        name: string,
+        threshold?: number,
+        delay?: number
+      ): Chainable<Element>;
       screenShotAfterRequest(
         category: string,
         name: string,
@@ -71,6 +77,45 @@ Cypress.Commands.add(
               cypressEnv.engine._time._deltaTime = deltaTime;
               cypressEnv.engine.update();
             }
+            const imageName = `${category}_${name}`;
+            resolve(
+              recurse(
+                () => {
+                  return cy
+                    .get("#canvas")
+                    .screenshot(imageName, { overwrite: true })
+                    .then(() => {
+                      return cy.task("compare", {
+                        fileName: imageName,
+                        options: {
+                          specFolder: Cypress.spec.name,
+                          threshold,
+                        },
+                      });
+                    });
+                },
+                ({ match }) => match,
+                {
+                  limit: 3,
+                }
+              )
+            );
+          }, delay);
+        });
+      });
+    });
+  }
+);
+
+Cypress.Commands.add(
+  "screenShotWithoutPause",
+  (category, name, threshold = 0, delay = 1000) => {
+    cy.visit(`/mpa/${name}.html`);
+    cy.window().then((win) => {
+      win.Math.random = () => 0.5;
+      cy.get("#canvas").then(() => {
+        return new Promise((resolve) => {
+          setTimeout(() => {
             const imageName = `${category}_${name}`;
             resolve(
               recurse(

@@ -1,21 +1,21 @@
 describe("Texture", () => {
   it("Compressed Texture", () => {
-    cy.screenShotAndCompare("Texture", "compressed-texture");
+    cy.screenShotWithoutPause("Texture", "compressed-texture");
   });
 
   it("Filter Mode", () => {
-    cy.screenShotAndCompare("Texture", "filter-mode");
+    cy.screenShotWithoutPause("Texture", "filter-mode");
   });
 
   it("Anisotropic", () => {
-    cy.screenShotAndCompare("Texture", "texture-aniso");
+    cy.screenShotWithoutPause("Texture", "texture-aniso");
   });
 
   it("Mipmap", () => {
-    cy.screenShotAndCompare("Texture", "texture-mipmap");
+    cy.screenShotWithoutPause("Texture", "texture-mipmap");
   });
 
   it("Wrap Mode", () => {
-    cy.screenShotAndCompare("Texture", "wrap-mode");
+    cy.screenShotWithoutPause("Texture", "wrap-mode");
   });
 });

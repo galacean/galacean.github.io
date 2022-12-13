@@ -102,7 +102,7 @@ function addSpriteRenderer(sprite: Sprite, position: Vector3): void {
 
 engine.run();
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine
 }

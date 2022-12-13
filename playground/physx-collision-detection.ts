@@ -127,7 +127,7 @@ PhysXPhysics.initialize().then(() => {
       engine.run();
     });
 
-  // @ts-ignore
+  // @ts-ignore for e2e test
   window.cypressEnv = {
     engine,
   }

@@ -14,7 +14,7 @@ then
 elif [ $1 == "push" ]
 then
   cd "./cypress/fixtures"
-  git add editor/*
+  git add playground/*
   git commit -am 'feat: update fixtures'
   git push origin main
 fi

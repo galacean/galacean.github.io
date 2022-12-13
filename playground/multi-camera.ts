@@ -101,7 +101,7 @@ engine.resourceManager
     background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
   });
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine,
 }

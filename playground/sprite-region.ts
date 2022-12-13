@@ -61,7 +61,7 @@ function addRegionEntity(entity: Entity, texture: Texture2D, posX: number, posY:
   regionRenderer.sprite = sprite;
 }
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine
 }

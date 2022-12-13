@@ -3,6 +3,7 @@ describe("Mesh", () => {
     cy.screenShotOnly("Mesh", "buffer-mesh-independent");
   });
 
+  //TODO need opt
   it("Buffer Mesh Instance", () => {
     cy.visit(`/mpa/buffer-mesh-instance.html`);
     cy.wait(3000);
@@ -12,7 +13,7 @@ describe("Mesh", () => {
   });
 
   it("Buffer Mesh Interleaved", () => {
-    cy.screenShotAndCompare("Mesh", "buffer-mesh-interleaved");
+    cy.screenShotWithoutPause("Mesh", "buffer-mesh-interleaved");
   });
 
   it("Model Mesh", () => {

@@ -88,7 +88,7 @@ folder.add(state, "cube1").name("红色立方体").listen();
 folder.add(state, "cube2").name("蓝色球体").listen();
 folder.open();
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine,
 }

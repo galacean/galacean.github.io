@@ -203,8 +203,8 @@ PhysXPhysics.initialize().then(() => {
       engine.run();
     });
   
-    // @ts-ignore
-    window.cypressEnv = {
-      engine,
-    }
+  // @ts-ignore
+  window.cypressEnv = {
+    engine,
+  }
 });

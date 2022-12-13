@@ -26,6 +26,7 @@ class ClickScript extends Script {
     const { pointers } = inputManager;
     if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       const pointerPosition = pointers[0].position;
+      console.log(pointerPosition)
       framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
         if (renderElement) {
           console.log(renderElement.component.entity.parent);
@@ -107,7 +108,7 @@ function addDebugGUI(outlineManager: OutlineManager) {
   });
 }
 
- // @ts-ignore
+ // @ts-ignore for e2e test
 window.cypressEnv = {
   engine,
 }

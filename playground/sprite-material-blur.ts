@@ -154,7 +154,7 @@ const spriteFragmentShader = `
 
 Shader.create("SpriteBlur", spriteVertShader, spriteFragmentShader);
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine
 }

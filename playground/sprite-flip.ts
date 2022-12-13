@@ -52,7 +52,7 @@ function addFlipEntity(entity: Entity, posX: number, flipX: boolean, flipY: bool
   flipRenderer.flipY = flipY;
 }
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine
 }

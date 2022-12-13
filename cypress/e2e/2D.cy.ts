@@ -3,8 +3,7 @@ import { recurse } from "cypress-recurse";
 describe("2D", () => {
   it("CSS DOM", () => {
     cy.visit("/mpa/CSS-DOM.html");
-    const canvas = cy.get("#canvas");
-    canvas.should("exist");
+    cy.wait(1000);
     cy.get("#canvas")
       .trigger("pointerdown", {
         offsetX: 600,

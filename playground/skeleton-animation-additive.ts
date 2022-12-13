@@ -108,7 +108,7 @@ const initDatGUI = (animator, animations, additiveLayer) => {
   });
 };
 
-// @ts-ignore
+// @ts-ignore for e2e test
 window.cypressEnv = {
   engine,
 }
