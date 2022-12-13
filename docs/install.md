@@ -55,7 +55,23 @@ If you just want to quickly create a project, it is recommended that you use [cr
 
 The core architecture logic and core functions of the engine are provided by oasis engine, including the following sub packages:
 
-![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*oqRcS6cRNP8AAAAAAAAAAAAAARQnAQ)
+```mermaid
+flowchart LR
+   Engine(<a href='https://github.com/ant-galaxy/oasis-engine'>oasis-engine</a>) --- Core("@oasis-engine/core")
+   Engine --- Loader("@oasis-engine/loader")
+   Engine --- Math("@oasis-engine/math")
+   Engine --- RHI("@oasis-engine/rhi-webgl")
+   Engine --- Design("@oasis-engine/design")
+   Engine --- PhysicsPhysx("@oasis-engine/physics-physx")
+   Engine --- PhysicsLite("@oasis-engine/physics-lite")
+
+   Toolkit(<a href='https://github.com/ant-galaxy/oasis-engine-toolkit'>oasis-engine-toolkit</a>) --- Controls("@oasis-engine-toolkit/controls")
+   Toolkit --- Stats("@oasis-engine-toolkit/stats")
+   Toolkit --- FramebufferPicker("@oasis-engine-toolkit/framebuffer-picker")
+   Toolkit --- AuxiliaryLines("@oasis-engine-toolkit/auxiliary-lines")
+   Toolkit --- Outline("@oasis-engine-toolkit/outline")
+   Toolkit --- PlanarShadowMaterial("@oasis-engine-toolkit/planar-shadow-material")
+```
 
 ### Engine package
 Engine core architecture logic and core functions ([oasis-engine](https://www.npmjs.com/package/oasis-engine)), including the following sub-packages:
