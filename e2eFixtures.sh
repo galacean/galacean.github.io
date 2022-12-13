@@ -16,5 +16,6 @@ then
   cd "./cypress/fixtures"
   git add playground/*
   git commit -am 'feat: update fixtures'
+  echo wq | git pull origin main
   git push origin main
 fi
