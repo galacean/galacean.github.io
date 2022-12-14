@@ -121,7 +121,7 @@ export interface FileData {
   type: string;
   /**
    * [文件语言]
-   * (enum: zh-CN, en, *)
+   * (enum: cn, en, *)
    */
   lang: string;
   /**

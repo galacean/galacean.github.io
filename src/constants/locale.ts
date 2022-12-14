@@ -1,5 +1,5 @@
 export const translationsData: { [lang: string]: any } = {
-  'zh-CN': {
+  'cn': {
     'app.content.error.button': '回到首页',
     'app.content.error.subtitle': '页面异常',
     'app.content.loading': '努力加载中...',

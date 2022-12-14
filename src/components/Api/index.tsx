@@ -195,10 +195,8 @@ const Api = () => {
   let { version } = useContext(AppContext);
   const [pkgChildren, setPkgChildren] = useState<PkgChild[]>();
   const navigate = useNavigate();
-  console.log(version, pkg, name)
 
-  if (!version || !pkg) {
-    version = version || 'latest';
+  if (!pkg) {
     pkg = pkg || 'core';
     navigate(`/api/${version}/${pkg}`);
   }

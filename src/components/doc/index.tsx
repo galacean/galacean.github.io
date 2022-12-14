@@ -4,7 +4,7 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ActionButton } from '@oasis-engine/editor-components';
-import { styled } from  "@oasis-engine/editor-design-system";
+import { styled } from "@oasis-engine/editor-design-system";
 import { Flex } from '@oasis-engine/editor-components';
 import { Popover } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
@@ -32,35 +32,76 @@ function Doc() {
   const context = useContext(AppContext);
   const [selectedDocId, setSelectedDocId] = useState('');
   const [items, setItems] = useState<any[]>([]);
-  const { ver, docTitle, lang } = useParams();
+  let { ver, docTitle, lang } = useParams();
   const languageCode = lang === 'en' ? 'en' : 'zh-CN';
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
+
+  const setSelectedItem = (docTitle: string) => {
+    let title = docTitle;
+
+    if (lang === 'cn') {
+      title += '.zh-CN'
+    }
+    // init routing from path params
+    if (Array.from(menuKeyTitleMapRef.current.values()).includes(title)) {
+      for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
+        if (value === title) {
+          setSelectedDocId(key);
+          break;
+        }
+      }
+    }
+  }
+
+  if (!ver || !docTitle) {
+    // set default version
+    if (!ver) {
+      ver = context.version;
+    }
+
+    // set default 
+    if (!docTitle) {
+      docTitle = 'install';
+    }
+
+    navigate(`/docs/${ver}/${context.lang}/${docTitle}`);
+  }
 
   useEffect(() => {
     mermaid.initialize({
       startOnLoad: true,
     })
   }, [])
-  
-  
+
   useEffect(() => {
-    const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+    // when route changes
+    if (docTitle) {
+      setSelectedItem(docTitle);
+    }
+  }, [docTitle])
+
+  useEffect(() => {
+    // navigate to new url if selectedDocId changes
+    if (selectedDocId) {
+      const selectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+
+      if (selectedDocTitle) {
+        let title = selectedDocTitle.replace('.zh-CN', '');
+
+        navigate(`/docs/${ver}/${context.lang}/${title}`);
+      }
+    }
+  }, [selectedDocId]);
+
+  useEffect(() => {
+    // navigate to new url if version or lang change.
     navigate(
-      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'zh'}/${context.lang === 'en'
-        ? currentSelectedDocTitle?.replace('.zh-CN', '')
-        : currentSelectedDocTitle + '.zh-CN'
-      }`
+      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'cn'}/${docTitle}`
     );
-    setItems([]);
-  }, [context.lang, context.version]);
 
-  useEffect(() => {
-    context.setVersion(ver);
-  }, [ver]);
-
-  useEffect(() => {
     menuKeyTitleMapRef.current.clear();
+
     fetchMenuList('markdown', context.version).then((list) => {
       const itemRes: any[] = [];
       list
@@ -101,46 +142,11 @@ function Doc() {
             });
           itemRes.push(newRootMenu);
         });
-      // init routing from path params
-      if (docTitle && Array.from(menuKeyTitleMapRef.current.values()).includes(docTitle)) {
-        for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
-          if (value === docTitle) {
-            setSelectedDocId(key);
-            break;
-          }
-        }
-        // init routing by default first doc
-      } else {
-        const defaultSelectedDocId =
-          (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0]?.key;
-        if (defaultSelectedDocId) {
-          setSelectedDocId(defaultSelectedDocId);
-          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
-          selectedDocTitle &&
-            navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
-        }
-      }
-      setItems(itemRes);
-    });
-  }, [lang, context.version]);
 
-  useEffect(() => {
-    if (items.length === 0) {
-      return;
-    }
-    const selectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
-    if (!selectedDocTitle) {
-      return;
-    }
-    if (!docTitle && selectedDocId) {
-      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
-      return;
-    }
-    if (docTitle && docTitle !== selectedDocTitle) {
-      setSelectedDocId(selectedDocId);
-      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
-    }
-  }, [selectedDocId, items.length]);
+      setItems(itemRes);
+      setSelectedItem(docTitle);
+    });
+  }, [context.lang, context.version]);
 
   if (items.length === 0) {
     return <LoadingIcon></LoadingIcon>;
@@ -175,12 +181,12 @@ function Doc() {
                 <List />
               </ActionButton>
             }
-            sideOffset={6}
-            css={{
-              marginRight: "$4",
-              maxHeight: "70vh",
-              overflow: "auto"
-            }}>
+              sideOffset={6}
+              css={{
+                marginRight: "$4",
+                maxHeight: "70vh",
+                overflow: "auto"
+              }}>
               {menu}
             </Popover>
             <Footer></Footer>
