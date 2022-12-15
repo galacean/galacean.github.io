@@ -6,7 +6,7 @@ const StyledToc = styled("div", {
   position: "fixed",
   top: "$16",
   right: 0,
-  zIndex: 10,
+  zIndex: 1,
   padding: "$4",
   margin: "$2 $4 $2 $2",
   fontSize: "$1",

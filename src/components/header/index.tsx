@@ -55,7 +55,9 @@ function Header() {
       >
         <Translate />
       </ActionButton>
-      <Select size='sm'
+      <Select
+        label="version"
+        size='sm'
         onSelectionChange={(e) => {
           context.setVersion(e)
         }}
