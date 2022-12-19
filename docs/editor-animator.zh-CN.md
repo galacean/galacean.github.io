@@ -6,7 +6,7 @@ group: 组件
 label: 编辑器/组件
 ---
 
-通过 Animator 编辑器，你可以在上面方便的为动画添加过渡和混合
+通过 Animator 编辑器，用户可以很方便的添加过渡和混合等动画效果。
 
 ## 基础使用
 
@@ -14,7 +14,7 @@ label: 编辑器/组件
 
    ![4](https://gw.alipayobjects.com/zos/OasisHub/2ee85519-4f48-4e65-8dcc-b6afe9d1f7d9/4.jpg)
 
-2. 当我们把模型拖入到场景中，模型以初始姿态展示出来，但是并不会播放任何动画，我们需要在模型实体上添加 Animator 组件，来控制动画的播放。
+2. 当我们把模型拖入到场景中，模型以初始姿态展示出来，但是并不会播放任何动画，我们需要在模型实体上添加 Animator 组件，来控制动画的播放
    ![image-20210902230821166](https://gw.alipayobjects.com/zos/OasisHub/405ebaa7-8c03-4fd0-816e-cbcb39562b68/1667457441830-207e0940-4a82-4bc2-8d9c-d12d44c3eb31.png)
 
 3. Animator 组件需要引入一个 AnimatorController 资产，我们创建并引入
@@ -27,7 +27,7 @@ label: 编辑器/组件
 5. 点击 AnimatorState 为它绑定一个 AnimationClip
    ![image](https://gw.alipayobjects.com/zos/OasisHub/8e29b9fa-eeed-4e5c-84c1-ea68f9732a92/1667457999371-e0ed9c57-d44c-4f2a-abda-12eba6e3a934.png)
 
-6. 至此你在导出的项目中就可以通过 `animator.play("New State")` 播放 `running` 动画了。如果你没有为实体添加 Animator 组件的话 OasisEngine 会为你默认创建一个并且 AnimatorController 中默认添加了模型的所有动画，拿上图的模型具体，你只需要直接调用 `animator.play("running")` 就可以了。以上内容是可以帮助你更清晰的了解 Animator 的运行机制，当然除此以外你可以通过 AnimatorController 的编辑器实现更多的功能。
+6. 至此你在导出的项目中就可以通过 `animator.play("New State")` 播放 `running` 动画了。如果你没有为实体添加 Animator 组件的话 OasisEngine 会为你默认创建一个并且 AnimatorController 中默认添加了模型的所有动画，拿上图的模型举例，你只需要直接调用 `animator.play("running")` 就可以了。以上内容是可以帮助你更清晰的了解 Animator 的运行机制，当然除此以外你可以通过 AnimatorController 的编辑器实现更多的功能。
 
 ### 参数说明
 
@@ -82,10 +82,10 @@ label: 编辑器/组件
 
 ### 参数说明
 
-| 属性     | 功能说明                                                                     |
+| 属性      | 功能说明                                                                    |
 | :------- | :------------------------------------------------------------------------- |
 | Name     | 该层的名字。                                                                 |
-| Weight   | 该层的混合权重，默认值为 1.0 。                                                 |
+| Weight   | 该层的混合权重，默认值为 1.0 。                                                |
 | Blending | 该层的混合模式，`Additive` 为叠加模式， `Override` 为覆盖模式，默认值为 `Override` |
 
 Oasis 支持多层的混合，你可以增加更多的层以达到你想要的效果。
