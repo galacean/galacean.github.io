@@ -117,9 +117,7 @@ const SearchResult = (props: ISearchResProps) => {
               pageNo: "0"
             }),
             category: "kindString",
-            link: (data: any) => {
-            console.log('api data', data)
-             return `/api/${context.version}/core/${data.name}`},
+            link: (data: any) => `/api/${context.version}/core/${data.name}`,
             setLoadingSearchResult: props.setLoadingSearchResult,
             icon: <Puzzle />
           }}
