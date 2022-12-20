@@ -18,8 +18,10 @@ function App() {
     }});
   }, []);
 
+  const lang = context.lang === 'cn' ? 'zh-CN' : 'en';
+
   return (
-    <IntlProvider locale={context.lang} messages={translationsData[context.lang]}>
+    <IntlProvider locale={lang} messages={translationsData[lang]}>
       <TooltipProvider>
         <RouterProvider router={router} fallbackElement={<LoadingIcon />}></RouterProvider>
       </TooltipProvider>
