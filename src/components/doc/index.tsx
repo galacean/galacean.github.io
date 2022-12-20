@@ -33,14 +33,13 @@ function Doc() {
   const [selectedDocId, setSelectedDocId] = useState('');
   const [items, setItems] = useState<any[]>([]);
   let { ver, docTitle, lang } = useParams();
-  const languageCode = lang === 'en' ? 'en' : 'zh-CN';
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
 
   const setSelectedItem = (docTitle: string) => {
     let title = docTitle;
 
-    if (lang === 'cn') {
+    if (context.lang === 'cn') {
       title += '.zh-CN'
     }
     // init routing from path params
@@ -54,21 +53,25 @@ function Doc() {
     }
   }
 
-  if (!ver || !docTitle) {
-    // set default version
-    if (!ver) {
-      ver = context.version;
-    }
-
-    // set default 
-    if (!docTitle) {
-      docTitle = 'install';
-    }
-
-    navigate(`/docs/${ver}/${context.lang}/${docTitle}`);
-  }
-
   useEffect(() => {
+    if (!ver || !docTitle) {
+      // set default version
+      if (!ver) {
+        ver = context.version;
+      }
+
+      if (!lang) {
+        lang = context.lang;
+      }
+
+      // set default 
+      if (!docTitle) {
+        docTitle = 'install';
+      }
+
+      navigate(`/docs/${ver}/${lang}/${docTitle}`);
+    }
+
     mermaid.initialize({
       startOnLoad: true,
     })
@@ -89,7 +92,7 @@ function Doc() {
       if (selectedDocTitle) {
         let title = selectedDocTitle.replace('.zh-CN', '');
 
-        navigate(`/docs/${ver}/${context.lang}/${title}`);
+        navigate(`/docs/${context.version}/${context.lang}/${title}`);
       }
     }
   }, [selectedDocId]);
@@ -102,6 +105,8 @@ function Doc() {
 
     menuKeyTitleMapRef.current.clear();
 
+    const languageCode = context.lang === 'en' ? 'en' : 'zh-CN';
+
     fetchMenuList('markdown', context.version).then((list) => {
       const itemRes: any[] = [];
       list
@@ -111,7 +116,7 @@ function Doc() {
           const { id, name, children, files, cn_name } = data;
           const newRootMenu: any = {
             key: id,
-            label: lang === 'en' ? name : cn_name,
+            label: context.lang === 'en' ? name : cn_name,
             children: [],
           };
           // create items
@@ -130,7 +135,7 @@ function Doc() {
           children
             .filter((item) => item.files.length > 0 || item.children.length > 0)
             .forEach((child, index) => {
-              let newGroup: any = { type: 'group', label: lang === 'en' ? child.name : child.cn_name };
+              let newGroup: any = { type: 'group', label: context.lang === 'en' ? child.name : child.cn_name };
               newGroup.children = child.files
                 .sort((a, b) => a.weight - b.weight)
                 .filter((file) => file.lang === languageCode && file.type === 'markdown')
