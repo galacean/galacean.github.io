@@ -268,7 +268,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
               if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
                 return (
                   <Link
-                    to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${lang === 'cn' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''}`}
+                    to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}`}
                   >
                     {title}
                   </Link>
