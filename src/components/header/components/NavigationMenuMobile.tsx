@@ -18,11 +18,11 @@ export function NavigationMenuMobile() {
         },
         {
           key: 1,
-          label: <Link to={`/docs/${context.version}/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`}>{formatMessage({ id: 'app.header.menu.artist.docs' })}</Link>
+          label: <Link to={`/docs/${context.version}/${context.lang}/artist-bake`}>{formatMessage({ id: 'app.header.menu.artist.docs' })}</Link>
         },
         {
           key: 2,
-          label: <Link to={`/docs/${context.version}/zh/editor.zh-CN`} >{formatMessage({ id: 'app.header.menu.editor.docs' })}</Link>
+          label: <Link to={`/docs/${context.version}/cn/editor`} >{formatMessage({ id: 'app.header.menu.editor.docs' })}</Link>
         }
       ]
     },

@@ -1,7 +1,7 @@
 import { createContext, PropsWithChildren, useState } from 'react';
 
 interface AppContext {
-  lang: 'zh-CN' | 'en';
+  lang: 'cn' | 'en';
   version: string;
   theme: string;
   setLang: Function;
@@ -10,7 +10,7 @@ interface AppContext {
 }
 
 const defaultValue: AppContext = {
-  lang: 'zh-CN',
+  lang: 'cn',
   version: 'latest',
   theme: "light-theme",
   setLang: () => {},
@@ -22,10 +22,10 @@ export const AppContext = createContext<AppContext>(defaultValue);
 AppContext.displayName = 'AppContext';
 
 const AppContextProvider = (props: PropsWithChildren) => {
-  const localStorageLang = localStorage.getItem('lang') === 'en' ? 'en' : 'zh-CN';
+  const localStorageLang = localStorage.getItem('lang') === 'en' ? 'en' : 'cn';
   const localStorageTheme = localStorage.getItem('theme') === 'dark-theme' ? 'dark-theme' : 'light-theme';
-  const [lang, setLang] = useState<'zh-CN' | 'en'>(
-    localStorageLang || (navigator.language.includes('en') ? 'en' : 'zh-CN')
+  const [lang, setLang] = useState<'cn' | 'en'>(
+    localStorageLang || (navigator.language.includes('en') ? 'en' : 'cn')
   );
   const [version, setVersion] = useState('latest');
   const [theme, setTheme] = useState(localStorageTheme);

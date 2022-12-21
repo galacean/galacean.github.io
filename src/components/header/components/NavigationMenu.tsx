@@ -306,10 +306,10 @@ const StyledNavigationMenu = () => {
               <ListItem to={`/docs/${context.version}/${context.lang}`} title={formatMessage({ id: 'app.header.menu.engine.docs' })}>
                 <FormattedMessage id='app.header.menu.engine.docs.description' />
               </ListItem>
-              <ListItem to={`/docs/latest/${context.lang}/artist-bake${context.lang === 'en' ? '' : '.zh-CN'}`} title={formatMessage({ id: 'app.header.menu.artist.docs' })}>
+              <ListItem to={`/docs/${context.version}/${context.lang}/artist-bake`} title={formatMessage({ id: 'app.header.menu.artist.docs' })}>
                 <FormattedMessage id='app.header.menu.artist.docs.description' />
               </ListItem>
-              <ListItem to={'/docs/latest/zh/editor.zh-CN'} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
+              <ListItem to={`/docs/${context.version}/cn/editor`} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
                 <FormattedMessage id='app.header.menu.editor.docs.description' />
               </ListItem>
             </StyledContentList>

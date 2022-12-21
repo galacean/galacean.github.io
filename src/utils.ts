@@ -5,7 +5,7 @@ export function isZhCN() {
   if (typeof window !== 'undefined') {
     const local = window.localStorage.getItem('locale');
     return local
-      ? local === 'zh-CN'
+      ? local === 'cn'
       : window.navigator.language && window.navigator.language.toLocaleLowerCase() === 'zh-cn';
   }
 }

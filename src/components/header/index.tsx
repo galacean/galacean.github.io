@@ -48,7 +48,7 @@ function Header() {
       <ActionButton
         size="sm"
         onClick={() => {
-          const newLang = context.lang === 'zh-CN' ? 'en' : 'zh-CN';
+          const newLang = context.lang === 'cn' ? 'en' : 'cn';
           context.setLang(newLang);
           localStorage.setItem('lang', newLang);
         }}
