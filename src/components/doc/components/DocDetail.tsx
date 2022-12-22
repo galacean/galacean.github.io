@@ -210,7 +210,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   }, [docTitle]);
 
   useEffect(() => {
-    fetchMenuList('ts', version).then((list) => {
+    fetchMenuList('example', version).then((list) => {
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {

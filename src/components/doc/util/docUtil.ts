@@ -236,13 +236,15 @@ export async function fetchDocDetailByTitle(title: string): Promise<DocData> {
     });
 }
 
+export type MenuTag = 'example' | 'doc-engine' | 'doc-art' | 'doc-editor';
+
 /**
  *
  * @param type Use 'ts' for example list and 'markdown' for markdown list
  * @returns The menu item list and their children.
  */
 export async function fetchMenuList(
-  type?: 'ts' | 'markdown',
+  type?: MenuTag,
   version: string = 'latest'
 ): Promise<MenuData[]> {
   return await fetch(`${serverAddress}/api2/doc/label/all/?tag=${type}&version=${version}`, {
