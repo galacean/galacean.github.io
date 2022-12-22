@@ -4,7 +4,7 @@
     "name": "Binary library",
     "parent_uuid": null,
     "weight": 1,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "二方库"
   },
   {
@@ -12,7 +12,7 @@
     "name": "Introduction",
     "parent_uuid": null,
     "weight": 2,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "快速入门"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Basic",
     "parent_uuid": "markdown-Introduction",
     "weight": 1,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "基础"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Advanced",
     "parent_uuid": "markdown-Introduction",
     "weight": 1,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "进阶"
   },
   {
@@ -36,7 +36,7 @@
     "name": "Core",
     "parent_uuid": null,
     "weight": 2,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "核心"
   },
   {
@@ -44,7 +44,7 @@
     "name": "Graphics",
     "parent_uuid": null,
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "图形"
   },
   {
@@ -52,7 +52,7 @@
     "name": "Camera",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "摄像机"
   },
   {
@@ -60,7 +60,7 @@
     "name": "Renderer",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "渲染器组件"
   },
   {
@@ -68,7 +68,7 @@
     "name": "Mesh",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "网格"
   },
   {
@@ -76,7 +76,7 @@
     "name": "Material",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "材质"
   },
   {
@@ -84,7 +84,7 @@
     "name": "Texture",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "纹理"
   },
   {
@@ -92,7 +92,7 @@
     "name": "Light",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "光照"
   },
   {
@@ -100,7 +100,7 @@
     "name": "2D",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "2D"
   },
   {
@@ -108,7 +108,7 @@
     "name": "Mask",
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "Mask"
   },
   {
@@ -116,7 +116,7 @@
     "name": "Animation",
     "parent_uuid": null,
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "动画"
   },
   {
@@ -124,7 +124,7 @@
     "name": "Animator Component",
     "parent_uuid": "markdown-Animation",
     "weight": 1,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "Animator Component"
   },
   {
@@ -132,7 +132,7 @@
     "name": "Physics",
     "parent_uuid": null,
     "weight": 4,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "物理"
   },
   {
@@ -140,7 +140,7 @@
     "name": "Interact",
     "parent_uuid": null,
     "weight": 7,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "交互"
   },
   {
@@ -148,7 +148,7 @@
     "name": "Resource",
     "parent_uuid": null,
     "weight": 8,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "资源"
   },
   {
@@ -156,7 +156,7 @@
     "name": "Performance",
     "parent_uuid": null,
     "weight": 9,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "性能调试"
   },
   {
@@ -164,7 +164,7 @@
     "name": "Tool",
     "parent_uuid": null,
     "weight": 10,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "工具库"
   },
   {
@@ -172,7 +172,7 @@
     "name": "Adaptation",
     "parent_uuid": null,
     "weight": 11,
-    "tag": "markdown",
+    "tag": "doc-engine",
     "cn_name": "平台适配"
   },
   {
@@ -180,7 +180,7 @@
     "name": "Art",
     "parent_uuid": null,
     "weight": 12,
-    "tag": "markdown",
+    "tag": "doc-art",
     "cn_name": "美术"
   },
   {
@@ -188,7 +188,7 @@
     "name": "规范",
     "parent_uuid": "markdown-Art",
     "weight": 12,
-    "tag": "markdown",
+    "tag": "docs-art",
     "cn_name": "规范"
   },
   {
@@ -196,7 +196,7 @@
     "name": "教程",
     "parent_uuid": "markdown-Art",
     "weight": 12,
-    "tag": "markdown",
+    "tag": "docs-art",
     "cn_name": "教程"
   },
   {
@@ -204,7 +204,7 @@
     "name": "编辑器",
     "parent_uuid": null,
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "编辑器"
   },
   {
@@ -212,7 +212,7 @@
     "name": "介绍",
     "parent_uuid": "markdown-编辑器",
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "介绍"
   },
   {
@@ -220,7 +220,7 @@
     "name": "基础操作",
     "parent_uuid": "markdown-编辑器",
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "基础操作"
   },
   {
@@ -228,7 +228,7 @@
     "name": "资产",
     "parent_uuid": "markdown-编辑器",
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "资产"
   },
 
@@ -237,7 +237,7 @@
     "name": "组件",
     "parent_uuid": "markdown-编辑器",
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "组件"
   },
 
@@ -246,7 +246,7 @@
     "name": "脚本",
     "parent_uuid": "markdown-编辑器",
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "脚本"
   },
   {
@@ -254,7 +254,7 @@
     "name": "发布",
     "parent_uuid": "markdown-编辑器",
     "weight": 13,
-    "tag": "markdown",
+    "tag": "doc-editor",
     "cn_name": "发布"
   },
   {
@@ -262,7 +262,7 @@
     "name": "Scene",
     "parent_uuid": null,
     "weight": 1,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Scene"
   },
   {
@@ -270,7 +270,7 @@
     "name": "Benchmark",
     "parent_uuid": null,
     "weight": 3,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Benchmark"
   },
   {
@@ -278,7 +278,7 @@
     "name": "Animation",
     "parent_uuid": null,
     "weight": 4,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Animation"
   },
   {
@@ -286,7 +286,7 @@
     "name": "Physics",
     "parent_uuid": null,
     "weight": 14,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Physics"
   },
   {
@@ -294,7 +294,7 @@
     "name": "Mesh",
     "parent_uuid": null,
     "weight": 5,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Mesh"
   },
   {
@@ -302,7 +302,7 @@
     "name": "Material",
     "parent_uuid": null,
     "weight": 6,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Material"
   },
   {
@@ -310,7 +310,7 @@
     "name": "Texture",
     "parent_uuid": null,
     "weight": 7,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Texture"
   },
   {
@@ -318,7 +318,7 @@
     "name": "Camera",
     "parent_uuid": null,
     "weight": 8,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Camera"
   },
   {
@@ -326,7 +326,7 @@
     "name": "2D",
     "parent_uuid": null,
     "weight": 9,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "2D"
   },
   {
@@ -334,7 +334,7 @@
     "name": "Input",
     "parent_uuid": null,
     "weight": 10,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Input"
   },
   {
@@ -342,7 +342,7 @@
     "name": "Basic",
     "parent_uuid": null,
     "weight": 11,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Basic"
   },
   {
@@ -350,7 +350,7 @@
     "name": "Toolkit",
     "parent_uuid": null,
     "weight": 12,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Toolkit"
   },
   {
@@ -358,7 +358,7 @@
     "name": "Advance",
     "parent_uuid": null,
     "weight": 13,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Advance"
   },
   {
@@ -366,7 +366,7 @@
     "name": "Particle",
     "parent_uuid": null,
     "weight": 15,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Particle"
   },
   {
@@ -374,7 +374,7 @@
     "name": "Light",
     "parent_uuid": null,
     "weight": 16,
-    "tag": "ts",
+    "tag": "example",
     "cn_name": "Light"
   }
 ]
