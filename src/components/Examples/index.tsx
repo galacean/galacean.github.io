@@ -75,7 +75,7 @@ export default function Examples() {
     setFilteredItems([]);
     menuKeyTitleMapRef.current.clear();
     navigate(`/examples/${context.version}`);
-    fetchMenuList('ts', context.version).then((list) => {
+    fetchMenuList('example', context.version).then((list) => {
       const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)

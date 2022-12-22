@@ -12,7 +12,7 @@ import Footer from '../footer';
 import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
-import { fetchMenuList } from './util/docUtil';
+import { fetchMenuList, MenuTag } from './util/docUtil';
 
 const StyledDocContent = styled('div', {
   flex: 1
@@ -107,7 +107,17 @@ function Doc() {
 
     const languageCode = context.lang === 'en' ? 'en' : 'zh-CN';
 
-    fetchMenuList('markdown', context.version).then((list) => {
+    // fetch different menu according to doc title
+    let menuTag: MenuTag = 'doc-engine';
+
+    if (docTitle.indexOf('editor-') > -1) {
+      menuTag = 'doc-engine';
+    }
+    else if (docTitle.indexOf('artist-') > - 1) {
+      menuTag = 'doc-art';
+    }
+
+    fetchMenuList(menuTag, context.version).then((list) => {
       const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
