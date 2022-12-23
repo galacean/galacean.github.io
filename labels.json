@@ -188,7 +188,7 @@
     "name": "规范",
     "parent_uuid": "markdown-Art",
     "weight": 12,
-    "tag": "docs-art",
+    "tag": "doc-art",
     "cn_name": "规范"
   },
   {
@@ -196,7 +196,7 @@
     "name": "教程",
     "parent_uuid": "markdown-Art",
     "weight": 12,
-    "tag": "docs-art",
+    "tag": "doc-art",
     "cn_name": "教程"
   },
   {
