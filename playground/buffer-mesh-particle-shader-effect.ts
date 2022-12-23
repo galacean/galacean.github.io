@@ -109,10 +109,15 @@ class ParticleMeshMaterial extends BaseMaterial {
 
 class AnimationComponent extends Script {
   time = 0;
+  mtl: ParticleMeshMaterial | undefined;
+  onAwake() {
+    this.mtl = this.entity.getComponent(MeshRenderer).getMaterial() as ParticleMeshMaterial;
+  }
   onUpdate(time: number) {
     this.time += time;
-    let mtl = this.entity.getComponent(MeshRenderer);
-    (mtl.getMaterial() as ParticleMeshMaterial).progress = this.time / 5000 % 2;
+    if (this.mtl) {
+      this.mtl.progress = this.time / 5000 % 2;
+    }
   }
 }
 
@@ -215,9 +220,7 @@ const rootEntity = scene.createRootEntity();
 
 const cameraEntity = rootEntity.createChild("camera");
 cameraEntity.addComponent(Camera);
-const pos = cameraEntity.transform.position;
-pos.set(0, 0, 50);
-cameraEntity.transform.position = pos;
+cameraEntity.transform.position.set(0, 0, 50);
 cameraEntity.addComponent(OrbitControl);
 
 engine.resourceManager.load([
