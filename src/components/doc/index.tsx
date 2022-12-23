@@ -54,35 +54,10 @@ function Doc() {
   }
 
   useEffect(() => {
-    if (!ver || !docTitle) {
-      // set default version
-      if (!ver) {
-        ver = context.version;
-      }
-
-      if (!lang) {
-        lang = context.lang;
-      }
-
-      // set default 
-      if (!docTitle) {
-        docTitle = 'install';
-      }
-
-      navigate(`/docs/${ver}/${lang}/${docTitle}`);
-    }
-
     mermaid.initialize({
       startOnLoad: true,
     })
   }, [])
-
-  useEffect(() => {
-    // when route changes
-    if (docTitle) {
-      setSelectedItem(docTitle);
-    }
-  }, [docTitle])
 
   useEffect(() => {
     // navigate to new url if selectedDocId changes
@@ -110,10 +85,10 @@ function Doc() {
     // fetch different menu according to doc title
     let menuTag: MenuTag = 'doc-engine';
 
-    if (docTitle.indexOf('editor-') > -1) {
-      menuTag = 'doc-engine';
+    if (docTitle.startsWith('editor')) {
+      menuTag = 'doc-editor';
     }
-    else if (docTitle.indexOf('artist-') > - 1) {
+    else if (docTitle.startsWith('artist')) {
       menuTag = 'doc-art';
     }
 
@@ -161,7 +136,7 @@ function Doc() {
       setItems(itemRes);
       setSelectedItem(docTitle);
     });
-  }, [context.lang, context.version]);
+  }, [context.lang, context.version, docTitle]);
 
   if (items.length === 0) {
     return <LoadingIcon></LoadingIcon>;
