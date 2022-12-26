@@ -28,7 +28,6 @@ import {
   CoordinateType,
   Gizmo,
   State,
-  Group,
 } from "@oasis-engine-toolkit/gizmo";
 
 import * as dat from "dat.gui";
@@ -47,31 +46,6 @@ export class ControlScript extends Script {
   private _navigator: NavigationGizmo;
   private _gizmo: Gizmo;
   private _orbitControl: OrbitControl;
-  private _group: Group = new Group();
-
-  /**
-   * toggle gizmo anchor type
-   * @return current anchor type - center or pivot, default center
-   */
-  get anchorType(): AnchorType {
-    return this._group.anchorType;
-  }
-
-  set anchorType(targetAnchor: AnchorType) {
-    this._group.anchorType = targetAnchor;
-  }
-
-  /**
-   * toggle gizmo orientation type
-   * @return current orientation type - global or local, default local
-   */
-  get coordType(): CoordinateType {
-    return this._group.coordinateType;
-  }
-
-  set coordType(targetCoord: CoordinateType) {
-    this._group.coordinateType = targetCoord;
-  }
 
   constructor(entity: Entity) {
     super(entity);
@@ -97,7 +71,7 @@ export class ControlScript extends Script {
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
     const gizmo = gizmoEntity.addComponent(Gizmo);
-    gizmo.init(this._sceneCamera, this._group);
+    gizmo.camera = this._sceneCamera;
     gizmo.state = State.scale;
     gizmo.layer = LayerSetting.Gizmo;
     this._gizmo = gizmo;
@@ -127,34 +101,20 @@ export class ControlScript extends Script {
     }
   }
 
-  private _addEntity(entity: Entity): boolean {
-    const { _group: group } = this;
-    return entity && group.addEntity(entity);
-  }
-
-  private _removeEntity(entity: Entity): void {
-    const { _group: group } = this;
-    entity && group.deleteEntity(entity);
-  }
-
-  private _clearEntity(): void {
-    this._group.reset();
-  }
-
   // left mouse for single selection
   private _singleSelectHandler(result: RenderElement) {
     const selectedEntity = result?.component?.entity;
     switch (selectedEntity?.layer) {
       case undefined: {
         this._orbitControl.enabled = true;
-        this._clearEntity();
+        this._gizmo.clearEntity();
         this._gizmo.entity.isActive = false;
         break;
       }
       case LayerSetting.Entity: {
         this._orbitControl.enabled = true;
-        this._clearEntity();
-        this._addEntity(selectedEntity);
+        this._gizmo.clearEntity();
+        this._gizmo.addEntity(selectedEntity);
         this._gizmo.entity.isActive = true;
         break;
       }
@@ -171,8 +131,8 @@ export class ControlScript extends Script {
     switch (selectedEntity?.layer) {
       case LayerSetting.Entity: {
         this._orbitControl.enabled = true;
-        if (!this._addEntity(selectedEntity)) {
-          this._removeEntity(selectedEntity);
+        if (!this._gizmo.addEntity(selectedEntity)) {
+          this._gizmo.removeEntity(selectedEntity);
         }
         this._gizmo.entity.isActive = true;
         break;
@@ -218,10 +178,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "global":
-            this.coordType = CoordinateType.Global;
+            this._gizmo.coordType = CoordinateType.Global;
             break;
           case "local":
-            this.coordType = CoordinateType.Local;
+            this._gizmo.coordType = CoordinateType.Local;
             break;
         }
       })
@@ -232,10 +192,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "center":
-            this.anchorType = AnchorType.Center;
+            this._gizmo.anchorType = AnchorType.Center;
             break;
           case "pivot":
-            this.anchorType = AnchorType.Pivot;
+            this._gizmo.anchorType = AnchorType.Pivot;
             break;
         }
       })
