@@ -42,36 +42,13 @@ enum LayerSetting {
 const gui = new dat.GUI();
 
 export class ControlScript extends Script {
+  group: Group = new Group();
+
   private _sceneCamera: Camera;
   private _framebufferPicker: FramebufferPicker;
   private _navigator: NavigationGizmo;
   private _gizmo: Gizmo;
   private _orbitControl: OrbitControl;
-  private _group: Group = new Group();
-
-  /**
-   * toggle gizmo anchor type
-   * @return current anchor type - center or pivot, default center
-   */
-  get anchorType(): AnchorType {
-    return this._group.anchorType;
-  }
-
-  set anchorType(targetAnchor: AnchorType) {
-    this._group.anchorType = targetAnchor;
-  }
-
-  /**
-   * toggle gizmo orientation type
-   * @return current orientation type - global or local, default local
-   */
-  get coordType(): CoordinateType {
-    return this._group.coordinateType;
-  }
-
-  set coordType(targetCoord: CoordinateType) {
-    this._group.coordinateType = targetCoord;
-  }
 
   constructor(entity: Entity) {
     super(entity);
@@ -97,7 +74,7 @@ export class ControlScript extends Script {
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
     const gizmo = gizmoEntity.addComponent(Gizmo);
-    gizmo.init(this._sceneCamera, this._group);
+    gizmo.init(this._sceneCamera, this.group);
     gizmo.state = State.scale;
     gizmo.layer = LayerSetting.Gizmo;
     this._gizmo = gizmo;
@@ -128,17 +105,15 @@ export class ControlScript extends Script {
   }
 
   private _addEntity(entity: Entity): boolean {
-    const { _group: group } = this;
-    return entity && group.addEntity(entity);
+    return entity && this.group.addEntity(entity);
   }
 
   private _removeEntity(entity: Entity): void {
-    const { _group: group } = this;
-    entity && group.deleteEntity(entity);
+    entity && this.group.deleteEntity(entity);
   }
 
   private _clearEntity(): void {
-    this._group.reset();
+    this.group.reset();
   }
 
   // left mouse for single selection
@@ -218,10 +193,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "global":
-            this.coordType = CoordinateType.Global;
+            this.group.coordinateType = CoordinateType.Global;
             break;
           case "local":
-            this.coordType = CoordinateType.Local;
+            this.group.coordinateType = CoordinateType.Local;
             break;
         }
       })
@@ -232,10 +207,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "center":
-            this.anchorType = AnchorType.Center;
+            this.group.anchorType = AnchorType.Center;
             break;
           case "pivot":
-            this.anchorType = AnchorType.Pivot;
+            this.group.anchorType = AnchorType.Pivot;
             break;
         }
       })
