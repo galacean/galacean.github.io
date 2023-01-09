@@ -9,7 +9,7 @@ label: 编辑器/基础操作
 层级面板位于编辑器的最左侧, 整个场景中的节点会以树状视图的方式在该面板中显示, 场景节点总是出现在树的顶部。你可以在层级面板快速的对场景中的节点进行查找和编辑。
 
 
-> 在层级面板中, Prefab 类型的节点将以青色来显示 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*t_LaRbDEcdEAAAAAAAAAAAAADsGIAQ/original">
+> 在层级面板中, glTF/glb 类型的节点将以青色来显示 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*t_LaRbDEcdEAAAAAAAAAAAAADsGIAQ/original">
 
 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IW35RbJQyOYAAAAAAAAAAAAADsGIAQ/original" alt="image.png" style="zoom:80%;" />
 
