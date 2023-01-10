@@ -28,7 +28,6 @@ import {
   CoordinateType,
   Gizmo,
   State,
-  Group,
 } from "@oasis-engine-toolkit/gizmo";
 
 import * as dat from "dat.gui";
@@ -42,8 +41,6 @@ enum LayerSetting {
 const gui = new dat.GUI();
 
 export class ControlScript extends Script {
-  group: Group = new Group();
-
   private _sceneCamera: Camera;
   private _framebufferPicker: FramebufferPicker;
   private _navigator: NavigationGizmo;
@@ -74,7 +71,7 @@ export class ControlScript extends Script {
     // add gizmo
     const gizmoEntity = this.entity.createChild("editor-gizmo");
     const gizmo = gizmoEntity.addComponent(Gizmo);
-    gizmo.init(this._sceneCamera, this.group);
+    gizmo.camera = this._sceneCamera;
     gizmo.state = State.scale;
     gizmo.layer = LayerSetting.Gizmo;
     this._gizmo = gizmo;
@@ -104,32 +101,20 @@ export class ControlScript extends Script {
     }
   }
 
-  private _addEntity(entity: Entity): boolean {
-    return entity && this.group.addEntity(entity);
-  }
-
-  private _removeEntity(entity: Entity): void {
-    entity && this.group.deleteEntity(entity);
-  }
-
-  private _clearEntity(): void {
-    this.group.reset();
-  }
-
   // left mouse for single selection
   private _singleSelectHandler(result: RenderElement) {
     const selectedEntity = result?.component?.entity;
     switch (selectedEntity?.layer) {
       case undefined: {
         this._orbitControl.enabled = true;
-        this._clearEntity();
+        this._gizmo.clearEntity();
         this._gizmo.entity.isActive = false;
         break;
       }
       case LayerSetting.Entity: {
         this._orbitControl.enabled = true;
-        this._clearEntity();
-        this._addEntity(selectedEntity);
+        this._gizmo.clearEntity();
+        this._gizmo.addEntity(selectedEntity);
         this._gizmo.entity.isActive = true;
         break;
       }
@@ -146,8 +131,8 @@ export class ControlScript extends Script {
     switch (selectedEntity?.layer) {
       case LayerSetting.Entity: {
         this._orbitControl.enabled = true;
-        if (!this._addEntity(selectedEntity)) {
-          this._removeEntity(selectedEntity);
+        if (!this._gizmo.addEntity(selectedEntity)) {
+          this._gizmo.removeEntity(selectedEntity);
         }
         this._gizmo.entity.isActive = true;
         break;
@@ -193,10 +178,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "global":
-            this.group.coordinateType = CoordinateType.Global;
+            this._gizmo.coordType = CoordinateType.Global;
             break;
           case "local":
-            this.group.coordinateType = CoordinateType.Local;
+            this._gizmo.coordType = CoordinateType.Local;
             break;
         }
       })
@@ -207,10 +192,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "center":
-            this.group.anchorType = AnchorType.Center;
+            this._gizmo.anchorType = AnchorType.Center;
             break;
           case "pivot":
-            this.group.anchorType = AnchorType.Pivot;
+            this._gizmo.anchorType = AnchorType.Pivot;
             break;
         }
       })
