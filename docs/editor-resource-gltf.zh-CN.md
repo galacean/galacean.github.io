@@ -12,7 +12,7 @@ label: 编辑器/资产
 
 glTF 模型是一种高效传输的 3D 资源格式标准，实际上是一个 JSON 文件，包含了场景、渲染、动画等数据结构。详见[ glTF 资源教程](${docs}gltf-cn)
 
-## 使用
+## 上传模型
 
 1.**准备 glTF 资源。** glTF 格式的资源比较灵活，通常有如下几种组合方式：
 
@@ -38,12 +38,30 @@ glTF 模型是一种高效传输的 3D 资源格式标准，实际上是一个 J
 
 ![img](https://gw.alipayobjects.com/zos/OasisHub/226a127f-598f-4b65-a7e1-6bede92d4002/1673514346738-3dd44b9b-1f19-4337-bce8-1452e84bb557.png)
 
-> 一般情况下，材质会自动绑定相应的纹理，如基础纹理；如果没有，则说明 glTF 文件本身没有绑定纹理，开发者需要根据需求手动进行绑定。材质调试详见 [材质资产](${docs}editor-material-cn) 教程。
-
 如果模型很多，可以使用编辑器的筛选/查找功能。
 
 ![img](https://gw.alipayobjects.com/zos/OasisHub/df255915-49dc-42f1-a458-32813ed6a2b5/1673514428252-843a7087-2390-4f35-b8a7-e107420ff04f.png)
 
-4.**更多功能。** 检查器面板还支持预览模型+动画，查看 url 地址，面数，drawcall 等信息，绑定材质等功能。
+4.**更多信息。** 检查器面板还支持预览模型+动画，查看 url 地址，面数，drawcall 等信息，绑定材质等功能。
 
 ![img](https://gw.alipayobjects.com/zos/OasisHub/225e2bd9-4a3a-47b6-b364-32965d7feb30/1673514900887-aca83634-da5b-4c9b-8e9f-a551c30a0e07.png)
+
+## 置入场景
+
+上传完模型之后，场景并不会自动渲染该模型，我们可以将模型拖拽至场景窗口，或者节点树相应的层级下面：
+
+![img](https://gw.alipayobjects.com/zos/OasisHub/e16be3d5-1e74-4a87-9cbf-1e64408de608/1673516227645-101c76d5-2d8f-4ebe-b299-c416bc082f6c.gif)
+
+模型置入场景后，可以基于模型做很多操作，比如可以通过绑定 `AnimatorController` 资源进行动画的控制，详见 [动画编辑](${docs}editor-animator-cn) 教程。
+
+## 修改材质
+
+一般情况下，模型已经自动绑定好材质和相应的纹理，用户可以不用做任何操作；但是在一定场景下，开发者可能想要手动微调材质，比如修改颜色，那么我们可以将原材质进行复制，即点击 `duplicate & remap`, 即可在原材质参数的基础上进行修改：
+
+![material](https://gw.alipayobjects.com/zos/OasisHub/ee709fab-ec1b-40fe-a643-be15df939f48/material.gif)
+
+当然，您也可以手动创建新的材质球进行绑定:
+
+![new](https://gw.alipayobjects.com/zos/OasisHub/643554d8-c5eb-4794-b263-30075f570142/new.gif)
+
+> 更多材质调试详见 [材质资产](${docs}editor-material-cn) 教程。
