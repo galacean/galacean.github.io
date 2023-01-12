@@ -14,12 +14,13 @@ label: 编辑器/组件
 
 1.**上传 glTF 资产。** 详细步骤见[ 模型资产教程](${docs}editor-resource-gltf-cn)。
 
-2.**绑定 glTF 模型组件。** 在资源上传成功后，资源的模型、贴图等内容会被展示在资源面板当中。然后，我们创建一个节点，并在右侧节点检查器中 **添加能力** ，选择 **glTF 模型**，在资源面板中选择绑定相应的 `.gltf` 资产，模型就渲染出来了。
+2.**置入场景** 
 
-![bind-gif](https://gw.alipayobjects.com/zos/OasisHub/8d8c2197-ad95-46c0-98b1-2beadba0535b/bind-gif.gif)
+直接将模型拖拽至场景窗口，或者节点树相应的层级下面：
+
+![img](https://gw.alipayobjects.com/zos/OasisHub/e16be3d5-1e74-4a87-9cbf-1e64408de608/1673516227645-101c76d5-2d8f-4ebe-b299-c416bc082f6c.gif)
+
 
 > 一般情况下，渲染的模型是有纹理细节的，即材质会自动绑定相应的纹理，如基础纹理；如果没有，则说明 glTF 文件本身没有绑定纹理，开发者需要根据需求手动进行绑定。材质调试详见 [材质资产](${docs}editor-material-cn) 教程。
 
-3.**操作动画。** 可以通过绑定 `AnimatorController` 资源进行动画的控制，详见 [动画编辑](${docs}editor-animator-cn) 教程。
-
-![animation](https://gw.alipayobjects.com/zos/OasisHub/0105f8dd-3e24-4127-8075-e1df34c2ab71/animation.gif)
+3.**操作动画。** 模型置入场景后，可以基于模型做很多操作，比如可以通过绑定 `AnimatorController` 资源进行动画的控制，详见 [动画编辑](${docs}editor-animator-cn) 教程。
