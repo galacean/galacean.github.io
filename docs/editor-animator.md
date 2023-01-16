@@ -1,6 +1,6 @@
 ---
 order: 3.4
-title: Animation
+title: Animator
 type: Editor
 group: Component
 label: Editor/Component
