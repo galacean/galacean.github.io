@@ -49,7 +49,7 @@ export default function Editor() {
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </StyledButton>
         </a>
-        <StyledImg src="//mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*acm6SpIQOGoAAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
+        <StyledImg src="//mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*Y0BfRoL5p3AAAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
       </Flex>
     </StyledEditor>
   );
