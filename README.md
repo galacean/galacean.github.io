@@ -8,10 +8,12 @@ The documentation source of [Oasis Engine](https://github.com/oasis-engine/engin
 ```bash
 $ yarn
 $ yarn dev
+
+open http://local.alipay.net
 ```
 #### Only develop playground
 ```bash
-yarn playground
+$ yarn playground
 ```
 ## Deploy
 ```bash
@@ -28,9 +30,9 @@ $ yarn deploy
 #### How to link engine
 * Mac
 ```bash
-yarn link ../engine/packages/*
+$ yarn link ../engine/packages/*
 ```
 * windows
 ```bash
-yarn link ..\engine\packages\oasis-engine
+$ yarn link ..\engine\packages\oasis-engine
 ```

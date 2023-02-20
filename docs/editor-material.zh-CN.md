@@ -17,58 +17,50 @@ label: 编辑器/资产
 
 ## 使用
 
-- 如果导入 glTF 模型，会自动创建对应类型的资源，其中就包含材质，如下图：
+一般情况下，模型已经自动绑定好材质和相应的纹理，用户可以不用做任何操作；但是在一定场景下，开发者可能想要手动微调材质，比如修改颜色，那么我们可以将原材质进行复制，即点击 `duplicate & remap`, 即可在原材质参数的基础上进行修改, 当然，您也可以手动创建新的材质球进行绑定:
 
-![image-20210719162230883](https://gw.alipayobjects.com/zos/OasisHub/d5626811-f20e-4b84-aa28-7c6909dc607b/image-20210719162230883.png)
+![img](https://gw.alipayobjects.com/zos/OasisHub/2c50e9b8-8a59-4422-9a49-762c3973c93d/1673942497459-c6c38ac5-fac7-4b62-a836-d0d89115fd27.gif)
 
-- 也可以在资源面板手动创建不同类型的材质：
+## 切换着色器（Shader）
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/01f73e82-8be1-4568-baca-a7de3baf17fb/image-20210719175600845.png" style="zoom:50%;" />
+创建完材质之后，我们通过切换着色器来实现上面说的不同材质功能，并且共用一部分属性，比如基础颜色，如果设置为红色，那么即使切换着色器，基础颜色仍为红色。
 
-## 调整渲染效果
+<img src="https://gw.alipayobjects.com/zos/OasisHub/31292983-082f-43a5-adce-0a0219df5d9d/image-20230117173532172.png" alt="image-20230117173532172" style="zoom:50%;" />
 
-通常情况， glTF 导入的材质中已经绑定了相应的纹理和参数，不需要进行任何操作。但是编辑器支持对材质进行二次加工，接下来针对不同材质类型进行渲染效果调整步骤。
+### 1. unlit
 
-### 1. Unlit 材质
+正如上文所说， Unlit 不受光照影响，只需要设置烘焙好的纹理即可：
 
-正如上文所说， Unlit 材质不受光照影响，只需要设置烘焙好的纹理即可：
-
-![unlit](https://gw.alipayobjects.com/zos/OasisHub/e2639e60-a6ed-416d-9f53-064557261d14/unlit.gif)
+![unlit](https://gw.alipayobjects.com/zos/OasisHub/c6b8ebe2-ca84-4758-9702-89877106e1fb/unlit.gif)
 
 一般 Unlit 的渲染效果非常不错，因为设置的是建模软件通过离线渲染得到的高质量纹理。如果不需要光线的实时变化，则大部分场景都可以使用此模式。
 
-### 2. BlinnPhong 材质
+### 2. blinn-phong
 
-BlinnPhong 材质受光照的影响，一般只需要设置基础颜色、镜面反射、法线。
+blinn-phong 受光照的影响，会随着视线、光照的变化而呈现不同的镜面反射。
 
-- 基础颜色控制主色调：
+- **基础颜色**：控制主色调：
+- **镜面反射**：控制高光部分的颜色和强度：
+- **法线**：控制视觉上面的 **凹凸感**：
 
-![baseColor](https://gw.alipayobjects.com/zos/OasisHub/a3ac25e1-36fa-4994-bb24-37b837698478/baseColor.gif)
+![blinn-phong](https://gw.alipayobjects.com/zos/OasisHub/7f2c52e2-87bb-4474-a47e-e5d7cbf9a301/blinn-phong.gif)
 
-- 镜面反射控制高光部分的颜色和强度：
+### 3. pbr
 
-![specular](https://gw.alipayobjects.com/zos/OasisHub/cbda6aec-63e8-4665-b15e-28adaccd7f19/specular.gif)
+PBR 遵循能量守恒，是基于物理的渲染，能设置基础颜色、法线等参数，通过金属度、粗糙度等参数，更加方便地调节渲染效果，并且最重要的是引入了 [环境光](${docs}light-cn#ibl-镜面反射)，可以随着金属、粗糙度的变化，模拟材质的属性反射周边的环境。
 
-- 法线控制视觉上面的 **凹凸感**：
+- 根据真实世界中光线与材质的交互，绝缘体（即当金属度为 0 时）材质也能反射大约 4% 纯色光线，从而渲染出周边环境，如下模型金属度为 0 但是还能隐约看到反射的周边环境：
 
-![normal](https://gw.alipayobjects.com/zos/OasisHub/9e48930a-a231-416d-9cb0-7bacc675be0a/normal.gif)
+![](https://gw.alipayobjects.com/zos/OasisHub/215c982e-d9d4-412e-85a5-706cfc872523/image-20230117171617164.png)
 
-### 3. PBR 材质
+- 我们调节材质的金属度，可以发现，金属度越大，周围的环境越清晰，并且开始从白色纯色变成彩色。这是因为电介质（即金属度为 1 时）材质会将光线 100% 全部反射出物体表面，即反射出彩色的周边环境：
 
-PBR 材质遵循能量守恒，是基于物理的渲染，也能设置基础颜色、法线等参数，但是不支持像 BlinnPhong 材质一样控制反光颜色和强度，因为这不符合能量守恒，但是可以通过金属度、粗糙度，更加方便地调节渲染效果，并且还可以反射周边的环境，参考 [环境光的 IBL 模式](${docs}light-cn#ibl-镜面反射)。
+![metallic](https://gw.alipayobjects.com/zos/OasisHub/fe19c2c4-109d-40c1-94b0-fdd3c69f00b1/metallic.gif)
 
-- 根据真实世界中光线与材质的交互，绝缘体，即当金属度为 0 时，材质也能反射大约 4% 纯色光线，从而渲染出周边环境，如下模型的头部：
+- 真实世界中的大部分材质都是有粗糙度的，在微表面的理论基础上解释即为光线将从物体表面从四面八方反射出去，即越粗糙，光线反射波瓣越大：
 
-![env](https://gw.alipayobjects.com/zos/OasisHub/c40a665d-9d37-46f1-9206-a29859be75a3/env.gif)
+![roughness](https://gw.alipayobjects.com/zos/OasisHub/5009c529-7d5d-41c0-8f16-c19a7eff347b/roughness.gif)
 
-- 我们调节材质的金属度，可以发现，金属度越大，周围的环境越清晰，并且开始从白色纯色变成彩色。这是因为电介质，即金属度为 1 时，光线将 100% 全部反射出物体表面，即反射出彩色的周边环境：
+除此之外，还有很多通用属性可以配置，比如环境遮蔽，自发射光，透明度等等：
 
-![metal](https://gw.alipayobjects.com/zos/OasisHub/95562cce-618f-4093-a775-c6a03831c580/metal.gif)
-
-- 真实世界中的大部分材质都是有粗糙度的，在微表面的理论基础上解释即为光线将从物体表面从四面八方反射出去，这样的话，即使金属度为 1，也不能清晰地反射周边环境：
-
-![roughness](https://gw.alipayobjects.com/zos/OasisHub/a51d5eca-e0ae-4882-8941-2fd15c8e523a/roughness.gif)
-
-所有材质类型都支持配置透明度相关：
-
-![opacity](https://gw.alipayobjects.com/zos/OasisHub/7f93cca8-0e2f-4549-b02a-199a9ed36bfc/opacity.gif)
+![other](https://gw.alipayobjects.com/zos/OasisHub/dc6e52f6-1a85-44bd-9f1f-f26228889e10/other.gif)
