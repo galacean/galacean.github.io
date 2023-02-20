@@ -1,9 +1,9 @@
 ---
-order: 1.4
+order: 0
 title: 碰撞体
-type: 编辑器
-group: 组件
-label: 编辑器/组件
+type: 功能
+group: 物理
+label: Editor/Feature/Physics
 ---
 
 ## 介绍

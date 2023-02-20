@@ -1,9 +1,9 @@
 ---
-order: 4
+order: 2
 title: 材质
-type: 编辑器
-group: 资产
-label: 编辑器/资产
+type: 功能
+group: 3D 渲染
+label: Editor/Feature/Rendering-3d
 ---
 
 ## 介绍

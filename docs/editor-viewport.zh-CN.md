@@ -1,9 +1,8 @@
 ---
-order: 2
+order: 4
 title: 视图区
-type: 编辑器
-group: 基础操作
-label: 编辑器/基础操作
+type: 界面
+label: Editor/Interface
 ---
 
 # 简介

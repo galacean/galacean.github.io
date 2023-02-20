@@ -1,9 +1,9 @@
 ---
-order: 3.1
+order: 2
 title: 精灵图集
-type: 编辑器
-group: 资产
-label: 编辑器/资产
+type: 功能
+group: 2D 渲染
+label: Editor/Feature/Rendering-2d
 ---
 
 ## 介绍

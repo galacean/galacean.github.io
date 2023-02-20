@@ -1,9 +1,9 @@
 ---
-order: 2
+order: 1
 title: 事件通信
-type: 编辑器
+type: 功能
 group: 脚本
-label: 编辑器/脚本
+label: Editor/Feature/Scripting
 ---
 
 开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合。
