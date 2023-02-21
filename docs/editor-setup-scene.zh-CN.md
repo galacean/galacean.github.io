@@ -1,9 +1,8 @@
 ---
 order: 2
-title: 视图区
-type: 编辑器
-group: 基础操作
-label: 编辑器/基础操作
+title: 快速上手
+type: 介绍
+label: Editor/Introduction
 ---
 
 使用 3D 模版创建项目后，在编辑器主界面可以看到场景中已经预设了相机、光照组件。

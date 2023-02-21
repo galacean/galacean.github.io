@@ -1,9 +1,9 @@
 ---
-order: 3.4
+order: 1
 title: 动画组件
-type: 编辑器
-group: 组件
-label: 编辑器/组件
+type: 功能
+group: 动画
+label: Editor/Feature/Animation
 ---
 
 通过 `AnimatorController` 编辑器，用户可以很方便的添加过渡和混合等动画效果。

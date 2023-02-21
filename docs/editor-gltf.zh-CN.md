@@ -1,9 +1,9 @@
 ---
-order: 0
-title: 模型
-type: 编辑器
-group: 资产
-label: 编辑器/资产
+order: 2
+title: glTF 模型
+type: 功能
+group: 3D 渲染
+label: Editor/Feature/Rendering-3d
 ---
 
 ## 介绍

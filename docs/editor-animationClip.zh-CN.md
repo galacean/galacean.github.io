@@ -1,9 +1,9 @@
 ---
-order: 3.5
+order: 1
 title: 动画片段编辑
-type: 编辑器
-group: 组件
-label: 编辑器/组件
+type: 功能
+group: 动画
+label: Editor/Feature/Animation
 ---
 
 设计师输出的带动画的模型中的每个动作在我们的编辑器中会被解析成一个个的 `动画片段` 资产，我们也可以通过 `动画片段` 编辑器` 创作额外的动画。

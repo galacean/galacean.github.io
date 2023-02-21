@@ -1,9 +1,8 @@
 ---
-order: 1
+order: 0
 title: 菜单栏
-type: 编辑器
-group: 基础操作
-label: 编辑器/基础操作
+type: 界面
+label: Editor/Interface
 ---
 
 在编辑器中，菜单栏的入口位于项目标题的右侧，点击该图标后会显示所有菜单项：

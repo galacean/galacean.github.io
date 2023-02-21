@@ -1,9 +1,8 @@
 ---
-order: 5
+order: 2
 title: 资产面板
-type: 编辑器
-group: 基础操作
-label: 编辑器/基础操作
+type: 界面
+label: Editor/Interface
 ---
 
 ![image-20221228150531761](https://mdn.alipayobjects.com/rms/afts/img/A*ZAjNRZ02xVkAAAAAAAAAAAAAARQnAQ/original/image-20221228150531761.png)

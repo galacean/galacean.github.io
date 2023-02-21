@@ -1,3 +1,10 @@
+---
+order: 1
+title: 项目
+type: 介绍
+label: Editor/Introduction
+---
+
 欢迎来到首页！这里是通向在线编辑 3D 项目的第一站。
 
 # 新建项目
