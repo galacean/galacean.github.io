@@ -200,62 +200,70 @@
     "cn_name": "教程"
   },
   {
-    "uuid": "markdown-编辑器",
-    "name": "编辑器",
+    "uuid": "markdown-Editor",
+    "name": "Editor",
     "parent_uuid": null,
     "weight": 13,
-    "tag": "doc-editor",
+    "tag": "doc-editor-202302",
     "cn_name": "编辑器"
   },
   {
-    "uuid": "markdown-编辑器-介绍",
-    "name": "介绍",
-    "parent_uuid": "markdown-编辑器",
+    "uuid": "markdown-Editor-Interface",
+    "name": "Interface",
+    "parent_uuid": "markdown-Editor",
     "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "介绍"
+    "tag": "doc-editor-202302",
+    "cn_name": "界面"
   },
   {
-    "uuid": "markdown-编辑器-基础操作",
-    "name": "基础操作",
-    "parent_uuid": "markdown-编辑器",
+    "uuid": "markdown-Editor-Feature",
+    "name": "Feature",
+    "parent_uuid": "markdown-Editor",
     "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "基础操作"
+    "tag": "doc-editor-202302",
+    "cn_name": "功能"
   },
   {
-    "uuid": "markdown-编辑器-资产",
-    "name": "资产",
-    "parent_uuid": "markdown-编辑器",
+    "uuid": "markdown-EF-R3d",
+    "name": "Rendering-3d",
+    "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "资产"
-  },
-
-  {
-    "uuid": "markdown-编辑器-组件",
-    "name": "组件",
-    "parent_uuid": "markdown-编辑器",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "组件"
+    "tag": "doc-editor-202302",
+    "cn_name": "3D 渲染"
   },
 
   {
-    "uuid": "markdown-编辑器-脚本",
-    "name": "脚本",
-    "parent_uuid": "markdown-编辑器",
+    "uuid": "markdown-EF-R2d",
+    "name": "Rendering-2d",
+    "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor",
+    "tag": "doc-editor-202302",
+    "cn_name": "2D 渲染"
+  },
+
+  {
+    "uuid": "markdown-EF-Animation",
+    "name": "Animation",
+    "parent_uuid": "markdown-Editor-Feature",
+    "weight": 13,
+    "tag": "doc-editor-202302",
+    "cn_name": "动画"
+  },
+  {
+    "uuid": "markdown-EF-Physics",
+    "name": "Physics",
+    "parent_uuid": "markdown-Editor-Feature",
+    "weight": 13,
+    "tag": "doc-editor-202302",
+    "cn_name": "物理"
+  },
+  {
+    "uuid": "markdown-EF-Scripting",
+    "name": "Scripting",
+    "parent_uuid": "markdown-Editor-Feature",
+    "weight": 13,
+    "tag": "doc-editor-202302",
     "cn_name": "脚本"
-  },
-  {
-    "uuid": "markdown-编辑器-发布",
-    "name": "发布",
-    "parent_uuid": "markdown-编辑器",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "发布"
   },
   {
     "uuid": "ts-Scene",
