@@ -200,27 +200,27 @@
     "cn_name": "教程"
   },
   {
-    "uuid": "markdown-Editor",
-    "name": "Editor",
+    "uuid": "markdown-Editor-Introduction",
+    "name": "Editor-Introduction",
     "parent_uuid": null,
     "weight": 13,
-    "tag": "doc-editor-202302",
-    "cn_name": "编辑器"
+    "tag": "doc-editor",
+    "cn_name": "介绍"
   },
   {
     "uuid": "markdown-Editor-Interface",
-    "name": "Interface",
-    "parent_uuid": "markdown-Editor",
+    "name": "Editor-Interface",
+    "parent_uuid": null,
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "界面"
   },
   {
     "uuid": "markdown-Editor-Feature",
-    "name": "Feature",
-    "parent_uuid": "markdown-Editor",
+    "name": "Editor-Feature",
+    "parent_uuid": null,
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "功能"
   },
   {
@@ -228,7 +228,7 @@
     "name": "Rendering-3d",
     "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "3D 渲染"
   },
 
@@ -237,7 +237,7 @@
     "name": "Rendering-2d",
     "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "2D 渲染"
   },
 
@@ -246,7 +246,7 @@
     "name": "Animation",
     "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "动画"
   },
   {
@@ -254,7 +254,7 @@
     "name": "Physics",
     "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "物理"
   },
   {
@@ -262,7 +262,7 @@
     "name": "Scripting",
     "parent_uuid": "markdown-Editor-Feature",
     "weight": 13,
-    "tag": "doc-editor-202302",
+    "tag": "doc-editor",
     "cn_name": "脚本"
   },
   {
