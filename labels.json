@@ -201,7 +201,7 @@
   },
   {
     "uuid": "markdown-Editor-Introduction",
-    "name": "Introduction",
+    "name": "Editor-Introduction",
     "parent_uuid": null,
     "weight": 13,
     "tag": "doc-editor",
@@ -209,16 +209,16 @@
   },
   {
     "uuid": "markdown-Editor-Interface",
-    "name": "Interface",
-    "parent_uuid": "markdown-Editor",
+    "name": "Editor-Interface",
+    "parent_uuid": null,
     "weight": 13,
     "tag": "doc-editor",
     "cn_name": "界面"
   },
   {
     "uuid": "markdown-Editor-Feature",
-    "name": "Feature",
-    "parent_uuid": "markdown-Editor",
+    "name": "Editor-Feature",
+    "parent_uuid": null,
     "weight": 13,
     "tag": "doc-editor",
     "cn_name": "功能"
