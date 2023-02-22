@@ -2,7 +2,7 @@
 order: 2
 title: 快速上手
 type: 介绍
-label: Editor/Introduction
+label: Editor-Introduction
 ---
 
 使用 3D 模版创建项目后，在编辑器主界面可以看到场景中已经预设了相机、光照组件。

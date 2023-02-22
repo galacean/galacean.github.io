@@ -3,7 +3,7 @@ order: 1
 title: 环境光
 type: 功能
 group: 3D 渲染
-label: Editor/Feature/Rendering-3d
+label: Editor-Feature/Rendering-3d
 ---
 
 ## 介绍
