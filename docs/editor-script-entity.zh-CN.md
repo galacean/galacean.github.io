@@ -3,7 +3,7 @@ order: 2
 title: 常用实体操作
 type: 功能
 group: 脚本
-label: Editor/Feature/Scripting
+label: Editor-Feature/Scripting
 ---
 
 [实体](${docs}entity-cn)是脚本的主要操作对象，以下展示一些常用操作：

@@ -3,7 +3,7 @@ order: 0
 title: 碰撞体
 type: 功能
 group: 物理
-label: Editor/Feature/Physics
+label: Editor-Feature/Physics
 ---
 
 ## 介绍

@@ -2,7 +2,7 @@
 order: 2
 title: 资产面板
 type: 界面
-label: Editor/Interface
+label: Editor-Interface
 ---
 
 ![image-20221228150531761](https://mdn.alipayobjects.com/rms/afts/img/A*ZAjNRZ02xVkAAAAAAAAAAAAAARQnAQ/original/image-20221228150531761.png)
