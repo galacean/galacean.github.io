@@ -3,7 +3,7 @@ order: 4
 title: Spine
 type: 功能
 group: 2D 渲染
-label: Editor/Feature/Rendering-2d
+label: Editor-Feature/Rendering-2d
 ---
 
 spine 资产包含 spine 动画的 json 文件，atlas 图集文件，image 贴图文件。用于渲染 spine 动画效果。

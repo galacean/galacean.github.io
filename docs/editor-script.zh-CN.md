@@ -3,7 +3,7 @@ order: 0
 title: 编写脚本
 type: 功能
 group: 脚本
-label: Editor/Feature/Scripting
+label: Editor-Feature/Scripting
 ---
 
 [脚本组件](${docs}script-cn)是引擎提供给开发者的重要的扩展能力，在 Oasis Editor 中，脚本也是一种资源。

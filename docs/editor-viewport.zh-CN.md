@@ -2,7 +2,7 @@
 order: 4
 title: 视图区
 type: 界面
-label: Editor/Interface
+label: Editor-Interface
 ---
 
 # 简介

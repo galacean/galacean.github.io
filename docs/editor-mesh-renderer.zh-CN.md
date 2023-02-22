@@ -3,7 +3,7 @@ order: 3
 title: 网格渲染器
 type: 功能
 group: 3D 渲染
-label: Editor/Feature/Rendering-3d
+label: Editor-Feature/Rendering-3d
 ---
 
 网格渲染器组件是渲染的核心组件，通过选取当前场景的**网格**和**材质**，可以将模型渲染到场景中。

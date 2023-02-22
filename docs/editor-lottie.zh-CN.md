@@ -3,7 +3,7 @@ order: 3
 title: Lottie
 type: 功能
 group: 2D 渲染
-label: Editor/Feature/Rendering-2d
+label: Editor-Feature/Rendering-2d
 ---
 
 [Lottie](https://airbnb.design/lottie/) 是广受设计师和前端开发者欢迎的动画格式，用户可以在 Oasis Editor 中轻松完成 Lottie 资产的处理和组件添加。

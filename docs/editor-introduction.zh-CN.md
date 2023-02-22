@@ -2,7 +2,7 @@
 order: 0
 title: 关于 Oasis Editor
 type: 介绍
-label: Editor/Introduction
+label: Editor-Introduction
 ---
 
 ## 什么是 Oasis Editor？
