@@ -46,7 +46,7 @@ import {
 - [BlinnPhongMaterial](${api}core/BlinnPhongMaterial)：材质定义了如何渲染这个立方体，BlinnPhong 材质是经典的材质之一。（详见 [材质](${docs}material-cn) 章节）
 
 **数学库相关类**：
-- [Vector3]()、[Vector4]()、[Color]()：这几个类是数学计算的一些基本单元，用来计算立方体的位置、颜色等。（详见 [数学库](${docs}math-cn) 章节）
+- [Vector3](${api}math/Vector3), [Vector4](${api}math/Vector4), [Color](${api}math/Color)：这几个类是数学计算的一些基本单元，用来计算立方体的位置、颜色等。（详见 [数学库](${docs}math-cn) 章节）
 
 ## 创建引擎实例
 
