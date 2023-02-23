@@ -1,5 +1,5 @@
 /**
- * @title Multiple Rendering Target
+ * @title Multiple Render Targets
  * @category Advance
  */
 import {
@@ -31,9 +31,7 @@ const cameraEntity = rootEntity.createChild('camera');
 const camera = cameraEntity.addComponent(Camera);
 camera.cullingMask = Layer.Layer0;
 cameraEntity.transform.setPosition(0, 0, 5);
-// @ts-ignore
 const control = cameraEntity.addComponent(OrbitControl);
-// @ts-ignore
 control.minDistance = 3;
 camera.scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
@@ -73,7 +71,6 @@ autoDepthEntity.transform.setPosition(0, -3, -6);
 
 const mrtMatrial = getMRTMaterial();
 mrtMatrial.renderState.rasterState.cullMode = CullMode.Off;
-mrtMatrial.renderState.depthState.enabled = true;
 
 class mrtScript extends Script {
   private materialMap: Array<{ renderer: MeshRenderer; material: Material }> =
