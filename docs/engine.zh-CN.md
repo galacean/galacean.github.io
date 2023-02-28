@@ -81,5 +81,5 @@ engine.targetFrameRate = 120;
 | --- | --- |
 | [run](${api}core/Engine#run) | 执行引擎渲染帧循环 |
 | [pause](${api}core/Engine#pause) | 暂停引擎渲染帧循环 |
-| [resume](${api}core/Engine#resume) | 恢复引擎渲染帧玄幻 |
+| [resume](${api}core/Engine#resume) | 恢复引擎渲渲染循环 |
 | [destroy](${api}core/Engine#destroy) | 销毁引擎 |
