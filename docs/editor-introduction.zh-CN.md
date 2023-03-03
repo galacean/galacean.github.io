@@ -7,7 +7,7 @@ label: Editor-Introduction
 
 ## 简介
 
-[Oasis Editor](https://oasis.alipay.com/editor) 是一个基于移动优先的高性能开源互动引擎 [Oasis Engine](https://github.com/oasis-engine/engine) 的云端 Web 互动创作平台。它可以帮助你快速的创建、编辑和导出一个互动项目。你可以通过 Oasis Editor 快速上传互动资产，创建和编辑材质、调整灯光、创建实体，从而创造出复杂的场景。你可以实现自己的创意想法，将自己的创意变成一个互动的现实。总之，使用 Oasis Editor，你可以在开发过程中节省大量时间和精力，从而创造出更具创意性和交互性的互动作品。
+[Oasis Editor](https://antg.antgroup.com/) 是一个基于移动优先的高性能开源互动引擎 [Oasis Engine](https://github.com/oasis-engine/engine) 的云端 Web 互动创作平台。它可以帮助你快速的创建、编辑和导出一个互动项目。你可以通过 Oasis Editor 快速上传互动资产，创建和编辑材质、调整灯光、创建实体，从而创造出复杂的场景。你可以实现自己的创意想法，将自己的创意变成一个互动的现实。总之，使用 Oasis Editor，你可以在开发过程中节省大量时间和精力，从而创造出更具创意性和交互性的互动作品。
 
 ## 认识编辑器
 
@@ -86,12 +86,15 @@ label: Editor-Introduction
 接下来，我们为这个节点再绑定一个 Script 组件（[什么是 Script 组件?](https://oasisengine.cn/#/docs/latest/cn/script)）。
 
 1. 我们继续使用上述方式在检查器面板中添加 Script 组件
-2. 接下来，我们在资产面板中 右键 → Create → Material  创建一个 Script 资产
+2. 接下来，我们在资产面板中 右键 → Create → Script  创建一个 Script 资产
 3. 最后，在检查器面板中将刚创建的脚本文件绑定到脚本组件上
 
 > ⚠️ 注意，如果你没有把脚本资产绑定到实体的脚本组件上，则脚本不会运行
 
 创建了 Script 后，我们可以 **双击它** 来跳转到代码编辑器页面。
+
+![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*EbiqQoEA-_oAAAAAAAAAAAAADqiTAQ/original)
+
 
 进入代码编辑器后，我们写一个非常简单的旋转功能：
 
