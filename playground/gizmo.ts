@@ -61,6 +61,8 @@ export class ControlScript extends Script {
 
     // add orbit control
     this._orbitControl = this._sceneCamera.entity.addComponent(OrbitControl);
+    this._orbitControl.maxPolarAngle = Infinity;
+    this._orbitControl.minPolarAngle = -Infinity;
 
     // add navigation gizmo
     const navigationGizmo = rootEntity.addComponent(NavigationGizmo);

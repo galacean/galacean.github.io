@@ -1,9 +1,9 @@
 ---
-order: 1.3
+order: 0
 title: 光照
-type: 编辑器
-group: 组件
-label: 编辑器/组件
+type: 功能
+group: 3D 渲染
+label: Editor-Feature/Rendering-3d
 ---
 
 ## 介绍

@@ -53,7 +53,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/api/:ver/:pkg/:item',
+    path: '/api/:ver/:pkg/:name',
     element: (
       <>
         <Header></Header>
@@ -69,7 +69,7 @@ export const router = createHashRouter([
     ),
   },
   {
-    path: '/api/:ver/:pkg/',
+    path: '/api/:ver/:pkg',
     element: (
       <>
         <Header></Header>
@@ -79,6 +79,15 @@ export const router = createHashRouter([
   },
   {
     path: '/api/:ver',
+    element: (
+      <>
+        <Header></Header>
+        <Api></Api>
+      </>
+    ),
+  },
+  {
+    path: '/api',
     element: (
       <>
         <Header></Header>

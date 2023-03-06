@@ -6,7 +6,7 @@ import {
 import stackblitzSdk from '@stackblitz/sdk';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { StyledAction } from './CodeActions';
-import { Tooltip } from '../../ui/Tooltip';
+import { Tooltip } from '@oasis-engine/editor-components';
 
 function Stackblitz (props: any) {
   const indexJsContent = `import './index.css';

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { CodepenOutlined } from '@ant-design/icons';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { StyledAction } from './CodeActions';
-import { Tooltip } from '../../ui/Tooltip';
+import { Tooltip } from '@oasis-engine/editor-components';
 
 function Codepen(props: any) {
   const iconRef = useRef<HTMLFormElement>(null);

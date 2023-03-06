@@ -5,6 +5,7 @@ import Header from '../header';
 import Advantage from './Advantage';
 import Banner from './Banner';
 import Cases from './Cases';
+import Editor from './Editor';
 import Features from './Features';
 import Partners from './Partners';
 
@@ -26,6 +27,7 @@ function Home() {
       </Helmet>
       <Banner />
       <Advantage />
+      <Editor />
       <Features />
       <Cases />
       <Partners />

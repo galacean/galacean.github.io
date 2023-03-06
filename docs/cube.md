@@ -46,7 +46,7 @@ Component class:
 - [BlinnPhongMaterial](${api}core/BlinnPhongMaterial): The material defines how to render the cube. The BlinnPhong material is one of the classic materials. (See the [Material](${docs}material) chapter for details)
 
 **Mathematics library related classes**:
--[Vector3](), [Vector4](), [Color](): These classes are some basic units of mathematical calculations, used to calculate the position and color of the cube. (See the [Mathematics Library](${docs}math) chapter for details)
+-[Vector3](${api}math/Vector3), [Vector4](${api}math/Vector4), [Color](${api}math/Color): These classes are some basic units of mathematical calculations, used to calculate the position and color of the cube. (See the [Mathematics Library](${docs}math) chapter for details)
 
 ## Create an Engine Instance
 

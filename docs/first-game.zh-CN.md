@@ -54,7 +54,7 @@ label: Introduction/Advanced
 
 ## 加载 UI 资源
 
-在获取 UI 资源后，可以参考[资源管理与加载](${docs}resource-manager-cn#1-texture2d)中加载 [Texture2D](${docs}texture-2d-cn) 的方式。
+在获取 UI 资源后，可以参考[资源管理与加载](${docs}resource-manager-cn#1-texture2d)中加载 [Texture2D](${docs}texture-2D-cn) 的方式。
 
 ## 界面搭建
 

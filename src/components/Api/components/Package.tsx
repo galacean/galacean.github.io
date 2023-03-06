@@ -1,4 +1,4 @@
-import { styled } from '../../../ui/design-system';
+import { styled } from "@oasis-engine/editor-design-system";
 import { PkgChild } from '../util/apiUtil';
 import Kind from './Kind';
 
@@ -33,7 +33,7 @@ export default function Package(props: IPackage) {
         {props.pgkChildren.map((child) => {
           return (
             <li key={child.id}>
-              <Kind {...{ setSelectedItem: props.setSelectedItem, ...child }} />
+              <Kind setSelectedItem={props.setSelectedItem} {...child} />
             </li>
           );
         })}
