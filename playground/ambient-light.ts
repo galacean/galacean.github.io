@@ -98,4 +98,3 @@ function openDebug(specularTexture) {
   gui.add(scene.ambientLight, "specularIntensity", 0, 1);
   gui.add(scene.ambientLight, "diffuseIntensity", 0, 1);
 }
-
