@@ -78,7 +78,7 @@ function openDebug(specularTexture) {
     if (v === "SphericalHarmonics") {
       scene.ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
     } else if (v === "SolidColor") {
-      scene.ambientLight.diffuseMode = DiffuseMode.SolidColor;
+      scene.ambientLight.diffuseMode = DiffuseMode.SolidColor
     }
   });
 
