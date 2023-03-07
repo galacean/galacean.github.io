@@ -23,12 +23,13 @@ class ClickScript extends Script {
     if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       if (pointers.length > 0) {
         const position = pointers[0].position;
-        const renderer = framebufferPicker.pick(position.x, position.y);
-        if (renderer) {
-          this.material.baseColor.set(1, 0, 0, 1);
-        } else {
-          this.material.baseColor.set(1, 1, 1, 1);
-        }
+        framebufferPicker.pick(position.x, position.y).then((renderer) => {
+          if (renderer) {
+            this.material.baseColor.set(1, 0, 0, 1);
+          } else {
+            this.material.baseColor.set(1, 1, 1, 1);
+          }
+        });
       }
     }
   }
