@@ -11,7 +11,7 @@ import {
   PointerButton,
   Script,
   Vector3,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
 
 class ClickScript extends Script {
@@ -22,11 +22,8 @@ class ClickScript extends Script {
     const { pointers } = inputManager;
     if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       if (pointers.length > 0) {
-        const pointerPosition = pointers[0].position;
-        const renderer = framebufferPicker.pick(
-          pointerPosition.x,
-          pointerPosition.y
-        );
+        const position = pointers[0].position;
+        const renderer = framebufferPicker.pick(position.x, position.y);
         if (renderer) {
           this.material.baseColor.set(1, 0, 0, 1);
         } else {
