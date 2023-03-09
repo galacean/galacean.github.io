@@ -12,10 +12,9 @@ import {
   Color,
   DirectLight,
   Engine,
-  GLTFResource,
-  Logger,
-  MeshRenderer,
+  GLTFResource, MeshRenderer,
   PBRMaterial,
+  PipelineStageValue,
   PrimitiveMesh,
   Script,
   Shader,
@@ -69,7 +68,7 @@ void main() {
     #endif
 }
 `,
-  "Forward"
+  { pipelineStage: PipelineStageValue.Forward }
 );
 
 Shader.create("transparent-shadow", [
