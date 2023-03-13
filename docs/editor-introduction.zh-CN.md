@@ -33,10 +33,10 @@ label: Editor-Introduction
 
 编辑器由这几部分组成：
 
-**[层级面板](/#/docs/latest/cn/editor-viewport)** 在这里会显示整个场景中的所有节点  
-**[资产面板](/#/docs/latest/cn/editor-assets)** 在这个面板中会显示当前项目所包含的所有资产，比如 HDR 贴图，各种纹理文件，脚本，字体文件等等  
-**[主编辑区](/#/docs/latest/cn/editor-viewport)** 是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景  
-**[检查器面板](/#/docs/latest/cn/editor-inspector)** 会根据你当前选择显示不同的可编辑选项
+**[层级面板](${docs}editor-hierarchy-cn)** 在这里会显示整个场景中的所有节点  
+**[资产面板](${docs}editor-assets-cn)** 在这个面板中会显示当前项目所包含的所有资产，比如 HDR 贴图，各种纹理文件，脚本，字体文件等等  
+**[主编辑区](${docs}editor-viewport-cn)** 是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景  
+**[检查器面板](${docs}editor-inspector-cn)** 会根据你当前选择显示不同的可编辑选项
 
 对于各个面板详细的介绍可以点击上方链接查看。接下来，我们来看看具体如何实现一个「旋转的立方体」项目。
 
