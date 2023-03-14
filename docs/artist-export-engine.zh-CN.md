@@ -16,7 +16,7 @@ Oasis 引擎目前有 3 种方式调试材质：
 
 1. 通过代码修改材质属性，参考[教程](${docs}material-cn)。
 
-2. 通过 Oasis Editor 可视化调试，参考[教程](${docs}editor-material-cn)。
+2. 通过 Oasis Editor 可视化调试，参考[教程](${docs}editor-3d-material-cn)。
 
 3. **通过 3D 建模软件调好后导出 [glTF](${docs}gltf-cn)**
 

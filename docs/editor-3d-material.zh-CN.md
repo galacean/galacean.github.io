@@ -8,7 +8,9 @@ label: Editor-Feature/Rendering-3d
 
 ## 介绍
 
-通过引擎的 [材质教程](${docs}material-cn) 中可以了解到 Oasis 的材质分为 [PBR 材质](${api}core/PBRMaterial)(**推荐**)、[PBR-Specular 材质](${api}core/PBRSpecularMaterial)、[BlinnPhong 材质](${api}core/BlinnPhongMaterial)、 [Unlit 材质](${api}core/UnlitMaterial) 四种材质类型，每种材质类型的应用场景都不一样，其中 PBR 材质为 glTF 模型默认材质标准，其余的类型也可以通过插件方式导入。
+在上文提到，模型由网格和材质组成。网格相当于骨架，描绘出模型的轮廓；材质相当于血肉，决定了渲染表现。
+
+通过引擎的 [材质教程](${docs}material-cn) 中可以了解到 Oasis 的标准材质分为 [PBR 材质](${api}core/PBRMaterial)(**推荐**)、[PBR-Specular 材质](${api}core/PBRSpecularMaterial)、[BlinnPhong 材质](${api}core/BlinnPhongMaterial)、 [Unlit 材质](${api}core/UnlitMaterial) 四种材质类型，每种材质类型的应用场景都不一样，其中 PBR 材质为 glTF 模型默认材质标准，其余的类型也可以通过插件方式导入。
 
 - PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，采用金属度-粗糙度工作流，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。
 - PBR-Specular 材质是相对于 PBR 的另外一种工作流： 高光-光泽度工作流。唯一的区别就是通过高光、光泽度参数，替代了 PBR 的金属度、粗糙度 参数。
@@ -25,7 +27,7 @@ label: Editor-Feature/Rendering-3d
 
 创建完材质之后，我们通过切换着色器来实现上面说的不同材质功能，并且共用一部分属性，比如基础颜色，如果设置为红色，那么即使切换着色器，基础颜色仍为红色。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/31292983-082f-43a5-adce-0a0219df5d9d/image-20230117173532172.png" alt="image-20230117173532172" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/34b16fb7-bcde-458d-b8ae-33d7badee344/image-20230314180037650.png" alt="image-20230314180037650" style="zoom:50%;" />
 
 ### 1. unlit
 
