@@ -5,15 +5,16 @@ type: 性能调试
 label: Performance
 ---
 
-[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats) 包主要用来显示引擎当前的运行状态。要显示引擎运行状态只需要引入 `Stats` 并注册：
+[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats) 包主要用来显示相机的渲染状态，只需要为相机节点添加 `Stats` 组件：
 
 ```typescript
-import { Engine } from 'oasis-engine';
-import { Stats } from '@oasis-engine-toolkit/stats';
+import { Engine } from "oasis-engine";
+import { Stats } from "@oasis-engine-toolkit/stats";
 
-Engine.registerFeature(Stats);
+cameraEntity.addComponent(Camera);
+cameraEntity.addComponent(Stats);
 ```
 
-显示如下：
+## 示例
 
-![image-20210901200322478](https://gw.alipayobjects.com/zos/OasisHub/262bebbd-cdd7-484e-8bdd-38e13915074d/image-20210901200322478.png)
+<playground src="text-barrage.ts"></playground>
