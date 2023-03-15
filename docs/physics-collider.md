@@ -48,6 +48,8 @@ between `Collider` and `ColliderShape`. The pose of each `Collider` is the same 
 synchronized every frame. while `ColliderShape`
 On the above, you can set the offset relative to the `Collider` through the `position` property.
 
+![table](https://mdn.alipayobjects.com/huamei_vvspai/afts/img/A*erlGRKk7dNMAAAAAAAAAAAAADsqFAQ/original)
+
 ## Trigger script function
 
 For the trigger mode, you first need to add a `Collider` to the `Entity` in the scene; when these components touch each
