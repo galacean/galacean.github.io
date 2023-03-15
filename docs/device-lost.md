@@ -74,7 +74,7 @@ export class CustomTextureContentRestorer extends ContentRestorer<Texture2D> {
 } 
 
 // Step 2: Register Content Restorer
-resourceManager.addContentRestorer(new CustomTextureContentRestorer(texture, url, requestConfig));
+resourceManager.addContentRestorer(new CustomTextureContentRestorer(texture, url));
 ```
 
 NOTE: Restorer implementations are not recommended to be dependent and CPU-intensive

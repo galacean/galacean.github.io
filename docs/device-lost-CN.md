@@ -74,7 +74,7 @@ engine.on("devicerestored", () => {
  } 
  
  // Step 2: Register Content Restorer
- resourceManager.addContentRestorer(new CustomTextureContentRestorer(texture, url, requestConfig));
+ resourceManager.addContentRestorer(new CustomTextureContentRestorer(texture, url));
  ```
 
 注意：恢复器实现不建议依赖和占用大量 CPU 内存
