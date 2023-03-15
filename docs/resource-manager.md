@@ -139,7 +139,7 @@ engine.resourceManager
 
 
 ### 3. Environment
-Oasis supports offline baking through [Oasis Editor](https://oasis.alipay.com/editor) or [glTF Viewer](https://oasisengine.cn/gltf-viewer) to get IBL baked products `*.env` file.
+Oasis supports offline baking through [Oasis Editor](https://antg.antgroup.com) or [glTF Viewer](https://oasisengine.cn/#/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 

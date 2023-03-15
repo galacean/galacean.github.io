@@ -154,7 +154,7 @@ label: Art/教程
 
 
 
-4. 放入[glTF查看器](https://oasisengine.cn/gltf-viewer)预览效果
+4. 放入[glTF查看器](https://oasisengine.cn/#/gltf-viewer)预览效果
 
 
 
