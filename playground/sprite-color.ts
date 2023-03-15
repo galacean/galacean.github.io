@@ -58,3 +58,8 @@ function addColorEntity(entity: Entity, posX: number, color: Color): void {
   entity.transform.setPosition(posX, 0, 0);
   entity.getComponent(SpriteRenderer).color = color;
 }
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine
+}

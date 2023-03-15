@@ -63,6 +63,11 @@ function init(): void {
     });
 
   engine.run();
+
+  //@ts-ignore
+  window.cypressEnv = {
+    engine
+  }
 }
 
 function addCustomMaterial(engine: Engine): Material {

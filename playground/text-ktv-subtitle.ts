@@ -195,3 +195,8 @@ class AnimateScript extends Script {
 }
 
 init();
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine
+}

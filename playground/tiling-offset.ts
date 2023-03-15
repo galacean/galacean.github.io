@@ -65,6 +65,11 @@ function init(): void {
       // Run engine
       engine.run();
     });
+  
+    // @ts-ignore for e2e test
+    window.cypressEnv = {
+      engine,
+    }
 }
 
 /**

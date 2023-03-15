@@ -84,3 +84,8 @@ function createText(
   // Set font whether italic
   italic && (renderer.fontStyle |= FontStyle.Italic);
 }
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine
+}

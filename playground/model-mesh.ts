@@ -39,6 +39,11 @@ function init(): void {
 
   createPlane(engine, rootEntity);
   engine.run();
+
+  //@ts-ignore
+  window.cypressEnv = {
+    engine,
+  }
 }
 
 /**

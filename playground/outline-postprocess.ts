@@ -26,6 +26,7 @@ class ClickScript extends Script {
     const { pointers } = inputManager;
     if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       const pointerPosition = pointers[0].position;
+      console.log(pointerPosition)
       framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
         if (renderElement) {
           console.log(renderElement.component.entity.parent);
@@ -105,4 +106,9 @@ function addDebugGUI(outlineManager: OutlineManager) {
   gui.addColor(debugInfo, "subColor").onChange((v) => {
     outlineManager.subColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
   });
+}
+
+ // @ts-ignore for e2e test
+window.cypressEnv = {
+  engine,
 }

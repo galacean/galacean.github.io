@@ -33,3 +33,8 @@ engine.resourceManager
 
 // Run
 engine.run();
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine,
+}

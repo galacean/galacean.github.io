@@ -44,3 +44,8 @@ function addGUI(materials: UnlitMaterial[]) {
     });
   });
 }
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine,
+}

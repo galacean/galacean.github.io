@@ -40,7 +40,7 @@ engine.resourceManager
 // test dom
 const dom = document.createElement("div");
 dom.innerHTML = "Hello world!!!";
-dom.setAttribute("style", "padding:10px;position:absolute;top:0;left:0;background:white;border-radius:5px");
+dom.setAttribute("style", "padding:10px;position:absolute;top:0;left:0;background:white;border-radius:5px;font-size:16px;");
 document.body.appendChild(dom);
 
 class Renderer2DScript extends Script {

@@ -181,6 +181,11 @@ engine.resourceManager
 
 engine.run();
 
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine,
+};
+
 class ScriptPipe extends Script {
   /** When there is no pipe in the pool, use this instance to clone. */
   private _originPipe: Entity;

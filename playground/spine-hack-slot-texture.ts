@@ -77,6 +77,7 @@ engine.resourceManager
 
 engine.run();
 
+
 function generateSkinResource(): LoadItem[] {
   const skinImgs = [
     'https://gw.alicdn.com/imgextra/i4/O1CN01NVzIQ61Hf7DT0jDWS_!!6000000000784-2-tps-802-256.png',
@@ -123,8 +124,14 @@ function changeSlotTexture(selectItem, textures, spineAnimation) {
     weapon: 'defult/arm_rigth_weapon',
     clothes: 'defult/Sleeveless_01',
   };
+  console.log(999, selectItem)
   const slotKey = selectItem.split('_')[0];
   const slotName = slotNameMap[slotKey];
   const index = selectItem.split('_')[1];
   spineAnimation.hackSeparateSlotTexture(slotName, textures[index]);
+}
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine
 }

@@ -54,3 +54,8 @@ function setTextRenderer(
   // Set horizontal alignment
   renderer.horizontalAlignment = hAlign;
 }
+
+// @ts-ignore for e2e test
+window.cypressEnv = {
+  engine
+};
