@@ -17,9 +17,11 @@ label: Editor-Feature/Rendering-3d
 - Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
 - Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
 
+另外，[oasis-engine-toolkit 仓库](https://www.npmjs.com/package/oasis-engine-toolkit?activeTab=versions) 还提供了 [Bake PBR](https://github.com/ant-galaxy/oasis-engine-toolkit/blob/dev/1.0/packages/custom-material/src/bake-pbr/BakePBRMaterial.ts) 作为 lightmap 的过渡方案，与 PBR 相比，只增加了一张 `lightmapTexture` 和 `lightmapIntensity`，用来存储光照和阴影信息，替换间接漫反射部分的计算，非常适用于那些需要大量光影计算，但是保持静态的场景。
+
 ## 使用
 
-一般情况下，模型已经自动绑定好材质和相应的纹理，用户可以不用做任何操作；但是在一定场景下，开发者可能想要手动微调材质，比如修改颜色，那么我们可以将原材质进行复制，即点击 `duplicate & remap`, 即可在原材质参数的基础上进行修改, 当然，您也可以手动创建新的材质球进行绑定:
+一般情况下，模型已经自动绑定好材质和相应的纹理，用户可以不用做任何操作；但是在一定场景下，开发者可能想要手动微调材质，比如修改颜色，那么我们可以将原材质进行复制，即点击 `duplicate & remap`， 即可在原材质参数的基础上进行修改， 当然，您也可以手动创建新的材质球进行绑定:
 
 ![img](https://gw.alipayobjects.com/zos/OasisHub/2c50e9b8-8a59-4422-9a49-762c3973c93d/1673942497459-c6c38ac5-fac7-4b62-a836-d0d89115fd27.gif)
 
@@ -66,3 +68,7 @@ PBR 遵循能量守恒，是基于物理的渲染，能设置基础颜色、法�
 除此之外，还有很多通用属性可以配置，比如环境遮蔽，自发射光，透明度等等：
 
 ![other](https://gw.alipayobjects.com/zos/OasisHub/dc6e52f6-1a85-44bd-9f1f-f26228889e10/other.gif)
+
+### 4. Bake PBR( lightmap 过渡方案 )
+
+![image-20230315140608854](https://gw.alipayobjects.com/zos/OasisHub/1f1a0a6d-e404-458c-a251-37f71b92ea0c/image-20230315140608854.png)
