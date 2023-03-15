@@ -58,7 +58,7 @@ class GripMap {
         this._destroyGrid(<Grid>grids.pop());
       }
     }
-    // 重置
+    // reset
     for (let i = 0; i < width; i++) {
       for (let j = 0; j < height; j++) {
         grids[i + j * width].reset(i, j);
@@ -117,7 +117,7 @@ class GripMap {
           }
         }
         if (grid.isOpen) {
-          // 更新消耗
+          // update cost
           const newG = currGrid.G + neighbor.cost;
           if (newG < grid.G) {
             grid.G = currGrid.G + neighbor.cost;
@@ -159,20 +159,20 @@ class GripMap {
       }
     }
 
-    // 倒推路径
+    // reverse path
     const resArr = [endGrid];
     currGrid = endGrid;
     while (currGrid != startGrid) {
       currGrid = currGrid.parent;
       resArr.push(currGrid);
     }
-    console.log("消耗时间:" + (window.Date.now() - time) + "毫秒");
+    console.log("Spend time:" + (window.Date.now() - time) + " ms");
     return resArr;
   }
 
   /**
-   * 加障碍物
-   * @param rect - 起始 x y 与 宽 高
+   * Add obstacles.
+   * @param rect - starting position and width and height
    */
   addObstacle(rect: Rect): void {
     const { x, y, width, height } = rect;
@@ -193,19 +193,19 @@ class GripMap {
   }
 
   /**
-   * 曼哈顿距离
-   * @param from
-   * @param to
-   * @returns
+   * Manhattan distance
+   * @param from - start position
+   * @param to - end position
+   * @returns estimated cost
    */
   private _getH(from: Grid, to: Grid): number {
     let dx = from.x - to.x;
     let dy = from.y - to.y;
     dx = dx >= 0 ? dx : -dx;
     dy = dy >= 0 ? dy : -dy;
-    // 直线
+    // straight line distance
     let a = dx > dy ? dx - dy : dy - dx;
-    // 斜线
+    // slash distance
     let b = (dx + dy - a) / 2;
     return a * GripMap.StraightCost + b * GripMap.SlashCost;
   }
@@ -259,30 +259,19 @@ class GripMap {
   }
 }
 
-/**
- * 网格类
- */
 class Grid {
-  // 父节点
   parent: Grid;
-  // 下标
   x: number;
   y: number;
-  // 从开始点到当前点的代价
-  G: number;
-  // 从当前点到目标点的预估代价
-  H: number;
-  // 从开始点到目标点的预估代价
-  F: number;
-  // 周围邻接点数组
   neighbors: (NeighborLink | null)[] = [];
+  G: number;
+  H: number;
+  F: number;
 
   walkAble: boolean = false;
   isOpen: boolean = false;
   isClose: boolean = false;
   isInit: boolean = false;
-
-  // 优化计算的手段
   version: number = 0;
 
   reset(x: number, y: number, walkAble: boolean = true) {
@@ -295,15 +284,9 @@ class Grid {
   }
 }
 
-/**
- * Grid 与周围点的链接关系
- */
 class NeighborLink {
-  // 点
   grid: Grid;
-  // 消耗（路程）
   cost: number;
-  // 是否可走
   walkAble: boolean;
   constructor(grid: Grid, cost: number) {
     this.grid = grid;
@@ -312,7 +295,7 @@ class NeighborLink {
 }
 
 /**
- * 最小堆
+ * Min heap
  */
 class BinaryHeap {
   arr: Array<any> = [];
@@ -536,7 +519,6 @@ PhysXPhysics.initialize().then(() => {
   // Create camera.
   const cameraEntity = rootEntity.createChild("Camera");
   cameraEntity.transform.setPosition(0, 0, 5);
-  // cameraEntity.transform.setRotation(-90, 0, 0);
   const camera = cameraEntity.addComponent(Camera);
   camera.isOrthographic = true;
   camera.orthographicSize = 40;
@@ -548,17 +530,17 @@ PhysXPhysics.initialize().then(() => {
   renderer.color = new Color(1, 1, 1, 1);
   renderer.fontSize = 40;
   renderer.font = Font.createFromOS(engine, "Arial");
-  renderer.text = "请点击地图选择寻路起始点";
+  renderer.text = "Please select the starting point";
   engine.on("StateChange", (state: FindingPathStep) => {
     switch (state) {
       case FindingPathStep.SetStart:
-        renderer.text = "请点击地图选择寻路起始点";
+        renderer.text = "Please select the starting point";
         break;
       case FindingPathStep.SetEnd:
-        renderer.text = "请点击地图选择寻路终点";
+        renderer.text = "Please select the end point";
         break;
       case FindingPathStep.Finish:
-        renderer.text = "请再次点击地图选择寻路起始点";
+        renderer.text = "Please select the starting point again";
         break;
       default:
         break;
@@ -577,5 +559,5 @@ PhysXPhysics.initialize().then(() => {
       mapViewControl.reset();
     },
   };
-  gui.add(guiData, "reset").name("重置地图");
+  gui.add(guiData, "reset");
 });
