@@ -4,6 +4,8 @@
  */
 import {
   Camera,
+  CameraClearFlags,
+  Color,
   CullMode,
   DirectLight,
   GLTFResource,
@@ -15,6 +17,7 @@ import {
   Script,
   Shader,
   Texture2D,
+  TextureFilterMode,
   TextureFormat,
   UnlitMaterial,
   Vector3,
@@ -52,6 +55,7 @@ const autoDepthTexture = new Texture2D(
   TextureFormat.Depth,
   false
 );
+autoDepthTexture.filterMode = TextureFilterMode.Point;
 const renderTarget = new RenderTarget(
   engine,
   width,
