@@ -1,5 +1,5 @@
 ---
-order: 0
+order: 1
 title: 精灵
 type: 功能
 group: 2D 渲染

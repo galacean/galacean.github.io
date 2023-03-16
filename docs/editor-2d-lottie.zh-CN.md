@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title: Lottie
 type: 功能
 group: 2D 渲染

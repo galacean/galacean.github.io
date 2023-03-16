@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 3
 title: 精灵遮罩
 type: 功能
 group: 2D 渲染
