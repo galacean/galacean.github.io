@@ -5,9 +5,14 @@ type: 界面
 label: Editor-Interface
 ---
 
+<figure style="float: right;position: relative; z-index: 2">
+  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*UFVgQroh2YkAAAAAAAAAAAAADsGIAQ/original" >
+  <figcaption style="text-align:center; color: #889096">Hiearchy Pane</figcaption>
+</figure>
+
 检查器面板位于编辑器右侧，它会是你在使用编辑器的过程中最常用的面板。基于你当前选择所选择的东西, 检查器面板会显示出相对应的属性。你可以使用检查器面板来编辑场景中几乎所有的事物，如场景、实体、组件、资产等等。
 
-<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*UFVgQroh2YkAAAAAAAAAAAAADsGIAQ/original" style="zoom: 50%">
+<img src="" style="zoom: 50%">
 
 ## 属性类型
 
@@ -25,7 +30,7 @@ label: Editor-Interface
 
 一些可以调节的属性是以滑动条的形式出现的. 你可以拖动滑块来快速调整数字的大小. 同样的, 在拖动滑块时, 按住 `⌘`(window上为 `ctrl`) 可以更精确的调整数字的大小
 
-![slider](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*w3fOTJkaZpsAAAAAAAAAAAAADsGIAQ/original)
+![slider](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*4OViSrJWl_EAAAAAAAAAAAAADsGIAQ/original)
 
 还有一些数字调节的属性是以输入框和按钮的形式出现的. 这些属性往往拥有更精确的步进大小(如 0.1, 1, 10). 点击按钮可以直接以步进长度来增加或减小数值.
 
@@ -45,38 +50,45 @@ label: Editor-Interface
 
 资产选择浮窗中还提供了一个搜索框，你可以使用它来更精确的找到对应的资产。
 
-<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*DyYQQJebgYIAAAAAAAAAAAAADsGIAQ/original" width="300px">
-<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*6nbkToYYx3kAAAAAAAAAAAAADsGIAQ/original" width="300px">
+<div style="display:flex">
+  <figure>
+    <img alt="Mesh" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IoDeQKHZyqoAAAAAAAAAAAAADsGIAQ/original" height="300px">
+    <figcaption style="text-align:center; color: #889096;font-size:12px">Mesh Picker</figcaption>
+  </figure>
 
-## 编辑场景属性
+  <figure>
+    <img alt="Material" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*Rak0SZqKf4oAAAAAAAAAAAAADsGIAQ/original" height="300px">
+    <figcaption style="text-align:center; color: #889096;font-size:12px">Material Picker</figcaption>
+  </figure>
+</div>
+
+
+## 编辑场景
 
 在选中根节点后，或不选择任何节点或资产的情况下，检查器面板将显示当前场景可以编辑的属性。你可以在此时调整场景的环境贴图、背景模式或阴影效果等。
-
-<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*ohTITKznWUsAAAAAAAAAAAAADsGIAQ/original">
 
 ## 编辑资产
 
 在资产面板中选择资产后，检查器面板会显示当前所选资产所可以编辑的属性。
 
-<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*tqVeQoTcLr8AAAAAAAAAAAAADsGIAQ/original">
-
 需要注意的是，针对prefab中的材质，你不能够直接编辑它，而是需要点击 `duplicate & remap` 按钮来生成一份该材质的副本，然后再编辑该副本。
 
 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*I2KcS56b46QAAAAAAAAAAAAADsGIAQ/original">
 
-### 调整 Prefab 的材质
+### 调整 glTF 的材质
 
-在选中 Prefab 后，你可以使用检查器中的 `remapped material` 属性来将某个材质映射到新的材质当中。一个最常用的使用场景是 **调整一个 gltf 中的材质的数值**，此时，你需要做如下操作：
-- 在资产面板中找到该 gltf
-- 点击展开按钮，找到你想要编辑的材质
-- 点击检查器中的 `duplicate & remap` 按钮，此时编辑器会自动完成如下操作
-  - 生成一份该材质的副本
-  - 并选中该副本
-  - 自动将gltf此材质的remapped属性设置为选中的副本材质
-- 调整相应的数值
+在选中 glTF 后，你可以使用检查器中的 `remapped material` 属性来将某个材质映射到新的材质当中。一个最常用的使用场景是 **调整一个 gltf 中的材质的数值**，此时，你需要做如下操作：
+
+1. 在资产面板中找到该 glTF
+2. 点击展开按钮，找到你想要编辑的材质
+3. 点击检查器中的 `duplicate & remap` 按钮，此时编辑器会自动完成如下操作
+   1. 生成一份该材质的副本
+   2. 并选中该副本
+   3. 自动将gltf此材质的remapped属性设置为选中的副本材质
+4. 调整相应的数值
 
 ## 编辑实体
 
-<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IdEQSL4U4xkAAAAAAAAAAAAADsGIAQ/original">
-
 从层级面板或场景中选择一个实体后，检查器将显示出当前选中节点所可以调整的属性。在此情况下，你可以点击添加组件按钮来为当前实体添加新的组件。
+
+<img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*wP1AS5VzCqAAAAAAAAAAAAAADsGIAQ/original">
