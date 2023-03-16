@@ -90,7 +90,7 @@ function openDebug(specularTexture) {
     if (v) {
       scene.ambientLight.specularTexture = specularTexture;
     } else {
-      scene.ambientLight.specularTexture = null
+      scene.ambientLight.specularTexture = null;
     }
   });
 
