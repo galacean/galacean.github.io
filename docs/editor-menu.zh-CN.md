@@ -6,6 +6,7 @@ label: Editor-Interface
 ---
 
 在编辑器中，菜单栏的入口位于项目标题的右侧，点击该图标后会显示所有菜单项：
+
 <img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*QKdwRJ6WUX8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
 菜单项内容分为以下几类：
@@ -58,16 +59,19 @@ label: Editor-Interface
 ### 创建资产
 
 资产创建操作，和资产面板的创建资产功能相同。
+
 <img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*vqGhS4EBgkQAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
 ### 创建实体
 
 快速创建带基础组件的实体，比如带相机、灯光等组件的实体，和层级面板上的创建实体功能相同。
+
 <img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*YQ63SIi02Z8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
 ### 添加组件
 
 给某个实体添加组件，和层级面板上的添加组件功能相同。注意必须选中某个实体后，该操作才可用。
+
 <img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*D6iKSp7NCcYAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
 ## 偏好设置
@@ -75,9 +79,11 @@ label: Editor-Interface
 ### 快捷方式
 
 快捷键有助于提升编辑场景的效率，用户可以在这里找到鼠标（或触控板）、键盘的视口控制方式，以及全局和各个面板的快捷键。
+
 <img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*diTfTq0BIb8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
 ### 语言设置
 
 支持中英两种语言。
+
 <img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*CjejTquhwoUAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
