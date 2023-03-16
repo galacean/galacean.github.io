@@ -38,6 +38,8 @@ label: Physics
 具体 API 可以参考文档，这里特别强调的是 `Collider` 与 `ColliderShape` 的位置关系。每一个 `Collider` 的姿态和其挂载的 `Entity` 是一致的，每一帧两者都会进行同步。而 `ColliderShape`
 上则可以通过 `position` 属性设置 **相对于** `Collider` 的偏移。
 
+![table](https://mdn.alipayobjects.com/huamei_vvspai/afts/img/A*erlGRKk7dNMAAAAAAAAAAAAADsqFAQ/original)
+
 ## 触发器脚本函数
 
 对于触发器模式，首先需要给场景中的 `Entity` 添加 `Collider`；该当这些组件相互接触时，会自动触发脚本组件当中的三个函数：
