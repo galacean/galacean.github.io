@@ -14,15 +14,15 @@ label: Editor-Feature/Rendering-2d
 
 1. 开发者拿到 `.json` 文件后，首先需要把 `.json` 文件上传到 Oasis Editor。通过资产面板的上传按钮选择 “lottie” 资产，选择本地一个 lottie json 文件，然后：
 
-<!-- ![image-20210901120042826](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*5RjfT6nvt1cAAAAAAAAAAAAADjCHAQ/original) -->
 <img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*5RjfT6nvt1cAAAAAAAAAAAAADjCHAQ/original"  style="zoom:25%;" />
 
 2. 选择一个节点，添加 Lottie 组件，选择 resource 为上一步上传的资产，通过修改 speed 改变播放速度：
 
 ![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*kazQS5AhnUsAAAAAAAAAAAAADjCHAQ/original)
 
-## 参数说明
+## 更多属性
 
+image.png
 | 属性 | 功能说明 |
 | :--- | :--- |
 | `Resource` | 选择 Lottie 资产 |

@@ -34,15 +34,15 @@ label: Editor-Feature/Rendering-2d
 
 | 属性 | 功能说明 |
 | :--- | :--- |
-| Text | 需要显示的文本 |
-| Color | 文本颜色 |
-| FontSize | 文本的字体大小 |
-| Font | 自定义字体 |
-| Width | 文本在三维空间中的宽 |
-| Height | 文本在三维空间中的高 |
-| LineSpacing | 行间距 |
-| FontStyle | 字体样式设置：是否加粗/是否斜体 |
-| HorizontalAlignment | 水平对齐方式，可选值有：Left/Center/Right |
-| VerticalAlignment | 竖直对齐方式，可选值有：Top/Center/Bottom |
-| EnableWrapping | 是否开启换行模式，打开换行模式后，会根据设置的宽来进行换行，如果这时候宽设置为 0，那么文本将不渲染 |
-| OverflowMode | 当文本总高度超出设置的高的时候的处理方式，可选值有：Overflow/Truncate， Overflow 表示直接溢出显示， Truncate 表示只保留设置高度以内的内容显示，具体显示内容还和文本在竖直方向上的对齐方式有关|
+| `Text` | 需要显示的文本 |
+| `Color` | 文本颜色 |
+| `FontSize` | 文本的字体大小 |
+| `Font` | 自定义字体 |
+| `Width` | 文本在三维空间中的宽 |
+| `Height` | 文本在三维空间中的高 |
+| `LineSpacing` | 行间距 |
+| `FontStyle` | 字体样式设置：是否加粗/是否斜体 |
+| `HorizontalAlignment` | 水平对齐方式，可选值有：Left/Center/Right |
+| `VerticalAlignment` | 竖直对齐方式，可选值有：Top/Center/Bottom |
+| `EnableWrapping` | 是否开启换行模式，打开换行模式后，会根据设置的宽来进行换行，如果这时候宽设置为 0，那么文本将不渲染 |
+| `OverflowMode` | 当文本总高度超出设置的高的时候的处理方式，可选值有：Overflow/Truncate， Overflow 表示直接溢出显示， Truncate 表示只保留设置高度以内的内容显示，具体显示内容还和文本在竖直方向上的对齐方式有关|

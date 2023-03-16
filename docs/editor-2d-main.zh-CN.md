@@ -20,7 +20,7 @@ label: Editor-Feature/Rendering-2d
 
 编辑器里面为开发者提供的 2D 渲染组件如下：
 
-- [精灵渲染组件](${docs}editor-2d-sprite-cn)
+- [精灵渲染组件](${docs}editor-2d-sprite-renderer-cn)
 - [文本渲染组件](${docs}editor-2d-text-cn)
 - [精灵遮罩组件](${docs}editor-2d-sprite-mask-cn)
 - [Lottie 渲染组件](${docs}editor-2d-lottie-cn)

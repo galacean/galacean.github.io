@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 title: 精灵图集
 type: 功能
 group: 2D 渲染
