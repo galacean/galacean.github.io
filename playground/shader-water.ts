@@ -12,7 +12,6 @@ import {
   Material,
   MeshRenderer,
   PrimitiveMesh,
-  Script,
   Shader,
   Texture2D,
   Vector3,
@@ -61,7 +60,7 @@ varying vec2 v_uv;
 varying vec3 v_position;
 varying vec3 v_normal;
 
-uniform float u_time;
+uniform vec4 u_Time;
 uniform sampler2D u_texture;
 uniform vec3 u_cameraPos;
 
@@ -86,8 +85,8 @@ float map(vec3 p, vec2 sc)
     float l = cos(length(p * 2.0));
     vec2 u = vec2(l, sc.y);
     vec2 um = u * 0.3;
-    um.x += u_time * 0.1 * u_water_speed;
-    um.y += -u_time * 0.025 * u_water_speed;
+    um.x += u_Time.x * 0.1 * u_water_speed;
+    um.y += -u_Time.x * 0.025 * u_water_speed;
     um.x += (um.y) * 2.0;    
     float a1 = texture2D(u_texture, (p.yz  *  .4 + um) * u_water_scale).x;
     float a2 = texture2D(u_texture, (p.zx  *  .4 + um) * u_water_scale).x;
@@ -204,20 +203,12 @@ renderer.setMaterial(material);
 engine.resourceManager
   .load({
     type: AssetType.Texture2D,
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*AC4IQZ6mfCIAAAAAAAAAAAAAARQnAQ"
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*AC4IQZ6mfCIAAAAAAAAAAAAAARQnAQ",
   })
   .then((texture: Texture2D) => {
     material.shaderData.setTexture("u_texture", texture);
     engine.run();
   });
-
-// u_time 更新脚本
-class WaterScript extends Script {
-  onUpdate() {
-    material.shaderData.setFloat("u_time", engine.time.timeSinceStartup * 0.001);
-  }
-}
-sphereEntity.addComponent(WaterScript);
 
 // debug
 function openDebug() {
@@ -229,7 +220,7 @@ function openDebug() {
     water_scale: shaderData.getFloat("u_water_scale"),
     water_speed: shaderData.getFloat("u_water_speed"),
     sea_base: [baseColor.r * 255, baseColor.g * 255, baseColor.b * 255],
-    water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255]
+    water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255],
   };
 
   gui.add(debug, "sea_height", 0, 3).onChange((v) => {
