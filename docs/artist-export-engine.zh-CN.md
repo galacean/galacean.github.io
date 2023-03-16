@@ -16,7 +16,7 @@ Oasis 引擎目前有 3 种方式调试材质：
 
 1. 通过代码修改材质属性，参考[教程](${docs}material-cn)。
 
-2. 通过 Oasis Editor 可视化调试，参考[教程](${docs}editor-material-cn)。
+2. 通过 Oasis Editor 可视化调试，参考[教程](${docs}editor-3d-material-cn)。
 
 3. **通过 3D 建模软件调好后导出 [glTF](${docs}gltf-cn)**
 
@@ -118,7 +118,7 @@ Oasis 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。gl
 
 - 校验导出
 
-导出 glTF 后，可以将文件拖拽到 [glTF 查看器](https://oasisengine.cn/gltf-viewer) 中，查看相应的颜色、纹理、参数等是否正确：
+导出 glTF 后，可以将文件拖拽到 [glTF 查看器](https://oasisengine.cn/#/gltf-viewer) 中，查看相应的颜色、纹理、参数等是否正确：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/a76d35e6-e222-4877-89a4-c44a117a1284/1635499678001-f7df3dc2-2219-4516-887b-fc5d51dc3521.png)
 
