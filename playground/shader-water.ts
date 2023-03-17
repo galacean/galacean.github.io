@@ -60,7 +60,7 @@ varying vec2 v_uv;
 varying vec3 v_position;
 varying vec3 v_normal;
 
-uniform vec4 u_Time;
+uniform vec4 u_ElapsedTime;
 uniform sampler2D u_texture;
 uniform vec3 u_cameraPos;
 
@@ -85,8 +85,8 @@ float map(vec3 p, vec2 sc)
     float l = cos(length(p * 2.0));
     vec2 u = vec2(l, sc.y);
     vec2 um = u * 0.3;
-    um.x += u_Time.x * 0.1 * u_water_speed;
-    um.y += -u_Time.x * 0.025 * u_water_speed;
+    um.x += u_ElapsedTime.x * 0.1 * u_water_speed;
+    um.y += -u_ElapsedTime.x * 0.025 * u_water_speed;
     um.x += (um.y) * 2.0;    
     float a1 = texture2D(u_texture, (p.yz  *  .4 + um) * u_water_scale).x;
     float a2 = texture2D(u_texture, (p.zx  *  .4 + um) * u_water_scale).x;
