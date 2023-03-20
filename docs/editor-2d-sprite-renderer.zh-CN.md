@@ -1,6 +1,6 @@
 ---
-order: 1
-title: 精灵渲染
+order: 2
+title: 精灵渲染组件
 type: 功能
 group: 2D 渲染
 label: Editor-Feature/Rendering-2d

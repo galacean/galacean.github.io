@@ -1,6 +1,6 @@
 ---
-order: 4
-title: Lottie
+order: 6
+title: Lottie 渲染组件
 type: 功能
 group: 2D 渲染
 label: Editor-Feature/Rendering-2d

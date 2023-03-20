@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 精灵遮罩
+title: 精灵遮罩组件
 type: 功能
 group: 2D 渲染
 label: Editor-Feature/Rendering-2d

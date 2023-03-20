@@ -1,6 +1,6 @@
 ---
-order: 2
-title: 文本
+order: 5
+title: 文本渲染组件
 type: 功能
 group: 2D 渲染
 label: Editor-Feature/Rendering-2d
