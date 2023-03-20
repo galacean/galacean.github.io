@@ -7,7 +7,7 @@ label: Editor-Interface
 
 <figure style="float: right;position: relative; z-index: 2">
   <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*OUlpRZXjKzQAAAAAAAAAAAAADqiTAQ/original" >
-  <figcaption style="text-align:center; color: #889096">Hiearchy Pane</figcaption>
+  <figcaption style="text-align:center; color: #889096;font-size:12px">Hiearchy Pane</figcaption>
 </figure>
 
 层级面板位于编辑器的最左侧，它以树状结构显示当前场景中的所有节点，场景节点是所有其他节点的父节点，包括相机、灯光、网格等等。在节点面板上方有一个搜索框，可以模糊搜索场景中的节点，来快速定位。通过节点面板，你可以添加或删除节点，通过拖拽的方式来排序从而更好的组织节点。
@@ -32,7 +32,7 @@ label: Editor-Interface
 
 ## 节点搜索
 
-节点面板上方有一个搜索框，用户可以输入节点的名称来搜索场景中的节点。搜索框支持模糊搜索，你可以输入节点名称的部分字符来查找节点。\
+节点面板上方有一个搜索框，用户可以输入节点的名称来搜索场景中的节点。搜索框支持模糊搜索，你可以输入节点名称的部分字符来查找节点。
 
 ## 节点隐藏
 

@@ -7,7 +7,7 @@ label: Editor-Interface
 
 <figure>
   <img alt="Assets Pane" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*A7XiQqUhHrgAAAAAAAAAAAAADsGIAQ/original" >
-  <figcaption style="text-align:center; color: #889096">Hiearchy Pane</figcaption>
+  <figcaption style="text-align:center; color: #889096;font-size:12px">Hiearchy Pane</figcaption>
 </figure>
 
 资产面板是编辑器中一个重要的面板，它可以帮助你管理场景中使用到的所有资产。在资产面板中，你可以查看和管理场景中使用到的所有资产，例如材质、贴图、模型等等。通过资产面板，你可以添加或删除资产，以及对资产进行分类管理，从而更好的组织资产。
@@ -19,23 +19,34 @@ label: Editor-Interface
 | 模型       | 支持 gltf/glb/fbx 文件上传，可以拖动到场景中                 | 上传 |
 | 纹理       | 支持 png/jpeg 文件上传，创建 2D 纹理                         | 上传 |
 | HDR        | 支持 .hdr 文件上传，可用于场景天空，环境光                   | 上传 |
+| Lottie     | 支持 lottie 文件（.json） 文件上传，需要把外链图片转成 base64 | 上传 |
 | 材质       | 用于调整渲染效果                                   | 创建 |
 | 网格       | 不可添加，只能使用内部网格和模型中的网格                     | - |
 | 动画控制器 | 用于控制动画状态                                   | 创建 |
 | 精灵       | 用于 2D 效果制作                                   | 创建 |
 | 精灵图集   | 用于 2D 素材优化                                   | 创建 |
-| Lottie     | 支持 lottie 文件（.json） 文件上传，需要把外链图片转成 base64 | 上传 |
-| 字体       | 支持 .ttf,.otf,.woff 文件上传，用于制作 2D 文字              |
-| 文件夹     | 和系统一致的文件夹逻辑, 可以把文件拖拽到文件夹中 | 创建 |
+| 字体       | 支持 `.ttf`, `.otf`, `.woff` 文件上传，用于制作 2D 文字      |  创建      |
+| 文件夹     | 和系统一致的文件夹逻辑，可以把文件拖拽到文件夹中 | 创建 |
 
 ## 资产的添加和删除
 
 ### 添加资产
 
 为了在场景中添加资产，你可以点击资产面板上的添加按钮，或者资产面板的右键菜单中的添加选项来添加新资产。添加资产后，你可以在检查器面板中对资产的属性进行编辑。
-你还可以将文件拖动到资产面板中来添加资产。支持的文件类型包括 gltf, glb, fbx, png, jpeg, hdr, ttf, otf, woff, json 等等
+你还可以将文件拖动到资产面板中来添加资产。支持的文件类型包括 `glTF`, `glb`, `fbx`, `png`, `jpeg`, `hdr`, `ttf`, `otf`, `woff`, `json` 等等。
 
 资产面板中的资产类型非常丰富，例如材质、贴图、模型、字体等等。具体可以参照上方的表格。
+
+<figure style="margin:0 auto;width: 700px;">
+  <img alt="Upload Asset by drag" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*9kmHQ6X7qVIAAAAAAAAAAAAADqiTAQ/original" width="100%">
+  <figcaption style="text-align:center; color: #889096; font-size: 12px;">通过拖拽上传图片</figcaption>
+</figure>
+
+<figure style="margin:0 auto;width: 700px;">
+  <img alt="Upload Asset by drag" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*9GWRQregHXYAAAAAAAAAAAAADqiTAQ/original" width="100%">
+  <figcaption style="text-align:center; color: #889096; font-size: 12px;">通过右键菜单上传图片</figcaption>
+</figure>
+
 
 ### 删除资产
 

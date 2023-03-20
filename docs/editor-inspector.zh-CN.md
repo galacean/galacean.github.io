@@ -7,10 +7,10 @@ label: Editor-Interface
 
 <figure style="float: right;position: relative; z-index: 2">
   <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*UFVgQroh2YkAAAAAAAAAAAAADsGIAQ/original" >
-  <figcaption style="text-align:center; color: #889096">Hiearchy Pane</figcaption>
+  <figcaption style="text-align:center; color: #889096;font-size:12px">Hiearchy Pane</figcaption>
 </figure>
 
-检查器面板位于编辑器右侧，它会是你在使用编辑器的过程中最常用的面板。基于你当前选择所选择的东西, 检查器面板会显示出相对应的属性。你可以使用检查器面板来编辑场景中几乎所有的事物，如场景、实体、组件、资产等等。
+检查器面板位于编辑器右侧，它会是你在使用编辑器的过程中最常用的面板。基于你当前选择所选择的东西，检查器面板会显示出相对应的属性。你可以使用检查器面板来编辑场景中几乎所有的事物，如场景、实体、组件、资产等等。
 
 <img src="" style="zoom: 50%">
 
@@ -28,11 +28,11 @@ label: Editor-Interface
 
 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*7BgOTI6rup4AAAAAAAAAAAAADsGIAQ/original">
 
-一些可以调节的属性是以滑动条的形式出现的. 你可以拖动滑块来快速调整数字的大小. 同样的, 在拖动滑块时, 按住 `⌘`(window上为 `ctrl`) 可以更精确的调整数字的大小
+一些可以调节的属性是以滑动条的形式出现的。你可以拖动滑块来快速调整数字的大小。同样的，在拖动滑块时，按住 `⌘`(window上为 `ctrl`) 可以更精确的调整数字的大小
 
 ![slider](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*4OViSrJWl_EAAAAAAAAAAAAADsGIAQ/original)
 
-还有一些数字调节的属性是以输入框和按钮的形式出现的. 这些属性往往拥有更精确的步进大小(如 0.1, 1, 10). 点击按钮可以直接以步进长度来增加或减小数值.
+还有一些数字调节的属性是以输入框和按钮的形式出现的。这些属性往往拥有更精确的步进大小(如 0.1, 1, 10)。点击按钮可以直接以步进长度来增加或减小数值.
 
 ![slider](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*mWKtQ6p0r8gAAAAAAAAAAAAADsGIAQ/original)
 
@@ -41,7 +41,7 @@ label: Editor-Interface
 
 ![colorpicker](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*W-3STp0S41QAAAAAAAAAAAAADsGIAQ/original)
 
-一些属性需要调整颜色,如光照,场景的背景色,亦或者材质的自发光颜色等。想要调整颜色，你需要点击左侧的颜色按钮来唤起颜色选择器。在颜色选择器中，你可以使用 HUE 来选择颜色，调整颜色的透明度；也可以在输入框来调整颜色具体的数值。  
+一些属性需要调整颜色，如光照，场景的背景色，亦或者材质的自发光颜色等。想要调整颜色，你需要点击左侧的颜色按钮来唤起颜色选择器。在颜色选择器中，你可以使用 HUE 来选择颜色，调整颜色的透明度；也可以在输入框来调整颜色具体的数值。  
 > 点击 ![switcher](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*As3nRrWtvNsAAAAAAAAAAAAADsGIAQ/original) 按钮可以在 HSLA，RGBA 和 HEXA 三种模式下进行切换。
 
 ### 资产选择
