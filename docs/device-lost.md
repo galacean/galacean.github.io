@@ -85,8 +85,8 @@ The probability of triggering device loss and recovery in actual projects is sma
 
 | Method                                                     | Explain      |
 | ---------------------------------------------------------- | ------------ |
-| [forceLoseDevice](${api}core/Engine#forceLoseDevice)       | 强制丢失设备 |
-| [forceRestoreDevice](${api}core/Engine#forceRestoreDevice) | 强制恢复设备 |
+| [forceLoseDevice](${api}core/Engine#forceLoseDevice)       | Force lost device |
+| [forceRestoreDevice](${api}core/Engine#forceRestoreDevice) | Force restore device |
 
 ### Reference
 
