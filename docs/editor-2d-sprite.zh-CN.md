@@ -12,13 +12,13 @@ label: Editor-Feature/Rendering-2d
 
 在编辑器中创建一个默认的精灵资源如下所示：
 
-![sprite-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*8eWyRq8mjxwAAAAAAAAAAAAADjCHAQ/original)
+![sprite-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*H2s4RIC4d9QAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置纹理
 
 创建默认精灵后，我们需要给精灵资源设置一个纹理来表示显示内容，如下：
 
-![sprite-tex](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*xC1_TaLq5t0AAAAAAAAAAAAADjCHAQ/original)
+![sprite-tex](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*1_NVSJxUieMAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置 pivot
 
@@ -28,7 +28,7 @@ label: Editor-Feature/Rendering-2d
 
 如果内置的 pivot 无法满足需求，可以自定义自己的 pivot，如下：
 
-![sprite-pivot](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*I4hdQo2L7rUAAAAAAAAAAAAADjCHAQ/original)
+![sprite-pivot](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*ih_8RJ6DXkYAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置 region
 

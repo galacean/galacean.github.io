@@ -12,13 +12,13 @@ label: Editor-Feature/Rendering-2d
 
 当我们需要对一个精灵进行遮罩的时候，首先需要创建一个实体，并添加精灵遮罩组件，如下：
 
-![mask-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*2aiPQpvSyncAAAAAAAAAAAAADjCHAQ/original)
+![mask-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*0ZNiQZjVpcEAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置遮罩区域
 
 精灵遮罩组件通过图片来表示遮罩区域，这里我们通过组件的 `sprite` 参数来设置精灵资源，如下：
 
-![mask-sprite](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*iVO6SaltbFoAAAAAAAAAAAAADjCHAQ/original)
+![mask-sprite](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*amcjQZ9peRkAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置精灵的遮罩类型
 
@@ -28,5 +28,5 @@ label: Editor-Feature/Rendering-2d
 
 这个参数表示当前 mask 有效 `alpha` 值的下限(范围：`0~1`)，即 sprite 的纹理中 alpha 值小于 alpha cutoff 的将被丢弃(也就是不会当作遮罩区域)。我们可以通过动态调整这个属性的值来看下实际效果，如下：
 
-![mask-alpha](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*he3fT5IKYesAAAAAAAAAAAAADjCHAQ/original)
+![mask-alpha](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*PNOyTYFf_N0AAAAAAAAAAAAADjCHAQ/original)
 
