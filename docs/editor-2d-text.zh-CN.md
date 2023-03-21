@@ -1,6 +1,6 @@
 ---
-order: 2
-title: 文本
+order: 5
+title: 文本渲染组件
 type: 功能
 group: 2D 渲染
 label: Editor-Feature/Rendering-2d
@@ -24,7 +24,7 @@ label: Editor-Feature/Rendering-2d
 
 为了让文本的显示更为丰富，开发者可以上传自己的字体文件，目前编辑器支持的字体文件格式有：**.ttf**、**.otf**、**.woff**
 
-![设置字体](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*krY3TId3tRAAAAAAAAAAAAAADjCHAQ/original)
+![设置字体](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*0ZNiQZjVpcEAAAAAAAAAAAAADjCHAQ/original)
 
 ## 更多属性
 
