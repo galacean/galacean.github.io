@@ -2,6 +2,7 @@
 order: 1
 title: 引擎
 type: 核心
+
 label: Core
 ---
 
@@ -16,7 +17,7 @@ label: Core
 
 初始化 Engine 需要提供 [画布](${docs}canvas-cn)（**Canvas**）和 硬件渲染层 （**HardwareRenderer**）。
 
-Oasis 引擎封装了硬件渲染层，将不同平台的渲染能力统一管理，还可以通过 [HardwareRenderer](${api}core/IHardwareRenderer) 的构造函数，传入支持的配置来控制不同平台的渲染能力。
+Oasis 引擎封装了硬件渲染层，将不同平台的渲染能力统一管理，还可以通过 [HardwareRenderer](${api}core/IHardwareRenderer) 的构造函数，传入支持的配置来控制不同平台的渲染能力。
 
 
 ```typescript
@@ -27,7 +28,7 @@ const engine = new Engine(webCanvas,webGLRenderer);
 ```
 
 
-为了方便用户直接创建 web 端 engine，Oasis 提供了 [WebGLEngine](${api}rhi-webgl/WebGLEngine) ：
+为了方便用户直接创建 web 端 engine，Oasis 提供了 [WebGLEngine](${api}rhi-webgl/WebGLEngine) ：
 
 ```typescript
 const engine = new WebGLEngine("canvas")
@@ -53,17 +54,19 @@ scene.background.solidColor.set(0, 0, 0, 0);
 类似的，可以用 `webGLMode` 控制 WebGL1/2，除 `webGLMode` 外的属性将透传给上下文，详情可参考 [getContext 参数释义](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#parameters)。
 
 ## 属性
-| 属性名称 | 属性释义 |
-| --- | --- |
-| [vSyncCount](${api}core/Engine#vSyncCount) | 引擎默认开启[垂直同步](https://baike.baidu.com/item/%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5/7263524?fromtitle=V-Sync&fromid=691778)且刷新率 `vSyncCount`  为`1`，即与屏幕刷新率保持一致。如果 `vSyncCount` 设置为`2`，则每刷新 2 帧，引擎更新一次。 |
-| [resourceManager](${api}core/Engine#resourceManager) | 资源管理 |
-| [sceneManager](${api}core/Engine#sceneManager) | 场景管理。*Engine* 是总控制器，*Scene* 作为场景单元，可以方便大型场景的实体管理；*Camera* 作为组件挂载在 *Scene* 中的某一实体下，和现实中的摄像机一样，可以选择拍摄 *Scene* 中的任何实体 ，最后渲染到屏幕上的一块区域或者离屏渲染。|
+
+| 属性名称                                             | 属性释义                                                     |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| [time](${api}core/Engine#time)                       | 引擎时间相关的信息。                                         |
+| [vSyncCount](${api}core/Engine#vSyncCount)           | 引擎默认开启[垂直同步](https://baike.baidu.com/item/%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5/7263524?fromtitle=V-Sync&fromid=691778)且刷新率 `vSyncCount`  为`1`，即与屏幕刷新率保持一致。如果 `vSyncCount` 设置为`2`，则每刷新 2 帧，引擎更新一次。 |
+| [resourceManager](${api}core/Engine#resourceManager) | 资源管理                                                     |
+| [sceneManager](${api}core/Engine#sceneManager)       | 场景管理。*Engine* 是总控制器，*Scene* 作为场景单元，可以方便大型场景的实体管理；*Camera* 作为组件挂载在 *Scene* 中的某一实体下，和现实中的摄像机一样，可以选择拍摄 *Scene* 中的任何实体 ，最后渲染到屏幕上的一块区域或者离屏渲染。 |
 
 ### 刷新率
 
 默认情况下引擎采用垂直同步模式并使用 [vSyncCount](${api}core/Engine#vSyncCount) 控制渲染刷新率，该模式才渲染帧会等待屏幕的垂直同步信号， [vSyncCount](${api}core/Engine#vSyncCount) 代表了渲染帧之间期望的屏幕同步信号次数，默认值为 1，该属性的值必须为整数，例如我们想在一个屏幕刷新率为 60 帧的设备上期望每秒渲染 30 帧，则可以将该值设置为 2。
 
-另外用户还可以关闭垂直同步，即将 [vSyncCount](${api}core/Engine#vSyncCount) 设置为 0，然后设置 [targetFrameRate](${api}core/Engine#targetFrameRate)  为期望的帧数值，该模式下的渲染不考虑垂直同步信号，而是，如 120 表示 120 帧，即每秒期望刷新 120 次。
+另外用户还可以关闭垂直同步，即将 [vSyncCount](${api}core/Engine#vSyncCount) 设置为 0，然后设置 [targetFrameRate](${api}core/Engine#targetFrameRate)  为期望的帧数值，该模式下的渲染不考虑垂直同步信号，而是，如 120 表示 120 帧，即每秒期望刷新 120 次。
 
 ```typescript
 // 垂直同步
@@ -77,9 +80,9 @@ engine.targetFrameRate = 120;
 
 ## 方法
 
-| 方法名称 | 方法释义 |
-| --- | --- |
-| [run](${api}core/Engine#run) | 执行引擎渲染帧循环 |
-| [pause](${api}core/Engine#pause) | 暂停引擎渲染帧循环 |
-| [resume](${api}core/Engine#resume) | 恢复引擎渲渲染循环 |
-| [destroy](${api}core/Engine#destroy) | 销毁引擎 |
+| 方法名称                             | 方法释义           |
+| ------------------------------------ | ------------------ |
+| [run](${api}core/Engine#run)         | 执行引擎渲染帧循环 |
+| [pause](${api}core/Engine#pause)     | 暂停引擎渲染帧循环 |
+| [resume](${api}core/Engine#resume)   | 恢复引擎渲渲染循环 |
+| [destroy](${api}core/Engine#destroy) | 销毁引擎           |
