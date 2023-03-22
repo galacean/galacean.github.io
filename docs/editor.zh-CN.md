@@ -15,7 +15,7 @@ label: Editor-Introduction
 
 在认识编辑器各模块之前，我们先了解一下使用编辑器创建互动项目的整体流程：
 
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*aa22QqPGmE8AAAAAAAAAAAAADsGIAQ/original)
+![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*jf7PSJUnDTUAAAAAAAAAAAAADqiTAQ/original)
 
 我这里以一个最简单的 3D 场景为例，带你认识一下整个编辑器的使用方法。
 
@@ -23,20 +23,20 @@ label: Editor-Introduction
 
 在你登录之后，首先看到的是编辑器的首页，在这个页面中会显示所有你创建的项目。使用右上角的按钮来创建项目，点击后可以选择要创建的项目类型，2D 或 3D。首先，我们来创建一个 3D 项目。
 
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*4iUvQ4XbQfMAAAAAAAAAAAAADsGIAQ/original)
+![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*SbSnTqJP7lEAAAAAAAAAAAAADqiTAQ/original)
 
 ### 编辑器
 
 在项目创建后，会自动跳转到编辑器页面。
 
-![SCR-20230223-klw.png](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*TYnpTreWDJ0AAAAAAAAAAAAADsGIAQ/original)
+![SCR-20230223-klw.png](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*BK17QK0OK54AAAAAAAAAAAAADqiTAQ/original)
 
 编辑器由这几部分组成：
 
-**[层级面板](${docs}editor-hierarchy-cn)** 在这里会显示整个场景中的所有节点  
-**[资产面板](${docs}editor-assets-cn)** 在这个面板中会显示当前项目所包含的所有资产，比如 HDR 贴图，各种纹理文件，脚本，字体文件等等  
-**[主编辑区](${docs}editor-viewport-cn)** 是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景  
-**[检查器面板](${docs}editor-inspector-cn)** 会根据你当前选择显示不同的可编辑选项
+**[层级面板](${docs}editor-hierarchy-cn)** 位于编辑器左侧，在这里会显示整个场景中的所有节点  
+**[资产面板](${docs}editor-assets-cn)** 位于编辑器底部，其中会显示当前项目所包含的所有资产，如 HDR 贴图、各种纹理文件、脚本、字体文件等等  
+**[主编辑区](${docs}editor-viewport-cn)** 位于编辑器中间，是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景  
+**[检查器面板](${docs}editor-inspector-cn)** 位于编辑器右侧，会根据你当前选择显示不同的可编辑选项
 
 对于各个面板详细的介绍可以点击上方链接查看。接下来，我们来看看具体如何实现一个「旋转的立方体」项目。
 
@@ -44,19 +44,21 @@ label: Editor-Introduction
 
 首先，我们在 **层级面板** 中创建一个新的实体（[什么是实体？](https://oasisengine.cn/#/docs/latest/cn/entity)）。
 
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*9R-fQrDkqz0AAAAAAAAAAAAADsGIAQ/original)
+<img width="400px" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*Su2jRIQHYjgAAAAAAAAAAAAADqiTAQ/original">
 
-我们用鼠标左键选中这个实体节点，此时检查器面板会显示出当前实体的一些可配置属性。因为我们的实体现在没有绑定任何组件（[什么是组件？](https://oasisengine.cn/#/docs/latest/cn/entity)），所以我们暂时只能调整实体的坐标信息这类的基础属性。
+我们用鼠标左键选中新建的实体节点，此时右侧的检查器面板会显示出当前实体的一些可配置属性。因为我们的实体现在没有绑定任何组件（[什么是组件？](https://oasisengine.cn/#/docs/latest/cn/entity)），所以我们暂时只能调整实体的坐标信息这类的基础属性。
 
 接下来，我们点击检查器面板中的 **Add Component** 按钮唤起组件选单，然后选择添加 **Mesh Renderer** 组件（什么是 [Mesh Renderer?](https://oasisengine.cn/#/docs/latest/cn/mesh-renderer)）。
 
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*rzeGTYjbAKYAAAAAAAAAAAAADsGIAQ/original)
+<img width="400px" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*sWuVQorDIgoAAAAAAAAAAAAADqiTAQ/original">
 
-这样，我们就给当前的实体新增了一个 Mesh Renderer 组件。但我们在主编辑区还看不到这个物体。需要为该组件添加 Mesh 和 Material 才行。我们为组件添加一个 Cuboid Mesh，但添加 Mesh 后我们只能看到模型的框体，因为我们还没有给它配置 “皮肤”。
+这样，我们就给当前的实体新增了一个 Mesh Renderer 组件。但我们在主编辑区还看不到这个物体。需要为该组件添加 Mesh 和 Material 才行。编辑器会默认为 Mesh Renderer 组件添加一个不可编辑的默认材质，我们只需要为组件的 Mesh 属性添加一个 Cuboid Mesh 就可以在场景中看到它了。
 
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*mxSZT7XMbHgAAAAAAAAAAAAADsGIAQ/original)
+<img width="400px" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*wXrvTbHrw94AAAAAAAAAAAAADqiTAQ/original">
 
-所以接下来，我们来创建一个材质。
+默认的材质比较简单，所以接下来，我们来创建一个自定义的材质。
+
+> 你也可以通过添加实体按钮中的 **3D 对象 → 立方体** 来快速添加一个立方体模型
 
 ### 创建材质
 
@@ -66,20 +68,16 @@ label: Editor-Introduction
 
 上传后，我们可以在面板中看到这些文件。
 
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*hTxsT74Y47kAAAAAAAAAAAAADsGIAQ/original)
+<img width="400px" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*we-qSZWIW-wAAAAAAAAAAAAADqiTAQ/original">
 
-接下来，我们把这些贴图配置到刚刚创建的材质上：
+接下来，我们把这些贴图配置到材质的对应属性当中。配置后我们再次选择上一步创建的实体节点，将 Mesh Renderer 组件的材质属性修改为我们刚刚创建的自定义材质。一个拥有金属质感的立方体就创建成功了。
 
-然后，我们再次选择上一步创建的实体节点，为 Mesh Renderer 组件增加 Material 属性，选择我们刚刚做好的材质球。
+![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*ni3KQ7jGK-0AAAAAAAAAAAAADqiTAQ/original)
 
-这样，我们就能在场景中看到这个立方体了！
-
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*L-a0ToEN5N4AAAAAAAAAAAAADsGIAQ/original)
-
-现在看上去有点暗，需要把 [灯光](https://oasisengine.cn/#/docs/latest/cn/light) 调亮一点。我们在节点树中选择 DirectLight 节点，然后在检查器中调高 Intensity（光强度）属性。
+只不过，立方体现在看上去有点暗，需要把场景中的 [灯光](https://oasisengine.cn/#/docs/latest/cn/light) 调亮一点。我们在节点树中选择 DirectLight 节点，然后在检查器中调高 Intensity（光强度）属性。
 
 现在看上去就比较正常了。
-![Untitled](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*b2nKRan70_QAAAAAAAAAAAAADsGIAQ/original)
+![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*n151R6vZ59oAAAAAAAAAAAAADqiTAQ/original)
 
 ## 添加脚本
 

@@ -5,8 +5,8 @@ type: 界面
 label: Editor-Interface
 ---
 
-<figure style="float: right;position: relative; z-index: 2">
-  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*OUlpRZXjKzQAAAAAAAAAAAAADqiTAQ/original" >
+<figure style="float: right;position: relative; z-index: 2;display:flex;flex-direction:column;width:380px;align-items:center;">
+  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*5MalSpvfv7kAAAAAAAAAAAAADqiTAQ/original" >
   <figcaption style="text-align:center; color: #889096;font-size:12px">Hiearchy Pane</figcaption>
 </figure>
 
