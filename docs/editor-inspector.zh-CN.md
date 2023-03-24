@@ -5,9 +5,9 @@ type: 界面
 label: Editor-Interface
 ---
 
-<figure style="float: right;position: relative; z-index: 2">
-  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*UFVgQroh2YkAAAAAAAAAAAAADsGIAQ/original" >
-  <figcaption style="text-align:center; color: #889096;font-size:12px">Hiearchy Pane</figcaption>
+<figure style="float: right;position: relative; z-index: 2; padding: 12px;display:flex;flex-direction:column;align-items:center;width:380px">
+  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*nLDFT6o2encAAAAAAAAAAAAADqiTAQ/original" >
+  <figcaption style="text-align:center; color: #889096;font-size:12px">Inspector Pane</figcaption>
 </figure>
 
 检查器面板位于编辑器右侧，它会是你在使用编辑器的过程中最常用的面板。基于你当前选择所选择的东西，检查器面板会显示出相对应的属性。你可以使用检查器面板来编辑场景中几乎所有的事物，如场景、实体、组件、资产等等。
