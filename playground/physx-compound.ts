@@ -4,7 +4,7 @@
  */
 
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { PhysXPhysics, PhysXRuntimeMode } from "@oasis-engine/physics-physx";
 import {
   AmbientLight,
   AssetType,
@@ -23,7 +23,7 @@ import {
   StaticCollider,
   Vector2,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
 
 class TableGenerator extends Script {
@@ -156,9 +156,12 @@ function addPlane(
 }
 
 //--------------------------------------------------------------------------------------------------------------------
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+
+async function main() {
+  const engine = await WebGLEngine.create({
+    canvas: "canvas",
+    physics: new PhysXPhysics(PhysXRuntimeMode.Auto)
+  });
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -191,4 +194,6 @@ PhysXPhysics.initialize().then(() => {
       scene.ambientLight = ambientLight;
       engine.run();
     });
-});
+}
+
+main();
