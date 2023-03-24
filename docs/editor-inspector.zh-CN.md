@@ -52,12 +52,12 @@ label: Editor-Interface
 
 <div style="display:flex">
   <figure>
-    <img alt="Mesh" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IoDeQKHZyqoAAAAAAAAAAAAADsGIAQ/original" height="300px">
+    <img alt="Mesh" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IoDeQKHZyqoAAAAAAAAAAAAADsGIAQ/original">
     <figcaption style="text-align:center; color: #889096;font-size:12px">Mesh Picker</figcaption>
   </figure>
 
   <figure>
-    <img alt="Material" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*Rak0SZqKf4oAAAAAAAAAAAAADsGIAQ/original" height="300px">
+    <img alt="Material" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*Rak0SZqKf4oAAAAAAAAAAAAADsGIAQ/original">
     <figcaption style="text-align:center; color: #889096;font-size:12px">Material Picker</figcaption>
   </figure>
 </div>
