@@ -70,7 +70,7 @@ label: Editor-Interface
 
 
 <figure style="float: right;position: relative; z-index: 2">
-  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IzTpT52ylZEAAAAAAAAAAAAADsGIAQ/original" >
+  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*BhITRYH2DroAAAAAAAAAAAAADqiTAQ/original" >
   <figcaption style="text-align:center; color: #889096">glTF检查器</figcaption>
 </figure>
 
