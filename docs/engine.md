@@ -1,7 +1,9 @@
 ---
+
 order: 1
 title: Engine
 type: Core
+
 label: Core
 ---
 
@@ -33,6 +35,7 @@ const engine = new WebGLEngine("canvas");
 
 
 ## WebGL context
+
 The context management of WebGL can be managed through the third parameter [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) of [WebGLEngine](${api}rhi-webgl/WebGLEngine), take **canvas transparent** For example, the engine closes the transparent channel of the canvas by default, that is, the web page elements behind the canvas cannot be displayed, which helps to save GPU memory. If you need to open it, you can set it like this:
 
 ```typescript
@@ -49,13 +52,15 @@ scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
 Similarly, you can use `webGLMode` to control WebGL1/2, attributes other than `webGLMode` will be transparently transmitted to the context. For details, please refer to [getContext](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#parameters).
+
 ## Properties
 
-| Property name | Interpretation |
-| --- | --- |
-| [vSyncCount](${api}core/Engine#vSyncCount) | The engine is turned on by default [Vertical Sync](https://baike.baidu.com/item/%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5/7263524?fromtitle=V-Sync&fromid=691778) and the refresh rate `vSyncCount` is `1`, which is consistent with the screen refresh rate. If `vSyncCount` is set to `2`, the engine will be updated every 2 frames. |
-| [resourceManager](${api}core/Engine#resourceManager) | Resource management. |
-| [sceneManager](${api}core/Engine#sceneManager) | Scene management. _Engine_ is the main controller, _Scene_ is a scene unit, which can facilitate the entity management of large scenes; _Camera_ is mounted as a component under an entity in _Scene_, and it can be selected as a camera in reality. Take any entity in the _Scene_, and finally render it to an area on the screen or off-screen rendering. |
+| Property name                                        | Interpretation                                               |
+| ---------------------------------------------------- | ------------------------------------------------------------ |
+| [time](${api}core/Engine#time)                       | The time information of the engine.                          |
+| [vSyncCount](${api}core/Engine#vSyncCount)           | The engine is turned on by default [Vertical Sync](https://baike.baidu.com/item/%E5%9E%82%E7%9B%B4%E5%90%8C%E6%AD%A5/7263524?fromtitle=V-Sync&fromid=691778) and the refresh rate `vSyncCount` is `1`, which is consistent with the screen refresh rate. If `vSyncCount` is set to `2`, the engine will be updated every 2 frames. |
+| [resourceManager](${api}core/Engine#resourceManager) | Resource management.                                         |
+| [sceneManager](${api}core/Engine#sceneManager)       | Scene management. _Engine_ is the main controller, _Scene_ is a scene unit, which can facilitate the entity management of large scenes; _Camera_ is mounted as a component under an entity in _Scene_, and it can be selected as a camera in reality. Take any entity in the _Scene_, and finally render it to an area on the screen or off-screen rendering. |
 
 ### Frame rate
 

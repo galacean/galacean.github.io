@@ -13,7 +13,6 @@ import {
   Engine,
   Material,
   RenderQueueType,
-  Script,
   Shader,
   Sprite,
   SpriteRenderer,
@@ -41,7 +40,7 @@ function init(): void {
     .load({
       // Sprite texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5wypQ5JyDLkAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture: Texture2D) => {
       // Create origin sprite entity.
@@ -51,15 +50,8 @@ function init(): void {
       renderer.sprite = new Sprite(engine, texture);
       renderer.setMaterial(material);
 
-      // Add glitch animate script.
-      const script = spriteEntity.addComponent(AnimateScript);
-      // Add custom material.
-      script.material = material;
-      // Init time.
-      script.time = 0.0;
-
       // Add Data UI.
-      addDataGUI(script.material, script);
+      addDataGUI(material);
     });
 
   engine.run();
@@ -82,7 +74,6 @@ function addCustomMaterial(engine: Engine): Material {
 
   // Set material shader data.
   const { shaderData } = material;
-  shaderData.setFloat("u_time", 0.0);
   shaderData.setFloat("u_indensity", 0.5);
 
   return material;
@@ -91,7 +82,7 @@ function addCustomMaterial(engine: Engine): Material {
 /**
  * Add data GUI.
  */
-function addDataGUI(material: Material, animationScript: AnimateScript) {
+function addDataGUI(material: Material) {
   const { shaderData } = material;
   const gui = new dat.GUI();
   const guiData = {
@@ -99,38 +90,18 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
     reset: () => {
       guiData.indensity = 0.5;
       shaderData.setFloat("u_indensity", 0.5);
-      shaderData.setFloat("u_time", 0.0);
-      animationScript.time = 0;
-    }
+    },
   };
 
   gui
     .add(guiData, "indensity", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       shaderData.setFloat("u_indensity", value);
-      shaderData.setFloat("u_time", 0.0);
-      animationScript.time = 0;
     })
     .listen();
 
   gui.add(guiData, "reset").name("重置");
   return guiData;
-}
-
-class AnimateScript extends Script {
-  material: Material;
-  time: number = 0;
-
-  /**
-   * The main loop, called frame by frame.
-   * @param deltaTime - The deltaTime when the script update.
-   */
-  onUpdate(deltaTime: number): void {
-    this.time += deltaTime * 0.1;
-    this.time = this.time % 1;
-    // Update material data.
-    this.material.shaderData.setFloat("u_time", this.time);
-  }
 }
 
 // Custom shader
@@ -154,7 +125,7 @@ const spriteVertShader = `
 
 const spriteFragmentShader = `
   uniform sampler2D u_spriteTexture;
-  uniform float u_time;
+  uniform vec4 oasis_ElapsedTime;
   uniform float u_indensity;
 
   varying vec2 v_uv;
@@ -165,7 +136,7 @@ const spriteFragmentShader = `
   }
 
   void main() {
-    float splitAmount = u_indensity * randomNoise(u_time);
+    float splitAmount = u_indensity * randomNoise(oasis_ElapsedTime.x * 100.0);
 
     vec4 normalColor = texture2D(u_spriteTexture, v_uv);
     float r = texture2D(u_spriteTexture, vec2(v_uv.x + splitAmount, v_uv.y)).r;

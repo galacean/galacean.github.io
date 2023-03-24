@@ -55,8 +55,7 @@ engine.resourceManager
     const animator = defaultSceneRoot.getComponent(Animator);
     animator.play(asset.animations[0].name);
 
-    const lightDirection = new Vector3();
-    lightEntity.transform.getWorldForward(lightDirection);
+    const lightDirection =  lightEntity.transform.worldForward;
 
     const renderers = new Array<MeshRenderer>();
     defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, renderers);
