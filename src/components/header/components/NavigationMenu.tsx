@@ -309,7 +309,7 @@ const StyledNavigationMenu = () => {
               <ListItem to={`/docs/${context.version}/${context.lang}/artist-bake`} title={formatMessage({ id: 'app.header.menu.artist.docs' })}>
                 <FormattedMessage id='app.header.menu.artist.docs.description' />
               </ListItem>
-              <ListItem to={`/docs/${context.version}/cn/editor-introduction`} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
+              <ListItem to={`/docs/${context.version}/cn/editor`} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
                 <FormattedMessage id='app.header.menu.editor.docs.description' />
               </ListItem>
             </StyledContentList>
