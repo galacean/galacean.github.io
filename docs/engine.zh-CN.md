@@ -31,7 +31,7 @@ const engine = new Engine(webCanvas,webGLRenderer);
 为了方便用户直接创建 web 端 engine，Oasis 提供了 [WebGLEngine](${api}rhi-webgl/WebGLEngine) ：
 
 ```typescript
-const engine = new WebGLEngine("canvas")
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 ```
 
 ## WebGL 上下文
