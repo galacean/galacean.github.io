@@ -22,13 +22,13 @@ import {
 /**
  * Main function.
  */
-function main() {
+async function main() {
   Logger.enable();
 
   initShader();
 
   // Create engine
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Get scene and create root entity
