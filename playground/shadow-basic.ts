@@ -14,8 +14,8 @@ import {
   Vector3,
   WebGLEngine
 } from "oasis-engine";
-async function init() {
-  const engine = new WebGLEngine("canvas");
+async function main() {
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
@@ -54,4 +54,4 @@ async function init() {
 
   engine.run();
 }
-init();
+main();
