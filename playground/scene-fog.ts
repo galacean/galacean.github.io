@@ -19,8 +19,8 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
-async function init() {
-  const engine = new WebGLEngine("canvas");
+async function main() {
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
@@ -147,4 +147,4 @@ function addDebugGUI(scene: Scene): void {
 
   switchMode(scene.fogMode);
 }
-init();
+main();
