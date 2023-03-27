@@ -465,9 +465,7 @@ function textureAndAnimationLoader(
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then((engine) => {
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
