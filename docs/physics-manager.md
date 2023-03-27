@@ -70,7 +70,7 @@ method to detect the collider hit by the raycast. code show as below:
 import {WebGLEngine, HitResult, Ray} from 'oasis-engine';
 import {LitePhysics} from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.physicsManager.initialize(LitePhysics);
 engine.canvas.resizeByClientSize();
 
