@@ -20,17 +20,17 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
-init();
+main();
 
-function init(): void {
-  // Create engine.
-  const engine = new WebGLEngine("canvas");
+async function main() {
+  // Create engine
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
-  // Create root entity.
+  // Create root entity
   const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
-  // Create camera.
+  // Create camera
   const cameraEntity = rootEntity.createChild("Camera");
   cameraEntity.transform.setPosition(0, 0, 12);
   cameraEntity.addComponent(Camera);
@@ -39,20 +39,20 @@ function init(): void {
   engine.resourceManager
     .load([
       {
-        // Sprite texture
+        // Sprite texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*L2GNRLWn9EAAAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
+        type: AssetType.Texture2D,
       },
       {
         // Noise texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*j2xJQL0e6J4AAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
+        type: AssetType.Texture2D,
       },
       {
         // Ramp texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ygj3S7sm4hQAAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
-      }
+        type: AssetType.Texture2D,
+      },
     ])
     .then((textures: Texture2D[]) => {
       // Create origin sprite entity.
@@ -73,7 +73,11 @@ function init(): void {
   engine.run();
 }
 
-function addCustomMaterial(engine: Engine, noiseTexture: Texture2D, rampTexture: Texture2D): Material {
+function addCustomMaterial(
+  engine: Engine,
+  noiseTexture: Texture2D,
+  rampTexture: Texture2D
+): Material {
   const material = new Material(engine, Shader.find("SpriteDissolve"));
 
   // Init state.
@@ -86,7 +90,7 @@ function addCustomMaterial(engine: Engine, noiseTexture: Texture2D, rampTexture:
   target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
   renderState.depthState.writeEnabled = false;
   renderState.rasterState.cullMode = CullMode.Off;
-  material.renderQueueType = RenderQueueType.Transparent;
+  material.renderState.renderQueueType = RenderQueueType.Transparent;
 
   // Set material shader data.
   const { shaderData } = material;
@@ -118,7 +122,7 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
     },
     resume: function () {
       animationScript.enabled = true;
-    }
+    },
   };
 
   gui
@@ -150,7 +154,7 @@ class AnimateScript extends Script {
    */
   onUpdate(deltaTime: number): void {
     const { guiData } = this;
-    const threshold = (guiData.threshold + deltaTime * 0.0003) % 1.0;
+    const threshold = (guiData.threshold + deltaTime * 0.3) % 1.0;
 
     // Update gui data.
     guiData.threshold = threshold;

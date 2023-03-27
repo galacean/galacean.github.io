@@ -20,11 +20,11 @@ import {
   WebGLEngine
 } from "oasis-engine";
 
-init();
+main();
 
-function init(): void {
-  // Create engine.
-  const engine = new WebGLEngine("canvas");
+async function main() {
+  // Create engine
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create root entity.
@@ -38,7 +38,7 @@ function init(): void {
 
   engine.resourceManager
     .load({
-      // Sprite texture
+      // Sprite texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5wypQ5JyDLkAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D,
     })

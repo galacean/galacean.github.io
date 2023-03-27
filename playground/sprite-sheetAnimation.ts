@@ -3,24 +3,22 @@
  * @category 2D
  */
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import * as TWEEN from "@tweenjs/tween.js";
 import {
   AssetType,
   Camera,
   Script,
   Sprite,
   SpriteRenderer,
-  Texture2D,
-  Vector2,
-  WebGLEngine,
-  Transform
+  Texture2D, Transform, Vector2,
+  WebGLEngine
 } from "oasis-engine";
-import * as TWEEN from "@tweenjs/tween.js";
 
-init();
+main();
 
-function init(): void {
+async function main(): Promise<void> {
   // Create engine object.
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create rootEntity.
@@ -36,11 +34,17 @@ function init(): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9nsHSpx28rAAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture) => {
       const spriteEntity = rootEntity.createChild("Sprite");
-      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture, null, null, null);
+      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(
+        engine,
+        texture,
+        null,
+        null,
+        null
+      );
       spriteEntity.addComponent(FrameSpriteScript);
     });
 
@@ -109,7 +113,9 @@ class FrameSpriteScript extends Script {
       // Need update frameIndex.
       const addFrameCount = Math.floor(this._cumulativeTime / frameInterval);
       this._cumulativeTime -= addFrameCount * frameInterval;
-      this._setFrameIndex((this._curFrameIndex + addFrameCount) % this._totalFrames);
+      this._setFrameIndex(
+        (this._curFrameIndex + addFrameCount) % this._totalFrames
+      );
     }
   }
 
@@ -118,7 +124,12 @@ class FrameSpriteScript extends Script {
       this._curFrameIndex = frameIndex;
       const frameInfo = this._regions[frameIndex];
       const region = this._sprite.region;
-      region.set(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
+      region.set(
+        frameInfo.x,
+        frameInfo.y,
+        this._reciprocalSliceWidth,
+        this._reciprocalSliceHeight
+      );
       this._sprite.region = region;
     }
   }
