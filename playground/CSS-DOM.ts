@@ -22,6 +22,7 @@ async function main() {
 
   engine.canvas.resizeByClientSize();
 
+  // Create root entity
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
 
@@ -48,7 +49,7 @@ async function main() {
   document.body.appendChild(dom);
 
   // Add script
-  const script = defaultSceneRoot.addComponent(Renderer2DScript);
+  const script = defaultSceneRoot.addComponent(LocationTrackingScript);
   script.htmlCanvas = htmlCanvas;
   script.camera = camera;
   script.dom = dom;
@@ -59,7 +60,7 @@ async function main() {
 
 main();
 
-class Renderer2DScript extends Script {
+class LocationTrackingScript extends Script {
   screenPoint: Vector3 = new Vector3();
   widthRatio: number;
   heightRatio: number;
@@ -74,6 +75,7 @@ class Renderer2DScript extends Script {
   }
 
   onUpdate() {
+    // Convert world coordinates to screen coordinates
     this.camera.worldToScreenPoint(
       this.entity.transform.position,
       this.screenPoint
