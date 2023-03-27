@@ -31,7 +31,7 @@ class TableGenerator extends Script {
 
   onUpdate(deltaTime: number): void {
     this._totalTime += deltaTime;
-    if (this._totalTime > 300) {
+    if (this._totalTime > 0.3) {
       this._addTable();
       this._totalTime = 0;
     }
@@ -160,7 +160,7 @@ function addPlane(
 async function main() {
   const engine = await WebGLEngine.create({
     canvas: "canvas",
-    physics: new PhysXPhysics(PhysXRuntimeMode.Auto)
+    physics: new PhysXPhysics(PhysXRuntimeMode.Auto),
   });
 
   engine.canvas.resizeByClientSize();
