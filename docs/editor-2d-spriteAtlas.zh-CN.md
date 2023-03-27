@@ -60,6 +60,8 @@ label: Editor-Feature/Rendering-2d
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*j_BOQ6W8xpkAAAAAAAAAAAAADleLAQ/original" alt="buildBox" style="zoom: 67%;" />
 
+## 设置
+
 ### 打包设置
 
 | 设置名称 | 释义 |
@@ -80,7 +82,7 @@ label: Editor-Feature/Rendering-2d
 | 各向异性过滤等级（[anisoLevel](${api}core/Texture#anisoLevel)） | 向向异性等级，1 ~ 16                                         |
 | 纹理映射[Mipmap](${api}core/Texture#generateMipmaps)） | true , false                   |
 
-### 最佳实践
+## 最佳实践
 
 点击`精灵图集`资产，通过调整`打包设置`的`纹理最大宽度`与`纹理最大高度`，同时调用`打包对象`中的`打包并预览`，可以保证图集利用率在一个较高的水平。
 
