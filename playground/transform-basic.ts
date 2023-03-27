@@ -3,21 +3,31 @@
  * @category Basic
  */
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Camera, Color, DirectLight, Entity, GLTFResource, Script, WebGLEngine } from "oasis-engine";
+import {
+  Camera,
+  Color,
+  DirectLight,
+  Entity,
+  GLTFResource,
+  Script,
+  WebGLEngine
+} from "oasis-engine";
 
-init();
+main();
 
 /**
  * Init demo.
  */
-function init(): void {
+async function main() {
   // Create engine
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create yellow duck
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+    )
     .then((gltf) => {
       // Create root entity.
       const rootEntity = engine.sceneManager.activeScene.createRootEntity();
