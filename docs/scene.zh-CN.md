@@ -128,7 +128,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 ### 基本用法
 
 ```typescript
-const engine = new WebGLEngine("demo");
+const engine = await WebGLEngine.create({ canvas: "demo" });
 const scene = engine.sceneManager.activeScene;
 
 // 创建根实体

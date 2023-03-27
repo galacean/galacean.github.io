@@ -53,7 +53,7 @@ Component class:
 Create an engine instance. The parameter `canvas` is the `id` of the *Canvas* element. If the `id` is different, please replace it yourself. As mentioned above, use the [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) method to reset the height and width of the canvas.
 
 ```typescript
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.canvas.resizeByClientSize();
 ```
 ## Create Scene Root Entity

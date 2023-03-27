@@ -108,7 +108,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 ### Basic usage
 
 ```typescript
-const engine = new WebGLEngine("demo");
+const engine = await WebGLEngine.create({ canvas: "demo" });
 const scene = engine.sceneManager.activeScene;
 
 // Create root entity
