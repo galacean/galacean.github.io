@@ -15,28 +15,26 @@ label: Physics
 1. [physics-lite](https://github.com/oasis-engine/engine/tree/main/packages/physics-lite)
 2. [physics-physx](https://github.com/oasis-engine/engine/tree/main/packages/physics-physx)
 
-初始化只需要将这两个后端的静态对象，绑定到 `physicsManager` 中即可：
+初始化引擎时只需要将这两个后端的对象传入 `Engine` 中即可：
 
 ```typescript
-import {LitePhysics} from "@oasis-engine/physics-lite";
+import { LitePhysics } from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
+const engine = await WebGLEngine.create({
+  canvas: htmlCanvas,
+  physics: new LitePhysics(),
+});
 ```
 
-## Wasm 版物理引擎加载与初始化
-
-由于WASM需要异步加载，因此引擎的初始化需要放在 Promise 的回调中进行。
+## PhysX 版物理引擎加载与初始化
 
 ```typescript
-import {PhysXPhysics} from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
-
-  engine.run();
-})
+const engine = await WebGLEngine.create({
+  canvas: htmlCanvas,
+  physics: new PhysXPhysics(),
+});
 ```
 
 ## 选择物理后端
