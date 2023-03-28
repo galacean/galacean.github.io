@@ -36,19 +36,13 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 ## WebGL 上下文
 
-WebGL 的上下文管理可以通过 [WebGLEngine](${api}rhi-webgl/WebGLEngine) 的第三个参数 [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) 来进行管理，拿**画布透明**来举例，引擎默认是将画布的透明通道关闭的，即无法显示画布背后的网页元素，这样有助于节省显存，如果需要打开，可以这样设置：
+WebGL 的上下文管理可以通过 [WebGLEngine](${api}rhi-webgl/WebGLEngine) 的第三个参数 [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) 来进行管理，拿**画布透明**来举例，引擎默认是将画布的透明通道开启的，即画布会和背后的网页元素混合，如果需要关闭透明，可以这样设置：
 
 ```typescript
-const engine = new WebGLEngine("canvas", {
-  alpha: true
+const engine = await WebGLEngine.create({
+  canvas: htmlCanvas,
+  rendererOptions: { alpha: false },
 });
-
-/**
- * 开启了透明通道后，还需要设置背景颜色来决定如何和网页背景融合。
- * 设置为 0，0，0，0 可以完全显示网页背景。
- */
-const scene = engine.sceneManager.activeScene;
-scene.background.solidColor.set(0, 0, 0, 0);
 ```
 
 类似的，可以用 `webGLMode` 控制 WebGL1/2，除 `webGLMode` 外的属性将透传给上下文，详情可参考 [getContext 参数释义](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext#parameters)。
