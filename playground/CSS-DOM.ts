@@ -17,7 +17,7 @@ async function main() {
   const htmlCanvas = document.getElementById("canvas") as HTMLCanvasElement;
   const engine = await WebGLEngine.create({
     canvas: htmlCanvas,
-    rendererOptions: { webGLMode: WebGLMode.Auto },
+    graphicDeviceOptions: { webGLMode: WebGLMode.Auto },
   });
 
   engine.canvas.resizeByClientSize();
