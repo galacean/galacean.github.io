@@ -38,7 +38,7 @@ class GlTFCollider extends Script {
     const boxCollider = entity.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
     boxColliderShape.position.set(localPosition.x, localPosition.y, localPosition.z);
-    boxColliderShape.setSize(localSize.x, localSize.y, localSize.z);
+    boxColliderShape.size.set(localSize.x, localSize.y, localSize.z);
     boxCollider.addShape(boxColliderShape);
     // Add click script.
     entity.addComponent(Script).onPointerClick = () => {

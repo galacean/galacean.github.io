@@ -55,21 +55,38 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 
 为了保证引擎的轻量化，我们将引擎包通过 monorepo 的形式划分为：
 
-![packages](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*oqRcS6cRNP8AAAAAAAAAAAAAARQnAQ)
+
+```mermaid
+flowchart LR
+   Engine(<a href='https://github.com/ant-galaxy/oasis-engine'>oasis-engine</a>) --- Core("@oasis-engine/core")
+   Engine --- Loader("@oasis-engine/loader")
+   Engine --- Math("@oasis-engine/math")
+   Engine --- RHI("@oasis-engine/rhi-webgl")
+   Engine --- Design("@oasis-engine/design")
+   Engine --- PhysicsPhysx("@oasis-engine/physics-physx")
+   Engine --- PhysicsLite("@oasis-engine/physics-lite")
+
+   Toolkit(<a href='https://github.com/ant-galaxy/oasis-engine-toolkit'>oasis-engine-toolkit</a>) --- Controls("@oasis-engine-toolkit/controls")
+   Toolkit --- Stats("@oasis-engine-toolkit/stats")
+   Toolkit --- FramebufferPicker("@oasis-engine-toolkit/framebuffer-picker")
+   Toolkit --- AuxiliaryLines("@oasis-engine-toolkit/auxiliary-lines")
+   Toolkit --- Outline("@oasis-engine-toolkit/outline")
+   Toolkit --- PlanarShadowMaterial("@oasis-engine-toolkit/planar-shadow-material")
+```
 
 ### 引擎包
 引擎核心架构逻辑和核心功能由 oasis-engine 提供，包含以下子包：
 
-|功能|解释|API|
-|:--|:--|--|
-|[@oasis-engine/core](https://www.npmjs.com/package/@oasis-engine/core)| 引擎核心，如组件系统 |[API](${api}core/index)|
-|[@oasis-engine/loader](https://www.npmjs.com/package/@oasis-engine/loader)| 资源加载 |[API](${api}loader/index)|
-|[@oasis-engine/rhi-webgl](https://www.npmjs.com/package/@oasis-engine/rhi-webgl)| WebGL 渲染硬件接口（Rendering Hardware Interface）|[API](${api}rhi-webgl/index)|
-|[@oasis-engine/math](https://www.npmjs.com/package/@oasis-engine/math)| 数学库 |[API](${api}math/index)|
-|[@oasis-engine/design](https://www.npmjs.com/package/@oasis-engine/design)| 引擎基础设计规范，如克隆规范、销毁规范、RHI规范 |[API](${api}design/index)|
-|[@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)| 轻量级物理引擎 |[API](${api}physics-lite/index)|
-|[@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx)| 全功能物理引擎 |[API](${api}physics-physx/index)|
-|[@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)| Draco 模型压缩 |[API](${api}draco/index)|
+| 功能                                                                                     | 解释                                               | API                              |
+| :--------------------------------------------------------------------------------------- | :------------------------------------------------- | -------------------------------- |
+| [@oasis-engine/core](https://www.npmjs.com/package/@oasis-engine/core)                   | 引擎核心，如组件系统                               | [API](${api}core/index)          |
+| [@oasis-engine/loader](https://www.npmjs.com/package/@oasis-engine/loader)               | 资源加载                                           | [API](${api}loader/index)        |
+| [@oasis-engine/rhi-webgl](https://www.npmjs.com/package/@oasis-engine/rhi-webgl)         | WebGL 渲染硬件接口（Rendering Hardware Interface） | [API](${api}rhi-webgl/index)     |
+| [@oasis-engine/math](https://www.npmjs.com/package/@oasis-engine/math)                   | 数学库                                             | [API](${api}math/index)          |
+| [@oasis-engine/design](https://www.npmjs.com/package/@oasis-engine/design)               | 引擎基础设计规范，如克隆规范、销毁规范、RHI规范    | [API](${api}design/index)        |
+| [@oasis-engine/physics-lite](https://www.npmjs.com/package/@oasis-engine/physics-lite)   | 轻量级物理引擎                                     | [API](${api}physics-lite/index)  |
+| [@oasis-engine/physics-physx](https://www.npmjs.com/package/@oasis-engine/physics-physx) | 全功能物理引擎                                     | [API](${api}physics-physx/index) |
+| [@oasis-engine/draco](https://www.npmjs.com/package/@oasis-engine/draco)                 | Draco 模型压缩                                     | [API](${api}draco/index)         |
 
 
 
@@ -79,18 +96,18 @@ import { OrbitControl, Stats } from 'oasis-engine-toolkit';
 
 完成功能列表请查看 https://github.com/oasis-engine/engine-toolkit/tree/main
 
-|功能|解释|API|
-|:--|:--|:--|
-|[@oasis-engine-toolkit/controls](https://www.npmjs.com/package/@oasis-engine-toolkit/controls)| 控制器 |[Doc](${docs}controls)|
-|[@oasis-engine-toolkit/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine-toolkit/framebuffer-picker)| 帧缓冲拾取 |[Doc](${docs}framebuffer-picker)|
-|[@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats)| 引擎统计面板 |[Doc](${docs}stats)|
-|......|  ||
+| 功能                                                                                                               | 解释         | API                              |
+| :----------------------------------------------------------------------------------------------------------------- | :----------- | :------------------------------- |
+| [@oasis-engine-toolkit/controls](https://www.npmjs.com/package/@oasis-engine-toolkit/controls)                     | 控制器       | [Doc](${docs}controls)           |
+| [@oasis-engine-toolkit/framebuffer-picker](https://www.npmjs.com/package/@oasis-engine-toolkit/framebuffer-picker) | 帧缓冲拾取   | [Doc](${docs}framebuffer-picker) |
+| [@oasis-engine-toolkit/stats](https://www.npmjs.com/package/@oasis-engine-toolkit/stats)                           | 引擎统计面板 | [Doc](${docs}stats)              |
+| ......                                                                                                             |              |                                  |
 
 
 
 ### 其他
 
-| 功能                                                         | 解释        | API                     |
-| :----------------------------------------------------------- | :---------- | :---------------------- |
+| 功能                                                                                   | 解释        | API                     |
+| :------------------------------------------------------------------------------------- | :---------- | :---------------------- |
 | [@oasis-engine/engine-spine](https://www.npmjs.com/package/@oasis-engine/engine-spine) | Spine 动画  | [Doc](${docs}spine-cn)  |
-| [@oasis-engine/lottie](https://www.npmjs.com/package/@oasis-engine/lottie) | Lottie 动画 | [Doc](${docs}lottie-cn) |
+| [@oasis-engine/lottie](https://www.npmjs.com/package/@oasis-engine/lottie)             | Lottie 动画 | [Doc](${docs}lottie-cn) |

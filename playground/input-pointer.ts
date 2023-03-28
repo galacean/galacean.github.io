@@ -114,7 +114,7 @@ function createBox(x: number, y: number, z: number): Entity {
 
   const boxCollider: StaticCollider = boxEntity.addComponent(StaticCollider);
   const boxColliderShape = new BoxColliderShape();
-  boxColliderShape.setSize(cubeSize, cubeSize, cubeSize);
+  boxColliderShape.size.set(cubeSize, cubeSize, cubeSize);
   boxCollider.addShape(boxColliderShape);
   return boxEntity;
 }

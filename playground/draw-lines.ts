@@ -51,7 +51,7 @@ class DrawScript extends Script {
 
   set camera(val: Camera) {
     this._camera = val;
-    val.entity.transform.getWorldForward(this._forward);
+    this._forward.copyFrom(val.entity.transform.worldForward);
   }
 
   set lineWidth(val: number) {
@@ -143,7 +143,7 @@ cameraControl.enabled = false;
 const planeEntity = rootEntity.createChild("camera");
 const planeCollider = planeEntity.addComponent(StaticCollider);
 const planeShape = new BoxColliderShape();
-planeShape.setSize(20, 20, 1);
+planeShape.size.set(20, 20, 1);
 planeCollider.addShape(planeShape);
 const planeScript = planeEntity.addComponent(DrawScript);
 planeScript.camera = camera;

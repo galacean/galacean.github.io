@@ -1,24 +1,25 @@
+import mermaid from 'mermaid'
 import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ActionButton } from '../../ui/ActionButton';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
-import { Popover } from '../../ui/Popover';
+import { ActionButton } from '@oasis-engine/editor-components';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
+import { Popover } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import Footer from '../footer';
 import LoadingIcon from '../Loading';
 import DocDetail from './components/DocDetail';
 import DocMenu from './components/DocMenu';
-import { fetchMenuList } from './util/docUtil';
+import { fetchMenuList, MenuTag } from './util/docUtil';
 
 const StyledDocContent = styled('div', {
   flex: 1
 });
 
 const StyledMenu = styled('div', {
-  minWidth: "250px",
+  width: "250px",
   maxHeight: '100vh',
   overflowY: 'auto',
   position: 'sticky',
@@ -31,29 +32,67 @@ function Doc() {
   const context = useContext(AppContext);
   const [selectedDocId, setSelectedDocId] = useState('');
   const [items, setItems] = useState<any[]>([]);
-  const { ver, docTitle, lang } = useParams();
-  const languageCode = lang === 'en' ? 'en' : 'zh-CN';
+  let { ver, docTitle, lang } = useParams();
   const navigate = useNavigate();
   const menuKeyTitleMapRef = useRef<Map<string, string>>(new Map());
 
+  const setSelectedItem = (docTitle: string) => {
+    let title = docTitle;
+
+    if (context.lang === 'cn') {
+      title += '.zh-CN'
+    }
+    // init routing from path params
+    if (Array.from(menuKeyTitleMapRef.current.values()).includes(title)) {
+      for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
+        if (value === title) {
+          setSelectedDocId(key);
+          break;
+        }
+      }
+    }
+  }
+
   useEffect(() => {
-    const currentSelectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+    mermaid.initialize({
+      startOnLoad: true,
+    })
+  }, [])
+
+  useEffect(() => {
+    // navigate to new url if selectedDocId changes
+    if (selectedDocId) {
+      const selectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
+
+      if (selectedDocTitle) {
+        let title = selectedDocTitle.replace('.zh-CN', '');
+
+        navigate(`/docs/${context.version}/${context.lang}/${title}`);
+      }
+    }
+  }, [selectedDocId]);
+
+  useEffect(() => {
+    // navigate to new url if version or lang change.
     navigate(
-      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'zh'}/${context.lang === 'en'
-        ? currentSelectedDocTitle?.replace('.zh-CN', '')
-        : currentSelectedDocTitle + '.zh-CN'
-      }`
+      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'cn'}/${docTitle}`
     );
-    setItems([]);
-  }, [context.lang, context.version]);
 
-  useEffect(() => {
-    context.setVersion(ver);
-  }, [ver]);
-
-  useEffect(() => {
     menuKeyTitleMapRef.current.clear();
-    fetchMenuList('markdown', context.version).then((list) => {
+
+    const languageCode = context.lang === 'en' ? 'en' : 'zh-CN';
+
+    // fetch different menu according to doc title
+    let menuTag: MenuTag = 'doc-engine';
+
+    if (docTitle.startsWith('editor')) {
+      menuTag = 'doc-editor';
+    }
+    else if (docTitle.startsWith('artist')) {
+      menuTag = 'doc-art';
+    }
+
+    fetchMenuList(menuTag, context.version).then((list) => {
       const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
@@ -62,7 +101,7 @@ function Doc() {
           const { id, name, children, files, cn_name } = data;
           const newRootMenu: any = {
             key: id,
-            label: lang === 'en' ? name : cn_name,
+            label: context.lang === 'en' ? name : cn_name,
             children: [],
           };
           // create items
@@ -81,7 +120,7 @@ function Doc() {
           children
             .filter((item) => item.files.length > 0 || item.children.length > 0)
             .forEach((child, index) => {
-              let newGroup: any = { type: 'group', label: lang === 'en' ? child.name : child.cn_name };
+              let newGroup: any = { type: 'group', label: context.lang === 'en' ? child.name : child.cn_name };
               newGroup.children = child.files
                 .sort((a, b) => a.weight - b.weight)
                 .filter((file) => file.lang === languageCode && file.type === 'markdown')
@@ -93,46 +132,11 @@ function Doc() {
             });
           itemRes.push(newRootMenu);
         });
-      // init routing from path params
-      if (docTitle && Array.from(menuKeyTitleMapRef.current.values()).includes(docTitle)) {
-        for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
-          if (value === docTitle) {
-            setSelectedDocId(key);
-            break;
-          }
-        }
-        // init routing by default first doc
-      } else {
-        const defaultSelectedDocId =
-          (itemRes[0] as any)?.children?.[0]?.children?.[0]?.key || (itemRes[0] as any)?.children?.[0]?.key;
-        if (defaultSelectedDocId) {
-          setSelectedDocId(defaultSelectedDocId);
-          const selectedDocTitle = menuKeyTitleMapRef.current.get(defaultSelectedDocId);
-          selectedDocTitle &&
-            navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
-        }
-      }
-      setItems(itemRes);
-    });
-  }, [lang, context.version]);
 
-  useEffect(() => {
-    if (items.length === 0) {
-      return;
-    }
-    const selectedDocTitle = menuKeyTitleMapRef.current.get(selectedDocId);
-    if (!selectedDocTitle) {
-      return;
-    }
-    if (!docTitle && selectedDocId) {
-      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
-      return;
-    }
-    if (docTitle && docTitle !== selectedDocTitle) {
-      setSelectedDocId(selectedDocId);
-      navigate(`/docs/${ver}/${context.lang === 'en' ? 'en' : 'zh'}/${selectedDocTitle}`);
-    }
-  }, [selectedDocId, items.length]);
+      setItems(itemRes);
+      setSelectedItem(docTitle);
+    });
+  }, [context.lang, context.version, docTitle]);
 
   if (items.length === 0) {
     return <LoadingIcon></LoadingIcon>;
@@ -167,12 +171,12 @@ function Doc() {
                 <List />
               </ActionButton>
             }
-            sideOffset={6}
-            css={{
-              marginRight: "$4",
-              maxHeight: "70vh",
-              overflow: "auto"
-            }}>
+              sideOffset={6}
+              css={{
+                marginRight: "$4",
+                maxHeight: "70vh",
+                overflow: "auto"
+              }}>
               {menu}
             </Popover>
             <Footer></Footer>
@@ -180,7 +184,7 @@ function Doc() {
         ) : (
           <Flex wrap={false}>
             <StyledMenu>{menu}</StyledMenu>
-            <StyledDocContent>
+            <StyledDocContent css={{ width: "calc(100% - 250px)" }}>
               {docDetail}
               <Footer></Footer>
             </StyledDocContent>

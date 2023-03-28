@@ -1,57 +1,89 @@
 ---
-order: 1
+order: 0
 title: 菜单栏
-type: 编辑器
-group: 基础操作
-label: 编辑器/基础操作
+type: 界面
+label: Editor-Interface
 ---
 
-在编辑器中，菜单栏是左右布局，分成了两个区域：左侧部分主要是项目管理使用的设置部分，右侧是针对单个项目的工具栏部分。  
+在编辑器中，菜单栏的入口位于项目标题的右侧，点击该图标后会显示所有菜单项：
 
-![image.png](https://img.alicdn.com/imgextra/i4/O1CN0132fsSv1V0iuAhcfMl_!!6000000002591-2-tps-3574-84.png)
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*QKdwRJ6WUX8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
-## 设置
+菜单项内容分为以下几类：
+- 项目管理
+- 历史版本管理
+- 撤销/重做
+- 引擎对象（实体/资产/组件）的编辑
+- 偏好设置
 
-<img src="https://img.alicdn.com/imgextra/i4/O1CN01gVf5E61hSSH3HUpgK_!!6000000004276-2-tps-782-76.png" alt="image.png" style="zoom:50%;" />  
+## 项目管理
 
-设置区域主要有四部分包含如下功能：切换项目、编辑当前项目的名称、本项目的管理和帮助信息。
-其中，点击 oasis logo 和 首页按钮 可以呼起项目管理的弹窗。
-点击项目名称可以启动编辑状态，编辑完成后让输入栏失焦即可实时保存。  
+项目管理包括新建项目、克隆项目、项目设置等操作。
 
-![set1.gif](https://img.alicdn.com/imgextra/i2/O1CN01Dit11q1YhGXZNv8j0_!!6000000003090-1-tps-286-98.gif)
+### 新建项目
 
-点击项目按钮可以打开[项目管理](${docs}editor-projec-cn)的菜单，在其中可以 **克隆项目**，**下载项目**，和对当前项目使用的引擎做 **版本控制**。这其中还会显示出当前项目所使用的引擎版本。  
+选择“新建项目”项，可以进一步选择新建不同类型的项目：
 
-<img src="https://img.alicdn.com/imgextra/i2/O1CN01jGVh1o1rzZ42dHa8B_!!6000000005702-2-tps-424-368.png" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*TKFmR7rpuhkAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
-点击帮助按钮可查看编辑器的使用教程，同时也可以进行编辑器问题的反馈。  
+### 克隆项目
 
-<img src="https://img.alicdn.com/imgextra/i3/O1CN01BFfELm1vW1zGff5aO_!!6000000006179-2-tps-280-212.png" alt="image.png" style="zoom:50%;" />
+点击“克隆项目”，会跳转到新克隆的项目页面，旧的项目仍会保留。
 
-## 工具栏
+### 项目设置
 
-<img src="https://img.alicdn.com/imgextra/i3/O1CN016IMSYH1tLNXdj2Hmm_!!6000000005885-2-tps-1142-76.png" alt="image.png" style="zoom:50%;" />  
+点击“项目设置”项，会出现项目设置弹窗，目前包含项目引擎版本管理等操作。
 
-工具栏主要是针对当前项目的一些操作。包括：
+#### 引擎版本管理
 
-**历史回溯（undo, redo）**   
+编辑器支持项目依赖的引擎版本，以便快速修复某个 bug 或享受新的功能。注意：引擎版本升级操作是不可逆的，如果认为升级引擎版本存在风险，请提前克隆项目以备份。
 
-![set2.gif](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*HxVUQZWboEkAAAAAAAAAAAAAARQnAQ)
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*AicBTapuqAUAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
 
-**生成预览二维码** <img src="https://img.alicdn.com/imgextra/i3/O1CN01NVpSCX1c5UKjuZtrH_!!6000000003549-2-tps-54-44.png" alt="image.png" style="zoom:50%;" />。鼠标悬浮在按钮上即可显示二维码
+### 版本管理
 
-**在线预览项目** <img src="https://img.alicdn.com/imgextra/i1/O1CN015EMX2n1TxEGY79kKl_!!6000000002448-2-tps-46-44.png" alt="image.png" style="zoom:50%;" />。点击会打开新的预览页面
+版本控制功能允许用户保存某个项目快照到历史记录中，用户可以在菜单中选择“添加快照”，也可以通过“打开历史版本”来添加快照。
 
-**场景设置按钮** <img src="https://img.alicdn.com/imgextra/i3/O1CN01bZ4A3A1TH5pOFAkJj_!!6000000002356-2-tps-46-48.png" alt="image.png" style="zoom:50%;" />。点击后右侧会显示出当前场景的一些配置项
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*uQixR6-0gH0AAAAAAAAAAAAADsF_AQ/original" alt="img" style="zoom:50%;" />
 
-<img src="https://img.alicdn.com/imgextra/i3/O1CN012JtXG01RvHLTfSMAQ_!!6000000002173-2-tps-874-1318.png" alt="image.png" style="zoom:50%;" />
+点击快照名可以编辑快照名称，以方便下次快速找到。快照可以执行恢复或删除操作。
 
-**隐藏/显示面板** <img src="https://img.alicdn.com/imgextra/i1/O1CN01CQJmM91kb6bPah6V6_!!6000000004701-2-tps-42-36.png" alt="image.png" style="zoom:50%;" />。点击后可将整个页面中的面板隐藏，能方便的观察当前场景的全貌。
+## 撤销重做
 
-![set3.gif](https://img.alicdn.com/imgextra/i2/O1CN01HBZbdv20AZVhAaep2_!!6000000006809-1-tps-1777-984.gif)
+撤销重做功能，覆盖除了资产操作以外的对场景编辑操作。
 
-**2D 视角切换** 按钮<img src="https://img.alicdn.com/imgextra/i2/O1CN01ij8NXB1KU4Vfw1a2o_!!6000000001166-2-tps-64-48.png" alt="image.png" style="zoom:50%;" />。点击后可将当前项目切换到 2D 视角进行编辑。再次点击可切换回 3D 模式
+## 引擎对象操作
 
-![set4.gif](https://img.alicdn.com/imgextra/i1/O1CN016Se9rO1DCTzDJN6e0_!!6000000000180-1-tps-1777-984.gif)
+包括引擎的资产、实体、组件等创建操作。
 
-**快照按钮** <img src="https://img.alicdn.com/imgextra/i1/O1CN01yFxqDF1paFwlStK0c_!!6000000005376-2-tps-60-40.png" alt="image.png" style="zoom:50%;" />。点击可以生成一份当前场景的图片并下载到本地。
+### 创建资产
+
+资产创建操作，和资产面板的创建资产功能相同。
+
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*vqGhS4EBgkQAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
+
+### 创建实体
+
+快速创建带基础组件的实体，比如带相机、灯光等组件的实体，和层级面板上的创建实体功能相同。
+
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*YQ63SIi02Z8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
+
+### 添加组件
+
+给某个实体添加组件，和层级面板上的添加组件功能相同。注意必须选中某个实体后，该操作才可用。
+
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*D6iKSp7NCcYAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
+
+## 偏好设置
+
+### 快捷方式
+
+快捷键有助于提升编辑场景的效率，用户可以在这里找到鼠标（或触控板）、键盘的视口控制方式，以及全局和各个面板的快捷键。
+
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*diTfTq0BIb8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
+
+### 语言设置
+
+支持中英两种语言。
+
+<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*CjejTquhwoUAAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />

@@ -1,9 +1,9 @@
 ---
-order: 2
+order: 1
 title: 事件通信
-type: 编辑器
+type: 功能
 group: 脚本
-label: 编辑器/脚本
+label: Editor-Feature/Scripting
 ---
 
 开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合。
@@ -113,7 +113,7 @@ this.engine.dispatch('rotate');
 ## 事件测试
 在 Oasis Editor 的代码编辑器中，我们提供了一个事件测试面板，用户可以使用它进行事件通信的测试：
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Qg5pQ7cSrC8AAAAAAAAAAAAAARQnAQ)
+![image.png](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*qSY-RZu6p-kAAAAAAAAAAAAADgeMAQ/original)
 
 3D项目中监听的事件会出现在输入事件列表中，触发的事件则会出现在输出事件面板中。
 
@@ -121,10 +121,10 @@ this.engine.dispatch('rotate');
 
 点击输入事件列表中的事件名右侧的编辑按钮，可以配置事件参数：
 
-<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*cfsMSKvFq3cAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*V9teS7ZRmw0AAAAAAAAAAAAADgeMAQ/original" alt="image.png" style="" />
 
-<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*24eJSJ2T3oYAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*UlAMSpDP8o0AAAAAAAAAAAAADgeMAQ/original" alt="image.png" style="" />
 
 点击触发按钮事件就被触发了：
 
-<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*GP1cSq2GJuYAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*GdcqQY1kW18AAAAAAAAAAAAADgeMAQ/original" alt="image.png" style="" />

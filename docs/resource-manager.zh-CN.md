@@ -137,7 +137,7 @@ engine.resourceManager
 
 
 ### 3. AmbientLight
-Oasis 支持通过[编辑器](https://oasis.alipay.com/editor)或者 [glTF Viewer](https://oasisengine.cn/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
+Oasis 支持通过[编辑器](https://antg.antgroup.com)或者 [glTF Viewer](https://oasisengine.cn/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 

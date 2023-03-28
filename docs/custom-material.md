@@ -4,6 +4,7 @@ title: Custom material
 type: Graphics
 group: Material
 label: Graphics/Material
+
 ---
 
 There may be some special rendering requirements, such as water flow, and this time you need **custom material** to achieve. By using [Material](${api}core/Material) and [Shader](${api}core/Shader), you can integrate your own shader code into the engine rendering process.
@@ -51,32 +52,51 @@ Because we don't have uploaded `u_color` variable, the fragment output is still 
 
 In the above, we gave the material a shader, this time the program can start rendering. It should be noted that there are two kinds of variables in the shader, one is the `attribute` variable which is **per vertex**, and the other is the `uniform` variable which is **per shader** (After GLSL300, they are unified as `in` variables). The engine has automatically uploaded some commonly used variables, and users can directly use them in the shader code, such as vertex data and `mvp` data. The following are the variables uploaded by the engine by default.
 
-| attribute data        | attribute name | type of data |
-| :-------------------- | :------------- | :----------- |
-| vertex data           | POSITION       | vec3         |
-| normal data           | NORMAL         | vec3         |
-| tangent data          | TANGENT        | vec4         |
-| vertex color          | COLOR_0        | vec4         |
-| skeleton index        | JOINTS_0       | vec4         |
-| skeleton weight       | WEIGHTS_0      | vec4         |
-| fist uv coordinates   | TEXCOORD_0     | vec2         |
-| Second uv coordinates | TEXCOORD_1     | vec2         |
+### VertexInput
 
-| uniform data                         | uniform name | type of data |
-| :----------------------------------- | :----------- | :----------- |
-| canvas resolution                    | u_resolution | vec2         |
-| viewport matrix                      | u_viewMat    | mat4         |
-| projection matrix                    | u_projMat    | mat4         |
-| viewport projection matrix           | u_VPMat      | mat4         |
-| viewport inverse matrix              | u_viewInvMat | mat4         |
-| projection inverse matrix            | u_projInvMat | mat4         |
-| camera position                      | u_cameraPos  | vec3         |
-| model local coordinate system matrix | u_localMat   | mat4         |
-| model world Coordinate System Matrix | u_modelMat   | mat4         |
-| model viewport matrix                | u_MVMat      | mat4         |
-| model viewport projection matrix     | u_MVPMat     | mat4         |
-| model viewport inverse matrix        | u_MVInvMat   | mat4         |
-| normal inverse transpose matrix      | u_normalMat  | mat4         |
+| Attribute data        | Name       | Type |
+| :-------------------- | :--------- | :--- |
+| vertex data           | POSITION   | vec3 |
+| normal data           | NORMAL     | vec3 |
+| tangent data          | TANGENT    | vec4 |
+| vertex color          | COLOR_0    | vec4 |
+| skeleton index        | JOINTS_0   | vec4 |
+| skeleton weight       | WEIGHTS_0  | vec4 |
+| fist uv coordinates   | TEXCOORD_0 | vec2 |
+| Second uv coordinates | TEXCOORD_1 | vec2 |
+
+### Properties
+
+| Name         | Type | Meaning                              |
+| :----------- | :--- | ------------------------------------ |
+| u_viewMat    | mat4 | viewport matrix                      |
+| u_projMat    | mat4 | projection matrix                    |
+| u_VPMat      | mat4 | viewport projection matrix           |
+| u_viewInvMat | mat4 | viewport inverse matrix              |
+| u_projInvMat | mat4 | projection inverse matrix            |
+| u_cameraPos  | vec3 | camera position                      |
+| u_localMat   | mat4 | model local coordinate system matrix |
+| u_modelMat   | mat4 | model world Coordinate System Matrix |
+| u_MVMat      | mat4 | model viewport matrix                |
+| u_MVPMat     | mat4 | model viewport projection matrix     |
+| u_MVInvMat   | mat4 | model viewport inverse matrix        |
+| u_normalMat  | mat4 | normal inverse transpose matrix      |
+
+#### Time
+
+| Name              | Type | Meaning                                                      |
+| :---------------- | :--- | :----------------------------------------------------------- |
+| oasis_ElapsedTime | vec4 | Total time elapsed since engine started: (x: t, y: sin(t), z: cos(t), w: 0) |
+| oasis_DeltaTime   | vec4 | Interval time from previous frame: (x: dt, y: 0, z: 0, w: 0) |
+
+#### Fog
+
+| Name            | Type | Meaning                                                      |
+| :-------------- | :--- | :----------------------------------------------------------- |
+| oasis_FogColor  | vec4 | Fog color                                                    |
+| oasis_FogParams | vec4 | Fog parameters: (x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
+
+
 
 ## Upload shader variables
 
@@ -119,7 +139,7 @@ renderer2ShaderData.setFloat("u_progross", 0.8);
 
 The code demo is as follows:
 
-```glsl
+```
 // shader
 
 uniform float u_float;
@@ -166,7 +186,7 @@ In addition to uniform variables, the engine also regards [macro definition](htt
 
 For example, these macros have been related to Shader:
 
-```glsl
+```
 #ifdef DISCARD
 	discard;
 #endif

@@ -53,7 +53,7 @@ Pointer 则表示每个独立的光标实例，通过调用相关的方法可以
 | [button](${api}core/Pointer#button)             | 返回触发此状态的光标按键，如鼠标左，中，右键等   |
 | [pressedButtons](${api}core/Pointer#pressedButtons) | 返回此刻光标持续按住的键位 |
 | [deltaPosition](${api}core/Pointer#deltaPosition)         | 返回本帧光标移动的差值   |
-| [pointerPosition](${api}core/Pointer#pointerPosition)             | 返回本帧光标的位置   |
+| [position](${api}core/Pointer#position)             | 返回本帧光标的位置   |
 
 如下示例：
 

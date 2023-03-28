@@ -1,5 +1,6 @@
 import toc from '@jsdevtools/rehype-toc';
 import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
+import MermaidBlock from './MermaidBlock';
 import ReactMarkdown from 'react-markdown';
 import Prism from 'prismjs';
 import remarkFrontmatter from 'remark-frontmatter';
@@ -16,8 +17,8 @@ import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
 import Source from './Source';
-import { styled } from '../../../ui/design-system';
-import { Flex } from '../../../ui/Flex';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 
 interface DocDetailProps {
   selectedDocId: string;
@@ -35,7 +36,7 @@ const StyledMarkdown = styled("div", {
   lineHeight: 2,
   "& a": {
     color: "$blue10",
-    "&:hover":{
+    "&:hover": {
       borderBottom: "2px solid $blueA9"
     }
   },
@@ -46,7 +47,6 @@ const StyledMarkdown = styled("div", {
     padding: 0,
     "> li": {
       margin: "$1 0 $1 $4",
-      paddingLeft: "$4",
       listStyleType: "circle",
       "&:empty": {
         display: "none"
@@ -176,7 +176,7 @@ const StyledModifiedTime = styled(Flex, {
 });
 
 const StyledReactMarkdown = styled("div", {
-  maxWidth: "980px",
+  maxWidth: "1400px",
   margin: "$8 auto $16 auto",
   padding: "0 200px 0 $16",
   '@media (max-width: 768px)': {
@@ -210,7 +210,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   }, [docTitle]);
 
   useEffect(() => {
-    fetchMenuList('ts', version).then((list) => {
+    fetchMenuList('example', version).then((list) => {
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -259,13 +259,16 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
           components={{
             a(param) {
               const linkHref = param.href;
+              if (linkHref?.length == 0 && !param.children) {
+                return <span></span>;
+              }
               const title = param.children[0];
 
               // for links within the SPA: need to use <Link /> to properly handle routing.
               if (typeof linkHref === 'string' && linkHref.startsWith('/#/docs/')) {
                 return (
                   <Link
-                    to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}${lang === 'zh-CN' && !linkHref.endsWith('.zh-CN') ? '.zh-CN' : ''}`}
+                    to={`/docs/${version}/${lang === 'en' ? 'en' : 'cn'}/${linkHref.replace('/#/docs/', '')}`}
                   >
                     {title}
                   </Link>
@@ -292,12 +295,16 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             },
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
-              return !inline && match ? (
-                <code dangerouslySetInnerHTML={{
+              if (!inline && match) {
+                if (className?.indexOf('mermaid') !== -1) {
+                  return <MermaidBlock>{children[0]}</MermaidBlock>;
+                }
+                return <code dangerouslySetInnerHTML={{
                   __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
                 }}
                 />
-              ) : (
+              }
+              return (
                 <code className={className} {...props}>
                   {children}
                 </code>

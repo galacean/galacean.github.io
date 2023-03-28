@@ -1,12 +1,12 @@
 import { List } from 'iconoir-react';
 import { useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
-import { useParams } from 'react-router-dom';
-import { ActionButton } from '../../ui/ActionButton';
-import { Breadcrumb, BreadcrumbItem } from '../../ui/Breadcrumb';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
-import { Popover } from '../../ui/Popover';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ActionButton } from '@oasis-engine/editor-components';
+import { Breadcrumb, BreadcrumbItem } from '@oasis-engine/editor-components';
+import { styled } from "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
+import { Popover } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import LoadingIcon from '../Loading';
 import Menu from './components/Menu';
@@ -53,188 +53,165 @@ const StyledPanel = styled("section", {
 });
 
 
-const Api = () => {
-  const [pkgList, setPkgList] = useState<Array<string>>([]);
-  const [pkgChildren, setPkgChildren] = useState<PkgChild[]>([]);
-  const [childrenDetail, setChildrenDetail] = useState<PkgChildDetail | null>(null);
-  const [selectedPkg, setSelectedPkg] = useState('');
-  const [selectedItem, setSelectedItem] = useState<number>();
-  const { ver, pkg, item } = useParams();
-  const { version, setVersion } = useContext(AppContext);
+const PackagePage = ({ isMobile, pkg, version, pkgChildren }: { isMobile: boolean, pkg: string, version: string, pkgChildren: PkgChild[] }) => {
+  const [children, setChildren] = useState<Record<string, PkgChild[]>>();
+  const navigate = useNavigate();
 
-  const pkgSet = new Set<string>();
-  pkgChildren.forEach((item) => {
-    if (!pkgSet.has(item.kind)) {
-      pkgSet.add(item.kind);
-    }
-  });
-
-  // page init: get package list; set selected package
   useEffect(() => {
-    setSelectedItem(undefined);
-    setPkgChildren([]);
-    setChildrenDetail(null);
-    setPkgList([]);
+    const tempChildren: Record<string, PkgChild[]> = {};
 
-    fetchPkgList(version).then((res) => {
+    pkgChildren.forEach((item) => {
+      if (!tempChildren[item.kind]) {
+        tempChildren[item.kind] = [];
+      }
+
+      tempChildren[item.kind].push(item);
+    });
+
+    setChildren(tempChildren);
+  }, [pkg, pkgChildren]);
+
+
+  return <Flex wrap="false">
+    <StyledContent>
+      <NavBreadcrumb pkg={pkg} version={version} />
+      <StyledPanel>
+        {children && Object.keys(children).map((kind) => {
+          return (
+            <Package
+              key={kind}
+              setSelectedItem={(id: number, name: string) => {
+                navigate(`/api/${version}/${pkg}/${name}`);
+              }}
+              kind={kind}
+              pgkChildren={children[kind]}
+            />
+          );
+        })}
+      </StyledPanel>
+    </StyledContent>
+    <ResponsibleMenu isMobile={isMobile} version={version} pkg={pkg} pkgChildren={pkgChildren} />
+  </Flex>
+}
+
+const ModulePage = ({ isMobile, pkg, version, id, name, pkgChildren }: { isMobile: boolean, pkg: string, version: string, name?: string, id?: number, pkgChildren: PkgChild[] }) => {
+  const [childrenDetail, setChildrenDetail] = useState<PkgChildDetail | null>();
+
+  useEffect(() => {
+    if (id) {
+      fetchPkgChildrenDetail(pkg, id, version).then((res) => {
+        setChildrenDetail(res);
+      });
+    }
+    else if (name) {
+      const item = pkgChildren.find((child) => child.name === name);
+
+      if (item) {
+        fetchPkgChildrenDetail(pkg, item.id, version).then((res) => {
+          setChildrenDetail(res);
+        });
+      }
+    }
+  }, []);
+
+  return <Flex wrap="false">
+    {childrenDetail ? <StyledContent>
+      <NavBreadcrumb pkg={pkg} version={version} name={name} />
+      <Module {...childrenDetail} />
+    </StyledContent> : null}
+    <ResponsibleMenu isMobile={isMobile} version={version} pkg={pkg} pkgChildren={pkgChildren} childrenDetail={childrenDetail} />
+  </Flex>
+}
+
+const NavMenu = ({ version, pkg, pkgChildren, childrenDetail }: { version: string, pkg: string, pkgChildren: PkgChild[], childrenDetail?: PkgChildDetail }) => {
+  const [pkgList, setPkgList] = useState<string[]>([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchPkgList(version).then((res: string[]) => {
       if (res?.length === 0) {
         return;
       }
       res.sort();
       setPkgList(res);
-
-      if (pkg && res.includes(pkg)) {
-        setSelectedPkg(pkg);
-      } else {
-        setSelectedPkg(res[0]);
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [version]);
-
-  useEffect(() => {
-    // skip running this effect if data is not ready yet.
-    if (pkgList.length === 0) {
-      return;
-    }
-    fetchPkgChildren(selectedPkg, version).then((res) => {
-      setPkgChildren(res);
-      const chosenItem = res.find((i) => i.name === item);
-      if (item && chosenItem) {
-        setSelectedItem(chosenItem.id);
-      } else {
-        setSelectedItem(undefined);
-      }
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedPkg, version]);
-
-  useEffect(() => {
-    // skip running this effect if data is not ready yet.
-    if (pkgChildren.length === 0) {
-      return;
-    }
-    fetchPkgChildrenDetail(selectedPkg, selectedItem, version).then((res) => {
-      setChildrenDetail(res);
     });
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedItem, version]);
+  }, []);
 
-  useEffect(() => {
-    const chosenItemId = pkgChildren.find((i) => i.name === item)?.id;
-    setSelectedItem(chosenItemId);
-  }, [item]);
+  return <Menu
+    {...{
+      pkgList,
+      pkgChildren,
+      selectedPkg: pkg,
+      childrenDetail,
+      onPkgClick: (newPkg: string) => {
+        if (pkg !== newPkg) {
+          navigate(`/api/${version}/${newPkg}`);
+        }
+      },
+    }}
+  ></Menu>
+}
 
-  useEffect(() => {
-    // skip running this effect if data is not ready yet.
-    if (pkgList.length === 0) {
-      return;
-    }
-    if (pkg && !pkgList.includes(pkg)) {
-      setSelectedPkg(pkgList[0]);
-      setSelectedItem(undefined);
-      return;
-    }
-    pkg && setSelectedPkg(pkg);
-  }, [pkg]);
+const ResponsibleMenu = ({ isMobile, version, pkg, pkgChildren, childrenDetail }: { isMobile: boolean, version: string, pkg: string, pkgChildren: PkgChild[], childrenDetail?: PkgChildDetail }) => {
+  return isMobile ? (
+    <Popover trigger={
+      <ActionButton size="lg" css={{ position: "fixed", right: "$4", bottom: "$16", zIndex: 11, }}>
+        <List />
+      </ActionButton>
+    } sideOffset={6} css={{ marginRight: "$4", maxHeight: "70vh", overflow: "auto" }}>
+      <NavMenu version={version} pkgChildren={pkgChildren} pkg={pkg} childrenDetail={childrenDetail} />
+    </Popover>
+  ) :
+  <NavMenu version={version} pkgChildren={pkgChildren} pkg={pkg} childrenDetail={childrenDetail} />
+}
 
-  useEffect(() => {
-    setVersion(ver);
-  }, [ver]);
+const NavBreadcrumb = ({ pkg, version, name }: { pkg: string, version: string, name?: string }) => {
+  const navigate = useNavigate();
 
-  if (pkgList.length === 0 || pkgChildren.length === 0) {
-    return <LoadingIcon></LoadingIcon>;
+  return <StyledBreadcrumb>
+    <Breadcrumb>
+      <BreadcrumbItem>API</BreadcrumbItem>
+      <BreadcrumbItem>
+        <span onClick={() => {
+          navigate(`/api/${version}/${pkg}`);
+        }}
+          style={{ cursor: 'pointer' }}
+        >
+          {pkg}
+        </span>
+      </BreadcrumbItem>
+      {name && (
+        <BreadcrumbItem>
+          <span>{name}</span>
+        </BreadcrumbItem>
+      )}
+    </Breadcrumb>
+  </StyledBreadcrumb>
+}
+
+const Api = () => {
+  let { pkg, name } = useParams();
+  let { version } = useContext(AppContext);
+  const [pkgChildren, setPkgChildren] = useState<PkgChild[]>();
+  const navigate = useNavigate();
+
+  if (!pkg) {
+    pkg = pkg || 'core';
+    navigate(`/api/${version}/${pkg}`);
   }
 
-  const menu = (
-    <Menu
-      {...{
-        pkgList,
-        pkgChildren,
-        selectedPkg,
-        childrenDetail,
-        onPkgClick: (pkg: string) => {
-          if (pkg !== selectedPkg) {
-            setSelectedPkg(pkg);
-            setSelectedItem(undefined);
-            setChildrenDetail(null);
-          }
-        },
-      }}
-    ></Menu>
-  );
+  useEffect(() => {
+    fetchPkgChildren(pkg, version).then((res) => {
+      setPkgChildren(res);
+    });
+  }, [pkg]);
 
   return (
     <Media query='(max-width: 768px)'>
-      {(isMobile) => (
-        <Flex wrap="false">
-          <StyledContent>
-            <StyledBreadcrumb>
-              <Breadcrumb>
-                <BreadcrumbItem>API</BreadcrumbItem>
-                <BreadcrumbItem>
-                  <span
-                    onClick={() => {
-                      setSelectedItem(undefined);
-                      setChildrenDetail(null);
-                    }}
-                    style={{ cursor: 'pointer' }}
-                  >
-                    {selectedPkg}
-                  </span>
-                </BreadcrumbItem>
-                {selectedItem && (
-                  <BreadcrumbItem>
-                    <span>{pkgChildren.find((child) => child.id === selectedItem)?.name}</span>
-                  </BreadcrumbItem>
-                )}
-              </Breadcrumb>
-            </StyledBreadcrumb>
-            {selectedItem ? (
-              <>{childrenDetail && <Module {...childrenDetail} />}</>
-            ) : (
-              <StyledPanel >
-                {Array.from(pkgSet).map((kind) => {
-                  return (
-                    <Package
-                      key={kind}
-                      {...{
-                        setSelectedItem,
-                        kind,
-                        pgkChildren: pkgChildren.filter((child) => child.kind === kind),
-                      }}
-                    />
-                  );
-                })}
-              </StyledPanel>
-            )}
-          </StyledContent>
-          {isMobile ? (
-            <Popover trigger={
-              <ActionButton size="lg" css={{
-                position: "fixed",
-                right: "$4",
-                bottom: "$16",
-                zIndex: 11,
-              }}>
-                <List />
-              </ActionButton>
-            }
-            sideOffset={6}
-            css={{
-              marginRight: "$4",
-              maxHeight: "70vh",
-              overflow: "auto"
-            }}>
-              {menu}
-            </Popover>
-          ) : (
-            <nav>{menu}</nav>
-          )}
-        </Flex>
-      )
-      }
+      {(isMobile) => pkgChildren ? (name ?
+        <ModulePage pkgChildren={pkgChildren} pkg={pkg} name={name} version={version} isMobile={isMobile} /> :
+        <PackagePage pkgChildren={pkgChildren} pkg={pkg} version={version} isMobile={isMobile} />) : <LoadingIcon></LoadingIcon>}
     </Media >
   );
 };

@@ -4,22 +4,28 @@
  */
 
 import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { Stats } from "@oasis-engine-toolkit/stats";
 import { Animator, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
+
+
 // Create root entity and get scene.
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
+
+
 // Create camera.
 const cameraEntity = rootEntity.createChild("Camera");
 cameraEntity.transform.setPosition(0, 0, 12);
 cameraEntity.addComponent(Camera);
-cameraEntity.addComponent(OrbitControl);
+// cameraEntity.addComponent(OrbitControl);
+cameraEntity.addComponent(Stats);
 
 // Load resources and add models.
 engine.resourceManager
@@ -43,15 +49,15 @@ engine.resourceManager
       material.baseColor.set(1, 1, 1, 1);
     });
 
-    for (let i = 0; i < 8; i++) {
-      for (let j = 0; j < 8; j++) {
+    for (let i = 0; i < 30; i++) {
+      for (let j = 0; j < 18; j++) {
         const modelClone = model.clone();
         rootEntity.addChild(modelClone);
 
         const { transform } = modelClone;
         transform.setRotation(0, -90, 0);
         transform.setScale(0.5, 0.5, 0.5);
-        transform.setPosition(i * 1.0 - 3.0, j * 1.2, -j * 3.5);
+        transform.setPosition(i * 1.0 - 15.0, j * 1.2, -j * 3.5);
 
         modelClone.getComponent(Animator).play("A");
       }

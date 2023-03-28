@@ -69,11 +69,11 @@ export class SketchSelection extends Script {
     }
 
     set camera(value: Camera) {
-        this._framebufferPicker.camera = value;
+        this._framebufferPicker = value.entity.addComponent(FramebufferPicker);
+      
     }
 
     onAwake(): void {
-        this._framebufferPicker = this.entity.addComponent(FramebufferPicker);
         this.sketch = this.entity.addComponent(SketchRenderer);
         this.sketch.scale = 0.02;
         this.sketch.setSketchMode(SketchMode.Wireframe, true);
@@ -86,24 +86,24 @@ export class SketchSelection extends Script {
             const pointerPosition = inputManager.pointers[0].position;
             this._framebufferPicker
                 .pick(pointerPosition.x, pointerPosition.y)
-                .then((renderElement) => {
-                    if (renderElement) {
+                .then((renderer) => {
+                    if (renderer) {
                         if (
                             this.specificEntity !== null &&
-                            renderElement.component.entity !== this.specificEntity
+                            renderer.entity !== this.specificEntity
                         ) {
                             return;
                         }
-                        if (renderElement.mesh instanceof ModelMesh) {
-                            if (selection.mesh !== renderElement.mesh) {
-                                selection.setOriginState();
-                                selection.mesh = renderElement.mesh;
 
-                                selection.material = <PBRMaterial>renderElement.material;
+                        if (renderer instanceof MeshRenderer) {
+                            if (selection.mesh !== renderer.mesh) {
+                                selection.setOriginState();
+                                selection.mesh = renderer.mesh;
+
+                                selection.material = <PBRMaterial>renderer.getMaterial();
                                 selection.setSelectedState();
 
-                                const renderer = renderElement.component;
-                                sketch.targetMesh = renderElement.mesh;
+                                sketch.targetMesh = renderer.mesh;
                                 sketch.skin = null;
                                 sketch.shaderData.disableMacro("O3_HAS_SKIN");
                                 sketch.worldMatrix = renderer.entity.transform.worldMatrix;

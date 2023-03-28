@@ -6,17 +6,22 @@ import { AppContext } from './components/contextProvider';
 import LoadingIcon from './components/Loading';
 import { translationsData } from './constants/locale';
 import { router } from './routes';
-import { globalCSS } from './ui/design-system';
+import { globalCSS } from '@oasis-engine/editor-design-system';
 
 function App() {
   const context = useContext(AppContext);
 
   useEffect(() => {
-    globalCSS();
+    globalCSS({body: {
+      backgroundColor: "$slate1",
+      minHeight: "100vh"
+    }});
   }, []);
 
+  const lang = context.lang === 'cn' ? 'zh-CN' : 'en';
+
   return (
-    <IntlProvider locale={context.lang} messages={translationsData[context.lang]}>
+    <IntlProvider locale={lang} messages={translationsData[lang]}>
       <TooltipProvider>
         <RouterProvider router={router} fallbackElement={<LoadingIcon />}></RouterProvider>
       </TooltipProvider>

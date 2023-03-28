@@ -1,9 +1,9 @@
 ---
-order: 3.2
+order: 1
 title: 精灵遮罩
-type: 编辑器
-group: 组件
-label: 编辑器/组件
+type: 功能
+group: 2D 渲染
+label: Editor-Feature/Rendering-2d
 ---
 
 精灵遮罩组件用于对 3D/2D 场景中的[精灵](${docs}editor-sprite-renderer-cn)实现遮罩效果，详见 [精灵遮罩组件](${docs}sprite-mask-cn)。

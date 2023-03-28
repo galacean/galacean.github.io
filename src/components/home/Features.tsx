@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { Button } from '../../ui/Button';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
+import { Button } from '@oasis-engine/editor-components';
+import { styled } from  "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import PBRHelmet from './PBRHelmet';
 import Spine from './Spine';
@@ -23,7 +23,7 @@ const StyledFeature = styled(Flex, {
 });
 
 export default function Features() {
-  const { lang } = useContext(AppContext);
+  const { lang, version } = useContext(AppContext);
   return (
     <Flex align="both" gap="lg" css={{borderTop: "1px solid $slate5", padding: "$8 0"}}>
       <StyledFeature dir="column" gap="md" align="v">
@@ -32,7 +32,7 @@ export default function Features() {
         <p>
           <FormattedMessage id='app.home.3d.intro' />
         </p>
-        <Link to={`/docs/latest/${lang}/mesh-renderer`}>
+        <Link to={`/docs/${version}/${lang}/mesh-renderer`}>
           <Button variant='outline'>
             <FormattedMessage id='app.home.more' />
           </Button>
@@ -44,7 +44,7 @@ export default function Features() {
         <p>
           <FormattedMessage id='app.home.2d.intro' />
         </p>
-        <Link to={`/docs/latest/${lang}/mesh-renderer`}>
+        <Link to={`/docs/${version}/${lang}/sprite-renderer`}>
           <Button variant='outline'>
             <FormattedMessage id='app.home.more' />
           </Button>

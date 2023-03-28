@@ -3,13 +3,13 @@ import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ActionButton } from '../../ui/ActionButton';
-import { styled } from '../../ui/design-system';
-import { Flex } from '../../ui/Flex';
-import { Input } from '../../ui/Input';
+import { ActionButton } from '@oasis-engine/editor-components';
+import { styled } from  "@oasis-engine/editor-design-system";
+import { Flex } from '@oasis-engine/editor-components';
+import { Input } from '@oasis-engine/editor-components';
 import { MenuBar } from '../../ui/MenuBar';
-import { Popover } from '../../ui/Popover';
-import { Toaster } from '../../ui/Toast';
+import { Popover } from '@oasis-engine/editor-components';
+import { Toaster } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import { fetchMenuList } from '../doc/util/docUtil';
 import Header from '../header';
@@ -33,6 +33,7 @@ const StyledContent = styled("div", {
 
 const StyledNav = styled("nav", {
   height: 'calc(100vh - 61px)',
+  width: "250px",
   overflow: "auto",
   borderRight: "1px solid $slate5"
 })
@@ -74,7 +75,7 @@ export default function Examples() {
     setFilteredItems([]);
     menuKeyTitleMapRef.current.clear();
     navigate(`/examples/${context.version}`);
-    fetchMenuList('ts', context.version).then((list) => {
+    fetchMenuList('example', context.version).then((list) => {
       const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
@@ -163,7 +164,10 @@ export default function Examples() {
         newGroup.children = (group as any).children.filter((i: { label: string }) =>
           i.label?.toLocaleLowerCase().includes(search?.toLocaleLowerCase())
         );
-        filtered.push(newGroup);
+
+        if (newGroup.children.length > 0) {
+          filtered.push(newGroup);
+        }
       });
       setFilteredItems(filtered);
     }
