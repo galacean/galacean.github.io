@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: 事件通信
 type: 功能
 group: 脚本
