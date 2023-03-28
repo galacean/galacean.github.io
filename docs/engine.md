@@ -36,12 +36,12 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 ## WebGL context
 
-The context management of WebGL can be managed through the third parameter [WebGLRendererOptions](${api}rhi-webgl/WebGLRendererOptions) of [WebGLEngine](${api}rhi-webgl/WebGLEngine), take **canvas transparency** For example, the engine enables the transparency channel of the canvas by default, that is, the canvas will be mixed with the web page elements behind it. If you need to turn off transparency, you can set it like this:
+The context management of WebGL can be managed through the third parameter [WebGLgraphicDeviceOptions](${api}rhi-webgl/WebGLgraphicDeviceOptions) of [WebGLEngine](${api}rhi-webgl/WebGLEngine), take **canvas transparency** For example, the engine enables the transparency channel of the canvas by default, that is, the canvas will be mixed with the web page elements behind it. If you need to turn off transparency, you can set it like this:
 
 ```typescript
 const engine = await WebGLEngine.create({
   canvas: htmlCanvas,
-  rendererOptions: { alpha: false },
+  graphicDeviceOptions: { alpha: false },
 });
 ```
 
