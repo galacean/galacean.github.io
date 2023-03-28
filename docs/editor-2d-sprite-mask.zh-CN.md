@@ -12,7 +12,7 @@ label: Editor-Feature/Rendering-2d
 
 当我们需要对一个精灵进行遮罩的时候，首先需要创建一个实体，并添加精灵遮罩组件，如下：
 
-![mask-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*0ZNiQZjVpcEAAAAAAAAAAAAADjCHAQ/original)
+![mask-create](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*AxvJRKKT37cAAAAAAAAAAAAADjCHAQ/original)
 
 ## 设置遮罩区域
 
