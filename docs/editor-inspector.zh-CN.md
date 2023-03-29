@@ -50,7 +50,7 @@ label: Editor-Interface
 
 资产选择浮窗中还提供了一个搜索框，你可以使用它来更精确的找到对应的资产。
 
-<div style="display:flex">
+<div style="display:flex;gap:12px;text-align:center">
   <figure>
     <img alt="Mesh" src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*IoDeQKHZyqoAAAAAAAAAAAAADsGIAQ/original">
     <figcaption style="text-align:center; color: #889096;font-size:12px">Mesh Picker</figcaption>
