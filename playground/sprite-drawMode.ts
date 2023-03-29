@@ -83,7 +83,7 @@ class TriangleScript extends Script {
     this.enabled = this.triangleEntity.isActive = value;
   }
 
-  onLateUpdate(): void {
+  onUpdate(): void {
     const { modelMesh, targetSpriteRenderer } = this;
     const { positions, vertexCount, triangles } =
       // @ts-ignore
