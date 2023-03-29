@@ -1,5 +1,5 @@
 /**
- * @title Sprite Slice
+ * @title Sprite Draw Mode
  * @category 2D
  */
 import * as dat from "dat.gui";
@@ -8,6 +8,7 @@ import {
   Camera,
   Color,
   Entity,
+  Logger,
   MathUtil,
   MeshRenderer,
   MeshTopology,
@@ -16,12 +17,15 @@ import {
   Sprite,
   SpriteDrawMode,
   SpriteRenderer,
+  SpriteTileMode,
   SubMesh,
   Texture2D,
   UnlitMaterial,
   Vector4,
-  WebGLEngine
+  WebGLEngine,
 } from "oasis-engine";
+
+Logger.enable();
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -40,7 +44,7 @@ camera.orthographicSize = 5;
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*0vm_SJVssKAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.
@@ -67,6 +71,8 @@ class TriangleScript extends Script {
     const triangleEntity = (this.triangleEntity = entity.createChild("tag"));
     const meshRenderer = triangleEntity.addComponent(MeshRenderer);
     meshRenderer.mesh = this.modelMesh = new ModelMesh(engine, "tag");
+    // @ts-ignore
+    this.modelMesh._enableVAO = false;
     const material = new UnlitMaterial(engine);
     material.baseColor = new Color(1, 0, 0, 1);
     meshRenderer.setMaterial(material);
@@ -77,21 +83,27 @@ class TriangleScript extends Script {
     this.enabled = this.triangleEntity.isActive = value;
   }
 
-  onUpdate(): void {
+  onLateUpdate(): void {
     const { modelMesh, targetSpriteRenderer } = this;
-    // @ts-ignore
-    const { positions, vertexCount, triangles } = targetSpriteRenderer._renderData;
+    const { positions, vertexCount, triangles } =
+      // @ts-ignore
+      targetSpriteRenderer._verticesData;
     if (vertexCount > 0) {
-      const length = triangles.length * 2;
-      if (length <= 0) {
-        return;
-      }
-      const myTriangles = modelMesh.getIndices() || new Uint16Array(length);
+      const trianglesCount =
+        targetSpriteRenderer.drawMode === SpriteDrawMode.Sliced
+          ? (vertexCount * 27) / 4
+          : vertexCount * 3;
+      const myTriangles =
+        modelMesh.getIndices() || new Uint16Array(Math.floor(4096 * 3));
       const myPositions = modelMesh.getPositions() || [];
-      for (let i = 0; i < positions.length; i++) {
-        myPositions[i] = positions[i].clone();
+      for (let i = 0; i < vertexCount; i++) {
+        if (myPositions[i]) {
+          myPositions[i].copyFrom(positions[i]);
+        } else {
+          myPositions[i] = positions[i].clone();
+        }
       }
-      for (let i = 0; i < triangles.length / 3; i++) {
+      for (let i = 0; i < trianglesCount / 6; i++) {
         myTriangles[6 * i] = triangles[i * 3];
         myTriangles[6 * i + 1] = triangles[i * 3 + 1];
         myTriangles[6 * i + 2] = triangles[i * 3 + 1];
@@ -101,8 +113,14 @@ class TriangleScript extends Script {
       }
       modelMesh.setPositions(myPositions);
       modelMesh.setIndices(myTriangles);
-      modelMesh.clearSubMesh();
-      modelMesh.addSubMesh(new SubMesh(0, length, MeshTopology.Lines));
+      const subMesh = modelMesh.subMesh;
+      if (subMesh) {
+        subMesh.count = trianglesCount;
+      } else {
+        modelMesh.addSubMesh(
+          new SubMesh(0, trianglesCount, MeshTopology.Lines)
+        );
+      }
       modelMesh.uploadData(false);
     }
   }
@@ -129,47 +147,139 @@ function addDataGUI(entity: Entity) {
     showTriangle: false,
     width: defaultWidth,
     height: defaultHeight,
+    tiledMode: "Continuous",
+    threshold: 0.5,
     reset: () => {
       spriteRenderer.width = guiData.width = defaultWidth;
       spriteRenderer.height = guiData.height = defaultHeight;
-      guiData.left = guiData.bottom = guiData.right = guiData.top = 0;
+      spriteRenderer.tileMode = SpriteTileMode.Continuous;
+      spriteRenderer.tiledAdaptiveThreshold = 0.5;
       sprite.border = border.set(0, 0, 0, 0);
+      guiData.tiledMode = "Continuous";
+      guiData.threshold = 0.5;
+      guiData.left = guiData.bottom = guiData.right = guiData.top = 0;
       guiData.showTriangle = false;
-    }
+      if (spriteRenderer.drawMode === SpriteDrawMode.Tiled) {
+        show(tileModeGui);
+        hide(tiledAdaptiveThresholdGui);
+      } else {
+        hide(tileModeGui);
+        hide(tiledAdaptiveThresholdGui);
+      }
+    },
   };
 
-  gui
-    .add(guiData, "drawMode", ["Simple", "Slice"])
+  function hide(gui) {
+    gui.__li.style.display = "none";
+  }
+  function show(gui) {
+    gui.__li.style.display = "block";
+  }
+
+  const rendererFolder = gui.addFolder("SpriteRenderer");
+  rendererFolder.open();
+  rendererFolder
+    .add(guiData, "drawMode", ["Simple", "Slice", "Tiled"])
     .onChange((value: string) => {
-      if (value === "Simple") {
-        spriteRenderer.drawMode = SpriteDrawMode.Simple;
-      } else {
-        spriteRenderer.drawMode = SpriteDrawMode.Sliced;
+      switch (value) {
+        case "Simple":
+          spriteRenderer.drawMode = SpriteDrawMode.Simple;
+          hide(tileModeGui);
+          hide(tiledAdaptiveThresholdGui);
+          break;
+        case "Slice":
+          spriteRenderer.drawMode = SpriteDrawMode.Sliced;
+          hide(tileModeGui);
+          hide(tiledAdaptiveThresholdGui);
+          break;
+        case "Tiled":
+          spriteRenderer.drawMode = SpriteDrawMode.Tiled;
+          show(tileModeGui);
+          if (guiData.tiledMode === "Adaptive") {
+            show(tiledAdaptiveThresholdGui);
+          } else {
+            hide(tiledAdaptiveThresholdGui);
+          }
+          break;
+        default:
+          break;
       }
     })
     .listen();
-  gui
+
+  const tileModeGui = rendererFolder
+    .add(guiData, "tiledMode", ["Adaptive", "Continuous"])
+    .onChange((value: string) => {
+      switch (value) {
+        case "Adaptive":
+          spriteRenderer.tileMode = SpriteTileMode.Adaptive;
+          show(tiledAdaptiveThresholdGui);
+          break;
+        case "Continuous":
+          spriteRenderer.tileMode = SpriteTileMode.Continuous;
+          hide(tiledAdaptiveThresholdGui);
+          break;
+        default:
+          break;
+      }
+    })
+    .listen();
+
+  const tiledAdaptiveThresholdGui = rendererFolder
+    .add(guiData, "threshold", 0.0, 1.0, 0.01)
+    .onChange((value: number) => {
+      spriteRenderer.tiledAdaptiveThreshold = value;
+    });
+
+  rendererFolder
+    .add(
+      guiData,
+      "width",
+      defaultWidth / 5,
+      defaultWidth * 5,
+      defaultWidth / 10
+    )
+    .onChange((value: number) => {
+      spriteRenderer.width = value;
+    })
+    .listen();
+  rendererFolder
+    .add(
+      guiData,
+      "height",
+      defaultHeight / 5,
+      defaultHeight * 5,
+      defaultHeight / 10
+    )
+    .onChange((value: number) => {
+      spriteRenderer.height = value;
+    })
+    .listen();
+
+  const spriteFolder = gui.addFolder("Sprite Border");
+  spriteFolder.open();
+  spriteFolder
     .add(guiData, "left", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       guiData.left = border.x = MathUtil.clamp(value, 0, 1 - border.z);
       sprite.border = border;
     })
     .listen();
-  gui
+  spriteFolder
     .add(guiData, "bottom", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       guiData.bottom = border.y = MathUtil.clamp(value, 0, 1 - border.w);
       sprite.border = border;
     })
     .listen();
-  gui
+  spriteFolder
     .add(guiData, "right", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       guiData.right = border.z = MathUtil.clamp(value, 0, 1 - border.x);
       sprite.border = border;
     })
     .listen();
-  gui
+  spriteFolder
     .add(guiData, "top", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       guiData.top = border.w = MathUtil.clamp(value, 0, 1 - border.y);
@@ -182,19 +292,9 @@ function addDataGUI(entity: Entity) {
       triangleScript.setShow(value);
     })
     .listen();
-  gui
-    .add(guiData, "width", defaultWidth / 5, defaultWidth * 5, defaultWidth / 10)
-    .onChange((value: number) => {
-      spriteRenderer.width = value;
-    })
-    .listen();
-  gui
-    .add(guiData, "height", defaultHeight / 5, defaultHeight * 5, defaultHeight / 10)
-    .onChange((value: number) => {
-      spriteRenderer.height = value;
-    })
-    .listen();
-  gui.add(guiData, "reset").name("重置");
 
+  gui.add(guiData, "reset");
+  hide(tileModeGui);
+  hide(tiledAdaptiveThresholdGui);
   return guiData;
 }
