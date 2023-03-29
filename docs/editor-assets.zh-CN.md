@@ -69,7 +69,7 @@ label: Editor-Interface
 ## 资产的预览和使用
 
 
-<figure style="float: right;position: relative; z-index: 2;text-align:center;width:360px">
+<figure style="float: right;position: relative; z-index: 2;width:360px">
   <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*BhITRYH2DroAAAAAAAAAAAAADqiTAQ/original" >
   <figcaption style="text-align:center; color: #889096">glTF检查器</figcaption>
 </figure>
