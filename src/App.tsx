@@ -12,10 +12,17 @@ function App() {
   const context = useContext(AppContext);
 
   useEffect(() => {
-    globalCSS({body: {
-      backgroundColor: "$slate1",
-      minHeight: "100vh"
-    }});
+    globalCSS({
+      body: {
+        backgroundColor: "$slate1",
+        minHeight: "100vh",
+      },
+      figure: {
+        textAlign: 'center',
+        fontSize: '12px',
+        color: 'var(--colors-slate11)',
+      }
+  });
   }, []);
 
   const lang = context.lang === 'cn' ? 'zh-CN' : 'en';
