@@ -23,11 +23,12 @@ label: Graphics/Light
 | [shadowStrength](${api}core/Light#shadowStrength) | 阴影强度 |
 
 这里需要特别说明一下阴影偏移：
-![shadow-bias](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8q5MTbrlC7QAAAAAAAAAAAAAARQnAQ)
-因为深度的精度问题，因此从相机出发采样的时候会产生伪影，因此往往都需要设置阴影的偏移量，使得采样出右图这样比较干净的阴影。
-但是如果偏移如果过大，就会使得阴影偏离了投射物，如右图这样影子和脚后跟分离。因此这个参数是在使用阴影的时候最需要仔细调整的参数。
 
-出来上述位于 Light 组件当中的阴影配置外，还有一些有关阴影的全局配置位于 `Scene` 当中:
+![shadow-bias](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8q5MTbrlC7QAAAAAAAAAAAAAARQnAQ)
+
+因为深度精度问题，从相机采样时会产生伪影。因此通常需要设置阴影的偏移量，以便产生干净的阴影，如右图所示。但是，如果偏移量过大，阴影将偏离投射物，可以看到右图中的影子和脚后跟分离了。因此，这个参数是使用阴影时需要仔细调整的参数。
+
+除了上述位于 `Light` 组件当中的阴影配置外，还有一些有关阴影的全局配置位于 `Scene` 当中:
 
 | 参数                                                         | 应用                   |
 | :----------------------------------------------------------- | :--------------------- |
@@ -37,10 +38,12 @@ label: Graphics/Light
 | [shadowTwoCascadeSplits](${api}core/Scene#shadowTwoCascadeSplits) | 划分二级级联阴影的参数 |
 | [shadowFourCascadeSplits](${api}core/Scene#shadowFourCascadeSplits) | 划分四级级联阴影的参数 |
 | [shadowDistance](${api}core/Scene#shadowDistance) | 最大阴影距离 |
+
 上述参数可以通过在 Playground 的例子中进行调试进行理解：
+
 <playground src="cascaded-shadow.ts"></playground>
 
-目前引擎**只支持为一盏有向光 `DirectLight` 开启阴影**，这主要是因为阴影的渲染使得 DrawCall 翻倍，因此会严重影响渲染的性能。
+目前引擎**只支持为一盏有向光 `DirectLight` 开启阴影**，这主要是因为阴影的渲染使得 DrawCall 翻倍，会严重影响渲染的性能。
 一般来说都会使用 `DirectLight` 模仿太阳光，所以才只支持一盏。对于有向光的阴影，有两点需要注意。
 
 ### 级联阴影
