@@ -383,5 +383,13 @@
     "weight": 16,
     "tag": "example",
     "cn_name": "Light"
+  },
+  {
+    "uuid": "ts-Other",
+    "name": "Other",
+    "parent_uuid": null,
+    "weight": 16,
+    "tag": "example",
+    "cn_name": "Other"
   }
 ]
