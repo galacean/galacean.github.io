@@ -22,7 +22,7 @@ label: Graphics/Camera
 
 |属性|解释|
 |:--|:--|
-|`target`)|观察的目标位置|
+|`target`|观察的目标位置|
 |`autoRotate`|是否自动旋转，默认为 false ，可通过 autoRotateSpeed 调整旋转速度|
 |`autoRotateSpeed`|自动旋转的速度|
 |`enableDamping`| 是否开启相机阻尼，默认为true|
