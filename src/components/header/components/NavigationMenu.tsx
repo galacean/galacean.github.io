@@ -309,7 +309,7 @@ const StyledNavigationMenu = () => {
               <ListItem to={`/docs/${context.version}/${context.lang}/artist-bake`} title={formatMessage({ id: 'app.header.menu.artist.docs' })}>
                 <FormattedMessage id='app.header.menu.artist.docs.description' />
               </ListItem>
-              <ListItem to={`/docs/${context.version}/cn/editor-introduction`} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
+              <ListItem to={`/docs/${context.version}/cn/editor`} title={formatMessage({ id: 'app.header.menu.editor.docs' })}>
                 <FormattedMessage id='app.header.menu.editor.docs.description' />
               </ListItem>
             </StyledContentList>
@@ -327,7 +327,7 @@ const StyledNavigationMenu = () => {
               <ListItem absolute={true} to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.createapp.description' />
               </ListItem>
-              <ListItem absolute={true} to={`https://oasis.alipay.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
+              <ListItem absolute={true} to={`https://antg.antgroup.com`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.editor.description' />
               </ListItem>
             </StyledContentList>

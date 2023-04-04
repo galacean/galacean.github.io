@@ -25,10 +25,10 @@ particles.size = 1;
 particles.is2d = true;
 
 // Start play
-particleComp.start();
+particles.start();
 
 // Stop
-particleComp.stop();
+particles.stop();
 ```
 
 ## Properties

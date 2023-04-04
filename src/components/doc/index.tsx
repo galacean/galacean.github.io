@@ -19,7 +19,7 @@ const StyledDocContent = styled('div', {
 });
 
 const StyledMenu = styled('div', {
-  minWidth: "250px",
+  width: "250px",
   maxHeight: '100vh',
   overflowY: 'auto',
   position: 'sticky',
@@ -184,7 +184,7 @@ function Doc() {
         ) : (
           <Flex wrap={false}>
             <StyledMenu>{menu}</StyledMenu>
-            <StyledDocContent>
+            <StyledDocContent css={{ width: "calc(100% - 250px)" }}>
               {docDetail}
               <Footer></Footer>
             </StyledDocContent>
