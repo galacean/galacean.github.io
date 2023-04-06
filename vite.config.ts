@@ -7,7 +7,7 @@ function replaceCDN() {
     name: 'vite-replace-cdn',
     closeBundle() {
       const entryHTML = 'dist/index.html';
-      const CDNPath = "//cdn.jsdelivr.net/gh/ant-galaxy/oasis-engine.github.io@gh-pages/assets/";
+      const CDNPath = "//cdn.jsdelivr.net/gh/galacean/oasis-engine.github.io@gh-pages/assets/";
 
       let text = fs.readFileSync(entryHTML, {
         encoding: 'utf8'
