@@ -36,6 +36,8 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       animator.play(animations![0].name);
 
       // Simulate device loss and recovery
+      // The actual project does not need to call `forceLoseDevice()` and `forceRestoreDevice()`
+      // These two methods are only used to simulate whether the performance of device loss and restoration is correct
       let time = 6;
       let waitingLost = true;
       const domText = createDomText(time);
