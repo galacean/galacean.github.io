@@ -15,12 +15,12 @@ function Home() {
     <>
       <Header></Header>
       <Helmet>
-        <title>{`Oasis Engine - ${intl.formatMessage({
+        <title>{`Galacean - ${intl.formatMessage({
           id: 'app.home.slogan',
         })}`}</title>
         <meta
           name='description'
-          content={`Oasis Engine - ${intl.formatMessage({
+          content={`Galacean - ${intl.formatMessage({
             id: 'app.home.slogan',
           })}`}
         />
