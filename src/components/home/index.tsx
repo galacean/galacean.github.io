@@ -19,7 +19,7 @@ function Home() {
           id: 'app.home.slogan',
         })}`}</title>
         <meta
-          name='Galacean'
+          name='description'
           content={`Galacean - ${intl.formatMessage({
             id: 'app.home.slogan',
           })}`}
