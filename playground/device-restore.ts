@@ -67,7 +67,8 @@ function initDomElement(engine: WebGLEngine): void {
   textStyle.left = "50%";
   textStyle.transform = "translate(-50%, -50%)";
   textStyle.fontSize = "60px";
-  textStyle.color = "cornflowerblue";
+  textStyle.color = "orange";
+  textStyle.fontWeight = "bold";
   document.body.appendChild(domText);
 
   // Lost button
@@ -82,7 +83,7 @@ function initDomElement(engine: WebGLEngine): void {
   document.body.appendChild(lostButton);
   lostButton.addEventListener("click", function () {
     engine.forceLoseDevice();
-    domText.textContent = "Force lost device!";
+    domText.textContent = "Force lost device...";
     lostButton.disabled = true;
   });
 
@@ -99,7 +100,7 @@ function initDomElement(engine: WebGLEngine): void {
   document.body.appendChild(restoreButton);
   restoreButton.addEventListener("click", function () {
     engine.forceRestoreDevice();
-    domText.textContent = "Force restore device!";
+    domText.textContent = "Force restore device...";
     restoreButton.disabled = true;
   });
 }
