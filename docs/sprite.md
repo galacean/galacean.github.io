@@ -55,4 +55,4 @@ When we get the texture content through region, the upper left corner of the tex
 
 ### Set border
 
-<playground src="sprite-slice.ts"></playground>
+<playground src="sprite-drawMode.ts"></playground>

@@ -51,7 +51,7 @@ spriteRenderer.drawMode = SpriteDrawMode.Sliced;
 sprite.border = new Vector4(0.1, 0.1, 0.1, 0.1);
 ```
 
-<playground src="sprite-slice.ts"></playground>
+<playground src="sprite-drawMode.ts"></playground>
 
 ## 图片翻转
 
