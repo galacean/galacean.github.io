@@ -90,7 +90,7 @@ function Header() {
             }
           }}>
             <StyledLogo to='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
-              <img src={LOGO_URL} alt='Oasis Engine' />
+              <img src={LOGO_URL} alt='galacean' />
             </StyledLogo>
             {isMobile && rightActions(true)}
             {!isMobile && <SearchBox></SearchBox>}

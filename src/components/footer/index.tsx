@@ -63,7 +63,7 @@ class Footer extends React.Component<{}> {
             </h2>
             <ul>
               <li>
-                <a target='_blank ' href='https://github.com/ant-galaxy/oasis-engine'>
+                <a target='_blank ' href='https://github.com/galacean'>
                   GitHub
                 </a>
               </li>
@@ -128,7 +128,7 @@ class Footer extends React.Component<{}> {
             </h2>
             <ul>
               <li>
-                <a target='_blank' rel='noopener noreferrer' href='https://github.com/oasis-engine/engine/issues'>
+                <a target='_blank' rel='noopener noreferrer' href='https://github.com/galacean/engine/issues'>
                   <StyledIcon>
                     <GithubOutlined />
                   </StyledIcon>

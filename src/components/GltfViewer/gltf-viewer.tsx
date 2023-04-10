@@ -3,7 +3,7 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
 import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@oasis-engine/baker";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
   AnimationClip,
