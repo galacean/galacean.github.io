@@ -1,6 +1,6 @@
 import { BackgroundMode, Camera, Entity, Vector3, WebGLEngine } from '@galacean/engine';
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import { SpineAnimation } from '@oasis-engine/spine';
+import { SpineAnimation } from '@galacean/engine-spine';
 import { useEffect } from 'react';
 
 export default function PBRHelmet() {
