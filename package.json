@@ -7,7 +7,7 @@
     "@babel/core": "^7.16.0",
     "@babel/standalone": "^7.19.3",
     "@jsdevtools/rehype-toc": "^3.0.2",
-    "@oasis-engine/baker": "^1.3.0-beta.0",
+    "@galacean/tools-baker": "^0.9.0-beta.2",
     "@oasis-engine/editor-components": "^0.0.3",
     "@oasis-engine/editor-design-system": "^0.0.2",
     "@galacean/engine-lottie": "0.9.0",

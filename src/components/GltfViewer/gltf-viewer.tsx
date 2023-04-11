@@ -2,7 +2,7 @@
 /* eslint no-multi-assign: "off" */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
-import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@oasis-engine/baker";
+import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@galacean/tools-baker";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
@@ -31,7 +31,7 @@ import {
   UnlitMaterial,
   Vector3,
   WebGLEngine
-} from "oasis-engine";
+} from "@galacean/engine";
 import React, { useEffect } from "react";
 import * as dat from 'dat.gui';
 import { SimpleDropzone } from 'simple-dropzone';
