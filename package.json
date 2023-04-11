@@ -13,7 +13,7 @@
     "@galacean/engine-lottie": "0.9.0",
     "@galacean/engine-physics-lite": "0.9.0-beta.80",
     "@galacean/engine-physics-physx": "0.9.0-beta.80",
-    "@oasis-engine/spine": "^0.2.1",
+    "@galacean/engine-spine": "^0.9.0",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-icons": "^1.1.1",
     "@radix-ui/react-navigation-menu": "^1.1.1",
