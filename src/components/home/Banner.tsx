@@ -26,6 +26,7 @@ const StyledHeading = styled("h1", {
 const StyledSlogan = styled("p", {
   fontSize: "1.2rem",
   color: "$slate11",
+  padding: "$5 0",
   '@media (max-width: 768px)': {
     fontSize: "$2"
   }
@@ -68,16 +69,6 @@ function Banner() {
       <StyledSlogan>
         <FormattedMessage id='app.home.slogan' />
       </StyledSlogan>
-      <Flex gap="md" css={{
-        margin: "$4 0"
-      }}>
-        <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
-          <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
-        </a>
-        <a href="https://www.npmjs.com/package/oasis-engine" target='_blank'>
-          <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
-        </a>
-      </Flex>
       <Flex gap="lg" css={{
         '@media (max-width: 768px)': {
           flexDirection: "column",
@@ -85,19 +76,19 @@ function Banner() {
         }
       }}>
         <Link to={`/docs/${context.version}/${context.lang}/install`}>
-          <Button variant="light">
+          <Button variant="light" size="lg">
             <FormattedMessage id='app.home.start' />
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </Button>
         </Link>
         <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank'>
-          <Button variant="secondary">
+          <Button variant="secondary" size="lg">
             <GithubOutlined style={{ marginRight: "5px" }} />
             <FormattedMessage id='app.home.discussion' />
           </Button>
         </a>
         <a href='https://opencollective.com/oasis' target='_blank'>
-          <LaunchButton variant="secondary">
+          <LaunchButton variant="secondary" size="lg">
             <RocketOutlined style={{ marginRight: "3px", fontSize: "18px", animation: `${float} 1000ms ease-in-out infinite` }} />
             <FormattedMessage id='app.home.sponsoring' />
           </LaunchButton>

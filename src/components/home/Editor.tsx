@@ -5,7 +5,6 @@ import { Button, Flex } from '@oasis-engine/editor-components';
 import { ArrowRightOutlined } from '@ant-design/icons';
 
 const StyledEditor = styled("div", {
-  borderTop: "1px solid $slate5",
   padding: "$8 0 $20",
   "& h2": {
     color: "$slate12",

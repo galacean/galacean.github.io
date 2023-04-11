@@ -3,6 +3,7 @@ import {
   createFromIconfontCN,
   YuqueOutlined,
   ZhihuOutlined,
+  GithubOutlined,
 } from '@ant-design/icons';
 import { Flex } from '@oasis-engine/editor-components';
 
@@ -12,6 +13,9 @@ const Icon = createFromIconfontCN({
 
 export default function Socials() {
   return <Flex gap="md" css={{padding: "0 $6 0 $4"}}>
+    <a target='_blank' rel='noopener noreferrer' href='https://github.com/galacean'>
+      <GithubOutlined />
+    </a>
     <a target='_blank' rel='noopener noreferrer' href='https://www.zhihu.com/column/c_1369047387231592448'>
       <ZhihuOutlined />
     </a>

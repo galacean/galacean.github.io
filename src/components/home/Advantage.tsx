@@ -6,10 +6,6 @@ import { Flex } from '@oasis-engine/editor-components';
 const StyledFeature = styled("div", {
   flex: 1,
   padding: "0 2rem",
-  borderRight: "1px solid $slate5",
-  "&:last-child": {
-    borderRight: "none"
-  },
   "& h3": {
     fontSize: "$3",
     color: "$slate12",
