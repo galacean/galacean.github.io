@@ -17,7 +17,8 @@ const StyledSection = styled(Flex, {
 const StyledHeading = styled("h1", {
   textAlign: "center",
   "& img": {
-    width: "40rem",
+    width: "20rem",
+    marginBottom: "3rem",
     '@media (max-width: 768px)': {
       maxWidth: "90%"
     }
@@ -40,8 +41,8 @@ function Banner() {
     <StyledSection align="both" dir="column" gap="lg">
       <StyledHeading css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
         <img
-          src='https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Xwt7RZ-2FrUAAAAAAAAAAAAAARQnAQ'
-          alt='Oasis Engine'
+          src='https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original'
+          alt='Galacean'
         />
       </StyledHeading>
       <StyledSlogan>

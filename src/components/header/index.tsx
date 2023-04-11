@@ -16,7 +16,7 @@ import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
 
 const { versions } = config;
-const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
+const LOGO_URL = 'https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original';
 
 function Header() {
   const context = useContext(AppContext);
@@ -33,11 +33,11 @@ function Header() {
   const StyledLogo = styled(Link, {
     textDecoration: "none",
     "& img": {
-      width: "200px",
+      width: "7rem",
     },
     '@media (max-width: 768px)': {
       "& img": {
-        width: "150px",
+        width: "5rem",
       },
     }
   });
