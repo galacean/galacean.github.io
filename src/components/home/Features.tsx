@@ -33,7 +33,7 @@ export default function Features() {
           <FormattedMessage id='app.home.3d.intro' />
         </p>
         <Link to={`/docs/${version}/${lang}/mesh-renderer`}>
-          <Button variant='outline'>
+          <Button variant="secondary">
             <FormattedMessage id='app.home.more' />
           </Button>
         </Link>
@@ -45,7 +45,7 @@ export default function Features() {
           <FormattedMessage id='app.home.2d.intro' />
         </p>
         <Link to={`/docs/${version}/${lang}/sprite-renderer`}>
-          <Button variant='outline'>
+          <Button variant='secondary'>
             <FormattedMessage id='app.home.more' />
           </Button>
         </Link>

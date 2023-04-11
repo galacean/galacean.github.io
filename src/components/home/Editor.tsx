@@ -44,7 +44,7 @@ export default function Editor() {
           <FormattedMessage id="app.home.editor.intro" />
         </StyledP>
         <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
-          <StyledButton variant="primary" size="md">
+          <StyledButton variant="light" size="md">
             <FormattedMessage id="app.home.editor.apply" />
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </StyledButton>

@@ -17,8 +17,7 @@ const StyledSection = styled(Flex, {
 const StyledHeading = styled("h1", {
   textAlign: "center",
   "& img": {
-    width: "20rem",
-    marginBottom: "3rem",
+    width: "30rem",
     '@media (max-width: 768px)': {
       maxWidth: "90%"
     }
@@ -39,16 +38,18 @@ function Banner() {
 
   return (
     <StyledSection align="both" dir="column" gap="lg">
-      <StyledHeading css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
+      <StyledHeading>
         <img
-          src='https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original'
+          src='https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*j82bSJoOTycAAAAAAAAAAAAADsF_AQ/original'
           alt='Galacean'
         />
       </StyledHeading>
       <StyledSlogan>
         <FormattedMessage id='app.home.slogan' />
       </StyledSlogan>
-      <Flex gap="md">
+      <Flex gap="md" css={{
+        margin: "$4 0"
+      }}>
         <a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
           <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
         </a>
@@ -57,26 +58,25 @@ function Banner() {
         </a>
       </Flex>
       <Flex gap="lg" css={{
-        marginTop: "$4",
         '@media (max-width: 768px)': {
           flexDirection: "column",
           textAlign: "center"
         }
       }}>
         <Link to={`/docs/${context.version}/${context.lang}/install`}>
-          <Button variant="primary">
+          <Button variant="light">
             <FormattedMessage id='app.home.start' />
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </Button>
         </Link>
         <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank'>
-          <Button>
+          <Button variant="secondary">
             <GithubOutlined style={{ marginRight: "5px" }} />
             <FormattedMessage id='app.home.discussion' />
           </Button>
         </a>
         <a href='https://opencollective.com/oasis' target='_blank'>
-          <Button>
+          <Button variant="secondary">
             <HeartFilled style={{ color: "hotpink", marginRight: "5px" }} />
             <FormattedMessage id='app.home.sponsoring' />
           </Button>
