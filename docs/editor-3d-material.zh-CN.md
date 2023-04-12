@@ -17,7 +17,7 @@ label: Editor-Feature/Rendering-3d
 - Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
 - Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
 
-另外，[galacean-engine-toolkit 仓库](https://www.npmjs.com/package/@galacean/engine-toolkit) 还提供了 [Bake PBR](https://github.com/galacean/engine-toolkit/blob/dev/1.0/packages/custom-material/src/bake-pbr/BakePBRMaterial.ts) 作为 lightmap 的过渡方案，与 PBR 相比，只增加了一张 `lightmapTexture` 和 `lightmapIntensity`，用来存储光照和阴影信息，替换间接漫反射部分的计算，非常适用于那些需要大量光影计算，但是保持静态的场景。
+另外，[@galacean/engine-toolkit 仓库](https://www.npmjs.com/package/@galacean/engine-toolkit) 还提供了 [Bake PBR](https://github.com/galacean/engine-toolkit/blob/dev/1.0/packages/custom-material/src/bake-pbr/BakePBRMaterial.ts) 作为 lightmap 的过渡方案，与 PBR 相比，只增加了一张 `lightmapTexture` 和 `lightmapIntensity`，用来存储光照和阴影信息，替换间接漫反射部分的计算，非常适用于那些需要大量光影计算，但是保持静态的场景。
 
 ## 使用
 
