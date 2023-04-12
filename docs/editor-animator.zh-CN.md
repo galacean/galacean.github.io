@@ -27,7 +27,7 @@ label: Editor-Feature/Animation
 5. 点击 AnimatorState 为它绑定一个 AnimationClip
    ![image](https://gw.alipayobjects.com/zos/OasisHub/8e29b9fa-eeed-4e5c-84c1-ea68f9732a92/1667457999371-e0ed9c57-d44c-4f2a-abda-12eba6e3a934.png)
 
-6. 至此你在导出的项目中就可以通过 `animator.play("New State")` 播放 `running` 动画了。如果你没有为实体添加 Animator 组件的话 OasisEngine 会为你默认创建一个并且 AnimatorController 中默认添加了模型的所有动画，拿上图的模型举例，你只需要直接调用 `animator.play("running")` 就可以了。以上内容是可以帮助你更清晰的了解 Animator 的运行机制，当然除此以外你可以通过 AnimatorController 的编辑器实现更多的功能。
+6. 至此你在导出的项目中就可以通过 `animator.play("New State")` 播放 `running` 动画了。如果你没有为实体添加 Animator 组件的话 Galacean Engine 会为你默认创建一个并且 AnimatorController 中默认添加了模型的所有动画，拿上图的模型举例，你只需要直接调用 `animator.play("running")` 就可以了。以上内容是可以帮助你更清晰的了解 Animator 的运行机制，当然除此以外你可以通过 AnimatorController 的编辑器实现更多的功能。
 
 ### 参数说明
 
@@ -88,6 +88,6 @@ label: Editor-Feature/Animation
 | Weight   | 该层的混合权重，默认值为 1.0 。                                                |
 | Blending | 该层的混合模式，`Additive` 为叠加模式， `Override` 为覆盖模式，默认值为 `Override` |
 
-Oasis 支持多层的混合，你可以增加更多的层以达到你想要的效果。
+Galacean 支持多层的混合，你可以增加更多的层以达到你想要的效果。
 
 ![animationadditive3](https://gw.alipayobjects.com/zos/OasisHub/4485bf06-b783-4ff6-9dfd-cb05cc5adf84/1667459905978-f86e9051-7b62-44ad-aa43-87da0248a8f1.gif)
