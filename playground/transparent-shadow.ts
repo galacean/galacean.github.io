@@ -60,7 +60,7 @@ void main() {
 
     gl_FragColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
     
-    #ifndef OASIS_COLORSPACE_GAMMA
+    #ifndef GALACEAN_COLORSPACE_GAMMA
         gl_FragColor = linearToGamma(gl_FragColor);
     #endif
 }

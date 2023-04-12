@@ -167,7 +167,7 @@ class AnimateScript extends Script {
 const spriteVertShader = `
   precision highp float;
 
-  uniform mat4 u_VPMat;
+  uniform mat4 galacean_VPMat;
 
   attribute vec3 POSITION;
   attribute vec2 TEXCOORD_0;
@@ -178,7 +178,7 @@ const spriteVertShader = `
 
   void main()
   {
-    gl_Position = u_VPMat * vec4(POSITION, 1.0);
+    gl_Position = galacean_VPMat * vec4(POSITION, 1.0);
     v_color = COLOR_0;
     v_uv = TEXCOORD_0;
   }
@@ -188,7 +188,7 @@ const spriteFragmentShader = `
   precision mediump float;
   precision mediump int;
 
-  uniform sampler2D u_spriteTexture;
+  uniform sampler2D galacean_SpriteTexture;
   uniform sampler2D u_noiseTexture;
   uniform sampler2D u_rampTexture;
   uniform float u_threshold;
@@ -210,7 +210,7 @@ const spriteFragmentShader = `
 
     float degree = clamp(0.0, 1.0, diff / u_edgeLength);
     vec4 edgeColor = texture2D(u_rampTexture, vec2(degree, degree));
-    vec4 color = texture2D(u_spriteTexture, v_uv);
+    vec4 color = texture2D(galacean_SpriteTexture, v_uv);
     vec4 finalColor = lerp(edgeColor, color, degree);
     gl_FragColor = vec4(finalColor.rgb, color.a) * v_color;
   }

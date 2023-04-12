@@ -130,19 +130,19 @@ class PlaneAnimation extends Script {
 
 const shader = Shader.create(
   "test-plane",
-  `uniform mat4 u_MVPMat;
+  `uniform mat4 galacean_MVPMat;
     attribute vec4 POSITION;
     attribute vec2 TEXCOORD_0;
     
-    uniform mat4 u_MVMat;
+    uniform mat4 galacean_MVMat;
     
     varying vec2 v_uv;
     varying vec3 v_position;
     
     void main() {
       v_uv = TEXCOORD_0;
-      v_position = (u_MVMat * POSITION).xyz;
-      gl_Position = u_MVPMat * POSITION;
+      v_position = (galacean_MVMat * POSITION).xyz;
+      gl_Position = galacean_MVPMat * POSITION;
     }`,
 
   `
@@ -166,7 +166,7 @@ const shader = Shader.create(
       fogAmount = clamp(fogAmount, 0., 1.);
       gl_FragColor = mix(color, u_fogColor, fogAmount); 
 
-      #ifndef OASIS_COLORSPACE_GAMMA
+      #ifndef GALACEAN_COLORSPACE_GAMMA
         gl_FragColor = linearToGamma(gl_FragColor);
       #endif
     }

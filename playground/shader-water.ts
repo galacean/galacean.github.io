@@ -36,7 +36,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   // 自定义材质
   const vertexSource = `
-uniform mat4 u_MVPMat;
+uniform mat4 galacean_MVPMat;
 attribute vec3 POSITION;
 attribute vec2 TEXCOORD_0;
 attribute vec3 NORMAL;
@@ -48,7 +48,7 @@ varying vec3 v_normal;
 
 void main() {
 
-  gl_Position = u_MVPMat  *  vec4( POSITION, 1.0 );
+  gl_Position = galacean_MVPMat  *  vec4( POSITION, 1.0 );
   v_uv = TEXCOORD_0;
   v_normal = NORMAL;
   v_position = POSITION;
@@ -62,7 +62,7 @@ varying vec3 v_normal;
 
 uniform vec4 oasis_ElapsedTime;
 uniform sampler2D u_texture;
-uniform vec3 u_cameraPos;
+uniform vec3 galacean_CameraPos;
 
 #define EPS 0.001
 #define MAX_ITR 100
@@ -144,7 +144,7 @@ void main (void) {
     vec2 uv = vec2(v_uv.x * 0.5, v_uv.y * 0.5);//  / iResolution.xy;
     
     vec3 pos = v_position; 
-    vec3 dist = pos - u_cameraPos;
+    vec3 dist = pos - galacean_CameraPos;
 
     float dis = EPS;
     vec3 rayDir = normalize(dist);

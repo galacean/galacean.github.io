@@ -230,7 +230,7 @@ async function main() {
         vec4 emission = u_emissiveColor;
         vec4 diffuse = u_baseColor;
         vec4 specular = u_specularColor;
-        vec4 ambient = vec4(u_envMapLight.diffuse * u_envMapLight.diffuseIntensity, 1.0) * diffuse;
+        vec4 ambient = vec4(galacean_EnvMapLight.diffuse * galacean_EnvMapLight.diffuseIntensity, 1.0) * diffuse;
     
     #ifdef OASIS_CALCULATE_SHADOWS
         int cascadeIndex = computeCascadeIndex(v_pos);

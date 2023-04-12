@@ -106,7 +106,7 @@ function addDataGUI(material: Material) {
 
 // Custom shader
 const spriteVertShader = `
-  uniform mat4 u_VPMat;
+  uniform mat4 galacean_VPMat;
 
   attribute vec3 POSITION;
   attribute vec2 TEXCOORD_0;
@@ -117,14 +117,14 @@ const spriteVertShader = `
 
   void main()
   {
-    gl_Position = u_VPMat * vec4(POSITION, 1.0);
+    gl_Position = galacean_VPMat * vec4(POSITION, 1.0);
     v_color = COLOR_0;
     v_uv = TEXCOORD_0;
   }
 `;
 
 const spriteFragmentShader = `
-  uniform sampler2D u_spriteTexture;
+  uniform sampler2D galacean_SpriteTexture;
   uniform vec4 oasis_ElapsedTime;
   uniform float u_indensity;
 
@@ -138,9 +138,9 @@ const spriteFragmentShader = `
   void main() {
     float splitAmount = u_indensity * randomNoise(oasis_ElapsedTime.x * 100.0);
 
-    vec4 normalColor = texture2D(u_spriteTexture, v_uv);
-    float r = texture2D(u_spriteTexture, vec2(v_uv.x + splitAmount, v_uv.y)).r;
-    float b = texture2D(u_spriteTexture, vec2(v_uv.x - splitAmount, v_uv.y)).b;
+    vec4 normalColor = texture2D(galacean_SpriteTexture, v_uv);
+    float r = texture2D(galacean_SpriteTexture, vec2(v_uv.x + splitAmount, v_uv.y)).r;
+    float b = texture2D(galacean_SpriteTexture, vec2(v_uv.x - splitAmount, v_uv.y)).b;
     gl_FragColor = vec4(r, normalColor.g, b, normalColor.a) * v_color;
   }
 `;

@@ -60,12 +60,12 @@ module.exports = {
   },
   resolve:{
     dedupe:[
-      "oasis-engine"
+      "@galacean/engine"
     ]
   },
   optimizeDeps: {
     exclude: [
-      "oasis-engine",
+      "@galacean/engine",
       "@oasis-engine/draco",
       "@oasis-engine/lottie",
       "@oasis-engine/spine",
