@@ -1,6 +1,5 @@
 import { ArrowRightOutlined, GithubOutlined, RocketOutlined } from '@ant-design/icons';
-import { Button, Flex } from '@oasis-engine/editor-components';
-import { keyframes, styled } from "@oasis-engine/editor-design-system";
+import { Button, Flex, keyframes, styled } from '@galacean/editor-ui';
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
@@ -76,19 +75,19 @@ function Banner() {
         }
       }}>
         <Link to={`/docs/${context.version}/${context.lang}/install`}>
-          <Button variant="light" size="lg">
+          <Button variant="light" size="lg" round>
             <FormattedMessage id='app.home.start' />
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </Button>
         </Link>
-        <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank'>
-          <Button variant="secondary" size="lg">
+        <a href='https://github.com/galacean/engine/discussions/categories/q-a' target='_blank'>
+          <Button variant="secondary" size="lg" round>
             <GithubOutlined style={{ marginRight: "5px" }} />
             <FormattedMessage id='app.home.discussion' />
           </Button>
         </a>
         <a href='https://opencollective.com/oasis' target='_blank'>
-          <LaunchButton variant="secondary" size="lg">
+          <LaunchButton variant="secondary" size="lg" round>
             <RocketOutlined style={{ marginRight: "3px", fontSize: "18px", animation: `${float} 1000ms ease-in-out infinite` }} />
             <FormattedMessage id='app.home.sponsoring' />
           </LaunchButton>

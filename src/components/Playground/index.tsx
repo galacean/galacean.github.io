@@ -1,9 +1,8 @@
+import { Flex, styled } from "@galacean/editor-ui";
 import Prism from 'prismjs';
 import { createRef, useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
 import siteConfig from '../../siteconfig.json';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
 import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';

@@ -1,7 +1,6 @@
+import { ActionButton, lightTheme } from "@galacean/editor-ui";
+import { HalfMoon, SunLight } from 'iconoir-react';
 import React, { useContext } from "react";
-import { lightTheme } from "@oasis-engine/editor-design-system";
-import { SunLight, HalfMoon } from 'iconoir-react';
-import { ActionButton } from "@oasis-engine/editor-components";
 import { AppContext } from "../../contextProvider";
 
 export default function ThemeButton() {

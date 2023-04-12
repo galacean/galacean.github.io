@@ -1,12 +1,9 @@
-import mermaid from 'mermaid'
+import { ActionButton, Flex, Popover, styled } from '@galacean/editor-ui';
 import { List } from 'iconoir-react';
+import mermaid from 'mermaid';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ActionButton } from '@oasis-engine/editor-components';
-import { styled } from "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
-import { Popover } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import Footer from '../footer';
 import LoadingIcon from '../Loading';

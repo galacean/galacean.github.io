@@ -1,13 +1,9 @@
+import { ActionButton, Flex, Option, Popover, Select, styled } from '@galacean/editor-ui';
 import { Menu, Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
-import { ActionButton } from '@oasis-engine/editor-components';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
-import { Popover } from '@oasis-engine/editor-components';
-import { Option, Select } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import { NavigationMenuMobile } from './components/NavigationMenuMobile';

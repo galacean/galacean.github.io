@@ -44,8 +44,8 @@ export default ({ mode }) => {
         output: {
           manualChunks: {
             '@galacean/engine': ['@galacean/engine'],
-            '@oasis-engine/spine': ['@oasis-engine/spine'],
-            '@oasis-engine/editor-components': ['@oasis-engine/editor-components'],
+            '@galacean/engine-spine': ['galaceanSpine'],
+            '@galacean/editor-ui': ['@galacean/editor-ui'],
             '@babel/standalone': ['@babel/standalone'],
             'mermaid': ['mermaid']
           },

@@ -1,14 +1,10 @@
-import React from 'react';
 import {
-  QrcodeOutlined,
-  ChromeOutlined
+  ChromeOutlined, QrcodeOutlined
 } from '@ant-design/icons';
+import { Flex, styled, Tooltip } from "@galacean/editor-ui";
 import QRCode from 'qrcode.react';
-import { StyledAction, StyledActions } from './CodeActions';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Tooltip } from '@oasis-engine/editor-components';
 import { FormattedMessage } from 'react-intl';
-import { Flex } from '@oasis-engine/editor-components';
+import { StyledAction, StyledActions } from './CodeActions';
 
 const StyledDemoActions = styled(StyledActions, {
   right: "initial",

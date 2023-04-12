@@ -1,14 +1,10 @@
-import React, { useState } from 'react';
 import { CopyOutlined } from '@ant-design/icons';
+import { Flex, styled, toast, Tooltip } from "@galacean/editor-ui";
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { FormattedMessage } from 'react-intl';
 import Codepen from './Codepen';
 import CodeSandbox from './CodeSandbox';
 import Stackblitz from './Stackblitz';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Tooltip } from '@oasis-engine/editor-components';
-import { Flex } from '@oasis-engine/editor-components';
-import { FormattedMessage } from 'react-intl';
-import { toast } from '@oasis-engine/editor-components';
 
 export const StyledActions = styled(Flex, {
   position: "absolute",

@@ -1,6 +1,5 @@
+import { Spin } from '@galacean/editor-ui';
 import React from 'react';
-import { useIntl } from 'react-intl';
-import { Spin } from '@oasis-engine/editor-components';
 
 const LoadingIcon: React.FC = (props) => {
   return (

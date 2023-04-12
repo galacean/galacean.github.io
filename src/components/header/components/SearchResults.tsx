@@ -1,8 +1,7 @@
+import { styled, Tabs, TabsContent, TabsList } from "@galacean/editor-ui";
 import { Book, CodeBracketsSquare, Puzzle } from 'iconoir-react';
 import { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { styled } from "@oasis-engine/editor-design-system";
-import { Tabs, TabsContent, TabsList } from '@oasis-engine/editor-components';
 import { AppContext } from '../../contextProvider';
 import { searchAPI, searchDoc } from '../headerUtils';
 import DocSearchRes from './SearchResult';

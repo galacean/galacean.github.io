@@ -1,24 +1,23 @@
+import { Flex, styled } from "@galacean/editor-ui";
 import toc from '@jsdevtools/rehype-toc';
-import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
-import MermaidBlock from './MermaidBlock';
-import ReactMarkdown from 'react-markdown';
+import moment from 'moment';
 import Prism from 'prismjs';
+import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'react';
+import { FormattedMessage } from 'react-intl';
+import ReactMarkdown from 'react-markdown';
+import { Link, useParams } from 'react-router-dom';
+import rehypeRaw from 'rehype-raw';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
+import { AppContext } from '../../contextProvider';
 import Playground from '../../Playground';
+import customeToc from '../plugins/customeToc';
 import linkPlugin from '../plugins/link';
 import playgroundPlugin from '../plugins/playground';
-import rehypeRaw from 'rehype-raw';
-import moment from 'moment';
-import { FormattedMessage } from 'react-intl';
-import { Link, useParams } from 'react-router-dom';
-import { AppContext } from '../../contextProvider';
-import customeToc from '../plugins/customeToc';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
 import DocToc from './DocToc';
+import MermaidBlock from './MermaidBlock';
 import Source from './Source';
-import { styled } from "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
 
 interface DocDetailProps {
   selectedDocId: string;

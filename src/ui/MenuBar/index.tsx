@@ -1,4 +1,4 @@
-import { styled } from "@oasis-engine/editor-design-system"
+import { styled } from "@galacean/editor-ui"
 
 const StyledRoot = styled("div", {
   lineHeight: 2,
