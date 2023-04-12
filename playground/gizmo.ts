@@ -7,6 +7,16 @@
  * 本示例展示如何使用Navigation Gizmo控制场景相机, 以及通过Gizmo控制物体移动、缩放、旋转
  */
 
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+import {
+  AnchorType,
+  CoordinateType,
+  Gizmo,
+  State
+} from "@oasis-engine-toolkit/gizmo";
+import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
+import { LitePhysics } from "@oasis-engine/physics-lite";
 import {
   Camera,
   Color,
@@ -17,18 +27,8 @@ import {
   PointerButton,
   Script,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
-import { LitePhysics } from "@oasis-engine/physics-lite";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
-import {
-  AnchorType,
-  CoordinateType,
-  Gizmo,
-  State,
-} from "@oasis-engine-toolkit/gizmo";
 
 import * as dat from "dat.gui";
 
@@ -212,44 +212,46 @@ const traverseEntity = (entity: Entity, callback: (entity: Entity) => any) => {
   }
 };
 
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
-engine.canvas.resizeByClientSize();
-const scene = engine.sceneManager.activeScene;
-const { background } = scene;
-background.solidColor = new Color(0.8, 0.8, 0.8, 1);
-const rootEntity = scene.createRootEntity();
+WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
+  (engine) => {
+    engine.canvas.resizeByClientSize();
+    const scene = engine.sceneManager.activeScene;
+    const { background } = scene;
+    background.solidColor = new Color(0.8, 0.8, 0.8, 1);
+    const rootEntity = scene.createRootEntity();
 
-// init full screen camera
-const cameraEntity = rootEntity.createChild("fullscreen-camera");
-const camera = cameraEntity.addComponent(Camera);
-cameraEntity.transform.setPosition(15, 9, 15);
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+    // init full screen camera
+    const cameraEntity = rootEntity.createChild("fullscreen-camera");
+    const camera = cameraEntity.addComponent(Camera);
+    cameraEntity.transform.setPosition(15, 9, 15);
+    cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 
-// setup scene
-const lightEntity = rootEntity.createChild("Light");
-lightEntity.transform.setPosition(20, 20, 20);
-lightEntity.transform.setRotation(-45, 0, 0);
-lightEntity.addComponent(DirectLight);
+    // setup scene
+    const lightEntity = rootEntity.createChild("Light");
+    lightEntity.transform.setPosition(20, 20, 20);
+    lightEntity.transform.setRotation(-45, 0, 0);
+    lightEntity.addComponent(DirectLight);
 
-const ambientLight = scene.ambientLight;
-ambientLight.diffuseSolidColor.set(0.8, 0.8, 1, 1);
-ambientLight.diffuseIntensity = 0.5;
+    const ambientLight = scene.ambientLight;
+    ambientLight.diffuseSolidColor.set(0.8, 0.8, 1, 1);
+    ambientLight.diffuseIntensity = 0.5;
 
-// add controls
-rootEntity.addComponent(ControlScript);
+    // add controls
+    rootEntity.addComponent(ControlScript);
 
-engine.resourceManager
-  .load<GLTFResource>(
-    "https://gw.alipayobjects.com/os/OasisHub/34156c78-ed78-4792-a027-f6b790ac5bd1/oasis-file/1664436920180/medieval_fantasy_tavern.gltf"
-  )
-  .then((gltf) => {
-    const { defaultSceneRoot } = gltf;
-    rootEntity.addChild(defaultSceneRoot);
-    traverseEntity(defaultSceneRoot, (entity) => {
-      entity.layer = LayerSetting.Entity;
-    });
-  })
-  .then(() => {
-    engine.run();
-  });
+    engine.resourceManager
+      .load<GLTFResource>(
+        "https://gw.alipayobjects.com/os/OasisHub/34156c78-ed78-4792-a027-f6b790ac5bd1/oasis-file/1664436920180/medieval_fantasy_tavern.gltf"
+      )
+      .then((gltf) => {
+        const { defaultSceneRoot } = gltf;
+        rootEntity.addChild(defaultSceneRoot);
+        traverseEntity(defaultSceneRoot, (entity) => {
+          entity.layer = LayerSetting.Entity;
+        });
+      })
+      .then(() => {
+        engine.run();
+      });
+  }
+);

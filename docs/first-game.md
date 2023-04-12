@@ -80,8 +80,8 @@ In the previous demand analysis, we can roughly determine the front and rear occ
 ### Build with Script
 
 ```typescript
-// Create engine object.
-const engine = new WebGLEngine("canvas");
+// Create engine
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;

@@ -2,6 +2,7 @@
  * @title AmbientLight
  * @category Light
  */
+import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -10,7 +11,6 @@ import {
   Camera,
   DiffuseMode,
   DirectLight,
-  Logger,
   MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
@@ -18,83 +18,90 @@ import {
   Vector3,
   WebGLEngine
 } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-Logger.enable();
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
 
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
-const gui = new dat.GUI();
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  engine.canvas.resizeByClientSize();
 
-// Create camera
-const cameraNode = rootEntity.createChild("camera_node");
-cameraNode.transform.position = new Vector3(-3, 0, 3);
-cameraNode.addComponent(Camera);
-cameraNode.addComponent(OrbitControl);
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
+  const gui = new dat.GUI();
 
-// Create sky
-const sky = scene.background.sky;
-const skyMaterial = new SkyBoxMaterial(engine);
-scene.background.mode = BackgroundMode.Sky;
-sky.material = skyMaterial;
-sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
+  // Create camera
+  const cameraNode = rootEntity.createChild("camera_node");
+  cameraNode.transform.position = new Vector3(-3, 0, 3);
+  cameraNode.addComponent(Camera);
+  cameraNode.addComponent(OrbitControl);
 
-const lightEntity = rootEntity.createChild();
-lightEntity.addComponent(DirectLight).intensity = 0.5;
-lightEntity.transform.setPosition(-5, 5, 5);
-lightEntity.transform.lookAt(new Vector3(0, 0, 0));
+  // Create sky
+  const sky = scene.background.sky;
+  const skyMaterial = new SkyBoxMaterial(engine);
+  scene.background.mode = BackgroundMode.Sky;
+  sky.material = skyMaterial;
+  sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
-// material ball
-const ball = rootEntity.createChild("ball");
-const ballRender = ball.addComponent(MeshRenderer);
-const material = new PBRMaterial(engine);
-material.metallic = 0;
-material.roughness = 0;
-ballRender.mesh = PrimitiveMesh.createSphere(engine, 1, 64);
-ballRender.setMaterial(material);
+  const lightEntity = rootEntity.createChild();
+  lightEntity.addComponent(DirectLight).intensity = 0.5;
+  lightEntity.transform.setPosition(-5, 5, 5);
+  lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 
-engine.resourceManager
-  .load<AmbientLight>({
-    type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin"
-  })
-  .then((ambientLight) => {
-    scene.ambientLight = ambientLight;
-    skyMaterial.textureCubeMap = ambientLight.specularTexture;
-    skyMaterial.textureDecodeRGBM = true;
-    openDebug(ambientLight.specularTexture);
-    engine.run();
-  });
+  // material ball
+  const ball = rootEntity.createChild("ball");
+  const ballRender = ball.addComponent(MeshRenderer);
+  const material = new PBRMaterial(engine);
+  material.metallic = 0;
+  material.roughness = 0;
+  ballRender.mesh = PrimitiveMesh.createSphere(engine, 1, 64);
+  ballRender.setMaterial(material);
 
-function openDebug(specularTexture) {
-  const info = {
-    diffuseMode: "SphericalHarmonics",
-    diffuseSolidColor: [0.212 * 255, 0.227 * 255, 0.259 * 255],
-    specularTexture: true
-  };
+  engine.resourceManager
+    .load<AmbientLight>({
+      type: AssetType.Env,
+      url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin",
+    })
+    .then((ambientLight) => {
+      scene.ambientLight = ambientLight;
+      skyMaterial.textureCubeMap = ambientLight.specularTexture;
+      skyMaterial.textureDecodeRGBM = true;
+      openDebug(ambientLight.specularTexture);
+      engine.run();
+    });
 
-  gui.add(info, "diffuseMode", ["SolidColor", "SphericalHarmonics"]).onChange((v) => {
-    if (v === "SphericalHarmonics") {
-      scene.ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-    } else if (v === "SolidColor") {
-      scene.ambientLight.diffuseMode = DiffuseMode.SolidColor;
-    }
-  });
+  function openDebug(specularTexture) {
+    const info = {
+      diffuseMode: "SphericalHarmonics",
+      diffuseSolidColor: [0.212 * 255, 0.227 * 255, 0.259 * 255],
+      specularTexture: true,
+    };
 
-  gui.addColor(info, "diffuseSolidColor").onChange((v) => {
-    scene.ambientLight.diffuseSolidColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
-  });
+    gui
+      .add(info, "diffuseMode", ["SolidColor", "SphericalHarmonics"])
+      .onChange((v) => {
+        if (v === "SphericalHarmonics") {
+          scene.ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+        } else if (v === "SolidColor") {
+          scene.ambientLight.diffuseMode = DiffuseMode.SolidColor;
+        }
+      });
 
-  gui.add(info, "specularTexture").onChange((v) => {
-    if (v) {
-      scene.ambientLight.specularTexture = specularTexture;
-    } else {
-      scene.ambientLight.specularTexture = null;
-    }
-  });
+    gui.addColor(info, "diffuseSolidColor").onChange((v) => {
+      scene.ambientLight.diffuseSolidColor.set(
+        v[0] / 255,
+        v[1] / 255,
+        v[2] / 255,
+        1
+      );
+    });
 
-  // env light debug
-  gui.add(scene.ambientLight, "specularIntensity", 0, 1);
-  gui.add(scene.ambientLight, "diffuseIntensity", 0, 1);
-}
+    gui.add(info, "specularTexture").onChange((v) => {
+      if (v) {
+        scene.ambientLight.specularTexture = specularTexture;
+      } else {
+        scene.ambientLight.specularTexture = null;
+      }
+    });
+
+    // env light debug
+    gui.add(scene.ambientLight, "specularIntensity", 0, 1);
+    gui.add(scene.ambientLight, "diffuseIntensity", 0, 1);
+  }
+});

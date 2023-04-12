@@ -23,12 +23,11 @@ import {
   ShadowResolution,
   ShadowType,
   Vector3,
-  WebGLEngine,
-  WebGLMode
+  WebGLEngine
 } from "oasis-engine";
 
-function main() {
-  const engine = new WebGLEngine("canvas", { webGLMode: WebGLMode.WebGL2 });
+async function main() {
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   createShadowMapVisualShader();

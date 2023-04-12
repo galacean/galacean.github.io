@@ -61,8 +61,10 @@ export class Script extends Component {
 import {WebGLEngine, HitResult, Ray} from 'oasis-engine';
 import {LitePhysics} from "@oasis-engine/physics-lite";
 
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
+const engine = await WebGLEngine.create({
+  canvas: "canvas",
+  physics: new LitePhysics(),
+});
 engine.canvas.resizeByClientSize();
 
 // 将屏幕输入转换成Ray

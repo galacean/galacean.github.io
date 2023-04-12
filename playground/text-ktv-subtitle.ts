@@ -21,7 +21,7 @@ import {
 } from "oasis-engine";
 
 // Create engine object
-const engine = new WebGLEngine("canvas");
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 engine.canvas.resizeByClientSize();
 engine.run();
 

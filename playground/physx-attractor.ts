@@ -27,7 +27,7 @@ import {
   StaticCollider,
   TextRenderer,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "oasis-engine";
 
 import { PhysXPhysics } from "@oasis-engine/physics-physx";
@@ -166,64 +166,63 @@ function addSphere(
 }
 
 //--------------------------------------------------------------------------------------------------------------------
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then(
+  (engine) => {
+    engine.canvas.resizeByClientSize();
+    const scene = engine.sceneManager.activeScene;
+    scene.shadowDistance = 20;
+    const rootEntity = scene.createRootEntity();
 
-  engine.canvas.resizeByClientSize();
-  const scene = engine.sceneManager.activeScene;
-  scene.shadowDistance = 20;
-  const rootEntity = scene.createRootEntity();
+    // init camera
+    const cameraEntity = rootEntity.createChild("camera");
+    const camera = cameraEntity.addComponent(Camera);
+    const pos = cameraEntity.transform.position;
+    pos.set(0, 0, -15);
+    cameraEntity.transform.position = pos;
+    cameraEntity.transform.lookAt(new Vector3());
 
-  // init camera
-  const cameraEntity = rootEntity.createChild("camera");
-  const camera = cameraEntity.addComponent(Camera);
-  const pos = cameraEntity.transform.position;
-  pos.set(0, 0, -15);
-  cameraEntity.transform.position = pos;
-  cameraEntity.transform.lookAt(new Vector3());
+    const entity = cameraEntity.createChild("text");
+    entity.transform.position = new Vector3(0, 3.5, -10);
+    const renderer = entity.addComponent(TextRenderer);
+    renderer.color = new Color();
+    renderer.text = "Use mouse to interact with spheres";
+    renderer.font = Font.createFromOS(entity.engine, "Arial");
+    renderer.fontSize = 40;
 
-  const entity = cameraEntity.createChild("text");
-  entity.transform.position = new Vector3(0, 3.5, -10);
-  const renderer = entity.addComponent(TextRenderer);
-  renderer.color = new Color();
-  renderer.text = "Use mouse to interact with spheres";
-  renderer.font = Font.createFromOS(entity.engine, "Arial");
-  renderer.fontSize = 40;
+    const light = rootEntity.createChild("light");
+    light.transform.setPosition(5, 0, -10);
+    light.transform.lookAt(new Vector3(0, 0, 0));
+    const p = light.addComponent(DirectLight);
+    p.shadowType = ShadowType.SoftLow;
 
-  const light = rootEntity.createChild("light");
-  light.transform.setPosition(5, 0, -10);
-  light.transform.lookAt(new Vector3(0, 0, 0));
-  const p = light.addComponent(DirectLight);
-  p.shadowType = ShadowType.SoftLow;
+    {
+      const attractorEntity = rootEntity.createChild();
+      attractorEntity.addComponent(Interactor).camera = camera;
+      const mtl = new PBRMaterial(engine);
+      mtl.baseColor.set(1, 1, 1, 1.0);
+      const renderer = attractorEntity.addComponent(MeshRenderer);
+      renderer.mesh = PrimitiveMesh.createSphere(engine, 2);
+      // renderer.setMaterial(mtl);
 
-  {
-    const attractorEntity = rootEntity.createChild();
-    attractorEntity.addComponent(Interactor).camera = camera;
-    const mtl = new PBRMaterial(engine);
-    mtl.baseColor.set(1, 1, 1, 1.0);
-    const renderer = attractorEntity.addComponent(MeshRenderer);
-    renderer.mesh = PrimitiveMesh.createSphere(engine, 2);
-    // renderer.setMaterial(mtl);
+      const attractorSphere = new SphereColliderShape();
+      attractorSphere.radius = 2;
+      const attractorCollider = attractorEntity.addComponent(DynamicCollider);
+      attractorCollider.isKinematic = true;
+      attractorCollider.addShape(attractorSphere);
+    }
 
-    const attractorSphere = new SphereColliderShape();
-    attractorSphere.radius = 2;
-    const attractorCollider = attractorEntity.addComponent(DynamicCollider);
-    attractorCollider.isKinematic = true;
-    attractorCollider.addShape(attractorSphere);
+    engine.physicsManager.gravity = new Vector3();
+    init(rootEntity);
+
+    engine.resourceManager
+      .load<AmbientLight>({
+        type: AssetType.Env,
+        url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+      })
+      .then((ambientLight) => {
+        scene.ambientLight = ambientLight;
+
+        engine.run();
+      });
   }
-
-  engine.physicsManager.gravity = new Vector3();
-  init(rootEntity);
-
-  engine.resourceManager
-    .load<AmbientLight>({
-      type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
-    })
-    .then((ambientLight) => {
-      scene.ambientLight = ambientLight;
-
-      engine.run();
-    });
-});
+);

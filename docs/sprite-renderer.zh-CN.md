@@ -19,7 +19,7 @@ label: Graphics/2D
 ```typescript
 import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
 
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 engine.resourceManager
   .load<Texture2D>({
