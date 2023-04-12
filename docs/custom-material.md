@@ -73,13 +73,11 @@ In the above, we gave the material a shader, this time the program can start ren
 | galacean_ProjMat    | mat4 | projection matrix                    |
 | galacean_VPMat      | mat4 | viewport projection matrix           |
 | galacean_ViewInvMat | mat4 | viewport inverse matrix              |
-| u_projInvMat | mat4 | projection inverse matrix            |
 | galacean_CameraPos  | vec3 | camera position                      |
 | galacean_LocalMat   | mat4 | model local coordinate system matrix |
 | galacean_ModelMat   | mat4 | model world Coordinate System Matrix |
 | galacean_MVMat      | mat4 | model viewport matrix                |
 | galacean_MVPMat     | mat4 | model viewport projection matrix     |
-| u_MVInvMat   | mat4 | model viewport inverse matrix        |
 | galacean_NormalMat  | mat4 | normal inverse transpose matrix      |
 
 #### Time

@@ -75,13 +75,11 @@ const material = new Material(engine, Shader.find("demo"));
 | galacean_ProjMat | mat4 | 投影矩阵 |
 | galacean_VPMat | mat4 | 视口投影矩阵 |
 | galacean_ViewInvMat | mat4 | 视口逆矩阵 |
-| u_projInvMat | mat4 | 投影逆矩阵 |
 | galacean_CameraPos | vec3 | 相机位置 |
 | galacean_LocalMat | mat4 | 模型本地坐标系矩阵 |
 | galacean_ModelMat | mat4 | 模型世界坐标系矩阵 |
 | galacean_MVMat | mat4 | 模型视口矩阵 |
 | galacean_MVPMat | mat4 | 模型视口投影矩阵 |
-| u_MVInvMat | mat4 | 模型视口逆矩阵 |
 | galacean_NormalMat | mat4 | 法线逆转置矩阵 |
 
 #### 时间
