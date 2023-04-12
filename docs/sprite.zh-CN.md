@@ -56,4 +56,4 @@ sprite.region = new Rect(0, 0, 0.5, 1);
 
 ### 设置 border
 
-<playground src="sprite-slice.ts"></playground>
+<playground src="sprite-drawMode.ts"></playground>
