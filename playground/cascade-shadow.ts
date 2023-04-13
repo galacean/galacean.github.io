@@ -256,7 +256,7 @@ async function main() {
 class CSSMVisualMaterial extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("shadow-map-visual"));
-    this.shaderData.enableMacro("O3_SHADOW_MAP_COUNT", "1");
+    this.shaderData.enableMacro("SCENE_SHADOW_CASCADED_COUNT", "1");
     this.shaderData.enableMacro("MATERIAL_NEED_WORLDPOS");
   }
 }
