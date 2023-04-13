@@ -227,10 +227,10 @@ async function main() {
     #include <mobile_material_frag>
     
     void main() {
-        vec4 emission = u_emissiveColor;
-        vec4 diffuse = u_baseColor;
-        vec4 specular = u_specularColor;
-        vec4 ambient = vec4(galacean_EnvMapLight.diffuse * galacean_EnvMapLight.diffuseIntensity, 1.0) * diffuse;
+        vec4 emission = material_EmissiveColor;
+        vec4 diffuse = material_BaseColor;
+        vec4 specular = material_SpecularColor;
+        vec4 ambient = vec4(scene_EnvMapLight.diffuse * scene_EnvMapLight.diffuseIntensity, 1.0) * diffuse;
     
     #ifdef OASIS_CALCULATE_SHADOWS
         int cascadeIndex = computeCascadeIndex(v_pos);
@@ -257,7 +257,7 @@ class CSSMVisualMaterial extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("shadow-map-visual"));
     this.shaderData.enableMacro("O3_SHADOW_MAP_COUNT", "1");
-    this.shaderData.enableMacro("O3_NEED_WORLDPOS");
+    this.shaderData.enableMacro("MATERIAL_NEED_WORLDPOS");
   }
 }
 

@@ -158,12 +158,12 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
 function initCustomShader(): Shader {
   const shader = Shader.create(
     "CustomShader",
-    `uniform mat4 galacean_MVPMat;
+    `uniform mat4 renderer_MVPMat;
       attribute vec4 POSITION;
       attribute vec3 INSTANCE_OFFSET;
       attribute vec3 INSTANCE_COLOR;
       
-      uniform mat4 galacean_MVMat;
+      uniform mat4 renderer_MVMat;
       
       varying vec3 v_position;
       varying vec3 v_color;
@@ -171,7 +171,7 @@ function initCustomShader(): Shader {
       void main() {
         vec4 position = POSITION;
         position.xyz += INSTANCE_OFFSET;
-        gl_Position = galacean_MVPMat * position;
+        gl_Position = renderer_MVPMat * position;
 
         v_color = INSTANCE_COLOR;
       }`,

@@ -20,12 +20,12 @@ import { Material, Shader, Color } from "oasis-engine";
 
 //-- Shader
 const vertexSource = `
-  uniform mat4 galacean_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
 
   void main() {
-    gl_Position = galacean_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
   }
   `;
 
@@ -69,16 +69,16 @@ In the above, we gave the material a shader, this time the program can start ren
 
 | Name         | Type | Meaning                              |
 | :----------- | :--- | ------------------------------------ |
-| galacean_ViewMat    | mat4 | viewport matrix                      |
-| galacean_ProjMat    | mat4 | projection matrix                    |
-| galacean_VPMat      | mat4 | viewport projection matrix           |
-| galacean_ViewInvMat | mat4 | viewport inverse matrix              |
-| galacean_CameraPos  | vec3 | camera position                      |
-| galacean_LocalMat   | mat4 | model local coordinate system matrix |
-| galacean_ModelMat   | mat4 | model world Coordinate System Matrix |
-| galacean_MVMat      | mat4 | model viewport matrix                |
-| galacean_MVPMat     | mat4 | model viewport projection matrix     |
-| galacean_NormalMat  | mat4 | normal inverse transpose matrix      |
+| camera_ViewMat    | mat4 | viewport matrix                      |
+| camera_ProjMat    | mat4 | projection matrix                    |
+| camera_VPMat      | mat4 | viewport projection matrix           |
+| camera_ViewInvMat | mat4 | viewport inverse matrix              |
+| camera_Position  | vec3 | camera position                      |
+| renderer_LocalMat   | mat4 | model local coordinate system matrix |
+| renderer_ModelMat   | mat4 | model world Coordinate System Matrix |
+| renderer_MVMat      | mat4 | model viewport matrix                |
+| renderer_MVPMat     | mat4 | model viewport projection matrix     |
+| renderer_NormalMat  | mat4 | normal inverse transpose matrix      |
 
 #### Time
 
@@ -268,14 +268,14 @@ import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from
 
 //-- Shader
 const vertexSource = `
-  uniform mat4 galacean_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
   attribute vec2 TEXCOORD_0;
   varying vec2 v_uv;
 
   void main() {
-    gl_Position = galacean_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
     v_uv = TEXCOORD_0;
   }
   `;

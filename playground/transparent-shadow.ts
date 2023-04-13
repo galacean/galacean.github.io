@@ -49,8 +49,8 @@ void main() {
 #include <worldpos_share>
 #include <ShadowFragmentDeclaration>
 
-uniform vec4 u_baseColor;
-uniform float u_alphaCutoff;
+uniform vec4 material_BaseColor;
+uniform float material_AlphaCutoff;
 
 void main() {
     float shadowAttenuation = 1.0;
@@ -58,9 +58,9 @@ void main() {
       shadowAttenuation *= sampleShadowMap();
     #endif
 
-    gl_FragColor = vec4(u_baseColor.rgb, saturate(1.0 - shadowAttenuation) * u_baseColor.a);
+    gl_FragColor = vec4(material_BaseColor.rgb, saturate(1.0 - shadowAttenuation) * material_BaseColor.a);
     
-    #ifndef GALACEAN_COLORSPACE_GAMMA
+    #ifndef ENGINE_IS_COLORSPACE_GAMMA
         gl_FragColor = linearToGamma(gl_FragColor);
     #endif
 }
@@ -97,7 +97,7 @@ class TransparentShadow extends BaseMaterial {
       TransparentShadow._baseColorProp,
       new Color(0, 0, 0, 1)
     );
-    this.shaderData.enableMacro("O3_NEED_WORLDPOS");
+    this.shaderData.enableMacro("MATERIAL_NEED_WORLDPOS");
   }
 }
 

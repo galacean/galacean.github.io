@@ -18,12 +18,12 @@ import { Material, Shader, Color } from "oasis-engine";
 
 //-- Shader 代码
 const vertexSource = `
-  uniform mat4 galacean_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
 
   void main() {
-    gl_Position = galacean_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
   }
   `;
 
@@ -71,16 +71,16 @@ const material = new Material(engine, Shader.find("demo"));
 
 | 名字 | 类型 | 解释 |
 | :--- | :--- | ---- |
-| galacean_ViewMat | mat4 | 视口矩阵 |
-| galacean_ProjMat | mat4 | 投影矩阵 |
-| galacean_VPMat | mat4 | 视口投影矩阵 |
-| galacean_ViewInvMat | mat4 | 视口逆矩阵 |
-| galacean_CameraPos | vec3 | 相机位置 |
-| galacean_LocalMat | mat4 | 模型本地坐标系矩阵 |
-| galacean_ModelMat | mat4 | 模型世界坐标系矩阵 |
-| galacean_MVMat | mat4 | 模型视口矩阵 |
-| galacean_MVPMat | mat4 | 模型视口投影矩阵 |
-| galacean_NormalMat | mat4 | 法线逆转置矩阵 |
+| camera_ViewMat | mat4 | 视口矩阵 |
+| camera_ProjMat | mat4 | 投影矩阵 |
+| camera_VPMat | mat4 | 视口投影矩阵 |
+| camera_ViewInvMat | mat4 | 视口逆矩阵 |
+| camera_Position | vec3 | 相机位置 |
+| renderer_LocalMat | mat4 | 模型本地坐标系矩阵 |
+| renderer_ModelMat | mat4 | 模型世界坐标系矩阵 |
+| renderer_MVMat | mat4 | 模型视口矩阵 |
+| renderer_MVPMat | mat4 | 模型视口投影矩阵 |
+| renderer_NormalMat | mat4 | 法线逆转置矩阵 |
 
 #### 时间
 
@@ -259,14 +259,14 @@ import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from
 
 //-- Shader 代码
 const vertexSource = `
-  uniform mat4 galacean_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
   attribute vec2 TEXCOORD_0;
   varying vec2 v_uv;
 
   void main() {
-    gl_Position = galacean_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
     v_uv = TEXCOORD_0;
   }
   `;
