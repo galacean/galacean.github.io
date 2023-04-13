@@ -2,8 +2,15 @@
  * @title Ortho Controls
  * @category Camera
  */
-import { AssetType, Camera, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
-import { OrthoControl } from "@oasis-engine-toolkit/controls";
+import {
+  AssetType,
+  Camera,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrthoControl } from "@galacean/engine-toolkit-controls";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -49,7 +56,7 @@ mainElement.addEventListener("mouseup", (e) => {
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*KjnzTpE8LdAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create sprite entity.

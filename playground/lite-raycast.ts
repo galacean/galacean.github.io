@@ -24,10 +24,10 @@ import {
   PBRMaterial,
   AmbientLight,
   AssetType,
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 class Raycast extends Script {
   camera: Camera;

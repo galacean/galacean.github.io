@@ -2,9 +2,17 @@
  * @title Mipmap
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
-import { Camera, MeshRenderer, PrimitiveMesh, RenderFace, Texture2D, UnlitMaterial, WebGLEngine } from "oasis-engine";
+import {
+  Camera,
+  MeshRenderer,
+  PrimitiveMesh,
+  RenderFace,
+  Texture2D,
+  UnlitMaterial,
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -33,14 +41,21 @@ planeRenderer.setMaterial(material);
 
 const img = new Image();
 img.crossOrigin = "anonymous";
-img.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_CtuR7LW4C0AAAAAAAAAAAAAARQnAQ";
+img.src =
+  "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_CtuR7LW4C0AAAAAAAAAAAAAARQnAQ";
 img.onload = () => {
   const { width, height } = img;
   const texture = new Texture2D(engine, width, height);
   texture.setImageSource(img);
   texture.generateMipmaps();
 
-  const textureNoMipmap = new Texture2D(engine, width, height, undefined, false);
+  const textureNoMipmap = new Texture2D(
+    engine,
+    width,
+    height,
+    undefined,
+    false
+  );
   textureNoMipmap.setImageSource(img);
 
   material.baseTexture = texture;

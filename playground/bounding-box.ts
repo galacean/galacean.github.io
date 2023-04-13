@@ -15,7 +15,7 @@ import {
   SkinnedMeshRenderer,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
+} from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

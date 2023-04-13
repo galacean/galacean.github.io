@@ -12,11 +12,14 @@ import {
   Camera,
   StaticCollider,
   Script,
-  DynamicCollider, PBRMaterial, AmbientLight, AssetType
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  DynamicCollider,
+  PBRMaterial,
+  AmbientLight,
+  AssetType,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -48,7 +51,12 @@ const boxRenderer = boxEntity.addComponent(MeshRenderer);
 boxMtl.baseColor.set(0.6, 0.3, 0.3, 1.0);
 boxMtl.metallic = 0.0;
 boxMtl.roughness = 0.5;
-boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
+boxRenderer.mesh = PrimitiveMesh.createCuboid(
+  engine,
+  cubeSize,
+  cubeSize,
+  cubeSize
+);
 boxRenderer.setMaterial(boxMtl);
 
 const boxCollider = boxEntity.addComponent(StaticCollider);
@@ -94,13 +102,23 @@ class MoveScript extends Script {
 // Collision Detection
 class CollisionScript extends Script {
   onTriggerExit() {
-    (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+    (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(
+      Math.random(),
+      Math.random(),
+      Math.random(),
+      1.0
+    );
   }
 
   onTriggerStay() {}
 
   onTriggerEnter() {
-    (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+    (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(
+      Math.random(),
+      Math.random(),
+      Math.random(),
+      1.0
+    );
   }
 }
 
@@ -110,7 +128,7 @@ sphereEntity.addComponent(MoveScript);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;

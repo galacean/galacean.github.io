@@ -2,13 +2,26 @@
  * @title Text Barrage
  * @category Benchmark
  */
-import { Camera, Color, Engine, Font, Script, TextHorizontalAlignment, TextRenderer, WebGLEngine } from "oasis-engine";
-import { Stats } from "@oasis-engine-toolkit/stats";
+import {
+  Camera,
+  Color,
+  Engine,
+  Font,
+  Script,
+  TextHorizontalAlignment,
+  TextRenderer,
+  WebGLEngine,
+} from "@galacean/engine";
+import { Stats } from "@galacean/engine-toolkit-stats";
 
 class TextBarrageAnimation extends Script {
   // prettier-ignore
-  static words = [ "OASIS", "oasis", "HELLO", "hello", "WORLD", "world", "TEXT", "text", "PEACE", "peace", "LOVE", "love", "abcdefg", "hijklmn", "opqrst", "uvwxyz", "ABCDEFG", "HIJKLMN", "OPQRST", "UVWXYZ", "~!@#$", "%^&*", "()_+" ];
-  static colors = [new Color(1, 1, 1, 1), new Color(1, 0, 0, 1), new Color(0, 1, 0.89, 1)];
+  static words = [ "GALACEAN", "galacean", "HELLO", "hello", "WORLD", "world", "TEXT", "text", "PEACE", "peace", "LOVE", "love", "abcdefg", "hijklmn", "opqrst", "uvwxyz", "ABCDEFG", "HIJKLMN", "OPQRST", "UVWXYZ", "~!@#$", "%^&*", "()_+" ];
+  static colors = [
+    new Color(1, 1, 1, 1),
+    new Color(1, 0, 0, 1),
+    new Color(0, 1, 0.89, 1),
+  ];
 
   public camera: Camera;
   public priorityOffset: number = 0;
@@ -62,7 +75,8 @@ class TextBarrageAnimation extends Script {
       position.x = getRandomNum(-halfOrthoWidth, halfOrthoWidth);
     } else {
       const { bounds } = textRenderer;
-      position.x = orthographicSize * camera.aspectRatio + bounds.max.x - bounds.min.x;
+      position.x =
+        orthographicSize * camera.aspectRatio + bounds.max.x - bounds.min.x;
     }
     position.y = getRandomNum(-orthographicSize, orthographicSize);
 

@@ -2,7 +2,7 @@
  * @title Video Background
  * @category Scene
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BackgroundMode,
   Camera,
@@ -15,8 +15,8 @@ import {
   Shader,
   Texture2D,
   TextureFormat,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -85,14 +85,21 @@ class UpdateVideoScript extends Script {
 const dom: HTMLVideoElement = document.createElement("video");
 const width = 3840;
 const height = 1920;
-dom.src = "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*p_f5QYjE_2kAAAAAAAAAAAAAARQnAQ";
+dom.src =
+  "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/file/A*p_f5QYjE_2kAAAAAAAAAAAAAARQnAQ";
 dom.crossOrigin = "anonymous";
 dom.loop = true;
 dom.muted = true;
 dom.play();
 
 // create video background
-const texture = new Texture2D(engine, width, height, TextureFormat.R8G8B8, false);
+const texture = new Texture2D(
+  engine,
+  width,
+  height,
+  TextureFormat.R8G8B8,
+  false
+);
 const { background } = scene;
 background.mode = BackgroundMode.Sky;
 const skyMaterial = (background.sky.material = new VideoMaterial(engine));

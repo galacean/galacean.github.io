@@ -2,7 +2,7 @@
  * @title Sprite SheetAnimation
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   Camera,
@@ -12,8 +12,8 @@ import {
   Texture2D,
   Vector2,
   WebGLEngine,
-  Transform
-} from "oasis-engine";
+  Transform,
+} from "@galacean/engine";
 import * as TWEEN from "@tweenjs/tween.js";
 
 init();
@@ -36,11 +36,17 @@ function init(): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9nsHSpx28rAAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture) => {
       const spriteEntity = rootEntity.createChild("Sprite");
-      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture, null, null, null);
+      spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(
+        engine,
+        texture,
+        null,
+        null,
+        null
+      );
       spriteEntity.addComponent(FrameSpriteScript);
     });
 
@@ -109,7 +115,9 @@ class FrameSpriteScript extends Script {
       // Need update frameIndex.
       const addFrameCount = Math.floor(this._cumulativeTime / frameInterval);
       this._cumulativeTime -= addFrameCount * frameInterval;
-      this._setFrameIndex((this._curFrameIndex + addFrameCount) % this._totalFrames);
+      this._setFrameIndex(
+        (this._curFrameIndex + addFrameCount) % this._totalFrames
+      );
     }
   }
 
@@ -118,7 +126,12 @@ class FrameSpriteScript extends Script {
       this._curFrameIndex = frameIndex;
       const frameInfo = this._regions[frameIndex];
       const region = this._sprite.region;
-      region.set(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
+      region.set(
+        frameInfo.x,
+        frameInfo.y,
+        this._reciprocalSliceWidth,
+        this._reciprocalSliceHeight
+      );
       this._sprite.region = region;
     }
   }

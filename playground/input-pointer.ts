@@ -16,9 +16,9 @@ import {
   Vector2,
   Vector4,
   Entity,
-  Pointer
-} from "oasis-engine";
-import { LitePhysics } from "@oasis-engine/physics-lite";
+  Pointer,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -55,10 +55,17 @@ class PanScript extends Script {
   private zValue: number = 0;
 
   onPointerDown(pointer: Pointer) {
-    this.zValue = camera.worldToViewportPoint(this.entity.transform.worldPosition, this.tempVec3).z;
+    this.zValue = camera.worldToViewportPoint(
+      this.entity.transform.worldPosition,
+      this.tempVec3
+    ).z;
     const { tempVec2, tempVec3 } = this;
     tempVec2.copyFrom(pointer.position);
-    tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+    tempVec3.set(
+      tempVec2.x * invCanvasWidth,
+      tempVec2.y * invCanvasHeight,
+      this.zValue
+    );
     camera.viewportToWorldPoint(tempVec3, this.startPointerPos);
   }
 
@@ -66,7 +73,11 @@ class PanScript extends Script {
     const { tempVec2, tempVec3, startPointerPos } = this;
     const { transform } = this.entity;
     tempVec2.copyFrom(pointer.position);
-    tempVec3.set(tempVec2.x * invCanvasWidth, tempVec2.y * invCanvasHeight, this.zValue);
+    tempVec3.set(
+      tempVec2.x * invCanvasWidth,
+      tempVec2.y * invCanvasHeight,
+      this.zValue
+    );
     camera.viewportToWorldPoint(tempVec3, tempVec3);
     Vector3.subtract(tempVec3, startPointerPos, startPointerPos);
     transform.worldPosition.add(startPointerPos);
@@ -77,26 +88,45 @@ class PanScript extends Script {
 class ClickScript extends Script {
   private material: BlinnPhongMaterial;
   onStart() {
-    this.material = <BlinnPhongMaterial>this.entity.getComponent(MeshRenderer).getInstanceMaterial();
+    this.material = <BlinnPhongMaterial>(
+      this.entity.getComponent(MeshRenderer).getInstanceMaterial()
+    );
   }
 
   onPointerClick() {
-    this.material.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+    this.material.baseColor.set(
+      Math.random(),
+      Math.random(),
+      Math.random(),
+      1.0
+    );
   }
 }
 
 class EnterExitScript extends Script {
   private material: BlinnPhongMaterial;
   onStart() {
-    this.material = <BlinnPhongMaterial>this.entity.getComponent(MeshRenderer).getInstanceMaterial();
+    this.material = <BlinnPhongMaterial>(
+      this.entity.getComponent(MeshRenderer).getInstanceMaterial()
+    );
   }
 
   onPointerEnter() {
-    this.material.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+    this.material.baseColor.set(
+      Math.random(),
+      Math.random(),
+      Math.random(),
+      1.0
+    );
   }
 
   onPointerExit() {
-    this.material.baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+    this.material.baseColor.set(
+      Math.random(),
+      Math.random(),
+      Math.random(),
+      1.0
+    );
   }
 }
 
@@ -109,7 +139,12 @@ function createBox(x: number, y: number, z: number): Entity {
   const boxMtl = new BlinnPhongMaterial(engine);
   const boxRenderer = boxEntity.addComponent(MeshRenderer);
   boxMtl.baseColor.set(0.6, 0.3, 0.3, 1.0);
-  boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
+  boxRenderer.mesh = PrimitiveMesh.createCuboid(
+    engine,
+    cubeSize,
+    cubeSize,
+    cubeSize
+  );
   boxRenderer.setMaterial(boxMtl);
 
   const boxCollider: StaticCollider = boxEntity.addComponent(StaticCollider);

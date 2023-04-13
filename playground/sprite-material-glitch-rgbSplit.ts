@@ -3,7 +3,7 @@
  * @category 2D
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -18,8 +18,8 @@ import {
   Sprite,
   SpriteRenderer,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 init();
 
@@ -41,7 +41,7 @@ function init(): void {
     .load({
       // Sprite texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5wypQ5JyDLkAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture: Texture2D) => {
       // Create origin sprite entity.
@@ -101,7 +101,7 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
       shaderData.setFloat("u_indensity", 0.5);
       shaderData.setFloat("u_time", 0.0);
       animationScript.time = 0;
-    }
+    },
   };
 
   gui

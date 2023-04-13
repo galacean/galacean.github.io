@@ -2,8 +2,8 @@
  * @title AnimatorStateScript
  * @category Animation
  */
- import * as dat from "dat.gui";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import * as dat from "dat.gui";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   AnimatorState,
@@ -16,7 +16,7 @@ import {
   TextRenderer,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 Logger.enable();
@@ -40,9 +40,9 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 // initText
 const textEntity = rootEntity.createChild("text");
 const textRenderer = textEntity.addComponent(TextRenderer);
-textEntity.transform.setPosition(0, 2, 0)
-textRenderer.fontSize = 12
-textRenderer.text = ""
+textEntity.transform.setPosition(0, 2, 0);
+textRenderer.fontSize = 12;
+textRenderer.text = "";
 
 engine.resourceManager
   .load<GLTFResource>(
@@ -62,7 +62,7 @@ engine.resourceManager
           animatorState: AnimatorState,
           layerIndex: number
         ): void {
-          textRenderer.text = "onStateEnter"
+          textRenderer.text = "onStateEnter";
           console.log("onStateEnter: ", animatorState);
         }
 
@@ -79,7 +79,7 @@ engine.resourceManager
           animatorState: AnimatorState,
           layerIndex: number
         ): void {
-          textRenderer.text = "onStateExit"
+          textRenderer.text = "onStateExit";
           console.log("onStateExit: ", animatorState);
         }
       }
@@ -93,10 +93,12 @@ engine.resourceManager
 engine.run();
 
 const initDatGUI = (animator: Animator, animations) => {
-  const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
+  const animationNames = animations
+    .filter((clip) => !clip.name.includes("pose"))
+    .map((clip) => clip.name);
   const debugInfo = {
     animation: animationNames[4],
-    speed: 1
+    speed: 1,
   };
 
   gui.add(debugInfo, "animation", animationNames).onChange((v) => {
@@ -106,4 +108,4 @@ const initDatGUI = (animator: Animator, animations) => {
   gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
     animator.speed = v;
   });
-}
+};

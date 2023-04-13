@@ -3,7 +3,7 @@
  * @category Camera
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -14,8 +14,8 @@ import {
   RenderTarget,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
@@ -32,7 +32,9 @@ cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
 // add gltf model
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
+  )
   .then((asset) => {
     const { defaultSceneRoot } = asset;
     rootEntity.addChild(defaultSceneRoot);
@@ -44,7 +46,7 @@ engine.resourceManager
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -54,7 +56,14 @@ engine.run();
 /** ---------------------------- Capture ---------------------------- */
 let screenshotCanvas: HTMLCanvasElement = null;
 let flipYCanvas: HTMLCanvasElement = null;
-function screenshot(camera: Camera, width: number, height: number, flipY = true, isPNG = true, jpgQuality = 1) {
+function screenshot(
+  camera: Camera,
+  width: number,
+  height: number,
+  flipY = true,
+  isPNG = true,
+  jpgQuality = 1
+) {
   if (!screenshotCanvas) {
     screenshotCanvas = document.createElement("canvas");
   }
@@ -70,7 +79,14 @@ function screenshot(camera: Camera, width: number, height: number, flipY = true,
   const originalTarget = camera.renderTarget;
   const renderColorTexture = new Texture2D(engine, width, height);
   const renderTargetData = new Uint8Array(width * height * 4);
-  const renderTarget = new RenderTarget(engine, width, height, renderColorTexture, undefined, 8);
+  const renderTarget = new RenderTarget(
+    engine,
+    width,
+    height,
+    renderColorTexture,
+    undefined,
+    8
+  );
 
   // render to off-screen
   camera.renderTarget = renderTarget;
@@ -141,7 +157,7 @@ function openDebug() {
     screenshot: () => {
       const { width, height, flipY, isPNG, jpgQuality } = config;
       screenshot(camera, width, height, flipY, isPNG, jpgQuality);
-    }
+    },
   };
 
   const configFolder = gui.addFolder("config");

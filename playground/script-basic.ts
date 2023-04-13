@@ -2,8 +2,14 @@
  * @title Script Basic
  * @category Basic
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Camera, GLTFResource, Script, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  Camera,
+  GLTFResource,
+  Script,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -27,7 +33,9 @@ class Rotate extends Script {
 }
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+  )
   .then((gltf) => {
     const duck = gltf.defaultSceneRoot;
 

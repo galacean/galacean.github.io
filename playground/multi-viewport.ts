@@ -15,9 +15,9 @@ import {
   BackgroundMode,
   SkyBoxMaterial,
   PrimitiveMesh,
-  TextureCube
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  TextureCube,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -62,9 +62,9 @@ engine.resourceManager
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ",
     ],
-    type: AssetType.TextureCube
+    type: AssetType.TextureCube,
   })
   .then((cubeMap1) => {
     // Add skybox background

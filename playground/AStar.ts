@@ -18,8 +18,8 @@ import {
   UnlitMaterial,
   Vector2,
   WebGLEngine,
-} from "oasis-engine";
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+} from "@galacean/engine";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 import * as dat from "dat.gui";
 
 class GripMap {
