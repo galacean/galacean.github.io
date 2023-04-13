@@ -2,8 +2,8 @@
  * @title AnimatorStateScript
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   AnimatorState,
@@ -15,8 +15,8 @@ import {
   SystemInfo,
   TextRenderer,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 Logger.enable();

@@ -2,7 +2,6 @@
  * @title AmbientLight
  * @category Light
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -16,8 +15,14 @@ import {
   PrimitiveMesh,
   SkyBoxMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+  Logger,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+
+Logger.enable();
+const engine = new WebGLEngine("canvas");
+engine.canvas.resizeByClientSize();
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

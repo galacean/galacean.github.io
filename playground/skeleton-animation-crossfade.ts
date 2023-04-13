@@ -2,16 +2,18 @@
  * @title Animation CrossFade
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import * as dat from "dat.gui";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   Camera,
-  DirectLight, GLTFResource, Logger,
+  DirectLight,
+  Logger,
   SystemInfo,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+  GLTFResource,
+} from "@galacean/engine";
+import * as dat from "dat.gui";
 
 const gui = new dat.GUI();
 

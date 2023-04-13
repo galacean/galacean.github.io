@@ -2,16 +2,16 @@
  * @title Text Barrage
  * @category Benchmark
  */
-import { Stats } from "@oasis-engine-toolkit/stats";
 import {
   Camera,
   Color,
+  Engine,
   Font,
   Script,
   TextHorizontalAlignment,
   TextRenderer,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

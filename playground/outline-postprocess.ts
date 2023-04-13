@@ -2,9 +2,6 @@
  * @title Outline post-process
  * @category Toolkit
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import { OutlineManager } from "@oasis-engine-toolkit/outline";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -17,8 +14,11 @@ import {
   PointerButton,
   PrimitiveMesh,
   Script,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
+import { OutlineManager } from "@galacean/engine-toolkit-outline";
 
 class ClickScript extends Script {
   onUpdate(): void {

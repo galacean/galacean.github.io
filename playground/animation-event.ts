@@ -2,7 +2,7 @@
  * @title Animation Event
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AnimationEvent,
@@ -14,8 +14,8 @@ import {
   SystemInfo,
   TextRenderer,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 async function main() {

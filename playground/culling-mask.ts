@@ -4,17 +4,17 @@
  */
 import * as dat from "dat.gui";
 import {
-  BlinnPhongMaterial,
-  Camera,
-  Color,
   DirectLight,
-  Layer,
   Logger,
-  MeshRenderer,
-  PrimitiveMesh,
+  WebGLEngine,
+  Camera,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  MeshRenderer,
+  BlinnPhongMaterial,
+  Color,
+  Layer,
+  PrimitiveMesh,
+} from "@galacean/engine";
 
 Logger.enable();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

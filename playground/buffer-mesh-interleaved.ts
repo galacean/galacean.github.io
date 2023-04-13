@@ -17,8 +17,8 @@ import {
   Vector3,
   VertexElement,
   VertexElementFormat,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine and get root entity
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

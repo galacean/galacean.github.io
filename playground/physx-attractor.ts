@@ -27,10 +27,10 @@ import {
   StaticCollider,
   TextRenderer,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 class Attractor extends Script {
   private collider: DynamicCollider;

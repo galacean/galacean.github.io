@@ -3,24 +3,58 @@
  * @category 2D
  */
 import {
+  AssetType,
   Camera,
+  Entity,
   GLTFResource,
+  Logger,
   Script,
   Vector3,
   WebGLEngine,
-  WebGLMode
-} from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+  WebGLMode,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit";
+Logger.enable();
 
-async function main() {
-  // Create engine
-  const htmlCanvas = document.getElementById("canvas") as HTMLCanvasElement;
-  const engine = await WebGLEngine.create({
-    canvas: htmlCanvas,
-    graphicDeviceOptions: { webGLMode: WebGLMode.Auto },
+//-- create engine object
+const engine = new WebGLEngine("canvas", { webGLMode: WebGLMode.Auto });
+engine.canvas.resizeByClientSize();
+
+const scene = engine.sceneManager.activeScene;
+const rootEntity = scene.createRootEntity();
+
+//Create camera
+const cameraNode = rootEntity.createChild("camera_node");
+cameraNode.transform.setPosition(0, 1.5, 5);
+const camera = cameraNode.addComponent(Camera);
+cameraNode.addComponent(OrbitControl);
+
+engine.run();
+
+// load gltf
+engine.resourceManager
+  .load<GLTFResource>({
+    type: AssetType.Prefab,
+    url: "https://gw.alipayobjects.com/os/bmw-prod/8d36415b-5905-461f-9336-68a23d41518e.gltf",
+  })
+  .then((gltf) => {
+    console.log(gltf);
+
+    const { defaultSceneRoot } = gltf;
+    rootEntity.addChild(defaultSceneRoot);
+
+    // important !
+    defaultSceneRoot.addComponent(Renderer2DScript);
   });
 
-  engine.canvas.resizeByClientSize();
+// test dom
+const dom = document.createElement("div");
+dom.innerHTML = "Hello world!!!";
+dom.setAttribute(
+  "style",
+  "padding:10px;position:absolute;top:0;left:0;background:white;border-radius:5px"
+);
+document.body.appendChild(dom);
 
   // Create root entity
   const scene = engine.sceneManager.activeScene;

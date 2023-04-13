@@ -2,7 +2,7 @@
  * @title PBR Clearcoat
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
   AssetType,
@@ -13,8 +13,8 @@ import {
   Logger,
   PrimitiveMesh,
   SkyBoxMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 Logger.enable();
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

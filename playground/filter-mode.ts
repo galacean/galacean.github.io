@@ -2,7 +2,7 @@
  * @title Filter Mode
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -13,8 +13,8 @@ import {
   Texture2D,
   TextureFilterMode,
   UnlitMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine

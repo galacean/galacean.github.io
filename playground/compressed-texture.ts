@@ -2,21 +2,22 @@
  * @title Compressed Texture
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
-  AssetType, Camera,
+  AssetType,
+  Camera,
   DirectLight,
   GLCompressedTextureInternalFormat,
   Logger,
   MeshRenderer,
-  PrimitiveMesh, Texture2D,
+  PrimitiveMesh,
+  Texture2D,
   UnlitMaterial,
   Vector3,
   WebGLEngine,
-  WebGLRenderer
-} from "oasis-engine";
-
+  WebGLRenderer,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 Logger.enable();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

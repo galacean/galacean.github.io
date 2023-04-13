@@ -2,7 +2,7 @@
  * @title PBR Base
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -14,8 +14,8 @@ import {
   PrimitiveMesh,
   SkyBoxMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

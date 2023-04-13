@@ -2,8 +2,8 @@
  * @title GLTF Basic
  * @category Basic
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Camera, GLTFResource, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { Camera, GLTFResource, WebGLEngine } from "@galacean/engine";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

@@ -2,7 +2,7 @@
  * @title Buffer Mesh Instance
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Buffer,
   BufferBindFlag,
@@ -18,8 +18,8 @@ import {
   Vector3,
   VertexElement,
   VertexElementFormat,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

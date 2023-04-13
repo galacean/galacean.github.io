@@ -2,17 +2,19 @@
  * @title Sprite SheetAnimation
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import * as TWEEN from "@tweenjs/tween.js";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   Camera,
   Script,
   Sprite,
   SpriteRenderer,
-  Texture2D, Transform, Vector2,
-  WebGLEngine
-} from "oasis-engine";
+  Texture2D,
+  Vector2,
+  WebGLEngine,
+  Transform,
+} from "@galacean/engine";
+import * as TWEEN from "@tweenjs/tween.js";
 
 main();
 

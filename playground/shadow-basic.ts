@@ -3,7 +3,7 @@
  * @category Light
  */
 
-import { FreeControl } from "@oasis-engine-toolkit/controls";
+import { FreeControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
   AssetType,
@@ -12,10 +12,11 @@ import {
   GLTFResource,
   ShadowType,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-async function main() {
-  const engine = await WebGLEngine.create({ canvas: "canvas" });
+  WebGLEngine,
+} from "@galacean/engine";
+
+async function init() {
+  const engine = new WebGLEngine("canvas");
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
@@ -54,4 +55,4 @@ async function main() {
 
   engine.run();
 }
-main();
+init();

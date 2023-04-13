@@ -2,7 +2,7 @@
  * @title Render Target
  * @category Camera
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   AssetType,
@@ -20,8 +20,8 @@ import {
   Texture2D,
   TextureCube,
   UnlitMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create scene
 

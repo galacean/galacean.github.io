@@ -2,15 +2,15 @@
  * @title Skeleton Viewer
  * @category Toolkit
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { SkeletonViewer } from "@oasis-engine-toolkit/skeleton-viewer";
 import {
   Animator,
   Camera,
   GLTFResource,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { SkeletonViewer } from "@galacean/engine-toolkit-skeleton-viewer";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

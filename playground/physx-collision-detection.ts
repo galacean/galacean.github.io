@@ -3,14 +3,25 @@
  * @category Physics
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
+  WebGLEngine,
+  SphereColliderShape,
+  DynamicCollider,
+  BoxColliderShape,
+  Vector3,
+  MeshRenderer,
+  PointLight,
+  PrimitiveMesh,
+  Camera,
+  Script,
+  StaticCollider,
+  ColliderShape,
+  PBRMaterial,
   AmbientLight,
-  AssetType, BoxColliderShape, Camera, ColliderShape, DynamicCollider, MeshRenderer, PBRMaterial, PointLight,
-  PrimitiveMesh, Script, SphereColliderShape, StaticCollider, Vector3, WebGLEngine
-} from "oasis-engine";
-
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+  AssetType,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then(
   (engine) => {

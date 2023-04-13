@@ -3,7 +3,7 @@
  * @category Camera
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -14,8 +14,8 @@ import {
   RenderTarget,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 const gui = new dat.GUI();
 

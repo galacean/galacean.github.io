@@ -2,7 +2,7 @@
  * @title Planar Shadow
  * @category Toolkit
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   BlinnPhongMaterial,
@@ -13,11 +13,11 @@ import {
   MeshRenderer,
   PrimitiveMesh,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-import { Color } from "oasis-engine";
-import { PlanarShadowShaderFactory } from "oasis-engine-toolkit";
+import { Color } from "@galacean/engine";
+import { PlanarShadowShaderFactory } from "@galacean/engine-toolkit";
 
 /**
  * Planar Shadow

@@ -19,7 +19,7 @@ import {
   VertexElementFormat,
   WebGLEngine,
   Script,
-} from "oasis-engine";
+} from "@galacean/engine";
 
 /**
  * Script for updating color buffer.
