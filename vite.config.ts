@@ -43,7 +43,7 @@ export default ({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            '@galacean/engine': ['@galacean/engine'],
+            '@galacean/engine': ['Galacean'],
             '@galacean/engine-spine': ['galaceanSpine'],
             '@galacean/editor-ui': ['@galacean/editor-ui'],
             '@babel/standalone': ['@babel/standalone'],
