@@ -59,9 +59,9 @@ function Banner() {
 
   return (
     <StyledSection align="both" dir="column" gap="lg">
-      <StyledHeading>
+      <StyledHeading >
         <img
-          src='https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*j82bSJoOTycAAAAAAAAAAAAADsF_AQ/original'
+          src='https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*Up_hTI7ccfoAAAAAAAAAAAAADsB_AQ/fmt.webp'
           alt='Galacean'
         />
       </StyledHeading>
@@ -87,7 +87,7 @@ function Banner() {
           </Button>
         </a>
         <a href='https://opencollective.com/oasis' target='_blank'>
-          <LaunchButton variant="secondary" size="lg" round>
+          <LaunchButton variant="secondary" size="lg" css={context.theme === 'dark-theme' ? { backgroundImage: "linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%)", color: "$slate6!important" } : {}} round>
             <RocketOutlined style={{ marginRight: "3px", fontSize: "18px", animation: `${float} 1000ms ease-in-out infinite` }} />
             <FormattedMessage id='app.home.sponsoring' />
           </LaunchButton>
