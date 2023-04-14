@@ -10,14 +10,14 @@ label: Editor-Feature/Rendering-3d
 
 在上文提到，模型由网格和材质组成。网格相当于骨架，描绘出模型的轮廓；材质相当于血肉，决定了渲染表现。
 
-通过引擎的 [材质教程](${docs}material-cn) 中可以了解到 Oasis 的标准材质分为 [PBR 材质](${api}core/PBRMaterial)(**推荐**)、[PBR-Specular 材质](${api}core/PBRSpecularMaterial)、[BlinnPhong 材质](${api}core/BlinnPhongMaterial)、 [Unlit 材质](${api}core/UnlitMaterial) 四种材质类型，每种材质类型的应用场景都不一样，其中 PBR 材质为 glTF 模型默认材质标准，其余的类型也可以通过插件方式导入。
+通过引擎的 [材质教程](${docs}material-cn) 中可以了解到 Galacean 的标准材质分为 [PBR 材质](${api}core/PBRMaterial)(**推荐**)、[PBR-Specular 材质](${api}core/PBRSpecularMaterial)、[BlinnPhong 材质](${api}core/BlinnPhongMaterial)、 [Unlit 材质](${api}core/UnlitMaterial) 四种材质类型，每种材质类型的应用场景都不一样，其中 PBR 材质为 glTF 模型默认材质标准，其余的类型也可以通过插件方式导入。
 
 - PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，采用金属度-粗糙度工作流，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。
 - PBR-Specular 材质是相对于 PBR 的另外一种工作流： 高光-光泽度工作流。唯一的区别就是通过高光、光泽度参数，替代了 PBR 的金属度、粗糙度 参数。
 - Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
 - Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
 
-另外，[oasis-engine-toolkit 仓库](https://www.npmjs.com/package/oasis-engine-toolkit?activeTab=versions) 还提供了 [Bake PBR](https://github.com/ant-galaxy/oasis-engine-toolkit/blob/dev/1.0/packages/custom-material/src/bake-pbr/BakePBRMaterial.ts) 作为 lightmap 的过渡方案，与 PBR 相比，只增加了一张 `lightmapTexture` 和 `lightmapIntensity`，用来存储光照和阴影信息，替换间接漫反射部分的计算，非常适用于那些需要大量光影计算，但是保持静态的场景。
+另外，[@galacean/engine-toolkit 仓库](https://www.npmjs.com/package/@galacean/engine-toolkit) 还提供了 [Bake PBR](https://github.com/galacean/engine-toolkit/blob/dev/1.0/packages/custom-material/src/bake-pbr/BakePBRMaterial.ts) 作为 lightmap 的过渡方案，与 PBR 相比，只增加了一张 `lightmapTexture` 和 `lightmapIntensity`，用来存储光照和阴影信息，替换间接漫反射部分的计算，非常适用于那些需要大量光影计算，但是保持静态的场景。
 
 ## 使用
 

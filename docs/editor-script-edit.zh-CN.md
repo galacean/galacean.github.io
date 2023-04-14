@@ -13,9 +13,9 @@ label: Editor-Feature/Scripting
 ![CodeEditor](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*6bTOSp1Z9owAAAAAAAAAAAAADgeMAQ/original)
 
 ### 代码编辑器
-代码编辑区会有 Oasis 创建的脚本模板代码，  Oasis 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
+代码编辑区会有 Galacean 创建的脚本模板代码，  Galacean 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
 ```typescript
-import { Script } from 'oasis-engine';
+import { Script } from '@galacean/engine';
 /**
  * 使用时再重写，性能可以得到提升
  */
@@ -64,9 +64,9 @@ export default class extends Script {
 
 当你修改完毕后，按 `Ctrl/⌘ + S` 代码即可保存，右侧的实时预览区即可展现最新的效果。
 
-> 提示： Oasis 的代码编辑器使用了 VSCode 团队开源的 Monaco 编辑器，编辑体验与快捷键与 VSCode 基本一致
+> 提示： Galacean 的代码编辑器使用了 VSCode 团队开源的 Monaco 编辑器，编辑体验与快捷键与 VSCode 基本一致
 
- Oasis 的代码编辑器还具有代码提示的功能，可以帮助你更加方便的编写代码。
+ Galacean 的代码编辑器还具有代码提示的功能，可以帮助你更加方便的编写代码。
 
 ### 实时预览区
 在实时预览区你可以调整显示设备以观察项目的兼容性：

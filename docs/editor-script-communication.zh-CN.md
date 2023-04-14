@@ -8,9 +8,9 @@ label: Editor-Feature/Scripting
 
 开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合。
 
-> Oasis 组件如何与业务代码进行双向的通信 ？
+> Galacean 组件如何与业务代码进行双向的通信 ？
 
-举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Oasis Engine 中的 [Engine](${docs}engine-cn) 就是一个 [EventDispatcher](${docs}event-cn) 我们可以使用他作为内外部通信的媒介。
+举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Galacean Engine 中的 [Engine](${docs}engine-cn) 就是一个 [EventDispatcher](${docs}event-cn) 我们可以使用他作为内外部通信的媒介。
 
 ## 基本用法
 
@@ -28,7 +28,7 @@ label: Editor-Feature/Scripting
 engine.dispatch('test');
 ```
 
-下面介绍 Oasis 与业务双向通信分别怎么写。
+下面介绍 Galacean 与业务双向通信分别怎么写。
 
 ## 从外到里通信
 
@@ -46,14 +46,14 @@ onAwake () {
 2. 在业务代码里触发事件：
 
 ```typescript
-import MyOasisComponent from "MyOasisComponent";
+import MyGalaceanComponent from "MyGalaceanComponent";
 
 export default ()=> {
   let engine = null
 
-  const handleSceneLoaded = oasis => {
-    // 从 oasis 对象中可以直接拿到 engine 实例
-    engine = oasis.engine;
+  const handleSceneLoaded = galacean => {
+    // 从 galacean 对象中可以直接拿到 engine 实例
+    engine = galacean.engine;
   };
 
   const handleClick = () => {
@@ -64,7 +64,7 @@ export default ()=> {
   return (
     < >
     <button onClick={handleClick}>旋转</button>
-    <MyOasisComponent
+    <MyGalaceanComponent
 			handleSceneLoaded={handleSceneLoaded}/>
     </>
   );
@@ -78,15 +78,15 @@ export default ()=> {
 1. 在业务代码里触发事件：
 
 ```typescript
-import { Event } from 'oasis-engine';
-import MyOasisComponent from "MyOasisComponent";
+import { Event } from '@galacean/engine';
+import MyGalaceanComponent from "MyGalaceanComponent";
 
 export default ()=> {
   let engine = null
 
-  const handleSceneLoaded = oasis => {
-    // 从 oasis 对象中可以直接拿到 engine 实例
-    engine = oasis.engine;
+  const handleSceneLoaded = galacean => {
+    // 从 galacean 对象中可以直接拿到 engine 实例
+    engine = galacean.engine;
     
     // 监听事件
     engine.addEventListener('test', e => {
@@ -96,7 +96,7 @@ export default ()=> {
 
   return (
     < >
-    <MyOasisComponent
+    <MyGalaceanComponent
 			handleSceneLoaded={handleSceneLoaded}/>
     </>
   );
@@ -111,7 +111,7 @@ this.engine.dispatch('rotate');
 ```
 
 ## 事件测试
-在 Oasis Editor 的代码编辑器中，我们提供了一个事件测试面板，用户可以使用它进行事件通信的测试：
+在 Galacean Editor 的代码编辑器中，我们提供了一个事件测试面板，用户可以使用它进行事件通信的测试：
 
 ![image.png](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*qSY-RZu6p-kAAAAAAAAAAAAADgeMAQ/original)
 
