@@ -6,7 +6,7 @@ group: 材质
 label: Graphics/Material
 ---
 
-Oasis 创建的三维世界与真实的世界一样包含各式各样的物体，这些物体的颜色，色泽亮度，透明度都是由材质决定的，引擎中内置了多种经典材质并支持开发者实现自定义材质。
+Galacean 创建的三维世界与真实的世界一样包含各式各样的物体，这些物体的颜色，色泽亮度，透明度都是由材质决定的，引擎中内置了多种经典材质并支持开发者实现自定义材质。
 
 ## 分类
 
@@ -30,7 +30,7 @@ Oasis 创建的三维世界与真实的世界一样包含各式各样的物体�
 
 ## 使用
 
-用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，glTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Oasis 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
+用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，glTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Galacean 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
 
 ```typescript
 // 获取想要修改的 renderer

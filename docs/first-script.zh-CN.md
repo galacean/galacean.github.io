@@ -6,7 +6,7 @@ group: 基础
 label: Introduction/Basic
 ---
 
-[上篇教程](${docs}model-cn)中，你已经学会了如何加载一个 3D 模型。这时候，你也许会问：如何给这个鸭子增加一点动画呢？在 Oasis Engine 中，功能以**组件**形式添加到实体上，其中[脚本组件](${docs}script-cn)提供了最灵活的扩展能力。这个教程将带你开发一个“匀速旋转的鸭子”示例：
+[上篇教程](${docs}model-cn)中，你已经学会了如何加载一个 3D 模型。这时候，你也许会问：如何给这个鸭子增加一点动画呢？在 Galacean Engine 中，功能以**组件**形式添加到实体上，其中[脚本组件](${docs}script-cn)提供了最灵活的扩展能力。这个教程将带你开发一个“匀速旋转的鸭子”示例：
 
 <playground src="script-basic.ts"></playground>
 
@@ -33,7 +33,7 @@ duck.addComponent(Rotate);
 
 ## 增加旋转逻辑
 
-想要实现旋转，只要在 `onUpdate` 函数内不断改变鸭子的 **Y** 轴角度就可以。旋转、位移、缩放都是经典的变换动画，由于[变换](${docs}transform-cn)是最常用的组件，所以 Oasis Engine 把 `transform` 作为实体属性，通过 `entity.transform` 就可以获得变换组件。
+想要实现旋转，只要在 `onUpdate` 函数内不断改变鸭子的 **Y** 轴角度就可以。旋转、位移、缩放都是经典的变换动画，由于[变换](${docs}transform-cn)是最常用的组件，所以 Galacean Engine 把 `transform` 作为实体属性，通过 `entity.transform` 就可以获得变换组件。
 
 变换组件提供了增量旋转方法 `rotate`，它的参数是类型为 [Vector3](${api}math/Vector3) 的变量。我们让鸭子每帧沿 Y 轴旋转 1 度：
 

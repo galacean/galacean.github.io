@@ -7,7 +7,7 @@ type: Art
 label: Art
 ---
 
-Such as [Baking Tutorial](${docs}artist-bake) described, if we have already made a baking texture, I hope there is a **convenient material**, the color is only affected by baking texture, do not have to add lights, do not debug the normal, don't have to debug metal roughness and other high-order properties, then you can try [UnlitMaterial](${api}core/UnlitMaterial) of Oasis, glTF has special [KHR_materials_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) Plugin, Oasis will resolve the plugin to generate Unlit material.
+Such as [Baking Tutorial](${docs}artist-bake) described, if we have already made a baking texture, I hope there is a **convenient material**, the color is only affected by baking texture, do not have to add lights, do not debug the normal, don't have to debug metal roughness and other high-order properties, then you can try [UnlitMaterial](${api}core/UnlitMaterial) of Galacean, glTF has special [KHR_materials_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) Plugin, Galacean will resolve the plugin to generate Unlit material.
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/39965fc2-3fc2-44b9-a294-a04eb4441120/1623652741734-090284d5-9b1a-4db8-9231-dc3f4d188a38-20210614150743080.png)
 
@@ -45,6 +45,6 @@ If the preview is correct, export the glTF file.
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1fe38185-399e-4f56-bff4-c39ba4ae3a2a/1623652462007-85b065a3-69fa-4d80-9dfd-834ef66da12a.png)
 
-Drag the glTF file you just exported from Blender to the [glTF viewer](https://oasisengine.cn/#/gltf-viewer), if the material type is **UnlitMaterial**, note [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) plugin has been exported, and has been parsed into Unlit material by Oasis.
+Drag the glTF file you just exported from Blender to the [glTF viewer](https://galacean.com/#/gltf-viewer), if the material type is **UnlitMaterial**, note [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) plugin has been exported, and has been parsed into Unlit material by Galacean.
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/fbb6ba43-f7d7-4757-a1d3-590083d30573/1623652636074-d8bb8437-f885-43fd-8957-8e14ae9fd8c0-20210614150914493.png)

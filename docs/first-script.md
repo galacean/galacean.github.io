@@ -6,7 +6,7 @@ group: Basic
 label: Introduction/Basic
 ---
 
-In [Previous Tutorial](${docs}model), you have learned how to load a 3D model. At this time, you may ask: How to add a little animation to this duck? In Oasis Engine, functions are added to entities in the form of **components**, among which [script component](${docs}script) provides the most flexible extension capability. This tutorial will take you to develop a "uniform rotating duck" example:
+In [Previous Tutorial](${docs}model), you have learned how to load a 3D model. At this time, you may ask: How to add a little animation to this duck? In Galacean Engine, functions are added to entities in the form of **components**, among which [script component](${docs}script) provides the most flexible extension capability. This tutorial will take you to develop a "uniform rotating duck" example:
 
 <playground src="script-basic.ts"></playground>
 
@@ -33,7 +33,7 @@ duck.addComponent(Rotate);
 
 ## Add rotation
 
-To achieve rotation, just keep changing the **Y** axis angle of the duck in the `onUpdate` function. Rotation, translation, and scaling are all classic transformation animations. Since [transform](${docs}transform) is the most commonly used component, Oasis Engine uses `transform` as an entity attribute, which can be done by `entity.transform` Obtain the transform component.
+To achieve rotation, just keep changing the **Y** axis angle of the duck in the `onUpdate` function. Rotation, translation, and scaling are all classic transformation animations. Since [transform](${docs}transform) is the most commonly used component, Galacean Engine uses `transform` as an entity attribute, which can be done by `entity.transform` Obtain the transform component.
 
 The transform component provides an incremental rotation method `rotate`, and its parameter is a variable of type [Vector3](${api}math/Vector3). We let the duck rotate 1 degree along the Y axis every frame:
 

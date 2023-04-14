@@ -14,7 +14,7 @@ When the pick-up frequency is not high, you can consider `FramebufferPicker`; wh
 ## Create FrameBufferPicker
 
 ```typescript
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
 
 const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
 framebufferPicker.camera = camera;

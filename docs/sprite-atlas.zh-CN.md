@@ -18,18 +18,18 @@ label: Graphics/2D
 
 ## 图集生成
 
-Oasis 为精灵图集提供了命令行工具，开发者可以按照以下步骤生成图集：
+Galacean 为精灵图集提供了命令行工具，开发者可以按照以下步骤生成图集：
 
 1. 安装包
 
 ```bash
-npm i @oasis-engine/tool-atlas -g
+npm i @galacean/tools-atlas -g
 ```
 
 2. 执行打包命令
 
 ```bash
-oasis-tool-atlas p inputPath -o outputName
+galacean-tools-atlas p inputPath -o outputName
 ```
 
 其中 `inputPath` 表示需要打包的文件夹路径，而 `outputName` 则表示打包输出的精灵图集文件名，如果你得到下图所示结果，那么说明打包成功了。
@@ -38,8 +38,8 @@ oasis-tool-atlas p inputPath -o outputName
 
 | 属性           | 解释                                         |
 | -------------- | -------------------------------------------- |
-| f/format       | 打包输出的精灵图集格式 (默认: "oasis")       |
-| o/output       | 打包输出的精灵图集文件名 (默认: "oasis")     |
+| f/format       | 打包输出的精灵图集格式 (默认: "galacean")       |
+| o/output       | 打包输出的精灵图集文件名 (默认: "galacean")     |
 | a/algorithm    | 打包精灵图集的算法 (默认: "maxrects")        |
 | ar/allowRotate | 打包精灵图集是否支持旋转 (默认: false)       |
 | p/padding      | 图集中每个精灵和这个精灵边框的距离 (默认: 1) |
@@ -48,7 +48,7 @@ oasis-tool-atlas p inputPath -o outputName
 | s/square       | 强制打包成正方形 (默认: false)               |
 | pot            | 宽高强制打包成 2 的幂 (默认: false)          |
 
-更多请参照[图集打包工具](https://github.com/oasis-engine/tool-atlas/edit/main/README.md)。
+更多请参照[图集打包工具](https://github.com/galacean/tools/blob/main/packages/atlas/README.md)。
 
 ## 基本使用
 

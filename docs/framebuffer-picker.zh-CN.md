@@ -14,7 +14,7 @@ label: Interact
 ## 创建帧缓冲拾取
 
 ```typescript
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
 
 const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
 framebufferPicker.camera = camera;

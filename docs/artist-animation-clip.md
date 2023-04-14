@@ -5,9 +5,9 @@ type: Art
 label: Art
 ---
 
-The AnimationClip is **a combination of animations on a time axis**, which can be the rotation, translation, scaling, weight animation of multiple objects, such as **walking, running, jumping** can be exported separately 3 AnimationClips; Oasis engine can choose which AnimationClip to play, provided that the FBX or glTF exported by the modeling software contains multiple AnimationClips.
+The AnimationClip is **a combination of animations on a time axis**, which can be the rotation, translation, scaling, weight animation of multiple objects, such as **walking, running, jumping** can be exported separately 3 AnimationClips; Galacean Engine can choose which AnimationClip to play, provided that the FBX or glTF exported by the modeling software contains multiple AnimationClips.
 
-In order to reduce communication costs, this article lists several common methods for making AnimationClips and how to export glTF to facilitate the direct use of Oasis engine, or through the [glTF preview](https://oasisengine.cn/#/gltf-viewer) page for verification .
+In order to reduce communication costs, this article lists several common methods for making AnimationClips and how to export glTF to facilitate the direct use of Galacean Engine, or through the [glTF preview](https://galacean.com/#/gltf-viewer) page for verification .
 
 Blender's animation editing page is very friendly, it can clearly visualize the nodes affected by the animation, and display the key frames on the timeline, so it is recommended to use Blender for making AnimationClips.
 
@@ -41,7 +41,7 @@ The exported AnimationClip's time axis must be consistent, which can be configur
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/b973b5bf-2068-4e79-ac74-f200c2cf15d4/1622618030553-ac8afb11-cfea-48b7-82e1-9ca1243af167.png)
 
-4. At this point, the AnimationClips(actions) has been prepared, export glTF or FBX and connect to the Oasis engine:
+4. At this point, the AnimationClips(actions) has been prepared, export glTF or FBX and connect to the Galacean Engine:
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/9e29488b-bbb7-45e7-9385-142b399e39f5/1622618144473-9b9c24eb-2186-408f-8b75-ee41c2bf9dbd.png)
 
@@ -95,4 +95,4 @@ If the installation is successful, you can see an additional **AntG** option in 
 11. Right-click the node and select Export AntG:
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1bfefe2b-ca58-4cca-a091-9efe8028a4df/1622552925151-16b86fcc-4680-4611-aa32-d3697bbe5086.png)
 
-1.  At this point, the glTF file containing the AnimationClips just made has been exported, and you can visit Oasis' [glTF preview](https://oasisengine.cn/#/gltf-viewer) for verification.
+1.  At this point, the glTF file containing the AnimationClips just made has been exported, and you can visit Galacean' [glTF preview](https://galacean.com/#/gltf-viewer) for verification.

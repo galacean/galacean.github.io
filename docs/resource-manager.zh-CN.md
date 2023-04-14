@@ -10,7 +10,7 @@ label: Resource
 推荐用[脚本组件](${docs}script-cn)的方式加载资源。[load](${api}core/ResourceManager#load) 方法即可传入 url，也可以传入 [loadItem](${api}core/LoadItem)，也可以传入数组表示批量加载。
 
 ```typescript
-import { GLTFResource } from 'oasis-engine';
+import { GLTFResource } from "@galacean/engine";
 
 export class ResourceScript extends Script {
 	async onAwake() {
@@ -81,7 +81,7 @@ engine.resourceManager.gc();
 > 更多纹理相关文档可查阅[纹理资源](${docs}texture-cn)。
 
 ```typescript
-import { Texture2D } from "oasis-engine";
+import { Texture2D } from "@galacean/engine";
 
 const texture2D = await this.engine.resourceManager.load<Texture2D>("test.png");
 ```
@@ -99,7 +99,7 @@ this.engine.resourceManager.load({url: "test", type: AssetType.Texture2D, params
 > 更多纹理相关文档可查阅[纹理资源](${docs}texture-cn)。
 
 ```typescript
-import { TextureCube } from "oasis-engine";
+import { TextureCube } from "@galacean/engine";
 
 const textureCube = await this.engine.resourceManager
   .load<TextureCube>({
@@ -121,7 +121,7 @@ const textureCube = await this.engine.resourceManager
 因此 HDR Loader 适用于那些对浮点颜色还有别的用途的场景。
 
 ```typescript
-import { TextureCube } from "oasis-engine";
+import { TextureCube } from "@galacean/engine";
 
 engine.resourceManager
   .load<TextureCube>({
@@ -137,7 +137,7 @@ engine.resourceManager
 
 
 ### 3. AmbientLight
-Oasis 支持通过[编辑器](https://antg.antgroup.com)或者 [glTF Viewer](https://oasisengine.cn/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
+Galacean 支持通过[编辑器](https://galacean.antgroup.com)或者 [glTF Viewer](https://galacean.com/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
@@ -158,7 +158,7 @@ engine.resourceManager
 > 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-compression-cn)。
 
 ```typescript
-import { Texture2D } from "oasis-engine";
+import { Texture2D } from "@galacean/engine";
 
 const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("test.ktx");
 ```
@@ -169,7 +169,7 @@ const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("t
 压缩的立方体纹理的加载和一般的立方体纹理加载不一样，是单独的一个二进制文件路径，而不需要 6 张图片的文件路径，但是需要指定为类型为 [AssetType.KTXCube](${api}core/AssetType#KTXCube)。因为 ResourceManager 无法根据后缀识别需要使用哪种特定类型的 Loader。
 
 ```typescript
-import { TextureCube } from "oasis-engine";
+import { TextureCube } from "@galacean/engine";
 
 const compressedTextureCube = await this.engine.resourceManager.load<TextureCube>({url: "test.ktx", type: AssetType.KTXCube});
 ```
@@ -179,7 +179,7 @@ const compressedTextureCube = await this.engine.resourceManager.load<TextureCube
 资源加载后得到的是一个 [GLTFResource](${api}loader/GLTFResource) 资源，包含 [Scene](${api}core/Scene)、[Entity](${api}core/Entity)、[Texture](${api}core/Texture)、[Material](${api}core/Material) 和 [AnimationClip](${api}core/AnimationClip) 等对象。
 
 ``` typescript
-import { GLTFResource } from 'oasis-engine';
+import { GLTFResource } from "@galacean/engine";
 
 const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 ```

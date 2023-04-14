@@ -19,7 +19,7 @@ label: Graphics/2D
 4、通过 color 设置文本颜色    
 
 ```typescript
-import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "oasis-engine";
+import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "@galacean/engine";
 
 const textEntity = rootEntity.createChild("text");
 // 给实体添加 TextRenderer 组件
@@ -27,7 +27,7 @@ const textRenderer = textEntity.addComponent(TextRenderer);
 // 通过 font 设置 Font 对象
 textRenderer.font = Font.createFromOS(engine, "Arial");
 // 通过 text 设置需要显示的文本
-textRenderer.text = "Oasis 会写字了！";
+textRenderer.text = "Galacean 会写字了！";
 // 通过 fontSize 设置字体大小
 textRenderer.fontSize = 36;
 // 通过 color 设置文本颜色
