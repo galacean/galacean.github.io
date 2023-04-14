@@ -2,7 +2,7 @@
  * @title OBJ Loader Use Model Mesh
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BlinnPhongMaterial,
   Camera,
@@ -12,8 +12,8 @@ import {
   MeshTopology,
   ModelMesh,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -30,7 +30,9 @@ cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 // init light
 rootEntity.addComponent(DirectLight);
 
-fetch("https://gw.alipayobjects.com/os/bmw-prod/b885a803-5315-44f0-af54-6787ec47ed1b.obj")
+fetch(
+  "https://gw.alipayobjects.com/os/bmw-prod/b885a803-5315-44f0-af54-6787ec47ed1b.obj"
+)
   .then((res) => res.text())
   .then((objText) => {
     const lines = objText.split(/\n/);
@@ -40,9 +42,19 @@ fetch("https://gw.alipayobjects.com/os/bmw-prod/b885a803-5315-44f0-af54-6787ec47
       .map((lineText) => lineText.split(" "))
       .forEach((parseTexts) => {
         if (parseTexts[0] === "v") {
-          positions.push(new Vector3(parseFloat(parseTexts[1]), parseFloat(parseTexts[2]), parseFloat(parseTexts[3])));
+          positions.push(
+            new Vector3(
+              parseFloat(parseTexts[1]),
+              parseFloat(parseTexts[2]),
+              parseFloat(parseTexts[3])
+            )
+          );
         } else if (parseTexts[0] === "f") {
-          indices.push(parseInt(parseTexts[1]) - 1, parseInt(parseTexts[2]) - 1, parseInt(parseTexts[3]) - 1);
+          indices.push(
+            parseInt(parseTexts[1]) - 1,
+            parseInt(parseTexts[2]) - 1,
+            parseInt(parseTexts[3]) - 1
+          );
         }
       });
 

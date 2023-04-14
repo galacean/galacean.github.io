@@ -2,7 +2,7 @@
  * @title Render Target
  * @category Camera
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   AssetType,
@@ -20,8 +20,8 @@ import {
   Texture2D,
   TextureCube,
   UnlitMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create scene
 const engine = new WebGLEngine("canvas");
@@ -86,30 +86,32 @@ class switchRTScript extends Script {
 cameraEntity.addComponent(switchRTScript);
 
 engine.resourceManager
-    .load<TextureCube>({
-      urls: [
-        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*Gi7CTZqKuacAAAAAAAAAAABkARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*iRRMQIExwKMAAAAAAAAAAABkARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ZIcPQZo20sAAAAAAAAAAAABkARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*SPYuTbHT-KgAAAAAAAAAAABkARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*mGUERbY77roAAAAAAAAAAABkARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ilkPS7A1_JsAAAAAAAAAAABkARQnAQ"
-      ],
-      type: AssetType.TextureCube
-    })
-    .then((cubeMap) => {
-      // Load glTF
-      engine.resourceManager
-          .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/8cc524dd-2481-438d-8374-3c933adea3b6.gltf")
-          .then((gltf) => {
-            const { animations, defaultSceneRoot } = gltf;
+  .load<TextureCube>({
+    urls: [
+      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*Gi7CTZqKuacAAAAAAAAAAABkARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*iRRMQIExwKMAAAAAAAAAAABkARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ZIcPQZo20sAAAAAAAAAAAABkARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*SPYuTbHT-KgAAAAAAAAAAABkARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*mGUERbY77roAAAAAAAAAAABkARQnAQ",
+      "https://gw.alipayobjects.com/mdn/rms_475770/afts/img/A*ilkPS7A1_JsAAAAAAAAAAABkARQnAQ",
+    ],
+    type: AssetType.TextureCube,
+  })
+  .then((cubeMap) => {
+    // Load glTF
+    engine.resourceManager
+      .load<GLTFResource>(
+        "https://gw.alipayobjects.com/os/bmw-prod/8cc524dd-2481-438d-8374-3c933adea3b6.gltf"
+      )
+      .then((gltf) => {
+        const { animations, defaultSceneRoot } = gltf;
 
-            rootEntity.addChild(defaultSceneRoot);
-            const animator = defaultSceneRoot.getComponent(Animator);
-            animator.play(animations[0].name);
-          });
+        rootEntity.addChild(defaultSceneRoot);
+        const animator = defaultSceneRoot.getComponent(Animator);
+        animator.play(animations[0].name);
+      });
 
-      scene.ambientLight.specularTexture = cubeMap;
-      skyMaterial.textureCubeMap = cubeMap;
-      engine.run();
-    });
+    scene.ambientLight.specularTexture = cubeMap;
+    skyMaterial.textureCubeMap = cubeMap;
+    engine.run();
+  });

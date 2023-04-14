@@ -22,15 +22,15 @@ import {
   UnlitMaterial,
   Vector3,
   WebGLEngine,
-} from 'oasis-engine';
-import { OrbitControl } from 'oasis-engine-toolkit';
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit";
 
-const engine = new WebGLEngine('canvas');
+const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
 const rootEntity = scene.createRootEntity();
-const cameraEntity = rootEntity.createChild('camera');
+const cameraEntity = rootEntity.createChild("camera");
 const camera = cameraEntity.addComponent(Camera);
 camera.cullingMask = Layer.Layer0;
 cameraEntity.transform.setPosition(0, 0, 5);
@@ -108,7 +108,7 @@ createWindowCamera();
 
 engine.resourceManager
   .load<GLTFResource>(
-    'https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf'
+    "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf"
   )
   .then((gltf) => {
     const { defaultSceneRoot } = gltf;
@@ -144,7 +144,7 @@ function getMRTMaterial() {
     }
     `;
 
-  const shader = Shader.create('MRT', vertex, frag);
+  const shader = Shader.create("MRT", vertex, frag);
   return new Material(engine, shader);
 }
 
@@ -164,7 +164,7 @@ function createPlane(texture: Texture2D) {
 function createWindowCamera() {
   const windowEntity = scene.createRootEntity();
   windowEntity.layer = Layer.Layer1;
-  const windowCameraEntity = windowEntity.createChild('window-camera');
+  const windowCameraEntity = windowEntity.createChild("window-camera");
   const windowCamera = windowCameraEntity.addComponent(Camera);
   windowCamera.cullingMask = Layer.Layer1;
   windowCamera.viewport.set(0.7, 0.0, 0.3, 0.7);

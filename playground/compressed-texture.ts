@@ -17,9 +17,9 @@ import {
   UnlitMaterial,
   Vector3,
   WebGLEngine,
-  WebGLRenderer
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  WebGLRenderer,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -71,13 +71,13 @@ const fileList = {
   [GLCompressedTextureInternalFormat.RGBA_PVRTC_2BPPV1_IMG]:
     "https://gw.alipayobjects.com/os/bmw-prod/7955549e-ee62-4982-a810-d118e2fce6dd.ktx",
   [GLCompressedTextureInternalFormat.RGBA_PVRTC_4BPPV1_IMG]:
-    "https://gw.alipayobjects.com/os/bmw-prod/dc02693a-f416-4b2e-bf7b-9553c4038ce8.ktx"
+    "https://gw.alipayobjects.com/os/bmw-prod/dc02693a-f416-4b2e-bf7b-9553c4038ce8.ktx",
 };
 
 const rhi = engine._hardwareRenderer as WebGLRenderer;
 const formats = [];
 const debugInfo = {
-  format: ""
+  format: "",
 };
 for (let format in fileList) {
   const can = rhi.canIUseCompressedTextureInternalFormat(format as any);
@@ -94,7 +94,7 @@ function loadTexture(formatDes: string) {
   engine.resourceManager
     .load<Texture2D>({
       type: AssetType.KTX,
-      url
+      url,
     })
     .then((res) => {
       const compressedTexture = res;

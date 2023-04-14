@@ -2,7 +2,7 @@
  * @title Shader Water
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -16,8 +16,8 @@ import {
   Shader,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 const gui = new dat.GUI();
 //-- create engine object
@@ -204,7 +204,7 @@ renderer.setMaterial(material);
 engine.resourceManager
   .load({
     type: AssetType.Texture2D,
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*AC4IQZ6mfCIAAAAAAAAAAAAAARQnAQ"
+    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*AC4IQZ6mfCIAAAAAAAAAAAAAARQnAQ",
   })
   .then((texture: Texture2D) => {
     material.shaderData.setTexture("u_texture", texture);
@@ -214,7 +214,10 @@ engine.resourceManager
 // u_time 更新脚本
 class WaterScript extends Script {
   onUpdate() {
-    material.shaderData.setFloat("u_time", engine.time.timeSinceStartup * 0.001);
+    material.shaderData.setFloat(
+      "u_time",
+      engine.time.timeSinceStartup * 0.001
+    );
   }
 }
 sphereEntity.addComponent(WaterScript);
@@ -229,7 +232,7 @@ function openDebug() {
     water_scale: shaderData.getFloat("u_water_scale"),
     water_speed: shaderData.getFloat("u_water_speed"),
     sea_base: [baseColor.r * 255, baseColor.g * 255, baseColor.b * 255],
-    water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255]
+    water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255],
   };
 
   gui.add(debug, "sea_height", 0, 3).onChange((v) => {

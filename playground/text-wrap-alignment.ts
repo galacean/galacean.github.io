@@ -3,8 +3,14 @@
  * @category 2D
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Camera, Entity, TextHorizontalAlignment, TextRenderer, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  Camera,
+  Entity,
+  TextHorizontalAlignment,
+  TextRenderer,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -25,13 +31,41 @@ const textEntity = rootEntity.createChild("text");
 textEntity.addComponent(TextRenderer);
 
 // Text display no wrap, center align
-setTextRenderer(textEntity, 2, `${text} (不换行，居中对齐)`, 2, false, TextHorizontalAlignment.Center);
+setTextRenderer(
+  textEntity,
+  2,
+  `${text} (不换行，居中对齐)`,
+  2,
+  false,
+  TextHorizontalAlignment.Center
+);
 // Text display with wrap, center align
-setTextRenderer(textEntity.clone(), 1, `${text}\n(换行，居中对齐)`, 2, true, TextHorizontalAlignment.Center);
+setTextRenderer(
+  textEntity.clone(),
+  1,
+  `${text}\n(换行，居中对齐)`,
+  2,
+  true,
+  TextHorizontalAlignment.Center
+);
 // Text display with wrap, left align
-setTextRenderer(textEntity.clone(), 0, `${text}\n(换行，左对齐)`, 2, true, TextHorizontalAlignment.Left);
+setTextRenderer(
+  textEntity.clone(),
+  0,
+  `${text}\n(换行，左对齐)`,
+  2,
+  true,
+  TextHorizontalAlignment.Left
+);
 // Text display with wrap, right align
-setTextRenderer(textEntity.clone(), -1, `${text}\n(换行，右对齐)`, 2, true, TextHorizontalAlignment.Right);
+setTextRenderer(
+  textEntity.clone(),
+  -1,
+  `${text}\n(换行，右对齐)`,
+  2,
+  true,
+  TextHorizontalAlignment.Right
+);
 
 engine.run();
 

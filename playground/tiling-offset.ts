@@ -2,7 +2,7 @@
  * @title Tiling Offset
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -14,8 +14,8 @@ import {
   Texture2D,
   UnlitMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 init();
 
@@ -28,7 +28,7 @@ function init(): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Umw_RJGiZLYAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture) => {
       const scene = engine.sceneManager.activeScene;
@@ -70,7 +70,10 @@ function init(): void {
 /**
  * Add data GUI.
  */
-function addDataGUI(material: UnlitMaterial, animationScript: AnimateScript): any {
+function addDataGUI(
+  material: UnlitMaterial,
+  animationScript: AnimateScript
+): any {
   const gui = new dat.GUI();
   const guiData = {
     tilingX: 1,
@@ -89,7 +92,7 @@ function addDataGUI(material: UnlitMaterial, animationScript: AnimateScript): an
     },
     resume: function () {
       animationScript.enabled = true;
-    }
+    },
   };
 
   gui
@@ -135,7 +138,9 @@ class AnimateScript extends Script {
    */
   onUpdate(deltaTime: number): void {
     const { material, guiData } = this;
-    material.tilingOffset.x = guiData.tilingX = ((guiData.tilingX - 1 + deltaTime * 0.001) % 9) + 1;
-    material.tilingOffset.y = guiData.tilingY = ((guiData.tilingY - 1 + deltaTime * 0.001) % 9) + 1;
+    material.tilingOffset.x = guiData.tilingX =
+      ((guiData.tilingX - 1 + deltaTime * 0.001) % 9) + 1;
+    material.tilingOffset.y = guiData.tilingY =
+      ((guiData.tilingY - 1 + deltaTime * 0.001) % 9) + 1;
   }
 }

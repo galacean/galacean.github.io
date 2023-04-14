@@ -2,7 +2,7 @@
  * @title glTF Pointer Merge
  * @category input
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BoundingBox,
   BoxColliderShape,
@@ -14,9 +14,9 @@ import {
   Script,
   StaticCollider,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-import { LitePhysics } from "@oasis-engine/physics-lite";
+  WebGLEngine,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 class GlTFCollider extends Script {
   onStart(): void {
@@ -38,7 +38,7 @@ class GlTFCollider extends Script {
     // Add collider.
     const boxCollider = boxEntity.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.setSize(worldSize.x, worldSize.y, worldSize.z);
+    boxColliderShape.size.set(worldSize.x, worldSize.y, worldSize.z);
     boxCollider.addShape(boxColliderShape);
     // Add click script.
     boxEntity.addComponent(Script).onPointerClick = () => {
@@ -66,7 +66,9 @@ cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb"
+  )
   .then((glTF) => {
     const glTFRoot = glTF.defaultSceneRoot;
     glTFRoot.transform.setScale(0.005, 0.005, 0.005);

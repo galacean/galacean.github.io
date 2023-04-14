@@ -2,7 +2,7 @@
  * @title Sprite Material Dissolve
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -17,8 +17,8 @@ import {
   Sprite,
   SpriteRenderer,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 init();
 
@@ -41,18 +41,18 @@ function init(): void {
       {
         // Sprite texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*L2GNRLWn9EAAAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
+        type: AssetType.Texture2D,
       },
       {
         // Noise texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*j2xJQL0e6J4AAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
+        type: AssetType.Texture2D,
       },
       {
         // Ramp texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ygj3S7sm4hQAAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
-      }
+        type: AssetType.Texture2D,
+      },
     ])
     .then((textures: Texture2D[]) => {
       // Create origin sprite entity.
@@ -73,7 +73,11 @@ function init(): void {
   engine.run();
 }
 
-function addCustomMaterial(engine: Engine, noiseTexture: Texture2D, rampTexture: Texture2D): Material {
+function addCustomMaterial(
+  engine: Engine,
+  noiseTexture: Texture2D,
+  rampTexture: Texture2D
+): Material {
   const material = new Material(engine, Shader.find("SpriteDissolve"));
 
   // Init state.
@@ -118,7 +122,7 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
     },
     resume: function () {
       animationScript.enabled = true;
-    }
+    },
   };
 
   gui

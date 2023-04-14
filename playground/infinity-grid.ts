@@ -3,13 +3,8 @@
  * @category Toolkit
  */
 
-import {
-    Camera,
-    GLTFResource,
-    WebGLEngine,
-    Vector3,
-} from "oasis-engine";
-import { OrbitControl, GridControl } from "oasis-engine-toolkit";
+import { Camera, GLTFResource, WebGLEngine, Vector3 } from "@galacean/engine";
+import { OrbitControl, GridControl } from "@galacean/engine-toolkit";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -27,11 +22,11 @@ const grid = rootEntity.addComponent(GridControl);
 grid.camera = camera;
 
 engine.resourceManager
-    .load<GLTFResource>(
-        "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
-    )
-    .then((gltf) => {
-        rootEntity.addChild(gltf.defaultSceneRoot);
-    });
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+  )
+  .then((gltf) => {
+    rootEntity.addChild(gltf.defaultSceneRoot);
+  });
 
 engine.run();

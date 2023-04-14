@@ -2,7 +2,7 @@
  * @title Animation BlendShape
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   Camera,
@@ -12,8 +12,8 @@ import {
   SystemInfo,
   Vector3,
   WebGLEngine,
-  GLTFResource
-} from "oasis-engine";
+  GLTFResource,
+} from "@galacean/engine";
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -34,7 +34,9 @@ lightNode.transform.lookAt(new Vector3(0, 0, 1));
 lightNode.transform.rotate(new Vector3(-45, -135, 0));
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/746da3e3-fdc9-4155-8fee-0e2a97de4e72.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/746da3e3-fdc9-4155-8fee-0e2a97de4e72.glb"
+  )
   .then((asset) => {
     const { defaultSceneRoot } = asset;
     rootEntity.addChild(defaultSceneRoot);

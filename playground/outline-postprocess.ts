@@ -14,11 +14,11 @@ import {
   PointerButton,
   PrimitiveMesh,
   Script,
-  WebGLEngine
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import { OutlineManager } from "@oasis-engine-toolkit/outline";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
+import { OutlineManager } from "@galacean/engine-toolkit-outline";
 
 class ClickScript extends Script {
   onUpdate(): void {
@@ -26,14 +26,16 @@ class ClickScript extends Script {
     const { pointers } = inputManager;
     if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       const pointerPosition = pointers[0].position;
-      framebufferPicker.pick(pointerPosition.x, pointerPosition.y).then((renderElement) => {
-        if (renderElement) {
-          console.log(renderElement.component.entity.parent);
-          outlineManager.addEntity(renderElement.component.entity);
-        } else {
-          outlineManager.clear();
-        }
-      });
+      framebufferPicker
+        .pick(pointerPosition.x, pointerPosition.y)
+        .then((renderElement) => {
+          if (renderElement) {
+            console.log(renderElement.component.entity.parent);
+            outlineManager.addEntity(renderElement.component.entity);
+          } else {
+            outlineManager.clear();
+          }
+        });
     }
   }
 }
@@ -61,7 +63,7 @@ framebufferPicker.camera = camera;
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -71,7 +73,7 @@ engine.resourceManager
 engine.resourceManager
   .load<GLTFResource>({
     type: AssetType.Prefab,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb",
   })
   .then((gltf) => {
     const parentEntity = rootEntity.createChild();
@@ -93,8 +95,16 @@ engine.resourceManager
 
 function addDebugGUI(outlineManager: OutlineManager) {
   const debugInfo = {
-    mainColor: [outlineManager.mainColor.r * 255, outlineManager.mainColor.g * 255, outlineManager.mainColor.b * 255],
-    subColor: [outlineManager.subColor.r * 255, outlineManager.subColor.g * 255, outlineManager.subColor.b * 255]
+    mainColor: [
+      outlineManager.mainColor.r * 255,
+      outlineManager.mainColor.g * 255,
+      outlineManager.mainColor.b * 255,
+    ],
+    subColor: [
+      outlineManager.subColor.r * 255,
+      outlineManager.subColor.g * 255,
+      outlineManager.subColor.b * 255,
+    ],
   };
   const gui = new dat.GUI();
 

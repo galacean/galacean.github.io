@@ -3,8 +3,16 @@
  * @category Benchmark
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Animator, AssetType, Camera, GLTFResource, PBRMaterial, Texture2D, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  Animator,
+  AssetType,
+  Camera,
+  GLTFResource,
+  PBRMaterial,
+  Texture2D,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -26,12 +34,12 @@ engine.resourceManager
   .load([
     {
       url: "https://gw.alipayobjects.com/os/loanprod/bf055064-3eec-4d40-bce0-ddf11dfbb88a/5d78db60f211d21a43834e23/4f5e6bb277dd2fab8e2097d7a418c5bc.gltf",
-      type: AssetType.Prefab
+      type: AssetType.Prefab,
     },
     {
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*OStMT63k5o8AAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
-    }
+      type: AssetType.Texture2D,
+    },
   ])
   .then((resources: Object[]) => {
     const glTF = <GLTFResource>resources[0];

@@ -2,7 +2,7 @@
  * @title Sprite Mask
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   Camera,
@@ -15,8 +15,8 @@ import {
   SpriteRenderer,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine.
 const engine = new WebGLEngine("canvas");
@@ -37,18 +37,18 @@ engine.resourceManager
     {
       // Sprite texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rgNGR4Vb7lQAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Mask texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*qyhFT5Un5AgAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Mask texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*pgrpQIneqSUAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
-    }
+      type: AssetType.Texture2D,
+    },
   ])
   .then((textures: Texture2D[]) => {
     const pos = new Vector3();
@@ -62,13 +62,25 @@ engine.resourceManager
     // Show inside mask.
     pos.set(-5, 0, 0);
     scale.set(2, 2, 2);
-    addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleInsideMask, SpriteMaskLayer.Layer0);
+    addSpriteRenderer(
+      pos,
+      scale,
+      sprite,
+      SpriteMaskInteraction.VisibleInsideMask,
+      SpriteMaskLayer.Layer0
+    );
     addMask(pos, maskSprite0, SpriteMaskLayer.Layer0, ScaleScript);
 
     // Show outside mask.
     pos.set(5, 0, 0);
     scale.set(2, 2, 2);
-    addSpriteRenderer(pos, scale, sprite, SpriteMaskInteraction.VisibleOutsideMask, SpriteMaskLayer.Layer1);
+    addSpriteRenderer(
+      pos,
+      scale,
+      sprite,
+      SpriteMaskInteraction.VisibleOutsideMask,
+      SpriteMaskLayer.Layer1
+    );
     addMask(pos, maksSprite1, SpriteMaskLayer.Layer1, RotationScript);
   });
 

@@ -2,8 +2,17 @@
  * @title Sprite Region
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { AssetType, Camera, Entity, Rect, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  AssetType,
+  Camera,
+  Entity,
+  Rect,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -21,7 +30,7 @@ cameraEntity.addComponent(OrbitControl);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*d3N9RYpcKncAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.
@@ -52,7 +61,13 @@ engine.run();
 /**
  * Add flip entity.
  */
-function addRegionEntity(entity: Entity, texture: Texture2D, posX: number, posY: number, region: Rect): void {
+function addRegionEntity(
+  entity: Entity,
+  texture: Texture2D,
+  posX: number,
+  posY: number,
+  region: Rect
+): void {
   rootEntity.addChild(entity);
   entity.transform.setPosition(posX, posY, 0);
   const regionRenderer = entity.getComponent(SpriteRenderer);

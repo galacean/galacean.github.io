@@ -18,17 +18,17 @@ import {
   Script,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
-import { LitePhysics } from "@oasis-engine/physics-lite";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
+import { NavigationGizmo } from "@galacean/engine-toolkit-navigation-gizmo";
 import {
   AnchorType,
   CoordinateType,
   Gizmo,
   State,
-} from "@oasis-engine-toolkit/gizmo";
+} from "@galacean/engine-toolkit-gizmo";
 
 import * as dat from "dat.gui";
 

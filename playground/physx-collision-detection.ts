@@ -4,16 +4,25 @@
  */
 
 import {
-  WebGLEngine, SphereColliderShape, DynamicCollider,
-  BoxColliderShape, Vector3,
-  MeshRenderer, PointLight,
-  PrimitiveMesh, Camera, Script, StaticCollider, ColliderShape, PBRMaterial, AmbientLight, AssetType
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  WebGLEngine,
+  SphereColliderShape,
+  DynamicCollider,
+  BoxColliderShape,
+  Vector3,
+  MeshRenderer,
+  PointLight,
+  PrimitiveMesh,
+  Camera,
+  Script,
+  StaticCollider,
+  ColliderShape,
+  PBRMaterial,
+  AmbientLight,
+  AssetType,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
-import {
-  PhysXPhysics
-} from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
@@ -46,7 +55,12 @@ PhysXPhysics.initialize().then(() => {
   boxMtl.baseColor.set(0.6, 0.3, 0.3, 1.0);
   boxMtl.metallic = 0.0;
   boxMtl.roughness = 0.5;
-  boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, cubeSize, cubeSize, cubeSize);
+  boxRenderer.mesh = PrimitiveMesh.createCuboid(
+    engine,
+    cubeSize,
+    cubeSize,
+    cubeSize
+  );
   boxRenderer.setMaterial(boxMtl);
 
   const physicsBox = new BoxColliderShape();
@@ -103,15 +117,24 @@ PhysXPhysics.initialize().then(() => {
   // Collision Detection
   class CollisionScript extends Script {
     onTriggerExit(other: ColliderShape) {
-      (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+      (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        1.0
+      );
     }
 
     onTriggerEnter(other: ColliderShape) {
-      (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(Math.random(), Math.random(), Math.random(), 1.0);
+      (<PBRMaterial>sphereRenderer.getMaterial()).baseColor.set(
+        Math.random(),
+        Math.random(),
+        Math.random(),
+        1.0
+      );
     }
 
-    onTriggerStay(other: ColliderShape) {
-    }
+    onTriggerStay(other: ColliderShape) {}
   }
 
   sphereEntity.addComponent(CollisionScript);
@@ -120,7 +143,7 @@ PhysXPhysics.initialize().then(() => {
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;

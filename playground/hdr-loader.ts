@@ -2,7 +2,7 @@
  * @title HDR Background
  * @category Scene
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   BackgroundMode,
@@ -12,8 +12,8 @@ import {
   SkyBoxMaterial,
   TextureCube,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -38,7 +38,7 @@ sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 engine.resourceManager
   .load<TextureCube>({
     type: AssetType.HDR,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin",
   })
   .then((texture) => {
     skyMaterial.textureCubeMap = texture;
