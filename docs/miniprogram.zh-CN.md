@@ -34,11 +34,11 @@ npm init @galacean/galacean-app -- --template miniprogram
 
 **根据提示**完成后续步骤后，可以使用小程序开发工具打开项目：
 
-![image-20210609164550721](https://gw.alipayobjects.com/zos/oasisHub/3e2df40f-6ccd-4442-85f8-69233d04b3b5/image-20210609164550721.png)
+![image-20210609164550721](https://gw.alipayobjects.com/zos/OasisHub/3e2df40f-6ccd-4442-85f8-69233d04b3b5/image-20210609164550721.png)
 
 选择对应目录即可，顺利的话可以看到：
 
-![image-20210609164816776](https://gw.alipayobjects.com/zos/oasisHub/04386e9c-b882-41f7-8aa6-a1bf990d578b/image-20210609164816776.png)
+![image-20210609164816776](https://gw.alipayobjects.com/zos/OasisHub/04386e9c-b882-41f7-8aa6-a1bf990d578b/image-20210609164816776.png)
 
 ## 已有项目使用 Galacean
 

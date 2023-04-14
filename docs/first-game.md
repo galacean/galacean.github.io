@@ -22,7 +22,7 @@ Before coding, we need to plan in our minds the general flow of how to achieve a
 
 After the trial, we can summarize the following points through a simple analysis:
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/27a9f1e5-7b2c-450d-bde5-dd127d498108/image-20210901174005015.png" alt="image.png" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/27a9f1e5-7b2c-450d-bde5-dd127d498108/image-20210901174005015.png" alt="image.png" />
 
 - The game is a 2D game, using [Orthogonal Camera](${docs}camera#orthogonal-projection) will be easier and more convenient.
 - The game is divided into three states:
@@ -44,13 +44,13 @@ After the analysis of the previous step, we have determined the display objects 
 
 ## UI resources
 
-| Bird | [https://gw.alipayobjects.com/zos/oasisHub/315000157/8356/bird.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/8356/bird.png) |  |
+| Bird | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png) |  |
 | --- | --- | --- |
-| Pipe | [https://gw.alipayobjects.com/zos/oasisHub/315000157/5987/pipe.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/5987/pipe.png) |  |
-| BackGround | [https://gw.alipayobjects.com/zos/oasisHub/315000157/5244/background.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/5244/background.png) |  |
-| Ground | [https://gw.alipayobjects.com/zos/oasisHub/315000157/5230/ground.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/5230/ground.png) |  |
-| Restart | [https://gw.alipayobjects.com/zos/oasisHub/315000157/6695/restart.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/6695/restart.png) |  |
-| Number | [https://gw.alipayobjects.com/zos/oasisHub/315000157/8709/527-number.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/8709/527-number.png) |  |
+| Pipe | [https://gw.alipayobjects.com/zos/OasisHub/315000157/5987/pipe.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/5987/pipe.png) |  |
+| BackGround | [https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png) |  |
+| Ground | [https://gw.alipayobjects.com/zos/OasisHub/315000157/5230/ground.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/5230/ground.png) |  |
+| Restart | [https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png) |  |
+| Number | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png) |  |
 
 ## Load resources
 
@@ -71,7 +71,7 @@ For simplicity, we choose the way of fixing the camera.
 
 In the previous demand analysis, we can roughly determine the front and rear occlusion relationship of each display object, so we can finalize the approximate placement position:
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/a9454792-763d-459d-a2ec-9cdcbdf67dae/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee-20210913105510153.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/a9454792-763d-459d-a2ec-9cdcbdf67dae/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee-20210913105510153.png" alt="image.png" style="zoom:50%;" />
 
 ### Build with editor
 
@@ -232,7 +232,7 @@ this._dropTween = new TWEEN.Tween(rotation)
 
 The motion trajectory affects the feel. You can see that the original code is very complicated. Here we simulate the experience in reality. When you click on the screen, first give the bird an upward initial speed. At this time, it is always a parabolic motion. When the falling speed reaches At a peak, the resistance is offset by gravity, and the bird is falling at a constant speed:
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/5ed29897-5094-48be-bffc-3acbeb7f3e9a/image-20210901174457088.png" alt="image.png"/>
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5ed29897-5094-48be-bffc-3acbeb7f3e9a/image-20210901174457088.png" alt="image.png"/>
 
 Assuming that the speed provided by clicking to fly up is `_startFlyV`, the acceleration of gravity is `_gravity`, the maximum falling speed is `_maxDropV`, and the moment of clicking on the screen is `_flyStartTime`, we can get the ordinate of the bird at any moment by calculation::
 
@@ -278,7 +278,7 @@ onUpdate(deltaTime: number) {
 
 ## Pipe
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/76e350ff-6b14-46b0-99ad-3bf7150be551/image-20210901174713640.png" alt="image.png"/>
+<img src="https://gw.alipayobjects.com/zos/OasisHub/76e350ff-6b14-46b0-99ad-3bf7150be551/image-20210901174713640.png" alt="image.png"/>
 
 We add `ScriptPipe` to the water pipe layer node to manage and generate water pipes. In order to better set the timing and performance of water pipe generation, we extract the configurable parameters:
 
@@ -362,17 +362,17 @@ Among them, the `_createPipe` function uses the [clone](${docs}entity-clone) fun
 
 First look at what the score resource looks like:
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/b7c4c65e-9a14-4f7b-8c0e-f4aa0acba85c/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199-20210913105806999.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b7c4c65e-9a14-4f7b-8c0e-f4aa0acba85c/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199-20210913105806999.png" alt="image.png" style="zoom:50%;" />
 
 Here you can refer to the [Sprite-Region](${examples}sprite-region) example, we can intercept and reorganize the numbers according to the following process, each number is an `Entity`, They all have their own `SpriteRender`:
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/3dd7137b-8fff-40ca-a18f-d9a4be91bccd/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24-20210913105810424.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/3dd7137b-8fff-40ca-a18f-d9a4be91bccd/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24-20210913105810424.png" alt="image.png" style="zoom:50%;" />
 
 ### Restart
 
 We can simply analyze the content of Restart and write a general process.
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/7c1c09ac-b801-428d-b67d-8f246bb0843b/image-20210901175201126.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/7c1c09ac-b801-428d-b67d-8f246bb0843b/image-20210901175201126.png" alt="image.png" style="zoom:50%;" />
 
 Here you can refer to the [Input](${docs}input) document.
 
@@ -382,7 +382,7 @@ Here you can refer to the [Input](${docs}input) document.
 
 There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Galacean scripting system](${docs}script#component-life-cycle-function) should be familiar with it. After we change the position of `Entity` in `onUpdate`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/49d73e14-842d-4909-8612-be2209bb0afe/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265-20210913105819642.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/49d73e14-842d-4909-8612-be2209bb0afe/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265-20210913105819642.png" alt="image.png" style="zoom:50%;" />
 
 ## Ground & Bird
 
@@ -395,7 +395,7 @@ engine.on(GameEvent.checkHit, (birdY) => {
 
 ## Pipe & Bird
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/cb8797ba-9ef9-4a20-9148-6e7f7b0001c1/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118-20210913105825037.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/cb8797ba-9ef9-4a20-9148-6e7f7b0001c1/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118-20210913105825037.png" alt="image.png" style="zoom:50%;" />
 
 You can see all the pipes (red and blue) in the game at this time. Knowing the coordinates of Bird at the moment, there are currently the following issues that we need to solve:
 

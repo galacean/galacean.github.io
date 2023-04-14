@@ -28,7 +28,7 @@ label: Interact
 | [onPointerClick](${api}core/Script#onPointerClick) | 当触控点在 Entity 的碰撞体范围内按下并松开，在松开时触发一次 |
 | [onPointerDrag](${api}core/Script#onPointerDrag) | 当触控点在 Entity 的碰撞体范围内按下时**持续**触发，直至触控点解除按下状态 |
 
-触发时序如下： <img src="https://gw.alipayobjects.com/zos/oasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:67%;" />
+触发时序如下： <img src="https://gw.alipayobjects.com/zos/OasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:67%;" />
 
 ### 光标按键检测
 

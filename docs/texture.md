@@ -45,15 +45,15 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
 - Clamp: Sampling edge texels when out of range
 
-  <img src="https://gw.alipayobjects.com/zos/oasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
 
 - Repeat: Resample from [0,1] when out of range
 
-  <img src="https://gw.alipayobjects.com/zos/oasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
 
 - Mirror: Mirror sampling from [1,0] when out of range
 
-  <img src="https://gw.alipayobjects.com/zos/oasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
 
 <playground src="wrap-mode.ts"></playground>
 

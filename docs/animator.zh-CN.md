@@ -167,7 +167,7 @@ colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
 
 ### 动画系统的构成
 
-![image-20210830233452874](https://gw.alipayobjects.com/zos/oasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
+![image-20210830233452874](https://gw.alipayobjects.com/zos/OasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
 
 #### [Animator](${api}core/Animator)
 动画控制器组件，用于控制动画的播放。Animator 组件读取 AnimatorController 作为动画数据。通过 AnimatorControllerParameter 设置该 Animator 中的变量。

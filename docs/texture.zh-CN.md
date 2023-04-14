@@ -45,15 +45,15 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
 - 截取模式（Clamp）：超出范围采样边缘纹素。
 
-  <img src="https://gw.alipayobjects.com/zos/oasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
 
 - 重复模式（Repeat）：超出范围从 [0,1] 开始重新采样
 
-  <img src="https://gw.alipayobjects.com/zos/oasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
 
 - 镜像重复模式（Mirror）：超出范围从 [1,0] 开始镜像采样。
 
-  <img src="https://gw.alipayobjects.com/zos/oasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
 
 <playground src="wrap-mode.ts"></playground>
 

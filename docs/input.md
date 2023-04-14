@@ -30,7 +30,7 @@ The interfaces of the input system have been integrated into [the life cycle of 
 
 This is represented in the schematic diagram below:
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:50%;" />
 
 ### Pointer button
 

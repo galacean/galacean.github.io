@@ -22,7 +22,7 @@ label: Introduction/Advanced
 
 试玩之后，通过简单的需求分析可以总结出以下 tips ：
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/81bb1385-4463-46b2-bc92-c42cb56332db/1623310879070-048cbc6d-2193-4672-9440-c9a13d31f4d8.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/81bb1385-4463-46b2-bc92-c42cb56332db/1623310879070-048cbc6d-2193-4672-9440-c9a13d31f4d8.png" alt="image.png" style="zoom:50%;" />
 
 - 游戏为 2D 游戏，使用[正交相机](${docs}camera-cn#正交投影)会更加简单方便
 - 整个游戏分为三个状态：
@@ -44,13 +44,13 @@ label: Introduction/Advanced
 
 ## 获取 UI 资源
 
-| Bird | [https://gw.alipayobjects.com/zos/oasisHub/315000157/8356/bird.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/8356/bird.png) |  |
+| Bird | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png) |  |
 | --- | --- | --- |
-| Pipe | [https://gw.alipayobjects.com/zos/oasisHub/315000157/5987/pipe.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/5987/pipe.png) |  |
-| BackGround | [https://gw.alipayobjects.com/zos/oasisHub/315000157/5244/background.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/5244/background.png) |  |
-| Ground | [https://gw.alipayobjects.com/zos/oasisHub/315000157/5230/ground.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/5230/ground.png) |  |
-| Restart | [https://gw.alipayobjects.com/zos/oasisHub/315000157/6695/restart.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/6695/restart.png) |  |
-| Number | [https://gw.alipayobjects.com/zos/oasisHub/315000157/8709/527-number.png](https://gw.alipayobjects.com/zos/oasisHub/315000157/8709/527-number.png) |  |
+| Pipe | [https://gw.alipayobjects.com/zos/OasisHub/315000157/5987/pipe.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/5987/pipe.png) |  |
+| BackGround | [https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png) |  |
+| Ground | [https://gw.alipayobjects.com/zos/OasisHub/315000157/5230/ground.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/5230/ground.png) |  |
+| Restart | [https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png) |  |
+| Number | [https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png](https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png) |  |
 
 ## 加载 UI 资源
 
@@ -71,7 +71,7 @@ label: Introduction/Advanced
 
 在之前进行需求分析时可以大概确定各个显示对象的前后遮挡关系，因此可以敲定大概的摆放位置：
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/a4d9c966-a98a-4a90-9146-49f070196e7e/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/a4d9c966-a98a-4a90-9146-49f070196e7e/1623317231501-471c07f0-a263-49a2-b41c-542d163a38ee.png" alt="image.png" style="zoom:50%;" />
 
 ### 编辑器搭建 UI
 
@@ -238,7 +238,7 @@ this._dropTween = new TWEEN.Tween(rotation)
 
 运动轨迹涉及到手感，可以看到原版代码实现得十分复杂，此处模拟现实中的体验，点击屏幕时先给小鸟一个向上的初速度，此时一直为抛物线的运动，当下落的速度达到一个峰值时阻力与重力抵消，此时小鸟以一个恒定的速度下落：
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/dbfaa502-b178-4c09-9a9a-bb4f21e7f884/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/dbfaa502-b178-4c09-9a9a-bb4f21e7f884/1623325606009-fe29a574-5b33-454a-92e1-d0f43b5107b8.png" alt="image.png" style="zoom:50%;" />
 
 假设点击往上飞提供的速度为 `_startFlyV`，重力加速度为 `_gravity`，最大下落速度为 `_maxDropV`，点击屏幕的时刻为 `_flyStartTime`，通过计算可以得到任意时刻小鸟的纵坐标：
 
@@ -284,7 +284,7 @@ onUpdate(deltaTime: number) {
 
 ## 水管
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/d73197c1-fc07-4dce-ab91-816ebfbf76c1/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/d73197c1-fc07-4dce-ab91-816ebfbf76c1/1623331517136-c243f292-e44a-4386-9b83-72514d9df2f9.png" alt="image.png" style="zoom:50%;" />
 
 依靠在水管层节点加入 `ScriptPipe` 管理和生成水管，为了更好地设置水管的生成时机与表现，我们将可配置的参数抽取出来：
 
@@ -368,17 +368,17 @@ onUpdate(deltaTime: number) {
 
 首先看下分数的资源长什么样。
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/c768b576-140a-4550-9cd5-b9cdba57b15d/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c768b576-140a-4550-9cd5-b9cdba57b15d/1625130444722-5c3eba5f-5543-456a-b78b-7b578339e199.png" alt="image.png" style="zoom:50%;" />
 
 此处可参考 [Sprite-Region](${examples}sprite-region) 示例，我们可按照以下流程对数字进行截取与重组，每个数字都是一个 `Entity`，他们都有自己的 `SpriteRender`：
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/8db5b759-0571-4fb4-83d9-4eae8005e238/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/8db5b759-0571-4fb4-83d9-4eae8005e238/1625131469833-847a18a0-460e-47ba-96a2-d0938a527b24.png" alt="image.png" style="zoom:50%;" />
 
 ### Restart
 
 可以简单分析一下 Restart 要实现的内容并写出大概的流程。
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/352dbced-36c6-4ed9-b5d0-b7f096f9aa0e/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/352dbced-36c6-4ed9-b5d0-b7f096f9aa0e/1625132333754-89ca4388-6af6-4ce7-b7c0-395e9abb48bf.png" alt="image.png" style="zoom:50%;" />
 
 此处可以参考 [输入交互](${docs}input-cn) 文档
 
@@ -388,7 +388,7 @@ onUpdate(deltaTime: number) {
 
 在执行碰撞检测时有一个前提，就是此时已经是这一帧的最终位置了，之前学习过 [Galacean 脚本系统](${docs}script-cn#组件生命周期函数) 的同学应该会很熟悉，当在 `onUpdate` 中改变 `Entity` 的位置后，可以在 `onLateUpdate` 中做碰撞检测，这样可以保证时序不出问题。
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/3b51a259-a9e9-4f82-bc92-fecbae21f3fc/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/3b51a259-a9e9-4f82-bc92-fecbae21f3fc/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
 
 ## Ground & Bird
 
@@ -403,7 +403,7 @@ engine.on(GameEvent.checkHit, (birdY) => {
 
 这里的碰撞检测可能会比较复杂，我们做一个简单的分析：
 
-<img src="https://gw.alipayobjects.com/zos/oasisHub/7c715dc7-95ac-4005-9abf-99a2433644ef/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118.png" alt="image.png" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/7c715dc7-95ac-4005-9abf-99a2433644ef/1625141607948-cc36c6ce-d1d1-43de-ada9-4ca0c15b7118.png" alt="image.png" style="zoom:50%;" />
 
 可以看到此时在局内的所有 pipe（红色和蓝色），已知 Bird 此刻的坐标，那么目前就有以下几个问题需要我们去解决：
 
