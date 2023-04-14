@@ -37,7 +37,7 @@ engine.resourceManager
     scene.ambientLight = ambientLight;
 
     // If you want to add a skybox, you can easily get it from ambientLight
-    skyMaterial.textureCubeMap = ambientLight.specularTexture;
+    skyMaterial.texture = ambientLight.specularTexture;
     // Since the encoding method of the baked texture is RGBM, the corresponding decoding settings are required
     skyMaterial.textureDecodeRGBM = true;
   });

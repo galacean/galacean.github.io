@@ -86,7 +86,7 @@ background.solidColor.set(1, 1, 1, 1); // White
 // Add a skybox background
 background.mode = BackgroundMode.Sky;
 const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // Set the material of skybox
-skyMaterial.textureCubeMap = textureCube; // Set the cube texture of material
+skyMaterial.texture = textureCube; // Set the cube texture of material
 background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // Set the mesh of the skybox
 ```
 

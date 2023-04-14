@@ -82,7 +82,7 @@ async function main() {
       // Add ambient light
       const ambientLight = <AmbientLight>resources[0];
       scene.ambientLight = ambientLight;
-      skyMaterial.textureCubeMap = ambientLight.specularTexture;
+      skyMaterial.texture = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
 
       // Add helmet model

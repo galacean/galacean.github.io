@@ -67,7 +67,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       const skyMaterial = (background.sky.material = new SkyBoxMaterial(
         engine
       )); // 添加天空盒材质
-      skyMaterial.textureCubeMap = cubeMap1; // 设置立方体纹理
+      skyMaterial.texture = cubeMap1; // 设置立方体纹理
       background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // 设置天空盒网格
       background.texture = texture;
       return [cubeMap1, cubeMap2];
@@ -137,7 +137,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       .add(obj, "cubeMap", { cubeMap1: 0, cubeMap2: 1 })
       .onChange((v) => {
         // @ts-ignore
-        background.sky.material.textureCubeMap = cubeMaps[parseInt(v)];
+        background.sky.material.texture = cubeMaps[parseInt(v)];
       });
     fitModeGUI = gui
       .add(mode, "fitMode", { AspectFitWidth: 0, AspectFitHeight: 1, Fill: 2 })

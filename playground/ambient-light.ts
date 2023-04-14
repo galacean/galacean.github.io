@@ -60,7 +60,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;
-      skyMaterial.textureCubeMap = ambientLight.specularTexture;
+      skyMaterial.texture = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
       openDebug(ambientLight.specularTexture);
       engine.run();

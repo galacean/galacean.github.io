@@ -41,7 +41,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin",
     })
     .then((texture) => {
-      skyMaterial.textureCubeMap = texture;
+      skyMaterial.texture = texture;
       // HDR output is in RGBM format.
       skyMaterial.textureDecodeRGBM = true;
       engine.run();
