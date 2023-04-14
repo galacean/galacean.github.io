@@ -30,7 +30,7 @@ label: Editor-Feature/Rendering-2d
 
 左键选中需要添加的`精灵`资产，可以在`检查器面板`找到精灵的`从属关系`，选择`打包进图集`就可以选取希望打包进的`精灵图集`资产了。
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*fqiITImT7JsAAAAAAAAAAAAADleLAQ/original" alt="buildBox" style="zoom: 67%;" />
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YBuGTqMWUFcAAAAAAAAAAAAADleLAQ/original" alt="buildBox" style="zoom: 67%;" />
 
 #### 方式二：操作精灵图集
 
@@ -86,6 +86,6 @@ label: Editor-Feature/Rendering-2d
 
 点击`精灵图集`资产，通过调整`打包设置`的`纹理最大宽度`与`纹理最大高度`，同时调用`打包对象`中的`打包并预览`，可以保证图集利用率在一个较高的水平。
 
-![image-20210901171947471](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*7UDwRajZtacAAAAAAAAAAAAADleLAQ/original)
+![image-20210901171947471](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*xaPrQInKSFsAAAAAAAAAAAAADleLAQ/original)
 
 预览图中左侧表示导出图片的大小信息，右侧表示图集利用率信息（代表所有散图面积的和占用最终大图的面积百分比），可依据此值调整打包设置以达到较佳的结果。
