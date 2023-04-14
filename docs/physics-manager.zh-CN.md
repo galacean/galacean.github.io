@@ -59,7 +59,7 @@ export class Script extends Component {
 ```typescript
 // 加载 Raycast 模块
 import {WebGLEngine, HitResult, Ray} from "@galacean/engine";
-import {LitePhysics} from "@galacean/physics-lite";
+import {LitePhysics} from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);

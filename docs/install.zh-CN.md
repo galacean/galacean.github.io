@@ -58,13 +58,13 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 
 ```mermaid
 flowchart LR
-   Engine(<a href='https://github.com/galacean/engine'>galacean-engine</a>) --- Core("@galacean/core")
-   Engine --- Loader("@galacean/loader")
-   Engine --- Math("@galacean/math")
-   Engine --- RHI("@galacean/rhi-webgl")
-   Engine --- Design("@galacean/design")
-   Engine --- PhysicsPhysx("@galacean/physics-physx")
-   Engine --- PhysicsLite("@galacean/physics-lite")
+   Engine(<a href='https://github.com/galacean/engine'>galacean-engine</a>) --- Core("@galacean/engine-core")
+   Engine --- Loader("@galacean/engine-loader")
+   Engine --- Math("@galacean/engine-math")
+   Engine --- RHI("@galacean/engine-rhi-webgl")
+   Engine --- Design("@galacean/engine-design")
+   Engine --- PhysicsPhysx("@galacean/engine-physics-physx")
+   Engine --- PhysicsLite("@galacean/engine-physics-lite")
 
    Toolkit(<a href='https://github.com/galacean/engine-toolkit'>galacean-toolkit</a>) --- Controls("@galacean/engine-toolkit-controls")
    Toolkit --- Stats("@galacean/engine-toolkit-stats")
@@ -79,14 +79,14 @@ flowchart LR
 
 | 功能                                                                                     | 解释                                               | API                              |
 | :--------------------------------------------------------------------------------------- | :------------------------------------------------- | -------------------------------- |
-| [@galacean/core](https://www.npmjs.com/package/@galacean/core)                   | 引擎核心，如组件系统                               | [API](${api}core/index)          |
-| [@galacean/loader](https://www.npmjs.com/package/@galacean/loader)               | 资源加载                                           | [API](${api}loader/index)        |
-| [@galacean/rhi-webgl](https://www.npmjs.com/package/@galacean/rhi-webgl)         | WebGL 渲染硬件接口（Rendering Hardware Interface） | [API](${api}rhi-webgl/index)     |
-| [@galacean/math](https://www.npmjs.com/package/@galacean/math)                   | 数学库                                             | [API](${api}math/index)          |
-| [@galacean/design](https://www.npmjs.com/package/@galacean/design)               | 引擎基础设计规范，如克隆规范、销毁规范、RHI规范    | [API](${api}design/index)        |
-| [@galacean/physics-lite](https://www.npmjs.com/package/@galacean/physics-lite)   | 轻量级物理引擎                                     | [API](${api}physics-lite/index)  |
-| [@galacean/physics-physx](https://www.npmjs.com/package/@galacean/physics-physx) | 全功能物理引擎                                     | [API](${api}physics-physx/index) |
-| [@galacean/draco](https://www.npmjs.com/package/@galacean/draco)                 | Draco 模型压缩                                     | [API](${api}draco/index)         |
+| [@galacean/engine-core](https://www.npmjs.com/package/@galacean/engine-core)                   | 引擎核心，如组件系统                               | [API](${api}core/index)          |
+| [@galacean/engine-loader](https://www.npmjs.com/package/@galacean/engine-loader)               | 资源加载                                           | [API](${api}loader/index)        |
+| [@galacean/engine-rhi-webgl](https://www.npmjs.com/package/@galacean/engine-rhi-webgl)         | WebGL 渲染硬件接口（Rendering Hardware Interface） | [API](${api}rhi-webgl/index)     |
+| [@galacean/engine-math](https://www.npmjs.com/package/@galacean/engine-math)                   | 数学库                                             | [API](${api}math/index)          |
+| [@galacean/engine-design](https://www.npmjs.com/package/@galacean/engine-design)               | 引擎基础设计规范，如克隆规范、销毁规范、RHI规范    | [API](${api}design/index)        |
+| [@galacean/engine-physics-lite](https://www.npmjs.com/package/@galacean/engine-physics-lite)   | 轻量级物理引擎                                     | [API](${api}physics-lite/index)  |
+| [@galacean/engine-physics-physx](https://www.npmjs.com/package/@galacean/engine-physics-physx) | 全功能物理引擎                                     | [API](${api}physics-physx/index) |
+| [@galacean/engine-draco](https://www.npmjs.com/package/@galacean/engine-draco)                 | Draco 模型压缩                                     | [API](${api}draco/index)         |
 
 
 
@@ -110,4 +110,4 @@ flowchart LR
 | 功能                                                                                   | 解释        | API                     |
 | :------------------------------------------------------------------------------------- | :---------- | :---------------------- |
 | [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine 动画  | [Doc](${docs}spine-cn)  |
-| [@galacean/lottie](https://www.npmjs.com/package/@galacean/lottie)             | Lottie 动画 | [Doc](${docs}lottie-cn) |
+| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie)             | Lottie 动画 | [Doc](${docs}lottie-cn) |

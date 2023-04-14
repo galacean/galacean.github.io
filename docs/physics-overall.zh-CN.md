@@ -18,7 +18,7 @@ label: Physics
 初始化只需要将这两个后端的静态对象，绑定到 `physicsManager` 中即可：
 
 ```typescript
-import {LitePhysics} from "@galacean/physics-lite";
+import {LitePhysics} from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -29,7 +29,7 @@ engine.physicsManager.initialize(LitePhysics);
 由于WASM需要异步加载，因此引擎的初始化需要放在 Promise 的回调中进行。
 
 ```typescript
-import {PhysXPhysics} from "@galacean/physics-physx";
+import {PhysXPhysics} from "@galacean/engine-physics-physx";
 
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");

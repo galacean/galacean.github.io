@@ -10,20 +10,20 @@ This is the <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> r
 
 ## Install
 
-<a href="https://www.npmjs.com/package/@galacean/lottie" target="_blank">@galacean/lottie</a> is a second party package of Galacean Engine, which need to install manually:
+<a href="https://www.npmjs.com/package/@galacean/engine-lottie" target="_blank">@galacean/engine-lottie</a> is a second party package of Galacean Engine, which need to install manually:
 
 ```bash
-npm i @galacean/lottie --save
+npm i @galacean/engine-lottie --save
 ```
 
 ## Usage
 
 ### Basic usage
 
-An atlas is needed for batch rendering. Before you start using the following code, you need to preprocess lottie's JSON file and merge the **assets** (several base64-encoded images) into a sprite image with [tool-atlas-lottie](https://www.npmjs.com/package/@galacean/tool-atlas-lottie). 
+An atlas is needed for batch rendering. Before you start using the following code, you need to preprocess lottie's JSON file and merge the **assets** (several base64-encoded images) into a sprite image with [tools-atlas-lottie](https://www.npmjs.com/package/@galacean/tools-atlas-lottie). 
 
 ```typescript
-import { LottieRenderer } from "@galacean/lottie";
+import { LottieRenderer } from "@galacean/engine-lottie";
 
 // Load lottie json、atlas file with engine's `resourceManager`
 engine.resourceManager.load({

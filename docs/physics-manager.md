@@ -68,7 +68,7 @@ method to detect the collider hit by the raycast. code show as below:
 ```typescript
 // 加载 Raycast 模块
 import {WebGLEngine, HitResult, Ray} from "@galacean/engine";
-import {LitePhysics} from "@galacean/physics-lite";
+import {LitePhysics} from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);

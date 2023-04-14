@@ -23,13 +23,13 @@ Galacean provides a command line tool for the sprite atlas. Developers can follo
 1. Install
 
 ```bash
-npm i @galacean/tool-atlas -g
+npm i @galacean/tools-atlas -g
 ```
 
 2. Execute command line
 
 ```bash
-galacean-tool-atlas p inputPath -o outputName
+galacean-tools-atlas p inputPath -o outputName
 ```
 
 Among them, `inputPath` represents the folder path to be packaged, and `outputName` represents the file name of the sprite atlas for packaged output. If you get the result shown in the figure below, then the package is successful.
@@ -48,7 +48,7 @@ Among them, `inputPath` represents the folder path to be packaged, and `outputNa
 | s/square       | 强制打包成正方形 (默认: false)               |
 | pot            | 宽高强制打包成 2 的幂 (默认: false)          |
 
-For more information, please refer to [Atlas Packaging Tool](https://github.com/galacean/tool-atlas/edit/main/README.md).
+For more information, please refer to [Atlas Packaging Tool](https://github.com/galacean/tools/blob/main/packages/atlas/README.md).
 
 ## Instructions for use
 

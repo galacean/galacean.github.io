@@ -25,7 +25,7 @@ engine backend implementations:
 Initialization only needs to bind the static objects of these two backends to `physicsManager`:
 
 ```typescript
-import {LitePhysics} from "@galacean/physics-lite";
+import {LitePhysics} from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -37,7 +37,7 @@ Since WASM needs to be loaded asynchronously, the initialization of the engine n
 Promise.
 
 ```typescript
-import {PhysXPhysics} from "@galacean/physics-physx";
+import {PhysXPhysics} from "@galacean/engine-physics-physx";
 
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");

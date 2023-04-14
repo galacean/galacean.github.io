@@ -58,13 +58,13 @@ The core architecture logic and core functions of the engine are provided by Gal
 
 ```mermaid
 flowchart LR
-   Engine(<a href='https://github.com/galacean/engine'>galacean-engine</a>) --- Core("@galacean/core")
-   Engine --- Loader("@galacean/loader")
-   Engine --- Math("@galacean/math")
-   Engine --- RHI("@galacean/rhi-webgl")
-   Engine --- Design("@galacean/design")
-   Engine --- PhysicsPhysx("@galacean/physics-physx")
-   Engine --- PhysicsLite("@galacean/physics-lite")
+   Engine(<a href='https://github.com/galacean/engine'>galacean-engine</a>) --- Core("@galacean/engine-core")
+   Engine --- Loader("@galacean/engine-loader")
+   Engine --- Math("@galacean/engine-math")
+   Engine --- RHI("@galacean/engine-rhi-webgl")
+   Engine --- Design("@galacean/engine-design")
+   Engine --- PhysicsPhysx("@galacean/engine-physics-physx")
+   Engine --- PhysicsLite("@galacean/engine-physics-lite")
 
    Toolkit(<a href='https://github.com/galacean/engine-toolkit'>galacean-toolkit</a>) --- Controls("@galacean/engine-toolkit-controls")
    Toolkit --- Stats("@galacean/engine-toolkit-stats")
@@ -79,14 +79,14 @@ Engine core architecture logic and core functions ([Galacean Engine](https://www
 
 |Main Package|Explanation|API|
 |:--|:--|--|
-|[@galacean/core](https://www.npmjs.com/package/@galacean/core)| Engine core, such as component system |[API](${api}core/index)|
-|[@galacean/loader](https://www.npmjs.com/package/@galacean/loader)| Resource loading |[API](${api}loader/index)|
-|[@galacean/rhi-webgl](https://www.npmjs.com/package/@galacean/rhi-webgl)| WebGL Rendering Hardware Interface|[API](${api}rhi-webgl/index)|
-|[@galacean/math](https://www.npmjs.com/package/@galacean/math)| Math Library |[API](${api}math/index)|
-|[@galacean/design](https://www.npmjs.com/package/@galacean/design)| Engine basic design specifications, such as cloning specifications, destruction specifications, RHI specifications|[API](${api}design/index)|
-|[@galacean/physics-lite](https://www.npmjs.com/package/@galacean/physics-lite)| Lightweight physics engine |[API](${api}physics-lite/index)|
-|[@galacean/physics-physx](https://www.npmjs.com/package/@galacean/physics-physx)| Full-featured physics engine |[API](${api}physics-physx/index)|
-|[@galacean/draco](https://www.npmjs.com/package/@galacean/draco)| Draco model compression |[API](${api}draco/index)|
+|[@galacean/engine-core](https://www.npmjs.com/package/@galacean/engine-core)| Engine core, such as component system |[API](${api}core/index)|
+|[@galacean/engine-loader](https://www.npmjs.com/package/@galacean/engine-loader)| Resource loading |[API](${api}loader/index)|
+|[@galacean/engine-rhi-webgl](https://www.npmjs.com/package/@galacean/engine-rhi-webgl)| WebGL Rendering Hardware Interface|[API](${api}rhi-webgl/index)|
+|[@galacean/engine-math](https://www.npmjs.com/package/@galacean/engine-math)| Math Library |[API](${api}math/index)|
+|[@galacean/engine-design](https://www.npmjs.com/package/@galacean/engine-design)| Engine basic design specifications, such as cloning specifications, destruction specifications, RHI specifications|[API](${api}design/index)|
+|[@galacean/engine-physics-lite](https://www.npmjs.com/package/@galacean/engine-physics-lite)| Lightweight physics engine |[API](${api}physics-lite/index)|
+|[@galacean/engine-physics-physx](https://www.npmjs.com/package/@galacean/engine-physics-physx)| Full-featured physics engine |[API](${api}physics-physx/index)|
+|[@galacean/engine-draco](https://www.npmjs.com/package/@galacean/engine-draco)| Draco model compression |[API](${api}draco/index)|
 
 
 
@@ -110,4 +110,4 @@ Please check the list of completed functions https://github.com/galacean/engine-
 | Expansion Pack                                               | Explanation      | API                  |
 | :----------------------------------------------------------- | :--------------- | :------------------- |
 | [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine Animation  | [Doc](${docs}spine)  |
-| [@galacean/lottie](https://www.npmjs.com/package/@galacean/lottie) | Lottie Animation | [Doc](${docs}lottie) |
+| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie Animation | [Doc](${docs}lottie) |

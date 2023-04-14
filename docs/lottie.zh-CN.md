@@ -9,19 +9,19 @@ label: Animation
 
 ## 安装
 
-<a href="https://www.npmjs.com/package/@galacean/lottie" target="_blank">@galacean/lottie</a> 是 Galacean Engine 的二方包，需要手动安装：
+<a href="https://www.npmjs.com/package/@galacean/engine-lottie" target="_blank">@galacean/engine-lottie</a> 是 Galacean Engine 的二方包，需要手动安装：
 
 ```bash
-npm i @galacean/lottie --save
+npm i @galacean/engine-lottie --save
 ```
 
 ## 使用
 
 ### 基础使用
-合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，使用 [tool-atlas-lottie](https://www.npmjs.com/package/@galacean/tool-atlas-lottie) 把其中的 **assets**（base64 编码的图片集）合并成一张精灵图。
+合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，使用 [tools-atlas-lottie](https://www.npmjs.com/package/@galacean/tools-atlas-lottie) 把其中的 **assets**（base64 编码的图片集）合并成一张精灵图。
 
 ```typescript
-import { LottieAnimation } from "@galacean/lottie";
+import { LottieAnimation } from "@galacean/engine-lottie";
 
 // Load lottie json、atlas file with engine's `resourceManager`
 engine.resourceManager.load({

@@ -23,13 +23,13 @@ Galacean 为精灵图集提供了命令行工具，开发者可以按照以下�
 1. 安装包
 
 ```bash
-npm i @galacean/tool-atlas -g
+npm i @galacean/tools-atlas -g
 ```
 
 2. 执行打包命令
 
 ```bash
-galacean-tool-atlas p inputPath -o outputName
+galacean-tools-atlas p inputPath -o outputName
 ```
 
 其中 `inputPath` 表示需要打包的文件夹路径，而 `outputName` 则表示打包输出的精灵图集文件名，如果你得到下图所示结果，那么说明打包成功了。
@@ -48,7 +48,7 @@ galacean-tool-atlas p inputPath -o outputName
 | s/square       | 强制打包成正方形 (默认: false)               |
 | pot            | 宽高强制打包成 2 的幂 (默认: false)          |
 
-更多请参照[图集打包工具](https://github.com/galacean/tool-atlas/edit/main/README.md)。
+更多请参照[图集打包工具](https://github.com/galacean/tools/blob/main/packages/atlas/README.md)。
 
 ## 基本使用
 

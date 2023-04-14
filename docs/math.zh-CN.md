@@ -32,7 +32,7 @@ label: Math/Tool
 在 Galacean 引擎中，向量用来表示物体坐标（position）、旋转（rotation）、缩放（scale）、颜色（color）。
 
 ```typescript
-import { Vector3 } from '@galacean/math';
+import { Vector3 } from '@galacean/engine-math';
 
 // 创建默认三维向量，即 x,y,z 分量均为0
 const v1 = new Vector3(); 
@@ -80,7 +80,7 @@ v1.cloneTo(c2);
 在 Galacean 引擎中，也是使用四元数来进行旋转相关运算，并提供欧拉角、矩阵等到四元数的转换API。
 
 ```typescript
-import { Vector3, Quaternion, MathUtil } from '@galacean/math';
+import { Vector3, Quaternion, MathUtil } from '@galacean/engine-math';
 
 // 创建默认四元数，即 x,y,z 分量均为0，w 分量为1
 const q1 = new Quaternion(); 
@@ -130,7 +130,7 @@ eulerV.scale(MathUtil.radToDegreeFactor);
 在 Galacean 引擎中，有局部坐标、全局坐标、观察坐标、裁剪坐标等，而物体在这些坐标之间的转换，正是通过转换矩阵来完成的。
 
 ```typescript
-import { Vector3, Matrix3x3, Matrix } from '@galacean/math';
+import { Vector3, Matrix3x3, Matrix } from '@galacean/engine-math';
 
 // 创建默认4x4矩阵，默认为单位矩阵
 const m1 = new Matrix(); 
@@ -182,7 +182,7 @@ Matrix.rotationAxisAngle(axis, Math.PI * 0.25, out4);
 ## Color
 
 ```typescript
-import { Color } from "@galacean/math";
+import { Color } from "@galacean/engine-math";
 
 // 创建 Color 对象
 const color1 = new Color(1, 0.5, 0.5, 1);
@@ -203,7 +203,7 @@ color2.toLinear(linearColor);
 
 ## 平面
 ```typescript
-import { Plane, Vector3 } from "@galacean/math";
+import { Plane, Vector3 } from "@galacean/engine-math";
 
 // 通过三角形的三个顶点创建平面
 const point1 = new Vector3(0, 1, 0);
@@ -218,7 +218,7 @@ const plane2 = new Plane(new Vector3(0, 1, 0), -1);
 ## 包围盒
 
 ```typescript
-import { BoundingBox, BoundingSphere, Matrix, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, Matrix, Vector3 } from "@galacean/engine-math";
 
 // 通过不同的方式创建同样的包围盒
 const box1 = new BoundingBox();
@@ -277,7 +277,7 @@ box.getCorners(corners);
 
 ## 包围球
 ```typescript
-import { BoundingBox, BoundingSphere, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, Vector3 } from "@galacean/engine-math";
 
 // 通过不同方式来创建包围球
 const sphere1 = new BoundingSphere();
@@ -305,7 +305,7 @@ BoundingSphere.fromBox(box, sphere2);
 
 ## 视锥体
 ```typescript
-import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@galacean/engine-math";
 
 // 根据 VP 矩阵创建视锥体，实际项目中，一般从相机中获取 view matrix 和 projection matrix
 const viewMatrix = new Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -20, 1);
@@ -331,7 +331,7 @@ const isIntersect4 = frustum.intersectsSphere(sphere2);
 ## 射线
 
 ```typescript
-import { BoundingBox, BoundingSphere, Plane, Ray, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, Plane, Ray, Vector3 } from "@galacean/engine-math";
 
 // 创建 ray
 const ray = new Ray(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -365,7 +365,7 @@ import {
   Ray,
   Vector3,
   CollisionUtil
-} from "@galacean/math";
+} from "@galacean/engine-math";
 
 const plane = new Plane(new Vector3(0, 1, 0), -5);
 const viewMatrix = new Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -20, 1);

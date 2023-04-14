@@ -22,10 +22,10 @@ Spine animation supports skin changing, blending and control animations with cod
 Download spine editor and select version 3.8 or above.
 
 ### Developer
-Add dependencies [@galacean/spine](https://github.com/galacean/engine-spine).
+Add dependencies [@galacean/engine-spine](https://github.com/galacean/engine-spine).
 
 ```bash
-npm i @galacean/spine --save
+npm i @galacean/engine-spine --save
 ```
 
 ## Usage
@@ -51,7 +51,7 @@ For detailed configuration of file export, please refer to the official file of 
 
 ### Import Resource
 
-When the _@galacean/spine_ is imported, the resource loader for the spine resource will be automatically registered on [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) at [engine]($%7Bapi%7Dcore/Engine) [resourceManager].
+When the _@galacean/engine-spine_ is imported, the resource loader for the spine resource will be automatically registered on [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) at [engine]($%7Bapi%7Dcore/Engine) [resourceManager].
 Through the [load]($%7Bapi%7Dcore/ResourceManager/#load) method of ResourceManager, the spine animation resources can be loaded.
 
 - When the transfer parameter is URL, the default spine animation resources have the same baseurl, just pass the CDN of JSON (or bin) file.

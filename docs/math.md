@@ -32,7 +32,7 @@ The most basic definition of a vector is a direction. Or more formally, a vector
 In the Galacean Engine, vectors are used to represent object coordinates (position), rotation (rotation), scale (scale), and color (color).
 
 ```typescript
-import { Vector3 } from '@galacean/math';
+import { Vector3 } from '@galacean/engine-math';
 
 // Create a default three-dimensional vector, that is, the x, y, and z components are all 0.
 const v1 = new Vector3(); 
@@ -80,7 +80,7 @@ Quaternion is a simple super complex number, and in the graphics engine, quatern
 In the Galacean Engine, quaternions are also used to perform rotation-related operations, and APIs for converting Euler angles, matrices, etc. to quaternions are provided.
 
 ```typescript
-import { Vector3, Quaternion, MathUtil } from '@galacean/math';
+import { Vector3, Quaternion, MathUtil } from '@galacean/engine-math';
 
 // Create a default quaternion, that is, the x, y, and z components are all 0, and the w component is 1.
 const q1 = new Quaternion(); 
@@ -130,7 +130,7 @@ In the 3D graphics engine, calculations can be performed in multiple different C
 In the Galacean Engine, there are local coordinates, global coordinates, observation coordinates, clipping coordinates, etc., and the conversion of objects between these coordinates is done through the conversion matrix.
 
 ```typescript
-import { Vector3, Matrix3x3, Matrix } from '@galacean/math';
+import { Vector3, Matrix3x3, Matrix } from '@galacean/engine-math';
 
 // Create a default 4x4 matrix, the default is the identity matrix.
 const m1 = new Matrix(); 
@@ -182,7 +182,7 @@ Matrix.rotationAxisAngle(axis, Math.PI * 0.25, out4);
 ## Color
 
 ```typescript
-import { Color } from "@galacean/math";
+import { Color } from "@galacean/engine-math";
 
 // Create a Color object.
 const color1 = new Color(1, 0.5, 0.5, 1);
@@ -203,7 +203,7 @@ color2.toLinear(linearColor);
 
 ## Plane
 ```typescript
-import { Plane, Vector3 } from "@galacean/math";
+import { Plane, Vector3 } from "@galacean/engine-math";
 
 // Create a plane from the three vertices of the triangle.
 const point1 = new Vector3(0, 1, 0);
@@ -218,7 +218,7 @@ const plane2 = new Plane(new Vector3(0, 1, 0), -1);
 ## BoundingBox
 
 ```typescript
-import { BoundingBox, BoundingSphere, Matrix, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, Matrix, Vector3 } from "@galacean/engine-math";
 
 // Create the same bounding box in different ways.
 const box1 = new BoundingBox();
@@ -277,7 +277,7 @@ box.getCorners(corners);
 
 ## BoundingSphere
 ```typescript
-import { BoundingBox, BoundingSphere, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, Vector3 } from "@galacean/engine-math";
 
 // Different ways to create a bounding sphere.
 const sphere1 = new BoundingSphere();
@@ -305,7 +305,7 @@ BoundingSphere.fromBox(box, sphere2);
 
 ## BoundingFrustum
 ```typescript
-import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@galacean/engine-math";
 
 // Create the frustum according to the VP matrix. In actual projects, the view matrix and projection matrix are generally obtained from the camera.
 const viewMatrix = new Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -20, 1);
@@ -331,7 +331,7 @@ const isIntersect4 = frustum.intersectsSphere(sphere2);
 ## Ray
 
 ```typescript
-import { BoundingBox, BoundingSphere, Plane, Ray, Vector3 } from "@galacean/math";
+import { BoundingBox, BoundingSphere, Plane, Ray, Vector3 } from "@galacean/engine-math";
 
 // Create ray.
 const ray = new Ray(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -365,7 +365,7 @@ import {
   Ray,
   Vector3,
   CollisionUtil
-} from "@galacean/math";
+} from "@galacean/engine-math";
 
 const plane = new Plane(new Vector3(0, 1, 0), -5);
 const viewMatrix = new Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -20, 1);
