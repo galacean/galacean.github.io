@@ -61,7 +61,7 @@ boxRenderer.setMaterial(boxMtl);
 
 const boxCollider = boxEntity.addComponent(StaticCollider);
 const boxColliderShape = new BoxColliderShape();
-boxColliderShape.setSize(cubeSize, cubeSize, cubeSize);
+boxColliderShape.size.set(cubeSize, cubeSize, cubeSize);
 boxCollider.addShape(boxColliderShape);
 
 // create sphere test entity

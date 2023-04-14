@@ -484,7 +484,7 @@ class GameCtrl extends Script {
     const boxCollider: StaticCollider =
       this.entity.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.setSize(10, 10, 0.001);
+    boxColliderShape.size.set(10, 10, 0.001);
     boxCollider.addShape(boxColliderShape);
   }
 
@@ -540,7 +540,7 @@ class ScriptGUI extends Script {
     const boxCollider: StaticCollider =
       resetBtnNode.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.setSize(2.14, 0.75, 0.001);
+    boxColliderShape.size.set(2.14, 0.75, 0.001);
     boxCollider.addShape(boxColliderShape);
     resetBtnNode.addComponent(Script).onPointerClick = () => {
       this.engine.dispatch(GameEvent.reStartGame);

@@ -449,7 +449,7 @@ class MapViewControl extends Script {
           }
           const collider = gridEntity.addComponent(StaticCollider);
           const colliderShape = new BoxColliderShape();
-          colliderShape.setSize(1, 1, 1);
+          colliderShape.size.set(1, 1, 1);
           collider.addShape(colliderShape);
           const gridControl = gridEntity.addComponent(Script);
           gridControl.onPointerEnter = () => {

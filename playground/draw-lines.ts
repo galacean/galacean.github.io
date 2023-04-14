@@ -171,7 +171,7 @@ cameraControl.enabled = false;
 const planeEntity = rootEntity.createChild("camera");
 const planeCollider = planeEntity.addComponent(StaticCollider);
 const planeShape = new BoxColliderShape();
-planeShape.setSize(20, 20, 1);
+planeShape.size.set(20, 20, 1);
 planeCollider.addShape(planeShape);
 const planeScript = planeEntity.addComponent(DrawScript);
 planeScript.camera = camera;
