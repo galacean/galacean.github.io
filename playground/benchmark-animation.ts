@@ -3,7 +3,7 @@
  * @category Benchmark
  */
 
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { Stats } from "@galacean/engine-toolkit-stats";
 import {
   Animator,
   AssetType,

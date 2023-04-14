@@ -5,13 +5,13 @@
 import {
   Camera,
   Color,
-  Engine,
   Font,
   Script,
   TextHorizontalAlignment,
   TextRenderer,
   WebGLEngine,
 } from "@galacean/engine";
+import { Stats } from "@galacean/engine-toolkit-stats";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
