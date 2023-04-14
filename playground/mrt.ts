@@ -4,167 +4,84 @@
  */
 import {
   Camera,
-  CullMode,
-  DirectLight,
   GLTFResource,
-  Layer,
-  Material,
-  MeshRenderer,
-  PrimitiveMesh,
-  RenderTarget,
   Script,
-  Shader,
-  Texture2D,
-  TextureFilterMode,
-  TextureFormat,
-  UnlitMaterial,
   Vector3,
   WebGLEngine,
+  WebGLMode,
 } from "@galacean/engine";
 import { OrbitControl } from "@galacean/engine-toolkit";
 
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
-
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
-const cameraEntity = rootEntity.createChild("camera");
-const camera = cameraEntity.addComponent(Camera);
-camera.cullingMask = Layer.Layer0;
-cameraEntity.transform.setPosition(0, 0, 5);
-const control = cameraEntity.addComponent(OrbitControl);
-control.minDistance = 3;
-camera.scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-
-const lightEntity = rootEntity.createChild();
-lightEntity.addComponent(DirectLight);
-lightEntity.transform.lookAt(new Vector3(0, 0, 0));
-
-const width = engine.canvas.width;
-const height = engine.canvas.height;
-
-const positionTexture = new Texture2D(engine, width, height);
-const depthTexture = new Texture2D(engine, width, height);
-const normalTexture = new Texture2D(engine, width, height);
-const autoDepthTexture = new Texture2D(
-  engine,
-  width,
-  height,
-  TextureFormat.Depth,
-  false
-);
-autoDepthTexture.filterMode = TextureFilterMode.Point;
-const renderTarget = new RenderTarget(
-  engine,
-  width,
-  height,
-  [positionTexture, depthTexture, normalTexture],
-  autoDepthTexture
-);
-
-const positionPlaneEntity = createPlane(positionTexture);
-positionPlaneEntity.transform.setPosition(0, 3, -6);
-const depthPlaneEntity = createPlane(depthTexture);
-depthPlaneEntity.transform.setPosition(0, 1, -6);
-const normalEntity = createPlane(normalTexture);
-normalEntity.transform.setPosition(0, -1, -6);
-const autoDepthEntity = createPlane(autoDepthTexture);
-autoDepthEntity.transform.setPosition(0, -3, -6);
-
-const mrtMatrial = getMRTMaterial();
-mrtMatrial.renderState.rasterState.cullMode = CullMode.Off;
-
-class mrtScript extends Script {
-  private materialMap: Array<{ renderer: MeshRenderer; material: Material }> =
-    [];
-  private rendererList: Array<MeshRenderer> = [];
-
-  onBeginRender(camera: Camera): void {
-    this.materialMap.length = 0;
-    this.rendererList.length = 0;
-    rootEntity.getComponentsIncludeChildren(MeshRenderer, this.rendererList);
-    for (let i = 0; i < this.rendererList.length; i++) {
-      const renderer = this.rendererList[i];
-      if (renderer.entity.layer === Layer.Layer1) continue;
-      const material = renderer.getMaterial();
-      if (material) {
-        this.materialMap.push({ renderer: this.rendererList[i], material });
-        renderer.setMaterial(mrtMatrial);
-      }
-    }
-
-    camera.renderTarget = renderTarget;
-    camera.render();
-    camera.renderTarget = null;
-    this.materialMap.forEach(({ renderer, material }) => {
-      renderer.setMaterial(material);
-    });
-  }
-}
-cameraEntity.addComponent(mrtScript);
-createWindowCamera();
-
-engine.resourceManager
-  .load<GLTFResource>(
-    "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf"
-  )
-  .then((gltf) => {
-    const { defaultSceneRoot } = gltf;
-    rootEntity.addChild(defaultSceneRoot);
-
-    engine.run();
+async function main() {
+  // Create engine
+  const htmlCanvas = document.getElementById("canvas") as HTMLCanvasElement;
+  const engine = await WebGLEngine.create({
+    canvas: htmlCanvas,
+    graphicDeviceOptions: { webGLMode: WebGLMode.Auto },
   });
 
-function getMRTMaterial() {
-  const vertex = `
-    uniform mat4 u_MVPMat;
-    uniform mat4 u_modelMat;
-    varying vec4 worldPos; 
-    varying vec4 normal;
+  engine.canvas.resizeByClientSize();
 
-    attribute vec3 NORMAL;
-    attribute vec3 POSITION; 
+  // Create root entity
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
 
-    void main() {
-      worldPos = u_modelMat * vec4(POSITION, 1.0);
-      normal = u_modelMat * vec4(NORMAL, 1.0);
-      gl_Position = u_MVPMat * vec4(POSITION, 1.0);
-      gl_Position.y *= -1.0;
-    }`;
-  const frag = `
-    varying vec4 worldPos;
-    varying vec4 normal;
+  // Create camera
+  const cameraEntity = rootEntity.createChild("camera_node");
+  cameraEntity.transform.setPosition(0, 1.5, 5);
+  const camera = cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(OrbitControl);
 
-    void main() {
-      gl_FragData[0] = vec4(worldPos.xyz, 1.0);
-      gl_FragData[1] = vec4(vec3(worldPos.z), 1.0);
-      gl_FragData[2] = vec4(normal.xyz, 1.0);
-    }
-    `;
+  // Load glTF asset
+  const glTFResource = await engine.resourceManager.load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/8d36415b-5905-461f-9336-68a23d41518e.gltf"
+  );
+  const defaultSceneRoot = glTFResource.defaultSceneRoot;
+  rootEntity.addChild(defaultSceneRoot);
 
-  const shader = Shader.create("MRT", vertex, frag);
-  return new Material(engine, shader);
+  // Add dom element
+  const dom = document.createElement("div");
+  dom.innerHTML = "Hello world!!!";
+  dom.setAttribute(
+    "style",
+    "padding:10px;position:absolute;top:0;left:0;background:white;border-radius:5px"
+  );
+  document.body.appendChild(dom);
+
+  // Add script
+  const script = defaultSceneRoot.addComponent(LocationTrackingScript);
+  script.htmlCanvas = htmlCanvas;
+  script.camera = camera;
+  script.dom = dom;
+
+  // Run engine
+  engine.run();
 }
 
-function createPlane(texture: Texture2D) {
-  const entity = rootEntity.createChild();
-  entity.transform.setRotation(90, 0, 0);
-  entity.layer = Layer.Layer1;
-  const renderer = entity.addComponent(MeshRenderer);
-  renderer.mesh = PrimitiveMesh.createPlane(engine, 2, (2 * height) / width);
-  const material = new UnlitMaterial(engine);
-  material.baseTexture = texture;
-  renderer.setMaterial(material);
+main();
 
-  return entity;
-}
+class LocationTrackingScript extends Script {
+  screenPoint: Vector3 = new Vector3();
+  widthRatio: number;
+  heightRatio: number;
+  camera: Camera;
+  htmlCanvas: HTMLCanvasElement;
+  dom: HTMLDivElement;
 
-function createWindowCamera() {
-  const windowEntity = scene.createRootEntity();
-  windowEntity.layer = Layer.Layer1;
-  const windowCameraEntity = windowEntity.createChild("window-camera");
-  const windowCamera = windowCameraEntity.addComponent(Camera);
-  windowCamera.cullingMask = Layer.Layer1;
-  windowCamera.viewport.set(0.7, 0.0, 0.3, 0.7);
-  windowCameraEntity.transform.setPosition(0, 0, 3);
+  onStart() {
+    const canvas = this.engine.canvas;
+    this.widthRatio = canvas.width / this.htmlCanvas.clientWidth;
+    this.heightRatio = canvas.height / this.htmlCanvas.clientHeight;
+  }
+
+  onUpdate() {
+    // Convert world coordinates to screen coordinates
+    this.camera.worldToScreenPoint(
+      this.entity.transform.position,
+      this.screenPoint
+    );
+    const style = this.dom.style;
+    style.left = `${this.screenPoint.x / this.widthRatio}px`;
+    style.top = `${this.screenPoint.y / this.heightRatio}px`;
+  }
 }

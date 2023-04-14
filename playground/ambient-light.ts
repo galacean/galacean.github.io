@@ -21,9 +21,6 @@ import {
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 Logger.enable();
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
-
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
 
