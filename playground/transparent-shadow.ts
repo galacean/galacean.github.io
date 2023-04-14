@@ -54,7 +54,7 @@ uniform float material_AlphaCutoff;
 
 void main() {
     float shadowAttenuation = 1.0;
-    #ifdef OASIS_CALCULATE_SHADOWS
+    #ifdef SCENE_IS_CALCULATE_SHADOWS
       shadowAttenuation *= sampleShadowMap();
     #endif
 
