@@ -2,7 +2,6 @@
  * @title Particle Renderer
  * @category Particle
  */
-// import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   Camera,
@@ -10,8 +9,8 @@ import {
   ParticleRenderer,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

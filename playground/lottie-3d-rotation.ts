@@ -2,9 +2,9 @@
  * @title Lottie 3D Rotation
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { LottieAnimation } from "@oasis-engine/lottie";
-import { Camera, Entity, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { Camera, Entity, WebGLEngine } from "@galacean/engine";
+import { LottieAnimation } from "@galacean/engine-lottie";
 
 async function main() {
   const engine = await WebGLEngine.create({ canvas: "canvas" });

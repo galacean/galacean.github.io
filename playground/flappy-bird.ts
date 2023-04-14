@@ -2,8 +2,6 @@
  * @title Flappy Bird
  * @category 2D
  */
-import { LitePhysics } from "@oasis-engine/physics-lite";
-import * as TWEEN from "@tweenjs/tween.js";
 import {
   AssetType,
   BoxColliderShape,
@@ -22,8 +20,10 @@ import {
   UnlitMaterial,
   Vector2,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import * as TWEEN from "@tweenjs/tween.js";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 enum EnumBirdState {
   Alive = 0,

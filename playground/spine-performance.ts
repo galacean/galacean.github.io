@@ -2,8 +2,8 @@
  * @title Spine
  * @category Benchmark
  */
-import { SpineAnimation } from "@oasis-engine/spine";
-import { Camera, Entity, Vector3, WebGLEngine } from "oasis-engine";
+import { Camera, Vector3, WebGLEngine, Entity } from "@galacean/engine";
+import { SpineAnimation } from "@galacean/engine-spine";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

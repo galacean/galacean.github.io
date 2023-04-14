@@ -19,8 +19,8 @@ import {
   ShadowResolution,
   ShadowType,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 const customForwardPass = new ShaderPass(
   `

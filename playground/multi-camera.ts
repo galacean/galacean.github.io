@@ -3,8 +3,7 @@
  * @category Camera
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { SpineAnimation } from "@oasis-engine/spine";
+import { SpineAnimation } from "@galacean/engine-spine";
 import {
   AssetType,
   BackgroundMode,
@@ -20,8 +19,9 @@ import {
   SkyBoxMaterial,
   TextureCube,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 /**
  * Script for rotate.

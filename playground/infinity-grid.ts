@@ -3,8 +3,8 @@
  * @category Toolkit
  */
 
-import { Camera, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
-import { GridControl, OrbitControl } from "oasis-engine-toolkit";
+import { Camera, GLTFResource, WebGLEngine, Vector3 } from "@galacean/engine";
+import { OrbitControl, GridControl } from "@galacean/engine-toolkit";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

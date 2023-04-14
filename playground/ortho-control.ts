@@ -2,15 +2,15 @@
  * @title Ortho Controls
  * @category Camera
  */
-import { OrthoControl } from "@oasis-engine-toolkit/controls";
 import {
   AssetType,
   Camera,
   Sprite,
   SpriteRenderer,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrthoControl } from "@galacean/engine-toolkit-controls";
 
 // Create engine object
 

@@ -2,7 +2,7 @@
  * @title Shader Replacement
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -16,8 +16,8 @@ import {
   Shader,
   SkyBoxMaterial,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 /**
  * Main function.

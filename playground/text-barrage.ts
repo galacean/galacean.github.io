@@ -2,16 +2,16 @@
  * @title Text Barrage
  * @category Benchmark
  */
-import { Stats } from "@oasis-engine-toolkit/stats";
 import {
   Camera,
   Color,
+  Engine,
   Font,
   Script,
   TextHorizontalAlignment,
   TextRenderer,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
@@ -50,7 +50,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
 class TextBarrageAnimation extends Script {
   // prettier-ignore
-  static words = [ "OASIS", "oasis", "HELLO", "hello", "WORLD", "world", "TEXT", "text", "PEACE", "peace", "LOVE", "love", "abcdefg", "hijklmn", "opqrst", "uvwxyz", "ABCDEFG", "HIJKLMN", "OPQRST", "UVWXYZ", "~!@#$", "%^&*", "()_+" ];
+  static words = [ "GALACEAN", "galacean", "HELLO", "hello", "WORLD", "world", "TEXT", "text", "PEACE", "peace", "LOVE", "love", "abcdefg", "hijklmn", "opqrst", "uvwxyz", "ABCDEFG", "HIJKLMN", "OPQRST", "UVWXYZ", "~!@#$", "%^&*", "()_+" ];
   static colors = [
     new Color(1, 1, 1, 1),
     new Color(1, 0, 0, 1),

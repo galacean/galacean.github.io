@@ -2,9 +2,9 @@
  * @title Spine Change Attachment
  * @category 2D
  */
-import { SpineAnimation } from "@oasis-engine/spine";
+import { Camera, Logger, Vector3, WebGLEngine, Entity } from "@galacean/engine";
+import { SpineAnimation } from "@galacean/engine-spine";
 import * as dat from "dat.gui";
-import { Camera, Entity, Logger, Vector3, WebGLEngine } from "oasis-engine";
 
 Logger.enable();
 

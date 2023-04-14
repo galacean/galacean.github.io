@@ -3,8 +3,8 @@
  * @category Physics
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 import {
   AmbientLight,
   AnimationClip,
@@ -41,8 +41,8 @@ import {
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 Logger.enable();
 

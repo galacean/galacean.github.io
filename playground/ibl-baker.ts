@@ -2,12 +2,12 @@
  * @title IBL Baker
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   DecodeMode,
   IBLBaker,
-  SphericalHarmonics3Baker
-} from "@oasis-engine/baker";
+  SphericalHarmonics3Baker,
+} from "@galacean/tools-baker";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -22,9 +22,12 @@ import {
   PrimitiveMesh,
   Shader,
   SphericalHarmonics3,
-  Texture2D, TextureCube, TextureCubeFace, Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  Texture2D,
+  TextureCubeFace,
+  TextureCube,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 Logger.enable();
 
 const gui = new dat.GUI();

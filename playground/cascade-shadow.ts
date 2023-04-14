@@ -3,7 +3,7 @@
  * @category Light
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -23,8 +23,9 @@ import {
   ShadowResolution,
   ShadowType,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+  WebGLMode,
+} from "@galacean/engine";
 
 async function main() {
   const engine = await WebGLEngine.create({ canvas: "canvas" });

@@ -2,7 +2,7 @@
  * @title HDR Background
  * @category Scene
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   BackgroundMode,
@@ -12,8 +12,8 @@ import {
   SkyBoxMaterial,
   TextureCube,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 Logger.enable();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

@@ -2,7 +2,7 @@
  * @title Sprite Pivot
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -12,8 +12,9 @@ import {
   Sprite,
   SpriteRenderer,
   Texture2D,
-  Vector2, WebGLEngine
-} from "oasis-engine";
+  Vector2,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

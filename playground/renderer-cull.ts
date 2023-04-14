@@ -2,7 +2,6 @@
  * @title Renderer Cull
  * @category Camera
  */
-import { FreeControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   BlinnPhongMaterial,
@@ -13,8 +12,9 @@ import {
   PrimitiveMesh,
   Script,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { FreeControl } from "@galacean/engine-toolkit-controls";
 const gui = new dat.GUI();
 
 // Create engine

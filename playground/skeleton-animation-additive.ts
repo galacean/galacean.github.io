@@ -2,7 +2,6 @@
  * @title Animation Additive
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import * as dat from "dat.gui";
 import {
   Animator,
@@ -15,8 +14,9 @@ import {
   Logger,
   SystemInfo,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const gui = new dat.GUI();
 

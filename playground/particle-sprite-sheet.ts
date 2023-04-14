@@ -2,7 +2,7 @@
  * @title Particle Sprite Sheet
  * @category Particle
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   Camera,
@@ -11,8 +11,8 @@ import {
   ParticleRendererBlendMode,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
