@@ -131,7 +131,7 @@ Oasis currently supports the following glTF plugins, if the corresponding plugin
 | [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | Support [Vertical data compression](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes) to save memory in CPU and GPU. for example, if the vertex data is generally floating point, this plugin can be saved as integer |
 | [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | Support for texture zoom and displacement, you can refer to [TilingOffset](https://oasisengine.cn/#/examples/latest/tiling-offset) demo |
 | [KHR_materials_clearcoat](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_clearcoat.ts) | Support PBR Clearcoat, you can refer to [Clearcoat](https://oasisengine.cn/#/examples/latest/pbr-clearcoat) demo |
-| [OASIS_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/OASIS_materials_remap.ts) | Oasis Editor remap material plugin. |
+| [GALACEAN_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/GALACEAN_materials_remap.ts) | Oasis Editor remap material plugin. |
 
 ## Plugin Extension
 
