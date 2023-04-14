@@ -30,11 +30,11 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const pos = new Vector3();
   // Create text with cursive font family
   pos.set(0, 0.75, 0);
-  createText("Oasis system font: Hello World");
+  createText("Galacean system font: Hello World");
   // Create text with font size 36
   pos.set(0, 0.25, 0);
   createText(
-    "Oasis custom font: Hello World",
+    "Galacean custom font: Hello World",
     "https://lg-2fw0hhsc-1256786476.cos.ap-shanghai.myqcloud.com/Avelia.otf"
   );
 
