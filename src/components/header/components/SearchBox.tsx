@@ -1,12 +1,8 @@
+import { ActionButton, Flex, Input, Spin, styled } from '@galacean/editor-ui';
 import { Cancel, Search } from 'iconoir-react';
 import * as _ from 'lodash';
-import React, { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { useIntl } from 'react-intl';
-import { ActionButton } from '@oasis-engine/editor-components';
-import { styled } from "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
-import { Input } from '@oasis-engine/editor-components';
-import { Spin } from '@oasis-engine/editor-components';
 import SearchResult from './SearchResults';
 
 const StyledSearchResult = styled("div", {
@@ -86,6 +82,7 @@ const SearchBox = () => {
         onChange={(e) => {
           debouncedSetSearchText(e.target.value);
         }}
+        round
       ></Input>
       {searchText ? (
         <StyledSearchResult

@@ -1,15 +1,10 @@
 import { SearchOutlined } from '@ant-design/icons';
+import { ActionButton, Flex, Input, Popover, styled, Toaster } from '@galacean/editor-ui';
 import { List } from 'iconoir-react';
 import { useContext, useEffect, useRef, useState } from 'react';
 import Media from 'react-media';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ActionButton } from '@oasis-engine/editor-components';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
-import { Input } from '@oasis-engine/editor-components';
 import { MenuBar } from '../../ui/MenuBar';
-import { Popover } from '@oasis-engine/editor-components';
-import { Toaster } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import { fetchMenuList } from '../doc/util/docUtil';
 import Header from '../header';

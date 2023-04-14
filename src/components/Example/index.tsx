@@ -1,12 +1,11 @@
+import * as Babel from '@babel/standalone';
+import { Flex, Spin } from '@galacean/editor-ui';
 import { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import 'regenerator-runtime/runtime';
 import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
-import * as Babel from '@babel/standalone';
-import { Spin } from '@oasis-engine/editor-components';
-import { Flex } from '@oasis-engine/editor-components';
 
 const useScript = async (libs: any) => {
   const promises: Promise<any>[] = [];

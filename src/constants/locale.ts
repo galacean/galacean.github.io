@@ -37,7 +37,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.ecosystem.gltfviewer": "glTF 查看器",
     "app.header.menu.ecosystem.gltfviewer.description":
       "快速预览 glTF2.0 格式的模型，生成引擎的 HDR 环境贴图",
-    "app.header.menu.ecosystem.createapp": "Create Galacean App",
+    "app.header.menu.ecosystem.createapp": "Create Oasis App",
     "app.header.menu.ecosystem.createapp.description":
       "创建 React、Vue、小程序等类型的前端应用的脚手架",
     "app.header.menu.ecosystem.animation": "动效",
@@ -77,7 +77,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.preview": "预览",
     "app.home.start": "开始使用",
     "app.home.discussion": "讨论",
-    "app.home.sponsoring": "赞助",
+    "app.home.sponsoring": "1.0 发布会",
     "app.home.editor": "编辑器",
     "app.home.editor.apply": "申请内测",
     "app.home.editor.intro":
@@ -212,7 +212,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.preview": "Preview",
     "app.home.start": "Get Started",
     "app.home.discussion": "Discussion",
-    "app.home.sponsoring": "Sponsoring",
+    "app.home.sponsoring": "1.0 Launch Event",
     "app.home.editor": "Editor",
     "app.home.editor.apply": "Join the waitlist",
     "app.home.editor.intro":

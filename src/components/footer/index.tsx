@@ -1,16 +1,14 @@
 import {
-  DingtalkOutlined,
+  createFromIconfontCN, DingtalkOutlined,
   GithubOutlined,
   TwitterOutlined,
   WechatOutlined,
   YuqueOutlined,
-  ZhihuOutlined,
-  createFromIconfontCN,
+  ZhihuOutlined
 } from '@ant-design/icons';
+import { Flex, styled } from "@galacean/editor-ui";
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
 
 const Icon = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
@@ -63,7 +61,7 @@ class Footer extends React.Component<{}> {
             </h2>
             <ul>
               <li>
-                <a target='_blank ' href='https://github.com/ant-galaxy/oasis-engine'>
+                <a target='_blank ' href='https://github.com/galacean'>
                   GitHub
                 </a>
               </li>
@@ -128,7 +126,7 @@ class Footer extends React.Component<{}> {
             </h2>
             <ul>
               <li>
-                <a target='_blank' rel='noopener noreferrer' href='https://github.com/oasis-engine/engine/issues'>
+                <a target='_blank' rel='noopener noreferrer' href='https://github.com/galacean/engine/issues'>
                   <StyledIcon>
                     <GithubOutlined />
                   </StyledIcon>

@@ -1,13 +1,9 @@
+import { ActionButton, Flex, Option, Popover, Select, styled } from '@galacean/editor-ui';
 import { Menu, Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
 import config from '../../siteconfig.json';
-import { ActionButton } from '@oasis-engine/editor-components';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
-import { Popover } from '@oasis-engine/editor-components';
-import { Option, Select } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import { NavigationMenuMobile } from './components/NavigationMenuMobile';
@@ -16,7 +12,7 @@ import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
 
 const { versions } = config;
-const LOGO_URL = 'https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*w3sZQpMix18AAAAAAAAAAAAAARQnAQ';
+const LOGO_URL = 'https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original';
 
 function Header() {
   const context = useContext(AppContext);
@@ -33,11 +29,11 @@ function Header() {
   const StyledLogo = styled(Link, {
     textDecoration: "none",
     "& img": {
-      width: "200px",
+      width: "7rem",
     },
     '@media (max-width: 768px)': {
       "& img": {
-        width: "150px",
+        width: "5rem",
       },
     }
   });
@@ -90,7 +86,7 @@ function Header() {
             }
           }}>
             <StyledLogo to='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
-              <img src={LOGO_URL} alt='Oasis Engine' />
+              <img src={LOGO_URL} alt='galacean' />
             </StyledLogo>
             {isMobile && rightActions(true)}
             {!isMobile && <SearchBox></SearchBox>}

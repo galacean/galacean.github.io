@@ -6,7 +6,7 @@ import { AppContext } from './components/contextProvider';
 import LoadingIcon from './components/Loading';
 import { translationsData } from './constants/locale';
 import { router } from './routes';
-import { globalCSS } from '@oasis-engine/editor-design-system';
+import { globalCSS } from '@galacean/editor-ui';
 
 function App() {
   const context = useContext(AppContext);
