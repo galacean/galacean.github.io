@@ -2,7 +2,7 @@ import { CodeSandboxOutlined } from '@ant-design/icons';
 import LZString from 'lz-string';
 import { useRef } from 'react';
 import { FormattedMessage, injectIntl } from 'react-intl';
-import { Tooltip } from '@oasis-engine/editor-components';
+import { Tooltip } from '@galacean/editor-ui';
 import { StyledAction } from './CodeActions';
 
 function compress(string: string) {

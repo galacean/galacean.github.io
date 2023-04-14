@@ -3,7 +3,7 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { NavArrowDown } from 'iconoir-react';
-import { keyframes, styled } from "@oasis-engine/editor-design-system";
+import { keyframes, styled } from "@galacean/editor-ui";
 import { AppContext } from '../../contextProvider';
 
 const enterFromRight = keyframes({
@@ -324,7 +324,7 @@ const StyledNavigationMenu = () => {
               <ListItem to={`/gltf-viewer`} title={formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.gltfviewer.description' />
               </ListItem>
-              <ListItem absolute={true} to={`https://github.com/oasis-engine/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
+              <ListItem absolute={true} to={`https://github.com/galacean/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.createapp.description' />
               </ListItem>
               <ListItem absolute={true} to={`https://antg.antgroup.com`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>

@@ -43,9 +43,9 @@ export default ({ mode }) => {
       rollupOptions: {
         output: {
           manualChunks: {
-            'oasis-engine': ['oasis-engine'],
-            '@oasis-engine/spine': ['@oasis-engine/spine'],
-            '@oasis-engine/editor-components': ['@oasis-engine/editor-components'],
+            '@galacean/engine': ['Galacean'],
+            '@galacean/engine-spine': ['galaceanSpine'],
+            '@galacean/editor-ui': ['@galacean/editor-ui'],
             '@babel/standalone': ['@babel/standalone'],
             'mermaid': ['mermaid']
           },

@@ -1,12 +1,10 @@
-
-import React from 'react';
 import {
-  ThunderboltOutlined,
+  ThunderboltOutlined
 } from '@ant-design/icons';
+import { Tooltip } from '@galacean/editor-ui';
 import stackblitzSdk from '@stackblitz/sdk';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { StyledAction } from './CodeActions';
-import { Tooltip } from '@oasis-engine/editor-components';
 
 function Stackblitz (props: any) {
   const indexJsContent = `import './index.css';

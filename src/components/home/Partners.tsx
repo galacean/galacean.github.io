@@ -1,7 +1,5 @@
-import React from 'react';
+import { Flex, styled } from "@galacean/editor-ui";
 import { FormattedMessage } from 'react-intl';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
 
 const StyledPartnerContainer = styled(Flex, {
   padding: "$10 0",
