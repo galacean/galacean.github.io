@@ -24,7 +24,7 @@ label: Art/教程
 
 
 ### 3、使用 lottie 的步骤
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/050e54cd-3968-4364-807a-1e6bfc5a2825/1597657251435-a5f7cd47-b7f9-41fb-8196-705c8ee94370.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/050e54cd-3968-4364-807a-1e6bfc5a2825/1597657251435-a5f7cd47-b7f9-41fb-8196-705c8ee94370.png)
 
 
 ### 4、使用 Bodymovin 和洛丽塔导出动画
@@ -38,20 +38,20 @@ label: Art/教程
 4.2、怎样使用 Bodymovin
 
 - 到 Bodymovin 的 GitHub 首页（链接：airbnb/lottie-web）克隆项目到本地，或者下载 .zip 包。  <br />   
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/429a17b1-19b3-41b8-902c-4992d722832f/1597673434824-27e06992-4a7d-486a-8514-62a470c53789.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/429a17b1-19b3-41b8-902c-4992d722832f/1597673434824-27e06992-4a7d-486a-8514-62a470c53789.png)
       
 - 在项目目录的“/build/extension”目录下找到“bodymovin.zxp”文件，这个就是插件包了。
 - 下载安装ZXP Installer。
 ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://aescripts.com/learn/zxp-installer) <br />
 - 打开软件，点击“File”>“Open”菜单项载入上述.zxp插件包，ZXP Installer会自动开始安装。安装完成后的软件主页面如下图所示，表示插件已成功安装。<br />
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/1e996008-498c-4845-953b-8d39f05503e0/1597674042809-af5a084f-f21b-4bf4-b0d4-7404466b2a1e.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/1e996008-498c-4845-953b-8d39f05503e0/1597674042809-af5a084f-f21b-4bf4-b0d4-7404466b2a1e.png)
 
 - 打开AE，点击“编辑”>“首选项”>“常规”菜单项，选中“允许脚本写入文件和访问网络”，点击确定。  
       
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/22b31fcd-2b6e-4691-abd1-b173ccab87e7/1597674058269-f2242296-32c5-4ae9-973b-2943e04e94bc.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/22b31fcd-2b6e-4691-abd1-b173ccab87e7/1597674058269-f2242296-32c5-4ae9-973b-2943e04e94bc.png)
 - 点击“窗口”>“扩展”>“Bodymovin”菜单项，就可以打开Bodymovin的界面使用插件了。
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/cb002ffc-4b59-4dbd-a85d-56e0c1809475/1597674100420-41e2440c-fe9a-4280-8000-4f384ccdf9c3.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/cb002ffc-4b59-4dbd-a85d-56e0c1809475/1597674100420-41e2440c-fe9a-4280-8000-4f384ccdf9c3.png)
 
 - 打开一个 AE 项目。         
       
@@ -59,27 +59,27 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
       
 - 打开Bodymovin插件窗口，可以发现该项目的名称出现在了下面的列表中。选中该名称，设置好 json 文件输出位置，点击 “Render”。
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/605a89c4-4cde-4e36-a3cf-4d47abbd2f92/1597675512496-6c7320a9-fb09-460b-a2b0-e1a133020d9e.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/605a89c4-4cde-4e36-a3cf-4d47abbd2f92/1597675512496-6c7320a9-fb09-460b-a2b0-e1a133020d9e.png)
 
 - 点击上图中的 Settings，可以对导出的 json 进行配置：
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/8e63e349-dad4-4fc9-a535-121aa92450b4/1597675671244-f967fb47-da02-4033-9c37-277e2056af40.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/8e63e349-dad4-4fc9-a535-121aa92450b4/1597675671244-f967fb47-da02-4033-9c37-277e2056af40.png)
       
 - 导出 json 以后，通过蚂蚁金服开放的“洛丽塔”平台进行上传和预览。
 - “洛丽塔”平台地址：[https://design.alipay.com/lolita](https://design.alipay.com/lolita)
 
 - 点击“新文件导入”：
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/553e9f5f-da51-4987-8e0d-cd5578c43be1/1597675804466-e14c7c20-5dde-46d4-95d1-944372f41613.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/553e9f5f-da51-4987-8e0d-cd5578c43be1/1597675804466-e14c7c20-5dde-46d4-95d1-944372f41613.png)
       
 - 上传成功以后，点击右上角“文件检测”：
 ![image.png](https://gw.alicdn.com/imgextra/i1/O1CN01YiZnT21Z4AKu5bCgI_!!6000000003140-2-tps-1336-760.png)
       
 - 通过“文件检测”查看低性能以及不支持的属性，可以回到 AE 中进行修改：
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/dbe0d4c9-53e7-4521-a545-c0d8dc7e6a12/1597675975163-4bb8f3bd-0a4a-4de0-ba8b-f087d039e8fb.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/dbe0d4c9-53e7-4521-a545-c0d8dc7e6a12/1597675975163-4bb8f3bd-0a4a-4de0-ba8b-f087d039e8fb.png)
       
 - 修改完毕以后点击右上角“压缩并导出”：
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/076f278d-8330-4f5a-9d61-a24efde7e883/1597676018672-5db0ed0e-344c-4b78-a1b7-c356c61b852a.png)
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/9e7c658c-0e17-4384-a64a-cbabc6d94da3/1597676097360-87548e7f-1fb6-413b-bd30-242011384571.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/076f278d-8330-4f5a-9d61-a24efde7e883/1597676018672-5db0ed0e-344c-4b78-a1b7-c356c61b852a.png)
+![image.png](https://gw.alipayobjects.com/zos/oasisHub/9e7c658c-0e17-4384-a64a-cbabc6d94da3/1597676097360-87548e7f-1fb6-413b-bd30-242011384571.png)
       
 - 视情况选择图片保留质量，并点击“执行”，进行动画压缩
 - 执行完毕以后，使用手淘扫码查看动画表现，并将导出的 json 文件地址给到前端、客户端开发

@@ -41,7 +41,7 @@ spriteRenderer.maskLayer = SpriteMaskLayer.Layer0;
 
 The `influenceLayers` of `SpriteMask` indicates that the mask will mask the `SpriteRenderer` in which mask layers, and the `maskLayer` of `SpriteRenderer` indicates which mask layers the sprite is in, as follows:
 
-![070C8B9F-14E2-4A9A-BFEC-4BC3F2BB564F](https://gw.alipayobjects.com/zos/OasisHub/09abdf57-84b8-4aa9-b785-822f858fb4f9/070C8B9F-14E2-4A9A-BFEC-4BC3F2BB564F.png)
+![070C8B9F-14E2-4A9A-BFEC-4BC3F2BB564F](https://gw.alipayobjects.com/zos/oasisHub/09abdf57-84b8-4aa9-b785-822f858fb4f9/070C8B9F-14E2-4A9A-BFEC-4BC3F2BB564F.png)
 
 As shown above, spriteMask has a masking effect on the sprites in `Layer1` and `Layer30`, spriteRenderer0 is in `Layer2`, there is no intersection, so spriteRenderer0 does not work with spriteMask, spriteRenderer1 is in `Layer1`, and spriteMask affects the mask. The overlays have intersections, so spriteRenderer1 and spriteMask work.
 

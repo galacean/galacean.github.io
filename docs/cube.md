@@ -13,7 +13,7 @@ This tutorial will take you to draw a cube example:
 
 Next, we start to use [TypeScript](https://www.typescriptlang.org/) to write engine code. If you are not too comfortable with TypeScript, you can run it with JavaScript, and you can also enjoy engine API prompts (by programming with IDEs such as [VSCode](https://code.visualstudio.com/)).
 
-Back to our programming, in order to achieve such a function, we need to introduce the following Oasis engine classes in our project:
+Back to our programming, in order to achieve such a function, we need to introduce the following Galacean Engine classes in our project:
 
 ```typescript
 import {
@@ -27,7 +27,7 @@ import {
   Vector3,
   Vector4,
   Color,
-} from 'oasis-engine';
+} from "@galacean/engine";
 ```
 
 Let's first briefly understand these classes:
@@ -68,7 +68,7 @@ const rootEntity = scene.createRootEntity('root');
 ```
 ## Create a Camera Entity
 
-In Oasis Engine, functions are added to entities in the form of components. First, we first create an entity to add the camera component.
+In Galacean Engine, functions are added to entities in the form of components. First, we first create an entity to add the camera component.
 
 After creating, change the position and orientation of the camera through the transform component `transform` that comes with the entity. Then add the camera component `Camera` to this entity. 
 

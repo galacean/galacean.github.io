@@ -5,7 +5,7 @@ type: Interact
 label: Interact
 ---
 
-The engine provides a basic input system. Because of the cross-terminal and cross-platform characteristics of Oasis, our input system also needs the characteristics of the PC and mobile terminals, and includes keyboard, mouse and touch screen operations. The current version supports different devices on different terminals:
+The engine provides a basic input system. Because of the cross-terminal and cross-platform characteristics of Galacean, our input system also needs the characteristics of the PC and mobile terminals, and includes keyboard, mouse and touch screen operations. The current version supports different devices on different terminals:
 
 - **Unify events**: The difference between [MouseEvent](https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent) and [TouchEvent](https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent) is smoothed out, and **PointerEvent** is used uniformly, so that the click event is unified in concept and interface.
 - **Multi-touch**: In order not to perform too many ray detections in one frame, if there are multiple Pointers in one frame in time, we will also average them and integrate them into a virtual [Pointer](${api}core/Pointer), and use this as the input source of ray detection.
@@ -30,7 +30,7 @@ The interfaces of the input system have been integrated into [the life cycle of 
 
 This is represented in the schematic diagram below:
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/oasisHub/33174f90-104d-44cf-8905-8af54e6c19a7/image-20211001164136273.png" alt="image-20211001164136273" style="zoom:50%;" />
 
 ### Pointer button
 
@@ -80,6 +80,6 @@ As of July 2022, the compatibility of PointerEvent on different platforms has re
 
 <img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9_pmR6kKancAAAAAAAAAAAAAARQnAQ" alt="image-20211001164136273" style="zoom:67%;" />
 
-If you encounter compatibility issues with different platforms, you can file an issue for us at https://github.com/oasis-engine/polyfill-pointer-event.
+If you encounter compatibility issues with different platforms, you can file an issue for us at https://github.com/galacean/polyfill-pointer-event.
 
-You can refer to the design ideas：https://github.com/oasis-engine/engine/wiki/Input-system-design.
+You can refer to the design ideas：https://github.com/galacean/engine/wiki/Input-system-design.

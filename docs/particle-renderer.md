@@ -5,7 +5,7 @@ type: Animation
 label: Animation
 ---
 
-Oasis Engine's particle renderer [ParticleRenderer](${api}core/ParticleRenderer) is a commonly used rendering component with rich properties. By adjusting each property value, it can achieve brilliant and colorful particle effects.
+Galacean Engine's particle renderer [ParticleRenderer](${api}core/ParticleRenderer) is a commonly used rendering component with rich properties. By adjusting each property value, it can achieve brilliant and colorful particle effects.
 
 <playground src="particle-renderer.ts"></playground>
 

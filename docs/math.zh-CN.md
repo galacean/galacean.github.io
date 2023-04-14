@@ -29,10 +29,10 @@ label: Math/Tool
 
 向量最基本的定义就是一个方向。或者更正式的说，向量有一个方向（Direction）和大小（Magnitude，也叫做强度或长度）。你可以把向量想像成一个藏宝图上的指示：“向左走10步，向北走3步，然后向右走5步”；“左”就是方向，“10步”就是向量的长度。那么这个藏宝图的指示一共有3个向量。向量可以在任意维度（Dimension）上，但是我们通常只使用2至4维。如果一个向量有2个维度，它表示一个平面的方向（想象一下2D的图像），当它有3个维度的时候它可以表达一个3D世界的方向。
 
-在 Oasis 引擎中，向量用来表示物体坐标（position）、旋转（rotation）、缩放（scale）、颜色（color）。
+在 Galacean 引擎中，向量用来表示物体坐标（position）、旋转（rotation）、缩放（scale）、颜色（color）。
 
 ```typescript
-import { Vector3 } from '@oasis-engine/math';
+import { Vector3 } from '@galacean/math';
 
 // 创建默认三维向量，即 x,y,z 分量均为0
 const v1 = new Vector3(); 
@@ -77,10 +77,10 @@ v1.cloneTo(c2);
 - 只需要存储4个浮点数，相比矩阵来说更轻量
 - 无论是求逆、串联等操作，相比矩阵更为高效
 
-在 Oasis 引擎中，也是使用四元数来进行旋转相关运算，并提供欧拉角、矩阵等到四元数的转换API。
+在 Galacean 引擎中，也是使用四元数来进行旋转相关运算，并提供欧拉角、矩阵等到四元数的转换API。
 
 ```typescript
-import { Vector3, Quaternion, MathUtil } from '@oasis-engine/math';
+import { Vector3, Quaternion, MathUtil } from '@galacean/math';
 
 // 创建默认四元数，即 x,y,z 分量均为0，w 分量为1
 const q1 = new Quaternion(); 
@@ -127,10 +127,10 @@ eulerV.scale(MathUtil.radToDegreeFactor);
 
 在 3D 图形引擎中，计算可以在多个不同的笛卡尔坐标空间中执行，从一个坐标空间到另一个坐标空间需要使用变换矩阵，而我们数学库中的Matrix模块正是为提供这种能力而存在的。
 
-在 Oasis 引擎中，有局部坐标、全局坐标、观察坐标、裁剪坐标等，而物体在这些坐标之间的转换，正是通过转换矩阵来完成的。
+在 Galacean 引擎中，有局部坐标、全局坐标、观察坐标、裁剪坐标等，而物体在这些坐标之间的转换，正是通过转换矩阵来完成的。
 
 ```typescript
-import { Vector3, Matrix3x3, Matrix } from '@oasis-engine/math';
+import { Vector3, Matrix3x3, Matrix } from '@galacean/math';
 
 // 创建默认4x4矩阵，默认为单位矩阵
 const m1 = new Matrix(); 
@@ -182,7 +182,7 @@ Matrix.rotationAxisAngle(axis, Math.PI * 0.25, out4);
 ## Color
 
 ```typescript
-import { Color } from "@oasis-engine/math";
+import { Color } from "@galacean/math";
 
 // 创建 Color 对象
 const color1 = new Color(1, 0.5, 0.5, 1);
@@ -203,7 +203,7 @@ color2.toLinear(linearColor);
 
 ## 平面
 ```typescript
-import { Plane, Vector3 } from "@oasis-engine/math";
+import { Plane, Vector3 } from "@galacean/math";
 
 // 通过三角形的三个顶点创建平面
 const point1 = new Vector3(0, 1, 0);
@@ -218,7 +218,7 @@ const plane2 = new Plane(new Vector3(0, 1, 0), -1);
 ## 包围盒
 
 ```typescript
-import { BoundingBox, BoundingSphere, Matrix, Vector3 } from "@oasis-engine/math";
+import { BoundingBox, BoundingSphere, Matrix, Vector3 } from "@galacean/math";
 
 // 通过不同的方式创建同样的包围盒
 const box1 = new BoundingBox();
@@ -277,7 +277,7 @@ box.getCorners(corners);
 
 ## 包围球
 ```typescript
-import { BoundingBox, BoundingSphere, Vector3 } from "@oasis-engine/math";
+import { BoundingBox, BoundingSphere, Vector3 } from "@galacean/math";
 
 // 通过不同方式来创建包围球
 const sphere1 = new BoundingSphere();
@@ -305,7 +305,7 @@ BoundingSphere.fromBox(box, sphere2);
 
 ## 视锥体
 ```typescript
-import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@oasis-engine/math";
+import { BoundingBox, BoundingSphere, BoundingFrustum,Matrix, Vector3 } from "@galacean/math";
 
 // 根据 VP 矩阵创建视锥体，实际项目中，一般从相机中获取 view matrix 和 projection matrix
 const viewMatrix = new Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -20, 1);
@@ -331,7 +331,7 @@ const isIntersect4 = frustum.intersectsSphere(sphere2);
 ## 射线
 
 ```typescript
-import { BoundingBox, BoundingSphere, Plane, Ray, Vector3 } from "@oasis-engine/math";
+import { BoundingBox, BoundingSphere, Plane, Ray, Vector3 } from "@galacean/math";
 
 // 创建 ray
 const ray = new Ray(new Vector3(0, 0, 0), new Vector3(0, 1, 0));
@@ -365,7 +365,7 @@ import {
   Ray,
   Vector3,
   CollisionUtil
-} from "@oasis-engine/math";
+} from "@galacean/math";
 
 const plane = new Plane(new Vector3(0, 1, 0), -5);
 const viewMatrix = new Matrix(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, -20, 1);

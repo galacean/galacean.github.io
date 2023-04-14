@@ -5,7 +5,7 @@ type: 核心
 label: Core
 ---
 
-`Engine` 在 Oasis engine 中扮演着总控制器的角色，主要包含了**画布**、**渲染控制**和**引擎子系统管理**等三大功能：
+`Engine` 在 Galacean Engine 中扮演着总控制器的角色，主要包含了**画布**、**渲染控制**和**引擎子系统管理**等三大功能：
 
 - **画布**：主画布相关的操作，如修改画布宽高等。
 - **渲染控制**： 控制渲染的执行/暂停/继续、垂直同步等功能。
@@ -16,7 +16,7 @@ label: Core
 
 初始化 Engine 需要提供 [画布](${docs}canvas-cn)（**Canvas**）和 硬件渲染层 （**HardwareRenderer**）。
 
-Oasis 引擎封装了硬件渲染层，将不同平台的渲染能力统一管理，还可以通过 [HardwareRenderer](${api}core/IHardwareRenderer) 的构造函数，传入支持的配置来控制不同平台的渲染能力。
+Galacean 引擎封装了硬件渲染层，将不同平台的渲染能力统一管理，还可以通过 [HardwareRenderer](${api}core/IHardwareRenderer) 的构造函数，传入支持的配置来控制不同平台的渲染能力。
 
 
 ```typescript
@@ -27,7 +27,7 @@ const engine = new Engine(webCanvas,webGLRenderer);
 ```
 
 
-为了方便用户直接创建 web 端 engine，Oasis 提供了 [WebGLEngine](${api}rhi-webgl/WebGLEngine) ：
+为了方便用户直接创建 web 端 engine，Galacean 提供了 [WebGLEngine](${api}rhi-webgl/WebGLEngine) ：
 
 ```typescript
 const engine = new WebGLEngine("canvas")

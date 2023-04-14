@@ -8,7 +8,7 @@ label: Graphics/Texture
 
 Texture ([Texture](${api}core/Texture)), is the most commonly used resource in 3D rendering. When we color the model, we need to set a color value for each fragment. In addition to setting this color value directly, we can also choose to read texels from the texture for coloring to achieve a richer art effect.
 
-It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Oasis engine currently supports all WebGL standard textures.
+It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Galacean Engine currently supports all WebGL standard textures.
 
 ## Texture category
 
@@ -45,15 +45,15 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
 - Clamp: Sampling edge texels when out of range
 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/oasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
 
 - Repeat: Resample from [0,1] when out of range
 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/oasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
 
 - Mirror: Mirror sampling from [1,0] when out of range
 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/oasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
 
 <playground src="wrap-mode.ts"></playground>
 
@@ -93,11 +93,11 @@ texture.anisoLevel = 4; // 1~16
 
 ### 1. mipmap
 
-**Oasis enable [mipmap](${api}core/Texture#generateMipmaps) by default**, mipmap is used to solve the accuracy and performance problems when sampling high-resolution textures from low-resolution screens. That is, textures of different resolutions can be selected at a suitable distance, as shown in the following figure:
+**Galacean enable [mipmap](${api}core/Texture#generateMipmaps) by default**, mipmap is used to solve the accuracy and performance problems when sampling high-resolution textures from low-resolution screens. That is, textures of different resolutions can be selected at a suitable distance, as shown in the following figure:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mTBvTJ7Czt4AAAAAAAAAAAAAARQnAQ)
 
-It should be noted that WebGL2.0 supports textures of **any resolution**, which will be processed according to the algorithm of [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) Layers of mip, but if your environment is in WebGL1.0 , then please be sure to upload a **2 power texture**, such as a texture with a resolution of 1024 \* 512, otherwise Oasis will detect that the environment is unavailable mipmap, automatically downgrades to turn off the mipmap, which brings some visual surprises.
+It should be noted that WebGL2.0 supports textures of **any resolution**, which will be processed according to the algorithm of [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) Layers of mip, but if your environment is in WebGL1.0 , then please be sure to upload a **2 power texture**, such as a texture with a resolution of 1024 \* 512, otherwise Galacean will detect that the environment is unavailable mipmap, automatically downgrades to turn off the mipmap, which brings some visual surprises.
 
 If you need to close mipmap, you can do it through a script. For the parameters, see [API](${api}core/Texture2D#constructor):
 

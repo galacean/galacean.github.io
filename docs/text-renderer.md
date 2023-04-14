@@ -19,7 +19,7 @@ label: Graphics/2D
 4、Set color by [color](${api}core/TextRenderer#color)    
 
 ```typescript
-import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "oasis-engine";
+import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "@galacean/engine";
 
 const textEntity = rootEntity.createChild("text");
 // Add TextRenderer for entity
@@ -27,7 +27,7 @@ const textRenderer = textEntity.addComponent(TextRenderer);
 // Set font
 textRenderer.font = Font.createFromOS(engine, "Arial");
 // Set text
-textRenderer.text = "First text for Oasis！";
+textRenderer.text = "First text for Galacean！";
 // Set fontSize
 textRenderer.fontSize = 36;
 // Set color

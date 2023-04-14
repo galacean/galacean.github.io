@@ -8,7 +8,7 @@ label: Graphics/Texture
 
 纹理（[Texture](${api}core/Texture)）, 是在 3D 渲染中最常用到的资源。我们在给模型着色时，需要给每个片元设置一个颜色值，这个色值除了直接手动设置，我们还可以选择从纹理中读取纹素来进行着色，来达到更加丰富的美术效果。
 
-值得注意的是，图片、canvas 画布、原始数据、视频等都可以用来当作纹理，Oasis 引擎目前支持所有 WebGL 标准的纹理。
+值得注意的是，图片、canvas 画布、原始数据、视频等都可以用来当作纹理，Galacean 引擎目前支持所有 WebGL 标准的纹理。
 ## 纹理类型
 
 | 类型 | 描述 |
@@ -45,15 +45,15 @@ texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp; // Clamp、Repeat
 
 - 截取模式（Clamp）：超出范围采样边缘纹素。
 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/oasisHub/6a713c1b-e1cc-4dca-b4f0-135ea769dd83/image-20210720153811910.png" width="20%" height="20%">
 
 - 重复模式（Repeat）：超出范围从 [0,1] 开始重新采样
 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/oasisHub/76c5d42b-5889-401e-b286-d30cec99d5bd/image-20210720153717932.png" width="20%" height="20%">
 
 - 镜像重复模式（Mirror）：超出范围从 [1,0] 开始镜像采样。
 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
+  <img src="https://gw.alipayobjects.com/zos/oasisHub/c9e302ad-44c5-4e55-a4d8-a807861d266e/image-20210720153841976.png" width="20%" height="20%">
 
 <playground src="wrap-mode.ts"></playground>
 
@@ -103,7 +103,7 @@ texture.anisoLevel = 4; // 1~16
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mTBvTJ7Czt4AAAAAAAAAAAAAARQnAQ)
 
-需要注意的是，WebGL2.0 支持**任意分辨率**的纹理，会根据 [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) 算法进行一层层的 mip，但是如果您的环境是在 WebGL1.0 环境，那么请务必上传**2 次幂纹理**，如 1024 \* 512 这种分辨率的纹理,否则 Oasis 会检测到环境不可使用 mipmap，自动降级关闭 mipmap 功能，在视觉上带来一些意外情况。
+需要注意的是，WebGL2.0 支持**任意分辨率**的纹理，会根据 [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) 算法进行一层层的 mip，但是如果您的环境是在 WebGL1.0 环境，那么请务必上传**2 次幂纹理**，如 1024 \* 512 这种分辨率的纹理,否则 Galacean 会检测到环境不可使用 mipmap，自动降级关闭 mipmap 功能，在视觉上带来一些意外情况。
 
 如果需要改变 mipmap 的默认行为，可以通过脚本来实现，参数详见 [API](${api}core/Texture2D#constructor)：
 

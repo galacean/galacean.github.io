@@ -5,23 +5,23 @@ type: 动画
 label: Animation
 ---
 
-这是用 Oasis Engine 实现的 <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> 运行时。目前只支持 Lottie 节点树中的**精灵元素**（Sprite Elements）的绘制。
+这是用 Galacean Engine 实现的 <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> 运行时。目前只支持 Lottie 节点树中的**精灵元素**（Sprite Elements）的绘制。
 
 ## 安装
 
-<a href="https://www.npmjs.com/package/@oasis-engine/lottie" target="_blank">@oasis-engine/lottie</a> 是 Oasis Engine 的二方包，需要手动安装：
+<a href="https://www.npmjs.com/package/@galacean/lottie" target="_blank">@galacean/lottie</a> 是 Galacean Engine 的二方包，需要手动安装：
 
 ```bash
-npm i @oasis-engine/lottie --save
+npm i @galacean/lottie --save
 ```
 
 ## 使用
 
 ### 基础使用
-合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，使用 [tool-atlas-lottie](https://www.npmjs.com/package/@oasis-engine/tool-atlas-lottie) 把其中的 **assets**（base64 编码的图片集）合并成一张精灵图。
+合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，使用 [tool-atlas-lottie](https://www.npmjs.com/package/@galacean/tool-atlas-lottie) 把其中的 **assets**（base64 编码的图片集）合并成一张精灵图。
 
 ```typescript
-import { LottieAnimation } from "@oasis-engine/lottie";
+import { LottieAnimation } from "@galacean/lottie";
 
 // Load lottie json、atlas file with engine's `resourceManager`
 engine.resourceManager.load({
@@ -88,7 +88,7 @@ engine.resourceManager.load({
 
 ![3D rotation](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ)
 
-得益于 Oasis Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 变换功能。
+得益于 Galacean Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 变换功能。
 
 <playground src="lottie-3d-rotation.ts"></playground>
 

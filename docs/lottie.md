@@ -5,25 +5,25 @@ type: Animation
 label: Animation
 ---
 
-This is the <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> runtime implemented with Oasis Engine. Currently, only the sprite elements in the lottie node tree can be rendered.
+This is the <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> runtime implemented with Galacean Engine. Currently, only the sprite elements in the lottie node tree can be rendered.
 
 
 ## Install
 
-<a href="https://www.npmjs.com/package/@oasis-engine/lottie" target="_blank">@oasis-engine/lottie</a> is a second party package of Oasis Engine, which need to install manually:
+<a href="https://www.npmjs.com/package/@galacean/lottie" target="_blank">@galacean/lottie</a> is a second party package of Galacean Engine, which need to install manually:
 
 ```bash
-npm i @oasis-engine/lottie --save
+npm i @galacean/lottie --save
 ```
 
 ## Usage
 
 ### Basic usage
 
-An atlas is needed for batch rendering. Before you start using the following code, you need to preprocess lottie's JSON file and merge the **assets** (several base64-encoded images) into a sprite image with [tool-atlas-lottie](https://www.npmjs.com/package/@oasis-engine/tool-atlas-lottie). 
+An atlas is needed for batch rendering. Before you start using the following code, you need to preprocess lottie's JSON file and merge the **assets** (several base64-encoded images) into a sprite image with [tool-atlas-lottie](https://www.npmjs.com/package/@galacean/tool-atlas-lottie). 
 
 ```typescript
-import { LottieRenderer } from "@oasis-engine/lottie";
+import { LottieRenderer } from "@galacean/lottie";
 
 // Load lottie json、atlas file with engine's `resourceManager`
 engine.resourceManager.load({
@@ -91,7 +91,7 @@ The above code adds three clips to the protocol: `beforePlay` (0-71 frames), `on
 
 ![3D rotation](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ)
 
-Thanks to the advantages of the 2D/3D-unified architecture of the Oasis Engine, the 3D transform feature can be easily implemented with Oasis Engine.
+Thanks to the advantages of the 2D/3D-unified architecture of the Galacean Engine, the 3D transform feature can be easily implemented with Galacean Engine.
 
 <playground src="lottie-3d-rotation.ts"></playground>
 

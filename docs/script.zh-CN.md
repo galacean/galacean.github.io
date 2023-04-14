@@ -5,7 +5,7 @@ type: 核心
 label: Core
 ---
 
-除了[内置组件](${docs}entity-cn#常用组件)之外，Oasis 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
+除了[内置组件](${docs}entity-cn#常用组件)之外，Galacean 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
 
 ## 添加脚本组件
 
@@ -14,7 +14,7 @@ label: Core
 import {
 	Entity,
 	Script
-} from 'oasis-engine'
+} from "@galacean/engine"
 
 // 1.创建实体
 const entity = new Entity(engine);
@@ -31,7 +31,7 @@ entity.addComponent(MyScript);
 
 ## 组件生命周期函数
 
-Oasis 为用户提供了丰富的生命周期回调函数，用户只要定义特定的回调函数，Oasis 就会在特定的时期自动执行相关脚本，用户不需要手工调用它们。目前提供给用户的生命周期回调函数如下:
+Galacean 为用户提供了丰富的生命周期回调函数，用户只要定义特定的回调函数，Galacean 就会在特定的时期自动执行相关脚本，用户不需要手工调用它们。目前提供给用户的生命周期回调函数如下:
 
 ![脚本生命周期-zh](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_8C-TJP2UIgAAAAAAAAAAAAAARQnAQ)
 
@@ -73,7 +73,7 @@ onUpdate() {
 }
 ```
 
-值得注意的是 Oasis 是批量执行完 `onStart` 回调之后再批量执行 `onUpdate` 这样做的好处是，可以在 `onUpdate` 中访问其他实体初始化的值：
+值得注意的是 Galacean 是批量执行完 `onStart` 回调之后再批量执行 `onUpdate` 这样做的好处是，可以在 `onUpdate` 中访问其他实体初始化的值：
 
 ```typescript
 import { TheScript } from './TheScript'

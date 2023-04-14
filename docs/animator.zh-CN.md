@@ -167,7 +167,7 @@ colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
 
 ### 动画系统的构成
 
-![image-20210830233452874](https://gw.alipayobjects.com/zos/OasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
+![image-20210830233452874](https://gw.alipayobjects.com/zos/oasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png)
 
 #### [Animator](${api}core/Animator)
 动画控制器组件，用于控制动画的播放。Animator 组件读取 AnimatorController 作为动画数据。通过 AnimatorControllerParameter 设置该 Animator 中的变量。
@@ -230,7 +230,7 @@ animator.play("walk");
 
 <playground src="skeleton-animation-additive.ts"></playground>
 
-动画叠加是通过AnimatorControllerLayer间的混合达到的效果。第一层是基础动画层，修改它的权重及混合模式将不会生效。将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，Oasis引擎支持多层的动画叠加。
+动画叠加是通过AnimatorControllerLayer间的混合达到的效果。第一层是基础动画层，修改它的权重及混合模式将不会生效。将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，Galacean引擎支持多层的动画叠加。
 
 ### 默认播放
 

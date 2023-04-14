@@ -15,16 +15,16 @@ Spine 动画是一款针对游戏开发的 `2D 骨骼动画`，它通过将图�
 
 Spine 动画支持换皮换肤，动画混合以及使用代码控制骨骼。
 
-Oasis Engine 通过 [BufferMesh](${docs}buffer-mesh-cn) 实现了 spine 动画的渲染。
+Galacean Engine 通过 [BufferMesh](${docs}buffer-mesh-cn) 实现了 spine 动画的渲染。
 
 
 ## 准备
 
 - 下载 Spine 编辑器，并选择 3.8 以上版本制作动画。
-- 开发者使用 Spine 需手动添加 [@oasis-engine/spine](https://github.com/oasis-engine/engine-spine)  二方包。
+- 开发者使用 Spine 需手动添加 [@galacean/spine](https://github.com/galacean/engine-spine)  二方包。
 
 ```bash
-npm i @oasis-engine/spine --save
+npm i @galacean/spine --save
 ```
 
 ## 使用
@@ -33,7 +33,7 @@ npm i @oasis-engine/spine --save
 通过 spine 编辑器的导出功能能够导出所需的资源文件。导出方法如下：
 ![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*jh0UTYlkKrIAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=xGebk&originHeight=1232&originWidth=1754&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-oasis spine 运行时需要使用 .json（或者.bin）, atlas, png 这几种格式的资源文件。导出时，能够选择文件导出的格式：
+Galacean Spine 运行时需要使用 .json（或者.bin）, atlas, png 这几种格式的资源文件。导出时，能够选择文件导出的格式：
 
 #### 导出 JSON
 
@@ -43,12 +43,12 @@ oasis spine 运行时需要使用 .json（或者.bin）, atlas, png 这几种格
 
 ![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*gs1HRId9wPcAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=q3yyW&originHeight=1180&originWidth=1710&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-导出后，在目标文件夹内会看到 .json（或者.bin）, atlas, png 三种格式的资源文件。oasis spine 运行时能够加载这些文件，播放 spine 动画。
-需要注意的是，oasis spine 运行时目前只支持加载单张纹理，所以当贴图尺寸过大时，需要对图片资源进行缩放处理，把贴图的张数控制在一张。
+导出后，在目标文件夹内会看到 .json（或者.bin）, atlas, png 三种格式的资源文件。Galacean Spine 运行时能够加载这些文件，播放 spine 动画。
+需要注意的是，Galacean Spine 运行时目前只支持加载单张纹理，所以当贴图尺寸过大时，需要对图片资源进行缩放处理，把贴图的张数控制在一张。
 文件导出的详细配置见 spine 官方文档：[http://zh.esotericsoftware.com/spine-export](http://zh.esotericsoftware.com/spine-export/)
 
 ### 资源加载
-当引入了 _@oasis-engine/spine_ 后，会自动在 [engine]($%7Bapi%7Dcore/Engine) 的 [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) 上注册 spine 资源的资源加载器。通过 resourceManager 的 [load]($%7Bapi%7Dcore/ResourceManager/#load) 方法能够加载 spine 动画资源。
+当引入了 _@galacean/spine_ 后，会自动在 [engine]($%7Bapi%7Dcore/Engine) 的 [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) 上注册 spine 资源的资源加载器。通过 resourceManager 的 [load]($%7Bapi%7Dcore/ResourceManager/#load) 方法能够加载 spine 动画资源。
 
 - 当传递参数为 url 时，默认 spine 动画的资源拥有同样的 baseUrl，仅需传递  json（或者 bin） 文件的 cdn 即可。
 - 当传递参数为 urls 数组时，需要传递 json（或者 bin），atlas， image（png，jpg）三个资源的 cdn 地址。

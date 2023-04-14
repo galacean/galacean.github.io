@@ -6,7 +6,7 @@ group: Camera
 label: Graphics/Camera
 ---
 
-The camera is an abstract concept of [3D projection](https://en.wikipedia.org/wiki/3D_projection) that a graphics engine acts like a camera or eyes in the real world. The camera of Oasis Engine implements automatic frustum culling, and only renders objects inside the frustum.
+The camera is an abstract concept of [3D projection](https://en.wikipedia.org/wiki/3D_projection) that a graphics engine acts like a camera or eyes in the real world. The camera of Galacean Engine implements automatic frustum culling, and only renders objects inside the frustum.
 
 CullingMask case:
 
@@ -47,7 +47,7 @@ Orthogonal projection means that the objects seen near and far in the viewing ar
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*KEuGSqX-vXsAAAAAAAAAAAAAARQnAQ)
 
-As shown in the figure above, there are top, bottom, left and right. Oasis has made some simplifications to the orthogonal properties, which is more in line with the developer’s usage habits. Only [orthographicSize](${api}core/Camera#orthographicSize)(orthogonal Half the size of the camera in mode). The following is the relationship between each attribute and [orthographicSize](${api}core/Camera#orthographicSize).
+As shown in the figure above, there are top, bottom, left and right. Galacean has made some simplifications to the orthogonal properties, which is more in line with the developer’s usage habits. Only [orthographicSize](${api}core/Camera#orthographicSize)(orthogonal Half the size of the camera in mode). The following is the relationship between each attribute and [orthographicSize](${api}core/Camera#orthographicSize).
 
 - `top = orthographicSize`
 - `bottom = -orthographicSize`
@@ -98,7 +98,7 @@ In the case of multiple cameras, we can combine the camera's `renderTarget`,  `p
 
 ### Camera orientation
 
-Since in Oasis, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
+Since in Galacean, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
 
 ## Q&A
 

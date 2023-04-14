@@ -8,24 +8,24 @@ label: Physics
 The physics engine is a very important part of the game engine. The industry generally adopts PhysX to introduce related
 functions. But for lightweight scenarios, PhysX makes the size of final application very large, beyond the constraints
 of
-these projects. Oasis is based on a multi-backend design. On the one hand, it uses WebAssembly Compile to
-get [PhysX.js](https://github.com/oasis-engine/physX.js) ; on the other hand, it also provides a lightweight physics
-engine. Both are identical in [API](https://github.com/oasis-engine/engine/tree/main/packages/design/src/physics)
+these projects. Galacean is based on a multi-backend design. On the one hand, it uses WebAssembly Compile to
+get [PhysX.js](https://github.com/galacean/physX.js) ; on the other hand, it also provides a lightweight physics
+engine. Both are identical in [API](https://github.com/galacean/engine/tree/main/packages/design/src/physics)
 design. Users only need to select a specific physical backend when initializing the engine. It can meet the needs of
 various scenarios such as lightweight applications and heavyweight games. For the overall design of physical components,
-you can refer to [Wiki](https://github.com/oasis-engine/engine/wiki/Physical-system-design)
+you can refer to [Wiki](https://github.com/galacean/engine/wiki/Physical-system-design)
 
 For scenes that need to use various physics components, `InputManager` and other scenes that need to be picked up by
-Raycast, you need to initialize the physics engine before use. Currently, the Oasis engine provides two built-in physics
+Raycast, you need to initialize the physics engine before use. Currently, the Galacean Engine provides two built-in physics
 engine backend implementations:
 
-1. [physics-lite](https://github.com/oasis-engine/engine/tree/main/packages/physics-lite)
-2. [physics-physx](https://github.com/oasis-engine/engine/tree/main/packages/physics-physx)
+1. [physics-lite](https://github.com/galacean/engine/tree/main/packages/physics-lite)
+2. [physics-physx](https://github.com/galacean/engine/tree/main/packages/physics-physx)
 
 Initialization only needs to bind the static objects of these two backends to `physicsManager`:
 
 ```typescript
-import {LitePhysics} from "@oasis-engine/physics-lite";
+import {LitePhysics} from "@galacean/physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -37,7 +37,7 @@ Since WASM needs to be loaded asynchronously, the initialization of the engine n
 Promise.
 
 ```typescript
-import {PhysXPhysics} from "@oasis-engine/physics-physx";
+import {PhysXPhysics} from "@galacean/physics-physx";
 
 PhysXPhysics.initialize().then(() => {
   const engine = new WebGLEngine("canvas");
@@ -74,9 +74,9 @@ There are two debugging methods:
    tool, you need to compile the debug version of PhysX yourself, and use WebSocket to connect the browser and the
    debugging tool.
    For specific usage, please refer to the introduction of Readme
-   in [physx.js](https://github.com/oasis-engine/physX.js).
+   in [physx.js](https://github.com/galacean/physX.js).
 2. We also provide a
-   lightweight [auxiliary-lines tool](https://github.com/oasis-engine/engine-toolkit/tree/main/packages/auxiliary-lines)
+   lightweight [auxiliary-lines tool](https://github.com/galacean/engine-toolkit/tree/main/packages/auxiliary-lines)
    , which is based on the configuration of physical components Draw the corresponding wireframes to assist in
    configuring and debugging physical components.
    It is also very easy to use, just mount the `WireframeManager` script, and then set it to associate various physical

@@ -18,18 +18,18 @@ In the sprite atlas example in the figure below, the drawing command is called o
 
 ## Generate sprite atlas
 
-Oasis provides a command line tool for the sprite atlas. Developers can follow the steps below to generate the atlas:
+Galacean provides a command line tool for the sprite atlas. Developers can follow the steps below to generate the atlas:
 
 1. Install
 
 ```bash
-npm i @oasis-engine/tool-atlas -g
+npm i @galacean/tool-atlas -g
 ```
 
 2. Execute command line
 
 ```bash
-oasis-tool-atlas p inputPath -o outputName
+galacean-tool-atlas p inputPath -o outputName
 ```
 
 Among them, `inputPath` represents the folder path to be packaged, and `outputName` represents the file name of the sprite atlas for packaged output. If you get the result shown in the figure below, then the package is successful.
@@ -38,8 +38,8 @@ Among them, `inputPath` represents the folder path to be packaged, and `outputNa
 
 | 属性           | 解释                                         |
 | -------------- | -------------------------------------------- |
-| f/format       | 打包输出的精灵图集格式 (默认: "oasis")       |
-| o/output       | 打包输出的精灵图集文件名 (默认: "oasis")     |
+| f/format       | 打包输出的精灵图集格式 (默认: "galacean")       |
+| o/output       | 打包输出的精灵图集文件名 (默认: "galacean")     |
 | a/algorithm    | 打包精灵图集的算法 (默认: "maxrects")        |
 | ar/allowRotate | 打包精灵图集是否支持旋转 (默认: false)       |
 | p/padding      | 图集中每个精灵和这个精灵边框的距离 (默认: 1) |
@@ -48,7 +48,7 @@ Among them, `inputPath` represents the folder path to be packaged, and `outputNa
 | s/square       | 强制打包成正方形 (默认: false)               |
 | pot            | 宽高强制打包成 2 的幂 (默认: false)          |
 
-For more information, please refer to [Atlas Packaging Tool](https://github.com/oasis-engine/tool-atlas/edit/main/README.md).
+For more information, please refer to [Atlas Packaging Tool](https://github.com/galacean/tool-atlas/edit/main/README.md).
 
 ## Instructions for use
 
