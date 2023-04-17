@@ -65,11 +65,6 @@ class Footer extends React.Component<{}> {
                   GitHub
                 </a>
               </li>
-              <li>
-                <a target='_blank ' href='https://oasis-engine.gitee.io/'>
-                  <FormattedMessage id='app.footer.chinamirror' />
-                </a>
-              </li>
             </ul>
           </StyledGroup>
           <StyledGroup>
