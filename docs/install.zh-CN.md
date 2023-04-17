@@ -6,11 +6,20 @@ group: 基础
 label: Introduction/Basic
 ---
 
+**Galacean Engine** 是一套 Web 为先，移动优先的互动引擎，使用 [Typescript](https://www.typescriptlang.org/) 编写。核心功能由 [Galacean Engine](https://www.npmjs.com/package/@galacean/engine) 提供，非核心和偏业务逻辑定制的高级功能由 [Galacean Toolkit](https://github.com/galacean/engine-toolkit) 提供。
+
+<a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
+   <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
+</a>
+<a href="https://www.npmjs.com/package/oasis-engine" target='_blank'>
+   <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
+</a>
+
 ## 安装方式
 
 ### NPM
 
-**Galacean Engine** 是一套 Web 为先，移动优先的互动引擎，使用 [Typescript](https://www.typescriptlang.org/) 编写。核心功能由 [Galacean Engine](https://www.npmjs.com/package/@galacean/engine) 提供，非核心和偏业务逻辑定制的高级功能由 [Galacean Toolkit](https://github.com/galacean/engine-toolkit) 提供，推荐通过 [NPM](https://docs.npmjs.com/) 的方式进行安装：
+推荐通过 [NPM](https://docs.npmjs.com/) 的方式进行安装：
 
 1. 安装
 
