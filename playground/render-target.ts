@@ -118,7 +118,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
         });
 
       scene.ambientLight.specularTexture = cubeMap;
-      skyMaterial.textureCubeMap = cubeMap;
+      skyMaterial.texture = cubeMap;
       engine.run();
     });
 });

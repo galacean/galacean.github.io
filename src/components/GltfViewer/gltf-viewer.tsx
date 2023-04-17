@@ -131,7 +131,7 @@ class Oasis {
           this.env[envName] = env;
 
           this.scene.ambientLight = env;
-          this.skyMaterial.textureCubeMap = env.specularTexture;
+          this.skyMaterial.texture = env.specularTexture;
           this.skyMaterial.textureDecodeRGBM = true;
           resolve(true);
         });
@@ -325,7 +325,7 @@ class Oasis {
           const urlNew = URL.createObjectURL(blob);
           this.engine.resourceManager
             .load<GLTFResource>({
-              type: AssetType.Prefab,
+              type: AssetType.GLTF,
               url: `${urlNew}#.gltf`
             })
             .then((asset) => {
@@ -338,7 +338,7 @@ class Oasis {
     } else {
       this.engine.resourceManager
         .load<GLTFResource>({
-          type: AssetType.Prefab,
+          type: AssetType.GLTF,
           url: `${url}#.glb`
         })
         .then((asset) => {

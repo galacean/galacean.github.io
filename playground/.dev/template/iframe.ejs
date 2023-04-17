@@ -13,12 +13,11 @@
         margin: 0;
         overflow: hidden;
         background: black;
+        border: none;
       }
 
       .dg.main > ul {
         overflow: initial;
-      }
-
       }
     </style>
   </head>
@@ -26,5 +25,10 @@
   <body>
     <canvas id="canvas"></canvas>
     <script type="module" src="<%= url %>"></script>
+    <script>
+      document.oncontextmenu = (e) => {
+        e.preventDefault();
+      };
+    </script>
   </body>
 </html>

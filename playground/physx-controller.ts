@@ -523,7 +523,7 @@ WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then((engi
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;
-      skyMaterial.textureCubeMap = ambientLight.specularTexture;
+      skyMaterial.texture = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
     });
 
