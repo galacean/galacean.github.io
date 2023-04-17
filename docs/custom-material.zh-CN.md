@@ -70,7 +70,6 @@ const material = new Material(engine, Shader.find("demo"));
 | 投影矩阵 | u_projMat | mat4 |
 | 视口投影矩阵 | u_VPMat | mat4 |
 | 视口逆矩阵 | u_viewInvMat | mat4 |
-| 投影逆矩阵 | u_projInvMat | mat4 |
 | 相机位置 | u_cameraPos | vec3 |
 | 模型本地坐标系矩阵 | u_localMat | mat4 |
 | 模型世界坐标系矩阵 | u_modelMat | mat4 |
