@@ -51,7 +51,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   engine.resourceManager
     .load({
-      type: AssetType.Prefab,
+      type: AssetType.GLTF,
       url: "https://gw.alipayobjects.com/os/OasisHub/440000554/3615/%25E5%25BD%2592%25E6%25A1%25A3.gltf",
     })
     .then((gltf: GLTFResource) => {
