@@ -327,7 +327,7 @@ const StyledNavigationMenu = () => {
               <ListItem absolute={true} to={`https://github.com/galacean/create-oasis-app`} title={formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.createapp.description' />
               </ListItem>
-              <ListItem absolute={true} to={`https://galacean.antgroup.com`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
+              <ListItem absolute={true} to={`https://galacean.antgroup.com/editor`} title={formatMessage({ id: 'app.header.menu.ecosystem.editor' })}>
                 <FormattedMessage id='app.header.menu.ecosystem.editor.description' />
               </ListItem>
             </StyledContentList>

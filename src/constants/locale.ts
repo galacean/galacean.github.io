@@ -30,7 +30,7 @@ export const translationsData: { [lang: string]: any } = {
       "面向美术和开发，编辑器的基础操作和引擎功能的可视化使用",
     "app.header.menu.ecosystem": "生态系统",
     "app.header.menu.ecosystem.tool": "工具",
-    "app.header.menu.ecosystem.editor": "编辑器 (马上就来)",
+    "app.header.menu.ecosystem.editor": "编辑器",
     "app.header.menu.ecosystem.editor.description":
       "在线完成场景搭建、动画编辑、脚本开发等流程",
     "app.header.menu.ecosystem.miniprogram": "小程序",
@@ -165,7 +165,7 @@ export const translationsData: { [lang: string]: any } = {
       "For artists and developers, the basic operation of the editor and the visual usage of engine functions",
     "app.header.menu.ecosystem": "Ecosystem",
     "app.header.menu.ecosystem.tool": "Tools",
-    "app.header.menu.ecosystem.editor": "Editor (Coming soon)",
+    "app.header.menu.ecosystem.editor": "Editor",
     "app.header.menu.ecosystem.editor.description":
       "Online visual workflow for building scenes, animations and scripts",
     "app.header.menu.ecosystem.miniprogram": "Mini-program",

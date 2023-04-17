@@ -6,11 +6,20 @@ group: Basic
 label: Introduction/Basic
 ---
 
+**Galacean Engine** is a set of web first and mobile first interactive engine, using [Typescript](https://www.typescriptlang.org/) Written.The core functions are provided by [Galacean Engine](https://www.npmjs.com/package/@galacean/engine), and the advanced functions of non core and partial business logic customization are provided by [Galacean Toolkit](https://github.com/galacean/engine-toolkit).
+
+<a href="https://github.com/ant-galaxy/oasis-engine/stargazers" target='_blank'>
+   <img src="https://img.shields.io/github/stars/ant-galaxy/oasis-engine?style=social" alt="github stars" />
+</a>
+<a href="https://www.npmjs.com/package/oasis-engine" target='_blank'>
+   <img src="https://img.shields.io/npm/dm/oasis-engine.svg" alt="npm download" />
+</a>
+
 ## How to Install
 
 ### NPM
 
-**Galacean Engine** is a set of web first and mobile first interactive engine, using [Typescript](https://www.typescriptlang.org/) Written.The core functions are provided by [Galacean Engine](https://www.npmjs.com/package/@galacean/engine), and the advanced functions of non core and partial business logic customization are provided by [Galacean Toolkit](https://github.com/galacean/engine-toolkit). It is recommended to install them through [NPM](https://docs.npmjs.com/):
+ It is recommended to install them through [NPM](https://docs.npmjs.com/):
 
 1. Install 
 
