@@ -137,7 +137,7 @@ engine.resourceManager
 
 
 ### 3. AmbientLight
-Galacean 支持通过[编辑器](https://galacean.antgroup.com)或者 [glTF Viewer](https://galacean.com/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
+Galacean 支持通过[编辑器](https://galacean.antgroup.com)或者 [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 

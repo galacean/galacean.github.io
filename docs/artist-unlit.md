@@ -45,6 +45,6 @@ If the preview is correct, export the glTF file.
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1fe38185-399e-4f56-bff4-c39ba4ae3a2a/1623652462007-85b065a3-69fa-4d80-9dfd-834ef66da12a.png)
 
-Drag the glTF file you just exported from Blender to the [glTF viewer](https://galacean.com/#/gltf-viewer), if the material type is **UnlitMaterial**, note [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) plugin has been exported, and has been parsed into Unlit material by Galacean.
+Drag the glTF file you just exported from Blender to the [glTF viewer](https://galacean.antgroup.com/#/gltf-viewer), if the material type is **UnlitMaterial**, note [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) plugin has been exported, and has been parsed into Unlit material by Galacean.
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/fbb6ba43-f7d7-4757-a1d3-590083d30573/1623652636074-d8bb8437-f885-43fd-8957-8e14ae9fd8c0-20210614150914493.png)

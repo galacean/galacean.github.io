@@ -139,7 +139,7 @@ engine.resourceManager
 
 
 ### 3. Environment
-Galacean supports offline baking through [Galacean Editor](https://galacean.antgroup.com) or [glTF Viewer](https://galacean.com/#/gltf-viewer) to get IBL baked products `*.env` file.
+Galacean supports offline baking through [Galacean Editor](https://galacean.antgroup.com) or [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 

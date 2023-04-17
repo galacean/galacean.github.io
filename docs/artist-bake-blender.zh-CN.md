@@ -154,7 +154,7 @@ label: Art/教程
 
 
 
-4. 放入[glTF查看器](https://galacean.com/#/gltf-viewer)预览效果
+4. 放入[glTF查看器](https://galacean.antgroup.com/#/gltf-viewer)预览效果
 
 
 
