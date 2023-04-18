@@ -96,17 +96,17 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
                  attribute vec3 NORMAL;
    
                  uniform float u_width;
-                 uniform mat4 u_MVPMat;
-                 uniform mat4 u_modelMat;
-                 uniform mat4 u_viewMat;
-                 uniform mat4 u_projMat;
-                 uniform mat4 u_normalMat;
+                 uniform mat4 renderer_MVPMat;
+                 uniform mat4 renderer_ModelMat;
+                 uniform mat4 camera_ViewMat;
+                 uniform mat4 camera_ProjMat;
+                 uniform mat4 renderer_NormalMat;
                  
                  void main() {
-                    vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
-                    vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
+                    vec4 mPosition = renderer_ModelMat * vec4(POSITION, 1.0);
+                    vec3 mNormal = normalize( mat3(renderer_NormalMat) * NORMAL );
                     mPosition.xyz += mNormal * u_width;
-                    gl_Position = u_projMat * u_viewMat * mPosition;
+                    gl_Position = camera_ProjMat * camera_ViewMat * mPosition;
                  }
                  `;
           const fragment = `
@@ -203,17 +203,17 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
                  attribute vec3 NORMAL;
    
                  uniform float u_width;
-                 uniform mat4 u_MVPMat;
-                 uniform mat4 u_modelMat;
-                 uniform mat4 u_viewMat;
-                 uniform mat4 u_projMat;
-                 uniform mat4 u_normalMat;
+                 uniform mat4 renderer_MVPMat;
+                 uniform mat4 renderer_ModelMat;
+                 uniform mat4 camera_ViewMat;
+                 uniform mat4 camera_ProjMat;
+                 uniform mat4 renderer_NormalMat;
                  
                  void main() {
-                    vec4 mPosition = u_modelMat * vec4(POSITION, 1.0);
-                    vec3 mNormal = normalize( mat3(u_normalMat) * NORMAL );
+                    vec4 mPosition = renderer_ModelMat * vec4(POSITION, 1.0);
+                    vec3 mNormal = normalize( mat3(renderer_NormalMat) * NORMAL );
                     mPosition.xyz += mNormal * u_width;
-                    gl_Position = u_projMat * u_viewMat * mPosition;
+                    gl_Position = camera_ProjMat * camera_ViewMat * mPosition;
                  }
                  `;
           const fragment = `

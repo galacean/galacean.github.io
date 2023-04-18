@@ -112,6 +112,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "repository": "git@github.com:JujieX/oasis-engine.github.io.git"
+  }
 }

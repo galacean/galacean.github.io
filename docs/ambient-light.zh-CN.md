@@ -38,7 +38,7 @@ engine.resourceManager
     scene.ambientLight = ambientLight;
 
     // 如果希望添加天空盒，也可以方便地从 ambientLight 中拿到
-    skyMaterial.textureCubeMap = ambientLight.specularTexture;
+    skyMaterial.texture = ambientLight.specularTexture;
     // 由于烘焙贴图的编码方式是 RGBM，因此需要进行相应的解码设置
     skyMaterial.textureDecodeRGBM = true;
   });

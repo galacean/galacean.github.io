@@ -49,7 +49,7 @@ const vs = `#define PI 3.14159265359
 attribute vec3 POSITION;
 attribute vec3 INDEX;
 attribute vec2 UV;
-uniform mat4 u_MVPMat;
+uniform mat4 renderer_MVPMat;
 uniform float progress;
 
 varying vec2 v_uv;
@@ -65,7 +65,7 @@ void main() {
   float p = clamp(progress-wait, 0., 2.0);
   position.z += sin(p * PI * 6.) * 3. * (maxDistance - distance * 0.5) / maxDistance * (2. - progress) * 0.5;
 
-  gl_Position = u_MVPMat * position;
+  gl_Position = renderer_MVPMat * position;
 }`;
 
 const ParticleMeshShader = Shader.create("test", vs, fs);

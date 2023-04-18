@@ -131,7 +131,7 @@ Oasis 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，�
 | [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
 | [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://oasisengine.cn/#/examples/latest/tiling-offset) 案例 |
 | [KHR_materials_clearcoat](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_clearcoat.ts) | 支持材质的透明清漆度拓展，可以参考 [Clearcoat](https://oasisengine.cn/#/examples/latest/pbr-clearcoat) 案例 |
-| [OASIS_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/OASIS_materials_remap.ts) | 支持编辑器材质映射 |
+| [GALACEAN_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/GALACEAN_materials_remap.ts) | 支持编辑器材质映射 |
 
 ## 插件拓展
 

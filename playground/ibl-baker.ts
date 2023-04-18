@@ -101,11 +101,11 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       attribute vec3 POSITION;
       attribute vec2 TEXCOORD_0;
   
-      uniform mat4 u_MVPMat;
+      uniform mat4 renderer_MVPMat;
       varying vec2 v_uv;
   
       void main(){
-        gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+        gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
         v_uv = TEXCOORD_0;
     }
     `,
