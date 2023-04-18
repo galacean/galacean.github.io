@@ -2,8 +2,8 @@
  * @title GLTF Basic
  * @category Basic
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Camera, GLTFResource, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { Camera, GLTFResource, WebGLEngine } from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -18,7 +18,9 @@ cameraEntity.addComponent(OrbitControl);
 engine.sceneManager.activeScene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+  )
   .then((gltf) => {
     rootEntity.addChild(gltf.defaultSceneRoot);
   });

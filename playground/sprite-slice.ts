@@ -20,8 +20,8 @@ import {
   Texture2D,
   UnlitMaterial,
   Vector4,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -40,7 +40,7 @@ camera.orthographicSize = 5;
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*0vm_SJVssKAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.
@@ -80,7 +80,8 @@ class TriangleScript extends Script {
   onUpdate(): void {
     const { modelMesh, targetSpriteRenderer } = this;
     // @ts-ignore
-    const { positions, vertexCount, triangles } = targetSpriteRenderer._renderData;
+    const { positions, vertexCount, triangles } =
+      targetSpriteRenderer._renderData;
     if (vertexCount > 0) {
       const length = triangles.length * 2;
       if (length <= 0) {
@@ -135,7 +136,7 @@ function addDataGUI(entity: Entity) {
       guiData.left = guiData.bottom = guiData.right = guiData.top = 0;
       sprite.border = border.set(0, 0, 0, 0);
       guiData.showTriangle = false;
-    }
+    },
   };
 
   gui
@@ -183,13 +184,25 @@ function addDataGUI(entity: Entity) {
     })
     .listen();
   gui
-    .add(guiData, "width", defaultWidth / 5, defaultWidth * 5, defaultWidth / 10)
+    .add(
+      guiData,
+      "width",
+      defaultWidth / 5,
+      defaultWidth * 5,
+      defaultWidth / 10
+    )
     .onChange((value: number) => {
       spriteRenderer.width = value;
     })
     .listen();
   gui
-    .add(guiData, "height", defaultHeight / 5, defaultHeight * 5, defaultHeight / 10)
+    .add(
+      guiData,
+      "height",
+      defaultHeight / 5,
+      defaultHeight * 5,
+      defaultHeight / 10
+    )
     .onChange((value: number) => {
       spriteRenderer.height = value;
     })

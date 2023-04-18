@@ -2,7 +2,15 @@
  * @title Sprite Atlas
  * @category 2D
  */
-import { AssetType, Camera, Sprite, SpriteAtlas, SpriteRenderer, Vector3, WebGLEngine } from "oasis-engine";
+import {
+  AssetType,
+  Camera,
+  Sprite,
+  SpriteAtlas,
+  SpriteRenderer,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -19,7 +27,7 @@ cameraEntity.addComponent(Camera).isOrthographic = true;
 engine.resourceManager
   .load<SpriteAtlas>({
     url: "https://gw.alipayobjects.com/os/bmw-prod/da0bccd4-020a-41d5-82e0-a04f4413d9a6.atlas",
-    type: AssetType.SpriteAtlas
+    type: AssetType.SpriteAtlas,
   })
   .then((atlas) => {
     const from = new Vector3();
@@ -78,7 +86,11 @@ engine.resourceManager
  * @param from  - Starting point of drawing
  * @param to - End point of drawing
  */
-function addGroupSpriteRenderer(sprite: Sprite, from: Vector3, to: Vector3): void {
+function addGroupSpriteRenderer(
+  sprite: Sprite,
+  from: Vector3,
+  to: Vector3
+): void {
   const { x: fromX, y: fromY } = from;
   const { x: toX, y: toY } = to;
   for (let i = fromX, n = toX; i <= n; i++) {

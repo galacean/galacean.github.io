@@ -2,7 +2,7 @@
  * @title Particle Sprite Sheet
  * @category Particle
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   Camera,
@@ -11,8 +11,8 @@ import {
   ParticleRendererBlendMode,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -44,7 +44,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 100,
-    sourceH: 95
+    sourceH: 95,
   },
   {
     x: 100,
@@ -54,7 +54,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 48,
-    sourceH: 46
+    sourceH: 46,
   },
   {
     x: 148,
@@ -64,7 +64,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 97,
-    sourceH: 90
+    sourceH: 90,
   },
   {
     x: 245,
@@ -74,7 +74,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 148,
-    sourceH: 128
+    sourceH: 128,
   },
   {
     x: 393,
@@ -84,7 +84,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 118,
-    sourceH: 249
+    sourceH: 249,
   },
   {
     x: 100,
@@ -94,7 +94,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 124,
-    sourceH: 94
+    sourceH: 94,
   },
   {
     x: 0,
@@ -104,7 +104,7 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 249,
-    sourceH: 185
+    sourceH: 185,
   },
   {
     x: 0,
@@ -114,14 +114,14 @@ const spriteSheet = [
     offX: 0,
     offY: 0,
     sourceW: 86,
-    sourceH: 83
-  }
+    sourceH: 83,
+  },
 ];
 
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*_oorR5SrpXcAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((resource) => {
     particles.maxCount = 400;

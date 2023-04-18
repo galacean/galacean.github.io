@@ -12,9 +12,9 @@ import {
   PrimitiveMesh,
   Script,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-import { FreeControl } from "@oasis-engine-toolkit/controls";
+  WebGLEngine,
+} from "@galacean/engine";
+import { FreeControl } from "@galacean/engine-toolkit-controls";
 const gui = new dat.GUI();
 
 //-- create engine object
@@ -71,7 +71,7 @@ cube2.addComponent(RotationScript);
 // observe renderer-cull
 const state = {
   cube1: "正常渲染",
-  cube2: "正常渲染"
+  cube2: "正常渲染",
 };
 
 class ObserverScript extends Script {

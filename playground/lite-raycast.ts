@@ -24,10 +24,10 @@ import {
   PBRMaterial,
   AmbientLight,
   AssetType,
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 class Raycast extends Script {
   camera: Camera;
@@ -143,7 +143,7 @@ boxRenderer.setMaterial(boxMtl);
 
 const boxCollider = boxEntity.addComponent(StaticCollider);
 const boxColliderShape = new BoxColliderShape();
-boxColliderShape.setSize(cubeSize, cubeSize, cubeSize);
+boxColliderShape.size.set(cubeSize, cubeSize, cubeSize);
 boxCollider.addShape(boxColliderShape);
 
 engine.resourceManager

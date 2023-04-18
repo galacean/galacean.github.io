@@ -2,7 +2,7 @@
  * @title Sprite Pivot
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -14,8 +14,8 @@ import {
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -33,7 +33,7 @@ cameraEntity.addComponent(OrbitControl);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*d3N9RYpcKncAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.
@@ -57,10 +57,17 @@ engine.run();
 /**
  * Add flip entity.
  */
-function addPivotEntity(entity: Entity, texture: Texture2D, posY: number): void {
+function addPivotEntity(
+  entity: Entity,
+  texture: Texture2D,
+  posY: number
+): void {
   rootEntity.addChild(entity);
   entity.transform.setPosition(0, posY, 0);
-  entity.getComponent(SpriteRenderer).sprite = new Sprite(entity.engine, texture);
+  entity.getComponent(SpriteRenderer).sprite = new Sprite(
+    entity.engine,
+    texture
+  );
 }
 
 /**
@@ -78,7 +85,7 @@ function addDataGUI(entity: Entity) {
       guiData.pivotY = 0.5;
       pivot.set(0.5, 0.5);
       sprite.pivot = pivot;
-    }
+    },
   };
 
   gui

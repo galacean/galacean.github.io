@@ -1,5 +1,5 @@
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { AmbientLight, AssetType, BackgroundMode, Camera, Color, DirectLight, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from '@galacean/engine-toolkit-controls';
+import { AmbientLight, AssetType, BackgroundMode, Camera, Color, DirectLight, GLTFResource, Vector3, WebGLEngine } from "@galacean/engine";
 import React, { useEffect } from "react";
 
 export default function PBRHelmet() {

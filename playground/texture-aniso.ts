@@ -2,7 +2,7 @@
  * @title Anisotropic
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -12,8 +12,8 @@ import {
   RenderFace,
   Texture2D,
   UnlitMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -43,7 +43,7 @@ planeRenderer.setMaterial(material);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_CtuR7LW4C0AAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     material.baseTexture = texture;

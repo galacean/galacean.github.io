@@ -67,8 +67,8 @@ method to detect the collider hit by the raycast. code show as below:
 
 ```typescript
 // 加载 Raycast 模块
-import {WebGLEngine, HitResult, Ray} from 'oasis-engine';
-import {LitePhysics} from "@oasis-engine/physics-lite";
+import {WebGLEngine, HitResult, Ray} from "@galacean/engine";
+import {LitePhysics} from "@galacean/engine-physics-lite";
 
 const engine = new WebGLEngine("canvas");
 engine.physicsManager.initialize(LitePhysics);
@@ -90,5 +90,5 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 It should be pointed out that if you want to enable ray casting on an Entity, the Entity must have **Collider** ,
 otherwise it will not trigger.
 
-At the same time, in Oasis, InputManager is also provided, which encapsulates the input source and provides more
+At the same time, in Galacean, InputManager is also provided, which encapsulates the input source and provides more
 easy-to-use logic. The usage method can be [Reference](${docs}input) .

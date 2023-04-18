@@ -1,6 +1,6 @@
-# Oasis Engine Site
+# Galacean Engine Site
 
-The documentation source of [Oasis Engine](https://github.com/oasis-engine/engine).
+The documentation source of [Galacean Engine](https://github.com/galacean/engine).
 
 ## Development
 #### Develop site
@@ -34,5 +34,6 @@ $ yarn link ../engine/packages/*
 ```
 * windows
 ```bash
-$ yarn link ..\engine\packages\oasis-engine
+$ yarn link ..\engine\packages\galacean
 ```
+

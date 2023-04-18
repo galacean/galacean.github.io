@@ -1,11 +1,11 @@
+import { styled } from "@galacean/editor-ui";
 import { Element } from 'react-scroll';
 import { Kinds } from '../constants';
 import type { IItem, IParameter, ISignature, IType } from '../util/apiUtil';
 import { PkgChildDetail } from '../util/apiUtil';
-import Source from './Source';
 import Comment from './Comment';
-import { styled } from "@oasis-engine/editor-design-system";
 import { StyledKind, StyledKindIcon } from './KindModule';
+import Source from './Source';
 
 const StyledDescription = styled("div", {
   margin: "$2 0"

@@ -7,7 +7,7 @@ label: Editor-Introduction
 
 ## 简介
 
-[Oasis Editor](https://antg.antgroup.com/) 是一个基于移动优先的高性能开源互动引擎 [Oasis Engine](https://github.com/oasis-engine/engine) 的云端 Web 互动创作平台。它可以帮助你快速的创建、编辑和导出一个互动项目。你可以通过 Oasis Editor 快速上传互动资产，创建和编辑材质、调整灯光、创建实体，从而创造出复杂的场景。你可以实现自己的创意想法，将自己的创意变成一个互动的现实。总之，使用 Oasis Editor，你可以在开发过程中节省大量时间和精力，从而创造出更具创意性和交互性的互动作品。
+[Galacean Editor](https://antg.antgroup.com/editor) 是一个基于移动优先的高性能开源互动引擎 [Galacean Engine](https://github.com/galacean/engine) 的云端 Web 互动创作平台。它可以帮助你快速的创建、编辑和导出一个互动项目。你可以通过 Galacean Editor 快速上传互动资产，创建和编辑材质、调整灯光、创建实体，从而创造出复杂的场景。你可以实现自己的创意想法，将自己的创意变成一个互动的现实。总之，使用 Galacean Editor，你可以在开发过程中节省大量时间和精力，从而创造出更具创意性和交互性的互动作品。
 
 ## 认识编辑器
 
@@ -42,13 +42,13 @@ label: Editor-Introduction
 
 ### 创建立方体
 
-首先，我们在 **层级面板** 中创建一个新的实体（[什么是实体？](https://oasisengine.cn/#/docs/latest/cn/entity)）。
+首先，我们在 **层级面板** 中创建一个新的实体（[什么是实体？](https://galacean.antgroup.com/#/docs/latest/cn/entity)）。
 
 <img width="400px" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*Su2jRIQHYjgAAAAAAAAAAAAADqiTAQ/original">
 
-我们用鼠标左键选中新建的实体节点，此时右侧的检查器面板会显示出当前实体的一些可配置属性。因为我们的实体现在没有绑定任何组件（[什么是组件？](https://oasisengine.cn/#/docs/latest/cn/entity)），所以我们暂时只能调整实体的坐标信息这类的基础属性。
+我们用鼠标左键选中新建的实体节点，此时右侧的检查器面板会显示出当前实体的一些可配置属性。因为我们的实体现在没有绑定任何组件（[什么是组件？](https://galacean.antgroup.com/#/docs/latest/cn/entity)），所以我们暂时只能调整实体的坐标信息这类的基础属性。
 
-接下来，我们点击检查器面板中的 **Add Component** 按钮唤起组件选单，然后选择添加 **Mesh Renderer** 组件（什么是 [Mesh Renderer?](https://oasisengine.cn/#/docs/latest/cn/mesh-renderer)）。
+接下来，我们点击检查器面板中的 **Add Component** 按钮唤起组件选单，然后选择添加 **Mesh Renderer** 组件（什么是 [Mesh Renderer?](https://galacean.antgroup.com/#/docs/latest/cn/mesh-renderer)）。
 
 <img width="400px" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*sWuVQorDIgoAAAAAAAAAAAAADqiTAQ/original">
 
@@ -74,14 +74,14 @@ label: Editor-Introduction
 
 ![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*ni3KQ7jGK-0AAAAAAAAAAAAADqiTAQ/original)
 
-只不过，立方体现在看上去有点暗，需要把场景中的 [灯光](https://oasisengine.cn/#/docs/latest/cn/light) 调亮一点。我们在节点树中选择 DirectLight 节点，然后在检查器中调高 Intensity（光强度）属性。
+只不过，立方体现在看上去有点暗，需要把场景中的 [灯光](https://galacean.antgroup.com/#/docs/latest/cn/light) 调亮一点。我们在节点树中选择 DirectLight 节点，然后在检查器中调高 Intensity（光强度）属性。
 
 现在看上去就比较正常了。
 ![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*n151R6vZ59oAAAAAAAAAAAAADqiTAQ/original)
 
 ## 添加脚本
 
-接下来，我们为这个节点再绑定一个 Script 组件（[什么是 Script 组件?](https://oasisengine.cn/#/docs/latest/cn/script)）。
+接下来，我们为这个节点再绑定一个 Script 组件（[什么是 Script 组件?](https://galacean.antgroup.com/#/docs/latest/cn/script)）。
 
 1. 我们继续使用上述方式在检查器面板中添加 Script 组件
 2. 接下来，我们在资产面板中 右键 → Create → Script  创建一个 Script 资产
@@ -98,7 +98,7 @@ label: Editor-Introduction
 
 ```ts
 // Script.ts
-import { Script } from 'oasis-engine';
+import { Script } from '@galacean/engine';
 
 export default class extends Script {
   onUpdate(deltaTime: number) {

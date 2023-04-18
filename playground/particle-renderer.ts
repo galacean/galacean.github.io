@@ -2,8 +2,16 @@
  * @title Particle Renderer
  * @category Particle
  */
-// import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { AssetType, Camera, Color, ParticleRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+// import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  AssetType,
+  Camera,
+  Color,
+  ParticleRenderer,
+  Texture2D,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -26,7 +34,7 @@ let particles: ParticleRenderer = particleEntity.addComponent(ParticleRenderer);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*kxloQYq2YDEAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((resource) => {
     particles.maxCount = 100;

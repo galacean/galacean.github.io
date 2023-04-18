@@ -2,9 +2,15 @@
  * @title Blend Mode
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
-import { Camera, GLTFResource, PBRMaterial, Vector3, WebGLEngine } from "oasis-engine";
+import {
+  Camera,
+  GLTFResource,
+  PBRMaterial,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -23,7 +29,9 @@ cameraEntity.addComponent(OrbitControl);
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/d099b30b-59a3-42e4-99eb-b158afa8e65d.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/d099b30b-59a3-42e4-99eb-b158afa8e65d.glb"
+  )
   .then((asset) => {
     const { defaultSceneRoot, materials } = asset;
     rootEntity.addChild(defaultSceneRoot);
@@ -31,7 +39,7 @@ engine.resourceManager
     const state = {
       alphaCutoff: 0,
       isTransparent: false,
-      opacity: 0
+      opacity: 0,
     };
 
     // Do not debug first material

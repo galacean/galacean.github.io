@@ -5,7 +5,7 @@ type: Core
 label: Core
 ---
 
-`Engine` plays the role of the master controller in the Oasis engine, which mainly includes three functions: **canvas**, **rendering control**, and **engine subsystem management**:
+`Engine` plays the role of the master controller in the Galacean Engine, which mainly includes three functions: **canvas**, **rendering control**, and **engine subsystem management**:
 
 - **Canvas**:Operations related to the main canvas, such as changing the width and height of the canvas.
 - **Rendering control**: Control rendering execution/pause/continue, vertical synchronization and other functions.
@@ -16,7 +16,7 @@ label: Core
 
 To initialize the Engine, you need to provide [Canvas](${docs}canvas)(**Canvas**) and the hardware rendering layer (**HardwareRenderer**).
 
-The Oasis engine encapsulates the hardware rendering layer and manages the rendering capabilities of different platforms in a unified manner. You can also pass in the supported configurations to control the rendering capabilities of different platforms through the constructor of [HardwareRenderer](${api}core/IHardwareRenderer).
+The Galacean Engine encapsulates the hardware rendering layer and manages the rendering capabilities of different platforms in a unified manner. You can also pass in the supported configurations to control the rendering capabilities of different platforms through the constructor of [HardwareRenderer](${api}core/IHardwareRenderer).
 
 ```typescript
 const canvas = document.getElementById("canvas");
@@ -25,7 +25,7 @@ const webGLRenderer = new WebGLRenderer();
 const engine = new Engine(webCanvas, webGLRenderer);
 ```
 
-In order to facilitate users to directly create a web-side engine, Oasis provides [WebGLEngine](${api}rhi-webgl/WebGLEngine):
+In order to facilitate users to directly create a web-side engine, Galacean provides [WebGLEngine](${api}rhi-webgl/WebGLEngine):
 
 ```typescript
 const engine = new WebGLEngine("canvas");

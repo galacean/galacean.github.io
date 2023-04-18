@@ -16,8 +16,8 @@ import {
   SystemInfo,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const gui = new dat.GUI();
 

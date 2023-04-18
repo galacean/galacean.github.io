@@ -3,11 +3,25 @@
  * @category Camera
  */
 
-import { SpineAnimation } from "@oasis-engine/spine";
+import { SpineAnimation } from "@galacean/engine-spine";
 import {
-  AssetType, BackgroundMode, BlinnPhongMaterial, Camera, Color, DirectLight, Entity, Layer, MeshRenderer, PrimitiveMesh, Script, SkyBoxMaterial, TextureCube, Vector3, WebGLEngine
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  AssetType,
+  BackgroundMode,
+  BlinnPhongMaterial,
+  Camera,
+  Color,
+  DirectLight,
+  Entity,
+  Layer,
+  MeshRenderer,
+  PrimitiveMesh,
+  Script,
+  SkyBoxMaterial,
+  TextureCube,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 /**
  * Script for rotate.
@@ -69,9 +83,9 @@ engine.resourceManager
     urls: [
       "https://gw.alipayobjects.com/os/OasisHub/a66ef194-6bc8-4325-9a59-6ea9097225b1/1620888427489.json",
       "https://gw.alipayobjects.com/os/OasisHub/a1e3e67b-a783-4832-ba1b-37a95bd55291/1620888427490.atlas",
-      "https://gw.alipayobjects.com/zos/OasisHub/a3ca8f62-1068-43a5-bb64-5c9a0f823dde/1620888427490.png"
+      "https://gw.alipayobjects.com/zos/OasisHub/a3ca8f62-1068-43a5-bb64-5c9a0f823dde/1620888427490.png",
     ],
-    type: "spine"
+    type: "spine",
   })
   .then((spineEntity: Entity) => {
     spineEntity.layer = Layer.Layer1;
@@ -89,9 +103,9 @@ engine.resourceManager
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
       "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
-      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
+      "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ",
     ],
-    type: AssetType.TextureCube
+    type: AssetType.TextureCube,
   })
   .then((cubeMap1) => {
     // Add skybox background

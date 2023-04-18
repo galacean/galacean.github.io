@@ -17,7 +17,7 @@ label: Graphics/2D
 3、创建 [SpriteRenderer](${api}core/SpriteRenderer) 组件显示图片
 
 ```typescript
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 

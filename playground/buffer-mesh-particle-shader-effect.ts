@@ -18,8 +18,8 @@ import {
   Shader,
   BaseMaterial,
   Script,
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const fs = `uniform float progress;
 uniform sampler2D texture1;
@@ -68,10 +68,9 @@ void main() {
   gl_Position = u_MVPMat * position;
 }`;
 
-const ParticleMeshShader = Shader.create('test', vs, fs);
+const ParticleMeshShader = Shader.create("test", vs, fs);
 
 class ParticleMeshMaterial extends BaseMaterial {
-
   constructor(engine: Engine) {
     super(engine, ParticleMeshShader);
   }
@@ -83,27 +82,27 @@ class ParticleMeshMaterial extends BaseMaterial {
   }
 
   get texture1(): Texture2D {
-    return <Texture2D>this.shaderData.getTexture('texture1');
+    return <Texture2D>this.shaderData.getTexture("texture1");
   }
 
   set texture1(value: Texture2D) {
-    this.shaderData.setTexture('texture1', value);
+    this.shaderData.setTexture("texture1", value);
   }
 
   get texture2(): Texture2D {
-    return <Texture2D>this.shaderData.getTexture('texture2');
+    return <Texture2D>this.shaderData.getTexture("texture2");
   }
 
   set texture2(value: Texture2D) {
-    this.shaderData.setTexture('texture2', value);
+    this.shaderData.setTexture("texture2", value);
   }
 
   get progress(): number {
-    return <number>this.shaderData.getFloat('progress');
+    return <number>this.shaderData.getFloat("progress");
   }
 
   set progress(value: number) {
-    this.shaderData.setFloat('progress', value);
+    this.shaderData.setFloat("progress", value);
   }
 }
 
@@ -111,18 +110,27 @@ class AnimationComponent extends Script {
   time = 0;
   mtl: ParticleMeshMaterial | undefined;
   onAwake() {
-    this.mtl = this.entity.getComponent(MeshRenderer).getMaterial() as ParticleMeshMaterial;
+    this.mtl = this.entity
+      .getComponent(MeshRenderer)
+      .getMaterial() as ParticleMeshMaterial;
   }
   onUpdate(time: number) {
     this.time += time;
     if (this.mtl) {
-      this.mtl.progress = this.time / 5000 % 2;
+      this.mtl.progress = (this.time / 5000) % 2;
     }
   }
 }
 
 // segmentX and segmentY handle how many particles we create
-function createPlaneParticleMesh(engine: WebGLEngine, width: number, height: number, segmentX: number, segmentY: number, isIn: boolean) {
+function createPlaneParticleMesh(
+  engine: WebGLEngine,
+  width: number,
+  height: number,
+  segmentX: number,
+  segmentY: number,
+  isIn: boolean
+) {
   const triangleCount = segmentX * segmentY * 2; // we create segmentX * segmentY rectangles, each rectangle has 2 triangles
   const vertexCount = triangleCount * 3;
 
@@ -198,15 +206,24 @@ function createPlaneParticleMesh(engine: WebGLEngine, width: number, height: num
 
   const mesh = new BufferMesh(engine);
   mesh.setVertexBufferBindings([
-    new VertexBufferBinding(new Buffer(engine, BufferBindFlag.VertexBuffer, positionBuffer), 3 * Float32Array.BYTES_PER_ELEMENT),
-    new VertexBufferBinding(new Buffer(engine, BufferBindFlag.VertexBuffer, uvBuffer), 2 * Float32Array.BYTES_PER_ELEMENT),
-    new VertexBufferBinding(new Buffer(engine, BufferBindFlag.VertexBuffer, indexBuffer), 3 * Float32Array.BYTES_PER_ELEMENT),
+    new VertexBufferBinding(
+      new Buffer(engine, BufferBindFlag.VertexBuffer, positionBuffer),
+      3 * Float32Array.BYTES_PER_ELEMENT
+    ),
+    new VertexBufferBinding(
+      new Buffer(engine, BufferBindFlag.VertexBuffer, uvBuffer),
+      2 * Float32Array.BYTES_PER_ELEMENT
+    ),
+    new VertexBufferBinding(
+      new Buffer(engine, BufferBindFlag.VertexBuffer, indexBuffer),
+      3 * Float32Array.BYTES_PER_ELEMENT
+    ),
   ]);
 
   mesh.setVertexElements([
     new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0),
     new VertexElement("UV", 0, VertexElementFormat.Vector2, 1),
-    new VertexElement("INDEX", 0, VertexElementFormat.Vector3, 2)
+    new VertexElement("INDEX", 0, VertexElementFormat.Vector3, 2),
   ]);
 
   mesh.addSubMesh(0, vertexCount);
@@ -223,9 +240,12 @@ cameraEntity.addComponent(Camera);
 cameraEntity.transform.position.set(0, 0, 50);
 cameraEntity.addComponent(OrbitControl);
 
-engine.resourceManager.load([
-  "https://gw.alipayobjects.com/zos/OasisHub/440001901/3736/spring.jpeg",
-  "https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg"]).then(assets => {
+engine.resourceManager
+  .load([
+    "https://gw.alipayobjects.com/zos/OasisHub/440001901/3736/spring.jpeg",
+    "https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg",
+  ])
+  .then((assets) => {
     const entity = rootEntity.createChild("plane");
     const renderer = entity.addComponent(MeshRenderer);
     const mesh = createPlaneParticleMesh(engine, 20, 20, 80, 80, true);

@@ -22,7 +22,7 @@ ambientLight.diffuseIntensity = 0.5;
 
 一般 PBR 工作流不会使用纯色模式，而是使用一张 HDR 贴图用作环境反射，我们在这里称之为 [IBL](https://developer.nvidia.cn/gpugems/gpugems/part-iii-materials/chapter-19-image-based-lighting) 模式。
 
-Oasis 支持通过[编辑器](https://antg.antgroup.com)或者 [glTF Viewer](https://oasisengine.cn/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
+Galacean 支持通过[编辑器](https://galacean.antgroup.com/editor)或者 [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 

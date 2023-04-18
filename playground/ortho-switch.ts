@@ -4,10 +4,16 @@
  */
 import { GUI } from "dat.gui";
 import {
-  BlinnPhongMaterial, Camera, Color, DirectLight, MeshRenderer,
-  PrimitiveMesh, Vector3, WebGLEngine
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  BlinnPhongMaterial,
+  Camera,
+  Color,
+  DirectLight,
+  MeshRenderer,
+  PrimitiveMesh,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();

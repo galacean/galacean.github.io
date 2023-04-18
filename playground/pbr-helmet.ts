@@ -2,7 +2,7 @@
  * @title PBR Helmet
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
   AssetType,
@@ -13,8 +13,8 @@ import {
   Logger,
   PrimitiveMesh,
   SkyBoxMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 Logger.enable();
 //-- create engine object
 const engine = new WebGLEngine("canvas");
@@ -47,7 +47,9 @@ sky.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
 
 Promise.all([
   engine.resourceManager
-    .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf")
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf"
+    )
     .then((gltf) => {
       const entity = rootEntity.createChild("");
       entity.addChild(gltf.defaultSceneRoot);
@@ -55,13 +57,13 @@ Promise.all([
   engine.resourceManager
     .load<AmbientLight>({
       type: AssetType.Env,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
+      url: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin",
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;
       skyMaterial.textureCubeMap = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
-    })
+    }),
 ]).then(() => {
   engine.run();
 });

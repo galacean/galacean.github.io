@@ -11,7 +11,7 @@ As [glTF Official Website](https://www.khronos.org/gltf/) described, **glTF**（
 
 The products of glTF are generally divided into (.gltf + .bin + png) or (.glb), the former is suitable for scenes with large pictures, so the pictures and models are separated, and models and textures can be loaded asynchronously; the latter is suitable for models For scenarios with large files, all data will be stored in binary, and the model needs to be parsed after all data is parsed.
 
-glTF is currently the preferred 3D scene transmission format recommended by Oasis. Oasis has made good support for the core functions and plugins of glTF.
+glTF is currently the preferred 3D scene transmission format recommended by Galacean. Galacean has made good support for the core functions and plugins of glTF.
 
 <playground src="gltf-loader.ts"></playground>
 
@@ -20,7 +20,7 @@ glTF is currently the preferred 3D scene transmission format recommended by Oasi
 First, we can load a glTF file by [ResourceManager](${api}core/ResourceManager#load), as follows:
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 ```
@@ -28,7 +28,7 @@ const gltfResource = await this.engine.resourceManager.load<GLTFResource>("https
 After loading, we got one [GLTFResource](${api}loader/GLTFResource), there are many analytical products inside, in general, we only need to get the parsing [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) add to the engine, as follows:
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 // The engine initialization code is omitted here ...
 const rootEntity = engine.sceneManager.activeScene.createRootEntity();
@@ -117,14 +117,14 @@ if (variants) {
 
 ### Plugins support
 
-Oasis currently supports the following glTF plugins, if the corresponding plugin is included in the glTF file, the corresponding capability is automatically loaded:
+Galacean currently supports the following glTF plugins, if the corresponding plugin is included in the glTF file, the corresponding capability is automatically loaded:
 
 | Plugin | Feature |
 | :-- | :-- |
-| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | Support DRACO compression model to save GPU memory |
-| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | Support multi-light combination, it resolves the light source of the engine, see [Light tutorial](${docs}light) |
-| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | Support PBR [specular-glossiness workflow](${api}core/PBRSpecularMaterial) |
-| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | Support [Unlit Material](https://oasisengine.cn/0.4/docs/artist-unlit) |
-| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | Allow the renderer to exist multiple materials, then make material switching via [setMaterial](${api}core/Renderer#setMaterial) API |
-| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | Support [Vertical data compression](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes) to save memory in CPU and GPU. for example, if the vertex data is generally floating point, this plugin can be saved as integer |
-| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | Support for texture zoom and displacement, you can refer to [TilingOffset](https://oasisengine.cn/0.4/examples#tiling-offset) in playground |
+| [KHR_draco_mesh_compression](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | Support DRACO compression model to save GPU memory |
+| [KHR_lights_punctual](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | Support multi-light combination, it resolves the light source of the engine, see [Light tutorial](${docs}light) |
+| [KHR_materials_pbrSpecularGlossiness](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | Support PBR [specular-glossiness workflow](${api}core/PBRSpecularMaterial) |
+| [KHR_materials_unlit](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | Support [Unlit Material](https://galacean.antgroup.com/#/docs/latest/artist-unlit) |
+| [KHR_materials_variants](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | Allow the renderer to exist multiple materials, then make material switching via [setMaterial](${api}core/Renderer#setMaterial) API |
+| [KHR_mesh_quantization](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | Support [Vertical data compression](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes) to save memory in CPU and GPU. for example, if the vertex data is generally floating point, this plugin can be saved as integer |
+| [KHR_texture_transform](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | Support for texture zoom and displacement, you can refer to [TilingOffset](https://galacean.antgroup.com/#/examples/latest/tiling-offsett) in playground |

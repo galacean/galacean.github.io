@@ -3,8 +3,8 @@
  * @category Camera
  */
 import * as dat from "dat.gui";
-import * as o3 from "oasis-engine";
-import { DirectLight, Logger } from "oasis-engine";
+import * as o3 from "@galacean/engine";
+import { DirectLight, Logger } from "@galacean/engine";
 
 Logger.enable();
 const engine = new o3.WebGLEngine("canvas");
@@ -41,16 +41,24 @@ function addGUI() {
     EveryThing: o3.Layer.Everything,
     Layer1: o3.Layer.Layer1,
     Layer2: o3.Layer.Layer2,
-    Layer3: o3.Layer.Layer3
+    Layer3: o3.Layer.Layer3,
   };
-  const cameraController = cameraFolder.add({ cullingMask: "EveryThing" }, "cullingMask", Object.keys(constMap));
+  const cameraController = cameraFolder.add(
+    { cullingMask: "EveryThing" },
+    "cullingMask",
+    Object.keys(constMap)
+  );
   cameraController.onChange((v) => {
     camera.cullingMask = constMap[v];
   });
 
   const boxFolder = gui.addFolder("box layer");
   boxFolder.open();
-  const boxController = boxFolder.add({ layer: "EveryThing" }, "layer", Object.keys(constMap));
+  const boxController = boxFolder.add(
+    { layer: "EveryThing" },
+    "layer",
+    Object.keys(constMap)
+  );
   boxController.onChange((v) => {
     renderer.entity.layer = constMap[v];
   });

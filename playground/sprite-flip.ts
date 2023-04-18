@@ -2,8 +2,16 @@
  * @title Sprite Flip
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { AssetType, Camera, Entity, Sprite, SpriteRenderer, Texture2D, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  AssetType,
+  Camera,
+  Entity,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object.
 const engine = new WebGLEngine("canvas");
@@ -21,7 +29,7 @@ cameraEntity.addComponent(OrbitControl);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*KjnzTpE8LdAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.
@@ -44,7 +52,12 @@ engine.run();
 /**
  * Add flip entity.
  */
-function addFlipEntity(entity: Entity, posX: number, flipX: boolean, flipY: boolean): void {
+function addFlipEntity(
+  entity: Entity,
+  posX: number,
+  flipX: boolean,
+  flipY: boolean
+): void {
   rootEntity.addChild(entity);
   entity.transform.setPosition(posX, 0, 0);
   const flipRenderer = entity.getComponent(SpriteRenderer);

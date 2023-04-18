@@ -11,8 +11,8 @@ import {
   MeshRenderer,
   PrimitiveMesh,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Init Engine
 const engine = new WebGLEngine("canvas");

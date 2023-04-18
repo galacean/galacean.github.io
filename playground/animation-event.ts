@@ -2,7 +2,7 @@
  * @title Animation Event
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AnimationEvent,
@@ -16,7 +16,7 @@ import {
   TextRenderer,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 Logger.enable();
@@ -40,9 +40,9 @@ lightNode.transform.rotate(new Vector3(0, 90, 0));
 // initText
 const textEntity = rootEntity.createChild("text");
 const textRenderer = textEntity.addComponent(TextRenderer);
-textEntity.transform.setPosition(0, 2, 0)
-textRenderer.fontSize = 12
-textRenderer.text = ""
+textEntity.transform.setPosition(0, 2, 0);
+textRenderer.fontSize = 12;
+textRenderer.text = "";
 
 engine.resourceManager
   .load<GLTFResource>(
@@ -69,37 +69,37 @@ engine.resourceManager
     defaultSceneRoot.addComponent(
       class extends Script {
         event0(): void {
-          textRenderer.text = "event0 called"
+          textRenderer.text = "event0 called";
         }
 
         event1(): void {
-          textRenderer.text = "event1 called"
+          textRenderer.text = "event1 called";
         }
       }
     );
 
     animator.play("walk", 0);
 
-
     initDatGUI(animator, animations);
   });
 
-  engine.run();
+engine.run();
 
-  const initDatGUI = (animator, animations) => {
-    const animationNames = animations.filter((clip) => !clip.name.includes("pose")).map((clip) => clip.name);
-    const debugInfo = {
-      animation: animationNames[4],
-      speed: 1
-    };
-  
-    gui.add(debugInfo, "animation", animationNames).onChange((v) => {
-      textRenderer.text = ""
-      animator.play(v);
-    });
-  
-    gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
-      animator.speed = v;
-    });
-  }
-  
+const initDatGUI = (animator, animations) => {
+  const animationNames = animations
+    .filter((clip) => !clip.name.includes("pose"))
+    .map((clip) => clip.name);
+  const debugInfo = {
+    animation: animationNames[4],
+    speed: 1,
+  };
+
+  gui.add(debugInfo, "animation", animationNames).onChange((v) => {
+    textRenderer.text = "";
+    animator.play(v);
+  });
+
+  gui.add(debugInfo, "speed", -1, 1).onChange((v) => {
+    animator.speed = v;
+  });
+};

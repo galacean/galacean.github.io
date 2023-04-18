@@ -25,7 +25,7 @@ import {
   Transform,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
+} from "@galacean/engine";
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -63,7 +63,6 @@ const spotLight2 = spotLightEntity2.addComponent(SpotLight);
 spotLight2.angle = Math.PI / 60;
 spotLightEntity2.transform.setPosition(0, 8, 0);
 spotLightEntity2.transform.setRotation(-60, 0, 0);
-
 
 engine.resourceManager
   .load<GLTFResource>(

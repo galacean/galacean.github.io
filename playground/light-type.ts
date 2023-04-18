@@ -2,7 +2,7 @@
  * @title Light Type
  * @category Light
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   BlinnPhongMaterial,
@@ -15,8 +15,8 @@ import {
   SpotLight,
   UnlitMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -71,28 +71,30 @@ const debugInfo = {
   penumbra: 15,
   x: 20,
   y: 20,
-  z: 0
+  z: 0,
 };
 
-gui.add(debugInfo, "type", ["DirectionalLight", "PointLight", "SpotLight"]).onChange((v) => {
-  light.enabled = false;
-  spotFolder.closed = true;
-  switch (v) {
-    case "SpotLight":
-      light = spotLight;
-      light.enabled = true;
-      spotFolder.closed = false;
-      break;
-    case "DirectionalLight":
-      light = directionalLight;
-      light.enabled = true;
-      break;
-    case "PointLight":
-      light = pointLight;
-      light.enabled = true;
-      break;
-  }
-});
+gui
+  .add(debugInfo, "type", ["DirectionalLight", "PointLight", "SpotLight"])
+  .onChange((v) => {
+    light.enabled = false;
+    spotFolder.closed = true;
+    switch (v) {
+      case "SpotLight":
+        light = spotLight;
+        light.enabled = true;
+        spotFolder.closed = false;
+        break;
+      case "DirectionalLight":
+        light = directionalLight;
+        light.enabled = true;
+        break;
+      case "PointLight":
+        light = pointLight;
+        light.enabled = true;
+        break;
+    }
+  });
 gui.add(light, "distance", 0, 100, 1);
 
 const folder = gui.addFolder("位置");

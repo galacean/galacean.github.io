@@ -18,8 +18,8 @@ import {
   TextureWrapMode,
   Vector2,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -36,14 +36,17 @@ cameraEntity.addComponent(Camera).isOrthographic = true;
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*L2GNRLWn9EAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.
     const texSize = new Vector2(texture.width, texture.height);
     const spriteEntity = rootEntity.createChild("spriteBlur");
 
-    spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture);
+    spriteEntity.addComponent(SpriteRenderer).sprite = new Sprite(
+      engine,
+      texture
+    );
     // The blur algorithm will sample the edges of the texture.
     // Set the clamp warp mode to avoid mis-sampling caused by repeate warp mode.
     texture.wrapModeU = texture.wrapModeV = TextureWrapMode.Clamp;
@@ -60,7 +63,12 @@ engine.resourceManager
 
 engine.run();
 
-function addCustomMaterialSpriteEntity(entity: Entity, posX: number, texSize: Vector2, blurSize: number): void {
+function addCustomMaterialSpriteEntity(
+  entity: Entity,
+  posX: number,
+  texSize: Vector2,
+  blurSize: number
+): void {
   rootEntity.addChild(entity);
   entity.transform.setPosition(posX, 0, 0);
   // Create material

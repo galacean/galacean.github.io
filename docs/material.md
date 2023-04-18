@@ -28,7 +28,7 @@ The following parameters can be directly used in [UnlitMaterial](${api}core/Unli
 
 ## How to use
 
-Users can export [glTF file](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md) by some software such as Unity, 3ds Max, C4D, Blender, etc. It contains resources such as scenes, entities, textures, animations, materials, etc. Oasis supports the use of [Resource Manager](${docs}resource-manager) to load and parse this glTF file. After parsing, the model has been automatically assigned the corresponding material. We can also get the material of the model and perform some post-processing, such as changing the color.
+Users can export [glTF file](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md) by some software such as Unity, 3ds Max, C4D, Blender, etc. It contains resources such as scenes, entities, textures, animations, materials, etc. Galacean supports the use of [Resource Manager](${docs}resource-manager) to load and parse this glTF file. After parsing, the model has been automatically assigned the corresponding material. We can also get the material of the model and perform some post-processing, such as changing the color.
 
 ```typescript
 // Get renderer

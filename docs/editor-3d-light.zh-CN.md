@@ -63,7 +63,7 @@ label: Editor-Feature/Rendering-3d
 
 ## IBL
 
-环境贴图使用 HDR 贴图作为环境反射，是 PBR 材质的重要组成部分。Oasis 支持通过[编辑器](https://antg.antgroup.com)或者[glTF Viewer](https://oasisengine.cn/#/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
+环境贴图使用 HDR 贴图作为环境反射，是 PBR 材质的重要组成部分。Galacean 支持通过[编辑器](https://galacean.antgroup.com/editor)或者[glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
 
 用户只需要从网上选择满意的 [HDRI 贴图](https://polyhaven.com/hdris)，然后上传到编辑器中，即可绑定环境贴图，其中的 IBL 离线烘焙、漫反射球谐烘焙等过程都会自动处理，就算您是零基础的用户，也能轻易上手。
 

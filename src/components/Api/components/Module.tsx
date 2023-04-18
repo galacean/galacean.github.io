@@ -2,7 +2,7 @@ import { PkgChildDetail } from '../util/apiUtil';
 import Item from './Item';
 import Source from './Source';
 import Comment from './Comment';
-import { styled } from "@oasis-engine/editor-design-system";
+import { styled } from "@galacean/editor-ui";
 import { StyledKind, StyledKindIcon } from './KindModule';
 
 const StyledTitle = styled("h2", {

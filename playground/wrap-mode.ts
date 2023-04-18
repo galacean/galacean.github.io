@@ -2,7 +2,7 @@
  * @title Wrap Mode
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -14,8 +14,8 @@ import {
   TextureFilterMode,
   TextureWrapMode,
   UnlitMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -47,7 +47,7 @@ planeRenderer.setMaterial(material);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rgNGR4Vb7lQAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     material.baseTexture = texture;
@@ -59,10 +59,10 @@ function addGUI(texture: Texture2D) {
   const wrapModeMap: Record<TextureFilterMode, string> = {
     [TextureWrapMode.Clamp]: "Clamp",
     [TextureWrapMode.Repeat]: "Repeat",
-    [TextureWrapMode.Mirror]: "Mirror"
+    [TextureWrapMode.Mirror]: "Mirror",
   };
   const state = {
-    wrapMode: wrapModeMap[texture.wrapModeU]
+    wrapMode: wrapModeMap[texture.wrapModeU],
   };
   gui.add(state, "wrapMode", Object.values(wrapModeMap)).onChange((v) => {
     for (let key in wrapModeMap) {

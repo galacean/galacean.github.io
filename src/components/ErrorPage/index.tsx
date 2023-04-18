@@ -1,8 +1,7 @@
+import { Button, Flex } from '@galacean/editor-ui';
 import React from 'react';
 import { useIntl } from 'react-intl';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@oasis-engine/editor-components';
-import { Flex } from '@oasis-engine/editor-components';
 
 const ErrorPage: React.FC = () => {
   const navigate = useNavigate();

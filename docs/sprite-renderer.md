@@ -17,7 +17,7 @@ label: Graphics/2D
 3、Create [SpriteRenderer](${api}core/SpriteRenderer) to display image
 
 ```typescript
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 
