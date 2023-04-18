@@ -325,7 +325,7 @@ class Oasis {
           const urlNew = URL.createObjectURL(blob);
           this.engine.resourceManager
             .load<GLTFResource>({
-              type: AssetType.Prefab,
+              type: AssetType.GLTF,
               url: `${urlNew}#.gltf`
             })
             .then((asset) => {
@@ -338,7 +338,7 @@ class Oasis {
     } else {
       this.engine.resourceManager
         .load<GLTFResource>({
-          type: AssetType.Prefab,
+          type: AssetType.GLTF,
           url: `${url}#.glb`
         })
         .then((asset) => {

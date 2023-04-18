@@ -70,7 +70,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   engine.resourceManager
     .load<GLTFResource>({
-      type: AssetType.Prefab,
+      type: AssetType.GLTF,
       url: "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb",
     })
     .then((gltf) => {

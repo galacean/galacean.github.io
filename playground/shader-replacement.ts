@@ -67,11 +67,11 @@ async function main() {
       },
       {
         url: "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf",
-        type: AssetType.Prefab,
+        type: AssetType.GLTF,
       },
       {
         url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf",
-        type: AssetType.Prefab,
+        type: AssetType.GLTF,
       },
       {
         url: "https://mdn.alipayobjects.com/huamei_b4l2if/afts/img/A*Q60vQ40ZERsAAAAAAAAAAAAADil6AQ/original",
