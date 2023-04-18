@@ -213,7 +213,7 @@ class CustomMaterialParser extends GLTFParser{
 
 engine.resourceManager
     .load<GLTFResource>({
-      type: AssetType.Prefab,
+      type: AssetType.GLTF,
       url: "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf"
       params: {
         pipeline: new GLTFPipeline(

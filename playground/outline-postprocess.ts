@@ -20,26 +20,6 @@ import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
 import { OutlineManager } from "@galacean/engine-toolkit-outline";
 
-class ClickScript extends Script {
-  onUpdate(): void {
-    const inputManager = this.engine.inputManager;
-    const { pointers } = inputManager;
-    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
-      const pointerPosition = pointers[0].position;
-      framebufferPicker
-        .pick(pointerPosition.x, pointerPosition.y)
-        .then((renderElement) => {
-          if (renderElement) {
-            console.log(renderElement.component.entity.parent);
-            outlineManager.addEntity(renderElement.component.entity);
-          } else {
-            outlineManager.clear();
-          }
-        });
-    }
-  }
-}
-
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.run();
   engine.canvas.resizeByClientSize();
@@ -52,13 +32,31 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const camera = cameraEntity.addComponent(Camera);
   cameraEntity.transform.setPosition(1, 1.3, 10);
   cameraEntity.addComponent(OrbitControl).target.set(1, 1.3, 0);
-  cameraEntity.addComponent(ClickScript);
 
   const outlineManager = cameraEntity.addComponent(OutlineManager);
   addDebugGUI(outlineManager);
+  const framebufferPicker = cameraEntity.addComponent(FramebufferPicker);
 
-  const framebufferPicker = rootEntity.addComponent(FramebufferPicker);
-  framebufferPicker.camera = camera;
+  class ClickScript extends Script {
+    onUpdate(): void {
+      const inputManager = this.engine.inputManager;
+      const { pointers } = inputManager;
+      if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+        const pointerPosition = pointers[0].position;
+        framebufferPicker
+          .pick(pointerPosition.x, pointerPosition.y)
+          .then((renderElement) => {
+            if (renderElement) {
+              outlineManager.addEntity(renderElement.entity);
+            } else {
+              outlineManager.clear();
+            }
+          });
+      }
+    }
+  }
+
+  cameraEntity.addComponent(ClickScript);
 
   engine.resourceManager
     .load<AmbientLight>({
@@ -72,7 +70,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   engine.resourceManager
     .load<GLTFResource>({
-      type: AssetType.Prefab,
+      type: AssetType.GLTF,
       url: "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb",
     })
     .then((gltf) => {

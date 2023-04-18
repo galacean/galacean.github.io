@@ -14,27 +14,6 @@ import {
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
 
-class ClickScript extends Script {
-  material: PBRMaterial;
-
-  onUpdate(): void {
-    const inputManager = this.engine.inputManager;
-    const { pointers } = inputManager;
-    if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
-      if (pointers.length > 0) {
-        const position = pointers[0].position;
-        framebufferPicker.pick(position.x, position.y).then((renderer) => {
-          if (renderer) {
-            this.material.baseColor.set(1, 0, 0, 1);
-          } else {
-            this.material.baseColor.set(1, 1, 1, 1);
-          }
-        });
-      }
-    }
-  }
-}
-
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -48,6 +27,26 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   control.target.set(0, 3, 0);
 
   const framebufferPicker = cameraEntity.addComponent(FramebufferPicker);
+  class ClickScript extends Script {
+    material: PBRMaterial;
+
+    onUpdate(): void {
+      const inputManager = this.engine.inputManager;
+      const { pointers } = inputManager;
+      if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
+        if (pointers.length > 0) {
+          const position = pointers[0].position;
+          framebufferPicker.pick(position.x, position.y).then((renderer) => {
+            if (renderer) {
+              this.material.baseColor.set(1, 0, 0, 1);
+            } else {
+              this.material.baseColor.set(1, 1, 1, 1);
+            }
+          });
+        }
+      }
+    }
+  }
 
   engine.resourceManager
     .load<GLTFResource>(

@@ -96,6 +96,7 @@ WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then(
     sphereCollider.isKinematic = true;
     sphereCollider.addShape(physicsSphere);
 
+    rootEntity.addComponent(MeshRenderer);
     const wireframe = rootEntity.addComponent(WireframeManager); // debug draw
     wireframe.addEntityWireframe(sphereEntity);
     wireframe.addEntityWireframe(boxEntity);
