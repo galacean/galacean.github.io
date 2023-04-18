@@ -28,10 +28,9 @@ import {
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+  WebGLEngine,
+} from "@galacean/engine";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 class PanScript extends Script {
   private startPointerPos = new Vector3();

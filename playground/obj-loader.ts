@@ -2,7 +2,7 @@
  * @title OBJ Loader Use Model Mesh
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BlinnPhongMaterial,
   Camera,
@@ -12,8 +12,8 @@ import {
   MeshTopology,
   ModelMesh,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

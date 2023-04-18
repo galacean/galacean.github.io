@@ -3,21 +3,21 @@
  * @category Camera
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
-  AssetType,
-  BackgroundMode,
-  BlinnPhongMaterial,
-  Camera,
-  Color,
+  WebGLEngine,
   DirectLight,
-  MeshRenderer,
-  PrimitiveMesh,
-  SkyBoxMaterial,
-  TextureCube,
+  AssetType,
+  Camera,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  MeshRenderer,
+  BlinnPhongMaterial,
+  Color,
+  BackgroundMode,
+  SkyBoxMaterial,
+  PrimitiveMesh,
+  TextureCube,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

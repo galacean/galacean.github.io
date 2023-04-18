@@ -3,7 +3,7 @@
  * @category Benchmark
  */
 
-import { Stats } from "@oasis-engine-toolkit/stats";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   AssetType,
@@ -11,8 +11,8 @@ import {
   GLTFResource,
   PBRMaterial,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

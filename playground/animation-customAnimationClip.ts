@@ -21,8 +21,8 @@ import {
   SystemInfo,
   Transform,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 Logger.enable();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

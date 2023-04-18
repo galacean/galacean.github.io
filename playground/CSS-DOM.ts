@@ -3,14 +3,17 @@
  * @category 2D
  */
 import {
+  AssetType,
   Camera,
+  Entity,
   GLTFResource,
+  Logger,
   Script,
   Vector3,
   WebGLEngine,
-  WebGLMode
-} from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+  WebGLMode,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit";
 
 async function main() {
   // Create engine

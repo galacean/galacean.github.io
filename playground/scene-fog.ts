@@ -3,7 +3,7 @@
  * @category Scene
  */
 
-import { FreeControl } from "@oasis-engine-toolkit/controls";
+import { FreeControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -16,8 +16,8 @@ import {
   Scene,
   ShadowType,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 async function main() {
   const engine = await WebGLEngine.create({ canvas: "canvas" });

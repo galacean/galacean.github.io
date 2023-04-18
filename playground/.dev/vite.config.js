@@ -1,7 +1,10 @@
 const path = require("path");
 const fs = require("fs-extra");
 const OUT_PATH = "mpa";
-const templateStr = fs.readFileSync(path.join(__dirname, "template/iframe.ejs"), "utf8");
+const templateStr = fs.readFileSync(
+  path.join(__dirname, "template/iframe.ejs"),
+  "utf8"
+);
 
 // 替换 ejs 模版格式的字符串，如 <%= title %>: templateStr.replaceEJS("title","replaced title");
 String.prototype.replaceEJS = function (regStr, replaceStr) {
@@ -27,14 +30,19 @@ const demoList = fs
     return {
       title: title[1],
       category: category[1],
-      file: name.split(".ts")[0]
+      file: name.split(".ts")[0],
     };
   });
 
 demoList.forEach(({ title, file }) => {
-  const ejs = templateStr.replaceEJS("title", title).replaceEJS("url", `./${file}.ts`);
+  const ejs = templateStr
+    .replaceEJS("title", title)
+    .replaceEJS("url", `./${file}.ts`);
 
-  fs.outputFileSync(path.resolve(__dirname, OUT_PATH, file + ".ts"), `import "../../${file}"`);
+  fs.outputFileSync(
+    path.resolve(__dirname, OUT_PATH, file + ".ts"),
+    `import "../../${file}"`
+  );
   fs.outputFileSync(path.resolve(__dirname, OUT_PATH, file + ".html"), ejs);
 });
 
@@ -46,7 +54,7 @@ demoList.forEach(({ title, category, file }) => {
   }
   demoSorted[category].push({
     src: file,
-    label: title
+    label: title,
   });
 });
 
@@ -56,30 +64,31 @@ module.exports = {
   server: {
     open: true,
     host: "0.0.0.0",
-    port: 3000
+    port: 3000,
   },
-  resolve:{
-    dedupe:[
-      "@galacean/engine"
-    ]
+  resolve: {
+    dedupe: ["@galacean/engine"],
   },
   optimizeDeps: {
     exclude: [
       "@galacean/engine",
-      "@oasis-engine/draco",
-      "@oasis-engine/lottie",
-      "@oasis-engine/spine",
-      "@oasis-engine/baker",
-      "oasis-engine-toolkit",
-      "@oasis-engine-toolkit/auxiliary-lines",
-      "@oasis-engine-toolkit/controls",
-      "@oasis-engine-toolkit/framebuffer-picker",
-      "@oasis-engine-toolkit/gizmo",
-      "@oasis-engine-toolkit/lines",
-      "@oasis-engine-toolkit/outline",
-      "@oasis-engine-toolkit/planar-shadow-material",
-      "@oasis-engine-toolkit/skeleton-viewer",
-      "@oasis-engine-toolkit/stats"
-    ]
-  }
+      "@galacean/engine-draco",
+      "@galacean/engine-lottie",
+      "@galacean/engine-spine",
+      "@galacean/tools-baker",
+      "@galacean/engine-toolkit",
+      "@galacean/engine-toolkit-auxiliary-lines",
+      "@galacean/engine-toolkit-controls",
+      "@galacean/engine-toolkit-framebuffer-picker",
+      "@galacean/engine-toolkit-gizmo",
+      "@galacean/engine-toolkit-lines",
+      "@galacean/engine-toolkit-outline",
+      "@galacean/engine-toolkit-planar-shadow-material",
+      "@galacean/engine-toolkit-skeleton-viewer",
+      "@galacean/engine-toolkit-grid-material",
+      "@galacean/engine-toolkit-navigation-gizmo",
+      "@galacean/engine-toolkit-geometry-sketch",
+      "@galacean/engine-toolkit-stats",
+    ],
+  },
 };

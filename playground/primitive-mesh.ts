@@ -2,7 +2,7 @@
  * @title Primitive Mesh
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   BlinnPhongMaterial,
@@ -18,8 +18,8 @@ import {
   Script,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 main();
 

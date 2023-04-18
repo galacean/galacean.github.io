@@ -3,8 +3,8 @@
  * @category Physics
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { PhysXPhysics, PhysXRuntimeMode } from "@oasis-engine/physics-physx";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 import {
   AmbientLight,
   AssetType,
@@ -23,8 +23,8 @@ import {
   StaticCollider,
   Vector2,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 class TableGenerator extends Script {
   private _totalTime: number = 0;

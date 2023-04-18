@@ -2,8 +2,7 @@
  * @title glTF Pointer Merge
  * @category input
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BoundingBox,
   BoxColliderShape,
@@ -15,8 +14,9 @@ import {
   Script,
   StaticCollider,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 class GlTFCollider extends Script {
   onStart(): void {

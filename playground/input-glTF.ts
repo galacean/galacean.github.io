@@ -2,8 +2,7 @@
  * @title glTF Pointer
  * @category input
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BoxColliderShape,
   Camera,
@@ -13,8 +12,9 @@ import {
   Script,
   StaticCollider,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 class GlTFCollider extends Script {
   private _tempVec30: Vector3 = new Vector3();
@@ -54,7 +54,7 @@ class GlTFCollider extends Script {
   }
 }
 
-// Create engine 
+// Create engine
 WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
   (engine) => {
     engine.canvas.resizeByClientSize();

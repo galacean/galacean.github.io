@@ -19,8 +19,8 @@ import {
   Shader,
   StencilOperation,
   WebGLEngine,
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const gui = new dat.GUI();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

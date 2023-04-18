@@ -3,29 +3,33 @@
  * @category Toolkit
  */
 
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import * as dat from "dat.gui";
 import {
-    AmbientLight,
-    Animator,
-    AssetType,
-    BlinnPhongMaterial,
-    Camera,
-    Color,
-    DirectLight,
-    Entity,
-    GLTFResource,
-    MeshRenderer,
-    ModelMesh,
-    PBRMaterial,
-    PointerButton,
-    PrimitiveMesh,
-    Script,
-    SkinnedMeshRenderer,
-    Vector3,
-    WebGLEngine
-} from "oasis-engine";
-import { FreeControl, SketchMode, SketchRenderer } from "oasis-engine-toolkit";
+  AmbientLight,
+  Animator,
+  AssetType,
+  BlinnPhongMaterial,
+  Camera,
+  Color,
+  DirectLight,
+  Entity,
+  GLTFResource,
+  MeshRenderer,
+  ModelMesh,
+  PBRMaterial,
+  PointerButton,
+  PrimitiveMesh,
+  Script,
+  SkinnedMeshRenderer,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
+import {
+  FreeControl,
+  SketchMode,
+  SketchRenderer,
+} from "@galacean/engine-toolkit";
+import * as dat from "dat.gui";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
 
 class SelectionInfo {
   mesh: ModelMesh;

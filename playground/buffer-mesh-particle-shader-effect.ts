@@ -2,24 +2,24 @@
  * @title Buffer Mesh Particle Shader Effect
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
-  BaseMaterial,
   Buffer,
   BufferBindFlag,
   BufferMesh,
   Camera,
-  Engine,
   MeshRenderer,
   RenderFace,
-  Script,
-  Shader,
   Texture2D,
   VertexBufferBinding,
   VertexElement,
   VertexElementFormat,
-  WebGLEngine
-} from "oasis-engine";
+  Engine,
+  Shader,
+  BaseMaterial,
+  Script,
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const fs = `uniform float progress;
 uniform sampler2D texture1;

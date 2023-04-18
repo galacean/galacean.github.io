@@ -16,8 +16,8 @@ import {
   Shader,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 main();
 

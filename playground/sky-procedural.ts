@@ -14,7 +14,7 @@ import {
   SunMode,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
+} from "@galacean/engine";
 
 Logger.enable();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

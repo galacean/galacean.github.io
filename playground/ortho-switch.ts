@@ -2,7 +2,6 @@
  * @title Orthographic Camera
  * @category Camera
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import { GUI } from "dat.gui";
 import {
   BlinnPhongMaterial,
@@ -12,8 +11,9 @@ import {
   MeshRenderer,
   PrimitiveMesh,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();

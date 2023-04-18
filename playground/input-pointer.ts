@@ -2,22 +2,22 @@
  * @title input-pointer
  * @category input
  */
-import { LitePhysics } from "@oasis-engine/physics-lite";
 import {
   BlinnPhongMaterial,
   BoxColliderShape,
   Camera,
-  Entity,
   MeshRenderer,
-  Pointer,
   PointLight,
   PrimitiveMesh,
   Script,
   StaticCollider,
   Vector2,
+  Pointer,
+  Entity,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 // Create engine
 WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(

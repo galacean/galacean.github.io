@@ -2,7 +2,7 @@
  * @title Transform Basic
  * @category Basic
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Camera,
   Color,
@@ -10,8 +10,8 @@ import {
   Entity,
   GLTFResource,
   Script,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 main();
 

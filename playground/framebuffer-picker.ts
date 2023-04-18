@@ -2,8 +2,6 @@
  * @title Framebuffer Picker
  * @category Toolkit
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
 import {
   Camera,
   GLTFResource,
@@ -11,8 +9,10 @@ import {
   PointerButton,
   Script,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
 
 class ClickScript extends Script {
   material: PBRMaterial;

@@ -3,7 +3,8 @@
  * @category Advance
  */
 import {
-  Camera, CullMode,
+  Camera,
+  CullMode,
   DirectLight,
   GLTFResource,
   Layer,
@@ -18,9 +19,9 @@ import {
   TextureFormat,
   UnlitMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
@@ -120,10 +121,8 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     uniform mat4 renderer_ModelMat;
     varying vec4 worldPos; 
     varying vec4 normal;
-
     attribute vec3 NORMAL;
     attribute vec3 POSITION; 
-
     void main() {
       worldPos = renderer_ModelMat * vec4(POSITION, 1.0);
       normal = renderer_ModelMat * vec4(NORMAL, 1.0);
@@ -133,7 +132,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     const frag = `
     varying vec4 worldPos;
     varying vec4 normal;
-
     void main() {
       gl_FragData[0] = vec4(worldPos.xyz, 1.0);
       gl_FragData[1] = vec4(vec3(worldPos.z), 1.0);

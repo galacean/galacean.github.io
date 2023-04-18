@@ -2,8 +2,13 @@
  * @title Lines
  * @category Toolkit
  */
-import { Camera, Color, Vector2, Vector3, WebGLEngine } from "oasis-engine";
-import { Line, DashLine, LineCap, LineJoin } from "@oasis-engine-toolkit/lines";
+import { Camera, Color, Vector2, Vector3, WebGLEngine } from "@galacean/engine";
+import {
+  Line,
+  DashLine,
+  LineCap,
+  LineJoin,
+} from "@galacean/engine-toolkit-lines";
 import * as dat from "dat.gui";
 
 const lines: Line[] = [];

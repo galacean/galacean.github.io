@@ -2,27 +2,27 @@
  * @title Draw Lines
  * @category input
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { LitePhysics } from "@oasis-engine/physics-lite";
-import * as dat from "dat.gui";
 import {
+  WebGLEngine,
+  Mesh,
+  ModelMesh,
+  Script,
+  Entity,
+  StaticCollider,
   BoxColliderShape,
+  MathUtil,
+  Quaternion,
+  RenderFace,
   Camera,
   Color,
   Engine,
-  Entity,
-  MathUtil,
-  Mesh,
   MeshRenderer,
-  ModelMesh,
-  Quaternion,
-  RenderFace,
-  Script,
-  StaticCollider,
   UnlitMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+} from "@galacean/engine";
+import * as dat from "dat.gui";
+import { LitePhysics } from "@galacean/engine-physics-lite";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const gui = new dat.GUI();
 const tempLine = new Vector3();

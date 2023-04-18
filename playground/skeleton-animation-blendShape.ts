@@ -2,16 +2,18 @@
  * @title Animation BlendShape
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Animator,
   Camera,
-  DirectLight, GLTFResource, Logger,
+  DirectLight,
+  Logger,
   SkinnedMeshRenderer,
   SystemInfo,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+  GLTFResource,
+} from "@galacean/engine";
 
 Logger.enable();
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {

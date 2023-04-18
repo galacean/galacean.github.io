@@ -2,7 +2,6 @@
  * @title Lite Collision Detection
  * @category Physics
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AmbientLight,
   AssetType,
@@ -16,10 +15,11 @@ import {
   Script,
   SphereColliderShape,
   StaticCollider,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
   (engine) => {
