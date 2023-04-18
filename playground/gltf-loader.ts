@@ -209,7 +209,7 @@ class Oasis {
           this.env[envName] = env;
 
           this.scene.ambientLight = env;
-          this.skyMaterial.textureCubeMap = env.specularTexture;
+          this.skyMaterial.texture = env.specularTexture;
           this.skyMaterial.textureDecodeRGBM = true;
           resolve(true);
         });

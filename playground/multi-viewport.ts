@@ -72,7 +72,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       const skyMaterial = (background.sky.material = new SkyBoxMaterial(
         engine
       ));
-      skyMaterial.textureCubeMap = cubeMap1;
+      skyMaterial.texture = cubeMap1;
       background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
     });
 });

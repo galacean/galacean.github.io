@@ -117,16 +117,16 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   function getMRTMaterial() {
     const vertex = `
-    uniform mat4 u_MVPMat;
-    uniform mat4 u_modelMat;
+    uniform mat4 renderer_MVPMat;
+    uniform mat4 renderer_ModelMat;
     varying vec4 worldPos; 
     varying vec4 normal;
     attribute vec3 NORMAL;
     attribute vec3 POSITION; 
     void main() {
-      worldPos = u_modelMat * vec4(POSITION, 1.0);
-      normal = u_modelMat * vec4(NORMAL, 1.0);
-      gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+      worldPos = renderer_ModelMat * vec4(POSITION, 1.0);
+      normal = renderer_ModelMat * vec4(NORMAL, 1.0);
+      gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
       gl_Position.y *= -1.0;
     }`;
     const frag = `

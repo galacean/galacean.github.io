@@ -95,7 +95,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const spriteVertShader = `
   precision highp float;
 
-  uniform mat4 u_VPMat;
+  uniform mat4 camera_VPMat;
 
   attribute vec3 POSITION;
   attribute vec2 TEXCOORD_0;
@@ -106,7 +106,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   void main()
   {
-    gl_Position = u_VPMat * vec4(POSITION, 1.0);
+    gl_Position = camera_VPMat * vec4(POSITION, 1.0);
     v_color = COLOR_0;
     v_uv = TEXCOORD_0;
   }
@@ -116,7 +116,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   precision mediump float;
   precision mediump int;
 
-  uniform sampler2D u_spriteTexture;
+  uniform sampler2D renderer_SpriteTexture;
   uniform float u_blurSize;
   uniform vec2 u_texSize;
 
@@ -128,7 +128,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   }
 
   void main() {
-    vec4 color = texture2D(u_spriteTexture, v_uv);
+    vec4 color = texture2D(renderer_SpriteTexture, v_uv);
     const int mSize = 11;
     const int kSize = (mSize - 1) / 2;
     float kernel[mSize];
@@ -153,7 +153,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     for (int i = -kSize; i <= kSize; ++i) {
       for (int j = -kSize; j <= kSize; ++j) {
         uv = v_uv.xy + vec2(float(i) * offsetX, float(j) * offsetY);
-        final_colour += kernel[kSize + j] * kernel[kSize + i] * texture2D(u_spriteTexture, uv).rgb;
+        final_colour += kernel[kSize + j] * kernel[kSize + i] * texture2D(renderer_SpriteTexture, uv).rgb;
       }
     }
 

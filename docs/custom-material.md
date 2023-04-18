@@ -20,12 +20,12 @@ import { Material, Shader, Color } from "oasis-engine";
 
 //-- Shader
 const vertexSource = `
-  uniform mat4 u_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
 
   void main() {
-    gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
   }
   `;
 
@@ -69,18 +69,16 @@ In the above, we gave the material a shader, this time the program can start ren
 
 | Name         | Type | Meaning                              |
 | :----------- | :--- | ------------------------------------ |
-| u_viewMat    | mat4 | viewport matrix                      |
-| u_projMat    | mat4 | projection matrix                    |
-| u_VPMat      | mat4 | viewport projection matrix           |
-| u_viewInvMat | mat4 | viewport inverse matrix              |
-| u_projInvMat | mat4 | projection inverse matrix            |
-| u_cameraPos  | vec3 | camera position                      |
-| u_localMat   | mat4 | model local coordinate system matrix |
-| u_modelMat   | mat4 | model world Coordinate System Matrix |
-| u_MVMat      | mat4 | model viewport matrix                |
-| u_MVPMat     | mat4 | model viewport projection matrix     |
-| u_MVInvMat   | mat4 | model viewport inverse matrix        |
-| u_normalMat  | mat4 | normal inverse transpose matrix      |
+| camera_ViewMat    | mat4 | viewport matrix                      |
+| camera_ProjMat    | mat4 | projection matrix                    |
+| camera_VPMat      | mat4 | viewport projection matrix           |
+| camera_ViewInvMat | mat4 | viewport inverse matrix              |
+| camera_Position  | vec3 | camera position                      |
+| renderer_LocalMat   | mat4 | model local coordinate system matrix |
+| renderer_ModelMat   | mat4 | model world Coordinate System Matrix |
+| renderer_MVMat      | mat4 | model viewport matrix                |
+| renderer_MVPMat     | mat4 | model viewport projection matrix     |
+| renderer_NormalMat  | mat4 | normal inverse transpose matrix      |
 
 #### Time
 
@@ -270,14 +268,14 @@ import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from
 
 //-- Shader
 const vertexSource = `
-  uniform mat4 u_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
   attribute vec2 TEXCOORD_0;
   varying vec2 v_uv;
 
   void main() {
-    gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
     v_uv = TEXCOORD_0;
   }
   `;

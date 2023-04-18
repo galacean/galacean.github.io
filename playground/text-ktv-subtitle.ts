@@ -102,7 +102,7 @@ function addCustomMaterialAndAnimateScript(
 const vertShader = `
   precision highp float;
 
-  uniform mat4 u_VPMat;
+  uniform mat4 camera_VPMat;
   uniform float u_startX;
   uniform float u_endX;
 
@@ -118,7 +118,7 @@ const vertShader = `
 
   void main()
   {
-    gl_Position = u_VPMat * vec4(POSITION, 1.0);
+    gl_Position = camera_VPMat * vec4(POSITION, 1.0);
     v_uv = TEXCOORD_0;
     v_color = COLOR_0;
     v_startX = u_startX;
@@ -131,7 +131,7 @@ const fragmentShader = `
   precision mediump float;
   precision mediump int;
 
-  uniform sampler2D u_spriteTexture;
+  uniform sampler2D renderer_SpriteTexture;
   uniform float u_percent;
   uniform vec4 u_subtitleColor;
 
@@ -142,7 +142,7 @@ const fragmentShader = `
   varying float v_posX;
 
   void main() {
-    vec4 baseColor = texture2D(u_spriteTexture, v_uv);
+    vec4 baseColor = texture2D(renderer_SpriteTexture, v_uv);
     float percent = (v_posX - v_startX) / v_width;
     if (percent <= u_percent) {
       gl_FragColor = baseColor * u_subtitleColor;
