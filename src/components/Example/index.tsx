@@ -6,8 +6,9 @@ import 'regenerator-runtime/runtime';
 import { fetchEngineDataConfig } from '../../utils';
 import { AppContext } from '../contextProvider';
 import { fetchDocDataById } from '../doc/util/docUtil';
+import gt from "semver/functions/gt";
 
-const useScript = async (libs: any) => {
+const useScript = async (libs: any, engineName: string) => {
   const promises: Promise<any>[] = [];
   const scripts: any[] = [];
 
@@ -31,10 +32,10 @@ const useScript = async (libs: any) => {
     return promise;
   };
 
-  await addLib(libs['oasis-engine']);
+  await addLib(libs[engineName]);
 
   Object.keys(libs).forEach((name) => {
-    if (name !== 'oasis-engine') {
+    if (name !== engineName) {
       const lib = libs[name];
       let promise;
 
@@ -132,7 +133,9 @@ export default function Example() {
       const packages = JSON.parse(res.find((config) => config.version === version)?.packages || '');
       const packageGlobals = getPackageGlobals(packages);
 
-      await useScript(packages);
+      const engineName = (version === "latest" || gt(version, '0.9.0-beta.0')) ? "@galacean/engine" : `oasis-engine`;
+
+      await useScript(packages, engineName);
 
       if (exampleId) {
         fetchDocDataById(exampleId).then(async (res) => {
