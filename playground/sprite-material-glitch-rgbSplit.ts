@@ -125,7 +125,7 @@ const spriteVertShader = `
 
 const spriteFragmentShader = `
   uniform sampler2D renderer_SpriteTexture;
-  uniform vec4 oasis_ElapsedTime;
+  uniform vec4 scene_ElapsedTime;
   uniform float u_indensity;
 
   varying vec2 v_uv;
@@ -136,7 +136,7 @@ const spriteFragmentShader = `
   }
 
   void main() {
-    float splitAmount = u_indensity * randomNoise(oasis_ElapsedTime.x * 100.0);
+    float splitAmount = u_indensity * randomNoise(scene_ElapsedTime.x * 100.0);
 
     vec4 normalColor = texture2D(renderer_SpriteTexture, v_uv);
     float r = texture2D(renderer_SpriteTexture, vec2(v_uv.x + splitAmount, v_uv.y)).r;

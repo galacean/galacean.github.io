@@ -84,7 +84,7 @@ In the above, we gave the material a shader, this time the program can start ren
 
 | Name              | Type | Meaning                                                      |
 | :---------------- | :--- | :----------------------------------------------------------- |
-| oasis_ElapsedTime | vec4 | Total time elapsed since engine started: (x: t, y: sin(t), z: cos(t), w: 0) |
+| scene_ElapsedTime | vec4 | Total time elapsed since engine started: (x: t, y: sin(t), z: cos(t), w: 0) |
 | oasis_DeltaTime   | vec4 | Interval time from previous frame: (x: dt, y: 0, z: 0, w: 0) |
 
 #### Fog
