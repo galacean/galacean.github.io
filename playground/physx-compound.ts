@@ -4,7 +4,7 @@
  */
 
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import { PhysXPhysics } from "@galacean/engine-physics-physx";
+import { PhysXPhysics, PhysXRuntimeMode } from "@galacean/engine-physics-physx";
 import {
   AmbientLight,
   AssetType,
