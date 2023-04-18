@@ -86,7 +86,7 @@ const material = new Material(engine, Shader.find("demo"));
 
 | 名字              | 类型 | 解释                                                      |
 | :---------------- | :--- | :-------------------------------------------------------- |
-| oasis_ElapsedTime | vec4 | 引擎启动后经过的总时间：(x: t, y: sin(t), z:cos(t), w: 0) |
+| scene_ElapsedTime | vec4 | 引擎启动后经过的总时间：(x: t, y: sin(t), z:cos(t), w: 0) |
 | oasis_DeltaTime   | vec4 | 距离上一帧的间隔时间：(x: dt, y: 0, z:0, w: 0)            |
 
 #### 雾
