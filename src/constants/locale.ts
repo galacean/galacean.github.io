@@ -37,7 +37,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.ecosystem.gltfviewer": "glTF 查看器",
     "app.header.menu.ecosystem.gltfviewer.description":
       "快速预览 glTF2.0 格式的模型，生成引擎的 HDR 环境贴图",
-    "app.header.menu.ecosystem.createapp": "Create Oasis App",
+    "app.header.menu.ecosystem.createapp": "Create Galacean App",
     "app.header.menu.ecosystem.createapp.description":
       "创建 React、Vue、小程序等类型的前端应用的脚手架",
     "app.header.menu.ecosystem.animation": "动效",
@@ -172,7 +172,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.ecosystem.gltfviewer": "glTF Viewer",
     "app.header.menu.ecosystem.gltfviewer.description":
       "Quickly preview glTF2.0 models, generate HDR environment maps for the engine",
-    "app.header.menu.ecosystem.createapp": "Create Oasis App",
+    "app.header.menu.ecosystem.createapp": "Create Galacean App",
     "app.header.menu.ecosystem.createapp.description":
       "Scaffolding for front-end applications created by React, Vue, and mini-program",
     "app.header.menu.ecosystem.animation": "Animation",
