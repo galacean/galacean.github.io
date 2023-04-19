@@ -49,10 +49,10 @@ This tutorial assumes that you already have certain development capabilities. If
 ```bash
 # use npm
 npm install @galacean/engine --save
-npm install @galacean/miniprogram-adapter --save
+npm install @galacean/engine-miniprogram-adapter --save
 # use yarn
 yarn add @galacean/engine
-yarn add @galacean/miniprogram-adapter
+yarn add @galacean/engine-miniprogram-adapter
 ```
 
 2. Add the following configuration items in the applet project configuration file `app.json`:
@@ -82,13 +82,13 @@ Use `onReady` to configure `canvas` initialization callback. Need to set the id 
 Note:
 
 1. Use `import * as GALACEAN from "galacean/dist/miniprogram"` to import the dependencies of miniprogram.
-2. Use `registerCanvas` which imported from `@galacean/miniprogram-adapter` to register `canvas`.
+2. Use `registerCanvas` which imported from `@galacean/engine-miniprogram-adapter` to register `canvas`.
 
 For example:
 
 ```js
 import * as GALACEAN from "galacean/dist/miniprogram";
-import { registerCanvas } from "@galacean/miniprogram-adapter";
+import { registerCanvas } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   onCanvasReady() {
@@ -157,7 +157,7 @@ Because miniprogram doesn't support `addEventListener` like dom, we have to mock
 ```
 
 ```typescript
-import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@galacean/miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   ...
