@@ -49,10 +49,10 @@ npm init @galacean/galacean-app -- --template miniprogram
 ```bash
 # 使用 npm
 npm install @galacean/engine --save
-npm install @galacean/miniprogram-adapter --save
+npm install @galacean/engine-miniprogram-adapter --save
 # 使用 yarn
 yarn add @galacean/engine
-yarn add @galacean/miniprogram-adapter
+yarn add @galacean/engine-miniprogram-adapter
 ```
 
 2. 在小程序项目配置文件 `app.json` 里添加下面配置项：
@@ -82,13 +82,13 @@ yarn add @galacean/miniprogram-adapter
 注意：
 
 1. 使用 `import * as GALACEAN from "galacean/dist/miniprogram"` 引入小程序依赖。
-2. 需要使用『@galacean/miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
+2. 需要使用『@galacean/engine-miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
 
 详情可以参考下面代码：
 
 ```js
 import * as GALACEAN from "galacean/dist/miniprogram";
-import { registerCanvas } from "@galacean/miniprogram-adapter";
+import { registerCanvas } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   onCanvasReady() {
@@ -160,7 +160,7 @@ cameraEntity.addComponent(OrbitControl);
 ```
 
 ```typescript
-import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@galacean/miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   ...
