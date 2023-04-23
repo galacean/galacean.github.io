@@ -58,7 +58,7 @@ import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 If you just want to quickly create a project, it is recommended that you use [create-galacean-app](https://github.com/galacean/create-galacean-app), which provides some commonly used frameworks such as [ React](https://reactjs.org/), [Vue](https://vuejs.org/) and other templates. Examples of usage are as follows:
 
-![npm-init](https://gw.alipayobjects.com/zos/OasisHub/b5bdc167-1d83-48a1-b826-bee43c2f1264/npm-init.gif)
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*qjIXR6Epk-AAAAAAAAAAAAAADleLAQ/original)
 
 
 ## Package structure
@@ -132,7 +132,7 @@ If your project is being developed using Oasis and you want to upgrade to Galace
 npx galacean-codemod
 ```
 
-### update dependencies
+### Update Dependencies
 
 ```bash
 rm -rf ./node_modules  && npm install

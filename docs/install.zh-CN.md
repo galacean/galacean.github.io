@@ -57,7 +57,7 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 
 如果你只是想在本地快速完成一个 Demo， 推荐你使用 [create-galacean-app](https://github.com/galacean/create-galacean-app)， 它提供了一些常用的框架如 [React](https://reactjs.org/)、[Vue](https://vuejs.org/) 等模板。使用示例如下：
 
-![npm-init](https://gw.alipayobjects.com/zos/OasisHub/b5bdc167-1d83-48a1-b826-bee43c2f1264/npm-init.gif)
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*qjIXR6Epk-AAAAAAAAAAAAAADleLAQ/original)
 
 
 ## 包结构
