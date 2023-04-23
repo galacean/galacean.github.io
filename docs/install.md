@@ -58,7 +58,7 @@ import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 If you just want to quickly create a project, it is recommended that you use [create-galacean-app](https://github.com/galacean/create-galacean-app), which provides some commonly used frameworks such as [ React](https://reactjs.org/), [Vue](https://vuejs.org/) and other templates. Examples of usage are as follows:
 
-![npm-init](https://gw.alipayobjects.com/zos/OasisHub/b5bdc167-1d83-48a1-b826-bee43c2f1264/npm-init.gif)
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*qjIXR6Epk-AAAAAAAAAAAAAADleLAQ/original)
 
 
 ## Package structure
@@ -120,3 +120,27 @@ Please check the list of completed functions https://github.com/galacean/engine-
 | :----------------------------------------------------------- | :--------------- | :------------------- |
 | [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine Animation  | [Doc](${docs}spine)  |
 | [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie Animation | [Doc](${docs}lottie) |
+
+## Replace Oasis with Galacean
+
+If your project is being developed using Oasis and you want to upgrade to Galacean, you can refer to the following steps:
+
+### Run Script
+
+```bash
+// Contributed by @crazylxr
+npx galacean-codemod
+```
+
+### Update Dependencies
+
+```bash
+rm -rf ./node_modules  && npm install
+```
+
+PS: Executing the `galacean-codemod` command will be configured according to [`packageReplacements`](https://github.com/crazylxr/galacean-codemod/blob/main/src/packageReplacements.json):
+- Traverse the script files in the `src` folder in the same directory to replace `import` references
+- Update the `package.json` file in the same directory to update dependencies
+- The original project directory will not be modified, and no dependencies will be added
+- After the automatic replacement, the developer needs to check whether the project is running correctly
+- If there are any omissions or optimizations, please submit [ISSUE](https://github.com/crazylxr/galacean-codemod/issues) or [PR](https://github.com/crazylxr/galacean-codemod/pulls)
