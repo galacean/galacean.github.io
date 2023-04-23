@@ -33,7 +33,6 @@ engine.resourceManager
     type: AssetType.Texture2D,
   })
   .then((texture) => {
-    // Create origin sprite entity.
     const entity = rootEntity.createChild("sprite");
     entity.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture);
     addDataGUI(entity);
