@@ -120,3 +120,26 @@ flowchart LR
 | :------------------------------------------------------------------------------------- | :---------- | :---------------------- |
 | [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine 动画  | [Doc](${docs}spine-cn)  |
 | [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie)             | Lottie 动画 | [Doc](${docs}lottie-cn) |
+
+## Oasis 替换为 Galacean
+
+如果您的项目正在使用 Oasis 进行开发，并且希望升级为 Galacean，可以参考以下步骤：
+
+### 安装
+
+```bash
+// 由 @crazylxr 提供
+npx galacean-codemod
+```
+
+### 更新依赖
+
+```bash
+rm -rf ./node_modules  && npm install
+```
+
+注：执行 `galacean-codemod` 指令会依据 [`packageReplacements`](https://github.com/crazylxr/galacean-codemod/blob/main/src/packageReplacements.json) 配置:
+- 遍历同目录下 `src` 文件夹内的脚本文件替换 `import` 引用
+- 更新同目录下 `package.json` 文件更新依赖关系
+- 自动替换后还需开发者自行检查项目是否正确运行
+- 若有遗漏或优化，欢迎提 [ISSUE](https://github.com/crazylxr/galacean-codemod/issues) 或 [PR](https://github.com/crazylxr/galacean-codemod/pulls) 
