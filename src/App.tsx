@@ -22,7 +22,7 @@ function App() {
         fontSize: '12px',
         color: 'var(--colors-slate11)',
       }
-  });
+    });
   }, []);
 
   const lang = context.lang === 'cn' ? 'zh-CN' : 'en';
