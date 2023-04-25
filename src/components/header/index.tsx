@@ -7,6 +7,7 @@ import config from '../../siteconfig.json';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import { NavigationMenuMobile } from './components/NavigationMenuMobile';
+import ScrollToTop from './components/ScrollToTop';
 import SearchBox from './components/SearchBox';
 import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
@@ -76,32 +77,35 @@ function Header() {
   }
 
   return (
-    <Media query='(max-width: 768px)'>
-      {(isMobile) => (
-        <StyledHeader justifyContent="between" align="v">
-          <Flex wrap="false" align="v" css={{
-            flex: 1,
-            '@media (max-width: 768px)': {
-              justifyContent: "space-between"
-            }
-          }}>
-            <StyledLogo to='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
-              <img src={LOGO_URL} alt='galacean' />
-            </StyledLogo>
-            {isMobile && rightActions(true)}
-            {!isMobile && <SearchBox></SearchBox>}
-          </Flex>
-          {!isMobile && (
-            <Flex align="both" gap="sm">
-              <NavigationMenu />
-              <Socials />
-              {rightActions(false)}
+    <>
+      <ScrollToTop />
+      <Media query='(max-width: 768px)'>
+        {(isMobile) => (
+          <StyledHeader justifyContent="between" align="v">
+            <Flex wrap="false" align="v" css={{
+              flex: 1,
+              '@media (max-width: 768px)': {
+                justifyContent: "space-between"
+              }
+            }}>
+              <StyledLogo to='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
+                <img src={LOGO_URL} alt='galacean' />
+              </StyledLogo>
+              {isMobile && rightActions(true)}
+              {!isMobile && <SearchBox></SearchBox>}
             </Flex>
-          )}
-        </StyledHeader>
-      )
-      }
-    </Media >
+            {!isMobile && (
+              <Flex align="both" gap="sm">
+                <NavigationMenu />
+                <Socials />
+                {rightActions(false)}
+              </Flex>
+            )}
+          </StyledHeader>
+        )
+        }
+      </Media >
+    </>
   );
 }
 
