@@ -164,7 +164,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
     onUpdate(dt: number) {
       if (this._isPlaying) {
-        this._curTime += dt;
+        this._curTime += dt * 1000;
         const { _curTime: curTime, totalTime } = this;
         const { shaderData } = this.material;
         const bounds = this.entity.getComponent(TextRenderer).bounds;

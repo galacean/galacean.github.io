@@ -10,7 +10,8 @@ import {
   Camera,
   Color,
   DirectLight,
-  Engine, MeshRenderer,
+  Engine,
+  MeshRenderer,
   PBRMaterial,
   PrimitiveMesh,
   Script,
@@ -97,7 +98,7 @@ class TransparentShadow extends BaseMaterial {
       TransparentShadow._baseColorProp,
       new Color(0, 0, 0, 1)
     );
-    this.shaderData.enableMacro("MATERIAL_NEED_WORLDPOS");
+    this.shaderData.enableMacro("MATERIAL_NEED_WORLD_POS");
   }
 }
 
