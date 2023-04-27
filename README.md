@@ -1,4 +1,4 @@
-# Galacean Engine Site
+# Galacean Site
 
 The documentation source of [Galacean Engine](https://github.com/galacean/engine).
 
