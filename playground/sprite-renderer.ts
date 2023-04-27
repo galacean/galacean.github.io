@@ -2,8 +2,17 @@
  * @title Sprite Renderer
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  AssetType,
+  Camera,
+  Script,
+  Sprite,
+  SpriteRenderer,
+  Texture2D,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -22,7 +31,7 @@ cameraEntity.addComponent(OrbitControl);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     for (let i = 0; i < 10; ++i) {

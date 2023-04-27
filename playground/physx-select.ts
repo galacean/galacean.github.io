@@ -29,9 +29,9 @@ import {
   PBRMaterial,
   AmbientLight,
   ShadowType,
-} from "oasis-engine";
+} from "@galacean/engine";
 
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 class PanScript extends Script {
   private startPointerPos = new Vector3();

@@ -6,7 +6,7 @@ group: 摄像机
 label: Graphics/Camera
 ---
 
-相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
+相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Galacean Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
 
 ## 基本用法
 
@@ -43,7 +43,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*KEuGSqX-vXsAAAAAAAAAAAAAARQnAQ)
 
-如上图所示，有 top、bottom、left 和 right，Oasis 对正交属性做了一些简化，更符合开发者的使用习惯，只有 [orthographicSize](${api}core/Camera#orthographicSize)（正交模式下相机的一半尺寸）。下面是针对各项属性和 [orthographicSize](${api}core/Camera#orthographicSize) 的关系
+如上图所示，有 top、bottom、left 和 right，Galacean 对正交属性做了一些简化，更符合开发者的使用习惯，只有 [orthographicSize](${api}core/Camera#orthographicSize)（正交模式下相机的一半尺寸）。下面是针对各项属性和 [orthographicSize](${api}core/Camera#orthographicSize) 的关系
 
 - `top = orthographicSize`
 - `bottom = -orthographicSize`
@@ -95,7 +95,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ### 相机的朝向
 
-由于在 Oasis 中，世界坐标系为右手系，因此任何节点的正方向朝向 -Z 轴，同理，相机的正方向（取景方向）也为 -Z 轴方向，以此类推，在 Unity 等世界坐标系为左手系的引擎中，相机的正方向为 +Z 轴。
+由于在 Galacean 中，世界坐标系为右手系，因此任何节点的正方向朝向 -Z 轴，同理，相机的正方向（取景方向）也为 -Z 轴方向，以此类推，在 Unity 等世界坐标系为左手系的引擎中，相机的正方向为 +Z 轴。
 
 为了方便区分，我们可以使用人脸朝向法判断，无论在左手系或者右手系，将右手放在 +X 轴上，将头部放在 +Y 轴上，此时面部朝向即正方向。
 

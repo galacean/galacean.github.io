@@ -10,6 +10,20 @@ label: Graphics/2D
 
 <playground src="sprite-renderer.ts"></playground>
 
+## Parameter description
+
+| parameter | type | description |
+| :--- | :--- | :--- |
+|[sprite](${api}core/SpriteRenderer/#sprite)|[Sprite](${api}core/Sprite)|Use sprite references|
+|[drawMode](${api}core/SpriteRenderer/#drawMode)|[SpriteDrawMode](${api}core/SpriteDrawMode)|The draw mode of the sprite renderer|
+|[width](${api}core/SpriteRenderer/#width)|number|The rendering width of the sprite|
+|[height](${api}core/SpriteRenderer/#height)|number|The rendering height of the sprite|
+|[color](${api}core/SpriteRenderer/#color)|[Color](${api}math/Color)|Render the color of the overlay|
+|[flipX](${api}core/SpriteRenderer/#flipX)|boolean|Whether to flip the rendering result horizontally|
+|[flipY](${api}core/SpriteRenderer/#flipY)|boolean|Whether to flip the rendering result vertically|
+|[maskLayer](${api}core/SpriteRenderer/#maskLayer)|[SpriteMaskLayer](${api}core/SpriteMaskLayer)|The mask layer the sprite renderer belongs to|
+|[maskInteraction](${api}core/SpriteRenderer/#maskInteraction)|[SpriteMaskInteraction](${api}core/SpriteMaskInteraction)|Interacts with the masks|
+
 ## Basic usage
 
 1、Download image texture ([Texture](${docs}texture)), Please refer to the download method [resource load](${docs}resource-manager)  
@@ -17,7 +31,7 @@ label: Graphics/2D
 3、Create [SpriteRenderer](${api}core/SpriteRenderer) to display image
 
 ```typescript
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 
@@ -55,9 +69,18 @@ sprite.border = new Vector4(0.1, 0.1, 0.1, 0.1);
 
 <playground src="sprite-slice.ts"></playground>
 
-## Image flip
+## Renderer Size
 
-In addition to basic image display, SpriteRenderer also supports image flipping,just set the attribute [flipX](${api}core/SpriteRenderer#flipX) or [flipY](${api}core/SpriteRenderer#flipY) to complete the flip, as follows:
+设置 `SpriteRenderer` 的 `width` 与 `height` 可以明确指定精灵在三维空间中显示的尺寸，若没有设置，则会将 `Sprite` 的尺寸作为默认值，通常为精灵纹理像素值的 `0.01` 倍。
+
+Setting the `width` and `height` of the `SpriteRenderer` can clearly specify the size of the sprite displayed in the three-dimensional space. If not set, the size of the `Sprite` will be used as the default value, which is usually `0.01` times the pixel value of the sprite texture.
+
+
+<playground src="sprite-size.ts"></playground>
+
+## Flip
+
+In addition to basic image display, SpriteRenderer also support horizontal and vertical flip, just set the attribute [flipX](${api}core/SpriteRenderer#flipX) or [flipY](${api}core/SpriteRenderer#flipY) to complete the flip, as follows:
 
 ```typescript
 // Image flip.

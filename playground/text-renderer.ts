@@ -3,8 +3,16 @@
  * @category 2D
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "oasis-engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  Camera,
+  Color,
+  Font,
+  FontStyle,
+  TextRenderer,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -20,7 +28,7 @@ cameraEntity.addComponent(Camera);
 cameraEntity.addComponent(OrbitControl);
 
 // The text to display
-const text = "Oasis 文字系统来啦～";
+const text = "Galacean 文字系统来啦～";
 // The position of text
 const pos = new Vector3();
 // The color of text

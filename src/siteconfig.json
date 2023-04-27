@@ -1,5 +1,5 @@
 {
-  "name": "oasis-engine",
+  "name": "galacean",
   "versions": ["latest", "0.8"],
   "serverConfig": {
     "local": "https://oasisbe.test.alipay.net",

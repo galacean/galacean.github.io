@@ -2,7 +2,7 @@
  * @title Blinn Phong Material
  * @category Material
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -14,8 +14,8 @@ import {
   RenderFace,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -46,16 +46,16 @@ engine.resourceManager
   .load([
     {
       type: AssetType.Texture2D,
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*g_HIRqQdNUcAAAAAAAAAAAAAARQnAQ"
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*g_HIRqQdNUcAAAAAAAAAAAAAARQnAQ",
     },
     {
       type: AssetType.Texture2D,
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*H7nMRY2SuWcAAAAAAAAAAAAAARQnAQ"
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*H7nMRY2SuWcAAAAAAAAAAAAAARQnAQ",
     },
     {
       type: AssetType.Prefab,
-      url: "https://gw.alipayobjects.com/os/bmw-prod/72a8e335-01da-4234-9e81-5f8b56464044.gltf"
-    }
+      url: "https://gw.alipayobjects.com/os/bmw-prod/72a8e335-01da-4234-9e81-5f8b56464044.gltf",
+    },
   ])
   .then((res) => {
     const baseTexture = res[0] as Texture2D;
@@ -89,7 +89,7 @@ function addGUI(materials: BlinnPhongMaterial[]): void {
     shininess: 64,
     normalIntensity: 1,
     isTransparent: false,
-    opacity: 1
+    opacity: 1,
   };
 
   gui.addColor(state, "baseColor").onChange((v) => {

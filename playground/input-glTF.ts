@@ -2,7 +2,7 @@
  * @title glTF Pointer
  * @category input
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BoxColliderShape,
   Camera,
@@ -12,16 +12,19 @@ import {
   Script,
   StaticCollider,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-import { LitePhysics } from "@oasis-engine/physics-lite";
+  WebGLEngine,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 class GlTFCollider extends Script {
   private _tempVec30: Vector3 = new Vector3();
   private _tempVec31: Vector3 = new Vector3();
 
   onStart(): void {
-    const renderers = this.entity.getComponentsIncludeChildren(MeshRenderer, []);
+    const renderers = this.entity.getComponentsIncludeChildren(
+      MeshRenderer,
+      []
+    );
     for (let i = renderers.length - 1; i >= 0; i--) {
       this._addBoundingBox(renderers[i]);
     }
@@ -37,8 +40,12 @@ class GlTFCollider extends Script {
     // Add collider.
     const boxCollider = entity.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.position.set(localPosition.x, localPosition.y, localPosition.z);
-    boxColliderShape.setSize(localSize.x, localSize.y, localSize.z);
+    boxColliderShape.position.set(
+      localPosition.x,
+      localPosition.y,
+      localPosition.z
+    );
+    boxColliderShape.size.set(localSize.x, localSize.y, localSize.z);
     boxCollider.addShape(boxColliderShape);
     // Add click script.
     entity.addComponent(Script).onPointerClick = () => {
@@ -66,7 +73,9 @@ cameraNode.addComponent(Camera);
 cameraNode.addComponent(OrbitControl);
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb"
+  )
   .then((glTF) => {
     const glTFRoot = glTF.defaultSceneRoot;
     const entity = rootEntity.createChild("glTF");

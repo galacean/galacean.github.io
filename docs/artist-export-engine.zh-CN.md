@@ -12,11 +12,11 @@ label: Art/教程
 
 ### 背景
 
-Oasis 引擎目前有 3 种方式调试材质：
+Galacean 引擎目前有 3 种方式调试材质：
 
 1. 通过代码修改材质属性，参考[教程](${docs}material-cn)。
 
-2. 通过 Oasis Editor 可视化调试，参考[教程](${docs}editor-3d-material-cn)。
+2. 通过 Galacean Editor 可视化调试，参考[教程](${docs}editor-3d-material-cn)。
 
 3. **通过 3D 建模软件调好后导出 [glTF](${docs}gltf-cn)**
 
@@ -44,7 +44,7 @@ Oasis 引擎目前有 3 种方式调试材质：
 
 #### 渲染算法差异
 
-目前在实时渲染领域应用的最多的是 PBR 算法，拥有能量守恒、物理正确、易操作等优点，但是不同软件的具体实现算法是不一样的，使得渲染结果也不一样。Oasis 使用的是 **Cook-Torrance BRDF** 反射率方程，并针对移动端做了优化。
+目前在实时渲染领域应用的最多的是 PBR 算法，拥有能量守恒、物理正确、易操作等优点，但是不同软件的具体实现算法是不一样的，使得渲染结果也不一样。Galacean 使用的是 **Cook-Torrance BRDF** 反射率方程，并针对移动端做了优化。
 
 值得一提的是，虽然算法不同会造成一定的视觉差异，但是其物理规律还是一致的。比如，金属度越大，环境反射越强，漫反射越弱；粗糙度越大，环境反射越模糊，如下图：
 
@@ -52,17 +52,17 @@ Oasis 引擎目前有 3 种方式调试材质：
 
 #### 光照差异
 
-跟现实世界一样，3D 场景也可以添加[直接光](${docs}light-cn#%E6%96%B9%E5%90%91%E5%85%89)、[环境光](${docs}ambient-light-cn)。Oasis 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
+跟现实世界一样，3D 场景也可以添加[直接光](${docs}light-cn#%E6%96%B9%E5%90%91%E5%85%89)、[环境光](${docs}ambient-light-cn)。Galacean 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/391e9bd9-945d-474d-b3fb-8cb0490e2b6f/1635434650361-60d7f40f-9f22-4e48-8865-141415d638f9.png)
 
-环境光基于 [IBL](${docs}texture-cube-cn#ibl) ，需要绑定一张 HDRI 贴图用来模拟周边环境，可以从[网上下载](https://polyhaven.com/hdris)。Oasis 场景中默认是没有绑定 HDRI 贴图的，而很多建模软件是自带了一张比较好看的周边环境的：
+环境光基于 [IBL](${docs}texture-cube-cn#ibl) ，需要绑定一张 HDRI 贴图用来模拟周边环境，可以从[网上下载](https://polyhaven.com/hdris)。Galacean 场景中默认是没有绑定 HDRI 贴图的，而很多建模软件是自带了一张比较好看的周边环境的：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/61c2287b-0793-4763-a5f5-70567fcdf106/1635477315862-08b0c680-029b-400b-8600-1d8cf7a20c60.png)
 
 #### glTF 支持度差异
 
-Oasis 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过[加载器](${docs}gltf-cn#%E5%8A%A0%E8%BD%BD-gltf)加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
+Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过[加载器](${docs}gltf-cn#%E5%8A%A0%E8%BD%BD-gltf)加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/2010b748-ab8b-4e46-8b15-3aee4daa71f9/1635434775734-f8454efe-d268-4f80-87ab-40f1cddf96ea.png)
 
@@ -76,7 +76,7 @@ Oasis 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。gl
 
 - 直接光
 
-前面说到，引擎默认不带直接光，那么保持还原度最简单的方法，就是删除建模软件中的灯光，保证建模软件和 Oasis 引擎中都只有环境光（性能最好）。
+前面说到，引擎默认不带直接光，那么保持还原度最简单的方法，就是删除建模软件中的灯光，保证建模软件和 Galacean 引擎中都只有环境光（性能最好）。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/dc228a19-8ca7-4ffa-ae0f-6634d0aad373/1635493208445-f1a4f6ac-28bf-4e22-8067-552ad88411b6.png)
 
@@ -106,7 +106,7 @@ Oasis 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。gl
 
 - 调试材质
 
-前面说到 Oasis PBR 使用的是 **Cook-Torrance BRDF** 反射率方程，在 Blender 中比较接近的是 Principled BSDF - GGX 算法：
+前面说到 Galacean PBR 使用的是 **Cook-Torrance BRDF** 反射率方程，在 Blender 中比较接近的是 Principled BSDF - GGX 算法：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/623b429e-b731-4c00-85ab-fd2cd270e695/1635496608900-f47ae7b7-e917-475a-9b24-74a91d485e8e.png)
 
@@ -118,7 +118,7 @@ Oasis 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。gl
 
 - 校验导出
 
-导出 glTF 后，可以将文件拖拽到 [glTF 查看器](https://oasisengine.cn/#/gltf-viewer) 中，查看相应的颜色、纹理、参数等是否正确：
+导出 glTF 后，可以将文件拖拽到 [glTF 查看器](https://galacean.antgroup.com/#/gltf-viewer) 中，查看相应的颜色、纹理、参数等是否正确：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/a76d35e6-e222-4877-89a4-c44a117a1284/1635499678001-f7df3dc2-2219-4516-887b-fc5d51dc3521.png)
 
@@ -134,6 +134,6 @@ Oasis 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。gl
 
 - [《导出 Unlit 材质》](${docs}artist-unlit-cn)
 
-#### Oasis 预览插件(规划中)
+#### Galacean 预览插件(规划中)
 
-我们后期还会投入插件开发人员，在各种建模软件中内置 Oasis 预览插件，保证所见即所得，省去 glTF 文件校验等步骤。
+我们后期还会投入插件开发人员，在各种建模软件中内置 Galacean 预览插件，保证所见即所得，省去 glTF 文件校验等步骤。

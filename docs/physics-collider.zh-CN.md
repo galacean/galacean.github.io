@@ -14,7 +14,7 @@ label: Physics
 
 ## 碰撞器与碰撞器外形
 
-[Collider](${api}core/Collider) 用来检测当前 [Entity](${api}core/Entity)上的碰撞体与场景中其他碰撞体的碰撞情况。Oasis 提供了两种碰撞器：
+[Collider](${api}core/Collider) 用来检测当前 [Entity](${api}core/Entity)上的碰撞体与场景中其他碰撞体的碰撞情况。Galacean 提供了两种碰撞器：
 
 1. [StaticCollider](${api}core/StaticCollider)：静态碰撞器，主要用于场景中静止的物体；
 

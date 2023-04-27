@@ -2,8 +2,15 @@
  * @title Spine
  * @category Benchmark
  */
-import { Camera, Logger, SystemInfo, Vector3, WebGLEngine, Entity } from "oasis-engine";
-import { SpineAnimation } from "@oasis-engine/spine";
+import {
+  Camera,
+  Logger,
+  SystemInfo,
+  Vector3,
+  WebGLEngine,
+  Entity,
+} from "@galacean/engine";
+import { SpineAnimation } from "@galacean/engine-spine";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -18,12 +25,12 @@ camera.farClipPlane = 200;
 
 engine.resourceManager
   .load({
-    urls: [ 
+    urls: [
       "https://gw.alipayobjects.com/os/OasisHub/a66ef194-6bc8-4325-9a59-6ea9097225b1/1620888427489.json",
       "https://gw.alipayobjects.com/os/OasisHub/a1e3e67b-a783-4832-ba1b-37a95bd55291/1620888427490.atlas",
-      "https://gw.alipayobjects.com/zos/OasisHub/a3ca8f62-1068-43a5-bb64-5c9a0f823dde/1620888427490.png"
+      "https://gw.alipayobjects.com/zos/OasisHub/a3ca8f62-1068-43a5-bb64-5c9a0f823dde/1620888427490.png",
     ],
-    type: "spine"
+    type: "spine",
   })
   .then((spineEntity: Entity) => {
     for (let i = -5; i < 5; i++) {

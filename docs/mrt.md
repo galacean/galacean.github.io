@@ -8,7 +8,7 @@ label: Graphics/Texture
 
 Off-screen rendering texture, as the name suggests, the texture can be obtained by off-screen rendering. The bottom layer uses the [FBO](https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/framebufferTexture2D) technology to output the rendering operation to the texture instead of the screen. The user can use this texture to realize post-processing special effects, refraction, reflection, dynamic environment mapping and other artistic creations.
 
-Oasis provides the [RenderTarget](${api}core/RenderTarget) class to perform off-screen rendering and obtain the corresponding off-screen rendering textures. Currently, the engine supports the generation of the following off-screen rendering textures:
+Galacean provides the [RenderTarget](${api}core/RenderTarget) class to perform off-screen rendering and obtain the corresponding off-screen rendering textures. Currently, the engine supports the generation of the following off-screen rendering textures:
 
 | Type | Usage |
 | :-- | :-- |

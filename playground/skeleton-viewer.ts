@@ -2,9 +2,15 @@
  * @title Skeleton Viewer
  * @category Toolkit
  */
-import { Animator, Camera, GLTFResource, Vector3, WebGLEngine } from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { SkeletonViewer } from "@oasis-engine-toolkit/skeleton-viewer";
+import {
+  Animator,
+  Camera,
+  GLTFResource,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { SkeletonViewer } from "@galacean/engine-toolkit-skeleton-viewer";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -20,7 +26,9 @@ const control = cameraEntity.addComponent(OrbitControl);
 control.target.set(0, 3, 0);
 
 engine.resourceManager
-  .load<GLTFResource>("https://gw.alipayobjects.com/os/bmw-prod/f40ef8dd-4c94-41d4-8fac-c1d2301b6e47.glb")
+  .load<GLTFResource>(
+    "https://gw.alipayobjects.com/os/bmw-prod/f40ef8dd-4c94-41d4-8fac-c1d2301b6e47.glb"
+  )
   .then((gltf) => {
     const { defaultSceneRoot, animations } = gltf;
     const animator = defaultSceneRoot.getComponent(Animator);

@@ -10,7 +10,7 @@ label: Editor-Interface
   <figcaption style="text-align:center; color: #889096;font-size:12px">项目导出导出配置面板</figcaption>
 </figure>
 
-Oasis Editor 项目导出功能可以将当前编辑器项目作为一个前端项目下载到本地。你可以在编辑器中配置项目导出的参数，如资产导出配置、渲染导出配置、物理导出配置等。基于这些配置，编辑器会生成出项目所需的代码、资产, 生成对应的 `package.json`，并最终打包成一个 zip 包供你下载。
+Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前端项目下载到本地。你可以在编辑器中配置项目导出的参数，如资产导出配置、渲染导出配置、物理导出配置等。基于这些配置，编辑器会生成出项目所需的代码、资产, 生成对应的 `package.json`，并最终打包成一个 zip 包供你下载。
 
 ## 导出配置
 

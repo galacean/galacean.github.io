@@ -2,7 +2,7 @@
  * @title Sprite Color
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   Camera,
@@ -12,8 +12,8 @@ import {
   SpriteRenderer,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -31,7 +31,7 @@ cameraEntity.addComponent(OrbitControl);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*KjnzTpE8LdAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     // Create origin sprite entity.

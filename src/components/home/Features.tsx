@@ -1,9 +1,7 @@
+import { Button, Flex, styled } from '@galacean/editor-ui';
 import { useContext } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
-import { Button } from '@oasis-engine/editor-components';
-import { styled } from  "@oasis-engine/editor-design-system";
-import { Flex } from '@oasis-engine/editor-components';
 import { AppContext } from '../contextProvider';
 import PBRHelmet from './PBRHelmet';
 import Spine from './Spine';
@@ -33,7 +31,7 @@ export default function Features() {
           <FormattedMessage id='app.home.3d.intro' />
         </p>
         <Link to={`/docs/${version}/${lang}/mesh-renderer`}>
-          <Button variant='outline'>
+          <Button variant="secondary" round>
             <FormattedMessage id='app.home.more' />
           </Button>
         </Link>
@@ -45,7 +43,7 @@ export default function Features() {
           <FormattedMessage id='app.home.2d.intro' />
         </p>
         <Link to={`/docs/${version}/${lang}/sprite-renderer`}>
-          <Button variant='outline'>
+          <Button variant='secondary' round>
             <FormattedMessage id='app.home.more' />
           </Button>
         </Link>

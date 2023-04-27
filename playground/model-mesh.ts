@@ -16,8 +16,8 @@ import {
   Shader,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 init();
 
@@ -48,7 +48,7 @@ function createPlane(engine: Engine, entity: Entity): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_2e421e/afts/img/A*fRtNTKrsq3YAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture) => {
       const planeEntity = entity.createChild("plane");
@@ -56,7 +56,14 @@ function createPlane(engine: Engine, entity: Entity): void {
       const material = new Material(engine, shader);
 
       // planeEntity.transform.setRotation(-90, 0, 0);
-      meshRenderer.mesh = PrimitiveMesh.createPlane(engine, 1245, 1245, 100, 100, false);
+      meshRenderer.mesh = PrimitiveMesh.createPlane(
+        engine,
+        1245,
+        1245,
+        100,
+        100,
+        false
+      );
       meshRenderer.setMaterial(material);
 
       planeEntity.addComponent(PlaneAnimation);
@@ -65,7 +72,10 @@ function createPlane(engine: Engine, entity: Entity): void {
       shaderData.setTexture("u_baseTexture", texture);
       shaderData.setColor("u_fogColor", new Color(0.25, 0.25, 0.25, 1));
       shaderData.setFloat("u_fogDensity", 0.004);
-      shaderData.setColor("u_color", new Color(86 / 255, 182 / 255, 194 / 255, 1));
+      shaderData.setColor(
+        "u_color",
+        new Color(86 / 255, 182 / 255, 194 / 255, 1)
+      );
     });
 }
 
@@ -108,7 +118,8 @@ class PlaneAnimation extends Script {
     const positions = mesh.getPositions();
     for (let i = 0, n = positions.length; i < n; i++) {
       const position = positions[i];
-      position.y = Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
+      position.y =
+        Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
       counter += 0.1;
     }
     mesh.setPositions(positions);

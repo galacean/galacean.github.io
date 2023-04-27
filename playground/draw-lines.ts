@@ -17,11 +17,11 @@ import {
   BoxColliderShape,
   MathUtil,
   Quaternion,
-  RenderFace
-} from "oasis-engine";
+  RenderFace,
+} from "@galacean/engine";
 import * as dat from "dat.gui";
-import { LitePhysics } from "@oasis-engine/physics-lite";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { LitePhysics } from "@galacean/engine-physics-lite";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const gui = new dat.GUI();
 const tempLine = new Vector3();
@@ -88,21 +88,40 @@ class DrawScript extends Script {
     if (now - this._preDrawTime >= this._drawInterval) {
       this._preDrawTime = now;
       const { tempPointer: endPointer, _prePointer: startPointer } = this;
-      const { x: screenX, y: screenY } = this.engine.inputManager.pointers[0].position;
-      this._camera.screenToWorldPoint(endPointer.set(screenX, screenY, this._depth), endPointer);
+      const { x: screenX, y: screenY } =
+        this.engine.inputManager.pointers[0].position;
+      this._camera.screenToWorldPoint(
+        endPointer.set(screenX, screenY, this._depth),
+        endPointer
+      );
       const { x: sx, y: sy, z: sz } = startPointer;
       const { x: ex, y: ey, z: ez } = endPointer;
       if (sx === ex && sy === ey && sz === ez) {
         return;
       }
-      const { _meshEntity: meshEntity, _forward: forward, _lineWidth: lineWidth, _meshMaterial: meshMaterial } = this;
+      const {
+        _meshEntity: meshEntity,
+        _forward: forward,
+        _lineWidth: lineWidth,
+        _meshMaterial: meshMaterial,
+      } = this;
       // Draw circle.
       const rendererCircle = meshEntity.addComponent(MeshRenderer);
-      rendererCircle.mesh = createCircleMesh(endPointer, forward, lineWidth, this._precision);
+      rendererCircle.mesh = createCircleMesh(
+        endPointer,
+        forward,
+        lineWidth,
+        this._precision
+      );
       rendererCircle.setMaterial(meshMaterial);
       // Draw line.
       const renderer = meshEntity.addComponent(MeshRenderer);
-      renderer.mesh = createLineMesh(startPointer, endPointer, forward, lineWidth);
+      renderer.mesh = createLineMesh(
+        startPointer,
+        endPointer,
+        forward,
+        lineWidth
+      );
       renderer.setMaterial(meshMaterial);
       startPointer.set(ex, ey, ez);
     }
@@ -111,12 +130,21 @@ class DrawScript extends Script {
   onPointerDown(): void {
     // Screen pointer to world pointer.
     this._preDrawTime = this.engine.time.nowTime;
-    const { x: screenX, y: screenY } = this.engine.inputManager.pointers[0].position;
+    const { x: screenX, y: screenY } =
+      this.engine.inputManager.pointers[0].position;
     const { _prePointer: startPointer } = this;
-    this._camera.screenToWorldPoint(startPointer.set(screenX, screenY, this._depth), startPointer);
+    this._camera.screenToWorldPoint(
+      startPointer.set(screenX, screenY, this._depth),
+      startPointer
+    );
     // Draw circle.
     const renderer = this._meshEntity.addComponent(MeshRenderer);
-    renderer.mesh = createCircleMesh(this._prePointer, this._forward, this._lineWidth, this._precision);
+    renderer.mesh = createCircleMesh(
+      this._prePointer,
+      this._forward,
+      this._lineWidth,
+      this._precision
+    );
     renderer.setMaterial(this._meshMaterial);
   }
 }
@@ -143,7 +171,7 @@ cameraControl.enabled = false;
 const planeEntity = rootEntity.createChild("camera");
 const planeCollider = planeEntity.addComponent(StaticCollider);
 const planeShape = new BoxColliderShape();
-planeShape.setSize(20, 20, 1);
+planeShape.size.set(20, 20, 1);
 planeCollider.addShape(planeShape);
 const planeScript = planeEntity.addComponent(DrawScript);
 planeScript.camera = camera;
@@ -158,7 +186,12 @@ engine.run();
  * @param lineWidth - Line width
  * @returns ModelMesh containing mesh information
  */
-function createLineMesh(startPos: Vector3, endPos: Vector3, forwardVec3: Vector3, lineWidth: number): Mesh {
+function createLineMesh(
+  startPos: Vector3,
+  endPos: Vector3,
+  forwardVec3: Vector3,
+  lineWidth: number
+): Mesh {
   // Get direction vector.
   Vector3.subtract(endPos, startPos, tempLine);
   // Get perpendicular vector.
@@ -186,22 +219,38 @@ function createLineMesh(startPos: Vector3, endPos: Vector3, forwardVec3: Vector3
  * @param precision - Precision
  * @returns ModelMesh containing mesh information
  */
-function createCircleMesh(pos: Vector3, forwardVec3: Vector3, lineWidth: number, precision: number): Mesh {
+function createCircleMesh(
+  pos: Vector3,
+  forwardVec3: Vector3,
+  lineWidth: number,
+  precision: number
+): Mesh {
   Vector3.cross(tempZAxis, forwardVec3, tempRotateAxis);
   const vec3Arr: Vector3[] = [];
   const axisLen = tempRotateAxis.length();
   const rad = (2 * Math.PI) / precision;
   if (axisLen <= MathUtil.zeroTolerance) {
     for (let i = 0; i < precision; i++) {
-      const vec3 = new Vector3((lineWidth * Math.sin(rad * i)) / 2, (lineWidth * Math.cos(rad * i)) / 2, 0);
+      const vec3 = new Vector3(
+        (lineWidth * Math.sin(rad * i)) / 2,
+        (lineWidth * Math.cos(rad * i)) / 2,
+        0
+      );
       vec3Arr.push(vec3.add(pos));
     }
   } else {
-    const rotateVal = Vector3.dot(tempZAxis, forwardVec3) > 0 ? Math.asin(axisLen) : Math.PI - Math.asin(axisLen);
+    const rotateVal =
+      Vector3.dot(tempZAxis, forwardVec3) > 0
+        ? Math.asin(axisLen)
+        : Math.PI - Math.asin(axisLen);
     const quat = new Quaternion();
     quat.rotationAxisAngle(tempRotateAxis, rotateVal);
     for (let i = 0; i < precision; i++) {
-      const vec3 = new Vector3((lineWidth * Math.sin(rad * i)) / 2, (lineWidth * Math.cos(rad * i)) / 2, 0);
+      const vec3 = new Vector3(
+        (lineWidth * Math.sin(rad * i)) / 2,
+        (lineWidth * Math.cos(rad * i)) / 2,
+        0
+      );
       vec3.transformByQuat(quat);
       vec3Arr.push(vec3.add(pos));
     }
@@ -229,7 +278,7 @@ const debugInfo = {
   drawInterval: 30,
   resetView: () => {
     cameraControl.enabled && cameraEntity.transform.setPosition(0, 0, 10);
-  }
+  },
 };
 
 gui.add(debugInfo, "mode", ["Observe", "Draw"]).onChange((v: string) => {

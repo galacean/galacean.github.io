@@ -12,9 +12,9 @@ import {
   MeshRenderer,
   MeshTopology,
   PrimitiveMesh,
-  WebGLEngine
-} from "oasis-engine";
-import { FreeControl } from "@oasis-engine-toolkit/controls";
+  WebGLEngine,
+} from "@galacean/engine";
+import { FreeControl } from "@galacean/engine-toolkit-controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -44,7 +44,11 @@ const groundMaterial = new BlinnPhongMaterial(engine);
 // create meshes in scene
 for (let i = 0; i < 100; i++) {
   let cube = rootNode.createChild("cube");
-  cube.transform.setPosition(Math.random() * 2000 - 1000, Math.random() * 200, Math.random() * 2000 - 1000);
+  cube.transform.setPosition(
+    Math.random() * 2000 - 1000,
+    Math.random() * 200,
+    Math.random() * 2000 - 1000
+  );
   const cubeRenderer = cube.addComponent(MeshRenderer);
   cubeRenderer.mesh = cuboid;
   cubeRenderer.setMaterial(material);

@@ -18,8 +18,8 @@ import {
   VertexElement,
   VertexElementFormat,
   WebGLEngine,
-  Script
-} from "oasis-engine";
+  Script,
+} from "@galacean/engine";
 
 /**
  * Script for updating color buffer.
@@ -100,7 +100,11 @@ function init() {
  * @param size - Cube size
  * @returns Cube mesh
  */
-function createCustomMesh(engine: Engine, size: number, randomColorScript: RandomColorScript): Mesh {
+function createCustomMesh(
+  engine: Engine,
+  size: number,
+  randomColorScript: RandomColorScript
+): Mesh {
   const cubeMesh = new BufferMesh(engine, "CustomCubeMesh");
 
   // Create vertices position and normal data.
@@ -140,9 +144,24 @@ function createCustomMesh(engine: Engine, size: number, randomColorScript: Rando
           20, 22, 23, 22, 20, 21]);
 
   // Create gpu vertex buffer and index buffer.
-  const posNorBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, positionNormals, BufferUsage.Static);
-  const independentColorBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, colorData, BufferUsage.Dynamic);
-  const indexBuffer = new Buffer(engine, BufferBindFlag.IndexBuffer, indices, BufferUsage.Static);
+  const posNorBuffer = new Buffer(
+    engine,
+    BufferBindFlag.VertexBuffer,
+    positionNormals,
+    BufferUsage.Static
+  );
+  const independentColorBuffer = new Buffer(
+    engine,
+    BufferBindFlag.VertexBuffer,
+    colorData,
+    BufferUsage.Dynamic
+  );
+  const indexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.IndexBuffer,
+    indices,
+    BufferUsage.Static
+  );
 
   // Bind buffer.
   cubeMesh.setVertexBufferBinding(posNorBuffer, 24, 0);
@@ -153,7 +172,7 @@ function createCustomMesh(engine: Engine, size: number, randomColorScript: Rando
   cubeMesh.setVertexElements([
     new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0),
     new VertexElement("NORMAL", 12, VertexElementFormat.Vector3, 0),
-    new VertexElement("COLOR_0", 0, VertexElementFormat.Vector3, 1)
+    new VertexElement("COLOR_0", 0, VertexElementFormat.Vector3, 1),
   ]);
 
   // Add one sub geometry.

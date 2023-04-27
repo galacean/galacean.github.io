@@ -20,20 +20,20 @@ import {
   StaticCollider,
   BoxColliderShape,
   Keys,
-  Engine
-} from "oasis-engine";
+  Engine,
+} from "@galacean/engine";
 import * as TWEEN from "@tweenjs/tween.js";
-import { LitePhysics } from "@oasis-engine/physics-lite";
+import { LitePhysics } from "@galacean/engine-physics-lite";
 
 enum EnumBirdState {
   Alive = 0,
-  Dead = 1
+  Dead = 1,
 }
 
 enum EnumGameState {
   Idel = 0,
   Start = 1,
-  End = 2
+  End = 2,
 }
 
 /** The y coordinate of the ground collision detection. */
@@ -47,7 +47,7 @@ const GameEvent = {
   checkHit: "checkHit",
   gameOver: "gameOver",
   addScore: "addScore",
-  reStartGame: "reStartGame"
+  reStartGame: "reStartGame",
 };
 
 let gameResArray: Texture2D[];
@@ -89,33 +89,33 @@ engine.resourceManager
     {
       // Background.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/5244/background.png",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Pipe.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/5987/pipe.png",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Ground.
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Sj7OS4YJHDIAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Bird.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8356/bird.png",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Restart.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/6695/restart.png",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     },
     {
       // Number.
       url: "https://gw.alipayobjects.com/zos/OasisHub/315000157/8709/527-number.png",
-      type: AssetType.Texture2D
-    }
+      type: AssetType.Texture2D,
+    },
   ])
   .then((texture2DArr: Texture2D[]) => {
     // Record the resources.
@@ -124,7 +124,10 @@ engine.resourceManager
     // Background.
     const nodeBg = rootEntity.createChild("nodeBg");
     nodeBg.transform.setPosition(0.3, 0, -10);
-    nodeBg.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[0]);
+    nodeBg.addComponent(SpriteRenderer).sprite = new Sprite(
+      engine,
+      texture2DArr[0]
+    );
 
     // Pipe.
     const nodePipe = rootEntity.createChild("nodePipe");
@@ -146,7 +149,10 @@ engine.resourceManager
     // Bird.
     const nodeBird = rootEntity.createChild("nodeBird");
     nodeBird.transform.setPosition(-1, 1.15, 0);
-    nodeBird.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[3]);
+    nodeBird.addComponent(SpriteRenderer).sprite = new Sprite(
+      engine,
+      texture2DArr[3]
+    );
     nodeBird.addComponent(ScriptBird);
 
     // Death Effect.
@@ -167,7 +173,10 @@ engine.resourceManager
     nodeGui.transform.setPosition(0.3, 0, 1);
     // Restart.
     const nodeRestart = nodeGui.createChild("nodeRestart");
-    nodeRestart.addComponent(SpriteRenderer).sprite = new Sprite(engine, texture2DArr[4]);
+    nodeRestart.addComponent(SpriteRenderer).sprite = new Sprite(
+      engine,
+      texture2DArr[4]
+    );
     // Score.
     const nodeScore = nodeGui.createChild("nodeScore");
     nodeScore.transform.setPosition(0, 3.2, 0);
@@ -212,8 +221,14 @@ class ScriptPipe extends Script {
     node1.transform.setPosition(0, -verticalDis / 2, 0);
     node2.transform.setPosition(0, verticalDis / 2, 0);
     node2.transform.setScale(1, -1, 1);
-    node1.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1]);
-    node2.addComponent(SpriteRenderer).sprite = new Sprite(engine, gameResArray[1]);
+    node1.addComponent(SpriteRenderer).sprite = new Sprite(
+      engine,
+      gameResArray[1]
+    );
+    node2.addComponent(SpriteRenderer).sprite = new Sprite(
+      engine,
+      gameResArray[1]
+    );
     this._pipePool.push(pipe);
 
     // Control the performance of the pipe according to the change of the game state.
@@ -263,7 +278,11 @@ class ScriptPipe extends Script {
       // After deltaTime, the distance the pipe has moved.
       const changeVal = deltaTime * this._pipeHorizontalV;
       const pipeLen = this._nowPipeArr.length;
-      const { _pipeHorizontalDis: horizontalDis, _pipeRandomPosY: randomPosY, _pipeHideX: hideX } = this;
+      const {
+        _pipeHorizontalDis: horizontalDis,
+        _pipeRandomPosY: randomPosY,
+        _pipeHideX: hideX,
+      } = this;
       // Adjust the position of all pipes.
       if (pipeLen > 0) {
         for (let i = pipeLen - 1; i >= 0; i--) {
@@ -283,19 +302,28 @@ class ScriptPipe extends Script {
           }
           // Judge whether the pipe needs to be regenerated according to the X coordinate.
           if (i == pipeLen - 1 && pipePos.x <= hideX - horizontalDis) {
-            this._createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
+            this._createPipe(
+              hideX,
+              randomPosY * Math.random() - randomPosY / 2 + 0.8,
+              0
+            );
           }
         }
       } else {
         // Need to regenerate a pipe.
-        this._createPipe(hideX, randomPosY * Math.random() - randomPosY / 2 + 0.8, 0);
+        this._createPipe(
+          hideX,
+          randomPosY * Math.random() - randomPosY / 2 + 0.8,
+          0
+        );
       }
     }
   }
 
   private _createPipe(posX: number, posY: number, posZ: number) {
     const pipePool = this._pipePool;
-    const pipe = pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
+    const pipe =
+      pipePool.length > 0 ? pipePool.pop() : this._originPipe.clone();
     pipe.transform.setPosition(posX, posY, posZ);
     this.entity.addChild(pipe);
     this._nowPipeArr.push(pipe);
@@ -338,7 +366,9 @@ class ScriptScore extends Script {
     const spriteArray = this._spriteArray;
     // Cut digital resources into ten.
     for (var i = 0; i < 10; i++) {
-      spriteArray.push(new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1)));
+      spriteArray.push(
+        new Sprite(engine, gameResArray[5], new Rect(i * 0.1, 0, 0.1, 1))
+      );
     }
 
     engine.on(GameEvent.addScore, () => {
@@ -370,7 +400,7 @@ class ScriptScore extends Script {
       _numInv: inv,
       _scoreEntitys: scoreEntitys,
       _spriteArray: spriteArray,
-      _scoreRenderer: scoreRenderers
+      _scoreRenderer: scoreRenderers,
     } = this;
     var nowEntityLen = scoreEntitys.length;
     let scoreEntity: Entity;
@@ -409,7 +439,9 @@ class ScriptGround extends Script {
   private _groundHorizontalV: number = 0.0082;
 
   onAwake() {
-    this._groundMaterial = <UnlitMaterial>this.entity.getComponent(MeshRenderer).getMaterial();
+    this._groundMaterial = <UnlitMaterial>(
+      this.entity.getComponent(MeshRenderer).getMaterial()
+    );
     // Control the performance of the ground according to the change of the game state.
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       switch (gameState) {
@@ -449,9 +481,10 @@ class GameCtrl extends Script {
       this._setGameState(EnumGameState.End);
     });
 
-    const boxCollider: StaticCollider = this.entity.addComponent(StaticCollider);
+    const boxCollider: StaticCollider =
+      this.entity.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.setSize(10, 10, 0.001);
+    boxColliderShape.size.set(10, 10, 0.001);
     boxCollider.addShape(boxColliderShape);
   }
 
@@ -504,9 +537,10 @@ class ScriptGUI extends Script {
     const resetBtnNode = entity.findByName("nodeRestart");
 
     // Add BoxCollider.
-    const boxCollider: StaticCollider = resetBtnNode.addComponent(StaticCollider);
+    const boxCollider: StaticCollider =
+      resetBtnNode.addComponent(StaticCollider);
     const boxColliderShape = new BoxColliderShape();
-    boxColliderShape.setSize(2.14, 0.75, 0.001);
+    boxColliderShape.size.set(2.14, 0.75, 0.001);
     boxCollider.addShape(boxColliderShape);
     resetBtnNode.addComponent(Script).onPointerClick = () => {
       this.engine.dispatch(GameEvent.reStartGame);
@@ -534,7 +568,11 @@ class ScriptGUI extends Script {
 
 class ScriptBird extends Script {
   /** Offsets of sprite sheet animation. */
-  private _regions: Vector2[] = [new Vector2(0, 0), new Vector2(1 / 3, 0), new Vector2(2 / 3, 0)];
+  private _regions: Vector2[] = [
+    new Vector2(0, 0),
+    new Vector2(1 / 3, 0),
+    new Vector2(2 / 3, 0),
+  ];
   /** Reciprocal Of SliceWidth. */
   private _reciprocalSliceWidth: number = 1 / 3;
   /** Reciprocal Of SliceHeight. */
@@ -575,9 +613,13 @@ class ScriptBird extends Script {
         this._cumulativeTime += deltaTime;
         if (this._cumulativeTime >= _frameInterval) {
           // Need update frameIndex.
-          const addFrameCount = Math.floor(this._cumulativeTime / _frameInterval);
+          const addFrameCount = Math.floor(
+            this._cumulativeTime / _frameInterval
+          );
           this._cumulativeTime -= addFrameCount * _frameInterval;
-          this._setFrameIndex((this._curFrameIndex + addFrameCount) % _totalFrames);
+          this._setFrameIndex(
+            (this._curFrameIndex + addFrameCount) % _totalFrames
+          );
         }
 
         // Update bird's location information.
@@ -593,11 +635,15 @@ class ScriptBird extends Script {
           const addToMaxUseTime = (_maxDropV - _startFlyV) / _gravity;
           if (subTime <= addToMaxUseTime) {
             // Free fall.
-            endY = ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 + this._startY;
+            endY =
+              ((_startFlyV + (_startFlyV + subTime * _gravity)) * subTime) / 2 +
+              this._startY;
           } else {
             // Falling at a constant speed.
             endY =
-              ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 + _maxDropV * (subTime - addToMaxUseTime) + this._startY;
+              ((_maxDropV + _startFlyV) * addToMaxUseTime) / 2 +
+              _maxDropV * (subTime - addToMaxUseTime) +
+              this._startY;
           }
           transform.setPosition(position.x, endY, position.z);
         }
@@ -704,7 +750,12 @@ class ScriptBird extends Script {
       this._curFrameIndex = frameIndex;
       const frameInfo = this._regions[frameIndex];
       const region = this._sprite.region;
-      region.set(frameInfo.x, frameInfo.y, this._reciprocalSliceWidth, this._reciprocalSliceHeight);
+      region.set(
+        frameInfo.x,
+        frameInfo.y,
+        this._reciprocalSliceWidth,
+        this._reciprocalSliceHeight
+      );
       this._sprite.region = region;
     }
   }
@@ -718,7 +769,11 @@ class ScriptDeathEff extends Script {
 
     // init Tween.
     const baseColor = material.baseColor;
-    const shockTween = new TWEEN.Tween(baseColor).to({ a: 1 }, 80).repeat(1).yoyo(true).delay(20);
+    const shockTween = new TWEEN.Tween(baseColor)
+      .to({ a: 1 }, 80)
+      .repeat(1)
+      .yoyo(true)
+      .delay(20);
     engine.on(GameEvent.stateChange, (gameState: EnumGameState) => {
       switch (gameState) {
         case EnumGameState.End:

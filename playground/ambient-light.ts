@@ -16,9 +16,9 @@ import {
   PrimitiveMesh,
   SkyBoxMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 Logger.enable();
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -57,7 +57,7 @@ ballRender.setMaterial(material);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin",
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -71,19 +71,26 @@ function openDebug(specularTexture) {
   const info = {
     diffuseMode: "SphericalHarmonics",
     diffuseSolidColor: [0.212 * 255, 0.227 * 255, 0.259 * 255],
-    specularTexture: true
+    specularTexture: true,
   };
 
-  gui.add(info, "diffuseMode", ["SolidColor", "SphericalHarmonics"]).onChange((v) => {
-    if (v === "SphericalHarmonics") {
-      scene.ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-    } else if (v === "SolidColor") {
-      scene.ambientLight.diffuseMode = DiffuseMode.SolidColor;
-    }
-  });
+  gui
+    .add(info, "diffuseMode", ["SolidColor", "SphericalHarmonics"])
+    .onChange((v) => {
+      if (v === "SphericalHarmonics") {
+        scene.ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+      } else if (v === "SolidColor") {
+        scene.ambientLight.diffuseMode = DiffuseMode.SolidColor;
+      }
+    });
 
   gui.addColor(info, "diffuseSolidColor").onChange((v) => {
-    scene.ambientLight.diffuseSolidColor.set(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+    scene.ambientLight.diffuseSolidColor.set(
+      v[0] / 255,
+      v[1] / 255,
+      v[2] / 255,
+      1
+    );
   });
 
   gui.add(info, "specularTexture").onChange((v) => {

@@ -7,9 +7,9 @@ group: 教程
 label: Art/教程
 ---
 
-动画切片(**AnimationClip**) 为**一段时间轴上的动画组合**，可以是多个物体的旋转、位移、缩放、权重动画，如**走路、跑步、跳跃**可以分别导出 3 个动画切片；Oasis 引擎可以选择播放哪一个动画切片，前提是建模软件导出的 FBX 或者 glTF 里面包含多个动画切片。
+动画切片(**AnimationClip**) 为**一段时间轴上的动画组合**，可以是多个物体的旋转、位移、缩放、权重动画，如**走路、跑步、跳跃**可以分别导出 3 个动画切片；Galacean 引擎可以选择播放哪一个动画切片，前提是建模软件导出的 FBX 或者 glTF 里面包含多个动画切片。
 
-为减少沟通成本，本文列举了几种常见的动画切片方法，导出 glTF 方便 Oasis 引擎直接使用，也可以通过 [glTF 预览](https://oasisengine.cn/#/gltf-viewer) 页面进行功能校验。
+为减少沟通成本，本文列举了几种常见的动画切片方法，导出 glTF 方便 Galacean 引擎直接使用，也可以通过 [glTF 预览](https://galacean.antgroup.com/#/gltf-viewer) 页面进行功能校验。
 
 Blender 的动画编辑页面非常友好，能够清晰地可视化显示受动画影响的节点，并且在时间轴上显示关键帧，因此推荐使用 Blender 进行动画切片。
 
@@ -43,7 +43,7 @@ Blender 的动画编辑页面非常友好，能够清晰地可视化显示受动
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/b973b5bf-2068-4e79-ac74-f200c2cf15d4/1622618030553-ac8afb11-cfea-48b7-82e1-9ca1243af167.png)
 
-4. 至此，动画切片已经准备完成，导出 glTF 或者 FBX ，接入 Oasis 引擎即可：
+4. 至此，动画切片已经准备完成，导出 glTF 或者 FBX ，接入 Galacean 引擎即可：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/9e29488b-bbb7-45e7-9385-142b399e39f5/1622618144473-9b9c24eb-2186-408f-8b75-ee41c2bf9dbd.png)
 
@@ -101,4 +101,4 @@ Unity 也可以导出动画切片，但是效率比较低。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1bfefe2b-ca58-4cca-a091-9efe8028a4df/1622552925151-16b86fcc-4680-4611-aa32-d3697bbe5086.png)
 
-12. 至此，制作的动画切片 glTF 文件导出完毕，可以访问 Oasis 的 [glTF 预览](https://oasisengine.cn/#/gltf-viewer) 进行功能校验。
+12. 至此，制作的动画切片 glTF 文件导出完毕，可以访问 Galacean 的 [glTF 预览](https://galacean.antgroup.com/#/gltf-viewer) 进行功能校验。

@@ -6,7 +6,7 @@ group: Advanced
 label: Introduction/Advanced
 ---
 
-> I believe everyone is familiar with **Flappy Bird**. Today we briefly describe how to use Oasis to replicate 2D games. The process is actually the same as the daily requirements. Original game link:[http://flappybird.io/](http://flappybird.io/)
+> I believe everyone is familiar with **Flappy Bird**. Today we briefly describe how to use Galacean to replicate 2D games. The process is actually the same as the daily requirements. Original game link:[http://flappybird.io/](http://flappybird.io/)
 
 # Overview
 
@@ -380,7 +380,7 @@ Here you can refer to the [Input](${docs}input) document.
 
 ## Timing of collision detection
 
-There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Oasis scripting system](${docs}script#component-life-cycle-function) should be familiar with it. After we change the position of `Entity` in `onUpdate`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
+There is a premise when performing collision detection, that is, it is already the final position of this frame. Developers who have studied [Galacean scripting system](${docs}script#component-life-cycle-function) should be familiar with it. After we change the position of `Entity` in `onUpdate`, we can do collision detection in `onLateUpdate`, which can ensure that there is no problem with the timing.
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/49d73e14-842d-4909-8612-be2209bb0afe/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265-20210913105819642.png" alt="image.png" style="zoom:50%;" />
 

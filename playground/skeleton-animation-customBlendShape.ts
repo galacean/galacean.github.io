@@ -2,7 +2,7 @@
  * @title Animation CustomBlendShape
  * @category Animation
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   BlendShape,
@@ -13,8 +13,8 @@ import {
   SystemInfo,
   UnlitMaterial,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 Logger.enable();
 const engine = new WebGLEngine("canvas");
@@ -40,7 +40,7 @@ const positions = [
   new Vector3(1.0, 1.0, 1.0),
   new Vector3(1.0, 1.0, 1.0),
   new Vector3(-1.0, 1.0, 1.0),
-  new Vector3(-1.0, -1.0, 1.0)
+  new Vector3(-1.0, -1.0, 1.0),
 ];
 modelMesh.setPositions(positions);
 
@@ -54,7 +54,7 @@ const deltaPositions = [
   new Vector3(-1.0, 0.0, 0.0),
   new Vector3(-1.0, 0.0, 0.0),
   new Vector3(1.0, 0.0, 0.0),
-  new Vector3(0.0, 0.0, 0.0)
+  new Vector3(0.0, 0.0, 0.0),
 ];
 const blendShape = new BlendShape("BlendShapeA");
 blendShape.addFrame(1.0, deltaPositions);
@@ -80,7 +80,7 @@ addDataGUI(skinnedMeshRenderer);
 function addDataGUI(skinnedMeshRenderer: SkinnedMeshRenderer): void {
   const gui = new dat.GUI();
   const guiData = {
-    blendShapeWeights: 1.0
+    blendShapeWeights: 1.0,
   };
 
   gui.add(guiData, "blendShapeWeights", 0, 1).onChange((value: number) => {

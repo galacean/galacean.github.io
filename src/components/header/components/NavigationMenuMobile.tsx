@@ -31,7 +31,7 @@ export function NavigationMenuMobile() {
       children: [
         {
           key: 0,
-          label: <a target="_blank" href={`https://github.com/oasis-engine/create-oasis-app`} >{formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}</a>
+          label: <a target="_blank" href={`https://github.com/galacean/create-galacean-app`} >{formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}</a>
         },
       ]
     },

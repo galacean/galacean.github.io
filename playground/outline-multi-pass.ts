@@ -18,9 +18,9 @@ import {
   Script,
   Shader,
   StencilOperation,
-  WebGLEngine
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+  WebGLEngine,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const gui = new dat.GUI();
 const engine = new WebGLEngine("canvas");
@@ -42,7 +42,7 @@ cameraNode.addComponent(OrbitControl).target.set(0, 1.3, 0);
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -52,7 +52,7 @@ engine.resourceManager
 engine.resourceManager
   .load({
     type: AssetType.Prefab,
-    url: "https://gw.alipayobjects.com/os/OasisHub/440000554/3615/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+    url: "https://gw.alipayobjects.com/os/OasisHub/440000554/3615/%25E5%25BD%2592%25E6%25A1%25A3.gltf",
   })
   .then((gltf: GLTFResource) => {
     const { defaultSceneRoot } = gltf;
@@ -272,13 +272,18 @@ function openDebug() {
   const config = {
     plan: "外描边",
     size: 3,
-    color: [0, 0, 0]
+    color: [0, 0, 0],
   };
 
   gui
     .add(config, "plan", ["外描边", "内描边"])
     .onChange((v) => {
-      color.set(config.color[0] / 255, config.color[1] / 255, config.color[2] / 255, 1);
+      color.set(
+        config.color[0] / 255,
+        config.color[1] / 255,
+        config.color[2] / 255,
+        1
+      );
 
       border.destroy();
       if (v === "外描边") {

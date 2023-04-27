@@ -14,7 +14,7 @@ label: Graphics/Material
 [Shader](${api}core/Shader) 封装了顶点着色器、片元着色器、着色器预编译、平台精度、平台差异性。他的创建和使用非常方便，用户只需要关注 shader 算法本身，而不用纠结于使用什么精度，亦或是使用 GLSL 哪个版本的写法。
 下面是一个简单的demo:
 ```javascript
-import { Material, Shader, Color } from "oasis-engine";
+import { Material, Shader, Color } from "@galacean/engine";
 
 //-- Shader 代码
 const vertexSource = `
@@ -70,7 +70,6 @@ const material = new Material(engine, Shader.find("demo"));
 | 投影矩阵 | u_projMat | mat4 |
 | 视口投影矩阵 | u_VPMat | mat4 |
 | 视口逆矩阵 | u_viewInvMat | mat4 |
-| 投影逆矩阵 | u_projInvMat | mat4 |
 | 相机位置 | u_cameraPos | vec3 |
 | 模型本地坐标系矩阵 | u_localMat | mat4 |
 | 模型世界坐标系矩阵 | u_modelMat | mat4 |
@@ -238,7 +237,7 @@ renderer.priority = -1; // 优先渲染
 ## 封装自定义材质
 这部分的内容是结合上文所有内容，给用户一个简单的封装示例，希望对您有所帮助：
 ```typescript
-import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from "oasis-engine";
+import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from "@galacean/engine";
 
 //-- Shader 代码
 const vertexSource = `

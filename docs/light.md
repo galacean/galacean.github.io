@@ -6,7 +6,7 @@ group: Light
 label: Graphics/Light
 ---
 
-Lighting makes the scene more layered, and using lighting can create a more realistic 3D scene. Oasis Engine supports the following light type:
+Lighting makes the scene more layered, and using lighting can create a more realistic 3D scene. Galacean Engine supports the following light type:
 
 | Type | Feature |
 | :-- | :-- |

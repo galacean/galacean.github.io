@@ -2,7 +2,7 @@
  * @title Filter Mode
  * @category Texture
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -13,8 +13,8 @@ import {
   Texture2D,
   TextureFilterMode,
   UnlitMaterial,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 const gui = new dat.GUI();
 
 // Create engine object
@@ -43,7 +43,7 @@ planeRenderer.setMaterial(material);
 engine.resourceManager
   .load<Texture2D>({
     url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_CtuR7LW4C0AAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   })
   .then((texture) => {
     material.baseTexture = texture;
@@ -56,10 +56,10 @@ function addGUI(texture: Texture2D) {
   const filterMap: Record<TextureFilterMode, string> = {
     [TextureFilterMode.Point]: "Point",
     [TextureFilterMode.Bilinear]: "Bilinear",
-    [TextureFilterMode.Trilinear]: "Trilinear"
+    [TextureFilterMode.Trilinear]: "Trilinear",
   };
   const state = {
-    filterMode: filterMap[texture.filterMode]
+    filterMode: filterMap[texture.filterMode],
   };
   gui.add(state, "filterMode", Object.values(filterMap)).onChange((v) => {
     for (let key in filterMap) {

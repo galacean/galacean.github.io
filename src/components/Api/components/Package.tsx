@@ -1,4 +1,4 @@
-import { styled } from "@oasis-engine/editor-design-system";
+import { styled } from "@galacean/editor-ui";
 import { PkgChild } from '../util/apiUtil';
 import Kind from './Kind';
 

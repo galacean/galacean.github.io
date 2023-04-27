@@ -2,7 +2,7 @@
  * @title Buffer Mesh Instance
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Buffer,
   BufferBindFlag,
@@ -18,8 +18,8 @@ import {
   Vector3,
   VertexElement,
   VertexElementFormat,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine.
 const engine = new WebGLEngine("canvas");
@@ -79,7 +79,9 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
   // Create instance data.
   const instanceCount = 4000;
   const instanceStride = 6;
-  const instanceData: Float32Array = new Float32Array(instanceCount * instanceStride);
+  const instanceData: Float32Array = new Float32Array(
+    instanceCount * instanceStride
+  );
   for (let i = 0; i < instanceCount; i++) {
     const offset = i * instanceStride;
     // instance offset
@@ -109,9 +111,24 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
           20, 22, 23, 22, 20, 21]);
 
   // Create gpu vertex buffer and index buffer.
-  const vertexBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, vertices, BufferUsage.Static);
-  const instanceVertexBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, instanceData, BufferUsage.Static);
-  const indexBuffer = new Buffer(engine, BufferBindFlag.IndexBuffer, indices, BufferUsage.Static);
+  const vertexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.VertexBuffer,
+    vertices,
+    BufferUsage.Static
+  );
+  const instanceVertexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.VertexBuffer,
+    instanceData,
+    BufferUsage.Static
+  );
+  const indexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.IndexBuffer,
+    indices,
+    BufferUsage.Static
+  );
 
   // Bind buffer
   geometry.setVertexBufferBinding(vertexBuffer, 24, 0);
@@ -123,7 +140,7 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
     new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0, 0), // Bind to VertexBuffer 0
     new VertexElement("NORMAL", 12, VertexElementFormat.Vector3, 0, 0), // Bind to VertexBuffer 0
     new VertexElement("INSTANCE_OFFSET", 0, VertexElementFormat.Vector3, 1, 1), // Bind instance offset to VertexBuffer 1, and enable instance by set instanceStepRate with 1
-    new VertexElement("INSTANCE_COLOR", 12, VertexElementFormat.Vector3, 1, 1) // Bind instance color to VertexBuffer 1, and enable instance by set instanceStepRate with 1
+    new VertexElement("INSTANCE_COLOR", 12, VertexElementFormat.Vector3, 1, 1), // Bind instance color to VertexBuffer 1, and enable instance by set instanceStepRate with 1
   ]);
 
   // Add one sub geometry.

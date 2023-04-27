@@ -21,8 +21,8 @@ import {
   ShadowResolution,
   ShadowType,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 Shader.create(
   "transparent-shadow",

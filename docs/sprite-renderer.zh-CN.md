@@ -10,6 +10,20 @@ label: Graphics/2D
 
 <playground src="sprite-renderer.ts"></playground>
 
+## 属性说明
+
+| 属性名 | 属性类型 | 描述 |
+| :--- | :--- | :--- |
+|[sprite](${api}core/SpriteRenderer/#sprite)|[Sprite](${api}core/Sprite)|使用精灵的引用|
+|[drawMode](${api}core/SpriteRenderer/#drawMode)|[SpriteDrawMode](${api}core/SpriteDrawMode)|绘制模式（普通绘制，九宫绘制）|
+|[width](${api}core/SpriteRenderer/#width)|number|渲染的精灵最后在三维空间中呈现的宽度|
+|[height](${api}core/SpriteRenderer/#height)|number|渲染的精灵最后在三维空间中呈现的高度|
+|[color](${api}core/SpriteRenderer/#color)|[Color](${api}math/Color)|渲染叠加的颜色|
+|[flipX](${api}core/SpriteRenderer/#flipX)|boolean|是否对渲染结果做水平翻转|
+|[flipY](${api}core/SpriteRenderer/#flipY)|boolean|是否对渲染结果做垂直翻转|
+|[maskLayer](${api}core/SpriteRenderer/#maskLayer)|[SpriteMaskLayer](${api}core/SpriteMaskLayer)|精灵渲染器属于哪个遮罩层|
+|[maskInteraction](${api}core/SpriteRenderer/#maskInteraction)|[SpriteMaskInteraction](${api}core/SpriteMaskInteraction)|遮罩的类型|
+
 ## 基本使用
 
 1、下载图片纹理([Texture](${docs}texture-cn))，下载方法请参考[资源加载](${docs}resource-manager-cn)  
@@ -17,7 +31,7 @@ label: Graphics/2D
 3、创建 [SpriteRenderer](${api}core/SpriteRenderer) 组件显示图片
 
 ```typescript
-import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "oasis-engine";
+import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "@galacean/engine";
 
 const engine = new WebGLEngine("canvas");
 
@@ -53,9 +67,15 @@ sprite.border = new Vector4(0.1, 0.1, 0.1, 0.1);
 
 <playground src="sprite-slice.ts"></playground>
 
-## 图片翻转
+## 渲染尺寸
 
-除了基本的图片显示，SpriteRenderer 还支持图片的翻转，只需要通过设置属性 [flipX](${api}core/SpriteRenderer#flipX)/[flipY](${api}core/SpriteRenderer#flipY) 即可完成翻转，如下：
+设置 `SpriteRenderer` 的 `width` 与 `height` 可以明确指定精灵在三维空间中显示的尺寸，若没有设置，则会将 `Sprite` 的尺寸作为默认值，通常为精灵纹理像素值的 `0.01` 倍。
+
+<playground src="sprite-size.ts"></playground>
+
+## 翻转
+
+除了基本的图片显示，SpriteRenderer 还支持水平与垂直翻转，只需要通过设置属性 [flipX](${api}core/SpriteRenderer#flipX)/[flipY](${api}core/SpriteRenderer#flipY) 即可完成翻转，如下：
 
 ```typescript
 // 翻转图片

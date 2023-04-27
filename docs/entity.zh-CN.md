@@ -5,7 +5,7 @@ type: 核心
 label: Core
 ---
 
-在 Oasis 引擎中，[Entity](${api}core/Entity) 不具备渲染模型等实际的功能，这些功能是通过加载 [Component](${api}core/Component) 组件类来实现的。例如，如果想让一个 _Entity_ 变成一个相机，只需要在该 _Entity_ 上添加相机组件 [Camera](${api}core/Camera)。这种基于组件的功能扩展方式注重将程序按照功能独立封装，在使用的时候按照需要组合添加，非常有利于降低程序耦合度并提升代码复用率。
+在 Galacean 引擎中，[Entity](${api}core/Entity) 不具备渲染模型等实际的功能，这些功能是通过加载 [Component](${api}core/Component) 组件类来实现的。例如，如果想让一个 _Entity_ 变成一个相机，只需要在该 _Entity_ 上添加相机组件 [Camera](${api}core/Camera)。这种基于组件的功能扩展方式注重将程序按照功能独立封装，在使用的时候按照需要组合添加，非常有利于降低程序耦合度并提升代码复用率。
 
 我们使用 [addComponent(Component)](${api}core/Entity#addComponent) 添加组件，例如给 `Entity`  添加“平行光”组件（[DirectLight](${api}core/DirectLight)）：
 

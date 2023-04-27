@@ -10,10 +10,10 @@ import {
   PrimitiveMesh,
   SkyBoxMaterial,
   TextureCube,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
 const engine = new WebGLEngine("canvas");
 engine.canvas.resizeByClientSize();
@@ -41,9 +41,9 @@ engine.resourceManager
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*8GF6Q4LZefUAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*D5pdRqUHC3IAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_FooTIp6pNIAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ"
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*CYGZR7ogZfoAAAAAAAAAAAAAARQnAQ",
       ],
-      type: AssetType.TextureCube
+      type: AssetType.TextureCube,
     },
     {
       urls: [
@@ -52,14 +52,14 @@ engine.resourceManager
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*trqjQp1nOMQAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_RXwRqwMK3EAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*q4Q6TroyuXcAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*DP5QTbTSAYgAAAAAAAAAAAAAARQnAQ"
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*DP5QTbTSAYgAAAAAAAAAAAAAARQnAQ",
       ],
-      type: AssetType.TextureCube
+      type: AssetType.TextureCube,
     },
     {
       url: "https://gw.alipayobjects.com/mdn/rms_2e421e/afts/img/A*BcWiRYM7hroAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
-    }
+      type: AssetType.Texture2D,
+    },
   ])
   .then(([cubeMap1, cubeMap2, texture]) => {
     // 添加天空盒背景
@@ -90,7 +90,7 @@ function addGUI(cubeMaps: TextureCube[]) {
     .add(background, "mode", {
       Sky: BackgroundMode.Sky,
       SolidColor: BackgroundMode.SolidColor,
-      Texture: BackgroundMode.Texture
+      Texture: BackgroundMode.Texture,
     })
     .onChange((v) => {
       const mode = (background.mode = parseInt(v));
@@ -111,26 +111,37 @@ function addGUI(cubeMaps: TextureCube[]) {
     });
 
   const solidColor = background.solidColor;
-  let colorObj = { color: [solidColor.r / 255, solidColor.g / 255, solidColor.b / 255, solidColor.a] };
+  let colorObj = {
+    color: [
+      solidColor.r / 255,
+      solidColor.g / 255,
+      solidColor.b / 255,
+      solidColor.a,
+    ],
+  };
   colorGUI = gui.addColor(colorObj, "color").onChange((v) => {
     background.solidColor.set(v[0] / 255, v[1] / 255, v[2] / 255, v[3] / 255);
   });
 
   const obj = {
-    cubeMap: 0
+    cubeMap: 0,
   };
 
   const mode = {
-    fitMode: 1
+    fitMode: 1,
   };
 
-  cubeMapGUI = gui.add(obj, "cubeMap", { cubeMap1: 0, cubeMap2: 1 }).onChange((v) => {
-    // @ts-ignore
-    background.sky.material.textureCubeMap = cubeMaps[parseInt(v)];
-  });
-  fitModeGUI = gui.add(mode, "fitMode", { AspectFitWidth: 0, AspectFitHeight: 1, Fill: 2 }).onChange((v) => {
-    background.textureFillMode = parseInt(v);
-  });
+  cubeMapGUI = gui
+    .add(obj, "cubeMap", { cubeMap1: 0, cubeMap2: 1 })
+    .onChange((v) => {
+      // @ts-ignore
+      background.sky.material.textureCubeMap = cubeMaps[parseInt(v)];
+    });
+  fitModeGUI = gui
+    .add(mode, "fitMode", { AspectFitWidth: 0, AspectFitHeight: 1, Fill: 2 })
+    .onChange((v) => {
+      background.textureFillMode = parseInt(v);
+    });
 
   // init
   background.mode = BackgroundMode.Texture;

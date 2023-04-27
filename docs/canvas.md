@@ -6,7 +6,7 @@ group: Basic
 label: Introduction/Basic
 ---
 
-Oasis Engine packs canvases of different platforms, such as [WebCanvas](${api}rhi-webgl/WebCanvas). We can control [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) or [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) through [Engine](${api}core/Engine) instance.
+Galacean Engine packs canvases of different platforms, such as [WebCanvas](${api}rhi-webgl/WebCanvas). We can control [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) or [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) through [Engine](${api}core/Engine) instance.
 
 ## Basic Usage
 
@@ -59,7 +59,7 @@ The rendering pressure is proportional to the area size of the screen. The large
 >
 > This line of code will change the value of `window.innerWidth` from 375 to 1125.
 
-The following two modes are recommended for Oasis screen adaptation:
+The following two modes are recommended for Galacean screen adaptation:
 
 ### Energy saving mode
 
@@ -94,7 +94,7 @@ webcanvas.resizeByClientSize(scale); // Stretch the canvas
 In some cases, such as when the design layout has a fixed width of 750, developers can hard code the canvas width to reduce the cost of adaptation.
 
 ```typescript
-import { WebCanvas } from "oasis-engine";
+import { WebCanvas } from "@galacean/engine";
 
 const canvas = document.getElementById('canvas');
 const webcanvas = new WebCanvas(canvas);

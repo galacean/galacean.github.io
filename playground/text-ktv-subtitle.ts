@@ -17,8 +17,8 @@ import {
   Shader,
   TextRenderer,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
 // Create engine object
 const engine = new WebGLEngine("canvas");
@@ -37,7 +37,7 @@ async function init() {
   // Set background
   const bgTex = await engine.resourceManager.load<Texture2D>({
     url: "https://gw.alipayobjects.com/zos/OasisHub/440000983/3784/vcg_VCG211258128318_RF.jpg?x-oss-process=image/format,webp",
-    type: AssetType.Texture2D
+    type: AssetType.Texture2D,
   });
   const background = engine.sceneManager.activeScene.background;
   background.mode = BackgroundMode.Texture;
@@ -77,7 +77,10 @@ function createText(text: string, posX: number, posY: number): Entity {
   return textEntity;
 }
 
-function addCustomMaterialAndAnimateScript(entity: Entity, time: number): AnimateScript {
+function addCustomMaterialAndAnimateScript(
+  entity: Entity,
+  time: number
+): AnimateScript {
   // Create material
   const material = new BaseMaterial(engine, Shader.find("TextKTVSubtitle"));
   entity.getComponent(TextRenderer).setMaterial(material);

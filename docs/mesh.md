@@ -6,7 +6,7 @@ group: Mesh
 label: Graphics/Mesh
 ---
 
-Mesh is the data object of MeshRenderer, which describes various information of vertices (position, topology, vertex color, UV, etc.). Similarly, in Oasis we can use [ModelMesh](${api}core/ModelMesh) or [BufferMesh](${api}core/BufferMesh) to describe the geometric information of the object to be rendered
+Mesh is the data object of MeshRenderer, which describes various information of vertices (position, topology, vertex color, UV, etc.). Similarly, in Galacean we can use [ModelMesh](${api}core/ModelMesh) or [BufferMesh](${api}core/BufferMesh) to describe the geometric information of the object to be rendered
 
 ## Mesh category
 
@@ -26,6 +26,6 @@ meshRenderer.mesh = new BufferMesh(engine);
 
 ## Common Geometry
 
-Constructing the geometry mesh data yourself can be a pain, so Oasis has built in some useful geometry.
+Constructing the geometry mesh data yourself can be a pain, so Galacean has built in some useful geometry.
 
 - [PrimitiveMesh](${docs}primitive-mesh-cn)：Contains cuboid, sphere, plane, cylinder, torus, cylinder and capsule.

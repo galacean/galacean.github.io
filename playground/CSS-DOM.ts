@@ -2,8 +2,18 @@
  * @title CSS DOM
  * @category 2D
  */
-import { AssetType, Camera, Entity, GLTFResource, Logger, Script, Vector3, WebGLEngine, WebGLMode } from "oasis-engine";
-import { OrbitControl } from "oasis-engine-toolkit";
+import {
+  AssetType,
+  Camera,
+  Entity,
+  GLTFResource,
+  Logger,
+  Script,
+  Vector3,
+  WebGLEngine,
+  WebGLMode,
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit";
 Logger.enable();
 
 //-- create engine object
@@ -25,7 +35,7 @@ engine.run();
 engine.resourceManager
   .load<GLTFResource>({
     type: AssetType.Prefab,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/8d36415b-5905-461f-9336-68a23d41518e.gltf"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/8d36415b-5905-461f-9336-68a23d41518e.gltf",
   })
   .then((gltf) => {
     console.log(gltf);
@@ -40,7 +50,10 @@ engine.resourceManager
 // test dom
 const dom = document.createElement("div");
 dom.innerHTML = "Hello world!!!";
-dom.setAttribute("style", "padding:10px;position:absolute;top:0;left:0;background:white;border-radius:5px");
+dom.setAttribute(
+  "style",
+  "padding:10px;position:absolute;top:0;left:0;background:white;border-radius:5px"
+);
 document.body.appendChild(dom);
 
 class Renderer2DScript extends Script {
@@ -49,8 +62,10 @@ class Renderer2DScript extends Script {
   heightRatio: number;
   constructor(entity: Entity) {
     super(entity);
-    this.widthRatio = engine.canvas.width / engine.canvas._webCanvas.clientWidth;
-    this.heightRatio = engine.canvas.height / engine.canvas._webCanvas.clientHeight;
+    this.widthRatio =
+      engine.canvas.width / engine.canvas._webCanvas.clientWidth;
+    this.heightRatio =
+      engine.canvas.height / engine.canvas._webCanvas.clientHeight;
   }
 
   onUpdate() {
