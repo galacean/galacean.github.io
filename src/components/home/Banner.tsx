@@ -80,7 +80,7 @@ function Banner() {
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </Button>
         </Link>
-        <a href='https://github.com/galacean/engine/discussions/categories/q-a' target='_blank'>
+        <a href='https://github.com/orgs/galacean/discussions' target='_blank'>
           <Button variant="secondary" size="lg" round>
             <GithubOutlined style={{ marginRight: "5px" }} />
             <FormattedMessage id='app.home.discussion' />
