@@ -505,7 +505,7 @@ WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
       onUpdate() {
         // Update TWEEN.
         TWEEN.update();
-        if (this.engine.inputManager.isKeyDown(Keys.Space)) {
+        if (engine.inputManager.isKeyDown(Keys.Space)) {
           this._dispatchFly();
         }
       }
@@ -552,7 +552,7 @@ WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
         boxColliderShape.size.set(2.14, 0.75, 0.001);
         boxCollider.addShape(boxColliderShape);
         resetBtnNode.addComponent(Script).onPointerClick = () => {
-          this.engine.dispatch(GameEvent.reStartGame);
+          engine.dispatch(GameEvent.reStartGame);
         };
 
         // Control the performance of the GUI according to the change of the game state.
