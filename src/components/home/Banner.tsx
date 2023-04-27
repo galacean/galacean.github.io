@@ -68,7 +68,7 @@ function Banner() {
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </Button>
         </Link>
-        <a href='https://github.com/ant-galaxy/oasis-engine/discussions/categories/q-a' target='_blank'>
+        <a href='https://github.com/orgs/galacean/discussions' target='_blank'>
           <Button>
             <GithubOutlined style={{ marginRight: "5px" }} />
             <FormattedMessage id='app.home.discussion' />
