@@ -63,7 +63,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   // Ground
   const ground = rootNode.createChild("ground");
   ground.transform.setPosition(0, -25, 0);
-  ground.transform.rotate(-90, 0, 0);
   const groundRender = ground.addComponent(MeshRenderer);
   groundRender.mesh = groundGeometry;
   groundRender.setMaterial(groundMaterial);
