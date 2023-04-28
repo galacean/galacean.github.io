@@ -160,12 +160,13 @@ cameraEntity.addComponent(OrbitControl);
 ```
 
 ```typescript
-import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@galacean/engine-miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerLeave, dispatchPointerCancel } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   ...
   onTouchEnd(e) {
     dispatchPointerUp(e);
+    dispatchPointerLeave(e);
   },
   onTouchStart(e) {
     dispatchPointerDown(e);
@@ -174,7 +175,7 @@ Page({
     dispatchPointerMove(e);
   },
   onTouchCancel(e) {
-    dispatchPointerOut(e);
+    dispatchPointerCancel(e);
   }
 })
 ```
