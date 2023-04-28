@@ -19,6 +19,7 @@ import {
   Script,
   Vector3,
   WebGLEngine,
+  ShadowType,
 } from "@galacean/engine";
 import { LitePhysics } from "@galacean/engine-physics-lite";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
@@ -68,7 +69,8 @@ cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
 const lightEntity = rootEntity.createChild("Light");
 lightEntity.transform.setPosition(20, 20, 20);
 lightEntity.transform.setRotation(-45, 0, 0);
-lightEntity.addComponent(DirectLight);
+const light = lightEntity.addComponent(DirectLight);
+light.shadowType = ShadowType.None;
 
 const ambientLight = scene.ambientLight;
 ambientLight.diffuseSolidColor.set(0.8, 0.8, 1, 1);

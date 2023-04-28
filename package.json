@@ -12,7 +12,7 @@
     "@galacean/engine-physics-lite": "^1.0.0-alpha.6",
     "@galacean/engine-physics-physx": "^1.0.0-alpha.6",
     "@galacean/engine-spine": "^1.0.0-beta.0",
-    "@galacean/engine-toolkit": "^1.0.0-alpha.18",
+    "@galacean/engine-toolkit": "^1.0.0-beta.0",
     "@galacean/tools-baker": "^1.0.0-alpha",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@radix-ui/colors": "^0.1.8",
@@ -112,5 +112,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "repository": "git@github.com:JujieX/oasis-engine.github.io.git"
 }
