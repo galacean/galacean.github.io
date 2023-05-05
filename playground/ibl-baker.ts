@@ -2,11 +2,7 @@
  * @title IBL Baker
  * @category Material
  */
-import {
-  BakerResolution,
-  IBLBaker,
-  SphericalHarmonics3Baker,
-} from "@galacean/tools-baker";
+import { BakerResolution, IBLBaker, SphericalHarmonics3Baker } from "@galacean/tools-baker";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
@@ -28,7 +24,7 @@ import {
   Vector3,
   WebGLEngine,
   SkyBoxMaterial,
-  BackgroundMode,
+  BackgroundMode
 } from "@galacean/engine";
 Logger.enable();
 
@@ -60,14 +56,14 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*LjSHTI5iSPoAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*pgCvTJ85RUYAAAAAAAAAAAAAARQnAQ",
         "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*0BKxR6jgRDAAAAAAAAAAAAAAARQnAQ",
-        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Pir4RoxLm3EAAAAAAAAAAAAAARQnAQ",
+        "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Pir4RoxLm3EAAAAAAAAAAAAAARQnAQ"
       ],
-      type: AssetType.TextureCube,
+      type: AssetType.TextureCube
     }),
     engine.resourceManager.load<TextureCube>({
       url: "https://gw.alipayobjects.com/os/bmw-prod/10c5d68d-8580-4bd9-8795-6f1035782b94.bin", // sunset_1K
-      type: AssetType.HDR,
-    }),
+      type: AssetType.HDR
+    })
   ]).then((textures: TextureCube[]) => {
     const ldrCubeMap = textures[0];
     const hdrCubeMap = textures[1];
@@ -145,10 +141,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
         // const bakerEntity = rootEntity.createChild("IBL Baker Entity");
         const bakerEntity = test;
         bakerEntity.transform.setRotation(90, 0, 0);
-        const bakerMaterial = new Material(
-          engine,
-          Shader.find("ibl debug test")
-        );
+        const bakerMaterial = new Material(engine, Shader.find("ibl debug test"));
         bakerMaterial.renderState.rasterState.cullMode = CullMode.Off;
         const bakerRenderer = bakerEntity.addComponent(MeshRenderer);
         bakerRenderer.mesh = PrimitiveMesh.createPlane(engine, 2, 2);
@@ -173,22 +166,8 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
         for (let i = 0; i < 6; i++) {
           const material = planeMaterials[i];
           const data = new Uint8Array(mipSize * mipSize * 4);
-          const planeTexture = new Texture2D(
-            engine,
-            mipSize,
-            mipSize,
-            undefined,
-            false
-          ); // no mipmap
-          debugTexture.getPixelBuffer(
-            TextureCubeFace.PositiveX + i,
-            0,
-            0,
-            mipSize,
-            mipSize,
-            mipLevel,
-            data
-          );
+          const planeTexture = new Texture2D(engine, mipSize, mipSize, undefined, false); // no mipmap
+          debugTexture.getPixelBuffer(TextureCubeFace.PositiveX + i, 0, 0, mipSize, mipSize, mipLevel, data);
           planeTexture.setPixelBuffer(data);
           material.shaderData.setTexture("u_env", planeTexture);
           material.shaderData.setInt("u_face", i);
@@ -210,14 +189,12 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
           debugTexture = bakedTexture;
           changeMip(state.mipLevel);
-        },
+        }
       };
 
-      gui
-        .add(state, "mipLevel", 0, hdrCubeMap.mipmapCount - 1, 1)
-        .onChange((mipLevel: number) => {
-          changeMip(mipLevel);
-        });
+      gui.add(state, "mipLevel", 0, hdrCubeMap.mipmapCount - 1, 1).onChange((mipLevel: number) => {
+        changeMip(mipLevel);
+      });
 
       gui.add(state, "HDR").onChange((v) => {
         if (v) {

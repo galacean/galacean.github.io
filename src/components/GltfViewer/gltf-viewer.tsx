@@ -2,8 +2,6 @@
 /* eslint no-multi-assign: "off" */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
-import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@oasis-engine/baker";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
 import {
   AmbientLight,
   AnimationClip,
@@ -31,10 +29,19 @@ import {
   UnlitMaterial,
   Vector3,
   WebGLEngine
-} from "oasis-engine";
-import React, { useEffect } from "react";
-import * as dat from 'dat.gui';
-import { SimpleDropzone } from 'simple-dropzone';
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit";
+import {
+  BakerResolution,
+  DecodeMode,
+  downloadArrayBuffer,
+  IBLBaker,
+  SphericalHarmonics3Baker,
+  toBuffer
+} from "@galacean/tools-baker";
+import * as dat from "dat.gui";
+import { useEffect } from "react";
+import { SimpleDropzone } from "simple-dropzone";
 import "./gltf-viewer.less";
 
 const envList = {
@@ -60,22 +67,22 @@ class Oasis {
   textures: Record<string, Texture2D> = {};
   env: Record<string, AmbientLight> = {};
 
-  engine: WebGLEngine = new WebGLEngine("canvas-gltf-viewer", { alpha: true });
-  scene: Scene = this.engine.sceneManager.activeScene;
-  skyMaterial: SkyBoxMaterial = new SkyBoxMaterial(this.engine);
+  engine: WebGLEngine;
+  scene: Scene;
+  skyMaterial: SkyBoxMaterial;
 
   // Entity
-  rootEntity: Entity = this.scene.createRootEntity("root");
-  cameraEntity: Entity = this.rootEntity.createChild("camera");
-  gltfRootEntity: Entity = this.rootEntity.createChild("gltf");
-  lightEntity1: Entity = this.rootEntity.createChild("light1");
-  lightEntity2: Entity = this.rootEntity.createChild("light2");
+  rootEntity: Entity;
+  cameraEntity: Entity;
+  gltfRootEntity: Entity;
+  lightEntity1: Entity;
+  lightEntity2: Entity;
 
   // Component
-  camera: Camera = this.cameraEntity.addComponent(Camera);
-  controler: OrbitControl = this.cameraEntity.addComponent(OrbitControl);
-  light1: DirectLight = this.lightEntity1.addComponent(DirectLight);
-  light2: DirectLight = this.lightEntity2.addComponent(DirectLight);
+  camera: Camera;
+  controler: OrbitControl;
+  light1: DirectLight;
+  light2: DirectLight;
 
   // Debug
   gui = new dat.GUI();
@@ -112,11 +119,26 @@ class Oasis {
     guiStyle.top = "68px";
     guiStyle.right = "-12px";
 
-    this.loadEnv(this.state.env).then(() => {
-      this.initScene();
-      this.initDropZone();
-      this.addSceneGUI();
-      this.initDefaultDebugMesh();
+    WebGLEngine.create({ canvas: "canvas-gltf-viewer" }).then((engine) => {
+      this.engine = engine;
+      this.scene = this.engine.sceneManager.activeScene;
+      this.skyMaterial = new SkyBoxMaterial(this.engine);
+      this.rootEntity = this.scene.createRootEntity("root");
+      this.cameraEntity = this.rootEntity.createChild("camera");
+      this.gltfRootEntity = this.rootEntity.createChild("gltf");
+      this.lightEntity1 = this.rootEntity.createChild("direct_light1");
+      this.lightEntity2 = this.rootEntity.createChild("direct_light2");
+      this.camera = this.cameraEntity.addComponent(Camera);
+      this.controler = this.cameraEntity.addComponent(OrbitControl);
+      this.light1 = this.lightEntity1.addComponent(DirectLight);
+      this.light2 = this.lightEntity2.addComponent(DirectLight);
+
+      this.loadEnv(this.state.env).then(() => {
+        this.initScene();
+        this.initDropZone();
+        this.addSceneGUI();
+        this.initDefaultDebugMesh();
+      });
     });
   }
 
@@ -357,12 +379,12 @@ class Oasis {
     this.gltfRootEntity = defaultSceneRoot;
     this.rootEntity.addChild(defaultSceneRoot);
 
-    const meshRenderers = [];
+    const meshRenderers: MeshRenderer[] = [];
     defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, meshRenderers);
 
     this.setCenter(meshRenderers);
     this.addMaterialGUI(materials);
-    this.loadAnimationGUI(animations);
+    this.loadAnimationGUI(animations as AnimationClip[]);
   }
 
   addTexture(name: string, url: string) {
@@ -386,12 +408,12 @@ class Oasis {
   async addEnv(name: string, url: string) {
     const texture = await this.engine.resourceManager.load<TextureCube>({
       url,
-      type: "HDR-RGBE" // from baker
+      type: AssetType.HDR
     });
 
-    const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, DecodeMode.RGBE);
+    const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, BakerResolution.R128, DecodeMode.RGBM);
     const sh = new SphericalHarmonics3();
-    SphericalHarmonics3Baker.fromTextureCubeMap(texture, DecodeMode.RGBE, sh);
+    SphericalHarmonics3Baker.fromTextureCubeMap(texture, sh);
     const arrayBuffer = toBuffer(bakedHDRCubeMap, sh);
     downloadArrayBuffer(arrayBuffer, name);
 
