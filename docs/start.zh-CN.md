@@ -16,14 +16,14 @@ label: Introduction/Start
 
 通过官网你可以了解更多 **Galacean** 的能力：
 
-- 在[引擎文档](${docs}install)部分可以深入了解引擎的各项功能模块以及能力展现。
+- 在[引擎文档](${docs}install)部分可以深入了解引擎的各项功能模块。
 - 在[编辑器文档](${docs}editor)部分可以了解如何使用编辑器，创建，制作并导出 2D 和 3D 项目。
-- 在[示例](https://antg.antgroup.com/#/examples/latest/background)部分可以浏览引擎各种功能的示例，并且在线调试查看效果。
-- 在[美术文档](${docs}artist-scene-standard)部分可以查看场景规格与若干美术教程。
+- 在[示例](https://antg.antgroup.com/#/examples/latest/background)部分可以浏览引擎各种功能示例，并支持在线调试。
+- 在[美术文档](${docs}artist-scene-standard)部分可以查看场景规范与美术教程。
 
 ## 兼容性
 
-**Galacean Engine** 可以在所有支持 WebGL 的环境下运行，小程序环境可参照[小程序](${docs}miniprogram)进行适配。此外，其余需要考虑兼容性的功能模块如下：
+**Galacean Engine** 可在所有支持 WebGL 的环境下运行，小程序环境可参照[小程序](${docs}miniprogram)进行适配。其余需要考虑兼容性的功能模块如下：
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
 | :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
@@ -32,15 +32,13 @@ label: Introduction/Start
 
 ## 快速搭建
 
-你可以通过[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的纯代码项目，也可以在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
+可通过[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的纯代码项目，也可在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
 
 ![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
 
 ## 版本相关
 
-**Galacean**采用严格的版本控制，我们依据以下规则进行 npm 包的版本管理。
-
-### 里程碑的开发阶段：
+### 版本管理：
 
 - alpha：内部测试版，用于早期功能研发，有里程碑内的新功能但稳定性较差
 - beta: 公开测试版，内部测试已基本完毕，稳定性较强，但可能仍有较少的问题与缺陷
