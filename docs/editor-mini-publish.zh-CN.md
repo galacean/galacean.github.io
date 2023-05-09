@@ -33,11 +33,11 @@ Galacean 编辑器导出支付宝小程序的功能仍在开发中，交互方�
 
 ### 本地资源处理
 
-#### BUC 用户
+#### 蚂蚁集团内部用户
 
 直接使用『上传到 CDN 』即可，使用集团默认 CDN 即可。若想使用自定义 CDN，参考非 BUC 用户。
 
-#### 非 BUC 用户
+#### 非蚂蚁集团内部用户
 
 1.  public 文件请自行上传 CDN
 2. 修改 scene.json 文件或配置 baseUrl（待 1.0 升级）
@@ -61,6 +61,6 @@ npm run dev
 
 ## 已知问题
 
-- 小程序不支持 WebAssembly，目前无法使用 PhysicX
-- 目前 ResourceManager 不支持 baseUrl 配置，需要手动修改 scene.json 文件
+- 小程序不支持 WebAssembly，目前无法使用 PhysicsX，后续有更新会在文档中通知
+- 目前 ResourceManager 不支持 baseUrl 配置，需要手动修改 scene.json 文件（1.0 会支持）
 - 目前不支持本地文件加载，需要手动上传到 CDN
