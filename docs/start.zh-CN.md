@@ -23,7 +23,7 @@ label: Introduction/Start
 
 ## 兼容性
 
-**Galacean Engine** 可以在所有支持 WebGL 的环境下运行，在小程序上则需要经过一些适配，可参照[小程序适配](${docs}miniprogram)。此外，部分功能模块的兼容性也需要额外考虑：
+**Galacean Engine** 可以在所有支持 WebGL 的环境下运行，在小程序上可参照[小程序](${docs}miniprogram)进行适配。此外，部分功能模块的兼容性需要额外考虑：
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
 | :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
@@ -46,15 +46,15 @@ label: Introduction/Start
 
 ### npm 库之间的依赖关系：
 
-[引擎核心架构逻辑的子包](https://github.com/galacean/engine/tree/main/packages)请保证在同一项目中版本一致，并且[工具包](https://github.com/galacean/engine-toolkit)务必与引擎的大版本保持一致。
+[引擎核心架构逻辑的子包](https://github.com/galacean/engine/tree/main/packages)请保证在同一项目中版本一致，[工具包](https://github.com/galacean/engine-toolkit)请务必与引擎的大版本保持一致。
 
 ### 版本升级
 
-每个里程碑版本更新迭代会同步更新[版本升级引导](https://github.com/galacean/engine/wiki/Migration-Guide)，其中包含了本次更新的内容以及 BreakChange，可依据此文档进行版本的更新迭代。
+每个里程碑版本更新迭代时会同步发布[版本升级引导](https://github.com/galacean/engine/wiki/Migration-Guide)，其中包含了本次更新的内容以及 BreakChange，可依据此文档进行版本的更新迭代。
 
 ## 开源共建
 
-**Galacean** 渴望与开发者共建互动引擎，所有的开发流程，包括[规划](https://github.com/galacean/engine/projects?query=is%3Aopen)，[里程碑](https://github.com/galacean/engine/milestones)，优先级，[架构设计](https://github.com/galacean/engine/wiki/Physical-system-design)在内的信息，全部都公开在 GitHub 的项目管理中，开发者可以通过[创建 issue](https://docs.github.com/zh/issues/tracking-your-work-with-issues/creating-an-issue)与[提交 PR](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)参与到引擎的开发中。
+**Galacean** 渴望与开发者共建互动引擎，所有的开发流程，包括[规划](https://github.com/galacean/engine/projects?query=is%3Aopen)，[里程碑](https://github.com/galacean/engine/milestones)，优先级，[架构设计](https://github.com/galacean/engine/wiki/Physical-system-design)在内的信息，全部都公开在 GitHub 的项目管理中，开发者可以通过[创建 issue](https://docs.github.com/zh/issues/tracking-your-work-with-issues/creating-an-issue)与[提交 PR](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)参与到引擎的建设之中。
 
 ## 社区与讨论区
 
