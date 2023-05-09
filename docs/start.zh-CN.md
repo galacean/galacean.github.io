@@ -23,7 +23,7 @@ label: Introduction/Start
 
 ## 兼容性
 
-**Galacean Engine** 可以在所有支持 WebGL 的环境下运行，在小程序上可参照[小程序](${docs}miniprogram)进行适配。此外，部分功能模块的兼容性需要额外考虑：
+**Galacean Engine** 可以在所有支持 WebGL 的环境下运行，小程序环境可参照[小程序](${docs}miniprogram)进行适配。此外，其余需要考虑兼容性的功能模块如下：
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
 | :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
@@ -32,7 +32,9 @@ label: Introduction/Start
 
 ## 快速搭建
 
-如果你想用纯代码搭建第一个项目，可以通过[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的脚手架，当然，你也可以在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
+你可以通过[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的纯代码项目，也可以在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
+
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
 
 ## 版本相关
 
