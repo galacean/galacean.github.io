@@ -61,6 +61,6 @@ npm run dev
 
 ## 已知问题
 
-- 小程序不支持 WebAssembly，目前无法使用 PhysicsX
+- 小程序不支持 WebAssembly，目前无法使用 PhysX 作为物理后端
 - 目前 ResourceManager 不支持 baseUrl 配置，需要手动修改 scene.json 文件（1.0 会支持）
 - 目前不支持本地文件加载，需要手动上传到 CDN
