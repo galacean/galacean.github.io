@@ -8,9 +8,9 @@ label: Introduction/Start
 
 ## 总览
 
-**Galacean** 是一套 Web 为先，移动优先，开源免费的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。他包含了[渲染](${docs}material-PBR)、[物理](${docs}physics-overall)、[动画](${docs}animator)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器。你可以通过 **Galacean**  在浏览器上创作绚丽的渲染效果，也可以使用它开发 2D & 3D 的玩法与互动。
+**Galacean** 是一套 Web 为先，移动优先，开源免费的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。他包含了[渲染](${docs}material-PBR)、[物理](${docs}physics-overall)、[动画](${docs}animator)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器。你可以在浏览器上创作 2D & 3D 复杂的互动、绚丽的效果展示以及游戏等应用。
 
-接下来我们简单介绍一下 **Galacean** 的组成：
+**Galacean** 主要由三部分组成：
 
 - [Galacean Engine](https://github.com/galacean/engine)
 - [Galacean Toolkit](https://github.com/galacean/engine-toolkit)
