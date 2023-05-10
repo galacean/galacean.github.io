@@ -8,20 +8,20 @@ label: Introduction/Start
 
 ## 总览
 
-**Galacean** 是一套 Web 为先，移动优先，开源免费的实时互动解决方案，即包含了[渲染](${docs}material-PBR)，[物理](${docs}physics-overall)，[动画](${docs}animator)，[交互](${docs}input)功能，也提供了在线编辑，创作与导出项目的完善工作流，你可以通过 **Galacean**  在浏览器上创作绚丽的渲染效果，也可以使用它开发 2D & 3D 的玩法与互动，此外，**Galacean** 的组件化架构与使用 [Typescript](https://www.typescriptlang.org/) 编写的特点也显著降低了开发者的上手难度。
+**Galacean** 是一套 Web 为先，移动优先，开源免费的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。他包含了[渲染](${docs}material-PBR)、[物理](${docs}physics-overall)、[动画](${docs}animator)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器。你可以通过 **Galacean**  在浏览器上创作绚丽的渲染效果，也可以使用它开发 2D & 3D 的玩法与互动。
 
 接下来我们简单介绍一下 **Galacean** 的组成：
 
-- [Galacean Engine](https://github.com/galacean/engine)：高性能开源互动引擎。
-- [Galacean Editor](https://galacean.antgroup.com/editor)：云端 Web 互动创作平台。
-- [Galacean Toolkit](https://github.com/galacean/engine-toolkit)：开箱即用的开源工具包。
+- [Galacean Engine](https://github.com/galacean/engine)
+- [Galacean Toolkit](https://github.com/galacean/engine-toolkit)
+- [Galacean Editor](https://galacean.antgroup.com/editor)
 
-通过以下信息源可以了解更多 **Galacean** 的能力：
+通过以下信息源可以了解更多关于 **Galacean** 的能力：
 
-- 在[引擎文档](${docs}install)部分可以深入了解引擎的各项功能模块。
-- 在[编辑器文档](${docs}editor)部分可以了解如何使用编辑器，创建，制作并导出 2D 和 3D 项目。
-- 在[示例](https://antg.antgroup.com/#/examples/latest/background)部分可以浏览引擎各种功能示例，并支持在线调试。
-- 在[美术文档](${docs}artist-scene-standard)部分可以查看场景规范与美术教程。
+- [引擎文档](${docs}install)：深入了解引擎的各项功能模块。
+- [编辑器文档](${docs}editor)：了解如何使用编辑器，创建，制作并导出 2D 和 3D 项目。
+- [示例](https://antg.antgroup.com/#/examples/latest/background)：浏览引擎各种功能示例，并支持在线调试。
+- [美术文档](${docs}artist-scene-standard)：查看场景规范与美术教程。
 
 ## 运行环境
 
