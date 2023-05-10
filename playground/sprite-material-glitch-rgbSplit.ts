@@ -13,7 +13,6 @@ import {
   Engine,
   Material,
   RenderQueueType,
-  Script,
   Shader,
   Sprite,
   SpriteRenderer,
@@ -21,11 +20,11 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 
-init();
+main();
 
-function init(): void {
-  // Create engine.
-  const engine = new WebGLEngine("canvas");
+async function main() {
+  // Create engine
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create root entity.
@@ -39,7 +38,7 @@ function init(): void {
 
   engine.resourceManager
     .load({
-      // Sprite texture
+      // Sprite texture
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*5wypQ5JyDLkAAAAAAAAAAAAAARQnAQ",
       type: AssetType.Texture2D,
     })
@@ -51,15 +50,8 @@ function init(): void {
       renderer.sprite = new Sprite(engine, texture);
       renderer.setMaterial(material);
 
-      // Add glitch animate script.
-      const script = spriteEntity.addComponent(AnimateScript);
-      // Add custom material.
-      script.material = material;
-      // Init time.
-      script.time = 0.0;
-
       // Add Data UI.
-      addDataGUI(script.material, script);
+      addDataGUI(material);
     });
 
   engine.run();
@@ -82,7 +74,6 @@ function addCustomMaterial(engine: Engine): Material {
 
   // Set material shader data.
   const { shaderData } = material;
-  shaderData.setFloat("u_time", 0.0);
   shaderData.setFloat("u_indensity", 0.5);
 
   return material;
@@ -91,7 +82,7 @@ function addCustomMaterial(engine: Engine): Material {
 /**
  * Add data GUI.
  */
-function addDataGUI(material: Material, animationScript: AnimateScript) {
+function addDataGUI(material: Material) {
   const { shaderData } = material;
   const gui = new dat.GUI();
   const guiData = {
@@ -99,8 +90,6 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
     reset: () => {
       guiData.indensity = 0.5;
       shaderData.setFloat("u_indensity", 0.5);
-      shaderData.setFloat("u_time", 0.0);
-      animationScript.time = 0;
     },
   };
 
@@ -108,8 +97,6 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
     .add(guiData, "indensity", 0.0, 1.0, 0.01)
     .onChange((value: number) => {
       shaderData.setFloat("u_indensity", value);
-      shaderData.setFloat("u_time", 0.0);
-      animationScript.time = 0;
     })
     .listen();
 
@@ -117,25 +104,9 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
   return guiData;
 }
 
-class AnimateScript extends Script {
-  material: Material;
-  time: number = 0;
-
-  /**
-   * The main loop, called frame by frame.
-   * @param deltaTime - The deltaTime when the script update.
-   */
-  onUpdate(deltaTime: number): void {
-    this.time += deltaTime * 0.1;
-    this.time = this.time % 1;
-    // Update material data.
-    this.material.shaderData.setFloat("u_time", this.time);
-  }
-}
-
 // Custom shader
 const spriteVertShader = `
-  uniform mat4 u_VPMat;
+  uniform mat4 camera_VPMat;
 
   attribute vec3 POSITION;
   attribute vec2 TEXCOORD_0;
@@ -146,15 +117,15 @@ const spriteVertShader = `
 
   void main()
   {
-    gl_Position = u_VPMat * vec4(POSITION, 1.0);
+    gl_Position = camera_VPMat * vec4(POSITION, 1.0);
     v_color = COLOR_0;
     v_uv = TEXCOORD_0;
   }
 `;
 
 const spriteFragmentShader = `
-  uniform sampler2D u_spriteTexture;
-  uniform float u_time;
+  uniform sampler2D renderer_SpriteTexture;
+  uniform vec4 scene_ElapsedTime;
   uniform float u_indensity;
 
   varying vec2 v_uv;
@@ -165,11 +136,11 @@ const spriteFragmentShader = `
   }
 
   void main() {
-    float splitAmount = u_indensity * randomNoise(u_time);
+    float splitAmount = u_indensity * randomNoise(scene_ElapsedTime.x * 100.0);
 
-    vec4 normalColor = texture2D(u_spriteTexture, v_uv);
-    float r = texture2D(u_spriteTexture, vec2(v_uv.x + splitAmount, v_uv.y)).r;
-    float b = texture2D(u_spriteTexture, vec2(v_uv.x - splitAmount, v_uv.y)).b;
+    vec4 normalColor = texture2D(renderer_SpriteTexture, v_uv);
+    float r = texture2D(renderer_SpriteTexture, vec2(v_uv.x + splitAmount, v_uv.y)).r;
+    float b = texture2D(renderer_SpriteTexture, vec2(v_uv.x - splitAmount, v_uv.y)).b;
     gl_FragColor = vec4(r, normalColor.g, b, normalColor.a) * v_color;
   }
 `;

@@ -21,35 +21,36 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 
-// Create engine.
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
+// Create engine
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  engine.canvas.resizeByClientSize();
 
-// Get scene and root entity.
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity("Root");
+  // Get scene and root entity
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity("Root");
 
-// Init instance shader.
-const shader = initCustomShader();
+  // Init instance shader
+  const shader = initCustomShader();
 
-// Create camera.
-const cameraEntity = rootEntity.createChild("Camera");
-const camera = cameraEntity.addComponent(Camera);
-cameraEntity.addComponent(OrbitControl);
-cameraEntity.transform.setPosition(0, 10, 160);
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-camera.farClipPlane = 300;
+  // Create camera
+  const cameraEntity = rootEntity.createChild("Camera");
+  const camera = cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(OrbitControl);
+  cameraEntity.transform.setPosition(0, 10, 160);
+  cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+  camera.farClipPlane = 300;
 
-// Create Instance Cube.
-const cubeEntity = rootEntity.createChild("Cube");
-const cubeRenderer = cubeEntity.addComponent(MeshRenderer);
-const material = new Material(engine, shader);
-cubeEntity.transform.rotate(0, 60, 0);
-cubeRenderer.mesh = createCustomMesh(engine, 1.0); // Use `createCustomMesh()` to create custom instance cube mesh.
-cubeRenderer.setMaterial(material);
+  // Create Instance Cube
+  const cubeEntity = rootEntity.createChild("Cube");
+  const cubeRenderer = cubeEntity.addComponent(MeshRenderer);
+  const material = new Material(engine, shader);
+  cubeEntity.transform.rotate(0, 60, 0);
+  cubeRenderer.mesh = createCustomMesh(engine, 1.0); // Use `createCustomMesh()` to create custom instance cube mesh.
+  cubeRenderer.setMaterial(material);
 
-// Run engine.
-engine.run();
+  // Run engine.
+  engine.run();
+});
 
 /**
  * Create cube geometry with custom BufferGeometry.
@@ -157,12 +158,12 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
 function initCustomShader(): Shader {
   const shader = Shader.create(
     "CustomShader",
-    `uniform mat4 u_MVPMat;
+    `uniform mat4 renderer_MVPMat;
       attribute vec4 POSITION;
       attribute vec3 INSTANCE_OFFSET;
       attribute vec3 INSTANCE_COLOR;
       
-      uniform mat4 u_MVMat;
+      uniform mat4 renderer_MVMat;
       
       varying vec3 v_position;
       varying vec3 v_color;
@@ -170,7 +171,7 @@ function initCustomShader(): Shader {
       void main() {
         vec4 position = POSITION;
         position.xyz += INSTANCE_OFFSET;
-        gl_Position = u_MVPMat * position;
+        gl_Position = renderer_MVPMat * position;
 
         v_color = INSTANCE_COLOR;
       }`,

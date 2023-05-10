@@ -4,33 +4,32 @@
  */
 
 import {
+  AmbientLight,
+  AssetType,
   BoxColliderShape,
   Camera,
+  CollisionDetectionMode,
+  Color,
+  DirectLight,
   DynamicCollider,
   Entity,
+  Font,
   Layer,
   MeshRenderer,
+  PBRMaterial,
   PlaneColliderShape,
   Pointer,
   PrimitiveMesh,
   Quaternion,
   Script,
+  ShadowType,
   StaticCollider,
+  TextRenderer,
+  Texture2D,
   Vector2,
   Vector3,
   WebGLEngine,
-  CollisionDetectionMode,
-  Texture2D,
-  DirectLight,
-  AssetType,
-  TextRenderer,
-  Color,
-  Font,
-  PBRMaterial,
-  AmbientLight,
-  ShadowType,
 } from "@galacean/engine";
-
 import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 class PanScript extends Script {
@@ -281,70 +280,69 @@ function addBox(
 }
 
 //--------------------------------------------------------------------------------------------------------------------
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then(
+  (engine) => {
+    engine.canvas.resizeByClientSize();
+    const invCanvasWidth = 1 / engine.canvas.width;
+    const invCanvasHeight = 1 / engine.canvas.height;
+    const scene = engine.sceneManager.activeScene;
+    scene.shadowDistance = 20;
+    const rootEntity = scene.createRootEntity("root");
 
-  engine.canvas.resizeByClientSize();
-  const invCanvasWidth = 1 / engine.canvas.width;
-  const invCanvasHeight = 1 / engine.canvas.height;
-  const scene = engine.sceneManager.activeScene;
-  scene.shadowDistance = 20;
-  const rootEntity = scene.createRootEntity("root");
+    scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
+    scene.ambientLight.diffuseIntensity = 1.2;
 
-  scene.ambientLight.diffuseSolidColor.set(0.5, 0.5, 0.5, 1);
-  scene.ambientLight.diffuseIntensity = 1.2;
+    // init camera
+    const cameraEntity = rootEntity.createChild("camera");
+    const camera = cameraEntity.addComponent(Camera);
+    cameraEntity.transform.setPosition(7, 7, 7);
+    cameraEntity.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
 
-  // init camera
-  const cameraEntity = rootEntity.createChild("camera");
-  const camera = cameraEntity.addComponent(Camera);
-  cameraEntity.transform.setPosition(7, 7, 7);
-  cameraEntity.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
+    const entity = cameraEntity.createChild("text");
+    entity.transform.position = new Vector3(0, 3.5, -10);
+    const renderer = entity.addComponent(TextRenderer);
+    renderer.color = new Color();
+    renderer.text = "Use mouse to move the bricks";
+    renderer.font = Font.createFromOS(entity.engine, "Arial");
+    renderer.fontSize = 40;
 
-  const entity = cameraEntity.createChild("text");
-  entity.transform.position = new Vector3(0, 3.5, -10);
-  const renderer = entity.addComponent(TextRenderer);
-  renderer.color = new Color();
-  renderer.text = "Use mouse to move the bricks";
-  renderer.font = Font.createFromOS(entity.engine, "Arial");
-  renderer.fontSize = 40;
+    // init point light
+    const light = rootEntity.createChild("light");
+    light.transform.setPosition(0, 5, 8);
+    light.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
+    const directLight = light.addComponent(DirectLight);
+    directLight.shadowType = ShadowType.SoftLow;
 
-  // init point light
-  const light = rootEntity.createChild("light");
-  light.transform.setPosition(0, 5, 8);
-  light.transform.lookAt(new Vector3(0, 2, 0), new Vector3(0, 1, 0));
-  const directLight = light.addComponent(DirectLight);
-  directLight.shadowType = ShadowType.SoftLow;
+    addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
 
-  addPlane(rootEntity, new Vector2(30, 30), new Vector3(), new Quaternion());
+    Promise.all([
+      engine.resourceManager.load<Texture2D>({
+        url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Wkn5QY0tpbcAAAAAAAAAAAAAARQnAQ",
+        type: AssetType.Texture2D,
+      }),
+      engine.resourceManager.load<Texture2D>({
+        url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*W5azT5DjDAEAAAAAAAAAAAAAARQnAQ",
+        type: AssetType.Texture2D,
+      }),
+    ]).then((asset: Texture2D[]) => {
+      addBox(
+        rootEntity,
+        asset[0],
+        asset[1],
+        camera,
+        invCanvasWidth,
+        invCanvasHeight
+      );
 
-  Promise.all([
-    engine.resourceManager.load<Texture2D>({
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Wkn5QY0tpbcAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D,
-    }),
-    engine.resourceManager.load<Texture2D>({
-      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*W5azT5DjDAEAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D,
-    }),
-  ]).then((asset: Texture2D[]) => {
-    addBox(
-      rootEntity,
-      asset[0],
-      asset[1],
-      camera,
-      invCanvasWidth,
-      invCanvasHeight
-    );
-
-    engine.resourceManager
-      .load<AmbientLight>({
-        type: AssetType.Env,
-        url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
-      })
-      .then((ambientLight) => {
-        scene.ambientLight = ambientLight;
-        engine.run();
-      });
-  });
-});
+      engine.resourceManager
+        .load<AmbientLight>({
+          type: AssetType.Env,
+          url: "https://gw.alipayobjects.com/os/bmw-prod/89c54544-1184-45a1-b0f5-c0b17e5c3e68.bin",
+        })
+        .then((ambientLight) => {
+          scene.ambientLight = ambientLight;
+          engine.run();
+        });
+    });
+  }
+);

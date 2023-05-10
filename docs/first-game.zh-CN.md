@@ -84,8 +84,8 @@ label: Introduction/Advanced
 无法使用编辑器的同学可以直接拷贝下方代码。
 
 ```typescript
-// Create engine object.
-const engine = new WebGLEngine("canvas");
+// Create engine
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;

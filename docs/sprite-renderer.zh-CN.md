@@ -33,7 +33,7 @@ label: Graphics/2D
 ```typescript
 import { AssetType, Camera, Script, Sprite, SpriteRenderer, Texture2D, Vector3, WebGLEngine } from "@galacean/engine";
 
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 engine.resourceManager
   .load<Texture2D>({
@@ -65,7 +65,7 @@ spriteRenderer.drawMode = SpriteDrawMode.Sliced;
 sprite.border = new Vector4(0.1, 0.1, 0.1, 0.1);
 ```
 
-<playground src="sprite-slice.ts"></playground>
+<playground src="sprite-drawMode.ts"></playground>
 
 ## 渲染尺寸
 

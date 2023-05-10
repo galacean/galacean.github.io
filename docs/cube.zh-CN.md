@@ -53,7 +53,7 @@ import {
 创建引擎实例，参数 `canvas` 是 *Canvas* 元素的 `id`，若 `id` 不同请自行替换。如上文所述，通过 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法重设画布高宽。
 
 ```typescript
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.canvas.resizeByClientSize();
 ```
 ## 创建场景根节点

@@ -13,14 +13,14 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 
-init();
+main();
 
 /**
  * Init demo.
  */
-function init(): void {
+async function main() {
   // Create engine
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create yellow duck

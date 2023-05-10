@@ -100,6 +100,24 @@ In the case of multiple cameras, we can combine the camera's `renderTarget`,  `p
 
 Since in Galacean, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
 
+## method
+
+| Properties | Explanation |
+| :------------------------------------------------ ----------- | :------------------------------------- -- |
+| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix) | Reset custom projection matrix, back to automatic mode. |
+| [resetAspectRatio](${api}core/Camera#resetAspectRatio) | Reset custom rendering aspect ratio and return to automatic mode. |
+| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint) | Convert a point from world space to viewport space. |
+| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint) | Convert a point from viewport space to world space. |
+| [viewportPointToRay](${api}core/Camera#viewportPointToRay) | Generates a world space ray through a point in viewport space. |
+| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint) | Convert a point from screen space to viewport space. |
+| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint) | Convert a point from viewport space to screen space. |
+| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint) | Convert a point from world space to screen space. |
+| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint) | Convert a point from screen space to world space. |
+| [screenPointToRay](${api}core/Camera#screenPointToRay) | Generates a world space ray through a point in screen space. |
+| [render](${api}core/Camera#render) | Manual rendering. |
+| [setReplacementShader](${api}core/Camera#setReplacementShader) | Set the global rendering replacement shader. |
+| [resetReplacementShader](${api}core/Camera#resetReplacementShader) | Clear the global rendering replacement shader. |◊
+
 ## Q&A
 
 ### How to render when there are multiple cameras in the scene?

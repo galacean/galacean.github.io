@@ -3,11 +3,6 @@
  * @category input
  */
 import {
-  Camera,
-  Color,
-  MeshRenderer,
-  UnlitMaterial,
-  Vector3,
   WebGLEngine,
   Mesh,
   ModelMesh,
@@ -18,6 +13,12 @@ import {
   MathUtil,
   Quaternion,
   RenderFace,
+  Camera,
+  Color,
+  Engine,
+  MeshRenderer,
+  UnlitMaterial,
+  Vector3,
 } from "@galacean/engine";
 import * as dat from "dat.gui";
 import { LitePhysics } from "@galacean/engine-physics-lite";
@@ -44,14 +45,14 @@ class DrawScript extends Script {
   private _lineWidth: number = 0.1;
   private _forward: Vector3 = new Vector3();
   private _precision: number = 15;
-  private _drawInterval: number = 30;
+  private _drawInterval: number = 0.03;
   private _color: Color = new Color(1, 1, 1, 1);
 
   private tempPointer: Vector3 = new Vector3();
 
   set camera(val: Camera) {
     this._camera = val;
-    val.entity.transform.getWorldForward(this._forward);
+    this._forward.copyFrom(val.entity.transform.worldForward);
   }
 
   set lineWidth(val: number) {
@@ -84,7 +85,7 @@ class DrawScript extends Script {
   }
 
   onPointerDrag(): void {
-    const now = this.engine.time.nowTime;
+    const now = this.engine.time.elapsedTime;
     if (now - this._preDrawTime >= this._drawInterval) {
       this._preDrawTime = now;
       const { tempPointer: endPointer, _prePointer: startPointer } = this;
@@ -108,6 +109,7 @@ class DrawScript extends Script {
       // Draw circle.
       const rendererCircle = meshEntity.addComponent(MeshRenderer);
       rendererCircle.mesh = createCircleMesh(
+        this.engine,
         endPointer,
         forward,
         lineWidth,
@@ -117,6 +119,7 @@ class DrawScript extends Script {
       // Draw line.
       const renderer = meshEntity.addComponent(MeshRenderer);
       renderer.mesh = createLineMesh(
+        this.engine,
         startPointer,
         endPointer,
         forward,
@@ -129,7 +132,7 @@ class DrawScript extends Script {
 
   onPointerDown(): void {
     // Screen pointer to world pointer.
-    this._preDrawTime = this.engine.time.nowTime;
+    this._preDrawTime = this.engine.time.elapsedTime;
     const { x: screenX, y: screenY } =
       this.engine.inputManager.pointers[0].position;
     const { _prePointer: startPointer } = this;
@@ -140,6 +143,7 @@ class DrawScript extends Script {
     // Draw circle.
     const renderer = this._meshEntity.addComponent(MeshRenderer);
     renderer.mesh = createCircleMesh(
+      this.engine,
       this._prePointer,
       this._forward,
       this._lineWidth,
@@ -149,34 +153,84 @@ class DrawScript extends Script {
   }
 }
 
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
-engine.canvas.resizeByClientSize();
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
+// Create engine
+WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
+  (engine) => {
+    engine.canvas.resizeByClientSize();
+    const scene = engine.sceneManager.activeScene;
+    const rootEntity = scene.createRootEntity();
 
-// init light
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-scene.ambientLight.diffuseIntensity = 1.2;
+    // init light
+    scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
+    scene.ambientLight.diffuseIntensity = 1.2;
 
-// init camera
-const cameraEntity = rootEntity.createChild("camera");
-const camera = cameraEntity.addComponent(Camera);
-cameraEntity.transform.setPosition(0, 0, 10);
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-const cameraControl = cameraEntity.addComponent(OrbitControl);
-cameraControl.enabled = false;
+    // init camera
+    const cameraEntity = rootEntity.createChild("camera");
+    const camera = cameraEntity.addComponent(Camera);
+    cameraEntity.transform.setPosition(0, 0, 10);
+    cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+    const cameraControl = cameraEntity.addComponent(OrbitControl);
+    cameraControl.enabled = false;
 
-// init plane
-const planeEntity = rootEntity.createChild("camera");
-const planeCollider = planeEntity.addComponent(StaticCollider);
-const planeShape = new BoxColliderShape();
-planeShape.size.set(20, 20, 1);
-planeCollider.addShape(planeShape);
-const planeScript = planeEntity.addComponent(DrawScript);
-planeScript.camera = camera;
+    // init plane
+    const planeEntity = rootEntity.createChild("camera");
+    const planeCollider = planeEntity.addComponent(StaticCollider);
+    const planeShape = new BoxColliderShape();
+    planeShape.size.set(20, 20, 1);
+    planeCollider.addShape(planeShape);
+    const planeScript = planeEntity.addComponent(DrawScript);
+    planeScript.camera = camera;
 
-engine.run();
+    engine.run();
+
+    // Debug
+    const debugInfo = {
+      mode: "Draw",
+      lineWidth: 0.1,
+      precision: 15,
+      depth: 10,
+      lineColor: [255, 255, 255],
+      drawInterval: 30,
+      resetView: () => {
+        cameraControl.enabled && cameraEntity.transform.setPosition(0, 0, 10);
+      },
+    };
+
+    gui.add(debugInfo, "mode", ["Observe", "Draw"]).onChange((v: string) => {
+      if (v === "Draw") {
+        planeScript.camera = camera;
+        planeScript.enabled = true;
+        cameraControl.enabled = false;
+      } else {
+        planeScript.enabled = false;
+        cameraControl.enabled = true;
+        cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+      }
+    });
+
+    gui.add(debugInfo, "lineWidth", 0.01, 2, 0.02).onChange((v: number) => {
+      planeScript.lineWidth = v;
+    });
+
+    gui.add(debugInfo, "precision", 4, 40, 1).onChange((v: number) => {
+      planeScript.precision = v;
+    });
+
+    gui.add(debugInfo, "depth", 5, 15, 0.5).onChange((v: number) => {
+      planeScript.depth = v;
+    });
+
+    gui.add(debugInfo, "drawInterval", 15, 100, 1).onChange((v: number) => {
+      planeScript.drawInterval = v;
+    });
+
+    gui.addColor(debugInfo, "lineColor").onChange((v: number) => {
+      planeScript.setColor(v[0] / 255, v[1] / 255, v[2] / 255, 1);
+    });
+
+    gui.add(debugInfo, "resetView");
+  }
+);
 
 /**
  * Draw a line segment perpendicular to the forward vector.
@@ -187,6 +241,7 @@ engine.run();
  * @returns ModelMesh containing mesh information
  */
 function createLineMesh(
+  engine: Engine,
   startPos: Vector3,
   endPos: Vector3,
   forwardVec3: Vector3,
@@ -220,6 +275,7 @@ function createLineMesh(
  * @returns ModelMesh containing mesh information
  */
 function createCircleMesh(
+  engine: Engine,
   pos: Vector3,
   forwardVec3: Vector3,
   lineWidth: number,
@@ -267,50 +323,3 @@ function createCircleMesh(
   mesh.uploadData(false);
   return mesh;
 }
-
-// Debug
-const debugInfo = {
-  mode: "Draw",
-  lineWidth: 0.1,
-  precision: 15,
-  depth: 10,
-  lineColor: [255, 255, 255],
-  drawInterval: 30,
-  resetView: () => {
-    cameraControl.enabled && cameraEntity.transform.setPosition(0, 0, 10);
-  },
-};
-
-gui.add(debugInfo, "mode", ["Observe", "Draw"]).onChange((v: string) => {
-  if (v === "Draw") {
-    planeScript.camera = camera;
-    planeScript.enabled = true;
-    cameraControl.enabled = false;
-  } else {
-    planeScript.enabled = false;
-    cameraControl.enabled = true;
-    cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-  }
-});
-
-gui.add(debugInfo, "lineWidth", 0.01, 2, 0.02).onChange((v: number) => {
-  planeScript.lineWidth = v;
-});
-
-gui.add(debugInfo, "precision", 4, 40, 1).onChange((v: number) => {
-  planeScript.precision = v;
-});
-
-gui.add(debugInfo, "depth", 5, 15, 0.5).onChange((v: number) => {
-  planeScript.depth = v;
-});
-
-gui.add(debugInfo, "drawInterval", 15, 100, 1).onChange((v: number) => {
-  planeScript.drawInterval = v;
-});
-
-gui.addColor(debugInfo, "lineColor").onChange((v: number) => {
-  planeScript.setColor(v[0] / 255, v[1] / 255, v[2] / 255, 1);
-});
-
-gui.add(debugInfo, "resetView");

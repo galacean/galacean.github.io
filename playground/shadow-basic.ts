@@ -15,7 +15,7 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 async function init() {
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;

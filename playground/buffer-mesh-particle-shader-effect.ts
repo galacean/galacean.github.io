@@ -3,14 +3,13 @@
  * @category Mesh
  */
 import {
-  Camera,
-  MeshRenderer,
-  WebGLEngine,
-  Texture2D,
-  RenderFace,
   Buffer,
   BufferBindFlag,
   BufferMesh,
+  Camera,
+  MeshRenderer,
+  RenderFace,
+  Texture2D,
   VertexBufferBinding,
   VertexElement,
   VertexElementFormat,
@@ -18,6 +17,7 @@ import {
   Shader,
   BaseMaterial,
   Script,
+  WebGLEngine,
 } from "@galacean/engine";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
@@ -49,7 +49,7 @@ const vs = `#define PI 3.14159265359
 attribute vec3 POSITION;
 attribute vec3 INDEX;
 attribute vec2 UV;
-uniform mat4 u_MVPMat;
+uniform mat4 renderer_MVPMat;
 uniform float progress;
 
 varying vec2 v_uv;
@@ -65,7 +65,7 @@ void main() {
   float p = clamp(progress-wait, 0., 2.0);
   position.z += sin(p * PI * 6.) * 3. * (maxDistance - distance * 0.5) / maxDistance * (2. - progress) * 0.5;
 
-  gl_Position = u_MVPMat * position;
+  gl_Position = renderer_MVPMat * position;
 }`;
 
 const ParticleMeshShader = Shader.create("test", vs, fs);
@@ -230,33 +230,34 @@ function createPlaneParticleMesh(
   return mesh;
 }
 
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  engine.canvas.resizeByClientSize();
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
 
-const cameraEntity = rootEntity.createChild("camera");
-cameraEntity.addComponent(Camera);
-cameraEntity.transform.position.set(0, 0, 50);
-cameraEntity.addComponent(OrbitControl);
+  const cameraEntity = rootEntity.createChild("camera");
+  cameraEntity.addComponent(Camera);
+  cameraEntity.transform.position.set(0, 0, 50);
+  cameraEntity.addComponent(OrbitControl);
 
-engine.resourceManager
-  .load([
-    "https://gw.alipayobjects.com/zos/OasisHub/440001901/3736/spring.jpeg",
-    "https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg",
-  ])
-  .then((assets) => {
-    const entity = rootEntity.createChild("plane");
-    const renderer = entity.addComponent(MeshRenderer);
-    const mesh = createPlaneParticleMesh(engine, 20, 20, 80, 80, true);
-    const mtl = new ParticleMeshMaterial(engine);
-    renderer.setMaterial(mtl);
-    renderer.mesh = mesh;
-    mtl.texture1 = assets[0] as Texture2D;
-    mtl.texture2 = assets[1] as Texture2D;
-    mtl.renderFace = RenderFace.Double;
+  engine.resourceManager
+    .load([
+      "https://gw.alipayobjects.com/zos/OasisHub/440001901/3736/spring.jpeg",
+      "https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg",
+    ])
+    .then((assets) => {
+      const entity = rootEntity.createChild("plane");
+      const renderer = entity.addComponent(MeshRenderer);
+      const mesh = createPlaneParticleMesh(engine, 20, 20, 80, 80, true);
+      const mtl = new ParticleMeshMaterial(engine);
+      renderer.setMaterial(mtl);
+      renderer.mesh = mesh;
+      mtl.texture1 = assets[0] as Texture2D;
+      mtl.texture2 = assets[1] as Texture2D;
+      mtl.renderFace = RenderFace.Double;
 
-    entity.addComponent(AnimationComponent);
-  });
+      entity.addComponent(AnimationComponent);
+    });
 
-engine.run();
+  engine.run();
+});

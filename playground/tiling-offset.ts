@@ -17,11 +17,11 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 
-init();
+main();
 
-function init(): void {
+async function main(): void {
   // Create engine object
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Load texture

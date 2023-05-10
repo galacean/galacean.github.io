@@ -2,8 +2,6 @@
  * @title GLTF Loader
  * @category Advance
  */
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import * as dat from "dat.gui";
 import {
   AmbientLight,
   AnimationClip,
@@ -25,13 +23,14 @@ import {
   PrimitiveMesh,
   Renderer,
   Scene,
-  SkinnedMeshRenderer,
   SkyBoxMaterial,
   Texture2D,
   UnlitMaterial,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import * as dat from "dat.gui";
 
 Logger.enable();
 
@@ -49,7 +48,7 @@ class Oasis {
   }
 
   static colorToGui(color: Color = new Color(1, 1, 1)): number[] {
-    const v = [];
+    const v: number[] = [];
     v[0] = color.r * 255;
     v[1] = color.g * 255;
     v[2] = color.b * 255;
@@ -59,22 +58,22 @@ class Oasis {
   textures: Record<string, Texture2D> = {};
   env: Record<string, AmbientLight> = {};
 
-  engine: WebGLEngine = new WebGLEngine("canvas");
-  scene: Scene = this.engine.sceneManager.activeScene;
-  skyMaterial: SkyBoxMaterial = new SkyBoxMaterial(this.engine);
+  engine: WebGLEngine;
+  scene: Scene;
+  skyMaterial: SkyBoxMaterial;
 
   // Entity
-  rootEntity: Entity = this.scene.createRootEntity("root");
-  cameraEntity: Entity = this.rootEntity.createChild("camera");
-  gltfRootEntity: Entity = this.rootEntity.createChild("gltf");
-  lightEntity1: Entity = this.rootEntity.createChild("direct_light1");
-  lightEntity2: Entity = this.rootEntity.createChild("direct_light2");
+  rootEntity: Entity;
+  cameraEntity: Entity;
+  gltfRootEntity: Entity;
+  lightEntity1: Entity;
+  lightEntity2: Entity;
 
   // Component
-  camera: Camera = this.cameraEntity.addComponent(Camera);
-  controler: OrbitControl = this.cameraEntity.addComponent(OrbitControl);
-  light1: DirectLight = this.lightEntity1.addComponent(DirectLight);
-  light2: DirectLight = this.lightEntity2.addComponent(DirectLight);
+  camera: Camera;
+  controler: OrbitControl;
+  light1: DirectLight;
+  light2: DirectLight;
 
   // Debug
   gui = new dat.GUI();
@@ -191,10 +190,25 @@ class Oasis {
   _extent: Vector3 = new Vector3();
 
   constructor() {
-    this.loadEnv(this.state.env).then(() => {
-      this.initScene();
-      this.addGLTFList();
-      this.addSceneGUI();
+    WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+      this.engine = engine;
+      this.scene = this.engine.sceneManager.activeScene;
+      this.skyMaterial = new SkyBoxMaterial(this.engine);
+      this.rootEntity = this.scene.createRootEntity("root");
+      this.cameraEntity = this.rootEntity.createChild("camera");
+      this.gltfRootEntity = this.rootEntity.createChild("gltf");
+      this.lightEntity1 = this.rootEntity.createChild("direct_light1");
+      this.lightEntity2 = this.rootEntity.createChild("direct_light2");
+      this.camera = this.cameraEntity.addComponent(Camera);
+      this.controler = this.cameraEntity.addComponent(OrbitControl);
+      this.light1 = this.lightEntity1.addComponent(DirectLight);
+      this.light2 = this.lightEntity2.addComponent(DirectLight);
+
+      this.loadEnv(this.state.env).then(() => {
+        this.initScene();
+        this.addGLTFList();
+        this.addSceneGUI();
+      });
     });
   }
 
@@ -209,7 +223,7 @@ class Oasis {
           this.env[envName] = env;
 
           this.scene.ambientLight = env;
-          this.skyMaterial.textureCubeMap = env.specularTexture;
+          this.skyMaterial.texture = env.specularTexture;
           this.skyMaterial.textureDecodeRGBM = true;
           resolve(true);
         });
@@ -324,8 +338,8 @@ class Oasis {
     const isGLB = /.glb$/.test(url);
     this.engine.resourceManager
       .load<GLTFResource>({
-        type: AssetType.Prefab,
-        url: `${url}#${Math.random()}.${isGLB ? "glb" : "gltf"}`, // @todo: resourceManager cache bug
+        type: AssetType.GLTF,
+        url: `${url}#${Math.random()}.${isGLB ? "glb" : "gltf"}` // @todo: resourceManager cache bug
       })
       .then((asset) => {
         const { defaultSceneRoot, materials, animations } = asset;
@@ -340,7 +354,7 @@ class Oasis {
 
         this.setCenter(meshRenderers);
         this.loadMaterialGUI(materials);
-        this.loadAnimationGUI(animations);
+        this.loadAnimationGUI(animations as AnimationClip[]);
       })
       .catch((e) => {
         console.error(e);

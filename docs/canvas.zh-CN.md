@@ -23,7 +23,7 @@ Galacean Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl
 创建 WebGLEngine 实例的时候会自动创建一个 WebCanvas 实例：
 
 ```typescript
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 console.log(engine.canvas) // => WebCanvas 实例
 ```

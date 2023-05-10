@@ -16,11 +16,11 @@ import {
 } from "@galacean/engine";
 import * as TWEEN from "@tweenjs/tween.js";
 
-init();
+main();
 
-function init(): void {
+async function main(): Promise<void> {
   // Create engine object.
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create rootEntity.

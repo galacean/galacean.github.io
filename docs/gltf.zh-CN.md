@@ -41,7 +41,7 @@ rootEntity.addChild(defaultSceneRoot);
 
 | 解析产物 | 功能 |
 | :-- | :-- |
-| [gltf](${api}loader/GLTFResource#gltf) | glTF 源文件 JSON 格式 |
+| [url](${api}loader/GLTFResource#gltf) | glTF 源文件请求地址 |
 | [defaultSceneRoot](${api}loader/GLTFResource#defaultSceneRoot) | glTF 默认根节点 |
 | [sceneRoots](${api}loader/GLTFResource#sceneRoots) | glTF 可能包含多个根节点，但是默认导出只能有一个根节点，开发者可以手动添加/切换根节点 |
 | [animations](${api}loader/GLTFResource#animations) | 动画片段 |
@@ -53,7 +53,7 @@ rootEntity.addChild(defaultSceneRoot);
 
 ## 更多使用
 
-### 播放动画
+### 1. 播放动画
 
 我们先从根节点上获取 [Animator](${api}core/Animator) 组件，然后可以选择播放哪一个动画片段。
 
@@ -65,7 +65,7 @@ rootEntity.addChild(defaultSceneRoot);
 animation.playAnimationClip(animations[0].name);
 ```
 
-### 切换 glTF 相机
+### 2. 切换 glTF 相机
 
 引擎默认不使用 glTF 导出的相机，如果需要，可以先禁用引擎的默认相机，然后启用 glTF 导出的某个相机。
 
@@ -82,7 +82,7 @@ if (cameras) {
 }
 ```
 
-### 选择场景根节点
+### 3. 选择场景根节点
 
 glTF 中的场景(**Scene**)指的是根节点，即引擎的 [Entity](${api}core/Entity)。除了默认场景根节点 `defaultSceneRoot`，还可能包含多个场景根节点 `sceneRoots`，开发者可以手动选择/切换根节点。
 
@@ -97,17 +97,19 @@ if (sceneRoots.length > 1) {
 }
 ```
 
-### 多材质切换
+### 4. 多材质切换
 
-如果 glTF 文件包含[多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants)，则可以利用 [variants](<(${api}loader/GLTFResource#variants)>) 来切换材质。
+glTF [多材质插件](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_variants) 可以用来切换材质。
 
 ```typescript
-const { variants, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
+const { extensionsData, defaultSceneRoot } = await this.engine.resourceManager.load<GLTFResource>("https://***.gltf");
 
 rootEntity.addChild(defaultSceneRoot);
 
-// variants?: { renderer: Renderer; material: Material; variants: string[] }[];
+const variants: IGLTFExtensionVariants = extensionsData?.variants;
+// variants?: Array({ renderer: Renderer; material: Material; variants: string[] });
 if (variants) {
+  const extensionData = extensionsData;
   const replaceVariant = variants[0];
   const { renderer, material } = replaceVariant;
 
@@ -115,16 +117,114 @@ if (variants) {
 }
 ```
 
-### 插件支持
+## 插件支持
 
 Galacean 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，则会自动加载相应功能：
 
 | 插件 | 功能 |
 | :-- | :-- |
-| [KHR_draco_mesh_compression](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | 支持 Draco 压缩模型，节省显存 |
-| [KHR_lights_punctual](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多光源组合，会解析成引擎的光源，详见[光照教程](${docs}light-cn) |
-| [KHR_materials_pbrSpecularGlossiness](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR [高光-光泽度工作流](${api}core/PBRSpecularMaterial) |
-| [KHR_materials_unlit](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | 支持 [Unlit 材质](https://galacean.antgroup.com/#/docs/latest/artist-unlit-cn) |
-| [KHR_materials_variants](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 允许渲染器存在多个材质，然后通过 [setMaterial](${api}core/Renderer#setMaterial) 接口进行材质切换 |
-| [KHR_mesh_quantization](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
-| [KHR_texture_transform](https://github.com/galacean/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://galacean.antgroup.com/#/examples/latest/tiling-offset) 案例 |
+| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | 支持 Draco 压缩模型，节省显存 |
+| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多光源组合，会解析成引擎的光源，详见[光照教程](${docs}light-cn) |
+| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR [高光-光泽度工作流](${api}core/PBRSpecularMaterial) |
+| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | 支持 [Unlit 材质](https://oasisengine.cn/0.4/docs/artist-unlit-cn) |
+| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 允许渲染器存在多个材质，然后通过 [setMaterial](${api}core/Renderer#setMaterial) 接口进行材质切换 |
+| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
+| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://oasisengine.cn/#/examples/latest/tiling-offset) 案例 |
+| [KHR_materials_clearcoat](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_clearcoat.ts) | 支持材质的透明清漆度拓展，可以参考 [Clearcoat](https://oasisengine.cn/#/examples/latest/pbr-clearcoat) 案例 |
+| [GALACEAN_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/GALACEAN_materials_remap.ts) | 支持编辑器材质映射 |
+
+## 插件拓展
+
+如果官方内置的插件不能满足您的需求，我们还提供了拓展插件的方法。
+
+举个例子，如果 Unity 导出了以下 glTF 插件，希望能根据材质拓展 `Unity_Material_Plugin` 生成新的自定义材质，然后根据灯光插件 `Unity_Light_Plugin` 表示想在某个节点上面加一个灯光：
+
+```json
+{
+  ...
+  materials:[{
+    extensions:{
+      Unity_Material_Plugin:{
+        color: [1,1,1],
+        ...
+      }
+    }
+  }],
+  nodes:[{
+    extensions:{
+      Unity_Light_Plugin:{
+        type:"point",
+        ...
+      }
+    }
+  }]
+
+}
+```
+
+### 1. 自定义创建解析
+
+按照上面的例子，我们注册一个材质插件，第二个参数 `GLTFExtensionMode.CreateAndParse` 表示这个插件是用来创建实例和解析的：
+
+```ts
+@registerGLTFExtension("Unity_Material_Plugin", GLTFExtensionMode.CreateAndParse)
+class UnityMaterialPluginParser extends GLTFExtensionParser {
+  createAndParse(context: GLTFParserContext, schema: {color,...other}}): Promise<Material> {
+    const { engine } = context.glTFResource;
+    const yourCustomMaterial = new Material(engine,customShader);
+    ...
+    return yourCustomMaterial;
+  }
+}
+```
+
+### 2. 增量解析
+
+按照上面的例子，我们注册一个灯光插件，第二个参数 `GLTFExtensionMode.AdditiveParse` 表示这个插件是在原来实例的基础上进行一些增量解析的,比如在这个实体上添加一个光源：
+
+```ts
+@registerGLTFExtension("Unity_Light_Plugin", GLTFExtensionMode.AdditiveParse)
+class UnityLightPlugin extends GLTFExtensionParser {
+  additiveParse(context: GLTFParserContext, entity: Entity, extensionSchema: {type,...other}): void {
+    entity.addComponent(type==="point"?PointLight:DirectLight);
+    ...
+  }
+}
+```
+
+### 3. 自定义管线
+
+如果上面的方法还不能满足您的需求，还可以完全自定义解析管线，用来重写解析的逻辑：
+
+```ts
+
+class CustomMaterialParser extends GLTFParser{
+   parse(context: GLTFParserContext): AssetPromise<Material[]> {
+      const { glTF, glTFResource, materialsPromiseInfo } = context;
+      glTFResource.materials = materials;
+      for (let i = 0; i < glTF.materials.length; i++) {
+        const materialInfo = glTF.materials[i];
+        ...
+      }
+      materialsPromiseInfo.resolve(materials);
+      return materialsPromiseInfo.promise;
+   }
+}
+
+engine.resourceManager
+    .load<GLTFResource>({
+      type: AssetType.GLTF,
+      url: "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf"
+      params: {
+        pipeline: new GLTFPipeline(
+          ...
+          CustomMaterialParser,
+          ...
+        )
+      }
+    })
+    .then((gltf) => {
+      const entity = rootEntity.createChild();
+      entity.addChild(gltf.defaultSceneRoot);
+    })
+```

@@ -17,73 +17,74 @@ import {
 import { FreeControl } from "@galacean/engine-toolkit-controls";
 const gui = new dat.GUI();
 
-//-- create engine object
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
+// Create engine
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  engine.canvas.resizeByClientSize();
 
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
 
-//-- create camera
-const cameraEntity = rootEntity.createChild("camera_entity");
-cameraEntity.transform.position = new Vector3(0, 0, 50);
-cameraEntity.addComponent(Camera);
-const control = cameraEntity.addComponent(FreeControl);
-control.movementSpeed = 50;
+  //-- create camera
+  const cameraEntity = rootEntity.createChild("camera_entity");
+  cameraEntity.transform.position = new Vector3(0, 0, 50);
+  cameraEntity.addComponent(Camera);
+  const control = cameraEntity.addComponent(FreeControl);
+  control.movementSpeed = 50;
 
-engine.run();
+  engine.run();
 
-// create two renderer
-const cube = rootEntity.createChild("cube1");
-const cube2 = rootEntity.createChild("cube2");
-cube.transform.position = new Vector3(-10, 0, 0);
-cube2.transform.position = new Vector3(10, 0, 0);
+  // create two renderer
+  const cube = rootEntity.createChild("cube1");
+  const cube2 = rootEntity.createChild("cube2");
+  cube.transform.position = new Vector3(-10, 0, 0);
+  cube2.transform.position = new Vector3(10, 0, 0);
 
-const lightNode = rootEntity.createChild("Light");
-lightNode.transform.setRotation(-45, 0, 0);
-lightNode.addComponent(DirectLight);
+  const lightNode = rootEntity.createChild("Light");
+  lightNode.transform.setRotation(-45, 0, 0);
+  lightNode.addComponent(DirectLight);
 
-const material = new BlinnPhongMaterial(engine);
-material.baseColor = new Color(1, 0, 0, 1);
-const material2 = new BlinnPhongMaterial(engine);
-material2.baseColor = new Color(0, 0, 1, 1);
-const geometry = PrimitiveMesh.createCuboid(engine, 5, 5, 5);
-const sphereGeometry = PrimitiveMesh.createSphere(engine, 5);
+  const material = new BlinnPhongMaterial(engine);
+  material.baseColor = new Color(1, 0, 0, 1);
+  const material2 = new BlinnPhongMaterial(engine);
+  material2.baseColor = new Color(0, 0, 1, 1);
+  const geometry = PrimitiveMesh.createCuboid(engine, 5, 5, 5);
+  const sphereGeometry = PrimitiveMesh.createSphere(engine, 5);
 
-const cubeRenderer = cube.addComponent(MeshRenderer);
-const cubeRenderer2 = cube2.addComponent(MeshRenderer);
+  const cubeRenderer = cube.addComponent(MeshRenderer);
+  const cubeRenderer2 = cube2.addComponent(MeshRenderer);
 
-cubeRenderer.mesh = geometry;
-cubeRenderer.setMaterial(material);
+  cubeRenderer.mesh = geometry;
+  cubeRenderer.setMaterial(material);
 
-cubeRenderer2.mesh = sphereGeometry;
-cubeRenderer2.setMaterial(material2);
+  cubeRenderer2.mesh = sphereGeometry;
+  cubeRenderer2.setMaterial(material2);
 
-// rotate
-class RotationScript extends Script {
-  onUpdate() {
-    this.entity.transform.rotate(1, 1, 1);
+  // rotate
+  class RotationScript extends Script {
+    onUpdate() {
+      this.entity.transform.rotate(1, 1, 1);
+    }
   }
-}
-cube.addComponent(RotationScript);
-cube2.addComponent(RotationScript);
+  cube.addComponent(RotationScript);
+  cube2.addComponent(RotationScript);
 
-// observe renderer-cull
-const state = {
-  cube1: "正常渲染",
-  cube2: "正常渲染",
-};
+  // observe renderer-cull
+  const state = {
+    cube1: "正常渲染",
+    cube2: "正常渲染",
+  };
 
-class ObserverScript extends Script {
-  onUpdate() {
-    state.cube1 = cubeRenderer.isCulled ? "视锥体裁剪" : "正常渲染";
-    state.cube2 = cubeRenderer2.isCulled ? "视锥体裁剪" : "正常渲染";
+  class ObserverScript extends Script {
+    onUpdate() {
+      state.cube1 = cubeRenderer.isCulled ? "视锥体裁剪" : "正常渲染";
+      state.cube2 = cubeRenderer2.isCulled ? "视锥体裁剪" : "正常渲染";
+    }
   }
-}
 
-rootEntity.addComponent(ObserverScript);
+  rootEntity.addComponent(ObserverScript);
 
-const folder = gui.addFolder("移动视角，观察视锥体裁剪情况");
-folder.add(state, "cube1").name("红色立方体").listen();
-folder.add(state, "cube2").name("蓝色球体").listen();
-folder.open();
+  const folder = gui.addFolder("移动视角，观察视锥体裁剪情况");
+  folder.add(state, "cube1").name("红色立方体").listen();
+  folder.add(state, "cube2").name("蓝色球体").listen();
+  folder.open();
+});

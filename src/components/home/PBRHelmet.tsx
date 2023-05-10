@@ -4,19 +4,24 @@ import React, { useEffect } from "react";
 
 export default function PBRHelmet() {
   useEffect(() => {
-    const engine = init();
+    let engine: WebGLEngine;
+
+    (async function() {
+      engine = await init();
+    })();
 
     return () => {
-      engine.destroy();
+      engine && engine.destroy();
     };
   }, []);
 
   return <canvas id="canvas-pbr-helmet" style={{ width: "350px", height: "350px" }} />;
 }
 
-function init(): WebGLEngine {
+async function init(): Promise<WebGLEngine> {
   // -- create engine object
-  const engine = new WebGLEngine("canvas-pbr-helmet", { alpha: true, antialias: true });
+  const engine = await WebGLEngine.create({ canvas: "canvas-pbr-helmet", graphicDeviceOptions: { alpha: true, antialias: true }},)
+
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;

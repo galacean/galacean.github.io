@@ -20,13 +20,11 @@ label: Editor-Feature/Rendering-2d
 
 ![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*FaB1RIf5jakAAAAAAAAAAAAADjCHAQ/original)
 
-## 更多属性
+## 参数说明
 
-image.png
 | 属性 | 功能说明 |
 | :--- | :--- |
-| `Resource` | 选择 Lottie 资产 |
-| `AutoPlay` | 是否自动播放，如果选择否，需要代码手动调用播放 |
+| `resource` | 选择 Lottie 资产 |
 | `isLooping` | 是否循环播放，默认循环 |
-| `Speed` | 播放速度，`1` 为原速度播放，数值越大播放约快 |
+| `speed` | 播放速度，`1` 为原速度播放，数值越大播放约快 |
 

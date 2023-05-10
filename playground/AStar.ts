@@ -508,10 +508,8 @@ class MapViewControl extends Script {
   }
 }
 
-PhysXPhysics.initialize().then(() => {
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then((engine) => {
   // Create engine object.
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
   engine.canvas.resizeByClientSize();
 
   // Create root entity.

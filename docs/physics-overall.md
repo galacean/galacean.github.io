@@ -22,29 +22,26 @@ engine backend implementations:
 1. [physics-lite](https://github.com/galacean/engine/tree/main/packages/physics-lite)
 2. [physics-physx](https://github.com/galacean/engine/tree/main/packages/physics-physx)
 
-Initialization only needs to bind the static objects of these two backends to `physicsManager`:
+When initializing the engine, you only need to pass the objects of these two backends into `Engine`:
 
 ```typescript
 import {LitePhysics} from "@galacean/engine-physics-lite";
 
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
+const engine = await WebGLEngine.create({
+  canvas: htmlCanvas,
+  physics: new LitePhysics(),
+});
 ```
 
-## Wasm version physics engine loading and initialization
-
-Since WASM needs to be loaded asynchronously, the initialization of the engine needs to be done in the callback of
-Promise.
+## PhysX version physics engine loading and initialization
 
 ```typescript
-import {PhysXPhysics} from "@galacean/engine-physics-physx";
+import { PhysXPhysics } from "@oasis-engine/physics-physx";
 
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
-
-  engine.run();
-})
+const engine = await WebGLEngine.create({
+  canvas: htmlCanvas,
+  physics: new PhysXPhysics(),
+});
 ```
 
 ## Select physical backend

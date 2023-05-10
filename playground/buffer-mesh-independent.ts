@@ -59,11 +59,11 @@ class RandomColorScript extends Script {
   }
 }
 
-init();
+main();
 
-function init() {
+async function main() {
   // Create engine and get root entity.
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   const rootEntity = engine.sceneManager.activeScene.createRootEntity("Root");

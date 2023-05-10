@@ -5,18 +5,23 @@ import { useEffect } from 'react';
 
 export default function PBRHelmet() {
   useEffect(() => {
-    const engine = init();
+    let engine: WebGLEngine;
+
+    (async function() {
+      engine = await init();
+    })();
 
     return () => {
-      engine.destroy();
+      engine && engine.destroy();
     };
   }, []);
 
   return <canvas id="canvas-spine" style={{ width: '350px', height: '350px' }} />;
 }
 
-function init(): WebGLEngine {
-  const engine = new WebGLEngine('canvas-spine', { alpha: true, antialias: true });
+async function init(): Promise<WebGLEngine> {
+  // -- create engine object
+  const engine = await WebGLEngine.create({ canvas: "canvas-spine", graphicDeviceOptions: { alpha: true, antialias: true }},)
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const { background } = scene;

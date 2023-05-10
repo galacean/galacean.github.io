@@ -7,13 +7,13 @@
     "@babel/core": "^7.16.0",
     "@babel/standalone": "^7.19.3",
     "@galacean/editor-ui": "^0.0.2",
-    "@galacean/engine": "0.9.0-beta.81",
-    "@galacean/engine-lottie": "0.9.1",
-    "@galacean/engine-physics-lite": "0.9.0-beta.81",
-    "@galacean/engine-physics-physx": "0.9.0-beta.81",
-    "@galacean/engine-spine": "^0.9.0",
-    "@galacean/engine-toolkit": "0.9.0-beta.8",
-    "@galacean/tools-baker": "^0.9.0-beta.2",
+    "@galacean/engine": "^1.0.0-beta.8",
+    "@galacean/engine-lottie": "^1.0.0-beta.0",
+    "@galacean/engine-physics-lite": "^1.0.0-alpha.8",
+    "@galacean/engine-physics-physx": "^1.0.0-alpha.8",
+    "@galacean/engine-spine": "^1.0.0-beta.0",
+    "@galacean/engine-toolkit": "^1.0.0-beta.1",
+    "@galacean/tools-baker": "^1.0.0-beta.3",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-icons": "^1.1.1",
@@ -114,5 +114,6 @@
     "presets": [
       "react-app"
     ]
-  }
+  },
+  "repository": "git@github.com:JujieX/oasis-engine.github.io.git"
 }

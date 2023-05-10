@@ -54,33 +54,35 @@ class GlTFCollider extends Script {
   }
 }
 
-//-- create engine object
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
-engine.physicsManager.initialize(LitePhysics);
+// Create engine
+WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
+  (engine) => {
+    engine.canvas.resizeByClientSize();
 
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
+    const scene = engine.sceneManager.activeScene;
+    const rootEntity = scene.createRootEntity();
 
-const directLightNode = rootEntity.createChild("dir_light");
-directLightNode.addComponent(DirectLight);
-directLightNode.transform.setRotation(30, 0, 0);
+    const directLightNode = rootEntity.createChild("dir_light");
+    directLightNode.addComponent(DirectLight);
+    directLightNode.transform.setRotation(30, 0, 0);
 
-//Create camera
-const cameraNode = rootEntity.createChild("camera_node");
-cameraNode.transform.setPosition(0, 0, 10);
-cameraNode.addComponent(Camera);
-cameraNode.addComponent(OrbitControl);
+    //Create camera
+    const cameraNode = rootEntity.createChild("camera_node");
+    cameraNode.transform.setPosition(0, 0, 10);
+    cameraNode.addComponent(Camera);
+    cameraNode.addComponent(OrbitControl);
 
-engine.resourceManager
-  .load<GLTFResource>(
-    "https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb"
-  )
-  .then((glTF) => {
-    const glTFRoot = glTF.defaultSceneRoot;
-    const entity = rootEntity.createChild("glTF");
-    entity.addChild(glTFRoot);
-    glTFRoot.transform.setScale(0.005, 0.005, 0.005);
-    glTFRoot.addComponent(GlTFCollider);
-    engine.run();
-  });
+    engine.resourceManager
+      .load<GLTFResource>(
+        "https://gw.alipayobjects.com/os/bmw-prod/48a1e8b3-06b4-4269-807d-79274e58283a.glb"
+      )
+      .then((glTF) => {
+        const glTFRoot = glTF.defaultSceneRoot;
+        const entity = rootEntity.createChild("glTF");
+        entity.addChild(glTFRoot);
+        glTFRoot.transform.setScale(0.005, 0.005, 0.005);
+        glTFRoot.addComponent(GlTFCollider);
+        engine.run();
+      });
+  }
+);

@@ -23,7 +23,7 @@ Insert a `<canvas>` tag in HTML and specify an id:
 When creating a WebGLEngine instance, a WebCanvas instance is automatically created:
 
 ```typescript
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 console.log(engine.canvas) // => WebCanvas instance
 ```

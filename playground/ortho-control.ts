@@ -7,62 +7,46 @@ import {
   Camera,
   Sprite,
   SpriteRenderer,
+  TextRenderer,
   Texture2D,
   WebGLEngine,
 } from "@galacean/engine";
 import { OrthoControl } from "@galacean/engine-toolkit-controls";
 
 // Create engine object
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
 
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  engine.canvas.resizeByClientSize();
 
-// Create camera
-const cameraEntity = rootEntity.createChild("Camera");
-cameraEntity.transform.setPosition(0, 0, 50);
-const camera = cameraEntity.addComponent(Camera);
-camera.isOrthographic = true;
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
 
-// Add camera control.
-const cameraControl = cameraEntity.addComponent(OrthoControl);
-const mainElement = engine.canvas._webCanvas;
-mainElement.addEventListener(
-  "wheel",
-  (e) => {
-    // @ts-ignore
-    if (e.deltaY < 0) {
-      cameraControl.zoomIn();
-    } else {
-      cameraControl.zoomOut();
-    }
-  },
-  false
-);
-mainElement.addEventListener("mousedown", (e) => {
-  // @ts-ignore
-  cameraControl.panStart(e.clientX, e.clientY);
+  // Create camera
+  const cameraEntity = rootEntity.createChild("Camera");
+  cameraEntity.transform.setPosition(0, 0, 50);
+  const camera = cameraEntity.addComponent(Camera);
+  camera.isOrthographic = true;
+
+  // Add  tip
+  const tipEntity = rootEntity.createChild("Tip");
+  tipEntity.transform.setPosition(0, 5, 0);
+  const textRenderer = tipEntity.addComponent(TextRenderer);
+  textRenderer.text = "Hold right button and drag";
+  textRenderer.fontSize = 50;
+
+  // Add camera control.
+  cameraEntity.addComponent(OrthoControl);
+  engine.resourceManager
+    .load<Texture2D>({
+      url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*KjnzTpE8LdAAAAAAAAAAAAAAARQnAQ",
+      type: AssetType.Texture2D,
+    })
+    .then((texture) => {
+      // Create sprite entity.
+      const spriteEntity = rootEntity.createChild("sprite");
+      const spriteRenderer = spriteEntity.addComponent(SpriteRenderer);
+      spriteRenderer.sprite = new Sprite(engine, texture);
+    });
+
+  engine.run();
 });
-mainElement.addEventListener("mousemove", (e) => {
-  // @ts-ignore
-  cameraControl.panMove(e.clientX, e.clientY);
-});
-mainElement.addEventListener("mouseup", (e) => {
-  // @ts-ignore
-  cameraControl.panEnd();
-});
-
-engine.resourceManager
-  .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*KjnzTpE8LdAAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D,
-  })
-  .then((texture) => {
-    // Create sprite entity.
-    const spriteEntity = rootEntity.createChild("sprite");
-    const spriteRenderer = spriteEntity.addComponent(SpriteRenderer);
-    spriteRenderer.sprite = new Sprite(engine, texture);
-  });
-
-engine.run();

@@ -18,12 +18,12 @@ import { Material, Shader, Color } from "@galacean/engine";
 
 //-- Shader 代码
 const vertexSource = `
-  uniform mat4 u_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
 
   void main() {
-    gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
   }
   `;
 
@@ -51,6 +51,8 @@ const material = new Material(engine, Shader.find("demo"));
 在上面，我们给 material 赋予了 shader，这个时候程序已经可以开始渲染了。需要注意的是，shader 代码中有两种变量，一种是**逐顶点**的 `attribute` 变量，另一种是**逐 shader** 的 `uniform` 变量。(在 GLSL300 后，统一为 in 变量)
 引擎已经自动上传了一些常用变量，用户可以直接在 shader 代码中使用，如顶点数据和 mvp 数据，下面是引擎默认上传的变量。
 
+### 顶点输入
+
 | 逐顶点数据 |  attribute name | 数据类型 |
 | :--- | :--- | :--- |
 | 顶点 | POSITION | vec3  |
@@ -62,24 +64,40 @@ const material = new Material(engine, Shader.find("demo"));
 | 第一套纹理坐标 | TEXCOORD_0 | vec2  |
 | 第二套纹理坐标 | TEXCOORD_1 | vec2  |
 
+### 属性
 
-| 逐 shader 数据 |  uniform name | 数据类型 |
-| :--- | :--- | :--- |
-| canvas 分辨率 | u_resolution | vec2 |
-| 视口矩阵 | u_viewMat | mat4 |
-| 投影矩阵 | u_projMat | mat4 |
-| 视口投影矩阵 | u_VPMat | mat4 |
-| 视口逆矩阵 | u_viewInvMat | mat4 |
-| 相机位置 | u_cameraPos | vec3 |
-| 模型本地坐标系矩阵 | u_localMat | mat4 |
-| 模型世界坐标系矩阵 | u_modelMat | mat4 |
-| 模型视口矩阵 | u_MVMat | mat4 |
-| 模型视口投影矩阵 | u_MVPMat | mat4 |
-| 模型视口逆矩阵 | u_MVInvMat | mat4 |
-| 法线逆转置矩阵 | u_normalMat | mat4 |
+#### 变换
 
+
+| 名字 | 类型 | 解释 |
+| :--- | :--- | ---- |
+| camera_ViewMat | mat4 | 视口矩阵 |
+| camera_ProjMat | mat4 | 投影矩阵 |
+| camera_VPMat | mat4 | 视口投影矩阵 |
+| camera_ViewInvMat | mat4 | 视口逆矩阵 |
+| camera_Position | vec3 | 相机位置 |
+| renderer_LocalMat | mat4 | 模型本地坐标系矩阵 |
+| renderer_ModelMat | mat4 | 模型世界坐标系矩阵 |
+| renderer_MVMat | mat4 | 模型视口矩阵 |
+| renderer_MVPMat | mat4 | 模型视口投影矩阵 |
+| renderer_NormalMat | mat4 | 法线逆转置矩阵 |
+
+#### 时间
+
+| 名字              | 类型 | 解释                                                      |
+| :---------------- | :--- | :-------------------------------------------------------- |
+| scene_ElapsedTime | vec4 | 引擎启动后经过的总时间：(x: t, y: sin(t), z:cos(t), w: 0) |
+| oasis_DeltaTime   | vec4 | 距离上一帧的间隔时间：(x: dt, y: 0, z:0, w: 0)            |
+
+#### 雾
+
+| 名字            | 类型 | 解释                                                         |
+| :-------------- | :--- | :----------------------------------------------------------- |
+| oasis_FogColor  | vec4 | 雾的颜色                                                     |
+| oasis_FogParams | vec4 | 雾的参数：(x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
 
 ## 上传 shader 变量
+
 > attribute 逐顶点数据的上传请参考 [网格渲染器](${docs}mesh-renderer-cn),这里不再赘述。
 
 除了内置的变量，我们可以在 shader 中上传任何自定义名字的变量(建议使用 u_** 、 v_** 分别表示 uniform、varying变量)，我们唯一要做的就是根据 shader 的变量类型，使用正确的接口。
@@ -241,14 +259,14 @@ import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from
 
 //-- Shader 代码
 const vertexSource = `
-  uniform mat4 u_MVPMat;
+  uniform mat4 renderer_MVPMat;
 
   attribute vec3 POSITION; 
   attribute vec2 TEXCOORD_0;
   varying vec2 v_uv;
 
   void main() {
-    gl_Position = u_MVPMat * vec4(POSITION, 1.0);
+    gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
     v_uv = TEXCOORD_0;
   }
   `;

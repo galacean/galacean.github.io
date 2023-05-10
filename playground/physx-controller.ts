@@ -139,7 +139,7 @@ class ControllerScript extends Script {
   onUpdate(deltaTime: number) {
     const inputManager = this.engine.inputManager;
     if (inputManager.isKeyHeldDown()) {
-      this._camera.transform.getWorldForward(this._forward);
+      this._forward.copyFrom(this._camera.transform.worldForward);
       this._forward.y = 0;
       this._forward.normalize();
       this._cross.set(this._forward.z, 0, -this._forward.x);
@@ -465,9 +465,7 @@ function textureAndAnimationLoader(
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then((engine) => {
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
@@ -525,7 +523,7 @@ PhysXPhysics.initialize().then(() => {
     })
     .then((ambientLight) => {
       scene.ambientLight = ambientLight;
-      skyMaterial.textureCubeMap = ambientLight.specularTexture;
+      skyMaterial.texture = ambientLight.specularTexture;
       skyMaterial.textureDecodeRGBM = true;
     });
 
