@@ -57,6 +57,7 @@ function Header() {
         size='sm'
         onSelectionChange={(e) => {
           context.setVersion(e)
+          localStorage.setItem('version', e as string || 'latest');
         }}
         selectedKey={context.version}
       >

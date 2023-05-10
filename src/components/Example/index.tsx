@@ -6,9 +6,8 @@ import "regenerator-runtime/runtime";
 import { fetchEngineDataConfig } from "../../utils";
 import { AppContext } from "../contextProvider";
 import { fetchDocDataById } from "../doc/util/docUtil";
-import gt from "semver/functions/gt";
 
-const useScript = async (libs: any, engineName: string) => {
+const useScript = async (libs: any, engineName?: string) => {
   const promises: Promise<any>[] = [];
   const scripts: any[] = [];
 
@@ -31,16 +30,22 @@ const useScript = async (libs: any, engineName: string) => {
     return promise;
   };
 
-  await addLib(libs[engineName]);
+  if (engineName) {
+    await addLib(libs[engineName]);
+  }
 
-  Object.keys(libs).forEach((name) => {
+  Object.keys(libs).forEach(async (name) => {
     if (name !== engineName) {
       const lib = libs[name];
-      // let promise;
 
-      const promise = addLib(lib);
-
-      promises.push(promise);
+      if (lib.packages) {
+        await useScript(lib.packages);
+        addLib(lib);
+      }
+      else {
+        const promise = addLib(lib);
+        promises.push(promise);
+      }
     }
   });
 
@@ -103,9 +108,9 @@ function getPackageGlobals(packages: Packages): PackageGlobals {
     const pkg = packages[name as keyof typeof packages];
     packageGlobals[name] = pkg.global;
     if ("packages" in pkg) {
-      for (const name in pkg.packages) {
-        const childPkg = pkg.packages[name as keyof typeof pkg.packages];
-        packageGlobals[name] = childPkg.global;
+      for (const pkgName in pkg.packages) {
+        const childPkg = pkg.packages[pkgName as keyof typeof pkg.packages];
+        packageGlobals[pkgName] = childPkg.global;
       }
     }
   }
@@ -129,7 +134,7 @@ export default function Example() {
       const packageGlobals = getPackageGlobals(packages);
 
       const engineName =
-        version === "latest" || gt(version, "0.9.0-beta.0")
+        version === "latest" || Number(version) > 0.8
           ? "@galacean/engine"
           : `oasis-engine`;
 
