@@ -39,7 +39,8 @@ label: Introduction/Start
 ## 版本相关
 
 ### 版本管理：
-以 `@galacean/engine` 为例，
+以 `@galacean/engine` 为例，开发者可以在 [Github](https://github.com/galacean/engine/releases) 或 [NPM](https://www.npmjs.com/package/@galacean/engine?activeTab=versions) 上查看所有可用版本，其中：
+
 - alpha：内部测试版，用于早期功能研发，有里程碑内的新功能但稳定性较差
 - beta: 公开测试版，内部测试已基本完毕，稳定性较强，但可能仍有较少的问题与缺陷
 - latest：正式稳定版，经过长期测试和验证，无重大缺陷，可投入生产的推荐版本
