@@ -27,26 +27,26 @@ label: Introduction/Start
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
 | :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
-| [鼠标与触控](${docs}input)      | [PointerEvent](https://caniuse.com/?search=PointerEvent) | 兼容请参照[polyfill-pointer-event](https://github.com/galacean/polyfill-pointer-event) |
-| [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 使用 PhysX 的前提是运行环境支持 WebAssembly                                            |
+| [鼠标与触控](${docs}input)      | [PointerEvent](https://caniuse.com/?search=PointerEvent) | 兼容请参照 [polyfill-pointer-event](https://github.com/galacean/polyfill-pointer-event) |
+| [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 运行环境需支持 WebAssembly                                            |
 
 ## 快速搭建
 
-可通过[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的纯代码项目，也可在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
+可参照[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的纯代码项目，也可在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
 
 ![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
 
 ## 版本相关
 
 ### 版本管理：
-
+以 `@galacean/engine` 为例，
 - alpha：内部测试版，用于早期功能研发，有里程碑内的新功能但稳定性较差
 - beta: 公开测试版，内部测试已基本完毕，稳定性较强，但可能仍有较少的问题与缺陷
 - latest：正式稳定版，经过长期测试和验证，无重大缺陷，可投入生产的推荐版本
 
 ### npm 库之间的依赖关系：
 
-[引擎核心架构逻辑的子包](https://github.com/galacean/engine/tree/main/packages)请保证在同一项目中版本一致，[工具包](https://github.com/galacean/engine-toolkit)请务必与引擎的大版本保持一致。
+在同一项目中，请保证[引擎核心架构逻辑子包](https://github.com/galacean/engine/tree/main/packages)的版本一致，[工具包](https://github.com/galacean/engine-toolkit)请务必与使用引擎的大版本保持一致。
 
 ### 版本升级
 
@@ -54,7 +54,7 @@ label: Introduction/Start
 
 ## 开源共建
 
-**Galacean** 渴望与开发者共建互动引擎，所有的开发流程，包括[规划](https://github.com/galacean/engine/projects?query=is%3Aopen)，[里程碑](https://github.com/galacean/engine/milestones)，优先级，[架构设计](https://github.com/galacean/engine/wiki/Physical-system-design)在内的信息，全部都公开在 GitHub 的项目管理中，开发者可以通过[创建 issue](https://docs.github.com/zh/issues/tracking-your-work-with-issues/creating-an-issue)与[提交 PR](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)参与到引擎的建设之中。
+**Galacean** 渴望与开发者共建互动引擎，所有的开发流程，包括[规划](https://github.com/galacean/engine/projects?query=is%3Aopen)，[里程碑](https://github.com/galacean/engine/milestones)，[架构设计](https://github.com/galacean/engine/wiki/Physical-system-design)在内的信息，全部都公开在 GitHub 的项目管理中，开发者可以通过[创建 issue](https://docs.github.com/zh/issues/tracking-your-work-with-issues/creating-an-issue)与[提交 PR](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)参与到引擎的建设当中。
 
 ## 社区与讨论区
 
