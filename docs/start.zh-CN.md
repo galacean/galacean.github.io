@@ -8,31 +8,33 @@ label: Introduction/Start
 
 ## 总览
 
-**Galacean** 是一套 Web 为先，移动优先的互动解决方案，他使用 [Typescript](https://www.typescriptlang.org/) 编写，并且严格遵循开源规范。**Galacean** 由以下部分组成：
+**Galacean** 是一套 Web 为先，移动优先，开源免费的实时互动解决方案，即涵盖了渲染，物理，动画，交互功能，也提供了在线编辑，创作与导出项目的完善工作流，你可以通过 **Galacean**  在浏览器上创作绚丽的渲染效果，也可以使用它开发 2D & 3D 的玩法与互动，此外，**Galacean** 的组件化架构以及使用 [Typescript](https://www.typescriptlang.org/) 编写的特点也大大降低了开发者的上手难度。
+
+接下来我们简单介绍一下 **Galacean** 的组成：
 
 - [Galacean Engine](https://github.com/galacean/engine)：高性能开源互动引擎。
 - [Galacean Editor](https://galacean.antgroup.com/editor)：云端 Web 互动创作平台。
 - [Galacean Toolkit](https://github.com/galacean/engine-toolkit)：开箱即用的开源工具包。
 
-通过官网你可以了解更多 **Galacean** 的能力：
+通过以下信息源可以了解更多 **Galacean** 的能力：
 
 - 在[引擎文档](${docs}install)部分可以深入了解引擎的各项功能模块。
 - 在[编辑器文档](${docs}editor)部分可以了解如何使用编辑器，创建，制作并导出 2D 和 3D 项目。
 - 在[示例](https://antg.antgroup.com/#/examples/latest/background)部分可以浏览引擎各种功能示例，并支持在线调试。
 - 在[美术文档](${docs}artist-scene-standard)部分可以查看场景规范与美术教程。
 
-## 兼容性
+## 运行环境
 
-**Galacean Engine** 可在所有支持 WebGL 的环境下运行，小程序环境可参照[小程序](${docs}miniprogram)进行适配。其余需要考虑兼容性的功能模块如下：
+**Galacean Engine** 可在浏览器与小程序环境下运行，小程序适配可参照[小程序适配文档](${docs}miniprogram)。其余需要考虑兼容性的功能模块如下：
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
 | :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
 | [鼠标与触控](${docs}input)      | [PointerEvent](https://caniuse.com/?search=PointerEvent) | 兼容请参照 [polyfill-pointer-event](https://github.com/galacean/polyfill-pointer-event) |
 | [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 运行环境需支持 WebAssembly                                            |
 
-## 快速搭建
+## 工作流程
 
-可参照[安装 Galacean Engine](${docs}install)快速搭建一个本地可运行的纯代码项目，也可在编辑器起始页通过模版快速创建一个完整项目，导出并在本地运行。
+如果你希望以纯代码的形式启动一个小型项目，可以参照[安装 Galacean Engine](${docs}install) 进行快速搭建。但对于较为复杂的项目，我们**更推荐使用编辑器进行可视化开发**，因为**通过编辑器可以让技术与美术同学更好地进行协作**，你可以在[编辑器首页](https://galacean.antgroup.com/editor)创建一个项目模版快速开始第一个项目的开发，[更多编辑器的能力](${docs}editor)期待你的探索。
 
 ![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
 
