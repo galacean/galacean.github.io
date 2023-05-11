@@ -1,5 +1,4 @@
-\---
-
+---
 order: 4
 
 title: Device Restore
@@ -7,8 +6,7 @@ title: Device Restore
 type: Resource
 
 label: Resource
-
-\---
+---
 
 Since the GPU is a shared resource, in some cases the GPU may reclaim control, resulting in the loss of your program's GPU device. For example, the device may be lost in the following situations:
 
@@ -23,25 +21,21 @@ After the device is lost, the engine will automatically restore all the contents
 When the GPU device is lost, `Engine` will dispatch the `devicelost` event, and the user can do some logic such as user prompts or save configuration:
 
 ```typescript
-engine.on("devicelost", () => {
+engine.on('devicelost', () => {
   // Do some device lost logic here
   // For example，prompt user or save configuration etc
 });
 ```
 
-
-
 The engine supports automatic recovery of GPU devices. When the program can be restored, `Engine` will dispatch the `devicerestored` event. The engine will automatically rebuild low-level GPU resources such as textures, buffers, and shaders, and will try to automatically restore their data content. Usually, resources created by means of Loader and PrimitiveMesh provided by the engine can fully automatically restore their content, and developers do not need to do anything. Manual processing is only required when the developer modifies the resource content by himself, such as manually modifying the pixel content of the texture.
 
 ```typescript
-engine.on("devicerestored", () => {
+engine.on('devicerestored', () => {
   // Do some device restore logic here
   // For example，restore user-modified texture content
   texture.setPixelBuffer(pixels, 0, offsetX, offsetY, width, height);
 });
 ```
-
-
 
 ### Custom content restorer
 
@@ -50,7 +44,6 @@ Another situation is that the resource is completely created by the developer, s
 ```typescript
 // Step 1: Define content restorer
 export class CustomTextureContentRestorer extends ContentRestorer<Texture2D> {
-  
   /**
    * Constructor of CustomTextureContentRestorer.
    * @param resource - Texture2D resource
@@ -71,10 +64,12 @@ export class CustomTextureContentRestorer extends ContentRestorer<Texture2D> {
       return resource;
     });
   }
-} 
+}
 
 // Step 2: Register Content Restorer
-resourceManager.addContentRestorer(new CustomTextureContentRestorer(texture, url));
+resourceManager.addContentRestorer(
+  new CustomTextureContentRestorer(texture, url)
+);
 ```
 
 NOTE: Restorer implementations are not recommended to be dependent and CPU-intensive
@@ -83,9 +78,9 @@ NOTE: Restorer implementations are not recommended to be dependent and CPU-inten
 
 The probability of triggering device loss and recovery in actual projects is small. In order to facilitate developers to test program performance and logic processing after device loss and recovery, `Engine` provides a built-in method to simulate device loss and recovery.
 
-| Method                                                     | Explain      |
-| ---------------------------------------------------------- | ------------ |
-| [forceLoseDevice](${api}core/Engine#forceLoseDevice)       | Force lost device |
+| Method                                                     | Explain              |
+| ---------------------------------------------------------- | -------------------- |
+| [forceLoseDevice](${api}core/Engine#forceLoseDevice)       | Force lost device    |
 | [forceRestoreDevice](${api}core/Engine#forceRestoreDevice) | Force restore device |
 
 ### Reference
