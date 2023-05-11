@@ -5,7 +5,7 @@ title: 时间
 
 type: 核心
 
-label: 核心
+label: Core
 ---
 
 `Time` 包含了引擎时间相关的信息：
