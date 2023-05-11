@@ -31,28 +31,6 @@ const StyledSlogan = styled("p", {
   }
 });
 
-const LaunchButton = styled(Button, {
-  backgroundImage: "linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%)",
-  transition: "0.5s",
-  color: "white!important",
-  backgroundSize: "200% auto",
-  "&:hover" : {
-    backgroundPosition: "right center"
-  }
-});
-
-const float = keyframes({
-	"0%": {
-		transform: "translateY(0px)"
-	},
-	"50%": {
-		transform: "translateY(-2px)"
-	},
-	"100%": {
-		transform: "translateY(0px)"
-	}
-});
-
 
 function Banner() {
   const context = useContext(AppContext);
@@ -85,12 +63,6 @@ function Banner() {
             <GithubOutlined style={{ marginRight: "5px" }} />
             <FormattedMessage id='app.home.discussion' />
           </Button>
-        </a>
-        <a href='http://hdxu.cn/8EUug' target='_blank'>
-          <LaunchButton variant="secondary" size="lg" css={context.theme === 'dark-theme' ? { backgroundImage: "linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%)", color: "$slate6!important" } : {}} round>
-            <RocketOutlined style={{ marginRight: "3px", fontSize: "18px", animation: `${float} 1000ms ease-in-out infinite` }} />
-            <FormattedMessage id='app.home.sponsoring' />
-          </LaunchButton>
         </a>
       </Flex>
     </StyledSection>
