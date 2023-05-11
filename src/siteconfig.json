@@ -1,6 +1,5 @@
 {
   "name": "galacean",
-  "versions": ["latest", "0.9", "0.8"],
   "serverConfig": {
     "local": "https://oasisbe.alipay.com",
     "dev": "https://oasisbe.alipay.com",
