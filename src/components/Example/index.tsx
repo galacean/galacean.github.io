@@ -161,7 +161,7 @@ export default function Example() {
         });
       }
     });
-
+    document.oncontextmenu = () => false;
     return () => {
       if (script) {
         document.body.removeChild(script);
