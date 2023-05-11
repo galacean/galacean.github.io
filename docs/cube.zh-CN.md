@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 2. 绘制一个立方体
+title: 绘制一个立方体
 type: 快速入门
 group: 基础
 label: Introduction/Basic

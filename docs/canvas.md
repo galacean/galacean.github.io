@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 1. Init canvas
+title: Init canvas
 type: Introduction
 group: Basic
 label: Introduction/Basic

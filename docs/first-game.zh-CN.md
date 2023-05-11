@@ -1,6 +1,6 @@
 ---
 order: 5
-title: 5. 第一个游戏
+title: 第一个游戏
 type: 快速入门
 group: 进阶
 label: Introduction/Advanced

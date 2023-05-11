@@ -1,6 +1,6 @@
 ---
 order: 2
-title: 2. Draw a Cube
+title: Draw a Cube
 type: Introduction
 group: Basic
 label: Introduction/Basic

@@ -1,6 +1,6 @@
 ---
 order: 5
-title: 5. First game
+title: First game
 type: Introduction
 group: Advanced
 label: Introduction/Advanced
