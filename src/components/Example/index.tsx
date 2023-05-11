@@ -39,7 +39,11 @@ const useScript = async (libs: any, engineName?: string) => {
       const lib = libs[name];
 
       if (lib.packages) {
-        await useScript(lib.packages);
+        // 兼容旧版本
+        if (engineName === 'oasis-engine') {
+          await useScript(lib.packages);
+        }
+
         addLib(lib);
       }
       else {
@@ -133,6 +137,7 @@ export default function Example() {
       );
       const packageGlobals = getPackageGlobals(packages);
 
+      // 兼容旧版本
       const engineName =
         version === "latest" || Number(version) > 0.8
           ? "@galacean/engine"
