@@ -3,7 +3,6 @@ import { Menu, Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import Media from 'react-media';
 import { Link } from 'react-router-dom';
-import config from '../../siteconfig.json';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import { NavigationMenuMobile } from './components/NavigationMenuMobile';
@@ -12,7 +11,6 @@ import SearchBox from './components/SearchBox';
 import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
 
-const { versions } = config;
 const LOGO_URL = 'https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original';
 
 function Header() {
@@ -39,6 +37,8 @@ function Header() {
     }
   });
 
+  const {versions} = useContext(AppContext);
+
   const rightActions = (isMobile: boolean) => {
     return <Flex gap="sm" align="both">
       <ThemeButton />
@@ -57,11 +57,11 @@ function Header() {
         size='sm'
         onSelectionChange={(e) => {
           context.setVersion(e)
-          localStorage.setItem('version', e as string || 'latest');
+          localStorage.setItem('version', e as string);
         }}
         selectedKey={context.version}
       >
-        {versions.map((v) => <Option key={v}>{v}</Option>)}
+        {versions?.map((v) => <Option key={v.version}>{v.version}</Option>)}
       </Select>
       {isMobile && <Popover trigger={
         <ActionButton>

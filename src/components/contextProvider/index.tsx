@@ -1,8 +1,10 @@
-import { createContext, PropsWithChildren, useState } from 'react';
+import { createContext, PropsWithChildren, useEffect, useState } from 'react';
+import { fetchEngineDataConfig } from '../../utils';
 
 interface AppContext {
   lang: 'cn' | 'en';
   version: string;
+  versions: { version: string; packages: string }[];
   theme: string;
   setLang: Function;
   setVersion: Function;
@@ -11,11 +13,12 @@ interface AppContext {
 
 const defaultValue: AppContext = {
   lang: 'cn',
-  version: 'latest',
+  version: '',
+  versions: [],
   theme: "light-theme",
-  setLang: () => {},
-  setVersion: () => {},
-  setTheme: () => {}
+  setLang: () => { },
+  setVersion: () => { },
+  setTheme: () => { }
 };
 
 export const AppContext = createContext<AppContext>(defaultValue);
@@ -24,7 +27,7 @@ AppContext.displayName = 'AppContext';
 const AppContextProvider = (props: PropsWithChildren) => {
   const localStorageLang = localStorage.getItem('lang') === 'en' ? 'en' : 'cn';
   const localStorageTheme = localStorage.getItem('theme') === 'dark-theme' ? 'dark-theme' : 'light-theme';
-  const localStorageVersion = localStorage.getItem('version') || 'latest';
+  const localStorageVersion = localStorage.getItem('version') || '';
 
   const [lang, setLang] = useState<'cn' | 'en'>(
     localStorageLang || (navigator.language.includes('en') ? 'en' : 'cn')
@@ -32,8 +35,21 @@ const AppContextProvider = (props: PropsWithChildren) => {
   const [version, setVersion] = useState(localStorageVersion);
   const [theme, setTheme] = useState(localStorageTheme);
 
-  return (
-    <AppContext.Provider value={{ lang, setLang, version, setVersion, theme, setTheme }}>{props.children}</AppContext.Provider>
-  );
+  const [versions, setVersions] = useState<{ version: string; packages: string }[]>([]);
+
+  useEffect(() => {
+    (async function () {
+      const configRes = await fetchEngineDataConfig();
+
+      if (configRes) {
+        setVersions(configRes);
+        if (!localStorageVersion) {
+          setVersion(configRes[configRes.length - 1].version);
+        }
+      }
+    })()
+  }, []);
+
+  return versions.length > 0 ? <AppContext.Provider value={{ lang, setLang, version, setVersion, theme, setTheme, versions }}>{props.children}</AppContext.Provider> : null;
 };
 export default AppContextProvider;
