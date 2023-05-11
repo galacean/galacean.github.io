@@ -443,6 +443,8 @@ class Oasis {
         const mode1 = f.addFolder("金属模式");
         mode1.add(material, "metallic", 0, 1).step(0.01);
         mode1.add(material, "roughness", 0, 1).step(0.01);
+        mode1.add(material, "ior", 0, 5).step(0.01);
+
         mode1
           .add(state, "roughnessMetallicTexture", [
             "None",

@@ -2,7 +2,14 @@
 /* eslint no-multi-assign: "off" */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
-import { DecodeMode, downloadArrayBuffer, IBLBaker, SphericalHarmonics3Baker, toBuffer } from "@galacean/tools-baker";
+import {
+  BakerResolution,
+  DecodeMode,
+  downloadArrayBuffer,
+  IBLBaker,
+  SphericalHarmonics3Baker,
+  toBuffer
+} from "@galacean/tools-baker";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AmbientLight,
@@ -33,8 +40,8 @@ import {
   WebGLEngine
 } from "@galacean/engine";
 import React, { useEffect } from "react";
-import * as dat from 'dat.gui';
-import { SimpleDropzone } from 'simple-dropzone';
+import * as dat from "dat.gui";
+import { SimpleDropzone } from "simple-dropzone";
 import "./gltf-viewer.less";
 
 const envList = {
@@ -491,6 +498,7 @@ class Oasis {
         const mode1 = f.addFolder("Metallic-Roughness props");
         mode1.add(material, "metallic", 0, 1).step(0.01);
         mode1.add(material, "roughness", 0, 1).step(0.01);
+        mode1.add(material, "ior", 0, 5).step(0.01);
         mode1
           .add(state, "roughnessMetallicTexture", ["None", "origin", ...Object.keys(this.textures)])
           .onChange((v) => {
@@ -592,6 +600,7 @@ class Oasis {
 export default function GLTFView(props: any) {
   useEffect(() => {
     let oasis = new Oasis();
+    document.oncontextmenu = () => false;
 
     return () => {
       if (oasis) {
