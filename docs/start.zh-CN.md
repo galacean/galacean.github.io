@@ -8,7 +8,7 @@ label: Introduction/Start
 
 ## 总览
 
-**Galacean** 是一套 Web 为先，移动优先，开源免费的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。他包含了[渲染](${docs}material-PBR)、[物理](${docs}physics-overall)、[动画](${docs}animator)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器。你可以在浏览器上创作 2D & 3D 复杂的互动、绚丽的效果展示以及游戏等应用。
+**Galacean** 是一套 Web 为先，移动优先，开源共建的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。它包含了[渲染](${docs}material-PBR)、[物理](${docs}physics-overall)、[动画](${docs}animator)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器，帮助你在浏览器上创作绚丽的 2D/3D 互动应用。
 
 **Galacean** 主要由三部分组成：
 
@@ -25,7 +25,13 @@ label: Introduction/Start
 
 ## 运行环境
 
-**Galacean Engine** 可在浏览器与小程序环境下运行，小程序适配可参照[小程序适配文档](${docs}miniprogram)。其余需要考虑兼容性的功能模块如下：
+**Galacean Engine** 可以在支持 WebGL 的环境下流畅运行，到目前为止，所有主流的移动端浏览器与桌面浏览器都支持这一标准。可以在 [CanIUse](https://caniuse.com/?search=webgl) 上检测运行环境的兼容性。
+
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*6L31Qa7bpXkAAAAAAAAAAAAADleLAQ/original)
+
+此外，**Galacean Engine** 还支持在[支付宝小程序环境](${docs}miniprogram)中运行。
+
+对于一些需要额外考虑兼容性的功能模块，当前的适配方案如下：
 
 | 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
 | :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
@@ -34,7 +40,7 @@ label: Introduction/Start
 
 ## 工作流程
 
-如果你希望以纯代码的形式启动一个小型项目，可以参照[安装 Galacean Engine](${docs}install) 进行快速搭建。但对于较为复杂的项目，我们**更推荐使用编辑器可视化开发**，因为**通过编辑器可以让技术与美术同学更好地进行协作**，你可以在[编辑器首页](https://galacean.antgroup.com/editor)创建一个项目模版快速开始第一个项目的开发，[更多编辑器的能力](${docs}editor)期待你的探索。
+如果你希望以纯代码的形式启动一个小型项目，可以参照[安装 Galacean Engine](${docs}install) 进行快速搭建。但对于较为复杂的项目，我们**更推荐使用编辑器可视化开发**，因为**通过编辑器可以让技术与美术同学更好地进行协作**，你可以在[编辑器首页](https://galacean.antgroup.com/editor)通过项目模板快速开始第一个项目的开发，[更多编辑器的能力](${docs}editor)期待你的探索。
 
 ![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
 
@@ -46,7 +52,7 @@ label: Introduction/Start
 
 - alpha：内部测试版，用于早期功能研发，有里程碑内的新功能但稳定性较差
 - beta: 公开测试版，内部测试已基本完毕，稳定性较强，但可能仍有较少的问题与缺陷
-- latest：正式稳定版，经过长期测试和验证，无重大缺陷，可投入生产的推荐版本
+- stable：正式稳定版，经过长期测试和验证，无重大缺陷，可投入生产的推荐版本
 
 ### NPM 库之间的依赖关系
 
