@@ -6,7 +6,7 @@ group: Camera
 label: Graphics/Camera
 ---
 
-The camera is an abstract concept of [3D projection](https://en.wikipedia.org/wiki/3D_projection) that a graphics engine acts like a camera or eyes in the real world. The camera of Oasis Engine implements automatic frustum culling, and only renders objects inside the frustum.
+The camera is an abstract concept of [3D projection](https://en.wikipedia.org/wiki/3D_projection) that a graphics engine acts like a camera or eyes in the real world. The camera of Galacean Engine implements automatic frustum culling, and only renders objects inside the frustum.
 
 CullingMask case:
 
@@ -47,7 +47,7 @@ Orthogonal projection means that the objects seen near and far in the viewing ar
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*KEuGSqX-vXsAAAAAAAAAAAAAARQnAQ)
 
-As shown in the figure above, there are top, bottom, left and right. Oasis has made some simplifications to the orthogonal properties, which is more in line with the developer’s usage habits. Only [orthographicSize](${api}core/Camera#orthographicSize)(orthogonal Half the size of the camera in mode). The following is the relationship between each attribute and [orthographicSize](${api}core/Camera#orthographicSize).
+As shown in the figure above, there are top, bottom, left and right. Galacean has made some simplifications to the orthogonal properties, which is more in line with the developer’s usage habits. Only [orthographicSize](${api}core/Camera#orthographicSize)(orthogonal Half the size of the camera in mode). The following is the relationship between each attribute and [orthographicSize](${api}core/Camera#orthographicSize).
 
 - `top = orthographicSize`
 - `bottom = -orthographicSize`
@@ -98,7 +98,25 @@ In the case of multiple cameras, we can combine the camera's `renderTarget`,  `p
 
 ### Camera orientation
 
-Since in Oasis, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
+Since in Galacean, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
+
+## method
+
+| Properties | Explanation |
+| :------------------------------------------------ ----------- | :------------------------------------- -- |
+| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix) | Reset custom projection matrix, back to automatic mode. |
+| [resetAspectRatio](${api}core/Camera#resetAspectRatio) | Reset custom rendering aspect ratio and return to automatic mode. |
+| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint) | Convert a point from world space to viewport space. |
+| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint) | Convert a point from viewport space to world space. |
+| [viewportPointToRay](${api}core/Camera#viewportPointToRay) | Generates a world space ray through a point in viewport space. |
+| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint) | Convert a point from screen space to viewport space. |
+| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint) | Convert a point from viewport space to screen space. |
+| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint) | Convert a point from world space to screen space. |
+| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint) | Convert a point from screen space to world space. |
+| [screenPointToRay](${api}core/Camera#screenPointToRay) | Generates a world space ray through a point in screen space. |
+| [render](${api}core/Camera#render) | Manual rendering. |
+| [setReplacementShader](${api}core/Camera#setReplacementShader) | Set the global rendering replacement shader. |
+| [resetReplacementShader](${api}core/Camera#resetReplacementShader) | Clear the global rendering replacement shader. |◊
 
 ## Q&A
 

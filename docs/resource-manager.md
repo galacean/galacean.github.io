@@ -11,7 +11,7 @@ Use [Script component](${docs}script) to load resources. [load](${api}core/Resou
 
 
 ```Typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 export class ResourceScript extension script {
   async onAwake() {
@@ -82,7 +82,7 @@ engine.resourceManager.gc();
 > For more texture related documents, please refer to [Texture Resources](${docs}texture).
 
 ```typescript
-import { Texture2D } from "oasis-engine";
+import { Texture2D } from "@galacean/engine";
 
 const texture2D = await this.engine.resourceManager.load<Texture2D>("test.png");
 ```
@@ -102,7 +102,7 @@ this.engine.resourceManager.load({ url: "test", type: AssetType.Texture2D, param
 > For more texture related documents, please refer to [Texture Resources](${docs}texture).
 
 ```typescript
-import { TextureCube } from "oasis-engine";
+import { TextureCube } from "@galacean/engine";
 
 const textureCube = await this.engine.resourceManager.load<TextureCube>({
   urls: [
@@ -123,7 +123,7 @@ Of course, if you feel that it is a bit troublesome to pass 6 images, you can al
 So HDR Loader is suitable for scenarios where there are other uses for floating point color.
 
 ```typescript
-import { TextureCube } from "oasis-engine";
+import { TextureCube } from "@galacean/engine";
 
 engine.resourceManager
   .load<TextureCube>({
@@ -131,7 +131,7 @@ engine.resourceManager
     url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin"
   })
   .then((texture) => {
-    skyMaterial.textureCubeMap = texture;
+    skyMaterial.texture = texture;
     // HDR output is in RGBM format.
     skyMaterial.textureDecodeRGBM = true;
   });
@@ -139,7 +139,7 @@ engine.resourceManager
 
 
 ### 3. Environment
-Oasis supports offline baking through [Oasis Editor](https://antg.antgroup.com) or [glTF Viewer](https://oasisengine.cn/#/gltf-viewer) to get IBL baked products `*.env` file.
+Galacean supports offline baking through [Galacean Editor](https://galacean.antgroup.com/editor) or [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
@@ -160,7 +160,7 @@ engine.resourceManager
 > For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture-compression).
 
 ```typescript
-import { Texture2D } from "oasis-engine";
+import { Texture2D } from "@galacean/engine";
 
 const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("test.ktx");
 ```
@@ -172,7 +172,7 @@ The suffix of compressed texture is generally `ktx`, and you need to pay attenti
 The loading of the compressed cube texture is different from the general cube texture. It is a separate binary file path, instead of the file path of 6 images, but it needs to be specified as [AssetType.KTXCube](${api}core/AssetType#KTXCube), because ResourceManager cannot identify which specific type of Loader needs to be used based on the suffix.
 
 ```typescript
-import { TextureCube } from "oasis-engine";
+import { TextureCube } from "@galacean/engine";
 
 const compressedTextureCube = await this.engine.resourceManager.load<TextureCube>({
   url: "test.ktx",
@@ -185,7 +185,7 @@ const compressedTextureCube = await this.engine.resourceManager.load<TextureCube
 What you get after the resource is loaded is a [GLTFResource](${api}loader/GLTFResource) resource, including [Scene](${api}core/Scene), [Entity](${api}core/Entity), [Texture ](${api}core/Texture), [Material](${api}core/Material) and [AnimationClip](${api}core/AnimationClip) and other objects.
 
 ```typescript
-import { GLTFResource } from "oasis-engine";
+import { GLTFResource } from "@galacean/engine";
 
 const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 ```

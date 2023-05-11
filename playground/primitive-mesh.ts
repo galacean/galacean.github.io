@@ -2,7 +2,7 @@
  * @title Primitive Mesh
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   BlinnPhongMaterial,
@@ -18,14 +18,14 @@ import {
   Script,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-init();
+main();
 
-function init(): void {
+async function main(): void {
   // Create engine
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create root entity
@@ -47,7 +47,7 @@ function init(): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ArCHTbfVPXUAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture) => {
       const distanceX = 2.5;
@@ -64,27 +64,63 @@ function init(): void {
 
         // Create cuboid
         position.set(posX, distanceY * 3, 0);
-        generatePrimitiveEntity(rootEntity, "cuboid", position, material, PrimitiveMesh.createCuboid(engine));
+        generatePrimitiveEntity(
+          rootEntity,
+          "cuboid",
+          position,
+          material,
+          PrimitiveMesh.createCuboid(engine)
+        );
 
         // Create sphere
         position.set(posX, distanceY * 2, 0);
-        generatePrimitiveEntity(rootEntity, "sphere", position, material, PrimitiveMesh.createSphere(engine));
+        generatePrimitiveEntity(
+          rootEntity,
+          "sphere",
+          position,
+          material,
+          PrimitiveMesh.createSphere(engine)
+        );
 
         // Create plane
         position.set(posX, distanceY * 1, 0);
-        generatePrimitiveEntity(rootEntity, "plane", position, material, PrimitiveMesh.createPlane(engine));
+        generatePrimitiveEntity(
+          rootEntity,
+          "plane",
+          position,
+          material,
+          PrimitiveMesh.createPlane(engine)
+        );
 
         // Create cylinder
         position.set(posX, -distanceY * 0, 0);
-        generatePrimitiveEntity(rootEntity, "cylinder", position, material, PrimitiveMesh.createCylinder(engine));
+        generatePrimitiveEntity(
+          rootEntity,
+          "cylinder",
+          position,
+          material,
+          PrimitiveMesh.createCylinder(engine)
+        );
 
         // Create cone
         position.set(posX, -distanceY * 1, 0);
-        generatePrimitiveEntity(rootEntity, "cone", position, material, PrimitiveMesh.createCone(engine));
+        generatePrimitiveEntity(
+          rootEntity,
+          "cone",
+          position,
+          material,
+          PrimitiveMesh.createCone(engine)
+        );
 
         // Create turos
         position.set(posX, -distanceY * 2, 0);
-        generatePrimitiveEntity(rootEntity, "torus", position, material, PrimitiveMesh.createTorus(engine));
+        generatePrimitiveEntity(
+          rootEntity,
+          "torus",
+          position,
+          material,
+          PrimitiveMesh.createTorus(engine)
+        );
 
         // Create capsule
         position.set(posX, -distanceY * 3, 0);

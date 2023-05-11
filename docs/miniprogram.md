@@ -5,31 +5,31 @@ type: Adaptation
 label: Adaptation
 ---
 
-At present, Oasis has been adapted to Alipay and Taobao miniprogram. This tutorial defaults that the developer has a certain ability to develop miniprograms. If not, please read the following tutorial, download the miniprogram development tools and apply for AppId:
+At present, Galacean has been adapted to Alipay and Taobao miniprogram. This tutorial defaults that the developer has a certain ability to develop miniprograms. If not, please read the following tutorial, download the miniprogram development tools and apply for AppId:
 
 - [Alipay Mini Program](https://opendocs.alipay.com/mini/developer)
 - [Taobao Mini Program](https://miniapp.open.taobao.com/docV3.htm?docId=119114&docType=1&tag=dev)
 
-## Create Oasis Mini Program Project
+## Create Galacean Mini Program Project
 
 > Requires Node.js version >=12.0.0.
 
 Create with yarn
 
 ```bash
-yarn create @oasis-engine/oasis-app --template miniprogram
+yarn create @galacean/galacean-app --template miniprogram
 ```
 
 Created with npm **6.x** version
 
 ```bash
-npm init @oasis-engine/oasis-app --template miniprogram
+npm init @galacean/galacean-app --template miniprogram
 ```
 
 Created with npm **7.x** version
 
 ```bash
-npm init @oasis-engine/oasis-app -- --template miniprogram
+npm init @galacean/galacean-app -- --template miniprogram
 ```
 
 **Follow the prompts** After completing the next steps, you can use the miniprogram development tool to open the project:
@@ -40,7 +40,7 @@ Just select the corresponding directory, if it goes well, you can see:
 
 ![image-20210609164816776](https://gw.alipayobjects.com/zos/OasisHub/04386e9c-b882-41f7-8aa6-a1bf990d578b/image-20210609164816776.png)
 
-## Existing projects use Oasis
+## Existing projects use Galacean
 
 This tutorial assumes that you already have certain development capabilities. If you are not familiar with mini program development, please read [Mini Program Development Document](https://opendocs.alipay.com/mini/developer) in detail.
 
@@ -48,11 +48,11 @@ This tutorial assumes that you already have certain development capabilities. If
 
 ```bash
 # use npm
-npm install oasis-engine --save
-npm install @oasis-engine/miniprogram-adapter --save
+npm install @galacean/engine --save
+npm install @galacean/engine-miniprogram-adapter --save
 # use yarn
-yarn add oasis-engine
-yarn add @oasis-engine/miniprogram-adapter
+yarn add @galacean/engine
+yarn add @galacean/engine-miniprogram-adapter
 ```
 
 2. Add the following configuration items in the applet project configuration file `app.json`:
@@ -77,18 +77,18 @@ yarn add @oasis-engine/miniprogram-adapter
 
 Use `onReady` to configure `canvas` initialization callback. Need to set the id of `canvas`, which will be used later.
 
-4. Add a callback function to the `.js` code file of the page, use `my._createCanvas` to create the required canvas context, and then use oasis in the `success` callback.
+4. Add a callback function to the `.js` code file of the page, use `my._createCanvas` to create the required canvas context, and then use galacean in the `success` callback.
 
 Note:
 
-1. Use `import * as OASIS from "oasis-engine/dist/miniprogram"` to import the dependencies of miniprogram.
-2. Use `registerCanvas` which imported from `@oasis-engine/miniprogram-adapter` to register `canvas`.
+1. Use `import * as GALACEAN from "galacean/dist/miniprogram"` to import the dependencies of miniprogram.
+2. Use `registerCanvas` which imported from `@galacean/engine-miniprogram-adapter` to register `canvas`.
 
 For example:
 
 ```js
-import * as OASIS from "oasis-engine/dist/miniprogram";
-import { registerCanvas } from "@oasis-engine/miniprogram-adapter";
+import * as GALACEAN from "galacean/dist/miniprogram";
+import { registerCanvas } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   onCanvasReady() {
@@ -104,8 +104,8 @@ Page({
         canvas.height = (windowHeight - titleBarHeight) * pixelRatio;
 
         // create engine
-        const engine = new OASIS.WebGLEngine(canvas);
-        // The remaining code is consistent with the Oasis Web version
+        const engine = new GALACEAN.WebGLEngine(canvas);
+        // The remaining code is consistent with the Galacean Web version
         ...
 			},
 		});
@@ -123,11 +123,11 @@ Page({
 1. Import library
 
 ```bash
-npm install @oasis-engine-toolkit/controls -S
+npm install @galacean/engine-toolkit-controls -S
 ```
 
 ```typescript
-import { OrbitControl } from "@oasis-engine-toolkit/controls/dist/miniprogram";
+import { OrbitControl } from "@galacean/engine-toolkit-controls/dist/miniprogram";
 ```
 
 2. Add Component
@@ -157,12 +157,13 @@ Because miniprogram doesn't support `addEventListener` like dom, we have to mock
 ```
 
 ```typescript
-import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@oasis-engine/miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerLeave, dispatchPointerCancel } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   ...
   onTouchEnd(e) {
     dispatchPointerUp(e);
+    dispatchPointerLeave(e);
   },
   onTouchStart(e) {
     dispatchPointerDown(e);
@@ -171,11 +172,11 @@ Page({
     dispatchPointerMove(e);
   },
   onTouchCancel(e) {
-    dispatchPointerOut(e);
+    dispatchPointerCancel(e);
   }
 })
 ```
 
-## More Oasis Mini Program Cases
+## More Galacean Mini Program Cases
 
 Coming soon...

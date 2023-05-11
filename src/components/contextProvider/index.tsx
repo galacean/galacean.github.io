@@ -24,10 +24,12 @@ AppContext.displayName = 'AppContext';
 const AppContextProvider = (props: PropsWithChildren) => {
   const localStorageLang = localStorage.getItem('lang') === 'en' ? 'en' : 'cn';
   const localStorageTheme = localStorage.getItem('theme') === 'dark-theme' ? 'dark-theme' : 'light-theme';
+  const localStorageVersion = localStorage.getItem('version') || 'latest';
+
   const [lang, setLang] = useState<'cn' | 'en'>(
     localStorageLang || (navigator.language.includes('en') ? 'en' : 'cn')
   );
-  const [version, setVersion] = useState('latest');
+  const [version, setVersion] = useState(localStorageVersion);
   const [theme, setTheme] = useState(localStorageTheme);
 
   return (

@@ -30,10 +30,10 @@ import {
   TextRenderer,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+} from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 class GeometryGenerator extends Script {
   quat: Quaternion;
@@ -298,9 +298,7 @@ function addCapsule(
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-PhysXPhysics.initialize().then(() => {
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then((engine) => {
 
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;

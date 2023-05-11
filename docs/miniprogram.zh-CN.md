@@ -5,31 +5,31 @@ type: 平台适配
 label: Adaptation
 ---
 
-目前 Oasis 已经适配到支付宝和淘宝小程序。本教程默认开发者已经具备一定的小程序开发能力，如果没有，请阅读下面教程，下载小程序开发工具及申请 AppId：
+目前 Galacean 已经适配到支付宝和淘宝小程序。本教程默认开发者已经具备一定的小程序开发能力，如果没有，请阅读下面教程，下载小程序开发工具及申请 AppId：
 
 - [支付宝小程序](https://opendocs.alipay.com/mini/developer)
 - [淘宝小程序](https://miniapp.open.taobao.com/docV3.htm?docId=119114&docType=1&tag=dev)
 
-## 创建 Oasis 小程序项目
+## 创建 Galacean 小程序项目
 
 > 需要 Node.js 版本 >=12.0.0.
 
 使用 yarn 创建
 
 ```bash
-yarn create @oasis-engine/oasis-app --template miniprogram
+yarn create @galacean/galacean-app --template miniprogram
 ```
 
 使用 npm **6.x** 版本创建
 
 ```
-npm init @oasis-engine/oasis-app --template miniprogram
+npm init @galacean/galacean-app --template miniprogram
 ```
 
 使用 npm **7.x** 版本创建
 
 ```she
-npm init @oasis-engine/oasis-app -- --template miniprogram
+npm init @galacean/galacean-app -- --template miniprogram
 ```
 
 **根据提示**完成后续步骤后，可以使用小程序开发工具打开项目：
@@ -40,7 +40,7 @@ npm init @oasis-engine/oasis-app -- --template miniprogram
 
 ![image-20210609164816776](https://gw.alipayobjects.com/zos/OasisHub/04386e9c-b882-41f7-8aa6-a1bf990d578b/image-20210609164816776.png)
 
-## 已有项目使用 Oasis
+## 已有项目使用 Galacean
 
 本教程假设你已经有一定开发能力，若不熟悉小程序开发，请详细阅读[小程序开发文档](https://opendocs.alipay.com/mini/developer)。
 
@@ -48,11 +48,11 @@ npm init @oasis-engine/oasis-app -- --template miniprogram
 
 ```bash
 # 使用 npm
-npm install oasis-engine --save
-npm install @oasis-engine/miniprogram-adapter --save
+npm install @galacean/engine --save
+npm install @galacean/engine-miniprogram-adapter --save
 # 使用 yarn
-yarn add oasis-engine
-yarn add @oasis-engine/miniprogram-adapter
+yarn add @galacean/engine
+yarn add @galacean/engine-miniprogram-adapter
 ```
 
 2. 在小程序项目配置文件 `app.json` 里添加下面配置项：
@@ -77,18 +77,18 @@ yarn add @oasis-engine/miniprogram-adapter
 
 使用 `onReady` 配置 `canvas` 初始化回调。需要设置 `canvas` 的 id，后面会用到。
 
-4. 在页面的 `.js` 代码文件里添加回调函数，使用 `my._createCanvas` 创建所需的 canvas 上下文，之后在 `success` 回调里使用 oasis 即可.
+4. 在页面的 `.js` 代码文件里添加回调函数，使用 `my._createCanvas` 创建所需的 canvas 上下文，之后在 `success` 回调里使用 galacean 即可.
 
 注意：
 
-1. 使用 `import * as OASIS from "oasis-engine/dist/miniprogram"` 引入小程序依赖。
-2. 需要使用『@oasis-engine/miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
+1. 使用 `import * as GALACEAN from "galacean/dist/miniprogram"` 引入小程序依赖。
+2. 需要使用『@galacean/engine-miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
 
 详情可以参考下面代码：
 
 ```js
-import * as OASIS from "oasis-engine/dist/miniprogram";
-import { registerCanvas } from "@oasis-engine/miniprogram-adapter";
+import * as GALACEAN from "galacean/dist/miniprogram";
+import { registerCanvas } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   onCanvasReady() {
@@ -104,8 +104,8 @@ Page({
         canvas.height = (windowHeight - titleBarHeight) * pixelRatio;
 
         // 创建引擎
-        const engine = new OASIS.WebGLEngine(canvas);
-        // 剩余代码和 Oasis Web 版本一致
+        const engine = new GALACEAN.WebGLEngine(canvas);
+        // 剩余代码和 Galacean Web 版本一致
         ...
 			},
 		});
@@ -123,11 +123,11 @@ Page({
 1. 引入二方库
 
 ```bash
-npm install @oasis-engine-toolkit/controls -S
+npm install @galacean/engine-toolkit-controls -S
 ```
 
 ```typescript
-import { OrbitControl } from "@oasis-engine-toolkit/controls/dist/miniprogram";
+import { OrbitControl } from "@galacean/engine-toolkit-controls/dist/miniprogram";
 ```
 
 2. 添加组件
@@ -160,12 +160,13 @@ cameraEntity.addComponent(OrbitControl);
 ```
 
 ```typescript
-import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerOut } from "@oasis-engine/miniprogram-adapter";
+import { dispatchPointerUp, dispatchPointerDown, dispatchPointerMove, dispatchPointerLeave, dispatchPointerCancel } from "@galacean/engine-miniprogram-adapter";
 
 Page({
   ...
   onTouchEnd(e) {
     dispatchPointerUp(e);
+    dispatchPointerLeave(e);
   },
   onTouchStart(e) {
     dispatchPointerDown(e);
@@ -174,11 +175,11 @@ Page({
     dispatchPointerMove(e);
   },
   onTouchCancel(e) {
-    dispatchPointerOut(e);
+    dispatchPointerCancel(e);
   }
 })
 ```
 
-## 更多 Oasis 小程序案例
+## 更多 Galacean 小程序案例
 
 正在建设中...

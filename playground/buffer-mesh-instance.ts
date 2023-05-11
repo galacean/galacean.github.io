@@ -2,7 +2,7 @@
  * @title Buffer Mesh Instance
  * @category Mesh
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   Buffer,
   BufferBindFlag,
@@ -18,38 +18,39 @@ import {
   Vector3,
   VertexElement,
   VertexElementFormat,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-// Create engine.
-const engine = new WebGLEngine("canvas");
-engine.canvas.resizeByClientSize();
+// Create engine
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  engine.canvas.resizeByClientSize();
 
-// Get scene and root entity.
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity("Root");
+  // Get scene and root entity
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity("Root");
 
-// Init instance shader.
-const shader = initCustomShader();
+  // Init instance shader
+  const shader = initCustomShader();
 
-// Create camera.
-const cameraEntity = rootEntity.createChild("Camera");
-const camera = cameraEntity.addComponent(Camera);
-cameraEntity.addComponent(OrbitControl);
-cameraEntity.transform.setPosition(0, 10, 160);
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-camera.farClipPlane = 300;
+  // Create camera
+  const cameraEntity = rootEntity.createChild("Camera");
+  const camera = cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(OrbitControl);
+  cameraEntity.transform.setPosition(0, 10, 160);
+  cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+  camera.farClipPlane = 300;
 
-// Create Instance Cube.
-const cubeEntity = rootEntity.createChild("Cube");
-const cubeRenderer = cubeEntity.addComponent(MeshRenderer);
-const material = new Material(engine, shader);
-cubeEntity.transform.rotate(0, 60, 0);
-cubeRenderer.mesh = createCustomMesh(engine, 1.0); // Use `createCustomMesh()` to create custom instance cube mesh.
-cubeRenderer.setMaterial(material);
+  // Create Instance Cube
+  const cubeEntity = rootEntity.createChild("Cube");
+  const cubeRenderer = cubeEntity.addComponent(MeshRenderer);
+  const material = new Material(engine, shader);
+  cubeEntity.transform.rotate(0, 60, 0);
+  cubeRenderer.mesh = createCustomMesh(engine, 1.0); // Use `createCustomMesh()` to create custom instance cube mesh.
+  cubeRenderer.setMaterial(material);
 
-// Run engine.
-engine.run();
+  // Run engine.
+  engine.run();
+});
 
 /**
  * Create cube geometry with custom BufferGeometry.
@@ -79,7 +80,9 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
   // Create instance data.
   const instanceCount = 4000;
   const instanceStride = 6;
-  const instanceData: Float32Array = new Float32Array(instanceCount * instanceStride);
+  const instanceData: Float32Array = new Float32Array(
+    instanceCount * instanceStride
+  );
   for (let i = 0; i < instanceCount; i++) {
     const offset = i * instanceStride;
     // instance offset
@@ -109,9 +112,24 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
           20, 22, 23, 22, 20, 21]);
 
   // Create gpu vertex buffer and index buffer.
-  const vertexBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, vertices, BufferUsage.Static);
-  const instanceVertexBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, instanceData, BufferUsage.Static);
-  const indexBuffer = new Buffer(engine, BufferBindFlag.IndexBuffer, indices, BufferUsage.Static);
+  const vertexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.VertexBuffer,
+    vertices,
+    BufferUsage.Static
+  );
+  const instanceVertexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.VertexBuffer,
+    instanceData,
+    BufferUsage.Static
+  );
+  const indexBuffer = new Buffer(
+    engine,
+    BufferBindFlag.IndexBuffer,
+    indices,
+    BufferUsage.Static
+  );
 
   // Bind buffer
   geometry.setVertexBufferBinding(vertexBuffer, 24, 0);
@@ -123,7 +141,7 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
     new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0, 0), // Bind to VertexBuffer 0
     new VertexElement("NORMAL", 12, VertexElementFormat.Vector3, 0, 0), // Bind to VertexBuffer 0
     new VertexElement("INSTANCE_OFFSET", 0, VertexElementFormat.Vector3, 1, 1), // Bind instance offset to VertexBuffer 1, and enable instance by set instanceStepRate with 1
-    new VertexElement("INSTANCE_COLOR", 12, VertexElementFormat.Vector3, 1, 1) // Bind instance color to VertexBuffer 1, and enable instance by set instanceStepRate with 1
+    new VertexElement("INSTANCE_COLOR", 12, VertexElementFormat.Vector3, 1, 1), // Bind instance color to VertexBuffer 1, and enable instance by set instanceStepRate with 1
   ]);
 
   // Add one sub geometry.
@@ -140,12 +158,12 @@ function createCustomMesh(engine: Engine, size: number): Mesh {
 function initCustomShader(): Shader {
   const shader = Shader.create(
     "CustomShader",
-    `uniform mat4 u_MVPMat;
+    `uniform mat4 renderer_MVPMat;
       attribute vec4 POSITION;
       attribute vec3 INSTANCE_OFFSET;
       attribute vec3 INSTANCE_COLOR;
       
-      uniform mat4 u_MVMat;
+      uniform mat4 renderer_MVMat;
       
       varying vec3 v_position;
       varying vec3 v_color;
@@ -153,7 +171,7 @@ function initCustomShader(): Shader {
       void main() {
         vec4 position = POSITION;
         position.xyz += INSTANCE_OFFSET;
-        gl_Position = u_MVPMat * position;
+        gl_Position = renderer_MVPMat * position;
 
         v_color = INSTANCE_COLOR;
       }`,

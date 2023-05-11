@@ -22,10 +22,10 @@ Spine animation supports skin changing, blending and control animations with cod
 Download spine editor and select version 3.8 or above.
 
 ### Developer
-Add dependencies [@oasis-engine/spine](https://github.com/oasis-engine/engine-spine).
+Add dependencies [@galacean/engine-spine](https://github.com/galacean/engine-spine).
 
 ```bash
-npm i @oasis-engine/spine --save
+npm i @galacean/engine-spine --save
 ```
 
 ## Usage
@@ -34,7 +34,7 @@ npm i @oasis-engine/spine --save
 Export resource files via spine editor: 
 ![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*jh0UTYlkKrIAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=xGebk&originHeight=1232&originWidth=1754&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-Oasis spine needs to use resource files of. JSON (or. Bin), Atlas, PNG on runtime. The file formats that can be used are as follows:
+Galacean spine needs to use resource files of. JSON (or. Bin), Atlas, PNG on runtime. The file formats that can be used are as follows:
 
 #### Export JSON
 
@@ -44,14 +44,14 @@ Oasis spine needs to use resource files of. JSON (or. Bin), Atlas, PNG on runtim
 
 ![](https://gw.alipayobjects.com/mdn/mybank_yul/afts/img/A*gs1HRId9wPcAAAAAAAAAAAAAARQnAQ#crop=0&crop=0&crop=1&crop=1&id=q3yyW&originHeight=1180&originWidth=1710&originalType=binary&ratio=1&rotation=0&showTitle=false&status=done&style=none&title=)
 
-After export, you will find resource files in three formats: JSON (or. Bin), Atlas and PNG in the target folder that Oasis spine can load and play the spine animation on runtime. It should be noted that oasis spine only supports loading a single texture at present, so when the map size is too large, it is neccssary to scale the image resources to control the number of maps in one.
+After export, you will find resource files in three formats: JSON (or. Bin), Atlas and PNG in the target folder that Galacean spine can load and play the spine animation on runtime. It should be noted that Galacean Spine only supports loading a single texture at present, so when the map size is too large, it is neccssary to scale the image resources to control the number of maps in one.
 
 For detailed configuration of file export, please refer to the official file of spine：
 [http://zh.esotericsoftware.com/spine-export](http://zh.esotericsoftware.com/spine-export/)
 
 ### Import Resource
 
-When the _@oasis-engine/spine_ is imported, the resource loader for the spine resource will be automatically registered on [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) at [engine]($%7Bapi%7Dcore/Engine) [resourceManager].
+When the _@galacean/engine-spine_ is imported, the resource loader for the spine resource will be automatically registered on [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) at [engine]($%7Bapi%7Dcore/Engine) [resourceManager].
 Through the [load]($%7Bapi%7Dcore/ResourceManager/#load) method of ResourceManager, the spine animation resources can be loaded.
 
 - When the transfer parameter is URL, the default spine animation resources have the same baseurl, just pass the CDN of JSON (or bin) file.

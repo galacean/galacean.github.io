@@ -14,7 +14,7 @@ export function NavigationMenuMobile() {
       children: [
         {
           key: 0,
-          label: <Link to={`/docs/${context.version}/${context.lang}`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
+          label: <Link to={`/docs/${context.version}/${context.lang}/install`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
         },
         {
           key: 1,
@@ -31,7 +31,7 @@ export function NavigationMenuMobile() {
       children: [
         {
           key: 0,
-          label: <a target="_blank" href={`https://github.com/oasis-engine/create-oasis-app`} >{formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}</a>
+          label: <a target="_blank" href={`https://github.com/galacean/create-galacean-app`} >{formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}</a>
         },
       ]
     },

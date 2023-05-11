@@ -1,23 +1,27 @@
-import { BackgroundMode, Entity } from 'oasis-engine';
-import { Camera, Vector3, WebGLEngine } from 'oasis-engine';
-import { SpineAnimation } from '@oasis-engine/spine';
-import { OrbitControl } from '@oasis-engine-toolkit/controls';
-import React, { useEffect } from 'react';
+import { BackgroundMode, Camera, Entity, Vector3, WebGLEngine } from '@galacean/engine';
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { SpineAnimation } from '@galacean/engine-spine';
+import { useEffect } from 'react';
 
 export default function PBRHelmet() {
   useEffect(() => {
-    const engine = init();
+    let engine: WebGLEngine;
+
+    (async function() {
+      engine = await init();
+    })();
 
     return () => {
-      engine.destroy();
+      engine && engine.destroy();
     };
   }, []);
 
   return <canvas id="canvas-spine" style={{ width: '350px', height: '350px' }} />;
 }
 
-function init(): WebGLEngine {
-  const engine = new WebGLEngine('canvas-spine', { alpha: true, antialias: true });
+async function init(): Promise<WebGLEngine> {
+  // -- create engine object
+  const engine = await WebGLEngine.create({ canvas: "canvas-spine", graphicDeviceOptions: { alpha: true, antialias: true }},)
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const { background } = scene;

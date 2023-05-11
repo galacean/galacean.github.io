@@ -5,7 +5,7 @@ type: Interact
 label: Interact
 ---
 
-Oasis supports developers to query the current keyboard interaction at any time without introducing additional packages and the calling interface is very simple。
+Galacean supports developers to query the current keyboard interaction at any time without introducing additional packages and the calling interface is very simple。
 
 ## Functions
 
@@ -56,8 +56,8 @@ This time use the `space` to control Angry Birds。
 
 ## Keys
 
-The keyboard Keys enumerated by Oasis correspond to the physical keyboard one by one, refer to the W3C standard, and are compatible with special keys of various hardware.
+The keyboard Keys enumerated by Galacean correspond to the physical keyboard one by one, refer to the W3C standard, and are compatible with special keys of various hardware.
 
-Keys：https://github.com/oasis-engine/engine/blob/main/packages/core/src/input/enums/Keys.ts
+Keys：https://github.com/galacean/engine/blob/main/packages/core/src/input/enums/Keys.ts
 W3C standard：https://www.w3.org/TR/2017/CR-uievents-code-20170601/
-You can refer to the design ideas：https://github.com/oasis-engine/engine/wiki/Keyboard-Input-design
+You can refer to the design ideas：https://github.com/galacean/engine/wiki/Keyboard-Input-design

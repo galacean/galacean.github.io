@@ -3,7 +3,7 @@
  * @category Light
  */
 
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AmbientLight,
@@ -24,11 +24,11 @@ import {
   ShadowType,
   Vector3,
   WebGLEngine,
-  WebGLMode
-} from "oasis-engine";
+  WebGLMode,
+} from "@galacean/engine";
 
-function main() {
-  const engine = new WebGLEngine("canvas", { webGLMode: WebGLMode.WebGL2 });
+async function main() {
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   createShadowMapVisualShader();
@@ -228,12 +228,12 @@ function main() {
     #include <mobile_material_frag>
     
     void main() {
-        vec4 emission = u_emissiveColor;
-        vec4 diffuse = u_baseColor;
-        vec4 specular = u_specularColor;
-        vec4 ambient = vec4(u_envMapLight.diffuse * u_envMapLight.diffuseIntensity, 1.0) * diffuse;
+        vec4 emission = material_EmissiveColor;
+        vec4 diffuse = material_BaseColor;
+        vec4 specular = material_SpecularColor;
+        vec4 ambient = vec4(scene_EnvMapLight.diffuse * scene_EnvMapLight.diffuseIntensity, 1.0) * diffuse;
     
-    #ifdef OASIS_CALCULATE_SHADOWS
+    #ifdef SCENE_IS_CALCULATE_SHADOWS
         int cascadeIndex = computeCascadeIndex(v_pos);
         if (cascadeIndex == 0) {
             diffuse = vec4(1.0, 1.0, 1.0, 1.0);
@@ -257,8 +257,8 @@ function main() {
 class CSSMVisualMaterial extends BaseMaterial {
   constructor(engine: Engine) {
     super(engine, Shader.find("shadow-map-visual"));
-    this.shaderData.enableMacro("O3_SHADOW_MAP_COUNT", "1");
-    this.shaderData.enableMacro("O3_NEED_WORLDPOS");
+    this.shaderData.enableMacro("SCENE_SHADOW_CASCADED_COUNT", "1");
+    this.shaderData.enableMacro("MATERIAL_NEED_WORLDPOS");
   }
 }
 

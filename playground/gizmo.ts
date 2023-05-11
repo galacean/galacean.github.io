@@ -15,20 +15,24 @@ import {
   GLTFResource,
   Layer,
   PointerButton,
+  Renderer,
   Script,
   Vector3,
   WebGLEngine,
-} from "oasis-engine";
-import { LitePhysics } from "@oasis-engine/physics-lite";
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
-import { FramebufferPicker } from "@oasis-engine-toolkit/framebuffer-picker";
-import { NavigationGizmo } from "@oasis-engine-toolkit/navigation-gizmo";
+  ShadowType,
+} from "@galacean/engine";
+import { LitePhysics } from "@galacean/engine-physics-lite";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
+import { NavigationGizmo } from "@galacean/engine-toolkit-navigation-gizmo";
+import { GridControl } from "@galacean/engine-toolkit-custom-material";
 import {
   AnchorType,
   CoordinateType,
   Gizmo,
   State,
-} from "@oasis-engine-toolkit/gizmo";
+  Group,
+} from "@galacean/engine-toolkit-gizmo";
 
 import * as dat from "dat.gui";
 
@@ -39,104 +43,115 @@ enum LayerSetting {
 }
 
 const gui = new dat.GUI();
+const traverseEntity = (entity: Entity, callback: (entity: Entity) => any) => {
+  callback(entity);
+  for (const child of entity.children) {
+    traverseEntity(child, callback);
+  }
+};
+
+// setup scene
+const engine = await WebGLEngine.create({
+  canvas: "canvas",
+  physics: new LitePhysics(),
+});
+engine.canvas.resizeByClientSize();
+const scene = engine.sceneManager.activeScene;
+const { background } = scene;
+background.solidColor = new Color(0.8, 0.8, 0.8, 1);
+const rootEntity = scene.createRootEntity();
+
+const cameraEntity = rootEntity.createChild("fullscreen-camera");
+const camera = cameraEntity.addComponent(Camera);
+cameraEntity.transform.setPosition(8, 5, 8);
+cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+
+const lightEntity = rootEntity.createChild("Light");
+lightEntity.transform.setPosition(20, 20, 20);
+lightEntity.transform.setRotation(-45, 0, 0);
+const light = lightEntity.addComponent(DirectLight);
+light.shadowType = ShadowType.None;
+
+const ambientLight = scene.ambientLight;
+ambientLight.diffuseSolidColor.set(0.8, 0.8, 1, 1);
+ambientLight.diffuseIntensity = 0.5;
+
+const grid = rootEntity.addComponent(GridControl);
+grid.camera = camera;
+grid.distance = 2;
 
 export class ControlScript extends Script {
-  private _sceneCamera: Camera;
+  public group = new Group();
+  public gizmo: Gizmo;
+
   private _framebufferPicker: FramebufferPicker;
-  private _navigator: NavigationGizmo;
-  private _gizmo: Gizmo;
   private _orbitControl: OrbitControl;
+  private _navigator: NavigationGizmo;
 
   constructor(entity: Entity) {
     super(entity);
-    this._sceneCamera = entity
-      .findByName("fullscreen-camera")
-      .getComponent(Camera);
-
     // add framebufferPicker
-    this._framebufferPicker = entity.addComponent(FramebufferPicker);
-    this._framebufferPicker.camera = this._sceneCamera;
-    this._framebufferPicker.colorRenderPass.mask =
-      LayerSetting.Entity | LayerSetting.Gizmo;
+    this._framebufferPicker = cameraEntity.addComponent(FramebufferPicker);
 
     // add orbit control
-    this._orbitControl = this._sceneCamera.entity.addComponent(OrbitControl);
+    this._orbitControl = camera.entity.addComponent(OrbitControl);
     this._orbitControl.maxPolarAngle = Infinity;
     this._orbitControl.minPolarAngle = -Infinity;
 
-    // add navigation gizmo
-    const navigationGizmo = rootEntity.addComponent(NavigationGizmo);
-    navigationGizmo.camera = this._sceneCamera;
-    navigationGizmo.layer = LayerSetting.NavigationGizmo;
-    this._navigator = navigationGizmo;
-
     // add gizmo
-    const gizmoEntity = this.entity.createChild("editor-gizmo");
+    const gizmoEntity = entity.createChild("gizmo");
     const gizmo = gizmoEntity.addComponent(Gizmo);
-    gizmo.camera = this._sceneCamera;
+    gizmo.init(camera, this.group);
     gizmo.state = State.scale;
     gizmo.layer = LayerSetting.Gizmo;
-    this._gizmo = gizmo;
+    this.gizmo = gizmo;
 
     gizmoEntity.isActive = false;
+
+    // add navigation gizmo
+    const navigatorEntity = entity.createChild("navigation-gizmo");
+    this._navigator = navigatorEntity.addComponent(NavigationGizmo);
+    this._navigator.camera = camera;
+    this._navigator.layer = LayerSetting.NavigationGizmo;
 
     this._addGUI();
   }
 
   onUpdate(deltaTime: number): void {
-    this._navigator.target = this._orbitControl.target;
-    const { inputManager } = this.engine;
+    const { inputManager } = engine;
     const { pointers } = inputManager;
-    // single select.
+
+    // sharing same camera target
+    this._navigator.target = this._orbitControl.target;
+
+    // single select
     if (pointers && inputManager.isPointerDown(PointerButton.Primary)) {
       const { position } = pointers[0];
       this._framebufferPicker.pick(position.x, position.y).then((result) => {
-        this._singleSelectHandler(result);
-      });
-    }
-    // multi select
-    if (pointers && inputManager.isPointerDown(PointerButton.Secondary)) {
-      const { position } = pointers[0];
-      this._framebufferPicker.pick(position.x, position.y).then((result) => {
-        this._multiSelectHandler(result);
+        this._selectHandler(result);
       });
     }
   }
 
   // left mouse for single selection
-  private _singleSelectHandler(result: RenderElement) {
-    const selectedEntity = result?.component?.entity;
+  private _selectHandler(result: Renderer) {
+    const selectedEntity = result?.entity;
     switch (selectedEntity?.layer) {
       case undefined: {
         this._orbitControl.enabled = true;
-        this._gizmo.clearEntity();
-        this._gizmo.entity.isActive = false;
+        this.group.reset();
+        this.gizmo.entity.isActive = false;
         break;
       }
       case LayerSetting.Entity: {
         this._orbitControl.enabled = true;
-        this._gizmo.clearEntity();
-        this._gizmo.addEntity(selectedEntity);
-        this._gizmo.entity.isActive = true;
+        this.group.reset();
+        this.group.addEntity(selectedEntity);
+        this.gizmo.entity.isActive = true;
         break;
       }
       case LayerSetting.Gizmo: {
         this._orbitControl.enabled = false;
-        break;
-      }
-    }
-  }
-
-  // right mouse for multiply selection
-  private _multiSelectHandler(result: RenderElement) {
-    const selectedEntity = result?.component?.entity;
-    switch (selectedEntity?.layer) {
-      case LayerSetting.Entity: {
-        this._orbitControl.enabled = true;
-        if (!this._gizmo.addEntity(selectedEntity)) {
-          this._gizmo.removeEntity(selectedEntity);
-        }
-        this._gizmo.entity.isActive = true;
         break;
       }
     }
@@ -157,19 +172,19 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "null":
-            this._gizmo.state = null;
+            this.gizmo.state = null;
             break;
           case "translate":
-            this._gizmo.state = State.translate;
+            this.gizmo.state = State.translate;
             break;
           case "rotate":
-            this._gizmo.state = State.rotate;
+            this.gizmo.state = State.rotate;
             break;
           case "scale":
-            this._gizmo.state = State.scale;
+            this.gizmo.state = State.scale;
             break;
           case "all":
-            this._gizmo.state = State.all;
+            this.gizmo.state = State.all;
             break;
         }
       })
@@ -180,10 +195,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "global":
-            this._gizmo.coordType = CoordinateType.Global;
+            this.group.coordinateType = CoordinateType.Global;
             break;
           case "local":
-            this._gizmo.coordType = CoordinateType.Local;
+            this.group.coordinateType = CoordinateType.Local;
             break;
         }
       })
@@ -194,10 +209,10 @@ export class ControlScript extends Script {
       .onChange((v: string) => {
         switch (v) {
           case "center":
-            this._gizmo.anchorType = AnchorType.Center;
+            this.group.anchorType = AnchorType.Center;
             break;
           case "pivot":
-            this._gizmo.anchorType = AnchorType.Pivot;
+            this.group.anchorType = AnchorType.Pivot;
             break;
         }
       })
@@ -205,50 +220,25 @@ export class ControlScript extends Script {
   }
 }
 
-const traverseEntity = (entity: Entity, callback: (entity: Entity) => any) => {
-  callback(entity);
-  for (const child of entity.children) {
-    traverseEntity(child, callback);
-  }
-};
-
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
-engine.canvas.resizeByClientSize();
-const scene = engine.sceneManager.activeScene;
-const { background } = scene;
-background.solidColor = new Color(0.8, 0.8, 0.8, 1);
-const rootEntity = scene.createRootEntity();
-
-// init full screen camera
-const cameraEntity = rootEntity.createChild("fullscreen-camera");
-const camera = cameraEntity.addComponent(Camera);
-cameraEntity.transform.setPosition(15, 9, 15);
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-
-// setup scene
-const lightEntity = rootEntity.createChild("Light");
-lightEntity.transform.setPosition(20, 20, 20);
-lightEntity.transform.setRotation(-45, 0, 0);
-lightEntity.addComponent(DirectLight);
-
-const ambientLight = scene.ambientLight;
-ambientLight.diffuseSolidColor.set(0.8, 0.8, 1, 1);
-ambientLight.diffuseIntensity = 0.5;
-
-// add controls
-rootEntity.addComponent(ControlScript);
+const controlEntity = rootEntity.createChild("control");
+const sceneControl = controlEntity.addComponent(ControlScript);
 
 engine.resourceManager
   .load<GLTFResource>(
-    "https://gw.alipayobjects.com/os/OasisHub/34156c78-ed78-4792-a027-f6b790ac5bd1/oasis-file/1664436920180/medieval_fantasy_tavern.gltf"
+    "https://mdn.alipayobjects.com/oasis_be/afts/file/A*AmbsSpS0IAcAAAAAAAAAAAAADkp5AQ/boxPBR.glb"
   )
   .then((gltf) => {
     const { defaultSceneRoot } = gltf;
     rootEntity.addChild(defaultSceneRoot);
+    defaultSceneRoot.transform.scale.set(0.01, 0.01, 0.01);
     traverseEntity(defaultSceneRoot, (entity) => {
       entity.layer = LayerSetting.Entity;
     });
+
+    // init scene as selected state
+    sceneControl.group.reset();
+    sceneControl.group.addEntity(defaultSceneRoot);
+    sceneControl.gizmo.entity.isActive = true;
   })
   .then(() => {
     engine.run();

@@ -1,11 +1,8 @@
-import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import { styled } from "@oasis-engine/editor-design-system";
-import { Button, Flex } from '@oasis-engine/editor-components';
 import { ArrowRightOutlined } from '@ant-design/icons';
+import { Button, Flex, styled } from "@galacean/editor-ui";
+import { FormattedMessage } from 'react-intl';
 
 const StyledEditor = styled("div", {
-  borderTop: "1px solid $slate5",
   padding: "$8 0 $20",
   "& h2": {
     color: "$slate12",
@@ -44,7 +41,7 @@ export default function Editor() {
           <FormattedMessage id="app.home.editor.intro" />
         </StyledP>
         <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
-          <StyledButton variant="primary" size="md">
+          <StyledButton variant="light" size="lg" round>
             <FormattedMessage id="app.home.editor.apply" />
             <ArrowRightOutlined style={{ marginLeft: "5px" }} />
           </StyledButton>

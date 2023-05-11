@@ -5,7 +5,7 @@ type: Core
 label: Core
 ---
 
-In addition to [built-in components](${docs}entity#Common\ components), the Oasis engine also provides a powerful scripting system. The script system is the link between engine capabilities and game logic. The script is extended from the base class [Script](${api}core/Script). You can use it to extend the engine’s functions, as well as the life cycle hook functions provided by script components. Write your own game logic code in.
+In addition to [built-in components](${docs}entity#Common\ components), the Galacean Engine also provides a powerful scripting system. The script system is the link between engine capabilities and game logic. The script is extended from the base class [Script](${api}core/Script). You can use it to extend the engine’s functions, as well as the life cycle hook functions provided by script components. Write your own game logic code in.
 
 ## Add script component
 
@@ -15,7 +15,7 @@ To add a script to the entity, you can do like this:
 import {
 	Entity,
 	Script
-} from 'oasis-engine'
+} from "@galacean/engine"
 
 // 1. Create entity
 const entity = new Entity(engine);
@@ -32,7 +32,7 @@ entity.addComponent(MyScript);
 
 ## Component life cycle function
 
-Oasis provides users with a wealth of life cycle callback functions. As long as the user defines a specific callback function, Oasis will automatically execute related scripts in a specific period, and the user does not need to manually call them. The life cycle callback functions currently provided to users are as follows:
+Galacean provides users with a wealth of life cycle callback functions. As long as the user defines a specific callback function, Galacean will automatically execute related scripts in a specific period, and the user does not need to manually call them. The life cycle callback functions currently provided to users are as follows:
 
 ![脚本生命周期-en](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*BFg7QZuCAy4AAAAAAAAAAAAAARQnAQ)
 
@@ -75,7 +75,7 @@ onUpdate() {
 }
 ```
   
-It is worth noting that Oasis executes the onUpdate in batches after the onStart callback is executed in batches. The advantage of this is that the initialized values of other entities can be accessed in the onUpdate:
+It is worth noting that Galacean executes the onUpdate in batches after the onStart callback is executed in batches. The advantage of this is that the initialized values of other entities can be accessed in the onUpdate:
 
 ```typescript
 import { TheScript } from './TheScript'

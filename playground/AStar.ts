@@ -18,8 +18,8 @@ import {
   UnlitMaterial,
   Vector2,
   WebGLEngine,
-} from "oasis-engine";
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+} from "@galacean/engine";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 import * as dat from "dat.gui";
 
 class GripMap {
@@ -449,7 +449,7 @@ class MapViewControl extends Script {
           }
           const collider = gridEntity.addComponent(StaticCollider);
           const colliderShape = new BoxColliderShape();
-          colliderShape.setSize(1, 1, 1);
+          colliderShape.size.set(1, 1, 1);
           collider.addShape(colliderShape);
           const gridControl = gridEntity.addComponent(Script);
           gridControl.onPointerEnter = () => {
@@ -508,10 +508,8 @@ class MapViewControl extends Script {
   }
 }
 
-PhysXPhysics.initialize().then(() => {
+WebGLEngine.create({ canvas: "canvas", physics: new PhysXPhysics() }).then((engine) => {
   // Create engine object.
-  const engine = new WebGLEngine("canvas");
-  engine.physicsManager.initialize(PhysXPhysics);
   engine.canvas.resizeByClientSize();
 
   // Create root entity.

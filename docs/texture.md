@@ -8,7 +8,7 @@ label: Graphics/Texture
 
 Texture ([Texture](${api}core/Texture)), is the most commonly used resource in 3D rendering. When we color the model, we need to set a color value for each fragment. In addition to setting this color value directly, we can also choose to read texels from the texture for coloring to achieve a richer art effect.
 
-It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Oasis engine currently supports all WebGL standard textures.
+It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Galacean Engine currently supports all WebGL standard textures.
 
 ## Texture category
 
@@ -93,11 +93,11 @@ texture.anisoLevel = 4; // 1~16
 
 ### 1. mipmap
 
-**Oasis enable [mipmap](${api}core/Texture#generateMipmaps) by default**, mipmap is used to solve the accuracy and performance problems when sampling high-resolution textures from low-resolution screens. That is, textures of different resolutions can be selected at a suitable distance, as shown in the following figure:
+**Galacean enable [mipmap](${api}core/Texture#generateMipmaps) by default**, mipmap is used to solve the accuracy and performance problems when sampling high-resolution textures from low-resolution screens. That is, textures of different resolutions can be selected at a suitable distance, as shown in the following figure:
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mTBvTJ7Czt4AAAAAAAAAAAAAARQnAQ)
 
-It should be noted that WebGL2.0 supports textures of **any resolution**, which will be processed according to the algorithm of [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) Layers of mip, but if your environment is in WebGL1.0 , then please be sure to upload a **2 power texture**, such as a texture with a resolution of 1024 \* 512, otherwise Oasis will detect that the environment is unavailable mipmap, automatically downgrades to turn off the mipmap, which brings some visual surprises.
+It should be noted that WebGL2.0 supports textures of **any resolution**, which will be processed according to the algorithm of [mipmap](http://download.nvidia.com/developer/Papers/2005/NP2_Mipmapping/NP2_Mipmap_Creation.pdf) Layers of mip, but if your environment is in WebGL1.0 , then please be sure to upload a **2 power texture**, such as a texture with a resolution of 1024 \* 512, otherwise Galacean will detect that the environment is unavailable mipmap, automatically downgrades to turn off the mipmap, which brings some visual surprises.
 
 If you need to close mipmap, you can do it through a script. For the parameters, see [API](${api}core/Texture2D#constructor):
 

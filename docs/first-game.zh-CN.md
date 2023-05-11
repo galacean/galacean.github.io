@@ -6,7 +6,7 @@ group: 进阶
 label: Introduction/Advanced
 ---
 
-> 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Oasis 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
+> 相信大家对 flappy bird 都不陌生，今天简单描述下如何用 Galacean 复刻 2D 游戏，其中的流程其实和日常做需求相差无几。原游戏链接：[http://flappybird.io/](http://flappybird.io/)
 
 # 总览
 
@@ -84,8 +84,8 @@ label: Introduction/Advanced
 无法使用编辑器的同学可以直接拷贝下方代码。
 
 ```typescript
-// Create engine object.
-const engine = new WebGLEngine("canvas");
+// Create engine
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.canvas.resizeByClientSize();
 
 const scene = engine.sceneManager.activeScene;
@@ -386,7 +386,7 @@ onUpdate(deltaTime: number) {
 
 ## 碰撞检测的时机
 
-在执行碰撞检测时有一个前提，就是此时已经是这一帧的最终位置了，之前学习过 [Oasis 脚本系统](${docs}script-cn#组件生命周期函数) 的同学应该会很熟悉，当在 `onUpdate` 中改变 `Entity` 的位置后，可以在 `onLateUpdate` 中做碰撞检测，这样可以保证时序不出问题。
+在执行碰撞检测时有一个前提，就是此时已经是这一帧的最终位置了，之前学习过 [Galacean 脚本系统](${docs}script-cn#组件生命周期函数) 的同学应该会很熟悉，当在 `onUpdate` 中改变 `Entity` 的位置后，可以在 `onLateUpdate` 中做碰撞检测，这样可以保证时序不出问题。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/3b51a259-a9e9-4f82-bc92-fecbae21f3fc/1625142815122-1977aa4e-54c1-498c-baef-533d2e9be265.png" alt="image.png" style="zoom:50%;" />
 

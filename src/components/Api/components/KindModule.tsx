@@ -1,4 +1,4 @@
-import { styled } from "@oasis-engine/editor-design-system";
+import { styled } from "@galacean/editor-ui";
 
 export const StyledKindIcon = styled("span", {
   color: "#9600ff",

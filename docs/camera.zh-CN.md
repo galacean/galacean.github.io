@@ -6,7 +6,7 @@ group: 摄像机
 label: Graphics/Camera
 ---
 
-相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Oasis Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
+相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Galacean Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
 
 ## 基本用法
 
@@ -43,7 +43,7 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*KEuGSqX-vXsAAAAAAAAAAAAAARQnAQ)
 
-如上图所示，有 top、bottom、left 和 right，Oasis 对正交属性做了一些简化，更符合开发者的使用习惯，只有 [orthographicSize](${api}core/Camera#orthographicSize)（正交模式下相机的一半尺寸）。下面是针对各项属性和 [orthographicSize](${api}core/Camera#orthographicSize) 的关系
+如上图所示，有 top、bottom、left 和 right，Galacean 对正交属性做了一些简化，更符合开发者的使用习惯，只有 [orthographicSize](${api}core/Camera#orthographicSize)（正交模式下相机的一半尺寸）。下面是针对各项属性和 [orthographicSize](${api}core/Camera#orthographicSize) 的关系
 
 - `top = orthographicSize`
 - `bottom = -orthographicSize`
@@ -65,19 +65,19 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ## 属性
 
-| 类型 | 属性 | 解释 |
-| :-- | :-- | :-- |
-| 通用 | [isOrthographic](${api}core/Camera#isOrthographic) | 是否正交投影，默认是 `false` |
-|  | [aspectRatio](${api}core/Camera#aspectRatio) | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
-|  | [cullingMask](${api}core/Camera#cullingMask) | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。 |
-|  | [priority](${api}core/Camera#priority) | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
-|  | [renderTarget](${api}core/Camera#renderTarget) | 渲染目标，确定内容最后被渲染到哪个目标上。 |
-|  | [viewport](${api}core/Camera#viewport) | 视口，确定内容最后被渲染到目标设备里的范围。 |
-|  | [nearClipPlane](${api}core/Camera#nearClipPlane) | 近裁剪平面 |
-|  | [farClipPlane](${api}core/Camera#farClipPlane) | 远裁剪平面 |
-|  | [clearFlags](${api}core/Camera#clearFlags) | 在渲染这个相机前清理画布缓冲的标记 |
-| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView) | 视角 |
-| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize) | 正交模式下相机的一半尺寸 |
+| 类型     | 属性                                                   | 解释                                                         |
+| :------- | :----------------------------------------------------- | :----------------------------------------------------------- |
+| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)     | 是否正交投影，默认是 `false`                                 |
+|          | [aspectRatio](${api}core/Camera#aspectRatio)           | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
+|          | [cullingMask](${api}core/Camera#cullingMask)           | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                 |
+|          | [priority](${api}core/Camera#priority)                 | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
+|          | [renderTarget](${api}core/Camera#renderTarget)         | 渲染目标，确定内容最后被渲染到哪个目标上。                   |
+|          | [viewport](${api}core/Camera#viewport)                 | 视口，确定内容最后被渲染到目标设备里的范围。                 |
+|          | [nearClipPlane](${api}core/Camera#nearClipPlane)       | 近裁剪平面                                                   |
+|          | [farClipPlane](${api}core/Camera#farClipPlane)         | 远裁剪平面                                                   |
+|          | [clearFlags](${api}core/Camera#clearFlags)             | 在渲染这个相机前清理画布缓冲的标记                           |
+| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)           | 视角                                                         |
+| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize) | 正交模式下相机的一半尺寸                                     |
 
 详情请查看 [API 文档](${api}core/Camera)。
 
@@ -95,9 +95,27 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ### 相机的朝向
 
-由于在 Oasis 中，世界坐标系为右手系，因此任何节点的正方向朝向 -Z 轴，同理，相机的正方向（取景方向）也为 -Z 轴方向，以此类推，在 Unity 等世界坐标系为左手系的引擎中，相机的正方向为 +Z 轴。
+由于在 Galacean 中，世界坐标系为右手系，因此任何节点的正方向朝向 -Z 轴，同理，相机的正方向（取景方向）也为 -Z 轴方向，以此类推，在 Unity 等世界坐标系为左手系的引擎中，相机的正方向为 +Z 轴。
 
 为了方便区分，我们可以使用人脸朝向法判断，无论在左手系或者右手系，将右手放在 +X 轴上，将头部放在 +Y 轴上，此时面部朝向即正方向。
+
+## 方法
+
+| 属性                                                         | 解释                                     |
+| :----------------------------------------------------------- | :--------------------------------------- |
+| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix) | 重置自定义投影矩阵，恢复到自动模式。     |
+| [resetAspectRatio](${api}core/Camera#resetAspectRatio)       | 重置自定义渲染横纵比，恢复到自动模式。   |
+| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint) | 将一个点从世界空间转换到视口空间。       |
+| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint) | 将一个点从视口空间转换到世界空间。       |
+| [viewportPointToRay](${api}core/Camera#viewportPointToRay)   | 通过视口空间中的一个点生成世界空间射线。 |
+| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint) | 将一个点从屏幕空间转换到视口空间。       |
+| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint) | 将一个点从视口空间转换到屏幕空间。       |
+| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint)   | 将一个点从世界空间转换到屏幕空间。       |
+| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint)   | 将一个点从屏幕空间转换到世界空间。       |
+| [screenPointToRay](${api}core/Camera#screenPointToRay)       | 通过屏幕空间中的一个点生成世界空间射线。 |
+| [render](${api}core/Camera#render)                           | 手动渲染。                               |
+| [setReplacementShader](${api}core/Camera#setReplacementShader) | 设置全局渲染替换着色器。                 |
+| [resetReplacementShader](${api}core/Camera#resetReplacementShader) | 清空全局渲染替换着色器。                 |
 
 ## Q&A
 

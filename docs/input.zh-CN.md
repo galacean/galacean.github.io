@@ -5,7 +5,7 @@ type: 交互
 label: Interact
 ---
 
-引擎中提供了基本的输入系统，正因为 Oasis 跨端跨平台的特性，我们的输入系统也需要兼容 PC 端与移动端，并且包含键盘，鼠标与触屏等操作，当前版本已支持不同端不同设备的点击输入：
+引擎中提供了基本的输入系统，正因为 Galacean 跨端跨平台的特性，我们的输入系统也需要兼容 PC 端与移动端，并且包含键盘，鼠标与触屏等操作，当前版本已支持不同端不同设备的点击输入：
 
 - **统一事件**：抹平了 [MouseEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/MouseEvent) 与 [TouchEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/TouchEvent) 的差异，统一使用 **PointerEvent**，使得点击事件在概念上和接口上都得到统一。
 - **多触控点**：当开启多触控点开关 [multiPointerEnabled](${api}core/InputManager#multiPointerEnabled) 时，一帧内可同时存在多个 Pointer ，每个 Pointer 互相独立，响应对应的事件并回调相应的钩子函数。
@@ -86,6 +86,6 @@ Pointer 则表示每个独立的光标实例，通过调用相关的方法可以
 
 <img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9_pmR6kKancAAAAAAAAAAAAAARQnAQ" alt="image-20211001164136273" style="zoom:67%;" />
 
-如果遇到不同平台的兼容性问题，可以在 https://github.com/oasis-engine/polyfill-pointer-event 为我们提 issue 。
+如果遇到不同平台的兼容性问题，可以在 https://github.com/galacean/polyfill-pointer-event 为我们提 issue 。
 
-设计思路可参考：https://github.com/oasis-engine/engine/wiki/Input-system-design.
+设计思路可参考：https://github.com/galacean/engine/wiki/Input-system-design.

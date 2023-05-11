@@ -16,14 +16,14 @@ import {
   Shader,
   Texture2D,
   Vector3,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-init();
+main();
 
-function init(): void {
+async function main() {
   // Create engine
-  const engine = new WebGLEngine("canvas");
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
   // Create root entity
@@ -48,7 +48,7 @@ function createPlane(engine: Engine, entity: Entity): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_2e421e/afts/img/A*fRtNTKrsq3YAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D
+      type: AssetType.Texture2D,
     })
     .then((texture) => {
       const planeEntity = entity.createChild("plane");
@@ -56,16 +56,26 @@ function createPlane(engine: Engine, entity: Entity): void {
       const material = new Material(engine, shader);
 
       // planeEntity.transform.setRotation(-90, 0, 0);
-      meshRenderer.mesh = PrimitiveMesh.createPlane(engine, 1245, 1245, 100, 100, false);
+      meshRenderer.mesh = PrimitiveMesh.createPlane(
+        engine,
+        1245,
+        1245,
+        100,
+        100,
+        false
+      );
       meshRenderer.setMaterial(material);
 
       planeEntity.addComponent(PlaneAnimation);
 
       const { shaderData } = material;
-      shaderData.setTexture("u_baseTexture", texture);
+      shaderData.setTexture("MATERIAL_HAS_BASETEXTURE", texture);
       shaderData.setColor("u_fogColor", new Color(0.25, 0.25, 0.25, 1));
       shaderData.setFloat("u_fogDensity", 0.004);
-      shaderData.setColor("u_color", new Color(86 / 255, 182 / 255, 194 / 255, 1));
+      shaderData.setColor(
+        "u_color",
+        new Color(86 / 255, 182 / 255, 194 / 255, 1)
+      );
     });
 }
 
@@ -108,7 +118,8 @@ class PlaneAnimation extends Script {
     const positions = mesh.getPositions();
     for (let i = 0, n = positions.length; i < n; i++) {
       const position = positions[i];
-      position.y = Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
+      position.y =
+        Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
       counter += 0.1;
     }
     mesh.setPositions(positions);
@@ -119,23 +130,23 @@ class PlaneAnimation extends Script {
 
 const shader = Shader.create(
   "test-plane",
-  `uniform mat4 u_MVPMat;
+  `uniform mat4 renderer_MVPMat;
     attribute vec4 POSITION;
     attribute vec2 TEXCOORD_0;
     
-    uniform mat4 u_MVMat;
+    uniform mat4 renderer_MVMat;
     
     varying vec2 v_uv;
     varying vec3 v_position;
     
     void main() {
       v_uv = TEXCOORD_0;
-      v_position = (u_MVMat * POSITION).xyz;
-      gl_Position = u_MVPMat * POSITION;
+      v_position = (renderer_MVMat * POSITION).xyz;
+      gl_Position = renderer_MVPMat * POSITION;
     }`,
 
   `
-    uniform sampler2D u_baseTexture;
+    uniform sampler2D material_BaseTexture;
     uniform vec4 u_color;
     uniform vec4 u_fogColor;
     uniform float u_fogDensity;
@@ -149,13 +160,13 @@ const shader = Shader.create(
     }
     
     void main() {
-      vec4 color = texture2D(u_baseTexture, v_uv) * u_color;
+      vec4 color = texture2D(material_BaseTexture, v_uv) * u_color;
       float fogDistance = length(v_position);
       float fogAmount = 1. - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
       fogAmount = clamp(fogAmount, 0., 1.);
       gl_FragColor = mix(color, u_fogColor, fogAmount); 
 
-      #ifndef OASIS_COLORSPACE_GAMMA
+      #ifndef ENGINE_IS_COLORSPACE_GAMMA
         gl_FragColor = linearToGamma(gl_FragColor);
       #endif
     }

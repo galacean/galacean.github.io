@@ -13,7 +13,7 @@ label: Introduction/Basic
 
 我们开始使用 [TypeScript](https://www.typescriptlang.org/) 编写引擎代码。如果你还不太适应 TypeScript，使用 JavaScript 也一样可以运行，并且同样可以享受到引擎 API 提示（通过使用 [VSCode](https://code.visualstudio.com/) 等 IDE 进行编程）。
 
-回到我们的编程，为了实现这样一个功能，需要在我们的工程里引入如下 Oasis 引擎的类：
+回到我们的编程，为了实现这样一个功能，需要在我们的工程里引入如下 Galacean 引擎的类：
 
 ```typescript
 import {
@@ -27,7 +27,7 @@ import {
   Vector3,
   Vector4,
   Color,
-} from 'oasis-engine';
+} from "@galacean/engine";
 ```
 
 我们先来简单认识一下这些类：
@@ -53,7 +53,7 @@ import {
 创建引擎实例，参数 `canvas` 是 *Canvas* 元素的 `id`，若 `id` 不同请自行替换。如上文所述，通过 [resizeByClientSize](${api}rhi-webgl/WebCanvas#resizeByClientSize) 方法重设画布高宽。
 
 ```typescript
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 engine.canvas.resizeByClientSize();
 ```
 ## 创建场景根节点
@@ -68,7 +68,7 @@ const rootEntity = scene.createRootEntity('root');
 ```
 ## 创建一个相机实体
 
-在 Oasis Engine 中，功能是以组件形式添加到实体上的。首先，我们先创建一个实体用来添加相机组件。
+在 Galacean Engine 中，功能是以组件形式添加到实体上的。首先，我们先创建一个实体用来添加相机组件。
 
 创建完成之后，通过实体上自带的变换组件 `transform` 来改变相机的位置和朝向。然后给这个实体添加相机组件 `Camera`。 
 

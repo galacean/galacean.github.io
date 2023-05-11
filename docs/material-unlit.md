@@ -6,7 +6,7 @@ group: Material
 label: Graphics/Material
 ---
 
-In some simple scenes, you may not want to calculate lighting. Oasis engine provides [UnlitMaterial](${api}core/UnlitMaterial), which uses the most streamlined shader code, and only needs to provide colors or textures to render.
+In some simple scenes, you may not want to calculate lighting. Galacean Engine provides [UnlitMaterial](${api}core/UnlitMaterial), which uses the most streamlined shader code, and only needs to provide colors or textures to render.
 
 ## General Parameter
 

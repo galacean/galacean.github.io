@@ -5,7 +5,7 @@ type: 交互
 label: Interact
 ---
 
-Oasis 支持开发者随时查询当前的键盘交互实况，不需引入额外包且调用接口十分简单。
+Galacean 支持开发者随时查询当前的键盘交互实况，不需引入额外包且调用接口十分简单。
 
 ## 方法
 
@@ -57,10 +57,10 @@ class KeyScript extends Script {
 
 ## Keys
 
-Oasis 所枚举的键盘 Keys 与实体键盘一一对应，参考 W3C 标准，且兼容各种不同硬件的特制按键。
+Galacean 所枚举的键盘 Keys 与实体键盘一一对应，参考 W3C 标准，且兼容各种不同硬件的特制按键。
 
-Keys 枚举：https://github.com/oasis-engine/engine/blob/main/packages/core/src/input/enums/Keys.ts
+Keys 枚举：https://github.com/galacean/engine/blob/main/packages/core/src/input/enums/Keys.ts
 
 W3C 标准：https://www.w3.org/TR/2017/CR-uievents-code-20170601/
 
-键盘输入设计思路：https://github.com/oasis-engine/engine/wiki/Keyboard-Input-design
+键盘输入设计思路：https://github.com/galacean/engine/wiki/Keyboard-Input-design

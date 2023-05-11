@@ -19,7 +19,7 @@ series of functions to set its own state, such as velocity, mass, etc.
 ## Collider and ColliderShape
 
 [Collider](${api}core/Collider) is used to detect the collision between the collider on the
-current [Entity](${api}core/Entity) and other colliders in the scene. Oasis provides two colliders:
+current [Entity](${api}core/Entity) and other colliders in the scene. Galacean provides two colliders:
 
 1. [StaticCollider](${api}core/StaticCollider): static collider, mainly used for static objects in the scene;
 

@@ -6,7 +6,7 @@ group: 基础
 label: Introduction/Basic
 ---
 
-Oasis Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl/WebCanvas) 支持用 [Engine](${api}core/Engine) 控制 [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) 或者 [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) 。
+Galacean Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl/WebCanvas) 支持用 [Engine](${api}core/Engine) 控制 [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement) 或者 [OffscreenCanvas](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas) 。
 
 ## 基础使用
 
@@ -23,7 +23,7 @@ Oasis Engine 包装了不同平台的画布，如 [WebCanvas](${api}rhi-webgl/We
 创建 WebGLEngine 实例的时候会自动创建一个 WebCanvas 实例：
 
 ```typescript
-const engine = new WebGLEngine("canvas");
+const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 console.log(engine.canvas) // => WebCanvas 实例
 ```
@@ -94,7 +94,7 @@ webcanvas.resizeByClientSize(scale); // 拉伸画布
 某些情况下，比如设计稿固定 750 宽度的情况，开发者有可能会写死画布宽度来降低适配成本。代码如下：
 
 ```typescript
-import { WebCanvas } from "oasis-engine";
+import { WebCanvas } from "@galacean/engine";
 
 const canvas = document.getElementById('canvas');
 const webcanvas = new WebCanvas(canvas);

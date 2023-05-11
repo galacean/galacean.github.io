@@ -58,11 +58,13 @@ export class Script extends Component {
 
 ```typescript
 // 加载 Raycast 模块
-import {WebGLEngine, HitResult, Ray} from 'oasis-engine';
-import {LitePhysics} from "@oasis-engine/physics-lite";
+import {WebGLEngine, HitResult, Ray} from "@galacean/engine";
+import {LitePhysics} from "@galacean/engine-physics-lite";
 
-const engine = new WebGLEngine("canvas");
-engine.physicsManager.initialize(LitePhysics);
+const engine = await WebGLEngine.create({
+  canvas: "canvas",
+  physics: new LitePhysics(),
+});
 engine.canvas.resizeByClientSize();
 
 // 将屏幕输入转换成Ray
@@ -80,4 +82,4 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 
 需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。
 
-同时，在 Oasis 当中，还提供了 InputManager，该管理器将输入源做了封装，提供了更加易用的逻辑，使用方式可以[参考](${docs}input-cn) .
+同时，在 Galacean 当中，还提供了 InputManager，该管理器将输入源做了封装，提供了更加易用的逻辑，使用方式可以[参考](${docs}input-cn) .

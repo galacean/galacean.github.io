@@ -1,12 +1,11 @@
 {
-  "name": "oasis-engine",
-  "versions": ["latest", "0.8"],
+  "name": "galacean",
+  "versions": ["latest", "0.9", "0.8"],
   "serverConfig": {
-    "local": "https://oasisbe.test.alipay.net",
-    "dev": "https://oasisbe.test.alipay.net",
+    "local": "https://oasisbe.alipay.com",
+    "dev": "https://oasisbe.alipay.com",
     "test": "https://oasisbe.test.alipay.net",
     "pre": "https://oasisbe-pre.alipay.com",
     "prod": "https://oasisbe.alipay.com"
   }
 }
-

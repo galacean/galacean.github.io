@@ -2,7 +2,7 @@
  * @title Sprite Material Dissolve
  * @category 2D
  */
-import { OrbitControl } from "@oasis-engine-toolkit/controls";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 import {
   AssetType,
@@ -17,20 +17,20 @@ import {
   Sprite,
   SpriteRenderer,
   Texture2D,
-  WebGLEngine
-} from "oasis-engine";
+  WebGLEngine,
+} from "@galacean/engine";
 
-init();
+main();
 
-function init(): void {
-  // Create engine.
-  const engine = new WebGLEngine("canvas");
+async function main() {
+  // Create engine
+  const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
 
-  // Create root entity.
+  // Create root entity
   const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
-  // Create camera.
+  // Create camera
   const cameraEntity = rootEntity.createChild("Camera");
   cameraEntity.transform.setPosition(0, 0, 12);
   cameraEntity.addComponent(Camera);
@@ -39,20 +39,20 @@ function init(): void {
   engine.resourceManager
     .load([
       {
-        // Sprite texture
+        // Sprite texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*L2GNRLWn9EAAAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
+        type: AssetType.Texture2D,
       },
       {
         // Noise texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*j2xJQL0e6J4AAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
+        type: AssetType.Texture2D,
       },
       {
         // Ramp texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ygj3S7sm4hQAAAAAAAAAAAAAARQnAQ",
-        type: AssetType.Texture2D
-      }
+        type: AssetType.Texture2D,
+      },
     ])
     .then((textures: Texture2D[]) => {
       // Create origin sprite entity.
@@ -73,7 +73,11 @@ function init(): void {
   engine.run();
 }
 
-function addCustomMaterial(engine: Engine, noiseTexture: Texture2D, rampTexture: Texture2D): Material {
+function addCustomMaterial(
+  engine: Engine,
+  noiseTexture: Texture2D,
+  rampTexture: Texture2D
+): Material {
   const material = new Material(engine, Shader.find("SpriteDissolve"));
 
   // Init state.
@@ -86,7 +90,7 @@ function addCustomMaterial(engine: Engine, noiseTexture: Texture2D, rampTexture:
   target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
   renderState.depthState.writeEnabled = false;
   renderState.rasterState.cullMode = CullMode.Off;
-  material.renderQueueType = RenderQueueType.Transparent;
+  material.renderState.renderQueueType = RenderQueueType.Transparent;
 
   // Set material shader data.
   const { shaderData } = material;
@@ -118,7 +122,7 @@ function addDataGUI(material: Material, animationScript: AnimateScript) {
     },
     resume: function () {
       animationScript.enabled = true;
-    }
+    },
   };
 
   gui
@@ -150,7 +154,7 @@ class AnimateScript extends Script {
    */
   onUpdate(deltaTime: number): void {
     const { guiData } = this;
-    const threshold = (guiData.threshold + deltaTime * 0.0003) % 1.0;
+    const threshold = (guiData.threshold + deltaTime * 0.3) % 1.0;
 
     // Update gui data.
     guiData.threshold = threshold;
@@ -163,7 +167,7 @@ class AnimateScript extends Script {
 const spriteVertShader = `
   precision highp float;
 
-  uniform mat4 u_VPMat;
+  uniform mat4 camera_VPMat;
 
   attribute vec3 POSITION;
   attribute vec2 TEXCOORD_0;
@@ -174,7 +178,7 @@ const spriteVertShader = `
 
   void main()
   {
-    gl_Position = u_VPMat * vec4(POSITION, 1.0);
+    gl_Position = camera_VPMat * vec4(POSITION, 1.0);
     v_color = COLOR_0;
     v_uv = TEXCOORD_0;
   }
@@ -184,7 +188,7 @@ const spriteFragmentShader = `
   precision mediump float;
   precision mediump int;
 
-  uniform sampler2D u_spriteTexture;
+  uniform sampler2D renderer_SpriteTexture;
   uniform sampler2D u_noiseTexture;
   uniform sampler2D u_rampTexture;
   uniform float u_threshold;
@@ -206,7 +210,7 @@ const spriteFragmentShader = `
 
     float degree = clamp(0.0, 1.0, diff / u_edgeLength);
     vec4 edgeColor = texture2D(u_rampTexture, vec2(degree, degree));
-    vec4 color = texture2D(u_spriteTexture, v_uv);
+    vec4 color = texture2D(renderer_SpriteTexture, v_uv);
     vec4 finalColor = lerp(edgeColor, color, degree);
     gl_FragColor = vec4(finalColor.rgb, color.a) * v_color;
   }

@@ -6,7 +6,7 @@ group: Basic
 label: Introduction/Basic
 ---
 
-glTF (GL Transmission Format) is a specification released by [khronos](https://www.khronos.org/) that can efficiently transmit and load 3D scenes. Like traditional model formats such as FBX and OBJ, it basically supports 3D scenes. All the features in Oasis are currently the preferred 3D file format recommended by Oasis.
+glTF (GL Transmission Format) is a specification released by [khronos](https://www.khronos.org/) that can efficiently transmit and load 3D scenes. Like traditional model formats such as FBX and OBJ, it basically supports 3D scenes. All the features in Galacean are currently the preferred 3D file format recommended by Galacean.
 
 The products of glTF are generally divided into (.gltf + .bin + png) or (.glb), the former is suitable for scenes with large pictures, so the pictures and models are separated, and models and textures can be loaded asynchronously; the latter is suitable for models For scenarios with large files, all data will be stored in binary, and the model needs to be parsed after all data is parsed.
 
@@ -34,7 +34,7 @@ The following demo:
 
 ## More cases
 
-glTF has a lot of features, the official website provides many [examples](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) for reference, and Oasis also provides a reprinted version For a quick overview, you can switch between different glTF models through the following **glTF List**.
+glTF has a lot of features, the official website provides many [examples](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0) for reference, and Galacean also provides a reprinted version For a quick overview, you can switch between different glTF models through the following **glTF List**.
 
 Go to [glTF resources](${docs}gltf) to learn more about glTF related designs.
 
