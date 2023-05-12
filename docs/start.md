@@ -8,7 +8,7 @@ label: Introduction/Start
 
 ## Overview
 
-**Galacean** is a web-first and mobile-first high-performance real-time interactive solution，Use component system design and pursue ease of use and light weight. Developers can independently use and write Typescript scripts to develop projects using pure code.It contains [Rendering](${docs}material-PBR), [Physics](${docs}physics-overall), [Animation](${docs}animator) and [Interaction](${docs}input) Function，and it provides a visual online editor with a complete workflow to help you create gorgeous 2D/3D interactive applications on the browser.
+**Galacean** is a web-first and mobile-first high-performance real-time interactive solution，Use component system design and pursue ease of use and light weight. Developers can independently use and write Typescript scripts to develop projects using pure code.It contains [Rendering](${docs}mesh-renderer), [Physics](${docs}physics-overall), [Animation](${docs}animator) and [Interaction](${docs}input) Function，and it provides a visual online editor with a complete workflow to help you create gorgeous 2D/3D interactive applications on the browser.
 
 **Galacean** consists of three parts:
 
@@ -40,15 +40,14 @@ For some functional modules that require additional consideration of compatibili
 
 ## Workflow
 
-如果你希望以纯代码的形式启动一个小型项目，可以参照[安装 Galacean Engine](${docs}install) 进行快速搭建。但对于较为复杂的项目，我们**更推荐使用编辑器可视化开发**，因为**通过编辑器可以让技术与美术同学更好地进行协作**，你可以在[编辑器首页](https://galacean.antgroup.com/editor)通过项目模板快速开始第一个项目的开发，[更多编辑器的能力](${docs}editor)期待你的探索。
+If you want to start a small project in the form of pure code, you can refer to [Install Galacean Engine](${docs}install) for quick setup. But for more complex projects, we **recommend using the editor for visual development**, because **through the editor, technology and art students can collaborate better**, you can go to [editor home page](https://galacean.antgroup.com/editor) quickly start the development of the first project through the project template, [more editor capabilities](${docs}editor) look forward to your exploration.
 
 
 ![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
 
-## 版本相关
-If you want to start a small project in the form of pure code, you can refer to [Install Galacean Engine](${docs}install) for quick setup. But for more complex projects, we **recommend using the editor for visual development**, because **through the editor, technology and art students can collaborate better**, you can go to [editor home page](https://galacean.antgroup.com/editor) quickly start the development of the first project through the project template, [more editor capabilities](${docs}editor) look forward to your exploration.
+## Version
 
-### 版本管理
+### Version management
 
 Taking `@galacean/engine` as an example, developers can find it in [Github](https://github.com/galacean/engine/releases) or [NPM](https://www.npmjs.com/package/@galacean/engine?activeTab=versions) where:
 
