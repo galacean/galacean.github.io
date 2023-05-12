@@ -27,7 +27,7 @@
     "uuid": "markdown-Introduction-basic",
     "name": "Basic",
     "parent_uuid": "markdown-Introduction",
-    "weight": 1,
+    "weight": 2,
     "tag": "doc-engine",
     "cn_name": "基础"
   },
@@ -35,7 +35,7 @@
     "uuid": "markdown-Introduction-advanced",
     "name": "Advanced",
     "parent_uuid": "markdown-Introduction",
-    "weight": 1,
+    "weight": 3,
     "tag": "doc-engine",
     "cn_name": "进阶"
   },
