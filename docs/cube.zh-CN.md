@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: 绘制一个立方体
 type: 快速入门
 group: 基础

@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: Init canvas
 type: Introduction
 group: Basic
