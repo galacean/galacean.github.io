@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 入门
+title: 开始
 type: 快速入门
 group: 开始
 label: Introduction/Start
@@ -25,18 +25,18 @@ label: Introduction/Start
 
 ## 运行环境
 
-**Galacean Engine** 可以在支持 WebGL 的环境下流畅运行，到目前为止，所有主流的移动端浏览器与桌面浏览器都支持这一标准。可以在 [CanIUse](https://caniuse.com/?search=webgl) 上检测运行环境的兼容性。
+**Galacean Engine** 可以在支持 WebGL 的环境下运行，到目前为止，所有主流的移动端浏览器与桌面浏览器都支持这一标准。可以在 [CanIUse](https://caniuse.com/?search=webgl) 上检测运行环境的兼容性。
 
 ![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*6L31Qa7bpXkAAAAAAAAAAAAADleLAQ/original)
 
-此外，**Galacean Engine** 还支持在[支付宝小程序环境](${docs}miniprogram)中运行。
+此外，**Galacean Engine** 还支持在[支付宝/淘宝小程序](${docs}miniprogram)中运行，同时也有开发者在社区贡献了[微信小程序/游戏的适配方案](https://github.com/deepkolos/platformize)。
 
 对于一些需要额外考虑兼容性的功能模块，当前的适配方案如下：
 
-| 模块                            | 兼容考虑                                                 | 具体文档                                                                               |
-| :------------------------------ | :------------------------------------------------------- | :------------------------------------------------------------------------------------- |
+| 模块                            | 兼容考虑                                                 | 具体文档                                                                                |
+| :------------------------------ | :------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
 | [鼠标与触控](${docs}input)      | [PointerEvent](https://caniuse.com/?search=PointerEvent) | 兼容请参照 [polyfill-pointer-event](https://github.com/galacean/polyfill-pointer-event) |
-| [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 运行环境需支持 WebAssembly                                            |
+| [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 运行环境需支持 WebAssembly                                                              |
 
 ## 工作流程
 
@@ -50,9 +50,9 @@ label: Introduction/Start
 
 以 `@galacean/engine` 为例，开发者可以在 [Github](https://github.com/galacean/engine/releases) 或 [NPM](https://www.npmjs.com/package/@galacean/engine?activeTab=versions) 上查看所有可用版本，其中：
 
-- alpha：内部测试版，用于早期功能研发，有里程碑内的新功能但稳定性较差
-- beta: 公开测试版，内部测试已基本完毕，稳定性较强，但可能仍有较少的问题与缺陷
-- stable：正式稳定版，经过长期测试和验证，无重大缺陷，可投入生产的推荐版本
+- alpha：内部测试版，用于早期功能研发，有里程碑内的新功能但稳定性较差，例如 [1.0.0-alpha.6](https://www.npmjs.com/package/@galacean/engine/v/1.0.0-alpha.6)
+- beta: 公开测试版，内部测试已基本完毕，稳定性较强，但可能仍有较少的问题与缺陷，例如 [1.0.0-beta.8](https://www.npmjs.com/package/@galacean/engine/v/1.0.0-beta.8)
+- stable：正式稳定版，经过长期测试和验证，无重大缺陷，可投入生产的推荐版本，例如 [0.9.8](https://www.npmjs.com/package/@galacean/engine/v/0.9.8)
 
 ### NPM 库之间的依赖关系
 
