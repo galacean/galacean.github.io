@@ -16,14 +16,6 @@
     "cn_name": "快速入门"
   },
   {
-    "uuid": "markdown-Introduction-start",
-    "name": "Start",
-    "parent_uuid": "markdown-Introduction",
-    "weight": 1,
-    "tag": "doc-engine",
-    "cn_name": "开始"
-  },
-  {
     "uuid": "markdown-Introduction-basic",
     "name": "Basic",
     "parent_uuid": "markdown-Introduction",

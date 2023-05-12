@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 title: 第一个脚本组件
 type: 快速入门
 group: 基础

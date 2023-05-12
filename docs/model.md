@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title: Load a 3D Model
 type: Introduction
 group: Basic
