@@ -58,7 +58,7 @@ function Banner() {
           textAlign: "center"
         }
       }}>
-        <Link to={`/docs/${stableVersion}/${lang}/start`} onClick={() => {
+        <Link to={`/docs/${stableVersion}/${lang}/install`} onClick={() => {
           setVersion(stableVersion);
           localStorage.setItem('version', stableVersion);
         }}>
@@ -68,7 +68,7 @@ function Banner() {
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>
         </Link>
-        <Link to={`/docs/${betaVersion}/${lang}/start`} onClick={() => {
+        <Link to={`/docs/${betaVersion}/${lang}/install`} onClick={() => {
           setVersion(betaVersion);
           localStorage.setItem('version', betaVersion);
         }}>
