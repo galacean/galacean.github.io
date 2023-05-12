@@ -303,7 +303,7 @@ const StyledNavigationMenu = () => {
           </StyledTrigger>
           <StyledContent>
             <StyledContentList css={{ width: "400px" }}>
-              <ListItem to={`/docs/${context.version}/${context.lang}/install`} title={formatMessage({ id: 'app.header.menu.engine.docs' })}>
+              <ListItem to={`/docs/${context.version}/${context.lang}/start`} title={formatMessage({ id: 'app.header.menu.engine.docs' })}>
                 <FormattedMessage id='app.header.menu.engine.docs.description' />
               </ListItem>
               <ListItem to={`/docs/${context.version}/${context.lang}/artist-bake`} title={formatMessage({ id: 'app.header.menu.artist.docs' })}>

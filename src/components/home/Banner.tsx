@@ -58,17 +58,17 @@ function Banner() {
           textAlign: "center"
         }
       }}>
-        <Link to={`/docs/${stableVersion}/${lang}/install`} onClick={() => {
+        <Link to={`/docs/${stableVersion}/${lang}/start`} onClick={() => {
           setVersion(stableVersion);
           localStorage.setItem('version', stableVersion);
         }}>
-          <Button variant="primary" size="lg" round posi>
+          <Button variant="primary" size="lg" round>
             {stableSpecificVersion}&nbsp;
             <FormattedMessage id='app.home.stable' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>
         </Link>
-        <Link to={`/docs/${betaVersion}/${lang}/install`} onClick={() => {
+        <Link to={`/docs/${betaVersion}/${lang}/start`} onClick={() => {
           setVersion(betaVersion);
           localStorage.setItem('version', betaVersion);
         }}>

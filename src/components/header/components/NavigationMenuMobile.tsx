@@ -14,7 +14,7 @@ export function NavigationMenuMobile() {
       children: [
         {
           key: 0,
-          label: <Link to={`/docs/${context.version}/${context.lang}/install`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
+          label: <Link to={`/docs/${context.version}/${context.lang}/start`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
         },
         {
           key: 1,
