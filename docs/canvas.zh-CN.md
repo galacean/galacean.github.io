@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 1. 初始化画布
+title: 初始化画布
 type: 快速入门
 group: 基础
 label: Introduction/Basic

@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 0. 安装 Galacean Engine
+title: 安装 Galacean Engine
 type: 快速入门
 group: 基础
 label: Introduction/Basic

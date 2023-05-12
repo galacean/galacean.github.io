@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 3. Load a 3D Model
+title: Load a 3D Model
 type: Introduction
 group: Basic
 label: Introduction/Basic

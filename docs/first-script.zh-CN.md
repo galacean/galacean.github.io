@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 4. 第一个脚本组件
+title: 第一个脚本组件
 type: 快速入门
 group: 基础
 label: Introduction/Basic

@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 0. Install Galacean Engine
+title: Install Galacean Engine
 type: Introduction
 group: Basic
 label: Introduction/Basic

@@ -1,6 +1,6 @@
 ---
 order: 4
-title: 4. The first script
+title: The first script
 type: Introduction
 group: Basic
 label: Introduction/Basic

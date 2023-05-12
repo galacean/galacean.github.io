@@ -1,6 +1,6 @@
 ---
 order: 3
-title: 3. 加载一个 3D 模型
+title: 加载一个 3D 模型
 type: 快速入门
 group: 基础
 label: Introduction/Basic
