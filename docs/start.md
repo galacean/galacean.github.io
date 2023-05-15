@@ -27,7 +27,7 @@ Learn more about **Galacean** abilities from the following sources:
 
 **Galacean Engine** can run in an environment that supports WebGL, and so far, all major mobile and desktop browsers support this standard. The compatibility of the operating environment can be checked on [CanIUse](https://caniuse.com/?search=webgl).
 
-![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*6L31Qa7bpXkAAAAAAAAAAAAADleLAQ/original)
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*8Ed3RZfVmbgAAAAAAAAAAAAADleLAQ/original)
 
 In addition, **Galacean Engine** also supports [Alipay/Taobao Mini Program](${docs}miniprogram), and some developers have contributed [WeChat Mini Program/Game Adaptation Solution](https://github.com/deepkolos/platformize).
 
@@ -43,7 +43,7 @@ For some functional modules that require additional consideration of compatibili
 If you want to start a small project in the form of pure code, you can refer to [Install Galacean Engine](${docs}install) for quick setup. But for more complex projects, we **recommend using the editor for visual development**, because **through the editor, technology and art students can collaborate better**, you can go to [editor home page](https://galacean.antgroup.com/editor) quickly start the development of the first project through the project template, [more editor capabilities](${docs}editor) look forward to your exploration.
 
 
-![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*sxnlS6r_q-0AAAAAAAAAAAAADleLAQ/original)
+![npm-init](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*WuTjTYbNTtcAAAAAAAAAAAAADleLAQ/original)
 
 ## Version
 
