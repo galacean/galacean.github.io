@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "@oasis-engine/physics-physx",
+	"name": "@galacean/engine-physics-physx",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
@@ -40,7 +40,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
 						}
 					],
 					"type": {
@@ -67,7 +67,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
 						}
 					],
 					"type": {
@@ -94,7 +94,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
 						}
 					],
 					"type": {
@@ -118,7 +118,7 @@
 					"fileName": "enum/PhysXRuntimeMode.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
 				}
 			]
 		},
@@ -170,9 +170,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 217,
+							"line": 223,
 							"character": 17,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L217"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L223"
 						}
 					],
 					"signatures": [
@@ -185,7 +185,7 @@
 							"parameters": [
 								{
 									"id": 90,
-									"name": "PHYSX",
+									"name": "physX",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
@@ -213,9 +213,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 162,
+							"line": 168,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L162"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L168"
 						}
 					],
 					"signatures": [
@@ -287,9 +287,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 187,
+							"line": 193,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L187"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L193"
 						}
 					],
 					"signatures": [
@@ -372,9 +372,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 142,
+							"line": 148,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L142"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L148"
 						}
 					],
 					"signatures": [
@@ -411,9 +411,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 135,
+							"line": 141,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L135"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L141"
 						}
 					],
 					"signatures": [
@@ -474,9 +474,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 199,
+							"line": 205,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L199"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L205"
 						}
 					],
 					"signatures": [
@@ -526,9 +526,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 206,
+							"line": 212,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L206"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L212"
 						}
 					],
 					"signatures": [
@@ -578,9 +578,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 107,
+							"line": 113,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L107"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L113"
 						}
 					],
 					"signatures": [
@@ -619,9 +619,9 @@
 											"sources": [
 												{
 													"fileName": "PhysXPhysics.ts",
-													"line": 108,
+													"line": 114,
 													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L108"
+													"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L114"
 												}
 											],
 											"signatures": [
@@ -683,9 +683,9 @@
 											"sources": [
 												{
 													"fileName": "PhysXPhysics.ts",
-													"line": 109,
+													"line": 115,
 													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L109"
+													"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L115"
 												}
 											],
 											"signatures": [
@@ -747,9 +747,9 @@
 											"sources": [
 												{
 													"fileName": "PhysXPhysics.ts",
-													"line": 110,
+													"line": 116,
 													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L110"
+													"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L116"
 												}
 											],
 											"signatures": [
@@ -811,9 +811,9 @@
 											"sources": [
 												{
 													"fileName": "PhysXPhysics.ts",
-													"line": 111,
+													"line": 117,
 													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L111"
+													"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L117"
 												}
 											],
 											"signatures": [
@@ -875,9 +875,9 @@
 											"sources": [
 												{
 													"fileName": "PhysXPhysics.ts",
-													"line": 112,
+													"line": 118,
 													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L112"
+													"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L118"
 												}
 											],
 											"signatures": [
@@ -939,9 +939,9 @@
 											"sources": [
 												{
 													"fileName": "PhysXPhysics.ts",
-													"line": 113,
+													"line": 119,
 													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L113"
+													"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L119"
 												}
 											],
 											"signatures": [
@@ -1003,9 +1003,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 149,
+							"line": 155,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L149"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L155"
 						}
 					],
 					"signatures": [
@@ -1099,9 +1099,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 180,
+							"line": 186,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L180"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L186"
 						}
 					],
 					"signatures": [
@@ -1162,9 +1162,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 169,
+							"line": 175,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L169"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L175"
 						}
 					],
 					"signatures": [
@@ -1236,9 +1236,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 213,
+							"line": 219,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L213"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L219"
 						}
 					],
 					"signatures": [
@@ -1288,9 +1288,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 128,
+							"line": 134,
 							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L128"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L134"
 						}
 					],
 					"signatures": [
@@ -1352,9 +1352,9 @@
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 99,
+							"line": 102,
 							"character": 16,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L99"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L102"
 						}
 					],
 					"signatures": [
@@ -1393,7 +1393,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 50,
 							"character": 16,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L50"
 						}
 					],
 					"signatures": [
@@ -1494,7 +1494,7 @@
 					"fileName": "PhysXPhysics.ts",
 					"line": 37,
 					"character": 13,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L37"
+					"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/PhysXPhysics.ts#L37"
 				}
 			]
 		}
@@ -1518,7 +1518,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/bfd0960a/packages/physics-physx/src/index.ts#L1"
 		}
 	]
 }
