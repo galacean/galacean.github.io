@@ -29,7 +29,7 @@ npm i @galacean/tools-atlas -g
 2. 执行打包命令
 
 ```bash
-galacean-tools-atlas p inputPath -o outputName
+galacean-tool-atlas p inputPath -o outputName
 ```
 
 其中 `inputPath` 表示需要打包的文件夹路径，而 `outputName` 则表示打包输出的精灵图集文件名，如果你得到下图所示结果，那么说明打包成功了。

@@ -111,7 +111,7 @@ const cache: any = {};
 async function getH5Data(path: string) {
   if (!cache[path]) {
     const data = await fetch(
-      'https://render.alipay.com/p/h5data/oasis-version_site-doc-versions-h5data.json'
+      'https://render.alipay.com/p/s/h5data/prod/oasis-version/site-doc-versions-h5data.json'
     ).then((res) => res.json());
     cache[path] = data;
   }

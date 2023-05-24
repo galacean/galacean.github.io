@@ -29,7 +29,7 @@ npm i @galacean/tools-atlas -g
 2. Execute command line
 
 ```bash
-galacean-tools-atlas p inputPath -o outputName
+galacean-tool-atlas p inputPath -o outputName
 ```
 
 Among them, `inputPath` represents the folder path to be packaged, and `outputName` represents the file name of the sprite atlas for packaged output. If you get the result shown in the figure below, then the package is successful.

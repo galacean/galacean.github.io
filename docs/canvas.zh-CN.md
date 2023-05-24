@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: 初始化画布
 type: 快速入门
 group: 基础

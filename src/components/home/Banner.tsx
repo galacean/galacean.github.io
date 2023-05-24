@@ -62,7 +62,7 @@ function Banner() {
           setVersion(stableVersion);
           localStorage.setItem('version', stableVersion);
         }}>
-          <Button variant="primary" size="lg" round posi>
+          <Button variant="primary" size="lg" round>
             {stableSpecificVersion}&nbsp;
             <FormattedMessage id='app.home.stable' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
