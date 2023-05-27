@@ -5,7 +5,7 @@ type: Core
 label: Core
 ---
 
-As a scene unit, Scene can facilitate entity tree management, especially for large-scale game scenes. For example, **scene1** and **scene2** are two different scenes, each independently manages its own **Entity** tree, so the lighting components, rendering components and physical components in the scene are also isolated from each other , do not affect each other. We can render one or more Scenes at the same time, or dynamically switch Scenes according to project logic at specific times.
+As a scene unit, Scene can facilitate entity tree management, especially for large-scale game scenes. For example: **scene1** and **scene2** are two different scenes, which can independently manage their own **Entity** trees, so the lighting components, rendering components and physical components in the scene also interact with each other Isolated, independent of each other. We can render one or more Scenes at the same time, or dynamically switch the current Scene according to the project logic at a specific time.
 
 Structurally, each Engine can contain one or more active scenes. Each Scene can have multiple root entities.
 
