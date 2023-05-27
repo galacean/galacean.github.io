@@ -5,36 +5,41 @@ type: Core
 label: Core
 ---
 
-Scene can manage the entity tree, especially large game scenes. For example, **scene1** and **scene2** are two different scenes and do not need to be loaded for activation and rendering at the same time. Then we can divide them into different scenes through modeling software or code logic. Activating the corresponding scenes separately or merging scenes at the appropriate time.
+As a scene unit, Scene can facilitate entity tree management, especially for large-scale game scenes. For example, **scene1** and **scene2** are two different scenes, each independently manages its own **Entity** tree, so the lighting components, rendering components and physical components in the scene are also isolated from each other , do not affect each other. We can render one or more Scenes at the same time, or dynamically switch Scenes according to project logic at specific times.
 
-Only one active scene `engine.sceneManager.activeScene` will be rendered under an Engine. Each Scene can have multiple root entities, and we manage the entire entity tree through the Scene object.
+Structurally, each Engine can contain one or more active scenes. Each Scene can have multiple root entities.
 
 ## Scene management
 
 | Properties                                         | Explanation     |
 | :------------------------------------------------- | :-------------- |
-| [activeScene](${api}core/SceneManager#activeScene) | Activated scene |
+| [scenes](${api}core/SceneManager#scenes) | Scene list |
 
 | Methods                                            | Explanation  |
 | :------------------------------------------------- | :----------- |
+| [addScene](${api}core/SceneManager#addScene) | Add scene |
+| [removeScene](${api}core/SceneManager#removeScene) | Remove scene |
 | [mergeScenes](${api}core/SceneManager#mergeScenes) | Merge scenes |
 | [loadScene](${api}core/SceneManager#loadScene)     | Load scene   |
 
 ### Basic usage
 
-#### 1. Active Scene
+#### 1. Add/Remove Scene
 
-Activating **Scene** is easy, just assign the **scene** you want to activate to `engine.sceneManager.activeScene`.
+Adding and removing **Scene** is very simple, just call `addScene()` and `removeScene()` of `engine.sceneManager`, and multiple scenes can be added and rendered at the same time.
 
 ```typescript
-// Suppose there are two inactive scenes
+// Suppose there are two scenes
 const scene1, scene2;
 
-// Activate scene1
-engine.sceneManager.activeScene = scene1;
+// Add scene1
+engine.sceneManager.addScene(scene1);
 
-// Activate scene2
-engine.sceneManager.activeScene = scene2;
+// Add scene2
+engine.sceneManager.addScene(scene1);
+
+// Remove scene2
+engine.sceneManager.removeScene(scene2);
 ```
 
 #### 2. Merge scenes
@@ -49,7 +54,7 @@ const sourceScene, destScene;
 engine.sceneManager.mergeScenes(sourceScene, destScene);
 
 // Activate destScene
-engine.sceneManager.activeScene = destScene;
+engine.sceneManager.addScene(destScene);
 ```
 
 #### 3. Load scene
@@ -59,11 +64,8 @@ If you want to load the **Scene** asset in the application, you can pass an url 
 ```typescript
 const sceneUrl = "...";
 
-const scenePromise = engine.sceneManager.loadScene(sceneUrl);
-
-// At this point, the loaded scene has been activated, you can do something on the loaded scene:
-scenePromise.then((scene) => {
-  console.log(scene);
+engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
+  engine.sceneManager.addScene(scene);
 });
 ```
 
@@ -76,7 +78,7 @@ Call `scene.destroy()` will destroy the scene.
 The scene background supports adding pure colors and sky:
 
 ```typescript
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 const { background } = scene;
 
 // Add a solid color background
@@ -99,7 +101,7 @@ The playground example:
 AmbientLight setting of the scene:
 
 ```typescript
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 ```
 
@@ -109,7 +111,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 ```typescript
 const engine = await WebGLEngine.create({ canvas: "demo" });
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 
 // Create root entity
 const rootEntity = scene.createRootEntity();
