@@ -13,10 +13,11 @@ label: Core
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YBAmSamxy_0AAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
 
-`左手坐标系`或`右手坐标系`最主要的区别是 `forward` 朝向的不同，无论在左手或是右手坐标系中，想象着将你的右手与 `+X` 重合，头顶方向与 `+Y` 重合，此时面部朝向的方向就是 `forward` 。可以由此得到 Galacean 与 Unity 的相机朝向差异：
+定义为`左手坐标系`或`右手坐标系`会影响 `forward` 的朝向与旋转的方向（逆时针或顺时针），对于朝向的定义可以想象着将右手与 `+X` 重合，头顶方向与 `+Y` 重合，此时面部朝向的方向就是 `forward` ，可以简单对比 Galacean 与 Unity 的差异：
 
-- Unity 的局部坐标与世界坐标系都是`左手坐标系`，而`左手坐标系`对应的 `forward` 方向是 `+Z` ，因此相机的朝向（取景方向）就是 `+Z` 方向。
-- Galacean 的局部坐标与世界坐标系都是`右手坐标系`，而`右手坐标系`对应的 `forward` 方向是 `-Z` ，因此相机的朝向（取景方向）就是 `-Z` 方向。
+- Unity 的局部坐标与世界坐标系都是`左手坐标系`，位姿变换时依据顺时针方向进行旋转，对应的 `forward` 方向是 `+Z` ，因此相机的朝向（取景方向）就是 `+Z` 方向
+
+- Galacean 的局部坐标与世界坐标系都是`右手坐标系`，位姿变换时依据逆时针方向进行旋转，对应的 `forward` 方向是 `-Z` ，因此相机的朝向（取景方向）就是 `-Z` 方向
 
 ## 局部空间
 
@@ -33,12 +34,6 @@ label: Core
 `观察空间`就是相机的局部空间，以透视相机为例：
 
 <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*isMHSpe21ZMAAAAAAAAAAAAAARQnAQ" width="100%" height="100%">
-
-## 裁减空间
-
-经过 MVP 变换后，坐标会被规范到 -1.0 到 1.0 的区间，顾名思义，超过范围的部分将不会显示到屏幕上。他是一个原点在画布中心的`左手坐标系`。
-
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_4RIQIC2O-UAAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
 
 ## 屏幕空间
 

@@ -13,10 +13,11 @@ This article will horizontally compare various coordinate spaces according to `s
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YBAmSamxy_0AAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
 
-The main difference between `left-handed coordinate system` and `right-handed coordinate system` is the direction of `forward`. No matter in the left-handed or right-handed coordinate system, imagine that your right hand coincides with `+X`, and the direction of the top of your head coincides with` +Y` coincides, and the direction facing the face at this time is `forward`. You can get the camera orientation difference between Galacean and Unity:
+Defined as `left-handed coordinate system` or `right-handed coordinate system` will affect the direction of `forward` and the direction of rotation (counterclockwise or clockwise). For the definition of orientation, you can imagine that the right hand coincides with `+X`, the direction of the top of the head Coincident with `+Y`, the direction of the face at this time is `forward`, you can simply compare the difference between Galacean and Unity:
 
-- Unity's local coordinate system and world coordinate system are `left-handed coordinate system`, and the `forward` direction corresponding to `left-handed coordinate system` is `+Z`, so the orientation of the camera (viewfinder direction) is `+Z` direction
-- Galacean's local coordinates and the world coordinate system are `right-handed coordinate system`, and the `forward` direction corresponding to `right-handed coordinate system` is `-Z`, so the orientation of the camera (viewing direction) is `-Z` direction
+- Unity's local coordinate system and world coordinate system are `left-handed coordinate system`, and the pose is rotated in a clockwise direction during pose transformation, while the `forward` direction corresponding to `left-handed coordinate system` is `+Z`, so the orientation of the camera ( Viewfinder direction) is `+Z` direction
+
+- Galacean's local coordinates and the world coordinate system are `right-handed coordinate system`, and the pose transformation is performed in a counterclockwise direction, and the `forward` direction corresponding to the `right-handed coordinate system` is `-Z`, so the orientation of the camera ( viewfinder direction) is `-Z` direction
 
 ## Local Space
 
@@ -33,10 +34,6 @@ The world space is absolute, the root node is placed in the `world space`, and i
 `Observation space` is the local space of the camera, taking the perspective camera as an example:
 
 <img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*isMHSpe21ZMAAAAAAAAAAAAAARQnAQ" width="100%" height="100%">
-
-## Clip Space
-
-After MVP transformation, the coordinates will be normalized to the interval from -1.0 to 1.0. As the name suggests, the part beyond the range will not be displayed on the screen. It is a `left-handed coordinate system` whose origin is at the center of the canvas.
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_4RIQIC2O-UAAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
 
