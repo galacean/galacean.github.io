@@ -11,7 +11,7 @@ label: Core
 
 本文会按照`空间的定义`，`坐标系类型`等方面来横向比较各个坐标空间，其中`坐标系类型`具体指`左手坐标系`与`右手坐标系`，如下图所示：
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YBAmSamxy_0AAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YBAmSamxy_0AAAAAAAAAAAAADleLAQ/original" width="50%" height="50%">
 
 定义为`左手坐标系`或`右手坐标系`会影响 `forward` 的朝向与旋转的方向（逆时针或顺时针），对于朝向的定义可以想象着将右手与 `+X` 重合，头顶方向与 `+Y` 重合，此时面部朝向的方向就是 `forward` ，可以简单对比 Galacean 与 Unity 的差异：
 
@@ -33,22 +33,22 @@ label: Core
 
 `观察空间`就是相机的局部空间，以透视相机为例：
 
-<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*isMHSpe21ZMAAAAAAAAAAAAAARQnAQ" width="100%" height="100%">
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*isMHSpe21ZMAAAAAAAAAAAAAARQnAQ" width="50%" height="50%">
 
 ## 屏幕空间
 
 屏幕空间的定义与前端规范保持一致，是以画布的左上角为坐标原点的二维空间坐标系，空间内的取值范围与画布的尺寸保持一致，在交互，屏幕空间转换时经常使用。
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*qG0eTrkP4MUAAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*qG0eTrkP4MUAAAAAAAAAAAAADleLAQ/original" width="50%" height="50%">
 
 ## 视口空间
 
 视口空间的定义与前端规范保持一致，通过设置相机的 viewport 可以控制渲染的目标区域，
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*ZxwVQYgXLooAAAAAAAAAAAAADleLAQ/original" width="100%" height="100%">
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*ZxwVQYgXLooAAAAAAAAAAAAADleLAQ/original" width="50%" height="50%">
 
 ## 2D 精灵
 
 渲染精灵或遮罩等 2D 元素时，默认在局部坐标系中的 XoY 平面上放置这个面片：
 
-![avatar](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_5fjTp0r2KEAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_5fjTp0r2KEAAAAAAAAAAAAAARQnAQ" width="50%" height="50%">
