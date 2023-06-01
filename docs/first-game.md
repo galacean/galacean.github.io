@@ -10,6 +10,8 @@ label: Introduction/Advanced
 
 # Overview
 
+> This tutorial is applicable to Galacean 1.0.0-beta and above.
+
 Before coding, we need to plan in our minds the general flow of how to achieve and the game, so we will divide this article into the following sections:
 
 - Demand analysis.
