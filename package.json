@@ -13,6 +13,7 @@
     "@galacean/engine-physics-physx": "^1.0.0-alpha.8",
     "@galacean/engine-spine": "^1.0.0-beta.0",
     "@galacean/engine-toolkit": "^1.0.0-beta.1",
+    "@galacean/engine-toolkit-input-logger": "^1.0.0-beta.1",
     "@galacean/tools-baker": "^1.0.0-beta.3",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@radix-ui/colors": "^0.1.8",
