@@ -2,7 +2,7 @@
  * @title Video Background
  * @category Scene
  */
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { OrbitControl } from "@galacean/engine-toolkit";
 import {
   BackgroundMode,
   Camera,
@@ -15,6 +15,7 @@ import {
   Shader,
   Texture2D,
   TextureFormat,
+  TextureUsage,
   WebGLEngine,
 } from "@galacean/engine";
 
@@ -98,7 +99,8 @@ void main() {
     width,
     height,
     TextureFormat.R8G8B8,
-    false
+    false,
+    TextureUsage.Dynamic
   );
   const { background } = scene;
   background.mode = BackgroundMode.Sky;
