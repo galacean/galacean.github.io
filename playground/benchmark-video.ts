@@ -17,7 +17,7 @@ import {
   WebGLEngine,
   dependentComponents,
 } from "@galacean/engine";
-import { Stats } from "@galacean/engine-toolkit-stats";
+import { Stats } from "@galacean/engine-toolkit";
 
 async function main() {
   // Create engine object
@@ -81,6 +81,7 @@ export class VideoScript extends Script {
 
   video: HTMLVideoElement;
   texture: Texture2D;
+  noVideoFrameCallback: boolean = false;
 
   onAwake() {
     const { width, height, url } =
@@ -115,7 +116,7 @@ export class VideoScript extends Script {
     };
 
     const updateVideo = () => {
-      texture.setImageSource(videoElement);
+      videoElement.readyState >= 2 && texture.setImageSource(videoElement);
       videoElement.requestVideoFrameCallback(updateVideo);
     };
 
@@ -124,13 +125,14 @@ export class VideoScript extends Script {
     } else {
       this.texture = texture;
       this.video = videoElement;
+      this.noVideoFrameCallback = true;
     }
   }
 
   onUpdate() {
-    if (this.video) {
+    if (this.noVideoFrameCallback && this.video.readyState >= 2) {
       this.texture.setImageSource(this.video);
-    }
+    } 
   }
 }
 
