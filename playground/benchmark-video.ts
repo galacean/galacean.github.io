@@ -132,7 +132,7 @@ export class VideoScript extends Script {
   onUpdate() {
     if (this.noVideoFrameCallback && this.video.readyState >= 2) {
       this.texture.setImageSource(this.video);
-    } 
+    }
   }
 }
 
