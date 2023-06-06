@@ -2,7 +2,7 @@
  * @title Video Background
  * @category Scene
  */
-import { OrbitControl } from "@galacean/engine-toolkit";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   BackgroundMode,
   Camera,

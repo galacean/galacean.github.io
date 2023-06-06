@@ -5,6 +5,7 @@
 
 import {
   Camera,
+  DependentMode,
   Entity,
   Script,
   Sprite,
@@ -14,75 +15,115 @@ import {
   TextureUsage,
   Vector3,
   WebGLEngine,
+  dependentComponents,
 } from "@galacean/engine";
-import { Stats } from "@galacean/engine-toolkit";
+import { Stats } from "@galacean/engine-toolkit-stats";
 
-const videoes = {
-  "540p_0": {
-    width: 480,
-    height: 960,
-    url: "https://gw.alipayobjects.com/v/huamei_p0cigc/afts/video/A*dftzSq2szUsAAAAAAAAAAAAADtN3AQ",
-  },
-  "540p_1": {
-    width: 480,
-    height: 960,
-    url: "https://gw.alipayobjects.com/v/huamei_p0cigc/afts/video/A*7gPzSo3RxlQAAAAAAAAAAAAADtN3AQ",
-  },
-  "540p_2": {
-    width: 512,
-    height: 1024,
-    url: "https://mdn.alipayobjects.com/huamei_p0cigc/afts/file/A*ZOgXRbmVlsIAAAAAAAAAAAAADoB5AQ",
-  },
-  "540p_3": {
-    width: 512,
-    height: 1024,
-    url: "https://mdn.alipayobjects.com/huamei_p0cigc/afts/file/A*8xcvSJqCc3IAAAAAAAAAAAAADoB5AQ",
-  },
-};
+async function main() {
+  // Create engine object
+  const engine = await WebGLEngine.create({
+    canvas: "canvas",
+  });
+  engine.canvas.resizeByClientSize();
 
-let index = 0;
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
+
+  // Create camera
+  const cameraEntity = rootEntity.createChild("camera_entity");
+  cameraEntity.transform.setPosition(0, 0, 20);
+  cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+  cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(Stats);
+
+  // Add videos
+  for (let i = 0; i < 7; ++i) {
+    const posX = -12 + i * 4;
+    addVideo(rootEntity, posX, 4);
+    addVideo(rootEntity, posX, -4);
+  }
+
+  // Run engine
+  engine.run();
+}
+
+function addVideo(parent: Entity, posX: number, posY: number): void {
+  const videoEntity = parent.createChild("");
+  videoEntity.addComponent(VideoScript);
+  videoEntity.transform.setPosition(posX, posY, 0);
+}
+
+@dependentComponents(SpriteRenderer, DependentMode.AutoAdd)
 export class VideoScript extends Script {
+  static videos = {
+    "540p_0": {
+      width: 480,
+      height: 960,
+      url: "https://gw.alipayobjects.com/v/huamei_p0cigc/afts/video/A*dftzSq2szUsAAAAAAAAAAAAADtN3AQ",
+    },
+    "540p_1": {
+      width: 480,
+      height: 960,
+      url: "https://gw.alipayobjects.com/v/huamei_p0cigc/afts/video/A*7gPzSo3RxlQAAAAAAAAAAAAADtN3AQ",
+    },
+    "540p_2": {
+      width: 512,
+      height: 1024,
+      url: "https://mdn.alipayobjects.com/huamei_p0cigc/afts/file/A*ZOgXRbmVlsIAAAAAAAAAAAAADoB5AQ",
+    },
+    "540p_3": {
+      width: 512,
+      height: 1024,
+      url: "https://mdn.alipayobjects.com/huamei_p0cigc/afts/file/A*8xcvSJqCc3IAAAAAAAAAAAAADoB5AQ",
+    },
+  };
+  static videoIndex: number = 0;
+
   video: HTMLVideoElement;
   texture: Texture2D;
 
   onAwake() {
-    const { width, height, url } = videoes[`540p_${index++}`];
-    if (index === 4) {
-      index = 0;
+    const { width, height, url } =
+      VideoScript.videos[`540p_${VideoScript.videoIndex++}`];
+
+    if (VideoScript.videoIndex === 4) {
+      VideoScript.videoIndex = 0;
     }
 
-    const entity = this.entity.createChild("video");
-    const sr = entity.addComponent(SpriteRenderer);
+    const spriteRenderer = this.entity.getComponent(SpriteRenderer);
     const { engine } = this;
-    const texture = (this.texture = new Texture2D(
+    const texture = new Texture2D(
       engine,
       width,
       height,
       TextureFormat.R8G8B8A8,
       false,
       TextureUsage.Dynamic
-    ));
-    sr.sprite = new Sprite(engine, texture);
+    );
+    spriteRenderer.sprite = new Sprite(engine, texture);
+    this.entity.transform.setScale(0.75, 0.75, 0.75);
 
-    const dom: HTMLVideoElement = document.createElement("video");
-    dom.src = url;
-    dom.crossOrigin = "anonymous";
-    dom.loop = true;
-    dom.muted = true;
-    dom.play();
-    dom.playsInline = true;
+    const videoElement = document.createElement("video");
+    videoElement.src = url;
+    videoElement.crossOrigin = "anonymous";
+    videoElement.loop = true;
+    videoElement.muted = true;
+    videoElement.play();
+    videoElement.playsInline = true;
     document.body.onclick = () => {
-      dom.play();
+      videoElement.play();
     };
 
     const updateVideo = () => {
-      texture.setImageSource(dom);
-      dom.requestVideoFrameCallback(updateVideo);
+      texture.setImageSource(videoElement);
+      videoElement.requestVideoFrameCallback(updateVideo);
     };
-    if ("requestVideoFrameCallback" in dom) {
+
+    if ("requestVideoFrameCallback" in videoElement) {
       updateVideo();
     } else {
-      this.video = dom;
+      this.texture = texture;
+      this.video = videoElement;
     }
   }
 
@@ -93,46 +134,4 @@ export class VideoScript extends Script {
   }
 }
 
-function addVideo(parent: Entity, posX: number, posY: number): Entity {
-  const videoEntity = parent.createChild("");
-  videoEntity.addComponent(VideoScript);
-  const { transform } = videoEntity;
-  transform.setPosition(posX, posY, 0);
-  return videoEntity;
-}
-
-// Create engine object
-const engine = await WebGLEngine.create({
-  canvas: "canvas",
-});
-engine.canvas.resizeByClientSize();
-
-const scene = engine.sceneManager.activeScene;
-const rootEntity = scene.createRootEntity();
-
-// Create camera
-const cameraEntity = rootEntity.createChild("camera_entity");
-cameraEntity.addComponent(Camera);
-cameraEntity.transform.setPosition(0, 0, 20);
-cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
-cameraEntity.addComponent(Stats);
-
-addVideo(rootEntity, -12, 5);
-addVideo(rootEntity, -8, 5);
-addVideo(rootEntity, -4, 5);
-addVideo(rootEntity, 0, 5);
-addVideo(rootEntity, 4, 5);
-addVideo(rootEntity, 8, 5);
-addVideo(rootEntity, 12, 5);
-addVideo(rootEntity, -6, 5);
-
-addVideo(rootEntity, -12, -5);
-addVideo(rootEntity, -8, -5);
-addVideo(rootEntity, -4, -5);
-addVideo(rootEntity, 0, -5);
-addVideo(rootEntity, 4, -5);
-addVideo(rootEntity, 8, -5);
-addVideo(rootEntity, 12, -5);
-addVideo(rootEntity, -6, -5);
-
-engine.run();
+main();
