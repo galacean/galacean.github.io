@@ -20,7 +20,7 @@ cube.setMaterial(new BlinnPhongMaterial(engine));
 
 ## Render Order
 
-The render order of the renderer is affected by 3 factors from front to back: render queue, render priority, and distance to the camera.
+The render order of the renderer is affected by 3 factors from front to back: render queue, render priority, and distance to the camera. It should be noted that the render order of the renderer will not be affected by the order of the scene node tree.
 
 ### Render Queue Type
 
