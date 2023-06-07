@@ -43,6 +43,8 @@ renderer.priority = 10;
 
 相机类型不同，到相机距离的计算方式也有差异。在正交相机中，距离是渲染器包围盒中心点与摄像机沿着摄像机视图方向的距离，在透视相机中，距离是渲染器包围盒中心点与摄像机位置的直接距离。
 
+![到相机距离示意图](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*gYvyQp6qD3YAAAAAAAAAAAAADjCHAQ/original)
+
 在非透明渲染队列和透明裁剪对象的渲染队列中，到相机距离越小，渲染顺序越前，透明渲染队列中，到相机距离越大，渲染顺序越前。
 
 ## 数据源

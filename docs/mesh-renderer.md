@@ -45,6 +45,8 @@ When the render priority of the renderers in the same render queue is the same, 
 
 Depending on the type of camera, the calculation method of the distance to the camera is also different. In an orthographic camera, the distance is the distance between the center point of the renderer's bounding box and the camera along the view direction of the camera, and in a perspective camera, the distance is the direct distance between the center point of the renderer's bounding box and the camera position.
 
+![到相机距离示意图](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*gYvyQp6qD3YAAAAAAAAAAAAADjCHAQ/original)
+
 In the opaque render queue and the alpha test render queue, the smaller the distance to the camera, the higher the render order. In the transparent render queue, the larger the distance to the camera, the higher the rendering order.
 
 ## Data source
