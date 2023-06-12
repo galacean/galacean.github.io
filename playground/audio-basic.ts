@@ -1,6 +1,6 @@
 /**
  * @title Audio Basic
- * @category Basic
+ * @category Audio
  */
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
@@ -110,8 +110,7 @@ class BarScript extends Script {
 
   onUpdate(deltaTime: number): void {
     if (this._audioSource.isPlaying) {
-      const percent =
-        this._audioSource.position / this._audioSource.clip.duration;
+      const percent = this._audioSource.time / this._audioSource.clip.duration;
       this._barRenderer.text = `${Math.floor(percent * 100)}` + "%";
     }
   }
@@ -196,20 +195,15 @@ WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
         type: AssetType.Audio,
       })
       .then((res) => {
-        const clip = new AudioClip("new");
+        const clip = new AudioClip(engine);
         clip.setData(res);
         const listenEntity = rootEntity.createChild("listen");
-        const listener = listenEntity.addComponent(AudioListener);
+        listenEntity.addComponent(AudioListener);
 
         const playerEntity = rootEntity.createChild("player");
 
         const audioSource = playerEntity.addComponent(AudioSource);
         audioSource.clip = clip;
-
-        audioSource.onPlayEnd = () => {
-          lightA.enabled = false;
-          lightB.enabled = false;
-        };
 
         const percentEntity = playerEntity.createChild();
         percentEntity.transform.setPosition(0, 8, 0);
@@ -227,14 +221,16 @@ WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
         // stop btn
         addBtn(rootEntity, new Vector3(-2.3, 4, 0), "STOP", () => {
           audioSource.stop();
+          lightA.enabled = false;
+          lightB.enabled = false;
         });
 
         addBtn(rootEntity, new Vector3(0.5, 4, 0), "PAUSE", () => {
           audioSource.pause();
         });
 
-        addBtn(rootEntity, new Vector3(1.9, 4, 0), "RESUME", () => {
-          audioSource.resume();
+        addBtn(rootEntity, new Vector3(1.9, 4, 0), "UNPAUSE", () => {
+          audioSource.unPause();
         });
       });
 
