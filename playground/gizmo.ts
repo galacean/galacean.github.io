@@ -225,7 +225,7 @@ const sceneControl = controlEntity.addComponent(ControlScript);
 
 engine.resourceManager
   .load<GLTFResource>(
-    "https://mdn.alipayobjects.com/oasis_be/afts/file/A*AmbsSpS0IAcAAAAAAAAAAAAADkp5AQ/boxPBR.glb"
+    "https://mmtcdp.stable.alipay.net/oasis_be/afts/file/A*dWifRIo2iSgAAAAAAAAAAAAADt53AQ/boxPBR.glb"
   )
   .then((gltf) => {
     const { defaultSceneRoot } = gltf;
