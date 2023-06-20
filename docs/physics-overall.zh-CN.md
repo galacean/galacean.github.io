@@ -29,7 +29,7 @@ const engine = await WebGLEngine.create({
 ## PhysX 版物理引擎加载与初始化
 
 ```typescript
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 const engine = await WebGLEngine.create({
   canvas: htmlCanvas,

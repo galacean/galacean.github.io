@@ -89,6 +89,7 @@ module.exports = {
       "@galacean/engine-toolkit-navigation-gizmo",
       "@galacean/engine-toolkit-geometry-sketch",
       "@galacean/engine-toolkit-stats",
+      "@galacean/engine-toolkit-input-logger",
     ],
   },
 };
