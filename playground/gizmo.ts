@@ -22,10 +22,12 @@ import {
   ShadowType,
 } from "@galacean/engine";
 import { LitePhysics } from "@galacean/engine-physics-lite";
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import { FramebufferPicker } from "@galacean/engine-toolkit-framebuffer-picker";
-import { NavigationGizmo } from "@galacean/engine-toolkit-navigation-gizmo";
-import { GridControl } from "@galacean/engine-toolkit-custom-material";
+import {
+  GridControl,
+  NavigationGizmo,
+  FramebufferPicker,
+  OrbitControl,
+} from "@galacean/engine-toolkit";
 import {
   AnchorType,
   CoordinateType,
