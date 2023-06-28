@@ -178,11 +178,11 @@ void main (void) {
 `;
 
   // 初始化 shader
-  Shader.create("water", vertexSource, fragSource);
+  Shader.create("customWater", vertexSource, fragSource);
 
   class ShaderMaterial extends Material {
     constructor(engine: Engine) {
-      super(engine, Shader.find("water"));
+      super(engine, Shader.find("customWater"));
 
       this.shaderData.setFloat("u_sea_height", 0.6);
       this.shaderData.setFloat("u_water_scale", 0.2);
