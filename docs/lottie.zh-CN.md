@@ -18,7 +18,7 @@ npm i @galacean/engine-lottie --save
 ## 使用
 
 ### 基础使用
-合批绘制的前提是有一张公共的图集。在开始使用下面的代码之前，你需要预处理一下 Lottie 的 JSON 文件，使用 [tools-atlas-lottie](https://www.npmjs.com/package/@galacean/tools-atlas-lottie) 把其中的 **assets**（base64 编码的图片集）合并成一张精灵图。
+在进行 `Pro Code` 开发的时候，需要一个 `json` 文件和一个 `atlas` 文件来实现 `lottie` 动画，通常美术同学通过 `AE` 导出的给到开发的只有 `json` 文件，此时需要使用 [tools-atlas-lottie](https://www.npmjs.com/package/@galacean/tools-atlas-lottie) `CLI` 工具生成 `atlas` 文件。
 
 ```typescript
 import { LottieAnimation } from "@galacean/engine-lottie";

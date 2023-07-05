@@ -212,7 +212,7 @@ transition.duration = 1;
 transition.offset = 0;
 transition.exitTime = 0.5;
 transition.destinationState = runState;
-walkState.addTransition(runState);
+walkState.addTransition(transition);
 animator.play("walk");
 ```
 In this way, every time you play the `walk` animation on the layer where the animation state machine is located, you will start to crossFade to the `run` animation halfway through the playback.
