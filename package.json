@@ -75,7 +75,7 @@
     "dev": "vite --host",
     "build": "vite build",
     "deploy": "gh-pages -d dist",
-    "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
+    "playground": "vite --force serve playground/.dev --config playground/.dev/vite.config.js "
   },
   "eslintConfig": {
     "extends": [
