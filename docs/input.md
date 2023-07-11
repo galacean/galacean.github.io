@@ -62,6 +62,14 @@ The following example:
 
 ### Q & A
 
+#### 0. Why is the touch function normal on the PC side, but abnormal on the mobile side?
+
+On the mobile side, touch will trigger the default behavior of HTML elements. Once the default behavior is triggered, the touch will be removed from the element (pointercancel), which can be solved by setting `touchAction` of the canvas:
+
+```typescript
+(engine.canvas._webCanvas as HTMLCanvasElement).style.touchAction = "none";
+```
+
 #### 1. How to troubleshoot why the Entity is not detected by the touch point
 - **Physics engine**: Please ensure that the physics engine is initialized at the same time as the engine is initialized.
 - **Collision component**: Please ensure that the Entity contains the Collision component, and the shape of the collision body fits the range of the collision.
