@@ -37,8 +37,8 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   orbitControl.maxDistance = 15;
 
   // 自定义材质
-  const shaderSource = `Shader "Water22" {
-    SubShader "water22" {
+  const shaderSource = `Shader "customWater" {
+    SubShader "customWater" {
       Tags { ReplacementTag = "Opaque",PipelineStage = "test" } 
   
       Pass "default" {
@@ -94,11 +94,11 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   `;
 
   // 初始化 shader
-  Shader.create(shaderSource);
+  const customShader = Shader.create(shaderSource);
 
   class ShaderMaterial extends Material {
     constructor(engine: Engine) {
-      super(engine, Shader.find('customWater'));
+      super(engine, customShader);
 
       this.shaderData.setFloat('u_sea_height', 0.6);
       this.shaderData.setFloat('u_water_scale', 0.2);
