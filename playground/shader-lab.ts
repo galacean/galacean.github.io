@@ -2,16 +2,17 @@
  * @title Shader Lab
  * @category Material
  */
-import { OrbitControl } from '@galacean/engine-toolkit-controls';
-import * as dat from 'dat.gui';
 import {
   AssetType,
   Camera,
   Color,
   Engine,
+  Entity,
   Material,
   MeshRenderer,
+  ModelMesh,
   PrimitiveMesh,
+  Script,
   Shader,
   Texture2D,
   Vector3,
@@ -19,146 +20,174 @@ import {
 } from '@galacean/engine';
 import { ShaderLab } from '@galacean/engine-shaderlab';
 
-const gui = new dat.GUI();
+// Create ShaderLab
 const shaderLab = new ShaderLab();
-// create engine
-WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
-  engine.canvas.resizeByClientSize();
 
-  const scene = engine.sceneManager.activeScene;
-  const rootEntity = scene.createRootEntity();
+main();
 
-  // create camera
-  const cameraEntity = rootEntity.createChild('camera_entity');
-  cameraEntity.transform.position = new Vector3(0, 0, 15);
-  cameraEntity.addComponent(Camera);
-  const orbitControl = cameraEntity.addComponent(OrbitControl);
-  orbitControl.minDistance = 15;
-  orbitControl.maxDistance = 15;
-
+async function main() {
+  // Create engine
+  const engine = await WebGLEngine.create({ canvas: 'canvas', shaderLab });
   // 自定义材质
-  const shaderSource = `Shader "customWater" {
-    SubShader "customWater" {
-      Tags { ReplacementTag = "Opaque",PipelineStage = "test" } 
-  
-      Pass "default" {
-        Tags { PipelineStage = "Forward"}
-  
-        struct a2v {
-         vec4 POSITION;
-         vec2 TEXCOORD_0; 
-        }
-  
-        struct v2f {
-         vec2 v_uv;
-         vec3 v_position;
-        }
-  
-        mat4 u_MVPMat;
-        sampler2D u_baseTexture;
-        vec4 u_color;
-        vec4 u_fogColor;
-        float u_fogDensity;
-        
-        VertexShader = vert;
-        FragmentShader = frag;
-  
-        vec4 linearToGamma(vec4 linearIn) {
-            return vec4(pow(linearIn.rgb, vec3(1.0 / 2.2)), linearIn.a);
+  const shaderSource = `Shader "Water" {
+  SubShader "Water" {
+
+    Pass "Water" {
+
+      struct a2v {
+       vec4 POSITION;
+       vec2 TEXCOORD_0; 
       }
+
+      struct v2f {
+       vec2 v_uv;
+       vec3 v_position;
+      }
+
+      mat4 renderer_MVPMat;
+      mat4 renderer_MVMat;
+
+      sampler2D material_BaseTexture;
+      vec4 u_color;
+      vec4 u_fogColor;
+      float u_fogDensity;
+      
+      VertexShader = vert;
+      FragmentShader = frag;
+
+      vec4 linearToGamma(vec4 linearIn) {
+          return vec4(pow(linearIn.rgb, vec3(1.0 / 2.2)), linearIn.a);
+    }
+
+      v2f vert(a2v v) {
+        v2f o;
+
+        o.v_uv = v.TEXCOORD_0;
+        vec4 tmp = renderer_MVMat * POSITION;
+        o.v_position = tmp.xyz;
+        gl_Position = renderer_MVPMat * v.POSITION;
+        return o;
+      }
+
+      void frag(v2f i) {
+        vec4 color = texture2D(material_BaseTexture, i.v_uv) * u_color;
+        float fogDistance = length(i.v_position);
+        float fogAmount = 1.0 - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
+        fogAmount = clamp(fogAmount, 0.0, 1.0);
+        gl_FragColor = mix(color, u_fogColor, fogAmount); 
   
-        v2f vert(a2v v) {
-          v2f o;
-  
-          o.v_uv = v.TEXCOORD_0;
-          vec4 tmp = u_MVPMat * POSITION;
-          o.v_position = tmp.xyz;
-          gl_Position = u_MVPMat * v.POSITION;
-          return o;
-        }
-  
-        void frag(v2f i) {
-          vec4 color = texture2D(u_baseTexture, i.v_uv) * u_color;
-          float fogDistance = length(i.v_position);
-          float fogAmount = 1.0 - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
-          fogAmount = clamp(fogAmount, 0.0, 1.0); 
-          gl_FragColor = mix(color, u_fogColor, fogAmount); 
-    
-          #ifndef OASIS_COLORSPACE_GAMMA
-            gl_FragColor = linearToGamma(gl_FragColor);
-          #endif
-        }
+        #ifndef ENGINE_IS_COLORSPACE_GAMMA
+          gl_FragColor = linearToGamma(gl_FragColor);
+        #endif
       }
     }
   }
-  `;
+}
+`;
 
   // 初始化 shader
-  const customShader = Shader.create(shaderSource);
+  Shader.create(shaderSource);
 
-  class ShaderMaterial extends Material {
-    constructor(engine: Engine) {
-      super(engine, customShader);
+  engine.canvas.resizeByClientSize();
 
-      this.shaderData.setFloat('u_sea_height', 0.6);
-      this.shaderData.setFloat('u_water_scale', 0.2);
-      this.shaderData.setFloat('u_water_speed', 3.5);
-      this.shaderData.setColor('u_sea_base', new Color(0.1, 0.2, 0.22));
-      this.shaderData.setColor('u_water_color', new Color(0.8, 0.9, 0.6));
-    }
-  }
-  const material = new ShaderMaterial(engine);
+  // Create root entity
+  const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
-  // 创建球体形的海面
-  const sphereEntity = rootEntity.createChild('sphere');
-  const renderer = sphereEntity.addComponent(MeshRenderer);
-  renderer.mesh = PrimitiveMesh.createSphere(engine, 3, 50);
-  renderer.setMaterial(material);
+  // Create camera
+  const cameraEntity = rootEntity.createChild('Camera');
+  cameraEntity.transform.setPosition(0, 10, 10);
+  cameraEntity.transform.lookAt(new Vector3(0, 8, 0));
+  const camera = cameraEntity.addComponent(Camera);
+  camera.farClipPlane = 2000;
+  camera.fieldOfView = 55;
 
-  // 加载噪声纹理
+  createPlane(engine, rootEntity);
+  engine.run();
+}
+
+/**
+ * Create a plane as a child of entity.
+ */
+function createPlane(engine: Engine, entity: Entity): void {
   engine.resourceManager
-    .load({
+    .load<Texture2D>({
+      url: 'https://gw.alipayobjects.com/mdn/rms_2e421e/afts/img/A*fRtNTKrsq3YAAAAAAAAAAAAAARQnAQ',
       type: AssetType.Texture2D,
-      url: 'https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*AC4IQZ6mfCIAAAAAAAAAAAAAARQnAQ',
     })
-    .then((texture: Texture2D) => {
-      material.shaderData.setTexture('u_texture', texture);
-      engine.run();
-    });
+    .then((texture) => {
+      const planeEntity = entity.createChild('plane');
+      const meshRenderer = planeEntity.addComponent(MeshRenderer);
+      const material = new Material(engine, Shader.find('Water'));
 
-  // debug
-  function openDebug() {
-    const shaderData = material.shaderData;
-    const baseColor = shaderData.getColor('u_sea_base');
-    const waterColor = shaderData.getColor('u_water_color');
-    const debug = {
-      sea_height: shaderData.getFloat('u_sea_height'),
-      water_scale: shaderData.getFloat('u_water_scale'),
-      water_speed: shaderData.getFloat('u_water_speed'),
-      sea_base: [baseColor.r * 255, baseColor.g * 255, baseColor.b * 255],
-      water_color: [waterColor.r * 255, waterColor.g * 255, waterColor.b * 255],
-    };
+      // planeEntity.transform.setRotation(-90, 0, 0);
+      meshRenderer.mesh = PrimitiveMesh.createPlane(
+        engine,
+        1245,
+        1245,
+        100,
+        100,
+        false
+      );
+      meshRenderer.setMaterial(material);
 
-    gui.add(debug, 'sea_height', 0, 3).onChange((v) => {
-      shaderData.setFloat('u_sea_height', v);
+      planeEntity.addComponent(PlaneAnimation);
+
+      const { shaderData } = material;
+      shaderData.setTexture('material_BaseTexture', texture);
+      shaderData.setColor('u_fogColor', new Color(0.25, 0.25, 0.25, 1));
+      shaderData.setFloat('u_fogDensity', 0.004);
+      shaderData.setColor(
+        'u_color',
+        new Color(86 / 255, 182 / 255, 194 / 255, 1)
+      );
     });
-    gui.add(debug, 'water_scale', 0, 4).onChange((v) => {
-      shaderData.setFloat('u_water_scale', v);
-    });
-    gui.add(debug, 'water_speed', 0, 4).onChange((v) => {
-      shaderData.setFloat('u_water_speed', v);
-    });
-    gui.addColor(debug, 'sea_base').onChange((v) => {
-      baseColor.r = v[0] / 255;
-      baseColor.g = v[1] / 255;
-      baseColor.b = v[2] / 255;
-    });
-    gui.addColor(debug, 'water_color').onChange((v) => {
-      waterColor.r = v[0] / 255;
-      waterColor.g = v[1] / 255;
-      waterColor.b = v[2] / 255;
-    });
+}
+
+/**
+ * Plane animation script.
+ */
+class PlaneAnimation extends Script {
+  private _planeMesh: ModelMesh;
+  private _initZ: number[];
+  private _counter: number = 0;
+
+  /**
+   * @override
+   * Called when be enabled first time, only once.
+   */
+  onAwake(): void {
+    const renderer = this.entity.getComponent(MeshRenderer);
+    const mesh = <ModelMesh>renderer.mesh;
+    const { vertexCount } = mesh;
+    const positions = mesh.getPositions();
+    const initY = new Array<number>(vertexCount);
+
+    for (var i = 0; i < vertexCount; i++) {
+      const position = positions[i];
+      position.y += Math.random() * 10 - 10;
+      initY[i] = position.y;
+    }
+    this._initZ = initY;
+    this._planeMesh = mesh;
   }
 
-  openDebug();
-});
+  /**
+   * @override
+   * The main loop, called frame by frame.
+   * @param deltaTime - The deltaTime when the script update.
+   */
+  onUpdate(deltaTime: number): void {
+    const mesh = this._planeMesh;
+    let { _counter: counter, _initZ: initZ } = this;
+    const positions = mesh.getPositions();
+    for (let i = 0, n = positions.length; i < n; i++) {
+      const position = positions[i];
+      position.y =
+        Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
+      counter += 0.1;
+    }
+    mesh.setPositions(positions);
+    mesh.uploadData(false);
+    this._counter = counter;
+  }
+}
