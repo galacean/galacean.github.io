@@ -28,7 +28,7 @@ main();
 async function main() {
   // Create engine
   const engine = await WebGLEngine.create({ canvas: 'canvas', shaderLab });
-  // 自定义材质
+  // Custom shader
   const shaderSource = `Shader Water {
   SubShader {
 
@@ -85,7 +85,7 @@ async function main() {
 }
 `;
 
-  // 初始化 shader
+  // Init shader
   Shader.create(shaderSource);
 
   engine.canvas.resizeByClientSize();
