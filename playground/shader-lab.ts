@@ -18,7 +18,7 @@ import {
   Vector3,
   WebGLEngine,
 } from '@galacean/engine';
-import { ShaderLab } from '@galacean/engine-shaderlab';
+import { ShaderLab } from '@galacean/engine-shader-lab';
 
 // Create ShaderLab
 const shaderLab = new ShaderLab();
