@@ -29,10 +29,10 @@ async function main() {
   // Create engine
   const engine = await WebGLEngine.create({ canvas: 'canvas', shaderLab });
   // Custom shader
-  const shaderSource = `Shader Water {
+  const shaderSource = `Shader "Water" {
   SubShader {
 
-    Pass Water {
+    Pass "Water" {
 
       struct a2v {
        vec4 POSITION;
