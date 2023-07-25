@@ -3,8 +3,6 @@
  * @category Scene
  */
 
-import { FreeControl } from "@galacean/engine-toolkit-controls";
-import * as dat from "dat.gui";
 import {
   AmbientLight,
   AssetType,
@@ -18,6 +16,8 @@ import {
   Vector3,
   WebGLEngine,
 } from "@galacean/engine";
+import { FreeControl } from "@galacean/engine-toolkit-controls";
+import * as dat from "dat.gui";
 
 async function main() {
   const engine = await WebGLEngine.create({ canvas: "canvas" });
@@ -25,15 +25,15 @@ async function main() {
 
   const scene = engine.sceneManager.activeScene;
 
-  // Set background color to cornflowerblue
-  const cornflowerblue = new Color(130 / 255, 163 / 255, 255 / 255);
-  scene.background.solidColor = cornflowerblue;
+  // Set background color to corn flower blue
+  const cornFlowerBlue = new Color(130 / 255, 163 / 255, 255 / 255);
+  scene.background.solidColor = cornFlowerBlue;
 
   // Set fog
   scene.fogMode = FogMode.ExponentialSquared;
   scene.fogDensity = 0.015;
   scene.fogEnd = 200;
-  scene.fogColor = cornflowerblue;
+  scene.fogColor = cornFlowerBlue;
 
   const rootEntity = scene.createRootEntity();
 
