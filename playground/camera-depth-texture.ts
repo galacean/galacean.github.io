@@ -118,7 +118,7 @@ const renderDepthFS = `
 
     void main() {
         float nonLinearDepth = texture2D(camera_DepthTexture, v_uv).r;
-        float depth = depthBufferLinear01(nonLinearDepth);
+        float depth = remapDepthBufferLinear01(nonLinearDepth);
 
         vec4 baseColor = vec4(depth, depth, depth, 1.0);
         gl_FragColor = baseColor;
