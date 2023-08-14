@@ -5,6 +5,7 @@
 import {
   AssetType,
   Camera,
+  Logger,
   ParticleMaterial,
   ParticleRenderer,
   RenderFace,
@@ -13,8 +14,10 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 
+
 // Create engine
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+  Logger.enable();
   engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
@@ -28,6 +31,8 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.run();
 
   const particleEntity = rootEntity.createChild("particle");
+  particleEntity.transform.rotate(90, 0, 0);
+
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
   const material = new ParticleMaterial(engine);
   material.renderFace = RenderFace.Double;
