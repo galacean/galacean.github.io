@@ -83,7 +83,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       const meshRenderer = triangleEntity.addComponent(MeshRenderer);
       meshRenderer.mesh = this.modelMesh = new ModelMesh(engine, "tag");
       // @ts-ignore
-      this.modelMesh._enableVAO = false;
+      this.modelMesh._primitive.enableVAO = false;
       const material = new UnlitMaterial(engine);
       material.baseColor = new Color(1, 0, 0, 1);
       meshRenderer.setMaterial(material);
