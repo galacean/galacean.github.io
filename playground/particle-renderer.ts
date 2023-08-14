@@ -5,9 +5,9 @@
 import {
   AssetType,
   Camera,
-  Color,
   ParticleMaterial,
   ParticleRenderer,
+  RenderFace,
   Texture2D,
   Vector3,
   WebGLEngine,
@@ -30,6 +30,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const particleEntity = rootEntity.createChild("particle");
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
   const material = new ParticleMaterial(engine);
+  material.renderFace = RenderFace.Double;
   particleRenderer.setMaterial(material);
 
   engine.resourceManager
