@@ -6,6 +6,7 @@ import {
   AssetType,
   BlendMode,
   Camera,
+  Color,
   Logger,
   ParticleCurveMode,
   ParticleMaterial,
@@ -43,6 +44,7 @@ WebGLEngine.create({
 
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
   const material = new ParticleMaterial(engine);
+  material.baseColor = new Color(0.5, 0.5, 0.5, 0.5);
   material.blendMode = BlendMode.Additive;
   particleRenderer.setMaterial(material);
 
@@ -58,7 +60,6 @@ WebGLEngine.create({
       generator.main.startLifetime.constantMax = 0.8;
       generator.main.startLifetime.mode = ParticleCurveMode.TwoConstants;
 
-
       generator.main.startSpeed.constantMin = 0.4;
       generator.main.startSpeed.constantMax = 1.6;
       generator.main.startSpeed.mode = ParticleCurveMode.TwoConstants;
@@ -71,7 +72,7 @@ WebGLEngine.create({
       generator.main.startRotation.constantMax = 360;
       generator.main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
-      generator.emission.rateOverTime.constant = 1;
+      generator.emission.rateOverTime.constant = 35;
 
       generator.shape.enabled = false;
 
