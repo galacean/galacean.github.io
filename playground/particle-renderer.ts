@@ -11,12 +11,12 @@ import {
   ParticleCurveMode,
   ParticleMaterial,
   ParticleRenderer,
-  RenderFace,
+  ParticleSimulationSpace,
   Texture2D,
   Vector2,
   Vector3,
   WebGLEngine,
-  WebGLMode,
+  WebGLMode
 } from "@galacean/engine";
 
 // Create engine
@@ -57,6 +57,8 @@ WebGLEngine.create({
     })
     .then((texture) => {
       const generator = particleRenderer.generator;
+
+      generator.main.simulationSpace = ParticleSimulationSpace.World;
 
       generator.main.startLifetime.constantMin = 0.2;
       generator.main.startLifetime.constantMax = 0.8;
