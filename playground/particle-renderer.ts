@@ -16,8 +16,8 @@ import {
   Vector2,
   Vector3,
   WebGLEngine,
+  WebGLMode,
 } from "@galacean/engine";
-import { WebGLMode } from "oasis-engine";
 
 // Create engine
 WebGLEngine.create({
@@ -29,6 +29,7 @@ WebGLEngine.create({
 
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
+  scene.background.solidColor = new Color(0.25, 0.25, 0.25, 1);
 
   // Create camera
   const cameraEntity = rootEntity.createChild("camera_entity");
@@ -44,7 +45,8 @@ WebGLEngine.create({
 
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
   const material = new ParticleMaterial(engine);
-  material.baseColor = new Color(0.5, 0.5, 0.5, 0.5);
+  material.baseColor = new Color(1.0, 1.0, 1.0, 1.0);
+
   material.blendMode = BlendMode.Additive;
   particleRenderer.setMaterial(material);
 
