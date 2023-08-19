@@ -20,12 +20,11 @@ import {
   ParticleRenderer,
   ParticleScaleMode,
   ParticleSimulationSpace,
-  SphereShape,
   Texture2D,
   Vector2,
   Vector3,
   WebGLEngine,
-  WebGLMode,
+  WebGLMode
 } from "@galacean/engine";
 
 // Create engine
@@ -341,14 +340,8 @@ function createFireEmbersParticle(
   particleRenderer.setMaterial(material);
 
   const generator = particleRenderer.generator;
-  const {
-    main,
-    shape,
-    emission,
-    sizeOverLifetime,
-    colorOverLifetime,
-    textureSheetAnimation,
-  } = generator;
+  const { main, shape, emission, sizeOverLifetime, colorOverLifetime } =
+    generator;
 
   // Main module
   main.duration = 3;
@@ -360,7 +353,7 @@ function createFireEmbersParticle(
   main.startSpeed.constant = 0.4;
 
   main.startSize.constantMin = 0.05;
-  main.startSize.constantMin = 0.2;
+  main.startSize.constantMax = 0.2;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
   main.startRotation.constantMin = 0;
@@ -375,7 +368,6 @@ function createFireEmbersParticle(
 
   // Emission module
   emission.rateOverTime.constant = 65;
-
   emission.addBurst(new Burst(0, new ParticleCompositeCurve(15)));
 
   // @todo
@@ -405,18 +397,14 @@ function createFireEmbersParticle(
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
   sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
+  sizeOverLifetime.size.curve.keys[0].value = 1;
+  sizeOverLifetime.size.curve.keys[1].value = 0;
 
   const curve = sizeOverLifetime.size.curve;
   const keys = curve.keys;
   keys[0].value = 0.28;
   keys[1].value = 1.0;
   curve.addKey(0.607, 0.909);
-
-  // Texture sheet animation module
-  textureSheetAnimation.enabled = true;
-  textureSheetAnimation.tiling = new Vector2(8, 8);
-  const frameOverTime = textureSheetAnimation.frameOverTime;
-  frameOverTime.curveMax.keys[1].value = 0.382;
 
   particleRenderer.play();
 }
