@@ -38,7 +38,7 @@ WebGLEngine.create({
 
   // Create camera
   const cameraEntity = rootEntity.createChild("camera_entity");
-  cameraEntity.transform.position = new Vector3(0, 5, 10);
+  cameraEntity.transform.position = new Vector3(0, 1, 3);
   const camera = cameraEntity.addComponent(Camera);
   camera.fieldOfView = 60;
 
