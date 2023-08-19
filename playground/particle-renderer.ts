@@ -290,14 +290,15 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   const colorKeys = gradient.colorKeys;
   colorKeys[0].time = 0;
   colorKeys[0].color.set(255 / 255, 98 / 255, 0 / 255, 1.0);
-  colorKeys[1].time = 1;
+  colorKeys[1].time = 0.679;
   colorKeys[1].color.set(0, 0, 0, 1.0);
-  gradient.addColorKey(0.6, new Color(255 / 255, 98 / 255, 0 / 255, 1.0));
+  gradient.addColorKey(0.515, new Color(255 / 255, 98 / 255, 0 / 255, 1.0));
 
   const alphaKeys = gradient.alphaKeys;
   alphaKeys[0].alpha = 0;
   alphaKeys[1].alpha = 0;
-  gradient.addAlphaKey(0.16, 1);
+  gradient.addAlphaKey(0.121, 1);
+  gradient.addAlphaKey(0.329, 200 / 255);
 
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
