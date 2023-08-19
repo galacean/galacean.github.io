@@ -7,6 +7,7 @@ import {
   BlendMode,
   Camera,
   Color,
+  ConeShape,
   Entity,
   Key,
   Logger,
@@ -67,7 +68,7 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D) {
   particleRenderer.setMaterial(material);
 
   const generator = particleRenderer.generator;
-  const { main, textureSheetAnimation, colorOverLifetime } = generator;
+  const { main, shape, textureSheetAnimation, colorOverLifetime } = generator;
 
   main.simulationSpace = ParticleSimulationSpace.World;
 
@@ -89,7 +90,10 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D) {
 
   generator.emission.rateOverTime.constant = 35;
 
-  generator.shape.enabled = false;
+  shape.enabled = true;
+  const coneShape = <ConeShape>shape.shape;
+  coneShape.angle = 0.96;
+  coneShape.radius = 0.01;
 
   textureSheetAnimation.enabled = true;
   textureSheetAnimation.tiling = new Vector2(6, 6);
