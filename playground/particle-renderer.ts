@@ -22,6 +22,7 @@ import {
   Vector3,
   WebGLEngine,
   WebGLMode,
+  ParticleScaleMode,
 } from "@galacean/engine";
 
 // Create engine
@@ -56,8 +57,8 @@ WebGLEngine.create({
       },
     ])
     .then((textures) => {
-      // const fireEntity = createFireParticle(rootEntity, <Texture2D>textures[0]);
-      createFireGlowParticle(rootEntity, <Texture2D>textures[1]);
+      const fireEntity = createFireParticle(rootEntity, <Texture2D>textures[0]);
+      createFireGlowParticle(fireEntity, <Texture2D>textures[1]);
     });
 });
 
@@ -185,6 +186,8 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   );
 
   main.simulationSpace = ParticleSimulationSpace.World;
+
+  main.scalingMode = ParticleScaleMode.Hierarchy;
 
   // Emission module
   emission.rateOverTime.constant = 20;
