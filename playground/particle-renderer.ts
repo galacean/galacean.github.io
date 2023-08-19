@@ -59,11 +59,16 @@ WebGLEngine.create({
         url: "https://mdn.alipayobjects.com/huamei_b4l2if/afts/img/A*cFafRr6WaWUAAAAAAAAAAAAADil6AQ/original",
         type: AssetType.Texture2D,
       },
+      {
+        url: "https://mdn.alipayobjects.com/huamei_b4l2if/afts/img/A*TASTTpESkIIAAAAAAAAAAAAADil6AQ/original",
+        type: AssetType.Texture2D,
+      },
     ])
     .then((textures) => {
       const fireEntity = createFireParticle(rootEntity, <Texture2D>textures[0]);
       createFireGlowParticle(fireEntity, <Texture2D>textures[1]);
       createFireSmokeParticle(fireEntity, <Texture2D>textures[2]);
+      createFireEmbersParticle(fireEntity, <Texture2D>textures[3]);
     });
 });
 
@@ -230,7 +235,100 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
 }
 
 function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
-  const particleEntity = fireEntity.createChild("FireGlow");
+  const particleEntity = fireEntity.createChild("FireSmoke");
+
+  const particleRenderer = particleEntity.addComponent(ParticleRenderer);
+
+  const material = new ParticleMaterial(fireEntity.engine);
+  material.baseTexture = texture;
+  particleRenderer.setMaterial(material);
+
+  const generator = particleRenderer.generator;
+  const {
+    main,
+    shape,
+    emission,
+    sizeOverLifetime,
+    colorOverLifetime,
+    textureSheetAnimation,
+  } = generator;
+
+  // Main module
+  main.startLifetime.constantMin = 1;
+  main.startLifetime.constantMax = 1.2;
+  main.startLifetime.mode = ParticleCurveMode.TwoConstants;
+
+  main.startSpeed.constant = 1.5;
+
+  main.startSize.constant = 1.2;
+
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
+
+  main.startColor.constant = new Color(
+    255 / 255,
+    255 / 255,
+    255 / 255,
+    84 / 255
+  );
+
+  main.gravityModifier.constant = -0.05;
+
+  main.simulationSpace = ParticleSimulationSpace.World;
+
+  main.scalingMode = ParticleScaleMode.Hierarchy;
+
+  // Emission module
+  emission.rateOverTime.constant = 25;
+
+  // Shape module
+  const coneShape = <ConeShape>shape.shape;
+  coneShape.angle = 10;
+  coneShape.radius = 0.1;
+
+  // Color over lifetime module
+  colorOverLifetime.enabled = true;
+  colorOverLifetime.color.mode = ParticleGradientMode.Gradient;
+
+  const gradient = colorOverLifetime.color.gradient;
+  const colorKeys = gradient.colorKeys;
+  colorKeys[0].time = 0;
+  colorKeys[0].color.set(255 / 255, 98 / 255, 0 / 255, 1.0);
+  colorKeys[1].time = 0.679;
+  colorKeys[1].color.set(0, 0, 0, 1.0);
+  gradient.addColorKey(0.515, new Color(255 / 255, 98 / 255, 0 / 255, 1.0));
+
+  const alphaKeys = gradient.alphaKeys;
+  alphaKeys[0].alpha = 0;
+  alphaKeys[1].alpha = 0;
+  gradient.addAlphaKey(0.121, 1);
+  gradient.addAlphaKey(0.329, 200 / 255);
+
+  // Size over lifetime module
+  sizeOverLifetime.enabled = true;
+  sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
+
+  const curve = sizeOverLifetime.size.curve;
+  const keys = curve.keys;
+  keys[0].value = 0.28;
+  keys[1].value = 1.0;
+  curve.addKey(0.607, 0.909);
+
+  // Texture sheet animation module
+  textureSheetAnimation.enabled = true;
+  textureSheetAnimation.tiling = new Vector2(8, 8);
+  const frameOverTime = textureSheetAnimation.frameOverTime;
+  frameOverTime.curveMax.keys[1].value = 0.382;
+
+  particleRenderer.play();
+}
+
+function createFireEmbersParticle(
+  fireEntity: Entity,
+  texture: Texture2D
+): void {
+  const particleEntity = fireEntity.createChild("FireEmbers");
 
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
 
