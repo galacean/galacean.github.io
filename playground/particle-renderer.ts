@@ -68,8 +68,16 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D) {
   particleRenderer.setMaterial(material);
 
   const generator = particleRenderer.generator;
-  const { main, shape, textureSheetAnimation, colorOverLifetime } = generator;
+  const {
+    main,
+    shape,
+    emission,
+    textureSheetAnimation,
+    sizeOverLifetime,
+    colorOverLifetime,
+  } = generator;
 
+  // Main module
   main.simulationSpace = ParticleSimulationSpace.World;
 
   main.startLifetime.constantMin = 0.2;
@@ -88,22 +96,31 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D) {
   main.startRotation.constantMax = 360;
   main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
-  generator.emission.rateOverTime.constant = 35;
+  emission.rateOverTime.constant = 35;
 
+  // Shape module
   shape.enabled = true;
   const coneShape = <ConeShape>shape.shape;
   coneShape.angle = 0.96;
   coneShape.radius = 0.01;
 
+  // Texture sheet animation module
   textureSheetAnimation.enabled = true;
   textureSheetAnimation.tiling = new Vector2(6, 6);
-  textureSheetAnimation.frameOverTime.mode = ParticleCurveMode.TwoCurves;
-  textureSheetAnimation.frameOverTime.curveMin = new ParticleCurve(
-    new Key(0, 0.47),
-    new Key(1, 1)
-  );
+  const frameOverTime = textureSheetAnimation.frameOverTime;
+  frameOverTime.mode = ParticleCurveMode.TwoCurves;
+  frameOverTime.curveMin = new ParticleCurve(new Key(0, 0.47), new Key(1, 1));
 
-  // generator.sizeOverLifetime.enabled = true;
+  // Size over lifetime module
+  sizeOverLifetime.enabled = true;
+  sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
+
+  const curve = sizeOverLifetime.size.curve;
+  const keys = curve.keys;
+  keys[0].value = 0.153;
+  keys[1].value = 0.529;
+  curve.addKey(0.074, 0.428);
+  curve.addKey(0.55, 0.947);
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -111,14 +128,11 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D) {
 
   const gradient = colorOverLifetime.color.gradient;
   const colorKeys = gradient.colorKeys;
-
   colorKeys[0].color.set(255 / 255, 127 / 255, 4 / 255, 1.0);
   colorKeys[1].time = 0.998;
   colorKeys[1].color.set(255 / 255, 123 / 255, 0 / 255, 1.0);
-
   gradient.addColorKey(0.157, new Color(1, 1, 1, 1));
   gradient.addColorKey(0.573, new Color(255 / 255, 255 / 255, 137 / 255, 1));
-
   gradient.alphaKeys[1].time = 0.089;
 
   particleRenderer.play();
