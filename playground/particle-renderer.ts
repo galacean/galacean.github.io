@@ -7,7 +7,9 @@ import {
   BlendMode,
   Camera,
   Color,
+  Key,
   Logger,
+  ParticleCurve,
   ParticleCurveMode,
   ParticleMaterial,
   ParticleRenderer,
@@ -16,7 +18,7 @@ import {
   Vector2,
   Vector3,
   WebGLEngine,
-  WebGLMode
+  WebGLMode,
 } from "@galacean/engine";
 
 // Create engine
@@ -82,6 +84,10 @@ WebGLEngine.create({
 
       generator.textureSheetAnimation.enabled = true;
       generator.textureSheetAnimation.tiling = new Vector2(6, 6);
+      generator.textureSheetAnimation.frameOverTime.mode =
+        ParticleCurveMode.TwoCurves;
+      generator.textureSheetAnimation.frameOverTime.curveMin =
+        new ParticleCurve(new Key(0, 0.47), new Key(1, 1));
 
       // generator.sizeOverLifetime.enabled = true;
       // generator.colorOverLifetime.enabled = true;
