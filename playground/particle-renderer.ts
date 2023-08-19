@@ -108,7 +108,6 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   emission.rateOverTime.constant = 35;
 
   // Shape module
-  shape.enabled = true;
   const coneShape = <ConeShape>shape.shape;
   coneShape.angle = 0.96;
   coneShape.radius = 0.01;
@@ -193,7 +192,6 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   emission.rateOverTime.constant = 20;
 
   // Shape module
-  shape.enabled = true;
   const coneShape = <ConeShape>shape.shape;
   coneShape.angle = 15;
   coneShape.radius = 0.01;
@@ -221,6 +219,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   keys[0].value = 0.153;
   keys[1].value = 1.0;
   curve.addKey(0.057, 0.37);
+  curve.addKey(0.728, 0.958);
 
   particleRenderer.play();
 }
