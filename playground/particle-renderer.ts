@@ -85,8 +85,6 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   } = generator;
 
   // Main module
-  main.simulationSpace = ParticleSimulationSpace.World;
-
   main.startLifetime.constantMin = 0.2;
   main.startLifetime.constantMax = 0.8;
   main.startLifetime.mode = ParticleCurveMode.TwoConstants;
@@ -102,6 +100,8 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   main.startRotation.constantMin = 0;
   main.startRotation.constantMax = 360;
   main.startRotation.mode = ParticleCurveMode.TwoConstants;
+
+  main.simulationSpace = ParticleSimulationSpace.World;
 
   // Emission module
   emission.rateOverTime.constant = 35;
@@ -163,8 +163,6 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
     generator;
 
   // Main module
-  main.simulationSpace = ParticleSimulationSpace.World;
-
   main.startLifetime.constantMin = 0.2;
   main.startLifetime.constantMax = 0.6;
   main.startLifetime.mode = ParticleCurveMode.TwoConstants;
@@ -178,6 +176,15 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   main.startRotation.constantMin = 0;
   main.startRotation.constantMax = 360;
   main.startRotation.mode = ParticleCurveMode.TwoConstants;
+
+  main.startColor.constant = new Color(
+    255 / 255,
+    100 / 255,
+    0 / 255,
+    168 / 255
+  );
+
+  main.simulationSpace = ParticleSimulationSpace.World;
 
   // Emission module
   emission.rateOverTime.constant = 20;
