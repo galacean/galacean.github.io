@@ -5,24 +5,27 @@
 import {
   AssetType,
   BlendMode,
+  Burst,
   Camera,
   Color,
   ConeShape,
   Entity,
   Key,
   Logger,
+  ParticleCompositeCurve,
   ParticleCurve,
   ParticleCurveMode,
   ParticleGradientMode,
   ParticleMaterial,
   ParticleRenderer,
+  ParticleScaleMode,
   ParticleSimulationSpace,
+  SphereShape,
   Texture2D,
   Vector2,
   Vector3,
   WebGLEngine,
   WebGLMode,
-  ParticleScaleMode,
 } from "@galacean/engine";
 
 // Create engine
@@ -333,6 +336,7 @@ function createFireEmbersParticle(
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
 
   const material = new ParticleMaterial(fireEntity.engine);
+  material.blendMode = BlendMode.Additive;
   material.baseTexture = texture;
   particleRenderer.setMaterial(material);
 
@@ -347,34 +351,34 @@ function createFireEmbersParticle(
   } = generator;
 
   // Main module
+  main.duration = 3;
+
   main.startLifetime.constantMin = 1;
-  main.startLifetime.constantMax = 1.2;
+  main.startLifetime.constantMax = 1.5;
   main.startLifetime.mode = ParticleCurveMode.TwoConstants;
 
-  main.startSpeed.constant = 1.5;
+  main.startSpeed.constant = 0.4;
 
-  main.startSize.constant = 1.2;
+  main.startSize.constantMin = 0.05;
+  main.startSize.constantMin = 0.2;
+  main.startSize.mode = ParticleCurveMode.TwoConstants;
 
   main.startRotation.constantMin = 0;
   main.startRotation.constantMax = 360;
   main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
-  main.startColor.constant = new Color(
-    255 / 255,
-    255 / 255,
-    255 / 255,
-    84 / 255
-  );
-
-  main.gravityModifier.constant = -0.05;
+  main.gravityModifier.constant = -0.15;
 
   main.simulationSpace = ParticleSimulationSpace.World;
 
   main.scalingMode = ParticleScaleMode.Hierarchy;
 
   // Emission module
-  emission.rateOverTime.constant = 25;
+  emission.rateOverTime.constant = 65;
 
+  emission.addBurst(new Burst(0, new ParticleCompositeCurve(15)));
+
+  // @todo
   // Shape module
   const coneShape = <ConeShape>shape.shape;
   coneShape.angle = 10;
