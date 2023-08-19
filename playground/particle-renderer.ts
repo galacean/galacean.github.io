@@ -210,7 +210,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   gradient.alphaKeys[0].alpha = 0;
   gradient.alphaKeys[1].alpha = 0;
 
-  gradient.addAlphaKey(0.57, 247 / 255);
+  gradient.addAlphaKey(0.057, 247 / 255);
 
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
@@ -219,7 +219,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   const curve = sizeOverLifetime.size.curve;
   const keys = curve.keys;
   keys[0].value = 0.153;
-  keys[1].value = 0.529;
+  keys[1].value = 1.0;
   curve.addKey(0.057, 0.37);
 
   particleRenderer.play();
