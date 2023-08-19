@@ -139,7 +139,7 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   keys[0].value = 0.153;
   keys[1].value = 0.529;
   curve.addKey(0.074, 0.428);
-  curve.addKey(0.55, 0.947);
+  curve.addKey(0.718, 0.957);
 
   // Texture sheet animation module
   textureSheetAnimation.enabled = true;
