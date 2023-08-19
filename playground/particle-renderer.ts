@@ -268,6 +268,8 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
     84 / 255
   );
 
+  main.gravityModifier.constant = -0.05;
+
   main.simulationSpace = ParticleSimulationSpace.World;
 
   main.scalingMode = ParticleScaleMode.Hierarchy;
@@ -305,7 +307,7 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   const keys = curve.keys;
   keys[0].value = 0.28;
   keys[1].value = 1.0;
-  // curve.addKey(0.057, 0.37);
+  curve.addKey(0.607, 0.909);
 
   // Texture sheet animation module
   textureSheetAnimation.enabled = true;
