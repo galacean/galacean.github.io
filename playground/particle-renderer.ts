@@ -101,28 +101,21 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D) {
 
   // generator.sizeOverLifetime.enabled = true;
 
+  // Color over lifetime module
   colorOverLifetime.enabled = true;
   colorOverLifetime.color.mode = ParticleGradientMode.Gradient;
-  colorOverLifetime.color.gradient.colorKeys[0].color.set(
-    255 / 255,
-    127 / 255,
-    4 / 255,
-    1.0
-  );
-  colorOverLifetime.color.gradient.colorKeys[1].time = 0.998;
-  colorOverLifetime.color.gradient.colorKeys[1].color.set(
-    255 / 255,
-    123 / 255,
-    0 / 255,
-    1.0
-  );
-  colorOverLifetime.color.gradient.addColorKey(0.157, new Color(1, 1, 1, 1));
-  colorOverLifetime.color.gradient.addColorKey(
-    0.573,
-    new Color(255 / 255, 255 / 255, 137 / 255, 1)
-  );
 
-  colorOverLifetime.color.gradient.addAlphaKey(0.089, 1.0);
+  const gradient = colorOverLifetime.color.gradient;
+  const colorKeys = gradient.colorKeys;
+
+  colorKeys[0].color.set(255 / 255, 127 / 255, 4 / 255, 1.0);
+  colorKeys[1].time = 0.998;
+  colorKeys[1].color.set(255 / 255, 123 / 255, 0 / 255, 1.0);
+
+  gradient.addColorKey(0.157, new Color(1, 1, 1, 1));
+  gradient.addColorKey(0.573, new Color(255 / 255, 255 / 255, 137 / 255, 1));
+
+  gradient.alphaKeys[1].time = 0.089;
 
   particleRenderer.play();
 }
