@@ -347,8 +347,14 @@ function createFireEmbersParticle(
   particleRenderer.setMaterial(material);
 
   const generator = particleRenderer.generator;
-  const { main, shape, emission, sizeOverLifetime, colorOverLifetime } =
-    generator;
+  const {
+    main,
+    shape,
+    emission,
+    sizeOverLifetime,
+    colorOverLifetime,
+    velocityOverLifetime,
+  } = generator;
 
   // Main module
   main.duration = 3;
@@ -381,6 +387,20 @@ function createFireEmbersParticle(
   const sphereShape = new SphereShape();
   sphereShape.radius = 0.01;
   shape.shape = sphereShape;
+
+  // Velocity over lifetime module
+  velocityOverLifetime.enabled = true;
+  velocityOverLifetime.x.constantMin = -0.1;
+  velocityOverLifetime.x.constantMax = 0.1;
+  velocityOverLifetime.x.mode = ParticleCurveMode.TwoConstants;
+
+  velocityOverLifetime.y.constantMin = -0.1;
+  velocityOverLifetime.y.constantMax = 0.1;
+  velocityOverLifetime.y.mode = ParticleCurveMode.TwoConstants;
+
+  velocityOverLifetime.z.constantMin = -0.1;
+  velocityOverLifetime.z.constantMax = 0.1;
+  velocityOverLifetime.z.mode = ParticleCurveMode.TwoConstants;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
