@@ -20,6 +20,7 @@ import {
   ParticleRenderer,
   ParticleScaleMode,
   ParticleSimulationSpace,
+  SphereShape,
   Texture2D,
   Vector2,
   Vector3,
@@ -373,15 +374,13 @@ function createFireEmbersParticle(
   emission.rateOverTime.constant = 65;
   emission.addBurst(new Burst(0, new ParticleCompositeCurve(15)));
 
-  // @todo
   // Shape module
-  const coneShape = new ConeShape();
-  coneShape.angle = 10;
-  coneShape.radius = 0.1;
-  shape.shape = coneShape;
+  const sphereShape = new SphereShape();
+  sphereShape.radius = 0.01;
+  shape.shape = sphereShape;
 
   // Color over lifetime module
-  colorOverLifetime.enabled = true;
+  // colorOverLifetime.enabled = true;
   colorOverLifetime.color.mode = ParticleGradientMode.Gradient;
 
   const gradient = colorOverLifetime.color.gradient;
@@ -400,15 +399,10 @@ function createFireEmbersParticle(
 
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
-  sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
-  sizeOverLifetime.size.curve.keys[0].value = 1;
-  sizeOverLifetime.size.curve.keys[1].value = 0;
-
   const curve = sizeOverLifetime.size.curve;
-  const keys = curve.keys;
-  keys[0].value = 0.28;
-  keys[1].value = 1.0;
-  curve.addKey(0.607, 0.909);
+  sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
+  curve.keys[0].value = 1;
+  curve.keys[1].value = 0;
 
   particleRenderer.play();
 }
