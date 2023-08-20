@@ -354,6 +354,7 @@ function createFireEmbersParticle(
     sizeOverLifetime,
     colorOverLifetime,
     velocityOverLifetime,
+    rotationOverLifetime,
   } = generator;
 
   // Main module
@@ -429,6 +430,15 @@ function createFireEmbersParticle(
   sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
   curve.keys[0].value = 1;
   curve.keys[1].value = 0;
+
+  // Rotation over lifetime module
+  rotationOverLifetime.enabled = true;
+  rotationOverLifetime.z.mode = ParticleCurveMode.TwoConstants;
+  rotationOverLifetime.z.constantMin = 90;
+  rotationOverLifetime.z.constantMax = 360;
+
+  // Renderer
+  particleRenderer.pivot = new Vector3(-0.2, -0.2, 0);
 
   particleRenderer.play();
 }
