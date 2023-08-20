@@ -420,9 +420,10 @@ function createFireEmbersParticle(
   gradientMin.addColorKey(1.0, new Color(255 / 255, 94 / 255, 0 / 255, 1.0));
 
   gradientMin.addAlphaKey(0.0, 1);
+  gradientMin.addAlphaKey(0.229, 1);
   gradientMin.addAlphaKey(0.621, 0);
   gradientMin.addAlphaKey(0.659, 1);
-  gradientMin.addAlphaKey(1.0, 1);
+
 
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
@@ -438,7 +439,7 @@ function createFireEmbersParticle(
   rotationOverLifetime.z.constantMax = 360;
 
   // Renderer
-  particleRenderer.pivot = new Vector3(-0.2, -0.2, 0);
+  particleRenderer.pivot = new Vector3(0.2, 0.2, 0);
 
   particleRenderer.play();
 }
