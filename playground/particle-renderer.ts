@@ -147,8 +147,8 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   const keys = curve.keys;
   keys[0].value = 0.153;
   keys[1].value = 0.529;
-  curve.addKey(0.074, 0.428);
-  curve.addKey(0.718, 0.957);
+  curve.addKey(0.074, 0.428 + 0.2);
+  curve.addKey(0.718, 0.957 + 0.03);
 
   // Texture sheet animation module
   textureSheetAnimation.enabled = true;
@@ -420,7 +420,6 @@ function createFireEmbersParticle(
   gradientMin.addAlphaKey(0.229, 1);
   gradientMin.addAlphaKey(0.621, 0);
   gradientMin.addAlphaKey(0.659, 1);
-
 
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
