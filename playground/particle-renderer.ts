@@ -118,7 +118,6 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   main.simulationSpace = ParticleSimulationSpace.World;
 
   // Emission module
-  emission.enabled = false;
   emission.rateOverTime.constant = 35;
 
   // Shape module
@@ -204,7 +203,6 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   main.scalingMode = ParticleScaleMode.Hierarchy;
 
   // Emission module
-  emission.enabled = false;
   emission.rateOverTime.constant = 20;
 
   // Shape module
@@ -287,7 +285,6 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   main.scalingMode = ParticleScaleMode.Hierarchy;
 
   // Emission module
-  emission.enabled = false;
   emission.rateOverTime.constant = 25;
 
   // Shape module
