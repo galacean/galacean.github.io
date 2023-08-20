@@ -396,7 +396,7 @@ function createFireEmbersParticle(
   const gradientMin = colorOverLifetime.color.gradientMin;
   gradientMin.addColorKey(0.0, new Color(1.0, 1.0, 1.0, 1.0));
   gradientMin.addColorKey(0.486, new Color(255 / 255, 203 / 255, 0 / 255, 1.0));
-  gradientMin.addColorKey(1.0, new Color(255 / 255, 94 / 255, 0, 1.0));
+  gradientMin.addColorKey(1.0, new Color(255 / 255, 94 / 255, 0 / 255, 1.0));
 
   gradientMin.addAlphaKey(0.0, 1);
   gradientMin.addAlphaKey(0.621, 0);
