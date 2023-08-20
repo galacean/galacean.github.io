@@ -24,7 +24,7 @@ import {
   Vector2,
   Vector3,
   WebGLEngine,
-  WebGLMode
+  WebGLMode,
 } from "@galacean/engine";
 
 // Create engine
@@ -120,9 +120,10 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   emission.rateOverTime.constant = 35;
 
   // Shape module
-  const coneShape = <ConeShape>shape.shape;
+  const coneShape = new ConeShape();
   coneShape.angle = 0.96;
   coneShape.radius = 0.01;
+  shape.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -204,9 +205,10 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   emission.rateOverTime.constant = 20;
 
   // Shape module
-  const coneShape = <ConeShape>shape.shape;
+  const coneShape = new ConeShape();
   coneShape.angle = 15;
   coneShape.radius = 0.01;
+  shape.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -285,9 +287,10 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   emission.rateOverTime.constant = 25;
 
   // Shape module
-  const coneShape = <ConeShape>shape.shape;
+  const coneShape = new ConeShape();
   coneShape.angle = 10;
   coneShape.radius = 0.1;
+  shape.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -372,9 +375,10 @@ function createFireEmbersParticle(
 
   // @todo
   // Shape module
-  const coneShape = <ConeShape>shape.shape;
+  const coneShape = new ConeShape();
   coneShape.angle = 10;
   coneShape.radius = 0.1;
+  shape.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
