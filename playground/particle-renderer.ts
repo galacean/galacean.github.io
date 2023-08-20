@@ -20,6 +20,8 @@ import {
   ParticleRenderer,
   ParticleScaleMode,
   ParticleSimulationSpace,
+  PointerButton,
+  Script,
   SphereShape,
   Texture2D,
   Vector2,
@@ -72,6 +74,7 @@ WebGLEngine.create({
       createFireGlowParticle(fireEntity, <Texture2D>textures[1]);
       createFireSmokeParticle(fireEntity, <Texture2D>textures[2]);
       createFireEmbersParticle(fireEntity, <Texture2D>textures[3]);
+      fireEntity.addComponent(FireMoveScript);
     });
 });
 
@@ -438,4 +441,18 @@ function createFireEmbersParticle(
   particleRenderer.pivot = new Vector3(0.2, 0.2, 0);
 
   particleRenderer.play();
+}
+
+class FireMoveScript extends Script {
+  radius: number = 0.8;
+  angle: number = 0;
+
+  onUpdate(deltaTime: number): void {
+    if (this.engine.inputManager.isPointerHeldDown(PointerButton.Primary)) {
+      this.angle -= deltaTime * 6.0;
+      const x = Math.cos(this.angle) * this.radius;
+      const y = Math.sin(this.angle) * this.radius;
+      this.entity.transform.setPosition(x, 0, 0);
+    }
+  }
 }
