@@ -118,6 +118,7 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   main.simulationSpace = ParticleSimulationSpace.World;
 
   // Emission module
+  emission.enabled = false;
   emission.rateOverTime.constant = 35;
 
   // Shape module
@@ -203,6 +204,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   main.scalingMode = ParticleScaleMode.Hierarchy;
 
   // Emission module
+  emission.enabled = false;
   emission.rateOverTime.constant = 20;
 
   // Shape module
@@ -285,6 +287,7 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   main.scalingMode = ParticleScaleMode.Hierarchy;
 
   // Emission module
+  emission.enabled = false;
   emission.rateOverTime.constant = 25;
 
   // Shape module
@@ -380,22 +383,25 @@ function createFireEmbersParticle(
   shape.shape = sphereShape;
 
   // Color over lifetime module
-  // colorOverLifetime.enabled = true;
-  colorOverLifetime.color.mode = ParticleGradientMode.Gradient;
+  colorOverLifetime.enabled = true;
+  colorOverLifetime.color.mode = ParticleGradientMode.TwoGradients;
 
-  const gradient = colorOverLifetime.color.gradient;
-  const colorKeys = gradient.colorKeys;
-  colorKeys[0].time = 0;
-  colorKeys[0].color.set(255 / 255, 98 / 255, 0 / 255, 1.0);
-  colorKeys[1].time = 0.679;
-  colorKeys[1].color.set(0, 0, 0, 1.0);
-  gradient.addColorKey(0.515, new Color(255 / 255, 98 / 255, 0 / 255, 1.0));
+  const gradientMax = colorOverLifetime.color.gradientMax;
+  const maxColorKeys = gradientMax.colorKeys;
+  maxColorKeys[0].time = 0.315;
+  maxColorKeys[1].time = 0.998;
+  maxColorKeys[1].color.set(255 / 255, 92 / 255, 0, 1.0);
+  gradientMax.addColorKey(0.71, new Color(255 / 255, 203 / 255, 0 / 255, 1.0));
 
-  const alphaKeys = gradient.alphaKeys;
-  alphaKeys[0].alpha = 0;
-  alphaKeys[1].alpha = 0;
-  gradient.addAlphaKey(0.121, 1);
-  gradient.addAlphaKey(0.329, 200 / 255);
+  const gradientMin = colorOverLifetime.color.gradientMin;
+  gradientMin.addColorKey(0.0, new Color(1.0, 1.0, 1.0, 1.0));
+  gradientMin.addColorKey(0.486, new Color(255 / 255, 203 / 255, 0 / 255, 1.0));
+  gradientMin.addColorKey(1.0, new Color(255 / 255, 94 / 255, 0, 1.0));
+
+  gradientMin.addAlphaKey(0.0, 1);
+  gradientMin.addAlphaKey(0.621, 0);
+  gradientMin.addAlphaKey(0.659, 1);
+  gradientMin.addAlphaKey(1.0, 1);
 
   // Size over lifetime module
   sizeOverLifetime.enabled = true;
