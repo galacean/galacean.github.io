@@ -90,6 +90,7 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   material.blendMode = BlendMode.Additive;
   material.baseTexture = texture;
   particleRenderer.setMaterial(material);
+  particleRenderer.priority = 2;
 
   const generator = particleRenderer.generator;
   const {
@@ -160,8 +161,6 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   frameOverTime.mode = ParticleCurveMode.TwoCurves;
   frameOverTime.curveMin = new ParticleCurve(new Key(0, 0.47), new Key(1, 1));
 
-  particleRenderer.priority = 2;
-
   return particleEntity;
 }
 
@@ -174,6 +173,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   material.blendMode = BlendMode.Additive;
   material.baseTexture = texture;
   particleRenderer.setMaterial(material);
+  particleRenderer.priority = 1;
 
   const generator = particleRenderer.generator;
   const { main, shape, emission, sizeOverLifetime, colorOverLifetime } =
@@ -238,8 +238,6 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   keys[1].value = 1.0;
   curve.addKey(0.057, 0.37);
   curve.addKey(0.728, 0.958);
-
-  particleRenderer.priority = 1;
 }
 
 function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
@@ -250,6 +248,7 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   const material = new ParticleMaterial(fireEntity.engine);
   material.baseTexture = texture;
   particleRenderer.setMaterial(material);
+  particleRenderer.priority = 0;
 
   const generator = particleRenderer.generator;
   const {
@@ -329,8 +328,6 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   textureSheetAnimation.tiling = new Vector2(8, 8);
   const frameOverTime = textureSheetAnimation.frameOverTime;
   frameOverTime.curveMax.keys[1].value = 0.382;
-
-  particleRenderer.priority = 0;
 }
 
 function createFireEmbersParticle(
@@ -345,6 +342,7 @@ function createFireEmbersParticle(
   material.blendMode = BlendMode.Additive;
   material.baseTexture = texture;
   particleRenderer.setMaterial(material);
+  particleRenderer.priority = 3;
 
   const generator = particleRenderer.generator;
   const {
@@ -439,7 +437,6 @@ function createFireEmbersParticle(
 
   // Renderer
   particleRenderer.pivot = new Vector3(0.2, 0.2, 0);
-  particleRenderer.priority = 3;
 }
 
 class FireMoveScript extends Script {
