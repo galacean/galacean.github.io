@@ -161,7 +161,6 @@ function createFireParticle(rootEntity: Entity, texture: Texture2D): Entity {
   frameOverTime.curveMin = new ParticleCurve(new Key(0, 0.47), new Key(1, 1));
 
   particleRenderer.priority = 2;
-  particleRenderer.play();
 
   return particleEntity;
 }
@@ -241,7 +240,6 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   curve.addKey(0.728, 0.958);
 
   particleRenderer.priority = 1;
-  particleRenderer.play();
 }
 
 function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
@@ -333,7 +331,6 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   frameOverTime.curveMax.keys[1].value = 0.382;
 
   particleRenderer.priority = 0;
-  particleRenderer.play();
 }
 
 function createFireEmbersParticle(
@@ -443,8 +440,6 @@ function createFireEmbersParticle(
   // Renderer
   particleRenderer.pivot = new Vector3(0.2, 0.2, 0);
   particleRenderer.priority = 3;
-
-  particleRenderer.play();
 }
 
 class FireMoveScript extends Script {
