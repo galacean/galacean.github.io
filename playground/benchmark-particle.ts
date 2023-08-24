@@ -1,6 +1,6 @@
 /**
- * @title Particle Renderer
- * @category Particle
+ * @title Particle
+ * @category Benchmark
  */
 import {
   AssetType,
@@ -77,7 +77,13 @@ WebGLEngine.create({
       createFireEmbersParticle(fireEntity, <Texture2D>textures[3]);
       fireEntity.addComponent(FireMoveScript);
 
-      rootEntity.addChild(fireEntity);
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 5; j++) {
+          const cloneFire = fireEntity.clone();
+          cloneFire.transform.setPosition(i * 1 - 2, j - 1, -3);
+          rootEntity.addChild(cloneFire);
+        }
+      }
     });
 });
 
