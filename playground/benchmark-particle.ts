@@ -30,6 +30,7 @@ import {
   WebGLEngine,
   WebGLMode,
 } from "@galacean/engine";
+import { Stats } from "@galacean/engine-toolkit";
 
 // Create engine
 WebGLEngine.create({
@@ -47,6 +48,7 @@ WebGLEngine.create({
   const cameraEntity = rootEntity.createChild("camera_entity");
   cameraEntity.transform.position = new Vector3(0, 1, 3);
   const camera = cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(Stats);
   camera.fieldOfView = 60;
 
   engine.run();
@@ -75,12 +77,11 @@ WebGLEngine.create({
       createFireGlowParticle(fireEntity, <Texture2D>textures[1]);
       createFireSmokeParticle(fireEntity, <Texture2D>textures[2]);
       createFireEmbersParticle(fireEntity, <Texture2D>textures[3]);
-      fireEntity.addComponent(FireMoveScript);
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 5; j++) {
           const cloneFire = fireEntity.clone();
-          cloneFire.transform.setPosition(i * 1 - 2, j - 1, -3);
+          cloneFire.transform.setPosition(i * 1 - 1.5, j - 1, -3);
           rootEntity.addChild(cloneFire);
         }
       }
