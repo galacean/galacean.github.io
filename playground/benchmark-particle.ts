@@ -105,7 +105,6 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   const generator = particleRenderer.generator;
   const {
     main,
-    shape,
     emission,
     textureSheetAnimation,
     sizeOverLifetime,
@@ -134,11 +133,10 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   // Emission module
   emission.rateOverTime.constant = 35;
 
-  // Shape module
   const coneShape = new ConeShape();
   coneShape.angle = 0.96;
   coneShape.radius = 0.01;
-  shape.shape = coneShape;
+  emission.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -186,8 +184,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   particleRenderer.priority = 1;
 
   const generator = particleRenderer.generator;
-  const { main, shape, emission, sizeOverLifetime, colorOverLifetime } =
-    generator;
+  const { main, emission, sizeOverLifetime, colorOverLifetime } = generator;
 
   // Main module
   main.startLifetime.constantMin = 0.2;
@@ -218,11 +215,10 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   // Emission module
   emission.rateOverTime.constant = 20;
 
-  // Shape module
   const coneShape = new ConeShape();
   coneShape.angle = 15;
   coneShape.radius = 0.01;
-  shape.shape = coneShape;
+  emission.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -263,7 +259,6 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   const generator = particleRenderer.generator;
   const {
     main,
-    shape,
     emission,
     sizeOverLifetime,
     colorOverLifetime,
@@ -299,11 +294,10 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   // Emission module
   emission.rateOverTime.constant = 25;
 
-  // Shape module
   const coneShape = new ConeShape();
   coneShape.angle = 10;
   coneShape.radius = 0.1;
-  shape.shape = coneShape;
+  emission.shape = coneShape;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -357,7 +351,6 @@ function createFireEmbersParticle(
   const generator = particleRenderer.generator;
   const {
     main,
-    shape,
     emission,
     sizeOverLifetime,
     colorOverLifetime,
@@ -392,24 +385,23 @@ function createFireEmbersParticle(
   emission.rateOverTime.constant = 65;
   emission.addBurst(new Burst(0, new ParticleCompositeCurve(15)));
 
-  // Shape module
   const sphereShape = new SphereShape();
   sphereShape.radius = 0.01;
-  shape.shape = sphereShape;
+  emission.shape = sphereShape;
 
   // Velocity over lifetime module
   velocityOverLifetime.enabled = true;
-  velocityOverLifetime.x.constantMin = -0.1;
-  velocityOverLifetime.x.constantMax = 0.1;
-  velocityOverLifetime.x.mode = ParticleCurveMode.TwoConstants;
+  velocityOverLifetime.velocityX.constantMin = -0.1;
+  velocityOverLifetime.velocityX.constantMax = 0.1;
+  velocityOverLifetime.velocityX.mode = ParticleCurveMode.TwoConstants;
 
-  velocityOverLifetime.y.constantMin = -0.1;
-  velocityOverLifetime.y.constantMax = 0.1;
-  velocityOverLifetime.y.mode = ParticleCurveMode.TwoConstants;
+  velocityOverLifetime.velocityY.constantMin = -0.1;
+  velocityOverLifetime.velocityY.constantMax = 0.1;
+  velocityOverLifetime.velocityY.mode = ParticleCurveMode.TwoConstants;
 
-  velocityOverLifetime.z.constantMin = -0.1;
-  velocityOverLifetime.z.constantMax = 0.1;
-  velocityOverLifetime.z.mode = ParticleCurveMode.TwoConstants;
+  velocityOverLifetime.velocityZ.constantMin = -0.1;
+  velocityOverLifetime.velocityZ.constantMax = 0.1;
+  velocityOverLifetime.velocityZ.mode = ParticleCurveMode.TwoConstants;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
@@ -441,9 +433,9 @@ function createFireEmbersParticle(
 
   // Rotation over lifetime module
   rotationOverLifetime.enabled = true;
-  rotationOverLifetime.z.mode = ParticleCurveMode.TwoConstants;
-  rotationOverLifetime.z.constantMin = 90;
-  rotationOverLifetime.z.constantMax = 360;
+  rotationOverLifetime.rotationZ.mode = ParticleCurveMode.TwoConstants;
+  rotationOverLifetime.rotationZ.constantMin = 90;
+  rotationOverLifetime.rotationZ.constantMax = 360;
 
   // Renderer
   particleRenderer.pivot = new Vector3(0.2, 0.2, 0);
