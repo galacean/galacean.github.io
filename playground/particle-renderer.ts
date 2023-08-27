@@ -9,9 +9,9 @@ import {
   Camera,
   Color,
   ConeShape,
+  CurveKey,
   Engine,
   Entity,
-  Key,
   Logger,
   ParticleCompositeCurve,
   ParticleCurve,
@@ -157,10 +157,10 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
 
   // Texture sheet animation module
   textureSheetAnimation.enabled = true;
-  textureSheetAnimation.tiling = new Vector2(6, 6);
+textureSheetAnimation.tiling = new Vector2(6, 6);
   const frameOverTime = textureSheetAnimation.frameOverTime;
   frameOverTime.mode = ParticleCurveMode.TwoCurves;
-  frameOverTime.curveMin = new ParticleCurve(new Key(0, 0.47), new Key(1, 1));
+  frameOverTime.curveMin = new ParticleCurve(new CurveKey(0, 0.47), new CurveKey(1, 1));
 
   return particleEntity;
 }
