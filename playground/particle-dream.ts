@@ -6,23 +6,17 @@ import {
   AssetType,
   BlendMode,
   BoxShape,
-  Burst,
   Camera,
   Color,
-  ConeShape,
   Engine,
   Entity,
   Logger,
-  ParticleCompositeCurve,
   ParticleCurveMode,
   ParticleGradientMode,
   ParticleMaterial,
+  ParticleRenderMode,
   ParticleRenderer,
-  ParticleScaleMode,
-  ParticleSimulationSpace,
-  SphereShape,
   Texture2D,
-  Vector2,
   Vector3,
   WebGLEngine,
   WebGLMode,
@@ -55,7 +49,7 @@ WebGLEngine.create({
         type: AssetType.Texture2D,
       },
       {
-        url: " https://mdn.alipayobjects.com/huamei_b4l2if/afts/img/A*JlayRa2WltYAAAAAAAAAAAAADil6AQ/original",
+        url: "https://mdn.alipayobjects.com/huamei_b4l2if/afts/img/A*eWTFRZPqfDMAAAAAAAAAAAAADil6AQ/original",
         type: AssetType.Texture2D,
       },
       {
@@ -69,7 +63,7 @@ WebGLEngine.create({
     ])
     .then((textures) => {
       const fireEntity = createDebrisParticle(engine, <Texture2D>textures[0]);
-      // createFireGlowParticle(fireEntity, <Texture2D>textures[1]);
+      createGlowParticle(fireEntity, <Texture2D>textures[1]);
       createSparksParticle(fireEntity, <Texture2D>textures[2]);
       createHighlightsParticle(fireEntity, <Texture2D>textures[3]);
 
@@ -153,10 +147,13 @@ function createDebrisParticle(engine: Engine, texture: Texture2D): Entity {
   return particleEntity;
 }
 
-function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
-  const particleEntity = fireEntity.createChild("FireGlow");
+function createGlowParticle(fireEntity: Entity, texture: Texture2D): void {
+  const particleEntity = fireEntity.createChild("Glow");
+  particleEntity.transform.position.set(-1.88, 0, 0);
 
   const particleRenderer = particleEntity.addComponent(ParticleRenderer);
+  particleRenderer.renderMode = ParticleRenderMode.StretchBillboard;
+  particleRenderer.lengthScale = 2;
 
   const material = new ParticleMaterial(fireEntity.engine);
   material.blendMode = BlendMode.Additive;
@@ -165,66 +162,62 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   particleRenderer.priority = 1;
 
   const generator = particleRenderer.generator;
-  const {
-    main,
-    emission,
-    velocityOverLifetime,
-    sizeOverLifetime,
-    colorOverLifetime,
-  } = generator;
+  const { main, emission, velocityOverLifetime, colorOverLifetime } = generator;
 
   // Main module
-  main.startLifetime.constantMin = 0.2;
-  main.startLifetime.constantMax = 0.6;
-  main.startLifetime.mode = ParticleCurveMode.TwoConstants;
+  main.startSpeed.constant = 0.0;
 
-  main.startSpeed.constantMin = 0.0;
-  main.startSpeed.constantMax = 1.4;
-  main.startSpeed.mode = ParticleCurveMode.TwoConstants;
-
-  main.startSize.constant = 1.2;
+  main.startSize.constantMin = 5;
+  main.startSize.constantMax = 9;
+  main.startSize.mode = ParticleCurveMode.TwoConstants;
 
   main.startRotation.constantMin = 0;
   main.startRotation.constantMax = 360;
   main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
-  main.startColor.constant = new Color(
-    255 / 255,
-    100 / 255,
+  main.startColor.constantMin = new Color(
     0 / 255,
-    168 / 255
+    157 / 255,
+    255 / 255,
+    64 / 255
   );
+  main.startColor.constantMax = new Color(
+    13 / 255,
+    255 / 255,
+    0 / 255,
+    128 / 255
+  );
+  main.startColor.mode = ParticleGradientMode.TwoConstants;
 
   // Emission module
-  emission.rateOverTime.constant = 20;
+  emission.rateOverTime.constant = 10;
 
-  const coneShape = new ConeShape();
-  coneShape.angle = 15;
-  coneShape.radius = 0.01;
-  emission.shape = coneShape;
+  const boxShape = new BoxShape();
+  boxShape.size.set(22, 1, 0);
+  emission.shape = boxShape;
+
+  // Velocity over lifetime module
+  velocityOverLifetime.enabled = true;
+  velocityOverLifetime.velocityX.constantMin = 2;
+  velocityOverLifetime.velocityX.constantMax = 1;
+  velocityOverLifetime.velocityX.mode = ParticleCurveMode.TwoConstants;
+
+  velocityOverLifetime.velocityY.constantMin = 4;
+  velocityOverLifetime.velocityY.constantMax = 2;
+  velocityOverLifetime.velocityY.mode = ParticleCurveMode.TwoConstants;
+
+  velocityOverLifetime.velocityZ.constantMin = 0;
+  velocityOverLifetime.velocityZ.constantMax = 0;
+  velocityOverLifetime.velocityZ.mode = ParticleCurveMode.TwoConstants;
 
   // Color over lifetime module
   colorOverLifetime.enabled = true;
   colorOverLifetime.color.mode = ParticleGradientMode.Gradient;
 
   const gradient = colorOverLifetime.color.gradient;
-  const colorKeys = gradient.colorKeys;
-  colorKeys[1].time = 0.998;
-  colorKeys[1].color.set(255 / 255, 50 / 255, 0 / 255, 1.0);
-
   gradient.alphaKeys[0].alpha = 0;
   gradient.alphaKeys[1].alpha = 0;
-
-  gradient.addAlphaKey(0.057, 247 / 255);
-
-  // Size over lifetime module
-  sizeOverLifetime.enabled = true;
-  sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
-
-  const curve = sizeOverLifetime.size.curve;
-  const keys = curve.keys;
-  keys[0].value = 1;
-  keys[1].value = 0;
+  gradient.addAlphaKey(0.2, 1.0);
 }
 
 function createSparksParticle(fireEntity: Entity, texture: Texture2D): void {
