@@ -1,5 +1,5 @@
 /**
- * @title Particle Renderer
+ * @title Particle Fire
  * @category Particle
  */
 import {
