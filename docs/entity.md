@@ -98,18 +98,6 @@ If duplicate name, use [findByPath](${api}core/Entity#findByPath) to find the en
 newEntity.findByPath("parent/child/grandson");
 ```
 
-#### Global Entity Search
-
-[Entity.findByName](${api}core/Entity#findByName) and [Entity.findByPath](${api}core/Entity#findByPath) are for global entity search. Its usage is similar to the above:
-
-```typescript
-Entity.findByName("model");
-```
-
-```typescript
-Entity.findByPath("container/model");
-```
-
 ### Component
 
 #### Get Component of an Entity
