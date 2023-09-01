@@ -16,17 +16,6 @@ label: Core
 
 ## initialization
 
-To initialize the Engine, you need to provide [Canvas](${docs}canvas)(**Canvas**) and the hardware rendering layer (**HardwareRenderer**).
-
-The Galacean Engine encapsulates the hardware rendering layer and manages the rendering capabilities of different platforms in a unified manner. You can also pass in the supported configurations to control the rendering capabilities of different platforms through the constructor of [HardwareRenderer](${api}core/IHardwareRenderer).
-
-```typescript
-const canvas = document.getElementById("canvas");
-const webCanvas = new WebCanvas(canvas);
-const webGLRenderer = new WebGLRenderer();
-const engine = new Engine(webCanvas, webGLRenderer);
-```
-
 In order to facilitate users to directly create a web-side engine, Galacean provides [WebGLEngine](${api}rhi-webgl/WebGLEngine):
 
 ```typescript
