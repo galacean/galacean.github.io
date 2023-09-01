@@ -15,19 +15,6 @@ label: Core
 
 ## 初始化
 
-初始化 Engine 需要提供 [画布](${docs}canvas-cn)（**Canvas**）和 硬件渲染层 （**HardwareRenderer**）。
-
-Galacean 引擎封装了硬件渲染层，将不同平台的渲染能力统一管理，还可以通过 [HardwareRenderer](${api}core/IHardwareRenderer) 的构造函数，传入支持的配置来控制不同平台的渲染能力。
-
-
-```typescript
-const canvas = document.getElementById("canvas");
-const webCanvas = new WebCanvas(canvas);
-const webGLRenderer = new WebGLRenderer();
-const engine = new Engine(webCanvas,webGLRenderer);
-```
-
-
 为了方便用户直接创建 web 端 engine，Galacean 提供了 [WebGLEngine](${api}rhi-webgl/WebGLEngine) ：
 
 ```typescript
