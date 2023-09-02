@@ -27,14 +27,12 @@ import {
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine,
-  WebGLMode,
+  WebGLEngine
 } from "@galacean/engine";
 
 // Create engine
 WebGLEngine.create({
   canvas: "canvas",
-  graphicDeviceOptions: { webGLMode: WebGLMode.WebGL1 },
 }).then((engine) => {
   Logger.enable();
   engine.canvas.resizeByClientSize();
@@ -157,10 +155,13 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
 
   // Texture sheet animation module
   textureSheetAnimation.enabled = true;
-textureSheetAnimation.tiling = new Vector2(6, 6);
+  textureSheetAnimation.tiling = new Vector2(6, 6);
   const frameOverTime = textureSheetAnimation.frameOverTime;
   frameOverTime.mode = ParticleCurveMode.TwoCurves;
-  frameOverTime.curveMin = new ParticleCurve(new CurveKey(0, 0.47), new CurveKey(1, 1));
+  frameOverTime.curveMin = new ParticleCurve(
+    new CurveKey(0, 0.47),
+    new CurveKey(1, 1)
+  );
 
   return particleEntity;
 }
@@ -177,8 +178,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   particleRenderer.priority = 1;
 
   const generator = particleRenderer.generator;
-  const { main, emission, sizeOverLifetime, colorOverLifetime } =
-    generator;
+  const { main, emission, sizeOverLifetime, colorOverLifetime } = generator;
 
   // Main module
   main.startLifetime.constantMin = 0.2;
