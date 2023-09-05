@@ -67,7 +67,7 @@ class FrameSpriteScript extends Script {
   /** Total frames. */
   private _totalFrames: number;
   /** Frame interval time, the unit of time is ms. */
-  private _frameInterval: number = 150;
+  private _frameInterval: number = 0.15;
 
   private _sprite: Sprite;
   private _curFrameIndex: number;
@@ -75,7 +75,7 @@ class FrameSpriteScript extends Script {
   private _birdTransform: Transform;
 
   onAwake(): void {
-    // Sprite sheet animation pictures have 4 rows and 4 columns, if you modify the picture, please modify this.
+    // Sprite sheet animation pictures have 3 rows and 1 columns, if you modify the picture, please modify this.
     const row = 3;
     const col = 1;
     const reciprocalSliceWidth = 1 / row;

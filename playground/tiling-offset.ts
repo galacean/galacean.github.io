@@ -2,8 +2,6 @@
  * @title Tiling Offset
  * @category Material
  */
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import * as dat from "dat.gui";
 import {
   AssetType,
   Camera,
@@ -14,12 +12,14 @@ import {
   Texture2D,
   UnlitMaterial,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import * as dat from "dat.gui";
 
 main();
 
-async function main(): void {
+async function main() {
   // Create engine object
   const engine = await WebGLEngine.create({ canvas: "canvas" });
   engine.canvas.resizeByClientSize();
@@ -28,7 +28,7 @@ async function main(): void {
   engine.resourceManager
     .load<Texture2D>({
       url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*Umw_RJGiZLYAAAAAAAAAAAAAARQnAQ",
-      type: AssetType.Texture2D,
+      type: AssetType.Texture2D
     })
     .then((texture) => {
       const scene = engine.sceneManager.activeScene;
@@ -70,10 +70,7 @@ async function main(): void {
 /**
  * Add data GUI.
  */
-function addDataGUI(
-  material: UnlitMaterial,
-  animationScript: AnimateScript
-): any {
+function addDataGUI(material: UnlitMaterial, animationScript: AnimateScript): any {
   const gui = new dat.GUI();
   const guiData = {
     tilingX: 1,
@@ -92,7 +89,7 @@ function addDataGUI(
     },
     resume: function () {
       animationScript.enabled = true;
-    },
+    }
   };
 
   gui
@@ -131,6 +128,7 @@ function addDataGUI(
  */
 class AnimateScript extends Script {
   guiData: any;
+  material: UnlitMaterial;
 
   /**
    * The main loop, called frame by frame.
@@ -138,9 +136,7 @@ class AnimateScript extends Script {
    */
   onUpdate(deltaTime: number): void {
     const { material, guiData } = this;
-    material.tilingOffset.x = guiData.tilingX =
-      ((guiData.tilingX - 1 + deltaTime * 0.001) % 9) + 1;
-    material.tilingOffset.y = guiData.tilingY =
-      ((guiData.tilingY - 1 + deltaTime * 0.001) % 9) + 1;
+    material.tilingOffset.x = guiData.tilingX = ((guiData.tilingX - 1 + deltaTime) % 9) + 1;
+    material.tilingOffset.y = guiData.tilingY = ((guiData.tilingY - 1 + deltaTime) % 9) + 1;
   }
 }
