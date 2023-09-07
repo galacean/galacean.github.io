@@ -142,7 +142,7 @@ function createSpring(
   springJoint.connectedAnchor = position;
   springJoint.swingOffset = new Vector3(0, 1, 0);
   springJoint.maxDistance = 2;
-  springJoint.stiffness = 0.2;
+  springJoint.stiffness = 10;
   springJoint.damping = 1;
 }
 
