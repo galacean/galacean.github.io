@@ -211,6 +211,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
 
   useEffect(() => {
     fetchMenuList('example', version).then((list) => {
+      idTitleMapRef.current.clear();
+
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -290,6 +292,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             nav: DocToc,
             blockquote({ className, src }: any) {
               if (className === 'playground-in-doc') {
+                console.log(src, getIdByTitle(src))
                 return <Playground id={getIdByTitle(src) || ''} title={docTitle} embed={true} />;
               }
               return null;
