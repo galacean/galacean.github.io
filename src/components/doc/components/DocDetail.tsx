@@ -238,6 +238,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         setDocData(res);
       });
     }
+    else {
+        setDocData(null);
+    }
   }, [props.selectedDocId]);
 
   if (!docData || !menuFetched) {
