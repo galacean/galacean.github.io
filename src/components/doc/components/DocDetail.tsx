@@ -211,6 +211,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
 
   useEffect(() => {
     fetchMenuList('example', version).then((list) => {
+      idTitleMapRef.current.clear();
+
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -235,6 +237,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
       fetchDocDataById(props.selectedDocId).then((res) => {
         setDocData(res);
       });
+    }
+    else {
+        setDocData(null);
     }
   }, [props.selectedDocId]);
 
