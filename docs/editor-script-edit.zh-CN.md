@@ -83,3 +83,37 @@ export default class extends Script {
 
 ### 事件调试面板
 事件通信区给开发者提供了方便的事件收发测试能力，帮助开发者方便的调试项目，详见[事件通信](${docs}editor-script-communication-cn)。
+
+## 引入依赖包
+
+当前的脚本编辑器暂不支持依赖包管理，如需引入外部依赖包，可按以下流程操作。
+
+### 外部依赖包代码
+
+以 [第一个游戏](${docs}first-game-cn) 依赖的 `@tweenjs/tween.js` 为例，**首先**需在对应的[包管理网站](https://www.npmjs.com/)上搜索包名：
+
+![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*MF67QZFZXt8AAAAAAAAAAAAADleLAQ/original)
+
+**找到依赖库后**，点击 `Versions` 标签选择需要依赖包的版本（只需点选 `Version History` 下相应版本即可）。
+
+![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YzUsQ50BLWQAAAAAAAAAAAAADleLAQ/original)
+
+**确定版本后**，点击 `Code` 标签，找到需要的代码文件（此处我们使用 **esm** 产物）。
+
+![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*kKS_Tb8E2wQAAAAAAAAAAAAADleLAQ/original)
+
+### 创建 & 拷贝
+
+按照 [创建脚本](${docs}editor-script-creation-cn) 的流程创建脚本，并将依赖包的代码拷贝至脚本中：
+
+![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*CfrYQ7rt9iwAAAAAAAAAAAAADleLAQ/original)
+
+### 引入
+
+只要 `TweenJS.ts` 中 export 的对象都可以供外部使用，引入方式如下：
+
+```
+import { update, Tween, Easing } from "./TweenJS";
+```
+
+![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*OxC1TKEE4K8AAAAAAAAAAAAADleLAQ/original)

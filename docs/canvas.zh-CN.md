@@ -28,15 +28,6 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 console.log(engine.canvas) // => WebCanvas 实例
 ```
 
-如果你希望手动创建 canvas，需要多写几行代码，这和上面的代码是等效的：
-
-```typescript
-const canvas = document.getElementById("canvas");
-const webCanvas = new WebCanvas(canvas);
-const webGLRenderer = new WebGLRenderer();
-const engine = new Engine(webCanvas,webGLRenderer);
-```
-
 ### 基础适配
 
 以下代码会根据 canvas 元素的 css 样式自动适配。当画布的显示尺寸发生变化时（比如浏览器窗口发生变化时），画面可能出现拉伸或压缩，也可以调用`resizeByClientSize` 来恢复正常。
