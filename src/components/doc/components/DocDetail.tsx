@@ -188,6 +188,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
   const { lang, version } = useContext(AppContext);
   const { docTitle } = useParams();
   const [docData, setDocData] = useState<DocData | null>(null);
+  const [menuFetched, setMenuFetched] =  useState(false);
   const idTitleMapRef = useRef<Map<string, string>>(new Map());
 
   const getIdByTitle = (title: string) => {
@@ -210,6 +211,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
 
   useEffect(() => {
     fetchMenuList('example', version).then((list) => {
+      idTitleMapRef.current.clear();
+
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -224,6 +227,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
               });
           }
         });
+
+        setMenuFetched(true);
     });
   }, [version]);
 
@@ -233,12 +238,14 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         setDocData(res);
       });
     }
+    else {
+        setDocData(null);
+    }
   }, [props.selectedDocId]);
 
-  if (!docData) {
+  if (!docData || !menuFetched) {
     return null;
   }
-
 
   return (
     <StyledMarkdown>

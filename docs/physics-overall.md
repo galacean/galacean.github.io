@@ -36,7 +36,7 @@ const engine = await WebGLEngine.create({
 ## PhysX version physics engine loading and initialization
 
 ```typescript
-import { PhysXPhysics } from "@oasis-engine/physics-physx";
+import { PhysXPhysics } from "@galacean/engine-physics-physx";
 
 const engine = await WebGLEngine.create({
   canvas: htmlCanvas,
