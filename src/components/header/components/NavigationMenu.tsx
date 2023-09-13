@@ -4,11 +4,13 @@ import { useIntl } from 'react-intl';
 import { AppContext } from '../../contextProvider';
 
 const StyledRoot = styled(Flex, {
+  margin: "0 $2"
 });
 
 const StyledItem = styled("div", {
   fontSize: "$2",
-  padding: "0 $2"
+  padding: "0 $1",
+  cursor: "pointer"
 })
 
 const StyledLink = styled("a", {
