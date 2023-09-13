@@ -3,192 +3,295 @@
  * @category Material
  */
 import {
-  AssetType,
-  Camera,
   Color,
-  Engine,
-  Entity,
   Material,
-  MeshRenderer,
-  ModelMesh,
-  PrimitiveMesh,
-  Script,
   Shader,
-  Texture2D,
+  ShaderProperty,
   Vector3,
+  Animator,
+  BlinnPhongMaterial,
+  Camera,
+  DirectLight,
+  GLTFResource,
+  Logger,
+  MeshRenderer,
+  PrimitiveMesh,
   WebGLEngine,
 } from '@galacean/engine';
+import { OrbitControl } from '@galacean/engine-toolkit-controls';
 import { ShaderLab } from '@galacean/engine-shader-lab';
 
 // Create ShaderLab
 const shaderLab = new ShaderLab();
 
-main();
-
-async function main() {
-  // Create engine
-  const engine = await WebGLEngine.create({ canvas: 'canvas', shaderLab });
+Logger.enable();
+WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   engine.canvas.resizeByClientSize();
+  const scene = engine.sceneManager.activeScene;
+  const rootEntity = scene.createRootEntity();
 
-  // Custom shader
-  const shaderSource = `
-  Shader "Water" {
-    SubShader {
-      Pass "Water" {
-        struct Attributes {
-          vec4 POSITION;
-          vec2 TEXCOORD_0; 
-        }
+  const cameraEntity = rootEntity.createChild('camera_node');
+  cameraEntity.transform.setPosition(0, 1, 5);
+  cameraEntity.addComponent(Camera);
+  cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
-        struct Varyings {
-          vec2 uv;
-          vec3 position;
-        }
+  const lightEntity = rootEntity.createChild('light_node');
+  lightEntity.addComponent(DirectLight);
+  lightEntity.transform.setPosition(-10, 10, 10);
+  lightEntity.transform.lookAt(new Vector3(0, 0, 0));
 
-        mat4 renderer_MVPMat;
-        mat4 renderer_MVMat;
+  const planeEntity = rootEntity.createChild('plane_node');
+  const renderer = planeEntity.addComponent(MeshRenderer);
+  renderer.mesh = PrimitiveMesh.createPlane(engine, 10, 10);
+  const planeMaterial = new BlinnPhongMaterial(engine);
+  planeMaterial.baseColor.set(1, 1.0, 0, 1.0);
+  renderer.setMaterial(planeMaterial);
 
-        sampler2D material_BaseTexture;
-        vec4 u_color;
-        vec4 u_fogColor;
-        float u_fogDensity;
+  engine.resourceManager
+    .load<GLTFResource>(
+      'https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb'
+    )
+    .then((asset) => {
+      const { defaultSceneRoot } = asset;
+      rootEntity.addChild(defaultSceneRoot);
+
+      const animator = defaultSceneRoot.getComponent(Animator);
+      animator.play(asset.animations[0].name);
+
+      const lightDirection = lightEntity.transform.worldForward;
+
+      const renderers = new Array<MeshRenderer>();
+      defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, renderers);
+
+      for (let i = 0, n = renderers.length; i < n; i++) {
+        const material = renderers[i].getMaterial();
+        PlanarShadowShaderFactory.replaceShader(material);
+        PlanarShadowShaderFactory.setShadowFalloff(material, 0.2);
+        PlanarShadowShaderFactory.setPlanarHeight(material, 0.01);
+        PlanarShadowShaderFactory.setLightDirection(material, lightDirection);
+        PlanarShadowShaderFactory.setShadowColor(
+          material,
+          new Color(0, 0, 0, 1.0)
+        );
+      }
+    });
+
+  engine.run();
+});
+
+class PlanarShadowShaderFactory {
+  private static _lightDirProp = ShaderProperty.getByName('u_lightDir');
+  private static _planarHeightProp = ShaderProperty.getByName('u_planarHeight');
+  private static _shadowColorProp = ShaderProperty.getByName(
+    'u_planarShadowColor'
+  );
+  private static _shadowFalloffProp = ShaderProperty.getByName(
+    'u_planarShadowFalloff'
+  );
+
+  /**
+   * Replace material Shader and initialization。
+   * @param material - Material to replace and initialization。
+   */
+  static replaceShader(material: Material) {
+    material.shader = Shader.find('PlanarShadow');
+
+    const shaderData = material.shaderData;
+    shaderData.setFloat(PlanarShadowShaderFactory._shadowFalloffProp, 0);
+    shaderData.setColor(
+      PlanarShadowShaderFactory._shadowColorProp,
+      new Color(1.0, 1.0, 1.0, 1.0)
+    );
+    shaderData.setVector3(
+      PlanarShadowShaderFactory._lightDirProp,
+      new Vector3(0, 0, 0)
+    );
+    shaderData.setFloat(PlanarShadowShaderFactory._planarHeightProp, 0);
+  }
+
+  /**
+   * Set planar height.
+   */
+  static setPlanarHeight(material: Material, value: number) {
+    material.shaderData.setFloat(
+      PlanarShadowShaderFactory._planarHeightProp,
+      value
+    );
+  }
+
+  /**
+   * Set light direction.
+   */
+  static setLightDirection(material: Material, value: Vector3) {
+    const lightDir = material.shaderData.getVector3(
+      PlanarShadowShaderFactory._lightDirProp
+    );
+    if (value !== lightDir) {
+      lightDir.copyFrom(value.normalize());
+    } else {
+      value.normalize();
+    }
+  }
+
+  /**
+   * Set shadow color
+   */
+  static setShadowColor(material: Material, value: Color) {
+    const shadowColor = material.shaderData.getColor(
+      PlanarShadowShaderFactory._shadowColorProp
+    );
+    if (value !== shadowColor) {
+      shadowColor.copyFrom(value);
+    }
+  }
+
+  /**
+   * Set Shadow falloff coefficient
+   */
+  static setShadowFalloff(material: Material, value: number) {
+    material.shaderData.setFloat(
+      PlanarShadowShaderFactory._shadowFalloffProp,
+      value
+    );
+  }
+}
+
+Shader.create(`Shader "PlanarShadow" {
+
+  SubShader "Default" {
+
+    UsePass "pbr/Default/Forward"
+
+    Pass "planarShadow" {
+      // render states
+      DepthState {
+        WriteEnabled = true;
+      }
+
+      BlendState blendState {
+        Enabled = true;
+        SourceColorBlendFactor = BlendFactor.SourceAlpha;
+        DestinationColorBlendFactor = BlendFactor.OneMinusSourceAlpha;
+        SourceAlphaBlendFactor = BlendFactor.One;
+        DestinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
+      }
+
+      StencilState {
+        Enabled = true;
+        ReferenceValue = 0;
+        CompareFunctionFront = CompareFunction.Equal;
+        CompareFunctionBack = CompareFunction.Equal;
+        FailOperationFront = StencilOperation.Keep;
+        FailOperationBack = StencilOperation.Keep;
+        ZFailOperationFront = StencilOperation.Keep;
+        ZFailOperationBack = StencilOperation.Keep;
+        PassOperationFront = StencilOperation.IncrementWrap;
+        PassOperationBack = StencilOperation.IncrementWrap;
+      }
+
+      BlendState = blendState;
+
+      RenderQueueType = RenderQueueType.Transparent;
+
+      vec3 u_lightDir;
+      float u_planarHeight;
+      vec4 u_planarShadowColor;
+      float u_planarShadowFalloff;
+
+      sampler2D renderer_JointSampler;
+      float renderer_JointCount;
+
+      mat4 renderer_ModelMat;
+      mat4 camera_VPMat;
+
+      #ifdef RENDERER_HAS_SKIN
+
+        #ifdef RENDERER_USE_JOINT_TEXTURE
+          mat4 getJointMatrix(sampler2D smp, float index) {
+              float base = index / renderer_JointCount;
+              float hf = 0.5 / renderer_JointCount;
+              float v = base + hf;
+
+              vec4 m0 = texture2D(smp, vec2(0.125, v ));
+              vec4 m1 = texture2D(smp, vec2(0.375, v ));
+              vec4 m2 = texture2D(smp, vec2(0.625, v ));
+              vec4 m3 = texture2D(smp, vec2(0.875, v ));
+
+              return mat4(m0, m1, m2, m3);
+          }
+        #elif defined(RENDERER_BLENDSHAPE_COUNT)
+            mat4 renderer_JointMatrix[ RENDERER_JOINTS_NUM ];
+        #endif
+      #endif
+
+      vec3 ShadowProjectPos(vec4 vertPos) {
+        vec3 shadowPos;
+
+        // get the world space coordinates of the vertex
+
+        vec3 worldPos = (renderer_ModelMat * vertPos).xyz;
         
-        VertexShader = vert;
-        FragmentShader = frag;
+        // world space coordinates of the shadow (the part below the ground is unchanged)
+        shadowPos.y = min(worldPos.y , u_planarHeight);
+        shadowPos.xz = worldPos.xz - u_lightDir.xz * max(0.0, worldPos.y - u_planarHeight) / u_lightDir.y;
 
-       
+        return shadowPos;
+      }
 
-        Varyings vert(Attributes input) {
-          Varyings v;
+      struct a2v {
+        vec4 POSITION;
+        vec4 JOINTS_0; 
+        vec4 WEIGHTS_0;
+      }
 
-          v.uv = input.TEXCOORD_0;
-          vec4 tmp = renderer_MVMat * POSITION;
-          v.position = tmp.xyz;
-          gl_Position = renderer_MVPMat * input.POSITION;
-          return v;
-        }
+      struct v2f {
+        vec4 color;
+      }
 
-        void frag(Varyings v) {
-          vec4 color = texture2D(material_BaseTexture, v.uv) * u_color;
-          float fogDistance = length(v.position);
-          float fogAmount = 1.0 - exp2(-u_fogDensity * u_fogDensity * fogDistance * fogDistance * 1.442695);
-          fogAmount = clamp(fogAmount, 0.0, 1.0);
-          gl_FragColor = mix(color, u_fogColor, fogAmount); 
-    
-          #ifndef ENGINE_IS_COLORSPACE_GAMMA
-            gl_FragColor = linearToGamma(gl_FragColor);
-          #endif
-        }
+      v2f vert(a2v v) {
+        v2f o;
 
-        vec4 linearToGamma(vec4 linearIn) {
-          return vec4(pow(linearIn.rgb, vec3(1.0 / 2.2)), linearIn.a);
-        }
+        vec4 position = vec4(v.POSITION.xyz, 1.0 );
+        #ifdef RENDERER_HAS_SKIN
+            #ifdef RENDERER_USE_JOINT_TEXTURE
+                mat4 skinMatrix =
+                    v.WEIGHTS_0.x * getJointMatrix(renderer_JointSampler, v.JOINTS_0.x ) +
+                    v.WEIGHTS_0.y * getJointMatrix(renderer_JointSampler, v.JOINTS_0.y ) +
+                    v.WEIGHTS_0.z * getJointMatrix(renderer_JointSampler, v.JOINTS_0.z ) +
+                    v.WEIGHTS_0.w * getJointMatrix(renderer_JointSampler, v.JOINTS_0.w );
+            #else
+                mat4 skinMatrix =
+                    v.WEIGHTS_0.x * renderer_JointMatrix[ int( v.JOINTS_0.x ) ] +
+                    v.WEIGHTS_0.y * renderer_JointMatrix[ int( v.JOINTS_0.y ) ] +
+                    v.WEIGHTS_0.z * renderer_JointMatrix[ int( v.JOINTS_0.z ) ] +
+                    v.WEIGHTS_0.w * renderer_JointMatrix[ int( v.JOINTS_0.w ) ];
+            #endif
+            position = skinMatrix * position;
+        #endif
+
+        // get the shadow's world space coordinates
+        vec3 shadowPos = ShadowProjectPos(position);
+
+        // convert to clip space
+        gl_Position = camera_VPMat * vec4(shadowPos, 1.0);
+
+        // get the world coordinates of the center point
+        vec3 center = vec3(renderer_ModelMat[3].x, u_planarHeight, renderer_ModelMat[3].z);
+        // calculate shadow falloff
+        float falloff = 0.5 - clamp(distance(shadowPos , center) * u_planarShadowFalloff, 0.0, 1.0);
+
+        // shadow color
+        o.color = u_planarShadowColor;
+        o.color.a *= falloff;
+      }
+      
+      VertexShader = vert;
+      FragmentShader = frag;
+
+      void frag(v2f i) {
+        gl_FragColor = i.color;
       }
     }
   }
-`;
-
-  // Init shader
-  Shader.create(shaderSource);
-
-  // Create root entity
-  const rootEntity = engine.sceneManager.activeScene.createRootEntity();
-
-  // Create camera
-  const cameraEntity = rootEntity.createChild('Camera');
-  cameraEntity.transform.setPosition(0, 10, 10);
-  cameraEntity.transform.lookAt(new Vector3(0, 8, 0));
-  const camera = cameraEntity.addComponent(Camera);
-  camera.farClipPlane = 2000;
-  camera.fieldOfView = 55;
-
-  createPlane(engine, rootEntity);
-
-  engine.run();
 }
-
-/**
- * Create a plane as a child of entity.
- */
-function createPlane(engine: Engine, entity: Entity): void {
-  engine.resourceManager
-    .load<Texture2D>({
-      url: 'https://gw.alipayobjects.com/mdn/rms_2e421e/afts/img/A*fRtNTKrsq3YAAAAAAAAAAAAAARQnAQ',
-      type: AssetType.Texture2D,
-    })
-    .then((texture) => {
-      const planeEntity = entity.createChild('plane');
-      const meshRenderer = planeEntity.addComponent(MeshRenderer);
-      const material = new Material(engine, Shader.find('Water'));
-
-      meshRenderer.mesh = PrimitiveMesh.createPlane(
-        engine,
-        1245,
-        1245,
-        100,
-        100,
-        false
-      );
-      meshRenderer.setMaterial(material);
-
-      planeEntity.addComponent(PlaneAnimation);
-
-      const { shaderData } = material;
-      shaderData.setTexture('material_BaseTexture', texture);
-      shaderData.setColor('u_fogColor', new Color(0.25, 0.25, 0.25, 1));
-      shaderData.setFloat('u_fogDensity', 0.004);
-      shaderData.setColor(
-        'u_color',
-        new Color(86 / 255, 182 / 255, 194 / 255, 1)
-      );
-    });
-}
-
-/**
- * Plane animation script.
- */
-class PlaneAnimation extends Script {
-  private _planeMesh: ModelMesh;
-  private _initZ: number[];
-  private _counter: number = 0;
-
-  /**
-   * @override
-   * Called when be enabled first time, only once.
-   */
-  onAwake(): void {
-    const renderer = this.entity.getComponent(MeshRenderer);
-    const mesh = <ModelMesh>renderer.mesh;
-    const { vertexCount } = mesh;
-    const positions = mesh.getPositions()!;
-    const initY = new Array<number>(vertexCount);
-
-    for (var i = 0; i < vertexCount; i++) {
-      const position = positions[i];
-      position.y += Math.random() * 10 - 10;
-      initY[i] = position.y;
-    }
-    this._initZ = initY;
-    this._planeMesh = mesh;
-  }
-
-  /**
-   * @override
-   * The main loop, called frame by frame.
-   * @param deltaTime - The deltaTime when the script update.
-   */
-  onUpdate(deltaTime: number): void {
-    const mesh = this._planeMesh;
-    let { _counter: counter, _initZ: initZ } = this;
-    const positions = mesh.getPositions()!;
-    for (let i = 0, n = positions.length; i < n; i++) {
-      const position = positions[i];
-      position.y =
-        Math.sin(i + counter * 0.00002) * (initZ[i] - initZ[i] * 0.6);
-      counter += 0.1;
-    }
-    mesh.setPositions(positions);
-    mesh.uploadData(false);
-    this._counter = counter;
-  }
-}
+`);
