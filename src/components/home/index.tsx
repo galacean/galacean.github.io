@@ -28,9 +28,7 @@ function Home() {
       <Banner />
       <Advantage />
       <Editor />
-      <Features />
       <Cases />
-      <Partners />
       <Footer></Footer>
     </>
   );

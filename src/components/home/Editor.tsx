@@ -1,5 +1,5 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
 import { Button, Flex, styled } from "@galacean/editor-ui";
+import { MagicWand } from "iconoir-react";
 import { FormattedMessage } from 'react-intl';
 
 const StyledEditor = styled("div", {
@@ -8,7 +8,7 @@ const StyledEditor = styled("div", {
     color: "$slate12",
     textAlign: "center",
     padding: "0 0 $4",
-    fontSize: "3rem"
+    fontSize: "2rem"
   }
 });
 
@@ -24,10 +24,10 @@ const StyledButton = styled(Button, {
 });
 
 const StyledP = styled("p", {
-  color: "$slate11",
   fontSize: "$2",
   padding: "0 $10",
-  lineHeight: "$5"
+  lineHeight: "$5",
+  fontWeight: 300
 })
 
 export default function Editor() {
@@ -40,13 +40,20 @@ export default function Editor() {
         <StyledP>
           <FormattedMessage id="app.home.editor.intro" />
         </StyledP>
-        <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
-          <StyledButton variant="light" size="lg" round>
-            <FormattedMessage id="app.home.editor.apply" />
-            <ArrowRightOutlined style={{ marginLeft: "5px" }} />
-          </StyledButton>
-        </a>
-        <StyledImg src="//mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*Y0BfRoL5p3AAAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
+        <Flex gap="lg">
+          <a href="https://galacean.antgroup.com/editor">
+            <StyledButton variant="primary" size="lg" round>
+              <MagicWand />&nbsp;
+              <FormattedMessage id="app.home.editor.use" />
+            </StyledButton>
+          </a>
+          <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
+            <StyledButton variant="light" size="lg" round>
+              <FormattedMessage id="app.home.editor.apply" />
+            </StyledButton>
+          </a>
+        </Flex>
+        <StyledImg src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*sxSySbfQHd0AAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
       </Flex>
     </StyledEditor>
   );

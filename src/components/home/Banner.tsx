@@ -24,8 +24,8 @@ const StyledHeading = styled("h1", {
 
 const StyledSlogan = styled("p", {
   fontSize: "1.2rem",
-  color: "$slate11",
   padding: "$5 0",
+  fontWeight: 300,
   '@media (max-width: 768px)': {
     fontSize: "$2"
   }
