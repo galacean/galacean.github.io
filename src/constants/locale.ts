@@ -28,7 +28,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.editor.docs": "编辑器文档",
     "app.header.menu.editor.docs.description":
       "面向美术和开发，编辑器的基础操作和引擎功能的可视化使用",
-    "app.header.menu.ecosystem": "生态系统",
+    "app.header.menu.ecosystem": "工具",
     "app.header.menu.ecosystem.tool": "工具",
     "app.header.menu.ecosystem.editor": "编辑器",
     "app.header.menu.ecosystem.editor.description":
@@ -169,7 +169,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.editor": "Editor",
     "app.header.menu.editor.docs.description":
       "For artists and developers, the basic operation of the editor and the visual usage of engine functions",
-    "app.header.menu.ecosystem": "Ecosystem",
+    "app.header.menu.ecosystem": "Tools",
     "app.header.menu.ecosystem.tool": "Tools",
     "app.header.menu.ecosystem.editor": "Editor",
     "app.header.menu.ecosystem.editor.description":
