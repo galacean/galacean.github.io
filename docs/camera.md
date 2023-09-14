@@ -105,6 +105,7 @@ Since in Galacean, the world coordinate system is a right-handed system, the pos
 ### Depth texture
 
 The camera can enable the depth texture through the [depthTextureMode]((${api}core/Camera#depthTextureMode)) attribute. After the depth texture is enabled, the depth texture can be accessed in the Shader through the `camera_DepthTexture` attribute. Depth textures can be used to achieve soft particles and water edge transitions, as well as some simple post-processing effects.
+Note: Depth textures only render non-transparent objects.
 
 <playground src="camera-depth-texture.ts"></playground>
 
