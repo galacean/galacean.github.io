@@ -75,7 +75,7 @@ In the above, we gave the material a shader, this time the program can start ren
 | renderer_ModelMat  | mat4 | model world Coordinate System Matrix |
 | renderer_MVMat     | mat4 | model viewport matrix                |
 | renderer_MVPMat    | mat4 | model viewport projection matrix     |
-| renderer_NormalMat | mat4 | normal inverse transpose matrix      |
+| renderer_NormalMat | mat4 | normal matrix      |
 
 #### Camera
 

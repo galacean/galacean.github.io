@@ -75,7 +75,7 @@ const material = new Material(engine, Shader.find("demo"));
 | renderer_ModelMat  | mat4 | 模型世界坐标系矩阵 |
 | renderer_MVMat     | mat4 | 模型视口矩阵       |
 | renderer_MVPMat    | mat4 | 模型视口投影矩阵   |
-| renderer_NormalMat | mat4 | 法线逆转置矩        |
+| renderer_NormalMat | mat4 | 法线矩阵        |
 
 #### 相机
 
