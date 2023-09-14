@@ -4,11 +4,8 @@
  */
 import {
   Color,
-  Material,
   Shader,
-  ShaderProperty,
   Vector3,
-  Animator,
   BlinnPhongMaterial,
   Camera,
   DirectLight,
@@ -31,7 +28,7 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   const rootEntity = scene.createRootEntity();
 
   const cameraEntity = rootEntity.createChild('camera_node');
-  cameraEntity.transform.setPosition(0, 1, 5);
+  cameraEntity.transform.setPosition(0, 3, 5);
   cameraEntity.addComponent(Camera);
   cameraEntity.addComponent(OrbitControl).target = new Vector3(0, 1, 0);
 
@@ -44,119 +41,46 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   const renderer = planeEntity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createPlane(engine, 10, 10);
   const planeMaterial = new BlinnPhongMaterial(engine);
-  planeMaterial.baseColor.set(1, 1.0, 0, 1.0);
+  planeMaterial.baseColor.set(1, 0, 1.0, 1.0);
   renderer.setMaterial(planeMaterial);
 
   engine.resourceManager
     .load<GLTFResource>(
-      'https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb'
+      'https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf'
     )
     .then((asset) => {
       const { defaultSceneRoot } = asset;
       rootEntity.addChild(defaultSceneRoot);
 
-      const animator = defaultSceneRoot.getComponent(Animator);
-      animator.play(asset.animations[0].name);
+      defaultSceneRoot.transform.setPosition(0, 1.5, 0);
+
+      // const animator = defaultSceneRoot.getComponent(Animator);
+      // animator.play(asset.animations[0].name);
 
       const lightDirection = lightEntity.transform.worldForward;
 
       const renderers = new Array<MeshRenderer>();
       defaultSceneRoot.getComponentsIncludeChildren(MeshRenderer, renderers);
 
+      const shadowShader = Shader.find('PlanarShadow');
+
       for (let i = 0, n = renderers.length; i < n; i++) {
         const material = renderers[i].getMaterial();
-        PlanarShadowShaderFactory.replaceShader(material);
-        PlanarShadowShaderFactory.setShadowFalloff(material, 0.2);
-        PlanarShadowShaderFactory.setPlanarHeight(material, 0.01);
-        PlanarShadowShaderFactory.setLightDirection(material, lightDirection);
-        PlanarShadowShaderFactory.setShadowColor(
-          material,
-          new Color(0, 0, 0, 1.0)
-        );
+        if (!material) continue;
+        material.shader = shadowShader;
+        const shaderData = material.shaderData;
+
+        shaderData.setFloat('u_planarShadowFalloff', 0.2);
+        shaderData.setFloat('u_planarHeight', 0.01);
+        shaderData.setColor('u_planarShadowColor', new Color(0, 0, 0, 1));
+        shaderData.setVector3('u_lightDir', lightDirection);
       }
     });
 
   engine.run();
 });
 
-class PlanarShadowShaderFactory {
-  private static _lightDirProp = ShaderProperty.getByName('u_lightDir');
-  private static _planarHeightProp = ShaderProperty.getByName('u_planarHeight');
-  private static _shadowColorProp = ShaderProperty.getByName(
-    'u_planarShadowColor'
-  );
-  private static _shadowFalloffProp = ShaderProperty.getByName(
-    'u_planarShadowFalloff'
-  );
-
-  /**
-   * Replace material Shader and initialization。
-   * @param material - Material to replace and initialization。
-   */
-  static replaceShader(material: Material) {
-    material.shader = Shader.find('PlanarShadow');
-
-    const shaderData = material.shaderData;
-    shaderData.setFloat(PlanarShadowShaderFactory._shadowFalloffProp, 0);
-    shaderData.setColor(
-      PlanarShadowShaderFactory._shadowColorProp,
-      new Color(1.0, 1.0, 1.0, 1.0)
-    );
-    shaderData.setVector3(
-      PlanarShadowShaderFactory._lightDirProp,
-      new Vector3(0, 0, 0)
-    );
-    shaderData.setFloat(PlanarShadowShaderFactory._planarHeightProp, 0);
-  }
-
-  /**
-   * Set planar height.
-   */
-  static setPlanarHeight(material: Material, value: number) {
-    material.shaderData.setFloat(
-      PlanarShadowShaderFactory._planarHeightProp,
-      value
-    );
-  }
-
-  /**
-   * Set light direction.
-   */
-  static setLightDirection(material: Material, value: Vector3) {
-    const lightDir = material.shaderData.getVector3(
-      PlanarShadowShaderFactory._lightDirProp
-    );
-    if (value !== lightDir) {
-      lightDir.copyFrom(value.normalize());
-    } else {
-      value.normalize();
-    }
-  }
-
-  /**
-   * Set shadow color
-   */
-  static setShadowColor(material: Material, value: Color) {
-    const shadowColor = material.shaderData.getColor(
-      PlanarShadowShaderFactory._shadowColorProp
-    );
-    if (value !== shadowColor) {
-      shadowColor.copyFrom(value);
-    }
-  }
-
-  /**
-   * Set Shadow falloff coefficient
-   */
-  static setShadowFalloff(material: Material, value: number) {
-    material.shaderData.setFloat(
-      PlanarShadowShaderFactory._shadowFalloffProp,
-      value
-    );
-  }
-}
-
-Shader.create(`Shader "PlanarShadow" {
+const PlanarShadowShaderSource = `Shader "PlanarShadow" {
 
   SubShader "Default" {
 
@@ -293,5 +217,6 @@ Shader.create(`Shader "PlanarShadow" {
       }
     }
   }
-}
-`);
+}`;
+
+Shader.create(PlanarShadowShaderSource);
