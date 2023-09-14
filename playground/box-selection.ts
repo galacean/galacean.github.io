@@ -1,6 +1,6 @@
 /**
  * @title Box Selection Controls
- * @category Camera
+ * @category Toolkit
  */
  import {
   Camera,
@@ -15,7 +15,6 @@ import { BoxSelectionComponent, BoxSelectionControls } from "@galacean/engine-to
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
   engine.run();
-  engine.canvas.resizeByClientSize();
 
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
