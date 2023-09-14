@@ -86,10 +86,11 @@ module.exports = {
       '@galacean/engine-toolkit-planar-shadow-material',
       '@galacean/engine-toolkit-skeleton-viewer',
       '@galacean/engine-toolkit-grid-material',
-      '@galacean/engine-toolkit-custom-material',
       '@galacean/engine-toolkit-navigation-gizmo',
       '@galacean/engine-toolkit-geometry-sketch',
       '@galacean/engine-toolkit-stats',
+      '@galacean/engine-toolkit-input-logger',
+      '@galacean/engine-toolkit-custom-material',
     ],
   },
 };

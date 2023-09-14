@@ -65,6 +65,14 @@ Pointer 则表示每个独立的光标实例，通过调用相关的方法可以
 
 ### Q & A
 
+#### 0. 为什么触控在 PC 端正常，但是在移动端异常
+
+在移动端，触控会触发 HTML 元素的默认行为，一旦触发默认行为，触控就会从元素上被移除（pointercancel），可以通过设置画布的 `touchAction` 解决：
+
+```typescript
+(engine.canvas._webCanvas as HTMLCanvasElement).style.touchAction = "none";
+```
+
 #### 1. 如何排查为何 Entity 没被触控点检测到？
 
 - **物理引擎**：请保证初始化引擎的同时初始化物理引擎。
