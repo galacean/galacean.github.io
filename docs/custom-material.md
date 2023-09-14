@@ -111,7 +111,7 @@ In the above, we gave the material a shader, this time the program can start ren
 
 In addition to the built-in variables, we can upload any variable with a custom name in the shader (it is recommended to use u\_\*\*, v\_\*\* to represent uniform and varying variables respectively), the only thing we have to do is using the correct interface according to the shader variable type. The upload interface is all in [ShaderData](${api}core/ShaderData), and the shaderData instance objects are saved in the four categories [Scene](${api}core/Scene), [Camera](${api}core/Camera), [Renderer](${api}core/Renderer), [Material](${api}core/Material) of the engine , we only need to call the interface in these shaderData, upload variables, and engine will automatically help us assemble these data at the bottom layer and optimize performance such as judging duplication.
 
-![image-20210722153638785](https://gw.alipayobjects.com/zos/OasisHub/fc605510-5b14-476f-8c91-03205c623b4b/image-20210722153638785.png)
+![original](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*vC3NTp2qOuAAAAAAAAAAAAAADleLAQ/original)
 
 ### ShaderData separate benefits
 
