@@ -69,7 +69,7 @@ In the above, we gave the material a shader, this time the program can start ren
 
 #### Renderer
 
-| camera_ViewMat     | mat4 | viewport matrix                      |
+| Name     | Type | Meaning                      |
 | :----------------- | :--- | ------------------------------------ |
 | renderer_LocalMat  | mat4 | model local coordinate system matrix |
 | renderer_ModelMat  | mat4 | model world Coordinate System Matrix |
