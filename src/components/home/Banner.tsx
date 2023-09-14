@@ -63,7 +63,7 @@ function Banner() {
           localStorage.setItem('version', stableVersion);
         }}>
           <Button variant="primary" size="lg" round>
-            {stableSpecificVersion}&nbsp;
+            {stableSpecificVersion.replace(/\.\d+/, '')}&nbsp;
             <FormattedMessage id='app.home.stable' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>
@@ -73,7 +73,7 @@ function Banner() {
           localStorage.setItem('version', betaVersion);
         }}>
           <Button variant="light" size="lg" round>
-            {betaSpecificVersion}&nbsp;
+            {betaSpecificVersion.replace(/\.\d+-beta\.\d+/, '')}&nbsp;
             <FormattedMessage id='app.home.beta' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>
