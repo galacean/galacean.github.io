@@ -5,36 +5,41 @@ type: 核心
 label: Core
 ---
 
-Scene 作为场景单元，可以方便场景的实体树管理，尤其是大型游戏场景。如，**scene1** 和 **scene2** 作为两个不同的场景，不需要同时加载激活和渲染，那么我们完全可以通过建模软件或者代码逻辑，将之划分为不同的场景，在不同的时机分别地激活相应场景，或者合并场景。
+Scene 作为场景单元，可以方便的进行实体树管理，尤其是大型游戏场景。如: **scene1** 和 **scene2** 作为两个不同的场景，可以各自独立管理其拥有的 **Entity** 树，因此场景下的光照组件、渲染组件和物理组件之间也互相隔离，互不影响。我们可以同时渲染一个或多个 Scene，也可以在特定时机下根据项目逻辑动态切换当前 Scene。
 
-每个 Engine 下面只会渲染一个激活的场景 `engine.sceneManager.activeScene`。每个 Scene 可以有多个根实体，我们通过 Scene 对象去管理整个实体树。
+从结构上每个 Engine 下可以包含一个和多个激活的场景。每个 Scene 可以有多个根实体。
 
 ## 场景管理
 
 | 属性名称                                           | 解释     |
 | :------------------------------------------------- | :------- |
-| [activeScene](${api}core/SceneManager#activeScene) | 激活场景 |
+| [scenes](${api}core/SceneManager#scenes) | 场景列表 |
 
 | 方法名称                                           | 解释     |
 | :------------------------------------------------- | :------- |
+| [addScene](${api}core/SceneManager#addScene) | 添加场景 |
+| [removeScene](${api}core/SceneManager#removeScene) | 移除场景 |
 | [mergeScenes](${api}core/SceneManager#mergeScenes) | 合并场景 |
 | [loadScene](${api}core/SceneManager#loadScene)     | 加载场景 |
 
 ### 基本用法
 
-#### 1. 激活 Scene
+#### 1. 添加/移除 Scene
 
-激活 **Scene** 很简单，只需要将想要激活的 **scene** 赋予到 `engine.sceneManager.activeScene` 上即可。
+添加和移除 **Scene** 很简单，只需要调用 `engine.sceneManager` 的 `addScene()` 和 `removeScene()` 即可，并且可以同时添加多个场景同时渲染。
 
 ```typescript
-// 假设已经有两个未激活的场景
+// 假设已经有两个场景
 const scene1, scene2;
 
-// 激活 场景1
-engine.sceneManager.activeScene = scene1;
+// 添加 场景1
+engine.sceneManager.addScene(scene1);
 
-// 激活 场景2
-engine.sceneManager.activeScene = scene2;
+// 添加 场景2
+engine.sceneManager.addScene(scene1);
+
+// 移除 场景2
+engine.sceneManager.removeScene(scene2);
 ```
 
 #### 2. 合并 Scene
@@ -49,7 +54,7 @@ const sourceScene, destScene;
 engine.sceneManager.mergeScenes(sourceScene, destScene);
 
 // 激活 destScene
-engine.sceneManager.activeScene = destScene;
+engine.sceneManager.addScene(destScene);
 ```
 
 #### 3. 加载 Scene
@@ -60,7 +65,7 @@ engine.sceneManager.activeScene = destScene;
 const sceneUrl = "...";
 
 engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
-  engine.sceneManager.activeScene = scene;
+  engine.sceneManager.addScene(scene);
 });
 
 ```
@@ -77,7 +82,7 @@ engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
 目前场景背景支持添加纯色、天空和纹理背景。纯色和天空相对简单，代码示例如下：
 
 ```typescript
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 const { background } = scene;
 
 // 添加纯色背景
@@ -119,7 +124,7 @@ Playground 示例如下：
 场景环境光（AmbientLight）设置：
 
 ```typescript
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 ```
 
@@ -129,7 +134,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 ```typescript
 const engine = await WebGLEngine.create({ canvas: "demo" });
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 
 // 创建根实体
 const rootEntity = scene.createRootEntity();
