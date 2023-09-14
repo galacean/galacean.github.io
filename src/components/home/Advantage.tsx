@@ -11,9 +11,9 @@ const StyledFeature = styled("div", {
     marginBottom: "$2"
   },
   "& p": {
-    color: "$slate11",
     lineHeight: 1.8,
-    fontSize: "$2"
+    fontSize: "$2",
+    fontWeight: 300,
   },
   '@media (max-width: 768px)': {
     padding: "0 $10 $6",
