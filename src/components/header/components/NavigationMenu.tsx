@@ -1,6 +1,7 @@
 import { DropdownMenu, Flex, MenuItem, styled } from "@galacean/editor-ui";
 import { useContext } from 'react';
 import { useIntl } from 'react-intl';
+import { Link } from 'react-router-dom';
 import { AppContext } from '../../contextProvider';
 
 const StyledRoot = styled(Flex, {
@@ -13,7 +14,7 @@ const StyledItem = styled("div", {
   cursor: "pointer"
 })
 
-const StyledLink = styled("a", {
+const StyledLink = styled(Link, {
   display: "block",
   width: "100%",
   lineHeight: 3,
@@ -32,40 +33,40 @@ const StyledNavigationMenu = () => {
     <StyledRoot align="both" gap="lg">
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.docs' })}</StyledItem >}>
         <MenuItem>
-          <StyledLink href={`/docs/${context.version}/${context.lang}/install`} target='_blank'>
+          <StyledLink to={`/docs/${context.version}/${context.lang}/install`}>
             {formatMessage({ id: 'app.header.menu.engine.docs' })}
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink href={`/docs/${context.version}/cn/editor`} target='_blank'>
+          <StyledLink to={`/docs/${context.version}/cn/editor`}>
             {formatMessage({ id: 'app.header.menu.editor.docs' })}
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink href={`/docs/${context.version}/${context.lang}/artist-bake`} target='_blank'>
+          <StyledLink to={`/docs/${context.version}/${context.lang}/artist-bake`}>
             {formatMessage({ id: 'app.header.menu.artist.docs' })}
           </StyledLink>
         </MenuItem>
       </DropdownMenu>
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.ecosystem' })}</StyledItem>}>
         <MenuItem>
-          <StyledLink href={`https://galacean.antgroup.com/editor`} target='_blank'>
+          <StyledLink to={`https://galacean.antgroup.com/editor`} target='_blank'>
             {formatMessage({ id: 'app.header.menu.ecosystem.editor' })}
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink href={`/gltf-viewer`} target='_blank'>
+          <StyledLink to={`/gltf-viewer`}>
             {formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}
           </StyledLink >
         </MenuItem>
         <MenuItem>
-          <StyledLink href={`https://github.com/galacean/create-galacean-app`} target='_blank'>
+          <StyledLink to={`https://github.com/galacean/create-galacean-app`} target='_blank'>
             {formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}
           </StyledLink>
         </MenuItem>
       </DropdownMenu>
-      <StyledItem as="a" href={`/api/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.api' })}</StyledItem >
-      <StyledItem as="a" href={`/examples/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.examples' })}</StyledItem >
+      <StyledItem as={Link} to={`/api/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.api' })}</StyledItem >
+      <StyledItem as={Link} to={`/examples/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.examples' })}</StyledItem >
     </StyledRoot>
   );
 };
