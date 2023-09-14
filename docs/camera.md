@@ -77,10 +77,12 @@ Therefore, when used in actual projects, the type of projection is generally det
 |  | [priority](${api}core/Camera#priority) | The rendering priority is used to determine the order in which the content contained in the camera is rendered in the case of multiple cameras. |
 |  | [renderTarget](${api}core/Camera#renderTarget) | The rendering target determines which target the content will be rendered to. |
 |  | [viewport](${api}core/Camera#viewport) | The viewport, which determines the scope of the content that is finally rendered to the target device. |
+| | [pixelViewport](${api}core/Camera#pixelViewport) | The viewport of the camera in pixel coordinates on the screen. In pixel screen coordinates, the upper-left corner is (0, 0), and the lower-right corner is (1.0, 1.0). |
 |  | [nearClipPlane](${api}core/Camera#nearClipPlane) | Near clipping plane |
 |  | [farClipPlane](${api}core/Camera#farClipPlane) | Far clipping plane |
 | Perspective projection | [fieldOfView](${api}core/Camera#fieldOfView) | Field of view |
 | Orthogonal projection | [orthographicSize](${api}core/Camera#orthographicSize) | Half the size of the camera in orthographic mode |
+|  | [depthTextureMode]((${api}core/Camera#depthTextureMode)) | Depth texture mode, defalut is `DepthTextureMode.None` |
 
 For details, please read [API documentation](${api}core/Camera)。
 

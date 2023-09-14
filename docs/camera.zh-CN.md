@@ -65,19 +65,21 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ## 属性
 
-| 类型     | 属性                                                   | 解释                                                         |
-| :------- | :----------------------------------------------------- | :----------------------------------------------------------- |
-| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)     | 是否正交投影，默认是 `false`                                 |
-|          | [aspectRatio](${api}core/Camera#aspectRatio)           | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
-|          | [cullingMask](${api}core/Camera#cullingMask)           | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                 |
-|          | [priority](${api}core/Camera#priority)                 | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
-|          | [renderTarget](${api}core/Camera#renderTarget)         | 渲染目标，确定内容最后被渲染到哪个目标上。                   |
-|          | [viewport](${api}core/Camera#viewport)                 | 视口，确定内容最后被渲染到目标设备里的范围。                 |
-|          | [nearClipPlane](${api}core/Camera#nearClipPlane)       | 近裁剪平面                                                   |
-|          | [farClipPlane](${api}core/Camera#farClipPlane)         | 远裁剪平面                                                   |
-|          | [clearFlags](${api}core/Camera#clearFlags)             | 在渲染这个相机前清理画布缓冲的标记                           |
-| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)           | 视角                                                         |
-| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize) | 正交模式下相机的一半尺寸                                     |
+| 类型     | 属性                                                     | 解释                                                         |
+| :------- | :------------------------------------------------------- | :----------------------------------------------------------- |
+| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)       | 是否正交投影，默认是 `false`                                 |
+|          | [aspectRatio](${api}core/Camera#aspectRatio)             | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
+|          | [cullingMask](${api}core/Camera#cullingMask)             | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                 |
+|          | [priority](${api}core/Camera#priority)                   | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
+|          | [renderTarget](${api}core/Camera#renderTarget)           | 渲染目标，确定内容最后被渲染到哪个目标上。                   |
+|          | [viewport](${api}core/Camera#viewport)                   | 视口，确定内容最后被渲染到目标设备里的范围。                 |
+|          | [pixelViewport](${api}core/Camera#pixelViewport)         | 屏幕上相机的视口（以像素坐标表示）。 在像素屏幕坐标中，左上角为(0, 0)，右下角为(1.0, 1.0)。 |
+|          | [nearClipPlane](${api}core/Camera#nearClipPlane)         | 近裁剪平面                                                   |
+|          | [farClipPlane](${api}core/Camera#farClipPlane)           | 远裁剪平面                                                   |
+|          | [clearFlags](${api}core/Camera#clearFlags)               | 在渲染这个相机前清理画布缓冲的标记                           |
+| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)             | 视角                                                         |
+| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize)   | 正交模式下相机的一半尺寸                                     |
+|          | [depthTextureMode]((${api}core/Camera#depthTextureMode)) | 深度我哪里模式，模型不生成                                   |
 
 详情请查看 [API 文档](${api}core/Camera)。
 

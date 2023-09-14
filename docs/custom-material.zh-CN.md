@@ -66,35 +66,43 @@ const material = new Material(engine, Shader.find("demo"));
 
 ### 属性
 
-#### 变换
+#### 渲染器
 
 
-| 名字 | 类型 | 解释 |
-| :--- | :--- | ---- |
-| camera_ViewMat | mat4 | 视口矩阵 |
-| camera_ProjMat | mat4 | 投影矩阵 |
-| camera_VPMat | mat4 | 视口投影矩阵 |
-| camera_ViewInvMat | mat4 | 视口逆矩阵 |
-| camera_Position | vec3 | 相机位置 |
-| renderer_LocalMat | mat4 | 模型本地坐标系矩阵 |
-| renderer_ModelMat | mat4 | 模型世界坐标系矩阵 |
-| renderer_MVMat | mat4 | 模型视口矩阵 |
-| renderer_MVPMat | mat4 | 模型视口投影矩阵 |
-| renderer_NormalMat | mat4 | 法线逆转置矩阵 |
+| 名字               | 类型 | 解释               |
+| :----------------- | :--- | ------------------ |
+| renderer_LocalMat  | mat4 | 模型本地坐标系矩阵 |
+| renderer_ModelMat  | mat4 | 模型世界坐标系矩阵 |
+| renderer_MVMat     | mat4 | 模型视口矩阵       |
+| renderer_MVPMat    | mat4 | 模型视口投影矩阵   |
+| renderer_NormalMat |      |                    |
+
+#### 相机
+
+
+| 名字                     | 类型      | 解释                                                         |
+| :----------------------- | :-------- | ------------------------------------------------------------ |
+| camera_ViewMat           | mat4      | 视口矩阵                                                     |
+| camera_ProjMat           | mat4      | 投影矩阵                                                     |
+| camera_VPMat             | mat4      | 视口投影矩阵                                                 |
+| camera_ViewInvMat        | mat4      | 视口逆矩阵                                                   |
+| camera_Position          | vec3      | 相机位置                                                     |
+| camera_DepthTexture      | sampler2D | 深度信息纹理                                                 |
+| camera_DepthBufferParams | Vec4      | 相机深度缓冲参数：(x: 1.0 - far / near, y: far / near, z: 0, w: 0) |
 
 #### 时间
 
 | 名字              | 类型 | 解释                                                      |
 | :---------------- | :--- | :-------------------------------------------------------- |
 | scene_ElapsedTime | vec4 | 引擎启动后经过的总时间：(x: t, y: sin(t), z:cos(t), w: 0) |
-| oasis_DeltaTime   | vec4 | 距离上一帧的间隔时间：(x: dt, y: 0, z:0, w: 0)            |
+| scene_DeltaTime   | vec4 | 距离上一帧的间隔时间：(x: dt, y: 0, z:0, w: 0)            |
 
 #### 雾
 
 | 名字            | 类型 | 解释                                                         |
 | :-------------- | :--- | :----------------------------------------------------------- |
-| oasis_FogColor  | vec4 | 雾的颜色                                                     |
-| oasis_FogParams | vec4 | 雾的参数：(x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
+| scene_FogColor  | vec4 | 雾的颜色                                                     |
+| scene_FogParams | vec4 | 雾的参数：(x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
 
 ## 上传 shader 变量
 

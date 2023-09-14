@@ -67,32 +67,41 @@ In the above, we gave the material a shader, this time the program can start ren
 
 ### Properties
 
-| Name         | Type | Meaning                              |
-| :----------- | :--- | ------------------------------------ |
-| camera_ViewMat    | mat4 | viewport matrix                      |
-| camera_ProjMat    | mat4 | projection matrix                    |
-| camera_VPMat      | mat4 | viewport projection matrix           |
-| camera_ViewInvMat | mat4 | viewport inverse matrix              |
-| camera_Position  | vec3 | camera position                      |
-| renderer_LocalMat   | mat4 | model local coordinate system matrix |
-| renderer_ModelMat   | mat4 | model world Coordinate System Matrix |
-| renderer_MVMat      | mat4 | model viewport matrix                |
-| renderer_MVPMat     | mat4 | model viewport projection matrix     |
-| renderer_NormalMat  | mat4 | normal inverse transpose matrix      |
+#### Renderer
+
+| camera_ViewMat     | mat4 | viewport matrix                      |
+| :----------------- | :--- | ------------------------------------ |
+| renderer_LocalMat  | mat4 | model local coordinate system matrix |
+| renderer_ModelMat  | mat4 | model world Coordinate System Matrix |
+| renderer_MVMat     | mat4 | model viewport matrix                |
+| renderer_MVPMat    | mat4 | model viewport projection matrix     |
+| renderer_NormalMat | mat4 | normal inverse transpose matrix      |
+
+#### Camera
+
+| Name                     | Type      | Meaning                                                      |
+| :----------------------- | :-------- | ------------------------------------------------------------ |
+| camera_ViewMat           | mat4      | viewport matrix                                              |
+| camera_ProjMat           | mat4      | projection matrix                                            |
+| camera_VPMat             | mat4      | viewport projection matrix                                   |
+| camera_ViewInvMat        | mat4      | viewport inverse matrix                                      |
+| camera_Position          | vec3      | camera position                                              |
+| camera_DepthTexture      | sampler2D | camera depth information texture                             |
+| camera_DepthBufferParams | Vec4      | camera depth buffer params: (x: 1.0 - far / near, y: far / near, z: 0, w: 0) |
 
 #### Time
 
 | Name              | Type | Meaning                                                      |
 | :---------------- | :--- | :----------------------------------------------------------- |
 | scene_ElapsedTime | vec4 | Total time elapsed since engine started: (x: t, y: sin(t), z: cos(t), w: 0) |
-| oasis_DeltaTime   | vec4 | Interval time from previous frame: (x: dt, y: 0, z: 0, w: 0) |
+| scene_DeltaTime   | vec4 | Interval time from previous frame: (x: dt, y: 0, z: 0, w: 0) |
 
 #### Fog
 
 | Name            | Type | Meaning                                                      |
 | :-------------- | :--- | :----------------------------------------------------------- |
-| oasis_FogColor  | vec4 | Fog color                                                    |
-| oasis_FogParams | vec4 | Fog parameters: (x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
+| scene_FogColor  | vec4 | Fog color                                                    |
+| scene_FogParams | vec4 | Fog parameters: (x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
 
 
 
