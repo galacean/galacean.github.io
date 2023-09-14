@@ -101,6 +101,12 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 为了方便区分，我们可以使用人脸朝向法判断，无论在左手系或者右手系，将右手放在 +X 轴上，将头部放在 +Y 轴上，此时面部朝向即正方向。
 
+### 深度纹理
+
+相机可以通过 [depthTextureMode]((${api}core/Camera#depthTextureMode)) 属性开启深度纹理，开启深度纹理后可以通过 `camera_DepthTexture` 属性在 Shader 中访问深度纹理。深度纹理可以用于实现软粒子和水面边缘过渡，以及一些简单的后处理效果。
+
+<playground src="camera-depth-texture.ts"></playground>
+
 ## 方法
 
 | 属性                                                         | 解释                                     |

@@ -102,6 +102,12 @@ In the case of multiple cameras, we can combine the camera's `renderTarget`,  `p
 
 Since in Galacean, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
 
+### Depth texture
+
+The camera can enable the depth texture through the [depthTextureMode]((${api}core/Camera#depthTextureMode)) attribute. After the depth texture is enabled, the depth texture can be accessed in the Shader through the `camera_DepthTexture` attribute. Depth textures can be used to achieve soft particles and water edge transitions, as well as some simple post-processing effects.
+
+<playground src="camera-depth-texture.ts"></playground>
+
 ## method
 
 | Properties | Explanation |
