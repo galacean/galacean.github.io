@@ -54,7 +54,7 @@ export default function Editor() {
             </StyledButton>
           </a>
         </Flex>
-        <StyledImg src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*sxSySbfQHd0AAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
+        <StyledImg src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*f3M3RJYVPYYAAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
       </Flex>
     </StyledEditor>
   );
