@@ -1,3 +1,4 @@
+import { ArrowRightOutlined } from "@ant-design/icons";
 import { Button, Flex, styled } from "@galacean/editor-ui";
 import { MagicWand } from "iconoir-react";
 import { FormattedMessage } from 'react-intl';
@@ -43,8 +44,8 @@ export default function Editor() {
         <Flex gap="lg">
           <a href="https://galacean.antgroup.com/editor">
             <StyledButton variant="primary" size="lg" round>
-              <MagicWand />&nbsp;
               <FormattedMessage id="app.home.editor.use" />
+              <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
             </StyledButton>
           </a>
           <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
