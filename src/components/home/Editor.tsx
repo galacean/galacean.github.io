@@ -16,8 +16,8 @@ const StyledEditor = styled("div", {
 const StyledVideo = styled('video', {
   width: "80%",
   maxWidth: "1000px",
-  borderRadius: "$4",
-  border: "8px solid $slate4"
+  borderRadius: "$2",
+  border: "5px solid $slate4"
 });
 
 const StyledButton = styled(Button, {
