@@ -51,7 +51,7 @@ export const translationsData: { [lang: string]: any } = {
       "支持模型、摄像机、材质、天空、粒子等 3D 常用功能，渲染效果强大，性能突出。",
     "app.home.features.component": "组件化设计",
     "app.home.features.component.intro":
-      "采用组件系统架构，模型、动画、精灵等均为组件，结构清晰。 组件之间均可随意组合，灵活性强，易扩展。 逻辑采用脚本组件编写，简单易用，复用性强。",
+      "采用 Entity Component 架构，组件之间均可随意组合，灵活易扩展。逻辑采用脚本组件编写，简单可复用。",
     "app.home.features.mobile": "移动优先",
     "app.home.features.mobile.intro":
       "针对移动端设备进行诸多优化。注重性能，可在低性能设备中流畅运行。兼容性强，可兼容市面上众多设备机型。",
@@ -184,7 +184,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.ecosystem.animation": "Animation",
     "app.header.menu.components": "Components",
     "app.home.features.component.intro":
-      "Adopting an entity-component architecture. Model, animation, sprite are all regarded as components. The components can be combined with strong flexibility and easy expansion. The logic is written by script components, which is easy to use and reusable.",
+      "Adopting an entity-component architecture. The components can be combined with strong flexibility and easy expansion. The logic is written by script components, which is easy to use and reusable.",
     "app.home.features.mobile": "Mobile first",
     "app.home.features.mobile.intro":
       "Many optimizations are made for mobile devices. Focus on performance and can run smoothly in low-performance devices. Strong compatibility, compatible with many device models on the market.",
