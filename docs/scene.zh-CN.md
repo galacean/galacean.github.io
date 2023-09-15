@@ -24,9 +24,21 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ### 基本用法
 
+#### 0. 获取场景对象
+
+通过调用 `engine.sceneManager.scenes` 可以获取当前引擎运行时激活的全部场景，也可以通过 `entity.scene` 获取对应 `entity` 从属的 `scene`。
+
+```typescript
+// 获取当前所有激活的场景
+const scenes = engine.sceneManager.scenes;
+
+// 获取节点属于的场景
+const scene = entity.scene;
+```
+
 #### 1. 添加/移除 Scene
 
-添加和移除 **Scene** 很简单，只需要调用 `engine.sceneManager` 的 `addScene()` 和 `removeScene()` 即可，并且可以同时添加多个场景同时渲染。
+`engine.sceneManager.scenes` 是只读的，若需要添加和移除 **Scene** ，需要调用 `engine.sceneManager.addScene()` 或 `engine.sceneManager.removeScene()` ，**引擎支持同时渲染多个场景**。
 
 ```typescript
 // 假设已经有两个场景
@@ -44,7 +56,7 @@ engine.sceneManager.removeScene(scene2);
 
 #### 2. 合并 Scene
 
-如果想要同时激活多个场景，可以使用 `engine.sceneManager.mergeScenes` 将 2 个场景进行合并为 1 个场景。
+可以使用 `engine.sceneManager.mergeScenes` 将 2 个场景进行合并为 1 个场景。
 
 ```typescript
 // 假设已经有两个未激活的场景
@@ -74,7 +86,7 @@ engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
 
 #### 4. 场景销毁
 
-调用 `scene.destroy()` 即可销毁场景。
+调用 `scene.destroy()` 即可销毁场景，被销毁的场景也会自动从激活场景列表中移除。
 
 
 #### 5. 设置场景背景
@@ -121,12 +133,7 @@ Playground 示例如下：
 
 #### 6. 设置场景环境光
 
-场景环境光（AmbientLight）设置：
-
-```typescript
-const scene = engine.sceneManager.scenes[0];
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-```
+请参考相关文档： [环境光] (${docs}ambient-light)
 
 ## 实体树管理
 
