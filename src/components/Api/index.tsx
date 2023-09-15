@@ -201,7 +201,7 @@ const Api = () => {
     fetchPkgChildren(pkg, version).then((res) => {
       setPkgChildren(res);
     });
-  }, [pkg]);
+  }, [pkg, version]);
 
   return (
     <Media query='(max-width: 768px)'>

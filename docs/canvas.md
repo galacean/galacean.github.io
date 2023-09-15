@@ -28,15 +28,6 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 console.log(engine.canvas) // => WebCanvas instance
 ```
 
-If you want to manually create a canvas, you need to write a few more lines of code, which is equivalent to the code above:
-
-```typescript
-const canvas = document.getElementById("canvas");
-const webCanvas = new WebCanvas(canvas);
-const webGLRenderer = new WebGLRenderer();
-const engine = new Engine(webCanvas,webGLRenderer);
-```
-
 ### Basic adaptation
 
 The following code will resize the canvas according to the css style of the canvas element. When the display size of the canvas changes(for example, when the browser window changes), the rendering may be stretched or compressed, `resizeByClientSize` can be called to return to normal.

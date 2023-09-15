@@ -69,7 +69,7 @@ function createPlane(engine: Engine, entity: Entity): void {
       planeEntity.addComponent(PlaneAnimation);
 
       const { shaderData } = material;
-      shaderData.setTexture("MATERIAL_HAS_BASETEXTURE", texture);
+      shaderData.setTexture("material_BaseTexture", texture);
       shaderData.setColor("u_fogColor", new Color(0.25, 0.25, 0.25, 1));
       shaderData.setFloat("u_fogDensity", 0.004);
       shaderData.setColor(

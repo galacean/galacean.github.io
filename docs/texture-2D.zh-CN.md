@@ -43,6 +43,10 @@ texture.setImageSource(video);
 
 > `setImageSource` 只能同步那一帧的数据，但是视频每一帧都在变化，如果需要纹理同步变化，则要在脚本 onUpdate 钩子里面执行
 
+对于视频这类需要频繁更新纹理内容的使用场景，创建纹理的时候需要设置关闭 mipmap 以及设置纹理使用方式为 Dynamic，以获得更好的性能，示例代码如下：
+
+<playground src="benchmark-video.ts"></playground>
+
 ### 3. 加载原始数据
 
 纹理底层其实对应着每个像素的颜色值，即 RGBA 通道，我们可以手动填写这些颜色通道的颜色数值，然后通过 [setPixelBuffer](${api}core/Texture2D#setPixelBuffer) 接口传到纹理中：

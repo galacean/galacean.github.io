@@ -97,18 +97,6 @@ newEntity.findByName("model");
 newEntity.findByPath("parent/child/grandson");
 ```
 
-#### 全局实体查找
-
-用户也可以通过 [Entity.findByName](${api}core/Entity#findByName) 和 [Entity.findByPath](${api}core/Entity#findByPath) 进行全局的实体查找，使用方法和之前的查找子实体类似:
-
-```typescript
-Entity.findByName("model");
-```
-
-```typescript
-Entity.findByPath("container/model");
-```
-
 ### 组件
 
 #### 查找实体上的组件

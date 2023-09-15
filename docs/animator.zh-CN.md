@@ -221,7 +221,7 @@ transition.duration = 1;
 transition.offset = 0;
 transition.exitTime = 0.5;
 transition.destinationState = runState;
-walkState.addTransition(runState);
+walkState.addTransition(transition);
 animator.play("walk");
 ```
 通过这样的方式你之后每次在该动画状态机所在的层播放 `walk` 动画时都会在播放一半时开始过渡到 `run` 动画。

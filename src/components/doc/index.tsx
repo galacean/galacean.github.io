@@ -39,6 +39,7 @@ function Doc() {
     if (context.lang === 'cn') {
       title += '.zh-CN'
     }
+    
     // init routing from path params
     if (Array.from(menuKeyTitleMapRef.current.values()).includes(title)) {
       for (let [key, value] of menuKeyTitleMapRef.current.entries()) {
@@ -47,6 +48,9 @@ function Doc() {
           break;
         }
       }
+    }
+    else {
+      setSelectedDocId('');
     }
   }
 

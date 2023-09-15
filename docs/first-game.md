@@ -175,7 +175,13 @@ Refer to the implementation of the example `sprite-sheetAnimation`, we add a `Sc
 
 ### tweenjs
 
-In order to realize the flying and falling of the bird, we introduce [tweenjs](https://github.com/tweenjs/tween.js), when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
+We use the ready-made [easing library](https://github.com/tweenjs/tween.js) to realize the bird's head up and down, if you are using **editor** development, you can refer to [edit script ](${docs}editor-script-edit-cn) imports external dependent libraries, and corresponding **pure code** imports need to install corresponding dependencies:
+
+```
+npm i @tweenjs/tween.js
+```
+
+when the bird is flying, rotate the bird counterclockwise to 20 degrees, and the bird falls At that time, the rotation angle of the easing bird is -90 degrees. Looking through the source code of the easing component, you can find that he updates the value through recursion. Developers who are familiar with [transform component] (${docs}transform) will find this A recursive way to change the components in the coordinate information one by one cannot make the `Entity` change the position in real time.
 
 ```typescript
 private _updateProperties(
