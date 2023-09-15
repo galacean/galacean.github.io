@@ -77,10 +77,12 @@ Therefore, when used in actual projects, the type of projection is generally det
 |  | [priority](${api}core/Camera#priority) | The rendering priority is used to determine the order in which the content contained in the camera is rendered in the case of multiple cameras. |
 |  | [renderTarget](${api}core/Camera#renderTarget) | The rendering target determines which target the content will be rendered to. |
 |  | [viewport](${api}core/Camera#viewport) | The viewport, which determines the scope of the content that is finally rendered to the target device. |
+| | [pixelViewport](${api}core/Camera#pixelViewport) | The viewport of the camera in pixel coordinates on the screen. In pixel screen coordinates, the upper-left corner is (0, 0), and the lower-right corner is (1.0, 1.0). |
 |  | [nearClipPlane](${api}core/Camera#nearClipPlane) | Near clipping plane |
 |  | [farClipPlane](${api}core/Camera#farClipPlane) | Far clipping plane |
 | Perspective projection | [fieldOfView](${api}core/Camera#fieldOfView) | Field of view |
 | Orthogonal projection | [orthographicSize](${api}core/Camera#orthographicSize) | Half the size of the camera in orthographic mode |
+|  | [depthTextureMode]((${api}core/Camera#depthTextureMode)) | Depth texture mode, defalut is `DepthTextureMode.None` |
 
 For details, please read [API documentation](${api}core/Camera)。
 
@@ -99,6 +101,13 @@ In the case of multiple cameras, we can combine the camera's `renderTarget`,  `p
 ### Camera orientation
 
 Since in Galacean, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
+
+### Depth texture
+
+The camera can enable the depth texture through the [depthTextureMode]((${api}core/Camera#depthTextureMode)) attribute. After the depth texture is enabled, the depth texture can be accessed in the Shader through the `camera_DepthTexture` attribute. Depth textures can be used to achieve soft particles and water edge transitions, as well as some simple post-processing effects.
+Note: Depth textures only render non-transparent objects.
+
+<playground src="camera-depth-texture.ts"></playground>
 
 ## method
 
