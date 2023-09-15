@@ -5,7 +5,7 @@ group: Material
 label: Graphics/Material
 ---
 
-`ShaderLab` 是可以运行在 Galacean 引擎中的一门贴合 [GLSL 100](https://www.khronos.org/files/opengles_shading_language.pdf) 语法标准的 Shader DSL 语言，相较以往手动代码指定方式，可以更为方便、快捷地编写表达自定义材质 Shader，如多 Pass，渲染状态(BlendState、StencilState、DepthState 等)，渲染队列(RenderQueue)等设置。此外还整合了传统顶点(vertex)着色器，片元(fragment)着色器编码方式，降低代码冗余量，自动剔除声明却未被引用的 uniform、attribute 变量。
+`ShaderLab` 是一种特别设计用于 Galacean 引擎的 Shader 语言，它与 [GLSL 100](https://www.khronos.org/files/opengles_shading_language.pdf) 语法标准非常贴合。相比以往手动代码指定的方式，使用 `ShaderLab` 可以更方便、快捷地编写自定义材质的 Shader。它支持多个 Pass、渲染状态（如混合状态、模板状态、深度状态）以及渲染队列设置等功能。此外，`ShaderLab` 还整合了传统的顶点着色器和片元着色器的编码方式，以减少代码的冗余量。它能自动剔除未被引用的 uniform 和 attribute 变量的声明，提高代码的整洁度。
 
 <playground src="shader-lab.ts"></playground>
 
@@ -134,6 +134,8 @@ Shader "ShaderName" {
   ```
   variableType variableName;
   ```
+
+与其他编程语言类似，ShaderLab 中的全局变量也有作用域和同名覆盖原则。简单来说，ShaderLab 中的全局变量的作用范围仅限于其声明的 SubShader 或 Pass 模块内部，而同名覆盖原则指的是如果存在与 Pass 内部同名的全局变量，则 Pass 内的全局变量会覆盖 SubShader 内的同名全局变量。
 
 #### SubShader
 
