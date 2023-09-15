@@ -1,6 +1,5 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Button, Flex, styled } from "@galacean/editor-ui";
-import { MagicWand } from "iconoir-react";
 import { FormattedMessage } from 'react-intl';
 
 const StyledEditor = styled("div", {
