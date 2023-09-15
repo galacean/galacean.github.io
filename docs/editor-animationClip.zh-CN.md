@@ -105,3 +105,20 @@ label: Editor-Feature/Animation
 刚才的曲线调整预览看起来可能并不明显，我们可以通过调低采样率的方式减慢动画速度
 ![image-20230116185226034](https://gw.alipayobjects.com/zos/OasisHub/c1526af2-337a-4abf-bfde-4c66b6114002/image-20230116185226034.png)
 ![curve2](https://gw.alipayobjects.com/zos/OasisHub/2ff245ef-2f7f-4e53-a5aa-e06ead091abf/curve2.gif)
+
+## 使用编辑器制作帧动画
+
+1.1 版本的编辑器支持引用类型的动画曲线，你可以添加类型为资产的关键帧比如（精灵）下图为制作精灵动画的流程：
+
+1. 给 Entity 添加 SpriteRenderer 组件
+   ![image-1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*qaqaTpBc_6oAAAAAAAAAAAAADsJ_AQ/original)
+2. 在资产面板中创建 AnimationCLip
+   ![image-2](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*iD-TR4SAADUAAAAAAAAAAAAADsJ_AQ/original)
+3. 在 AnimationClip 编辑器中添加 sprite 曲线
+   ![image-3](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*blT2T5NLFx4AAAAAAAAAAAAADsJ_AQ/original)
+4. 编辑器中点到对应的帧数，在 SpriteRenderer 中添加 Sprite(sprite 上传相关详见[精灵](${docs}editor-sprite.zh-CN))即可自动添加关键帧
+   ![image-4](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*tGOdSILNYokAAAAAAAAAAAAADsJ_AQ/original)
+
+### 完整流程如下：
+
+![spriteAnimation](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*h2ELSp8N9mEAAAAAAAAAAAAADsJ_AQ/original)
