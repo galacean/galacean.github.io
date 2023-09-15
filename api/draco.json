@@ -23,7 +23,7 @@
 							"fileName": "decoder.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L21"
 						}
 					],
 					"signatures": [
@@ -38,7 +38,7 @@
 									"fileName": "decoder.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L21"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L21"
 								}
 							],
 							"parameters": [
@@ -82,7 +82,7 @@
 							"fileName": "decoder.ts",
 							"line": 17,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L17"
 						}
 					],
 					"type": {
@@ -104,7 +104,7 @@
 							"fileName": "decoder.ts",
 							"line": 19,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L19"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L19"
 						}
 					],
 					"type": {
@@ -136,7 +136,7 @@
 							"fileName": "decoder.ts",
 							"line": 14,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L14"
 						}
 					],
 					"type": {
@@ -166,7 +166,7 @@
 							"fileName": "decoder.ts",
 							"line": 18,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L18"
 						}
 					],
 					"type": {
@@ -208,7 +208,7 @@
 							"fileName": "decoder.ts",
 							"line": 16,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L16"
 						}
 					],
 					"type": {
@@ -229,7 +229,7 @@
 							"fileName": "decoder.ts",
 							"line": 15,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L15"
 						}
 					],
 					"type": {
@@ -249,7 +249,7 @@
 							"fileName": "decoder.ts",
 							"line": 79,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L79"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L79"
 						}
 					],
 					"signatures": [
@@ -264,7 +264,7 @@
 									"fileName": "decoder.ts",
 									"line": 79,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L79"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L79"
 								}
 							],
 							"parameters": [
@@ -332,7 +332,7 @@
 							"fileName": "decoder.ts",
 							"line": 65,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L65"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L65"
 						}
 					],
 					"signatures": [
@@ -347,7 +347,7 @@
 									"fileName": "decoder.ts",
 									"line": 65,
 									"character": 10,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L65"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L65"
 								}
 							],
 							"type": {
@@ -386,7 +386,7 @@
 							"fileName": "decoder.ts",
 							"line": 31,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L31"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L31"
 						}
 					],
 					"signatures": [
@@ -401,7 +401,7 @@
 									"fileName": "decoder.ts",
 									"line": 31,
 									"character": 10,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L31"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L31"
 								}
 							],
 							"type": {
@@ -455,7 +455,7 @@
 					"fileName": "decoder.ts",
 					"line": 13,
 					"character": 13,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L13"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/draco/src/decoder.ts#L13"
 				}
 			]
 		}
