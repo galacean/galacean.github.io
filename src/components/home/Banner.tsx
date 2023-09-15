@@ -63,7 +63,7 @@ function Banner() {
           localStorage.setItem('version', stableVersion);
         }}>
           <Button variant="primary" size="lg" round>
-            {stableSpecificVersion.replace(/\.\d+/, '')}&nbsp;
+            {stableSpecificVersion.replace(/\.\d+$/, '')}&nbsp;
             <FormattedMessage id='app.home.stable' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>
