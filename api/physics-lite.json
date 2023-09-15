@@ -45,7 +45,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 100,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L100"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L100"
 						}
 					],
 					"signatures": [
@@ -69,7 +69,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 100,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L100"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L100"
 								}
 							],
 							"parameters": [
@@ -150,7 +150,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 121,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L121"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L121"
 						}
 					],
 					"signatures": [
@@ -174,7 +174,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 121,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L121"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L121"
 								}
 							],
 							"parameters": [
@@ -261,7 +261,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 80,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L80"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L80"
 						}
 					],
 					"signatures": [
@@ -285,7 +285,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 80,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L80"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L80"
 								}
 							],
 							"type": {
@@ -321,7 +321,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 73,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L73"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L73"
 						}
 					],
 					"signatures": [
@@ -345,7 +345,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 73,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L73"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L73"
 								}
 							],
 							"parameters": [
@@ -415,7 +415,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L133"
 						}
 					],
 					"signatures": [
@@ -439,7 +439,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 133,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L133"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L133"
 								}
 							],
 							"parameters": [
@@ -493,7 +493,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 140,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L140"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L140"
 						}
 					],
 					"signatures": [
@@ -517,7 +517,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 140,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L140"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L140"
 								}
 							],
 							"parameters": [
@@ -571,7 +571,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L37"
 						}
 					],
 					"signatures": [
@@ -595,7 +595,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L37"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L37"
 								}
 							],
 							"type": {
@@ -631,7 +631,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 87,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L87"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L87"
 						}
 					],
 					"signatures": [
@@ -655,7 +655,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 87,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L87"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L87"
 								}
 							],
 							"parameters": [
@@ -748,7 +748,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L44"
 						}
 					],
 					"signatures": [
@@ -772,7 +772,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 44,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L44"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L44"
 								}
 							],
 							"parameters": [
@@ -813,7 +813,7 @@
 													"fileName": "LitePhysics.ts",
 													"line": 46,
 													"character": 21,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L46"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L46"
 												}
 											],
 											"signatures": [
@@ -828,7 +828,7 @@
 															"fileName": "LitePhysics.ts",
 															"line": 46,
 															"character": 21,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L46"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L46"
 														}
 													],
 													"parameters": [
@@ -885,7 +885,7 @@
 													"fileName": "LitePhysics.ts",
 													"line": 47,
 													"character": 19,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L47"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L47"
 												}
 											],
 											"signatures": [
@@ -900,7 +900,7 @@
 															"fileName": "LitePhysics.ts",
 															"line": 47,
 															"character": 19,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L47"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L47"
 														}
 													],
 													"parameters": [
@@ -957,7 +957,7 @@
 													"fileName": "LitePhysics.ts",
 													"line": 48,
 													"character": 23,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L48"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L48"
 												}
 											],
 											"signatures": [
@@ -972,7 +972,7 @@
 															"fileName": "LitePhysics.ts",
 															"line": 48,
 															"character": 23,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L48"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L48"
 														}
 													],
 													"parameters": [
@@ -1029,7 +1029,7 @@
 													"fileName": "LitePhysics.ts",
 													"line": 49,
 													"character": 21,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L49"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L49"
 												}
 											],
 											"signatures": [
@@ -1044,7 +1044,7 @@
 															"fileName": "LitePhysics.ts",
 															"line": 49,
 															"character": 21,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L49"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L49"
 														}
 													],
 													"parameters": [
@@ -1101,7 +1101,7 @@
 													"fileName": "LitePhysics.ts",
 													"line": 50,
 													"character": 19,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L50"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L50"
 												}
 											],
 											"signatures": [
@@ -1116,7 +1116,7 @@
 															"fileName": "LitePhysics.ts",
 															"line": 50,
 															"character": 19,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L50"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L50"
 														}
 													],
 													"parameters": [
@@ -1173,7 +1173,7 @@
 													"fileName": "LitePhysics.ts",
 													"line": 51,
 													"character": 23,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L51"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L51"
 												}
 											],
 											"signatures": [
@@ -1188,7 +1188,7 @@
 															"fileName": "LitePhysics.ts",
 															"line": 51,
 															"character": 23,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L51"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L51"
 														}
 													],
 													"parameters": [
@@ -1258,7 +1258,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 114,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L114"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L114"
 						}
 					],
 					"signatures": [
@@ -1282,7 +1282,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 114,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L114"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L114"
 								}
 							],
 							"parameters": [
@@ -1347,7 +1347,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 107,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L107"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L107"
 						}
 					],
 					"signatures": [
@@ -1371,7 +1371,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 107,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L107"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L107"
 								}
 							],
 							"parameters": [
@@ -1447,7 +1447,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 147,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L147"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L147"
 						}
 					],
 					"signatures": [
@@ -1471,7 +1471,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 147,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L147"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L147"
 								}
 							],
 							"parameters": [
@@ -1525,7 +1525,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L66"
 						}
 					],
 					"signatures": [
@@ -1549,7 +1549,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 66,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L66"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L66"
 								}
 							],
 							"parameters": [
@@ -1619,7 +1619,7 @@
 							"fileName": "LitePhysics.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L30"
 						}
 					],
 					"signatures": [
@@ -1643,7 +1643,7 @@
 									"fileName": "LitePhysics.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L30"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L30"
 								}
 							],
 							"type": {
@@ -1707,7 +1707,7 @@
 					"fileName": "LitePhysics.ts",
 					"line": 26,
 					"character": 13,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/physics-lite/src/LitePhysics.ts#L26"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L26"
 				}
 			],
 			"implementedTypes": [
