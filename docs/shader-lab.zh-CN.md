@@ -14,12 +14,12 @@ label: Graphics/Material
 ```ts
 import { ShaderLab } from "@galacean/engine-shaderlab";
 
-// Create engine with shaderLab
+// 使用ShaderLab初始化Engine
 const engine = await WebGLEngine.create({ canvas: "canvas", shaderLab });
 
 ......
 
-// Create shader by galacean shader code directly!
+// 直接使用ShaderLab创建Shader
 const shader = Shader.create(galaceanShaderCode);
 ```
 
