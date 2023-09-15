@@ -1,5 +1,5 @@
 ---
-Order: 5
+order: 5
 title: Particle Renderer
 type: Animation
 label: Animation

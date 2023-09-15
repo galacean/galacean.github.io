@@ -1,5 +1,5 @@
 ---
-Order: 5
+order: 5
 title: 粒子渲染器
 type: 动画
 label: Animation
