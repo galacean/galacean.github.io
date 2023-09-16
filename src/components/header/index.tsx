@@ -61,7 +61,11 @@ function Header() {
         }}
         selectedKey={context.version}
       >
-        {versions?.map((v) => <Option key={v.version}>{v.version}</Option>)}
+        {versions?.map((v) => <Option key={v.version} textValue={v.version}>{
+          v.version === 'latest' ?
+            JSON.parse(v.packages)["@galacean/engine"].version?.replace(/\.\d+-beta\.\d+/, '-beta') :
+            v.version
+        }</Option>)}
       </Select>
       {isMobile && <Popover trigger={
         <ActionButton>
