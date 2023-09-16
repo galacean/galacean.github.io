@@ -11,13 +11,13 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ## 场景管理
 
-| 属性名称                                           | 解释     |
-| :------------------------------------------------- | :------- |
+| 属性名称                                 | 解释     |
+| :--------------------------------------- | :------- |
 | [scenes](${api}core/SceneManager#scenes) | 场景列表 |
 
 | 方法名称                                           | 解释     |
 | :------------------------------------------------- | :------- |
-| [addScene](${api}core/SceneManager#addScene) | 添加场景 |
+| [addScene](${api}core/SceneManager#addScene)       | 添加场景 |
 | [removeScene](${api}core/SceneManager#removeScene) | 移除场景 |
 | [mergeScenes](${api}core/SceneManager#mergeScenes) | 合并场景 |
 | [loadScene](${api}core/SceneManager#loadScene)     | 加载场景 |
@@ -54,6 +54,10 @@ engine.sceneManager.addScene(scene1);
 engine.sceneManager.removeScene(scene2);
 ```
 
+多场景渲染示例如下：
+
+<playground src="multi-scene.ts"></playground>
+
 #### 2. 合并 Scene
 
 可以使用 `engine.sceneManager.mergeScenes` 将 2 个场景进行合并为 1 个场景。
@@ -76,10 +80,11 @@ engine.sceneManager.addScene(destScene);
 ```typescript
 const sceneUrl = "...";
 
-engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
-  engine.sceneManager.addScene(scene);
-});
-
+engine.resourceManager
+  .load({ type: AssetType.Scene, url: "..." })
+  .then((scene) => {
+    engine.sceneManager.addScene(scene);
+  });
 ```
 
 > 此 api 更多在编辑器场景中使用，后续编辑器开放后，同时也会开放场景格式标准。
@@ -87,7 +92,6 @@ engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
 #### 4. 场景销毁
 
 调用 `scene.destroy()` 即可销毁场景，被销毁的场景也会自动从激活场景列表中移除。
-
 
 #### 5. 设置场景背景
 
@@ -119,11 +123,11 @@ background.texture = texture;
 
 目前纹理适配模式有以下三种：
 
-| 适配模式 | 说明 |
-| --- | --- |
-| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth) | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
+| 适配模式                                                                | 说明                                               |
+| ----------------------------------------------------------------------- | -------------------------------------------------- |
+| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth)   | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
 | [AspectFitHeight](${api}core/BackgroundTextureFillMode#AspectFitHeight) | 保持宽高比，把纹理高缩放至 Canvas 的高，左右居中。 |
-| [Fill](${api}core/BackgroundTextureFillMode#Fill) | 把纹理的宽高填满 Canvas 的宽高。 |
+| [Fill](${api}core/BackgroundTextureFillMode#Fill)                       | 把纹理的宽高填满 Canvas 的宽高。                   |
 
 默认的适配模式是 `BackgroundTextureFillMode.AspectFitHeight`。
 
@@ -133,7 +137,7 @@ Playground 示例如下：
 
 #### 6. 设置场景环境光
 
-请参考相关文档： [环境光] (${docs}ambient-light)
+请参考相关文档： [环境光](${docs}ambient-light)
 
 ## 实体树管理
 
@@ -160,12 +164,12 @@ const entity2 = scene.getRootEntity(2);
 
 ### 方法
 
-| 方法名称 | 解释 |
-| :-- | :-- |
-| [createRootEntity](${api}core/Scene#createRootEntity) | 新创建的 _scene_ 默认没有根实体，需要手动创建 |
-| [addRootEntity](${api}core/Scene#addRootEntity) | 可以直接新建实体，或者添加已经存在的实体 |
-| [removeRootEntity](${api}core/Scene#removeRootEntity) | 删除根实体 |
-| [getRootEntity](${api}core/Scene#getRootEntity) | 查找根实体，可以拿到全部根实体，或者单独的某个实体对象。注意，全部实体是只读数组，不能改变长度和顺序 |
+| 方法名称                                              | 解释                                                                                                 |
+| :---------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| [createRootEntity](${api}core/Scene#createRootEntity) | 新创建的 _scene_ 默认没有根实体，需要手动创建                                                        |
+| [addRootEntity](${api}core/Scene#addRootEntity)       | 可以直接新建实体，或者添加已经存在的实体                                                             |
+| [removeRootEntity](${api}core/Scene#removeRootEntity) | 删除根实体                                                                                           |
+| [getRootEntity](${api}core/Scene#getRootEntity)       | 查找根实体，可以拿到全部根实体，或者单独的某个实体对象。注意，全部实体是只读数组，不能改变长度和顺序 |
 
 ## 其他
 

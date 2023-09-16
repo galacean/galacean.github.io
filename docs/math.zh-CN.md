@@ -353,6 +353,8 @@ const out = new Vector3();
 ray.getPoint(10, out);
 ```
 
+## 随机
+
 ## CollisionUtil
 
 ```typescript
