@@ -12,7 +12,11 @@ label: Graphics/Mesh
 
 ## 脚本创建
 
-### 代码示例
+### 通过高级数据创建
+
+可以直接通过设置 `position`,  `normal` , `uv` 等高级数据生成 ModelMesh，然后调用 `uploadData` 方法统一上传数据至 GPU 完成应用。
+
+#### 代码示例
 
 ```typescript
 const entity = rootEntity.createChild('mesh-example');
@@ -41,7 +45,7 @@ meshRenderer.mesh = modelMesh;
 meshRenderer.setMaterial(new UnlitMaterial(engine));
 ```
 
-### 详细介绍
+#### 详细介绍
 
 `ModelMesh` 的使用分为三步：
 
@@ -110,6 +114,39 @@ modelMesh.uploadData(false);
 
 <playground src="model-mesh.ts"></playground>
 
+### 通过低级数据创建
+
+除了设置高级数据的方式，还提可以通过 `setVertexElements` 和 `setVertexBufferBinding` 等接口设置低级数据生成 ModelMesh，通过低级接口设置数据可以自由操作顶点缓冲和索引缓冲数据，不仅灵活还可能带来性能提升。但需要理解 Vertex Buffer 和 Vertex Element 之间的关系，如下图：
+
+![image-20230916235413234](/Users/guolei/Library/Application Support/typora-user-images/image-20230916235413234.png)
+
+#### 代码示例
+
+```typescript
+const modelMesh = new ModelMesh(engine);
+
+// Create vertex element
+const vertexElements = [
+  new VertexElement(VertexAttribute.Position, 0, VertexElementFormat.Vector3, 0),
+  new VertexElement(VertexAttribute.Normal, 0, VertexElementFormat.Vector3, 0),
+  new VertexElement(VertexAttribute.UV, 0, VertexElementFormat.Vector2, 1)
+];
+modelMesh.setVertexElements(vertexElements);
+
+// Create position and normal buffer
+const positionNormals =  new Float32Array([...]);                   
+const positionNormalBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, positionNormals, BufferUsage.Static);
+
+// Create uv buffer
+const uvs =  new Float32Array([...]);   
+const uvBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, uvs, BufferUsage.Static);
+
+modelMesh.setVertexBufferBinding(positionNormalBuffer, 24, 0);
+modelMesh.setVertexBufferBinding(uvBuffer, 8, 1)
+```
+
+
+
 ## 脚本添加 BlendShape 动画
 
 `BlendShape` 通常用于制作精细程度非常高的动画，比如表情动画等。其原理也比较简单，主要通过权重混合基础形状和目标形状的网格数据来表现形状之间过度的动画效果。
@@ -124,7 +161,7 @@ modelMesh.uploadData(false);
 
 1. **组织`BlendShape`数据**
 
-   首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame)添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
+   首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame) 添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
 
    然后我们通过`Mesh`的`addBlendShape()` 方法添加创建好的`BlendShape`。
 

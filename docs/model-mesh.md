@@ -12,7 +12,11 @@ label: Graphics/Mesh
 
 ## Create with script
 
-### Code example
+### Created with advanced data
+
+You can directly generate ModelMesh by setting advanced data such as `position`, `normal`, `uv`, etc., and then call the `uploadData` method to uniformly upload the data to the GPU to complete the application.
+
+#### Code example
 
 ```typescript
 const entity = rootEntity.createChild('mesh-example');
@@ -41,7 +45,7 @@ meshRenderer.mesh = modelMesh;
 meshRenderer.setMaterial(new UnlitMaterial(engine));
 ```
 
-### Detailed introduction
+#### Detailed introduction
 
 The use of `ModelMesh` is divided into three steps:
 
@@ -109,6 +113,37 @@ modelMesh.uploadData(false);
 ```
 
 <playground src="model-mesh.ts"></playground>
+
+### Created with low-level data
+
+In addition to the way of setting high-level data, it is also mentioned that low-level data can be set to generate ModelMesh through interfaces such as `setVertexElements` and `setVertexBufferBinding`. Setting data through low-level interfaces can freely operate vertex buffer and index buffer data, which is not only flexible but may also bring performance improvements. But you need to understand the relationship between Vertex Buffer and Vertex Element, as shown below:
+
+![image-20230916235413234](/Users/guolei/Library/Application Support/typora-user-images/image-20230916235413234.png)
+
+#### Code Example
+
+```typescript
+const modelMesh = new ModelMesh(engine);
+
+//Create vertex element
+const vertexElements = [
+   new VertexElement(VertexAttribute.Position, 0, VertexElementFormat.Vector3, 0),
+   new VertexElement(VertexAttribute.Normal, 0, VertexElementFormat.Vector3, 0),
+   new VertexElement(VertexAttribute.UV, 0, VertexElementFormat.Vector2, 1)
+];
+modelMesh.setVertexElements(vertexElements);
+
+//Create position and normal buffer
+const positionNormals = new Float32Array([...]);
+const positionNormalBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, positionNormals, BufferUsage.Static);
+
+//Create uv buffer
+const uvs = new Float32Array([...]);
+const uvBuffer = new Buffer(engine, BufferBindFlag.VertexBuffer, uvs, BufferUsage.Static);
+
+modelMesh.setVertexBufferBinding(positionNormalBuffer, 24, 0);
+modelMesh.setVertexBufferBinding(uvBuffer, 8, 1);
+```
 
 ## Script to add BlendShape animation
 
