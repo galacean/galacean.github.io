@@ -116,7 +116,7 @@ modelMesh.uploadData(false);
 
 ### 通过低级数据创建
 
-除了设置高级数据的方式，还提可以通过 `setVertexElements` 和 `setVertexBufferBinding` 等接口设置低级数据生成 ModelMesh，通过低级接口设置数据可以自由操作顶点缓冲和索引缓冲数据，不仅灵活还可能带来性能提升。但需要理解 Vertex Buffer 和 Vertex Element 之间的关系，如下图：
+除了设置高级数据的方式，还提可以通过 `setVertexElements` 和 `setVertexBufferBinding` 等接口设置低级数据生成 ModelMesh，通过低级接口设置数据可以自由操作顶点缓冲数据，不仅灵活还可能带来性能提升。但需要理解 Vertex Buffer 和 Vertex Element 之间的关系，如下图：
 
 ![image-20230916235413234](/Users/guolei/Library/Application Support/typora-user-images/image-20230916235413234.png)
 

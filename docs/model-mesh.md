@@ -116,7 +116,7 @@ modelMesh.uploadData(false);
 
 ### Created with low-level data
 
-In addition to the way of setting high-level data, it is also mentioned that low-level data can be set to generate ModelMesh through interfaces such as `setVertexElements` and `setVertexBufferBinding`. Setting data through low-level interfaces can freely operate vertex buffer and index buffer data, which is not only flexible but may also bring performance improvements. But you need to understand the relationship between Vertex Buffer and Vertex Element, as shown below:
+In addition to the method of setting high-level data, it is also mentioned that low-level data can be set to generate ModelMesh through interfaces such as `setVertexElements` and `setVertexBufferBinding`. By setting data through low-level interfaces, the vertex buffer data can be freely manipulated, which is not only flexible but may also bring about performance improvements. But you need to understand the relationship between Vertex Buffer and Vertex Element, as shown below:
 
 ![image-20230916235413234](/Users/guolei/Library/Application Support/typora-user-images/image-20230916235413234.png)
 
