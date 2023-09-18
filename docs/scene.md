@@ -24,7 +24,19 @@ Structurally, each Engine can contain one or more active scenes. Each Scene can 
 
 ### Basic usage
 
-#### 1. Add/Remove Scene
+#### 1. Get the scene object
+
+By calling `engine.sceneManager.scenes` you can get all the scenes activated when the current engine is running, or by calling `entity.scene` you can get the `scene` that the corresponding `entity` is subordinate to.
+
+```typescript
+// Get all currently activated scenes
+const scenes = engine.sceneManager.scenes;
+
+// Get the scene the node belongs to
+const scene = entity.scene;
+```
+
+#### 2. Add/Remove Scene
 
 Adding and removing **Scene** is very simple, just call `addScene()` and `removeScene()` of `engine.sceneManager`, and multiple scenes can be added and rendered at the same time.
 
@@ -42,9 +54,13 @@ engine.sceneManager.addScene(scene1);
 engine.sceneManager.removeScene(scene2);
 ```
 
-#### 2. Merge scenes
+An example of multi-scene rendering is as follows:
 
-If you want to activate multiple scenes at the same time, you can use `engine.sceneManager.mergeScenes` to merge 2 scenes into 1 scene.
+<playground src="multi-scene.ts"></playground>
+
+#### 3. Merge scenes
+
+`engine.sceneManager.scenes` is read-only. If you need to add and remove **Scene**, you need to call `engine.sceneManager.addScene()` or `engine.sceneManager.removeScene()`, **engine support Render multiple scenes simultaneously**.
 
 ```typescript
 // Suppose there are two inactive scenes
@@ -57,7 +73,7 @@ engine.sceneManager.mergeScenes(sourceScene, destScene);
 engine.sceneManager.addScene(destScene);
 ```
 
-#### 3. Load scene
+#### 4. Load scene
 
 If you want to load the **Scene** asset in the application, you can pass an url to `engine.sceneManager.loadScene` method.
 
@@ -69,11 +85,11 @@ engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
 });
 ```
 
-#### 4. Destroy scene
+#### 5. Destroy scene
 
-Call `scene.destroy()` will destroy the scene.
+Call `scene.destroy()` to destroy the scene, and the destroyed scene will be automatically removed from the active scene list.
 
-#### 4. Set background of scene
+#### 6. Set background of scene
 
 The scene background supports adding pure colors and sky:
 
@@ -96,14 +112,9 @@ The playground example:
 
 <playground src="background.ts"></playground>
 
-#### 5. Set the scene ambient light
+#### 7. Set the scene ambient light
 
-AmbientLight setting of the scene:
-
-```typescript
-const scene = engine.sceneManager.scenes[0];
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-```
+Please refer to the relevant documentation: [Ambient Light](${docs}ambient-light)
 
 ## Entity tree management
 

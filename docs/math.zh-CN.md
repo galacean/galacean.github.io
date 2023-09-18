@@ -376,8 +376,6 @@ const num6 = rand.random();
 rand.reset(0, 0x96aa4de3);
 ```
 
-## 随机
-
 ## CollisionUtil
 
 ```typescript

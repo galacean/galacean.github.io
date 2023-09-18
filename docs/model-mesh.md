@@ -15,19 +15,19 @@ label: Graphics/Mesh
 ### Code example
 
 ```typescript
-const entity = rootEntity.createChild('mesh-example');
+const entity = rootEntity.createChild("mesh-example");
 const meshRenderer = entity.addComponent(MeshRenderer);
 
 const modelMesh = new ModelMesh(engine);
 
 // Set vertices data
 const positions = [
-  new Vector3(-1.0, -1.0,  1.0),
-  new Vector3( 1.0, -1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3(-1.0,  1.0,  1.0),
-  new Vector3(-1.0, -1.0,  1.0)
+  new Vector3(-1.0, -1.0, 1.0),
+  new Vector3(1.0, -1.0, 1.0),
+  new Vector3(1.0, 1.0, 1.0),
+  new Vector3(1.0, 1.0, 1.0),
+  new Vector3(-1.0, 1.0, 1.0),
+  new Vector3(-1.0, -1.0, 1.0),
 ];
 modelMesh.setPositions(positions);
 
@@ -47,29 +47,28 @@ The use of `ModelMesh` is divided into three steps:
 
 1. **Setup Data**
 
-Set vertex data by `setPositions()`, `setColors()` and other methods
+You can directly generate ModelMesh by setting **advanced data** such as `position`, `normal`, `uv`, etc., and then call the `uploadData` method to uniformly upload the data to the GPU to complete the application.
+
+**Code Example**
 
 ```typescript
-modelMesh.setPositions([
-  new Vector3(-1.0, -1.0,  1.0),
-  new Vector3( 1.0, -1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3(-1.0,  1.0,  1.0),
-  new Vector3(-1.0, -1.0,  1.0)
-]);
+const positions = new Array<Vector3>(4);
+positions[0] = new Vector3(-1, 1, 1);
+positions[1] = new Vector3(1, 1, 1);
+positions[2] = new Vector3(1, -1, 1);
+positions[3] = new Vector3(-1, -1, 1);
+const uvs = new Array<Vector2>(4);
+uvs[0] = new Vector2(0, 0);
+uvs[1] = new Vector2(1, 0);
+uvs[2] = new Vector2(1, 1);
+uvs[3] = new Vector2(0, 1);
 
-modelMesh.setColors([
-    new Color(1, 0, 0),
-    new Color(1, 1, 0),
-    new Color(0, 1, 1),
-    new Color(0, 1, 0),
-    new Color(0, 1, 1),
-    new Color(1, 0, 1)
-]);
+modelMesh.setPositions(positions);
+modelMesh.setUVs(uvs);
+modelMesh.uploadData(false);
 ```
 
-The APIs for setting data are:
+The APIs for setting advanced data are:
 
 | API                                                   | 说明                           |
 | ----------------------------------------------------- | ------------------------------ |
@@ -83,6 +82,30 @@ The APIs for setting data are:
 | [setUVs](${api}core/ModelMesh#setUVs)                 | Set per-vertex uv data         |
 
 It can be set selectively according to needs (note that location is necessary data and needs to be set first).
+
+In addition, the setting of vertex data can also be completed through **low-level data** ([Buffer](${api}core/Buffer)). Compared with high-level data, setting data through the low-level interface can freely operate the vertex buffer data, not only Flexibility may also lead to performance improvements. But you need to understand the relationship between Vertex Buffer and Vertex Element, as shown below:
+
+![image.png](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*68IjSo2kwUAAAAAAAAAAAAAADleLAQ/original)
+
+**Code Example**
+
+```typescript
+const pos = new Float32Array([1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0]);
+const posBuffer = new Buffer(
+  engine,
+  BufferBindFlag.VertexBuffer,
+  pos,
+  BufferUsage.Static,
+  true
+);
+const mesh = new ModelMesh(engine);
+mesh.setVertexBufferBinding(posBuffer, 12, 0);
+const vertexElements = [
+  newVertexElement(VertexAttribute.Position, 0, VertexElementFormat.Vector3, 0),
+];
+mesh.setVertexElements(vertexElements);
+mesh.uploadData(false);
+```
 
 2. **Add SubMesh**
 
@@ -110,6 +133,33 @@ modelMesh.uploadData(false);
 
 <playground src="model-mesh.ts"></playground>
 
+4. **Read advanced data**
+
+To make the vertex data in `ModelMesh` readable, please note:
+
+- Set the `releaseData` parameter to `false` when uploading data
+- If the vertex data is set through **low-level data**, the readable attribute of the low-level data ([readable](${api}core/Buffer#readable)) needs to be set to `true`
+
+```typescript
+const pos = new Float32Array([1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0]);
+const posBuffer = new Buffer(
+  engine,
+  BufferBindFlag.VertexBuffer,
+  pos,
+  BufferUsage.Static,
+  true
+);
+const mesh = new ModelMesh(engine);
+mesh.setVertexBufferBinding(posBuffer, 12, 0);
+const vertexElements = [
+  newVertexElement(VertexAttribute.Position, 0, VertexElementFormat.Vector3, 0),
+];
+mesh.setVertexElements(vertexElements);
+mesh.uploadData(false);
+//Expected advanced data
+const result = mesh.getPositions();
+```
+
 ## Script to add BlendShape animation
 
 `BlendShape` is usually used to make very detailed animations, such as expression animations. The principle is also relatively simple, mainly by weighting the mesh data of the basic shape and the target shape to express the excessive animation effect between the shapes.
@@ -131,19 +181,17 @@ Example of glTF import BlendShape animation:
    ```typescript
    // Add BlendShape
    const deltaPositions = [
-      new Vector3(0.0, 0.0, 0.0),
-      new Vector3(0.0, 0.0, 0.0),
-      new Vector3(-1.0, 0.0, 0.0),
-      new Vector3(-1.0, 0.0, 0.0),
-      new Vector3(1.0, 0.0, 0.0),
-      new Vector3(0.0, 0.0, 0.0)
-    ];
-    const blendShape = new BlendShape("BlendShapeA");
-    blendShape.addFrame(1.0, deltaPositions);
-    modelMesh.addBlendShape(blendShape);
+     new Vector3(0.0, 0.0, 0.0),
+     new Vector3(0.0, 0.0, 0.0),
+     new Vector3(-1.0, 0.0, 0.0),
+     new Vector3(-1.0, 0.0, 0.0),
+     new Vector3(1.0, 0.0, 0.0),
+     new Vector3(0.0, 0.0, 0.0),
+   ];
+   const blendShape = new BlendShape("BlendShapeA");
+   blendShape.addFrame(1.0, deltaPositions);
+   modelMesh.addBlendShape(blendShape);
    ```
-
-   
 
 2. **Adjust to the target `BlendShape` by weighting**
 
@@ -153,5 +201,3 @@ Example of glTF import BlendShape animation:
    // Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
    skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
    ```
-
-   
