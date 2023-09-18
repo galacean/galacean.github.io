@@ -351,6 +351,29 @@ distance = ray.intersectBox(box);
 // 到射线起点指定距离的点
 const out = new Vector3();
 ray.getPoint(10, out);
+
+```
+
+## Rand
+
+数学库新增了随机数生成器 `Rand` ，他基于 `xorshift128+` 算法实现（被同样应用在 V8，Safari 与 Firefox 中），是一种快速、高质量且周期完整的伪随机数生成算法。
+
+```typescript
+// 初始化随机数生成器实例
+const rand = new Rand(0, 0xf3857f6f);
+
+// 生成区间在[0, 0xffffffff)的随机整数
+const num1 = rand.randomInt32();
+const num2 = rand.randomInt32();
+const num3 = rand.randomInt32();
+
+// 生成区间在[0, 1)的随机数
+const num4 = rand.random();
+const num5 = rand.random();
+const num6 = rand.random();
+
+// 重置种子
+rand.reset(0, 0x96aa4de3);
 ```
 
 ## 随机
