@@ -96,13 +96,13 @@ modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 
 Call the [uploadData()](${api}core/ModelMesh#uploadData) method.
 
-If you no longer need to modify the `ModelMesh` data, set the `noLongerAccessible` parameter to `true`:
+If you no longer need to modify the `ModelMesh` data, set the `releaseData` parameter to `true`:
 
 ```typescript
 modelMesh.uploadData(true);
 ```
 
-If you need to continuously modify the `ModelMesh` data, set the `noLongerAccessible` parameter to `false`:
+If you need to continuously modify the `ModelMesh` data, set the `releaseData` parameter to `false`:
 
 ```typescript
 modelMesh.uploadData(false);
