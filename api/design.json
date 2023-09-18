@@ -31,7 +31,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -54,7 +54,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 								}
 							],
 							"type": {
@@ -85,7 +85,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -108,7 +108,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 								}
 							],
 							"parameters": [
@@ -160,7 +160,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -183,7 +183,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 								}
 							],
 							"parameters": [
@@ -235,7 +235,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -258,7 +258,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 36,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 								}
 							],
 							"parameters": [
@@ -312,7 +312,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -335,7 +335,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 								}
 							],
 							"parameters": [
@@ -392,7 +392,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -415,7 +415,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 								}
 							],
 							"parameters": [
@@ -472,7 +472,7 @@
 							"fileName": "physics/shape/IBoxColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -495,7 +495,7 @@
 									"fileName": "physics/shape/IBoxColliderShape.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
 								}
 							],
 							"parameters": [
@@ -542,7 +542,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -565,7 +565,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 								}
 							],
 							"parameters": [
@@ -632,7 +632,7 @@
 					"fileName": "physics/shape/IBoxColliderShape.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IBoxColliderShape.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IBoxColliderShape.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -670,7 +670,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -693,7 +693,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 								}
 							],
 							"type": {
@@ -724,7 +724,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -747,7 +747,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 								}
 							],
 							"parameters": [
@@ -799,7 +799,7 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
 						}
 					],
 					"signatures": [
@@ -822,7 +822,7 @@
 									"fileName": "physics/shape/ICapsuleColliderShape.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
 								}
 							],
 							"parameters": [
@@ -864,7 +864,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -887,7 +887,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 								}
 							],
 							"parameters": [
@@ -939,7 +939,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -962,7 +962,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 36,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 								}
 							],
 							"parameters": [
@@ -1016,7 +1016,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -1039,7 +1039,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 								}
 							],
 							"parameters": [
@@ -1096,7 +1096,7 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
 						}
 					],
 					"signatures": [
@@ -1119,7 +1119,7 @@
 									"fileName": "physics/shape/ICapsuleColliderShape.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
 								}
 							],
 							"parameters": [
@@ -1161,7 +1161,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -1184,7 +1184,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 								}
 							],
 							"parameters": [
@@ -1241,7 +1241,7 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 23,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
 						}
 					],
 					"signatures": [
@@ -1264,7 +1264,7 @@
 									"fileName": "physics/shape/ICapsuleColliderShape.ts",
 									"line": 23,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
 								}
 							],
 							"parameters": [
@@ -1306,7 +1306,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -1329,7 +1329,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 								}
 							],
 							"parameters": [
@@ -1398,7 +1398,7 @@
 					"fileName": "physics/shape/ICapsuleColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -1436,7 +1436,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -1459,7 +1459,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 								}
 							],
 							"parameters": [
@@ -1513,7 +1513,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -1536,7 +1536,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 								}
 							],
 							"type": {
@@ -1567,7 +1567,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L26"
 						}
 					],
 					"signatures": [
@@ -1590,7 +1590,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L26"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L26"
 								}
 							],
 							"parameters": [
@@ -1637,7 +1637,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L14"
 						}
 					],
 					"signatures": [
@@ -1660,7 +1660,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L14"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L14"
 								}
 							],
 							"parameters": [
@@ -1745,7 +1745,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -1768,7 +1768,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 								}
 							],
 							"parameters": [
@@ -1822,7 +1822,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L38"
 						}
 					],
 					"signatures": [
@@ -1845,7 +1845,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 38,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L38"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L38"
 								}
 							],
 							"parameters": [
@@ -1887,7 +1887,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L50"
 						}
 					],
 					"signatures": [
@@ -1910,7 +1910,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 50,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L50"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L50"
 								}
 							],
 							"parameters": [
@@ -1952,7 +1952,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L32"
 						}
 					],
 					"signatures": [
@@ -1975,7 +1975,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L32"
 								}
 							],
 							"parameters": [
@@ -2017,7 +2017,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L44"
 						}
 					],
 					"signatures": [
@@ -2040,7 +2040,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 44,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L44"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L44"
 								}
 							],
 							"parameters": [
@@ -2087,7 +2087,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L20"
 						}
 					],
 					"signatures": [
@@ -2110,7 +2110,7 @@
 									"fileName": "physics/ICharacterController.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L20"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L20"
 								}
 							],
 							"parameters": [
@@ -2169,7 +2169,7 @@
 					"fileName": "physics/ICharacterController.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICharacterController.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICharacterController.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -2207,7 +2207,7 @@
 							"fileName": "IClone.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/IClone.ts#L9"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/IClone.ts#L9"
 						}
 					],
 					"signatures": [
@@ -2241,7 +2241,7 @@
 									"fileName": "IClone.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/IClone.ts#L9"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/IClone.ts#L9"
 								}
 							],
 							"type": {
@@ -2267,7 +2267,7 @@
 							"fileName": "IClone.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/IClone.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/IClone.ts#L15"
 						}
 					],
 					"signatures": [
@@ -2290,7 +2290,7 @@
 									"fileName": "IClone.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/IClone.ts#L15"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/IClone.ts#L15"
 								}
 							],
 							"parameters": [
@@ -2341,7 +2341,7 @@
 					"fileName": "IClone.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/IClone.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/IClone.ts#L4"
 				}
 			]
 		},
@@ -2371,7 +2371,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -2394,7 +2394,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 								}
 							],
 							"parameters": [
@@ -2438,7 +2438,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -2461,7 +2461,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 								}
 							],
 							"type": {
@@ -2482,7 +2482,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -2505,7 +2505,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 								}
 							],
 							"parameters": [
@@ -2554,7 +2554,7 @@
 					"fileName": "physics/ICollider.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L6"
 				}
 			],
 			"extendedBy": [
@@ -2601,7 +2601,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -2624,7 +2624,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 								}
 							],
 							"type": {
@@ -2645,7 +2645,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -2668,7 +2668,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 								}
 							],
 							"parameters": [
@@ -2710,7 +2710,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -2733,7 +2733,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 								}
 							],
 							"parameters": [
@@ -2775,7 +2775,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -2798,7 +2798,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 36,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 								}
 							],
 							"parameters": [
@@ -2842,7 +2842,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -2865,7 +2865,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 								}
 							],
 							"parameters": [
@@ -2912,7 +2912,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -2935,7 +2935,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 								}
 							],
 							"parameters": [
@@ -2982,7 +2982,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -3005,7 +3005,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 								}
 							],
 							"parameters": [
@@ -3061,7 +3061,7 @@
 					"fileName": "physics/shape/IColliderShape.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L7"
 				}
 			],
 			"extendedBy": [
@@ -3113,7 +3113,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 110,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L110"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L110"
 						}
 					],
 					"signatures": [
@@ -3136,7 +3136,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 110,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L110"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L110"
 								}
 							],
 							"parameters": [
@@ -3183,7 +3183,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -3206,7 +3206,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 								}
 							],
 							"parameters": [
@@ -3260,7 +3260,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 116,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L116"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L116"
 						}
 					],
 					"signatures": [
@@ -3283,7 +3283,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 116,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L116"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L116"
 								}
 							],
 							"parameters": [
@@ -3330,7 +3330,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -3353,7 +3353,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 								}
 							],
 							"type": {
@@ -3384,7 +3384,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L20"
 						}
 					],
 					"signatures": [
@@ -3407,7 +3407,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L20"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L20"
 								}
 							],
 							"parameters": [
@@ -3478,7 +3478,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 123,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L123"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L123"
 						}
 					],
 					"signatures": [
@@ -3501,7 +3501,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 123,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L123"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L123"
 								}
 							],
 							"parameters": [
@@ -3588,7 +3588,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -3611,7 +3611,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 								}
 							],
 							"parameters": [
@@ -3665,7 +3665,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L32"
 						}
 					],
 					"signatures": [
@@ -3688,7 +3688,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L32"
 								}
 							],
 							"parameters": [
@@ -3730,7 +3730,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L44"
 						}
 					],
 					"signatures": [
@@ -3753,7 +3753,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 44,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L44"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L44"
 								}
 							],
 							"parameters": [
@@ -3800,7 +3800,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L56"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L56"
 						}
 					],
 					"signatures": [
@@ -3823,7 +3823,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 56,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L56"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L56"
 								}
 							],
 							"parameters": [
@@ -3870,7 +3870,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 92,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L92"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L92"
 						}
 					],
 					"signatures": [
@@ -3893,7 +3893,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 92,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L92"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L92"
 								}
 							],
 							"parameters": [
@@ -3935,7 +3935,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 104,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L104"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L104"
 						}
 					],
 					"signatures": [
@@ -3958,7 +3958,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 104,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L104"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L104"
 								}
 							],
 							"parameters": [
@@ -4000,7 +4000,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 62,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L62"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L62"
 						}
 					],
 					"signatures": [
@@ -4023,7 +4023,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 62,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L62"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L62"
 								}
 							],
 							"parameters": [
@@ -4070,7 +4070,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 98,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L98"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L98"
 						}
 					],
 					"signatures": [
@@ -4093,7 +4093,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 98,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L98"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L98"
 								}
 							],
 							"parameters": [
@@ -4135,7 +4135,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L26"
 						}
 					],
 					"signatures": [
@@ -4158,7 +4158,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L26"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L26"
 								}
 							],
 							"parameters": [
@@ -4200,7 +4200,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L38"
 						}
 					],
 					"signatures": [
@@ -4223,7 +4223,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 38,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L38"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L38"
 								}
 							],
 							"parameters": [
@@ -4270,7 +4270,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L50"
 						}
 					],
 					"signatures": [
@@ -4293,7 +4293,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 50,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L50"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L50"
 								}
 							],
 							"parameters": [
@@ -4335,7 +4335,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L68"
 						}
 					],
 					"signatures": [
@@ -4358,7 +4358,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 68,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L68"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L68"
 								}
 							],
 							"parameters": [
@@ -4400,7 +4400,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L74"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L74"
 						}
 					],
 					"signatures": [
@@ -4423,7 +4423,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 74,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L74"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L74"
 								}
 							],
 							"parameters": [
@@ -4465,7 +4465,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 80,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L80"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L80"
 						}
 					],
 					"signatures": [
@@ -4488,7 +4488,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 80,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L80"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L80"
 								}
 							],
 							"parameters": [
@@ -4530,7 +4530,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 86,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L86"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L86"
 						}
 					],
 					"signatures": [
@@ -4553,7 +4553,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 86,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L86"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L86"
 								}
 							],
 							"parameters": [
@@ -4595,7 +4595,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 13,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L13"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L13"
 						}
 					],
 					"signatures": [
@@ -4618,7 +4618,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L13"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L13"
 								}
 							],
 							"parameters": [
@@ -4689,7 +4689,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 128,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L128"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L128"
 						}
 					],
 					"signatures": [
@@ -4712,7 +4712,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 128,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L128"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L128"
 								}
 							],
 							"type": {
@@ -4733,7 +4733,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L133"
 						}
 					],
 					"signatures": [
@@ -4756,7 +4756,7 @@
 									"fileName": "physics/IDynamicCollider.ts",
 									"line": 133,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L133"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L133"
 								}
 							],
 							"type": {
@@ -4803,7 +4803,7 @@
 					"fileName": "physics/IDynamicCollider.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IDynamicCollider.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IDynamicCollider.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -4841,7 +4841,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -4864,7 +4864,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 								}
 							],
 							"parameters": [
@@ -4908,7 +4908,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -4931,7 +4931,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 								}
 							],
 							"parameters": [
@@ -4975,7 +4975,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -5009,7 +5009,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 								}
 							],
 							"parameters": [
@@ -5058,7 +5058,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -5081,7 +5081,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 								}
 							],
 							"parameters": [
@@ -5127,7 +5127,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -5150,7 +5150,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 								}
 							],
 							"parameters": [
@@ -5194,7 +5194,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -5217,7 +5217,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 								}
 							],
 							"parameters": [
@@ -5261,7 +5261,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -5284,7 +5284,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 								}
 							],
 							"parameters": [
@@ -5328,7 +5328,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -5351,7 +5351,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 								}
 							],
 							"parameters": [
@@ -5405,7 +5405,7 @@
 					"fileName": "physics/joints/IFixedJoint.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IFixedJoint.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IFixedJoint.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -5443,7 +5443,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L21"
 						}
 					],
 					"signatures": [
@@ -5466,7 +5466,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L21"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L21"
 								}
 							],
 							"type": {
@@ -5487,7 +5487,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L26"
 						}
 					],
 					"signatures": [
@@ -5510,7 +5510,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L26"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L26"
 								}
 							],
 							"type": {
@@ -5547,7 +5547,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -5570,7 +5570,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L11"
 								}
 							],
 							"parameters": [
@@ -5609,7 +5609,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -5632,7 +5632,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 								}
 							],
 							"parameters": [
@@ -5676,7 +5676,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -5699,7 +5699,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 								}
 							],
 							"parameters": [
@@ -5743,7 +5743,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -5777,7 +5777,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 								}
 							],
 							"parameters": [
@@ -5826,7 +5826,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -5849,7 +5849,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 								}
 							],
 							"parameters": [
@@ -5895,7 +5895,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -5918,7 +5918,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 								}
 							],
 							"parameters": [
@@ -5962,7 +5962,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -5985,7 +5985,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 								}
 							],
 							"parameters": [
@@ -6029,7 +6029,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 55,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L55"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L55"
 						}
 					],
 					"signatures": [
@@ -6052,7 +6052,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 55,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L55"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L55"
 								}
 							],
 							"parameters": [
@@ -6094,7 +6094,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 61,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L61"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L61"
 						}
 					],
 					"signatures": [
@@ -6117,7 +6117,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 61,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L61"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L61"
 								}
 							],
 							"parameters": [
@@ -6159,7 +6159,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 49,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L49"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L49"
 						}
 					],
 					"signatures": [
@@ -6182,7 +6182,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 49,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L49"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L49"
 								}
 							],
 							"parameters": [
@@ -6224,7 +6224,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 34,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L34"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L34"
 						}
 					],
 					"signatures": [
@@ -6247,7 +6247,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 34,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L34"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L34"
 								}
 							],
 							"parameters": [
@@ -6327,7 +6327,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L68"
 						}
 					],
 					"signatures": [
@@ -6350,7 +6350,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 68,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L68"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L68"
 								}
 							],
 							"parameters": [
@@ -6411,7 +6411,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -6434,7 +6434,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 								}
 							],
 							"parameters": [
@@ -6478,7 +6478,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -6501,7 +6501,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 								}
 							],
 							"parameters": [
@@ -6545,7 +6545,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 43,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L43"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L43"
 						}
 					],
 					"signatures": [
@@ -6568,7 +6568,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 43,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L43"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L43"
 								}
 							],
 							"parameters": [
@@ -6667,7 +6667,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 16,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L16"
 						}
 					],
 					"signatures": [
@@ -6690,7 +6690,7 @@
 									"fileName": "physics/joints/IHingeJoint.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L16"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L16"
 								}
 							],
 							"parameters": [
@@ -6749,7 +6749,7 @@
 					"fileName": "physics/joints/IHingeJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IHingeJoint.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IHingeJoint.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -6787,7 +6787,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -6810,7 +6810,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 								}
 							],
 							"parameters": [
@@ -6844,7 +6844,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -6867,7 +6867,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 								}
 							],
 							"parameters": [
@@ -6901,7 +6901,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -6935,7 +6935,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 								}
 							],
 							"parameters": [
@@ -6974,7 +6974,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -6997,7 +6997,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 								}
 							],
 							"parameters": [
@@ -7033,7 +7033,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -7056,7 +7056,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 								}
 							],
 							"parameters": [
@@ -7090,7 +7090,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -7113,7 +7113,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 								}
 							],
 							"parameters": [
@@ -7147,7 +7147,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -7170,7 +7170,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 								}
 							],
 							"parameters": [
@@ -7204,7 +7204,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -7227,7 +7227,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 								}
 							],
 							"parameters": [
@@ -7271,7 +7271,7 @@
 					"fileName": "physics/joints/IJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L7"
 				}
 			],
 			"extendedBy": [
@@ -7318,7 +7318,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 88,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L88"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L88"
 						}
 					],
 					"signatures": [
@@ -7341,7 +7341,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 88,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L88"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L88"
 								}
 							],
 							"parameters": [
@@ -7430,7 +7430,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 112,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L112"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L112"
 						}
 					],
 					"signatures": [
@@ -7453,7 +7453,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 112,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L112"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L112"
 								}
 							],
 							"parameters": [
@@ -7556,7 +7556,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 64,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L64"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L64"
 						}
 					],
 					"signatures": [
@@ -7579,7 +7579,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 64,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L64"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L64"
 								}
 							],
 							"type": {
@@ -7602,7 +7602,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 52,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L52"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L52"
 						}
 					],
 					"signatures": [
@@ -7625,7 +7625,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 52,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L52"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L52"
 								}
 							],
 							"parameters": [
@@ -7698,7 +7698,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 123,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L123"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L123"
 						}
 					],
 					"signatures": [
@@ -7721,7 +7721,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 123,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L123"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L123"
 								}
 							],
 							"parameters": [
@@ -7767,7 +7767,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 129,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L129"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L129"
 						}
 					],
 					"signatures": [
@@ -7790,7 +7790,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 129,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L129"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L129"
 								}
 							],
 							"parameters": [
@@ -7836,7 +7836,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 25,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L25"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L25"
 						}
 					],
 					"signatures": [
@@ -7859,7 +7859,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 25,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L25"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L25"
 								}
 							],
 							"type": {
@@ -7882,7 +7882,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L74"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L74"
 						}
 					],
 					"signatures": [
@@ -7905,7 +7905,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 74,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L74"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L74"
 								}
 							],
 							"parameters": [
@@ -8025,7 +8025,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L37"
 						}
 					],
 					"signatures": [
@@ -8048,7 +8048,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L37"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L37"
 								}
 							],
 							"parameters": [
@@ -8102,7 +8102,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 39,
 													"character": 21,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L39"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L39"
 												}
 											],
 											"signatures": [
@@ -8117,7 +8117,7 @@
 															"fileName": "physics/IPhysics.ts",
 															"line": 39,
 															"character": 21,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L39"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L39"
 														}
 													],
 													"parameters": [
@@ -8182,7 +8182,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 40,
 													"character": 20,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L40"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L40"
 												}
 											],
 											"signatures": [
@@ -8197,7 +8197,7 @@
 															"fileName": "physics/IPhysics.ts",
 															"line": 40,
 															"character": 20,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L40"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L40"
 														}
 													],
 													"parameters": [
@@ -8262,7 +8262,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 41,
 													"character": 20,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L41"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L41"
 												}
 											],
 											"signatures": [
@@ -8277,7 +8277,7 @@
 															"fileName": "physics/IPhysics.ts",
 															"line": 41,
 															"character": 20,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L41"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L41"
 														}
 													],
 													"parameters": [
@@ -8342,7 +8342,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 42,
 													"character": 21,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L42"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L42"
 												}
 											],
 											"signatures": [
@@ -8357,7 +8357,7 @@
 															"fileName": "physics/IPhysics.ts",
 															"line": 42,
 															"character": 21,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L42"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L42"
 														}
 													],
 													"parameters": [
@@ -8422,7 +8422,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 43,
 													"character": 20,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L43"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L43"
 												}
 											],
 											"signatures": [
@@ -8437,7 +8437,7 @@
 															"fileName": "physics/IPhysics.ts",
 															"line": 43,
 															"character": 20,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L43"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L43"
 														}
 													],
 													"parameters": [
@@ -8502,7 +8502,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 44,
 													"character": 20,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L44"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L44"
 												}
 											],
 											"signatures": [
@@ -8517,7 +8517,7 @@
 															"fileName": "physics/IPhysics.ts",
 															"line": 44,
 															"character": 20,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L44"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L44"
 														}
 													],
 													"parameters": [
@@ -8574,7 +8574,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 103,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L103"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L103"
 						}
 					],
 					"signatures": [
@@ -8597,7 +8597,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 103,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L103"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L103"
 								}
 							],
 							"parameters": [
@@ -8662,7 +8662,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 96,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L96"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L96"
 						}
 					],
 					"signatures": [
@@ -8685,7 +8685,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 96,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L96"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L96"
 								}
 							],
 							"parameters": [
@@ -8769,7 +8769,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 135,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L135"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L135"
 						}
 					],
 					"signatures": [
@@ -8792,7 +8792,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 135,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L135"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L135"
 								}
 							],
 							"parameters": [
@@ -8838,7 +8838,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 59,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L59"
 						}
 					],
 					"signatures": [
@@ -8861,7 +8861,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 59,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L59"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L59"
 								}
 							],
 							"parameters": [
@@ -8934,7 +8934,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L20"
 						}
 					],
 					"signatures": [
@@ -8968,7 +8968,7 @@
 									"fileName": "physics/IPhysics.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L20"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L20"
 								}
 							],
 							"type": {
@@ -9016,7 +9016,7 @@
 					"fileName": "physics/IPhysics.ts",
 					"line": 15,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysics.ts#L15"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysics.ts#L15"
 				}
 			]
 		},
@@ -9039,7 +9039,7 @@
 					"fileName": "physics/IPhysicsManager.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsManager.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsManager.ts#L4"
 				}
 			]
 		},
@@ -9069,7 +9069,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L38"
 						}
 					],
 					"signatures": [
@@ -9092,7 +9092,7 @@
 									"fileName": "physics/IPhysicsMaterial.ts",
 									"line": 38,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L38"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L38"
 								}
 							],
 							"type": {
@@ -9113,7 +9113,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L27"
 						}
 					],
 					"signatures": [
@@ -9136,7 +9136,7 @@
 									"fileName": "physics/IPhysicsMaterial.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L27"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L27"
 								}
 							],
 							"parameters": [
@@ -9178,7 +9178,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L9"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L9"
 						}
 					],
 					"signatures": [
@@ -9201,7 +9201,7 @@
 									"fileName": "physics/IPhysicsMaterial.ts",
 									"line": 9,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L9"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L9"
 								}
 							],
 							"parameters": [
@@ -9243,7 +9243,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L15"
 						}
 					],
 					"signatures": [
@@ -9266,7 +9266,7 @@
 									"fileName": "physics/IPhysicsMaterial.ts",
 									"line": 15,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L15"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L15"
 								}
 							],
 							"parameters": [
@@ -9308,7 +9308,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 33,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L33"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L33"
 						}
 					],
 					"signatures": [
@@ -9331,7 +9331,7 @@
 									"fileName": "physics/IPhysicsMaterial.ts",
 									"line": 33,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L33"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L33"
 								}
 							],
 							"parameters": [
@@ -9373,7 +9373,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L21"
 						}
 					],
 					"signatures": [
@@ -9396,7 +9396,7 @@
 									"fileName": "physics/IPhysicsMaterial.ts",
 									"line": 21,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L21"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L21"
 								}
 							],
 							"parameters": [
@@ -9446,7 +9446,7 @@
 					"fileName": "physics/IPhysicsMaterial.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsMaterial.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsMaterial.ts#L4"
 				}
 			]
 		},
@@ -9476,7 +9476,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L44"
 						}
 					],
 					"signatures": [
@@ -9499,7 +9499,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 44,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L44"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L44"
 								}
 							],
 							"parameters": [
@@ -9543,7 +9543,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L32"
 						}
 					],
 					"signatures": [
@@ -9566,7 +9566,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L32"
 								}
 							],
 							"parameters": [
@@ -9610,7 +9610,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L20"
 						}
 					],
 					"signatures": [
@@ -9633,7 +9633,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L20"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L20"
 								}
 							],
 							"parameters": [
@@ -9677,7 +9677,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L66"
 						}
 					],
 					"signatures": [
@@ -9711,7 +9711,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 66,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L66"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L66"
 								}
 							],
 							"parameters": [
@@ -9785,7 +9785,7 @@
 													"fileName": "physics/IPhysicsScene.ts",
 													"line": 69,
 													"character": 15,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L69"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L69"
 												}
 											],
 											"signatures": [
@@ -9800,7 +9800,7 @@
 															"fileName": "physics/IPhysicsScene.ts",
 															"line": 69,
 															"character": 15,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L69"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L69"
 														}
 													],
 													"parameters": [
@@ -9854,7 +9854,7 @@
 													"fileName": "physics/IPhysicsScene.ts",
 													"line": 70,
 													"character": 19,
-													"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L70"
+													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L70"
 												}
 											],
 											"signatures": [
@@ -9869,7 +9869,7 @@
 															"fileName": "physics/IPhysicsScene.ts",
 															"line": 70,
 															"character": 19,
-															"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L70"
+															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L70"
 														}
 													],
 													"parameters": [
@@ -9956,7 +9956,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L50"
 						}
 					],
 					"signatures": [
@@ -9979,7 +9979,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 50,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L50"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L50"
 								}
 							],
 							"parameters": [
@@ -10023,7 +10023,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L38"
 						}
 					],
 					"signatures": [
@@ -10046,7 +10046,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 38,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L38"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L38"
 								}
 							],
 							"parameters": [
@@ -10090,7 +10090,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L26"
 						}
 					],
 					"signatures": [
@@ -10113,7 +10113,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 26,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L26"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L26"
 								}
 							],
 							"parameters": [
@@ -10157,7 +10157,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L14"
 						}
 					],
 					"signatures": [
@@ -10180,7 +10180,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 14,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L14"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L14"
 								}
 							],
 							"parameters": [
@@ -10227,7 +10227,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L56"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L56"
 						}
 					],
 					"signatures": [
@@ -10250,7 +10250,7 @@
 									"fileName": "physics/IPhysicsScene.ts",
 									"line": 56,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L56"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L56"
 								}
 							],
 							"parameters": [
@@ -10303,7 +10303,7 @@
 					"fileName": "physics/IPhysicsScene.ts",
 					"line": 9,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IPhysicsScene.ts#L9"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IPhysicsScene.ts#L9"
 				}
 			]
 		},
@@ -10333,7 +10333,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -10356,7 +10356,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 								}
 							],
 							"type": {
@@ -10387,7 +10387,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -10410,7 +10410,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 								}
 							],
 							"parameters": [
@@ -10462,7 +10462,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -10485,7 +10485,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 								}
 							],
 							"parameters": [
@@ -10537,7 +10537,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -10560,7 +10560,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 36,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 								}
 							],
 							"parameters": [
@@ -10614,7 +10614,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -10637,7 +10637,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 								}
 							],
 							"parameters": [
@@ -10694,7 +10694,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -10717,7 +10717,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 								}
 							],
 							"parameters": [
@@ -10774,7 +10774,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -10797,7 +10797,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 								}
 							],
 							"parameters": [
@@ -10863,7 +10863,7 @@
 					"fileName": "physics/shape/IPlaneColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IPlaneColliderShape.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IPlaneColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -10893,7 +10893,7 @@
 							"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 							"line": 3,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L3"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L3"
 						}
 					],
 					"signatures": [
@@ -10908,7 +10908,7 @@
 									"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 									"line": 3,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L3"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L3"
 								}
 							],
 							"type": {
@@ -10929,7 +10929,7 @@
 							"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 							"line": 2,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L2"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L2"
 						}
 					],
 					"signatures": [
@@ -10944,7 +10944,7 @@
 									"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 									"line": 2,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L2"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L2"
 								}
 							],
 							"parameters": [
@@ -10993,7 +10993,7 @@
 					"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L1"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L1"
 				}
 			]
 		},
@@ -11015,7 +11015,7 @@
 							"fileName": "shader-lab/IShaderInfo.ts",
 							"line": 4,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderInfo.ts#L4"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderInfo.ts#L4"
 						}
 					],
 					"type": {
@@ -11034,7 +11034,7 @@
 							"fileName": "shader-lab/IShaderInfo.ts",
 							"line": 5,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderInfo.ts#L5"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderInfo.ts#L5"
 						}
 					],
 					"type": {
@@ -11062,7 +11062,7 @@
 					"fileName": "shader-lab/IShaderInfo.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderInfo.ts#L3"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderInfo.ts#L3"
 				}
 			]
 		},
@@ -11092,7 +11092,7 @@
 							"fileName": "shader-lab/IShaderLab.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderLab.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderLab.ts#L10"
 						}
 					],
 					"signatures": [
@@ -11115,7 +11115,7 @@
 									"fileName": "shader-lab/IShaderLab.ts",
 									"line": 10,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderLab.ts#L10"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderLab.ts#L10"
 								}
 							],
 							"parameters": [
@@ -11154,7 +11154,7 @@
 					"fileName": "shader-lab/IShaderLab.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderLab.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderLab.ts#L6"
 				}
 			]
 		},
@@ -11176,7 +11176,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderPassInfo.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderPassInfo.ts#L6"
 						}
 					],
 					"type": {
@@ -11195,7 +11195,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 4,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderPassInfo.ts#L4"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderPassInfo.ts#L4"
 						}
 					],
 					"type": {
@@ -11214,7 +11214,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderPassInfo.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderPassInfo.ts#L8"
 						}
 					],
 					"type": {
@@ -11296,7 +11296,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 7,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderPassInfo.ts#L7"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderPassInfo.ts#L7"
 						}
 					],
 					"type": {
@@ -11343,7 +11343,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 5,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderPassInfo.ts#L5"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderPassInfo.ts#L5"
 						}
 					],
 					"type": {
@@ -11369,7 +11369,7 @@
 					"fileName": "shader-lab/IShaderPassInfo.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/IShaderPassInfo.ts#L3"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/IShaderPassInfo.ts#L3"
 				}
 			]
 		},
@@ -11399,7 +11399,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -11422,7 +11422,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L47"
 								}
 							],
 							"type": {
@@ -11453,7 +11453,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -11476,7 +11476,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L30"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L30"
 								}
 							],
 							"parameters": [
@@ -11528,7 +11528,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -11551,7 +11551,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L42"
 								}
 							],
 							"parameters": [
@@ -11603,7 +11603,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -11626,7 +11626,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 36,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L36"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L36"
 								}
 							],
 							"parameters": [
@@ -11680,7 +11680,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -11703,7 +11703,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L18"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L18"
 								}
 							],
 							"parameters": [
@@ -11760,7 +11760,7 @@
 							"fileName": "physics/shape/ISphereColliderShape.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
 						}
 					],
 					"signatures": [
@@ -11783,7 +11783,7 @@
 									"fileName": "physics/shape/ISphereColliderShape.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
 								}
 							],
 							"parameters": [
@@ -11825,7 +11825,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -11848,7 +11848,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 12,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L12"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L12"
 								}
 							],
 							"parameters": [
@@ -11905,7 +11905,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -11928,7 +11928,7 @@
 									"fileName": "physics/shape/IColliderShape.ts",
 									"line": 24,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/IColliderShape.ts#L24"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/IColliderShape.ts#L24"
 								}
 							],
 							"parameters": [
@@ -11995,7 +11995,7 @@
 					"fileName": "physics/shape/ISphereColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/shape/ISphereColliderShape.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/shape/ISphereColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -12033,7 +12033,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -12056,7 +12056,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 42,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L42"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L42"
 								}
 							],
 							"parameters": [
@@ -12100,7 +12100,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -12123,7 +12123,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L47"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L47"
 								}
 							],
 							"parameters": [
@@ -12167,7 +12167,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -12201,7 +12201,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L17"
 								}
 							],
 							"parameters": [
@@ -12250,7 +12250,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -12273,7 +12273,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L11"
 								}
 							],
 							"parameters": [
@@ -12319,7 +12319,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -12342,7 +12342,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 27,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L27"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L27"
 								}
 							],
 							"parameters": [
@@ -12386,7 +12386,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -12409,7 +12409,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L22"
 								}
 							],
 							"parameters": [
@@ -12453,7 +12453,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 41,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L41"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L41"
 						}
 					],
 					"signatures": [
@@ -12476,7 +12476,7 @@
 									"fileName": "physics/joints/ISpringJoint.ts",
 									"line": 41,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L41"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L41"
 								}
 							],
 							"parameters": [
@@ -12518,7 +12518,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -12541,7 +12541,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L37"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L37"
 								}
 							],
 							"parameters": [
@@ -12585,7 +12585,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -12608,7 +12608,7 @@
 									"fileName": "physics/joints/IJoint.ts",
 									"line": 32,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/IJoint.ts#L32"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/IJoint.ts#L32"
 								}
 							],
 							"parameters": [
@@ -12652,7 +12652,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 23,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L23"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L23"
 						}
 					],
 					"signatures": [
@@ -12675,7 +12675,7 @@
 									"fileName": "physics/joints/ISpringJoint.ts",
 									"line": 23,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L23"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L23"
 								}
 							],
 							"parameters": [
@@ -12717,7 +12717,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -12740,7 +12740,7 @@
 									"fileName": "physics/joints/ISpringJoint.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L17"
 								}
 							],
 							"parameters": [
@@ -12782,7 +12782,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 35,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L35"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L35"
 						}
 					],
 					"signatures": [
@@ -12805,7 +12805,7 @@
 									"fileName": "physics/joints/ISpringJoint.ts",
 									"line": 35,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L35"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L35"
 								}
 							],
 							"parameters": [
@@ -12847,7 +12847,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -12870,7 +12870,7 @@
 									"fileName": "physics/joints/ISpringJoint.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L11"
 								}
 							],
 							"parameters": [
@@ -12909,7 +12909,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 29,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L29"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L29"
 						}
 					],
 					"signatures": [
@@ -12932,7 +12932,7 @@
 									"fileName": "physics/joints/ISpringJoint.ts",
 									"line": 29,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L29"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L29"
 								}
 							],
 							"parameters": [
@@ -12990,7 +12990,7 @@
 					"fileName": "physics/joints/ISpringJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/joints/ISpringJoint.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/joints/ISpringJoint.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -13028,7 +13028,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -13051,7 +13051,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 11,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L11"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L11"
 								}
 							],
 							"parameters": [
@@ -13105,7 +13105,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -13128,7 +13128,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L22"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L22"
 								}
 							],
 							"type": {
@@ -13159,7 +13159,7 @@
 							"fileName": "physics/IStaticCollider.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IStaticCollider.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IStaticCollider.ts#L20"
 						}
 					],
 					"signatures": [
@@ -13182,7 +13182,7 @@
 									"fileName": "physics/IStaticCollider.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IStaticCollider.ts#L20"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IStaticCollider.ts#L20"
 								}
 							],
 							"parameters": [
@@ -13253,7 +13253,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -13276,7 +13276,7 @@
 									"fileName": "physics/ICollider.ts",
 									"line": 17,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/ICollider.ts#L17"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/ICollider.ts#L17"
 								}
 							],
 							"parameters": [
@@ -13330,7 +13330,7 @@
 							"fileName": "physics/IStaticCollider.ts",
 							"line": 13,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IStaticCollider.ts#L13"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IStaticCollider.ts#L13"
 						}
 					],
 					"signatures": [
@@ -13353,7 +13353,7 @@
 									"fileName": "physics/IStaticCollider.ts",
 									"line": 13,
 									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IStaticCollider.ts#L13"
+									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IStaticCollider.ts#L13"
 								}
 							],
 							"parameters": [
@@ -13431,7 +13431,7 @@
 					"fileName": "physics/IStaticCollider.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/physics/IStaticCollider.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/physics/IStaticCollider.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -13461,7 +13461,7 @@
 							"fileName": "shader-lab/ISubShaderInfo.ts",
 							"line": 4,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/ISubShaderInfo.ts#L4"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/ISubShaderInfo.ts#L4"
 						}
 					],
 					"type": {
@@ -13480,7 +13480,7 @@
 							"fileName": "shader-lab/ISubShaderInfo.ts",
 							"line": 5,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/ISubShaderInfo.ts#L5"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/ISubShaderInfo.ts#L5"
 						}
 					],
 					"type": {
@@ -13515,7 +13515,7 @@
 							"fileName": "shader-lab/ISubShaderInfo.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/ISubShaderInfo.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/ISubShaderInfo.ts#L6"
 						}
 					],
 					"type": {
@@ -13567,7 +13567,7 @@
 					"fileName": "shader-lab/ISubShaderInfo.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/design/src/shader-lab/ISubShaderInfo.ts#L3"
+					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/design/src/shader-lab/ISubShaderInfo.ts#L3"
 				}
 			]
 		}
