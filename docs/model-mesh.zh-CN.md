@@ -43,11 +43,11 @@ meshRenderer.setMaterial(new UnlitMaterial(engine));
 
 ### 详细介绍
 
-`ModelMesh` 的使用分为三步：
+`ModelMesh` 的使用分为以下几步：
 
 #### **设置数据**
 
-`ModelMesh` 可以通过**高级数据**或**低级数据**设置顶点数据。
+`ModelMesh` 可以通过**高级数据**或**低级数据**设置顶点数据，也可以根据需求选择性设置，但需要注意位置是必要数据且需要最先设置。
 
 ##### 通过高级数据设置
 
@@ -184,30 +184,30 @@ const result = mesh.getPositions();
 
 #### **组织`BlendShape`数据**
 
-   首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame)添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
+首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame)添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
 
-   然后我们通过`Mesh`的`addBlendShape()` 方法添加创建好的`BlendShape`。
+然后我们通过`Mesh`的`addBlendShape()` 方法添加创建好的`BlendShape`。
 
-   ```typescript
-   // Add BlendShape
-   const deltaPositions = [
-     new Vector3(0.0, 0.0, 0.0),
-     new Vector3(0.0, 0.0, 0.0),
-     new Vector3(-1.0, 0.0, 0.0),
-     new Vector3(-1.0, 0.0, 0.0),
-     new Vector3(1.0, 0.0, 0.0),
-     new Vector3(0.0, 0.0, 0.0),
-   ];
-   const blendShape = new BlendShape("BlendShapeA");
-   blendShape.addFrame(1.0, deltaPositions);
-   modelMesh.addBlendShape(blendShape);
-   ```
+```typescript
+// Add BlendShape
+const deltaPositions = [
+  new Vector3(0.0, 0.0, 0.0),
+  new Vector3(0.0, 0.0, 0.0),
+  new Vector3(-1.0, 0.0, 0.0),
+  new Vector3(-1.0, 0.0, 0.0),
+  new Vector3(1.0, 0.0, 0.0),
+  new Vector3(0.0, 0.0, 0.0),
+];
+const blendShape = new BlendShape("BlendShapeA");
+blendShape.addFrame(1.0, deltaPositions);
+modelMesh.addBlendShape(blendShape);
+```
 
 #### **通过权重调整至目标 `BlendShape`**
 
-   现在我们要将网格的形状完全调整为刚才添加的`BlendShape`，我们需要设置一个权重数组，由于我们只添加了一个`BlendShape`，所以权重数组长度为 1 即可，并把第一个元素的值设置为 1.0。
+现在我们要将网格的形状完全调整为刚才添加的`BlendShape`，我们需要设置一个权重数组，由于我们只添加了一个`BlendShape`，所以权重数组长度为 1 即可，并把第一个元素的值设置为 1.0。
 
-   ```typescript
-   // Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
-   skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
-   ```
+```typescript
+// Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
+skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
+```

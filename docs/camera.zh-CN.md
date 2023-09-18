@@ -65,21 +65,21 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ## 属性
 
-| 类型     | 属性                                                     | 解释                                                         |
-| :------- | :------------------------------------------------------- | :----------------------------------------------------------- |
-| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)       | 是否正交投影，默认是 `false`                                 |
-|          | [aspectRatio](${api}core/Camera#aspectRatio)             | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
-|          | [cullingMask](${api}core/Camera#cullingMask)             | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                 |
-|          | [priority](${api}core/Camera#priority)                   | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
-|          | [renderTarget](${api}core/Camera#renderTarget)           | 渲染目标，确定内容最后被渲染到哪个目标上。                   |
-|          | [viewport](${api}core/Camera#viewport)                   | 视口，确定内容最后被渲染到目标设备里的范围。                 |
-|          | [pixelViewport](${api}core/Camera#pixelViewport)         | 屏幕上相机的视口（以像素坐标表示）。 在像素屏幕坐标中，左上角为(0, 0)，右下角为(1.0, 1.0)。 |
-|          | [nearClipPlane](${api}core/Camera#nearClipPlane)         | 近裁剪平面                                                   |
-|          | [farClipPlane](${api}core/Camera#farClipPlane)           | 远裁剪平面                                                   |
-|          | [clearFlags](${api}core/Camera#clearFlags)               | 在渲染这个相机前清理画布缓冲的标记                           |
-| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)             | 视角                                                         |
-| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize)   | 正交模式下相机的一半尺寸                                     |
-|          | [depthTextureMode]((${api}core/Camera#depthTextureMode)) | 深度我哪里模式，模型不生成                                   |
+| 类型     | 属性                                                       | 解释                                                                                        |
+| :------- | :--------------------------------------------------------- | :------------------------------------------------------------------------------------------ |
+| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)         | 是否正交投影，默认是 `false`                                                                |
+|          | [aspectRatio](${api}core/Camera#aspectRatio)               | 画布宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐）                        |
+|          | [cullingMask](${api}core/Camera#cullingMask)               | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                                                |
+|          | [priority](${api}core/Camera#priority)                     | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。                      |
+|          | [renderTarget](${api}core/Camera#renderTarget)             | 渲染目标，确定内容最后被渲染到哪个目标上。                                                  |
+|          | [viewport](${api}core/Camera#viewport)                     | 视口，确定内容最后被渲染到目标设备里的范围。                                                |
+|          | [pixelViewport](${api}core/Camera#pixelViewport)           | 屏幕上相机的视口（以像素坐标表示）。 在像素屏幕坐标中，左上角为(0, 0)，右下角为(1.0, 1.0)。 |
+|          | [nearClipPlane](${api}core/Camera#nearClipPlane)           | 近裁剪平面                                                                                  |
+|          | [farClipPlane](${api}core/Camera#farClipPlane)             | 远裁剪平面                                                                                  |
+|          | [clearFlags](${api}core/Camera#clearFlags)                 | 在渲染这个相机前清理画布缓冲的标记                                                          |
+| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)               | 视角                                                                                        |
+| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize)     | 正交模式下相机的一半尺寸                                                                    |
+|          | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>) | 深度模式，默认为`DepthTextureMode.None`                                                     |
 
 详情请查看 [API 文档](${api}core/Camera)。
 
@@ -103,27 +103,27 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 ### 深度纹理
 
-相机可以通过 [depthTextureMode]((${api}core/Camera#depthTextureMode)) 属性开启深度纹理，开启深度纹理后可以通过 `camera_DepthTexture` 属性在 Shader 中访问深度纹理。深度纹理可以用于实现软粒子和水面边缘过渡，以及一些简单的后处理效果。
+相机可以通过 [depthTextureMode](<(${api}core/Camera#depthTextureMode)>) 属性开启深度纹理，开启深度纹理后可以通过 `camera_DepthTexture` 属性在 Shader 中访问深度纹理。深度纹理可以用于实现软粒子和水面边缘过渡，以及一些简单的后处理效果。
 注意：深度纹理仅渲染非透明物体。
 
 <playground src="camera-depth-texture.ts"></playground>
 
 ## 方法
 
-| 属性                                                         | 解释                                     |
-| :----------------------------------------------------------- | :--------------------------------------- |
-| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix) | 重置自定义投影矩阵，恢复到自动模式。     |
-| [resetAspectRatio](${api}core/Camera#resetAspectRatio)       | 重置自定义渲染横纵比，恢复到自动模式。   |
-| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint) | 将一个点从世界空间转换到视口空间。       |
-| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint) | 将一个点从视口空间转换到世界空间。       |
-| [viewportPointToRay](${api}core/Camera#viewportPointToRay)   | 通过视口空间中的一个点生成世界空间射线。 |
-| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint) | 将一个点从屏幕空间转换到视口空间。       |
-| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint) | 将一个点从视口空间转换到屏幕空间。       |
-| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint)   | 将一个点从世界空间转换到屏幕空间。       |
-| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint)   | 将一个点从屏幕空间转换到世界空间。       |
-| [screenPointToRay](${api}core/Camera#screenPointToRay)       | 通过屏幕空间中的一个点生成世界空间射线。 |
-| [render](${api}core/Camera#render)                           | 手动渲染。                               |
-| [setReplacementShader](${api}core/Camera#setReplacementShader) | 设置全局渲染替换着色器。                 |
+| 属性                                                               | 解释                                     |
+| :----------------------------------------------------------------- | :--------------------------------------- |
+| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix)   | 重置自定义投影矩阵，恢复到自动模式。     |
+| [resetAspectRatio](${api}core/Camera#resetAspectRatio)             | 重置自定义渲染横纵比，恢复到自动模式。   |
+| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint)     | 将一个点从世界空间转换到视口空间。       |
+| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint)     | 将一个点从视口空间转换到世界空间。       |
+| [viewportPointToRay](${api}core/Camera#viewportPointToRay)         | 通过视口空间中的一个点生成世界空间射线。 |
+| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint)   | 将一个点从屏幕空间转换到视口空间。       |
+| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint)   | 将一个点从视口空间转换到屏幕空间。       |
+| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint)         | 将一个点从世界空间转换到屏幕空间。       |
+| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint)         | 将一个点从屏幕空间转换到世界空间。       |
+| [screenPointToRay](${api}core/Camera#screenPointToRay)             | 通过屏幕空间中的一个点生成世界空间射线。 |
+| [render](${api}core/Camera#render)                                 | 手动渲染。                               |
+| [setReplacementShader](${api}core/Camera#setReplacementShader)     | 设置全局渲染替换着色器。                 |
 | [resetReplacementShader](${api}core/Camera#resetReplacementShader) | 清空全局渲染替换着色器。                 |
 
 ## Q&A
