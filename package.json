@@ -15,6 +15,7 @@
     "@galacean/engine-toolkit": "^1.1.0-beta.0",
     "@galacean/engine-toolkit-input-logger": "^1.0.0-beta.1",
     "@galacean/tools-baker": "^1.0.0-beta.3",
+    "@galacean/engine-shader-lab": "^1.1.0-beta.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-icons": "^1.1.1",
