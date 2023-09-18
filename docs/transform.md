@@ -56,6 +56,9 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 | [lossyWorldScale]($%7Bapi%7Dcore/Transform#lossyWorldScale)                 | world lossy scaling - When the parent node is zoomed and the child node is rotated, the zoom will be tilted and cannot be represented correctly by Vector3, and must be represented by Matrix3x3 matrix. |
 | [localMatrix]($%7Bapi%7Dcore/Transform#localMatrix)                         | local matrix                                                                                                                                                                                             |
 | [worldMatrix]($%7Bapi%7Dcore/Transform#worldMatrix)                         | world matrix                                                                                                                                                                                             |
+| [worldForward](${api}core/Transform#worldMatrix)                            | forward vector (identity matrix in world space)                                                                                                                                                          |
+| [worldRight](${api}core/Transform#worldMatrix)                              | right vector (identity matrix in world space)                                                                                                                                                            |
+| [worldUp](${api}core/Transform#worldMatrix)                                 | up vector (identity matrix in world space)                                                                                                                                                               |
 
 ## Component methods
 
