@@ -89,8 +89,6 @@ Compared with high-level data, setting data through low-level interfaces allows 
 
 ![image.png](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*68IjSo2kwUAAAAAAAAAAAAAADleLAQ/original)
 
-**Code Example**
-
 ```typescript
 const pos = new Float32Array([1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0]);
 const posBuffer = new Buffer(
