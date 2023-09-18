@@ -35,7 +35,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.resourceManager
     .load([
       {
-        // Sprite texture
+        // Sprite texture
         url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*rgNGR4Vb7lQAAAAAAAAAAAAAARQnAQ",
         type: AssetType.Texture2D,
       },
