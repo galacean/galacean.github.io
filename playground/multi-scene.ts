@@ -16,6 +16,7 @@ import {
   MeshRenderer,
   PrimitiveMesh,
   Scene,
+  SceneManager,
   Script,
   SkyBoxMaterial,
   TextureCube,
@@ -23,17 +24,18 @@ import {
   WebGLEngine,
 } from "@galacean/engine";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import * as dat from "dat.gui";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
 
-  initFirstScene(engine);
-  initSecondScene(engine);
-
+  const firstScene = initFirstScene(engine);
+  const secondScene = initSecondScene(engine);
   engine.run();
+  addGUI(engine.sceneManager, firstScene, secondScene);
 });
 
-function initFirstScene(engine: Engine): void {
+function initFirstScene(engine: Engine): Scene {
   const scene = engine.sceneManager.scenes[0];
   const rootEntity = scene.createRootEntity();
 
@@ -80,10 +82,10 @@ function initFirstScene(engine: Engine): void {
   const material = new BlinnPhongMaterial(engine);
   material.baseColor = new Color(1, 0.25, 0.25, 1);
   renderer.setMaterial(material);
+  return scene;
 }
-4;
 
-function initSecondScene(engine: Engine): void {
+function initSecondScene(engine: Engine): Scene {
   // Init window camera
   const scene = new Scene(engine);
   engine.sceneManager.addScene(scene);
@@ -109,6 +111,7 @@ function initSecondScene(engine: Engine): void {
       rootEntity.addChild(defaultSceneRoot);
       defaultSceneRoot.addComponent(RotateScript);
     });
+  return scene;
 }
 
 /**
@@ -123,4 +126,40 @@ class RotateScript extends Script {
   onUpdate(deltaTime: number): void {
     this.entity.transform.rotate(0.0, 50 * deltaTime, 0);
   }
+}
+
+function addGUI(
+  sceneManager: SceneManager,
+  firstScene: Scene,
+  secondScene: Scene
+) {
+  const guiData = {
+    showFirst: true,
+    showSecond: true,
+  };
+
+  const gui = new dat.GUI();
+  const sceneFolder = gui.addFolder("multi scene");
+  sceneFolder.open();
+
+  gui
+    .add(guiData, "showFirst")
+    .onChange((value: boolean) => {
+      if (value) {
+        sceneManager.addScene(0, firstScene);
+      } else {
+        sceneManager.removeScene(firstScene);
+      }
+    })
+    .listen();
+  gui
+    .add(guiData, "showSecond")
+    .onChange((value: boolean) => {
+      if (value) {
+        sceneManager.addScene(1, secondScene);
+      } else {
+        sceneManager.removeScene(secondScene);
+      }
+    })
+    .listen();
 }
