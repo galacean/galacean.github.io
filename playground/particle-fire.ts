@@ -103,7 +103,7 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   } = generator;
 
   // Main module
-  const { startLifetime, startSpeed, startSize, startRotationZ } = this.main;
+  const { startLifetime, startSpeed, startSize, startRotationZ } = main;
   startLifetime.constantMin = 0.2;
   startLifetime.constantMax = 0.8;
   startLifetime.mode = ParticleCurveMode.TwoConstants;
@@ -182,7 +182,7 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   const { main, emission, sizeOverLifetime, colorOverLifetime } = generator;
 
   // Main module
-  const { startLifetime, startSpeed, startRotationZ } = this.main;
+  const { startLifetime, startSpeed, startRotationZ } = main;
   startLifetime.constantMin = 0.2;
   startLifetime.constantMax = 0.6;
   startLifetime.mode = ParticleCurveMode.TwoConstants;
@@ -262,7 +262,7 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   } = generator;
 
   // Main module
-  const { startLifetime, startRotationZ } = this.main;
+  const { startLifetime, startRotationZ } = main;
   startLifetime.constantMin = 1;
   startLifetime.constantMax = 1.2;
   startLifetime.mode = ParticleCurveMode.TwoConstants;
@@ -356,7 +356,7 @@ function createFireEmbersParticle(
   } = generator;
 
   // Main module
-  const { startLifetime, startSize, startRotationZ } = this.main;
+  const { startLifetime, startSize, startRotationZ } = main;
   main.duration = 3;
 
   startLifetime.constantMin = 1;
