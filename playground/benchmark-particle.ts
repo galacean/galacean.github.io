@@ -167,10 +167,7 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   textureSheetAnimation.tiling = new Vector2(6, 6);
   const frameOverTime = textureSheetAnimation.frameOverTime;
   frameOverTime.mode = ParticleCurveMode.TwoCurves;
-  frameOverTime.curveMin = new ParticleCurve(
-    new CurveKey(0, 0.47),
-    new CurveKey(1, 1)
-  );
+  frameOverTime.curveMin = new ParticleCurve(new CurveKey(0, 0.47), new CurveKey(1, 1));
 
   return particleEntity;
 }
