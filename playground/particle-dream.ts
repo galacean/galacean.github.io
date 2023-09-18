@@ -99,9 +99,9 @@ function createDebrisParticle(engine: Engine, texture: Texture2D): Entity {
   main.startSize.constantMax = 1;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constantMin.set(255 / 255, 255 / 255, 255 / 255, 1.0);
   main.startColor.constantMax.set(13 / 255, 255 / 255, 0 / 255, 1.0);
@@ -171,9 +171,9 @@ function createGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   main.startSize.constantMax = 9;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constantMin = new Color(
     0 / 255,
@@ -242,9 +242,9 @@ function createSparksParticle(fireEntity: Entity, texture: Texture2D): void {
   main.startSize.constantMax = 0.2;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constant = new Color(
     37 / 255,
@@ -316,9 +316,9 @@ function createHighlightsParticle(
   main.startSize.constantMax = 7;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constantMin.set(105 / 255, 198 / 255, 255 / 255, 64 / 255);
   main.startColor.constantMax.set(13 / 255, 255 / 255, 0 / 255, 32 / 255);

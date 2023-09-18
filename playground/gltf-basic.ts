@@ -3,7 +3,7 @@
  * @category Basic
  */
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import { Camera, GLTFResource, Rand, WebGLEngine } from "@galacean/engine";
+import { Camera, GLTFResource, WebGLEngine } from "@galacean/engine";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
@@ -21,6 +21,14 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     1,
     1
   );
+
+  engine.resourceManager
+    .load<GLTFResource>(
+      "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+    )
+    .then((gltf) => {
+      rootEntity.addChild(gltf.defaultSceneRoot);
+    });
 
   engine.run();
 });

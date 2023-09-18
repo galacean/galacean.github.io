@@ -24,7 +24,7 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ### 基本用法
 
-#### 0. 获取场景对象
+#### 1. 获取场景对象
 
 通过调用 `engine.sceneManager.scenes` 可以获取当前引擎运行时激活的全部场景，也可以通过 `entity.scene` 获取对应 `entity` 从属的 `scene`。
 
@@ -36,7 +36,7 @@ const scenes = engine.sceneManager.scenes;
 const scene = entity.scene;
 ```
 
-#### 1. 添加/移除 Scene
+#### 2. 添加/移除 Scene
 
 `engine.sceneManager.scenes` 是只读的，若需要添加和移除 **Scene** ，需要调用 `engine.sceneManager.addScene()` 或 `engine.sceneManager.removeScene()` ，**引擎支持同时渲染多个场景**。
 
@@ -58,7 +58,7 @@ engine.sceneManager.removeScene(scene2);
 
 <playground src="multi-scene.ts"></playground>
 
-#### 2. 合并 Scene
+#### 3. 合并 Scene
 
 可以使用 `engine.sceneManager.mergeScenes` 将 2 个场景进行合并为 1 个场景。
 
@@ -73,7 +73,7 @@ engine.sceneManager.mergeScenes(sourceScene, destScene);
 engine.sceneManager.addScene(destScene);
 ```
 
-#### 3. 加载 Scene
+#### 4. 加载 Scene
 
 如果想要加载 **Scene** 资产作为应用中的一个场景，可以使用 `engine.resourceManager.load` 传入 url 即可。
 
@@ -89,11 +89,11 @@ engine.resourceManager
 
 > 此 api 更多在编辑器场景中使用，后续编辑器开放后，同时也会开放场景格式标准。
 
-#### 4. 场景销毁
+#### 5. 场景销毁
 
 调用 `scene.destroy()` 即可销毁场景，被销毁的场景也会自动从激活场景列表中移除。
 
-#### 5. 设置场景背景
+#### 6. 设置场景背景
 
 目前场景背景支持添加纯色、天空和纹理背景。纯色和天空相对简单，代码示例如下：
 
@@ -135,7 +135,7 @@ Playground 示例如下：
 
 <playground src="background.ts"></playground>
 
-#### 6. 设置场景环境光
+#### 7. 设置场景环境光
 
 请参考相关文档： [环境光](${docs}ambient-light)
 
@@ -170,6 +170,7 @@ const entity2 = scene.getRootEntity(2);
 | [addRootEntity](${api}core/Scene#addRootEntity)       | 可以直接新建实体，或者添加已经存在的实体                                                             |
 | [removeRootEntity](${api}core/Scene#removeRootEntity) | 删除根实体                                                                                           |
 | [getRootEntity](${api}core/Scene#getRootEntity)       | 查找根实体，可以拿到全部根实体，或者单独的某个实体对象。注意，全部实体是只读数组，不能改变长度和顺序 |
+
 
 ## 其他
 

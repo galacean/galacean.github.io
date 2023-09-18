@@ -124,9 +124,9 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   main.startSize.constantMax = 0.9;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.simulationSpace = ParticleSimulationSpace.World;
 
@@ -167,7 +167,10 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   textureSheetAnimation.tiling = new Vector2(6, 6);
   const frameOverTime = textureSheetAnimation.frameOverTime;
   frameOverTime.mode = ParticleCurveMode.TwoCurves;
-  frameOverTime.curveMin = new ParticleCurve(new CurveKey(0, 0.47), new CurveKey(1, 1));
+  frameOverTime.curveMin = new ParticleCurve(
+    new CurveKey(0, 0.47),
+    new CurveKey(1, 1)
+  );
 
   return particleEntity;
 }
@@ -197,9 +200,9 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
 
   main.startSize.constant = 1.2;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constant = new Color(
     255 / 255,
@@ -274,9 +277,9 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
 
   main.startSize.constant = 1.2;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constant = new Color(
     255 / 255,
@@ -371,9 +374,9 @@ function createFireEmbersParticle(
   main.startSize.constantMax = 0.2;
   main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  main.startRotationZ.constantMin = 0;
-  main.startRotationZ.constantMax = 360;
-  main.startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.gravityModifier.constant = -0.15;
 

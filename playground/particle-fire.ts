@@ -27,7 +27,7 @@ import {
   Texture2D,
   Vector2,
   Vector3,
-  WebGLEngine,
+  WebGLEngine
 } from "@galacean/engine";
 
 // Create engine
@@ -103,22 +103,21 @@ function createFireParticle(engine: Engine, texture: Texture2D): Entity {
   } = generator;
 
   // Main module
-  const { startLifetime, startSpeed, startSize, startRotationZ } = this.main;
-  startLifetime.constantMin = 0.2;
-  startLifetime.constantMax = 0.8;
-  startLifetime.mode = ParticleCurveMode.TwoConstants;
+  main.startLifetime.constantMin = 0.2;
+  main.startLifetime.constantMax = 0.8;
+  main.startLifetime.mode = ParticleCurveMode.TwoConstants;
 
-  startSpeed.constantMin = 0.4;
-  startSpeed.constantMax = 1.6;
-  startSpeed.mode = ParticleCurveMode.TwoConstants;
+  main.startSpeed.constantMin = 0.4;
+  main.startSpeed.constantMax = 1.6;
+  main.startSpeed.mode = ParticleCurveMode.TwoConstants;
 
-  startSize.constantMin = 0.6;
-  startSize.constantMax = 0.9;
-  startSize.mode = ParticleCurveMode.TwoConstants;
+  main.startSize.constantMin = 0.6;
+  main.startSize.constantMax = 0.9;
+  main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  startRotationZ.constantMin = 0;
-  startRotationZ.constantMax = 360;
-  startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.simulationSpace = ParticleSimulationSpace.World;
 
@@ -182,20 +181,19 @@ function createFireGlowParticle(fireEntity: Entity, texture: Texture2D): void {
   const { main, emission, sizeOverLifetime, colorOverLifetime } = generator;
 
   // Main module
-  const { startLifetime, startSpeed, startRotationZ } = this.main;
-  startLifetime.constantMin = 0.2;
-  startLifetime.constantMax = 0.6;
-  startLifetime.mode = ParticleCurveMode.TwoConstants;
+  main.startLifetime.constantMin = 0.2;
+  main.startLifetime.constantMax = 0.6;
+  main.startLifetime.mode = ParticleCurveMode.TwoConstants;
 
-  startSpeed.constantMin = 0.0;
-  startSpeed.constantMax = 1.4;
-  startSpeed.mode = ParticleCurveMode.TwoConstants;
+  main.startSpeed.constantMin = 0.0;
+  main.startSpeed.constantMax = 1.4;
+  main.startSpeed.mode = ParticleCurveMode.TwoConstants;
 
   main.startSize.constant = 1.2;
 
-  startRotationZ.constantMin = 0;
-  startRotationZ.constantMax = 360;
-  startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constant = new Color(
     255 / 255,
@@ -262,18 +260,17 @@ function createFireSmokeParticle(fireEntity: Entity, texture: Texture2D): void {
   } = generator;
 
   // Main module
-  const { startLifetime, startRotationZ } = this.main;
-  startLifetime.constantMin = 1;
-  startLifetime.constantMax = 1.2;
-  startLifetime.mode = ParticleCurveMode.TwoConstants;
+  main.startLifetime.constantMin = 1;
+  main.startLifetime.constantMax = 1.2;
+  main.startLifetime.mode = ParticleCurveMode.TwoConstants;
 
   main.startSpeed.constant = 1.5;
 
   main.startSize.constant = 1.2;
 
-  startRotationZ.constantMin = 0;
-  startRotationZ.constantMax = 360;
-  startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.startColor.constant = new Color(
     255 / 255,
@@ -356,22 +353,21 @@ function createFireEmbersParticle(
   } = generator;
 
   // Main module
-  const { startLifetime, startSize, startRotationZ } = this.main;
   main.duration = 3;
 
-  startLifetime.constantMin = 1;
-  startLifetime.constantMax = 1.5;
-  startLifetime.mode = ParticleCurveMode.TwoConstants;
+  main.startLifetime.constantMin = 1;
+  main.startLifetime.constantMax = 1.5;
+  main.startLifetime.mode = ParticleCurveMode.TwoConstants;
 
   main.startSpeed.constant = 0.4;
 
-  startSize.constantMin = 0.05;
-  startSize.constantMax = 0.2;
-  startSize.mode = ParticleCurveMode.TwoConstants;
+  main.startSize.constantMin = 0.05;
+  main.startSize.constantMax = 0.2;
+  main.startSize.mode = ParticleCurveMode.TwoConstants;
 
-  startRotationZ.constantMin = 0;
-  startRotationZ.constantMax = 360;
-  startRotationZ.mode = ParticleCurveMode.TwoConstants;
+  main.startRotation.constantMin = 0;
+  main.startRotation.constantMax = 360;
+  main.startRotation.mode = ParticleCurveMode.TwoConstants;
 
   main.gravityModifier.constant = -0.15;
 

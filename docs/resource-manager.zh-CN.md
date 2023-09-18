@@ -74,7 +74,7 @@ this.engine.resourceManager
 
 ### 4. 取消加载
 
-_ResourceManager_ 对象中有 [cancelNotLoaded](${api}core/ResourceManager#cancelNotLoaded) 方法，可以通过调用此方法取消未加载完成的资源。传入 url 会取消特定的 url 的资源加载。
+*ResourceManager* 对象中有 [cancelNotLoaded](${api}core/ResourceManager#cancelNotLoaded) 方法，可以通过调用此方法取消未加载完成的资源。传入 url 会取消特定的 url 的资源加载。
 
 ```typescript
 // 取消所有未加载完的资源。
@@ -87,15 +87,15 @@ this.engine.resourceManager.cancelNotLoaded("test.gltf");
 
 ### 5. 获取加载过的资产
 
-目前加载过的资产会缓存在 _ResourceManager_ 中，如需获取加载过的资产，只需要再次调用 `load` 方法即可。
+目前加载过的资产会缓存在 *ResourceManager* 中，如需获取加载过的资产，只需要再次调用 `load` 方法即可。
 
 ### 6. 资源释放
 
-为了避免重复加载资源，当资源被加载完成之后，会被缓存在 _ResourceManager_ 内。缓存本身会占用内存和显存，当开发者不再需要缓存的内容时，需要手动去释放缓存的内容。
+为了避免重复加载资源，当资源被加载完成之后，会被缓存在 *ResourceManager* 内。缓存本身会占用内存和显存，当开发者不再需要缓存的内容时，需要手动去释放缓存的内容。
 
 > 注意：资源之间是相互依赖的。
 
-例如下图展示的实体包含 [MeshRenderer](${api}core/MeshRenderer) 组件，依赖于 [Material](${api}core/Material)， _Material_ 可能被多个 _MeshRenderer_ 引用，如果释放 _Material_ ，那么引用此的其他 _MeshRenderer_ 则会找不到该 _Material_ 而报错。
+例如下图展示的实体包含 [MeshRenderer](${api}core/MeshRenderer) 组件，依赖于 [Material](${api}core/Material)， *Material* 可能被多个 *MeshRenderer* 引用，如果释放 *Material* ，那么引用此的其他 *MeshRenderer* 则会找不到该 *Material* 而报错。
 
 ![image.png](https://gw.alipayobjects.com/mdn/mybank_yulibao/afts/img/A*wXmqRIwqI18AAAAAAAAAAAAAARQnAQ)
 
@@ -250,7 +250,7 @@ export class FBXLoader extends Loader<FBXResource> {
 }
 ```
 
-1. 通过 [@resourceLoader](${api}core/resourceLoader) 装饰器标注为 _ResourceLoader_，传入类型枚举和被解析的资源后缀名。上面的例子 `FBX` 是类型枚举， `["fbx"]`  是被解析资源的后缀名。
+1. 通过 [@resourceLoader](${api}core/resourceLoader) 装饰器标注为 *ResourceLoader*，传入类型枚举和被解析的资源后缀名。上面的例子 `FBX` 是类型枚举， `["fbx"]`  是被解析资源的后缀名。
 1. 重写 [load](${api}core/ResourceManager#load) 方法， `load`  方法会传入 `loadItem` 和 `resourceManager` ， `loadItem`  包含了加载的基信息， `resourceManager`  可以帮助加载其他引用资源。
 1. 返回 [AssetPromise](${api}core/AssetPromise)  对象， `resolve`  解析后的资源结果，例如 FBX 返回特定的 `FBXResource` 。
 1. 若报错则 `reject`  错误。
