@@ -1,6 +1,5 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Button, Flex, styled } from "@galacean/editor-ui";
-import { MagicWand } from "iconoir-react";
 import { FormattedMessage } from 'react-intl';
 
 const StyledEditor = styled("div", {
@@ -16,8 +15,7 @@ const StyledEditor = styled("div", {
 const StyledVideo = styled('video', {
   width: "80%",
   maxWidth: "1000px",
-  borderRadius: "$2",
-  border: "5px solid $slate4"
+  borderRadius: "$3"
 });
 
 const StyledButton = styled(Button, {
