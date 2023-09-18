@@ -10,9 +10,7 @@ label: Graphics/Mesh
 
 <playground src="obj-loader.ts"></playground>
 
-## Create with script
-
-### Code example
+## Code example
 
 ```typescript
 const entity = rootEntity.createChild("mesh-example");
@@ -41,15 +39,15 @@ meshRenderer.mesh = modelMesh;
 meshRenderer.setMaterial(new UnlitMaterial(engine));
 ```
 
-### Detailed introduction
+## Detailed introduction
 
 The use of `ModelMesh` is divided into the following steps:
 
-#### **Setup Data**
+### **Setup Data**
 
 `ModelMesh` can set vertex data through **high-level data** or **low-level data**, or it can be set selectively according to needs, but it should be noted that the position is necessary data and needs to be set first.
 
-##### Via advanced data settings
+#### Via advanced data settings
 
 You can directly generate ModelMesh by setting **advanced data** such as `position`, `normal`, `uv`, etc., and then call the `uploadData` method to uniformly upload the data to the GPU to complete the application.
 
@@ -83,7 +81,7 @@ The APIs for setting advanced data are:
 | [setBoneIndices](${api}core/ModelMesh#setBoneIndices) | Set per-vertex bone index data |
 | [setUVs](${api}core/ModelMesh#setUVs)                 | Set per-vertex uv data         |
 
-##### Set via low-level data
+#### Set via low-level data
 
 Compared with high-level data, setting data through low-level interfaces allows free manipulation of vertex buffer data, which is not only flexible but may also bring performance improvements. But you need to understand the relationship between Vertex Buffer and Vertex Element, as shown below:
 
@@ -107,7 +105,7 @@ mesh.setVertexElements(vertexElements);
 mesh.uploadData(false);
 ```
 
-#### **Add SubMesh**
+### **Add SubMesh**
 
 [SubMesh](${api}core/SubMesh) mainly contains information such as drawing range and drawing method. Call [addSubMesh](${api}core/ModelMesh#addSubMesh) to add.
 
@@ -115,7 +113,7 @@ mesh.uploadData(false);
 modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 ```
 
-#### **Upload data**
+### **Upload data**
 
 Call the [uploadData()](${api}core/ModelMesh#uploadData) method.
 
@@ -133,7 +131,7 @@ modelMesh.uploadData(false);
 
 <playground src="model-mesh.ts"></playground>
 
-#### **Read advanced data**
+### **Read advanced data**
 
 To make the vertex data in `ModelMesh` readable, please note:
 

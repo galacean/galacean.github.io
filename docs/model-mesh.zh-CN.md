@@ -10,9 +10,7 @@ label: Graphics/Mesh
 
 <playground src="obj-loader.ts"></playground>
 
-## 脚本创建
-
-### 代码示例
+## 代码示例
 
 ```typescript
 const entity = rootEntity.createChild("mesh-example");
@@ -41,15 +39,15 @@ meshRenderer.mesh = modelMesh;
 meshRenderer.setMaterial(new UnlitMaterial(engine));
 ```
 
-### 详细介绍
+## 详细介绍
 
 `ModelMesh` 的使用分为以下几步：
 
-#### **设置数据**
+### **设置数据**
 
 `ModelMesh` 可以通过**高级数据**或**低级数据**设置顶点数据，也可以根据需求选择性设置，但需要注意位置是必要数据且需要最先设置。
 
-##### 通过高级数据设置
+#### 通过高级数据设置
 
 可以直接通过设置 `position`, `normal` , `uv` 等**高级数据**生成 ModelMesh，然后调用 `uploadData` 方法统一上传数据至 GPU 完成应用。
 
@@ -83,7 +81,7 @@ modelMesh.uploadData(false);
 | [setBoneIndices](${api}core/ModelMesh#setBoneIndices) | 设置逐顶点骨骼索引数据 |
 | [setUVs](${api}core/ModelMesh#setUVs)                 | 设置逐顶点 uv 数据     |
 
-##### 通过低级数据设置
+#### 通过低级数据设置
 
 相比于高级数据，通过低级接口设置数据可以自由操作顶点缓冲数据，不仅灵活还可能带来性能提升。但需要理解 Vertex Buffer 和 Vertex Element 之间的关系，如下图：
 
@@ -112,7 +110,7 @@ mesh.setVertexElements(vertexElements);
 mesh.uploadData(false);
 ```
 
-#### **添加 SubMesh**
+### **添加 SubMesh**
 
 [SubMesh](${api}core/SubMesh) 主要包含了绘制范围和绘制方式等信息。调用 [addSubMesh](${api}core/ModelMesh#addSubMesh)。
 
@@ -120,7 +118,7 @@ mesh.uploadData(false);
 modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 ```
 
-#### **上传数据**
+### **上传数据**
 
 调用 [uploadData()](${api}core/ModelMesh#uploadData) 方法。
 
@@ -138,7 +136,7 @@ modelMesh.uploadData(false);
 
 <playground src="model-mesh.ts"></playground>
 
-#### **读取高级数据**
+### **读取高级数据**
 
 若要让 `ModelMesh` 中的顶点数据可读，需注意：
 
