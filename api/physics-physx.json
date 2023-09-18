@@ -1,15 +1,16 @@
 {
 	"id": 0,
 	"name": "@galacean/engine-physics-physx",
-	"variant": "project",
 	"kind": 1,
+	"kindString": "Project",
 	"flags": {},
+	"originalName": "",
 	"children": [
 		{
 			"id": 99,
 			"name": "PhysXRuntimeMode",
-			"variant": "declaration",
 			"kind": 8,
+			"kindString": "Enumeration",
 			"flags": {},
 			"comment": {
 				"summary": [
@@ -23,8 +24,8 @@
 				{
 					"id": 100,
 					"name": "Auto",
-					"variant": "declaration",
 					"kind": 16,
+					"kindString": "Enumeration Member",
 					"flags": {},
 					"comment": {
 						"summary": [
@@ -50,8 +51,8 @@
 				{
 					"id": 102,
 					"name": "JavaScript",
-					"variant": "declaration",
 					"kind": 16,
+					"kindString": "Enumeration Member",
 					"flags": {},
 					"comment": {
 						"summary": [
@@ -77,8 +78,8 @@
 				{
 					"id": 101,
 					"name": "WebAssembly",
-					"variant": "declaration",
 					"kind": 16,
+					"kindString": "Enumeration Member",
 					"flags": {},
 					"comment": {
 						"summary": [
@@ -124,8 +125,8 @@
 		{
 			"id": 1,
 			"name": "PhysXPhysics",
-			"variant": "declaration",
 			"kind": 128,
+			"kindString": "Class",
 			"flags": {},
 			"comment": {
 				"summary": [
@@ -139,8 +140,8 @@
 				{
 					"id": 2,
 					"name": "constructor",
-					"variant": "declaration",
 					"kind": 512,
+					"kindString": "Constructor",
 					"flags": {},
 					"sources": [
 						{
@@ -154,38 +155,28 @@
 						{
 							"id": 3,
 							"name": "new PhysXPhysics",
-							"variant": "signature",
 							"kind": 16384,
+							"kindString": "Constructor signature",
 							"flags": {},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 50,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L50"
-								}
-							],
 							"parameters": [
 								{
 									"id": 4,
 									"name": "runtimeMode",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 99,
-										"name": "PhysXRuntimeMode",
-										"package": "@galacean/engine-physics-physx"
+										"id": 99,
+										"name": "PhysXRuntimeMode"
 									},
 									"defaultValue": "PhysXRuntimeMode.Auto"
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": 1,
-								"name": "PhysXPhysics",
-								"package": "@galacean/engine-physics-physx"
+								"id": 1,
+								"name": "PhysXPhysics"
 							}
 						}
 					]
@@ -193,8 +184,8 @@
 				{
 					"id": 10,
 					"name": "_initializePromise",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -208,10 +199,6 @@
 					],
 					"type": {
 						"type": "reference",
-						"target": {
-							"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-							"qualifiedName": "Promise"
-						},
 						"typeArguments": [
 							{
 								"type": "intrinsic",
@@ -219,14 +206,15 @@
 							}
 						],
 						"name": "Promise",
+						"qualifiedName": "Promise",
 						"package": "typescript"
 					}
 				},
 				{
 					"id": 9,
 					"name": "_initializeState",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -240,20 +228,15 @@
 					],
 					"type": {
 						"type": "reference",
-						"target": {
-							"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-							"qualifiedName": "InitializeState"
-						},
-						"name": "InitializeState",
-						"package": "@galacean/engine-physics-physx"
+						"name": "InitializeState"
 					},
 					"defaultValue": "InitializeState.Uninitialized"
 				},
 				{
 					"id": 8,
 					"name": "_runTimeMode",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -267,16 +250,15 @@
 					],
 					"type": {
 						"type": "reference",
-						"target": 99,
-						"name": "PhysXRuntimeMode",
-						"package": "@galacean/engine-physics-physx"
+						"id": 99,
+						"name": "PhysXRuntimeMode"
 					}
 				},
 				{
 					"id": 96,
 					"name": "_init",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {
 						"isPrivate": true
 					},
@@ -292,23 +274,15 @@
 						{
 							"id": 97,
 							"name": "_init",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 250,
-									"character": 10,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L250"
-								}
-							],
 							"parameters": [
 								{
 									"id": 98,
 									"name": "physX",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -326,8 +300,8 @@
 				{
 					"id": 67,
 					"name": "createBoxColliderShape",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -341,8 +315,8 @@
 						{
 							"id": 68,
 							"name": "createBoxColliderShape",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -353,20 +327,12 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 199,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L199"
-								}
-							],
 							"parameters": [
 								{
 									"id": 69,
 									"name": "uniqueID",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -376,63 +342,46 @@
 								{
 									"id": 70,
 									"name": "size",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/math/types/Vector3.d.ts",
-											"qualifiedName": "Vector3"
-										},
-										"name": "Vector3",
-										"package": "@galacean/engine-math"
+										"name": "Vector3"
 									}
 								},
 								{
 									"id": 71,
 									"name": "material",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysicsMaterial.ts",
-											"qualifiedName": "PhysXPhysicsMaterial"
-										},
-										"name": "PhysXPhysicsMaterial",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/shape/IBoxColliderShape.d.ts",
-									"qualifiedName": "IBoxColliderShape"
-								},
-								"name": "IBoxColliderShape",
-								"package": "@galacean/engine-design"
+								"name": "IBoxColliderShape"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createBoxColliderShape"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createBoxColliderShape"
 					}
 				},
 				{
 					"id": 81,
 					"name": "createCapsuleColliderShape",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -446,8 +395,8 @@
 						{
 							"id": 82,
 							"name": "createCapsuleColliderShape",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -458,20 +407,12 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 220,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L220"
-								}
-							],
 							"parameters": [
 								{
 									"id": 83,
 									"name": "uniqueID",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -481,8 +422,8 @@
 								{
 									"id": 84,
 									"name": "radius",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -492,8 +433,8 @@
 								{
 									"id": 85,
 									"name": "height",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -503,47 +444,35 @@
 								{
 									"id": 86,
 									"name": "material",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysicsMaterial.ts",
-											"qualifiedName": "PhysXPhysicsMaterial"
-										},
-										"name": "PhysXPhysicsMaterial",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/shape/ICapsuleColliderShape.d.ts",
-									"qualifiedName": "ICapsuleColliderShape"
-								},
-								"name": "ICapsuleColliderShape",
-								"package": "@galacean/engine-design"
+								"name": "ICapsuleColliderShape"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createCapsuleColliderShape"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createCapsuleColliderShape"
 					}
 				},
 				{
 					"id": 58,
 					"name": "createCharacterController",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -557,8 +486,8 @@
 						{
 							"id": 59,
 							"name": "createCharacterController",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -569,41 +498,26 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 179,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L179"
-								}
-							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/ICharacterController.d.ts",
-									"qualifiedName": "ICharacterController"
-								},
-								"name": "ICharacterController",
-								"package": "@galacean/engine-design"
+								"name": "ICharacterController"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createCharacterController"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createCharacterController"
 					}
 				},
 				{
 					"id": 54,
 					"name": "createDynamicCollider",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -617,8 +531,8 @@
 						{
 							"id": 55,
 							"name": "createDynamicCollider",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -629,75 +543,50 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 172,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L172"
-								}
-							],
 							"parameters": [
 								{
 									"id": 56,
 									"name": "position",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/math/types/Vector3.d.ts",
-											"qualifiedName": "Vector3"
-										},
-										"name": "Vector3",
-										"package": "@galacean/engine-math"
+										"name": "Vector3"
 									}
 								},
 								{
 									"id": 57,
 									"name": "rotation",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/math/types/Quaternion.d.ts",
-											"qualifiedName": "Quaternion"
-										},
-										"name": "Quaternion",
-										"package": "@galacean/engine-math"
+										"name": "Quaternion"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/IDynamicCollider.d.ts",
-									"qualifiedName": "IDynamicCollider"
-								},
-								"name": "IDynamicCollider",
-								"package": "@galacean/engine-design"
+								"name": "IDynamicCollider"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createDynamicCollider"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createDynamicCollider"
 					}
 				},
 				{
 					"id": 87,
 					"name": "createFixedJoint",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -711,8 +600,8 @@
 						{
 							"id": 88,
 							"name": "createFixedJoint",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -723,59 +612,39 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 232,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L232"
-								}
-							],
 							"parameters": [
 								{
 									"id": 89,
 									"name": "collider",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXCollider.ts",
-											"qualifiedName": "PhysXCollider"
-										},
-										"name": "PhysXCollider",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXCollider"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/joints/IFixedJoint.d.ts",
-									"qualifiedName": "IFixedJoint"
-								},
-								"name": "IFixedJoint",
-								"package": "@galacean/engine-design"
+								"name": "IFixedJoint"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createFixedJoint"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createFixedJoint"
 					}
 				},
 				{
 					"id": 90,
 					"name": "createHingeJoint",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -789,8 +658,8 @@
 						{
 							"id": 91,
 							"name": "createHingeJoint",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -801,59 +670,39 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 239,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L239"
-								}
-							],
 							"parameters": [
 								{
 									"id": 92,
 									"name": "collider",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXCollider.ts",
-											"qualifiedName": "PhysXCollider"
-										},
-										"name": "PhysXCollider",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXCollider"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/joints/IHingeJoint.d.ts",
-									"qualifiedName": "IHingeJoint"
-								},
-								"name": "IHingeJoint",
-								"package": "@galacean/engine-design"
+								"name": "IHingeJoint"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createHingeJoint"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createHingeJoint"
 					}
 				},
 				{
 					"id": 15,
 					"name": "createPhysicsManager",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -867,8 +716,8 @@
 						{
 							"id": 16,
 							"name": "createPhysicsManager",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -879,41 +728,26 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 133,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L133"
-								}
-							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/IPhysicsManager.d.ts",
-									"qualifiedName": "IPhysicsManager"
-								},
-								"name": "IPhysicsManager",
-								"package": "@galacean/engine-design"
+								"name": "IPhysicsManager"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createPhysicsManager"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createPhysicsManager"
 					}
 				},
 				{
 					"id": 60,
 					"name": "createPhysicsMaterial",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -927,8 +761,8 @@
 						{
 							"id": 61,
 							"name": "createPhysicsMaterial",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -939,20 +773,12 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 186,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L186"
-								}
-							],
 							"parameters": [
 								{
 									"id": 62,
 									"name": "staticFriction",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -962,8 +788,8 @@
 								{
 									"id": 63,
 									"name": "dynamicFriction",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -973,8 +799,8 @@
 								{
 									"id": 64,
 									"name": "bounciness",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -984,8 +810,8 @@
 								{
 									"id": 65,
 									"name": "frictionCombine",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -995,8 +821,8 @@
 								{
 									"id": 66,
 									"name": "bounceCombine",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -1006,31 +832,24 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/IPhysicsMaterial.d.ts",
-									"qualifiedName": "IPhysicsMaterial"
-								},
-								"name": "IPhysicsMaterial",
-								"package": "@galacean/engine-design"
+								"name": "IPhysicsMaterial"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createPhysicsMaterial"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createPhysicsMaterial"
 					}
 				},
 				{
 					"id": 17,
 					"name": "createPhysicsScene",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -1044,8 +863,8 @@
 						{
 							"id": 18,
 							"name": "createPhysicsScene",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1056,36 +875,23 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 140,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L140"
-								}
-							],
 							"parameters": [
 								{
 									"id": 19,
 									"name": "physicsManager",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysicsManager.ts",
-											"qualifiedName": "PhysXPhysicsManager"
-										},
-										"name": "PhysXPhysicsManager",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXPhysicsManager"
 									}
 								},
 								{
 									"id": 20,
 									"name": "onContactBegin",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
 									},
@@ -1094,8 +900,8 @@
 										"declaration": {
 											"id": 21,
 											"name": "__type",
-											"variant": "declaration",
 											"kind": 65536,
+											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
@@ -1109,23 +915,15 @@
 												{
 													"id": 22,
 													"name": "__type",
-													"variant": "signature",
 													"kind": 4096,
+													"kindString": "Call signature",
 													"flags": {},
-													"sources": [
-														{
-															"fileName": "PhysXPhysics.ts",
-															"line": 142,
-															"character": 21,
-															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L142"
-														}
-													],
 													"parameters": [
 														{
 															"id": 23,
 															"name": "obj1",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1135,8 +933,8 @@
 														{
 															"id": 24,
 															"name": "obj2",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1156,8 +954,8 @@
 								{
 									"id": 25,
 									"name": "onContactEnd",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
 									},
@@ -1166,8 +964,8 @@
 										"declaration": {
 											"id": 26,
 											"name": "__type",
-											"variant": "declaration",
 											"kind": 65536,
+											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
@@ -1181,23 +979,15 @@
 												{
 													"id": 27,
 													"name": "__type",
-													"variant": "signature",
 													"kind": 4096,
+													"kindString": "Call signature",
 													"flags": {},
-													"sources": [
-														{
-															"fileName": "PhysXPhysics.ts",
-															"line": 143,
-															"character": 19,
-															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L143"
-														}
-													],
 													"parameters": [
 														{
 															"id": 28,
 															"name": "obj1",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1207,8 +997,8 @@
 														{
 															"id": 29,
 															"name": "obj2",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1228,8 +1018,8 @@
 								{
 									"id": 30,
 									"name": "onContactStay",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
 									},
@@ -1238,8 +1028,8 @@
 										"declaration": {
 											"id": 31,
 											"name": "__type",
-											"variant": "declaration",
 											"kind": 65536,
+											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
@@ -1253,23 +1043,15 @@
 												{
 													"id": 32,
 													"name": "__type",
-													"variant": "signature",
 													"kind": 4096,
+													"kindString": "Call signature",
 													"flags": {},
-													"sources": [
-														{
-															"fileName": "PhysXPhysics.ts",
-															"line": 144,
-															"character": 20,
-															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L144"
-														}
-													],
 													"parameters": [
 														{
 															"id": 33,
 															"name": "obj1",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1279,8 +1061,8 @@
 														{
 															"id": 34,
 															"name": "obj2",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1300,8 +1082,8 @@
 								{
 									"id": 35,
 									"name": "onTriggerBegin",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
 									},
@@ -1310,8 +1092,8 @@
 										"declaration": {
 											"id": 36,
 											"name": "__type",
-											"variant": "declaration",
 											"kind": 65536,
+											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
@@ -1325,23 +1107,15 @@
 												{
 													"id": 37,
 													"name": "__type",
-													"variant": "signature",
 													"kind": 4096,
+													"kindString": "Call signature",
 													"flags": {},
-													"sources": [
-														{
-															"fileName": "PhysXPhysics.ts",
-															"line": 145,
-															"character": 21,
-															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L145"
-														}
-													],
 													"parameters": [
 														{
 															"id": 38,
 															"name": "obj1",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1351,8 +1125,8 @@
 														{
 															"id": 39,
 															"name": "obj2",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1372,8 +1146,8 @@
 								{
 									"id": 40,
 									"name": "onTriggerEnd",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
 									},
@@ -1382,8 +1156,8 @@
 										"declaration": {
 											"id": 41,
 											"name": "__type",
-											"variant": "declaration",
 											"kind": 65536,
+											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
@@ -1397,23 +1171,15 @@
 												{
 													"id": 42,
 													"name": "__type",
-													"variant": "signature",
 													"kind": 4096,
+													"kindString": "Call signature",
 													"flags": {},
-													"sources": [
-														{
-															"fileName": "PhysXPhysics.ts",
-															"line": 146,
-															"character": 19,
-															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L146"
-														}
-													],
 													"parameters": [
 														{
 															"id": 43,
 															"name": "obj1",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1423,8 +1189,8 @@
 														{
 															"id": 44,
 															"name": "obj2",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1444,8 +1210,8 @@
 								{
 									"id": 45,
 									"name": "onTriggerStay",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {
 										"isOptional": true
 									},
@@ -1454,8 +1220,8 @@
 										"declaration": {
 											"id": 46,
 											"name": "__type",
-											"variant": "declaration",
 											"kind": 65536,
+											"kindString": "Type literal",
 											"flags": {},
 											"sources": [
 												{
@@ -1469,23 +1235,15 @@
 												{
 													"id": 47,
 													"name": "__type",
-													"variant": "signature",
 													"kind": 4096,
+													"kindString": "Call signature",
 													"flags": {},
-													"sources": [
-														{
-															"fileName": "PhysXPhysics.ts",
-															"line": 147,
-															"character": 20,
-															"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L147"
-														}
-													],
 													"parameters": [
 														{
 															"id": 48,
 															"name": "obj1",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1495,8 +1253,8 @@
 														{
 															"id": 49,
 															"name": "obj2",
-															"variant": "param",
 															"kind": 32768,
+															"kindString": "Parameter",
 															"flags": {},
 															"type": {
 																"type": "intrinsic",
@@ -1516,31 +1274,24 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/IPhysicsScene.d.ts",
-									"qualifiedName": "IPhysicsScene"
-								},
-								"name": "IPhysicsScene",
-								"package": "@galacean/engine-design"
+								"name": "IPhysicsScene"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createPhysicsScene"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createPhysicsScene"
 					}
 				},
 				{
 					"id": 77,
 					"name": "createPlaneColliderShape",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -1554,8 +1305,8 @@
 						{
 							"id": 78,
 							"name": "createPlaneColliderShape",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1566,20 +1317,12 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 213,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L213"
-								}
-							],
 							"parameters": [
 								{
 									"id": 79,
 									"name": "uniqueID",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -1589,47 +1332,35 @@
 								{
 									"id": 80,
 									"name": "material",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysicsMaterial.ts",
-											"qualifiedName": "PhysXPhysicsMaterial"
-										},
-										"name": "PhysXPhysicsMaterial",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/shape/IPlaneColliderShape.d.ts",
-									"qualifiedName": "IPlaneColliderShape"
-								},
-								"name": "IPlaneColliderShape",
-								"package": "@galacean/engine-design"
+								"name": "IPlaneColliderShape"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createPlaneColliderShape"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createPlaneColliderShape"
 					}
 				},
 				{
 					"id": 72,
 					"name": "createSphereColliderShape",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -1643,8 +1374,8 @@
 						{
 							"id": 73,
 							"name": "createSphereColliderShape",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1655,20 +1386,12 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 206,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L206"
-								}
-							],
 							"parameters": [
 								{
 									"id": 74,
 									"name": "uniqueID",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -1678,8 +1401,8 @@
 								{
 									"id": 75,
 									"name": "radius",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
@@ -1689,47 +1412,35 @@
 								{
 									"id": 76,
 									"name": "material",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysicsMaterial.ts",
-											"qualifiedName": "PhysXPhysicsMaterial"
-										},
-										"name": "PhysXPhysicsMaterial",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXPhysicsMaterial"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/shape/ISphereColliderShape.d.ts",
-									"qualifiedName": "ISphereColliderShape"
-								},
-								"name": "ISphereColliderShape",
-								"package": "@galacean/engine-design"
+								"name": "ISphereColliderShape"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createSphereColliderShape"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createSphereColliderShape"
 					}
 				},
 				{
 					"id": 93,
 					"name": "createSpringJoint",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -1743,8 +1454,8 @@
 						{
 							"id": 94,
 							"name": "createSpringJoint",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1755,59 +1466,39 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 246,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L246"
-								}
-							],
 							"parameters": [
 								{
 									"id": 95,
 									"name": "collider",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/physics-physx/src/PhysXCollider.ts",
-											"qualifiedName": "PhysXCollider"
-										},
-										"name": "PhysXCollider",
-										"package": "@galacean/engine-physics-physx"
+										"name": "PhysXCollider"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/joints/ISpringJoint.d.ts",
-									"qualifiedName": "ISpringJoint"
-								},
-								"name": "ISpringJoint",
-								"package": "@galacean/engine-design"
+								"name": "ISpringJoint"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createSpringJoint"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createSpringJoint"
 					}
 				},
 				{
 					"id": 50,
 					"name": "createStaticCollider",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -1821,8 +1512,8 @@
 						{
 							"id": 51,
 							"name": "createStaticCollider",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1833,75 +1524,50 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 165,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L165"
-								}
-							],
 							"parameters": [
 								{
 									"id": 52,
 									"name": "position",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/math/types/Vector3.d.ts",
-											"qualifiedName": "Vector3"
-										},
-										"name": "Vector3",
-										"package": "@galacean/engine-math"
+										"name": "Vector3"
 									}
 								},
 								{
 									"id": 53,
 									"name": "rotation",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/math/types/Quaternion.d.ts",
-											"qualifiedName": "Quaternion"
-										},
-										"name": "Quaternion",
-										"package": "@galacean/engine-math"
+										"name": "Quaternion"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../engine/packages/design/types/physics/IStaticCollider.d.ts",
-									"qualifiedName": "IStaticCollider"
-								},
-								"name": "IStaticCollider",
-								"package": "@galacean/engine-design"
+								"name": "IStaticCollider"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.createStaticCollider"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.createStaticCollider"
 					}
 				},
 				{
 					"id": 13,
 					"name": "destroy",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {
 						"isPublic": true
 					},
@@ -1917,8 +1583,8 @@
 						{
 							"id": 14,
 							"name": "destroy",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1928,14 +1594,6 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 121,
-									"character": 9,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L121"
-								}
-							],
 							"type": {
 								"type": "intrinsic",
 								"name": "void"
@@ -1946,8 +1604,8 @@
 				{
 					"id": 11,
 					"name": "initialize",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
@@ -1961,8 +1619,8 @@
 						{
 							"id": 12,
 							"name": "initialize",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
 							"comment": {
 								"summary": [
@@ -1983,20 +1641,8 @@
 									}
 								]
 							},
-							"sources": [
-								{
-									"fileName": "PhysXPhysics.ts",
-									"line": 59,
-									"character": 2,
-									"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L59"
-								}
-							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
 								"typeArguments": [
 									{
 										"type": "intrinsic",
@@ -2004,18 +1650,17 @@
 									}
 								],
 								"name": "Promise",
+								"qualifiedName": "Promise",
 								"package": "typescript"
 							},
 							"implementationOf": {
 								"type": "reference",
-								"target": -1,
 								"name": "IPhysics.initialize"
 							}
 						}
 					],
 					"implementationOf": {
 						"type": "reference",
-						"target": -1,
 						"name": "IPhysics.initialize"
 					}
 				}
@@ -2068,12 +1713,7 @@
 			"implementedTypes": [
 				{
 					"type": "reference",
-					"target": {
-						"sourceFileName": "../engine/packages/design/types/physics/IPhysics.d.ts",
-						"qualifiedName": "IPhysics"
-					},
-					"name": "IPhysics",
-					"package": "@galacean/engine-design"
+					"name": "IPhysics"
 				}
 			]
 		}
@@ -2092,441 +1732,12 @@
 			]
 		}
 	],
-	"packageName": "@galacean/engine-physics-physx",
-	"readme": [
+	"sources": [
 		{
-			"kind": "text",
-			"text": "## Installation\n\nTo install, use:\n\n"
-		},
-		{
-			"kind": "code",
-			"text": "```sh\nnpm install @galacean/engine-physics-physx\n```"
-		},
-		{
-			"kind": "text",
-			"text": "\n\nThis will allow you to import engine entirely using:\n\n"
-		},
-		{
-			"kind": "code",
-			"text": "```javascript\nimport * as PHYSICS_PHYSX from \"@galacean/engine-physics-physx\";\n```"
-		},
-		{
-			"kind": "text",
-			"text": "\n\nor individual classes using:\n\n"
-		},
-		{
-			"kind": "code",
-			"text": "```javascript\nimport { PhysXPhysics } from \"@galacean/engine-physics-physx\";\n```"
-		},
-		{
-			"kind": "text",
-			"text": "\n\n## Usage\n\n"
-		},
-		{
-			"kind": "code",
-			"text": "```typescript\n// Create engine by passing in the HTMLCanvasElement id and adjust canvas size\nconst engine = await WebGLEngine.create({ canvas: \"canvas-id\" });\n\n// Initialize physics manager with PhysXPhysics.\nengine.physicsManager.initialize(PhysXPhysics);\n\n......\n\n// Run engine.\nengine.run();\n```"
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/index.ts#L1"
 		}
-	],
-	"symbolIdMap": {
-		"0": {
-			"sourceFileName": "../engine/packages/physics-physx/src/index.ts",
-			"qualifiedName": ""
-		},
-		"1": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics"
-		},
-		"2": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.__constructor"
-		},
-		"3": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics"
-		},
-		"4": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "runtimeMode"
-		},
-		"8": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics._runTimeMode"
-		},
-		"9": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics._initializeState"
-		},
-		"10": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics._initializePromise"
-		},
-		"11": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.initialize"
-		},
-		"12": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.initialize"
-		},
-		"13": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.destroy"
-		},
-		"14": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.destroy"
-		},
-		"15": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPhysicsManager"
-		},
-		"16": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPhysicsManager"
-		},
-		"17": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPhysicsScene"
-		},
-		"18": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPhysicsScene"
-		},
-		"19": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "physicsManager"
-		},
-		"20": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "onContactBegin"
-		},
-		"21": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"22": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"23": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj1"
-		},
-		"24": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj2"
-		},
-		"25": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "onContactEnd"
-		},
-		"26": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"27": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"28": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj1"
-		},
-		"29": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj2"
-		},
-		"30": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "onContactStay"
-		},
-		"31": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"32": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"33": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj1"
-		},
-		"34": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj2"
-		},
-		"35": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "onTriggerBegin"
-		},
-		"36": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"37": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"38": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj1"
-		},
-		"39": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj2"
-		},
-		"40": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "onTriggerEnd"
-		},
-		"41": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"42": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"43": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj1"
-		},
-		"44": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj2"
-		},
-		"45": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "onTriggerStay"
-		},
-		"46": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"47": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "__type"
-		},
-		"48": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj1"
-		},
-		"49": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "obj2"
-		},
-		"50": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createStaticCollider"
-		},
-		"51": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createStaticCollider"
-		},
-		"52": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "position"
-		},
-		"53": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "rotation"
-		},
-		"54": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createDynamicCollider"
-		},
-		"55": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createDynamicCollider"
-		},
-		"56": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "position"
-		},
-		"57": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "rotation"
-		},
-		"58": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createCharacterController"
-		},
-		"59": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createCharacterController"
-		},
-		"60": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPhysicsMaterial"
-		},
-		"61": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPhysicsMaterial"
-		},
-		"62": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "staticFriction"
-		},
-		"63": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "dynamicFriction"
-		},
-		"64": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "bounciness"
-		},
-		"65": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "frictionCombine"
-		},
-		"66": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "bounceCombine"
-		},
-		"67": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createBoxColliderShape"
-		},
-		"68": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createBoxColliderShape"
-		},
-		"69": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "uniqueID"
-		},
-		"70": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "size"
-		},
-		"71": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "material"
-		},
-		"72": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createSphereColliderShape"
-		},
-		"73": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createSphereColliderShape"
-		},
-		"74": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "uniqueID"
-		},
-		"75": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "radius"
-		},
-		"76": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "material"
-		},
-		"77": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPlaneColliderShape"
-		},
-		"78": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createPlaneColliderShape"
-		},
-		"79": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "uniqueID"
-		},
-		"80": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "material"
-		},
-		"81": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createCapsuleColliderShape"
-		},
-		"82": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createCapsuleColliderShape"
-		},
-		"83": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "uniqueID"
-		},
-		"84": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "radius"
-		},
-		"85": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "height"
-		},
-		"86": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "material"
-		},
-		"87": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createFixedJoint"
-		},
-		"88": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createFixedJoint"
-		},
-		"89": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "collider"
-		},
-		"90": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createHingeJoint"
-		},
-		"91": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createHingeJoint"
-		},
-		"92": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "collider"
-		},
-		"93": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createSpringJoint"
-		},
-		"94": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics.createSpringJoint"
-		},
-		"95": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "collider"
-		},
-		"96": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics._init"
-		},
-		"97": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "PhysXPhysics._init"
-		},
-		"98": {
-			"sourceFileName": "../engine/packages/physics-physx/src/PhysXPhysics.ts",
-			"qualifiedName": "physX"
-		},
-		"99": {
-			"sourceFileName": "../engine/packages/physics-physx/src/enum/PhysXRuntimeMode.ts",
-			"qualifiedName": "PhysXRuntimeMode"
-		},
-		"100": {
-			"sourceFileName": "../engine/packages/physics-physx/src/enum/PhysXRuntimeMode.ts",
-			"qualifiedName": "PhysXRuntimeMode.Auto"
-		},
-		"101": {
-			"sourceFileName": "../engine/packages/physics-physx/src/enum/PhysXRuntimeMode.ts",
-			"qualifiedName": "PhysXRuntimeMode.WebAssembly"
-		},
-		"102": {
-			"sourceFileName": "../engine/packages/physics-physx/src/enum/PhysXRuntimeMode.ts",
-			"qualifiedName": "PhysXRuntimeMode.JavaScript"
-		}
-	}
+	]
 }
