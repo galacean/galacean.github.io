@@ -18,7 +18,7 @@ label: Editor-Feature/Rendering-2d
 
 ## 更多属性
 
-![属性面板](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T2fMRI_KPEsAAAAAAAAAAAAADleLAQ/original)
+![属性面板](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*CcoCQJ2homcAAAAAAAAAAAAADjCHAQ/original)
 
 在精灵渲染组件的属性查看器中可以看到编辑器提供了精灵渲染组件所有可设置的属性，属性说明如下：
 
@@ -32,6 +32,7 @@ label: Editor-Feature/Rendering-2d
 | `Draw Mode` | 绘制模式，支持普通与九宫绘制 |
 | `Mask Interaction` | 遮罩类型，用于设置精灵是否需要遮罩，以及需要遮罩的情况下，是显示遮罩内还是遮罩外的内容 |
 | `Mask Layer` | 精灵所属遮罩层，用于和 SpriteMask 进行匹配，默认为 Everything，表示可以和任何 SpriteMask 发生遮罩 |
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
 
 ## 使用遮罩
 
