@@ -7,7 +7,10 @@ label: Graphics/Material
 
 `ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往的引擎 Shader，使用 `ShaderLab` 提供了更多便利。例如，它可以通过特定指令来指定渲染管线和设置渲染状态。通过 `SubShader` 和 `Pass` 模块，编写多 Pass Shader 也更加便捷。在 `ShaderLab` 中使用 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语言编写渲染管线中的顶点(Vertex)和片元(Fragment)着色器程序。值得一提的是，只需声明一次 uniform、attribute 和 varying 变量，未被着色器程序使用的变量会被引擎自动剔除，帮助开发者更加便捷、快速地编写自定义材质的 Shader。
 
-`ShaderLab`语法骨架如下，每个模块会在下文详细展开。
+下面是一个"最简单"的 ShaderLab 使用示例，它定义了一个只实现 MVP 转换的顶点着色器和一个通过 Uniform 指定像素颜色的片元着色器。
+<playground src="shader-lab-triangle.ts"></playground>
+
+`ShaderLab`语法骨架如下，每个模块语法和使用会在下文详细展开。
 
 ```
 Shader "ShaderName" {
@@ -23,13 +26,12 @@ Shader "ShaderName" {
 }
 ```
 
-<playground src="shader-lab.ts"></playground>
-
 ## `ShaderLab` 初始化
 
 ```ts
 import { ShaderLab } from "@galacean/engine-shaderlab";
 
+const shaderLab = new ShaderLab();
 // 使用ShaderLab初始化Engine
 const engine = await WebGLEngine.create({ canvas: "canvas", shaderLab });
 
@@ -277,3 +279,7 @@ shaderLab.registerShaderFragment('common_shader', commonSource);
 ```
 #include <common_shader>
 ```
+
+## 一个利用多 Pass 技术实现平面阴影的示例
+
+<playground src="shader-lab.ts"></playground>

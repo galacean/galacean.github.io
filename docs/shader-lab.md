@@ -7,7 +7,11 @@ label: Graphics/Material
 
 `ShaderLab` is a shader language designed specifically for the Galacean engine. Compared with previous engine version, using `ShaderLab` provides more convenience. For example, it can specify the rendering pipeline and set the rendering state through specific instructions. Through the SubShader and Pass modules, it is also more convenient to write multiple Pass Shaders. Use [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) language in ShaderLab to write vertex and fragment shader programs in the rendering pipeline. It is worth mentioning that you only need to declare uniform, attribute and varying variables once, and variables not used by the shader program will be automatically eliminated by the engine, helping developers to write custom material Shaders more conveniently and quickly.
 
-The syntax skeleton of `ShaderLab` is as follows, and each module will be expanded in detail below.
+The following is the "simplest" example of using ShaderLab, which defines a vertex shader that only implements MVP transformation and a fragment shader that specifies the pixel color through a Uniform.
+
+<playground src="shader-lab-triangle.ts"></playground>
+
+The syntax skeleton of `ShaderLab` is as follows, and the syntax and usage of each module will be expanded in detail below.
 
 ```
 Shader "ShaderName" {
@@ -23,13 +27,12 @@ Shader "ShaderName" {
 }
 ```
 
-<playground src="shader-lab.ts"></playground>
-
 ## ShaderLab Initialization
 
 ```ts
 import { ShaderLab } from "@galacean/engine-shaderlab";
 
+const shaderLab = new ShaderLab();
 // Create engine with shaderLab
 const engine = await WebGLEngine.create({ canvas: "canvas", shaderLab });
 
@@ -277,3 +280,7 @@ After the code fragment is registered, the code fragment is replaced through the
 ```
 #include <common_shader>
 ```
+
+## A demo using multi-pass technology to implement planar shadows
+
+<playground src="shader-lab.ts"></playground>
