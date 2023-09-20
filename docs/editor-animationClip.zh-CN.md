@@ -121,4 +121,4 @@ label: Editor-Feature/Animation
 
 ### 完整流程如下：
 
-![spriteAnimation](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*h2ELSp8N9mEAAAAAAAAAAAAADsJ_AQ/original)
+![spriteAnimation](https://intranetproxy.alipay.com/skylark/lark/0/2023/gif/294833/1695108046398-62873c70-0b82-455c-892a-e9599035460f.gif)
