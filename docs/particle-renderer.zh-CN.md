@@ -23,8 +23,9 @@ material.blendMode = BlendMode.Additive;
 material.baseTexture = texture;
 particleRenderer.setMaterial(material);
 
-// Config main params
 const generator = particleRenderer.generator;
+
+// Config main params
 const main = generator.main;
 .......
 
@@ -53,11 +54,11 @@ const generator = particleRenderer.generator;
 const rotationOverLifetime = generator.rotationOverLifetime;
 .......
 
-// Start play
-particleComp.play();
+// Play 
+generator.play();
 
 // Stop
-particleComp.stop();
+generator.stop();
 ```
 
 ## 粒子生成器
