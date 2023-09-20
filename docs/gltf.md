@@ -197,17 +197,12 @@ class UnityLightPlugin extends GLTFExtensionParser {
 If the above methods do not meet your needs, you can also completely customize the glTF pipeline to rewrite the parsing logic:
 
 ```ts
-
+@registerGLTFParser(GLTFParserType.Material)
 class CustomMaterialParser extends GLTFParser{
-   parse(context: GLTFParserContext): AssetPromise<Material[]> {
-      const { glTF, glTFResource, materialsPromiseInfo } = context;
-      glTFResource.materials = materials;
-      for (let i = 0; i < glTF.materials.length; i++) {
-        const materialInfo = glTF.materials[i];
-        ...
-      }
-      materialsPromiseInfo.resolve(materials);
-      return materialsPromiseInfo.promise;
+  parse(context: GLTFParserContext, index: number): Promise<Material> {
+      const materialInfo = context.glTF.materials[index];
+      ...
+      return materialPromise;
    }
 }
 
@@ -215,13 +210,6 @@ engine.resourceManager
     .load<GLTFResource>({
       type: AssetType.GLTF,
       url: "https://gw.alipayobjects.com/os/bmw-prod/150e44f6-7810-4c45-8029-3575d36aff30.gltf"
-      params: {
-        pipeline: new GLTFPipeline(
-          ...
-          CustomMaterialParser,
-          ...
-        )
-      }
     })
     .then((gltf) => {
       const entity = rootEntity.createChild();

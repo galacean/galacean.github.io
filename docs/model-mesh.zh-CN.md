@@ -10,24 +10,22 @@ label: Graphics/Mesh
 
 <playground src="obj-loader.ts"></playground>
 
-## 脚本创建
-
-### 代码示例
+## 代码示例
 
 ```typescript
-const entity = rootEntity.createChild('mesh-example');
+const entity = rootEntity.createChild("mesh-example");
 const meshRenderer = entity.addComponent(MeshRenderer);
 
 const modelMesh = new ModelMesh(engine);
 
 // Set vertieces data
 const positions = [
-  new Vector3(-1.0, -1.0,  1.0),
-  new Vector3( 1.0, -1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3(-1.0,  1.0,  1.0),
-  new Vector3(-1.0, -1.0,  1.0)
+  new Vector3(-1.0, -1.0, 1.0),
+  new Vector3(1.0, -1.0, 1.0),
+  new Vector3(1.0, 1.0, 1.0),
+  new Vector3(1.0, 1.0, 1.0),
+  new Vector3(-1.0, 1.0, 1.0),
+  new Vector3(-1.0, -1.0, 1.0),
 ];
 modelMesh.setPositions(positions);
 
@@ -41,35 +39,36 @@ meshRenderer.mesh = modelMesh;
 meshRenderer.setMaterial(new UnlitMaterial(engine));
 ```
 
-### 详细介绍
+## 详细介绍
 
-`ModelMesh` 的使用分为三步：
+`ModelMesh` 的使用分为以下几步：
 
-1. **设置数据**
+### **设置数据**
 
-通过 `setPositions（）`、 `setColors（）`等方法设置顶点数据
+`ModelMesh` 可以通过**高级数据**或**低级数据**设置顶点数据，也可以根据需求选择性设置，但需要注意位置是必要数据且需要最先设置。
+
+#### 通过高级数据设置
+
+可以直接通过设置 `position`, `normal` , `uv` 等**高级数据**生成 ModelMesh，然后调用 `uploadData` 方法统一上传数据至 GPU 完成应用。
 
 ```typescript
-modelMesh.setPositions([
-  new Vector3(-1.0, -1.0,  1.0),
-  new Vector3( 1.0, -1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3( 1.0,  1.0,  1.0),
-  new Vector3(-1.0,  1.0,  1.0),
-  new Vector3(-1.0, -1.0,  1.0)
-]);
+const positions = new Array<Vector3>(4);
+positions[0] = new Vector3(-1, 1, 1);
+positions[1] = new Vector3(1, 1, 1);
+positions[2] = new Vector3(1, -1, 1);
+positions[3] = new Vector3(-1, -1, 1);
+const uvs = new Array<Vector2>(4);
+uvs[0] = new Vector2(0, 0);
+uvs[1] = new Vector2(1, 0);
+uvs[2] = new Vector2(1, 1);
+uvs[3] = new Vector2(0, 1);
 
-modelMesh.setColors([
-    new Color(1, 0, 0),
-    new Color(1, 1, 0),
-    new Color(0, 1, 1),
-    new Color(0, 1, 0),
-    new Color(0, 1, 1),
-    new Color(1, 0, 1)
-]);
+modelMesh.setPositions(positions);
+modelMesh.setUVs(uvs);
+modelMesh.uploadData(false);
 ```
 
-设置数据的 API 有：
+设置高级数据的 API 有：
 
 | API                                                   | 说明                   |
 | ----------------------------------------------------- | ---------------------- |
@@ -82,33 +81,92 @@ modelMesh.setColors([
 | [setBoneIndices](${api}core/ModelMesh#setBoneIndices) | 设置逐顶点骨骼索引数据 |
 | [setUVs](${api}core/ModelMesh#setUVs)                 | 设置逐顶点 uv 数据     |
 
-可以根据需求选择性设置（注意位置是必要数据且需要最先设置）。
+#### 通过低级数据设置
 
-2. **添加 SubMesh**
+相比于高级数据，通过低级接口设置数据可以自由操作顶点缓冲数据，不仅灵活还可能带来性能提升。但需要理解 Vertex Buffer 和 Vertex Element 之间的关系，如下图：
 
-[SubMesh](${api}core/SubMesh) 主要包含了绘制范围和绘制方式等信息。调用 [addSubMesh](${api}core/ModelMesh#addSubMesh) 添加。
+![image.png](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*68IjSo2kwUAAAAAAAAAAAAAADleLAQ/original)
+
+```typescript
+const pos = new Float32Array([1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0]);
+const posBuffer = new Buffer(
+  engine,
+  BufferBindFlag.VertexBuffer,
+  pos,
+  BufferUsage.Static,
+  true
+);
+const mesh = new ModelMesh(engine);
+mesh.setVertexBufferBinding(posBuffer, 12, 0);
+const vertexElements = [
+  new VertexElement(
+    VertexAttribute.Position,
+    0,
+    VertexElementFormat.Vector3,
+    0
+  ),
+];
+mesh.setVertexElements(vertexElements);
+mesh.uploadData(false);
+```
+
+### **添加 SubMesh**
+
+[SubMesh](${api}core/SubMesh) 主要包含了绘制范围和绘制方式等信息。调用 [addSubMesh](${api}core/ModelMesh#addSubMesh)。
 
 ```typescript
 modelMesh.addSubMesh(0, 2, MeshTopology.Triangles);
 ```
 
-3. **上传数据**
+### **上传数据**
 
 调用 [uploadData()](${api}core/ModelMesh#uploadData) 方法。
 
-如果不再需要修改 `ModelMesh` 数据，`noLongerAccessible` 参数设置为 `true`：
+如果不再需要修改 `ModelMesh` 数据，`releaseData` 参数设置为 `true`：
 
 ```typescript
 modelMesh.uploadData(true);
 ```
 
-如果需要持续修改 `ModelMesh` 数据，`noLongerAccessible` 参数设置为 `false`：
+如果需要持续修改 `ModelMesh` 数据，`releaseData` 参数设置为 `false`：
 
 ```typescript
 modelMesh.uploadData(false);
 ```
 
 <playground src="model-mesh.ts"></playground>
+
+### **读取高级数据**
+
+若要让 `ModelMesh` 中的顶点数据可读，需注意：
+
+- 在上传数据时将 `releaseData` 参数设置为 `false`
+- 若顶点数据是通过**低级数据**设置的，低级数据的可读属性([readable](${api}core/Buffer#readable))需设置为 `true`
+
+```typescript
+const pos = new Float32Array([1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0]);
+const posBuffer = new Buffer(
+  engine,
+  BufferBindFlag.VertexBuffer,
+  pos,
+  BufferUsage.Static,
+  true
+);
+const mesh = new ModelMesh(engine);
+mesh.setVertexBufferBinding(posBuffer, 12, 0);
+const vertexElements = [
+  new VertexElement(
+    VertexAttribute.Position,
+    0,
+    VertexElementFormat.Vector3,
+    0
+  ),
+];
+mesh.setVertexElements(vertexElements);
+mesh.uploadData(false);
+// 期望得到的高级数据
+const result = mesh.getPositions();
+```
 
 ## 脚本添加 BlendShape 动画
 
@@ -122,36 +180,32 @@ modelMesh.uploadData(false);
 
 ### 详细步骤
 
-1. **组织`BlendShape`数据**
+#### **组织`BlendShape`数据**
 
-   首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame)添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
+首先我们先创建一个`BlendShape` 对象，然后调用 [addFrame()](${api}core/ModelMesh#addFrame)添加混合形状的帧数据，一个 `BlendShape` 可以添加多个关键帧，每一帧由**权重**和**几何体偏移数据**组成 其中**偏移位置**是必要数据，**偏移法线**和**偏移切线**为可选数据。
 
-   然后我们通过`Mesh`的`addBlendShape()` 方法添加创建好的`BlendShape`。
+然后我们通过`Mesh`的`addBlendShape()` 方法添加创建好的`BlendShape`。
 
-   ```typescript
-   // Add BlendShape
-   const deltaPositions = [
-      new Vector3(0.0, 0.0, 0.0),
-      new Vector3(0.0, 0.0, 0.0),
-      new Vector3(-1.0, 0.0, 0.0),
-      new Vector3(-1.0, 0.0, 0.0),
-      new Vector3(1.0, 0.0, 0.0),
-      new Vector3(0.0, 0.0, 0.0)
-    ];
-    const blendShape = new BlendShape("BlendShapeA");
-    blendShape.addFrame(1.0, deltaPositions);
-    modelMesh.addBlendShape(blendShape);
-   ```
+```typescript
+// Add BlendShape
+const deltaPositions = [
+  new Vector3(0.0, 0.0, 0.0),
+  new Vector3(0.0, 0.0, 0.0),
+  new Vector3(-1.0, 0.0, 0.0),
+  new Vector3(-1.0, 0.0, 0.0),
+  new Vector3(1.0, 0.0, 0.0),
+  new Vector3(0.0, 0.0, 0.0),
+];
+const blendShape = new BlendShape("BlendShapeA");
+blendShape.addFrame(1.0, deltaPositions);
+modelMesh.addBlendShape(blendShape);
+```
 
-   
+#### **通过权重调整至目标 `BlendShape`**
 
-2. **通过权重调整至目标 `BlendShape`**
+现在我们要将网格的形状完全调整为刚才添加的`BlendShape`，我们需要设置一个权重数组，由于我们只添加了一个`BlendShape`，所以权重数组长度为 1 即可，并把第一个元素的值设置为 1.0。
 
-   现在我们要将网格的形状完全调整为刚才添加的`BlendShape`，我们需要设置一个权重数组，由于我们只添加了一个`BlendShape`，所以权重数组长度为1即可，并把第一个元素的值设置为1.0。
-
-   ```typescript
-   // Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
-   skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
-   ```
-
-   
+```typescript
+// Use `blendShapeWeights` property to adjust the mesh to the target BlendShape
+skinnedMeshRenderer.blendShapeWeights = new Float32Array([1.0]);
+```

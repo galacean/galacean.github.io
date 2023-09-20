@@ -4,34 +4,21 @@ title: Ambient Light
 label: Graphics/Light
 ---
 
+**Ambient light** has been built into [Scene](${api}core/Scene), mainly using IBL technology. IBL technology treats the **surrounding environment** as a large light source and saves it in the cube texture, when rendering, each pixel of the cube texture is regarded as a light source. This method can effectively capture the global illumination and atmosphere of the environment, making the object better integrate into its environment.
 
-**Ambient light** has been built into [Scene](${api}core/Scene), providing solid color mode and texture mode for **diffuse**.
+Galacean supports offline baking through [Editor](https://galacean.antgroup.com/editor) to obtain IBL baked product `*.env` files. For details, please refer to the editor [Lighting Tutorial](${docs}editor-3d-light-cn).
 
-#### Solid color mode
-
-```typescript
-const ambientLight = scene.ambientLight;
-// Set ambient light color with red
-ambientLight.diffuseSolidColor.set(1, 0, 0, 1);
-// Set ambient light intensity
-ambientLight.diffuseIntensity = 0.5;
-```
-
-#### IBL
-
-Generally, the PBR workflow does not use the pure color mode, but uses an HDR texture as the environment reflection, which we call the [IBL](https://developer.nvidia.cn/gpugems/gpugems/part-iii-materials/chapter-19-image-based-lighting) mode here.
-
-Galacean supports offline baking through [Galacean Editor](https://galacean.antgroup.com/editor) or [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) to get IBL baked products `*.env` file.
+We also provide a small tool in [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer), just drag and drop the HDR texture:
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
-After getting the `*.env`, we can load the ambient light through resourceManager:
+After getting `*.env`, we can load the ambient light through resourceManager:
 
 ```typescript
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "***.env"
+    url: "*.env"
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
@@ -44,4 +31,3 @@ engine.resourceManager
 ```
 
 <playground src="ambient-light.ts"></playground>
-

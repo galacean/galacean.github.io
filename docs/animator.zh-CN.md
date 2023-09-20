@@ -160,6 +160,13 @@ colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
 ```
 注：就像上面的第二个例子，你同样可以为你的子实体 `/light` 绑定 AnimationCurve，同时 `addCurveBinding` 的第三个参数并不局限于组件的属性，它是一个能索引到值的路径。
 
+<playground src="animation-customAnimationClip.ts"></playground>
+
+#### 使用自定义动画片段实现帧动画
+引擎在1.1版本支持引用类型的动画曲线（[AnimationRefCurve](${api}core/AnimationRefCurve)），关键帧的值可以是资产如（精灵，材质），你可以通过创建引用类型的动画曲线实现比如帧动画的能力：
+
+<playground src="animation-sprite.ts"></playground>
+
 ## 使用动画状态机控制动画
 
 在进一步介绍使用方法之前，先简单介绍下动画系统的构成以便理解。动画系统的构成如下：

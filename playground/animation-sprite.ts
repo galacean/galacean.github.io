@@ -52,7 +52,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       spriteEntity.transform.position = new Vector3();
       spriteEntity.transform.scale.set(100 / 32, 100 / 32, 100 / 32);
       spriteEntity.addComponent(SpriteRenderer).sprite =
-        atlas.getSprite("npcs-11");
+      atlas.getSprite("npcs-11");
 
       const spriteCurve = new AnimationRefCurve();
       for (let i = 0; i < 10; ++i) {
