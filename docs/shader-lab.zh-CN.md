@@ -43,7 +43,7 @@ const shader = Shader.create(galaceanShaderCode);
 
 ## ShaderLab 语法标准
 
-#### Shader
+### Shader
 
 ```
 Shader "ShaderName" {
@@ -59,7 +59,7 @@ Shader "ShaderName" {
 
 ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎渲染设置相关信息的集合封装，它允许在同一个`Shader`对象中定义多个着色器程序，并告诉 Galacean 在渲染过程中如何选择使用它们。`Shader` 对象具有嵌套的结构，包含 `SubShader` 和 `Pass` 子结构。
 
-#### 全局变量
+### 全局变量
 
 可以在 ShaderLab 中声明 4 类全局变量：渲染状态(RenderState)，结构体，函数，以及单变量。
 
@@ -135,7 +135,7 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
 
 与其他编程语言类似，ShaderLab 中的全局变量也有作用域和同名覆盖原则。简单来说，ShaderLab 中的全局变量的作用范围仅限于其声明的 SubShader 或 Pass 模块内部，而同名覆盖原则指的是如果存在与 Pass 内部同名的全局变量，则 Pass 内的全局变量会覆盖 SubShader 内的同名全局变量。
 
-#### SubShader
+### SubShader
 
 ```
 SubShader "SubShaderName" {
@@ -167,7 +167,7 @@ SubShader "SubShaderName" {
   |   SpriteMask    |   SpriteMask/Default/Forward    |
   |     Sprite      |     Sprite/Default/Forward      |
 
-#### Pass
+### Pass
 
 ```
 Pass "PassName" {
@@ -266,7 +266,7 @@ Pass "PassName" {
   RenderQueueType = RenderQueueType.Transparent;
   ```
 
-#### `include` 宏
+### `include` 宏
 
 为了方便代码片段复用，ShaderLab 提供了 shader 代码片段注册方法。
 

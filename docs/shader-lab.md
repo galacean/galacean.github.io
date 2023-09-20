@@ -44,7 +44,7 @@ const shader = Shader.create(galaceanShaderCode);
 
 ## `ShaderLab` syntax standard
 
-#### Shader
+### Shader
 
 ```
 Shader "ShaderName" {
@@ -60,7 +60,7 @@ Shader "ShaderName" {
 
 `Shader` in `ShaderLab` is a collection of information related to shader programs and other engine rendering settings in the traditional rendering pipeline. It allows multiple shader programs to be defined in the same Shader object and tells Galacean how to choose to use them during the rendering process. Shader objects have a nested structure, containing SubShader and Pass substructures.
 
-#### Global variables
+### Global variables
 
 Four types of global variables can be declared in ShaderLab: rendering state, structures, functions, and single variables.
 
@@ -136,7 +136,7 @@ Four types of global variables can be declared in ShaderLab: rendering state, st
 
 Similar to other programming languages, global variables in ShaderLab also have scope and same-name coverage principles. Simply put, the scope of global variables in ShaderLab is limited to the SubShader or Pass module in which it is declared, and the same-name coverage principle means that if there is a global variable with the same name as the one in Pass, the global variable in Pass will overwrite the one in SubShader. global variable with the same name.
 
-#### SubShader
+### SubShader
 
 ```
 SubShader "SubShaderName" {
@@ -168,7 +168,7 @@ A `Shader` object can contain multiple, but at least one `SubShader`. It represe
   |   SpriteMask    |   SpriteMask/Default/Forward    |
   |     Sprite      |     Sprite/Default/Forward      |
 
-#### Pass
+### Pass
 
 ```
 Pass "PassName" {
@@ -267,7 +267,7 @@ Pass "PassName" {
   RenderQueueType = RenderQueueType.Transparent;
   ```
 
-#### `include` Macro
+### `include` Macro
 
 In order to facilitate the reuse of code snippets, ShaderLab provides a shader code snippet registration method.
 
