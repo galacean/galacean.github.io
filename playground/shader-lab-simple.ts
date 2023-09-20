@@ -9,7 +9,6 @@ import {
   BufferMesh,
   Camera,
   Logger,
-  SystemInfo,
   WebGLEngine,
   Buffer,
   BufferBindFlag,
@@ -107,7 +106,7 @@ Shader "Lines" {
   }
 }`;
 
-function createTriangleMesh(engine: WebGLEngine) {
+function createPlaneMesh(engine: WebGLEngine) {
   const mesh = new BufferMesh(engine);
   const vertices = new Float32Array([
     -1, -1, 1, 1, -1, 1, 1, 1, 1, 1, 1, 1, -1, 1, 1, -1, -1, 1,
@@ -135,8 +134,6 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
     lines: Shader.create(linesShaderSource),
   };
 
-  engine.canvas.width = window.innerWidth * SystemInfo.devicePixelRatio;
-  engine.canvas.height = window.innerHeight * SystemInfo.devicePixelRatio;
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
 
@@ -146,10 +143,10 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   cameraEntity.addComponent(Camera);
   cameraEntity.addComponent(OrbitControl);
 
-  // create triangle
-  const triangle = rootEntity.createChild('Triangle');
+  // create plane
+  const triangle = rootEntity.createChild('plane');
   const renderer = triangle.addComponent(MeshRenderer);
-  renderer.mesh = createTriangleMesh(engine);
+  renderer.mesh = createPlaneMesh(engine);
   const shader = shaderMap.lines;
   const material = new Material(engine, shader);
   material.shaderData.setColor('u_color', new Color(1.0, 1.0, 0));
