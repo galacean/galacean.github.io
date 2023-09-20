@@ -7,35 +7,35 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 1,
+			"id": 2,
 			"name": "LitePhysics",
 			"kind": 128,
 			"kindString": "Class",
 			"flags": {},
 			"children": [
 				{
-					"id": 2,
+					"id": 3,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
 					"signatures": [
 						{
-							"id": 3,
+							"id": 4,
 							"name": "new LitePhysics",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"type": {
 								"type": "reference",
-								"id": 1,
+								"id": 2,
 								"name": "LitePhysics"
 							}
 						}
 					]
 				},
 				{
-					"id": 58,
+					"id": 59,
 					"name": "createBoxColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -45,12 +45,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 100,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L100"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L100"
 						}
 					],
 					"signatures": [
 						{
-							"id": 59,
+							"id": 60,
 							"name": "createBoxColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -66,7 +66,7 @@
 							},
 							"parameters": [
 								{
-									"id": 60,
+									"id": 61,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -77,7 +77,7 @@
 									}
 								},
 								{
-									"id": 61,
+									"id": 62,
 									"name": "size",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -88,7 +88,7 @@
 									}
 								},
 								{
-									"id": 62,
+									"id": 63,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -115,7 +115,7 @@
 					}
 				},
 				{
-					"id": 72,
+					"id": 73,
 					"name": "createCapsuleColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -125,12 +125,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 121,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L121"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L121"
 						}
 					],
 					"signatures": [
 						{
-							"id": 73,
+							"id": 74,
 							"name": "createCapsuleColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -146,7 +146,7 @@
 							},
 							"parameters": [
 								{
-									"id": 74,
+									"id": 75,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -157,7 +157,7 @@
 									}
 								},
 								{
-									"id": 75,
+									"id": 76,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -168,7 +168,7 @@
 									}
 								},
 								{
-									"id": 76,
+									"id": 77,
 									"name": "height",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -179,7 +179,7 @@
 									}
 								},
 								{
-									"id": 77,
+									"id": 78,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -206,7 +206,7 @@
 					}
 				},
 				{
-					"id": 49,
+					"id": 50,
 					"name": "createCharacterController",
 					"kind": 2048,
 					"kindString": "Method",
@@ -216,12 +216,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 80,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L80"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L80"
 						}
 					],
 					"signatures": [
 						{
-							"id": 50,
+							"id": 51,
 							"name": "createCharacterController",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -251,7 +251,7 @@
 					}
 				},
 				{
-					"id": 45,
+					"id": 46,
 					"name": "createDynamicCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -261,12 +261,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 73,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L73"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L73"
 						}
 					],
 					"signatures": [
 						{
-							"id": 46,
+							"id": 47,
 							"name": "createDynamicCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -282,7 +282,7 @@
 							},
 							"parameters": [
 								{
-									"id": 47,
+									"id": 48,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -293,7 +293,7 @@
 									}
 								},
 								{
-									"id": 48,
+									"id": 49,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -320,7 +320,7 @@
 					}
 				},
 				{
-					"id": 78,
+					"id": 79,
 					"name": "createFixedJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -330,12 +330,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L133"
 						}
 					],
 					"signatures": [
 						{
-							"id": 79,
+							"id": 80,
 							"name": "createFixedJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -351,7 +351,7 @@
 							},
 							"parameters": [
 								{
-									"id": 80,
+									"id": 81,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -378,7 +378,7 @@
 					}
 				},
 				{
-					"id": 81,
+					"id": 82,
 					"name": "createHingeJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -388,12 +388,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 140,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L140"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L140"
 						}
 					],
 					"signatures": [
 						{
-							"id": 82,
+							"id": 83,
 							"name": "createHingeJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -409,7 +409,7 @@
 							},
 							"parameters": [
 								{
-									"id": 83,
+									"id": 84,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -436,7 +436,7 @@
 					}
 				},
 				{
-					"id": 6,
+					"id": 7,
 					"name": "createPhysicsManager",
 					"kind": 2048,
 					"kindString": "Method",
@@ -446,12 +446,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L37"
 						}
 					],
 					"signatures": [
 						{
-							"id": 7,
+							"id": 8,
 							"name": "createPhysicsManager",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -481,7 +481,7 @@
 					}
 				},
 				{
-					"id": 51,
+					"id": 52,
 					"name": "createPhysicsMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -491,12 +491,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 87,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L87"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L87"
 						}
 					],
 					"signatures": [
 						{
-							"id": 52,
+							"id": 53,
 							"name": "createPhysicsMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -512,7 +512,7 @@
 							},
 							"parameters": [
 								{
-									"id": 53,
+									"id": 54,
 									"name": "staticFriction",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -523,7 +523,7 @@
 									}
 								},
 								{
-									"id": 54,
+									"id": 55,
 									"name": "dynamicFriction",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -534,7 +534,7 @@
 									}
 								},
 								{
-									"id": 55,
+									"id": 56,
 									"name": "bounciness",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -545,7 +545,7 @@
 									}
 								},
 								{
-									"id": 56,
+									"id": 57,
 									"name": "frictionCombine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -556,7 +556,7 @@
 									}
 								},
 								{
-									"id": 57,
+									"id": 58,
 									"name": "bounceCombine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -583,7 +583,7 @@
 					}
 				},
 				{
-					"id": 8,
+					"id": 9,
 					"name": "createPhysicsScene",
 					"kind": 2048,
 					"kindString": "Method",
@@ -593,12 +593,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L44"
 						}
 					],
 					"signatures": [
 						{
-							"id": 9,
+							"id": 10,
 							"name": "createPhysicsScene",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -614,7 +614,7 @@
 							},
 							"parameters": [
 								{
-									"id": 10,
+									"id": 11,
 									"name": "physicsManager",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -625,7 +625,7 @@
 									}
 								},
 								{
-									"id": 11,
+									"id": 12,
 									"name": "onContactBegin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -635,7 +635,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 12,
+											"id": 13,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -645,19 +645,19 @@
 													"fileName": "LitePhysics.ts",
 													"line": 46,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L46"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L46"
 												}
 											],
 											"signatures": [
 												{
-													"id": 13,
+													"id": 14,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 14,
+															"id": 15,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -668,7 +668,7 @@
 															}
 														},
 														{
-															"id": 15,
+															"id": 16,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -689,7 +689,7 @@
 									}
 								},
 								{
-									"id": 16,
+									"id": 17,
 									"name": "onContactEnd",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -699,7 +699,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 17,
+											"id": 18,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -709,19 +709,19 @@
 													"fileName": "LitePhysics.ts",
 													"line": 47,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L47"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L47"
 												}
 											],
 											"signatures": [
 												{
-													"id": 18,
+													"id": 19,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 19,
+															"id": 20,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -732,7 +732,7 @@
 															}
 														},
 														{
-															"id": 20,
+															"id": 21,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -753,7 +753,7 @@
 									}
 								},
 								{
-									"id": 21,
+									"id": 22,
 									"name": "onContactPersist",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -763,7 +763,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 22,
+											"id": 23,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -773,19 +773,19 @@
 													"fileName": "LitePhysics.ts",
 													"line": 48,
 													"character": 23,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L48"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L48"
 												}
 											],
 											"signatures": [
 												{
-													"id": 23,
+													"id": 24,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 24,
+															"id": 25,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -796,7 +796,7 @@
 															}
 														},
 														{
-															"id": 25,
+															"id": 26,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -817,7 +817,7 @@
 									}
 								},
 								{
-									"id": 26,
+									"id": 27,
 									"name": "onTriggerBegin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -827,7 +827,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 27,
+											"id": 28,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -837,19 +837,19 @@
 													"fileName": "LitePhysics.ts",
 													"line": 49,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L49"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L49"
 												}
 											],
 											"signatures": [
 												{
-													"id": 28,
+													"id": 29,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 29,
+															"id": 30,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -860,7 +860,7 @@
 															}
 														},
 														{
-															"id": 30,
+															"id": 31,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -881,7 +881,7 @@
 									}
 								},
 								{
-									"id": 31,
+									"id": 32,
 									"name": "onTriggerEnd",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -891,7 +891,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 32,
+											"id": 33,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -901,19 +901,19 @@
 													"fileName": "LitePhysics.ts",
 													"line": 50,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L50"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L50"
 												}
 											],
 											"signatures": [
 												{
-													"id": 33,
+													"id": 34,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 34,
+															"id": 35,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -924,7 +924,7 @@
 															}
 														},
 														{
-															"id": 35,
+															"id": 36,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -945,7 +945,7 @@
 									}
 								},
 								{
-									"id": 36,
+									"id": 37,
 									"name": "onTriggerPersist",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -955,7 +955,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 37,
+											"id": 38,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -965,19 +965,19 @@
 													"fileName": "LitePhysics.ts",
 													"line": 51,
 													"character": 23,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L51"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L51"
 												}
 											],
 											"signatures": [
 												{
-													"id": 38,
+													"id": 39,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 39,
+															"id": 40,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -988,7 +988,7 @@
 															}
 														},
 														{
-															"id": 40,
+															"id": 41,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1025,7 +1025,7 @@
 					}
 				},
 				{
-					"id": 68,
+					"id": 69,
 					"name": "createPlaneColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1035,12 +1035,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 114,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L114"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L114"
 						}
 					],
 					"signatures": [
 						{
-							"id": 69,
+							"id": 70,
 							"name": "createPlaneColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1056,7 +1056,7 @@
 							},
 							"parameters": [
 								{
-									"id": 70,
+									"id": 71,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1067,7 +1067,7 @@
 									}
 								},
 								{
-									"id": 71,
+									"id": 72,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1094,7 +1094,7 @@
 					}
 				},
 				{
-					"id": 63,
+					"id": 64,
 					"name": "createSphereColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1104,12 +1104,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 107,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L107"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L107"
 						}
 					],
 					"signatures": [
 						{
-							"id": 64,
+							"id": 65,
 							"name": "createSphereColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1125,7 +1125,7 @@
 							},
 							"parameters": [
 								{
-									"id": 65,
+									"id": 66,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1136,7 +1136,7 @@
 									}
 								},
 								{
-									"id": 66,
+									"id": 67,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1147,7 +1147,7 @@
 									}
 								},
 								{
-									"id": 67,
+									"id": 68,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1174,7 +1174,7 @@
 					}
 				},
 				{
-					"id": 84,
+					"id": 85,
 					"name": "createSpringJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1184,12 +1184,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 147,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L147"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L147"
 						}
 					],
 					"signatures": [
 						{
-							"id": 85,
+							"id": 86,
 							"name": "createSpringJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1205,7 +1205,7 @@
 							},
 							"parameters": [
 								{
-									"id": 86,
+									"id": 87,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1232,7 +1232,7 @@
 					}
 				},
 				{
-					"id": 41,
+					"id": 42,
 					"name": "createStaticCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1242,12 +1242,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L66"
 						}
 					],
 					"signatures": [
 						{
-							"id": 42,
+							"id": 43,
 							"name": "createStaticCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1263,7 +1263,7 @@
 							},
 							"parameters": [
 								{
-									"id": 43,
+									"id": 44,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1274,7 +1274,7 @@
 									}
 								},
 								{
-									"id": 44,
+									"id": 45,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1301,7 +1301,7 @@
 					}
 				},
 				{
-					"id": 4,
+					"id": 5,
 					"name": "initialize",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1311,12 +1311,12 @@
 							"fileName": "LitePhysics.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L30"
 						}
 					],
 					"signatures": [
 						{
-							"id": 5,
+							"id": 6,
 							"name": "initialize",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1358,26 +1358,26 @@
 				{
 					"title": "Constructors",
 					"children": [
-						2
+						3
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						58,
-						72,
-						49,
-						45,
-						78,
-						81,
-						6,
-						51,
-						8,
-						68,
-						63,
-						84,
-						41,
-						4
+						59,
+						73,
+						50,
+						46,
+						79,
+						82,
+						7,
+						52,
+						9,
+						69,
+						64,
+						85,
+						42,
+						5
 					]
 				}
 			],
@@ -1386,7 +1386,7 @@
 					"fileName": "LitePhysics.ts",
 					"line": 26,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/LitePhysics.ts#L26"
+					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/LitePhysics.ts#L26"
 				}
 			],
 			"implementedTypes": [
@@ -1395,11 +1395,39 @@
 					"name": "IPhysics"
 				}
 			]
+		},
+		{
+			"id": 1,
+			"name": "version",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 4,
+					"character": 13,
+					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/index.ts#L4"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "__buildVersion"
+			},
+			"defaultValue": "..."
 		}
 	],
 	"groups": [
 		{
 			"title": "Classes",
+			"children": [
+				2
+			]
+		},
+		{
+			"title": "Variables",
 			"children": [
 				1
 			]
@@ -1410,7 +1438,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-lite/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-lite/src/index.ts#L1"
 		}
 	]
 }

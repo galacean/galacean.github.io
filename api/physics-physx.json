@@ -7,7 +7,7 @@
 	"originalName": "",
 	"children": [
 		{
-			"id": 99,
+			"id": 100,
 			"name": "PhysXRuntimeMode",
 			"kind": 8,
 			"kindString": "Enumeration",
@@ -22,7 +22,7 @@
 			},
 			"children": [
 				{
-					"id": 100,
+					"id": 101,
 					"name": "Auto",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -40,7 +40,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
 						}
 					],
 					"type": {
@@ -49,7 +49,7 @@
 					}
 				},
 				{
-					"id": 102,
+					"id": 103,
 					"name": "JavaScript",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -67,7 +67,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
 						}
 					],
 					"type": {
@@ -76,7 +76,7 @@
 					}
 				},
 				{
-					"id": 101,
+					"id": 102,
 					"name": "WebAssembly",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -94,7 +94,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
 						}
 					],
 					"type": {
@@ -107,9 +107,9 @@
 				{
 					"title": "Enumeration Members",
 					"children": [
-						100,
-						102,
-						101
+						101,
+						103,
+						102
 					]
 				}
 			],
@@ -118,12 +118,12 @@
 					"fileName": "enum/PhysXRuntimeMode.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
 				}
 			]
 		},
 		{
-			"id": 1,
+			"id": 2,
 			"name": "PhysXPhysics",
 			"kind": 128,
 			"kindString": "Class",
@@ -138,7 +138,7 @@
 			},
 			"children": [
 				{
-					"id": 2,
+					"id": 3,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
@@ -148,26 +148,26 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L50"
 						}
 					],
 					"signatures": [
 						{
-							"id": 3,
+							"id": 4,
 							"name": "new PhysXPhysics",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 4,
+									"id": 5,
 									"name": "runtimeMode",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 99,
+										"id": 100,
 										"name": "PhysXRuntimeMode"
 									},
 									"defaultValue": "PhysXRuntimeMode.Auto"
@@ -175,14 +175,14 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 1,
+								"id": 2,
 								"name": "PhysXPhysics"
 							}
 						}
 					]
 				},
 				{
-					"id": 10,
+					"id": 11,
 					"name": "_initializePromise",
 					"kind": 1024,
 					"kindString": "Property",
@@ -194,7 +194,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 48,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L48"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L48"
 						}
 					],
 					"type": {
@@ -211,7 +211,7 @@
 					}
 				},
 				{
-					"id": 9,
+					"id": 10,
 					"name": "_initializeState",
 					"kind": 1024,
 					"kindString": "Property",
@@ -223,7 +223,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 47,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L47"
 						}
 					],
 					"type": {
@@ -233,7 +233,7 @@
 					"defaultValue": "InitializeState.Uninitialized"
 				},
 				{
-					"id": 8,
+					"id": 9,
 					"name": "_runTimeMode",
 					"kind": 1024,
 					"kindString": "Property",
@@ -245,17 +245,17 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 46,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L46"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L46"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"id": 99,
+						"id": 100,
 						"name": "PhysXRuntimeMode"
 					}
 				},
 				{
-					"id": 96,
+					"id": 97,
 					"name": "_init",
 					"kind": 2048,
 					"kindString": "Method",
@@ -267,19 +267,19 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 250,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L250"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L250"
 						}
 					],
 					"signatures": [
 						{
-							"id": 97,
+							"id": 98,
 							"name": "_init",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 98,
+									"id": 99,
 									"name": "physX",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -298,7 +298,7 @@
 					]
 				},
 				{
-					"id": 67,
+					"id": 68,
 					"name": "createBoxColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -308,12 +308,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 199,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L199"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L199"
 						}
 					],
 					"signatures": [
 						{
-							"id": 68,
+							"id": 69,
 							"name": "createBoxColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -329,7 +329,7 @@
 							},
 							"parameters": [
 								{
-									"id": 69,
+									"id": 70,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -340,7 +340,7 @@
 									}
 								},
 								{
-									"id": 70,
+									"id": 71,
 									"name": "size",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -351,7 +351,7 @@
 									}
 								},
 								{
-									"id": 71,
+									"id": 72,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -378,7 +378,7 @@
 					}
 				},
 				{
-					"id": 81,
+					"id": 82,
 					"name": "createCapsuleColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -388,12 +388,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 220,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L220"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L220"
 						}
 					],
 					"signatures": [
 						{
-							"id": 82,
+							"id": 83,
 							"name": "createCapsuleColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -409,7 +409,7 @@
 							},
 							"parameters": [
 								{
-									"id": 83,
+									"id": 84,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -420,7 +420,7 @@
 									}
 								},
 								{
-									"id": 84,
+									"id": 85,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -431,7 +431,7 @@
 									}
 								},
 								{
-									"id": 85,
+									"id": 86,
 									"name": "height",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -442,7 +442,7 @@
 									}
 								},
 								{
-									"id": 86,
+									"id": 87,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -469,7 +469,7 @@
 					}
 				},
 				{
-					"id": 58,
+					"id": 59,
 					"name": "createCharacterController",
 					"kind": 2048,
 					"kindString": "Method",
@@ -479,12 +479,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 179,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L179"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L179"
 						}
 					],
 					"signatures": [
 						{
-							"id": 59,
+							"id": 60,
 							"name": "createCharacterController",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -514,7 +514,7 @@
 					}
 				},
 				{
-					"id": 54,
+					"id": 55,
 					"name": "createDynamicCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -524,12 +524,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 172,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L172"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L172"
 						}
 					],
 					"signatures": [
 						{
-							"id": 55,
+							"id": 56,
 							"name": "createDynamicCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -545,7 +545,7 @@
 							},
 							"parameters": [
 								{
-									"id": 56,
+									"id": 57,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -556,7 +556,7 @@
 									}
 								},
 								{
-									"id": 57,
+									"id": 58,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -583,7 +583,7 @@
 					}
 				},
 				{
-					"id": 87,
+					"id": 88,
 					"name": "createFixedJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -593,12 +593,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 232,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L232"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L232"
 						}
 					],
 					"signatures": [
 						{
-							"id": 88,
+							"id": 89,
 							"name": "createFixedJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -614,7 +614,7 @@
 							},
 							"parameters": [
 								{
-									"id": 89,
+									"id": 90,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -641,7 +641,7 @@
 					}
 				},
 				{
-					"id": 90,
+					"id": 91,
 					"name": "createHingeJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -651,12 +651,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 239,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L239"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L239"
 						}
 					],
 					"signatures": [
 						{
-							"id": 91,
+							"id": 92,
 							"name": "createHingeJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -672,7 +672,7 @@
 							},
 							"parameters": [
 								{
-									"id": 92,
+									"id": 93,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -699,7 +699,7 @@
 					}
 				},
 				{
-					"id": 15,
+					"id": 16,
 					"name": "createPhysicsManager",
 					"kind": 2048,
 					"kindString": "Method",
@@ -709,12 +709,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L133"
 						}
 					],
 					"signatures": [
 						{
-							"id": 16,
+							"id": 17,
 							"name": "createPhysicsManager",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -744,7 +744,7 @@
 					}
 				},
 				{
-					"id": 60,
+					"id": 61,
 					"name": "createPhysicsMaterial",
 					"kind": 2048,
 					"kindString": "Method",
@@ -754,12 +754,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 186,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L186"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L186"
 						}
 					],
 					"signatures": [
 						{
-							"id": 61,
+							"id": 62,
 							"name": "createPhysicsMaterial",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -775,7 +775,7 @@
 							},
 							"parameters": [
 								{
-									"id": 62,
+									"id": 63,
 									"name": "staticFriction",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -786,7 +786,7 @@
 									}
 								},
 								{
-									"id": 63,
+									"id": 64,
 									"name": "dynamicFriction",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -797,7 +797,7 @@
 									}
 								},
 								{
-									"id": 64,
+									"id": 65,
 									"name": "bounciness",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -808,7 +808,7 @@
 									}
 								},
 								{
-									"id": 65,
+									"id": 66,
 									"name": "frictionCombine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -819,7 +819,7 @@
 									}
 								},
 								{
-									"id": 66,
+									"id": 67,
 									"name": "bounceCombine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -846,7 +846,7 @@
 					}
 				},
 				{
-					"id": 17,
+					"id": 18,
 					"name": "createPhysicsScene",
 					"kind": 2048,
 					"kindString": "Method",
@@ -856,12 +856,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 140,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L140"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L140"
 						}
 					],
 					"signatures": [
 						{
-							"id": 18,
+							"id": 19,
 							"name": "createPhysicsScene",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -877,7 +877,7 @@
 							},
 							"parameters": [
 								{
-									"id": 19,
+									"id": 20,
 									"name": "physicsManager",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -888,7 +888,7 @@
 									}
 								},
 								{
-									"id": 20,
+									"id": 21,
 									"name": "onContactBegin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -898,7 +898,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 21,
+											"id": 22,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -908,19 +908,19 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 142,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L142"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L142"
 												}
 											],
 											"signatures": [
 												{
-													"id": 22,
+													"id": 23,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 23,
+															"id": 24,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -931,7 +931,7 @@
 															}
 														},
 														{
-															"id": 24,
+															"id": 25,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -952,7 +952,7 @@
 									}
 								},
 								{
-									"id": 25,
+									"id": 26,
 									"name": "onContactEnd",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -962,7 +962,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 26,
+											"id": 27,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -972,19 +972,19 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 143,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L143"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L143"
 												}
 											],
 											"signatures": [
 												{
-													"id": 27,
+													"id": 28,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 28,
+															"id": 29,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -995,7 +995,7 @@
 															}
 														},
 														{
-															"id": 29,
+															"id": 30,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1016,7 +1016,7 @@
 									}
 								},
 								{
-									"id": 30,
+									"id": 31,
 									"name": "onContactStay",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1026,7 +1026,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 31,
+											"id": 32,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1036,19 +1036,19 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 144,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L144"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L144"
 												}
 											],
 											"signatures": [
 												{
-													"id": 32,
+													"id": 33,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 33,
+															"id": 34,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1059,7 +1059,7 @@
 															}
 														},
 														{
-															"id": 34,
+															"id": 35,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1080,7 +1080,7 @@
 									}
 								},
 								{
-									"id": 35,
+									"id": 36,
 									"name": "onTriggerBegin",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1090,7 +1090,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 36,
+											"id": 37,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1100,19 +1100,19 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 145,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L145"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L145"
 												}
 											],
 											"signatures": [
 												{
-													"id": 37,
+													"id": 38,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 38,
+															"id": 39,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1123,7 +1123,7 @@
 															}
 														},
 														{
-															"id": 39,
+															"id": 40,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1144,7 +1144,7 @@
 									}
 								},
 								{
-									"id": 40,
+									"id": 41,
 									"name": "onTriggerEnd",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1154,7 +1154,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 41,
+											"id": 42,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1164,19 +1164,19 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 146,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L146"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L146"
 												}
 											],
 											"signatures": [
 												{
-													"id": 42,
+													"id": 43,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 43,
+															"id": 44,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1187,7 +1187,7 @@
 															}
 														},
 														{
-															"id": 44,
+															"id": 45,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1208,7 +1208,7 @@
 									}
 								},
 								{
-									"id": 45,
+									"id": 46,
 									"name": "onTriggerStay",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1218,7 +1218,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 46,
+											"id": 47,
 											"name": "__type",
 											"kind": 65536,
 											"kindString": "Type literal",
@@ -1228,19 +1228,19 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 147,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L147"
+													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L147"
 												}
 											],
 											"signatures": [
 												{
-													"id": 47,
+													"id": 48,
 													"name": "__type",
 													"kind": 4096,
 													"kindString": "Call signature",
 													"flags": {},
 													"parameters": [
 														{
-															"id": 48,
+															"id": 49,
 															"name": "obj1",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1251,7 +1251,7 @@
 															}
 														},
 														{
-															"id": 49,
+															"id": 50,
 															"name": "obj2",
 															"kind": 32768,
 															"kindString": "Parameter",
@@ -1288,7 +1288,7 @@
 					}
 				},
 				{
-					"id": 77,
+					"id": 78,
 					"name": "createPlaneColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1298,12 +1298,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 213,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L213"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L213"
 						}
 					],
 					"signatures": [
 						{
-							"id": 78,
+							"id": 79,
 							"name": "createPlaneColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1319,7 +1319,7 @@
 							},
 							"parameters": [
 								{
-									"id": 79,
+									"id": 80,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1330,7 +1330,7 @@
 									}
 								},
 								{
-									"id": 80,
+									"id": 81,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1357,7 +1357,7 @@
 					}
 				},
 				{
-					"id": 72,
+					"id": 73,
 					"name": "createSphereColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1367,12 +1367,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 206,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L206"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L206"
 						}
 					],
 					"signatures": [
 						{
-							"id": 73,
+							"id": 74,
 							"name": "createSphereColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1388,7 +1388,7 @@
 							},
 							"parameters": [
 								{
-									"id": 74,
+									"id": 75,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1399,7 +1399,7 @@
 									}
 								},
 								{
-									"id": 75,
+									"id": 76,
 									"name": "radius",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1410,7 +1410,7 @@
 									}
 								},
 								{
-									"id": 76,
+									"id": 77,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1437,7 +1437,7 @@
 					}
 				},
 				{
-					"id": 93,
+					"id": 94,
 					"name": "createSpringJoint",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1447,12 +1447,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 246,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L246"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L246"
 						}
 					],
 					"signatures": [
 						{
-							"id": 94,
+							"id": 95,
 							"name": "createSpringJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1468,7 +1468,7 @@
 							},
 							"parameters": [
 								{
-									"id": 95,
+									"id": 96,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1495,7 +1495,7 @@
 					}
 				},
 				{
-					"id": 50,
+					"id": 51,
 					"name": "createStaticCollider",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1505,12 +1505,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 165,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L165"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L165"
 						}
 					],
 					"signatures": [
 						{
-							"id": 51,
+							"id": 52,
 							"name": "createStaticCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1526,7 +1526,7 @@
 							},
 							"parameters": [
 								{
-									"id": 52,
+									"id": 53,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1537,7 +1537,7 @@
 									}
 								},
 								{
-									"id": 53,
+									"id": 54,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1564,7 +1564,7 @@
 					}
 				},
 				{
-					"id": 13,
+					"id": 14,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1576,12 +1576,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 121,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L121"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L121"
 						}
 					],
 					"signatures": [
 						{
-							"id": 14,
+							"id": 15,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1602,7 +1602,7 @@
 					]
 				},
 				{
-					"id": 11,
+					"id": 12,
 					"name": "initialize",
 					"kind": 2048,
 					"kindString": "Method",
@@ -1612,12 +1612,12 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 59,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L59"
 						}
 					],
 					"signatures": [
 						{
-							"id": 12,
+							"id": 13,
 							"name": "initialize",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1669,36 +1669,36 @@
 				{
 					"title": "Constructors",
 					"children": [
-						2
+						3
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
+						11,
 						10,
-						9,
-						8
+						9
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						96,
-						67,
-						81,
-						58,
-						54,
-						87,
-						90,
-						15,
-						60,
-						17,
-						77,
-						72,
-						93,
-						50,
-						13,
-						11
+						97,
+						68,
+						82,
+						59,
+						55,
+						88,
+						91,
+						16,
+						61,
+						18,
+						78,
+						73,
+						94,
+						51,
+						14,
+						12
 					]
 				}
 			],
@@ -1707,7 +1707,7 @@
 					"fileName": "PhysXPhysics.ts",
 					"line": 38,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/PhysXPhysics.ts#L38"
+					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L38"
 				}
 			],
 			"implementedTypes": [
@@ -1716,17 +1716,45 @@
 					"name": "IPhysics"
 				}
 			]
+		},
+		{
+			"id": 1,
+			"name": "version",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 5,
+					"character": 13,
+					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/index.ts#L5"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "__buildVersion"
+			},
+			"defaultValue": "..."
 		}
 	],
 	"groups": [
 		{
 			"title": "Enumerations",
 			"children": [
-				99
+				100
 			]
 		},
 		{
 			"title": "Classes",
+			"children": [
+				2
+			]
+		},
+		{
+			"title": "Variables",
 			"children": [
 				1
 			]
@@ -1737,7 +1765,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/galacean/engine/blob/6b21f9a0/packages/physics-physx/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/index.ts#L1"
 		}
 	]
 }
