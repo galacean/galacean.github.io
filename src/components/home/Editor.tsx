@@ -41,7 +41,7 @@ export default function Editor() {
         </StyledP>
         <Flex gap="lg">
           <a href="https://galacean.antgroup.com/editor">
-            <StyledButton variant="primary" size="lg" round>
+            <StyledButton variant="outline" size="lg" round>
               <FormattedMessage id="app.home.editor.use" />
               <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
             </StyledButton>
