@@ -176,7 +176,3 @@ Page({
   }
 })
 ```
-
-## More Galacean Mini Program Cases
-
-Coming soon...

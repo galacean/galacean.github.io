@@ -5,41 +5,62 @@ type: Core
 label: Core
 ---
 
-Scene can manage the entity tree, especially large game scenes. For example, **scene1** and **scene2** are two different scenes and do not need to be loaded for activation and rendering at the same time. Then we can divide them into different scenes through modeling software or code logic. Activating the corresponding scenes separately or merging scenes at the appropriate time.
+As a scene unit, Scene can facilitate entity tree management, especially for large-scale game scenes. For example: **scene1** and **scene2** are two different scenes, which can independently manage their own **Entity** trees, so the lighting components, rendering components and physical components in the scene also interact with each other Isolated, independent of each other. We can render one or more Scenes at the same time, or dynamically switch the current Scene according to the project logic at a specific time.
 
-Only one active scene `engine.sceneManager.activeScene` will be rendered under an Engine. Each Scene can have multiple root entities, and we manage the entire entity tree through the Scene object.
+Structurally, each Engine can contain one or more active scenes. Each Scene can have multiple root entities.
 
 ## Scene management
 
 | Properties                                         | Explanation     |
 | :------------------------------------------------- | :-------------- |
-| [activeScene](${api}core/SceneManager#activeScene) | Activated scene |
+| [scenes](${api}core/SceneManager#scenes) | Scene list |
 
 | Methods                                            | Explanation  |
 | :------------------------------------------------- | :----------- |
+| [addScene](${api}core/SceneManager#addScene) | Add scene |
+| [removeScene](${api}core/SceneManager#removeScene) | Remove scene |
 | [mergeScenes](${api}core/SceneManager#mergeScenes) | Merge scenes |
 | [loadScene](${api}core/SceneManager#loadScene)     | Load scene   |
 
 ### Basic usage
 
-#### 1. Active Scene
+#### 1. Get the scene object
 
-Activating **Scene** is easy, just assign the **scene** you want to activate to `engine.sceneManager.activeScene`.
+By calling `engine.sceneManager.scenes` you can get all the scenes activated when the current engine is running, or by calling `entity.scene` you can get the `scene` that the corresponding `entity` is subordinate to.
 
 ```typescript
-// Suppose there are two inactive scenes
-const scene1, scene2;
+// Get all currently activated scenes
+const scenes = engine.sceneManager.scenes;
 
-// Activate scene1
-engine.sceneManager.activeScene = scene1;
-
-// Activate scene2
-engine.sceneManager.activeScene = scene2;
+// Get the scene the node belongs to
+const scene = entity.scene;
 ```
 
-#### 2. Merge scenes
+#### 2. Add/Remove Scene
 
-If you want to activate multiple scenes at the same time, you can use `engine.sceneManager.mergeScenes` to merge 2 scenes into 1 scene.
+Adding and removing **Scene** is very simple, just call `addScene()` and `removeScene()` of `engine.sceneManager`, and multiple scenes can be added and rendered at the same time.
+
+```typescript
+// Suppose there are two scenes
+const scene1, scene2;
+
+// Add scene1
+engine.sceneManager.addScene(scene1);
+
+// Add scene2
+engine.sceneManager.addScene(scene1);
+
+// Remove scene2
+engine.sceneManager.removeScene(scene2);
+```
+
+An example of multi-scene rendering is as follows:
+
+<playground src="multi-scene.ts"></playground>
+
+#### 3. Merge scenes
+
+`engine.sceneManager.scenes` is read-only. If you need to add and remove **Scene**, you need to call `engine.sceneManager.addScene()` or `engine.sceneManager.removeScene()`, **engine support Render multiple scenes simultaneously**.
 
 ```typescript
 // Suppose there are two inactive scenes
@@ -49,34 +70,31 @@ const sourceScene, destScene;
 engine.sceneManager.mergeScenes(sourceScene, destScene);
 
 // Activate destScene
-engine.sceneManager.activeScene = destScene;
+engine.sceneManager.addScene(destScene);
 ```
 
-#### 3. Load scene
+#### 4. Load scene
 
 If you want to load the **Scene** asset in the application, you can pass an url to `engine.sceneManager.loadScene` method.
 
 ```typescript
 const sceneUrl = "...";
 
-const scenePromise = engine.sceneManager.loadScene(sceneUrl);
-
-// At this point, the loaded scene has been activated, you can do something on the loaded scene:
-scenePromise.then((scene) => {
-  console.log(scene);
+engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
+  engine.sceneManager.addScene(scene);
 });
 ```
 
-#### 4. Destroy scene
+#### 5. Destroy scene
 
-Call `scene.destroy()` will destroy the scene.
+Call `scene.destroy()` to destroy the scene, and the destroyed scene will be automatically removed from the active scene list.
 
-#### 4. Set background of scene
+#### 6. Set background of scene
 
 The scene background supports adding pure colors and sky:
 
 ```typescript
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 const { background } = scene;
 
 // Add a solid color background
@@ -94,14 +112,9 @@ The playground example:
 
 <playground src="background.ts"></playground>
 
-#### 5. Set the scene ambient light
+#### 7. Set the scene ambient light
 
-AmbientLight setting of the scene:
-
-```typescript
-const scene = engine.sceneManager.activeScene;
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-```
+Please refer to the relevant documentation: [Ambient Light](${docs}ambient-light)
 
 ## Entity tree management
 
@@ -109,7 +122,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 ```typescript
 const engine = await WebGLEngine.create({ canvas: "demo" });
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 
 // Create root entity
 const rootEntity = scene.createRootEntity();

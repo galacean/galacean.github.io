@@ -61,39 +61,39 @@ label: Editor-Feature/Rendering-3d
 | distance(距离)         | 有效距离，**距离光源超过有效距离的地方将无法接受到聚光灯的光线** |
 | penumbra(半影衰减角度) | 表示在有效的夹角范围内，随着夹角增大光照强度逐渐衰减至 0 。      |
 
-## IBL
+## 基于图像的照明（IBL）
 
-环境贴图使用 HDR 贴图作为环境反射，是 PBR 材质的重要组成部分。Galacean 支持通过[编辑器](https://galacean.antgroup.com/editor)或者[glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer)进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。
+![image-20230914142423022](https://gw.alipayobjects.com/zos/OasisHub/ce57cb4c-2285-4c36-b5a2-d89b70280282/image-20230914142423022.png)
 
-用户只需要从网上选择满意的 [HDRI 贴图](https://polyhaven.com/hdris)，然后上传到编辑器中，即可绑定环境贴图，其中的 IBL 离线烘焙、漫反射球谐烘焙等过程都会自动处理，就算您是零基础的用户，也能轻易上手。
+除了直接光源，IBL 技术将 **周围环境** 视为一个大光源，保存在立方体纹理中，在渲染时，将立方体纹理的每个像素都视为光源，这种方式可以有效地捕捉环境的全局光照和氛围，使物体更好地融入其环境。
 
-1. **获取资源**
+因为实时卷积计算 IBL 非常耗时，所以编辑器会 **提前烘焙周围环境** 到一张预滤波环境贴图中，即每个 mipmap 级别存储不同粗糙度的预卷积结果。
 
-HDR 贴图是高动态范围的 RGB 贴图，需要用 RGBE 解码方式进行解码，有很多网站可以下载，拿 [polyhaven](https://polyhaven.com/hdris) 举例，先选择一个喜欢的 HDR 贴图，然后下载到本地：
+编辑器支持根据 **场景** 进行烘焙，在编辑器中点击场景，配置如下：
 
-![](https://gw.alipayobjects.com/zos/OasisHub/48e59229-0110-4817-9e30-258a9c1e2f4f/image-20211115172445792.png)
+### 相关配置
 
-注意，我们一般只需要下载分辨率为 1K 的文件即可满足大部分场景需求，并且格式必须为 **HDR**，而不是 EXR:
+- 环境光：默认天空模式，表示使用根据场景烘焙的球谐参数；纯色模式时使用纯色作为漫反射颜色。
 
-![](https://gw.alipayobjects.com/zos/OasisHub/fa727617-dc38-47df-ac24-cebf41fc5cff/image-20211115172759917.png)
+![image-20230914164237484](https://gw.alipayobjects.com/zos/OasisHub/b0b1f614-dba2-41d5-a888-654256552287/image-20230914164237484.png)
 
-2. **上传资源**
+- 环境反射：默认天空模式，表示使用根据场景烘焙的预滤波环境贴图；自定义模式时可以单独上传一张 HDR 贴图作为环境反射。
 
-下载到本地之后，我们需要上传环境贴图到编辑器，编辑器会消耗大概几秒钟帮我们进行离线烘焙：
+烘焙分辨率表示烘焙后的立方体纹理分辨率，默认 128 分辨率，烘焙产物约为 500KB，64 分辨率的烘焙产物约为 125KB，可以根据场景选择合适的烘焙分辨率。
 
-![image-20230314184830375](https://gw.alipayobjects.com/zos/OasisHub/d6361dd0-e4b7-4072-8b7b-0ebcf53518a8/image-20230314184830375.png)
+![image-20230914165044652](https://gw.alipayobjects.com/zos/OasisHub/05562080-53f2-4256-852e-54bf182b9aec/image-20230914165044652.png)
 
-3. **绑定**
+- 场景背景：支持 纯色、天空、纹理 3 种模式。编辑器默认为天空模式，配大气散射材质球：
 
-现在环境贴图还是一份资产，还没有绑定到场景中，我们需要在场景面板中，进行绑定希望的环境贴图：
+![image-20230914160050455](https://gw.alipayobjects.com/zos/OasisHub/304fdc0f-36ca-47d1-8f23-de4c4da08b58/image-20230914160050455.png)
 
-![image-20230314185111042](https://gw.alipayobjects.com/zos/OasisHub/147e5338-a5d2-4d30-95c7-3c6018d3fbf3/image-20230314185111042.png)
+天空模式默认绑定大气散射材质球，我们也可以自己手动创建材质球，**着色器** 类型选择 “Sky Procedural” 或者 “Sky Box”：
 
-4. **查看效果**
+<img src="https://gw.alipayobjects.com/zos/OasisHub/0fa9b8af-9cf0-4a91-860b-907bdb7ba940/image-20230914161700839.png" alt="image-20230914161700839" style="zoom:25%;" />
 
-![ibl](https://gw.alipayobjects.com/zos/OasisHub/89943cf7-ef91-4224-988f-c36006e275ed/ibl.gif)
+其中大气散射为程序化 Shader，不需要绑定任意纹理；天空盒需要绑定一张 HDR 贴图当作背景，可以从 [Poly Haven](https://polyhaven.com/hdris) 下载，然后上传到编辑器中。
 
-调节材质的金属度、粗糙度，能够清晰地看到 IBL 在材质渲染的漫反射、镜面反射上面的作用。
+修改背景或者分辨率后，点击“烘焙场景”按钮即可重新进行烘焙。
 
 ## 阴影
 

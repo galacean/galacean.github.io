@@ -23,6 +23,8 @@ label: Graphics/2D
 |[flipY](${api}core/SpriteRenderer/#flipY)|boolean|是否对渲染结果做垂直翻转|
 |[maskLayer](${api}core/SpriteRenderer/#maskLayer)|[SpriteMaskLayer](${api}core/SpriteMaskLayer)|精灵渲染器属于哪个遮罩层|
 |[maskInteraction](${api}core/SpriteRenderer/#maskInteraction)|[SpriteMaskInteraction](${api}core/SpriteMaskInteraction)|遮罩的类型|
+[priority](${api}core/SpriteRenderer/#priority)|number|渲染器的渲染优先级，值较低的先渲染，值较高的最后渲染|
+
 
 ## 基本使用
 

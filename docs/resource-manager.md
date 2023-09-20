@@ -9,7 +9,6 @@ label: Resource
 
 Use [Script component](${docs}script) to load resources. [load](${api}core/ResourceManager#load) method can pass URL, [loadItem](${api}core/LoadItem), and an array which indicate batch loading.
 
-
 ```Typescript
 import { GLTFResource } from "@galacean/engine";
 
@@ -20,26 +19,58 @@ export class ResourceScript extension script {
   }
 }
 ```
+
 ## Features
 
-### 1. Batch Loading
+### 1. url
+
+The url path of the resource supports **relative path**, **absolute path** and **virtual path**:
+
+- The relative path is for the runtime root path. If the path is wrong, you can adjust it according to the loading error message in the developer tools.
+- An absolute path is a path that completely specifies the file location, such as `https://xxxx.png`, and also includes `blob` and `base64`
+- The virtual path is the path in the editor’s asset file, usually `Assets/sprite.png`
+
+```typescript
+//Load resources under relative paths
+this.engine.resourceManager.load("a.png");
+
+//Load resources under absolute path
+this.engine.resourceManager.load("https://a.png");
+
+//Load base64
+this.engine.resourceManager.load<GLTFResource>({
+  url: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg==",
+  type: AssetType.Texture2D,
+});
+
+//Load resources under the editor's virtual path
+this.engine.resourceManager.load<GLTFResource>("Assets/texture.png");
+```
+
+### 2. Batch Loading
+
 The load queue can be passed in a set of [LoadItem](${api}core/LoadItem) arrays, or a set of URLs, and the returned result is a sequence of loaded resource queues.
 
 ```typescript
-const [texture2D, glTFResource] = await this.engine.resourceManager.load(["a.png", "b.gltf"]);
-````
+const [texture2D, glTFResource] = await this.engine.resourceManager.load([
+  "a.png",
+  "b.gltf",
+]);
+```
 
-### 2. Loading progress
+### 3. Loading progress
 
 You can get a [AssetPromise](${api}core/AssetPromise) object by calling the loading queue, and you can use [onProgress](${api}core/AssetPromise#onProgress) to get the loading progress.
 
 ```typescript
-this.engine.resourceManager.load(["a.png", "b.gltf"]).onProgress((progress: number) => {
-  console.log(`current progress is ${progress}`);
-});
+this.engine.resourceManager
+  .load(["a.png", "b.gltf"])
+  .onProgress((progress: number) => {
+    console.log(`current progress is ${progress}`);
+  });
 ```
 
-### 3. Cancel loading
+### 4. Cancel loading
 
 There is a [cancelNotLoaded](${api}core/ResourceManager#cancelNotLoaded) method in the _ResourceManager_ object. You can call this method to cancel unloaded resources. Passing in the url will cancel the resource loading of the specific url.
 
@@ -52,10 +83,9 @@ this.engine.resourceManager.cancelNotLoaded("test.gltf");
 
 > Note: Currently, unloading unfinished resources will throw an exception.
 
-
 ### 4. Get loaded resource
 
-Loaded resources will be cached in *ResourceManager*, to get the loaded assets, you should call the `load` method again.
+Loaded resources will be cached in _ResourceManager_, to get the loaded assets, you should call the `load` method again.
 
 ### 5. Resource Release
 
@@ -90,10 +120,15 @@ const texture2D = await this.engine.resourceManager.load<Texture2D>("test.png");
 The loader will use suffixes such as png and jpg as the basis for judging Texture2D. If you use the CDN address without the suffix, you need to use type to specify the loading type. For example:
 
 ```typescript
-this.engine.resourceManager.load({ url: "test", type: AssetType.Texture2D, params: { format, mipmap } });
+this.engine.resourceManager.load({
+  url: "test",
+  type: AssetType.Texture2D,
+  params: { format, mipmap },
+});
 ```
 
 #### Additional Params
+
 - format([TextureFormat](${api}core/TextureFormat)): Texture format, default is [TextureFormat.RGBA](${api}core/TextureFormat#RGBA).
 - mipmap(boolean): Whether to generate mipmap, default is true.
 
@@ -111,9 +146,9 @@ const textureCube = await this.engine.resourceManager.load<TextureCube>({
     "/static/env/papermill/specular/specular_top_0.jpg",
     "/static/env/papermill/specular/specular_bottom_0.jpg",
     "/static/env/papermill/specular/specular_front_0.jpg",
-    "/static/env/papermill/specular/specular_back_0.jpg"
+    "/static/env/papermill/specular/specular_back_0.jpg",
   ],
-  type: AssetType.TextureCube
+  type: AssetType.TextureCube,
 });
 ```
 
@@ -128,7 +163,7 @@ import { TextureCube } from "@galacean/engine";
 engine.resourceManager
   .load<TextureCube>({
     type: AssetType.HDR,
-    url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin"
+    url: "https://gw.alipayobjects.com/os/bmw-prod/b578946a-8a25-4543-8161-fa92f92ae1ac.bin",
   })
   .then((texture) => {
     skyMaterial.texture = texture;
@@ -137,8 +172,8 @@ engine.resourceManager
   });
 ```
 
-
 ### 3. Environment
+
 Galacean supports offline baking through [Galacean Editor](https://galacean.antgroup.com/editor) or [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) to get IBL baked products `*.env` file.
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
@@ -149,12 +184,13 @@ After getting the `*.env`, we can load the ambient light through resourceManager
 engine.resourceManager
   .load<AmbientLight>({
     type: AssetType.Env,
-    url: "*.env"
+    url: "*.env",
   })
   .then((ambientLight) => {
     scene.ambientLight = ambientLight;
   });
 ```
+
 ### 4. Compressed texture
 
 > For more compressed texture related documents, please refer to [Compressed Texture](${docs}texture-compression).
@@ -162,7 +198,9 @@ engine.resourceManager
 ```typescript
 import { Texture2D } from "@galacean/engine";
 
-const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>("test.ktx");
+const compressedTexture2D = await this.engine.resourceManager.load<Texture2D>(
+  "test.ktx"
+);
 ```
 
 The suffix of compressed texture is generally `ktx`, and you need to pay attention to the compressed texture format supported by the platform when using it. After the compressed texture is loaded, the result is also [Texture2D](${api}core/Texture2D).
@@ -174,10 +212,11 @@ The loading of the compressed cube texture is different from the general cube te
 ```typescript
 import { TextureCube } from "@galacean/engine";
 
-const compressedTextureCube = await this.engine.resourceManager.load<TextureCube>({
-  url: "test.ktx",
-  type: AssetType.KTXCube
-});
+const compressedTextureCube =
+  await this.engine.resourceManager.load<TextureCube>({
+    url: "test.ktx",
+    type: AssetType.KTXCube,
+  });
 ```
 
 ### 6. glTF

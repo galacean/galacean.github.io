@@ -29,19 +29,19 @@ class CustomScript extends Script{
   c:Vector3 = new Vector3(0,0,0);
 }
 
-// init entity and script.
+// Init entity and script
 const entity = engine.createEntity();
 const script = entity.addComponent(CustomScript);
 script.a = true;
 script.b = 2;
 script.c.set(1,1,1);
 
-// clone logic.
+// Clone logic
 const cloneEntity = entity.clone();
 const cloneScript = cloneEntity.getComponent(CustomScript);
-console.log(cloneScript.a);// output is true.
-console.log(cloneScript.b);// output is 2.
-console.log(cloneScript.c);// output is (1,1,1).
+console.log(cloneScript.a); // output is true.
+console.log(cloneScript.b); // output is 2.
+console.log(cloneScript.c); // output is (1,1,1).
 ```
 ### Clone decorator
 In addition to the default cloning method, the engine also provides a "cloning decorator" to customize the cloning method of script fields. The engine has four built-in clone decorations:
@@ -74,7 +74,7 @@ class CustomScript extends Script{
   d:Vector3[] = [new Vector3(0,0,0)];
 }
 
-//init entity and script.
+// Init entity and script
 const entity = engine.createEntity();
 const script = entity.addComponent(CustomScript);
 script.a = true;
@@ -82,7 +82,7 @@ script.b = 2;
 script.c[0].set(1,1,1);
 script.d[0].set(1,1,1);
 
-// clone logic.
+// Clone logic
 const cloneEntity = entity.clone();
 const cloneScript = cloneEntity.getComponent(CustomScript);
 console.log(cloneScript.a);// output is false,ignoreClone will ignore the value.
@@ -96,8 +96,9 @@ cloneScript.d[0].set(2,2,2);// change the field d[0] value to (2,2,2).
 console.log(script.c[0]);// output is (2,2,2). bacause shallowClone let c[0] use the same reference with cloneScript's c[0].
 console.log(script.d[0]);// output is (1,1,1). bacause deepClone let d[0] use the different reference with cloneScript's d[0].
 ```
-Note:
+- Notice: 
 
-- `shallowClone` and `deepClone` are applicable to *Object*, *Array* and *Class* types.
-- `shallowClone` will keep its own references independent after cloning, and clone all its internal fields by means of assignment (if the internal field is a basic type, the value will be copied, if the internal field is a reference type, its reference address will be copied).
-- `deepClone` If *Class* is encountered in the deep cloning process, it will call the object's [cloneTo()](${api}design/IClone#cloneTo) to implement cloning, and the object needs to implement [IClone](${api}design /IClone) interface.
+  - `shallowClone` and `deepClone` are usually used for *Object*, *Array* and *Class* types.
+  - `shallowClone` will keep its own reference independent after cloning, and use assignment to clone all its internal fields (if the internal field is a basic type, the value will be copied, if the internal field is a reference type, its reference address will be copied).
+  - `deepClone` is a deep clone, which will perform deep recursion on the properties. How to clone the sub-properties of the properties depends on the decorator of the sub-properties.
+  - If the clone decorator cannot meet the requirements, you can add a custom clone by implementing the [_cloneTo()](${api}design/IClone#cloneTo) method.
