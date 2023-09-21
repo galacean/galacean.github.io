@@ -167,6 +167,8 @@ colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
 
 <playground src="animation-sprite.ts"></playground>
 
+编辑器操作详见[动画片段编辑](${docs}editor-animationClip.zh-CN)
+
 ## 使用动画状态机控制动画
 
 在进一步介绍使用方法之前，先简单介绍下动画系统的构成以便理解。动画系统的构成如下：
