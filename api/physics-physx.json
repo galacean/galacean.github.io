@@ -40,7 +40,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
 						}
 					],
 					"type": {
@@ -67,7 +67,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
 						}
 					],
 					"type": {
@@ -94,7 +94,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
 						}
 					],
 					"type": {
@@ -118,7 +118,7 @@
 					"fileName": "enum/PhysXRuntimeMode.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
 				}
 			]
 		},
@@ -148,7 +148,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L50"
 						}
 					],
 					"signatures": [
@@ -194,7 +194,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 48,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L48"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L48"
 						}
 					],
 					"type": {
@@ -223,7 +223,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 47,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L47"
 						}
 					],
 					"type": {
@@ -245,7 +245,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 46,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L46"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L46"
 						}
 					],
 					"type": {
@@ -267,7 +267,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 250,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L250"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L250"
 						}
 					],
 					"signatures": [
@@ -308,7 +308,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 199,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L199"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L199"
 						}
 					],
 					"signatures": [
@@ -388,7 +388,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 220,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L220"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L220"
 						}
 					],
 					"signatures": [
@@ -479,7 +479,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 179,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L179"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L179"
 						}
 					],
 					"signatures": [
@@ -524,7 +524,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 172,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L172"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L172"
 						}
 					],
 					"signatures": [
@@ -593,7 +593,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 232,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L232"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L232"
 						}
 					],
 					"signatures": [
@@ -651,7 +651,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 239,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L239"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L239"
 						}
 					],
 					"signatures": [
@@ -709,7 +709,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L133"
 						}
 					],
 					"signatures": [
@@ -754,7 +754,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 186,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L186"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L186"
 						}
 					],
 					"signatures": [
@@ -856,7 +856,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 140,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L140"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L140"
 						}
 					],
 					"signatures": [
@@ -908,7 +908,7 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 142,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L142"
+													"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L142"
 												}
 											],
 											"signatures": [
@@ -972,7 +972,7 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 143,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L143"
+													"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L143"
 												}
 											],
 											"signatures": [
@@ -1036,7 +1036,7 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 144,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L144"
+													"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L144"
 												}
 											],
 											"signatures": [
@@ -1100,7 +1100,7 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 145,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L145"
+													"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L145"
 												}
 											],
 											"signatures": [
@@ -1164,7 +1164,7 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 146,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L146"
+													"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L146"
 												}
 											],
 											"signatures": [
@@ -1228,7 +1228,7 @@
 													"fileName": "PhysXPhysics.ts",
 													"line": 147,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L147"
+													"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L147"
 												}
 											],
 											"signatures": [
@@ -1298,7 +1298,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 213,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L213"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L213"
 						}
 					],
 					"signatures": [
@@ -1367,7 +1367,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 206,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L206"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L206"
 						}
 					],
 					"signatures": [
@@ -1447,7 +1447,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 246,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L246"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L246"
 						}
 					],
 					"signatures": [
@@ -1505,7 +1505,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 165,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L165"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L165"
 						}
 					],
 					"signatures": [
@@ -1576,7 +1576,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 121,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L121"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L121"
 						}
 					],
 					"signatures": [
@@ -1612,7 +1612,7 @@
 							"fileName": "PhysXPhysics.ts",
 							"line": 59,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L59"
 						}
 					],
 					"signatures": [
@@ -1707,7 +1707,7 @@
 					"fileName": "PhysXPhysics.ts",
 					"line": 38,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/PhysXPhysics.ts#L38"
+					"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/PhysXPhysics.ts#L38"
 				}
 			],
 			"implementedTypes": [
@@ -1730,7 +1730,7 @@
 					"fileName": "index.ts",
 					"line": 5,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/index.ts#L5"
+					"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/index.ts#L5"
 				}
 			],
 			"type": {
@@ -1765,7 +1765,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/physics-physx/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/8c2197aa/packages/physics-physx/src/index.ts#L1"
 		}
 	]
 }
