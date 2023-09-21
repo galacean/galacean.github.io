@@ -48,7 +48,7 @@ Galacean Spine 运行时需要使用 .json（或者.bin）, atlas, png 这几种
 文件导出的详细配置见 spine 官方文档：[http://zh.esotericsoftware.com/spine-export](http://zh.esotericsoftware.com/spine-export/)
 
 ### 资源加载
-当引入了 _@galacean/engine-spine_ 后，会自动在 [engine]($%7Bapi%7Dcore/Engine) 的 [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) 上注册 spine 资源的资源加载器。通过 resourceManager 的 [load]($%7Bapi%7Dcore/ResourceManager/#load) 方法能够加载 spine 动画资源。
+如果你在编辑器中使用，请参考[文档](${docs}editor-spine)。如果在纯代码项目中，当引入了 _@galacean/engine-spine_ 后，会自动在 [engine]($%7Bapi%7Dcore/Engine) 的 [resourceManager]($%7Bapi%7Dcore/Engine#resourceManager) 上注册 spine 资源的资源加载器。通过 resourceManager 的 [load]($%7Bapi%7Dcore/ResourceManager/#load) 方法能够加载 spine 动画资源。
 
 - 当传递参数为 url 时，默认 spine 动画的资源拥有同样的 baseUrl，仅需传递  json（或者 bin） 文件的 cdn 即可。
 - 当传递参数为 urls 数组时，需要传递 json（或者 bin），atlas， image（png，jpg）三个资源的 cdn 地址。
