@@ -63,7 +63,7 @@ generator.stop();
 
 ## Particle generator
 
-The [generator](<](${api}core/ParticleGenerator)>) property of ParticleRenderer is mainly responsible for the generation and playback functions of particles. The functions related to generating particles are composed of multiple modules, namely the main module, the emitter module, and the life cycle size. Module, life cycle color module, life cycle speed module, life cycle rotation module, texture table animation module.
+The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is mainly responsible for the generation and playback functions of particles. The functions related to generating particles are composed of multiple modules, namely the main module, the emitter module, and the life cycle size. Module, life cycle color module, life cycle speed module, life cycle rotation module, texture table animation module.
 
 ### Main module
 
