@@ -1,5 +1,5 @@
 /**
- * @title Shader Lab
+ * @title Shader Lab Planar Shadow
  * @category Material
  */
 import {
@@ -41,7 +41,7 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   const renderer = planeEntity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createPlane(engine, 10, 10);
   const planeMaterial = new BlinnPhongMaterial(engine);
-  planeMaterial.baseColor.set(1, 0, 1.0, 1.0);
+  planeMaterial.baseColor.set(1.0, 1.0, 1.0, 1.0);
   renderer.setMaterial(planeMaterial);
 
   engine.resourceManager
@@ -53,9 +53,6 @@ WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
       rootEntity.addChild(defaultSceneRoot);
 
       defaultSceneRoot.transform.setPosition(0, 1.5, 0);
-
-      // const animator = defaultSceneRoot.getComponent(Animator);
-      // animator.play(asset.animations[0].name);
 
       const lightDirection = lightEntity.transform.worldForward;
 
