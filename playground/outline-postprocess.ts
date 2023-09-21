@@ -34,7 +34,9 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   cameraEntity.addComponent(OrbitControl).target.set(1, 1.3, 0);
 
   const outlineManager = cameraEntity.addComponent(OutlineManager);
+  outlineManager.isChildrenIncluded = true;
   addDebugGUI(outlineManager);
+
   const framebufferPicker = cameraEntity.addComponent(FramebufferPicker);
 
   class ClickScript extends Script {

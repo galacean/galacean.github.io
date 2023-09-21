@@ -103,14 +103,6 @@ class Footer extends React.Component<{}> {
               <FormattedMessage id='app.footer.issues' />
             </a>
           </li>
-          <li>
-            <div>
-              <StyledIcon>
-                <DingtalkOutlined />
-              </StyledIcon>
-              <FormattedMessage id='app.footer.dingtalk' />: 31065609
-            </div>
-          </li>
         </StyledGroup>
         <StyledGroup>
           <li>
@@ -121,6 +113,16 @@ class Footer extends React.Component<{}> {
               <FormattedMessage id='app.footer.wechat' />
             </div>
             <StyledQRCode width="100" height="100" src='https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*uinbS4soUJAAAAAAAAAAAAAADsF_AQ/fmt.webp' alt='' style={{
+            }} />
+          </li>
+          <li>
+            <div>
+              <StyledIcon>
+                <DingtalkOutlined />
+              </StyledIcon>
+              <FormattedMessage id='app.footer.dingtalk' />
+            </div>
+            <StyledQRCode width="100" height="100" src='https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*8RKoRZmX0VgAAAAAAAAAAAAADsF_AQ/original' alt='' style={{
             }} />
           </li>
         </StyledGroup>

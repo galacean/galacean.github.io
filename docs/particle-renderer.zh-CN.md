@@ -1,81 +1,205 @@
 ---
 order: 5
-title: 粒子动画
+title: 粒子渲染器
 type: 动画
 label: Animation
+
 ---
 
 Galacean Engine 的粒子渲染器 [ParticleRenderer](${api}core/ParticleRenderer) 是常用的渲染组件，具备丰富的属性，通过调节各个属性值达到绚丽多彩的粒子效果。
 
-<playground src="particle-renderer.ts"></playground>
+<playground src="particle-fire.ts"></playground>
+
+<playground src="particle-dream.ts"></playground>
+
 ## 代码示例
 
 ```typescript
-let particles: ParticleRenderer = particleEntity.addComponent(ParticleRenderer);
+let particleRenderer = particleEntity.addComponent(ParticleRenderer);
 
-particles.maxCount = 100;
-particles.velocity = new Vector3(1, 1, 1);
-particles.acceleration = new Vector3(-1, -1, -1);
-particles.accelerationRandomness = new Vector3(-3, -3, -3);
-particles.velocityRandomness = new Vector3(-1, -1, -1);
-particles.rotateVelocity = 1;
-particles.rotateVelocityRandomness = 1;
-particles.size = 1;
-particles.is2d = true;
+// Set Material
+const material = new ParticleMaterial(particleEntity.engine);
+material.blendMode = BlendMode.Additive;
+material.baseTexture = texture;
+particleRenderer.setMaterial(material);
 
-// Start play
-particleComp.start();
+const generator = particleRenderer.generator;
+
+// Config main params
+const main = generator.main;
+.......
+
+// Config emission params
+const generator = particleRenderer.generator;
+const emission = generator.emission;
+.......
+
+// Config sizeOverLifetime params
+const generator = particleRenderer.generator;
+const sizeOverLifetime = generator.sizeOverLifetime;
+.......
+
+// Config colorOverLifetime params
+const generator = particleRenderer.generator;
+const colorOverLifetime = generator.colorOverLifetime;
+.......
+
+// Config velocityOverLifetime params
+const generator = particleRenderer.generator;
+const velocityOverLifetime = generator.velocityOverLifetime;
+.......
+
+// Config rotationOverLifetime params
+const generator = particleRenderer.generator;
+const rotationOverLifetime = generator.rotationOverLifetime;
+.......
+
+// Play 
+generator.play();
 
 // Stop
-particleComp.stop();
+generator.stop();
 ```
 
-## 属性
+## 粒子生成器
 
-粒子渲染器包含生命周期、材质、变换等属性。
+ParticleRenderer 的 [generator](${api}core/ParticleGenerator) 属性主要负责粒子的生成和播放功能，生成粒子相关的功能由多个模块组成，分别是主模块、发射器模块、生命周期尺寸模块、生命周期颜色模块、生命周期速度模块、生命周期旋转模块、纹理表格动画模块。
 
-### 基础属性 
-- [maxCount](${api}core/ParticleRenderer#maxCount)：最大粒子数，决定所占内存的大小，需要合理分配。
+### 主模块
 
-### 生命周期
-- [lifetime](${api}core/ParticleRenderer#lifetime)：粒子的生命周期，单位秒。
-- [startTimeRandomness](${api}core/ParticleRenderer#startTimeRandomness)：开始时间随机因子。
-- [isOnce](${api}core/ParticleRenderer#isOnce) ：是否只发射一次，默认 `false` （循环发射）。
-- [playOnEnable](${api}core/ParticleRenderer#playOnEnable) ：是否自动播放，默认`true`。
+[`MainModule`](${api}core/MainModule) 是 `ParticleGeneratorModule` 的主模块，包含了最基本的粒子生成参数。
 
-### 材质
-- [texture](${api}core/ParticleRenderer#texture) ： 粒子形状贴图。
-- [color](${api}core/ParticleRenderer#color)：粒子颜色。
-- [colorRandomness](${api}core/ParticleRenderer#colorRandomness)：颜色随机因子，取值在 `0~1` 之间，颜色的 R、G、B通道的色值会分别在随机因子范围内取一个随机值。
-- [isUseOriginColor](${api}core/ParticleRenderer#isUseOriginColor) ：是否使用图片原色，为 `true` (默认) 时使用图片原色，为 `false`  时，图片原色混合用户配置的颜色。
-- [spriteSheet](${api}core/ParticleRenderer#spriteSheet)：精灵图表，每个粒子可以渲染精灵图中某块区域：
+#### 属性
 
-<playground src="particle-sprite-sheet.ts"></playground>
+- [`duration`](${api}core/MainModule#duration): 粒子生成器的持续时间（单位：秒）。
 
-- [alpha](${api}core/ParticleRenderer#alpha)：透明度。
-- [alphaRandomness](${api}core/ParticleRenderer#alphaRandomness)：透明度随机因子。
-- [isFadeIn](${api}core/ParticleRenderer#isFadeIn) ：是否添加淡入效果。
-- [isFadeOut](${api}core/ParticleRenderer#isFadeOut) ：是否添加淡出效果。
-- [blendMode](${api}core/ParticleRenderer#blendMode)：混合模式，目前支持 [Transparent](${api}core/ParticleRendererBlendMode#Transparent) 和 [Additive](${api}core/ParticleRendererBlendMode#Additive) 模式，默认`Transparent`。
+- [`isLoop`](${api}core/MainModule#isLoop): 指定粒子生成器是否循环。
 
-### 变换
-- [position](${api}core/ParticleRenderer#position) ：初始位置。
-- [positionRandomness](${api}core/ParticleRenderer#positionRandomness)：位置随机因子。
-- [velocity](${api}core/ParticleRenderer#velocity) ：移动速度。
-- [velocityRandomness](${api}core/ParticleRenderer#velocityRandomness)：移动速度随机因子。
-- [acceleration`](${api}core/ParticleRenderer#acceleration)：加速度。
-- [accelerationRandomness](${api}core/ParticleRenderer#accelerationRandomness)：加速度随机因子。
-- [angle](${api}core/ParticleRenderer#angle): 初始旋转角度。
-- [angleRandomness](${api}core/ParticleRenderer#angleRandomness): 初始旋转角度随机因子，取值在 `0~1` 之间，例如：若随机因子为 1，则生成的角度在 `-PI~PI` 之间随机。
-- [rotateVelocity](${api}core/ParticleRenderer#rotateVelocity): 旋转速度。
-- [rotateVelocityRandomness](${api}core/ParticleRenderer#rotateVelocityRandomness): 旋转速度随机因子。
-- [isRotateToVelocity](${api}core/ParticleRenderer#isRotateToVelocity)：是否跟随粒子运动速度的方向，默认 `false`，为 `true`  时，将粒子贴图的单位向量旋转至粒子运动速度的方向，例如烟花。为 `false` 时，无旋转，适用于方向一致的场景，例如孔明灯。
-- [is2d](${api}core/ParticleRenderer#is2d)：是否是 2D 粒子，默认 `true`。
-- [size](${api}core/ParticleRenderer#size)：粒子大小。
-- [sizeRandomness](${api}core/ParticleRenderer#sizeRandomness)：粒子大小随机因子。
-- [scale](${api}core/ParticleRenderer#scale)：粒子缩放。
-- [isScaleByLifetime](${api}core/ParticleRenderer#isScaleByLifetime)：是否随生命周期缩小至消失。为 `true` 时粒子会越来越小。
+- [`startDelay`](#${api}core/MainModule#startDelay): 粒子发射的开始延迟（单位：秒）。
 
-  ## 方法
-- [start()](${api}core/ParticleRenderer#start)：开始播放。
-- [stop()](${api}core/ParticleRenderer#stop)：停止播放。
+- [`startLifetime`](#${api}core/MainModule#startLifetime): 粒子发射时的初始生命周期。
+
+- [`startSpeed`](#${api}core/MainModule#startSpeed): 粒子生成器首次生成粒子时的初始速度。
+
+- [`startSize3D`](#${api}core/MainModule#startSize3D): 是否以每个轴的粒子大小分别指定。
+
+- [`startSize`](#${api}core/MainModule#startSize): 粒子生成器首次生成粒子时的初始大小。
+
+- [`startSizeX`](#${api}core/MainModule#startSizeX): 粒子生成器首次生成粒子时沿 x 轴的初始大小。
+
+- [`startSizeY`](#${api}core/MainModule#startSizeY): 粒子生成器首次生成粒子时沿 y 轴的初始大小。
+
+- [`startSizeZ`](#${api}core/MainModule#startSizeZ): 粒子生成器首次生成粒子时沿 z 轴的初始大小。
+
+- [`startRotation3D`](#${api}core/MainModule#startRotation3D): 是否启用 3D 粒子旋转。
+
+- [`startRotation`](#${api}core/MainModule#startRotation): 粒子生成器首次生成粒子时的初始旋转。
+
+- [`startRotationX`](#${api}core/MainModule#startRotationX): 粒子发射时沿 x 轴的初始旋转。
+
+- [`startRotationY`](#${api}core/MainModule#startRotationY): 粒子发射时沿 y 轴的初始旋转。
+
+- [`startRotationZ`](#${api}core/MainModule#startRotationZ): 粒子发射时沿 z 轴的初始旋转。
+
+- [`flipRotation`](#${api}core/MainModule#flipRotation): 使部分粒子以相反方向旋转。
+
+- [`startColor`](#${api}core/MainModule#startColor): 粒子的初始颜色模式。
+
+- [`gravityModifier`](#${api}core/MainModule#gravityModifier): 此粒子生成器应用于由 Physics.gravity 定义的重力的比例。
+
+- [`simulationSpace`](#${api}core/MainModule#simulationSpace): 选择模拟粒子的空间，它可以是世界空间或本地空间。
+
+- [`simulationSpeed`](#${api}core/MainModule#simulationSpeed): 覆盖粒子生成器的默认播放速度。
+
+- [`scalingMode`](#${api}core/MainModule#scalingMode): 控制粒子生成器如何将其 Transform 组件应用到它发射的粒子。
+
+- [`playOnEnabled`](#${api}core/MainModule#playOnEnabled): 如果设置为 true，粒子生成器将在启动时自动开始播放。
+
+- [`maxParticles`](#${api}core/MainModule#maxParticles): 最大粒子数。
+
+### 发射模块模块
+
+[`EmissionModule`](${api}core/EmissionModule) 是 `ParticleGeneratorModule` 的发射模块。该模块用于处理粒子系统的发射行为，包括粒子发射速率、发射形状以及爆破（burst）行为等。
+
+#### 属性
+
+- [rateOverTime](${api}core/EmissionModule#rateOverTime): 这是一个 `ParticleCompositeCurve` 对象，表示粒子的发射速率。默认值为 `10`。
+- [rateOverDistance](${api}core/EmissionModule#rateOverDistance): 这是一个 `ParticleCompositeCurve` 对象，表示粒子的距离发射速率。默认值为 `0`。
+- [shape](${api}core/EmissionModule#shape): 这是一个 `BaseShape` 对象，表示发射器的形状。
+
+#### 方法
+
+- [addBurst(burst: Burst)](${api}core/EmissionModule#addBurst): 添加一个爆破行为。
+
+- [removeBurst(burst: Burst)](${api}core/EmissionModule#removeBurst): 移除一个爆破行为。
+
+- [removeBurstByIndex(index: number)](${api}core/EmissionModule#removeBurstByIndex): 通过索引移除一个爆破行为。
+
+- [clearBurst()](${api}core/EmissionModule#clearBurst): 清除所有的爆破行为。
+
+### 生命周期尺寸模块
+
+[`SizeOverLifetimeModule`](${api}core/SizeOverLifetimeModule) 是 `ParticleGeneratorModule` 的子类，用于处理粒子系统的生命周期内的大小变化。
+
+#### 属性
+
+- [separateAxes](#${api}core/SizeOverLifetimeModule#separateAxes): 布尔值，指定每个轴的大小是否独立变化。
+- [sizeX](#${api}core/SizeOverLifetimeModule#sizeX): `ParticleCompositeCurve` 对象，表示 x 轴方向上粒子的大小变化曲线。
+- [sizeY](#${api}core/SizeOverLifetimeModule#sizeY): `ParticleCompositeCurve` 对象，表示 y 轴方向上粒子的大小变化曲线。
+- [sizeZ](#${api}core/SizeOverLifetimeModule#sizeZ): `ParticleCompositeCurve` 对象，表示 z 轴方向上粒子的大小变化曲线。
+- [size](#${api}core/SizeOverLifetimeModule#size): `ParticleCompositeCurve` 对象，获取或设置粒子的大小变化曲线。
+
+### 生命周期颜色模块
+
+[`ColorOverLifetimeModule`](${api}core/ColorOverLifetimeModule) 继承自 `ParticleGeneratorModule`，用于处理粒子系统的生命周期内的颜色变化。
+
+#### 属性
+
+- [color](#${api}core/ColorOverLifetimeModule#color): `ParticleCompositeGradient` 对象，表示粒子在其生命周期内的颜色渐变。
+
+### 生命周期旋转模块
+
+[`RotationOverLifetimeModule`](${api}core/RotationOverLifetimeModule) 继承自 `ParticleGeneratorModule`，用于控制粒子系统的生命周期内的旋转变化。
+
+#### 属性
+
+- [separateAxes](#${api}core/RotationOverLifetimeModule#separateAxes): `boolean` 类型，表示是否在每个轴上分别进行旋转。如果禁用，将只使用 z 轴。
+
+- [rotationX](#${api}core/RotationOverLifetimeModule#rotationX): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 x 轴旋转。
+
+- [rotationY](#${api}core/RotationOverLifetimeModule#rotationY): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 y 轴旋转。
+
+- [rotationZ](#${api}core/RotationOverLifetimeModule#rotationZ): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 z 轴旋转。
+
+### 纹理表格动画模块
+
+[`TextureSheetAnimationModule`](${api}core/TextureSheetAnimationModule) 继承自 `ParticleGeneratorModule`，用于控制粒子系统的纹理表动画。
+
+#### 属性
+
+- [startFrame](${api}core/TextureSheetAnimationModule#startFrame): `ParticleCompositeCurve` 对象，表示纹理表的起始帧。
+
+- [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime): `ParticleCompositeCurve` 对象，表示纹理表的帧随时间变化的曲线。
+
+- [type](${api}core/TextureSheetAnimationModule#type): `TextureSheetAnimationType` 枚举，表示纹理表动画的类型。
+
+- [cycleCount](${api}core/TextureSheetAnimationModule#cycleCount): `number` 类型，表示纹理表动画的周期计数。
+
+- [tiling](${api}core/TextureSheetAnimationModule#tiling): `Vector2` 对象，表示纹理表的平铺。可以通过 `get` 和 `set` 方法访问和修改。
+
+## 其他参数
+
+- [velocityScale](${api}core/ParticleRenderer#velocityScale): 指定粒子根据其速度伸展的程度，类型为。
+- [lengthScale](${api}core/ParticleRenderer#lengthScale): 定义粒子在其运动方向上伸展的程度，定义为粒子的长度与其宽度的比例。
+- [pivot](${api}core/ParticleRenderer#pivot): 粒子的枢轴。
+- [renderMode](${api}core/ParticleRenderer#renderMode): 粒子的渲染模式。
+- [mesh](${api}core/ParticleRenderer#mesh): 粒子的网格，当 `renderMode` 为 `Mesh` 时有效。
+
+## 渲染材质
+
+[ParticleMaterial](${api}core/ParticleMaterial) 是粒子的默认材质，包含了一些粒子基本的常用材质属性。
+
+### 属性
+
+- [baseColor](${api}core/ParticleMaterial#baseColor): 基础颜色。
+- [baseTexture](${api}core/ParticleMaterial#baseColor): 基础纹理。

@@ -66,35 +66,43 @@ const material = new Material(engine, Shader.find("demo"));
 
 ### 属性
 
-#### 变换
+#### 渲染器
 
 
-| 名字 | 类型 | 解释 |
-| :--- | :--- | ---- |
-| camera_ViewMat | mat4 | 视口矩阵 |
-| camera_ProjMat | mat4 | 投影矩阵 |
-| camera_VPMat | mat4 | 视口投影矩阵 |
-| camera_ViewInvMat | mat4 | 视口逆矩阵 |
-| camera_Position | vec3 | 相机位置 |
-| renderer_LocalMat | mat4 | 模型本地坐标系矩阵 |
-| renderer_ModelMat | mat4 | 模型世界坐标系矩阵 |
-| renderer_MVMat | mat4 | 模型视口矩阵 |
-| renderer_MVPMat | mat4 | 模型视口投影矩阵 |
-| renderer_NormalMat | mat4 | 法线逆转置矩阵 |
+| 名字               | 类型 | 解释               |
+| :----------------- | :--- | ------------------ |
+| renderer_LocalMat  | mat4 | 模型本地坐标系矩阵 |
+| renderer_ModelMat  | mat4 | 模型世界坐标系矩阵 |
+| renderer_MVMat     | mat4 | 模型视口矩阵       |
+| renderer_MVPMat    | mat4 | 模型视口投影矩阵   |
+| renderer_NormalMat | mat4 | 法线矩阵        |
+
+#### 相机
+
+
+| 名字                     | 类型      | 解释                                                         |
+| :----------------------- | :-------- | ------------------------------------------------------------ |
+| camera_ViewMat           | mat4      | 视口矩阵                                                     |
+| camera_ProjMat           | mat4      | 投影矩阵                                                     |
+| camera_VPMat             | mat4      | 视口投影矩阵                                                 |
+| camera_ViewInvMat        | mat4      | 视口逆矩阵                                                   |
+| camera_Position          | vec3      | 相机位置                                                     |
+| camera_DepthTexture      | sampler2D | 深度信息纹理                                                 |
+| camera_DepthBufferParams | Vec4      | 相机深度缓冲参数：(x: 1.0 - far / near, y: far / near, z: 0, w: 0) |
 
 #### 时间
 
 | 名字              | 类型 | 解释                                                      |
 | :---------------- | :--- | :-------------------------------------------------------- |
 | scene_ElapsedTime | vec4 | 引擎启动后经过的总时间：(x: t, y: sin(t), z:cos(t), w: 0) |
-| oasis_DeltaTime   | vec4 | 距离上一帧的间隔时间：(x: dt, y: 0, z:0, w: 0)            |
+| scene_DeltaTime   | vec4 | 距离上一帧的间隔时间：(x: dt, y: 0, z:0, w: 0)            |
 
 #### 雾
 
 | 名字            | 类型 | 解释                                                         |
 | :-------------- | :--- | :----------------------------------------------------------- |
-| oasis_FogColor  | vec4 | 雾的颜色                                                     |
-| oasis_FogParams | vec4 | 雾的参数：(x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
+| scene_FogColor  | vec4 | 雾的颜色                                                     |
+| scene_FogParams | vec4 | 雾的参数：(x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
 
 ## 上传 shader 变量
 
@@ -103,7 +111,7 @@ const material = new Material(engine, Shader.find("demo"));
 除了内置的变量，我们可以在 shader 中上传任何自定义名字的变量(建议使用 u_** 、 v_** 分别表示 uniform、varying变量)，我们唯一要做的就是根据 shader 的变量类型，使用正确的接口。
 上传接口全部保存在 [ShaderData](${api}core/ShaderData) 中，而 shaderData 实例对象又分别保存在引擎的四大类 [Scene](${api}core/Scene)、[Camera](${api}core/Camera)、[Renderer](${api}core/Renderer)、[Material](${api}core/Material) 中，我们只需要分别往这些 shaderData 中调用接口，上传变量，引擎便会在底层自动帮我们组装这些数据，并进行判重等性能的优化。
 
-![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*yR97QbVx-QwAAAAAAAAAAAAAARQnAQ)
+![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*ijQMQJM_Vy0AAAAAAAAAAAAADleLAQ/original)
 
 ### shaderData 分开的好处
 shaderData 分别保存在引擎的四大类 [Scene](${api}core/Scene)、[Camera](${api}core/Camera)、[Renderer](${api}core/Renderer)、[Material](${api}core/Material) 中，这样做的好处之一就是底层可以根据上传时机上传某一块 uniform，提升性能；另外，将材质无关的 shaderData 剥离出来，可以实现共享材质，比如两个 renderer ，共享了一个材质，虽然都要操控同一个 shader，但是因为这一部分 shader 数据的上传来源于两个 renderer 的 shaderData，所以是不会影响彼此的渲染结果的。

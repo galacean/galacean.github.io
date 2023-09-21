@@ -234,6 +234,13 @@ layers[1].stateMachine.defaultState = animator.findAnimatorState('sad_pose');
 layers[1].blendingMode = AnimatorLayerBlendingMode.Additive;
 ```
 
+<playground src="animation-customAnimationClip.ts"></playground>
+
+#### Create sprite animation using custom animation clips
+The engine supports reference type animation curve([AnimationRefCurve](${api}core/AnimationRefCurve)) from version 1.1. The keyframe values can be assets (sprites or materials). You can create reference type animation curve to implement capabilities like sprite animation:
+
+<playground src="animation-sprite.ts"></playground>
+
 ### StateMachineScript
 
 <playground src="animation-stateMachineScript.ts"></playground>

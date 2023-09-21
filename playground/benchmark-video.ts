@@ -15,7 +15,6 @@ import {
   TextureUsage,
   Vector3,
   WebGLEngine,
-  dependentComponents,
 } from "@galacean/engine";
 import { Stats } from "@galacean/engine-toolkit";
 
@@ -52,8 +51,6 @@ function addVideo(parent: Entity, posX: number, posY: number): void {
   videoEntity.addComponent(VideoScript);
   videoEntity.transform.setPosition(posX, posY, 0);
 }
-
-@dependentComponents(SpriteRenderer, DependentMode.AutoAdd)
 export class VideoScript extends Script {
   static videos = {
     "540p_0": {
@@ -91,7 +88,7 @@ export class VideoScript extends Script {
       VideoScript.videoIndex = 0;
     }
 
-    const spriteRenderer = this.entity.getComponent(SpriteRenderer);
+    const spriteRenderer = this.entity.addComponent(SpriteRenderer);
     const { engine } = this;
     const texture = new Texture2D(
       engine,

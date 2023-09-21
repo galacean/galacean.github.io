@@ -1,6 +1,5 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { Button, Flex, styled } from "@galacean/editor-ui";
-import { MagicWand } from "iconoir-react";
 import { FormattedMessage } from 'react-intl';
 
 const StyledEditor = styled("div", {
@@ -13,11 +12,10 @@ const StyledEditor = styled("div", {
   }
 });
 
-const StyledImg = styled('img', {
+const StyledVideo = styled('video', {
   width: "80%",
   maxWidth: "1000px",
-  borderRadius: "$4",
-  border: "8px solid $slate4"
+  borderRadius: "$3"
 });
 
 const StyledButton = styled(Button, {
@@ -43,7 +41,7 @@ export default function Editor() {
         </StyledP>
         <Flex gap="lg">
           <a href="https://galacean.antgroup.com/editor">
-            <StyledButton variant="primary" size="lg" round>
+            <StyledButton variant="outline" size="lg" round>
               <FormattedMessage id="app.home.editor.use" />
               <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
             </StyledButton>
@@ -54,7 +52,9 @@ export default function Editor() {
             </StyledButton>
           </a>
         </Flex>
-        <StyledImg src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*f3M3RJYVPYYAAAAAAAAAAAAADsF_AQ/fmt.webp" alt="" />
+        <StyledVideo playsInline autoPlay muted loop poster="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*aVJIToZjpB0AAAAAAAAAAAAADsF_AQ/fmt.webp">
+          <source src="https://gw.alipayobjects.com/v/huamei_b4l2if/afts/video/iAMbRIrO7mYAAAAAAAAAAAAAK4eUAQBr" type="video/mp4" />
+        </StyledVideo >
       </Flex>
     </StyledEditor>
   );

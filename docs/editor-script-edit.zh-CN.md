@@ -10,10 +10,10 @@ label: Editor-Feature/Scripting
 用户可以在线使用脚本编辑器编辑脚本，并且实时预览场景，以及调试事件查看日志。
 
 创建脚本之后，在 `资源面板` 中双击击你想要编辑的脚本, 就会打开该脚本的编辑页面：
-![CodeEditor](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*6bTOSp1Z9owAAAAAAAAAAAAADgeMAQ/original)
+![CodeEditor](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*26NQRZbLtAIAAAAAAAAAAAAADqiTAQ/original)
 
 ### 代码编辑器
-代码编辑区会有 Galacean 创建的脚本模板代码，  Galacean 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
+代码编辑区会有 Galacean 使用默认模板创建的脚本代码，Galacean 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
 ```typescript
 import { Script } from '@galacean/engine';
 /**
@@ -71,15 +71,7 @@ export default class extends Script {
 ### 实时预览区
 在实时预览区你可以调整显示设备以观察项目的兼容性：
 
-<img src="https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*Y9jUSo3wIPAAAAAAAAAAAAAADgeMAQ/original" style="zoom:50%;">
-
-### 工具栏
-工具栏中的三个按钮分别为：
-
-| 强制刷新页面                                                                                                                              | 手机扫码预览                                                                                                                                                                                                                                                                        | 新开窗口预览                                                                                                                              |
-|:-----------------------------------------------------------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
-| ![](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*AtF_Q74WW84AAAAAAAAAAAAADgeMAQ/original) | <img src="https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*M8lCSKudyAYAAAAAAAAAAAAADgeMAQ/original" style="zoom:50%;" /> | ![](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*rjD2Tb17Xg8AAAAAAAAAAAAADgeMAQ/original) |
-
+<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*7JWrTJnt96sAAAAAAAAAAAAADqiTAQ/original" style="zoom:50%;">
 
 ### 事件调试面板
 事件通信区给开发者提供了方便的事件收发测试能力，帮助开发者方便的调试项目，详见[事件通信](${docs}editor-script-communication-cn)。

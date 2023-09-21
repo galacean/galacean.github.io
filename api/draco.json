@@ -1,70 +1,57 @@
 {
 	"id": 0,
 	"name": "@galacean/engine-draco",
-	"variant": "project",
 	"kind": 1,
+	"kindString": "Project",
 	"flags": {},
+	"originalName": "",
 	"children": [
 		{
 			"id": 1,
 			"name": "DRACODecoder",
-			"variant": "declaration",
 			"kind": 128,
+			"kindString": "Class",
 			"flags": {},
 			"children": [
 				{
 					"id": 2,
 					"name": "constructor",
-					"variant": "declaration",
 					"kind": 512,
+					"kindString": "Constructor",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "decoder.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L21"
 						}
 					],
 					"signatures": [
 						{
 							"id": 3,
 							"name": "new DRACODecoder",
-							"variant": "signature",
 							"kind": 16384,
+							"kindString": "Constructor signature",
 							"flags": {},
-							"sources": [
-								{
-									"fileName": "decoder.ts",
-									"line": 21,
-									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L21"
-								}
-							],
 							"parameters": [
 								{
 									"id": 4,
 									"name": "config",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-											"qualifiedName": "IDecoderConfig"
-										},
-										"name": "IDecoderConfig",
-										"package": "@galacean/engine-draco"
+										"name": "IDecoderConfig"
 									},
 									"defaultValue": "..."
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": 1,
-								"name": "DRACODecoder",
-								"package": "@galacean/engine-draco"
+								"id": 1,
+								"name": "DRACODecoder"
 							}
 						}
 					]
@@ -72,8 +59,8 @@
 				{
 					"id": 8,
 					"name": "currentTaskId",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -82,7 +69,7 @@
 							"fileName": "decoder.ts",
 							"line": 17,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L17"
 						}
 					],
 					"type": {
@@ -94,8 +81,8 @@
 				{
 					"id": 10,
 					"name": "loadLibPromise",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -104,15 +91,11 @@
 							"fileName": "decoder.ts",
 							"line": 19,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L19"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L19"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"target": {
-							"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-							"qualifiedName": "Promise"
-						},
 						"typeArguments": [
 							{
 								"type": "intrinsic",
@@ -120,14 +103,15 @@
 							}
 						],
 						"name": "Promise",
+						"qualifiedName": "Promise",
 						"package": "typescript"
 					}
 				},
 				{
 					"id": 5,
 					"name": "pool",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -136,19 +120,14 @@
 							"fileName": "decoder.ts",
 							"line": 14,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L14"
 						}
 					],
 					"type": {
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"target": {
-								"sourceFileName": "../engine/packages/draco/src/DRACOWorker.ts",
-								"qualifiedName": "DRACOWorker"
-							},
-							"name": "DRACOWorker",
-							"package": "@galacean/engine-draco"
+							"name": "DRACOWorker"
 						}
 					},
 					"defaultValue": "[]"
@@ -156,8 +135,8 @@
 				{
 					"id": 9,
 					"name": "taskCache",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -166,24 +145,15 @@
 							"fileName": "decoder.ts",
 							"line": 18,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L18"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"target": {
-							"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es2015.collection.d.ts",
-							"qualifiedName": "WeakMap"
-						},
 						"typeArguments": [
 							{
-								"type": "reference",
-								"target": {
-									"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "WeakKey"
-								},
-								"name": "WeakKey",
-								"package": "typescript"
+								"type": "intrinsic",
+								"name": "object"
 							},
 							{
 								"type": "intrinsic",
@@ -191,6 +161,7 @@
 							}
 						],
 						"name": "WeakMap",
+						"qualifiedName": "WeakMap",
 						"package": "typescript"
 					},
 					"defaultValue": "..."
@@ -198,8 +169,8 @@
 				{
 					"id": 7,
 					"name": "useJS",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -208,7 +179,7 @@
 							"fileName": "decoder.ts",
 							"line": 16,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L16"
 						}
 					],
 					"type": {
@@ -219,8 +190,8 @@
 				{
 					"id": 6,
 					"name": "workerLimit",
-					"variant": "declaration",
 					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
 						"isPrivate": true
 					},
@@ -229,7 +200,7 @@
 							"fileName": "decoder.ts",
 							"line": 15,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L15"
 						}
 					],
 					"type": {
@@ -241,72 +212,52 @@
 				{
 					"id": 15,
 					"name": "decode",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "decoder.ts",
 							"line": 79,
 							"character": 2,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L79"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L79"
 						}
 					],
 					"signatures": [
 						{
 							"id": 16,
 							"name": "decode",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
-							"sources": [
-								{
-									"fileName": "decoder.ts",
-									"line": 79,
-									"character": 2,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L79"
-								}
-							],
 							"parameters": [
 								{
 									"id": 17,
 									"name": "buffer",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-											"qualifiedName": "ArrayBuffer"
-										},
 										"name": "ArrayBuffer",
+										"qualifiedName": "ArrayBuffer",
 										"package": "typescript"
 									}
 								},
 								{
 									"id": 18,
 									"name": "taskConfig",
-									"variant": "param",
 									"kind": 32768,
+									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/draco/src/DRACOWorker.ts",
-											"qualifiedName": "ITaskConfig"
-										},
-										"name": "ITaskConfig",
-										"package": "@galacean/engine-draco"
+										"name": "ITaskConfig"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
 								"typeArguments": [
 									{
 										"type": "intrinsic",
@@ -314,6 +265,7 @@
 									}
 								],
 								"name": "Promise",
+								"qualifiedName": "Promise",
 								"package": "typescript"
 							}
 						}
@@ -322,8 +274,8 @@
 				{
 					"id": 13,
 					"name": "getWorker",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {
 						"isPrivate": true
 					},
@@ -332,42 +284,26 @@
 							"fileName": "decoder.ts",
 							"line": 65,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L65"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L65"
 						}
 					],
 					"signatures": [
 						{
 							"id": 14,
 							"name": "getWorker",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
-							"sources": [
-								{
-									"fileName": "decoder.ts",
-									"line": 65,
-									"character": 10,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L65"
-								}
-							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
 								"typeArguments": [
 									{
 										"type": "reference",
-										"target": {
-											"sourceFileName": "../engine/packages/draco/src/DRACOWorker.ts",
-											"qualifiedName": "DRACOWorker"
-										},
-										"name": "DRACOWorker",
-										"package": "@galacean/engine-draco"
+										"name": "DRACOWorker"
 									}
 								],
 								"name": "Promise",
+								"qualifiedName": "Promise",
 								"package": "typescript"
 							}
 						}
@@ -376,8 +312,8 @@
 				{
 					"id": 11,
 					"name": "preloadLib",
-					"variant": "declaration",
 					"kind": 2048,
+					"kindString": "Method",
 					"flags": {
 						"isPrivate": true
 					},
@@ -386,30 +322,18 @@
 							"fileName": "decoder.ts",
 							"line": 31,
 							"character": 10,
-							"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L31"
+							"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L31"
 						}
 					],
 					"signatures": [
 						{
 							"id": 12,
 							"name": "preloadLib",
-							"variant": "signature",
 							"kind": 4096,
+							"kindString": "Call signature",
 							"flags": {},
-							"sources": [
-								{
-									"fileName": "decoder.ts",
-									"line": 31,
-									"character": 10,
-									"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L31"
-								}
-							],
 							"type": {
 								"type": "reference",
-								"target": {
-									"sourceFileName": "../../../../.npm/_npx/dafcb7cdaad6ed61/node_modules/typescript/lib/lib.es5.d.ts",
-									"qualifiedName": "Promise"
-								},
 								"typeArguments": [
 									{
 										"type": "intrinsic",
@@ -417,6 +341,7 @@
 									}
 								],
 								"name": "Promise",
+								"qualifiedName": "Promise",
 								"package": "typescript"
 							}
 						}
@@ -455,7 +380,7 @@
 					"fileName": "decoder.ts",
 					"line": 13,
 					"character": 13,
-					"url": "https://github.com/Sway007/engine/blob/9b48edc4/packages/draco/src/decoder.ts#L13"
+					"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/decoder.ts#L13"
 				}
 			]
 		}
@@ -468,97 +393,12 @@
 			]
 		}
 	],
-	"packageName": "@galacean/engine-draco",
-	"readme": [
+	"sources": [
 		{
-			"kind": "text",
-			"text": "A subpackage of "
-		},
-		{
-			"kind": "code",
-			"text": "`@galacean/engine`"
-		},
-		{
-			"kind": "text",
-			"text": "."
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/galacean/engine/blob/cafc24f2/packages/draco/src/index.ts#L1"
 		}
-	],
-	"symbolIdMap": {
-		"0": {
-			"sourceFileName": "../engine/packages/draco/src/index.ts",
-			"qualifiedName": ""
-		},
-		"1": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder"
-		},
-		"2": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.__constructor"
-		},
-		"3": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder"
-		},
-		"4": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "config"
-		},
-		"5": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.pool"
-		},
-		"6": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.workerLimit"
-		},
-		"7": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.useJS"
-		},
-		"8": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.currentTaskId"
-		},
-		"9": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.taskCache"
-		},
-		"10": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.loadLibPromise"
-		},
-		"11": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.preloadLib"
-		},
-		"12": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.preloadLib"
-		},
-		"13": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.getWorker"
-		},
-		"14": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.getWorker"
-		},
-		"15": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.decode"
-		},
-		"16": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "DRACODecoder.decode"
-		},
-		"17": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "buffer"
-		},
-		"18": {
-			"sourceFileName": "../engine/packages/draco/src/decoder.ts",
-			"qualifiedName": "taskConfig"
-		}
-	}
+	]
 }

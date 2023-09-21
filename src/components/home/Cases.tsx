@@ -14,6 +14,10 @@ const StyledCases = styled("div", {
 const StyledCase = styled("div", {
 });
 
+const StyledVideo = styled("video", {
+  borderRadius: "$3"
+})
+
 const StyledCaseName = styled("div", {
   textAlign: "center",
   marginBottom: "$4",
@@ -55,9 +59,9 @@ export default function Cases() {
             <StyledCaseName>
               <FormattedMessage id={name} />
             </StyledCaseName>
-            <video width="250" height="540" playsInline autoPlay muted loop poster={poster}>
+            <StyledVideo width="250" height="540" playsInline autoPlay muted loop poster={poster}>
               <source src={src} type="video/mp4" />
-            </video>
+            </StyledVideo>
           </StyledCase>
           })
         }

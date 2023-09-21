@@ -69,18 +69,20 @@ Therefore, when used in actual projects, the type of projection is generally det
 
 ## Attributes
 
-| Type | Attributes | Meaning |
-| :-- | :-- | :-- |
-| Universal | [isOrthographic](${api}core/Camera#isOrthographic) | Whether it is an orthogonal projection, the default is `false` |
-|  | [aspectRatio](${api}core/Camera#aspectRatio) | The canvas aspect ratio is usually calculated automatically based on the canvas size, or it can be changed manually (not recommended) |
-|  | [cullingMask](${api}core/Camera#cullingMask) | The crop mask is used to selectively render the rendering components in the scene. |
-|  | [priority](${api}core/Camera#priority) | The rendering priority is used to determine the order in which the content contained in the camera is rendered in the case of multiple cameras. |
-|  | [renderTarget](${api}core/Camera#renderTarget) | The rendering target determines which target the content will be rendered to. |
-|  | [viewport](${api}core/Camera#viewport) | The viewport, which determines the scope of the content that is finally rendered to the target device. |
-|  | [nearClipPlane](${api}core/Camera#nearClipPlane) | Near clipping plane |
-|  | [farClipPlane](${api}core/Camera#farClipPlane) | Far clipping plane |
-| Perspective projection | [fieldOfView](${api}core/Camera#fieldOfView) | Field of view |
-| Orthogonal projection | [orthographicSize](${api}core/Camera#orthographicSize) | Half the size of the camera in orthographic mode |
+| Type                   | Attributes                                                 | Meaning                                                                                                                                                                |
+| :--------------------- | :--------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Universal              | [isOrthographic](${api}core/Camera#isOrthographic)         | Whether it is an orthogonal projection, the default is `false`                                                                                                         |
+|                        | [aspectRatio](${api}core/Camera#aspectRatio)               | The canvas aspect ratio is usually calculated automatically based on the canvas size, or it can be changed manually (not recommended)                                  |
+|                        | [cullingMask](${api}core/Camera#cullingMask)               | The crop mask is used to selectively render the rendering components in the scene.                                                                                     |
+|                        | [priority](${api}core/Camera#priority)                     | The rendering priority is used to determine the order in which the content contained in the camera is rendered in the case of multiple cameras.                        |
+|                        | [renderTarget](${api}core/Camera#renderTarget)             | The rendering target determines which target the content will be rendered to.                                                                                          |
+|                        | [viewport](${api}core/Camera#viewport)                     | The viewport, which determines the scope of the content that is finally rendered to the target device.                                                                 |
+|                        | [pixelViewport](${api}core/Camera#pixelViewport)           | The viewport of the camera in pixel coordinates on the screen. In pixel screen coordinates, the upper-left corner is (0, 0), and the lower-right corner is (1.0, 1.0). |
+|                        | [nearClipPlane](${api}core/Camera#nearClipPlane)           | Near clipping plane                                                                                                                                                    |
+|                        | [farClipPlane](${api}core/Camera#farClipPlane)             | Far clipping plane                                                                                                                                                     |
+| Perspective projection | [fieldOfView](${api}core/Camera#fieldOfView)               | Field of view                                                                                                                                                          |
+| Orthogonal projection  | [orthographicSize](${api}core/Camera#orthographicSize)     | Half the size of the camera in orthographic mode                                                                                                                       |
+|                        | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>) | Depth texture mode, defalut is `DepthTextureMode.None`                                                                                                                 |
 
 For details, please read [API documentation](${api}core/Camera)。
 
@@ -92,7 +94,7 @@ The camera can selectively render the nodes in the scene, just set the mask corr
 
 ### `renderTarget` && `priority` && `clearFlags`
 
-In the case of multiple cameras, we can combine the camera's `renderTarget`,  `priority` and `clearFlags`, and we can complete many advanced implementations, such as using the rendering results of multiple cameras to achieve a picture-in-picture effect.
+In the case of multiple cameras, we can combine the camera's `renderTarget`, `priority` and `clearFlags`, and we can complete many advanced implementations, such as using the rendering results of multiple cameras to achieve a picture-in-picture effect.
 
 <playground src="multi-camera.ts"></playground>
 
@@ -100,23 +102,30 @@ In the case of multiple cameras, we can combine the camera's `renderTarget`,  `p
 
 Since in Galacean, the world coordinate system is a right-handed system, the positive direction of any node faces the -Z axis. Similarly, the positive direction of the camera (viewing direction) is also the -Z axis direction, and so on. In Unity and other world coordinates In a left-handed engine, the positive direction of the camera is the +Z axis.
 
+### Depth texture
+
+The camera can enable the depth texture through the [depthTextureMode](<(${api}core/Camera#depthTextureMode)>) attribute. After the depth texture is enabled, the depth texture can be accessed in the Shader through the `camera_DepthTexture` attribute. Depth textures can be used to achieve soft particles and water edge transitions, as well as some simple post-processing effects.
+Note: Depth textures only render non-transparent objects.
+
+<playground src="camera-depth-texture.ts"></playground>
+
 ## method
 
-| Properties | Explanation |
-| :------------------------------------------------ ----------- | :------------------------------------- -- |
-| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix) | Reset custom projection matrix, back to automatic mode. |
-| [resetAspectRatio](${api}core/Camera#resetAspectRatio) | Reset custom rendering aspect ratio and return to automatic mode. |
-| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint) | Convert a point from world space to viewport space. |
-| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint) | Convert a point from viewport space to world space. |
-| [viewportPointToRay](${api}core/Camera#viewportPointToRay) | Generates a world space ray through a point in viewport space. |
-| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint) | Convert a point from screen space to viewport space. |
-| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint) | Convert a point from viewport space to screen space. |
-| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint) | Convert a point from world space to screen space. |
-| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint) | Convert a point from screen space to world space. |
-| [screenPointToRay](${api}core/Camera#screenPointToRay) | Generates a world space ray through a point in screen space. |
-| [render](${api}core/Camera#render) | Manual rendering. |
-| [setReplacementShader](${api}core/Camera#setReplacementShader) | Set the global rendering replacement shader. |
-| [resetReplacementShader](${api}core/Camera#resetReplacementShader) | Clear the global rendering replacement shader. |◊
+| Properties                                                         | Explanation                                                       |
+| :----------------------------------------------------------------- | :---------------------------------------------------------------- | --- |
+| [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix)   | Reset custom projection matrix, back to automatic mode.           |
+| [resetAspectRatio](${api}core/Camera#resetAspectRatio)             | Reset custom rendering aspect ratio and return to automatic mode. |
+| [worldToViewportPoint](${api}core/Camera#worldToViewportPoint)     | Convert a point from world space to viewport space.               |
+| [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint)     | Convert a point from viewport space to world space.               |
+| [viewportPointToRay](${api}core/Camera#viewportPointToRay)         | Generates a world space ray through a point in viewport space.    |
+| [screenToViewportPoint](${api}core/Camera#screenToViewportPoint)   | Convert a point from screen space to viewport space.              |
+| [viewportToScreenPoint](${api}core/Camera#viewportToScreenPoint)   | Convert a point from viewport space to screen space.              |
+| [worldToScreenPoint](${api}core/Camera#worldToScreenPoint)         | Convert a point from world space to screen space.                 |
+| [screenToWorldPoint](${api}core/Camera#screenToWorldPoint)         | Convert a point from screen space to world space.                 |
+| [screenPointToRay](${api}core/Camera#screenPointToRay)             | Generates a world space ray through a point in screen space.      |
+| [render](${api}core/Camera#render)                                 | Manual rendering.                                                 |
+| [setReplacementShader](${api}core/Camera#setReplacementShader)     | Set the global rendering replacement shader.                      |
+| [resetReplacementShader](${api}core/Camera#resetReplacementShader) | Clear the global rendering replacement shader.                    | ◊   |
 
 ## Q&A
 
