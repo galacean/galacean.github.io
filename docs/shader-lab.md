@@ -9,7 +9,7 @@ label: Graphics/Material
 
 The following is the "simplest" example of using ShaderLab, which defines a vertex shader that only implements MVP transformation and a fragment shader that specifies the pixel color through a Uniform.
 
-<playground src="shader-lab-triangle.ts"></playground>
+<playground src="shader-lab-simple.ts"></playground>
 
 The syntax skeleton of `ShaderLab` is as follows, and the syntax and usage of each module will be expanded in detail below.
 
