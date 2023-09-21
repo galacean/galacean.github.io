@@ -283,8 +283,11 @@ shaderLab.registerShaderFragment('common_shader', commonSource);
 ## 当前不支持的 GLSL 语法格式
 
 1. 浮点数小数点前后的 0 不能省略
-2. 变量赋值语句
-   当赋值为函数调用返回值的属性时，需要用括弧包含函数调用，如
+
+   - ❌ `float n = 1. + .9;`
+   - ✅ `float n = 1.0 + 0.9;`
+
+2. 变量赋值语句中当赋值为函数调用返回值的属性时，需要用括弧包含函数调用
 
    - ❌ `float a3 = texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale).x;`
    - ✅ `float a3 = (texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale)).x;`

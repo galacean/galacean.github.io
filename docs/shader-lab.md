@@ -281,6 +281,34 @@ After the code fragment is registered, the code fragment is replaced through the
 #include <common_shader>
 ```
 
+## Currently unsupported GLSL syntax formats
+
+1. The `0` bit before and after the decimal point of floating point numbers cannot be omitted.
+
+   - ❌ `float n = 1. + .9;`
+   - ✅ `float n = 1.0 + 0.9;`
+
+2. In a variable assignment statement, when assigning a property that is the return value of a function call, the function call needs to be enclosed in parentheses
+
+   - ❌ `float a3 = texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale).x;`
+   - ✅ `float a3 = (texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale)).x;`
+
+3. If there is only one line of code after the `if` / `for` conditional statement, "{}" cannot be omitted
+
+   - ❌
+
+     ```
+     if(dis < EPS || dis > MAX_DIS)
+       break;
+     ```
+
+   - ✅
+     ```
+     if(dis < EPS || dis > MAX_DIS) {
+       break;
+     }
+     ```
+
 ## A demo using multi-pass technology to implement planar shadows
 
 <playground src="shader-lab.ts"></playground>
