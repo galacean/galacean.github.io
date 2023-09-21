@@ -32,7 +32,7 @@ flowchart LR
 
 下面你看到的是编辑器的主界面
 
-<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*byuTTZ843X4AAAAAAAAAAAAADqiTAQ/original" alt="SCR-20230223-klw.png" style="zoom: 50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*-txWQZkYIjgAAAAAAAAAAAAADqiTAQ/original" alt="SCR-20230223-klw.png" style="zoom: 50%;" />
 
 
 | 序号 | 面板                                         | 说明                                                         |
@@ -97,7 +97,7 @@ flowchart LR
 接下来，我们为这个节点再绑定一个 `Script` 组件（[什么是 Script 组件?](https://galacean.antgroup.com/#/docs/latest/cn/script)）。
 
 1. 我们继续使用上述方式在检查器面板中添加 `Script` 组件
-2. 接下来，我们在资产面板中 `右键` →` Create` → `Script`  创建一个 `Script` 资产
+2. 接下来，我们在资产面板中 `右键` → `Create` → `Script`  创建一个 `Script` 资产
 3. 最后，在检查器面板中将刚创建的脚本文件绑定到脚本组件上
 
 > ⚠️ 注意，如果你没有把脚本资产绑定到实体的脚本组件上，则脚本不会运行
