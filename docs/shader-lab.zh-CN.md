@@ -8,7 +8,7 @@ label: Graphics/Material
 `ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往的引擎 Shader，使用 `ShaderLab` 提供了更多便利。例如，它可以通过特定指令来指定渲染管线和设置渲染状态。通过 `SubShader` 和 `Pass` 模块，编写多 Pass Shader 也更加便捷。在 `ShaderLab` 中使用 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语言编写渲染管线中的顶点(Vertex)和片元(Fragment)着色器程序。值得一提的是，只需声明一次 uniform、attribute 和 varying 变量，未被着色器程序使用的变量会被引擎自动剔除，帮助开发者更加便捷、快速地编写自定义材质的 Shader。
 
 以下是一个简单的 ShaderLab 使用示例，其中包含了两个 Shader。"normal" Shader 定义了一个只实现 MVP 转换的顶点着色器，并且通过 Uniform 变量指定了像素颜色的片元着色器。另外，"lines" Shader 是一个使用 ShaderLab 进行改造的 [shadertoy](https://www.shadertoy.com/view/DtXfDr) 示例。
-<playground src="shader-lab-triangle.ts"></playground>
+<playground src="shader-lab-simple.ts"></playground>
 
 `ShaderLab`语法骨架如下，每个模块语法和使用会在下文详细展开。
 
