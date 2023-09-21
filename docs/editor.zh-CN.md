@@ -104,7 +104,7 @@ flowchart LR
 
 创建脚本后，我们可以 **双击它** 来跳转到代码编辑器页面。
 
-![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*EbiqQoEA-_oAAAAAAAAAAAAADqiTAQ/original)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c1f6ec7e-9a9c-453d-ac7f-41fbea3a792e/image-20230921180953712.png" alt="image-20230921180953712" style="zoom:50%;" />
 
 
 进入代码编辑器后，我们写一个非常简单的旋转功能：
@@ -120,9 +120,7 @@ export default class extends Script {
 }
 ```
 
-在写好代码后，保存（`⌘+s`）, 右侧预览区就可以实时的看到整个场景的效果：
-
-![preview](https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*9lhLRY7D2g8AAAAAAAAAAAAADsGIAQ/original)
+在写好代码后，保存（`⌘+s`）, 右侧预览区就可以实时的看到整个场景的效果。
 
 ## 导出项目
 
