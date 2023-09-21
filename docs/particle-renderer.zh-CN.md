@@ -63,7 +63,7 @@ generator.stop();
 
 ## 粒子生成器
 
-ParticleRenderer 的 [generator](<](${api}core/ParticleGenerator)>) 属性主要负责粒子的生成和播放功能，生成粒子相关的功能由多个模块组成，分别是主模块、发射器模块、生命周期尺寸模块、生命周期颜色模块、生命周期速度模块、生命周期旋转模块、纹理表格动画模块。
+ParticleRenderer 的 [generator](${api}core/ParticleGenerator) 属性主要负责粒子的生成和播放功能，生成粒子相关的功能由多个模块组成，分别是主模块、发射器模块、生命周期尺寸模块、生命周期颜色模块、生命周期速度模块、生命周期旋转模块、纹理表格动画模块。
 
 ### 主模块
 
