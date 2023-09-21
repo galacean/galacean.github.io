@@ -6,7 +6,7 @@ label: Editor-Interface
 ---
 
 <figure style="float: right;position: relative; z-index: 2;">
-  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*oMBrSq53g1UAAAAAAAAAAAAADqiTAQ/original">
+  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*rQciToKt9-AAAAAAAAAAAAAADqiTAQ/original">
   <figcaption style="text-align:center; color: #889096;font-size:12px">项目导出导出配置面板</figcaption>
 </figure>
 

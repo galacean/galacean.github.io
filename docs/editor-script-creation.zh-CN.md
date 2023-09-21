@@ -29,4 +29,4 @@ label: Editor-Feature/Scripting
 
 脚本创建好之后，我们就可以对其进行编辑了。在 `资源面板` 中双击击你想要编辑的脚本, 就会打开脚本编辑器页面：
 
-![image-20210720212141177](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*Mld6QIBfHKIAAAAAAAAAAAAADgeMAQ/original)
+![image-20210720212141177](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*26NQRZbLtAIAAAAAAAAAAAAADqiTAQ/original)

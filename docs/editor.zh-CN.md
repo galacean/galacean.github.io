@@ -25,18 +25,19 @@ label: Editor-Introduction
 
 ![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*SbSnTqJP7lEAAAAAAAAAAAAADqiTAQ/original)
 
-### 编辑器
+### 编辑器界面
 
-在项目创建后，会自动跳转到编辑器页面。
+下面你看到的是编辑器的主界面
 
-![SCR-20230223-klw.png](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*BK17QK0OK54AAAAAAAAAAAAADqiTAQ/original)
+![SCR-20230223-klw.png](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*byuTTZ843X4AAAAAAAAAAAAADqiTAQ/original)
 
-编辑器由这几部分组成：
-
-**[层级面板](${docs}editor-hierarchy-cn)** 位于编辑器左侧，在这里会显示整个场景中的所有节点  
-**[资产面板](${docs}editor-assets-cn)** 位于编辑器底部，其中会显示当前项目所包含的所有资产，如 HDR 贴图、各种纹理文件、脚本、字体文件等等  
-**[主编辑区](${docs}editor-viewport-cn)** 位于编辑器中间，是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景  
-**[检查器面板](${docs}editor-inspector-cn)** 位于编辑器右侧，会根据你当前选择显示不同的可编辑选项
+1. **侧边栏** 包含了编辑器的主菜单，面板切换按钮以及个性化设置
+2. **[层级面板](${docs}editor-hierarchy-cn)** 位于编辑器左侧，在这里会显示整个场景中的所有节点  
+3. **[资产面板](${docs}editor-assets-cn)** 位于编辑器底部，其中会显示当前项目所包含的所有资产，如 HDR 贴图、各种纹理文件、脚本、字体文件等
+4. **[检查器面板](${docs}editor-inspector-cn)** 位于编辑器右侧，会根据你的当前选择二显示不同编辑选项
+5. **[主编辑区](${docs}editor-viewport-cn)** 位于编辑器中间，是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景  
+6. **工具栏** 位于编辑器顶部，这里提供了一些快速的操作如切换 Gizmo 的模式、切换场景视角，相机配置等
+7. **相机预览区** 位于主编辑区域的左下角，在这里可以以当前选中的相机为视角来预览场景
 
 对于各个面板详细的介绍可以点击上方链接查看。接下来，我们来看看具体如何实现一个「旋转的立方体」项目。
 
