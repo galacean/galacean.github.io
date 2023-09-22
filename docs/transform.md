@@ -73,18 +73,8 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 | [rotateByAxis]($%7Bapi%7Dcore/Transform#rotateByAxis)                       | Rotate around the specified axis according to the specified angle                 |
 | [translate]($%7Bapi%7Dcore/Transform#translate)                             | Translate according to the specified direction and distance                       |
 
-## Common QA
-
-- What is the role of the `transform` component?
-
-In a 3D scene, the `transform` component is automatically added when an object is created. Its function is mainly divided into two parts:
-
-- Structurally, the `transform` component can uniformly manage the geometric transformation of objects,
-- In terms of performance, the `transform` component has made a lot of calculation optimizations using dirty markers internally.​
-
-- What is the function of `registerWorldChangeFlag`?
-
-Since the `worldMatrix` attribute of `transform` has also been optimized with the dirty mark, if the outside of the component needs to pay attention to whether the `worldMatrix` of the current `transform` has changed, it needs to obtain the status of its dirty mark. The `transform` component provides the `registerWorldChangeFlag` method: this method will return an update flag, which will trigger the change of the flag when the `worldMatrix` of the current `transform` is modified. For specific usage, please refer to the camera component:
+### The `registerWorldChangeFlag` method
+The `transform` component has made a lot of calculation optimizations using dirty markers internally.​ Since the `worldMatrix` attribute of `transform` has also been optimized with the dirty mark, if the outside of the component needs to pay attention to whether the `worldMatrix` of the current `transform` has changed, it needs to obtain the status of its dirty mark. The `transform` component provides the `registerWorldChangeFlag` method: this method will return an update flag, which will trigger the change of the flag when the `worldMatrix` of the current `transform` is modified. For specific usage, please refer to the camera component:
 
 ```typescript
 class Camera {

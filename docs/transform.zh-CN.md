@@ -71,17 +71,9 @@ cubeEntity.transform.rotate(new Vector3(45, 0, 0), true);
 | [rotateByAxis](${api}core/Transform#rotateByAxis)                       | 根据指定角度绕着指定轴旋转             |
 | [translate](${api}core/Transform#translate)                             | 根据指定的方向和距离进行位移           |
 
-## 常见 QA
+### `registerWorldChangeFlag` 的作用
 
-- `transform` 组件的作用？
-
-3D 场景中，物体在创建时会自动添加 `transform` 组件，它的作用主要分为两部分：
-  - 结构上，`transform` 组件可以统一管理物体的几何变换，
-  - 性能上， `transform` 组件内部用脏标记作了大量计算优化。 ​
-
-- `registerWorldChangeFlag` 有什么作用？
-
-由于 `transform` 的 `worldMatrix` 属性也用脏标记进行了优化，若组件外部需要关注当前 `transform` 的 `worldMatrix` 是否发生了变化，需要获取到其脏标记的状态。 `transform` 组件提供了 `registerWorldChangeFlag` 方法：这个方法会返回一个更新标记，当前 `transform` 的 `worldMatrix` 被修改时会触发标记的更改。具体用法可以参考相机组件：
+`transform` 组件内部用脏标记作了大量计算优化。由于 `transform` 的 `worldMatrix` 属性也用脏标记进行了优化，若组件外部需要关注当前 `transform` 的 `worldMatrix` 是否发生了变化，需要获取到其脏标记的状态。 `transform` 组件提供了 `registerWorldChangeFlag` 方法：这个方法会返回一个更新标记，当前 `transform` 的 `worldMatrix` 被修改时会触发标记的更改。具体用法可以参考相机组件：
 
 ```typescript
 class Camera {
