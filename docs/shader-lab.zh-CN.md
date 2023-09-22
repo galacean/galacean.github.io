@@ -5,14 +5,15 @@ group: Material
 label: Graphics/Material
 ---
 
-`ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往的引擎 Shader，使用 `ShaderLab` 提供了更多便利。例如，它可以通过特定指令来指定渲染管线和设置渲染状态。通过 `SubShader` 和 `Pass` 模块，编写多 Pass Shader 也更加便捷。在 `ShaderLab` 中使用 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语言编写渲染管线中的顶点(Vertex)和片元(Fragment)着色器程序。值得一提的是，只需声明一次 uniform、attribute 和 varying 变量，未被着色器程序使用的变量会被引擎自动剔除，帮助开发者更加便捷、快速地编写自定义材质的 Shader。
+`ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往通过 glsl 编写自定义 Shader 的方式，使用 `ShaderLab` 会更加便捷。例如，它可以通过特定指令来指定渲染管线和设置渲染状态。通过 `SubShader` 和 `Pass` 模块，编写多 Pass Shader 也更加便捷。在 `ShaderLab` 中使用 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语言编写渲染管线中的顶点(Vertex)和片元(Fragment)着色器程序。值得一提的是，只需声明一次 uniform、attribute 和 varying 变量，未被着色器程序使用的变量会被引擎自动剔除，帮助开发者更加便捷、快速地编写自定义材质的 Shader。
 
 以下是一个简单的 ShaderLab 使用示例，其中包含了两个 Shader。"normal" Shader 定义了一个只实现 MVP 转换的顶点着色器，并且通过 Uniform 变量指定了像素颜色的片元着色器。另外，"lines" Shader 是一个使用 ShaderLab 进行改造的 [shadertoy](https://www.shadertoy.com/view/DtXfDr) 示例。
-<playground src="shader-lab-triangle.ts"></playground>
+
+<playground src="shader-lab-simple.ts"></playground>
 
 `ShaderLab`语法骨架如下，每个模块语法和使用会在下文详细展开。
 
-```
+```glsl
 Shader "ShaderName" {
   ...
   SubShader "SubShaderName" {
@@ -45,7 +46,7 @@ const shader = Shader.create(galaceanShaderCode);
 
 ### Shader
 
-```
+```glsl
 Shader "ShaderName" {
   ...
   // 全局变量区：变量声明，结构体声明，渲染状态声明
@@ -67,7 +68,7 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
 
   包含混合状态(BlendState)，深度状态(DepthState)，模板状态(StencilState)，光栅化状态(RasterState)
 
-  ```
+  ```glsl
   BlendState {
     Enabled[n]: bool;
     ColorBlendOperation[n]: BlendOperation;
@@ -82,9 +83,9 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
   }
   ```
 
-  > [n] 可省略，在使用 MRT 的情况下， [n] 为指定某个 MRT 渲染状态，省略为设置所有 MRT 状态，BlendOperation 和 BlendFactor 枚举等同引擎 API
+  [n] 可省略，在使用 MRT 的情况下， [n] 为指定某个 MRT 渲染状态，省略为设置所有 MRT 状态，BlendOperation 和 BlendFactor 枚举等同引擎 API
 
-  ```
+  ```glsl
   DepthState {
     Enabled: bool;
     WriteEnabled: bool;
@@ -92,9 +93,9 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
   }
   ```
 
-  > CompareFunction 枚举等同引擎 API
+  CompareFunction 枚举等同引擎 API
 
-  ```
+  ```glsl
   StencilState {
     Enabled: bool;
     ReferenceValue: int;
@@ -111,9 +112,9 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
   }
   ```
 
-  > CompareFunction 和 StencilOperation 举等同引擎 API
+  CompareFunction 和 StencilOperation 举等同引擎 API
 
-  ```
+  ```glsl
   RasterState {
     CullMode: CullMode;
     DepthBias: float;
@@ -121,7 +122,7 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
   }
   ```
 
-  > CullMode 举等同引擎 API
+  CullMode 举等同引擎 API
 
 - 结构体、函数
 
@@ -129,7 +130,7 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
 
 - 单变量
 
-  ```
+  ```glsl
   [lowp/mediump/highp] variableType variableName;
   ```
 
@@ -137,7 +138,7 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
 
 ### SubShader
 
-```
+```glsl
 SubShader "SubShaderName" {
   ...
   // 全局变量区：变量声明，结构体声明，渲染状态声明
@@ -152,7 +153,7 @@ SubShader "SubShaderName" {
 }
 ```
 
-一个`Shader`对象可以包含多个，但至少一个`SubShader`。它表示一组渲染管线的具体实现，定义了一种渲染效果的多个实现步骤(Pass),当前`SubShader`可以通过自定义 Tag，如`ReplaceTag`，搭配 [`Camera.setReplacementShader`](${api}/core/Camera) 指定可能需要替换的着色器程序。
+一个`Shader`对象可以包含多个，但至少一个`SubShader`。它表示一组渲染管线的具体实现，定义了一种渲染效果的多个实现步骤(Pass),当前`SubShader`可以通过自定义 Tag，如`ReplaceTag`，搭配 [`Camera.setReplacementShader`](${api}core/Camera) 指定可能需要替换的着色器程序。
 
 - `UsePass` 指令
 
@@ -169,7 +170,7 @@ SubShader "SubShaderName" {
 
 ### Pass
 
-```
+```glsl
 Pass "PassName" {
   Tag {PipelineStage = "ShadowCaster"}
 
@@ -211,7 +212,7 @@ Pass "PassName" {
 
   直接声明成全局变量
 
-  ```
+  ```glsl
   mediump vec4 u_color;
   float material_AlphaCutoff;
   mat4 renderer_ModelMat;
@@ -222,7 +223,7 @@ Pass "PassName" {
 
   通过定义顶点着色器函数入参结构体指定
 
-  ```
+  ```glsl
   struct a2v {
     vec4 POSITION;
   }
@@ -236,7 +237,7 @@ Pass "PassName" {
 
   通过定义顶点着色器出参结构体和片元着色器入参结构体指定
 
-  ```
+  ```glsl
   struct v2f {
     vec3 color;
   }
@@ -276,9 +277,35 @@ shaderLab.registerShaderFragment('common_shader', commonSource);
 
 代码片段注册后通过`include`宏进行代码片段替换
 
-```
+```glsl
 #include <common_shader>
 ```
+
+## 当前不支持的 GLSL 语法格式
+
+1. 浮点数小数点前后的 0 不能省略
+
+   - ❌ `float n = 1. + .9;`
+   - ✅ `float n = 1.0 + 0.9;`
+
+2. 变量赋值语句中当赋值为函数调用返回值的属性时，需要用括弧包含函数调用
+
+   - ❌ `float a3 = texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale).x;`
+   - ✅ `float a3 = (texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale)).x;`
+
+3. if / for 判断语句后如果只有一行代码，"{}"不能省略
+
+   - ❌
+     ```
+     if(dis < EPS || dis > MAX_DIS)
+       break;
+     ```
+   - ✅
+     ```
+     if(dis < EPS || dis > MAX_DIS) {
+       break;
+     }
+     ```
 
 ## 一个利用多 Pass 技术实现平面阴影的示例
 

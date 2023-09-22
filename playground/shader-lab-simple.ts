@@ -1,5 +1,5 @@
 /**
- * @title Shader Lab - Triangle
+ * @title ShaderLab Basic
  * @category Material
  */
 

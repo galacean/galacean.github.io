@@ -7,9 +7,9 @@ label: Graphics/Material
 
 `ShaderLab` is a shader language designed specifically for the Galacean engine. Compared with previous engine version, using `ShaderLab` provides more convenience. For example, it can specify the rendering pipeline and set the rendering state through specific instructions. Through the SubShader and Pass modules, it is also more convenient to write multiple Pass Shaders. Use [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) language in ShaderLab to write vertex and fragment shader programs in the rendering pipeline. It is worth mentioning that you only need to declare uniform, attribute and varying variables once, and variables not used by the shader program will be automatically eliminated by the engine, helping developers to write custom material Shaders more conveniently and quickly.
 
-The following is the "simplest" example of using ShaderLab, which defines a vertex shader that only implements MVP transformation and a fragment shader that specifies the pixel color through a Uniform.
+The following is a simple example of using ShaderLab, which contains two Shaders. The "normal" Shader defines a vertex shader that only implements MVP transformations, and a fragment shader that specifies the pixel color through a Uniform variable. Alternatively, the "lines" Shader is a [shadertoy](https://www.shadertoy.com/view/DtXfDr) example modified using ShaderLab.
 
-<playground src="shader-lab-triangle.ts"></playground>
+<playground src="shader-lab-simple.ts"></playground>
 
 The syntax skeleton of `ShaderLab` is as follows, and the syntax and usage of each module will be expanded in detail below.
 
@@ -280,6 +280,34 @@ After the code fragment is registered, the code fragment is replaced through the
 ```
 #include <common_shader>
 ```
+
+## Currently unsupported GLSL syntax formats
+
+1. The `0` bit before and after the decimal point of floating point numbers cannot be omitted.
+
+   - ❌ `float n = 1. + .9;`
+   - ✅ `float n = 1.0 + 0.9;`
+
+2. In a variable assignment statement, when assigning a property that is the return value of a function call, the function call needs to be enclosed in parentheses
+
+   - ❌ `float a3 = texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale).x;`
+   - ✅ `float a3 = (texture2D(u_texture, (p.xy  * 0.4 + um) * u_water_scale)).x;`
+
+3. If there is only one line of code after the `if` / `for` conditional statement, "{}" cannot be omitted
+
+   - ❌
+
+     ```
+     if(dis < EPS || dis > MAX_DIS)
+       break;
+     ```
+
+   - ✅
+     ```
+     if(dis < EPS || dis > MAX_DIS) {
+       break;
+     }
+     ```
 
 ## A demo using multi-pass technology to implement planar shadows
 
