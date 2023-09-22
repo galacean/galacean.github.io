@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 6
 title: 项目发布
 type: 界面
 label: Editor-Interface

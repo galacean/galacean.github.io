@@ -1,5 +1,5 @@
 ---
-order: 0
+order: 1
 title: 编辑器主菜单
 type: 界面
 label: Editor-Interface

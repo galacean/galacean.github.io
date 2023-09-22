@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 7
 title: 支付宝小程序项目发布
 type: 界面
 label: Editor-Interface

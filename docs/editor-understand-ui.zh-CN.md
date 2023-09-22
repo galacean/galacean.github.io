@@ -2,7 +2,7 @@
 order: 0
 title: 简介
 type: 页面介绍
-label: Editor-Introduction
+label: Editor-Interface
 ---
 
 ## 编辑器首页

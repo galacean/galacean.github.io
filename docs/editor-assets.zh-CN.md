@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: 资产面板
 type: 界面
 label: Editor-Interface

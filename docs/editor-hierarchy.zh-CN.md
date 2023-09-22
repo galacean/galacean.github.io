@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: 层级面板
 type: 界面
 label: Editor-Interface
