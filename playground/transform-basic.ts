@@ -79,23 +79,21 @@ class TransformScript extends Script {
   /** Duck2. */
   duck2: Entity;
 
-  private _totalTime: number = 0;
-
   /**
    * @override
    * The main loop, called frame by frame.
    * @param deltaTime - The deltaTime when the script update.
    */
   onUpdate(deltaTime: number): void {
-    this._totalTime += deltaTime;
-    const sinFactor = Math.sin(this._totalTime / 500);
+    const nowTime = this.engine.time.actualElapsedTime;
+    const sinFactor = Math.sin(2 * nowTime);
 
     // Update duck0's position.
     const positionFactor = Math.max(sinFactor, 0);
     this.duck0.transform.setPosition(0, positionFactor, 0);
 
     // Update duck1's roatation.
-    const rotateFactor = this._totalTime * 0.1;
+    const rotateFactor = nowTime * 100;
     this.duck1.transform.setRotation(0, rotateFactor, 0);
 
     // Update duck2's scale.
