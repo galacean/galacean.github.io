@@ -1,7 +1,7 @@
 ---
 order: 0
 title: 简介
-type: 界面
+type: 页面介绍
 label: Editor-Introduction
 ---
 
