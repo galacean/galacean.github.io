@@ -21,9 +21,9 @@ label: Editor-Interface
 
 ### 项目设置
 
-点击`Project Settings`项，会出现项目设置弹窗，包含项目引擎版本管理、快照管理等操作。
+点击`Project Settings`项，会出现项目设置弹窗，包含项目重命名、引擎版本管理、快照管理等操作。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/69325979-d35c-45a0-aa02-d13b546e97c8/image-20230925163642823.png" alt="image-20230925163642823" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/318a60f6-8c6c-4aa8-88e5-b96d9344bcc3/image-20230925172423563.png" alt="image-20230925172423563" style="zoom:50%;" />
 
 #### 基础设置
 
