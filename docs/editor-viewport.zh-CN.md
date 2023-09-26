@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 title: 视图区
 type: 界面
 label: Editor-Interface
@@ -223,4 +223,3 @@ label: Editor-Interface
 
 选中带有相机组件的实体时，会在视图窗口左下角显示该相机的实时预览。帮助用户实时调整相机、场景位置。
 
-有 display、phone 两种常见高宽比可以选择。并且可以点击左上角锁形图标锁定预览相机。

@@ -24,8 +24,8 @@ const StyledHeading = styled("h1", {
 
 const StyledSlogan = styled("p", {
   fontSize: "1.2rem",
-  color: "$slate11",
   padding: "$5 0",
+  fontWeight: 300,
   '@media (max-width: 768px)': {
     fontSize: "$2"
   }
@@ -62,8 +62,8 @@ function Banner() {
           setVersion(stableVersion);
           localStorage.setItem('version', stableVersion);
         }}>
-          <Button variant="primary" size="lg" round>
-            {stableSpecificVersion}&nbsp;
+          <Button variant="outline" size="lg" round>
+            {stableSpecificVersion.replace(/\.\d+$/, '')}&nbsp;
             <FormattedMessage id='app.home.stable' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>
@@ -73,7 +73,7 @@ function Banner() {
           localStorage.setItem('version', betaVersion);
         }}>
           <Button variant="light" size="lg" round>
-            {betaSpecificVersion}&nbsp;
+            {betaSpecificVersion.replace(/\.\d+-beta\.\d+/, '')}&nbsp;
             <FormattedMessage id='app.home.beta' />
             <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
           </Button>

@@ -28,7 +28,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.editor.docs": "编辑器文档",
     "app.header.menu.editor.docs.description":
       "面向美术和开发，编辑器的基础操作和引擎功能的可视化使用",
-    "app.header.menu.ecosystem": "生态系统",
+    "app.header.menu.ecosystem": "工具",
     "app.header.menu.ecosystem.tool": "工具",
     "app.header.menu.ecosystem.editor": "编辑器",
     "app.header.menu.ecosystem.editor.description":
@@ -51,7 +51,7 @@ export const translationsData: { [lang: string]: any } = {
       "支持模型、摄像机、材质、天空、粒子等 3D 常用功能，渲染效果强大，性能突出。",
     "app.home.features.component": "组件化设计",
     "app.home.features.component.intro":
-      "采用组件系统架构，模型、动画、精灵等均为组件，结构清晰。 组件之间均可随意组合，灵活性强，易扩展。 逻辑采用脚本组件编写，简单易用，复用性强。",
+      "采用 Entity Component 架构，组件之间均可随意组合，灵活易扩展。逻辑采用脚本组件编写，简单可复用。",
     "app.home.features.mobile": "移动优先",
     "app.home.features.mobile.intro":
       "针对移动端设备进行诸多优化。注重性能，可在低性能设备中流畅运行。兼容性强，可兼容市面上众多设备机型。",
@@ -59,6 +59,10 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.features.f2e.intro":
       "完美支持前端开发工作流。采用 npm 进行引擎包管理，方便易用。可与 React、Vue 等前端框架完美结合。",
     "app.home.cases": "案例",
+    "app.home.case.starball": "星星球",
+    "app.home.case.ringtoss": "套圈圈",
+    "app.home.case.assets": "鲸探数字藏品",
+    "app.home.case.avatar": "支付宝数字形象",
     "app.home.partners": "感谢信赖",
     "app.content.edit-page": "在 Github 上编辑此页！",
     "app.content.modifiedTime": "上次修改时间：",
@@ -77,10 +81,11 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.preview": "预览",
     "app.home.stable": "稳定版",
     "app.home.beta": "测试版",
-    "app.home.discussion": "讨论",
+    "app.home.discussion": "论坛",
     "app.home.sponsoring": "1.0 发布会",
     "app.home.editor": "编辑器",
     "app.home.editor.apply": "申请内测",
+    "app.home.editor.use": "立即使用",
     "app.home.editor.intro":
       "提供场景搭建、资产处理、动画编辑、脚本编辑等能力，大幅提升 2D、3D 互动项目的开发效率。",
     "app.home.download": "下载",
@@ -113,7 +118,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.footer.discuss-en": "在线讨论 (English)",
     "app.footer.discuss-cn": "在线讨论 (中文)",
     "app.footer.bug-report": "报告 Bug",
-    "app.footer.issues": "讨论列表",
+    "app.footer.issues": "论坛",
     "app.footer.version": "文档版本：",
     "app.footer.work_with_us": "加入我们",
     "app.footer.more-product": "更多产品",
@@ -121,7 +126,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.footer.ant-design": "蚂蚁 UI 体系",
     "app.community.yuque": "语雀",
     "app.community.zhihu": "知乎专栏",
-    "app.footer.dingtalk": "钉钉开源社区群",
+    "app.footer.dingtalk": "钉钉群",
     "app.community.twitter": "推特",
     "app.footer.wechat": "微信公众号",
     "app.community.juejin": "掘金",
@@ -164,7 +169,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.editor": "Editor",
     "app.header.menu.editor.docs.description":
       "For artists and developers, the basic operation of the editor and the visual usage of engine functions",
-    "app.header.menu.ecosystem": "Ecosystem",
+    "app.header.menu.ecosystem": "Tools",
     "app.header.menu.ecosystem.tool": "Tools",
     "app.header.menu.ecosystem.editor": "Editor",
     "app.header.menu.ecosystem.editor.description":
@@ -179,7 +184,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.ecosystem.animation": "Animation",
     "app.header.menu.components": "Components",
     "app.home.features.component.intro":
-      "Adopting an entity-component architecture. Model, animation, sprite are all regarded as components. The components can be combined with strong flexibility and easy expansion. The logic is written by script components, which is easy to use and reusable.",
+      "Adopting an entity-component architecture. The components can be combined with strong flexibility and easy expansion. The logic is written by script components, which is easy to use and reusable.",
     "app.home.features.mobile": "Mobile first",
     "app.home.features.mobile.intro":
       "Many optimizations are made for mobile devices. Focus on performance and can run smoothly in low-performance devices. Strong compatibility, compatible with many device models on the market.",
@@ -187,6 +192,10 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.features.f2e.intro":
       "Perfect support for front-end development workflow. Use npm for engine package management, which is convenient and easy to use. It can be perfectly combined with front-end frameworks such as React and Vue.",
     "app.home.cases": "Cases",
+    "app.home.case.starball": "Star Ball",
+    "app.home.case.ringtoss": "Ring Toss",
+    "app.home.case.assets": "Digital Assets",
+    "app.home.case.avatar": "Digital Avatar",
     "app.home.partners": "Thanks",
     "app.header.menu.resource": "Resources",
     "app.header.lang": "中文",
@@ -217,6 +226,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.sponsoring": "1.0 Launch Event",
     "app.home.editor": "Editor",
     "app.home.editor.apply": "Join the waitlist",
+    "app.home.editor.use": "Open editor",
     "app.home.editor.intro":
       "Scene building, resource processing, animation editing, script editing, greatly improving the development efficiency of 2D and 3D interactive projects.",
     "app.home.download": "Download",
@@ -248,7 +258,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.footer.discuss-en": "Chat Room (English)",
     "app.footer.discuss-cn": "Chat Room (中文)",
     "app.footer.bug-report": "Bug Report",
-    "app.footer.issues": "Issues",
+    "app.footer.issues": "Github Discussions",
     "app.footer.version": "Version: ",
     "app.footer.work_with_us": "Work with Us",
     "app.footer.more-product": "More Products",

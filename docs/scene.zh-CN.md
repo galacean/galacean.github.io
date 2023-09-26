@@ -5,41 +5,62 @@ type: 核心
 label: Core
 ---
 
-Scene 作为场景单元，可以方便场景的实体树管理，尤其是大型游戏场景。如，**scene1** 和 **scene2** 作为两个不同的场景，不需要同时加载激活和渲染，那么我们完全可以通过建模软件或者代码逻辑，将之划分为不同的场景，在不同的时机分别地激活相应场景，或者合并场景。
+Scene 作为场景单元，可以方便的进行实体树管理，尤其是大型游戏场景。如: **scene1** 和 **scene2** 作为两个不同的场景，可以各自独立管理其拥有的 **Entity** 树，因此场景下的光照组件、渲染组件和物理组件之间也互相隔离，互不影响。我们可以同时渲染一个或多个 Scene，也可以在特定时机下根据项目逻辑动态切换当前 Scene。
 
-每个 Engine 下面只会渲染一个激活的场景 `engine.sceneManager.activeScene`。每个 Scene 可以有多个根实体，我们通过 Scene 对象去管理整个实体树。
+从结构上每个 Engine 下可以包含一个和多个激活的场景。每个 Scene 可以有多个根实体。
 
 ## 场景管理
 
-| 属性名称                                           | 解释     |
-| :------------------------------------------------- | :------- |
-| [activeScene](${api}core/SceneManager#activeScene) | 激活场景 |
+| 属性名称                                 | 解释     |
+| :--------------------------------------- | :------- |
+| [scenes](${api}core/SceneManager#scenes) | 场景列表 |
 
 | 方法名称                                           | 解释     |
 | :------------------------------------------------- | :------- |
+| [addScene](${api}core/SceneManager#addScene)       | 添加场景 |
+| [removeScene](${api}core/SceneManager#removeScene) | 移除场景 |
 | [mergeScenes](${api}core/SceneManager#mergeScenes) | 合并场景 |
 | [loadScene](${api}core/SceneManager#loadScene)     | 加载场景 |
 
 ### 基本用法
 
-#### 1. 激活 Scene
+#### 1. 获取场景对象
 
-激活 **Scene** 很简单，只需要将想要激活的 **scene** 赋予到 `engine.sceneManager.activeScene` 上即可。
+通过调用 `engine.sceneManager.scenes` 可以获取当前引擎运行时激活的全部场景，也可以通过 `entity.scene` 获取对应 `entity` 从属的 `scene`。
 
 ```typescript
-// 假设已经有两个未激活的场景
-const scene1, scene2;
+// 获取当前所有激活的场景
+const scenes = engine.sceneManager.scenes;
 
-// 激活 场景1
-engine.sceneManager.activeScene = scene1;
-
-// 激活 场景2
-engine.sceneManager.activeScene = scene2;
+// 获取节点属于的场景
+const scene = entity.scene;
 ```
 
-#### 2. 合并 Scene
+#### 2. 添加/移除 Scene
 
-如果想要同时激活多个场景，可以使用 `engine.sceneManager.mergeScenes` 将 2 个场景进行合并为 1 个场景。
+`engine.sceneManager.scenes` 是只读的，若需要添加和移除 **Scene** ，需要调用 `engine.sceneManager.addScene()` 或 `engine.sceneManager.removeScene()` ，**引擎支持同时渲染多个场景**。
+
+```typescript
+// 假设已经有两个场景
+const scene1, scene2;
+
+// 添加 场景1
+engine.sceneManager.addScene(scene1);
+
+// 添加 场景2
+engine.sceneManager.addScene(scene1);
+
+// 移除 场景2
+engine.sceneManager.removeScene(scene2);
+```
+
+多场景渲染示例如下：
+
+<playground src="multi-scene.ts"></playground>
+
+#### 3. 合并 Scene
+
+可以使用 `engine.sceneManager.mergeScenes` 将 2 个场景进行合并为 1 个场景。
 
 ```typescript
 // 假设已经有两个未激活的场景
@@ -49,35 +70,35 @@ const sourceScene, destScene;
 engine.sceneManager.mergeScenes(sourceScene, destScene);
 
 // 激活 destScene
-engine.sceneManager.activeScene = destScene;
+engine.sceneManager.addScene(destScene);
 ```
 
-#### 3. 加载 Scene
+#### 4. 加载 Scene
 
 如果想要加载 **Scene** 资产作为应用中的一个场景，可以使用 `engine.resourceManager.load` 传入 url 即可。
 
 ```typescript
 const sceneUrl = "...";
 
-engine.resourceManager.load({ type: AssetType.Scene, url: "..." }).then(scene=>{
-  engine.sceneManager.activeScene = scene;
-});
-
+engine.resourceManager
+  .load({ type: AssetType.Scene, url: "..." })
+  .then((scene) => {
+    engine.sceneManager.addScene(scene);
+  });
 ```
 
 > 此 api 更多在编辑器场景中使用，后续编辑器开放后，同时也会开放场景格式标准。
 
-#### 4. 场景销毁
+#### 5. 场景销毁
 
-调用 `scene.destroy()` 即可销毁场景。
+调用 `scene.destroy()` 即可销毁场景，被销毁的场景也会自动从激活场景列表中移除。
 
-
-#### 5. 设置场景背景
+#### 6. 设置场景背景
 
 目前场景背景支持添加纯色、天空和纹理背景。纯色和天空相对简单，代码示例如下：
 
 ```typescript
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 const { background } = scene;
 
 // 添加纯色背景
@@ -102,11 +123,11 @@ background.texture = texture;
 
 目前纹理适配模式有以下三种：
 
-| 适配模式 | 说明 |
-| --- | --- |
-| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth) | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
+| 适配模式                                                                | 说明                                               |
+| ----------------------------------------------------------------------- | -------------------------------------------------- |
+| [AspectFitWidth](${api}core/BackgroundTextureFillMode#AspectFitWidth)   | 保持宽高比，把纹理宽缩放至 Canvas 的宽，上下居中。 |
 | [AspectFitHeight](${api}core/BackgroundTextureFillMode#AspectFitHeight) | 保持宽高比，把纹理高缩放至 Canvas 的高，左右居中。 |
-| [Fill](${api}core/BackgroundTextureFillMode#Fill) | 把纹理的宽高填满 Canvas 的宽高。 |
+| [Fill](${api}core/BackgroundTextureFillMode#Fill)                       | 把纹理的宽高填满 Canvas 的宽高。                   |
 
 默认的适配模式是 `BackgroundTextureFillMode.AspectFitHeight`。
 
@@ -114,14 +135,9 @@ Playground 示例如下：
 
 <playground src="background.ts"></playground>
 
-#### 6. 设置场景环境光
+#### 7. 设置场景环境光
 
-场景环境光（AmbientLight）设置：
-
-```typescript
-const scene = engine.sceneManager.activeScene;
-scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-```
+请参考相关文档： [环境光](${docs}ambient-light)
 
 ## 实体树管理
 
@@ -129,7 +145,7 @@ scene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
 
 ```typescript
 const engine = await WebGLEngine.create({ canvas: "demo" });
-const scene = engine.sceneManager.activeScene;
+const scene = engine.sceneManager.scenes[0];
 
 // 创建根实体
 const rootEntity = scene.createRootEntity();
@@ -148,12 +164,13 @@ const entity2 = scene.getRootEntity(2);
 
 ### 方法
 
-| 方法名称 | 解释 |
-| :-- | :-- |
-| [createRootEntity](${api}core/Scene#createRootEntity) | 新创建的 _scene_ 默认没有根实体，需要手动创建 |
-| [addRootEntity](${api}core/Scene#addRootEntity) | 可以直接新建实体，或者添加已经存在的实体 |
-| [removeRootEntity](${api}core/Scene#removeRootEntity) | 删除根实体 |
-| [getRootEntity](${api}core/Scene#getRootEntity) | 查找根实体，可以拿到全部根实体，或者单独的某个实体对象。注意，全部实体是只读数组，不能改变长度和顺序 |
+| 方法名称                                              | 解释                                                                                                 |
+| :---------------------------------------------------- | :--------------------------------------------------------------------------------------------------- |
+| [createRootEntity](${api}core/Scene#createRootEntity) | 新创建的 _scene_ 默认没有根实体，需要手动创建                                                        |
+| [addRootEntity](${api}core/Scene#addRootEntity)       | 可以直接新建实体，或者添加已经存在的实体                                                             |
+| [removeRootEntity](${api}core/Scene#removeRootEntity) | 删除根实体                                                                                           |
+| [getRootEntity](${api}core/Scene#getRootEntity)       | 查找根实体，可以拿到全部根实体，或者单独的某个实体对象。注意，全部实体是只读数组，不能改变长度和顺序 |
+
 
 ## 其他
 

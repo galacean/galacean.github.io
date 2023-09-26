@@ -47,7 +47,7 @@ const SearchBox = () => {
   let endSlot = null;
 
   if (loadingSearchResult) {
-    endSlot = <Spin size="sm" />
+    endSlot = <Spin size="sm" css={{width: "$4", height: "$4", marginRight: "$1_5"}} />
   }
   else if (searchText) {
     endSlot = <ActionButton size="md">

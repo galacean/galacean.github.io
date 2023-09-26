@@ -43,6 +43,10 @@ texture.setImageSource(video);
 
 > `setImageSource` only sync the data of the frame, but each frame is changing, if you need to change synchronous changes, you can perform in the script `onUpdate` hook.
 
+For scenarios such as videos that require frequent texture updates, you need to set mipmap off and set the texture usage to Dynamic when creating textures to achieve better performance. The sample code is as follows:
+
+<playground src="benchmark-video.ts"></playground>
+
 ### 3. Load raw data
 
 The bottom layer of the texture actually corresponds to the color value of each pixel, that is, the RGBA channel. We can manually fill in the color value of these color channels, and then pass it to the texture through the [setPixelBuffer](${api}core/Texture2D#setPixelBuffer) interface:

@@ -23,6 +23,7 @@ label: Graphics/2D
 |[flipY](${api}core/SpriteRenderer/#flipY)|boolean|Whether to flip the rendering result vertically|
 |[maskLayer](${api}core/SpriteRenderer/#maskLayer)|[SpriteMaskLayer](${api}core/SpriteMaskLayer)|The mask layer the sprite renderer belongs to|
 |[maskInteraction](${api}core/SpriteRenderer/#maskInteraction)|[SpriteMaskInteraction](${api}core/SpriteMaskInteraction)|Interacts with the masks|
+[priority](${api}core/SpriteRenderer/#priority)|number|The render priority of the renderer, lower values are rendered first and higher values are rendered last|
 
 ## Basic usage
 

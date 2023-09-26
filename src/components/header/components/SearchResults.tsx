@@ -13,11 +13,14 @@ interface ISearchResProps {
 
 const StyledTabList = styled(TabsList, {
   marginBottom: "$4",
+  backgroundColor: "transparent",
   gap: "$8",
   "& button": {
     transition: "border-color 0.2s",
-    borderBottom: "4px solid transparent",
+    border: "none",
+    borderBottom: "1px solid transparent",
     "&[data-state='active']": {
+    backgroundColor: "transparent",
       borderColor: "$blue10"
     }
   }

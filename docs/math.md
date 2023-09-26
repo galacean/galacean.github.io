@@ -353,6 +353,28 @@ const out = new Vector3();
 ray.getPoint(10, out);
 ```
 
+## Rand
+
+The math library has introduced a new random number generator called `Rand`, which is implemented based on the `xorshift128+` algorithm (also used in V8, Safari, and Firefox). It is a fast, high-quality, and full-period pseudo-random number generation algorithm.
+
+```typescript
+// Initialize an instance of the random number generator.
+const rand = new Rand(0, 0xf3857f6f);
+
+// Generate a random integer within the range [0, 0xffffffff).
+const num1 = rand.randomInt32();
+const num2 = rand.randomInt32();
+const num3 = rand.randomInt32();
+
+// Generate a random number within the range [0, 1).
+const num4 = rand.random();
+const num5 = rand.random();
+const num6 = rand.random();
+
+// Reset the seed.
+rand.reset(0, 0x96aa4de3);
+```
+
 ## CollisionUtil
 
 ```typescript

@@ -1,22 +1,15 @@
 ---
-order: 0
-title: 菜单栏
+order: 1
+title: 编辑器主菜单
 type: 界面
 label: Editor-Interface
 ---
 
-在编辑器中，菜单栏的入口位于项目标题的右侧，点击该图标后会显示所有菜单项：
+## 主菜单
 
-<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*QKdwRJ6WUX8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
-
-菜单项内容分为以下几类：
-- 项目管理
-- 历史版本管理
-- 撤销/重做
-- 引擎对象（实体/资产/组件）的编辑
-- 偏好设置
-
-## 项目管理
+<figure style="float: right;position: relative; z-index: 2; padding: 12px;display:flex;flex-direction:column;align-items:center;width:380px">
+  <img alt="Hierarchy Pane" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*WIfrS6vpkKoAAAAAAAAAAAAADqiTAQ/original" >
+</figure>
 
 项目管理包括新建项目、克隆项目、项目设置等操作。
 

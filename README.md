@@ -18,7 +18,6 @@ $ yarn playground
 ## Deploy
 ```bash
 $ yarn build
-$ yarn deploy
 ```
 
 ## Q&A
