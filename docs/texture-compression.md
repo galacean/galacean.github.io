@@ -29,6 +29,8 @@ You can generate KTX2 files using:
 
 - toktx
 - basisu
-- Packaging in the editor. You can refer to the "Project Publishing" documentation for more details.
+- Packaging in the editor. You can refer to the 『[Project Publishing](<(${docs}editor-publish-cn)>)』 documentation for more details.
 
-Galacean supports compressed textures in **DXT/PVR/ETC/ASTC** format, and supports the use of **KTX**([Khronos Texture](https://www.khronos.org/opengles/sdk/tools/KTX/file_format_spec/)) container format loading.
+## Compatibility
+
+KTX2 transcoding uses WebAssembly technology, which requires Chrome 57+ and iOS 11.3+ (11.0 ~ 11.2. WebAssembly below has [bug](https://bugs.webkit.org/show_bug.cgi?id=181781))
