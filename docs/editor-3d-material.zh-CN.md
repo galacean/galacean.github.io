@@ -81,8 +81,6 @@ PBR 遵循能量守恒，是基于物理的渲染，能设置基础颜色、法�
 
 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*I2KcS56b46QAAAAAAAAAAAAADsGIAQ/original">
 
-### 调整 glTF 的材质
-
 在选中 glTF 后，你可以使用检查器中的 `remapped material` 属性来将某个材质映射到新的材质当中。一个最常用的使用场景是 **调整一个 gltf 中的材质的数值**，此时，你需要做如下操作：
 
 1. 在资产面板中找到该 glTF
