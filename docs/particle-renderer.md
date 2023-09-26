@@ -102,8 +102,8 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 
 | Property                                                       | Definition                                                       |
 | --------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [rateOverTime](${api}core/EmissionModule#rateOverTime)           | This is a `ParticleCompositeCurve` object that represents the emission rate of particles over time. The default value is `10`. |
-| [rateOverDistance](${api}core/EmissionModule#rateOverDistance)   | This is a `ParticleCompositeCurve` object that represents the emission rate of particles over distance. The default value is `0`. |
+| [rateOverTime](${api}core/EmissionModule#rateOverTime)           | This is a [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the emission rate of particles over time. The default value is `10`. |
+| [rateOverDistance](${api}core/EmissionModule#rateOverDistance)   | This is a [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the emission rate of particles over distance. The default value is `0`. |
 | [shape](${api}core/EmissionModule#shape)                         | This is a `BaseShape` object that represents the shape of the emitter. |
 
 | Method                                                          | Definition                                                      |
@@ -122,10 +122,10 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 | Property                                                    |  Definition                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [separateAxes](${api}core/SizeOverLifetimeModule#separateAxes) | A boolean value that specifies whether the size changes independently for each axis. |
-| [sizeX](${api}core/SizeOverLifetimeModule#sizeX)             | A `ParticleCompositeCurve` object that represents the size variation curve of particles along the x-axis. |
-| [sizeY](${api}core/SizeOverLifetimeModule#sizeY)             | A `ParticleCompositeCurve` object that represents the size variation curve of particles along the y-axis. |
-| [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ)             | A `ParticleCompositeCurve` object that represents the size variation curve of particles along the z-axis. |
-| [size](${api}core/SizeOverLifetimeModule#size)               | A `ParticleCompositeCurve` object that retrieves or sets the size variation curve of particles. |
+| [sizeX](${api}core/SizeOverLifetimeModule#sizeX)             | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the size variation curve of particles along the x-axis. |
+| [sizeY](${api}core/SizeOverLifetimeModule#sizeY)             | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the size variation curve of particles along the y-axis. |
+| [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ)             | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the size variation curve of particles along the z-axis. |
+| [size](${api}core/SizeOverLifetimeModule#size)               | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that retrieves or sets the size variation curve of particles. |
 
 ### Life cycle color module
 
@@ -133,7 +133,7 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 
 | Property                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [color](${api}core/ColorOverLifetimeModule#color)             | A `ParticleCompositeGradient` object that represents the color gradient of particles during their lifetime. |
+| [color](${api}core/ColorOverLifetimeModule#color)             | A [ParticleCompositeGradient](${api}core/ParticleCompositeGradient) object that represents the color gradient of particles during their lifetime. |
 
 ### Life cycle rotation module
 
@@ -142,9 +142,9 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 | Property                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [separateAxes](${api}core/RotationOverLifetimeModule#separateAxes) | A boolean value that indicates whether the rotation is separate for each axis. If disabled, only the z-axis will be used. |
-| [rotationX](${api}core/RotationOverLifetimeModule#rotationX) | A `ParticleCompositeCurve` object that represents the rotation variation along the x-axis during the lifetime of particles. |
-| [rotationY](${api}core/RotationOverLifetimeModule#rotationY) | A `ParticleCompositeCurve` object that represents the rotation variation along the y-axis during the lifetime of particles. |
-| [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ) | A `ParticleCompositeCurve` object that represents the rotation variation along the z-axis during the lifetime of particles. |
+| [rotationX](${api}core/RotationOverLifetimeModule#rotationX) | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the rotation variation along the x-axis during the lifetime of particles. |
+| [rotationY](${api}core/RotationOverLifetimeModule#rotationY) | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the rotation variation along the y-axis during the lifetime of particles. |
+| [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ) | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the rotation variation along the z-axis during the lifetime of particles. |
 
 ### Texture table animation module
 
@@ -152,8 +152,8 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 
 | Property                                                     | Description                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [startFrame](${api}core/TextureSheetAnimationModule#startFrame) | A `ParticleCompositeCurve` object that represents the starting frame of the texture sheet animation. |
-| [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime) | A `ParticleCompositeCurve` object that represents the curve of frame changes over time in the texture sheet animation. |
+| [startFrame](${api}core/TextureSheetAnimationModule#startFrame) | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the starting frame of the texture sheet animation. |
+| [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime) | A [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) object that represents the curve of frame changes over time in the texture sheet animation. |
 | [type](${api}core/TextureSheetAnimationModule#type)           | A `TextureSheetAnimationType` enumeration that represents the type of texture sheet animation. |
 | [cycleCount](${api}core/TextureSheetAnimationModule#cycleCount) | A `number` value that represents the cycle count of the texture sheet animation. |
 | [tiling](${api}core/TextureSheetAnimationModule#tiling)       | A `Vector2` object that represents the tiling of the texture sheet. It can be accessed and modified using the `get` and `set` methods. |
