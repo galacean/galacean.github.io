@@ -11,6 +11,7 @@ import {
   MeshRenderer,
   PrimitiveMesh,
   Texture2D,
+  TextureFormat,
   UnlitMaterial,
   Vector3,
   WebGLEngine,
@@ -55,11 +56,11 @@ WebGLEngine.create({ canvas: "canvas", ktx2Loader: { workerCount: 4 } }).then(
 
     const formats: string[] = [];
     const debugInfo = {
-      format: "",
+      colorModel: "",
     };
     for (let format in fileList) {
       formats.push(format);
-      debugInfo.format = "etc1s";
+      debugInfo.colorModel = "etc1s";
     }
 
     function loadTexture(formatDes: string) {
@@ -71,14 +72,16 @@ WebGLEngine.create({ canvas: "canvas", ktx2Loader: { workerCount: 4 } }).then(
         })
         .then((res) => {
           const compressedTexture = res;
+          console.log(TextureFormat[res.format]);
           material.baseTexture = compressedTexture;
+          gui.add({ format: TextureFormat[res.format] }, "format");
         });
     }
 
-    if (debugInfo.format) {
-      loadTexture(debugInfo.format);
+    if (debugInfo.colorModel) {
+      loadTexture(debugInfo.colorModel);
     }
-    gui.add(debugInfo, "format", formats).onChange((v) => {
+    gui.add(debugInfo, "colorModel", formats).onChange((v) => {
       loadTexture(v);
     });
 
