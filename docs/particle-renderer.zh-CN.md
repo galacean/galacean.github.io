@@ -75,47 +75,47 @@ ParticleRenderer 的 [generator](${api}core/ParticleGenerator) 属性主要负�
 
 - [`isLoop`](${api}core/MainModule#isLoop): 指定粒子生成器是否循环。
 
-- [`startDelay`](#${api}core/MainModule#startDelay): 粒子发射的开始延迟（单位：秒）。
+- [`startDelay`](${api}core/MainModule#startDelay): 粒子发射的开始延迟（单位：秒）。
 
-- [`startLifetime`](#${api}core/MainModule#startLifetime): 粒子发射时的初始生命周期。
+- [`startLifetime`](${api}core/MainModule#startLifetime): 粒子发射时的初始生命周期。
 
-- [`startSpeed`](#${api}core/MainModule#startSpeed): 粒子生成器首次生成粒子时的初始速度。
+- [`startSpeed`](${api}core/MainModule#startSpeed): 粒子生成器首次生成粒子时的初始速度。
 
-- [`startSize3D`](#${api}core/MainModule#startSize3D): 是否以每个轴的粒子大小分别指定。
+- [`startSize3D`](${api}core/MainModule#startSize3D): 是否以每个轴的粒子大小分别指定。
 
-- [`startSize`](#${api}core/MainModule#startSize): 粒子生成器首次生成粒子时的初始大小。
+- [`startSize`](${api}core/MainModule#startSize): 粒子生成器首次生成粒子时的初始大小。
 
-- [`startSizeX`](#${api}core/MainModule#startSizeX): 粒子生成器首次生成粒子时沿 x 轴的初始大小。
+- [`startSizeX`](${api}core/MainModule#startSizeX): 粒子生成器首次生成粒子时沿 x 轴的初始大小。
 
-- [`startSizeY`](#${api}core/MainModule#startSizeY): 粒子生成器首次生成粒子时沿 y 轴的初始大小。
+- [`startSizeY`](${api}core/MainModule#startSizeY): 粒子生成器首次生成粒子时沿 y 轴的初始大小。
 
-- [`startSizeZ`](#${api}core/MainModule#startSizeZ): 粒子生成器首次生成粒子时沿 z 轴的初始大小。
+- [`startSizeZ`](${api}core/MainModule#startSizeZ): 粒子生成器首次生成粒子时沿 z 轴的初始大小。
 
-- [`startRotation3D`](#${api}core/MainModule#startRotation3D): 是否启用 3D 粒子旋转。
+- [`startRotation3D`](${api}core/MainModule#startRotation3D): 是否启用 3D 粒子旋转。
 
-- [`startRotation`](#${api}core/MainModule#startRotation): 粒子生成器首次生成粒子时的初始旋转。
+- [`startRotation`](${api}core/MainModule#startRotation): 粒子生成器首次生成粒子时的初始旋转。
 
-- [`startRotationX`](#${api}core/MainModule#startRotationX): 粒子发射时沿 x 轴的初始旋转。
+- [`startRotationX`](${api}core/MainModule#startRotationX): 粒子发射时沿 x 轴的初始旋转。
 
-- [`startRotationY`](#${api}core/MainModule#startRotationY): 粒子发射时沿 y 轴的初始旋转。
+- [`startRotationY`](${api}core/MainModule#startRotationY): 粒子发射时沿 y 轴的初始旋转。
 
-- [`startRotationZ`](#${api}core/MainModule#startRotationZ): 粒子发射时沿 z 轴的初始旋转。
+- [`startRotationZ`](${api}core/MainModule#startRotationZ): 粒子发射时沿 z 轴的初始旋转。
 
-- [`flipRotation`](#${api}core/MainModule#flipRotation): 使部分粒子以相反方向旋转。
+- [`flipRotation`](${api}core/MainModule#flipRotation): 使部分粒子以相反方向旋转。
 
-- [`startColor`](#${api}core/MainModule#startColor): 粒子的初始颜色模式。
+- [`startColor`](${api}core/MainModule#startColor): 粒子的初始颜色模式。
 
-- [`gravityModifier`](#${api}core/MainModule#gravityModifier): 此粒子生成器应用于由 Physics.gravity 定义的重力的比例。
+- [`gravityModifier`](${api}core/MainModule#gravityModifier): 此粒子生成器应用于由 Physics.gravity 定义的重力的比例。
 
-- [`simulationSpace`](#${api}core/MainModule#simulationSpace): 选择模拟粒子的空间，它可以是世界空间或本地空间。
+- [`simulationSpace`](${api}core/MainModule#simulationSpace): 选择模拟粒子的空间，它可以是世界空间或本地空间。
 
-- [`simulationSpeed`](#${api}core/MainModule#simulationSpeed): 覆盖粒子生成器的默认播放速度。
+- [`simulationSpeed`](${api}core/MainModule#simulationSpeed): 覆盖粒子生成器的默认播放速度。
 
-- [`scalingMode`](#${api}core/MainModule#scalingMode): 控制粒子生成器如何将其 Transform 组件应用到它发射的粒子。
+- [`scalingMode`](${api}core/MainModule#scalingMode): 控制粒子生成器如何将其 Transform 组件应用到它发射的粒子。
 
-- [`playOnEnabled`](#${api}core/MainModule#playOnEnabled): 如果设置为 true，粒子生成器将在启动时自动开始播放。
+- [`playOnEnabled`](${api}core/MainModule#playOnEnabled): 如果设置为 true，粒子生成器将在启动时自动开始播放。
 
-- [`maxParticles`](#${api}core/MainModule#maxParticles): 最大粒子数。
+- [`maxParticles`](${api}core/MainModule#maxParticles): 最大粒子数。
 
 ### 发射模块模块
 
@@ -143,11 +143,11 @@ ParticleRenderer 的 [generator](${api}core/ParticleGenerator) 属性主要负�
 
 #### 属性
 
-- [separateAxes](#${api}core/SizeOverLifetimeModule#separateAxes): 布尔值，指定每个轴的大小是否独立变化。
-- [sizeX](#${api}core/SizeOverLifetimeModule#sizeX): `ParticleCompositeCurve` 对象，表示 x 轴方向上粒子的大小变化曲线。
-- [sizeY](#${api}core/SizeOverLifetimeModule#sizeY): `ParticleCompositeCurve` 对象，表示 y 轴方向上粒子的大小变化曲线。
-- [sizeZ](#${api}core/SizeOverLifetimeModule#sizeZ): `ParticleCompositeCurve` 对象，表示 z 轴方向上粒子的大小变化曲线。
-- [size](#${api}core/SizeOverLifetimeModule#size): `ParticleCompositeCurve` 对象，获取或设置粒子的大小变化曲线。
+- [separateAxes](${api}core/SizeOverLifetimeModule#separateAxes): 布尔值，指定每个轴的大小是否独立变化。
+- [sizeX](${api}core/SizeOverLifetimeModule#sizeX): `ParticleCompositeCurve` 对象，表示 x 轴方向上粒子的大小变化曲线。
+- [sizeY](${api}core/SizeOverLifetimeModule#sizeY): `ParticleCompositeCurve` 对象，表示 y 轴方向上粒子的大小变化曲线。
+- [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ): `ParticleCompositeCurve` 对象，表示 z 轴方向上粒子的大小变化曲线。
+- [size](${api}core/SizeOverLifetimeModule#size): `ParticleCompositeCurve` 对象，获取或设置粒子的大小变化曲线。
 
 ### 生命周期颜色模块
 
@@ -155,7 +155,7 @@ ParticleRenderer 的 [generator](${api}core/ParticleGenerator) 属性主要负�
 
 #### 属性
 
-- [color](#${api}core/ColorOverLifetimeModule#color): `ParticleCompositeGradient` 对象，表示粒子在其生命周期内的颜色渐变。
+- [color](${api}core/ColorOverLifetimeModule#color): `ParticleCompositeGradient` 对象，表示粒子在其生命周期内的颜色渐变。
 
 ### 生命周期旋转模块
 
@@ -163,13 +163,13 @@ ParticleRenderer 的 [generator](${api}core/ParticleGenerator) 属性主要负�
 
 #### 属性
 
-- [separateAxes](#${api}core/RotationOverLifetimeModule#separateAxes): `boolean` 类型，表示是否在每个轴上分别进行旋转。如果禁用，将只使用 z 轴。
+- [separateAxes](${api}core/RotationOverLifetimeModule#separateAxes): `boolean` 类型，表示是否在每个轴上分别进行旋转。如果禁用，将只使用 z 轴。
 
-- [rotationX](#${api}core/RotationOverLifetimeModule#rotationX): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 x 轴旋转。
+- [rotationX](${api}core/RotationOverLifetimeModule#rotationX): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 x 轴旋转。
 
-- [rotationY](#${api}core/RotationOverLifetimeModule#rotationY): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 y 轴旋转。
+- [rotationY](${api}core/RotationOverLifetimeModule#rotationY): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 y 轴旋转。
 
-- [rotationZ](#${api}core/RotationOverLifetimeModule#rotationZ): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 z 轴旋转。
+- [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ): `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 z 轴旋转。
 
 ### 纹理表格动画模块
 
