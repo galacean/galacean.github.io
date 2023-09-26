@@ -6,9 +6,13 @@ label: Animation
 
 ---
 
-Galacean Engine's particle renderer [ParticleRenderer](${api}core/ParticleRenderer) is a commonly used rendering component with rich properties. Colorful particle effects can be achieved by adjusting each property value.
+The particle renderer ParticleRenderer of Galacean Engine is a commonly used rendering component with rich properties. It allows for the creation of vibrant and colorful particle effects by adjusting various property values.
+
+Flame Effect:
 
 <playground src="particle-fire.ts"></playground>
+
+Ambient Effect:
 
 <playground src="particle-dream.ts"></playground>
 
@@ -30,27 +34,22 @@ const main = generator.main;
 .......
 
 // Config emission params
-const generator = particleRenderer.generator;
 const emission = generator.emission;
 .......
 
 // Config sizeOverLifetime params
-const generator = particleRenderer.generator;
 const sizeOverLifetime = generator.sizeOverLifetime;
 .......
 
 // Config colorOverLifetime params
-const generator = particleRenderer.generator;
 const colorOverLifetime = generator.colorOverLifetime;
 .......
 
 // Config velocityOverLifetime params
-const generator = particleRenderer.generator;
 const velocityOverLifetime = generator.velocityOverLifetime;
 .......
 
 // Config rotationOverLifetime params
-const generator = particleRenderer.generator;
 const rotationOverLifetime = generator.rotationOverLifetime;
 .......
 
@@ -71,69 +70,48 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 
 #### Properties
 
-- [`duration`](${api}core/MainModule#duration): The duration of the particle generator (unit: seconds).
-
-- [`isLoop`](${api}core/MainModule#isLoop): Specifies whether the particle generator loops.
-
-- [`startDelay`](${api}core/MainModule#startDelay): The start delay of particle emission (unit: seconds).
-
-- [`startLifetime`](${api}core/MainModule#startLifetime): The initial life cycle when particles are emitted.
-
-- [`startSpeed`](${api}core/MainModule#startSpeed): The initial speed when the particle generator first generates particles.
-
-- [`startSize3D`](${api}core/MainModule#startSize3D): Whether to specify the particle size of each axis separately.
-
-- [`startSize`](${api}core/MainModule#startSize): The initial size of the particle generator when it first generates particles.
-
-- [`startSizeX`](${api}core/MainModule#startSizeX): The initial size along the x-axis when the particle generator first generates particles.
-
-- [`startSizeY`](${api}core/MainModule#startSizeY): The initial size along the y-axis when the particle generator first generates particles.
-
-- [`startSizeZ`](${api}core/MainModule#startSizeZ): The initial size along the z-axis when the particle generator first generates particles.
-
-- [`startRotation3D`](${api}core/MainModule#startRotation3D): Whether to enable 3D particle rotation.
-
-- [`startRotationX`](${api}core/MainModule#startRotationX): The initial rotation along the x-axis when the particle is emitted.
-
-- [`startRotationY`](${api}core/MainModule#startRotationY): The initial rotation along the y-axis when the particle is emitted.
-
-- [`startRotationZ`](${api}core/MainModule#startRotationZ): The initial rotation along the z-axis when the particle is emitted.
-
-- [`flipRotation`](${api}core/MainModule#flipRotation): Make some particles rotate in the opposite direction.
-
-- [`startColor`](${api}core/MainModule#startColor): The initial color mode of particles.
-
-- [`gravityModifier`](${api}core/MainModule#gravityModifier): This particle generator applies the scale of gravity defined by Physics.gravity.
-
-- [`simulationSpace`](${api}core/MainModule#simulationSpace): Select the space to simulate particles, which can be world space or local space.
-
-- [`simulationSpeed`](${api}core/MainModule#simulationSpeed): Overrides the default playback speed of the particle generator.
-
-- [`scalingMode`](${api}core/MainModule#scalingMode): Controls how the particle generator applies its Transform component to the particles it emits.
-
-- [`playOnEnabled`](${api}core/MainModule#playOnEnabled): If set to true, the particle generator will automatically start playing on startup.
-
-- [`maxParticles`](${api}core/MainModule#maxParticles): Maximum number of particles.
+| Property | Definition                                               |
+| --------------------------------------------------------------- | -------------------------------------------------------- |
+| [duration](${api}core/MainModule#duration)                       | Duration of the particle emitter in seconds              |
+| [isLoop](${api}core/MainModule#isLoop)                           | Specifies whether the particle emitter loops             |
+| [startDelay](${api}core/MainModule#startDelay)                   | Delay before particles are emitted in seconds            |
+| [startLifetime](${api}core/MainModule#startLifetime)             | Initial lifetime of particles when emitted               |
+| [startSpeed](${api}core/MainModule#startSpeed)                   | Initial speed of particles when first emitted            |
+| [startSize3D](${api}core/MainModule#startSize3D)                 | Specifies whether particle size is specified per axis    |
+| [startSize](${api}core/MainModule#startSize)                     | Initial size of particles when first emitted             |
+| [startSizeX](${api}core/MainModule#startSizeX)                   | Initial size of particles along the x-axis               |
+| [startSizeY](${api}core/MainModule#startSizeY)                   | Initial size of particles along the y-axis               |
+| [startSizeZ](${api}core/MainModule#startSizeZ)                   | Initial size of particles along the z-axis               |
+| [startRotation3D](${api}core/MainModule#startRotation3D)         | Enables 3D rotation of particles                         |
+| [startRotation](${api}core/MainModule#startRotation)             | Initial rotation of particles when first emitted         |
+| [startRotationX](${api}core/MainModule#startRotationX)           | Initial rotation of particles along the x-axis            |
+| [startRotationY](${api}core/MainModule#startRotationY)           | Initial rotation of particles along the y-axis            |
+| [startRotationZ](${api}core/MainModule#startRotationZ)           | Initial rotation of particles along the z-axis            |
+| [flipRotation](${api}core/MainModule#flipRotation)               | Causes some particles to rotate in the opposite direction |
+| [startColor](${api}core/MainModule#startColor)                   | Initial color mode of particles                          |
+| [gravityModifier](${api}core/MainModule#gravityModifier)         | Proportional gravity applied to particles defined by Physics.gravity |
+| [simulationSpace](${api}core/MainModule#simulationSpace)         | Space in which particles are simulated, either World or Local |
+| [simulationSpeed](${api}core/MainModule#simulationSpeed)         | Overrides the default playback speed of the particle emitter |
+| [scalingMode](${api}core/MainModule#scalingMode)                 | Controls how the particle emitter applies its Transform component to emitted particles |
+| [playOnEnabled](${api}core/MainModule#playOnEnabled)             | If set to true, the particle emitter automatically starts playing on startup |
+| [maxParticles](${api}core/MainModule#maxParticles)               | Maximum number of particles                               |
 
 ### Launch module module
 
 [`EmissionModule`](${api}core/EmissionModule) is the emission module of `ParticleGeneratorModule`. This module is used to process the emission behavior of particle systems, including particle emission rate, emission shape, and burst behavior.
 
-#### Properties
+| Property                                                       | Definition                                                       |
+| --------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [rateOverTime](${api}core/EmissionModule#rateOverTime)           | This is a `ParticleCompositeCurve` object that represents the emission rate of particles over time. The default value is `10`. |
+| [rateOverDistance](${api}core/EmissionModule#rateOverDistance)   | This is a `ParticleCompositeCurve` object that represents the emission rate of particles over distance. The default value is `0`. |
+| [shape](${api}core/EmissionModule#shape)                         | This is a `BaseShape` object that represents the shape of the emitter. |
 
-- [rateOverTime](${api}core/EmissionModule#rateOverTime): This is a `ParticleCompositeCurve` object representing the emission rate of particles. The default value is `10`.
-- [rateOverDistance](${api}core/EmissionModule#rateOverDistance): This is a `ParticleCompositeCurve` object that represents the distance emission rate of particles. The default value is `0`.
-- [shape](${api}core/EmissionModule#shape): This is a `BaseShape` object that represents the shape of the emitter.
-
-#### method
-
-- [addBurst(burst: Burst)](${api}core/EmissionModule#addBurst): Add a burst behavior.
-
-- [removeBurst(burst: Burst)](${api}core/EmissionModule#removeBurst): Remove a burst behavior.
-
-- [removeBurstByIndex(index: number)](${api}core/EmissionModule#removeBurstByIndex): Remove a bursting behavior by index.
-
-- [clearBurst()](${api}core/EmissionModule#clearBurst): Clear all blasting behaviors.
+| Method                                                          | Definition                                                      |
+| --------------------------------------------------------------- | --------------------------------------------------------------- |
+| [addBurst(burst: Burst)](${api}core/EmissionModule#addBurst)     | Adds a burst behavior.                                          |
+| [removeBurst(burst: Burst)](${api}core/EmissionModule#removeBurst) | Removes a burst behavior.                                       |
+| [removeBurstByIndex(index: number)](${api}core/EmissionModule#removeBurstByIndex) | Removes a burst behavior by index.                              |
+| [clearBurst()](${api}core/EmissionModule#clearBurst)             | Clears all burst behaviors.                                     |
 
 ### Life cycle size module
 
@@ -141,63 +119,60 @@ The [generator](${api}core/ParticleGenerator) property of ParticleRenderer is ma
 
 #### Properties
 
-- [separateAxes](${api}core/SizeOverLifetimeModule#separateAxes): Boolean value, specifying whether the size of each axis changes independently.
-- [sizeX](${api}core/SizeOverLifetimeModule#sizeX): `ParticleCompositeCurve` object, representing the size change curve of particles in the x-axis direction.
-- [sizeY](${api}core/SizeOverLifetimeModule#sizeY): `ParticleCompositeCurve` object, representing the size change curve of particles in the y-axis direction.
-- [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ): `ParticleCompositeCurve` object, representing the size change curve of particles in the z-axis direction.
-- [size](${api}core/SizeOverLifetimeModule#size): `ParticleCompositeCurve` object, gets or sets the particle size change curve.
+| Property                                                    |  Definition                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [separateAxes](${api}core/SizeOverLifetimeModule#separateAxes) | A boolean value that specifies whether the size changes independently for each axis. |
+| [sizeX](${api}core/SizeOverLifetimeModule#sizeX)             | A `ParticleCompositeCurve` object that represents the size variation curve of particles along the x-axis. |
+| [sizeY](${api}core/SizeOverLifetimeModule#sizeY)             | A `ParticleCompositeCurve` object that represents the size variation curve of particles along the y-axis. |
+| [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ)             | A `ParticleCompositeCurve` object that represents the size variation curve of particles along the z-axis. |
+| [size](${api}core/SizeOverLifetimeModule#size)               | A `ParticleCompositeCurve` object that retrieves or sets the size variation curve of particles. |
 
 ### Life cycle color module
 
 [`ColorOverLifetimeModule`](${api}core/ColorOverLifetimeModule) inherited from `ParticleGeneratorModule`, used to handle color changes during the life cycle of the particle system.
 
-#### Properties
-
-- [color](${api}core/ColorOverLifetimeModule#color): `ParticleCompositeGradient` object, representing the color gradient of particles during their life cycle.
+| Property                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [color](${api}core/ColorOverLifetimeModule#color)             | A `ParticleCompositeGradient` object that represents the color gradient of particles during their lifetime. |
 
 ### Life cycle rotation module
 
 [`RotationOverLifetimeModule`](${api}core/RotationOverLifetimeModule) Inherits from `ParticleGeneratorModule` and is used to control rotation changes during the life cycle of the particle system.
 
-#### Properties
-
-- [separateAxes](${api}core/RotationOverLifetimeModule#separateAxes): `boolean` type, indicating whether to rotate on each axis separately. If disabled, only the z-axis will be used.
-
-- [rotationX](${api}core/RotationOverLifetimeModule#rotationX): `ParticleCompositeCurve` object, representing the x-axis rotation of the particle during its lifetime.
-
-- [rotationY](${api}core/RotationOverLifetimeModule#rotationY): `ParticleCompositeCurve` object, representing the y-axis rotation of the particle during its life cycle.
-
-- [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ): `ParticleCompositeCurve` object, representing the z-axis rotation of the particle during its lifetime.
+| Property                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [separateAxes](${api}core/RotationOverLifetimeModule#separateAxes) | A boolean value that indicates whether the rotation is separate for each axis. If disabled, only the z-axis will be used. |
+| [rotationX](${api}core/RotationOverLifetimeModule#rotationX) | A `ParticleCompositeCurve` object that represents the rotation variation along the x-axis during the lifetime of particles. |
+| [rotationY](${api}core/RotationOverLifetimeModule#rotationY) | A `ParticleCompositeCurve` object that represents the rotation variation along the y-axis during the lifetime of particles. |
+| [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ) | A `ParticleCompositeCurve` object that represents the rotation variation along the z-axis during the lifetime of particles. |
 
 ### Texture table animation module
 
 [`TextureSheetAnimationModule`](${api}core/TextureSheetAnimationModule) Inherits from `ParticleGeneratorModule` and is used to control the texture sheet animation of the particle system.
 
-#### Properties
-
-- [startFrame](${api}core/TextureSheetAnimationModule#startFrame): `ParticleCompositeCurve` object, representing the starting frame of the texture table.
-
-- [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime): `ParticleCompositeCurve` object, representing the curve of the frame of the texture table changing over time.
-
-- [type](${api}core/TextureSheetAnimationModule#type): `TextureSheetAnimationType` enumeration, indicating the type of texture sheet animation.
-
-- [cycleCount](${api}core/TextureSheetAnimationModule#cycleCount): `number` type, indicating the cycle count of texture sheet animation.
-
-- [tiling](${api}core/TextureSheetAnimationModule#tiling): `Vector2` object, representing the tiling of the texture table. Can be accessed and modified through the `get` and `set` methods.
+| Property                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [startFrame](${api}core/TextureSheetAnimationModule#startFrame) | A `ParticleCompositeCurve` object that represents the starting frame of the texture sheet animation. |
+| [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime) | A `ParticleCompositeCurve` object that represents the curve of frame changes over time in the texture sheet animation. |
+| [type](${api}core/TextureSheetAnimationModule#type)           | A `TextureSheetAnimationType` enumeration that represents the type of texture sheet animation. |
+| [cycleCount](${api}core/TextureSheetAnimationModule#cycleCount) | A `number` value that represents the cycle count of the texture sheet animation. |
+| [tiling](${api}core/TextureSheetAnimationModule#tiling)       | A `Vector2` object that represents the tiling of the texture sheet. It can be accessed and modified using the `get` and `set` methods. |
 
 ## Other parameters
 
-- [velocityScale](${api}core/ParticleRenderer#velocityScale): Specifies the extent to which particles stretch based on their speed, type.
-- [lengthScale](${api}core/ParticleRenderer#lengthScale): Defines the extent to which the particle stretches in the direction of its motion, defined as the ratio of the particle's length to its width.
-- [pivot](${api}core/ParticleRenderer#pivot): The pivot of the particle.
-- [renderMode](${api}core/ParticleRenderer#renderMode): The rendering mode of particles.
-- [mesh](${api}core/ParticleRenderer#mesh): The mesh of particles, valid when `renderMode` is `Mesh`.
+| Property                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [velocityScale](${api}core/ParticleRenderer#velocityScale)   | Specifies how much the particles stretch based on their velocity. |
+| [lengthScale](${api}core/ParticleRenderer#lengthScale)       | Defines the extent to which particles stretch along their motion direction, defined as the ratio of particle length to width. |
+| [pivot](${api}core/ParticleRenderer#pivot)                   | The pivot point of the particles.                            |
+| [renderMode](${api}core/ParticleRenderer#renderMode)         | The rendering mode of the particles.                         |
+| [mesh](${api}core/ParticleRenderer#mesh)                     | The mesh used for particles. Only valid when `renderMode` is set to `Mesh`. |
 
 ## Rendering material
 
 [ParticleMaterial](${api}core/ParticleMaterial) is the default material of particles and contains some basic common material properties of particles.
 
-### Properties
-
-- [baseColor](${api}core/ParticleMaterial#baseColor): Base color.
-- [baseTexture](${api}core/ParticleMaterial#baseColor): Base texture.
+| Property                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [baseColor](${api}core/ParticleMaterial#baseColor)           | The base color of the particles.                             |
+| [baseTexture](${api}core/ParticleMaterial#baseColor)         | The base texture of the particles.                           |
