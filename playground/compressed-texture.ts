@@ -63,6 +63,15 @@ WebGLEngine.create({ canvas: "canvas", ktx2Loader: { workerCount: 4 } }).then(
       debugInfo.colorModel = "etc1s";
     }
 
+    const transcodeFormat = { format: "" };
+
+    gui.add(debugInfo, "colorModel", formats).onChange((v) => {
+      loadTexture(v);
+    });
+
+    const formatController = gui.add(transcodeFormat, "format");
+    console.log(formatController);
+
     function loadTexture(formatDes: string) {
       const url = fileList[formatDes];
       engine.resourceManager
@@ -72,18 +81,14 @@ WebGLEngine.create({ canvas: "canvas", ktx2Loader: { workerCount: 4 } }).then(
         })
         .then((res) => {
           const compressedTexture = res;
-          console.log(TextureFormat[res.format]);
           material.baseTexture = compressedTexture;
-          gui.add({ format: TextureFormat[res.format] }, "format");
+          formatController.setValue(TextureFormat[res.format])
         });
     }
 
     if (debugInfo.colorModel) {
       loadTexture(debugInfo.colorModel);
     }
-    gui.add(debugInfo, "colorModel", formats).onChange((v) => {
-      loadTexture(v);
-    });
 
     engine.run();
   }
