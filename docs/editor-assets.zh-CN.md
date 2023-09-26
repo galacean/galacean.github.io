@@ -34,7 +34,7 @@ label: Editor-Interface
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">通过右键菜单创建/上传资产</figcaption>
 </figure>
 
-你还可以将文件拖动到资产面板中来添加资产。支持的文件类型包括 `glTF`, `glb`, `fbx`, `png`, `jpeg`, `hdr`, `ttf`, `otf`, `woff`, `json` 等等。
+你还可以将文件拖动到资产面板中来添加资产。支持的文件类型包括 `glTF`, `glb`, `fbx`, `png`, `jpeg`, `hdr`, `ttf`, `otf`, `woff`, `json`（仅 lottie json） 等等。
 
 <figure style="margin:0 auto;width: 700px;">
   <img alt="Upload Asset by drag" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*9kmHQ6X7qVIAAAAAAAAAAAAADqiTAQ/original" width="100%">
