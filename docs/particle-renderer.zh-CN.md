@@ -100,8 +100,8 @@ generator.stop();
 
 | 属性                                                         | 释义                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [rateOverTime](${api}core/EmissionModule#rateOverTime)       | 这是一个 `ParticleCompositeCurve` 对象，表示粒子的发射速率。默认值为 `10` |
-| [rateOverDistance](${api}core/EmissionModule#rateOverDistance) | 这是一个 `ParticleCompositeCurve` 对象，表示粒子的距离发射速率。默认值为 `0` |
+| [rateOverTime](${api}core/EmissionModule#rateOverTime)       | 这是一个 [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示粒子的发射速率。默认值为 `10` |
+| [rateOverDistance](${api}core/EmissionModule#rateOverDistance) | 这是一个 [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示粒子的距离发射速率。默认值为 `0` |
 | [shape](${api}core/EmissionModule#shape)                     | 这是一个 `BaseShape` 对象，表示发射器的形状                  |
 
 | 方法                                                         | 释义                     |
@@ -118,10 +118,10 @@ generator.stop();
 | 属性                                                         | 释义                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [separateAxes](${api}core/SizeOverLifetimeModule#separateAxes) | 布尔值，指定每个轴的大小是否独立变化                         |
-| [sizeX](${api}core/SizeOverLifetimeModule#sizeX)             | `ParticleCompositeCurve` 对象，表示 x 轴方向上粒子的大小变化曲线 |
-| [sizeY](${api}core/SizeOverLifetimeModule#sizeY)             | `ParticleCompositeCurve` 对象，表示 y 轴方向上粒子的大小变化曲线 |
-| [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ)             | `ParticleCompositeCurve` 对象，表示 z 轴方向上粒子的大小变化曲线 |
-| [size](${api}core/SizeOverLifetimeModule#size)               | `ParticleCompositeCurve` 对象，获取或设置粒子的大小变化曲线  |
+| [sizeX](${api}core/SizeOverLifetimeModule#sizeX)             | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示 x 轴方向上粒子的大小变化曲线 |
+| [sizeY](${api}core/SizeOverLifetimeModule#sizeY)             | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示 y 轴方向上粒子的大小变化曲线 |
+| [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ)             | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示 z 轴方向上粒子的大小变化曲线 |
+| [size](${api}core/SizeOverLifetimeModule#size)               | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，获取或设置粒子的大小变化曲线  |
 
 ### 生命周期颜色模块
 
@@ -129,7 +129,7 @@ generator.stop();
 
 | 属性                                              | 释义                                                         |
 | ------------------------------------------------- | ------------------------------------------------------------ |
-| [color](${api}core/ColorOverLifetimeModule#color) | `ParticleCompositeGradient` 对象，表示粒子在其生命周期内的颜色渐变 |
+| [color](${api}core/ColorOverLifetimeModule#color) | [ParticleCompositeGradient](${api}core/ParticleCompositeGradient) 对象，表示粒子在其生命周期内的颜色渐变 |
 
 ### 生命周期旋转模块
 
@@ -138,9 +138,9 @@ generator.stop();
 | 属性                                                         | 释义                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [separateAxes](${api}core/RotationOverLifetimeModule#separateAxes) | `boolean` 类型，表示是否在每个轴上分别进行旋转。如果禁用，将只使用 z 轴 |
-| [rotationX](${api}core/RotationOverLifetimeModule#rotationX) | `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 x 轴旋转 |
-| [rotationY](${api}core/RotationOverLifetimeModule#rotationY) | `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 y 轴旋转 |
-| [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ) | `ParticleCompositeCurve` 对象，表示粒子在其生命周期内的 z 轴旋转 |
+| [rotationX](${api}core/RotationOverLifetimeModule#rotationX) | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示粒子在其生命周期内的 x 轴旋转 |
+| [rotationY](${api}core/RotationOverLifetimeModule#rotationY) | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示粒子在其生命周期内的 y 轴旋转 |
+| [rotationZ](${api}core/RotationOverLifetimeModule#rotationZ) | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示粒子在其生命周期内的 z 轴旋转 |
 
 ### 纹理表格动画模块
 
@@ -148,8 +148,8 @@ generator.stop();
 
 | 属性                                                         | 释义                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [startFrame](${api}core/TextureSheetAnimationModule#startFrame) | `ParticleCompositeCurve` 对象，表示纹理表的起始帧            |
-| [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime) | `ParticleCompositeCurve` 对象，表示纹理表的帧随时间变化的曲线 |
+| [startFrame](${api}core/TextureSheetAnimationModule#startFrame) | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示纹理表的起始帧            |
+| [frameOverTime](${api}core/TextureSheetAnimationModule#frameOverTime) | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示纹理表的帧随时间变化的曲线 |
 | [type](${api}core/TextureSheetAnimationModule#type)          | `TextureSheetAnimationType` 枚举，表示纹理表动画的类型       |
 | [cycleCount](${api}core/TextureSheetAnimationModule#cycleCount) | `number` 类型，表示纹理表动画的周期计数                      |
 | [tiling](${api}core/TextureSheetAnimationModule#tiling)      | `Vector2` 对象，表示纹理表的平铺。可以通过 `get` 和 `set` 方法访问和修改 |
