@@ -152,15 +152,14 @@ const StyledMarkdown = styled("div", {
       color: "$slate11",
       border: "1px solid $slate6"
     },
-    "& blockquote": {
-      margin: "$1 0",
-      paddingLeft: "$2",
-      color: "$slate10",
-      borderLeft: "4px solid $slate4",
-      "& p": {
-        margin: 0
-      }
-    }
+  },
+  "& blockquote": {
+    margin: "$2 0",
+    padding: "0 $2",
+    color: "$slate11",
+    borderRadius: "$2",
+    border: "1px solid $blue8",
+    backgroundColor: "$blueA2",
   }
 });
 
@@ -293,11 +292,12 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             },
             //@ts-ignore
             nav: DocToc,
-            blockquote({ className, src }: any) {
+            blockquote({ className, src, children }: any) {
               if (className === 'playground-in-doc') {
                 return <Playground id={getIdByTitle(src) || ''} title={docTitle} embed={true} />;
               }
-              return null;
+
+              return <blockquote className={className}>{children}</blockquote>;
             },
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
