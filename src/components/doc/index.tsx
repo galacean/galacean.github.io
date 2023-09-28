@@ -74,9 +74,18 @@ function Doc() {
   }, [selectedDocId]);
 
   useEffect(() => {
+    if (ver && ver !== localStorage.getItem('version')) {
+      context.setVersion(ver);
+      localStorage.setItem('version', ver as string);
+    }
+  }, [ver]);
+
+  useEffect(() => {
+    const version = localStorage.getItem('version');
+
     // navigate to new url if version or lang change.
     navigate(
-      `/docs/${context.version}/${context.lang === 'en' ? 'en' : 'cn'}/${docTitle}`
+      `/docs/${version}/${context.lang === 'en' ? 'en' : 'cn'}/${docTitle}`
     );
 
     menuKeyTitleMapRef.current.clear();
@@ -86,14 +95,14 @@ function Doc() {
     // fetch different menu according to doc title
     let menuTag: MenuTag = 'doc-engine';
 
-    if (docTitle.startsWith('editor')) {
+    if (docTitle?.startsWith('editor')) {
       menuTag = 'doc-editor';
     }
-    else if (docTitle.startsWith('artist')) {
+    else if (docTitle?.startsWith('artist')) {
       menuTag = 'doc-art';
     }
 
-    fetchMenuList(menuTag, context.version).then((list) => {
+    fetchMenuList(menuTag, version).then((list) => {
       const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
@@ -135,9 +144,9 @@ function Doc() {
         });
 
       setItems(itemRes);
-      setSelectedItem(docTitle);
+      setSelectedItem(docTitle as string);
     });
-  }, [context.lang, context.version, docTitle]);
+  }, [context.lang, localStorage.getItem('version'), docTitle]);
 
   if (items.length === 0) {
     return <LoadingIcon></LoadingIcon>;
