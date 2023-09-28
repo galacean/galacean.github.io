@@ -191,6 +191,9 @@ const Api = () => {
   let { version } = useContext(AppContext);
   const [pkgChildren, setPkgChildren] = useState<PkgChild[]>();
   const navigate = useNavigate();
+  const context = useContext(AppContext);
+  const { ver } = useParams();
+
 
   if (!pkg) {
     pkg = pkg || 'core';
@@ -198,10 +201,30 @@ const Api = () => {
   }
 
   useEffect(() => {
-    fetchPkgChildren(pkg, version).then((res) => {
+    if (ver && ver !== localStorage.getItem('version')) {
+      context.setVersion(ver);
+      localStorage.setItem('version', ver as string);
+    }
+  }, [ver]);
+  
+  const fetchPkgs = (pkg, v) => {
+    fetchPkgChildren(pkg, v).then((res) => {
       setPkgChildren(res);
     });
-  }, [pkg, version]);
+  }
+
+  useEffect(() => {
+    const v = localStorage.getItem('version');
+    if (name) {
+      navigate(`/api/${v}/${pkg}/${name}`);
+    }
+    else {
+      navigate(`/api/${v}/${pkg}`);
+    }
+
+    fetchPkgs(pkg, v);
+  }, [pkg, localStorage.getItem('version')]);
+
 
   return (
     <Media query='(max-width: 768px)'>
