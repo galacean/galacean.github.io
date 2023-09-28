@@ -187,7 +187,7 @@ const NavBreadcrumb = ({ pkg, version, name }: { pkg: string, version: string, n
 }
 
 const Api = () => {
-  let { pkg, name  } = useParams();
+  let { pkg, name } = useParams();
   let { version } = useContext(AppContext);
   const [pkgChildren, setPkgChildren] = useState<PkgChild[]>();
   const navigate = useNavigate();
