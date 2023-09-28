@@ -77,7 +77,7 @@ PBR 遵循能量守恒，是基于物理的渲染，能设置基础颜色、法�
 
 ## Remap 材质
 
-需要注意的是，针对 glTF 中的材质，你不能够直接编辑它，而是需要点击 `duplicate & remap` 按钮来生成一份该材质的副本，然后再编辑该副本。
+> 需要注意的是，针对 glTF 中的材质，你不能够直接编辑它，而是需要点击 `duplicate & remap` 按钮来生成一份该材质的副本，然后再编辑该副本。
 
 <img src="https://mdn.alipayobjects.com/huamei_x9dkln/afts/img/A*I2KcS56b46QAAAAAAAAAAAAADsGIAQ/original">
 
