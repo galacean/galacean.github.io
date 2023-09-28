@@ -72,7 +72,7 @@ resourceManager.addContentRestorer(
 );
 ```
 
-注意：恢复器实现不建议依赖和占用大量 CPU 内存
+> 注意：恢复器实现不建议依赖和占用大量 CPU 内存
 
 ### 模拟设备丢失和恢复
 

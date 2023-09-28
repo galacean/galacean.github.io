@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 7
 title: Shader Lab
 group: Material
 label: Graphics/Material

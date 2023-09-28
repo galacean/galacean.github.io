@@ -6,7 +6,7 @@ group: 基础
 label: Introduction/Basic
 ---
 
-glTF（GL Transmission Format）是 [khronos](https://www.khronos.org/) 发布的一种能高效传输和加载 3D 场景的规范，与 FBX、OBJ 等传统模型格式一样，基本支持 3D 场景中的所有特性，也是目前 Galacean 推荐的首选 3D 文件格式。
+> glTF（GL Transmission Format）是 [khronos](https://www.khronos.org/) 发布的一种能高效传输和加载 3D 场景的规范，与 FBX、OBJ 等传统模型格式一样，基本支持 3D 场景中的所有特性，也是目前 Galacean 推荐的首选 3D 文件格式。
 
 glTF 的产物一般分为（.gltf + .bin + png）或者 (.glb)，前者适合图片体积大的场景，所以将图片和模型拆分开来，可以异步加载模型和纹理；后者适合模型文件较大的场景，会将所有数据进行二进制保存，需要等所有数据解析完毕才能展示模型。
 

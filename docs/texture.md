@@ -8,7 +8,7 @@ label: Graphics/Texture
 
 Texture ([Texture](${api}core/Texture)), is the most commonly used resource in 3D rendering. When we color the model, we need to set a color value for each fragment. In addition to setting this color value directly, we can also choose to read texels from the texture for coloring to achieve a richer art effect.
 
-It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Galacean Engine currently supports all WebGL standard textures.
+> It is worth noting that pictures, Canvas, raw data, videos, etc. can be used as textures, and the Galacean Engine currently supports all WebGL standard textures.
 
 ## Texture category
 

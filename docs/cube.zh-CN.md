@@ -32,21 +32,16 @@ import {
 
 我们先来简单认识一下这些类：
 
-**WebGL 引擎类**：
-- [WebGLEngine](${api}rhi-webgl/WebGLEngine)：WebGL 平台引擎，支持 WebGL1.0 和 WebGL2.0，它能够控制画布的一切行为，包括资源管理、场景管理、执行/暂停/继续、垂直同步等功能。(详见 [引擎](${docs}engine-cn) 章节。)
-
-组件类：
-- [Camera](${api}core/Camera)：相机，是一个图形引擎对 3D 投影的抽象概念，作用好比现实世界中的摄像机或眼睛，如果不加相机，画布将什么都画不出来。（详见 [相机](${docs}camera-cn) 章节）
-- [DirectLight](${api}core/DirectLight)：直接光，是光照的一种，光照使场景更有层次感，使用光照，能建立更真实的三维场景。（详见 [光照](${docs}light-cn) 章节）
-- [Script](${api}core/Script)：脚本，是衔接引擎能力和游戏逻辑的纽带，可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。（详见 [脚本](${docs}script-cn) 章节）
-- [MeshRenderer](${api}core/MeshRenderer)：网格渲染器，使用网格对象（这个例子中就是立方体）作为几何体轮廓的数据源。（详见 [网格渲染器](${docs}mesh-renderer-cn) 章节）
-
-**几何体和材质类**：
-- [PrimitiveMesh](${api}core/PrimitiveMesh)：基础几何体，提供了创建立方体、球体等网格对象的便捷方法。（详见 [基础几何体](${docs}primitive-mesh-cn) 章节）
-- [BlinnPhongMaterial](${api}core/BlinnPhongMaterial)：材质定义了如何渲染这个立方体，BlinnPhong 材质是经典的材质之一。（详见 [材质](${docs}material-cn) 章节）
-
-**数学库相关类**：
-- [Vector3](${api}math/Vector3), [Vector4](${api}math/Vector4), [Color](${api}math/Color)：这几个类是数学计算的一些基本单元，用来计算立方体的位置、颜色等。（详见 [数学库](${docs}math-cn) 章节）
+| 类型           | 类名                                                         | 释义                                                         |
+| -------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| WebGL 引擎类   | [WebGLEngine](${api}rhi-webgl/WebGLEngine)                   | WebGL 平台引擎，支持 WebGL1.0 和 WebGL2.0，它能够控制画布的一切行为，包括资源管理、场景管理、执行/暂停/继续、垂直同步等功能。(详见 [引擎](${docs}engine-cn) 章节。) |
+| 组件类         | [Camera](${api}core/Camera)                                  | 相机，是一个图形引擎对 3D 投影的抽象概念，作用好比现实世界中的摄像机或眼睛，如果不加相机，画布将什么都画不出来。（详见 [相机](${docs}camera-cn) 章节） |
+|                | [DirectLight](${api}core/DirectLight)                        | 直接光，是光照的一种，光照使场景更有层次感，使用光照，能建立更真实的三维场景。（详见 [光照](${docs}light-cn) 章节） |
+|                | [Script](${api}core/Script)                                  | 脚本，是衔接引擎能力和游戏逻辑的纽带，可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。（详见 [脚本](${docs}script-cn) 章节） |
+|                | [MeshRenderer](${api}core/MeshRenderer)                      | 网格渲染器，使用网格对象（这个例子中就是立方体）作为几何体轮廓的数据源。（详见 [网格渲染器](${docs}mesh-renderer-cn) 章节） |
+| 几何体和材质类 | [PrimitiveMesh](${api}core/PrimitiveMesh)                    | 基础几何体，提供了创建立方体、球体等网格对象的便捷方法。（详见 [基础几何体](${docs}primitive-mesh-cn) 章节） |
+|                | [BlinnPhongMaterial](${api}core/BlinnPhongMaterial)          | 材质定义了如何渲染这个立方体，BlinnPhong 材质是经典的材质之一。（详见 [材质](${docs}material-cn) 章节） |
+| 数学库相关类   | [Vector3](${api}math/Vector3), [Vector4](${api}math/Vector4), [Color](${api}math/Color) | 这几个类是数学计算的一些基本单元，用来计算立方体的位置、颜色等。（详见 [数学库](${docs}math-cn) 章节） |
 
 ## 创建引擎实例
 
