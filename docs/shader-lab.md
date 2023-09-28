@@ -83,7 +83,7 @@ Four types of global variables can be declared in ShaderLab: rendering state, st
   }
   ```
 
-  > [n] can be omitted. When using MRT, [n] is to specify a certain MRT rendering state. If omitted, it is to set all MRT states. BlendOperation and BlendFactor enumerations are equivalent to the engine API.
+  [n] can be omitted. When using MRT, [n] is to specify a certain MRT rendering state. If omitted, it is to set all MRT states. BlendOperation and BlendFactor enumerations are equivalent to the engine API.
 
   ```
   DepthState {
@@ -93,7 +93,7 @@ Four types of global variables can be declared in ShaderLab: rendering state, st
   }
   ```
 
-  > CompareFunction enumeration equivalent engine API
+  CompareFunction enumeration equivalent engine API
 
   ```
   StencilState {
@@ -112,7 +112,7 @@ Four types of global variables can be declared in ShaderLab: rendering state, st
   }
   ```
 
-  > CompareFunction and StencilOperation are equivalent engine APIs
+  CompareFunction and StencilOperation are equivalent engine APIs
 
   ```
   RasterState {
@@ -122,7 +122,7 @@ Four types of global variables can be declared in ShaderLab: rendering state, st
   }
   ```
 
-  > CullMode Cull Equivalent Engine API
+  CullMode Cull Equivalent Engine API
 
 - Structure, Function
 
