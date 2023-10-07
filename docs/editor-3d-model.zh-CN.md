@@ -30,9 +30,9 @@ label: Editor-Feature/Rendering-3d
 | castShadows     | 当前渲染器是否投射阴影（默认投射）                            |
 | Render Priority | 渲染优先级，默认 0，数字越大，越后渲染                        |
 
-## 2. 建模软件导出（FBX、glTF）
+## 2. 建模软件导出
 
-> 编辑器目前支持导入 `glTF` 或者 `FBX` 格式的模型，但是最后编辑器都会转换成运行时也可以解析的[ glTF 格式](${docs}gltf-cn)。
+编辑器目前支持导入 `glTF` 或者 `FBX` 格式的模型，但是最后编辑器都会转换成运行时也可以解析的[ glTF 格式](${docs}gltf-cn)。
 
 ```mermaid
 	flowchart LR
@@ -47,14 +47,20 @@ label: Editor-Feature/Rendering-3d
 
 - **上传模型** ，可以选择以下两种方式上传：
   - 直接把模型文件，或者压缩成 **.zip** 后拖进资源面板:（**推荐**） 
+
   <img src="https://gw.alipayobjects.com/zos/OasisHub/d34e7e5f-495f-4777-80e5-860ac7772681/import.gif" alt="import" style="zoom:50%;" />
+
   - 也可以在资源面板中点击上传按钮： 
+
   <img src="https://gw.alipayobjects.com/zos/OasisHub/a825f9ad-a7ed-45f4-8a92-da500863eef5/image-20231001181106137.png" alt="image-20231001181106137" style="zoom:50%;" />
 
 - **预览模型相关资产。** 模型上传成功后，模型资源的网格、贴图、动画、材质等内容都会被展示在资源面板当中：
-<img src="https://gw.alipayobjects.com/zos/OasisHub/d189bfc2-0f1c-4a94-8c4d-0a827c0b63ad/image-20231001181618652.png" alt="image-20231001181618652" style="zoom:50%;" />
-	>  如果素材很多，还可以使用编辑器的筛选/查找功能:
-	<img src="https://gw.alipayobjects.com/zos/OasisHub/f1a86a4c-e1ca-43b5-81d9-5cd8417a89c1/image-20231001182024810.png" alt="image-20231001182024810" style="zoom:50%;" />
+
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/d189bfc2-0f1c-4a94-8c4d-0a827c0b63ad/image-20231001181618652.png" alt="image-20231001181618652" style="zoom:50%;" />
+
+如果素材很多，还可以使用编辑器的筛选/查找功能:
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/f1a86a4c-e1ca-43b5-81d9-5cd8417a89c1/image-20231001182024810.png" alt="image-20231001182024810" style="zoom:50%;" />
 
 
 ### 修改模型
@@ -63,10 +69,8 @@ label: Editor-Feature/Rendering-3d
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/1f5caa3a-bc01-419f-83c0-dd0ef12692bf/remap.gif" alt="remap" style="zoom:50%;" />
 
-> 更多材质调试详见 [材质教程](${docs}editor-3d-material-cn)。
-> 更多动画编辑详见 [动画教程](${docs}editor-animator-cn)。
-
-
+- 更多材质调试详见 [材质教程](${docs}editor-3d-material-cn)。
+- 更多动画编辑详见 [动画教程](${docs}editor-animator-cn)。
 
 ### 置入场景
 
