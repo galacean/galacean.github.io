@@ -15,16 +15,20 @@ Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前�
 
 资产导出配置可以用来控制导出的资源类型和质量等参数。在资产导出配置中，你可以选择导出的资源类型，例如模型、纹理、HDR 等等，以及选择每种类型的导出质量和格式等参数。在导出模型时，你可以选择是否导出模型的网格信息、骨骼信息、动画信息等。
 
-- glTF Quantize：一种 glTF 压缩算法，详见[这里](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_mesh_quantization/README.md)。
-- KTX2：勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项。
+| 配置          | 描述                                                         |
+| ------------- | ------------------------------------------------------------ |
+| glTF Quantize | 一种 glTF 压缩算法，详见[这里](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_mesh_quantization/README.md) |
+| KTX2          | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项 |
 
 ### 渲染导出配置
 
-渲染导出配置可以用来控制项目的渲染效果和性能等参数。在渲染导出配置中，你可以配置：
+渲染导出配置可以用来控制项目的渲染效果和性能等参数。
 
-- WebGL 的版本，`Auto` 值表示根据设备能力自动选择 WebGL 版本；
-- WebGL 的 [Context](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) 的一些配置：Anti-Alias、Alpha、Preserve Drawing Buffer 等；
-- 设备的像素比，用来控制画布的尺寸。
+| 配置                                                         | 描述                                                       |
+| ------------------------------------------------------------ | ---------------------------------------------------------- |
+| WebGL Mode                                                   | WebGL 的版本，`Auto` 值表示根据设备能力自动选择 WebGL 版本 |
+| WebGL  [Context](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) 的配置 | Anti-Alias、Alpha、Preserve Drawing Buffer 等              |
+| Device Pixel Ratio                                           | 设备的像素比，用来控制画布的尺寸                           |
 
 ## 项目启动
 
