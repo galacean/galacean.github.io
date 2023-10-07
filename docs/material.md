@@ -8,12 +8,12 @@ label: Graphics/Material
 
 ## Material category
 
-| type                                              | description                      |
-| :------------------------------------------------ | :------------------------------- |
-| [UnlitMaterial](${docs}material-unlit)            | Rendering with color and texture only, no brightness calculation |
-| [BlinnPhongMaterial](${docs}material-blinn-phong) | The optics are basically complete, and the rendering algorithm is efficient       |
-| [PBRMaterial](${docs}material-pbr)              | Follow the conservation of energy and comply with the laws of physics       |
-| [Custom Material](${docs}custom-material)          | Customizable for special rendering needs             |
+| type | description |
+| :-- | :-- |
+| [Unlit Material](${docs}material-unlit-cn) | The Unlit material is suitable for baked model rendering. It only needs to set a basic texture or color to show high-quality rendering results obtained from offline rendering. However, the disadvantage is that it cannot show light and shadow interaction in real time because Unlit determines the rendering by the texture and does not Affected by any lighting, please refer to [Baking Tutorial](${docs}artist-bake-cn) and [Export Unlit Tutorial](${docs}artist-unlit-cn). |
+| [Blinn-Phong Material](${docs}material-blinn-phong-cn) | The Blinn Phong material is suitable for scenes that do not have such high requirements for realism. Although it does not follow physics, its efficient rendering algorithm and basically complete optical parts can be applied to many scenes. |
+| [PBR Material](${docs}material-pbr-cn) | PBR materials are suitable for application scenarios that require realistic rendering, because PBR is physically based rendering and follows energy conservation. Developers can ensure that the rendering effects are physically correct by adjusting parameters such as metallicity, roughness, and lighting. |
+| [Custom Material](${docs}custom-material) | Customizable for special rendering needs |
 
 ## General parameter
 
@@ -61,11 +61,10 @@ const renderer = entity.getComponent(MeshRenderer);
 // Get material
 const material = renderer.getMaterial();
 // Set base texture
-material.baseTexture = await engine.resourceManager
-  .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
-  });
+material.baseTexture = await engine.resourceManager.load<Texture2D>({
+  url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
+  type: AssetType.Texture2D
+});
 ```
 
 ## QA

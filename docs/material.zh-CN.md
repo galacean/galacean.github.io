@@ -10,12 +10,12 @@ Galacean 创建的三维世界与真实的世界一样包含各式各样的物�
 
 ## 分类
 
-| 类型                 | 描述                             |
-| :------------------- | :------------------------------- |
-| [Unlit 材质](${docs}material-unlit-cn)       | 仅使用颜色与纹理渲染，不计算光照 |
-| [Blinn-Phong 材质](${docs}material-blinn-phong-cn) | 光学基本齐全，渲染算法高效       |
-| [PBR 材质](${docs}material-pbr-cn)         | 遵循能量守恒，符合物理规则       |
-| [自定义材质](${docs}custom-material-cn)       | 可定制特殊的渲染需求             |
+| 类型 | 描述 |
+| :-- | :-- |
+| [Unlit 材质](${docs}material-unlit-cn) | Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn) |
+| [Blinn-Phong 材质](${docs}material-blinn-phong-cn) | Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。 |
+| [PBR 材质](${docs}material-pbr-cn) | PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。 |
+| [自定义材质](${docs}custom-material-cn) | 可定制特殊的渲染需求 |
 
 ## 通用属性
 
@@ -63,11 +63,10 @@ const renderer = entity.getComponent(MeshRenderer);
 // 获取材质
 const material = renderer.getMaterial();
 // 设置贴图
-material.baseTexture = await engine.resourceManager
-  .load<Texture2D>({
-    url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
-    type: AssetType.Texture2D
-  });
+material.baseTexture = await engine.resourceManager.load<Texture2D>({
+  url: "https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*ApFPTZSqcMkAAAAAAAAAAAAAARQnAQ",
+  type: AssetType.Texture2D
+});
 ```
 
 ## 常见 QA
