@@ -14,7 +14,7 @@ label: Editor-Feature/Rendering-3d
 
 ## 材质类型（切换 Shader）
 
-> 切换 Shader 时会共用相同类型的属性，比如基础颜色为红色，那么即使切换 Shader，基础颜色仍为红色。
+切换 Shader 时会共用相同类型的属性，比如基础颜色为红色，那么即使切换 Shader，基础颜色仍为红色。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/87453ef7-2a75-4f7c-9f87-330961f6af0b/image-20231007111738732.png" alt="image-20231007111738732" style="zoom:50%;" />
 
@@ -30,7 +30,7 @@ label: Editor-Feature/Rendering-3d
 
 ### PBR
 
-> PBR 遵循能量守恒，是基于物理的渲染，并且引入了 [IBL](${docs}light-cn#ibl-镜面反射) 模拟全局光照，通过金属度、粗糙度等参数，更加方便地调节渲染效果。
+PBR 遵循能量守恒，是基于物理的渲染，并且引入了 [IBL](${docs}light-cn#ibl-镜面反射) 模拟全局光照，通过金属度、粗糙度等参数，更加方便地调节渲染效果。
 
 - 根据真实世界中光线与材质的交互，绝缘体（即当金属度为 0 时）材质也能反射大约 4% 纯色光线，从而渲染出周边环境，如下模型金属度为 0 但是还能隐约看到反射的周边环境：
 
@@ -46,13 +46,13 @@ label: Editor-Feature/Rendering-3d
 
 ### Unlit
 
-> Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
+Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/6be78a08-3075-4cd1-8cad-9757fc34f695/unlit.gif" alt="unlit" style="zoom:50%;" />
 
 ### Blinn Phong
 
-> Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
+Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/eaa93827-29a4-46ad-b9d3-f179fa200c57/blinn.gif" alt="blinn" style="zoom:50%;" />
 
@@ -62,7 +62,7 @@ label: Editor-Feature/Rendering-3d
 
 ### Sky Box
 
-> 天空盒背景，需要绑定一张 HDR 贴图
+天空盒背景，需要绑定一张 HDR 贴图
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/3e7d376f-c8a4-4200-b859-d1a8db1859fe/skybox.gif" alt="skybox" style="zoom:50%;" />
 
@@ -75,7 +75,7 @@ label: Editor-Feature/Rendering-3d
 
 ### Sky Procedural
 
-> 程序化大气散射天空
+程序化大气散射天空
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/cee919e3-07dc-4dec-9d7a-4dafd0a2cb90/skyProcedural.gif" alt="skyProcedural" style="zoom:50%;" />
 
