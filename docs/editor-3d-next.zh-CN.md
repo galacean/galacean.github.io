@@ -14,8 +14,27 @@ label: Editor-Feature/Rendering-3d
 
 ## 相关流程
 
-- [模型](${docs}editor-3d-model-cn)
-- [材质](${docs}editor-3d-material-cn)
-- [光照](${docs}editor-3d-light-cn)
-- [相机](${docs}editor-3d-camera-cn)
-- [场景配置](${docs}editor-3d-scene-config-cn)
+> 各个环节没有严格的顺序要求，并且每个环节之间可能需要多次反馈调整
+
+```mermaid
+%%{init: { 'logLevel': 'debug', 'theme': 'dark' } }%%
+timeline
+  	title 场景搭建环节简介
+    导入模型 : 自带几何体
+            : glTF、FBX
+    调整材质 : Unlit
+			: Blinn Phong
+			: PBR
+			: Custom
+    调整光照 : 直接光
+			: IBL
+			: 烘焙
+    调整相机 : Runtime
+			: 预览
+    调整场景 : 背景
+			: 阴影
+			: 雾化
+	更多     : 动画
+			: 物理
+			: 脚本
+```
