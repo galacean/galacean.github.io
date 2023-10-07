@@ -14,7 +14,7 @@ label: Editor-Feature/Rendering-3d
 
 ### 1. 平行光
 
-> 光线以某个方向均匀射出，光线之间是平行的，不受位置影响，常用来模拟太阳光。
+光线以某个方向均匀射出，光线之间是平行的，不受位置影响，常用来模拟太阳光。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/d41ceadf-7cc4-4ec5-952e-545ddcc09efb/image-20231007164919086.png" alt="image-20231007164919086" style="zoom:50%;" />
 
@@ -29,7 +29,7 @@ label: Editor-Feature/Rendering-3d
 
 ### 2. 点光源
 
-> 存在于空间中的一点，由该点向四面八方发射光线，光照强度随光源距离衰减，如灯泡。
+存在于空间中的一点，由该点向四面八方发射光线，光照强度随光源距离衰减，如灯泡。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/ca022b96-adb3-4b42-9317-adc8fb8b58b0/image-20231007165225260.png" alt="image-20231007165225260" style="zoom:50%;" />
 
@@ -45,7 +45,7 @@ label: Editor-Feature/Rendering-3d
 
 ### 3. 聚光灯
 
-> 由一个特定位置发出，向特定方向延伸的光，光照强度随光源距离衰减，光照区域为锥形，锥形边缘随张开角度衰减，如手电筒。
+由一个特定位置发出，向特定方向延伸的光，光照强度随光源距离衰减，光照区域为锥形，锥形边缘随张开角度衰减，如手电筒。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/94dd6d9a-caa8-4878-ace1-059f4ab1d935/image-20231007165832895.png" alt="image-20231007165832895" style="zoom:50%;" />
 
@@ -73,7 +73,7 @@ label: Editor-Feature/Rendering-3d
 
 ### 相关配置
 
-> 修改背景或者烘焙分辨率后，点击“烘焙场景”按钮可重新进行烘焙。
+修改背景或者烘焙分辨率后，点击“烘焙场景”按钮可重新进行烘焙。
 
 #### **环境漫反射**：
 
