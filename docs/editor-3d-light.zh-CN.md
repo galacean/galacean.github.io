@@ -18,10 +18,10 @@ label: Editor-Feature/Rendering-3d
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/d41ceadf-7cc4-4ec5-952e-545ddcc09efb/image-20231007164919086.png" alt="image-20231007164919086" style="zoom:50%;" />
 
-- 使用：
+#### 使用方式：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/c3c8c050-0357-4eec-8bd9-e9af015aff3e/image-20231007165009703.png" alt="image-20231007165009703" style="zoom:50%;" />
-
+  
 | 属性      | 作用                             |
 | :-------- | :------------------------------- |
 | Intensity | 控制平行光的强度，**值越高越亮** |
@@ -33,7 +33,7 @@ label: Editor-Feature/Rendering-3d
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/ca022b96-adb3-4b42-9317-adc8fb8b58b0/image-20231007165225260.png" alt="image-20231007165225260" style="zoom:50%;" />
 
-- 使用
+#### 使用方式：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/2e158795-c9a0-4e73-ba46-882f7223690e/image-20231007165305235.png" alt="image-20231007165305235" style="zoom:50%;" />
 
@@ -49,7 +49,7 @@ label: Editor-Feature/Rendering-3d
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/94dd6d9a-caa8-4878-ace1-059f4ab1d935/image-20231007165832895.png" alt="image-20231007165832895" style="zoom:50%;" />
 
-- 使用
+#### 使用方式：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/e865c58e-28c3-466f-b7a0-30b89e241351/image-20231007165901115.png" alt="image-20231007165901115" style="zoom:50%;" />
 
@@ -75,7 +75,7 @@ label: Editor-Feature/Rendering-3d
 
 > 修改背景或者烘焙分辨率后，点击“烘焙场景”按钮可重新进行烘焙。
 
-- **环境漫反射**：
+#### **环境漫反射**：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/6f2ff568-b7d5-4673-8262-f9303583530a/image-20231007170656596.png" alt="image-20231007170656596" style="zoom:50%;" />
 
@@ -84,7 +84,7 @@ label: Editor-Feature/Rendering-3d
 | Mode | 支持 `Sky`和 `Solid Color` 两种模式，默认 `Sky` 模式，表示使用根据场景烘焙的球谐参数; `Solid Color` 模式时使用纯色作为漫反射颜色 |
 | Intensity | 漫反射强度 |
 
-- **环境镜面反射**：
+#### **环境镜面反射**：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/da9ed1da-553c-46fe-800d-6d6e050df0ba/image-20231007171003814.png" alt="image-20231007171003814" style="zoom:50%;" />
 
@@ -94,7 +94,7 @@ label: Editor-Feature/Rendering-3d
 | Intensity | 镜面反射强度 |
 | Baker Resolution | 表示烘焙后的立方体纹理分辨率，默认 128 分辨率，烘焙产物约为 500KB，64 分辨率的烘焙产物约为 125KB，可以根据场景选择合适的烘焙分辨率。 |
 
-- **背景：**
+#### **背景：**
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/07110f5a-3257-4529-91b4-b97e31e77ba7/image-20231007171608522.png" alt="image-20231007171608522" style="zoom:50%;" />
 
