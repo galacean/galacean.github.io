@@ -1,5 +1,5 @@
 ---
-Forder: 8
+order: 8
 title: 自定义材质
 type: 图形
 group: 材质
