@@ -136,7 +136,6 @@ const DocSearchRes = (props: IDocSearchResProps) => {
                     key={data.id}
                     onClick={() => {
                       navigate(props.link(data), { replace: true });
-                      location.reload();
                     }}
                   >
                     {props.icon}
