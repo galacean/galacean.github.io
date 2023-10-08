@@ -34,7 +34,26 @@ Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前�
 
 ### 项目启动
 
-在点击导出面板中的下载按钮后，你将得到一个项目的压缩包。解压缩后进入文件夹，在 Terminal 中依次运行：
+在点击导出面板中的下载按钮后，你将得到一个项目的压缩包。解压缩后进入文件夹，目录结构（以 React 项目为例）如下：
+
+```shell
+├── example # 📁 示例目录
+│   ├── main.tsx # 示例组件
+├── public # 📁 公共资源目录
+│		├── scene.json # 场景文件
+│   └── ... # 其他
+├── src # 📁 源代码目录
+│   └── ... # 其他
+├── index.tsx # ⚙️ 组件代码入口
+├── index.html # ⚙️ 示例项目入口文件
+├── project.json # ⚙️ 编辑器导出工程配置
+|── tsconfig.json # ⚙️ TypeScript 配置文件
+├── vite.config.ts # ⚙️ vite 配置文件
+├── package.json # ⚙️ 项目配置文件
+└── ... # 其他
+```
+
+在文件夹目录里的 Terminal 依次运行：
 
 ```bash
 npm install
@@ -46,11 +65,9 @@ npm run dev
 ## 小程序项目导出
 Galacean 编辑器导出支付宝小程序的功能仍在开发中，交互方式和模板工程后续可能会有改动。
 
-### 导出步骤
+<img src="https://mdn.alipayobjects.com/rms/afts/img/A*ZIXuR7Bj5gEAAAAAAAAAAAAAARQnAQ/original/image-20231008163057689.png" alt="image-20231008163057689" style="zoom:50%;" />
 
-#### 在编辑器里导出
-
-![image-20231008145913073](https://mdn.alipayobjects.com/rms/afts/img/A*kNF_SYH1AakAAAAAAAAAAAAAARQnAQ/original/image-20231008145913073.png)
+### 项目启动
 
 点击下载后会下载一个 zip 文件，解压文件目录结构如下：
 
@@ -70,24 +87,7 @@ Galacean 编辑器导出支付宝小程序的功能仍在开发中，交互方�
 └── ... # 其他
 ```
 
-#### 本地资源处理
-
-##### 蚂蚁集团内部用户
-
-直接使用『上传到 CDN 』即可，使用集团默认 CDN 即可。若想使用自定义 CDN，参考非蚂蚁集团内部用户。
-
-##### 非蚂蚁集团内部用户
-
-1.  public 文件请自行上传 CDN
-2. 修改 scene.json 文件或配置 baseUrl
-
-### 包内文件加载（WIP）
-
-目前还没有支持小程序的本地文件加载。
-
-### 包使用
-
-安装依赖和启动项目
+接下来就可以安装依赖和启动项目：
 
 ```shell
 npm install
@@ -97,6 +97,21 @@ npm run dev
 用小程序 IDE 打开可以看到：
 
 ![image-20230420111035524](https://mdn.alipayobjects.com/rms/afts/img/A*kEUkTbfSMIwAAAAAAAAAAAAAARQnAQ/original/image-20230420111035524.png)
+
+### 本地资源处理
+
+#### 蚂蚁集团内部用户
+
+直接使用『上传到 CDN 』即可（在导出面板选项中，参考上图），使用集团默认 CDN 即可。若想使用自定义 CDN，参考非蚂蚁集团内部用户。
+
+#### 非蚂蚁集团内部用户
+
+1.  public 文件请自行上传 CDN
+2. 修改 scene.json 文件或配置 baseUrl
+
+### 包内文件加载（WIP）
+
+目前还没有支持小程序的本地文件加载。
 
 ### 已知问题
 
