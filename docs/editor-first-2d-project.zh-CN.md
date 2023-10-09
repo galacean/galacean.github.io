@@ -104,3 +104,16 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 > 如果你在上述过程中需要处理精灵之间的遮盖关系，就像 CSS 里的 `z-index` 属性一样，你可以通过 `Sprite Renderer`  的 `priority` 属性来设置，值越大越后渲染，即越能遮住其他精灵。
 
 ## 编写逻辑
+
+
+```mermaid
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+```
