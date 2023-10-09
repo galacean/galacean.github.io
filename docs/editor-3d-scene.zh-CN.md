@@ -12,7 +12,7 @@ label: Editor-Feature/Rendering-3d
 
 ## 背景
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/c417f715-801b-4ab6-85ca-2d0348570ef4/background.gif" alt="background" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c417f715-801b-4ab6-85ca-2d0348570ef4/background.gif" alt="background" style="zoom:100%;" />
 
 | 属性 | 作用 |
 | :-- | :-- |
@@ -26,10 +26,10 @@ label: Editor-Feature/Rendering-3d
 
 可以针对整个场景进行阴影分辨率等配置：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/0b8707a9-5084-4e87-b530-897bcd37c16b/shadow.gif" alt="shadow" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/0b8707a9-5084-4e87-b530-897bcd37c16b/shadow.gif" alt="shadow" style="zoom:100%;" />
 
 ## 雾化
 
 可以给整个场景增加 **线性、指数、指数平方** 3 种雾化：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/5a713502-18b2-45eb-af56-d6530a340581/fog.gif" alt="fog" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5a713502-18b2-45eb-af56-d6530a340581/fog.gif" alt="fog" style="zoom:100%;" />
