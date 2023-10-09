@@ -10,7 +10,7 @@ label: Editor-Feature/Rendering-3d
 
 一般情况下，模型已经自动绑定好材质，用户可以不用做任何操作；如果想要修改材质，我们需要点击 `duplicate & remap` 按钮来生成一份该材质的副本，然后再编辑该材质副本。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/1f5caa3a-bc01-419f-83c0-dd0ef12692bf/remap.gif" alt="remap" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1f5caa3a-bc01-419f-83c0-dd0ef12692bf/remap.gif" alt="remap" style="zoom:100%;" />
 
 ## 材质类型（切换 Shader）
 

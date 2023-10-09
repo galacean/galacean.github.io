@@ -54,8 +54,7 @@ label: Editor-Feature/Rendering-3d
 
 - **预览模型相关资产。** 模型上传成功后，模型资源的网格、贴图、动画、材质等内容都会被展示在资源面板当中：
 <img src="https://gw.alipayobjects.com/zos/OasisHub/b7c0062e-2e11-4fda-8594-c151c0b45527/image-20231009112328575.png" alt="image-20231009112328575" style="zoom:50%;" />
-如果素材很多，还可以使用编辑器的筛选/查找功能:
-<img src="https://gw.alipayobjects.com/zos/OasisHub/fb096eaf-b5ec-4d37-bc25-54d420afd7e4/image-20231009112430083.png" alt="image-20231009112430083" style="zoom:50%;" />
+如果素材很多，还可以使用编辑器的筛选/查找功能:</br> <img src="https://gw.alipayobjects.com/zos/OasisHub/fb096eaf-b5ec-4d37-bc25-54d420afd7e4/image-20231009112430083.png" alt="image-20231009112430083" style="zoom:50%;" />
 
 
 ### 修改模型
