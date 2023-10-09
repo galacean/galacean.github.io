@@ -105,15 +105,41 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 ## 编写逻辑
 
+在编写逻辑前，我们先梳理对局的状态以及状态下不同对象对应的表现。
 
 ```mermaid
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
+stateDiagram
+    [*] --> Idle
+    Idle --> Playing
+    Playing --> Crash
+    Crash --> Result
+    Result --> Idle: Restart
+    Result --> [*]
+
+    state Idle {
+      Bird.Hang()
+       --
+      Pipe.Hide()
+       --
+      Ground.Move()
+    }
+
+    state Playing {
+       Bird.Fly()
+        --
+       Pipe.Move()
+    }
+
+    state Crash {
+       Bird.Drop()
+       --
+       Pipe.Pause()
+       --
+       Ground.Pause()
+    }
+
+    state Result {
+      GUI.Show()
+    }
 ```
+
