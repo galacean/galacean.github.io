@@ -8,7 +8,7 @@ label: Editor-Feature/Rendering-3d
 
 至此，3D 已经搭建完毕，我们还可以针对场景做一些整体配置：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/cb341c8c-72cb-4a9c-8673-3db29ffc43e2/image-20231007180316197.png" alt="image-20231007180316197" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/3abee7ad-a734-4fa8-a3a8-51581552c82d/image-20231009115240696.png" alt="image-20231009115240696" style="zoom:50%;" />
 
 ## 背景
 

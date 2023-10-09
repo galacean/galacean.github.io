@@ -16,7 +16,7 @@ label: Editor-Feature/Rendering-3d
 
 切换 Shader 时会共用相同类型的属性，比如基础颜色为红色，那么即使切换 Shader，基础颜色仍为红色。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/87453ef7-2a75-4f7c-9f87-330961f6af0b/image-20231007111738732.png" alt="image-20231007111738732" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b3724c3e-e8d9-43af-91c8-c6a80cd027f9/image-20231009112713870.png" alt="image-20231009112713870" style="zoom:50%;" />
 
 | Shader         | 描述              |
 | :------------- | :---------------- |
@@ -58,7 +58,7 @@ Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，�
 
 ### Bake PBR( lightmap 过渡方案 )
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/1617230c-0e2c-419a-ae49-7c60b2220a9d/image-20231007115307271.png" alt="image-20231007115307271" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c539743b-d96a-4081-b959-7ddd5a0db217/image-20231009113312944.png" alt="image-20231009113312944" style="zoom:50%;" />
 
 ### Sky Box
 

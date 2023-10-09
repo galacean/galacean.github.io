@@ -16,11 +16,11 @@ label: Editor-Feature/Rendering-3d
 
 光线以某个方向均匀射出，光线之间是平行的，不受位置影响，常用来模拟太阳光。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/d41ceadf-7cc4-4ec5-952e-545ddcc09efb/image-20231007164919086.png" alt="image-20231007164919086" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/93d8b5ba-6c3d-498d-a343-ec976ba39978/image-20231009113534494.png" alt="image-20231009113534494" style="zoom:50%;" />
 
 #### 使用方式：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/c3c8c050-0357-4eec-8bd9-e9af015aff3e/image-20231007165009703.png" alt="image-20231007165009703" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b554d6f8-c9a4-48a9-9dd3-475dbf63ae55/image-20231009113622354.png" alt="image-20231009113622354" style="zoom:50%;" />
   
 | 属性      | 作用                             |
 | :-------- | :------------------------------- |
@@ -31,11 +31,11 @@ label: Editor-Feature/Rendering-3d
 
 存在于空间中的一点，由该点向四面八方发射光线，光照强度随光源距离衰减，如灯泡。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/ca022b96-adb3-4b42-9317-adc8fb8b58b0/image-20231007165225260.png" alt="image-20231007165225260" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/f0d42119-4ebf-4214-a9c1-154e6c00be65/image-20231009113806918.png" alt="image-20231009113806918" style="zoom:50%;" />
 
 #### 使用方式：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/2e158795-c9a0-4e73-ba46-882f7223690e/image-20231007165305235.png" alt="image-20231007165305235" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5d8e7211-aff1-4911-85ac-844915976ef0/image-20231009113830843.png" alt="image-20231009113830843" style="zoom:50%;" />
 
 | 属性      | 作用                             |
 | :-------- | :------------------------------- |
@@ -47,11 +47,11 @@ label: Editor-Feature/Rendering-3d
 
 由一个特定位置发出，向特定方向延伸的光，光照强度随光源距离衰减，光照区域为锥形，锥形边缘随张开角度衰减，如手电筒。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/94dd6d9a-caa8-4878-ace1-059f4ab1d935/image-20231007165832895.png" alt="image-20231007165832895" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1695c247-a6f1-43c5-8cfe-cb89c507cf31/image-20231009114221422.png" alt="image-20231009114221422" style="zoom:50%;" />
 
 #### 使用方式：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/e865c58e-28c3-466f-b7a0-30b89e241351/image-20231007165901115.png" alt="image-20231007165901115" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/d3ff9ed7-ccba-4112-ba73-568b6b203549/image-20231009114257367.png" alt="image-20231009114257367" style="zoom:50%;" />
 
 | 属性                   | 作用                                                     |
 | :--------------------- | :------------------------------------------------------- |
@@ -77,7 +77,7 @@ label: Editor-Feature/Rendering-3d
 
 #### **环境漫反射**：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/6f2ff568-b7d5-4673-8262-f9303583530a/image-20231007170656596.png" alt="image-20231007170656596" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/7b2f79cc-7886-43da-b1cb-32bb7373dcb0/image-20231009114400810.png" alt="image-20231009114400810" style="zoom:50%;" />
 
 | 属性 | 作用 |
 | :-- | :-- |
@@ -86,7 +86,7 @@ label: Editor-Feature/Rendering-3d
 
 #### **环境镜面反射**：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/da9ed1da-553c-46fe-800d-6d6e050df0ba/image-20231007171003814.png" alt="image-20231007171003814" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/635ba520-5b7c-4156-a617-445045ddf92d/image-20231009114427072.png" alt="image-20231009114427072" style="zoom:50%;" />
 
 | 属性 | 作用 |
 | :-- | :-- |
@@ -96,7 +96,7 @@ label: Editor-Feature/Rendering-3d
 
 #### **背景：**
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/07110f5a-3257-4529-91b4-b97e31e77ba7/image-20231007171608522.png" alt="image-20231007171608522" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1604407b-f6e0-442a-b179-aef4836877cf/image-20231009114455268.png" alt="image-20231009114455268" style="zoom:50%;" />
 
 | 属性 | 作用 |
 | :-- | :-- |
@@ -110,4 +110,4 @@ label: Editor-Feature/Rendering-3d
 
 平行光组件下面可以打开阴影功能，可以前往 [阴影教程](${docs}shadow-cn) 了解更多细节。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/a902239e-4e09-4bfc-aaa4-a781554b40d3/image-20231007173142825.png" alt="image-20231007173142825" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/98e9ce45-5de5-4161-964b-0b9b099b7662/image-20231009114604582.png" alt="image-20231009114604582" style="zoom:50%;" />
