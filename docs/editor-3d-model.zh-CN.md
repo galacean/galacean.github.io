@@ -47,7 +47,7 @@ label: Editor-Feature/Rendering-3d
 
 - **上传模型** ，可以选择以下两种方式上传：
   - 直接把模型文件，或者压缩成 **.zip** 后拖进资源面板:（**推荐**） 
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/d34e7e5f-495f-4777-80e5-860ac7772681/import.gif" alt="import" style="zoom:50%;" />
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/d34e7e5f-495f-4777-80e5-860ac7772681/import.gif" alt="import" style="zoom:100%;" />
 
   - 也可以在资源面板中点击上传按钮： 
   <img src="https://gw.alipayobjects.com/zos/OasisHub/0d250b2d-4559-4333-802d-be2613db388c/image-20231009112129853.png" alt="image-20231009112129853" style="zoom:50%;" />
@@ -62,7 +62,7 @@ label: Editor-Feature/Rendering-3d
 
 一般情况下，模型已经自带动画和材质，用户可以不用做任何操作；但是在一定场景下，开发者可能想要手动微调材质，比如修改颜色，那么我们可以将原材质进行复制，即点击 `duplicate & remap`，然后就可以在原材质参数的基础上进行修改：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/1f5caa3a-bc01-419f-83c0-dd0ef12692bf/remap.gif" alt="remap" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1f5caa3a-bc01-419f-83c0-dd0ef12692bf/remap.gif" alt="remap" style="zoom:100%;" />
 
 - 更多材质调试详见 [材质教程](${docs}editor-3d-material-cn)。
 - 更多动画编辑详见 [动画教程](${docs}editor-animator-cn)。
@@ -71,4 +71,4 @@ label: Editor-Feature/Rendering-3d
 
 上传和修改完模型资源之后，场景并不会自动渲染该模型，我们还需要将模型资源拖拽到场景中：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/8e088349-f36d-4d16-a525-bbb63fe00105/import.gif" alt="import" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/8e088349-f36d-4d16-a525-bbb63fe00105/import.gif" alt="import" style="zoom:100%;" />

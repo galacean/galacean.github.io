@@ -38,23 +38,23 @@ PBR 遵循能量守恒，是基于物理的渲染，并且引入了 [IBL](${docs
 
 - 我们调节材质的金属度，可以发现，金属度越大，周围的环境越清晰，并且开始从白色纯色变成彩色。这是因为电介质（即金属度为 1 时）材质会将光线 100% 全部反射出物体表面，即反射出彩色的周边环境：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/711f8b97-247c-465e-8cf2-4896b0c78534/metal.gif" alt="metal" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/711f8b97-247c-465e-8cf2-4896b0c78534/metal.gif" alt="metal" style="zoom:100%;" />
 
 除此之外，还有很多通用属性可以配置，比如粗糙度、环境遮蔽、自发射光、透明度等等：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/4806589e-386f-404a-82e5-d273e98b707d/other.gif" alt="other" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/4806589e-386f-404a-82e5-d273e98b707d/other.gif" alt="other" style="zoom:100%;" />
 
 ### Unlit
 
 Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/6be78a08-3075-4cd1-8cad-9757fc34f695/unlit.gif" alt="unlit" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/6be78a08-3075-4cd1-8cad-9757fc34f695/unlit.gif" alt="unlit" style="zoom:100%;" />
 
 ### Blinn Phong
 
 Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/eaa93827-29a4-46ad-b9d3-f179fa200c57/blinn.gif" alt="blinn" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/eaa93827-29a4-46ad-b9d3-f179fa200c57/blinn.gif" alt="blinn" style="zoom:100%;" />
 
 ### Bake PBR( lightmap 过渡方案 )
 
@@ -64,7 +64,7 @@ Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，�
 
 天空盒背景，需要绑定一张 HDR 贴图
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/3e7d376f-c8a4-4200-b859-d1a8db1859fe/skybox.gif" alt="skybox" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/3e7d376f-c8a4-4200-b859-d1a8db1859fe/skybox.gif" alt="skybox" style="zoom:100%;" />
 
 | 属性       | 功能       |
 | :--------- | :--------- |
@@ -77,7 +77,7 @@ Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，�
 
 程序化大气散射天空
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/cee919e3-07dc-4dec-9d7a-4dafd0a2cb90/skyProcedural.gif" alt="skyProcedural" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/cee919e3-07dc-4dec-9d7a-4dafd0a2cb90/skyProcedural.gif" alt="skyProcedural" style="zoom:100%;" />
 
 | 属性                 | 功能         |
 | :------------------- | :----------- |
