@@ -109,32 +109,27 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 ```mermaid
 stateDiagram
-    [*] --> Idle
-    Idle --> Playing
-    Playing --> Crash
+    [*] --> Preparation
+    Preparation --> Fly
+    Fly --> Crash
     Crash --> Result
-    Result --> Idle: Restart
+    Result --> Preparation: Restart
     Result --> [*]
 
-    state Idle {
+    state Preparation {
       Bird.Hang()
-       --
       Pipe.Hide()
-       --
       Ground.Move()
     }
 
-    state Playing {
+    state Fly {
        Bird.Fly()
-        --
        Pipe.Move()
     }
 
     state Crash {
        Bird.Drop()
-       --
        Pipe.Pause()
-       --
        Ground.Pause()
     }
 
