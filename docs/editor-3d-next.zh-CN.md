@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 场景搭建
+title: 3D 简介
 type: 功能
 group: 3D 渲染
 label: Editor-Feature/Rendering-3d
@@ -13,9 +13,10 @@ label: Editor-Feature/Rendering-3d
 > 各个环节没有严格的顺序要求，并且每个环节之间可能需要多次反馈调整
 
 ```mermaid
-%%{init: { 'logLevel': 'debug', 'theme': 'dark' } }%%
+%%{init: { 'timeline': {'disableMulticolor': true} , 'themeVariables': {
+              'cScale0': '#3F8EF8'
+       } } }%%
 timeline
-  	title 场景搭建环节简介
     导入模型 : 自带几何体
             : glTF、FBX
     调整材质 : Unlit
