@@ -70,19 +70,29 @@ On the mobile side, touch will trigger the default behavior of HTML elements. On
 (engine.canvas._webCanvas as HTMLCanvasElement).style.touchAction = "none";
 ```
 
-#### 1. How to troubleshoot why the Entity is not detected by the touch point
+#### 1. Why does the right-click operation fail and the menu bar pops up?
+
+This is caused by the right-click triggering the default behavior of the system. You can add the following code to prevent it:
+
+```typescript
+document.oncontextmenu = (e) => {
+  e.preventDefault();
+};
+```
+
+#### 2. How to troubleshoot why the Entity is not detected by the touch point
 - **Physics engine**: Please ensure that the physics engine is initialized at the same time as the engine is initialized.
 - **Collision component**: Please ensure that the Entity contains the Collision component, and the shape of the collision body fits the range of the collision.
 - **Entity is active**: Entity is correctly added to the specified position in the three-dimensional space, and isActive is True.
 - **Not occluded**: Please ensure that the Entity that is expected to be hit is in the normally rendered camera and there is no other occlusion in the direction facing the camera.
 
-#### 2. How to implement click hits in three-dimensional space?
+#### 3. How to implement click hits in three-dimensional space?
 Click hits in three-dimensional space mainly rely on radiographic detection. The entire process can be roughly divided into three steps:
 - Entity adds the collider component and sets the appropriate collider shape. (Please make sure the Entity is added in the three-dimensional space)
 - The canvas listens to **PointerEvent**, obtains the coordinate information carried by the click event received by the screen, and converts it into a ray in the three-dimensional space. Here, it can be simply understood that the point passes through the far plane and the near plane of the NDC matrix at the same time, so only the near plane intersects the point The three-dimensional space coordinates of is the starting point, and the left side of the three-dimensional space of the far plane is the point that the ray passes through, you can get this ray, see the [viewportPointToRay](${api}core/Camera#viewportPointToRay) function in Camera for details.
 - Next, you only need to call the ray detection interface of the physics engine to get the Entity instance that collided with the ray, and then execute the corresponding interface method in the instance.
 
-#### 3. Compatibility
+#### 4. Compatibility
 
 As of July 2022, the compatibility of PointerEvent on different platforms has reached nearly 95%.
 
