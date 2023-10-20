@@ -56,7 +56,7 @@ label: Introduction/Basic
 
 ### NPM 库之间的依赖关系
 
-在同一项目中，请保证[引擎核心架构逻辑子包](https://github.com/galacean/engine/tree/main/packages)的版本一致，[工具包](https://github.com/galacean/engine-toolkit)请务必与使用引擎的大版本保持一致。
+在同一项目中，请保证[引擎核心架构逻辑子包](https://github.com/galacean/engine/tree/main/packages)的版本一致，[工具包](https://github.com/galacean/engine-toolkit)请务必与使用引擎的大版本保持一致，以 1.0.x 版本的引擎为例，需要配套使用 1.0.y 版本的工具包。
 
 ### 版本升级
 
