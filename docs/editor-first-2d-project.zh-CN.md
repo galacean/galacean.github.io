@@ -9,7 +9,7 @@ label: Editor-Introduction
 >
 > 原游戏链接：[http://flappybird.io/](http://flappybird.io/)
 
-Flappy Bird 是一个 2D 项目， 我们先通过编辑器的 `New Project`  创建一个 `2D Project`。项目创建之后，会自动打开一个空白的 2D 场景编辑器。
+Flappy Bird 是一个 2D 项目， 我们先通过编辑器的 `New Project` 创建一个 `2D Project`。项目创建之后，会自动打开一个空白的 2D 场景编辑器。
 
 ## 准备资源
 
@@ -25,27 +25,23 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里]()可以下载图片�
 
 ### 上传资源
 
-回到场景编辑器，点击资源面板上的上传按钮 <img src="https://gw.alipayobjects.com/zos/OasisHub/07b876d3-462b-4a06-a2da-ce68d2932034/image-20231007145111353.png" alt="image-20231007145111353" style="zoom:50%;" />，选择  `Sprite`，此时会唤起操作系统的文件查看器，选中所有 FlappyBird 目录下的图片。上传之后，如下图所示，编辑器为每张图片创建了一个 [Texture](${docs}texture) 资源和 一个 [Sprite](${docs}sprite) 资源（为了和 Texture 资源作区分，Sprite 对象带灰色圆角矩形背景）。在接下来的操作中，我们只需要关心 Sprite 资源。
+回到场景编辑器，点击资源面板上的上传按钮 <img src="https://gw.alipayobjects.com/zos/OasisHub/07b876d3-462b-4a06-a2da-ce68d2932034/image-20231007145111353.png" alt="image-20231007145111353" style="zoom:50%;" />，选择 `Sprite`，此时会唤起操作系统的文件查看器，选中所有 FlappyBird 目录下的图片。上传之后，如下图所示，编辑器为每张图片创建了一个 [Texture](${docs}texture) 资源和 一个 [Sprite](${docs}sprite) 资源（为了和 Texture 资源作区分，Sprite 对象带灰色圆角矩形背景）。在接下来的操作中，我们只需要关心 Sprite 资源。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/7f13679f-de18-4621-81b1-5834b5d00bd7/image-20231007145451371.png" alt="image-20231007145451371" style="zoom:50%;" />
 
-到这里，我们已经把资源上传完，但是有洁癖的你看到这散乱的资源可能已经按耐不住整理的冲动了。让我们创建一个文件夹，并重命名为 *Sprites*，把刚上传的资源批量选中后拖到 *Sprites* 目录中。这样做的目的不仅是让资源面板更加整洁，还为我们下一步创建 [Atlas 图集](${docs}sprite-atlas)资源做好了准备。
+到这里，我们已经把资源上传完，但是有洁癖的你看到这散乱的资源可能已经按耐不住整理的冲动了。让我们创建一个文件夹，并重命名为 _Sprites_，把刚上传的资源批量选中后拖到 _Sprites_ 目录中。这样做的目的不仅是让资源面板更加整洁，还为我们下一步创建 [Atlas 图集](${docs}sprite-atlas)资源做好了准备。
 
 ### 创建图集
 
-为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过检查器面板上的 `Add to List` 按钮把除了背景图（ `background-spr.png`） 和地面（`grass.png`）之外的 Sprite 资源都添加到列表中。
+为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过检查器面板上的 `Add to List` 按钮把所有 Sprite 资源都添加到列表中。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/a58d8beb-7e8e-4b5e-a53e-03ad37304009/image-20231007171348757.png" alt="image-20231007171348757" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*en0JTIdKargAAAAAAAAAAAAADleLAQ/original" alt="image-20231007171348757" style="zoom:50%;" />
 
 点击 `Pack and Preview` 按钮可以看到 Atlas 创建成功：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/cc3e12d2-5b7a-4968-8f4f-e8304a060caa/image-20231007153448666.png" alt="image-20231007153448666" style="zoom:50%;" />
-
-
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*Xc0ZR71aXdMAAAAAAAAAAAAADleLAQ/original" alt="image-20231007153448666" style="zoom:50%;" />
 
 恭喜你，到这里你已经完成了资源上传和管理的操作。接下去我们进行游戏场景搭建的环节。
-
-
 
 ## 搭建场景
 
@@ -69,29 +65,31 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里]()可以下载图片�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/c4e2cf84-3834-4178-86d0-3ad9faa7bd28/image-20231007163240028.png" alt="image-20231007163240028" style="zoom:50%;" />
 
-考虑到管道会重复出现，我们在节点树中把一对管道设置成一个 `PipeMother` 的组，并把它放到 `Pipe` 节点下。这样，后面通过在 Pipe 上绑定脚本组件就可以获取  `PipeMother` 以实现管道的复用。
+考虑到管道会重复出现，我们在节点树中把一对管道设置成一个 `PipeMother` 的组，并把它放到 `Pipe` 节点下。这样，后面通过在 Pipe 上绑定脚本组件就可以获取 `PipeMother` 以实现管道的复用。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/ef20415a-aa57-4236-b29e-e4df88f7e747/image-20231007163400680.png" alt="image-20231007163400680" style="zoom:50%;" />
 
 ### 加上草地
 
-我们通过材质的 `tilingOffset` 属性来实现草地在地上平铺且能水平移动的效果。
-
-> 由于 `SpriteRenderer` 的默认材质尚未支持  `tilingOffset` 属性，我们暂时先用一个平面几何体绑定 unlit 材质的方式来实现。后续等  `SpriteRenderer` 支持  `tilingOffset` 属性后就不需要这么麻烦了。
+我们可以通过结合`精灵渲染模式`与 `动画片段编辑` 来实现草地来实现草地在地上平铺且能水平移动的效果。
 
 步骤如下：
 
 1. 在节点树中创建一个节点，命名为 `ground`。
 
-2. 在检查器面板中通过 `Add Component` 按钮添加 `Mesh Renderer` 组件，并且把 `Mesh` 属性设置成 `Plane`。
+2. 在检查器面板中通过 `Add Component` 按钮添加 `Sprite Renderer` 组件，并且把 `SpriteRenderer DrawMode Info` 属性设置成 `Tiled`，并将宽度设置为 `8.14`
 
-3. 在资源面版中创建一个 `Material`，把 `Shader` 属性设置成 `Unlit`，`Base Texture` 设置成 `ground.png`，`UV tiling offset` 的 `x` 值设置成 `21`。
+   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*pDBbTp6a78oAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" style="zoom:50%;" />
 
-   <img src="https://gw.alipayobjects.com/zos/OasisHub/d5d5114c-ec4a-4bd0-a395-ae14633065c5/image-20231007173243980.png" alt="image-20231007173243980" style="zoom:50%;" />
+3. 此时就得到了一个平铺完毕的地面，接下来我们可以通过创建动画片段来让它动起来！详见[动画片段编辑](${docs}editor-animationClip)。
 
-4. 重新选中 `ground` 节点，设置 `Mesh Renderer` 的 `Material` 为上一步创建的材质，然后调整一下节点的变换属性。
+   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*3d2GSINL_8IAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" style="zoom:50%;" />
 
-   <img src="https://gw.alipayobjects.com/zos/OasisHub/efc19c94-d350-4de8-a043-774d6cf36f4a/image-20231007173843994.png" alt="image-20231007173843994" style="zoom:50%;" />
+### 添加遮罩
+
+添加完地面后发现，左右显示好像穿邦了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}editor-sprite-mask)
+
+   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*d_ZBS6zxOjQAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" style="zoom:50%;" />
 
 ### 加上 GUI
 
@@ -101,40 +99,481 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 至此，界面搭建完毕！观察一下左侧的节点树的完整结构，好的树结构对复杂场景管理来说很重要。
 
-> 如果你在上述过程中需要处理精灵之间的遮盖关系，就像 CSS 里的 `z-index` 属性一样，你可以通过 `Sprite Renderer`  的 `priority` 属性来设置，值越大越后渲染，即越能遮住其他精灵。
+> 如果你在上述过程中需要处理精灵之间的遮盖关系，就像 CSS 里的 `z-index` 属性一样，你可以通过 `Sprite Renderer` 的 `priority` 属性来设置，值越大越后渲染，即越能遮住其他精灵。
+
+### 增加物理反馈
+
+在此项目中，我们需要为**小鸟在触碰到水管或地面**和**鼠标在点击重开按钮**增加物理反馈，在编辑器中增加物理反馈只需要两步：
+
+- 添加合适的碰撞体
+- 脚本中处理对应的碰撞回调
+
+#### 添加碰撞体
+
+碰撞体描述了事物的位姿形态，因此在添加碰撞体时应该尽量贴合物体实际显示的大小。关于碰撞器的使用详见[碰撞器](${docs}editor-collider)，此处演示为小鸟添加碰撞体。
+
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_szwQL3V1AQAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
+
+#### 脚本回调
+
+```typescript
+/**
+ * 挂载在小鸟节点上的脚本组件
+ */
+class Bird extends Script {
+  onTriggerEnter(other: ColliderShape): void {
+    // 与水管或地面发生了碰撞
+  }
+}
+
+/**
+ * 挂载在重开按钮节点上的脚本组件
+ */
+class Restart extends Script {
+  onPointerClick() {
+    // 点击了重开按钮
+  }
+}
+```
 
 ## 编写逻辑
 
-在编写逻辑前，我们先梳理对局的状态以及状态下不同对象对应的表现。
+正式编写逻辑前，需要对游戏进行全局链路分析：
+
+- 状态切换与通信方式
+- 不同状态下各个实例对应的表现
+
+### 状态切换与通信方式
 
 ```mermaid
 stateDiagram
-    [*] --> Preparation
-    Preparation --> Fly
-    Fly --> Crash
-    Crash --> Result
-    Result --> Preparation: Restart
-    Result --> [*]
-
-    state Preparation {
-      Bird.Hang()
-      Pipe.Hide()
-      Ground.Move()
-    }
-
-    state Fly {
-       Bird.Fly()
-       Pipe.Move()
-    }
-
-    state Crash {
-       Bird.Drop()
-       Pipe.Pause()
-       Ground.Pause()
-    }
-
-    state Result {
-      GUI.Show()
-    }
+    [*] --> Idle
+    Idle --> Flying: Tap screen
+    Flying --> Crash: Collision
+    Crash --> Finish: Landing
+    Finish --> Idle: Click restart
+    Finish --> [*]
 ```
 
+我们枚举了全局**全局状态**与**切换条件**，可以将它们想象成穿梭在不同实例之间的`信息流`，当小鸟在准备阶段时**按下屏幕**，信息被解析并传递给其他实例对象，此时地面开始播放循环移动动画，水管开始交替出现并消失，`信息流`的传递可以用[事件系统](${docs}event)实现，下面我们简化逻辑，在 `Bird` 中监听屏幕点击事件，一旦点击发生，`Idle` 状态就会切换至 `Flying` ，并且其他实例也会监听到对应状态改变。
+
+```typescript
+/**
+ * 全局状态的枚举
+ */
+enum EnumState {
+  Idle,
+  Flying,
+  Crash,
+  Finish,
+}
+
+/**
+ * 对全局状态的控制与分发
+ */
+class GameCtrl extends EventDispatcher {
+  private static _ins: GameCtrl;
+  static get ins() {
+    return (this._ins ||= new GameCtrl());
+  }
+
+  private _gameState: EnumState = EnumState.Idle;
+  set gameState(value: EnumState) {
+    if (this._gameState !== value) {
+      console.log("GameCtrl：全局状态被改变");
+      this._gameState = value;
+      this.dispatch("State_Change", value);
+    }
+  }
+
+  get gameState() {
+    return this._gameState;
+  }
+}
+
+/**
+ * 挂载在小鸟节点上的脚本组件
+ */
+class Bird extends Script {
+  onAwake(): void {
+    GameCtrl.ins.on("State_Change", (state: EnumState) => {
+      console.log("Bird：监听到了状态改变");
+    });
+  }
+
+  onUpdate(deltaTime: number): void {
+    const { ins } = GameCtrl;
+    if (
+      ins.gameState === EnumState.Idle &&
+      this.engine.inputManager.isPointerDown()
+    ) {
+      console.log("Bird：按下屏幕，对局开始");
+      ins.gameState = EnumState.Flying;
+    }
+  }
+}
+
+/**
+ * 挂载在地面节点上的脚本组件
+ */
+class Ground extends Script {
+  onAwake(): void {
+    GameCtrl.ins.on("State_Change", (state: EnumState) => {
+      console.log("Ground：监听到了状态改变");
+    });
+  }
+}
+```
+
+同理，依照流程图中各个状态的切换条件，完善其他状态之间的切换（`GameCtrl.ins.gameState = 对应状态`）：
+
+- `Flying` -> `Crash` ：小鸟与水管或地面发生碰撞
+- `Crash` -> `Result` ：小鸟落地（判断 Y 轴坐标即可）
+- `Result` -> `Idle` ：点击重新开始按钮
+
+### 完善表现
+
+我们已经将全局的状态都串联起来，并且保证各个实例都能获取当前状态并监听到状态的改变，接下来只需要让各个实例在不同状态下展示对应的表现即可。
+
+```mermaid
+timeline
+     title Game life cycle
+     Idle : Bird.hang() : Ground.move() : Pipe.reset() : Gui.hide()
+     Flying : Bird.fly() : Ground.move() : Pipe.move()
+     Crash : Bird.crash() : Ground.pause() : Pipe.pause()
+     Finish : Gui.show()
+```
+
+#### 小鸟
+
+```typescript
+/**
+ * 挂载在小鸟节点上的脚本组件
+ */
+class Bird extends Script {
+  private _animator: Animator;
+
+  /**
+   * 第一次触发可用状态时调用,只调用一次。
+   */
+  onAwake() {
+    this._animator = this.entity.getComponent(Animator);
+    GameCtrl.ins.on("State_Change", (state: EnumState) => {
+      const animator = this._animator;
+      switch (state) {
+        case EnumRoundState.Idle:
+          this._alive();
+          this._hang();
+          break;
+        case EnumRoundState.Flying:
+          break;
+        case EnumRoundState.Crash:
+          this._dead();
+          this._crash();
+          break;
+        case EnumRoundState.Result:
+          break;
+      }
+    });
+  }
+
+  onUpdate(deltaTime: number): void {
+    const { ins } = GameCtrl;
+    if (
+      ins.gameState === EnumState.Idle &&
+      this.engine.inputManager.isPointerDown()
+    ) {
+      this._fly();
+      ins.gameState = EnumState.Flying;
+    }
+  }
+
+  onTriggerEnter(other: ColliderShape): void {
+    GameCtrl.ins.gameState = EnumState.Crash;
+  }
+
+  private _alive(): void {
+    // 帧动画-拍动翅膀
+    animator.play("alive", 0);
+  }
+
+  private _dead(): void {
+    // 停止拍动翅膀
+    animator.play("dead", 0);
+  }
+
+  private _hang(): void {
+    // 准备阶段
+    animator.play("Hang", 1);
+    animator.play("Hang", 2);
+  }
+
+  private _fly(): void {
+    // 向上冲
+    animator.play("Fly", 1);
+    animator.play("Fly", 2);
+  }
+
+  private _crash(): void {
+    // 坠落
+    animator.play("Crash", 1);
+    animator.play("Crash", 2);
+  }
+}
+```
+
+#### 水管
+
+水管较为复杂，在对局开始时，我们让水管向左移动，当需要生成下个水管时，从池子中获取，当水管移动超出显示区域时，回收水管到池子中。
+
+```typescript
+/**
+ * 挂载在水管节点上的脚本组件
+ */
+class Pipe extends Script {
+  // 水管池子
+  private _pipePool = [];
+  // 当前激活的水管
+  private _pipes = [];
+  // 水管母体
+  private _pipeMother: Entity;
+  // 是否停止
+  private _isPaused: boolean = true;
+
+  private _inv = 2.87;
+  private _up = 4.48;
+  private _down = -3.2;
+  private _downLimit = -2.12 + 1.08;
+  private _upLimit = 3.4 - 1.08;
+  private _pipeHorizontalV = 3;
+  private _leftDistance = 2;
+
+  onAwake() {
+    this._pipeMother = this.entity.children[0];
+    this._pipeMother.parent = null;
+    GameCtrl.ins.on("State_Change", (state: EnumState) => {
+      switch (state) {
+        case EnumState.Idle:
+          this._reset();
+          break;
+        case EnumState.Flying:
+          this._move();
+          break;
+        case EnumState.Crash:
+          this._pause();
+          break;
+        default:
+          break;
+      }
+    });
+  }
+
+  onUpdate(deltaTime: number) {
+    if (this._isPaused) {
+      return;
+    }
+    const { ins } = GameCtrl;
+    const moveDistance = this._pipeHorizontalV * deltaTime;
+    if ((this._leftDistance -= moveDistance) <= 0) {
+      this._leftDistance = 4;
+      this._generate();
+    }
+    const { _pipes: pipes } = this;
+    for (let i = pipes.length - 1; i >= 0; i--) {
+      const pipe = pipes[i];
+      const { position } = pipe.transform;
+      const posX = position.x - moveDistance;
+      if (position.x >= 0 && posX < 0) {
+        ins.score += 1;
+      }
+      if (posX <= -4.53) {
+        pipes.splice(i, 1);
+        pipe.parent = null;
+        this._pipePool.push(pipe);
+      } else {
+        position.x = posX;
+      }
+    }
+  }
+
+  private _move() {
+    this._isPaused = false;
+  }
+
+  private _pause() {
+    this._isPaused = true;
+  }
+
+  private _reset() {
+    const { _pipes: pipes } = this;
+    for (let i = 0, n = pipes.length; i < n; i++) {
+      const pipe = pipes[i];
+      pipe.parent = null;
+      this._pipePool.push(pipe);
+    }
+    pipes.length = 0;
+    this._leftDistance = 2;
+    this._isPaused = true;
+  }
+
+  private _getOrCreatePipe() {
+    let pipe: Entity;
+    if (this._pipePool.length > 0) {
+      pipe = this._pipePool.pop();
+    } else {
+      pipe = this._pipeMother.clone();
+    }
+    this._pipes.push(pipe);
+    const center =
+      Math.random() * (this._upLimit - this._downLimit) + this._downLimit;
+
+    const [upColliderShape, downColliderShape] = <BoxColliderShape[]>(
+      pipe.getComponent(StaticCollider).shapes
+    );
+
+    const upPipe = pipe.findByName("up_pipe");
+    const upRenderer = upPipe.getComponent(SpriteRenderer);
+    const upHeight = this._up - center - this._inv / 2;
+    upColliderShape.size.set(1.2, upHeight, 1);
+    upColliderShape.position.set(0, 4.48 - upHeight / 2, 0);
+    upRenderer.height = upHeight;
+    const downPipe = pipe.findByName("down_pipe");
+    const downRenderer = downPipe.getComponent(SpriteRenderer);
+    const downHeight = center - this._down - this._inv / 2;
+    downColliderShape.size.set(1.2, downHeight, 1);
+    downColliderShape.position.set(0, downHeight / 2 - 3.2, 0);
+    downRenderer.height = downHeight;
+    pipe.transform.position.x = 4.53;
+    this.entity.addChild(pipe);
+  }
+}
+```
+
+可以看到，上方的逻辑就是对流程图的代码完善：
+
+- 当状态切换为 `Idle` 时，`Pipe._reset()` 函数被触发，场上所有的水管都被回收至池中
+- 当状态切换为 `Flying` 时，`Pipe._move()` 函数被触发，水管命运的齿轮开始转动，帧循环中判断是否需要生成新的水管，是否需要回收旧的水管，生成新水管使用了引擎自带的 [clone](${docs}entity-clone-cn) 能力，可以完整复刻节点的结构与组件。
+- 当状态切换为 `Crash` 时，`Pipe._pause()` 函数被触发，水管停止移动。
+
+#### 地面
+
+地面的逻辑相对简单，只需要在 `Flying` 时让地面移动，其余的时间让地面静止即可。
+
+```typescript
+class Ground extends Script {
+  private _animator: Animator;
+  onAwake() {
+    this._animator = this.entity.getComponent(Animator);
+    GameCtrl.ins.on("State_Change", (state: EnumState) => {
+      if (state === EnumState.Flying) {
+        this._move();
+      } else {
+        this._pause();
+      }
+    });
+    this._pause();
+  }
+
+  private _move() {
+    this._animator.speed = 1;
+  }
+
+  private _pause() {
+    this._animator.speed = 0;
+  }
+}
+```
+
+#### GUI
+
+在实现完上述逻辑后，项目基本可以正常运行了，此时我们需要为游戏加上分数显示让他的逻辑更加完整，同样分析分数的改变与传递时机，小鸟通过水管时会触发分数的叠加，对局重开时会触发分数的重置，分数的改变信息会传递给各个实例，参考 `gameState` 依葫芦画瓢，我们在 `GameCtrl` 中添加 `score` 属性。
+
+```typescript
+class GameCtrl extends EventDispatcher {
+  private static _ins: GameCtrl;
+
+  static get ins() {
+    return (this._ins ||= new GameCtrl());
+  }
+
+  private _gameState: EnumState = EnumState.Idle;
+  private _score: number = 0;
+  set gameState(value: EnumState) {
+    if (this._gameState !== value) {
+      this._gameState = value;
+      if (value === EnumState.Idle) {
+        // 重开时重置分数
+        this._reset();
+      }
+      this.dispatch("State_Change", value);
+    }
+  }
+
+  get gameState() {
+    return this._gameState;
+  }
+
+  set score(val: number) {
+    this._score = val;
+    this.dispatch("Score_Change", val);
+  }
+
+  get score() {
+    return this._score;
+  }
+
+  private _reset() {
+    this.score = 0;
+  }
+}
+```
+
+这样一来，分数变化整体的流程也完善了，接下来只需要完善分数的展示逻辑即可：
+
+- 切换至 `Idle` 状态时，隐藏分数
+- 切换至 `Flying` 状态时，展示分数
+
+```typescript
+class Score extends Script {
+   const { engine, entity } = this;
+   const { ins } = GameCtrl;
+   ins.on("State_Change", (state: EnumState) => {
+      switch (state) {
+        case EnumState.Idle:
+          this._hide();
+          break;
+        case EnumState.Flying:
+          this._show(ins.score);
+          break;
+      }
+   });
+
+   ins.on("Score_Change", (num: number) => {
+      if (ins.gameState !== EnumState.Idle) {
+        this._show(num);
+      }
+   });
+
+   private _show(score:number):void {
+      // 展示分数
+   }
+
+   private _hide(score:number):void {
+      // 隐藏分数
+   }
+}
+
+```
+
+需要注意的是，分数被我们打成了图集，这样在性能上会有很大提升，在编辑器中，我们可以通过相对路径十分方便地获取虚拟目录下的图集，随后通过图集获取各个数字对应的精灵资产：
+
+```typescript
+engine.resourceManager
+  .load({ type: AssetType.SpriteAtlas, url: "/Assets/atlas/SpriteAtlas" })
+  .then((atlas: SpriteAtlas) => {
+    this._atlas = atlas;
+    const targetSprite = atlas.getSprite(
+      "Assets/sprites/" + score[i] + "-spr.png"
+    );
+  });
+```
