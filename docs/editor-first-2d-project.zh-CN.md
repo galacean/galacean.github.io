@@ -9,7 +9,7 @@ label: Editor-Introduction
 >
 > 原游戏链接：[http://flappybird.io/](http://flappybird.io/)
 
-Flappy Bird 是一个 2D 项目， 我们先通过编辑器的 `New Project` 创建一个 `2D Project`。项目创建之后，会自动打开一个空白的 2D 场景编辑器。
+Flappy Bird 是一个 2D 项目，编辑器首页自带的 2D 模版便是按照此文档一步一步实现的，我们先通过编辑器的 `New Project` 创建一个 `2D Project`。（若遇到问题，可参照**首页**->**模版**->**像素小鸟**）
 
 ## 准备资源
 
