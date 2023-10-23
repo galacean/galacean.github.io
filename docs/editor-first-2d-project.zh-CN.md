@@ -244,6 +244,18 @@ timeline
      Finish : Gui.show()
 ```
 
+需要注意的是，了解过[动画组件](${docs}animator)的同学应该知道 `Animator.play()` 这个接口，但在示例中鲜少有同学设置过这个接口的 `Layer` 参数，现在我们就示范一下如何使用，首先先将小鸟的动画按照类型分类：
+
+```mermaid
+timeline
+    title History of Social Media Platform
+    替换精灵(Layer0) : Alive : Dead
+    修改坐标(Layer1) : Hang, Fly, Crash
+    修改旋转(Layer2) : Hang, Fly, Crash
+```
+
+这样一来，不同层的原子动画互相不会影响，而调用时也只需标明使用层级即可，完整代码如下：
+
 #### 小鸟
 
 ```typescript
@@ -253,9 +265,6 @@ timeline
 class Bird extends Script {
   private _animator: Animator;
 
-  /**
-   * 第一次触发可用状态时调用,只调用一次。
-   */
   onAwake() {
     this._animator = this.entity.getComponent(Animator);
     GameCtrl.ins.on("State_Change", (state: EnumState) => {
@@ -321,6 +330,99 @@ class Bird extends Script {
   }
 }
 ```
+
+由于动画片段编辑只能编辑绝对的坐标或旋转变化，例如每次飞行的动画，他的旋转变化是绝对的，但坐标变换却是相对于当前的坐标改变的，因此我们可以在 `StateMachineScript` 中实现，以 `Fly` 动画为例：
+
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T_stQakEWT0AAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
+
+然后打开这个脚本，并在其中添加上自由落体的坐标变化：
+
+```typescript
+export default class extends StateMachineScript {
+  // 小鸟的位置
+  private _position: Vector3;
+  // 起始时间
+  private _startTime = 0;
+  // 起始位置
+  private _startY = 0;
+  // 起始速度
+  private _startV = 10;
+  // 最终匀速速度
+  private _maxV = -8;
+  // 重力加速度
+  private _gravity = -35;
+  // [0, _dividTime] 匀加速；[_dividTime, +∞] 匀速
+  private _dividTime = 18 / 35;
+
+  onStateEnter(
+    animator: Animator,
+    animatorState: AnimatorState,
+    layerIndex: number
+  ): void {
+    this._startTime = animator.engine.time.elapsedTime;
+    this._position = animator.entity.transform.position;
+    this._startY = this._position.y;
+  }
+
+  onStateUpdate(
+    animator: Animator,
+    animatorState: AnimatorState,
+    layerIndex: number
+  ): void {
+    const { engine } = animator;
+    const { _maxV, _startV, _gravity, _dividTime, _position } = this;
+    const subTime = engine.time.elapsedTime - this._startTime;
+    if (subTime <= _dividTime) {
+      _position.y =
+        ((_startV + (_startV + subTime * _gravity)) * subTime) / 2 +
+        this._startY;
+    } else {
+      _position.y =
+        ((_maxV + _startV) * _dividTime) / 2 +
+        _maxV * (subTime - _dividTime) +
+        this._startY;
+    }
+  }
+}
+```
+
+同理，在小鸟坠落时也需要添加 `Crash` 脚本：
+
+```typescript
+class extends StateMachineScript {
+  // 是否已经落地
+  private _bLanding: boolean = false;
+
+  onStateEnter(
+    animator: Animator,
+    animatorState: AnimatorState,
+    layerIndex: number
+  ): void {
+    this._bLanding = false;
+  }
+
+  onStateUpdate(
+    animator: Animator,
+    animatorState: AnimatorState,
+    layerIndex: number
+  ): void {
+    if (this._bLanding) {
+      return;
+    }
+    const { entity, engine } = animator;
+    const { position } = entity.transform;
+    // 地面高度
+    if (position.y <= -3.1) {
+      GameCtrl.ins.gameState = EnumState.Result;
+      this._bLanding = true;
+    } else {
+      position.y -= engine.time.deltaTime;
+    }
+  }
+}
+```
+
+OK！这个游戏中最复杂的部分已经被我们成功攻克了，此时点击屏幕，小鸟触发飞行动画，同时每帧计算自由落体的位置，触碰到障碍物后，小鸟触发坠落动画，同时每帧计算坠落的位置。
 
 #### 水管
 
@@ -457,7 +559,7 @@ class Pipe extends Script {
 
 #### 地面
 
-地面的逻辑相对简单，只需要在 `Flying` 时让地面移动，其余的时间让地面静止即可。
+地面的逻辑相对简单，只需要在 `Flying` 时让地面移动，其余的时间让地面保持静止即可。
 
 ```typescript
 class Ground extends Script {
@@ -535,9 +637,34 @@ class GameCtrl extends EventDispatcher {
 
 ```typescript
 class Score extends Script {
-   const { engine, entity } = this;
-   const { ins } = GameCtrl;
-   ins.on("State_Change", (state: EnumState) => {
+  // 数字精灵所在的图集
+  private _atlas: SpriteAtlas;
+  // 提供克隆的数字母体
+  private _scoreMother: Entity;
+  // 当前显示的数字节点数组
+  private _scoreEntities: Entity[] = [];
+  // 当前显示的数字精灵渲染器数组
+  private _scoreRenderers: SpriteRenderer[] = [];
+  // 每个数字之间的间隔（归一化）
+  private _inv: number = 1.2;
+
+  onAwake() {
+    const { engine, entity } = this;
+    const { ins } = GameCtrl;
+    this._scoreEntities[0] = this._scoreMother =
+      entity.findByName("scoreMother");
+
+    this._scoreRenderers[0] =
+      this._scoreEntities[0].getComponent(SpriteRenderer);
+
+    // 通过相对路径获取精灵图集资产
+    engine.resourceManager
+      .load({ type: AssetType.SpriteAtlas, url: "/Assets/atlas/SpriteAtlas" })
+      .then((atlas: SpriteAtlas) => {
+        this._atlas = atlas;
+      });
+
+    ins.on("State_Change", (state: EnumState) => {
       switch (state) {
         case EnumState.Idle:
           this._hide();
@@ -546,34 +673,96 @@ class Score extends Script {
           this._show(ins.score);
           break;
       }
-   });
+    });
 
-   ins.on("Score_Change", (num: number) => {
+    ins.on("Score_Change", (num: number) => {
       if (ins.gameState !== EnumState.Idle) {
         this._show(num);
       }
-   });
+    });
+  }
 
-   private _show(score:number):void {
-      // 展示分数
-   }
+  private _show(score: number): void {
+    const {
+      _scoreEntities: entities,
+      _scoreRenderers: renderers,
+      _scoreMother: mother,
+    } = this;
+    const score = num.toFixed(0);
+    const needCount = score.length;
+    const currCount = entities.length;
+    const n = Math.max(needCount, currCount);
+    const width = needCount * this._inv;
+    for (let i = 0; i < n; i++) {
+      if (i >= needCount) {
+        entities[i] && (entities[i].isActive = false);
+      } else {
+        let entity: Entity;
+        let renderer: SpriteRenderer;
+        if (entities[i]) {
+          entity = entities[i];
+          renderer = renderers[i];
+        } else {
+          entity = entities[i] = mother.clone();
+          renderer = renderers[i] = entity.getComponent(SpriteRenderer);
+          this.entity.addChild(entity);
+        }
+        entity.isActive = true;
+        entity.transform.position.x = this._inv * (i + 0.5) - width / 2;
+        renderer.priority = 10;
+        renderer.sprite = this._atlas?.getSprite(
+          "Assets/sprites/" + score[i] + "-spr.png"
+        );
+      }
+    }
+  }
 
-   private _hide(score:number):void {
-      // 隐藏分数
-   }
+  private _hide(): void {
+    const { _scoreEntities: entities } = this;
+    for (let i = 0, n = entities.length; i < n; i++) {
+      entities[i].isActive = false;
+    }
+  }
 }
-
 ```
 
-需要注意的是，分数被我们打成了图集，这样在性能上会有很大提升，在编辑器中，我们可以通过相对路径十分方便地获取虚拟目录下的图集，随后通过图集获取各个数字对应的精灵资产：
+Restart 按钮相对来说比较简单：
 
 ```typescript
-engine.resourceManager
-  .load({ type: AssetType.SpriteAtlas, url: "/Assets/atlas/SpriteAtlas" })
-  .then((atlas: SpriteAtlas) => {
-    this._atlas = atlas;
-    const targetSprite = atlas.getSprite(
-      "Assets/sprites/" + score[i] + "-spr.png"
-    );
-  });
+class Restart extends Script {
+  private collider: StaticCollider;
+  private spriteRenderer: SpriteRenderer;
+
+  onAwake() {
+    const { entity } = this;
+    this.collider = entity.getComponent(StaticCollider);
+    this.spriteRenderer = entity.getComponent(SpriteRenderer);
+    GameCtrl.ins.on("State_Change", (state: EnumState) => {
+      switch (state) {
+        case EnumState.Result:
+          this.show();
+          break;
+        default:
+          this.hide();
+          break;
+      }
+    });
+
+    this.hide();
+  }
+
+  hide() {
+    this.collider.enabled = this.spriteRenderer.enabled = false;
+  }
+
+  show() {
+    this.collider.enabled = this.spriteRenderer.enabled = true;
+  }
+
+  onPointerClick() {
+    GameCtrl.ins.gameState = EnumState.Idle;
+  }
+}
 ```
+
+至此，所有的游戏逻辑都已完善，点击预览快试试有没有 Bug 吧！如果对中间某些步骤有疑问，可以通过在编辑器 **首页**->**模版**->**像素小鸟** 对照依照此文档实现的模版，如果对此文档有其他建议，欢迎提出您的想法。
