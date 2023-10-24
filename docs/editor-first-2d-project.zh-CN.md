@@ -11,6 +11,8 @@ label: Editor-Introduction
 
 Flappy Bird 是一个 2D 项目，编辑器首页自带的 2D 模版便是按照此文档一步一步实现的，我们先通过编辑器的 `New Project` 创建一个 `2D Project`。（若遇到问题，可参照**首页**->**模版**->**像素小鸟**）
 
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*tzD2TKk9f9gAAAAAAAAAAAAADleLAQ/original" alt="image-20231007170002181" style="zoom:50%;" />
+
 ## 准备资源
 
 Flappy Bird 依赖的资源是一堆图片，点击[这里]()可以下载图片包到本地。解压之后看到以下图片：
@@ -87,7 +89,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里]()可以下载图片�
 
 ### 添加遮罩
 
-添加完地面后发现，左右显示好像穿邦了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}editor-sprite-mask)
+添加完地面后发现，左右显示好像穿帮了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}editor-sprite-mask)
 
    <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*d_ZBS6zxOjQAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" style="zoom:50%;" />
 
@@ -103,10 +105,10 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 ### 增加物理反馈
 
-在此项目中，我们需要为**小鸟在触碰到水管或地面**和**鼠标在点击重开按钮**增加物理反馈，在编辑器中增加物理反馈只需要两步：
+在此项目中，我们需要为**小鸟在触碰到水管或地面**和**鼠标在点击重开按钮**时增加物理反馈，增加物理反馈只需要两步：
 
-- 添加合适的碰撞体
-- 脚本中处理对应的碰撞回调
+- 添加碰撞体
+- 处理碰撞回调
 
 #### 添加碰撞体
 
@@ -114,7 +116,7 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_szwQL3V1AQAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
 
-#### 脚本回调
+#### 处理碰撞回调
 
 ```typescript
 /**
@@ -150,9 +152,9 @@ stateDiagram
     [*] --> Idle
     Idle --> Flying: Tap screen
     Flying --> Crash: Collision
-    Crash --> Finish: Landing
-    Finish --> Idle: Click restart
-    Finish --> [*]
+    Crash --> Result: Landing
+    Result --> Idle: Click restart
+    Result --> [*]
 ```
 
 我们枚举了全局**全局状态**与**切换条件**，可以将它们想象成穿梭在不同实例之间的`信息流`，当小鸟在准备阶段时**按下屏幕**，信息被解析并传递给其他实例对象，此时地面开始播放循环移动动画，水管开始交替出现并消失，`信息流`的传递可以用[事件系统](${docs}event)实现，下面我们简化逻辑，在 `Bird` 中监听屏幕点击事件，一旦点击发生，`Idle` 状态就会切换至 `Flying` ，并且其他实例也会监听到对应状态改变。
@@ -165,7 +167,7 @@ enum EnumState {
   Idle,
   Flying,
   Crash,
-  Finish,
+  Result,
 }
 
 /**
@@ -241,20 +243,23 @@ timeline
      Idle : Bird.hang() : Ground.move() : Pipe.reset() : Gui.hide()
      Flying : Bird.fly() : Ground.move() : Pipe.move()
      Crash : Bird.crash() : Ground.pause() : Pipe.pause()
-     Finish : Gui.show()
+     Result : Gui.show()
 ```
 
-需要注意的是，了解过[动画组件](${docs}animator)的同学应该知道 `Animator.play()` 这个接口，但在示例中鲜少有同学设置过这个接口的 `Layer` 参数，现在我们就示范一下如何使用，首先先将小鸟的动画按照类型分类：
+
+经过拆解可以发现，小鸟的动画状态有很多，待机的时候要播放精灵切换和上下缓动的动画，飞行的时候也需要播放精灵切换与抬头坠落的动画，因此我们可以将各个动画状态原子化，并将其分别设置在不同的 `Layer` 中，不同的 `Layer` 相互独立，并且可以同时播放不同的动画，设置各自的叠加模式，详情可参考[动画组件](${docs}animator)。
+
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*1cXjQIJAgZoAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
+
+让各个 `Layer` 分别控制不同的动画状态，可以让我们的逻辑更加清晰。
 
 ```mermaid
 timeline
-    title History of Social Media Platform
+    Animation Layer
     替换精灵(Layer0) : Alive : Dead
-    修改坐标(Layer1) : Hang, Fly, Crash
-    修改旋转(Layer2) : Hang, Fly, Crash
+    修改旋转(Layer1) : Hang, Fly, Crash
+    修改坐标(Layer2) : Hang, Fly, Crash
 ```
-
-这样一来，不同层的原子动画互相不会影响，而调用时也只需标明使用层级即可，完整代码如下：
 
 #### 小鸟
 
@@ -270,17 +275,17 @@ class Bird extends Script {
     GameCtrl.ins.on("State_Change", (state: EnumState) => {
       const animator = this._animator;
       switch (state) {
-        case EnumRoundState.Idle:
+        case EnumState.Idle:
           this._alive();
           this._hang();
           break;
-        case EnumRoundState.Flying:
+        case EnumState.Flying:
           break;
-        case EnumRoundState.Crash:
+        case EnumState.Crash:
           this._dead();
           this._crash();
           break;
-        case EnumRoundState.Result:
+        case EnumState.Result:
           break;
       }
     });
