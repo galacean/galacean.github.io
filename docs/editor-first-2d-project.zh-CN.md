@@ -67,6 +67,14 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里]()可以下载图片�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/c4e2cf84-3834-4178-86d0-3ad9faa7bd28/image-20231007163240028.png" alt="image-20231007163240028" style="zoom:50%;" />
 
+在游戏过程中，产生管道的高度也是随机的，但是我们手上的资产高度却是固定的。不用急，只需要调整一下`精灵渲染模式`即可，这样可以让我们`无损`拉伸某些资产哦。
+
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*ZDSZTaXK-RIAAAAAAAAAAAAADleLAQ/original" alt="image-20231007163240028" style="zoom:50%;" />
+
+这里有个小技巧，将引用 `sprite` 资产的 `pivot` 属性设置为 `buttom` 就可以避免每次调整高度的时候重新锚定位置了。
+
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*MQqKTK0BAFAAAAAAAAAAAAAADleLAQ/original" alt="image-20231007163240028" style="zoom:50%;" />
+
 考虑到管道会重复出现，我们在节点树中把一对管道设置成一个 `PipeMother` 的组，并把它放到 `Pipe` 节点下。这样，后面通过在 Pipe 上绑定脚本组件就可以获取 `PipeMother` 以实现管道的复用。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/ef20415a-aa57-4236-b29e-e4df88f7e747/image-20231007163400680.png" alt="image-20231007163400680" style="zoom:50%;" />
@@ -157,7 +165,7 @@ stateDiagram
     Result --> [*]
 ```
 
-我们枚举了全局**全局状态**与**切换条件**，可以将它们想象成穿梭在不同实例之间的`信息流`，当小鸟在准备阶段时**按下屏幕**，信息被解析并传递给其他实例对象，此时地面开始播放循环移动动画，水管开始交替出现并消失，`信息流`的传递可以用[事件系统](${docs}event)实现，下面我们简化逻辑，在 `Bird` 中监听屏幕点击事件，一旦点击发生，`Idle` 状态就会切换至 `Flying` ，并且其他实例也会监听到对应状态改变。
+我们枚举了**全局状态**与**切换条件**，可以将它们想象成穿梭在不同实例之间的`信息流`，当小鸟在准备阶段时**按下屏幕**，信息被解析并传递给其他实例对象，此时地面开始播放循环移动动画，水管开始交替出现并消失，`信息流`的传递可以用[事件系统](${docs}event)实现，下面我们简化逻辑，在 `Bird` 中监听屏幕点击事件，一旦点击发生，`Idle` 状态就会切换至 `Flying` ，并且其他实例也会监听到对应状态改变。
 
 ```typescript
 /**
@@ -247,11 +255,11 @@ timeline
 ```
 
 
-经过拆解可以发现，小鸟的动画状态有很多，待机的时候要播放精灵切换和上下缓动的动画，飞行的时候也需要播放精灵切换与抬头坠落的动画，因此我们可以将各个动画状态原子化，并将其分别设置在不同的 `Layer` 中，不同的 `Layer` 相互独立，并且可以同时播放不同的动画，设置各自的叠加模式，详情可参考[动画组件](${docs}animator)。
+经过拆解可以发现，如果我们简单地将动画分类为待机动画，飞行动画与坠落动画，考虑到待机的时候要播放精灵切换和上下缓动的动画，飞行的时候也需要播放精灵切换与抬头坠落的动画，他们重合的部分不仅会增加动画编辑时的工作量，还需要额外考虑这两个动画衔接时其中的精灵切换动画是否自然，因此我们更进一步，将各个动画状态原子化，拆分其中精灵切换与坐标改变的部分，并分别设置在不同的 `Layer` 中，不同的 `Layer` 相互独立，并可同时播放各自的动画，设置各自的叠加模式与权重，详情可参考[动画组件](${docs}animator)。
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*1cXjQIJAgZoAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
 
-让各个 `Layer` 分别控制不同的动画状态，可以让我们的逻辑更加清晰。
+让各个 `Layer` 分别控制各自的动画状态，可以逻辑更加清晰。
 
 ```mermaid
 timeline
@@ -336,7 +344,7 @@ class Bird extends Script {
 }
 ```
 
-由于动画片段编辑只能编辑绝对的坐标或旋转变化，例如每次飞行的动画，他的旋转变化是绝对的，但坐标变换却是相对于当前的坐标改变的，因此我们可以在 `StateMachineScript` 中实现，以 `Fly` 动画为例：
+由于动画片段编辑只能编辑绝对的坐标或旋转变化，例如每次飞行的动画，他的旋转变化是绝对的，但坐标却是相对的，因此我们可以在 `StateMachineScript` 中实现，以 `Fly` 动画为例：
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T_stQakEWT0AAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
 
