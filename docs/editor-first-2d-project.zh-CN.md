@@ -11,11 +11,11 @@ label: Editor-Introduction
 
 Flappy Bird 是一个 2D 项目，编辑器首页自带的 2D 模版便是按照此文档一步一步实现的，我们先通过编辑器的 `New Project` 创建一个 `2D Project`。（若遇到问题，可参照**首页**->**模版**->**像素小鸟**）
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*tzD2TKk9f9gAAAAAAAAAAAAADleLAQ/original" alt="image-20231007170002181" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*tzD2TKk9f9gAAAAAAAAAAAAADleLAQ/original" alt="image-20231007170002181" />
 
 ## 准备资源
 
-Flappy Bird 依赖的资源是一堆图片，点击[这里]()可以下载图片包到本地。解压之后看到以下图片：
+Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/galacean/galacean.github.io/files/13161928/fb.zip)可以下载图片包到本地。解压之后看到以下图片：
 
 - 0-9 的分数数字图
 - 游戏背景图
@@ -254,7 +254,6 @@ timeline
      Result : Gui.show()
 ```
 
-
 经过拆解可以发现，如果我们简单地将动画分类为待机动画，飞行动画与坠落动画，考虑到待机的时候要播放精灵切换和上下缓动的动画，飞行的时候也需要播放精灵切换与抬头坠落的动画，他们重合的部分不仅会增加动画编辑时的工作量，还需要额外考虑这两个动画衔接时其中的精灵切换动画是否自然，因此我们更进一步，将各个动画状态原子化，拆分其中精灵切换与坐标改变的部分，并分别设置在不同的 `Layer` 中，不同的 `Layer` 相互独立，并可同时播放各自的动画，设置各自的叠加模式与权重，详情可参考[动画组件](${docs}animator)。
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*1cXjQIJAgZoAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
@@ -263,10 +262,10 @@ timeline
 
 ```mermaid
 timeline
-    Animation Layer
+    title Animation Layer
     替换精灵(Layer0) : Alive : Dead
-    修改旋转(Layer1) : Hang, Fly, Crash
-    修改坐标(Layer2) : Hang, Fly, Crash
+    修改旋转(Layer1) : Hang : Fly : Crash
+    修改坐标(Layer2) : Hang : Fly : Crash
 ```
 
 #### 小鸟
@@ -346,7 +345,7 @@ class Bird extends Script {
 
 由于动画片段编辑只能编辑绝对的坐标或旋转变化，例如每次飞行的动画，他的旋转变化是绝对的，但坐标却是相对的，因此我们可以在 `StateMachineScript` 中实现，以 `Fly` 动画为例：
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T_stQakEWT0AAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T_stQakEWT0AAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265"/>
 
 然后打开这个脚本，并在其中添加上自由落体的坐标变化：
 
