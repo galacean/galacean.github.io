@@ -80,7 +80,7 @@ export default class extends Script {
 
 ### 外部依赖包代码
 
-以 [第一个游戏](${docs}first-game-cn) 依赖的 `@tweenjs/tween.js` 为例，**首先**需在对应的[包管理网站](https://www.npmjs.com/)上搜索包名：
+以 `@tweenjs/tween.js` 为例，**首先**需在对应的[包管理网站](https://www.npmjs.com/)上搜索包名：
 
 ![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*MF67QZFZXt8AAAAAAAAAAAAADleLAQ/original)
 
