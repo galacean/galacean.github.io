@@ -69,7 +69,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 在游戏过程中，产生管道的高度也是随机的，但是我们手上的资产高度却是固定的。不用急，只需要调整一下`精灵渲染模式`即可，这样可以让我们`无损`拉伸某些资产哦。
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*ZDSZTaXK-RIAAAAAAAAAAAAADleLAQ/original" alt="image-20231007163240028" />
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*ZDSZTaXK-RIAAAAAAAAAAAAADleLAQ/original"/>
 
 这里有个小技巧，将引用 `sprite` 资产的 `pivot` 属性设置为 `buttom` 就可以避免每次调整高度的时候重新锚定位置了。
 
@@ -93,13 +93,13 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 3. 此时就得到了一个平铺完毕的地面，接下来我们可以通过创建动画片段来让它动起来！详见[动画片段编辑](${docs}editor-animationClip)。
 
-   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*3d2GSINL_8IAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" />
+   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*3d2GSINL_8IAAAAAAAAAAAAADleLAQ/original" />
 
 ### 添加遮罩
 
 添加完地面后发现，左右显示好像穿帮了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}editor-sprite-mask)
 
-   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*d_ZBS6zxOjQAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" />
+   <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*d_ZBS6zxOjQAAAAAAAAAAAAADleLAQ/original" />
 
 ### 加上 GUI
 
@@ -122,7 +122,7 @@ GUI 包括分数显示和重新开始按钮。我们分数（ `0.png`） 和重�
 
 碰撞体描述了事物的位姿形态，因此在添加碰撞体时应该尽量贴合物体实际显示的大小。关于碰撞器的使用详见[碰撞器](${docs}editor-collider)，此处演示为小鸟添加碰撞体。
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_szwQL3V1AQAAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265" />
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*_szwQL3V1AQAAAAAAAAAAAAADleLAQ/original" />
 
 #### 处理碰撞回调
 
@@ -345,7 +345,7 @@ class Bird extends Script {
 
 由于动画片段编辑只能编辑绝对的坐标或旋转变化，例如每次飞行的动画，他的旋转变化是绝对的，但坐标却是相对的，因此我们可以在 `StateMachineScript` 中实现，以 `Fly` 动画为例：
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T_stQakEWT0AAAAAAAAAAAAADleLAQ/original" alt="image-20231007180819265"/>
+<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*T_stQakEWT0AAAAAAAAAAAAADleLAQ/original"/>
 
 然后打开这个脚本，并在其中添加上自由落体的坐标变化：
 
