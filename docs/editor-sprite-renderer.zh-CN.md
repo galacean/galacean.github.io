@@ -13,12 +13,12 @@ label: Editor-Feature/Rendering-2d
 
 需要显示图片的时候，需要先给一个实体添加精灵组件，并且设置精灵资源属性，如下：
 
-![sprite-renderer](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*fdp-R4v1Ei4AAAAAAAAAAAAADjCHAQ/original)
+![sprite-renderer](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*adizTpp_l5cAAAAAAAAAAAAADjCHAQ/original)
 
 
 ## 更多属性
 
-![属性面板](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*CcoCQJ2homcAAAAAAAAAAAAADjCHAQ/original)
+![属性面板](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*pcbLSahH--YAAAAAAAAAAAAADjCHAQ/original)
 
 在精灵渲染组件的属性查看器中可以看到编辑器提供了精灵渲染组件所有可设置的属性，属性说明如下：
 
@@ -42,12 +42,12 @@ label: Editor-Feature/Rendering-2d
 
 1、设置为 `sprite mask none`，表示不需要遮罩
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*SRC4R4Bctp8AAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*EkvgRZqpdhUAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
 
 2、设置为 `sprite mask visible in side`，表示显示遮罩区域内内容
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*48_kTozciMcAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*IqgVQLLddsEAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
 
 3、设置为 `sprite mask visible out side`，表示显示遮罩区域外内容
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*bROfQqyt4CcAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*fcsJR4KSht4AAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />

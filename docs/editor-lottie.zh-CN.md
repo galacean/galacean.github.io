@@ -14,11 +14,11 @@ label: Editor-Feature/Rendering-2d
 
 开发者拿到 `.json` 文件后，首先需要把 `.json` 文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “lottie” 资产，选择本地一个 lottie json 文件，然后：
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*5RjfT6nvt1cAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*UQ1LTI_mYv4AAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
 
 选择一个节点，添加 Lottie 组件，选择 resource 为上一步上传的资产，通过修改 speed 改变播放速度：
 
-![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*FaB1RIf5jakAAAAAAAAAAAAADjCHAQ/original)
+![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*ehFMT7vBaCAAAAAAAAAAAAAADjCHAQ/original)
 
 ### 参数说明
 
@@ -27,9 +27,10 @@ label: Editor-Feature/Rendering-2d
 | `resource` | 选择 Lottie 资产 |
 | `isLooping` | 是否循环播放，默认循环 |
 | `speed` | 播放速度，`1` 为原速度播放，数值越大播放约快 |
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
 
 
 ## 切片功能
 编辑器提供了动画切片的功能，可以把设计师提供的整个片段切成多段，每个片段需要定义片段名、开始帧、结束帧三个字段。运行时的具体使用请看[这里](${docs}lottie)。
 
-<img src="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*pIMCQ4XQIk8AAAAAAAAAAAAADsF_AQ/original" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*skjbSZjSpYoAAAAAAAAAAAAADjCHAQ/original" style="zoom:100%;" />
