@@ -15,11 +15,11 @@ label: Editor-Feature/Rendering-2d
 
 开发者需要同时把三个文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “spine” 资产，选择本地的这三个文件，上传成功后能够在资产面板看到上传的 spine 资产：
 
-<img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*yTReSbOtsQIAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*9GQGTp1G8BIAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
 
 选择一个节点，添加 Spine 组件，选择 resource 为上一步上传的资产，填写动画名称即播放 spine 动画：
 
-![spine](https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*gE3qSqzp0S4AAAAAAAAAAAAADsp6AQ/original)
+![spine](https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*aPYlRJ0JtdwAAAAAAAAAAAAADsp6AQ/original)
 
 ### 参数说明
 
