@@ -54,7 +54,7 @@ export default function Production() {
           <StyledP>
             <FormattedMessage id="app.home.editor.intro" />
           </StyledP>
-          <a href="https://galacean.antgroup.com/editor">
+          <a href="./editor">
             <StyledButton variant="outline" size="lg" round>
               <FormattedMessage id="app.home.editor.use" />
             </StyledButton>
@@ -69,7 +69,7 @@ export default function Production() {
           <StyledP>
             <FormattedMessage id="app.home.effect.intro" />
           </StyledP>
-          <a href="https://galacean.antgroup.com/effects">
+          <a href="./effects">
             <StyledButton variant="outline" size="lg" round>
               <FormattedMessage id="app.home.effect.use" />
             </StyledButton>
