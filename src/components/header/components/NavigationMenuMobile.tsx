@@ -18,12 +18,17 @@ export function NavigationMenuMobile() {
         },
         {
           key: 1,
-          label: <Link to={`/docs/${context.version}/${context.lang}/artist-bake`}>{formatMessage({ id: 'app.header.menu.artist.docs' })}</Link>
+          label: <Link to={`/docs/${context.version}/cn/editor`} >{formatMessage({ id: 'app.header.menu.editor.docs' })}</Link>
         },
         {
           key: 2,
-          label: <Link to={`/docs/${context.version}/cn/editor`} >{formatMessage({ id: 'app.header.menu.editor.docs' })}</Link>
-        }
+          label: <a rel='noopener noreferrer' href={`/effects/#/user/`}>{formatMessage({ id: 'app.header.menu.effects.doc' })}</a>
+
+        },
+        {
+          key: 3,
+          label: <Link to={`/docs/${context.version}/${context.lang}/artist-bake`}>{formatMessage({ id: 'app.header.menu.artist.docs' })}</Link>
+        },
       ]
     },
     {

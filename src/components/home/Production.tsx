@@ -37,30 +37,29 @@ export default function Production() {
       <Flex align="h" gap="lg" css={{
         paddingBottom: "$10",
         maxWidth: "1000px",
-        alignItems: "flex-start",
         '@media (max-width: 768px)': {
           flexDirection: "column",
         }
       }}>
         <Flex align="both" dir="column" gap="lg" css={{ position: "relative", flexGrow: 1, flexShrink: 0, flexBasis: '30%' }}>
           <StyledH>
-            <FormattedMessage id="app.home.editor" />
+            <FormattedMessage id="app.home.engine" />
           </StyledH>
           <StyledImage />
           <StyledP>
-            <FormattedMessage id="app.home.editor.intro" />
+            <FormattedMessage id="app.home.engine.intro" />
           </StyledP>
           <Flex align="both" dir="column" gap="lg" css={{ position: "relative" }}>
             <Flex gap="lg">
               <a href="https://galacean.antgroup.com/editor">
                 <StyledButton variant="outline" size="lg" round>
-                  <FormattedMessage id="app.home.editor.use" />
+                  <FormattedMessage id="app.home.engine.use" />
                   <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
                 </StyledButton>
               </a>
               <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
                 <StyledButton variant="light" size="lg" round>
-                  <FormattedMessage id="app.home.editor.apply" />
+                  <FormattedMessage id="app.home.engine.apply" />
                 </StyledButton>
               </a>
             </Flex>
@@ -77,19 +76,20 @@ export default function Production() {
           </StyledP>
           <a href="./effects">
             <StyledButton variant="outline" size="lg" round>
-              <FormattedMessage id="app.home.effects.use" />
+              <FormattedMessage id="app.home.effects.learn" />
+              <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
             </StyledButton>
           </a>
           {/* <Flex gap="lg">
             <a href="https://galacean.antgroup.com/editor">
               <StyledButton variant="outline" size="lg" round>
-                <FormattedMessage id="app.home.editor.use" />
+                <FormattedMessage id="app.home.engine.use" />
                 <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
               </StyledButton>
             </a>
             <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
               <StyledButton variant="light" size="lg" round>
-                <FormattedMessage id="app.home.editor.apply" />
+                <FormattedMessage id="app.home.engine.apply" />
               </StyledButton>
             </a>
           </Flex>

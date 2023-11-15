@@ -60,7 +60,7 @@ const StyledNavigationMenu = () => {
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink as="a" rel='noopener noreferrer' href={`/effects/studio/`} target="_blank">
+          <StyledLink as="a" rel='noopener noreferrer' href={`/effects/dashboard/`} target="_blank">
             {formatMessage({ id: 'app.header.menu.ecosystem.effects-editor' })}
           </StyledLink>
         </MenuItem>
@@ -94,7 +94,7 @@ const StyledNavigationMenu = () => {
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink as="a" rel='noopener noreferrer' href={`/effects/#/api/`}>
+          <StyledLink as="a" rel='noopener noreferrer' href={`/effects/#/playground/`}>
             {formatMessage({ id: 'app.header.menu.effects.examples' })}
           </StyledLink>
         </MenuItem>
