@@ -28,8 +28,8 @@ function Home() {
       </Helmet>
       <Banner />
       <Production />
-      <Advantage />
-      <Editor />
+      {/* <Advantage /> */}
+      {/* <Editor /> */}
       <Cases />
       <Footer></Footer>
     </>
