@@ -73,10 +73,10 @@ ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎�
     Enabled[n]: bool;
     ColorBlendOperation[n]: BlendOperation;
     AlphaBlendOperation[n]: BlendOperation;
-    SrcColorBlendFactor[n]: BlendFactor;
-    SrcAlphaBlendFactor[n]: BlendFactor;
-    DestColorBlendFactor[n]: BlendFactor;
-    DestAlphaBlendFactor[n]: BlendFactor;
+    SourceColorBlendFactor[n]: BlendFactor;
+    SourceAlphaBlendFactor[n]: BlendFactor;
+    DestinationColorBlendFactor[n]: BlendFactor;
+    DestinationAlphaBlendFactor[n]: BlendFactor;
     ColorWriteMask[n]: float // 0xffffffff
     BlendColor: vec4;
     AlphaToCoverage: bool;

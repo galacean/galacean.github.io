@@ -73,10 +73,10 @@ Four types of global variables can be declared in ShaderLab: rendering state, st
     Enabled[n]: bool;
     ColorBlendOperation[n]: BlendOperation;
     AlphaBlendOperation[n]: BlendOperation;
-    SrcColorBlendFactor[n]: BlendFactor;
-    SrcAlphaBlendFactor[n]: BlendFactor;
-    DestColorBlendFactor[n]: BlendFactor;
-    DestAlphaBlendFactor[n]: BlendFactor;
+    SourceColorBlendFactor[n]: BlendFactor;
+    SourceAlphaBlendFactor[n]: BlendFactor;
+    DestinationColorBlendFactor[n]: BlendFactor;
+    DestinationAlphaBlendFactor[n]: BlendFactor;
     ColorWriteMask[n]: float // 0xffffffff
     BlendColor: vec4;
     AlphaToCoverage: bool;
