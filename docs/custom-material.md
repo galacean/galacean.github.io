@@ -44,13 +44,19 @@ Shader.create("demo", vertexSource, fragmentSource);
 const material = new Material(engine, Shader.find("demo"));
 ```
 
-`Shader.create()` is used to add the shader to the cache pool of the engine, so the entire runtime only needs to be created once, and then you can pass [Shader.find(name)](${api}core/Shader#find) to use repeatedly. **Note: The engine has pre-created blinn-phong, pbr, shadow-map, shadow, skybox, framebuffer-picker-color, and trail. Users can directly use these built-in shaders, but cannot create them with the same name.**
+`Shader.create()` is used to add the shader to the cache pool of the engine, so the entire runtime only needs to be created once, and then you can pass [Shader.find(name)](${api}core/Shader#find) to use repeatedly. 
+
+> Note: The engine has pre-created blinn-phong, pbr, shadow-map, shadow, skybox, framebuffer-picker-color, and trail. Users can directly use these built-in shaders, but cannot create them with the same name.
 
 Because we don't have uploaded `u_color` variable, the fragment output is still black (uniform has default value), let's introduce the built-in shader variable in the engine and how to upload a custom variable.
 
 ## Built-in shader variables
 
-In the above, we gave the material a shader, this time the program can start rendering. It should be noted that there are two kinds of variables in the shader, one is the `attribute` variable which is **per vertex**, and the other is the `uniform` variable which is **per shader** (After GLSL300, they are unified as `in` variables). The engine has automatically uploaded some commonly used variables, and users can directly use them in the shader code, such as vertex data and `mvp` data. The following are the variables uploaded by the engine by default.
+In the above, we gave the material a shader, this time the program can start rendering. 
+
+> It should be noted that there are two kinds of variables in the shader, one is the `attribute` variable which is **per vertex**, and the other is the `uniform` variable which is **per shader** (After GLSL300, they are unified as `in` variables). 
+
+The engine has automatically uploaded some commonly used variables, and users can directly use them in the shader code, such as vertex data and `mvp` data. The following are the variables uploaded by the engine by default.
 
 ### VertexInput
 

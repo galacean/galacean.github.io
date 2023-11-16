@@ -72,7 +72,7 @@ resourceManager.addContentRestorer(
 );
 ```
 
-NOTE: Restorer implementations are not recommended to be dependent and CPU-intensive
+> NOTE: Restorer implementations are not recommended to be dependent and CPU-intensive
 
 ### Simulate device loss and recovery
 

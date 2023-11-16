@@ -16,9 +16,7 @@ label: Editor-Feature/Scripting
 代码编辑区会有 Galacean 使用默认模板创建的脚本代码，Galacean 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
 ```typescript
 import { Script } from '@galacean/engine';
-/**
- * 使用时再重写，性能可以得到提升
- */
+
 export default class extends Script {
   /**
    * 第一次触发可用状态时调用,只调用一次。
@@ -82,7 +80,7 @@ export default class extends Script {
 
 ### 外部依赖包代码
 
-以 [第一个游戏](${docs}first-game-cn) 依赖的 `@tweenjs/tween.js` 为例，**首先**需在对应的[包管理网站](https://www.npmjs.com/)上搜索包名：
+以 `@tweenjs/tween.js` 为例，**首先**需在对应的[包管理网站](https://www.npmjs.com/)上搜索包名：
 
 ![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*MF67QZFZXt8AAAAAAAAAAAAADleLAQ/original)
 

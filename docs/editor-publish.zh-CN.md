@@ -1,42 +1,127 @@
 ---
 order: 6
-title: 项目发布
+title: 项目导出
 type: 界面
 label: Editor-Interface
 ---
 
-Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前端项目下载到本地。你可以在编辑器中配置项目导出的参数，如资产导出配置、渲染导出配置、物理导出配置等。基于这些配置，编辑器会生成出项目所需的代码、资产, 生成对应的 `package.json`，并最终打包成一个 zip 包供你下载。
+## HTML5 项目导出
 
-![image-20230926110313384](https://mdn.alipayobjects.com/rms/afts/img/A*6n9rQrL9S9kAAAAAAAAAAAAAARQnAQ/80q.webp)
+Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前端项目下载到本地。你可以在编辑器中配置项目导出的参数，如资产导出配置、渲染导出配置、物理导出配置等。基于这些配置，编辑器会生成出项目所需的代码、资产，生成对应的 `package.json`，并最终打包成一个 zip 包供你下载。
 
-## 导出配置
+<img src="https://gw.alipayobjects.com/zos/OasisHub/e07d04fd-499c-40b6-90d7-f6f183e0b6a2/image-20231007201437362.png" alt="image-20231007201437362" style="zoom:50%;" />
 
-### 资产导出配置
+### 导出配置
+
+#### 资产导出配置
 
 资产导出配置可以用来控制导出的资源类型和质量等参数。在资产导出配置中，你可以选择导出的资源类型，例如模型、纹理、HDR 等等，以及选择每种类型的导出质量和格式等参数。在导出模型时，你可以选择是否导出模型的网格信息、骨骼信息、动画信息等。
 
-#### KTX2
+| 配置          | 描述                                                         |
+| ------------- | ------------------------------------------------------------ |
+| glTF Quantize | 一种 glTF 压缩算法，详见[这里](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_mesh_quantization/README.md) |
+| KTX2          | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项 |
 
-勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项。**压缩纹理**是一种优化图形性能的技术，它通过使用专门的算法将图形数据压缩为更小的大小。在游戏和其他图形密集型应用中，压缩纹理可以显著降低 GPU 的内存并提高帧率，从而改善用户体验。
+#### 渲染导出配置
 
-默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项。Galacean 采取的是 **KTX2(Khronos Texture Container version 2.0)** 方案。KTX2 会根据设备平台支持运行时转码到对应格式的压缩纹理。
+渲染导出配置可以用来控制项目的渲染效果和性能等参数。
 
-### 渲染导出配置
+| 配置                                                         | 描述                                                       |
+| ------------------------------------------------------------ | ---------------------------------------------------------- |
+| WebGL Mode                                                   | WebGL 的版本，`Auto` 值表示根据设备能力自动选择 WebGL 版本 |
+| WebGL  [Context](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) 的配置 | Anti-Alias、Alpha、Preserve Drawing Buffer 等              |
+| Device Pixel Ratio                                           | 设备的像素比，用来控制画布的尺寸                           |
 
-渲染导出配置可以用来控制项目的渲染效果和性能等参数。在渲染导出配置中，你可以配置 WebGL 的版本, 是否为项目开启抗锯齿, 设备的像素比等.
+### 项目启动
 
-### 物理导出配置
+在点击导出面板中的下载按钮后，你将得到一个项目的压缩包。解压缩后进入文件夹，目录结构（以 React 项目为例）如下：
 
-物理导出配置可以用来控制项目的物理效果和性能等参数。在物理导出配置中，你可以选择需要的物理引擎类型.
+```shell
+├── example # 📁 示例目录
+│   ├── main.tsx # 示例组件
+├── public # 📁 公共资源目录
+│		├── scene.json # 场景文件
+│   └── ... # 其他
+├── src # 📁 源代码目录
+│   └── ... # 其他
+├── index.tsx # ⚙️ 组件代码入口
+├── index.html # ⚙️ 示例项目入口文件
+├── project.json # ⚙️ 编辑器导出工程配置
+|── tsconfig.json # ⚙️ TypeScript 配置文件
+├── vite.config.ts # ⚙️ vite 配置文件
+├── package.json # ⚙️ 项目配置文件
+└── ... # 其他
+```
 
-## 项目启动
+在文件夹目录里的 Terminal 依次运行：
 
-在点击导出面板中的下载按钮后, 你将得到一个项目的压缩包. 解压缩后进入文件夹, 依次运行 `npm install`, `npm run dev`. 项目就可以在本地运行了.
+```bash
+npm install
+npm run dev
+```
+
+项目就可以在本地运行了。
+
+## 小程序项目导出
+Galacean 编辑器导出支付宝小程序的功能仍在开发中，交互方式和模板工程后续可能会有改动。
+
+<img src="https://mdn.alipayobjects.com/rms/afts/img/A*ZIXuR7Bj5gEAAAAAAAAAAAAAARQnAQ/original/image-20231008163057689.png" alt="image-20231008163057689" style="zoom:50%;" />
+
+### 项目启动
+
+点击下载后会下载一个 zip 文件，解压文件目录结构如下：
+
+```shell
+.
+├── mini # 📁 小程序执行目录
+│   ├── dist # 📁 代码构建结果
+│   ├── pages # 📁 小程序页面
+│   ├── app.json # ⚙️ 项目配置文件
+│   ├── app.js # 代码入口
+├── public # 📁 公共资源目录
+│		├── scene.json # 场景文件
+│   └── ... # 其他
+├── src # 📁 源代码目录
+├── mini.project.json # ⚙️ 工程配置文件
+├── project.json # ⚙️ 编辑器导出工程配置
+└── ... # 其他
+```
+
+接下来就可以安装依赖和启动项目：
+
+```shell
+npm install
+npm run dev
+```
+
+用小程序 IDE 打开可以看到：
+
+![image-20230420111035524](https://mdn.alipayobjects.com/rms/afts/img/A*kEUkTbfSMIwAAAAAAAAAAAAAARQnAQ/original/image-20230420111035524.png)
+
+### 本地资源处理
+
+#### 蚂蚁集团内部用户
+
+直接使用『上传到 CDN 』即可（在导出面板选项中，参考上图），使用集团默认 CDN 即可。若想使用自定义 CDN，参考非蚂蚁集团内部用户。
+
+#### 非蚂蚁集团内部用户
+
+1.  public 文件请自行上传 CDN
+2. 修改 scene.json 文件或配置 baseUrl
+
+### 包内文件加载（WIP）
+
+目前还没有支持小程序的本地文件加载。
+
+### 已知问题
+
+- 小程序不支持 WebAssembly，目前无法使用 PhysX 作为物理后端
+- 目前不支持本地文件加载，需要手动上传到 CDN
 
 ## 注意事项
 
 在使用编辑器项目导出功能时，你需要注意以下事项：
 
-1. 导出的项目需要在支持 WebGL 的浏览器中运行，因此你可能需要在项目中添加相应的浏览器兼容性代码。
+1. 导出的项目需要在支持 WebGL 的环境中运行。
 2. 导出的项目中可能包含大量的资源文件，你需要对项目进行优化和压缩，以提高项目的性能和加载速度。
 3. 导出的项目中可能包含敏感信息和数据，你需要对项目进行安全性评估和保护，以防止信息泄漏和数据丢失等情况。

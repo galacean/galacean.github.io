@@ -43,12 +43,16 @@ const material = new Material(engine, Shader.find("demo"));
 
 ```
 `Shader.create()`用来将 shader 添加到引擎的缓存池子中，因此整个 runtime 只需要创建一次,接下来就可以通过 [Shader.find(name)](${api}core/Shader#find) 来反复使用.
-**注：引擎已经预先 create 了 blinn-phong、pbr、shadow-map、shadow、skybox、framebuffer-picker-color、trail。用户可以直接使用这些内置 shader，但是不能重名创建。**
+
+> 注：引擎已经预先 create 了 blinn-phong、pbr、shadow-map、shadow、skybox、framebuffer-picker-color、trail。用户可以直接使用这些内置 shader，但是不能重名创建。
 
 因为我们没有上传 `u_color`  变量，所以片元输出还是黑色的(uniform 默认值)，接下来我们来介绍下引擎内置的 shader 变量以及如何上传自定义变量。
 
 ## 内置 shader 变量
-在上面，我们给 material 赋予了 shader，这个时候程序已经可以开始渲染了。需要注意的是，shader 代码中有两种变量，一种是**逐顶点**的 `attribute` 变量，另一种是**逐 shader** 的 `uniform` 变量。(在 GLSL300 后，统一为 in 变量)
+在上面，我们给 material 赋予了 shader，这个时候程序已经可以开始渲染了。
+
+> 需要注意的是，shader 代码中有两种变量，一种是**逐顶点**的 `attribute` 变量，另一种是**逐 shader** 的 `uniform` 变量。(在 GLSL300 后，统一为 in 变量)
+
 引擎已经自动上传了一些常用变量，用户可以直接在 shader 代码中使用，如顶点数据和 mvp 数据，下面是引擎默认上传的变量。
 
 ### 顶点输入

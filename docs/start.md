@@ -57,7 +57,7 @@ Taking `@galacean/engine` as an example, developers can find it in [Github](http
 
 ### Dependencies between NPM repositories
 
-In the same project, please ensure that the version of [Engine Core Architecture Logic Subpackage](https://github.com/galacean/engine/tree/main/packages) is the same, [toolkit](https://github.com/galacean/engine-toolkit) must be consistent with the major version of the used engine.
+In the same project, please ensure that the version of [Engine Core Architecture Logic Subpackage](https://github.com/galacean/engine/tree/main/packages) is the same, [toolkit](https://github.com/galacean/engine-toolkit) must be consistent with the major version of the used engine, taking the 1.0.x version of the engine as an example, it needs to be used with the 1.0.y version of the toolkit.
 
 ### Version upgrade
 

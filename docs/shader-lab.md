@@ -1,11 +1,13 @@
 ---
-order: 2
+order: 7
 title: Shader Lab
 group: Material
 label: Graphics/Material
 ---
 
-`ShaderLab` is a shader language designed specifically for the Galacean engine. Compared with previous engine version, using `ShaderLab` provides more convenience. For example, it can specify the rendering pipeline and set the rendering state through specific instructions. Through the SubShader and Pass modules, it is also more convenient to write multiple Pass Shaders. Use [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) language in ShaderLab to write vertex and fragment shader programs in the rendering pipeline. It is worth mentioning that you only need to declare uniform, attribute and varying variables once, and variables not used by the shader program will be automatically eliminated by the engine, helping developers to write custom material Shaders more conveniently and quickly.
+`ShaderLab` is a shader language designed specifically for the Galacean engine. Compared with previous engine version, using `ShaderLab` provides more convenience. For example, it can specify the rendering pipeline and set the rendering state through specific instructions. Through the SubShader and Pass modules, it is also more convenient to write multiple Pass Shaders. Use [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) language in ShaderLab to write vertex and fragment shader programs in the rendering pipeline.
+
+> It is worth mentioning that you only need to declare uniform, attribute and varying variables once, and variables not used by the shader program will be automatically eliminated by the engine, helping developers to write custom material Shaders more conveniently and quickly.
 
 The following is a simple example of using ShaderLab, which contains two Shaders. The "normal" Shader defines a vertex shader that only implements MVP transformations, and a fragment shader that specifies the pixel color through a Uniform variable. Alternatively, the "lines" Shader is a [shadertoy](https://www.shadertoy.com/view/DtXfDr) example modified using ShaderLab.
 
