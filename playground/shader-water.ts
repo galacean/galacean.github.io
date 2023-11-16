@@ -50,6 +50,8 @@ const shaderSource = `Shader "customWater" {
         o.v_uv = v.TEXCOORD_0;
         o.v_normal = v.NORMAL;
         o.v_position = v.POSITION;
+
+        return o;
       }
 
       vec4 scene_ElapsedTime;
