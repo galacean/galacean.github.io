@@ -11,7 +11,7 @@ const StyledH = styled('h2', {
 
 const StyledImage = styled('div', {
   width: 480,
-  height: 420,
+  height: 390,
   backgroundColor: '#d8d8d8',
   backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
@@ -28,7 +28,7 @@ const StyledP = styled("p", {
   padding: "0 $10",
   lineHeight: "$5",
   fontWeight: 300,
-  minHeight: "6em",
+  minHeight: "8em",
 })
 
 export default function Production() {
@@ -70,7 +70,7 @@ export default function Production() {
           <StyledH>
             <FormattedMessage id="app.home.effects" />
           </StyledH>
-          <StyledImage style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_j9rjmc/afts/img/A*4uMTSYNQWygAAAAAAAAAAAAADvGmAQ/original)` }}/>
+          <StyledImage style={{ backgroundImage: 'url(https://mdn.alipayobjects.com/huamei_j9rjmc/afts/img/A*OMVPTawHKrYAAAAAAAAAAAAADvGmAQ/original)' }}/>
           <StyledP>
             <FormattedMessage id="app.home.effects.intro" />
           </StyledP>
