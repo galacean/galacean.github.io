@@ -1,22 +1,35 @@
-import { Button, Flex, styled } from "@galacean/editor-ui";
+import { Button, Flex, Link, styled } from "@galacean/editor-ui";
 import { FormattedMessage } from 'react-intl';
 import { ArrowRightOutlined } from "@ant-design/icons";
+import { useContext } from "react";
+import { AppContext } from "../contextProvider";
 
-const StyledH = styled('h2', {
+const StyledH = styled(Flex, {
+  minHeight: "$12",
   color: "$slate12",
-  textAlign: "center",
-  padding: "0 0 $4",
-  fontSize: "2rem"
+  fontSize: "1.8em",
+  fontWeight: 800,
+  fontStyle: "italic",
+  whiteSpace: "nowrap",
 })
 
-const StyledImage = styled('div', {
-  width: 480,
-  height: 420,
-  backgroundColor: '#d8d8d8',
+const StyledIcon = styled("img", {
+  width: "$14",
+  paddingRight: "$3"
+});
+
+const StyledCard = styled('div', {
+  minHeight: "400px",
+  backgroundColor: "$slate3",
   backgroundSize: 'contain',
   backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'center',
-  borderRadius: 24,
+  backgroundPosition: 'center bottom',
+  borderRadius: "24px",
+  padding: "$8",
+  flex: 1,
+  '@media (max-width: 768px)': {
+    margin: "0 $4"
+  }
 })
 
 const StyledButton = styled(Button, {
@@ -25,38 +38,44 @@ const StyledButton = styled(Button, {
 
 const StyledP = styled("p", {
   fontSize: "$2",
-  padding: "0 $10",
   lineHeight: "$5",
   fontWeight: 300,
-  minHeight: "6em",
+  padding: "$2 0 $6"
 })
 
 export default function Production() {
+  const { setVersion, versions, lang } = useContext(AppContext);
+  const beta = versions[versions.length - 1];
+  const betaVersion = beta?.version;
+
   return (
     <Flex align="both">
-      <Flex align="h" gap="lg" css={{
+      <Flex align="h" css={{
         paddingBottom: "$10",
-        maxWidth: "1000px",
+        gap: "60px",
+        width: "1000px",
         '@media (max-width: 768px)': {
-          flexDirection: "column",
+          flexDirection: "column"
         }
       }}>
-        <Flex align="both" dir="column" gap="lg" css={{ position: "relative", flexGrow: 1, flexShrink: 0, flexBasis: '30%' }}>
-          <StyledH>
+        <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*cOUgSYMpo1cAAAAAAAAAAAAADsB_AQ/fmt.webp)` }}>
+          <StyledH align="v" wrap={false}>
             <FormattedMessage id="app.home.engine" />
           </StyledH>
-          <StyledImage />
           <StyledP>
-            <FormattedMessage id="app.home.engine.intro" />
+            <FormattedMessage id="app.home.slogan" />
           </StyledP>
-          <Flex align="both" dir="column" gap="lg" css={{ position: "relative" }}>
+          <Flex align="h" dir="column" gap="lg" css={{ position: "relative" }}>
             <Flex gap="lg">
-              <a href="https://galacean.antgroup.com/editor">
-                <StyledButton variant="outline" size="lg" round>
+              <Link to={`/docs/${betaVersion}/${lang}/start`} onClick={() => {
+                setVersion(betaVersion);
+                localStorage.setItem('version', betaVersion);
+              }}>
+                <StyledButton variant="light" size="lg" round>
                   <FormattedMessage id="app.home.engine.use" />
-                  <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
+                  <ArrowRightOutlined style={{ marginLeft: "5px", fontSize: "12px" }} />
                 </StyledButton>
-              </a>
+              </Link>
               <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
                 <StyledButton variant="light" size="lg" round>
                   <FormattedMessage id="app.home.engine.apply" />
@@ -64,39 +83,23 @@ export default function Production() {
               </a>
             </Flex>
           </Flex>
-        </Flex>
+        </StyledCard>
 
-        <Flex align="both" dir="column" gap="lg" css={{ position: "relative", flexGrow: 1, flexShrink: 0, flexBasis: '30%' }}>
-          <StyledH>
+        <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*DDHdQ4gxfj0AAAAAAAAAAAAADsB_AQ/fmt.webp)` }}>
+          <StyledH align="v" wrap={false}>
+            <StyledIcon src="https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*iX_AQJ118e0AAAAAAAAAAAAADsB_AQ/original" alt="" />
             <FormattedMessage id="app.home.effects" />
           </StyledH>
-          <StyledImage style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_j9rjmc/afts/img/A*4uMTSYNQWygAAAAAAAAAAAAADvGmAQ/original)` }}/>
           <StyledP>
             <FormattedMessage id="app.home.effects.intro" />
           </StyledP>
           <a href="./effects">
-            <StyledButton variant="outline" size="lg" round>
+            <StyledButton variant="light" size="lg" round>
               <FormattedMessage id="app.home.effects.learn" />
-              <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
+              <ArrowRightOutlined style={{ marginLeft: "5px", fontSize: "12px" }} />
             </StyledButton>
           </a>
-          {/* <Flex gap="lg">
-            <a href="https://galacean.antgroup.com/editor">
-              <StyledButton variant="outline" size="lg" round>
-                <FormattedMessage id="app.home.engine.use" />
-                <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
-              </StyledButton>
-            </a>
-            <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
-              <StyledButton variant="light" size="lg" round>
-                <FormattedMessage id="app.home.engine.apply" />
-              </StyledButton>
-            </a>
-          </Flex>
-          <StyledVideo playsInline autoPlay muted loop poster="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*aVJIToZjpB0AAAAAAAAAAAAADsF_AQ/fmt.webp">
-            <source src="https://gw.alipayobjects.com/v/huamei_b4l2if/afts/video/iAMbRIrO7mYAAAAAAAAAAAAAK4eUAQBr" type="video/mp4" />
-          </StyledVideo > */}
-        </Flex>
+        </StyledCard>
       </Flex>
     </Flex>
   );
