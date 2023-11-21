@@ -49,7 +49,7 @@ function Banner() {
           alt='Galacean'
         />
       </StyledHeading>
-      <StyledSlogan>
+      {/* <StyledSlogan>
         <FormattedMessage id='app.home.slogan' />
       </StyledSlogan>
       <Flex gap="lg" css={{
@@ -84,7 +84,7 @@ function Banner() {
             <FormattedMessage id='app.home.discussion' />
           </Button>
         </a>
-      </Flex>
+      </Flex> */}
     </StyledSection>
   );
 }
