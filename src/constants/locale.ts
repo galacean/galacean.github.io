@@ -17,22 +17,22 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.engine": "引擎",
     "app.header.menu.api": "API",
     "app.header.menu.examples": "示例",
-    "app.header.menu.engine.docs": "引擎开发文档",
+    "app.header.menu.engine.docs": "Engine 运行时文档",
     "app.header.menu.engine.docs.description":
       "面向开发，介绍如何快速上手、引擎基础概念和使用方法",
     "app.header.menu.engine.api": "引擎 API",
-    "app.header.menu.engine.examples": "引擎示例",
+    "app.header.menu.engine.examples": "Engine 示例",
     "app.header.menu.artist": "美术",
     "app.header.menu.artist.docs": "美术文档",
     "app.header.menu.artist.docs.description":
       "面向美术，包含常用美术软件使用指南和对接引擎的最佳实践",
     "app.header.menu.editor": "编辑器",
-    "app.header.menu.editor.docs": "引擎编辑器文档",
+    "app.header.menu.editor.docs": "Engine 编辑器文档",
     "app.header.menu.editor.docs.description":
       "面向美术和开发，编辑器的基础操作和引擎功能的可视化使用",
     "app.header.menu.ecosystem": "工具",
     "app.header.menu.ecosystem.tool": "工具",
-    "app.header.menu.ecosystem.editor": "引擎编辑器",
+    "app.header.menu.ecosystem.editor": "Engine 编辑器",
     "app.header.menu.ecosystem.editor.description":
     "在线完成场景搭建、动画编辑、脚本开发等流程",
     "app.header.menu.ecosystem.effects-editor": "Effects 编辑器",
@@ -169,12 +169,12 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.engine": "Engine",
     "app.header.menu.api": "API",
     "app.header.menu.examples": "examples",
-    "app.header.menu.engine.docs": "Engine Development Docs",
+    "app.header.menu.engine.docs": "Engine Runtime Docs",
     "app.header.menu.engine.docs.description":
       "For developers, introduce how to get started, basic concepts and usage of engine",
     "app.header.menu.engine.api": "Engine API",
     "app.header.menu.engine.examples": "Engine Examples",
-    "app.header.menu.editor.docs": "Editor Docs",
+    "app.header.menu.editor.docs": "Engine Editor Docs",
     "app.header.menu.artist": "Art",
     "app.header.menu.artist.docs": "Art Docs",
     "app.header.menu.artist.docs.description":
