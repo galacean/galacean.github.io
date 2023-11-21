@@ -1,8 +1,9 @@
 ---
 order: 4
 title: 检查器面板
-type: 界面
-label: Editor-Interface
+type: 基础知识
+group: 界面
+label: Basics/Interfaces
 ---
 
 

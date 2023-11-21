@@ -1,8 +1,9 @@
 ---
 order: 0
-title: 简介
-type: 页面介绍
-label: Editor-Interface
+title: 页面
+type: 基础知识
+group: 界面
+label: Basics/Interfaces
 ---
 
 ## 编辑器首页

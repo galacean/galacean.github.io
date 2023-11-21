@@ -1,9 +1,8 @@
 ---
 order: 0
 title: Overview
-type: Introduction
-group: Basic
-label: Introduction/Basic
+type: Basics
+label: Basics
 ---
 
 ## Overview

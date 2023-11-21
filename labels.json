@@ -9,11 +9,11 @@
   },
   {
     "uuid": "markdown-Introduction",
-    "name": "Introduction",
+    "name": "Basics",
     "parent_uuid": null,
     "weight": 2,
     "tag": "doc-engine",
-    "cn_name": "快速入门"
+    "cn_name": "基础知识"
   },
   {
     "uuid": "markdown-Introduction-basic",

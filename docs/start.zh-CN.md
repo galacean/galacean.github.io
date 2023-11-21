@@ -1,9 +1,8 @@
 ---
 order: 0
 title: 概述
-type: 快速入门
-group: 基础
-label: Introduction/Basic
+type: 基础知识
+label: Basics
 ---
 
 ## 总览

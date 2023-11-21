@@ -1,8 +1,9 @@
 ---
 order: 3
 title: 资产面板
-type: 界面
-label: Editor-Interface
+type: 基础知识
+group: 界面
+label: Basics/Interfaces
 ---
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/b4ef8a10-3a03-4a85-afc0-1ada972a50ab/image-20230925180630387.png" alt="image-20230925180630387" style="zoom:50%;" />

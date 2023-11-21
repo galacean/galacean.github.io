@@ -1,8 +1,9 @@
 ---
 order: 1
 title: 主菜单
-type: 界面
-label: Editor-Interface
+type: 基础知识
+group: 界面
+label: Basics/Interfaces
 ---
 
 ## 主菜单
