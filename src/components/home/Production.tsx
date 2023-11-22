@@ -1,4 +1,5 @@
-import { Button, Flex, Link, styled } from "@galacean/editor-ui";
+import { Button, Flex, styled } from "@galacean/editor-ui";
+import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useContext } from "react";
