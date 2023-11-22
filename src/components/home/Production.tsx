@@ -85,7 +85,7 @@ export default function Production() {
           </Flex>
         </StyledCard>
 
-        <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*DDHdQ4gxfj0AAAAAAAAAAAAADsB_AQ/fmt.webp)` }}>
+        <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_j9rjmc/afts/img/A*1UogT4whkacAAAAAAAAAAAAADvGmAQ/original)` }}>
           <StyledH align="v" wrap={false}>
             <StyledIcon src="https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*iX_AQJ118e0AAAAAAAAAAAAADsB_AQ/original" alt="" />
             <FormattedMessage id="app.home.effects" />
