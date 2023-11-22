@@ -20,7 +20,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.engine.docs": "Engine 运行时文档",
     "app.header.menu.engine.docs.description":
       "面向开发，介绍如何快速上手、引擎基础概念和使用方法",
-    "app.header.menu.engine.api": "引擎 API",
+    "app.header.menu.engine.api": "Engine API",
     "app.header.menu.engine.examples": "Engine 示例",
     "app.header.menu.artist": "美术",
     "app.header.menu.artist.docs": "美术文档",
@@ -168,7 +168,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.header.menu.community": "Community",
     "app.header.menu.engine": "Engine",
     "app.header.menu.api": "API",
-    "app.header.menu.examples": "examples",
+    "app.header.menu.examples": "Examples",
     "app.header.menu.engine.docs": "Engine Runtime Docs",
     "app.header.menu.engine.docs.description":
       "For developers, introduce how to get started, basic concepts and usage of engine",
