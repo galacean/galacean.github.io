@@ -77,7 +77,7 @@ const StyledNavigationMenu = () => {
       </DropdownMenu>
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.api' })}</StyledItem>}>
         <MenuItem>
-          <StyledLink to={`https://galacean.antgroup.com/editor`} target='_blank'>
+          <StyledLink to={`/api/${context.version}`} target='_blank'>
             {formatMessage({ id: 'app.header.menu.engine.api' })}
           </StyledLink>
         </MenuItem>
