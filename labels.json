@@ -375,5 +375,13 @@
     "weight": 16,
     "tag": "example",
     "cn_name": "Light"
+  },
+  {
+    "uuid": "ts-Video",
+    "name": "Video",
+    "parent_uuid": null,
+    "weight": 17,
+    "tag": "example",
+    "cn_name": "Video"
   }
 ]
