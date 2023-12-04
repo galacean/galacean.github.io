@@ -7,8 +7,6 @@ import {
   BaseMaterial,
   BlendMode,
   Camera,
-  CompareFunction,
-  CullMode,
   Engine,
   Script,
   Shader,
