@@ -1,8 +1,9 @@
 ---
-order: 1
-title: 第一个 2D 项目
-type: 介绍
-label: Editor-Introduction
+order: 0
+title: 像素小鸟
+type: 手把手
+label: HandByHand 
+
 ---
 
 > 相信大家对 Flappy Bird 都不陌生，本文简单描述下如何用 Galacean 复刻这个 2D 游戏。
