@@ -7,8 +7,6 @@ import {
   BaseMaterial,
   BlendMode,
   Camera,
-  CompareFunction,
-  CullMode,
   Engine,
   Script,
   Shader,
@@ -109,7 +107,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const width = 1500;
   const height = 1624;
   dom.src =
-    "https://mass-office.alipay.com/huamei_koqzbu/afts/file/MaxERLqU_vsAAAAAAAAAABAADnV5AQBr";
+    "https://gw.alipayobjects.com/v/wufu_ainianhua/afts/video/zKhSTJqO8dUAAAAAAAAAAAAALW6BAQBr";
   dom.crossOrigin = "anonymous";
   dom.loop = true;
   dom.muted = true;
