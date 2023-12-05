@@ -1,33 +1,13 @@
 ---
 order: 1
-title: 相机组件
+title: 相机
 type: 图形
-group: 摄像机
-label: Graphics/Camera
+label: Graphics
 ---
 
 相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Galacean Engine 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
 
-## 基本用法
-
-```typescript
-// 创建实体
-const entity = root.createChild("cameraEntity");
-// 创建相机组件
-const camera = entity.addComponent(Camera);
-camera.nearClipPlane = 0.1;
-camera.farClipPlane = 100;
-
-// 设置透视投影属性
-camera.fieldOfView = 60;
-
-// 通过 entity 获取相机
-entity.engine.sceneManager.activeScene._activeCameras[0];
-```
-
 ## 类型
-
-开发者可以通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定采用透视投影或正交投影。
 
 ### 透视投影
 
@@ -54,14 +34,40 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 
 经过对透视投影和正交投影的比较，可以直观地发现他们主要有以下不同点：
 
-- **可视区域模型**
-- **是否有近大远小的效果**
+- 可视区域模型
+- 是否有近大远小的效果
 
 因此在实际项目中使用时，一般会以想要获得的视觉效果来确定投影的类型，比如当需要展示 2D 效果时，就选择正交投影，当需要展示 3D 效果时，就选择透视投影。
 
-### isOrthographic
+## 编辑器操作
 
-<playground src="ortho-switch.ts"></playground>
+编辑器项目已经自带了一个相机组件，当然，我们也可以手动添加：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c6a1a344-630c-40c6-88ef-abb447cfd183/image-20231009114711623.png" alt="image-20231009114711623" style="zoom:50%;" />
+
+在检查器里可以查看相机属性，并且左下角的相机预览可以方便地查看项目实际运行时的相机效果：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/24fa20d2-8f50-49bd-907a-3806f31e462e/image-20231009114816056.png" alt="image-20231009114816056" style="zoom:50%;" />
+
+相机属性介绍详见[相机文档](${docs}camera-cn)。
+
+## 脚本使用
+
+```typescript
+// 创建实体
+const entity = root.createChild("cameraEntity");
+// 创建相机组件
+const camera = entity.addComponent(Camera);
+camera.nearClipPlane = 0.1;
+camera.farClipPlane = 100;
+
+// 设置透视投影属性
+camera.fieldOfView = 60;
+
+// 通过 entity 获取相机
+entity.engine.sceneManager.activeScene._activeCameras[0];
+```
+
 
 ## 属性
 
@@ -82,6 +88,11 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 |          | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>) | 深度模式，默认为`DepthTextureMode.None`                                                     |
 
 详情请查看 [API 文档](${api}core/Camera)。
+
+### isOrthographic
+开发者可以通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定采用透视投影或正交投影。
+
+<playground src="ortho-switch.ts"></playground>
 
 ### cullingMask
 
@@ -131,3 +142,9 @@ entity.engine.sceneManager.activeScene._activeCameras[0];
 ### 相机和相机控件如何配合使用？
 
 详情请查看 [相机控件文档](${docs}controls-cn)。
+
+## 编辑器视图相机
+
+编辑器也暴露了几个编辑时相机配置选项，主要用来解决搭建场景时，裁剪面太远或者太近导致看不到物体的问题：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/38748b3a-e448-47fb-bae6-9e77414ea975/image-20231009114856297.png" alt="image-20231009114856297" style="zoom:50%;" />
