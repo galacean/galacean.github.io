@@ -1,22 +1,21 @@
 ---
-order: 4
-title: 网格渲染器
+order: 0
+title: 渲染管线
 type: 图形
-group: 渲染器组件
-label: Graphics/Renderer
+label: Graphics
 ---
 
 [MeshRenderer](${api}core/MeshRenderer) 是网格渲染组件，当一个实体挂载了网格渲染组件，只需设置它的 `mesh` 与 `material`即可渲染物体。
 
-## 使用
+组件属性：
 
-```typescript
-let cubeEntity = rootEntity.createChild('cube');
-let cube = cubeEntity.addComponent(MeshRenderer);
-cube.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
-cube.setMaterial(new BlinnPhongMaterial(engine));
-```
-<playground src="scene-basic.ts"></playground>
+| 属性            | 说明                                                          |
+| --------------- | ------------------------------------------------------------- |
+| Mesh            | 选取项目中的网格，描述顶点信息（位置，拓扑，顶点颜色，UV 等） |
+| Material        | 选取项目中的材质，描述材质信息                                |
+| receiveShadows  | 当前渲染器是否接受阴影（默认接受）                            |
+| castShadows     | 当前渲染器是否投射阴影（默认投射）                            |
+| Render Priority | 渲染优先级，默认 0，数字越大，越后渲染                        |
 
 ## 渲染顺序
 
