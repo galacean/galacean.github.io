@@ -72,10 +72,3 @@ label: Basics/Interfaces
     <figcaption style="text-align:center; color: #889096;font-size:12px">Material Asset Picker</figcaption>
   </figure>
 </div>
-
-### 组件面板
-
-从层级面板或场景中选择一个实体后，检查器将显示出当前选中节点所可以调整的属性。在此情况下，你可以点击 `Add Component` 按钮来为当前实体添加新的组件。
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/95d58dde-109f-44b2-89ef-2959ad8b4fe3/image-20230926112713126.png" alt="image-20230926112713126" style="zoom:50%;" />
-
