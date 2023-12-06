@@ -1,5 +1,5 @@
 ---
-order: 5
+order: 3
 title: 离屏渲染纹理
 type: 图形
 group: 纹理

@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 2
 title: 立方纹理
 type: 图形
 group: 纹理

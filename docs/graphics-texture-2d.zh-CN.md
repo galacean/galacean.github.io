@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 title: 2D 纹理
 type: 图形
 group: 纹理
@@ -69,4 +69,3 @@ const texture = 生成纹理(); // 上文所示，不再赘述
 
 material.baseTexture = texture;
 ```
-

@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 4
 title: 纹理压缩
 type: 图形
 group: 纹理
