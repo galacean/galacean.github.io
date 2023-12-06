@@ -1,8 +1,8 @@
 ---
 order: 5
 title: 粒子渲染器
-type: 动画
-label: Animation
+type: 图形
+label: Graphics
 
 ---
 
