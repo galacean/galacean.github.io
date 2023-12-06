@@ -105,35 +105,6 @@ label: Basics/Interfaces
 - [全局/复原](#10)
 - [截屏](#11)
 
-## Gizmo
-
-更改选中实体的可视化变换组件，直接使用鼠标操纵辅助图标轴。
-
-<h3 id = '1'> 移动 </h3>
-
-| 图标                                                                                                                              | 操作                    | 快捷键 |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :----- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*s6H2RIawrzgAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `切换到 Gizmo 移动模式` | W      |
-
-点击辅助轴，可在单个方向内拖动选中实体。点击辅助平面，可在单个平面内拖动选中实体。
-
-<h3 id = '2'> 旋转 </h3>
-
-| 图标                                                                                                                              | 操作                    | 快捷键 |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :----- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*lwdcRK3MAUIAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `切换到 Gizmo 选择模式` | E      |
-
-点击并拖动以更改选中实体的旋转。
-红色代表绕 X 轴进行旋转，绿色代表绕 y 轴进行旋转，蓝色代表绕 z 轴进行旋转。
-
-<h3 id = '3'> 缩放 </h3>
-
-| 图标                                                                                                                              | 操作                    | 快捷键 |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :----- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*r7RiRpAiJm0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `切换到 Gizmo 缩放模式` | R      |
-
-点击中心立方体，在所有轴上均匀的缩放选中实体。点击辅助轴，在单个方向缩放选中实体。
-
 <h2 id = '4'> 锚点 </h2>
 确定 Gizmo，以及<strong>聚焦目标</strong>的位置。更改此选项可以更容易地在想要的点周围进行转换。
 
@@ -141,14 +112,6 @@ label: Basics/Interfaces
 | :-------------------------------------------------------------------------------------------------------------------------------- | :--------- | :----------------------------- |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*A5olSoPK_jMAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `中心锚点` | 选中实体及其子节点包围盒的中心 |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*hniTQL6c-D0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `枢纽锚点` | 选中实体的世界坐标             |
-
-<h2 id = '5'> 坐标 </h2>
-确定 gizmo 在场景中姿态
-
-| 图标                                                                                                                              | 选项       | 内容                                              |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :--------- | :------------------------------------------------ |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*of8ATKP_4u0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `本地坐标` | 保持 Gizmo 相对于选中实体的旋转                   |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*Okm5S64_LqEAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `全局坐标` | 固定 Gizmo 与世界空间方向。即与场景中网格方向一致 |
 
 <h2 id = '7'> 设置 </h2>
 设置菜单包含用于调整视图辅助显示的选项。包括

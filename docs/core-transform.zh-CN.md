@@ -11,7 +11,39 @@ label: Core
 
 <playground src="transform-basic.ts"></playground>
 
-## 基本用法
+## 编辑器使用
+
+![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original)
+
+更改选中实体的可视化变换组件，直接使用鼠标操纵辅助图标轴。
+
+<h3 id = '1'> 移动 </h3>
+
+| 图标                                                                                                                              | 操作                    | 快捷键 |
+| :-------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :----- |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*s6H2RIawrzgAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `切换到 Gizmo 移动模式` | W      |
+
+点击辅助轴，可在单个方向内拖动选中实体。点击辅助平面，可在单个平面内拖动选中实体。
+
+<h3 id = '2'> 旋转 </h3>
+
+| 图标                                                                                                                              | 操作                    | 快捷键 |
+| :-------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :----- |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*lwdcRK3MAUIAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `切换到 Gizmo 选择模式` | E      |
+
+点击并拖动以更改选中实体的旋转。
+红色代表绕 X 轴进行旋转，绿色代表绕 y 轴进行旋转，蓝色代表绕 z 轴进行旋转。
+
+<h3 id = '3'> 缩放 </h3>
+
+| 图标                                                                                                                              | 操作                    | 快捷键 |
+| :-------------------------------------------------------------------------------------------------------------------------------- | :---------------------- | :----- |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*r7RiRpAiJm0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `切换到 Gizmo 缩放模式` | R      |
+
+点击中心立方体，在所有轴上均匀的缩放选中实体。点击辅助轴，在单个方向缩放选中实体。
+
+
+## 脚本使用
 
 ```typescript
 // 创建节点

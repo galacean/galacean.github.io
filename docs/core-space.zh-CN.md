@@ -1,13 +1,11 @@
 ---
 order: 8
-title: 坐标系统
+title: 坐标系统与变换
 type: 核心
 label: Core
 ---
 
 坐标系统在渲染引擎中扮演的角色非常重要，它保证了渲染结果与交互的准确，阅读本文档，你可以了解 Galacean 中涉及的绝大多数坐标系统，需要注意的是，不同渲染引擎中各种空间的定义是有差异的，本文仅讨论 Galacean 中的空间标准。
-
-## 前言
 
 本文会按照`空间的定义`，`坐标系类型`等方面来横向比较各个坐标空间，其中`坐标系类型`具体指`左手坐标系`与`右手坐标系`，如下图所示：
 
@@ -28,6 +26,18 @@ label: Core
 ## 世界空间
 
 世界空间是绝对的，根节点放置在`世界空间`中，而其子节点会继承他的空间关系，与`局部空间`相同，`世界空间`也是`右手坐标系`，当两个节点不在同一个`局部空间`时，可以将它们转换至世界空间来比较相对的位置关系。
+
+## 编辑器使用
+
+![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original)
+
+确定 gizmo 在场景中姿态
+
+| 图标                                                                                                                              | 选项       | 内容                                              |
+| :-------------------------------------------------------------------------------------------------------------------------------- | :--------- | :------------------------------------------------ |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*of8ATKP_4u0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `本地坐标` | 保持 Gizmo 相对于选中实体的旋转                   |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*Okm5S64_LqEAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `全局坐标` | 固定 Gizmo 与世界空间方向。即与场景中网格方向一致 |
+
 
 ## 观察空间
 
