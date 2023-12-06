@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 1
 title: 实体与组件
 type: 核心
 label: Core
