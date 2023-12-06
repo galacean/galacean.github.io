@@ -1,17 +1,37 @@
 ---
-order: 4
+order: 3
 title: PBR 材质
 type: 图形
 group: 材质
 label: Graphics/Material
 ---
 
-引擎和编辑器全面提倡使用 PBR 材质 。PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。
+PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。PBR 遵循能量守恒，是基于物理的渲染，并且引入了 [IBL](${docs}light-cn#ibl-镜面反射) 模拟全局光照，通过金属度、粗糙度等参数，更加方便地调节渲染效果。
+
 
 <playground src="pbr-helmet.ts"></playground>
 
-## 通用参数
+## 编辑器使用
 
+根据真实世界中光线与材质的交互，绝缘体（即当金属度为 0 时）材质也能反射大约 4% 纯色光线，从而渲染出周边环境，如下模型金属度为 0 但是还能隐约看到反射的周边环境：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1017d75b-03a3-4c06-8971-524544373429/image-20231007153753006.png" alt="image-20231007153753006" style="zoom:50%;" />
+
+我们调节材质的金属度，可以发现，金属度越大，周围的环境越清晰，并且开始从白色纯色变成彩色。这是因为电介质（即金属度为 1 时）材质会将光线 100% 全部反射出物体表面，即反射出彩色的周边环境：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/711f8b97-247c-465e-8cf2-4896b0c78534/metal.gif" alt="metal" style="zoom:100%;" />
+
+除此之外，还有很多通用属性可以配置，比如粗糙度、环境遮蔽、自发射光、透明度等等：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/4806589e-386f-404a-82e5-d273e98b707d/other.gif" alt="other" style="zoom:100%;" />
+
+### Bake PBR( lightmap 过渡方案 )
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c539743b-d96a-4081-b959-7ddd5a0db217/image-20231009113312944.png" alt="image-20231009113312944" style="zoom:50%;" />
+
+## 参数
+
+### 通用参数
 | 参数 | 应用 |
 | :-- | :-- |
 | [baseColor](${api}core/PBRBaseMaterial#baseColor) | 基础颜色。**基础颜色** \* **基础颜色纹理** = **最后的基础颜色**。基础颜色是物体的反照率值,与传统的漫反射颜色不同，它会同时贡献镜面反射和漫反射的颜色，我们可以通过上面提到过的金属度、粗糙度，来控制贡献比。 |
@@ -29,7 +49,7 @@ label: Graphics/Material
 
 除了以上通用参数，PBR 提供了 **金属-粗糙度** 和 **高光-光泽度** 两种工作流，分别对应 [PBRMaterial](${api}core/PBRMaterial) 和 [PBRSpecularMaterial](${api}core/PBRSpecularMaterial)。
 
-## PBRMaterial
+### PBRMaterial
 
 | 参数 | 应用 |
 | :-- | :-- |
@@ -39,7 +59,7 @@ label: Graphics/Material
 
 <playground src="pbr-base.ts"></playground>
 
-## PBRSpecularMaterial
+### PBRSpecularMaterial
 
 | 参数 | 应用 |
 | :-- | :-- |

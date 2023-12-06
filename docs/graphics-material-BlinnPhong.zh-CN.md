@@ -1,14 +1,21 @@
 ---
-order: 3
+order: 2
 title: Blinn-Phong 材质
 type: 图形
 group: 材质
 label: Graphics/Material
 ---
 
-[BlinnPhongMaterial](${api}core/BlinnPhongMaterial) 虽然不是基于物理渲染，但是其高效的渲染算法和基本齐全的光学部分，还是有很多的应用场景。
+Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。 [BlinnPhongMaterial](${api}core/BlinnPhongMaterial) 虽然不是基于物理渲染，但是其高效的渲染算法和基本齐全的光学部分，还是有很多的应用场景。
 
-## 常用参数
+## 编辑器使用
+<img src="https://gw.alipayobjects.com/zos/OasisHub/eaa93827-29a4-46ad-b9d3-f179fa200c57/blinn.gif" alt="blinn" style="zoom:100%;" />
+
+## 脚本使用
+
+<playground src="blinn-phong.ts"></playground>
+
+## 参数
 
 | 参数 | 应用 |
 | :-- | :-- |
@@ -22,7 +29,3 @@ label: Graphics/Material
 | [emissiveTexture](${api}core/BlinnPhongMaterial#emissiveTexture) | 自发光纹理。搭配自发光颜色使用，是个相乘的关系。 |
 | [shininess](${api}core/BlinnPhongMaterial#shininess) | 镜面反射系数。值越大镜面反射效果越聚拢。 |
 | [tilingOffset](${api}core/BlinnPhongMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移，参考 [案例](${examples}tiling-offset) |
-
-## 使用
-
-<playground src="blinn-phong.ts"></playground>

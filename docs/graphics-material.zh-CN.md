@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 0
 title: 材质总览
 type: 图形
 group: 材质
@@ -8,7 +8,7 @@ label: Graphics/Material
 
 Galacean 创建的三维世界与真实的世界一样包含各式各样的物体，这些物体的颜色，色泽亮度，透明度都是由材质决定的，引擎中内置了多种经典材质并支持开发者实现自定义材质。
 
-## 分类
+用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，glTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Galacean 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
 
 | 类型 | 描述 |
 | :-- | :-- |
@@ -16,8 +16,6 @@ Galacean 创建的三维世界与真实的世界一样包含各式各样的物�
 | [Blinn-Phong 材质](${docs}material-blinn-phong-cn) | Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。 |
 | [PBR 材质](${docs}material-pbr-cn) | PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。 |
 | [自定义材质](${docs}custom-material-cn) | 可定制特殊的渲染需求 |
-
-## 通用属性
 
 以下属性都可以直接在 [UnlitMaterial](${api}core/UnlitMaterial)、[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)、[PBRMaterial](${api}core/PBRMaterial)、[PBRSpecularMaterial](${api}core/PBRSpecularMaterial) 材质中使用。
 
@@ -28,9 +26,27 @@ Galacean 创建的三维世界与真实的世界一样包含各式各样的物�
 | [renderFace](${api}core/BaseMaterial#renderFace) | 渲染面。可以决定渲染正面、背面、双面。 |
 | [blendMode](${api}core/BaseMaterial#blendMode) | 颜色混合模式。当设置材质为透明后，可以设置此枚举来决定颜色混合模式，参考 [案例](${examples}blend-mode) |
 
-## 使用
+## 编辑器使用
 
-用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，glTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Galacean 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
+一般情况下，模型已经自动绑定好材质，用户可以不用做任何操作；如果想要修改材质，我们需要点击 `duplicate & remap` 按钮来生成一份该材质的副本，然后再编辑该材质副本。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1f5caa3a-bc01-419f-83c0-dd0ef12692bf/remap.gif" alt="remap" style="zoom:100%;" />
+
+切换 Shader 时会共用相同类型的属性，比如基础颜色为红色，那么即使切换 Shader，基础颜色仍为红色。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b3724c3e-e8d9-43af-91c8-c6a80cd027f9/image-20231009112713870.png" alt="image-20231009112713870" style="zoom:50%;" />
+
+| Shader         | 描述              |
+| :------------- | :---------------- |
+| PBR            | Galacean 标准材质 |
+| PBR Specular   | Galacean 标准材质 |
+| Unlit          | Galacean 标准材质 |
+| Blinn Phong    | Galacean 标准材质 |
+| Bake PBR       | lightmap 过渡方案 |
+| Sky Box        | 天空盒            |
+| Sky Procedural | 大气散射          |
+
+## 脚本使用
 
 ```typescript
 // 获取想要修改的 renderer
