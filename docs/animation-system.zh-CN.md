@@ -10,7 +10,7 @@ label: Animation
 ```mermaid
 flowchart TD
 	%% Colors %%
-		linkStyle default stroke-width:1px
+		linkStyle default stroke-width:1px,stroke-dasharray:3
 		classDef white fill:white,stroke:#000,stroke-width:2px,color:#000
 		classDef yellow fill:#fffd75,stroke:#000,stroke-width:2px,color:#000
 		classDef green fill:#93ff75,stroke:#000,stroke-width:2px,color:#000
