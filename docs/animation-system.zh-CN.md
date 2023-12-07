@@ -7,7 +7,28 @@ label: Animation
 
 ### 动画系统的构成
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/b973418a-cca7-46c9-9298-a54e7d445f70/image-20210830233452874.png" alt="image-20210830233452874" style="zoom:50%;" />
+```mermaid
+flowchart TD
+	%% Colors %%
+		linkStyle default stroke-width:1px
+		classDef white fill:white,stroke:#000,stroke-width:2px,color:#000
+		classDef yellow fill:#fffd75,stroke:#000,stroke-width:2px,color:#000
+		classDef green fill:#93ff75,stroke:#000,stroke-width:2px,color:#000
+
+    Animator:::green --> AnimatorController:::yellow
+    Animator --> AnimatorControllerParameter:::white
+    AnimatorController --> AnimatorControllerLayer
+    AnimatorControllerLayer --> AnimatorStateMachine
+    AnimatorControllerLayer --> BlendingMode:::white
+    AnimatorStateMachine --> AnimatorState
+    AnimatorStateMachine --> AnimatorTransition:::white
+    AnimatorState --> AnimationClip
+    AnimationClip:::yellow --> AnimationCurve
+    AnimationClip --> AnimationEvent:::white
+    AnimationCurve --> Keyframe
+    AnimationCurve --> Interpolation:::white
+ ```
+  
 
 | 概念                                                         | 解释                                                         |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
