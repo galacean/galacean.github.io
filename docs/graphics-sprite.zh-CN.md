@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 精灵
+title: 精灵渲染器
 type: 图形
 group: 2D
 label: Graphics/2D
@@ -49,23 +49,28 @@ pivot 代表精灵中心在 region 中的位置，如下：
 
 ### 添加精灵组件
 
-[SpriteRenderer](${api}core/SpriteRenderer) 组件用于在 3D/2D 场景中显示图片。
+[SpriteRenderer](${api}core/SpriteRenderer) 组件用于在 3D/2D 场景中显示图片：
 
-| 属性名 | 属性类型 | 描述 |
-| :--- | :--- | :--- |
-|[sprite](${api}core/SpriteRenderer/#sprite)|[Sprite](${api}core/Sprite)|使用精灵的引用|
-|[drawMode](${api}core/SpriteRenderer/#drawMode)|[SpriteDrawMode](${api}core/SpriteDrawMode)|绘制模式（普通绘制，九宫绘制）|
-|[width](${api}core/SpriteRenderer/#width)|number|渲染的精灵最后在三维空间中呈现的宽度|
-|[height](${api}core/SpriteRenderer/#height)|number|渲染的精灵最后在三维空间中呈现的高度|
-|[color](${api}core/SpriteRenderer/#color)|[Color](${api}math/Color)|渲染叠加的颜色|
-|[flipX](${api}core/SpriteRenderer/#flipX)|boolean|是否对渲染结果做水平翻转|
-|[flipY](${api}core/SpriteRenderer/#flipY)|boolean|是否对渲染结果做垂直翻转|
-|[maskLayer](${api}core/SpriteRenderer/#maskLayer)|[SpriteMaskLayer](${api}core/SpriteMaskLayer)|精灵渲染器属于哪个遮罩层|
-|[maskInteraction](${api}core/SpriteRenderer/#maskInteraction)|[SpriteMaskInteraction](${api}core/SpriteMaskInteraction)|遮罩的类型|
-[priority](${api}core/SpriteRenderer/#priority)|number|渲染器的渲染优先级，值较低的先渲染，值较高的最后渲染|
+![sprite-renderer](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*adizTpp_l5cAAAAAAAAAAAAADjCHAQ/original)
+
+提供了精灵渲染组件所有可设置的属性：
+
+![属性面板](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*pcbLSahH--YAAAAAAAAAAAAADjCHAQ/original)
+
+| 属性 | 功能说明 |
+| :--- | :--- |
+| `Sprite` | 精灵资源 |
+| `Width` | 精灵显示宽，默认会根据贴图自动计算 |
+| `Height` | 精灵显示高，默认会根据贴图自动计算 |
+| `Color` | 精灵颜色 |
+| `Flip` | 精灵翻转，支持水平和竖直两个方向 |
+| `Draw Mode` | 绘制模式，支持普通与九宫绘制 |
+| `Mask Interaction` | 遮罩类型，用于设置精灵是否需要遮罩，以及需要遮罩的情况下，是显示遮罩内还是遮罩外的内容 |
+| `Mask Layer` | 精灵所属遮罩层，用于和 SpriteMask 进行匹配，默认为 Everything，表示可以和任何 SpriteMask 发生遮罩 |
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
 
 
-### 添加精灵组件并且设置精灵资源
+### 设置精灵资源
 
 需要显示图片的时候，需要先给一个实体添加精灵组件，然后设置精灵资源，如下：
 
@@ -82,18 +87,6 @@ pivot 代表精灵中心在 region 中的位置，如下：
 可以通过设置 `color` 属性来调整颜色，从而实现一些淡入淡出的效果，如下：
 
 ![sprite-renderer-color](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*5pRRSLLGfq8AAAAAAAAAAAAADjCHAQ/original)
-
-### 使用遮罩
-
-`SpriteRenderer` 和 `SpriteMask` 配合使用，可以实现精灵的各种遮挡效果。`SpriteMask` 组件在编辑器中的使用详见 [SpriteMask在编辑器中如何使用](${docs}editor-sprite-mask-cn)。使用遮罩，需要设置 `mask interaction`（遮罩类型）和 `mask layer`（精灵所属遮罩层) 两个字段：
-
-![sprite-renderer-mask-prop](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*O0BtQpE83GkAAAAAAAAAAAAADjCHAQ/original)
-
-
-
-在编辑器中，可以通过设置以上两个字段来看看具体效果：
-
-![sprite-renderer-mask](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*PewLQaWiLhoAAAAAAAAAAAAADjCHAQ/original)
 
 
 ## 脚本使用
@@ -219,18 +212,3 @@ spriteRenderer.color.set(1, 0, 0, 1);
 SpriteRenderer 的自定义材质的使用方法和 [MeshRenderer](${docs}mesh-renderer-cn) 的一样，请参考[自定义材质](${docs}custom-material-cn)文档。
 
 <playground src="sprite-material-blur.ts"></playground>
-
-#### 使用遮罩
-
-SpriteRenderer 和 SpriteMask 配合使用，可以实现精灵的各种遮挡效果。可以通过以下代码打开精灵的遮罩功能：
-
-```typescript
-// 设置遮罩类型
-spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
-// 设置精灵处于哪个遮罩层
-spriteRenderer.maskLayer = SpriteMaskLayer.Layer0;
-```
-
-[SpriteMaskInteraction](${api}core/SpriteMaskInteraction) 里面声明了精灵的遮罩类型，[SpriteMaskLayer](${api}core/SpriteMaskLayer) 里面声明了所有的遮罩层，这个在 SpriteMask 中也需要用到。
-
-<playground src="sprite-mask.ts"></playground>

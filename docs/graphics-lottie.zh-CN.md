@@ -1,13 +1,65 @@
 ---
-order: 4
+order: 6
 title: Lottie
-type: 动画
-label: Animation
+type: 图形
+group: 2D
+label: Graphics/2D
 ---
 
-这是用 Galacean Engine 实现的 <a href="https://airbnb.design/lottie/" target="_blank">Lottie</a> 运行时。目前只支持 Lottie 节点树中的**精灵元素**（Sprite Elements）的绘制。
+[Lottie](https://airbnb.design/lottie/) 是广受设计师和前端开发者欢迎的动画格式，用户可以在 Galacean 中轻松完成 Lottie 资产的处理和组件添加。
 
-## 安装
+## 编辑器使用
+
+建议设计师在 AE 中导出 lottie 文件的时候，图片采用 base64 格式写入 lottie 的 json 文件中。
+
+开发者拿到 `.json` 文件后，首先需要把 `.json` 文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “lottie” 资产，选择本地一个 lottie json 文件，然后：
+
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*UQ1LTI_mYv4AAAAAAAAAAAAADjCHAQ/original"   />
+
+选择一个节点，添加 Lottie 组件，选择 resource 为上一步上传的资产，通过修改 speed 改变播放速度：
+
+![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*ehFMT7vBaCAAAAAAAAAAAAAADjCHAQ/original)
+
+| 属性 | 功能说明 |
+| :--- | :--- |
+| `resource` | 选择 Lottie 资产 |
+| `isLooping` | 是否循环播放，默认循环 |
+| `speed` | 播放速度，`1` 为原速度播放，数值越大播放约快 |
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
+
+| 方法 |  描述 |
+| :--- | :--- |
+| `play` | 播放动画，传入动画片段名参数会播放特定的动画片段 |
+| `pause` | 暂停动画 |
+
+### 切片功能
+
+编辑器提供了动画切片的功能，可以把设计师提供的整个片段切成多段，每个片段需要定义片段名、开始帧、结束帧三个字段。
+
+<playground src="lottie-clips.ts"></playground>
+
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*skjbSZjSpYoAAAAAAAAAAAAADjCHAQ/original" style="zoom:100%;" />
+
+该操作会在 Lottie 协议中添加 `lolitaAnimations` 字段实现动画的切片：
+
+```json
+"lolitaAnimations": [
+  {
+    "name": "clip1",
+    "start": 0,
+    "end": 30
+  },
+  {
+    "name": "clip2",
+    "start": 50,
+    "end": 100
+  },
+]
+```
+
+## 脚本使用
+
+### 安装包
 
 <a href="https://www.npmjs.com/package/@galacean/engine-lottie" target="_blank">@galacean/engine-lottie</a> 是 Galacean Engine 的二方包，需要手动安装：
 
@@ -15,9 +67,8 @@ label: Animation
 npm i @galacean/engine-lottie --save
 ```
 
-## 使用
-
 ### 基础使用
+
 在进行 `Pro Code` 开发的时候，需要一个 `json` 文件和一个 `atlas` 文件来实现 `lottie` 动画，通常美术同学通过 `AE` 导出的给到开发的只有 `json` 文件，此时需要使用 [tools-atlas-lottie](https://www.npmjs.com/package/@galacean/tools-atlas-lottie) `CLI` 工具生成 `atlas` 文件。
 
 ```typescript
@@ -54,34 +105,6 @@ engine.resourceManager.load({
   // do something next..
 ```
 
-### 动画切片
-设计师给的 Lottie 文件常常包含多个动画片段（一个动画片段从某帧开始到某帧结束），前端在播放时可以通过在 Lottie 协议中添加 `lolitaAnimations` 字段实现动画的切片：
-
-```json
-"lolitaAnimations": [
-  {
-    "name": "beforePlay",
-    "start": 0,
-    "end": 71
-  },
-  {
-    "name": "onPlay",
-    "start": 72,
-    "end": 143
-  },
-  {
-    "name": "afterPlay",
-    "start": 144,
-    "end": 203
-  }
-]
-```
-
-以上代码在协议中添加了 `beforePlay`（0-71帧）、`onPlay`（72-143帧）、`afterPlay`（114-203帧）三个片段。以下示例先播放 3 遍 `beforePlay`，再播放 2 遍 `onPlay`，最后播 1 遍 `afterPlay`：
-
-<playground src="lottie-clips.ts"></playground>
-
-
 ### 3D 变换
 
 业务场景中经常会出现 3D 变换的需求，比如一些弹窗的入场动画。以旋转为例，由于传统的 lottie-web 方案只能沿着 **Z轴** 旋转（也就是说垂直于屏幕法线方向旋转），即使我们在 AE 中实现了沿着 **X轴** 或 **Y轴** 的旋转效果，使用 lottie-web  播放时也会被忽略。
@@ -91,18 +114,3 @@ engine.resourceManager.load({
 得益于 Galacean Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 变换功能。
 
 <playground src="lottie-3d-rotation.ts"></playground>
-
-## 属性
-
-| 名称 |  描述 |
-| :--- | :--- |
-| `isLooping` | 是否无限循环播放 |
-| `repeats` | 重复播放次数 |
-| `speed` | 播放倍速 |
-
-## 方法
-
-| 名称 |  描述 |
-| :--- | :--- |
-| `play` | 播放动画，传入动画片段名参数会播放特定的动画片段 |
-| `pause` | 暂停动画 |

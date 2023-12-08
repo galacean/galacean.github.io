@@ -1,16 +1,54 @@
 ---
-order: 5
+order: 6
 title: 文字渲染器
 type: 图形
 group: 2D
 label: Graphics/2D
 ---
 
-[TextRenderer](${api}core/TextRenderer) 组件用于在 3D/2D 场景中显示文本。
+[TextRenderer](${api}core/TextRenderer) 组件用于在 3D/2D 场景中显示图片，详见 [文本组件](${docs}text-renderer-cn)。
+
+| 属性 | 功能说明 |
+| :--- | :--- |
+| `Text` | 需要显示的文本 |
+| `Color` | 文本颜色 |
+| `FontSize` | 文本的字体大小 |
+| `Font` | 自定义字体 |
+| `Width` | 文本在三维空间中的宽 |
+| `Height` | 文本在三维空间中的高 |
+| `LineSpacing` | 行间距 |
+| `FontStyle` | 字体样式设置：是否加粗/是否斜体 |
+| `HorizontalAlignment` | 水平对齐方式，可选值有：Left/Center/Right |
+| `VerticalAlignment` | 竖直对齐方式，可选值有：Top/Center/Bottom |
+| `EnableWrapping` | 是否开启换行模式，打开换行模式后，会根据设置的宽来进行换行，如果这时候宽设置为 0，那么文本将不渲染 |
+| `OverflowMode` | 当文本总高度超出设置的高的时候的处理方式，可选值有：Overflow/Truncate， Overflow 表示直接溢出显示， Truncate 表示只保留设置高度以内的内容显示，具体显示内容还和文本在竖直方向上的对齐方式有关|
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
+
+
+## 编辑器使用
+
+### 添加文本组件
+
+需要显示文本的时候，需要先给一个实体添加文本组件，如下：
+
+![添加文本组件](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*3d5AQYTtcNkAAAAAAAAAAAAADjCHAQ/original)
+
+### 设置显示文本
+
+添加完文本组件后，可以设置 Text 属性来显示需要的文本，如下：
+
+![设置显示文本](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*J6nKTJOOm4kAAAAAAAAAAAAADjCHAQ/original)
+
+### 设置自定义字体
+
+为了让文本的显示更为丰富，开发者可以上传自己的字体文件，目前编辑器支持的字体文件格式有：**.ttf**、**.otf**、**.woff**
+
+![设置字体](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*CgA5S5vneeMAAAAAAAAAAAAADjCHAQ/original)
+
+
+## 脚本使用
 
 <playground src="text-renderer.ts"></playground>
-
-## 基本使用
 
 1、创建 [TextRenderer](${api}core/TextRenderer) 组件显示文本    
 2、通过 font 设置 [Font](${docs}font-cn) 对象    
@@ -34,7 +72,7 @@ textRenderer.fontSize = 36;
 textRenderer.color.set(1, 0, 0, 1);
 ```
 
-## 设置宽高
+### 设置宽高
 
 可以通过 width/height 来设置文本在三维空间中的大小，主要有以下几个用处：    
 1、用于包围盒的计算    
@@ -47,7 +85,7 @@ textRenderer.width = 10;
 textRenderer.height = 10;
 ```
 
-## 设置行间距
+### 设置行间距
 
 当需要显示多行文本时，可以通过 lineSpacing 来设置两行文本在竖直方向的间距
 
@@ -56,7 +94,7 @@ textRenderer.height = 10;
 textRenderer.lineSpacing = 0.1;
 ```
 
-## 多行文本显示
+### 多行文本显示
 
 当文本过长时，可能希望文本能够多行来显示，这时候可以通过 enableWrapping 字段来设置开启换行模式，打开换行模式后，会根据前面设置的宽来进行换行，如果这时候宽设置为 0，那么文本将不渲染
 
@@ -65,7 +103,7 @@ textRenderer.lineSpacing = 0.1;
 textRenderer.enableWrapping = true;
 ```
 
-## 文本截取
+### 文本截取
 
 当显示多行文本时，可能存在文本行数过多，这时候可以通过 overflowMode 字段设置是否截取一部分显示，只保留设置高度以内的内容显示，具体显示内容还和文本在竖直方向上的对齐方式有关(相见：文本对齐)，如下：
 
@@ -76,7 +114,7 @@ textRenderer.overflowMode = OverflowMode.Overflow;
 textRenderer.overflowMode = OverflowMode.Truncate;
 ```
 
-## 文本对齐
+### 文本对齐
 
 文本对齐用来设置在指定宽高的情况下，文本如何在宽高内显示，如下：
 
@@ -85,7 +123,8 @@ textRenderer.overflowMode = OverflowMode.Truncate;
 |[horizontalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextHorizontalAlignment](${api}core/TextHorizontalAlignment)|水平方向对齐方式：Left/Center/Right 分别代表 左对齐/居中对齐/右对齐 显示|
 |[verticalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextVerticalAlignment](${api}core/TextVerticalAlignment)|竖直方向对齐方式：Top/Center/Bottom 分别代表 顶部开始显示/居中显示/底部开始显示|
 
-## 文本的字体样式
+### 文本的字体样式
+
 文本的字体样式用来设置文本是否加粗显示，是否斜体显示，如下：
 
 | 属性名 | 属性类型 | 描述 |
@@ -104,9 +143,27 @@ textRenderer.fontStyle = FontStyle.Italic;
 textRenderer.fontStyle = FontStyle.Bold | FontStyle.Italic;
 ```
 
-## 多行文本示例
+### 多行文本
 
 <playground src="text-wrap-alignment.ts"></playground>
 
-## 自定义字体示例
+### 自定义字体
+
+[Font](${api}core/Font) 是字体资源，用于表示文本使用的字体。
+
+| 属性名 | 属性类型 | 描述 |
+| :--- | :--- | :--- |
+|[name](${api}core/Sprite#name)|string|字体资源名称，用来唯一标识一个字体资源，目前用这个字段来表示需要的系统字体|
+
+
+```typescript
+const font = Font.createFromOS(engine, "Arial");
+```
+
+目前支持格式：ttf/otf/woff
+
+```typescript
+const font = await engine.resourceManager.load({url: "https://lg-2fw0hhsc-1256786476.cos.ap-shanghai.myqcloud.com/Avelia.otf"});
+```
+
 <playground src="text-renderer-font.ts"></playground>
