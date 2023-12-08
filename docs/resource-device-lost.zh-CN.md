@@ -1,10 +1,7 @@
 ---
 order: 4
-
 title: 设备恢复
-
 type: 资源
-
 label: Resource
 ---
 
