@@ -1,9 +1,8 @@
 ---
 order: 0
 title: 创建脚本
-type: 功能
-group: 脚本
-label: Editor-Feature/Scripting
+type: 脚本
+label: Script
 ---
 
 [脚本组件](${docs}script-cn)是引擎提供给开发者的重要的扩展能力，在 Galacean Editor 中，脚本也是一种资源。

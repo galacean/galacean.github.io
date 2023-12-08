@@ -1,9 +1,8 @@
 ---
 order: 1
 title: 编辑脚本
-type: 功能
-group: 脚本
-label: Editor-Feature/Scripting
+type: 脚本
+label: Script
 ---
 
 ## 脚本编辑器

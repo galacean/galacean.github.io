@@ -1,9 +1,8 @@
 ---
-order: 2
+order: 3
 title: 事件通信
-type: 功能
-group: 脚本
-label: Editor-Feature/Scripting
+type: 脚本
+label: Script
 ---
 
 开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合。
@@ -14,19 +13,48 @@ label: Editor-Feature/Scripting
 
 ## 基本用法
 
-- **监听事件**
+引擎中提供了基本的事件系统，一般组件间的通信，**游戏和业务**的通信会考虑采用事件系统。引擎提供了 [EventDispatcher](${api}core/EventDispatcher) 作为事件类，[Engine](${api}core/Engine) 和 [Entity](${api}core/Entity) 继承自 EventDispatcher。
+
+> **注意**：一般情况下，推荐使用[脚本组件](${docs}script-cn)来解决游戏内的组件间通信问题，事件系统只推荐在一些需要解耦的场景下使用。
+
+## 事件监听
+
+- 使用 [on](${api}core/EventDispatcher#on) 监听：
+
+  ```typescript
+  this.engine.on("event-test", () => {
+    console.log("call event-test");
+  });
+  ```
+
+- 使用 [once](${api}core/EventDispatcher#once) 监听，只会触发一次回调函数：
+
+  ```typescript
+  this.engine.once("event-test", () => {
+    console.log("call event-test");
+  });
+  ```
+
+## 事件监听移除
 
 ```typescript
- engine.addEventListener('test', e => {
-   console.log('test event triggered', e);
- });
+// Remove the specific function "fun" that listen to "event-test".
+this.engine.off("event-test", fun);
+// Remove all functions that listen to "event-test".
+this.engine.off("event-test");
 ```
 
-- **触发事件**：
+## 事件派发
+
+调用 [dispatch](${api}core/EventDispatcher#dispatch) 方法可以派发事件，派发对应事件会触发监听事件回调函数的执行。
 
 ```typescript
-engine.dispatch('test');
+this.engine.dispatch("event-test", { eventData: "mydata" });
 ```
+
+## 回调参数
+
+回调参数与发送时携带的参数一致。
 
 下面介绍 Galacean 与业务双向通信分别怎么写。
 
