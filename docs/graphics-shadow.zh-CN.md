@@ -2,9 +2,7 @@
 order: 5
 title: 阴影
 type: 图形
-group: 光照
-
-label: Graphics/Light
+label: Graphics
 ---
 
 阴影能够有效增强渲染画面的立体感和真实感。在实时渲染中，一般使用所谓的 ShadowMap 技术来进行阴影的绘制，简单来说就是把光源作为一个虚拟的相机渲染场景的深度，
