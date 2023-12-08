@@ -51,6 +51,44 @@ label: Basics/GettingStarted
 现在看上去就比较正常了。
 <img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*n151R6vZ59oAAAAAAAAAAAAADqiTAQ/original" alt="Untitled" style="zoom:50%;" />
 
+### 创建脚本
+接下来，我们为这个节点再绑定一个 `Script` 组件（[什么是 Script 组件?](https://galacean.antgroup.com/#/docs/latest/cn/script)）。
+
+1. 我们继续使用上述方式在检查器面板中添加 `Script` 组件
+2. 接下来，我们在资产面板中 `右键` → `Create` → `Script`  创建一个 `Script` 资产
+3. 最后，在检查器面板中将刚创建的脚本文件绑定到脚本组件上
+
+> ⚠️ 注意，如果你没有把脚本资产绑定到实体的脚本组件上，则脚本不会运行
+
+创建脚本后，我们可以 **双击它** 来跳转到代码编辑器页面。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c1f6ec7e-9a9c-453d-ac7f-41fbea3a792e/image-20230921180953712.png" alt="image-20230921180953712" style="zoom:50%;" />
+
+
+进入代码编辑器后，我们写一个非常简单的旋转功能：
+
+```ts
+// Script.ts
+import { Script } from '@galacean/engine';
+
+export default class extends Script {
+  onUpdate(deltaTime: number) {
+    this.entity.transform.rotate(1,1,1);
+  }
+}
+```
+
+在写好代码后，保存（`⌘+s`）, 右侧预览区就可以实时的看到整个场景的效果。
+
+### 导出项目
+
+现在，我们已经完成了在编辑器中的基础开发工作，接下来我们来导出这个项目到本地。
+
+我们点击左侧工具栏的 **下载** 按钮，会唤起导出界面，我们这里把项目名改为 “box”，然后点击 `Download` 按钮，编辑器就会把项目打包为一个 `box.zip` 文件下载。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/9412a241-b07b-462b-8d29-b8f640f710fd/image-20230921162204014.png" alt="image-20230921162204014" style="zoom:50%;" />
+
+项目打包完成后，我们使用 VsCode 打开 box 项目，运行 `npm install` &  `npm run dev` ，可以看到项目已经能够正常运行了。
 
 ## 脚本使用
 
