@@ -28,6 +28,8 @@ label: Graphics
 
 除了上述位于 `Light` 组件当中的阴影配置外，还有一些有关阴影的全局配置位于 `Scene` 当中:
 
+<img src="https://gw.alipayobjects.com/zos/OasisHub/0b8707a9-5084-4e87-b530-897bcd37c16b/shadow.gif" alt="shadow" style="zoom:100%;" />
+
 | 参数                                                         | 应用                   |
 | :----------------------------------------------------------- | :--------------------- |
 | [castShadows](${api}core/Scene#castShadows)                  | 是否投射阴影           |
