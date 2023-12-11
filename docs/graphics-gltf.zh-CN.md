@@ -1,8 +1,8 @@
 ---
-order: 3
+order: 4
 title: glTF
-type: 资源
-label: Resource
+type: 图形
+label: Graphics
 ---
 
 ## 什么是 glTF?
