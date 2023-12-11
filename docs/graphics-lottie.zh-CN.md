@@ -112,7 +112,7 @@ engine.resourceManager.load({
 
 业务场景中经常会出现 3D 变换的需求，比如一些弹窗的入场动画。以旋转为例，由于传统的 lottie-web 方案只能沿着 **Z轴** 旋转（也就是说垂直于屏幕法线方向旋转），即使我们在 AE 中实现了沿着 **X轴** 或 **Y轴** 的旋转效果，使用 lottie-web  播放时也会被忽略。
 
-![3D rotation](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*qVYxTaEdVBgAAAAAAAAAAAAAARQnAQ" alt="3D rotation" style="zoom:50%;" />
 
 得益于 Galacean Engine 2D/3D 引擎统一架构的优势，轻松地实现 3D 变换功能。
 
@@ -141,18 +141,18 @@ engine.resourceManager.load({
 
 ## 如何导出 Lottie 动画
 
-1、 什么是 Bodymovin
+### 什么是 Bodymovin
 
 - Bodymovin 是一个 AE 的插件，它可以把动画直接输出成代码，直接给程序员使用放在各个终端上使用。
 - 你可以在 github 上找到最新版本的 bodymovin 使用。
 - Bodymovin的版本等于输出的json文件版本。
 
 
-2、怎样使用 Bodymovin
+### 怎样使用 Bodymovin
 
 - 到 Bodymovin 的 GitHub 首页（链接：airbnb/lottie-web）克隆项目到本地，或者下载 .zip 包。   
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/429a17b1-19b3-41b8-902c-4992d722832f/1597673434824-27e06992-4a7d-486a-8514-62a470c53789.png)
-      
+  ![image.png](https://gw.alipayobjects.com/zos/OasisHub/429a17b1-19b3-41b8-902c-4992d722832f/1597673434824-27e06992-4a7d-486a-8514-62a470c53789.png)
+  
 - 在项目目录的“/build/extension”目录下找到“bodymovin.zxp”文件，这个就是插件包了。
 - 下载安装ZXP Installer。
 ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://aescripts.com/learn/zxp-installer) <br />
@@ -161,20 +161,17 @@ ZXP插件安装器地址: [https://aescripts.com/learn/zxp-installer](https://ae
 
 - 打开AE，点击“编辑”>“首选项”>“常规”菜单项，选中“允许脚本写入文件和访问网络”，点击确定。  
       
+
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/22b31fcd-2b6e-4691-abd1-b173ccab87e7/1597674058269-f2242296-32c5-4ae9-973b-2943e04e94bc.png)
 - 点击“窗口”>“扩展”>“Bodymovin”菜单项，就可以打开Bodymovin的界面使用插件了。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/cb002ffc-4b59-4dbd-a85d-56e0c1809475/1597674100420-41e2440c-fe9a-4280-8000-4f384ccdf9c3.png)
 
-- 打开一个 AE 项目。         
-      
-![image.png](https://gw.alicdn.com/imgextra/i3/O1CN01ChXn781jglsjOiFnx_!!6000000004578-2-tps-1336-995.png)
-      
 - 打开Bodymovin插件窗口，可以发现该项目的名称出现在了下面的列表中。选中该名称，设置好 json 文件输出位置，点击 “Render”。
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/605a89c4-4cde-4e36-a3cf-4d47abbd2f92/1597675512496-6c7320a9-fb09-460b-a2b0-e1a133020d9e.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/605a89c4-4cde-4e36-a3cf-4d47abbd2f92/1597675512496-6c7320a9-fb09-460b-a2b0-e1a133020d9e.png" alt="image.png" style="zoom:50%;" />
 
 - 点击上图中的 Settings，可以对导出的 json 进行配置：
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/8e63e349-dad4-4fc9-a535-121aa92450b4/1597675671244-f967fb47-da02-4033-9c37-277e2056af40.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/8e63e349-dad4-4fc9-a535-121aa92450b4/1597675671244-f967fb47-da02-4033-9c37-277e2056af40.png" alt="image.png" style="zoom:50%;" />
       
