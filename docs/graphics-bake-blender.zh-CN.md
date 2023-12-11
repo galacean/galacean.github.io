@@ -1,10 +1,9 @@
 ---
-order: 3
-
+order: 5
 title: Blender 烘焙
-type: 美术
-group: 教程
-label: Art/教程
+type: 图形
+group: 材质
+label: Graphics/Material
 ---  
 
 

@@ -1,7 +1,7 @@
 ---
-order: 1
+order: 2
 title: 统计面板
-type: 性能调试
+type: 性能
 label: Performance
 ---
 

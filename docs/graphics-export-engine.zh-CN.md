@@ -1,11 +1,8 @@
 ---
 order: 7
-
 title: 美术软件到引擎的视觉还原度
-
-type: 美术
-group: 教程
-label: Art/教程
+type: 图形
+label: Graphics
 ---
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/5dd84590-7c37-4156-bb1a-498207880c75/1635493348596-92184a82-6aaa-4ab8-95e5-2d88762df213.png)
