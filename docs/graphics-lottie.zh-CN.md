@@ -139,7 +139,7 @@ engine.resourceManager.load({
 - 为了防止 lottie 导出的兼容性问题，请尽量使用英文版本 AE ，图层需简洁，命名清晰
 - 避免大面积矢量部分，以及大面积粒子效果
 
-## 如何导出 Lottie 动画
+## 如何从 AE 导出 Lottie 动画
 
 ### 什么是 Bodymovin
 
