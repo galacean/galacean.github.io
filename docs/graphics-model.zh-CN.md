@@ -2,7 +2,8 @@
 order: 3
 title: 模型
 type: 图形
-label: Graphics
+group: 网格
+label: Graphics/Mesh
 ---
 
 ## 建模软件导出

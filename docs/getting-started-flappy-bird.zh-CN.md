@@ -1,8 +1,9 @@
 ---
-order: 0
+order: 2
 title: 像素小鸟
-type: 手把手
-label: HandByHand 
+type: 基础知识
+group: 快速上手
+label: Basics/GettingStarted
 
 ---
 

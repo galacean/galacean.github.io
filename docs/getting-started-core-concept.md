@@ -6,7 +6,14 @@ group: 快速上手
 label: Basics/GettingStarted
 ---
 
+我们通过一个立方体的例子，来了解一下编辑器和运行时中的核心概念。
+
 ## 编辑器使用
+
+### 创建项目
+在你登录之后，首先看到的是编辑器的首页，在这个页面中会显示所有你创建的项目。使用右上角的按钮来创建项目，点击后可以选择要创建的项目类型，2D 或 3D。我们选择 3D Project。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/78a618a3-ff7b-4579-8489-9ed6548f3b6c/image-20230921161225962.png" alt="image-20230921161225962" style="zoom:50%;" />
 
 ### 创建立方体
 
