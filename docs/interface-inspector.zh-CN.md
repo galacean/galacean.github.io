@@ -3,9 +3,8 @@ order: 4
 title: 检查器面板
 type: 基础知识
 group: 界面
-label: Basics/Interfaces
+label: Basics/Interface
 ---
-
 
 检查器面板位于编辑器右侧，它会是你在使用编辑器的过程中最常用的面板。基于你当前选择所选择的东西，检查器面板会显示出相对应的属性。你可以使用检查器面板来编辑场景中几乎所有的事物，如场景、实体、组件、资产等等。
 
@@ -35,11 +34,11 @@ label: Basics/Interfaces
 
 检查器中提供了很多数字调节的入口。针对不同的属性，数字可调节的范围，每次调整的大小都会不同。最典型的是调整 `Transform` 组件的位置、旋转、缩放属性值。
 
-你可以通过拖拽输入框右侧的滑块来快速调整数字的大小。在拖拽时，按住 `⌘`（window上为 `ctrl`）可以更精确地调整数字的大小（精度为原 step 的 1/10）。
+你可以通过拖拽输入框右侧的滑块来快速调整数字的大小。在拖拽时，按住 `⌘`（window 上为 `ctrl`）可以更精确地调整数字的大小（精度为原 step 的 1/10）。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/252b0426-036b-4950-a90e-24680837fc74/image-20230926105543072.png" alt="image-20230926105543072" style="zoom:50%;" />
 
-一些可以调节的属性是以滑动条的形式出现的。你可以拖动滑块来快速调整数字的大小，如灯光的 `Intensity`。同样的，在拖动滑块时，按住 `⌘`（window上为 `ctrl`）可以更精确的调整数字的大小。
+一些可以调节的属性是以滑动条的形式出现的。你可以拖动滑块来快速调整数字的大小，如灯光的 `Intensity`。同样的，在拖动滑块时，按住 `⌘`（window 上为 `ctrl`）可以更精确的调整数字的大小。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/1cbd4aa5-3cf6-4358-af31-043d93b82d20/image-20230926105935206.png" alt="image-20230926105935206" style="zoom:50%;" />
 
@@ -47,14 +46,11 @@ label: Basics/Interfaces
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/e00085ab-60c9-43d0-b012-f1754406ada1/image-20230926110053695.png" alt="image-20230926110053695" style="zoom:50%;" />
 
-
 ### 颜色面板
 
 一些属性需要调整颜色，如光照、场景的背景色，亦或者材质的自发光颜色等。想要调整颜色，你需要点击左侧的颜色按钮来唤起颜色选择器。在颜色选择器中，你可以使用 HUE 来选择颜色，调整颜色的透明度；也可以在输入框来调整颜色具体的 RGBA 数值。点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/dc030a4b-8813-4ea2-acb0-549c04363b1d/image-20230926110451443.png" alt="image-20230926110451443" style="zoom: 33%;" />按钮可以在 HSLA，RGBA 和 HEXA 三种模式下进行切换。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/e845cefd-6057-46f2-b7cd-46c37ddb95d6/image-20230926110251506.png" alt="image-20230926110251506" style="zoom:50%;" />
-
-
 
 ### 资产面板
 

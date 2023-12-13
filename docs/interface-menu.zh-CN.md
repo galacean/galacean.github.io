@@ -3,7 +3,7 @@ order: 1
 title: 主菜单
 type: 基础知识
 group: 界面
-label: Basics/Interfaces
+label: Basics/Interface
 ---
 
 ## 主菜单
@@ -17,8 +17,6 @@ label: Basics/Interfaces
 选择`New Project`项，可以进一步选择新建不同类型的项目。点击`Fork`，会跳转到新克隆的项目页面，旧的项目仍会保留。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/ff52d1d2-f8b0-4285-b845-d1661baf866b/image-20230925162814875.png" alt="image-20230925162814875" style="zoom:50%;" />
-
-
 
 ### 项目设置
 

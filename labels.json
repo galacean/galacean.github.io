@@ -3,7 +3,7 @@
     "uuid": "markdown-Basics",
     "name": "Basics",
     "parent_uuid": null,
-    "weight": 2,
+    "weight": 1,
     "tag": "doc-engine",
     "cn_name": "基础知识"
   },
@@ -75,7 +75,7 @@
     "uuid": "markdown-Animation",
     "name": "Animation",
     "parent_uuid": null,
-    "weight": 4,
+    "weight": 5,
     "tag": "doc-engine",
     "cn_name": "动画"
   },
@@ -83,15 +83,23 @@
     "uuid": "markdown-Physics",
     "name": "Physics",
     "parent_uuid": null,
-    "weight": 4,
+    "weight": 6,
     "tag": "doc-engine",
     "cn_name": "物理"
+  },
+  {
+    "uuid": "markdown-Scripts",
+    "name": "Script",
+    "parent_uuid": null,
+    "weight": 7,
+    "tag": "doc-engine",
+    "cn_name": "脚本"
   },
   {
     "uuid": "markdown-Interact",
     "name": "Interact",
     "parent_uuid": null,
-    "weight": 7,
+    "weight": 8,
     "tag": "doc-engine",
     "cn_name": "交互"
   },
@@ -99,7 +107,7 @@
     "uuid": "markdown-Resource",
     "name": "Resource",
     "parent_uuid": null,
-    "weight": 8,
+    "weight": 3,
     "tag": "doc-engine",
     "cn_name": "资源"
   },
