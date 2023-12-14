@@ -6,7 +6,6 @@ import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {
   AssetType,
   AudioClip,
-  AudioListener,
   AudioSource,
   BoxColliderShape,
   Camera,
@@ -190,16 +189,11 @@ WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
       });
 
     engine.resourceManager
-      .load<AudioBuffer>({
+      .load<AudioClip>({
         url: "https://mass-office.alipay.com/huamei_koqzbu/afts/file/JLvfSZkPfIoAAAAAAAAAABAADnV5AQBr",
         type: AssetType.Audio,
       })
-      .then((res) => {
-        const clip = new AudioClip(engine);
-        clip.setData(res);
-        const listenEntity = rootEntity.createChild("listen");
-        listenEntity.addComponent(AudioListener);
-
+      .then((clip: AudioClip) => {
         const playerEntity = rootEntity.createChild("player");
 
         const audioSource = playerEntity.addComponent(AudioSource);
@@ -227,10 +221,6 @@ WebGLEngine.create({ canvas: "canvas", physics: new LitePhysics() }).then(
 
         addBtn(rootEntity, new Vector3(0.5, 4, 0), "PAUSE", () => {
           audioSource.pause();
-        });
-
-        addBtn(rootEntity, new Vector3(1.9, 4, 0), "UNPAUSE", () => {
-          audioSource.unPause();
         });
       });
 
