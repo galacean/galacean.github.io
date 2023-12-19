@@ -1,7 +1,7 @@
 import { DropdownMenu, Flex, MenuGroup, MenuItem, styled } from "@galacean/editor-ui";
 import { useContext } from 'react';
 import { useIntl } from 'react-intl';
-import { Link } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 import { AppContext } from '../../contextProvider';
 
 const StyledRoot = styled(Flex, {
@@ -29,7 +29,9 @@ const StyledNavigationMenu = () => {
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
 
-  return (
+  const match = useMatch('/');
+
+  return match ?
     <StyledRoot align="both" gap="lg">
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.engine' })}</StyledItem >}>
         <MenuItem>
@@ -48,21 +50,21 @@ const StyledNavigationMenu = () => {
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink to={`/api/${context.version}`} target='_blank'>
+          <StyledLink to={`/api/${context.version}`}>
             {formatMessage({ id: 'app.header.menu.engine.api' })}
           </StyledLink>
         </MenuItem>
         <MenuGroup label={""} divider="top">
-        <MenuItem>
-          <StyledLink to={`/gltf-viewer`}>
-            {formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}
-          </StyledLink >
-        </MenuItem>
-        <MenuItem>
-          <StyledLink to={`https://github.com/galacean/create-galacean-app`} target='_blank'>
-            {formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}
-          </StyledLink>
-        </MenuItem>
+          <MenuItem>
+            <StyledLink to={`/gltf-viewer`}>
+              {formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}
+            </StyledLink >
+          </MenuItem>
+          <MenuItem>
+            <StyledLink to={`https://github.com/galacean/create-galacean-app`} target='_blank'>
+              {formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}
+            </StyledLink>
+          </MenuItem>
         </MenuGroup>
       </DropdownMenu>
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.effects' })}</StyledItem>}>
@@ -88,7 +90,33 @@ const StyledNavigationMenu = () => {
         </MenuItem>
       </DropdownMenu>
     </StyledRoot>
-  );
+    :
+    <StyledRoot align="both" gap="lg">
+      <StyledItem as={Link} to={`/docs/${context.version}/${context.lang}/getting-started-overview`}>
+        {formatMessage({ id: 'app.header.menu.engine.docs' })}
+      </StyledItem>
+      <StyledItem as={Link} to={`https://galacean.antgroup.com/editor`} target='_blank'>
+        {formatMessage({ id: 'app.header.menu.ecosystem.editor' })}
+      </StyledItem>
+      <StyledItem as={Link} to={`/examples/${context.version}`}>
+        {formatMessage({ id: 'app.header.menu.engine.examples' })}
+      </StyledItem>
+      <StyledItem as={Link} to={`/api/${context.version}`}>
+        {formatMessage({ id: 'app.header.menu.engine.api' })}
+      </StyledItem>
+      <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.ecosystem.tool' })}</StyledItem >}>
+        <MenuItem>
+          <StyledLink to={`/gltf-viewer`}>
+            {formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}
+          </StyledLink >
+        </MenuItem>
+        <MenuItem>
+          <StyledLink to={`https://github.com/galacean/create-galacean-app`} target='_blank'>
+            {formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}
+          </StyledLink>
+        </MenuItem>
+      </DropdownMenu>
+    </StyledRoot>
 };
 
 export default StyledNavigationMenu;
