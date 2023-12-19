@@ -3,7 +3,7 @@ order: 6
 title: 项目导出
 type: 基础知识
 group: 界面
-label: Basics/Interfaces
+label: Basics/Interface
 ---
 
 ## HTML5 项目
@@ -18,20 +18,20 @@ Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前�
 
 资产导出配置可以用来控制导出的资源类型和质量等参数。在资产导出配置中，你可以选择导出的资源类型，例如模型、纹理、HDR 等等，以及选择每种类型的导出质量和格式等参数。在导出模型时，你可以选择是否导出模型的网格信息、骨骼信息、动画信息等。
 
-| 配置          | 描述                                                         |
-| ------------- | ------------------------------------------------------------ |
+| 配置 | 描述 |
+| --- | --- |
 | glTF Quantize | 一种 glTF 压缩算法，详见[这里](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_mesh_quantization/README.md) |
-| KTX2          | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项 |
+| KTX2 | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项 |
 
 #### 渲染导出配置
 
 渲染导出配置可以用来控制项目的渲染效果和性能等参数。
 
-| 配置                                                         | 描述                                                       |
-| ------------------------------------------------------------ | ---------------------------------------------------------- |
-| WebGL Mode                                                   | WebGL 的版本，`Auto` 值表示根据设备能力自动选择 WebGL 版本 |
-| WebGL  [Context](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) 的配置 | Anti-Alias、Alpha、Preserve Drawing Buffer 等              |
-| Device Pixel Ratio                                           | 设备的像素比，用来控制画布的尺寸                           |
+| 配置 | 描述 |
+| --- | --- |
+| WebGL Mode | WebGL 的版本，`Auto` 值表示根据设备能力自动选择 WebGL 版本 |
+| WebGL [Context](https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext) 的配置 | Anti-Alias、Alpha、Preserve Drawing Buffer 等 |
+| Device Pixel Ratio | 设备的像素比，用来控制画布的尺寸 |
 
 ### 项目启动
 
@@ -76,6 +76,7 @@ npm run dev
 - [淘宝小程序发布](https://developer.alibaba.com/docs/doc.htm?spm=a219a.7629140.0.0.258775fexQgSFj&treeId=635&articleId=117321&docType=1)
 
 ### 项目导出
+
 Galacean 编辑器导出支付宝小程序的功能仍在开发中，交互方式和模板工程后续可能会有改动。
 
 <img src="https://mdn.alipayobjects.com/rms/afts/img/A*ZIXuR7Bj5gEAAAAAAAAAAAAAARQnAQ/original/image-20231008163057689.png" alt="image-20231008163057689" style="zoom:50%;" />
@@ -120,7 +121,7 @@ npm run dev
 #### 非蚂蚁集团内部用户
 
 1.  public 文件请自行上传 CDN
-2. 修改 scene.json 文件或配置 baseUrl
+2.  修改 scene.json 文件或配置 baseUrl
 
 ### 包内文件加载（WIP）
 
@@ -139,7 +140,7 @@ npm run dev
 2. 导出的项目中可能包含大量的资源文件，你需要对项目进行优化和压缩，以提高项目的性能和加载速度。
 3. 导出的项目中可能包含敏感信息和数据，你需要对项目进行安全性评估和保护，以防止信息泄漏和数据丢失等情况。
 
-********************************
+---
 
 ## 小程序的补充说明
 
@@ -152,7 +153,7 @@ npm install @galacean/engine-toolkit-controls -S
 ```
 
 ```typescript
-import { OrbitControl } from "@galacean/engine-toolkit-controls/dist/miniprogram";
+import { OrbitControl } from '@galacean/engine-toolkit-controls/dist/miniprogram';
 ```
 
 2. 添加组件

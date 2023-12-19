@@ -11,7 +11,7 @@
     "@galacean/engine-lottie": "^1.0.0-beta.0",
     "@galacean/engine-physics-lite": "^1.1.0-beta.9",
     "@galacean/engine-physics-physx": "^1.1.0-beta.9",
-    "@galacean/engine-spine": "^1.0.0-beta.0",
+    "@galacean/engine-spine": "^1.1.0-beta.0",
     "@galacean/engine-toolkit": "^1.1.0-beta.0",
     "@galacean/engine-toolkit-input-logger": "^1.0.0-beta.1",
     "@galacean/tools-baker": "^1.0.0-beta.3",

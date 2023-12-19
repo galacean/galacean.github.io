@@ -3,13 +3,12 @@ order: 5
 title: 视图区
 type: 基础知识
 group: 界面
-label: Basics/Interfaces
+label: Basics/Interface
 ---
 
 # 简介
 
-视图窗口是用于选择、定位、更改当前场景中各种类型实体及组件的交互式界面。
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*KnUgR7hfVrsAAAAAAAAAAAAADtKFAQ/original)
+视图窗口是用于选择、定位、更改当前场景中各种类型实体及组件的交互式界面。 ![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*KnUgR7hfVrsAAAAAAAAAAAAADtKFAQ/original)
 
 # 导航
 
@@ -17,10 +16,10 @@ label: Basics/Interfaces
 
 ![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*eI0bRorCPVQAAAAAAAAAAAAADtKFAQ/original)
 
-| 操作        | 快捷键                                                             |
-| :---------- | :----------------------------------------------------------------- |
-| `环绕轨道`  | alt + 鼠标左键                                                     |
-| `平移`      | alt + command + 鼠标左键， 或者 按下鼠标滚轮                       |
+| 操作 | 快捷键 |
+| :-- | :-- |
+| `环绕轨道` | alt + 鼠标左键 |
+| `平移` | alt + command + 鼠标左键， 或者 按下鼠标滚轮 |
 | `放大/缩小` | alt + control + 鼠标左键，或者 滚动鼠标滚轮，或者 触控板上双指轻扫 |
 
 围绕中心视点旋转视图。
@@ -70,9 +69,9 @@ label: Basics/Interfaces
 
 <h2 id = '6'> 聚焦 </h2>
 
-| 图标                                                                                                                              | 操作           | 快捷键 |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :------------- | :----- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*dIQJQLEsSvQAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `聚焦选中物体` | F      |
+| 图标 | 操作 | 快捷键 |
+| :-- | :-- | :-- |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*dIQJQLEsSvQAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `聚焦选中物体` | F |
 
 将场景相机聚焦于选中实体。锚点的选择会影响聚焦目标为中心锚点，或枢纽锚点。
 
@@ -93,15 +92,15 @@ label: Basics/Interfaces
 从左到右依次为：
 
 | 移动 | 旋转 | 缩放 | 锚点 | 坐标 | 聚焦 | 设置 | 场景相机 | 模式 | 全屏/复原 | 截屏 |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- | -------- | ---- | --------- | ---- |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 <h2 id = '4'> 锚点 </h2>
 确定 Gizmo，以及<strong>聚焦目标</strong>的位置。更改此选项可以更容易地在想要的点周围进行转换。
 
-| 图标                                                                                                                              | 选项       | 内容                           |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :--------- | :----------------------------- |
+| 图标 | 选项 | 内容 |
+| :-- | :-- | :-- |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*A5olSoPK_jMAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `中心锚点` | 选中实体及其子节点包围盒的中心 |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*hniTQL6c-D0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `枢纽锚点` | 选中实体的世界坐标             |
+| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*hniTQL6c-D0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `枢纽锚点` | 选中实体的世界坐标 |
 
 <h2 id = '7'> 设置 </h2>
 设置菜单包含用于调整视图辅助显示的选项。包括
@@ -128,49 +127,41 @@ label: Basics/Interfaces
 
 <h3 id = '1.3'> 辅助线框 </h3>
 
-辅助线框是与场景中特定组件相关联的线框。仅在选中带有该组件的实体时显示。
-| 属性 | 内容 |默认
-| :-- | :-- |:-- |
-| `相机` | 以锥体显示选中相机组件 | 开启
-| `直射光` | 显示直射光组件的方向 | 关闭
-| `点光源` | 显示点光源组件| 关闭
-| `聚光灯` | 显示聚光灯组件的方向 | 关闭
-| `静态碰撞体` | 显示静态碰撞体形状 | 开启
-| `动态碰撞体` | 显示动态碰撞体形状 | 开启
+辅助线框是与场景中特定组件相关联的线框。仅在选中带有该组件的实体时显示。 | 属性 | 内容 |默认 | :-- | :-- |:-- | | `相机` | 以锥体显示选中相机组件 | 开启 | `直射光` | 显示直射光组件的方向 | 关闭 | `点光源` | 显示点光源组件| 关闭 | `聚光灯` | 显示聚光灯组件的方向 | 关闭 | `静态碰撞体` | 显示静态碰撞体形状 | 开启 | `动态碰撞体` | 显示动态碰撞体形状 | 开启
 
 <h2 id = '8'> 场景相机 </h2>
 场景相机菜单包含用于配置场景相机的选项，主要用来解决搭建场景时，裁剪面太远或者太近导致看不到物体的问题。这些调整不会影响场景中带有相机组件的实体的设置。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/38748b3a-e448-47fb-bae6-9e77414ea975/image-20231009114856297.png" alt="image-20231009114856297" style="zoom:50%;" />
 
-| 属性       | 内容                                                         | 默认                 |
-| :--------- | :----------------------------------------------------------- | :------------------- |
-| `视角`     | 场景相机的视角                                               | 60                   |
-| `动态裁剪` | 相对选中实体和场景相机位置，自动计算场景相机的近裁面和远裁面 | 关闭                 |
-| `近裁面`   | 手动调整相对于场景相机的最近点                               | 不勾选动态裁剪后开启 |
-| `远裁面`   | 手动调整相对于场景相机的最远点                               | 不勾选动态裁剪后开启 |
+| 属性 | 内容 | 默认 |
+| :-- | :-- | :-- |
+| `视角` | 场景相机的视角 | 60 |
+| `动态裁剪` | 相对选中实体和场景相机位置，自动计算场景相机的近裁面和远裁面 | 关闭 |
+| `近裁面` | 手动调整相对于场景相机的最近点 | 不勾选动态裁剪后开启 |
+| `远裁面` | 手动调整相对于场景相机的最远点 | 不勾选动态裁剪后开启 |
 
 <h2 id = '9'> 模式 </h2>
 方便在 2D/3D 场景模式间进行点击切换。
 
 2D 模式下，导航部件、正交/透视切换关闭，导航中的环绕轨道不再生效。
 
-| 图标                                                                                                                              | 内容            |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :-------------- |
+| 图标 | 内容 |
+| :-- | :-- |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*QzcETYEe338AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `当前模式为 3D` |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*EZezT6T1LBoAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `当前模式为 2D` |
 
 <h2 id = '10'> 全屏/复原 </h2>
 
-| 图标                                                                                                                              | 内容                                       |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------- |
+| 图标 | 内容 |
+| :-- | :-- |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*WqDQQZTAOjEAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `最大化视图窗口，最小化层级、资产、检查器` |
 
 <h2 id = '11'> 截屏 </h2>
 对当前场景进行快照。仅显示场景内用户创建实体，辅助显示的一系列工具，如图标、网格、gizmo 不会被计入其中。进行截屏后，该快照会在首页作为该项目缩略图。
 
-| 图标                                                                                                                              | 内容   |
-| :-------------------------------------------------------------------------------------------------------------------------------- | :----- |
+| 图标 | 内容 |
+| :-- | :-- |
 | <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*cqFUSrG5QvgAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `截屏` |
 
 # 预览
@@ -178,4 +169,3 @@ label: Basics/Interfaces
 ![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*wNTaQKkA1bYAAAAAAAAAAAAADtKFAQ/original)
 
 选中带有相机组件的实体时，会在视图窗口左下角显示该相机的实时预览。帮助用户实时调整相机、场景位置。
-
