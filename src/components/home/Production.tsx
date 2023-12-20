@@ -68,7 +68,7 @@ export default function Production() {
           </StyledP>
           <Flex align="h" dir="column" gap="lg" css={{ position: "relative" }}>
             <Flex gap="lg">
-              <Link to={`/docs/${betaVersion}/${lang}/start`} onClick={() => {
+              <Link to={`/docs/${betaVersion}/${lang}/getting-started-overview`} onClick={() => {
                 setVersion(betaVersion);
                 localStorage.setItem('version', betaVersion);
               }}>
