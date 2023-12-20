@@ -29,9 +29,7 @@ const StyledNavigationMenu = () => {
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
 
-  const match = useMatch('/');
-
-  return match ?
+  return useMatch('/') ?
     <StyledRoot align="both" gap="lg">
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.engine' })}</StyledItem >}>
         <MenuItem>

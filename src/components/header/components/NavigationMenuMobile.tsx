@@ -7,9 +7,8 @@ import { AppContext } from "../../contextProvider";
 export function NavigationMenuMobile() {
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
-  const match = useMatch('/');
 
-  const items = match ? [
+  const items = useMatch('/') ? [
     {
       label: formatMessage({ id: 'app.header.menu.engine' }),
       children: [
