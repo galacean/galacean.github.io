@@ -29,16 +29,17 @@ Spine 动画支持换皮换肤，动画混合以及使用代码控制骨骼。
 
 开发者需要同时把三个文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “spine” 资产，选择本地的这三个文件，上传成功后能够在资产面板看到上传的 spine 资产：
 
-<img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*yTReSbOtsQIAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*zLoHRL_Zk8wAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
 
-选择一个节点，添加 Spine 组件，选择 resource 为上一步上传的资产，填写动画名称即播放 spine 动画：
+选择一个节点，添加 Spine 渲染组件，选择 resource 为上一步上传的资产，选择动画名称即播放 spine 动画（如果不选择，默认第一个）：
 
-![spine](https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*gE3qSqzp0S4AAAAAAAAAAAAADsp6AQ/original)
+![spine](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*tqm4R51gYxEAAAAAAAAAAAAADjCHAQ/original)
 
-| 组件属性 | 功能说明 |
+| 属性 | 功能说明 |
 | :--- | :--- |
 | `resource` | 选择 Spine 资产 |
 | `autoPlay` | 是否自动播放 |
+| `loop` | 是否循环播放 |
 | `animation` | 动画名称 |
 | `Scale` | 动画缩放 |
 
