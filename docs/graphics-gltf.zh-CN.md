@@ -2,7 +2,8 @@
 order: 4
 title: glTF
 type: 图形
-label: Graphics
+group: 网格
+label: Graphics/Mesh
 ---
 
 ## 什么是 glTF?
