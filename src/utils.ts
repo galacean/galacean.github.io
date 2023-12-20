@@ -97,17 +97,20 @@ export enum Env {
 
 export function getEnv() {
   const host = window.location.host;
-  if (host.indexOf('local.alipay.net') > -1 || host.indexOf('localhost') > -1) {
-    return Env.test;
-  }
+  // if (
+  //   /(local|debug.*?)\.alipay\.net/.test(host) ||
+  //   host.indexOf('localhost') > -1
+  // ) {
+  //   return Env.test;
+  // }
 
-  if (/dev.*alipay/.test(host)) {
-    return Env.dev;
-  }
+  // if (/dev.*alipay/.test(host)) {
+  //   return Env.dev;
+  // }
 
-  if (/pre/.test(host)) {
-    return Env.pre;
-  }
+  // if (/pre/.test(host)) {
+  //   return Env.pre;
+  // }
 
   return Env.prod;
 }
