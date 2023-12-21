@@ -81,7 +81,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       const debugInfo = {
         aniso_x: 1,
         aniso_y: 0,
-        aniso_z: 0,
         rotate: true
       };
 
@@ -91,9 +90,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       });
       gui.add(debugInfo, "aniso_y", 0, 1, 0.01).onChange((v) => {
         hairMat.anisotropyDirection.y = v;
-      });
-      gui.add(debugInfo, "aniso_z", 0, 1, 0.01).onChange((v) => {
-        hairMat.anisotropyDirection.z = v;
       });
 
       gui.add(debugInfo, "rotate").onChange((v) => {
