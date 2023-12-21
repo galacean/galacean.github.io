@@ -46,6 +46,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       url: "https://mdn.alipayobjects.com/oasis_be/afts/file/A*4zvFQaMWvOsAAAAAAAAAAAAADkp5AQ/ambient.bin"
     })
     .then((ambientLight) => {
+      ambientLight.specularIntensity = 2;
       scene.ambientLight = ambientLight;
       engine.run();
     });
