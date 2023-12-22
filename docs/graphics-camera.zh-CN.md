@@ -49,7 +49,6 @@ label: Graphics
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/24fa20d2-8f50-49bd-907a-3806f31e462e/image-20231009114816056.png" alt="image-20231009114816056" style="zoom:50%;" />
 
-相机属性介绍详见[相机文档](${docs}camera-cn)。
 
 ## 脚本使用
 
