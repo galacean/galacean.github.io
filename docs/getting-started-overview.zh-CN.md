@@ -2,8 +2,7 @@
 order: 0
 title: 概述
 type: 基础知识
-group: 快速上手
-label: Basics/GettingStarted
+label: Basics
 ---
 
 **Galacean Engine**  是一套 Web 为先、移动优先、开源共建的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。它包含了[渲染](${docs}mesh-renderer)、[物理](${docs}physics-overall)、[动画](${docs}animation-system)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器，帮助你在浏览器上创作绚丽的 2D/3D 互动应用。它主要由两部分组成：
