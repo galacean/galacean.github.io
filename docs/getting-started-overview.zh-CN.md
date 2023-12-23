@@ -5,7 +5,7 @@ type: 基础知识
 label: Basics
 ---
 
-**Galacean Engine**  是一套 Web 为先、移动优先、开源共建的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。它包含了[渲染](${docs}mesh-renderer)、[物理](${docs}physics-overall)、[动画](${docs}animator)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器，帮助你在浏览器上创作绚丽的 2D/3D 互动应用。它主要由两部分组成：
+**Galacean Engine**  是一套 Web 为先、移动优先、开源共建的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。它包含了[渲染](${docs}mesh-renderer)、[物理](${docs}physics-overall)、[动画](${docs}animation-system)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器，帮助你在浏览器上创作绚丽的 2D/3D 互动应用。它主要由两部分组成：
 
 - 编辑器：一个在线 Web 互动创作平台 [Editor](https://galacean.antgroup.com/editor)
 - 运行时：一个 Web 为先、移动优先的高性能的互动运行时 [Runtime](https://github.com/galacean/runtime)，一系列非核心功能和偏业务逻辑定制功能 [Toolkit](https://github.com/galacean/runtime-toolkit)
@@ -58,13 +58,13 @@ import { WebGLEngine, Camera } from "@galacean/engine";
 
 ### 工具包
 
-非核心功能和偏业务逻辑定制功能由 galacean-toolkit 包提供（完成功能列表请查看 https://github.com/galacean/engine-toolkit/tree/main）：
+非核心功能和偏业务逻辑定制功能由 galacean-toolkit 包提供（完成功能列表请查看[engine-toolkit](https://github.com/galacean/engine-toolkit/tree/main)）：
 
 | 功能                                                                                                               | 解释         | API                              |
 | :----------------------------------------------------------------------------------------------------------------- | :----------- | :------------------------------- |
 | [@galacean/engine-toolkit-controls](https://www.npmjs.com/package/@galacean/engine-toolkit-controls)                     | 控制器       | [Doc](${docs}controls)           |
-| [@galacean/engine-toolkit-framebuffer-picker](https://www.npmjs.com/package/@galacean/engine-toolkit-framebuffer-picker) | 帧缓冲拾取   | [Doc](${docs}framebuffer-picker) |
-| [@galacean/engine-toolkit-stats](https://www.npmjs.com/package/@galacean/engine-toolkit-stats)                           | 引擎统计面板 | [Doc](${docs}stats)              |
+| [@galacean/engine-toolkit-framebuffer-picker](https://www.npmjs.com/package/@galacean/engine-toolkit-framebuffer-picker) | 帧缓冲拾取   | [Doc](${docs}input-framebuffer-picker) |
+| [@galacean/engine-toolkit-stats](https://www.npmjs.com/package/@galacean/engine-toolkit-stats)                           | 引擎统计面板 | [Doc](${docs}performance-stats)              |
 | ......                                                                                                             |              |                                  |
 
 你可以通过 [NPM](https://docs.npmjs.com/) 的方式进行安装：
@@ -85,8 +85,8 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 
 | 功能                                                                                   | 解释        | API                     |
 | :------------------------------------------------------------------------------------- | :---------- | :---------------------- |
-| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine 动画  | [Doc](${docs}spine-cn)  |
-| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie)             | Lottie 动画 | [Doc](${docs}lottie-cn) |
+| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine 动画  | [Doc](${doc}graphics-spine)  |
+| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie)             | Lottie 动画 | [Doc](${doc}graphics-lottie) |
 
 ### 兼容性
 

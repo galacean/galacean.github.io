@@ -5,11 +5,9 @@ type: 脚本
 label: Script
 ---
 
-开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合。举个例子，点击业务中用 React 编写的 UI 按钮通知游戏开始，这时候就需要用到事件通信。Galacean Engine 中的 [Engine](${docs}engine-cn) 就是一个 [EventDispatcher](${docs}event-cn) 我们可以使用他作为内外部通信的媒介。
+开发完的互动项目往往还需要添加到真正的业务项目中和业务代码相结合，引擎中提供了基本的事件系统，一般组件间的通信，**游戏和业务**的通信会考虑采用事件系统。引擎提供了 [EventDispatcher](${api}core/EventDispatcher) 作为事件类，[Engine](${api}core/Engine) 继承自 EventDispatcher，我们可以使用他作为内外部通信的媒介。
 
-引擎中提供了基本的事件系统，一般组件间的通信，**游戏和业务**的通信会考虑采用事件系统。引擎提供了 [EventDispatcher](${api}core/EventDispatcher) 作为事件类，[Engine](${api}core/Engine) 和 [Entity](${api}core/Entity) 继承自 EventDispatcher。
-
-> **注意**：一般情况下，推荐使用[脚本组件](${docs}script-cn)来解决游戏内的组件间通信问题，事件系统只推荐在一些需要解耦的场景下使用。
+> **注意**：一般情况下，推荐使用[脚本组件](${docs}script)来解决游戏内的组件间通信问题，事件系统只推荐在一些需要解耦的场景下使用。
 
 ## 编辑器使用
 
@@ -76,7 +74,7 @@ this.engine.dispatch("event-test", { eventData: "mydata" });
 
 ### 从外到里通信
 
-1. 在脚本组件的[生命周期函数](${docs}script-cn#组件生命周期函数)（如 `onAwake` ）内可以监听事件：
+1. 在脚本组件的[生命周期函数](${docs}script#组件生命周期函数)（如 `onAwake` ）内可以监听事件：
 
 ```typescript
 onAwake () {
@@ -147,7 +145,7 @@ export default ()=> {
 
 ```
 
-2. 在脚本组件的[生命周期函数](${docs}script-cn)内可以触发事件：
+2. 在脚本组件的[生命周期函数](${docs}script)内可以触发事件：
 
 ```typescript
 this.engine.dispatch('rotate');

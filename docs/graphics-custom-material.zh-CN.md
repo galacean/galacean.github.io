@@ -110,7 +110,7 @@ const material = new Material(engine, Shader.find("demo"));
 
 ## 上传 shader 变量
 
-> attribute 逐顶点数据的上传请参考 [网格渲染器](${docs}graphics-mesh-cn),这里不再赘述。
+> attribute 逐顶点数据的上传请参考 [网格渲染器](${docs}graphics-model-mesh),这里不再赘述。
 
 除了内置的变量，我们可以在 shader 中上传任何自定义名字的变量(建议使用 u_** 、 v_** 分别表示 uniform、varying变量)，我们唯一要做的就是根据 shader 的变量类型，使用正确的接口。
 上传接口全部保存在 [ShaderData](${api}core/ShaderData) 中，而 shaderData 实例对象又分别保存在引擎的四大类 [Scene](${api}core/Scene)、[Camera](${api}core/Camera)、[Renderer](${api}core/Renderer)、[Material](${api}core/Material) 中，我们只需要分别往这些 shaderData 中调用接口，上传变量，引擎便会在底层自动帮我们组装这些数据，并进行判重等性能的优化。

@@ -6,7 +6,7 @@ group: 材质
 label: Graphics/Material
 ---
 
-在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。Unlit 材质适用于烘焙好的模型渲染，它只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn)。
+在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。Unlit 材质适用于烘焙好的模型渲染，它只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响。
 
 ## 编辑器使用
 <img src="https://gw.alipayobjects.com/zos/OasisHub/6be78a08-3075-4cd1-8cad-9757fc34f695/unlit.gif" alt="unlit" style="zoom:100%;" />
@@ -25,7 +25,7 @@ label: Graphics/Material
 
 ## Blender 导出 Unlit 材质
 
-如[烘焙教程](${docs}artist-bake-cn)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Galacean 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR\_materials\_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，Galacean 会解析插件，生成 Unlit 材质。
+如[烘焙教程](${docs}graphics-bake-blender)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Galacean 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR\_materials\_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，Galacean 会解析插件，生成 Unlit 材质。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/39965fc2-3fc2-44b9-a294-a04eb4441120/1623652741734-090284d5-9b1a-4db8-9231-dc3f4d188a38-20210614150743080.png)
 

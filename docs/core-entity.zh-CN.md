@@ -35,7 +35,7 @@ label: Core
 
 ### 创建新实体
 
-在[场景](${docs}script-cn)中已经介绍了如何获取激活场景。在新场景中，我们通常会先添加根节点：
+在[场景](${docs}core-scene)中已经介绍了如何获取激活场景。在新场景中，我们通常会先添加根节点：
 
 ```typescript
 const scene = engine.sceneManager.activeScene;

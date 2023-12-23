@@ -6,7 +6,7 @@ group: 2D
 label: Graphics/2D
 ---
 
-[TextRenderer](${api}core/TextRenderer) 组件用于在 3D/2D 场景中显示图片，详见 [文本组件](${docs}text-renderer-cn)。
+[TextRenderer](${api}core/TextRenderer) 组件用于在 3D/2D 场景中显示文字。
 
 | 属性 | 功能说明 |
 | :--- | :--- |
@@ -51,7 +51,7 @@ label: Graphics/2D
 <playground src="text-renderer.ts"></playground>
 
 1、创建 [TextRenderer](${api}core/TextRenderer) 组件显示文本    
-2、通过 font 设置 [Font](${docs}font-cn) 对象    
+2、通过 font 设置 [Font](${api}core/Font) 对象    
 3、通过 text 设置需要显示的文本    
 3、通过 fontSize 设置字体大小    
 4、通过 color 设置文本颜色    

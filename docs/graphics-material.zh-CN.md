@@ -8,14 +8,14 @@ label: Graphics/Material
 
 Galacean 创建的三维世界与真实的世界一样包含各式各样的物体，这些物体的颜色，色泽亮度，透明度都是由材质决定的，引擎中内置了多种经典材质并支持开发者实现自定义材质。
 
-用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，glTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Galacean 支持使用[资源管理器](${docs}resource-manager-cn)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
+用户在 Unity、3ds Max、C4D、Blender 等建模软件调试后可以输出 [glTF 文件](https://github.com/KhronosGroup/glTF/blob/master/specification/2.0/README.md)，glTF 文件里面包含了场景、模型实体、纹理、动画、材质等资源，Galacean 支持使用[资源管理器](${docs}resource-manager)加载解析这个 glTF 文件，解析后模型已经自动赋予了对应的材质，我们也可以拿到模型的材质，进行一些后期加工，比如修改颜色。
 
 | 类型 | 描述 |
 | :-- | :-- |
-| [Unlit 材质](${docs}material-unlit-cn) | Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}artist-bake-cn) 和 [导出 Unlit 教程](${docs}artist-unlit-cn) |
-| [Blinn-Phong 材质](${docs}material-blinn-phong-cn) | Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。 |
-| [PBR 材质](${docs}material-pbr-cn) | PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。 |
-| [自定义材质](${docs}custom-material-cn) | 可定制特殊的渲染需求 |
+| [Unlit 材质](${docs}graphics-material-Unlit) | Unlit 材质适用于烘焙好的模型渲染，她只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响，可参考 [烘焙教程](${docs}graphics-bake-blender) 和 [导出 Unlit 教程](${docs}graphics-material-Unlit) |
+| [Blinn-Phong 材质](${docs}graphics-material-BlinnPhong) | Blinn Phong 材质适用于那些对真实感没有那么高要求的场景，虽然没有遵循物理，但是其高效的渲染算法和基本齐全的光学部分，可以适用很多的场景。 |
+| [PBR 材质](${docs}graphics-material-PBR) | PBR 材质适合需要真实感渲染的应用场景，因为 PBR 是基于物理的渲染，遵循能量守恒，开发者通过调整金属度、粗糙度、灯光等参数，能够保证渲染效果都是物理正确的。 |
+| [自定义材质](${docs}graphics-custom-material) | 可定制特殊的渲染需求 |
 
 以下属性都可以直接在 [UnlitMaterial](${api}core/UnlitMaterial)、[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)、[PBRMaterial](${api}core/PBRMaterial)、[PBRSpecularMaterial](${api}core/PBRSpecularMaterial) 材质中使用。
 

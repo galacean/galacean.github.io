@@ -49,4 +49,4 @@ renderer.priority = 10;
 ## 数据源
 
 - [网格](${docs}mesh-cn)
-- [材质](${docs}material-cn)
+- [材质](${docs}graphics-material)

@@ -82,4 +82,4 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 
 需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。
 
-同时，在 Galacean 当中，还提供了 InputManager，该管理器将输入源做了封装，提供了更加易用的逻辑，使用方式可以[参考](${docs}input-cn) .
+同时，在 Galacean 当中，还提供了 InputManager，该管理器将输入源做了封装，提供了更加易用的逻辑，使用方式可以[参考](${docs}input) .

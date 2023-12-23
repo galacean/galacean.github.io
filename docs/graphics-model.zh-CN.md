@@ -8,7 +8,7 @@ label: Graphics/Mesh
 
 ## 建模软件导出
 
-编辑器目前支持导入 `glTF` 或者 `FBX` 格式的模型，但是最后编辑器都会转换成运行时也可以解析的[ glTF 格式](${docs}gltf-cn)。
+编辑器目前支持导入 `glTF` 或者 `FBX` 格式的模型，但是最后编辑器都会转换成运行时也可以解析的[ glTF 格式](${docs}graphics-gltf)。
 
 ```mermaid
 	flowchart LR
@@ -47,7 +47,7 @@ label: Graphics/Mesh
 
 ### 脚本使用
 
-加载一个 3D 模型只要调用引擎 [ResourceManager](${docs}resource-manager-cn) 实例的 [load](${api}core/ResourceManager/#load) 方法即可，如下：
+加载一个 3D 模型只要调用引擎 [ResourceManager](${docs}resource-manager) 实例的 [load](${api}core/ResourceManager/#load) 方法即可，如下：
 
 ```typescript
 engine.resourceManager.load("{glTF source}").then((gltf) => {
@@ -69,7 +69,7 @@ entity.addChild(gltf.defaultSceneRoot);
 
 glTF 拥有非常多的特性，官网提供了大量的[示例](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0)进行参考，Galacean 也提供了一份复刻版本进行快速浏览，可以通过以下 **glTF List** 切换不同的 glTF 模型。
 
-前往[ glTF 资源](${docs}gltf-cn) 了解更多 glTF 相关设计。
+前往[ glTF 资源](${docs}graphics-gltf) 了解更多 glTF 相关设计。
 
 <playground src="gltf-loader.ts"></playground>
 

@@ -156,7 +156,7 @@ Galacean 支持通过 [编辑器](https://galacean.antgroup.com/editor) 进行�
 
 #### 阴影
 
-平行光组件下面可以打开阴影功能，可以前往 [阴影教程](${docs}shadow-cn) 了解更多细节。
+平行光组件下面可以打开阴影功能，可以前往 [阴影教程](${docs}graphics-shadow) 了解更多细节。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/98e9ce45-5de5-4161-964b-0b9b099b7662/image-20231009114604582.png" alt="image-20231009114604582" style="zoom:50%;" />
 

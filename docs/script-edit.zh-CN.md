@@ -57,7 +57,7 @@ export default class extends Script {
 
 > 注意：不要写空函数，需要使用某个生命周期函数时再写，这样性能更好。
 
-脚本的详细介绍见：[脚本组件](${docs}script-cn)
+脚本的详细介绍见：[脚本组件](${docs}script)
 
 当你修改完毕后，按 `Ctrl/⌘ + S` 代码即可保存，右侧的实时预览区即可展现最新的效果。
 
@@ -71,7 +71,7 @@ export default class extends Script {
 <img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*7JWrTJnt96sAAAAAAAAAAAAADqiTAQ/original" style="zoom:50%;">
 
 ### 事件调试面板
-事件通信区给开发者提供了方便的事件收发测试能力，帮助开发者方便的调试项目，详见[事件通信](${docs}editor-script-communication-cn)。
+事件通信区给开发者提供了方便的事件收发测试能力，帮助开发者方便的调试项目，详见[事件通信](${docs}script-communication)。
 
 ## 引入依赖包
 
@@ -93,7 +93,7 @@ export default class extends Script {
 
 ### 创建 & 拷贝
 
-按照 [创建脚本](${docs}editor-script-creation-cn) 的流程创建脚本，并将依赖包的代码拷贝至脚本中：
+按照 [创建脚本](${docs}script-create) 的流程创建脚本，并将依赖包的代码拷贝至脚本中：
 
 ![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*CfrYQ7rt9iwAAAAAAAAAAAAADleLAQ/original)
 
