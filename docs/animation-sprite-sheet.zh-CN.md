@@ -20,7 +20,7 @@ label: Animation
 
 <img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*blT2T5NLFx4AAAAAAAAAAAAADsJ_AQ/original" alt="image-3" style="zoom:50%;" />
 
-4. 编辑器中点到对应的帧数，在 `SpriteRenderer` 中添加 `Sprite` （sprite 上传相关详见[精灵](${docs}editor-sprite.zh-CN)）即可自动添加关键帧
+4. 编辑器中点到对应的帧数，在 `SpriteRenderer` 中添加 `Sprite` （sprite 上传相关详见[精灵](${docs}graphics-sprite)）即可自动添加关键帧
 
 <img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*tGOdSILNYokAAAAAAAAAAAAADsJ_AQ/original" alt="image-4" style="zoom:50%;" />
 

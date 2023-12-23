@@ -6,7 +6,7 @@ group: 材质
 label: Graphics/Material
 ---
 
-PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。PBR 遵循能量守恒，是基于物理的渲染，并且引入了 [IBL](${docs}light-cn#ibl-镜面反射) 模拟全局光照，通过金属度、粗糙度等参数，更加方便地调节渲染效果。
+PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的渲染**，最早由迪士尼在 2012 年提出，后来被游戏界广泛使用。跟传统的 **Blinn-Phong** 等渲染方法相比，PBR 遵循能量守恒，符合物理规则，美术们只需要调整几个简单的参数，即使在复杂的场景中也能保证正确的渲染效果。PBR 遵循能量守恒，是基于物理的渲染，并且引入了 [IBL](${docs}graphics-light) 模拟全局光照，通过金属度、粗糙度等参数，更加方便地调节渲染效果。
 
 
 <playground src="pbr-helmet.ts"></playground>
@@ -67,4 +67,5 @@ PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的�
 | [glossiness](${api}core/PBRSpecularMaterial#glossiness) | 光泽度。模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效) |
 | [specularGlossinessTexture](${api}core/PBRSpecularMaterial#specularGlossinessTexture) | 高光光泽度纹理。搭配高光光泽度使用，是相乘的关系。 |
 
-> **注**：如果您使用了 PBR 材质，千万别忘了开启[环境光的 IBL 模式](${docs}ambient-light-cn#ibl)～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
+> **注**：如果您使用了 PBR 材质，千万别忘了开启[环境光的 IBL 模式](${docs}graphics-light)～只有添加了之后，属于 PBR 的金属粗糙度、镜面反射、物理守恒、全局光照才会展现出效果。
+

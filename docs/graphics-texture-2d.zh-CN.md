@@ -14,7 +14,7 @@ label: Graphics/Texture
 
 ### 1. 加载网络图片
 
-我们可以通过 [ResourceManager](${docs}resource-manager-cn) 加载图片，详见 [资源加载教程](${docs}resource-manager-cn#内置资源类型)：
+我们可以通过 [ResourceManager](${docs}resource-manager) 加载图片，详见 [资源加载教程](${docs}resource-manager#内置资源类型)：
 
 ```typescript
 const textureResource = {

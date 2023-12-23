@@ -21,7 +21,7 @@ Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前�
 | 配置 | 描述 |
 | --- | --- |
 | glTF Quantize | 一种 glTF 压缩算法，详见[这里](https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_mesh_quantization/README.md) |
-| KTX2 | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}texture-compression-cn)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项 |
+| KTX2 | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}graphics-texture-compression)优化选项，能减少约 80% 的纹理显存。默认的压缩配置是 UASTC，开启 MIPMAP 和 ZSTD 压缩。后续编辑器的迭代会逐步开放更多的配置选项 |
 
 #### 渲染导出配置
 

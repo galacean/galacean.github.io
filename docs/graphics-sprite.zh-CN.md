@@ -6,7 +6,7 @@ group: 2D
 label: Graphics/2D
 ---
 
-[Sprite](${api}core/Sprite) 是 2D 图形对象，用于角色、道具、子弹以及一些其他 2D 游戏要素。这些图形是从 [Texture2D](${docs}texture-cn) 获得的。[Sprite](${api}core/Sprite) 类主要标识应用于特定 `Sprite` 的图像部分。然后 [Entity](${docs}entity-cn) 上的  [SpriteRenderer](${docs}sprite-renderer-cn) 组件可以使用此信息来实际显示图形，[Entity](${docs}entity-cn) 上的 [SpriteMask](${docs}sprite-mask-cn) 组件可以使用此信息来表示遮罩区域。详见 [精灵资源](${docs}sprite-cn)。
+[Sprite](${api}core/Sprite) 是 2D 图形对象，用于角色、道具、子弹以及一些其他 2D 游戏要素。这些图形是从 [Texture2D](${docs}graphics-texture-2d) 获得的。[Sprite](${api}core/Sprite) 类主要标识应用于特定 `Sprite` 的图像部分。然后 [Entity](${docs}core-entity) 上的 [SpriteRenderer](${api}core/SpriteRenderer) 可以使用此信息来实际显示图形，[Entity](${docs}core-entity) 上的 [SpriteMask](${docs}graphics-sprite-mask) 组件可以使用此信息来表示遮罩区域。
 
 | 属性名 | 属性类型 | 描述 |
 | :--- | :--- | :--- |
@@ -138,8 +138,8 @@ sprite.region = new Rect(0, 0, 0.5, 1);
 
 #### 基本使用
 
-1、下载图片纹理([Texture](${docs}texture-cn))，下载方法请参考[资源加载](${docs}resource-manager-cn)  
-2、通过 texture 创建 [Sprite](${docs}sprite-cn) 对象  
+1、下载图片纹理([Texture](${docs}graphics-texture-2d))，下载方法请参考[资源加载](${docs}resource-manager)  
+2、通过 texture 创建 [Sprite](${api}core/Sprite) 对象  
 3、创建 [SpriteRenderer](${api}core/SpriteRenderer) 组件显示图片
 
 ```typescript
@@ -209,6 +209,6 @@ spriteRenderer.color.set(1, 0, 0, 1);
 
 #### 自定义材质
 
-SpriteRenderer 的自定义材质的使用方法和 [MeshRenderer](${docs}mesh-renderer-cn) 的一样，请参考[自定义材质](${docs}custom-material-cn)文档。
+SpriteRenderer 的自定义材质的使用方法请参考[自定义材质](${docs}graphics-custom-material)文档。
 
 <playground src="sprite-material-blur.ts"></playground>

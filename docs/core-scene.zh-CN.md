@@ -160,7 +160,7 @@ Playground 示例如下：
 
 ### 设置场景环境光
 
-请参考相关文档： [环境光](${docs}ambient-light)
+请参考相关文档： [环境光](${docs}graphics-light)
 
 ### 实体树管理
 

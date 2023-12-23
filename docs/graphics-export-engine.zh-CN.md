@@ -11,11 +11,11 @@ label: Graphics
 
 Galacean 引擎目前有 3 种方式调试材质：
 
-1. 通过代码修改材质属性，参考[教程](${docs}material-cn)。
+1. 通过代码修改材质属性，参考[教程](${docs}graphics-material)。
 
-2. 通过 Galacean Editor 可视化调试，参考[教程](${docs}editor-3d-material-cn)。
+2. 通过 Galacean Editor 可视化调试，参考[教程](${docs}graphics-material)。
 
-3. **通过 3D 建模软件调好后导出 [glTF](${docs}gltf-cn)**
+3. **通过 3D 建模软件调好后导出 [glTF](${docs}graphics-gltf)**
 
 前两种方式直接使用引擎渲染，所见即所得，没有视觉上的差异。
 
@@ -29,7 +29,7 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 针对造成差异的这些原因，可以通过以下方法来获取最大程度的视觉还原度：
 
-- **通过烘焙贴图，[导出 Unlit 材质到引擎](${docs}artist-unlit-cn)**
+- **通过烘焙贴图，[导出 Unlit 材质到引擎](${docs}graphics-material-Unlit)**
 
 - **使用相同的环境贴图(一般为 HDRI 文件)、直接光照等变量。**
 
@@ -49,17 +49,17 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 #### 光照差异
 
-跟现实世界一样，3D 场景也可以添加[直接光](${docs}light-cn#%E6%96%B9%E5%90%91%E5%85%89)、[环境光](${docs}ambient-light-cn)。Galacean 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
+跟现实世界一样，3D 场景也可以添加[直接光与环境光](${docs}graphics-light)。Galacean 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/391e9bd9-945d-474d-b3fb-8cb0490e2b6f/1635434650361-60d7f40f-9f22-4e48-8865-141415d638f9.png)
 
-环境光基于 [IBL](${docs}texture-cube-cn#ibl) ，需要绑定一张 HDRI 贴图用来模拟周边环境，可以从[网上下载](https://polyhaven.com/hdris)。Galacean 场景中默认是没有绑定 HDRI 贴图的，而很多建模软件是自带了一张比较好看的周边环境的：
+环境光基于 [立方纹理](${docs}graphics-texture-cube) 开启 IBL 模式，需要绑定一张 HDRI 贴图用来模拟周边环境，可以从[网上下载](https://polyhaven.com/hdris)。Galacean 场景中默认是没有绑定 HDRI 贴图的，而很多建模软件是自带了一张比较好看的周边环境的：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/61c2287b-0793-4763-a5f5-70567fcdf106/1635477315862-08b0c680-029b-400b-8600-1d8cf7a20c60.png)
 
 #### glTF 支持度差异
 
-Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过[加载器](${docs}gltf-cn#%E5%8A%A0%E8%BD%BD-gltf)加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
+Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-gltf)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过加载器加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/2010b748-ab8b-4e46-8b15-3aee4daa71f9/1635434775734-f8454efe-d268-4f80-87ab-40f1cddf96ea.png)
 
@@ -125,11 +125,11 @@ Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}gltf-cn)�
 
 我们针对烘焙方案也提供了几篇教程，你也可以通过 Google 搜索“\*\*\* 建模软件 烘焙 KHR_materials_unlit” 等关键词学习更多细节：
 
-- [《C4D 烘焙教程》](${docs}artist-bake-cn)
+- [《C4D 烘焙教程》](${docs}graphics-bake-c4d)
 
-- [《Blender 烘焙教程》](${docs}artist-bake-cn)
+- [《Blender 烘焙教程》](${docs}graphics-bake-blender)
 
-- [《导出 Unlit 材质》](${docs}artist-unlit-cn)
+- [《导出 Unlit 材质》](${docs}graphics-material-Unlit)
 
 #### Galacean 预览插件(规划中)
 
