@@ -29,7 +29,7 @@ flowchart LR
 
 ## 运行时
 
-**Galacean Runtime** 是一个 Web 为先，移动优先的互动运行时，使用 [Typescript](https://www.typescriptlang.org/) 编写。核心功能由 [Galacean Runtime](https://www.npmjs.com/package/@galacean/runtime) 提供，非核心和偏业务逻辑定制的高级功能由 [Galacean Toolkit](https://github.com/galacean/runtime-toolkit) 提供。你可以通过浏览器在线浏览引擎的各种[示例](https://antg.antgroup.com/#/examples/latest/background)。
+核心功能由 [Galacean Runtime](https://www.npmjs.com/package/@galacean/runtime) 提供，非核心和偏业务逻辑定制的高级功能由 [Galacean Toolkit](https://github.com/galacean/runtime-toolkit) 提供。你可以通过浏览器在线浏览引擎的各种[示例](https://antg.antgroup.com/#/examples/latest/background)。
 
 ### 核心包
 
