@@ -6,8 +6,6 @@ group: 界面
 label: Basics/Interface
 ---
 
-## 主菜单
-
 项目管理包括新建项目、克隆项目、项目设置等操作。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/7bbd7d4c-ca69-49b6-a296-b0fc006e1c28/image-20230925162556276.png" alt="image-20230925162556276" style="zoom:50%;" />
