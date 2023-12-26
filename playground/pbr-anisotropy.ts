@@ -57,7 +57,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   material.metallic = 1;
   material.roughness = 0.3;
   material.anisotropy = 1;
-  material.anisotropyDirection.set(1, 1);
   renderer.mesh = PrimitiveMesh.createCylinder(engine, 1, 1, 0, 64);
   renderer.setMaterial(material);
 
@@ -77,13 +76,9 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
         texture: true
       };
 
-      gui.add(material, "anisotropy", 0, 1, 0.01);
-      gui.add(debugInfo, "aniso_x", 0, 1, 0.01).onChange((v) => {
-        material.anisotropyDirection.x = v;
-      });
-      gui.add(debugInfo, "aniso_y", 0, 1, 0.01).onChange((v) => {
-        material.anisotropyDirection.y = v;
-      });
+      gui.add(material, "roughness", 0, 1, 0.01);
+      gui.add(material, "anisotropy", -5, 5, 0.01);
+      gui.add(material, "anisotropyRotation", -180, 180, 0.01);
 
       gui.add(debugInfo, "rotate").onChange((v) => {
         rotateComponent.enabled = v;
