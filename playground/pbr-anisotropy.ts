@@ -67,7 +67,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     material.anisotropyRotation = 45; // [1,1]
     material.anisotropyTexture = texture;
 
-    gui.add(material, "anisotropy", -5, 5, 0.01);
+    gui.add(material, "anisotropy", -1, 1, 0.01);
     gui.add(material, "anisotropyRotation", -180, 180, 0.01);
 
     gui.add(debugInfo, "rotate").onChange((v) => {
