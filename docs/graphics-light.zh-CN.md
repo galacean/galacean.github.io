@@ -32,6 +32,7 @@ label: Graphics
 <img src="https://gw.alipayobjects.com/zos/OasisHub/b554d6f8-c9a4-48a9-9dd3-475dbf63ae55/image-20231009113622354.png" alt="image-20231009113622354" style="zoom:50%;" />
 
 ### 脚本使用
+
 ```typescript
 const lightEntity = rootEntity.createChild("light");
 const directLight = lightEntity.addComponent(DirectLight);
@@ -56,13 +57,12 @@ lightEntity.transform.setRotation(-45, -45, 0);
 | Color     | 控制点光源的颜色，默认白色       |
 | Distance  | 有效距离，光照强度随距离衰减     |
 
-
 ### 编辑器使用
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/5d8e7211-aff1-4911-85ac-844915976ef0/image-20231009113830843.png" alt="image-20231009113830843" style="zoom:50%;" />
 
-
 ### 脚本使用
+
 ```typescript
 const lightEntity = rootEntity.createChild("light");
 
@@ -117,8 +117,8 @@ lightEntity.transform.setRotation(-45, -45, 0);
 
 ### 编辑器使用
 
-> 编辑器默认打开自动烘焙，会在修改背景或者烘焙分辨率等操作后，自动进行烘焙；如需设置纯色背景可以关闭自动开关。
- <img src="https://gw.alipayobjects.com/zos/OasisHub/8ae1e2ba-fa09-4421-9c4e-0b68a27d2e6d/image-20231227152024235.png" alt="image-20231227152024235" style="zoom:50%;" />
+> 编辑器默认打开自动烘焙，会在修改背景或者烘焙分辨率等操作后，自动进行烘焙；如烘焙完之后想要设置纯色背景可以关闭自动开关。
+> <img src="https://gw.alipayobjects.com/zos/OasisHub/8ae1e2ba-fa09-4421-9c4e-0b68a27d2e6d/image-20231227152024235.png" alt="image-20231227152024235" style="zoom:50%;" />
 
 #### 设置背景
 
