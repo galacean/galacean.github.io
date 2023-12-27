@@ -117,7 +117,8 @@ lightEntity.transform.setRotation(-45, -45, 0);
 
 ### 编辑器使用
 
-> 编辑器默认打开自动烘焙，会在修改背景或者烘焙分辨率等操作后，自动进行烘焙；如需设置纯色背景可以关闭自动开关。 <img src="https://gw.alipayobjects.com/zos/OasisHub/8ae1e2ba-fa09-4421-9c4e-0b68a27d2e6d/image-20231227152024235.png" alt="image-20231227152024235" style="zoom:50%;" />
+> 编辑器默认打开自动烘焙，会在修改背景或者烘焙分辨率等操作后，自动进行烘焙；如需设置纯色背景可以关闭自动开关。
+ <img src="https://gw.alipayobjects.com/zos/OasisHub/8ae1e2ba-fa09-4421-9c4e-0b68a27d2e6d/image-20231227152024235.png" alt="image-20231227152024235" style="zoom:50%;" />
 
 #### 设置背景
 
