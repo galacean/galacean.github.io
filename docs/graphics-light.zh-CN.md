@@ -111,17 +111,25 @@ lightEntity.transform.setRotation(-45, -45, 0);
 
 ## 环境光
 
-![image-20230914142423022](https://gw.alipayobjects.com/zos/OasisHub/ce57cb4c-2285-4c36-b5a2-d89b70280282/image-20230914142423022.png)
+![image-20231227151844040](https://gw.alipayobjects.com/zos/OasisHub/23397353-5434-4bde-ace7-72c8731d5581/image-20231227151844040.png)
 
-除了直接光源，[IBL 技术](https://learnopengl-cn.github.io/07%20PBR/03%20IBL/01%20Diffuse%20irradiance/)将 周围环境视为一个大光源，保存在立方体纹理中，在渲染时，将立方体纹理的每个像素都视为光源，这种方式可以有效地捕捉环境的全局光照和氛围，使物体更好地融入其环境。因为实时卷积计算 IBL 非常耗时，所以编辑器会提前烘焙周围环境到一张[预滤波环境贴图](https://learnopengl-cn.github.io/07%20PBR/03%20IBL/02%20Specular%20IBL/)中，即每个 mipmap 级别存储不同粗糙度的预卷积结果。
-
-环境光已经内置在了[场景](${api}core/Scene)中，主要使用了 IBL 技术，IBL 技术将周围环境视为一个大光源，保存在立方体纹理中，在渲染时，将立方体纹理的每个像素都视为光源，这种方式可以有效地捕捉环境的全局光照和氛围，使物体更好地融入其环境。
+除了直接光源，我们一般还要烘焙场景作为环境光照，这种方式可以有效地捕捉环境的全局光照和氛围，使物体更好地融入其环境，如上图。
 
 ### 编辑器使用
 
-Galacean 支持通过 [编辑器](https://galacean.antgroup.com/editor) 进行离线烘焙得到 IBL 烘焙产物 `*.env` 文件。在编辑器中点击场景，配置如下：
+> 编辑器默认打开自动烘焙，会在修改背景或者烘焙分辨率等操作后，自动进行烘焙；如需设置纯色背景可以关闭自动开关。 <img src="https://gw.alipayobjects.com/zos/OasisHub/8ae1e2ba-fa09-4421-9c4e-0b68a27d2e6d/image-20231227152024235.png" alt="image-20231227152024235" style="zoom:50%;" />
 
-修改背景或者烘焙分辨率后，点击“烘焙场景”按钮可重新进行烘焙。
+#### 设置背景
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1604407b-f6e0-442a-b179-aef4836877cf/image-20231009114455268.png" alt="image-20231009114455268" style="zoom:50%;" />
+
+| 属性 | 作用 |
+| :-- | :-- |
+| Mode | 支持 `Sky`、`Solid Color`、`Texture` 三种模式。默认 `Sky` 模式，配大气散射作为背景； `Solid Color` 模式支持设置纯色作为背景；`Texture` 模式支持设置纹理作为背景 |
+| Color | `Solid Color` 模式时，可以设置颜色 |
+| Texture | `Texture` 模式时，可以设置纹理 |
+| Material | `Sky` 模式时，可以绑定材质球，一般选择天空盒或者大气散射 </br> <img src="https://gw.alipayobjects.com/zos/OasisHub/5e0474d7-136d-4a8a-a2a7-8f5ee83cb5c5/image-20231007172742202.png" alt="image-20231007172742202" style="zoom:50%;" /> |
+| Mesh | `Sky` 模式时，可以绑定 Mesh。大气散射搭配球，天空盒搭配立方体 |
 
 #### 环境漫反射
 
@@ -142,28 +150,9 @@ Galacean 支持通过 [编辑器](https://galacean.antgroup.com/editor) 进行�
 | Intensity | 镜面反射强度 |
 | Baker Resolution | 表示烘焙后的立方体纹理分辨率，默认 128 分辨率，烘焙产物约为 500KB，64 分辨率的烘焙产物约为 125KB，可以根据场景选择合适的烘焙分辨率。 |
 
-#### 背景
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/1604407b-f6e0-442a-b179-aef4836877cf/image-20231009114455268.png" alt="image-20231009114455268" style="zoom:50%;" />
-
-| 属性 | 作用 |
-| :-- | :-- |
-| Mode | 支持 `Sky`、`Solid Color`、`Texture` 三种模式。默认 `Sky` 模式，配大气散射作为背景； `Solid Color` 模式支持设置纯色作为背景；`Texture` 模式支持设置纹理作为背景 |
-| Color | `Solid Color` 模式时，可以设置颜色 |
-| Texture | `Texture` 模式时，可以设置纹理 |
-| Material | `Sky` 模式时，可以绑定材质球，一般选择天空盒或者大气散射 </br> <img src="https://gw.alipayobjects.com/zos/OasisHub/5e0474d7-136d-4a8a-a2a7-8f5ee83cb5c5/image-20231007172742202.png" alt="image-20231007172742202" style="zoom:50%;" /> |
-| Mesh | `Sky` 模式时，可以绑定 Mesh。大气散射搭配球，天空盒搭配立方体 |
-
-#### 阴影
-
-平行光组件下面可以打开阴影功能，可以前往 [阴影教程](${docs}graphics-shadow) 了解更多细节。
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/98e9ce45-5de5-4161-964b-0b9b099b7662/image-20231009114604582.png" alt="image-20231009114604582" style="zoom:50%;" />
-
-
 ### 脚本使用
 
-我们在 [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) 也提供了小工具，直接拖拽 HDR 贴图即可 ：
+我们在 [glTF Viewer](https://galacean.antgroup.com/#/gltf-viewer) 也提供了小工具，直接拖拽 HDR 贴图即可自动下载烘焙产物 ：
 
 ![gltf viewer](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*9mGbSpQ4HngAAAAAAAAAAAAAARQnAQ)
 
