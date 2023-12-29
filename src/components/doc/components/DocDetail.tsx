@@ -184,7 +184,7 @@ const StyledReactMarkdown = styled("div", {
 });
 
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
-  const { lang, version } = useContext(AppContext);
+  const { lang, version, theme } = useContext(AppContext);
   const { docTitle } = useParams();
   const [docData, setDocData] = useState<DocData | null>(null);
   const [menuFetched, setMenuFetched] =  useState(false);
@@ -303,7 +303,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
               const match = /language-(\w+)/.exec(className || '');
               if (!inline && match) {
                 if (className?.indexOf('mermaid') !== -1) {
-                  return <MermaidBlock>{children[0]}</MermaidBlock>;
+                  const themePrefix = `%%{init: {'theme':'${theme === "dark-theme" ? "dark" : "default" }'}}%% `;
+
+                  return <MermaidBlock>{themePrefix + children[0]}</MermaidBlock>;
                 }
                 return <code dangerouslySetInnerHTML={{
                   __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
