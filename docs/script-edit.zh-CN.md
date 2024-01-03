@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 2
 title: 编辑脚本
 type: 脚本
 label: Script

@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: 脚本参数
 type: 脚本
 label: Script

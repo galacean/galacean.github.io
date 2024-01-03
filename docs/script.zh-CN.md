@@ -1,8 +1,8 @@
 ---
-order: 4
-title: 脚本
-type: 核心
-label: Core
+order: 0
+title: 脚本总览
+type: 脚本
+label: Script
 ---
 
 除了[内置组件](${docs}core-component)之外，Galacean 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
