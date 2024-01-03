@@ -1,5 +1,5 @@
 ---
-order: 0
+order: 1
 title: 创建脚本
 type: 脚本
 label: Script

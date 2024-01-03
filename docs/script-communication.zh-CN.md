@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title: 事件通信
 type: 脚本
 label: Script

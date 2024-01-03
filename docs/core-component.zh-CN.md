@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 4
 title: 组件
 type: 核心
 label: Core
