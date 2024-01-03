@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 动画组件
+title: 动画总览
 type: 动画
 label: Animation
 ---

@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 页面
+title: 界面总览
 type: 基础知识
 group: 界面
 label: Basics/Interface
