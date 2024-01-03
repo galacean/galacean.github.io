@@ -116,7 +116,3 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 ## 开源共建
 
 **Galacean** 渴望与你共建互动引擎，所有的开发流程，包括[规划](https://github.com/galacean/engine/projects?query=is%3Aopen)，[里程碑](https://github.com/galacean/engine/milestones)，[架构设计](https://github.com/galacean/engine/wiki/Physical-system-design)在内的信息，全部都公开在 GitHub 的项目管理中，你可以通过[创建 issue](https://docs.github.com/zh/issues/tracking-your-work-with-issues/creating-an-issue) 与[提交 PR](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) 参与到引擎的建设当中。如果你有疑问或者需要帮助，可以加入钉钉群或[讨论区](https://github.com/orgs/galacean/discussions)寻求帮助。
-
-| 微信公众号 | 钉钉群 |
-|--------|-----|
-|<img width="100" height="100" src="https://github.com/galacean/.github/assets/1296667/35f8e183-8c33-4b24-b360-e36cb53f3a29" alt="">|<img width="100" height="100" src="https://github.com/galacean/.github/assets/1296667/4274498b-209f-4643-ae3c-2af13c679a24" alt="">|
