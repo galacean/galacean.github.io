@@ -274,7 +274,9 @@ Pass "PassName" {
 为了方便代码片段复用，ShaderLab 提供了 shader 代码片段注册方法。
 
 ```ts
-shaderLab.registerShaderFragment('common_shader', commonSource);
+import { ShaderFactory } from '@galacean/engine';
+
+ShaderFactory.registerInclude('common_shader', commonSource);
 ```
 
 代码片段注册后通过`include`宏进行代码片段替换
