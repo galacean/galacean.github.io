@@ -54,14 +54,35 @@ Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前�
 └── ... # 其他
 ```
 
-在文件夹目录里的 Terminal 依次运行：
+### 项目调试
+
+接下来就可以在本地进行项目的调试与预览了，依次在文件夹目录里的 Terminal 中运行以下命令，看看本地效果是否与编辑器中的效果一致吧：
 
 ```bash
 npm install
 npm run dev
 ```
 
-项目就可以在本地运行了。
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*jTKVR4LYseUAAAAAAAAAAAAADhuCAQ/original" alt="image-20231008163057689" style="zoom:50%;" />
+
+### 项目构建与部署
+
+一切准备完毕后就将项目构建并部署上去吧，在文件夹目录里的 Terminal 中运行以下命令：
+
+```bash
+npm run build
+```
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*PXRURowEHRQAAAAAAAAAAAAADhuCAQ/original" alt="image-20231008163057689" style="zoom:50%;" />
+
+可以发现，当 `build` 完毕后，文件目录（左上角）多出了一个 `dist` 文件夹，里面即包含了运行所需的所有代码与资源，接下来只需要将这个文件内的所有内容上传 CDN 即可。
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*R9MEQahvjkUAAAAAAAAAAAAADhuCAQ/original" alt="image-20231008163057689" style="zoom:50%;" />
+
+随后访问对应地址：
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Z4X6TKcFDaIAAAAAAAAAAAAADhuCAQ/original" alt="image-20231008163057689" style="zoom:50%;" />
+
 
 ## 小程序项目
 
