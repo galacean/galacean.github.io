@@ -83,6 +83,7 @@ npm run build
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Z4X6TKcFDaIAAAAAAAAAAAAADhuCAQ/original" alt="image-20231008163057689" style="zoom:50%;" />
 
+> 导出项目为 vite 工程，更多部署方案参考 [vite 官网](https://vitejs.dev/guide/)
 
 ## 小程序项目
 
