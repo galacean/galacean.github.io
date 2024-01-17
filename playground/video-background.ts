@@ -1,6 +1,6 @@
 /**
  * @title Video Background
- * @category Scene
+ * @category Video
  */
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import {

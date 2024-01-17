@@ -1,6 +1,6 @@
 /**
  * @title Bounding Box
- * @category Other
+ * @category Advance
  */
 import {
   BoundingBox,
@@ -15,18 +15,23 @@ import {
   SkinnedMeshRenderer,
   Vector3,
   WebGLEngine,
-} from "@galacean/engine";
+} from '@galacean/engine';
 
-WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+WebGLEngine.create({ canvas: 'canvas' }).then((engine) => {
   engine.canvas.resizeByClientSize();
 
   const rootEntity = engine.sceneManager.activeScene.createRootEntity();
 
-  const cameraEntity = rootEntity.createChild("camera");
+  const cameraEntity = rootEntity.createChild('camera');
   cameraEntity.addComponent(Camera);
   cameraEntity.transform.setPosition(0, 0, 10);
-  engine.sceneManager.activeScene.ambientLight.diffuseSolidColor.set(1, 1, 1, 1);
-  const lightEntity = rootEntity.createChild("DirectLight");
+  engine.sceneManager.activeScene.ambientLight.diffuseSolidColor.set(
+    1,
+    1,
+    1,
+    1
+  );
+  const lightEntity = rootEntity.createChild('DirectLight');
   lightEntity.addComponent(DirectLight);
   lightEntity.transform.setPosition(3, 3, 3);
   lightEntity.transform.lookAt(new Vector3(0, 0, 0));
@@ -40,7 +45,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     private _tempVec: Vector3 = new Vector3();
 
     onStart() {
-      const boxEntity = (this._boxEntity = rootEntity.createChild("box"));
+      const boxEntity = (this._boxEntity = rootEntity.createChild('box'));
       const boxRenderer = boxEntity.addComponent(MeshRenderer);
       boxRenderer.mesh = PrimitiveMesh.createCuboid(engine, 1, 1, 1);
       const material = new PBRMaterial(engine);
@@ -81,7 +86,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   engine.resourceManager
     .load<GLTFResource>(
-      "https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb"
+      'https://gw.alipayobjects.com/os/bmw-prod/5e3c1e4e-496e-45f8-8e05-f89f2bd5e4a4.glb'
     )
     .then((glTF) => {
       const glTFEntity = glTF.defaultSceneRoot;
