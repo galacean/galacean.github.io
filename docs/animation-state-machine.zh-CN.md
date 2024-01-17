@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 2
 title: 动画状态机
 type: 动画
 label: Animation
@@ -9,7 +9,7 @@ label: Animation
 
 将两个想要过渡的 `AnimatorState` 连接即可实现动画过渡的效果, 点击两个动画间的连线，可以修改动画过渡的参数调整效果
 
-![animationcrossfade](https://gw.alipayobjects.com/zos/OasisHub/cd8fa035-0c1c-493e-a0c7-54d301f96156/1667458692286-29d9f543-9b98-4911-8fa7-ac38b61b1668.gif)
+![animationcrossfade](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*7_OFQqABtc0AAAAAAAAAAAAADsJ_AQ/original)
 
 #### 参数说明
 
@@ -44,11 +44,11 @@ Galacean引擎支持多层的动画叠加。动画叠加是通过 `AnimatorContr
 
 双击 `AnimatorController` 资源文件编辑动画，添加 Layer，将混合的动作也连接`entry`
 
-![animationadditive](https://gw.alipayobjects.com/zos/OasisHub/7548a66b-a72f-4cad-9b27-c9f1a2824aff/1667459461151-4568a32a-07db-427b-922e-3bc6f844097b.gif)
+![animationadditive](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*ZStsQI2aAskAAAAAAAAAAAAADsJ_AQ/original)
 
-有的时候你想要得到一个固定的姿势，需要裁减设计师给到的动画切片，可以向上图一样修改 `AnimatorState` 的`StartTime` 及 `EndTime`，点击 `AnimatorState` 即可对其进行编辑:
+有的时候你想要得到一个固定的姿势，需要裁减设计师给到的动画切片，可以修改 `AnimatorState` 的`StartTime` 及 `EndTime`，点击 `AnimatorState` 即可对其进行编辑:
 
-![1](https://gw.alipayobjects.com/zos/OasisHub/cc0db4c9-95f9-48d7-a3ac-48d69e94a31d/1.jpg)
+![1](additiveStartTime.gif)
 
 | 属性 | 功能说明 |
 | :------- | :------------------------------------------------------------------- |
@@ -61,7 +61,7 @@ Galacean引擎支持多层的动画叠加。动画叠加是通过 `AnimatorContr
 
 你也可以通过修改 `Layer` 的 `Weight` 参数来调整 `Layer` 在混合中的权重，通过修改 `Blending` 来修改混合模式。
 
-![animationadditive2](https://gw.alipayobjects.com/zos/OasisHub/acd80bdf-7c8d-41ac-8a2f-fe75cc6d2da4/1667459778293-be31b02b-7f6c-4c27-becc-2c0c8e80b538.gif)
+![animationadditive2](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*_3aNSKP44FgAAAAAAAAAAAAADsJ_AQ/original)
 
 | 属性      | 功能说明                                                                    |
 | :------- | :------------------------------------------------------------------------- |
@@ -79,7 +79,7 @@ Galacean引擎支持多层的动画叠加。动画叠加是通过 `AnimatorContr
 ### 默认播放
 
 将 AnimatorState 连接到`entry`上你导出的项目运行时就会自动播放其上的动画，而不需再调用 `animator.play`。同时你也会看到编辑器的模型也开始播放动画了。
-![2](https://gw.alipayobjects.com/zos/OasisHub/de60a906-0d3c-4578-8d50-aa2ce050e560/2.jpg)
+![2](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*t2JlQ7PGqikAAAAAAAAAAAAADsJ_AQ/original)
 
 #### 脚本使用
 
