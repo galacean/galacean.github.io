@@ -2,11 +2,9 @@
  * @title IBL Baker
  * @category Material
  */
-import { BakerResolution, IBLBaker, SphericalHarmonics3Baker } from "@galacean/tools-baker";
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import * as dat from "dat.gui";
 import {
   AssetType,
+  BackgroundMode,
   Camera,
   CullMode,
   DiffuseMode,
@@ -17,15 +15,17 @@ import {
   PBRMaterial,
   PrimitiveMesh,
   Shader,
+  SkyBoxMaterial,
   SphericalHarmonics3,
   Texture2D,
-  TextureCubeFace,
   TextureCube,
+  TextureCubeFace,
   Vector3,
-  WebGLEngine,
-  SkyBoxMaterial,
-  BackgroundMode
+  WebGLEngine
 } from "@galacean/engine";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import { BakerResolution, IBLBaker, SphericalHarmonics3Baker } from "@galacean/tools-baker";
+import * as dat from "dat.gui";
 Logger.enable();
 
 const gui = new dat.GUI();
@@ -36,7 +36,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const scene = engine.sceneManager.activeScene;
   const { ambientLight } = scene;
   const rootEntity = scene.createRootEntity();
-
+  const groupEntity = rootEntity.createChild("group");
   const sky = scene.background.sky;
   const skyMaterial = new SkyBoxMaterial(engine);
   scene.background.mode = BackgroundMode.Sky;
@@ -123,7 +123,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       const size = hdrCubeMap.width;
 
       // Create Sphere
-      const sphereEntity = rootEntity.createChild("box");
+      const sphereEntity = groupEntity.createChild("box");
       sphereEntity.transform.setPosition(-1, 2, 0);
       const sphereMaterial = new PBRMaterial(engine);
       sphereMaterial.roughness = 0;
@@ -137,7 +137,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       const planeMaterials = new Array<Material>(6);
 
       for (let i = 0; i < 6; i++) {
-        const test = scene.createRootEntity(i + "");
+        const test = groupEntity.createChild(i + "");
         // const bakerEntity = rootEntity.createChild("IBL Baker Entity");
         const bakerEntity = test;
         bakerEntity.transform.setRotation(90, 0, 0);
@@ -178,15 +178,28 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
         mipLevel: 0,
         HDR: true,
         bake: () => {
+          const specularTime = performance.now();
+          const awaitTime = performance.now();
+
           const bakedTexture = IBLBaker.fromScene(scene, BakerResolution.R256);
           ambientLight.specularTexture = bakedTexture;
           ambientLight.specularTextureDecodeRGBM = true;
 
+          console.log(`%c specularTime:${performance.now() - specularTime}`, "color:yellow;");
           const sh = new SphericalHarmonics3();
-          SphericalHarmonics3Baker.fromTextureCubeMap(bakedTexture, sh);
-          ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
-          ambientLight.diffuseSphericalHarmonics = sh;
+          const shTime = performance.now();
+          SphericalHarmonics3Baker.fromTextureCube(bakedTexture, sh).then((sh) => {
+            ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+            ambientLight.diffuseSphericalHarmonics = sh;
+            console.log(`%c SH time:${performance.now() - shTime}`, "color:yellow;");
+          });
 
+          // SphericalHarmonics3Baker.fromTextureCubeMap(bakedTexture, sh);
+          // ambientLight.diffuseMode = DiffuseMode.SphericalHarmonics;
+          // ambientLight.diffuseSphericalHarmonics = sh;
+          // console.log(`%c SH time:${performance.now() - shTime}`, "color:yellow;");
+
+          console.log(`%c 堵塞时间:${performance.now() - awaitTime}`, "color:red;");
           debugTexture = bakedTexture;
           changeMip(state.mipLevel);
         }
