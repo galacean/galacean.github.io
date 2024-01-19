@@ -26,12 +26,7 @@ const gui = new dat.GUI();
  */
 
 Logger.enable();
-WebGLEngine.create({
-  canvas: "canvas",
-  graphicDeviceOptions: {
-    webGLMode: WebGLMode.WebGL1
-  }
-}).then((engine) => {
+WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
