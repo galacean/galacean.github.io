@@ -79,3 +79,11 @@ label: Basics/Interface
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">资产选择器</figcaption>
 </figure>
 
+### 快捷键
+
+| 快捷键          | 功能     |
+| --------------- | -------- |
+| `⌫`  / `Delete` | 删除资源 |
+| `⌘` + `D`       | 复制资源 |
+| `⌘`+ `F`        | 搜索资源 |
+
