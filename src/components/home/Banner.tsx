@@ -49,42 +49,6 @@ function Banner() {
           alt='Galacean'
         />
       </StyledHeading>
-      <StyledSlogan>
-        <FormattedMessage id='app.home.slogan' />
-      </StyledSlogan>
-      <Flex gap="lg" css={{
-        '@media (max-width: 768px)': {
-          flexDirection: "column",
-          textAlign: "center"
-        }
-      }}>
-        <Link to={`/docs/${stableVersion}/${lang}/start`} onClick={() => {
-          setVersion(stableVersion);
-          localStorage.setItem('version', stableVersion);
-        }}>
-          <Button variant="outline" size="lg" round>
-            {stableSpecificVersion.replace(/\.\d+$/, '')}&nbsp;
-            <FormattedMessage id='app.home.stable' />
-            <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
-          </Button>
-        </Link>
-        <Link to={`/docs/${betaVersion}/${lang}/start`} onClick={() => {
-          setVersion(betaVersion);
-          localStorage.setItem('version', betaVersion);
-        }}>
-          <Button variant="light" size="lg" round>
-            {betaSpecificVersion.replace(/\.\d+-beta\.\d+/, '')}&nbsp;
-            <FormattedMessage id='app.home.beta' />
-            <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
-          </Button>
-        </Link>
-        <a href='https://github.com/orgs/galacean/discussions' target='_blank'>
-          <Button variant="secondary" size="lg" round>
-            <GithubOutlined style={{ marginRight: "5px" }} />
-            <FormattedMessage id='app.home.discussion' />
-          </Button>
-        </a>
-      </Flex>
     </StyledSection>
   );
 }
