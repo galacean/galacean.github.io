@@ -10,18 +10,19 @@ label: Basics/Interface
 
 <div style="display: flex; gap: 20px;">
   <figure style="flex:1;">
-  <img alt="Scene Inspector" src="https://gw.alipayobjects.com/zos/OasisHub/0db2e1f6-50fb-4e19-8bb8-a354c45ac08f/image-20230926102750275.png" style="zoom:50%;" >
-  <figcaption style="text-align:center; color: #889096;font-size:12px">Scene Inspector</figcaption>
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/e5c728d7-02f7-4f2a-bfff-799324db54a1/image-20240122144004260.png" alt="image-20240122144004260" style="zoom:50%;" />
+  <figcaption style="text-align:center; color: #889096;font-size:12px">场景检查器</figcaption>
 	</figure>
   <figure style="flex:1;">
-    <img alt="Entity Inspector" src="https://gw.alipayobjects.com/zos/OasisHub/c2ebe2da-6de9-496d-a761-ce1674e9c0fc/image-20230926102715326.png" style="zoom:50%;">
-    <figcaption style="text-align:center; color: #889096;font-size:12px">Entity Inspector</figcaption>
+    <img src="https://gw.alipayobjects.com/zos/OasisHub/814940b3-147c-4d08-9223-dd7721a7c069/image-20240122144102202.png" alt="image-20240122144102202" style="zoom:50%;" />
+    <figcaption style="text-align:center; color: #889096;font-size:12px">实体检查器</figcaption>
   </figure>
   <figure style="flex:1;">
-    <img alt="Asset Inspector" src="https://gw.alipayobjects.com/zos/OasisHub/7e024b90-38fa-4f74-9fe8-abe6cfeb7968/image-20230926105306507.png" alt="image-20230926105306507" style="zoom:50%;" />
-    <figcaption style="text-align:center; color: #889096;font-size:12px">Asset Inspector</figcaption>
+    <img src="https://gw.alipayobjects.com/zos/OasisHub/708b77a1-a666-4573-a021-697a001c27c0/image-20240122144141450.png" alt="image-20240122144141450" style="zoom:50%;" />
+    <figcaption style="text-align:center; color: #889096;font-size:12px">资产检查器</figcaption>
   </figure>
 </div>
+
 
 ## 属性类型
 
@@ -50,7 +51,7 @@ label: Basics/Interface
 
 一些属性需要调整颜色，如光照、场景的背景色，亦或者材质的自发光颜色等。想要调整颜色，你需要点击左侧的颜色按钮来唤起颜色选择器。在颜色选择器中，你可以使用 HUE 来选择颜色，调整颜色的透明度；也可以在输入框来调整颜色具体的 RGBA 数值。点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/dc030a4b-8813-4ea2-acb0-549c04363b1d/image-20230926110451443.png" alt="image-20230926110451443" style="zoom: 33%;" />按钮可以在 HSLA，RGBA 和 HEXA 三种模式下进行切换。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/e845cefd-6057-46f2-b7cd-46c37ddb95d6/image-20230926110251506.png" alt="image-20230926110251506" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b6a6835c-1c11-4a5a-a62a-58117ffab872/image-20240122143848061.png" alt="image-20240122143848061" style="zoom:50%;" />
 
 ### 资产面板
 
@@ -60,11 +61,12 @@ label: Basics/Interface
 
 <div style="display: flex; gap: 20px;">
   <figure style="flex:1;">
-  <img alt="Mesh Asset Picker" src="https://gw.alipayobjects.com/zos/OasisHub/2dc535d4-4f21-46f1-90a3-deebeb55fd13/image-20230926111017781.png" alt="image-20230926111017781" style="zoom:50%;" >
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/e2d0e8fd-7926-4c6b-b7bf-b0e712649855/image-20240122143554973.png" alt="image-20240122143554973" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096;font-size:12px">Mesh Asset Picker</figcaption>
 	</figure>
   <figure style="flex:1;">
-    <img alt="Material Asset Picker" src="https://gw.alipayobjects.com/zos/OasisHub/7f6e0990-f8a5-451c-a6c7-9d00f36c9a57/image-20230926111318386.png" style="zoom:50%;">
-    <figcaption style="text-align:center; color: #889096;font-size:12px">Material Asset Picker</figcaption>
+    <img src="https://gw.alipayobjects.com/zos/OasisHub/f456c74e-b8ba-4bd6-9cf9-4f907535af26/image-20240122134039213.png" alt="image-20240122134039213" style="zoom:50%;" />
+    <figcaption style="text-align:center; color: #889096;font-size:12px">Texture Asset Picker</figcaption>
   </figure>
 </div>
+
