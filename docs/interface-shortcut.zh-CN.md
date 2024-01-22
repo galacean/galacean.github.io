@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 7
 title: 快捷键
 type: 基础知识
 group: 界面
