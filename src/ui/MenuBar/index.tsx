@@ -5,7 +5,7 @@ const StyledRoot = styled("div", {
   fontSize: '$2',
   padding: '$6',
   '@media (max-width: 768px)': {
-    padding: '$2',
+    padding: '0 $2',
   }
 });
 
@@ -20,8 +20,10 @@ const StyledGroup = styled("li", {
     paddingBottom: "$2",
     marginBottom: "$2",
   },
-  borderBottom: "1px solid $slate5"
-
+  borderBottom: "1px solid $slate5",
+  "&:last-child": {
+    borderBottom: "none"
+  }
 })
 
 const StyledItem = styled("li", {
