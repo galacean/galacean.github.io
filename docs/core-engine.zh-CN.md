@@ -22,7 +22,7 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 ## WebGL 上下文
 
-WebGL 的上下文管理可以通过 [WebGLEngine](${api}rhi-webgl/WebGLEngine) 的第三个参数 [WebGLgraphicDeviceOptions](${api}rhi-webgl/WebGLgraphicDeviceOptions) 来进行管理，拿**画布透明**来举例，引擎默认是将画布的透明通道开启的，即画布会和背后的网页元素混合，如果需要关闭透明，可以这样设置：
+WebGL 的上下文管理可以通过 [WebGLEngine](${api}rhi-webgl/WebGLEngine) 的第三个参数 [WebGLGraphicDeviceOptions](${api}rhi-webgl/WebGLGraphicDeviceOptions) 来进行管理，拿**画布透明**来举例，引擎默认是将画布的透明通道开启的，即画布会和背后的网页元素混合，如果需要关闭透明，可以这样设置：
 
 ```typescript
 const engine = await WebGLEngine.create({
