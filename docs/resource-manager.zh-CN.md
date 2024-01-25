@@ -60,6 +60,22 @@ this.engine.resourceManager.load<GLTFResource>({
 this.engine.resourceManager.load<GLTFResource>("Assets/texture.png");
 ```
 
+#### baseUrl
+
+`ResourceManger` 目前也支持了 `baseUrl` 的设置：
+
+```typescript
+engine.resourceManager.baseUrl = "https://cdn.galacean.com"
+```
+
+如果设置了 `baseUrl`，加载的相对路径会和 `baseUrl` 组合：
+
+```typescript
+engine.resourceManager.load('img/2d.png');
+```
+
+上面两段代码可以得出实际的加载路径是`https://cdn.galacean.com/img/2d.png`。
+
 ### 4. 批量加载
 
 加载队列可传入一组 [LoadItem](${api}core/LoadItem) 数组，或一组 url，返回结果是按顺序排列的加载好的资源队列。
