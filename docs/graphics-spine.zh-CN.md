@@ -18,9 +18,9 @@ Spine 动画支持换皮换肤，动画混合以及使用代码控制骨骼。
 
 ## 资源导出
 
-下载 Spine 编辑器，并选择 3.8 以上版本制作动画。通过 spine 编辑器的导出功能能够导出所需的资源文件。导出后，在目标文件夹内会看到 .json（或者.bin）, atlas, png 三种格式的资源文件。Galacean Spine 运行时能够加载这些文件，播放 spine 动画。
+下载 [Spine 编辑器](https://zh.esotericsoftware.com/)，并选择 3.8 版本制作动画（目前仅支持 3.8版本）。通过 spine 编辑器的导出功能能够导出所需的资源文件。导出后，在目标文件夹内会看到 .json（或者.bin）, atlas, png 三种格式的资源文件。Galacean Spine 运行时能够加载这些文件，播放 spine 动画。
 
-> 需要注意的是，Galacean Spine 运行时目前只支持加载单张纹理，所以当贴图尺寸过大时，需要对图片资源进行缩放处理，把贴图的张数控制在一张。
+> Galacean Spine 运行时目前只支持加载单张纹理，所以当贴图尺寸过大时，需要对图片资源进行缩放处理，把贴图的张数控制在一张。
 文件导出的详细配置见 spine 官方文档：[http://zh.esotericsoftware.com/spine-export](http://zh.esotericsoftware.com/spine-export/)
 
 ## 编辑器使用
@@ -28,20 +28,26 @@ Spine 动画支持换皮换肤，动画混合以及使用代码控制骨骼。
 首先，需要设计师在 spine 编辑器中[导出](http://zh.esotericsoftware.com/spine-export#JSON) spine 素材。素材包含 json，atlas，png 三个文件。
 
 开发者需要同时把三个文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “spine” 资产，选择本地的这三个文件，上传成功后能够在资产面板看到上传的 spine 资产：
+<img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*OYpQSIgQi8UAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*zLoHRL_Zk8wAAAAAAAAAAAAADjCHAQ/original"  style="zoom:50%;" />
+也可以直接把三个文件拖动到资产区域完成上传：
+<img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*ZQi1SasPBGUAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
 
-选择一个节点，添加 Spine 渲染组件，选择 resource 为上一步上传的资产，选择动画名称即播放 spine 动画（如果不选择，默认第一个）：
+完成上传后，选择一个节点，添加 Spine 渲染组件（SpineRenderer），选择 resource 为上一步上传的资产，选择动画名称即播放 spine 动画（如果不选择，默认第一个）：
 
 ![spine](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*tqm4R51gYxEAAAAAAAAAAAAADjCHAQ/original)
 
+Spine 渲染组件的属性如下：
+
 | 属性 | 功能说明 |
 | :--- | :--- |
-| `resource` | 选择 Spine 资产 |
-| `autoPlay` | 是否自动播放 |
+| `Resource` | 选择 Spine 资产 |
+| `AutoPlay` | 是否自动播放 |
 | `loop` | 是否循环播放 |
-| `animation` | 动画名称 |
+| `Animation` | 动画名称 |
+| `SkinName` | 皮肤名称 |
 | `Scale` | 动画缩放 |
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
 
 
 ## 脚本使用
@@ -60,17 +66,21 @@ npm i @galacean/engine-spine --save
 - 当传递参数为 urls 数组时，需要传递 json（或者 bin），atlas， image（png，jpg）三个资源的 cdn 地址。
 - 资源的 type 必须指定为 spine。
 
-加载完毕后，会同步返回一个 spine entity 对象，能够直接通过 addChild 方法，将 spine 动画添加到场景当中。
+加载完毕后，会返回一个 SpineResouce。我们需要创建一个节点，添加 Spine 渲染器，然后指定渲染器的资源为返回的 SpineResouce。请参考下方示例中的代码：
 
 <playground src="spine-animation.ts"></playground>
 
 ### 动画播放
 
-需要播放动画时，需要获取到 spine entity 的上的 SpineAnimation 组件。SpineAnimation 组件对外暴露 [AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) 以及 [Skeleton](http://zh.esotericsoftware.com/spine-api-reference#Skeleton) 接口，能够借助 spine-core 原生 API 来播放动画。
+Spine 渲染器（SpineRenderer） 提供了多种动画播放的方法。
+
+1. 通过 animationName,autoPlay,loop 属性播放。当设置了 animationName 为待播放的动画名称，且 autoplay 为 true 时，对应名称动画会自动播放。通过 loop 能够控制是否循环播放。
+2. 调用 play 方法播放。play 方法支持传入动画名称和是否循环两个参数。
+3. 从 spineAnimation 属性上，能够获取 spine 的 [AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState) 以及 [Skeleton](http://zh.esotericsoftware.com/spine-api-reference#Skeleton) 接口，能够借助 spine-core 原生 API 来播放动画。
 
 #### 动画控制
 
-通过 SpineAnimation 暴露的 AnimationState 对象，能够实现动画的控制，比如循环播放动画，暂停动画播放等。这里可以参考下面的示例。
+借助 Spine 渲染器(SpineRenderer) 的 spineAnimation 暴露的 AnimationState 对象，能够实现动画的控制，比如循环播放动画，暂停动画播放等。这里可以参考下面的示例。
 详细的 API 可以参考 AnimationState 的官方文档：[http://zh.esotericsoftware.com/spine-api-reference#AnimationState](http://zh.esotericsoftware.com/spine-api-reference#AnimationState)
 
 #### 动画事件机制
@@ -81,10 +91,15 @@ spine 还提供了一些事件方便用户进行开发。动画事件的机制�
 [http://esotericsoftware.com/spine-unity-events](http://esotericsoftware.com/spine-unity-events)
 通过 AnimationState 的 addListener 方法，能够在不同的事件触发时，添加回调方法。
 
+### 附件替换
+
+借助 AnimationState 和 Skeleton API 能够实现 spine 的附件替换，从而实现换装的效果。
+<playground src="spine-change-attachment.ts"></playground>
+
 
 ### 插槽拆分
 
-spine 组件会合并 spine 动画的所有顶点生成一个 `Mesh`。使用 `addSeparateSlot` 方法能够将指定名称的插槽拆分成单独的 `SubMesh`，然后使用 `hackSeparateSlotTexture` 方法，能够替换拆分插槽的材质。
+spine 组件会合并 spine 动画的所有顶点生成一个 `Mesh`。使用 `addSeparateSlot` 方法能够将指定名称的插槽拆分成单独的 `SubMesh`，然后使用 `hackSeparateSlotTexture` 方法，能够替换拆分插槽的材质。通过这种方式，也能实现换装的效果。
 
 <playground src="spine-hack-slot-texture.ts"></playground>
 

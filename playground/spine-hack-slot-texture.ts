@@ -11,7 +11,7 @@ import {
   AssetType,
   LoadItem,
 } from "@galacean/engine";
-import { SpineAnimation } from "@galacean/engine-spine";
+import { SpineRenderer } from "@galacean/engine-spine";
 import * as dat from "dat.gui";
 
 Logger.enable();
@@ -40,15 +40,17 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     type: "spine",
   };
   resource.unshift(spineResource);
-  engine.resourceManager.load(resource).then((res) => {
-    const spineEntity = res[0] as Entity;
+  engine.resourceManager.load(resource).then((res: any) => {
+    const spineResource = res[0];
+    const spineEntity = rootEntity.createChild("spine");
     spineEntity.transform.setPosition(0, -12, 0);
     rootEntity.addChild(spineEntity);
-    const spineAnimation = spineEntity.getComponent(SpineAnimation);
-    spineAnimation.state.setAnimation(0, "02_walk", true);
-    spineAnimation.skeleton.setSkinByName("skin1");
+    const spineRenderer = spineEntity.addComponent(SpineRenderer);
+    spineRenderer.resource = spineResource
+    spineRenderer.skinName = "skin1";
+    spineRenderer.animationName = "02_walk";
+    const { spineAnimation } = spineRenderer;
     spineAnimation.scale = 0.07;
-
     spineAnimation.addSeparateSlot("defult/head_hair");
     spineAnimation.addSeparateSlot("defult/arm_rigth_weapon");
     spineAnimation.addSeparateSlot("defult/Sleeveless_01");
