@@ -21,13 +21,13 @@ PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/711f8b97-247c-465e-8cf2-4896b0c78534/metal.gif" alt="metal" style="zoom:100%;" />
 
+材质默认是各向同性，即从不同方向观测材质表面，反射形状是相同的，我们可以通过调节各向异性相关参数，控制随着视线的变化，反射在切线、副切线空间延伸的方向，做到类似唱片拉丝的效果:
+
+![material-anisotropy](https://gw.alipayobjects.com/zos/OasisHub/3d420bb8-9546-4412-a725-7a342a25fd22/material-anisotropy.gif)
+
 除此之外，还有很多通用属性可以配置，比如粗糙度、环境遮蔽、自发射光、透明度等等：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/4806589e-386f-404a-82e5-d273e98b707d/other.gif" alt="other" style="zoom:100%;" />
-
-### Bake PBR( lightmap 过渡方案 )
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/c539743b-d96a-4081-b959-7ddd5a0db217/image-20231009113312944.png" alt="image-20231009113312944" style="zoom:50%;" />
 
 ## 参数
 
@@ -56,6 +56,9 @@ PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的�
 | [metallic](${api}core/PBRMaterial#metallic) | 金属度。模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
 | [roughness](${api}core/PBRMaterial#roughness) | 粗糙度。模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
 | [roughnessMetallicTexture](${api}core/PBRMaterial#roughnessMetallicTexture) | 金属粗糙度纹理。搭配金属粗糙度使用，是相乘的关系。 |
+| [anisotropy](${api}core/PBRMaterial#anisotropy) | 各向异性强度。默认为0，关闭各项异性计算。 |
+| [anisotropyRotation](${api}core/PBRMaterial#anisotropyRotation) | 各向异性旋转角度。沿切线、副切线空间旋转相应角度。 |
+| [anisotropyTexture](${api}core/PBRMaterial#anisotropyTexture) | 各向异性纹理。RG通道保存着各向异性方向，会和 anisotropyRotation 计算结果相乘；B通道保存着各向异性强度，会和 anisotropy 相乘。 |
 
 <playground src="pbr-base.ts"></playground>
 
