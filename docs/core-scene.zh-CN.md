@@ -129,7 +129,7 @@ background.mode = BackgroundMode.SolidColor; // 默认纯色背景
 background.solidColor.set(1, 1, 1, 1); // 纯白色
 
 // 添加天空盒背景
-background.mode = BackgroundMode.Sky; // 默认纯色背景
+background.mode = BackgroundMode.Sky;
 const skyMaterial = (background.sky.material = new SkyBoxMaterial(engine)); // 添加天空盒材质
 skyMaterial.texture = textureCube; // 设置立方体纹理
 background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2); // 设置天空盒网格
