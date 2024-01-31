@@ -35,9 +35,3 @@ label: Basics/Interface
 `Snapshorts` 快照管理功能允许用户保存某个项目的快照到历史记录中，万一项目出现数据丢失等问题，可以通过 `Revet` 快速恢复到之前保存的某个快照。用户可以在菜单中选择 `Add Snapshot` 。点击快照名可以编辑快照名称，以方便下次快速找到。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/51d93899-44a7-40ef-a5ba-5550b89fcf49/image-20230925164014187.png" alt="image-20230925164014187" style="zoom:50%;" />
-
-#### 快捷键字典
-
-快捷键有助于提升编辑场景的效率，用户可以在 `Shortcuts` 中找到鼠标（或触控板）、键盘的视口控制方式，以及全局和各个面板的快捷键。
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/6bd261ac-2803-4e97-a2aa-3ccdafe731a6/image-20230925164702582.png" alt="image-20230925164702582" style="zoom:50%;" />

@@ -6,47 +6,68 @@ group: 界面
 label: Basics/Interface
 ---
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/b4ef8a10-3a03-4a85-afc0-1ada972a50ab/image-20230925180630387.png" alt="image-20230925180630387" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/f0c6ef22-b6f5-4ac7-876c-fff2e4a8b99d/image-20240122134812991.png" alt="image-20240122134812991" style="zoom:50%;" />
 
 资产面板是编辑器中一个重要的面板，它可以帮助你管理场景中使用到的所有资产。在资产面板中，你可以查看和管理场景中使用到的所有资产，例如材质、贴图、模型等等。通过资产面板，你可以添加或删除资产，以及对资产进行分类管理，从而更好的组织资产。
 
 目前，编辑器支持上传或创建的资产有：
 
-| 支持的资产 | 说明 | 创建方式 |
-| --- | --- | --- |
-| 模型 | 支持 gltf/glb/fbx 文件上传，可以拖动到场景中 | 上传 |
-| 纹理 | 支持 png/jpeg 文件上传，创建 2D 纹理 | 上传 |
-| HDR | 支持 .hdr 文件上传，可用于场景天空，环境光 | 上传 |
-| Lottie | 支持 lottie 文件（.json） 文件上传，需要把外链图片转成 base64 | 上传 |
-| 材质 | 用于调整渲染效果 | 创建 |
-| 网格 | 不可添加，只能使用内部网格和模型中的网格 | - |
-| 动画控制器 | 用于控制动画状态 | 创建 |
-| 精灵 | 用于 2D 效果制作 | 创建 |
-| 精灵图集 | 用于 2D 素材优化 | 创建 |
-| 字体 | 支持 `.ttf`, `.otf`, `.woff` 文件上传，用于制作 2D 文字 | 创建 |
-| 文件夹 | 和系统一致的文件夹逻辑，可以把文件拖拽到文件夹中 | 创建 |
+| 支持的资产 | 说明 | 交换格式 | 创建方式 |
+| --- | --- | --- | --- |
+| 文件夹 | 类似操作系统的文件夹，可以把文件拖拽到文件夹中 |  | 创建 |
+| 场景 | 用于实体树管理 |  | 创建 |
+| 模型 | 3D 模型文件 | `.gltf`, `.glb`, .`fbx`, `.zip` | 上传 |
+| 网格 | 不可添加，只能使用内部网格和模型中的网格 |  | - |
+| 材质 | 用于调整渲染效果 |  | 创建 |
+| 纹理 | 上传图片文件创建 2D 纹理 | `.png`,`. jpg`,` .webp` | 上传 |
+| 立方体纹理（TextureCube） | 用于场景天空，环境光 | `.hdr` | 上传 |
+| 精灵 | 可以直接上传图片文件创建精灵（省去先创建精灵后绑定纹理的步骤） | `.png`,`. jpg`,` .webp` | 创建/上传 |
+| 精灵图集（SpriteAtlas） | 把多个精灵打包成图集，用于优化 2D 资产 |  | 创建 |
+| 字体 | 用于制作 2D 文字 | `.ttf`, `.otf`, `.woff` | 上传 |
+| 脚本 | 用于编写业务逻辑 | `.ts` | 创建 |
+| 动画控制器（Animation Controller） | 用于组织动画片段和控制动画状态 |  | 创建 |
+| 动画片段（Animation Clip） | 预先制作好的、连续的动画数据，包含一段时间内关键帧的变化信息 | `.ts` | 创建 |
+| 动画状态机脚本（Animation State Machine Script） | 用来控制和管理动画状态机行为的程序脚本 |  | 创建 |
+| Lottie | 支持 lottie 文件上传 | `.json`, `.zip` | 上传 |
+| Spine | 支持 spine 文件文件上传 | `.zip`（.json + .atlas  + 图片） | 上传 |
 
 ### 添加资产
 
 为了在场景中添加资产，你可以点击资产面板上的添加按钮，或者资产面板的右键菜单中的添加选项来添加新资产。添加资产后，你可以在检查器面板中对资产的属性进行编辑。资产面板中的资产类型非常丰富，例如材质、贴图、模型、字体等等。具体可以参照上方的表格。
 
-<figure style="margin:0 auto;width: 697px;">
-  <img alt="Upload Asset by drag" src="https://gw.alipayobjects.com/zos/OasisHub/a87e7e88-c8e5-460f-9daf-704d6ad09dfa/image-20230925180747370.png" width="100%">
+<figure style="width: 578px;">
+ <img src="https://gw.alipayobjects.com/zos/OasisHub/5bc3747d-b1e9-4864-b490-7f9d3eb86e93/image-20240122135556344.png" alt="image-20240122135556344" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">通过右键菜单创建/上传资产</figcaption>
 </figure>
 
 你还可以将文件拖动到资产面板中来添加资产。支持的文件类型包括 `glTF`, `glb`, `fbx`, `png`, `jpeg`, `hdr`, `ttf`, `otf`, `woff`, `json`（仅 lottie json） 等等。
 
-<figure style="margin:0 auto;width: 700px;">
-  <img alt="Upload Asset by drag" src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*9kmHQ6X7qVIAAAAAAAAAAAAADqiTAQ/original" width="100%">
+<figure style="width:605px;">
+<img src="https://gw.alipayobjects.com/zos/OasisHub/15d62349-0820-44ec-8eb6-4e5a82121341/drag2.gif" alt="drag2" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">通过拖拽上传图片</figcaption>
 </figure>
 
+### 组织资产
+
 资产面板中的资产可以通过分类来管理，以便更好的组织资产。你可以在资产面板中创建文件夹并将资产移动到对应的文件夹中，以实现分类管理。资产面板中的文件夹可以嵌套，你可以创建多层级的文件夹来更好的组织资产。
 
-![drag](https://gw.alipayobjects.com/zos/OasisHub/d1c3f972-bec6-47fc-92ab-dc18b8d447b1/drag.gif)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/520edde4-a54b-4b53-bd47-d1738d08e26a/drag1.gif" alt="drag1" style="zoom:50%;" />
 
-资产搜索功能可以帮助你快速定位场景中的资产，特别是对于大型场景或者资产数量较多的场景，搜索功能可以提高你的工作效率。资产面板上方有一个搜索框，你可以通过输入名称搜索场景中的资产。搜索框支持模糊搜索，你可以输入资产名称或类型的部分字符来查找资产。搜索框旁还有一个过滤器，你可以使用过滤器来筛选资产类型，例如只显示模型或只显示材质等等。
+资产面板提供了对资产浏览友好的工具栏，帮助你快速地查找某个或某类资产。你也可以根据你的使用习惯，对资产的浏览模式、排序方式和缩略图大小进行修改。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/538c4cc0-7180-404a-8163-24564541bd75/drag4.gif" alt="drag4" style="zoom: 50%;" />
+
+组织完资产后，每个资产都有一个**相对路径**，我们可以右击某个资产拷贝路径。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5c56884c-ac30-4f87-95a8-48d96117a53b/image-20240131162519263.png" alt="image-20240131162519263" style="zoom:50%;" />
+
+这对项目开发来说很重要，因为项目中经常遇到需要异步加载资产的情况，即初始化不需要加载某个资产（甚至是场景），可以通过脚本来控制某个资产的加载。具体的语法可以看[资产](${docs}resource-manager)和[场景](${docs}core-scene)的加载使用，以加载场景为例：
+
+```typescript
+this.engine.resourceManager.load({url:"...", type: AssetType.Scene});
+```
+
+
 
 ### 删除资产
 
@@ -56,20 +77,29 @@ label: Basics/Interface
 
 在选中一个资产后, 右侧的检查器面板会显示出此资产可配置的属性。不同的资产所对应的可配置项是不同的, 比如 glTF 资产会显示模型预览窗, 材质资产会显示出详细的材质配置选项 。
 
-<figure style="width:305px">
-  <img alt="Hierarchy Pane" src="https://gw.alipayobjects.com/zos/OasisHub/ac387a20-4a2e-4d59-9d80-f06a7f69158b/image-20230925180421581.png" >
-  <figcaption style="text-align:center; color: #889096">glTF检查器</figcaption>
+<figure style="width: 284px;">
+ <img src="https://gw.alipayobjects.com/zos/OasisHub/ffb89d11-b221-4757-96f9-c4950ea7f225/image-20240122134306052.png" alt="image-20240122134306052" style="zoom:50%;" />
+  <figcaption style="text-align:center; color: #889096;font-size: 12px;">glTF检查器</figcaption>
 </figure>
+
 
 ### 使用资产
 
 部分资产（如 glTF 资产）支持拖拽到场景中或节点树中。
 
-![drag1](https://gw.alipayobjects.com/zos/OasisHub/d79190c7-db54-49b3-9417-ac777a19ac30/drag1.gif)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/1220149f-b509-4e7e-bf11-5f0bc4de5bd6/drag3.gif" alt="drag3" style="zoom:50%;" />
 
 检查器提供了统一的资产选择器，你也可以把资产拖拽到检查器的资产选择框中，以便快速操作。
 
-<figure style="width:341px">
-  <img alt="Hierarchy Pane" src="https://gw.alipayobjects.com/zos/OasisHub/57a69991-5d67-4e1d-ae50-585ea434224d/image-20230925180956061.png" >
-  <figcaption style="text-align:center; color: #889096">资产选择器</figcaption>
+<figure style="width: 326px;">
+ <img src="https://gw.alipayobjects.com/zos/OasisHub/f456c74e-b8ba-4bd6-9cf9-4f907535af26/image-20240122134039213.png" alt="image-20240122134039213" style="zoom:50%;" />
+  <figcaption style="text-align:center; color: #889096; font-size: 12px;">资产选择器</figcaption>
 </figure>
+### 快捷键
+
+| 快捷键          | 功能     |
+| --------------- | -------- |
+| `⌫`  / `Delete` | 删除资源 |
+| `⌘` + `D`       | 复制资源 |
+| `⌘`+ `F`        | 搜索资源 |
+
