@@ -11,29 +11,56 @@ label: Graphics/2D
 
 用户可以在 Galacean 中轻松完成 Lottie 资产的处理和组件添加。
 
-## 编辑器使用
+### 资源上传
 
 建议设计师在 AE 中导出 lottie 文件的时候，图片采用 base64 格式写入 lottie 的 json 文件中。
 
-开发者拿到 `.json` 文件后，首先需要把 `.json` 文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “lottie” 资产，选择本地一个 lottie json 文件，然后：
+开发者拿到 `.json` 文件后，首先需要把 `.json` 文件上传到 Galacean Editor。通过资产面板的上传按钮选择 “lottie” 资产，选择本地一个 [lottie json](https://github.com/galacean/galacean.github.io/files/14106485/_Lottie.3.json) 文件，然后上传：
 
 <img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*UQ1LTI_mYv4AAAAAAAAAAAAADjCHAQ/original"   />
 
-选择一个节点，添加 Lottie 组件，选择 resource 为上一步上传的资产，通过修改 speed 改变播放速度：
+### 添加组件
+
+选择一个实体，添加 Lottie 组件，选择 resource 为上一步上传的资产，即可显示并且播放 Lottie 特效：
 
 ![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*ehFMT7vBaCAAAAAAAAAAAAAADjCHAQ/original)
+
+开发者可以通过调整属性面板中的各个参数来对 Lottie 进行相关设置：
+
+![lottie](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*OswOQI837OkAAAAAAAAAAAAADjCHAQ/original)
+
 
 | 属性 | 功能说明 |
 | :--- | :--- |
 | `resource` | 选择 Lottie 资产 |
+| `autoPlay` | 是否自动播放，默认自动 |
 | `isLooping` | 是否循环播放，默认循环 |
 | `speed` | 播放速度，`1` 为原速度播放，数值越大播放约快 |
 | `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
+
+有时候开发者可能需要在运行时动态对 Lottie 进行设置，在脚本组件中添加代码如下：
+```typescript
+// 先找到 Lottie 所在的实体 lottieEntity，然后获取 Lottie 组件
+const lottie = lottieEntity.getComponent(LottieAnimation);
+// 设置 lottie 属性
+lottie.speed = 2;
+```
+另外，Lottie 组件还提供了 2 个 API 来控制动画的播放和暂停，如下：
 
 | 方法 |  描述 |
 | :--- | :--- |
 | `play` | 播放动画，传入动画片段名参数会播放特定的动画片段 |
 | `pause` | 暂停动画 |
+
+### 监听播放结束
+
+很多时候我们有监听 Lottie 动画播放结束的需求，比如在动画结束的时候运行一些业务逻辑。`LottieAnimation` 的 `play` 方法会返回一个 `Promise`，所以可以很方便地监听动画结束的时机：
+
+```typescript
+  const lottie = lottieEntity.getComponent(LottieAnimation);
+  await lottie.play();
+  // do something next..
+```
 
 ### 切片功能
 
@@ -60,17 +87,16 @@ label: Graphics/2D
 ]
 ```
 
-## 脚本使用
 
-### 安装包
+### 安装依赖包
 
-<a href="https://www.npmjs.com/package/@galacean/engine-lottie" target="_blank">@galacean/engine-lottie</a> 是 Galacean Engine 的二方包，需要手动安装：
+<a href="https://www.npmjs.com/package/@galacean/engine-lottie" target="_blank">@galacean/engine-lottie</a> 是 Galacean Engine 的二方包，项目中用到了 Lottie 的时候，需要确保项目中安装了该包：
 
 ```bash
 npm i @galacean/engine-lottie --save
 ```
 
-### 基础使用
+### pro code 开发模式
 
 在进行 `Pro Code` 开发的时候，需要一个 `json` 文件和一个 `atlas` 文件来实现 `lottie` 动画，通常美术同学通过 `AE` 导出的给到开发的只有 `json` 文件，此时需要使用 [tools-atlas-lottie](https://www.npmjs.com/package/@galacean/tools-atlas-lottie) `CLI` 工具生成 `atlas` 文件。
 
@@ -98,15 +124,6 @@ engine.resourceManager.load({
 
 <playground src="lottie.ts"></playground>
 
-### 监听播放结束
-
-很多时候我们有监听 Lottie 动画播放结束的需求，比如在动画结束的时候运行一些业务逻辑。`LottieAnimation` 的 `play` 方法会返回一个 `Promise`，所以可以很方便地监听动画结束的时机：
-
-```typescript
-  const lottie = lottieEntity.getComponent(LottieAnimation);
-  await lottie.play();
-  // do something next..
-```
 
 ### 3D 变换
 
