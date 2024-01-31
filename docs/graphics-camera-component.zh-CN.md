@@ -57,22 +57,22 @@ camera.clearFlags = CameraClearFlags.All;
 
 其中每个属性对应的功能如下：
 
-| 类型     | 属性                                                         | 解释                                                         |
-| :------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)           | 通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定透视投影或正交投影。，默认是 `false`                                 |
-|          | [nearClipPlane](${api}core/Camera#nearClipPlane)             | 近裁剪平面                                                   |
-|          | [farClipPlane](${api}core/Camera#farClipPlane)               | 远裁剪平面                                                   |
-|          | [viewport](${api}core/Camera#viewport)                       | 视口，确定内容最后被渲染到目标设备里的范围。                 |
-|          | [priority](${api}core/Camera#priority)                       | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。 |
-|          | [enableFrustumCulling](${api}core/Camera#enableFrustumCulling) | 是否开启视锥剔除，默认为 `true`                              |
-|          | [clearFlags](${api}core/Camera#clearFlags)                   | 在渲染这个相机前清理画布缓冲的标记                           |
-|          | [cullingMask](${api}core/Camera#cullingMask)                 | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                 |
-|          | [aspectRatio](${api}core/Camera#aspectRatio)                 | 渲染目标的宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐） |
-|          | [renderTarget](${api}core/Camera#renderTarget)               | 渲染目标，确定内容被渲染到哪个目标上。                      |
-|          | [pixelViewport](${api}core/Camera#pixelViewport)             | 屏幕上相机的视口（以像素坐标表示）。 在像素屏幕坐标中，左上角为(0, 0)，右下角为(1.0, 1.0)。 |
-| 透视投影  | [fieldOfView](${api}core/Camera#fieldOfView)                 | 视角                                             |
-| 正交投影  | [orthographicSize](${api}core/Camera#orthographicSize)       | 正交模式下相机的一半尺寸                                     |
-|          | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>)   | 深度模式，默认为`DepthTextureMode.None`                     |
+| 类型     | 属性                                                           | 解释                                                                                                   |
+| :------- | :------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------- |
+| 通用     | [isOrthographic](${api}core/Camera#isOrthographic)             | 通过设置 [isOrthographic](${api}core/Camera#isOrthographic) 来决定透视投影或正交投影。，默认是 `false` |
+|          | [nearClipPlane](${api}core/Camera#nearClipPlane)               | 近裁剪平面                                                                                             |
+|          | [farClipPlane](${api}core/Camera#farClipPlane)                 | 远裁剪平面                                                                                             |
+|          | [viewport](${api}core/Camera#viewport)                         | 视口，确定内容最后被渲染到目标设备里的范围。                                                           |
+|          | [priority](${api}core/Camera#priority)                         | 渲染优先级，用来确定在多相机的情况下按照什么顺序去渲染相机包含的内容。                                 |
+|          | [enableFrustumCulling](${api}core/Camera#enableFrustumCulling) | 是否开启视锥剔除，默认为 `true`                                                                        |
+|          | [clearFlags](${api}core/Camera#clearFlags)                     | 在渲染这个相机前清理画布缓冲的标记                                                                     |
+|          | [cullingMask](${api}core/Camera#cullingMask)                   | 裁剪遮罩，用来选择性地渲染场景中的渲染组件。                                                           |
+|          | [aspectRatio](${api}core/Camera#aspectRatio)                   | 渲染目标的宽高比，一般是根据 canvas 大小自动计算，也可以手动改变（不推荐）                             |
+|          | [renderTarget](${api}core/Camera#renderTarget)                 | 渲染目标，确定内容被渲染到哪个目标上。                                                                 |
+|          | [pixelViewport](${api}core/Camera#pixelViewport)               | 屏幕上相机的视口（以像素坐标表示）。 在像素屏幕坐标中，左上角为(0, 0)，右下角为(1.0, 1.0)。            |
+| 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)                   | 视角                                                                                                   |
+| 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize)         | 正交模式下相机的一半尺寸                                                                               |
+|          | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>)     | 深度模式，默认为`DepthTextureMode.None`                                                                |
 
 ### 裁剪遮罩
 
@@ -96,14 +96,14 @@ camera.clearFlags = CameraClearFlags.All;
 
 相机组件提供各种方法（主要涉及`渲染`与`空间转换`）方便开发者实现期望的定制能力。
 
-| 类型      | 属性                                                               | 解释                                     |
+| 类型     | 属性                                                               | 解释                                     |
 | :------- | :----------------------------------------------------------------- | :--------------------------------------- |
-|  渲染     | [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix)   | 重置自定义投影矩阵，恢复到自动模式。     |
+| 渲染     | [resetProjectionMatrix](${api}core/Camera#resetProjectionMatrix)   | 重置自定义投影矩阵，恢复到自动模式。     |
 |          | [resetAspectRatio](${api}core/Camera#resetAspectRatio)             | 重置自定义渲染横纵比，恢复到自动模式。   |
 |          | [render](${api}core/Camera#render)                                 | 手动渲染。                               |
 |          | [setReplacementShader](${api}core/Camera#setReplacementShader)     | 设置全局渲染替换着色器。                 |
 |          | [resetReplacementShader](${api}core/Camera#resetReplacementShader) | 清空全局渲染替换着色器。                 |
-| 空间转换   | [worldToViewportPoint](${api}core/Camera#worldToViewportPoint)    | 将一个点从世界空间转换到视口空间。       |
+| 空间转换 | [worldToViewportPoint](${api}core/Camera#worldToViewportPoint)     | 将一个点从世界空间转换到视口空间。       |
 |          | [viewportToWorldPoint](${api}core/Camera#viewportToWorldPoint)     | 将一个点从视口空间转换到世界空间。       |
 |          | [viewportPointToRay](${api}core/Camera#viewportPointToRay)         | 通过视口空间中的一个点生成世界空间射线。 |
 |          | [screenToViewportPoint](${api}core/Camera#screenToViewportPoint)   | 将一个点从屏幕空间转换到视口空间。       |
@@ -130,4 +130,6 @@ const cameras = entity.getComponentsIncludeChildren(Camera, []);
 const cameras = scene._activeCameras;
 ```
 
+## onBeginRender 与 onEndRender
 
+相机组件额外包含了 [onBeginRender](${api}core/Script#onBeginRender) 与 [onEndRender](${api}core/Script#onEndRender) 两个生命周期回调，它们的时序可参考[脚本生命周期时序图](${docs}script)
