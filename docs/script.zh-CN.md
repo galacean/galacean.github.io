@@ -78,7 +78,7 @@ onUpdate() {
 ```typescript
 import { TheScript } from './TheScript'
 onStart() {
-	this.otherEntity = Entity.findByName('otherEntity');
+	this.otherEntity = this.entity.findByName('otherEntity');
 	this.otherEntityScript = this.otherEntity.getComponent(TheScript)
 }
 
