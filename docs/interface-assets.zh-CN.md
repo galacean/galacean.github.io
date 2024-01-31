@@ -10,13 +10,13 @@ label: Basics/Interface
 
 资产面板是编辑器中一个重要的面板，它可以帮助你管理场景中使用到的所有资产。在资产面板中，你可以查看和管理场景中使用到的所有资产，例如材质、贴图、模型等等。通过资产面板，你可以添加或删除资产，以及对资产进行分类管理，从而更好的组织资产。
 
-目前，编辑器支持上传或创建的资产有：
+目前，编辑器支持上传或创建的资产有(**+** 表示组合文件)：
 
 | 支持的资产 | 说明 | 交换格式 | 创建方式 |
 | --- | --- | --- | --- |
 | 文件夹 | 类似操作系统的文件夹，可以把文件拖拽到文件夹中 |  | 创建 |
 | 场景 | 用于实体树管理 |  | 创建 |
-| 模型 | 3D 模型文件 | `.gltf`, `.glb`, .`fbx`, `.zip` | 上传 |
+| 模型 | 3D 模型文件 | `.gltf`+`.bin`+`.jpg`, `.glb`+`.jpg`, .`fbx`+`.jpg` | 上传 |
 | 网格 | 不可添加，只能使用内部网格和模型中的网格 |  | - |
 | 材质 | 用于调整渲染效果 |  | 创建 |
 | 纹理 | 上传图片文件创建 2D 纹理 | `.png`,`.jpg`,` .webp` | 上传 |
@@ -28,8 +28,8 @@ label: Basics/Interface
 | 动画控制器（Animation Controller） | 用于组织动画片段和控制动画状态 |  | 创建 |
 | 动画片段（Animation Clip） | 预先制作好的、连续的动画数据，包含一段时间内关键帧的变化信息 | `.ts` | 创建 |
 | 动画状态机脚本（Animation State Machine Script） | 用来控制和管理动画状态机行为的程序脚本 |  | 创建 |
-| Lottie | 支持 lottie 文件上传 | `.json`, `.zip` | 上传 |
-| Spine | 支持 spine 文件文件上传 | `.zip`（.json + .atlas  + 图片） | 上传 |
+| Lottie | 支持 lottie 文件上传 | `.json`(+`.jpg`)，图片支持 base64 内置和独立图片 | 上传 |
+| Spine | 支持 spine 文件文件上传 | `.json` + `.atlas` + `.jpg` | 上传 |
 
 ### 添加资产
 
@@ -40,7 +40,7 @@ label: Basics/Interface
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">通过右键菜单创建/上传资产</figcaption>
 </figure>
 
-你还可以将文件拖动到资产面板中来添加资产。支持的文件类型包括 `glTF`, `glb`, `fbx`, `png`, `jpeg`, `hdr`, `ttf`, `otf`, `woff`, `json`（仅 lottie json） 等等。
+你还可以将文件拖动到资产面板中来添加资产，组合文件可以直接选中多个文件拖进资产面板即可。
 
 <figure style="width:605px;">
 <img src="https://gw.alipayobjects.com/zos/OasisHub/15d62349-0820-44ec-8eb6-4e5a82121341/drag2.gif" alt="drag2" style="zoom:50%;" />
@@ -95,6 +95,7 @@ this.engine.resourceManager.load({url:"...", type: AssetType.Scene});
  <img src="https://gw.alipayobjects.com/zos/OasisHub/f456c74e-b8ba-4bd6-9cf9-4f907535af26/image-20240122134039213.png" alt="image-20240122134039213" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">资产选择器</figcaption>
 </figure>
+
 ### 快捷键
 
 | 快捷键          | 功能     |
