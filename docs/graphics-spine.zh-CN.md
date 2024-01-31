@@ -19,7 +19,10 @@ Spine 动画支持换皮换肤，动画混合以及使用代码控制骨骼。
 
 ## 在编辑器中使用
 在编辑器中使用 spine 包含下面几个步骤：
-<img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*SDIMT5gq-5IAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
+```mermaid
+flowchart LR
+   资源导出 --> 资源上传 --> 添加组件 --> 编写脚本
+```
 
 
 ### 资源导出
