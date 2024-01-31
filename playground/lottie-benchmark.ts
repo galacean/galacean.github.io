@@ -5,6 +5,7 @@
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import { Camera, Entity, WebGLEngine } from "@galacean/engine";
 import { LottieAnimation } from "@galacean/engine-lottie";
+import { Stats } from "@galacean/engine-toolkit-stats";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
@@ -15,6 +16,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const camera = cameraEntity.addComponent(Camera);
   cameraEntity.transform.setPosition(0, 0, 30);
   cameraEntity.addComponent(OrbitControl);
+  cameraEntity.addComponent(Stats);
 
   engine.resourceManager
     .load<Entity>({
