@@ -12,19 +12,24 @@ label: Basics/Interface
 
 目前，编辑器支持上传或创建的资产有：
 
-| 支持的资产 | 说明 | 创建方式 |
-| --- | --- | --- |
-| 模型 | 支持 gltf/glb/fbx 文件上传，可以拖动到场景中 | 上传 |
-| 纹理 | 支持 png/jpeg 文件上传，创建 2D 纹理 | 上传 |
-| HDR | 支持 .hdr 文件上传，可用于场景天空，环境光 | 上传 |
-| Lottie | 支持 lottie 文件（.json） 文件上传，需要把外链图片转成 base64 | 上传 |
-| 材质 | 用于调整渲染效果 | 创建 |
-| 网格 | 不可添加，只能使用内部网格和模型中的网格 | - |
-| 动画控制器 | 用于控制动画状态 | 创建 |
-| 精灵 | 用于 2D 效果制作 | 创建 |
-| 精灵图集 | 用于 2D 素材优化 | 创建 |
-| 字体 | 支持 `.ttf`, `.otf`, `.woff` 文件上传，用于制作 2D 文字 | 创建 |
-| 文件夹 | 和系统一致的文件夹逻辑，可以把文件拖拽到文件夹中 | 创建 |
+| 支持的资产 | 说明 | 交换格式 | 创建方式 |
+| --- | --- | --- | --- |
+| 文件夹 | 类似操作系统的文件夹，可以把文件拖拽到文件夹中 |  | 创建 |
+| 场景 | 用于实体树管理 |  | 创建 |
+| 模型 | 3D 模型文件 | `.gltf`, `.glb`, .`fbx`, `.zip` | 上传 |
+| 网格 | 不可添加，只能使用内部网格和模型中的网格 |  | - |
+| 材质 | 用于调整渲染效果 |  | 创建 |
+| 纹理 | 上传图片文件创建 2D 纹理 | `.png`,`. jpg`,` .webp` | 上传 |
+| 立方体纹理（TextureCube） | 用于场景天空，环境光 | `.hdr` | 上传 |
+| 精灵 | 可以直接上传图片文件创建精灵（省去先创建精灵后绑定纹理的步骤） | `.png`,`. jpg`,` .webp` | 创建/上传 |
+| 精灵图集（SpriteAtlas） | 把多个精灵打包成图集，用于优化 2D 资产 |  | 创建 |
+| 字体 | 用于制作 2D 文字 | `.ttf`, `.otf`, `.woff` | 上传 |
+| 脚本 | 用于编写业务逻辑 | `.ts` | 创建 |
+| 动画控制器（Animation Controller） | 用于组织动画片段和控制动画状态 |  | 创建 |
+| 动画片段（Animation Clip） | 预先制作好的、连续的动画数据，包含一段时间内关键帧的变化信息 | `.ts` | 创建 |
+| 动画状态机脚本（Animation State Machine Script） | 用来控制和管理动画状态机行为的程序脚本 |  | 创建 |
+| Lottie | 支持 lottie 文件上传 | `.json`, `.zip` | 上传 |
+| Spine | 支持 spine 文件文件上传 | `.zip`（.json + .atlas  + 图片） | 上传 |
 
 ### 添加资产
 
@@ -52,6 +57,18 @@ label: Basics/Interface
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/538c4cc0-7180-404a-8163-24564541bd75/drag4.gif" alt="drag4" style="zoom: 50%;" />
 
+组织完资产后，每个资产都有一个**相对路径**，我们可以右击某个资产拷贝路径。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5c56884c-ac30-4f87-95a8-48d96117a53b/image-20240131162519263.png" alt="image-20240131162519263" style="zoom:50%;" />
+
+这对项目开发来说很重要，因为项目中经常遇到需要异步加载资产的情况，即初始化不需要加载某个资产（甚至是场景），可以通过脚本来控制某个资产的加载。具体的语法可以看[资产](${docs}resource-manager)和[场景](${docs}core-scene)的加载使用，以加载场景为例：
+
+```typescript
+this.engine.resourceManager.load({url:"...", type: AssetType.Scene});
+```
+
+
+
 ### 删除资产
 
 你可以在选中一个资产后点击资产面板上的删除按钮，或者通过右键菜单中的删除选项来删除资产。删除资产时，你需要注意所删除的资产是否会影响场景中其他节点的关联性。
@@ -78,7 +95,6 @@ label: Basics/Interface
  <img src="https://gw.alipayobjects.com/zos/OasisHub/f456c74e-b8ba-4bd6-9cf9-4f907535af26/image-20240122134039213.png" alt="image-20240122134039213" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096; font-size: 12px;">资产选择器</figcaption>
 </figure>
-
 ### 快捷键
 
 | 快捷键          | 功能     |
