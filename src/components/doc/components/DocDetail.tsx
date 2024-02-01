@@ -63,7 +63,7 @@ const StyledMarkdown = styled("div", {
     },
   },
   "& img": {
-    maxWidth: "calc(100% - 32px)"
+    maxWidth: "100%"
   },
   "& h1": {
     margin: "20px 0",
