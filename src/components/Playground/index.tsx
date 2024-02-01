@@ -118,7 +118,7 @@ export default function Playground(props: IPlayground) {
               engineName={siteConfig.name}
               name={props.title || ''}
               url={url}
-              version={packages['@galacean/engine']}
+              version={packages['@galacean/engine'] ? packages['@galacean/engine'].version : packages['oasis-engine']?.version}
               packages={packages}
             />
           )}

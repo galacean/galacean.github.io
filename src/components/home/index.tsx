@@ -26,10 +26,7 @@ function Home() {
           })}`}
         />
       </Helmet>
-      <Banner />
       <Production />
-      {/* <Advantage /> */}
-      {/* <Editor /> */}
       <Cases />
       <Footer></Footer>
     </>
