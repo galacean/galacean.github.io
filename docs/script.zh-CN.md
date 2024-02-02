@@ -1,11 +1,11 @@
 ---
-order: 4
-title: 脚本
-type: 核心
-label: Core
+order: 0
+title: 脚本总览
+type: 脚本
+label: Script
 ---
 
-除了[内置组件](${docs}entity-cn#常用组件)之外，Galacean 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
+除了[内置组件](${docs}core-component)之外，Galacean 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
 
 ## 添加脚本组件
 
@@ -78,7 +78,7 @@ onUpdate() {
 ```typescript
 import { TheScript } from './TheScript'
 onStart() {
-	this.otherEntity = Entity.findByName('otherEntity');
+	this.otherEntity = this.entity.findByName('otherEntity');
 	this.otherEntityScript = this.otherEntity.getComponent(TheScript)
 }
 
@@ -158,9 +158,9 @@ onLateUpdate(deltaTime: number) {
 
 ### 输入系统接口
 
-详见[输入交互](${docs}input-cn)。
+详见[输入交互](${docs}input)。
 
-[实体](${docs}entity-cn)是脚本的主要操作对象，以下展示一些常用操作：
+[实体](${docs}core-entity)是脚本的主要操作对象，以下展示一些常用操作：
 
 ## 常用实体操作
 ### 变换
@@ -229,20 +229,5 @@ onAwake() {
 ```typescript
 onAwake() {
 	this.entity.findByPath('parent/child/grandson');
-}
-```
-#### 全局节点查找
-
-用户也可以通过 [Entity.findByName](${api}core/Entity#findByName) 和 [Entity.findByPath](${api}core/Entity#findByPath) 进行全局的节点查找，使用方法和之前的查找子节点类似:
-
-```typescript
-onAwake() {
-	Entity.findByName('model');
-}
-```
-
-```typescript
-onAwake() {
-	Entity.findByPath('container/model');
 }
 ```

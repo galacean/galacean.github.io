@@ -26,7 +26,7 @@ export interface APISearchResponse {
    * [符合查询条件的总记录数]
    */
   total: number;
-  list: PkgChildDetail[];
+  list: (PkgChildDetail & { pkg: string })[];
   /**
    * [页码, 下标从0开始]
    */
@@ -111,14 +111,19 @@ export interface DocSearchResponse {
   pageNo: number;
   pageSize: number;
 }
-export async function searchAPI(opts: APISearchOptions): Promise<APISearchResponse> {
-  return await fetch(`${serverAddress}/api2/doc/apis/search?` + new URLSearchParams({ ...opts }), {
-    credentials: 'include',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+export async function searchAPI(
+  opts: APISearchOptions
+): Promise<APISearchResponse> {
+  return await fetch(
+    `${serverAddress}/api2/doc/apis/search?` + new URLSearchParams({ ...opts }),
+    {
+      credentials: 'include',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  )
     .then((res) => res.json())
     .then((res) => {
       if (res?.success) {
@@ -129,14 +134,19 @@ export async function searchAPI(opts: APISearchOptions): Promise<APISearchRespon
     });
 }
 
-export async function searchDoc(opts: DocSearchOptions): Promise<DocSearchResponse> {
-  return await fetch(`${serverAddress}/api2/doc/search?` + new URLSearchParams({ ...opts }), {
-    credentials: 'include',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
+export async function searchDoc(
+  opts: DocSearchOptions
+): Promise<DocSearchResponse> {
+  return await fetch(
+    `${serverAddress}/api2/doc/search?` + new URLSearchParams({ ...opts }),
+    {
+      credentials: 'include',
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+  )
     .then((res) => res.json())
     .then((res: { data: DocSearchResponse; success: any }) => {
       if (res?.success) {

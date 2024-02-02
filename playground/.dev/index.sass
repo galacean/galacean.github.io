@@ -1,7 +1,7 @@
-$header-height: 3.5rem
-$header-padding: 1rem
-$container-gap: 2rem
+$header-height: 2rem
+$container-gap: 1rem
 $transition-duration: 0.5s
+$header-padding: 1rem
 
 *
     box-sizing: border-box
@@ -25,46 +25,47 @@ a
     display: flex
     height: 100%
     user-select: none
-    .header
-        position: absolute
-        top: 0
-        left: 0
-        height: $header-height
-        padding: $header-padding $container-gap
-        .logo
-            height: $header-height - 2 * $header-padding
+
+    .nav-left
+        display: flex
+        flex-direction: column
+        overflow: auto
+        padding: 1rem $container-gap
+        .header
+            height: $header-height
             display: flex
             align-items: center
+            justify-content: space-between
+            .logo
+                height: 100%
+                display: flex
+                align-items: center
             img
                 height: 100%
             span
                 font-weight: bold
                 padding-left: 10px
                 font-size: 1.2em
-    .search-bar
-        position: absolute
-        top: $header-height
-        left: 1rem
-        padding: $header-padding $container-gap
-        background: #fff url("//gw-office.alipayobjects.com/basement_prod/225a73b9-1281-4388-9555-1e671899bc25.svg") .6rem .55rem no-repeat
-        cursor: text
-        width: 10rem
-        height: 2rem
-        color: #666
-        display: inline-block
-        border: 1px solid #ccc
-        border-radius: 2rem
-        font-size: .9rem
-        line-height: 2rem
-        outline: none
-    .nav-left
-        display: flex
-        flex-direction: column
-        overflow: auto
-        padding: 1rem $container-gap
-        margin-top: $header-height + 2rem
-
+            #fullScreen
+                height: 100%
+                cursor: pointer
+        .search-bar
+            margin: 1rem 0
+            padding: $header-padding 2rem
+            background: #fff url("//gw-office.alipayobjects.com/basement_prod/225a73b9-1281-4388-9555-1e671899bc25.svg") .6rem .55rem no-repeat
+            cursor: text
+            width: 10rem
+            height: 2rem
+            color: #666
+            display: inline-block
+            border: 1px solid #ccc
+            border-radius: 2rem
+            font-size: .9rem
+            line-height: 2rem
+            outline: none
         .item-list
+            flex: 1
+            overflow: auto
             .hide
                 height: 0
             ul

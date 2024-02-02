@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useIntl } from "react-intl";
-import { Link } from 'react-router-dom';
+import { Link, useMatch } from 'react-router-dom';
 import { MenuBar } from "../../../ui/MenuBar";
 import { AppContext } from "../../contextProvider";
 
@@ -8,39 +8,56 @@ export function NavigationMenuMobile() {
   const formatMessage = useIntl().formatMessage;
   const context = useContext(AppContext);
 
-  const items = [
+  const items = useMatch('/') ? [
     {
-      label: formatMessage({ id: 'app.header.menu.docs' }),
+      label: formatMessage({ id: 'app.header.menu.engine' }),
       children: [
         {
-          key: 0,
-          label: <Link to={`/docs/${context.version}/${context.lang}/install`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
+          label: <Link to={`/docs/${context.version}/${context.lang}/getting-started-overview`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
         },
         {
-          key: 1,
-          label: <Link to={`/docs/${context.version}/${context.lang}/artist-bake`}>{formatMessage({ id: 'app.header.menu.artist.docs' })}</Link>
+          label: <Link to={`/api/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.api' })}</Link>,
         },
         {
-          key: 2,
-          label: <Link to={`/docs/${context.version}/cn/editor`} >{formatMessage({ id: 'app.header.menu.editor.docs' })}</Link>
-        }
-      ]
-    },
-    {
-      label: formatMessage({ id: 'app.header.menu.ecosystem' }),
-      children: [
+          label: <Link to={`/examples/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.examples' })}</Link>,
+        },
         {
-          key: 0,
           label: <a target="_blank" href={`https://github.com/galacean/create-galacean-app`} >{formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}</a>
         },
       ]
     },
     {
-      label: <Link to={`/api/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.api' })}</Link>,
+      label: formatMessage({ id: 'app.header.menu.effects' }),
+      children: [
+        {
+          label: <a rel='noopener noreferrer' href={`/effects/#/user/`}>{formatMessage({ id: 'app.header.menu.effects.doc' })}</a>
+        },
+        {
+          label: <a rel='noopener noreferrer' href={`/effects/#/playground/`}>{formatMessage({ id: 'app.header.menu.effects.examples' })}</a>
+        },
+        {
+          label: <a rel='noopener noreferrer' href={`/effects/#/api/`}>{formatMessage({ id: 'app.header.menu.effects.api' })}</a>
+        },
+      ]
     },
+  ] : [
     {
-      label: <Link to={`/examples/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.examples' })}</Link>,
+      children: [
+        {
+          label: <Link to={`/docs/${context.version}/${context.lang}/getting-started-overview`}>{formatMessage({ id: 'app.header.menu.engine.docs' })}</Link>
+        },
+        {
+          label: <Link to={`/api/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.api' })}</Link>,
+        },
+        {
+          label: <Link to={`/examples/${context.version}`}>{formatMessage({ id: 'app.header.menu.engine.examples' })}</Link>,
+        },
+        {
+          label: <a target="_blank" href={`https://github.com/galacean/create-galacean-app`} >{formatMessage({ id: 'app.header.menu.ecosystem.createapp' })}</a>
+        },
+      ]
     }
+
   ]
 
   return <MenuBar items={items} onClick={() => { }}></MenuBar>

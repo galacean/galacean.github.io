@@ -24,8 +24,8 @@ const StyledHeading = styled("h1", {
 
 const StyledSlogan = styled("p", {
   fontSize: "1.2rem",
-  color: "$slate11",
   padding: "$5 0",
+  fontWeight: 300,
   '@media (max-width: 768px)': {
     fontSize: "$2"
   }
@@ -49,42 +49,6 @@ function Banner() {
           alt='Galacean'
         />
       </StyledHeading>
-      <StyledSlogan>
-        <FormattedMessage id='app.home.slogan' />
-      </StyledSlogan>
-      <Flex gap="lg" css={{
-        '@media (max-width: 768px)': {
-          flexDirection: "column",
-          textAlign: "center"
-        }
-      }}>
-        <Link to={`/docs/${stableVersion}/${lang}/install`} onClick={() => {
-          setVersion(stableVersion);
-          localStorage.setItem('version', stableVersion);
-        }}>
-          <Button variant="primary" size="lg" round>
-            {stableSpecificVersion}&nbsp;
-            <FormattedMessage id='app.home.stable' />
-            <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
-          </Button>
-        </Link>
-        <Link to={`/docs/${betaVersion}/${lang}/install`} onClick={() => {
-          setVersion(betaVersion);
-          localStorage.setItem('version', betaVersion);
-        }}>
-          <Button variant="light" size="lg" round>
-            {betaSpecificVersion}&nbsp;
-            <FormattedMessage id='app.home.beta' />
-            <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
-          </Button>
-        </Link>
-        <a href='https://github.com/orgs/galacean/discussions' target='_blank'>
-          <Button variant="secondary" size="lg" round>
-            <GithubOutlined style={{ marginRight: "5px" }} />
-            <FormattedMessage id='app.home.discussion' />
-          </Button>
-        </a>
-      </Flex>
     </StyledSection>
   );
 }

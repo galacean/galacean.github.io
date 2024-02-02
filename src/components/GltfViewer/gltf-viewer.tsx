@@ -252,8 +252,8 @@ class Oasis {
     const center = this._center;
     const extent = this._extent;
 
-    boundingBox.min.set(0, 0, 0);
-    boundingBox.max.set(0, 0, 0);
+    boundingBox.min.set(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
+    boundingBox.max.set(Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY);
 
     renderers.forEach((renderer) => {
       BoundingBox.merge(renderer.bounds, boundingBox, boundingBox);

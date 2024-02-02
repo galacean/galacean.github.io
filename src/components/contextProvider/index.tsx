@@ -44,7 +44,9 @@ const AppContextProvider = (props: PropsWithChildren) => {
       if (configRes) {
         setVersions(configRes);
         if (!localStorageVersion) {
-          setVersion(configRes[configRes.length - 1].version);
+          const { version } = configRes[configRes.length - 1];
+          localStorage.setItem('version', version);
+          setVersion(version);
         }
       }
     })()

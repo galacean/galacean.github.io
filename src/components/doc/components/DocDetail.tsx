@@ -63,7 +63,7 @@ const StyledMarkdown = styled("div", {
     },
   },
   "& img": {
-    maxWidth: "calc(100% - 32px)"
+    maxWidth: "100%"
   },
   "& h1": {
     margin: "20px 0",
@@ -152,15 +152,14 @@ const StyledMarkdown = styled("div", {
       color: "$slate11",
       border: "1px solid $slate6"
     },
-    "& blockquote": {
-      margin: "$1 0",
-      paddingLeft: "$2",
-      color: "$slate10",
-      borderLeft: "4px solid $slate4",
-      "& p": {
-        margin: 0
-      }
-    }
+  },
+  "& blockquote": {
+    margin: "$2 0",
+    padding: "0 $2",
+    color: "$slate11",
+    borderRadius: "$2",
+    border: "1px solid $blue8",
+    backgroundColor: "$blueA2",
   }
 });
 
@@ -185,7 +184,7 @@ const StyledReactMarkdown = styled("div", {
 });
 
 function DocDetail(props: PropsWithChildren<DocDetailProps>) {
-  const { lang, version } = useContext(AppContext);
+  const { lang, version, theme } = useContext(AppContext);
   const { docTitle } = useParams();
   const [docData, setDocData] = useState<DocData | null>(null);
   const [menuFetched, setMenuFetched] =  useState(false);
@@ -211,6 +210,8 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
 
   useEffect(() => {
     fetchMenuList('example', version).then((list) => {
+      idTitleMapRef.current.clear();
+
       list
         .sort((a, b) => a.weight - b.weight)
         .forEach((data) => {
@@ -235,6 +236,9 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
       fetchDocDataById(props.selectedDocId).then((res) => {
         setDocData(res);
       });
+    }
+    else {
+        setDocData(null);
     }
   }, [props.selectedDocId]);
 
@@ -288,17 +292,20 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
             },
             //@ts-ignore
             nav: DocToc,
-            blockquote({ className, src }: any) {
+            blockquote({ className, src, children }: any) {
               if (className === 'playground-in-doc') {
                 return <Playground id={getIdByTitle(src) || ''} title={docTitle} embed={true} />;
               }
-              return null;
+
+              return <blockquote className={className}>{children}</blockquote>;
             },
             code({ node, inline, className, children, ...props }) {
               const match = /language-(\w+)/.exec(className || '');
               if (!inline && match) {
                 if (className?.indexOf('mermaid') !== -1) {
-                  return <MermaidBlock>{children[0]}</MermaidBlock>;
+                  const themePrefix = `%%{init: {'theme':'${theme === "dark-theme" ? "dark" : "default" }'}}%% `;
+
+                  return <MermaidBlock>{themePrefix + children[0]}</MermaidBlock>;
                 }
                 return <code dangerouslySetInnerHTML={{
                   __html: Prism.highlight(children[0] as string || '', Prism.languages.javascript, 'javascript'),
