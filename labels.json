@@ -72,10 +72,18 @@
     "cn_name": "光照"
   },
   {
+    "uuid": "markdown-Renderer",
+    "name": "Renderer",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 4,
+    "tag": "doc-engine",
+    "cn_name": "渲染器"
+  },
+  {
     "uuid": "markdown-Model",
     "name": "Model",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 5,
     "tag": "doc-engine",
     "cn_name": "模型"
   },
@@ -83,7 +91,7 @@
     "uuid": "markdown-Mesh",
     "name": "Mesh",
     "parent_uuid": "markdown-Graphics",
-    "weight": 5,
+    "weight": 6,
     "tag": "doc-engine",
     "cn_name": "网格"
   },
@@ -91,7 +99,7 @@
     "uuid": "markdown-Material",
     "name": "Material",
     "parent_uuid": "markdown-Graphics",
-    "weight": 6,
+    "weight": 7,
     "tag": "doc-engine",
     "cn_name": "材质"
   },
@@ -99,7 +107,7 @@
     "uuid": "markdown-Shader",
     "name": "Shader",
     "parent_uuid": "markdown-Graphics",
-    "weight": 7,
+    "weight": 8,
     "tag": "doc-engine",
     "cn_name": "着色器"
   },
@@ -107,7 +115,7 @@
     "uuid": "markdown-Texture",
     "name": "Texture",
     "parent_uuid": "markdown-Graphics",
-    "weight": 8,
+    "weight": 9,
     "tag": "doc-engine",
     "cn_name": "纹理"
   },
@@ -115,7 +123,7 @@
     "uuid": "markdown-2D",
     "name": "2D",
     "parent_uuid": "markdown-Graphics",
-    "weight": 9,
+    "weight": 10,
     "tag": "doc-engine",
     "cn_name": "2D"
   },
@@ -123,7 +131,7 @@
     "uuid": "markdown-Particle",
     "name": "Particle",
     "parent_uuid": "markdown-Graphics",
-    "weight": 10,
+    "weight": 11,
     "tag": "doc-engine",
     "cn_name": "粒子系统"
   },
