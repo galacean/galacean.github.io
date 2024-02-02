@@ -49,7 +49,7 @@ Galacean 中的局部坐标与世界坐标遵循`右手坐标系`，因此相机
 
 ## 上手
 
-介绍了相机的基本概念，接下来让我们来学习：
+介绍了相机的基本概念，接下来让我们上手：
 
 - 在场景中添加[相机组件](${docs}graphics-camera-component)
 - 通过[相机控件](${docs}graphics-camera-control)来更方便地操控[相机组件](${docs}graphics-camera-component)
