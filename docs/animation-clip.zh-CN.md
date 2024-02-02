@@ -5,7 +5,8 @@ type: 动画
 label: Animation
 ---
 
-设计师输出的带动画的模型中的每个动作在我们的编辑器中会被解析成一个个的**动画片段**资产，我们也可以通过动画片段编辑器创作额外的动画。
+**动画片段**是Galacean动画系统的核心元素之一，Galacean支持导入外部设计软件设计的模型动画，设计师输出的带动画的模型中的每个动画在Galacean中会被解析成一个个的**动画片段**资产，我们也可以通过动画片段编辑器创作额外的动画。
+
 动画片段编辑器目前支持除物理相关组件的所有可插值属性的编辑，如果你需要编辑其他属性，要在实体上添加对应的组件。
 
 ## 基础操作
@@ -75,6 +76,9 @@ label: Animation
 
 ![image-20230116170144892](https://gw.alipayobjects.com/zos/OasisHub/d53ed8f7-3126-4001-a26b-8e037fe2b6d5/animatorText.gif)
 
+### 帧动画示例
+除了数值类型，Galacean还支持引用类型的动画曲线，可以阅读[帧动画](${docs}animation-sprite-sheet)来了解，如何制作帧动画。
+
 ## 更多操作
 
 ### 操作关键帧
@@ -127,15 +131,8 @@ label: Animation
 
 ![curve](https://gw.alipayobjects.com/zos/OasisHub/f439881a-39a4-463d-a7fc-1551f88bcd7c/curve.gif)
 
-### 调整采样率
-
-刚才的曲线调整预览看起来可能并不明显，我们可以通过调低采样率的方式减慢动画速度
-
-![image-20230116185226034](https://gw.alipayobjects.com/zos/OasisHub/c1526af2-337a-4abf-bfde-4c66b6114002/image-20230116185226034.png)
-
-![curve2](https://gw.alipayobjects.com/zos/OasisHub/2ff245ef-2f7f-4e53-a5aa-e06ead091abf/curve2.gif)
-
 ## 脚本使用
+> 在使用脚本之前，最好阅读[动画系统构成](${docs}animation-system)文档，以帮助你更好的了解动画系统的运行逻辑
 
 你可以自己创建一个 [AnimationClip](${api}core/AnimationClip) 并通过 [addCurveBinding](${api}core/AnimationClip#addCurveBinding) 为它绑定 [AnimationCurve](${api}core/AnimationCurve)。
 
@@ -173,13 +170,11 @@ colorCurve.addKey(key2);
 colorClip.addCurveBinding('/light', DirectLight, "color.r", colorCurve);
 ```
 
-就像上面的第二个例子，你同样可以为你的子实体 `/light` 绑定 AnimationCurve，同时 `addCurveBinding` 的第三个参数并不局限于组件的属性，它是一个能索引到值的路径。
+你同样可以为你的子实体 `/light` 绑定 AnimationCurve，就像上面的代码示例，同时 `addCurveBinding` 的第三个参数并不局限于组件的属性，它是一个能索引到值的路径。
 
 <playground src="animation-customAnimationClip.ts"></playground>
 
 ### 动画事件
-
-<playground src="animation-event.ts"></playground>
 
 你可以使用 [AnimationEvent](${api}core/AnimationEvent) 来为AnimationClip添加事件，动画事件将在指定时间调用你在同一实体上绑定组件的指定回调函数。
 
@@ -189,4 +184,6 @@ event.functionName = "test";
 event.time = 0.5;
 clip.addEvent(event);
 ```
+
+<playground src="animation-event.ts"></playground>
 

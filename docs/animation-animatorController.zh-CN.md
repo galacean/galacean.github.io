@@ -1,9 +1,46 @@
 ---
 order: 2
-title: 动画状态机
+title: 动画控制器
 type: 动画
 label: Animation
 ---
+
+动画控制器（[AnimatorController](${api}core/AnimatorController)）用于组织[动画片段](${docs}animation-clip)（[AnimationClip](${api}core/AnimationClip)）实现更加灵活丰富的动画效果。
+
+## 编辑器使用
+
+### 基础使用
+通过动画控制器的编辑器，用户可以在其中组织[动画片段](${docs}animation-clip)的播放逻辑
+
+1. 将带动画的模型上传到编辑器上，编辑器会自动加载其上的动画片段（[设计师如何制作动画片段](${docs}animation-clip-for-artist)）到资源面板中
+
+![1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*Qc8sQ6iJd8IAAAAAAAAAAAAADsJ_AQ/original)
+
+2. 要组织播放这些动画片段我们需要创建一个动画控制器（[AnimatorController](${api}core/AnimatorController)）资产
+
+![3](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*irT7SZvw4N8AAAAAAAAAAAAADsJ_AQ/original)
+
+3. 刚创建的动画控制器中没有任何数据，我们需要对他进行编辑，双击资产, 并为它添加一个 AnimatorState
+
+![5](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*BcYXSI6OTyoAAAAAAAAAAAAADsJ_AQ/original)
+
+4. 点击 AnimatorState 为它绑定一个动画片段
+
+![6](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*KwFzRZCmbxoAAAAAAAAAAAAADsJ_AQ/original)
+
+5. 在[动画控制组件](${docs}animation-animator)上绑定该动画控制器（[AnimatorController](${api}core/AnimatorController)）资产
+   
+![4](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*VtX3RJR8kdMAAAAAAAAAAAAADsJ_AQ/original)
+
+6. 至此你在导出的项目中就可以通过 `animator.play("New State")` 播放 `run` 动画了
+
+
+你还可以通过动画控制器的编辑器实现更多的功能：
+
+### 默认播放
+
+将 AnimatorState 连接到`entry`上你导出的项目运行时就会自动播放其上的动画，而不需再调用 `animator.play`。同时你也会看到编辑器的模型也开始播放动画了。
+![2](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*t2JlQ7PGqikAAAAAAAAAAAAADsJ_AQ/original)
 
 ### 动画过渡
 
@@ -19,24 +56,6 @@ label: Animation
 | offset   | 目标状态向前的偏移时间，时间为相对目标状态的归一化时间, 默认值为 0  |
 | exitTime | 起始状态过渡开始时间，时间为相对起始状态的归一化时间, 默认值为 0.3  |
 
-#### 脚本使用
-
-你可以通过为 `AnimatorState` 添加 `AnimatorTransition` 实现动画状态间的过渡。
-
-```typescript
-const walkState = animatorStateMachine.addState('walk');
-walkState.clip = walkClip;
-const runState = animatorStateMachine.addState('run');
-runState.clip = runClip;
-const transition = new AnimatorStateTransition();
-transition.duration = 1;
-transition.offset = 0;
-transition.exitTime = 0.5;
-transition.destinationState = runState;
-walkState.addTransition(transition);
-animator.play("walk");
-```
-通过这样的方式你之后每次在该动画状态机所在的层播放 `walk` 动画时都会在播放一半时开始过渡到 `run` 动画。
 
 ### 动画叠加
 
@@ -48,7 +67,7 @@ Galacean引擎支持多层的动画叠加。动画叠加是通过 `AnimatorContr
 
 有的时候你想要得到一个固定的姿势，需要裁减设计师给到的动画切片，可以修改 `AnimatorState` 的`StartTime` 及 `EndTime`，点击 `AnimatorState` 即可对其进行编辑:
 
-![1](additiveStartTime.gif)
+![1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*JNFGTboEM5QAAAAAAAAAAAAADsJ_AQ/original)
 
 | 属性 | 功能说明 |
 | :------- | :------------------------------------------------------------------- |
@@ -70,18 +89,10 @@ Galacean引擎支持多层的动画叠加。动画叠加是通过 `AnimatorContr
 | Blending | 该层的混合模式，`Additive` 为叠加模式， `Override` 为覆盖模式，默认值为 `Override` |
 
 
-#### 脚本使用
-
-将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，
-
-<playground src="skeleton-animation-additive.ts"></playground>
+## 脚本使用
+> 在使用脚本之前，最好阅读[动画系统构成](${docs}animation-system)文档，以帮助你更好的了解动画系统的运行逻辑
 
 ### 默认播放
-
-将 AnimatorState 连接到`entry`上你导出的项目运行时就会自动播放其上的动画，而不需再调用 `animator.play`。同时你也会看到编辑器的模型也开始播放动画了。
-![2](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*t2JlQ7PGqikAAAAAAAAAAAAADsJ_AQ/original)
-
-#### 脚本使用
 
 你可以通过设置AnimatorStateMachine的[defaultState](${api}core/AnimatorStateMachine#defaultState) 来设置所在层的默认播放动画，这样当Animator `enabled=true` 时你不需要调用 `play` 方法即可默认播放。
 
@@ -92,29 +103,54 @@ layers[1].stateMachine.defaultState = animator.findAnimatorState('sad_pose');
 layers[1].blendingMode = AnimatorLayerBlendingMode.Additive;
 ```
 
-### 获取当前在播放的动画状态
+### 动画过渡
 
-你可以使用 [getCurrentAnimatorState](${api}core/Animator#getCurrentAnimatorState) 方法来获取当前正在播放的AnimatorState。参数为动画状态所在层的序号`layerIndex`, 详见[API文档](${api}core/Animator#getCurrentAnimatorState)。获取之后可以设置动画状态的属性，比如将默认的循环播放改为一次。
-
-```typescript
-const currentState = animator.getCurrentAnimatorState(0);
-// 播放一次
-currentState.wrapMode = WrapMode.Once;
-// 循环播放
-currentState.wrapMode = WrapMode.Loop;
-```
-
-### 获取动画状态
-
-你可以使用 [findAnimatorState](${api}core/Animator#findAnimatorState) 方法来获取指定名称的AnimatorState。详见[API文档](${api}core/Animator#getCurrentAnimatorState)。获取之后可以设置动画状态的属性，比如将默认的循环播放改为一次。
+你可以通过为 `AnimatorState` 添加 `AnimatorTransition` 实现动画状态间的过渡。
 
 ```typescript
-const state = animator.findAnimatorState('xxx');
-// 播放一次
-state.wrapMode = WrapMode.Once;
-// 循环播放
-state.wrapMode = WrapMode.Loop;
+const walkThenRunState = animatorStateMachine.addState('walkThenRun');
+walkThenRunState.clip = walkClip;
+const runState = animatorStateMachine.addState('run');
+runState.clip = runClip;
+const transition = new AnimatorStateTransition();
+transition.duration = 1;
+transition.offset = 0;
+transition.exitTime = 0.5;
+transition.destinationState = runState;
+walkThenRunState.addTransition(transition);
+animator.play("walkThenRun");
 ```
+通过这样的方式你之后每次在该动画状态机所在的层播放 `walkThenRun` 动画时都会在 `walk` 动画播放一半时开始过渡到 `run` 动画。
+
+### 动画叠加
+将想要叠加的动画状态添加到其他层并将它的混合模式设置为 `AnimatorLayerBlendingMode.Additive` 即可实现动画叠加效果，
+
+<playground src="skeleton-animation-additive.ts"></playground>
+
+### 动画数据
+
+#### 设置动画数据
+
+你可以通过 [animatorController](${api}core/Animator#animatorController)  属性来设置动画控制器的动画数据，加载完成的GLTF模型会自动添加一个默认的AnimatorController。
+
+
+```typescript
+animator.animatorController = new AnimatorController()；
+```
+
+#### 复用动画数据
+
+有的时候模型的动画数据存储在其他模型中，可以用如下的方式引入使用：
+
+<playground src="skeleton-animation-reuse.ts"></playground>
+
+除此以外还有一种方式，Animator的 [AnimatorController](${api}core/AnimatorController) 就是一个数据存储的类，它不会包含运行时的数据，基于这种设计只要绑定Animator组件的模型的**骨骼节点的层级结构和命名相同**，我们就可以对动画数据进行复用。
+
+```typescript
+const animator = model1.getComponent(Animator);
+animator.animatorController = model2.getComponent(Animator).animatorController;
+```
+
 
 ### 状态机脚本
 

@@ -1,6 +1,6 @@
 ---
-order: 0
-title: 动画总览
+order: 5
+title: 动画系统构成
 type: 动画
 label: Animation
 ---
