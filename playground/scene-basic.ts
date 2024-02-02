@@ -10,8 +10,6 @@ import {
   DirectLight,
   MeshRenderer,
   PrimitiveMesh,
-  Renderer,
-  UnlitMaterial,
   Vector3,
   WebGLEngine,
 } from "@galacean/engine";

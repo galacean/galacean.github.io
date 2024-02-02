@@ -58,14 +58,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   cubeRenderer2.mesh = sphereGeometry;
   cubeRenderer2.setMaterial(material2);
-  material2.isTransparent = true;
-  material2.isTransparent = false;
-  material2.alphaCutoff = 0.3;
-  console.log('material20', material2.renderState.renderQueueType);
-  material2.alphaCutoff = 0.4;
-  material2.isTransparent = true;
-  material2.isTransparent = false;
-  console.log('material21', material2.renderState.renderQueueType);
 
   // rotate
   class RotationScript extends Script {
