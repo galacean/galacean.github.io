@@ -61,7 +61,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     camera: Camera,
     width: number,
     height: number,
-    flipY = true,
+    flipY = false,
     isPNG = true,
     jpgQuality = 1
   ) {
