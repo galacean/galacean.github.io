@@ -1,14 +1,16 @@
 ---
 order: 5
-title: 美术软件到引擎的视觉还原度
+title: 在编辑器中还原美术效果
 type: 图形
 group: 模型
 label: Graphics/Model
 ---
 
+# 在编辑器中还原美术效果
+
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/5dd84590-7c37-4156-bb1a-498207880c75/1635493348596-92184a82-6aaa-4ab8-95e5-2d88762df213.png)
 
-### 背景
+## 背景
 
 Galacean 引擎目前有 3 种方式调试材质：
 
@@ -38,9 +40,9 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 如果你也遇到了上述问题，可以先参考本教程，找到具体的原因，然后再参照相应的解决方法。如果还是无法解决问题，可以联系我们团队，我们会不断改进本教程。
 
-### 原因
+## 原因
 
-#### 渲染算法差异
+### 渲染算法差异
 
 目前在实时渲染领域应用的最多的是 PBR 算法，拥有能量守恒、物理正确、易操作等优点，但是不同软件的具体实现算法是不一样的，使得渲染结果也不一样。Galacean 使用的是 **Cook-Torrance BRDF** 反射率方程，并针对移动端做了优化。
 
@@ -48,7 +50,7 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/ddfe44e2-c9ab-4692-b62f-b43b8965ee4c/1635432936926-b26c9652-6d95-4160-9743-b954025dfe32.png)
 
-#### 光照差异
+### 光照差异
 
 跟现实世界一样，3D 场景也可以添加[直接光与环境光](${docs}graphics-light)。Galacean 场景中默认是**没有**光源的，只有一个偏向蓝色的[纯色漫反射](${api}core/AmbientLight#diffuseSolidColor)，如下图左一；而很多建模软件中是自带光源的：
 
@@ -58,7 +60,7 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/61c2287b-0793-4763-a5f5-70567fcdf106/1635477315862-08b0c680-029b-400b-8600-1d8cf7a20c60.png)
 
-#### glTF 支持度差异
+### glTF 支持度差异
 
 Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-model-glTF)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过加载器加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
 
@@ -66,11 +68,11 @@ Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-m
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/acd35018-dc09-404b-a735-85a981384df1/1635434736607-cc408f27-a7d7-4a30-a7ea-e083f209d2c9.png)
 
-### 解决方法
+## 解决方法
 
 保证视觉还原度的首要前提是在同一个场景下调试材质，即相同的光照，相同的环境光等等，然后再选择实时渲染方案或者是烘焙方案。
 
-#### 统一光照
+### 统一光照
 
 - 直接光
 
@@ -96,7 +98,7 @@ Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-m
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/52e54319-7c7f-42a5-bf16-e7bca854734c/1635496231128-2b912395-f1eb-48cd-b5e9-323cb28c8c49.png)
 
-#### 实时渲染方案
+### 实时渲染方案
 
 - 渲染方案
 
@@ -120,7 +122,7 @@ Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-m
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/a76d35e6-e222-4877-89a4-c44a117a1284/1635499678001-f7df3dc2-2219-4516-887b-fc5d51dc3521.png)
 
-#### 烘焙方案
+### 烘焙方案
 
 不同于实时渲染，如果你的渲染场景完全静态，不需要光影交互，不需要要折射、透明等效果，那么使用烘焙方案会更加满足你的艺术创作，因为烘焙方案可以无视上文说的光照、glTF 支持度等问题；可以放心地使用建模软件的自带渲染器，[vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 等强大插件，最后通过烘焙贴图，导出到 [glTF Unlit 插件](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_unlit)。
 
@@ -132,6 +134,6 @@ Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-m
 
 - [《导出 Unlit 材质》](${docs}graphics-material-Unlit)
 
-#### Galacean 预览插件(规划中)
+### Galacean 预览插件(规划中)
 
 我们后期还会投入插件开发人员，在各种建模软件中内置 Galacean 预览插件，保证所见即所得，省去 glTF 文件校验等步骤。

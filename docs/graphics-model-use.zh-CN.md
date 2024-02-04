@@ -1,12 +1,12 @@
 ---
 order: 4
-title: 模型资产的加载与使用
+title: 模型的加载与使用
 type: 图形
 group: 模型
 label: Graphics/Model
 ---
 
-# 模型资产的加载与使用
+# 模型的加载与使用
 
 加载与使用模型资产，一般会遇到以下两种情况：
 
@@ -14,6 +14,8 @@ label: Graphics/Model
 - 未预加载的模型，在脚本中的加载与使用
 
 在编辑器中，**放置在场景中的模型**都会随着场景文件被预先加载，依照步骤 **资产界面** -> **左键拖动模型缩略图** -> **拖动至[视图界面](${docs})** -> **松开左键** -> **调整坐标** 即可将模型放置在对应场景中。
+
+> 编辑器不能直接调整模型节点的 scale 属性, 所以通常情况下, 你需要把模型节点拖拽到一个 entity 节点下, 然后调整 entity 节点的 scale 属性。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/8e088349-f36d-4d16-a525-bbb63fe00105/import.gif" alt="import" style="zoom:100%;" />
 

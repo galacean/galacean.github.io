@@ -1,6 +1,6 @@
 ---
 order: 3
-title: Import glTF
+title: 导入模型
 type: 图形
 group: 模型
 label: Graphics/Model
@@ -38,4 +38,3 @@ style="zoom:100%;" />
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*OtKERZfkrEAAAAAAAAAAAAAADhuCAQ/original" alt="image-20231009112129853" style="zoom:50%;" />
 
 导入完毕后，资产面板中就会新增导入的模型资产，让我们[看看模型资产包含了什么内容](${docs})吧。
-
