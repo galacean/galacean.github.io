@@ -15,7 +15,7 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 2. 通过 Galacean Editor 可视化调试，参考[教程](${docs}graphics-material)。
 
-3. **通过 3D 建模软件调好后导出 [glTF](${docs}graphics-gltf)**
+3. **通过 3D 建模软件调好后导出 [glTF](${docs}graphics-model-glTF)**
 
 前两种方式直接使用引擎渲染，所见即所得，没有视觉上的差异。
 
@@ -59,7 +59,7 @@ Galacean 引擎目前有 3 种方式调试材质：
 
 #### glTF 支持度差异
 
-Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-gltf)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过加载器加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
+Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-model-glTF)。glTF 支持标准的 [PBR 属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material-pbrmetallicroughness)和[通用材质属性](https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html#reference-material)，并支持 [ClearCoat](https://github.com/KhronosGroup/glTF/tree/main/extensions/2.0/Khronos/KHR_materials_clearcoat) 等插件，如下图。因此建模软件中的操作只要能导出到 glTF，引擎都能通过加载器加载，而那些额外的操作，比如 [vRay](https://www.chaosgroup.com/cn/vray/3ds-max) 材质的一些参数，是无法导出到 glTF 文件的。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/2010b748-ab8b-4e46-8b15-3aee4daa71f9/1635434775734-f8454efe-d268-4f80-87ab-40f1cddf96ea.png)
 

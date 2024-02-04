@@ -233,7 +233,7 @@ const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 
 <playground src="gltf-basic.ts"></playground>
 
-前往[ glTF 资源](${docs}graphics-gltf) 了解更多 glTF 相关设计。
+前往[ glTF 资源](${docs}graphics-model-glTF) 了解更多 glTF 相关设计。
 
 ### 7. 自定义加载器
 
