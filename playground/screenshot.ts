@@ -152,7 +152,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
     const config = {
       width: 1024,
       height: 1024,
-      flipY: true,
+      flipY: false,
       isPNG: true,
       jpgQuality: 1,
       screenshot: () => {
