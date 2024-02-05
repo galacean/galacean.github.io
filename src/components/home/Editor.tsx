@@ -33,22 +33,22 @@ export default function Editor() {
   return (
     <StyledEditor>
       <h2>
-        <FormattedMessage id="app.home.editor" />
+        <FormattedMessage id="app.home.engine" />
       </h2>
       <Flex align="both" dir="column" gap="lg" css={{ position: "relative" }}>
         <StyledP>
-          <FormattedMessage id="app.home.editor.intro" />
+          <FormattedMessage id="app.home.engine.intro" />
         </StyledP>
         <Flex gap="lg">
           <a href="https://galacean.antgroup.com/editor">
             <StyledButton variant="outline" size="lg" round>
-              <FormattedMessage id="app.home.editor.use" />
+              <FormattedMessage id="app.home.engine.use" />
               <ArrowRightOutlined style={{ marginLeft: "5px", fontSize:"12px" }} />
             </StyledButton>
           </a>
           <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
             <StyledButton variant="light" size="lg" round>
-              <FormattedMessage id="app.home.editor.apply" />
+              <FormattedMessage id="app.home.engine.apply" />
             </StyledButton>
           </a>
         </Flex>

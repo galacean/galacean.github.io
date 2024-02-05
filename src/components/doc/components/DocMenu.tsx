@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from 'react';
 import { MenuBar } from '../../../ui/MenuBar';
 
 interface DocMenuProps {
-  items: any;
+  items: any[];
   selectedDocId: string;
   setSelectedDocId: React.Dispatch<React.SetStateAction<string>>;
   defaultOpenKeys: string;
@@ -21,7 +21,7 @@ function DocMenu(props: PropsWithChildren<DocMenuProps>) {
     <MenuBar
       onClick={onClick}
       defaultSelectedKeys={[props.defaultOpenKeys]}
-      items={props.items}
+      items={props.items.filter((item) => item.children?.length)}
       selectedKeys={[props.selectedDocId]}
     />
   );

@@ -7,7 +7,7 @@ label: Resource
 
 3D 资源一般与 Engine 挂钩，我们使用挂载在 Engine 实例中的 [resourceManager](${api}core/Engine#resourceManager) 管理与加载资源。
 
-推荐用[脚本组件](${docs}script-cn)的方式加载资源。[load](${api}core/ResourceManager#load) 方法即可传入 url，也可以传入 [loadItem](${api}core/LoadItem)，也可以传入数组表示批量加载。
+推荐用[脚本组件](${docs}script)的方式加载资源。[load](${api}core/ResourceManager#load) 方法即可传入 url，也可以传入 [loadItem](${api}core/LoadItem)，也可以传入数组表示批量加载。
 
 ```typescript
 import { GLTFResource } from "@galacean/engine";
@@ -111,7 +111,7 @@ engine.resourceManager.gc();
 
 ### 1. Texture2D
 
-> 更多纹理相关文档可查阅[纹理资源](${docs}texture-cn)。
+> 更多纹理相关文档可查阅[2D 纹理](${docs}graphics-texture-2d)。
 
 ```typescript
 import { Texture2D } from "@galacean/engine";
@@ -136,7 +136,7 @@ this.engine.resourceManager.load({
 
 ### 2. TextureCube
 
-> 更多纹理相关文档可查阅[纹理资源](${docs}texture-cn)。
+> 更多纹理相关文档可查阅[立方纹理](${docs}graphics-texture-cube)。
 
 ```typescript
 import { TextureCube } from "@galacean/engine";
@@ -195,7 +195,7 @@ engine.resourceManager
 
 ### 4. 压缩纹理
 
-> 更多压缩纹理相关文档可查阅[压缩纹理](${docs}texture-compression-cn)。
+> 更多压缩纹理相关文档可查阅[压缩纹理](${docs}graphics-texture-compression)。
 
 ```typescript
 import { Texture2D } from "@galacean/engine";
@@ -233,7 +233,7 @@ const gltf = await this.engine.resourceManager.load<GLTFResource>("test.gltf");
 
 <playground src="gltf-basic.ts"></playground>
 
-前往[ glTF 资源](${docs}gltf-cn) 了解更多 glTF 相关设计。
+前往[ glTF 资源](${docs}graphics-gltf) 了解更多 glTF 相关设计。
 
 ### 7. 自定义加载器
 

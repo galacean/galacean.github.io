@@ -3,7 +3,7 @@
  * @category 2D
  */
 import { Camera, Logger, Vector3, WebGLEngine, Entity } from "@galacean/engine";
-import { SpineAnimation } from "@galacean/engine-spine";
+import { SpineRenderer } from "@galacean/engine-spine";
 
 Logger.enable();
 
@@ -21,19 +21,16 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
   engine.resourceManager
     .load({
-      urls: [
-        "https://gw.alipayobjects.com/os/OasisHub/a66ef194-6bc8-4325-9a59-6ea9097225b1/1620888427489.json",
-        "https://gw.alipayobjects.com/os/OasisHub/a1e3e67b-a783-4832-ba1b-37a95bd55291/1620888427490.atlas",
-        "https://gw.alipayobjects.com/zos/OasisHub/a3ca8f62-1068-43a5-bb64-5c9a0f823dde/1620888427490.png",
-      ],
+      url: "https://mmtcdp.stable.alipay.net/oasis_be/afts/file/A*jceoSrUXbUYAAAAAAAAAAAAADnN-AQ/spineboy.json",
       type: "spine",
     })
-    .then((spineEntity: Entity) => {
-      spineEntity.transform.setPosition(0, -15, 0);
-      rootEntity.addChild(spineEntity);
-      const spineAnimation = spineEntity.getComponent(SpineAnimation);
-      spineAnimation.state.setAnimation(0, "walk", true);
-      spineAnimation.scale = 0.05;
+    .then((spineResource: any) => {
+      const spineEntity = rootEntity.createChild("spine");
+      spineEntity.transform.setPosition(0, -18, 0);
+      const spineRenderer = spineEntity.addComponent(SpineRenderer);
+      spineRenderer.scale = 0.05;
+      spineRenderer.animationName = "walk";
+      spineRenderer.resource = spineResource;
     });
 
   engine.run();
