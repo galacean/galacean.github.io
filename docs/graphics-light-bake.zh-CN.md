@@ -7,6 +7,8 @@ label: Light
 
 烘焙指 Galacean 提前执行光照计算并将结果[烘焙](${docs}graphics-light-bake)到二进制文件（包含[漫反射球谐参数](https://www.wikiwand.com/zh-hans/%E7%90%83%E8%B0%90%E5%87%BD%E6%95%B0)和[预滤波环境贴图](https://learnopengl-cn.github.io/07%20PBR/03%20IBL/02%20Specular%20IBL/)），然后在运行时实时采样。
 
+<img src="https://gw.alipayobjects.com/zos/OasisHub/5ff4f65b-7940-4359-9de0-f8beef4d7fb2/bake.gif" alt="bake" style="zoom:50%;" />
+
 我们在[编辑器](https://galacean.antgroup.com/editor) 和 [glTF 查看器](https://galacean.antgroup.com/#/gltf-viewer) 提供了烘焙工具。
 
 ## 编辑器使用
