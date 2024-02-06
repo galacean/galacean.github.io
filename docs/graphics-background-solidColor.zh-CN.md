@@ -24,6 +24,8 @@ const background = scene.background;
 background.mode = BackgroundMode.SolidColor;
 // 设置特定的背景色
 background.solidColor.set(0.25, 0.25, 0.25, 1.0);
+// 设置为(0,0,0,0) 可以透出网页背景
+background.solidColor.set(0, 0, 0, 0);
 ```
 
 ## 属性
