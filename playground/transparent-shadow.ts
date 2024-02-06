@@ -48,6 +48,7 @@ void main() {
 #include <common>
 #include <uv_share>
 #include <worldpos_share>
+#include <camera_declare>
 #include <ShadowFragmentDeclaration>
 
 uniform vec4 material_BaseColor;
