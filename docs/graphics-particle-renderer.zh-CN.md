@@ -132,6 +132,16 @@ particleRenderer.generator.main.simulationSpeed = 2;
 | [removeBurstByIndex(index: number)](${api}core/EmissionModule#removeBurstByIndex) | 通过索引移除一个爆破行为 |
 | [clearBurst()](${api}core/EmissionModule#clearBurst)                              | 清除所有的爆破行为       |
 
+目前引擎内置了以下发射器形状，选中粒子组件时提供对应形状的辅助显示。
+
+| 发射器形状类型                                               | 释义                                 |
+| ------------------------------------------------------------ | ------------------------------------ |
+| [BoxShape](${api}core/EmissionModule#BoxShape)               | `BaseShape` 对象，发射器形状为立方体 |
+| [CircleShape](${api}core/EmissionModule#CircleShape)         | `BaseShape` 对象，发射器形状为圆圈   |
+| [ConeShape](${api}core/EmissionModule#ConeShape)             | `BaseShape` 对象，发射器形状为类圆锥 |
+| [HemisphereShape](${api}core/EmissionModule#HemisphereShape) | `BaseShape` 对象，发射器形状为半球   |
+| [SphereShape](${api}core/EmissionModule#SphereShape)         | `BaseShape` 对象，发射器形状为球体   |
+
 ### 生命周期尺寸模块
 
 [`SizeOverLifetimeModule`](${api}core/SizeOverLifetimeModule) 是 `ParticleGeneratorModule` 的子类，用于处理粒子系统的生命周期内的大小变化。
@@ -146,7 +156,23 @@ particleRenderer.generator.main.simulationSpeed = 2;
 | [sizeZ](${api}core/SizeOverLifetimeModule#sizeZ)               | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，表示 z 轴方向上粒子的大小变化曲线 |
 | [size](${api}core/SizeOverLifetimeModule#size)                 | [ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，获取或设置粒子的大小变化曲线      |
 
+针对[ ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，在编辑器内置了折线编辑器，可视化调整曲线。
+
 ![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*70KGQpOg85oAAAAAAAAAAAAADtKFAQ/original)
+
+或者在代码中：
+
+```ts
+sizeOverLifetime.enabled = true;
+sizeOverLifetime.size.mode = ParticleCurveMode.Curve;
+
+const curve = sizeOverLifetime.size.curve;
+const keys = curve.keys;
+keys[0].value = 0.153;
+keys[1].value = 1.0;
+curve.addKey(0.057, 0.37);
+curve.addKey(0.728, 0.958);
+```
 
 ### 生命周期旋转模块
 
@@ -197,6 +223,8 @@ particleRenderer.generator.main.simulationSpeed = 2;
 | 属性                                              | 释义                                                                                                     |
 | ------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [color](${api}core/ColorOverLifetimeModule#color) | [ParticleCompositeGradient](${api}core/ParticleCompositeGradient) 对象，表示粒子在其生命周期内的颜色渐变 |
+
+对于 [ParticleCompositeGradient](${api}core/ParticleCompositeGradient) 对象，编辑器内置了渐变编辑器。渐变条上方代表颜色 key，下方代表 alpha 值 key。每个 key 在渐变条的位置代表其时间。双击现有 key 可以新建 key，长按 key 并向下拖动可以删除 key。
 
 ![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*BW3dQb--WXAAAAAAAAAAAAAADtKFAQ/original) ![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*NHL9RKwOFTIAAAAAAAAAAAAADtKFAQ/original)
 
