@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: 动画控制器
 type: 动画
 label: Animation
@@ -12,7 +12,7 @@ label: Animation
 ### 基础使用
 通过动画控制器的编辑器，用户可以在其中组织[动画片段](${docs}animation-clip)的播放逻辑
 
-1. 将带动画的模型上传到编辑器上，编辑器会自动加载其上的动画片段（[设计师如何制作动画片段](${docs}animation-clip-for-artist)）到资源面板中
+1. 准备好动画片段（[制作动画片段](${docs}animation-clip-)）
 
 ![1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*Qc8sQ6iJd8IAAAAAAAAAAAAADsJ_AQ/original)
 
@@ -63,7 +63,7 @@ Galacean引擎支持多层的动画叠加。动画叠加是通过 `AnimatorContr
 
 双击 `AnimatorController` 资源文件编辑动画，添加 Layer，将混合的动作也连接`entry`
 
-![animationadditive](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*ZStsQI2aAskAAAAAAAAAAAAADsJ_AQ/original)
+![animationadditive](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*vF7fS6mRnmYAAAAAAAAAAAAADsJ_AQ/original)
 
 有的时候你想要得到一个固定的姿势，需要裁减设计师给到的动画切片，可以修改 `AnimatorState` 的`StartTime` 及 `EndTime`，点击 `AnimatorState` 即可对其进行编辑:
 

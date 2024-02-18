@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 2
 title: 动画片段
 type: 动画
 label: Animation
@@ -7,9 +7,18 @@ label: Animation
 
 **动画片段**是Galacean动画系统的核心元素之一，Galacean支持导入外部设计软件设计的模型动画，设计师输出的带动画的模型中的每个动画在Galacean中会被解析成一个个的**动画片段**资产，我们也可以通过动画片段编辑器创作额外的动画。
 
-动画片段编辑器目前支持除物理相关组件的所有可插值属性的编辑，如果你需要编辑其他属性，要在实体上添加对应的组件。
+
+有两种常用的方式得到动画片段
+1. 导入用第三方工具（例如 Autodesk® 3ds Max®， Autodesk® Maya®， Blender）创建的带动画的模型，详见[美术制作动画片段](${docs}animation-clip-for-artist)
+   
+![1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*Qc8sQ6iJd8IAAAAAAAAAAAAADsJ_AQ/original)
+
+2. 在Galacean中创建动画片段（下文会介绍编辑器和脚本这两种创建方式）
+
 
 ## 动画面板介绍
+动画片段编辑器目前支持除物理相关组件的所有可插值属性的编辑，如果你需要编辑其他属性，要在实体上添加对应的组件。
+
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*NzstQooi6vMAAAAAAAAAAAAADsJ_AQ/original)
 
 ## 基础操作
