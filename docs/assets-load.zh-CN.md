@@ -7,7 +7,32 @@ label: Resource
 
 # 资产的加载
 
-在编辑器中已经被添加到场景使用的资产，会随着项目被**预加载进运行时**，不需要额外调用加载。对于那些没有被预加载的资产，可以使用挂载在 Engine 实例中的 [resourceManager.load](${api}core/Engine#resourceManager#load) 加载资源。
+在 Galacean 中，资产加载一般由使用它的情形分为三种情况：
+
+- 资产被导入到编辑器中，且在某个场景中使用
+- 资产被导入到编辑器中，但没有在场景中使用
+- 资产没有被导入到编辑器中
+
+> 若使用项目加载器加载项目，项目只会加载**主场景**中使用到的资源，编辑器里的其他资源不会被加载。
+
+```typescript
+await engine.resourceManager.load({
+  type: AssetType.Project,
+  url: "xxx.json",
+});
+```
+
+> 对应地，若使用场景加载器加载某个场景，场景加载器只会加载**该场景**中使用到的资源，其他资源默认不会被加载。
+
+```typescript
+const scene = await engine.resourceManager.load({
+  type: AssetType.Scene,
+  url: "xxx.json",
+});
+engine.sceneManager.activeScene = scene;
+```
+
+> 至于那些没有在场景中使用的资产，可以使用挂载在 Engine 实例中的 [resourceManager.load](${api}core/Engine#resourceManager#load) 加载资源。
 
 ```typescript
 // 若只传入 URL ，引擎会依据后缀推断加载的资产类型，如 `.png` 对应纹理， `.gltf` 则对应模型
@@ -62,6 +87,22 @@ this.engine.resourceManager.load<GLTFResource>("Assets/texture.png");
 ```
 
 > 在编辑器中可以通过 **资产面板** -> **右键资产** -> **Copy relative path** 快速复制资产的相对路径
+
+### baseUrl
+
+`ResourceManger` 目前也支持了 `baseUrl` 的设置：
+
+```typescript
+engine.resourceManager.baseUrl = "https://cdn.galacean.com"
+```
+
+如果设置了 `baseUrl`，加载的相对路径会和 `baseUrl` 组合：
+
+```typescript
+engine.resourceManager.load('img/2d.png');
+```
+
+上面两段代码可以得出实际的加载路径是`https://cdn.galacean.com/img/2d.png`。
 
 ## 加载进度
 
