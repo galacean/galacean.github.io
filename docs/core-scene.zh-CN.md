@@ -7,10 +7,20 @@ label: Core
 
 Scene 作为场景单元，可以方便的进行实体树管理，尤其是大型游戏场景。如: **scene1** 和 **scene2** 作为两个不同的场景，可以各自独立管理其拥有的 **Entity** 树，因此场景下的光照组件、渲染组件和物理组件之间也互相隔离，互不影响。我们可以同时渲染一个或多个 Scene，也可以在特定时机下根据项目逻辑动态切换当前 Scene。
 
-从结构上每个 Engine 下可以包含一个和多个激活的场景。每个 Scene 可以有多个根实体。
+从结构上每个 Engine 下可以包含一个和多个激活的场景（目前编辑器还不支持多个）。每个 Scene 可以有多个根实体。
 
 
 ## 编辑器使用
+
+### 场景创建和切换
+
+在资产面板右键（或资产面板右上角 + 号）创建场景，双击场景可以切换过去：
+
+![Untitled](https://mdn.alipayobjects.com/rms/afts/img/A*3KX4QKXgZZAAAAAAAAAAAAAAARQnAQ/original/Untitled.gif)
+
+### 环境光
+
+请参考相关文档： [环境光](${docs}graphics-light)
 
 ### 背景
 
@@ -157,10 +167,6 @@ background.texture = texture;
 Playground 示例如下：
 
 <playground src="background.ts"></playground>
-
-### 设置场景环境光
-
-请参考相关文档： [环境光](${docs}graphics-light)
 
 ### 实体树管理
 
