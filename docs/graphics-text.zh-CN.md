@@ -8,23 +8,6 @@ label: Graphics/2D
 
 [TextRenderer](${api}core/TextRenderer) 组件用于在 3D/2D 场景中显示文字。
 
-| 属性 | 功能说明 |
-| :--- | :--- |
-| `Text` | 需要显示的文本 |
-| `Color` | 文本颜色 |
-| `FontSize` | 文本的字体大小 |
-| `Font` | 自定义字体 |
-| `Width` | 文本在三维空间中的宽 |
-| `Height` | 文本在三维空间中的高 |
-| `LineSpacing` | 行间距 |
-| `FontStyle` | 字体样式设置：是否加粗/是否斜体 |
-| `HorizontalAlignment` | 水平对齐方式，可选值有：Left/Center/Right |
-| `VerticalAlignment` | 竖直对齐方式，可选值有：Top/Center/Bottom |
-| `EnableWrapping` | 是否开启换行模式，打开换行模式后，会根据设置的宽来进行换行，如果这时候宽设置为 0，那么文本将不渲染 |
-| `OverflowMode` | 当文本总高度超出设置的高的时候的处理方式，可选值有：Overflow/Truncate， Overflow 表示直接溢出显示， Truncate 表示只保留设置高度以内的内容显示，具体显示内容还和文本在竖直方向上的对齐方式有关|
-| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
-
-
 ## 编辑器使用
 
 ### 添加文本组件
@@ -32,6 +15,30 @@ label: Graphics/2D
 需要显示文本的时候，需要先给一个实体添加文本组件，如下：
 
 ![添加文本组件](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*3d5AQYTtcNkAAAAAAAAAAAAADjCHAQ/original)
+
+### 参数说明
+
+选中一个带有 TextRenderer 组件的实体，可以在右侧 inspector 中设置所有相关属性来对文本组件进行各种设置：
+![添加文本组件](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*9XKjSYHZQWsAAAAAAAAAAAAADjCHAQ/original)
+
+属性说明如下：
+| 属性 | 功能说明 |
+| :--- | :--- |
+| `Text` | 需要显示的文本 |
+| `Color` | 文本颜色 |
+| `FontSize` | 文本的字体大小 |
+| `Font` | 自定义字体 |
+| `Width` | 文本在三维空间中的宽，用于包围盒的计算和在需要多行显示文本时会结合宽高来确认换行原则 |
+| `Height` | 文本在三维空间中的高，用于包围盒的计算和在需要多行显示文本时会结合宽高来确认换行原则|
+| `LineSpacing` | 行间距 |
+| `FontStyle` | 字体样式设置：是否加粗/是否斜体 |
+| `HorizontalAlignment` | 水平对齐方式，可选值有：Left/Center/Right |
+| `VerticalAlignment` | 竖直对齐方式，可选值有：Top/Center/Bottom |
+| `EnableWrapping` | 是否开启换行模式，打开换行模式后，会根据设置的宽来进行换行，如果这时候宽设置为 0，那么文本将不渲染 |
+| `OverflowMode` | 当文本总高度超出设置的高的时候的处理方式，可选值有：Overflow/Truncate， Overflow 表示直接溢出显示， Truncate 表示只保留设置高度以内的内容显示，具体显示内容还和文本在竖直方向上的对齐方式有关|
+| `Mask Interaction` | 遮罩类型，用于设置文本是否需要遮罩，以及需要遮罩的情况下，是显示遮罩内还是遮罩外的内容 |
+| `Mask Layer` | 文本所属遮罩层，用于和 SpriteMask 进行匹配，默认为 Everything，表示可以和任何 SpriteMask 发生遮罩 |
+| `priority` | 渲染优先级，值越小，渲染优先级越高，越优先被渲染 |
 
 ### 设置显示文本
 
@@ -45,19 +52,26 @@ label: Graphics/2D
 
 ![设置字体](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*CgA5S5vneeMAAAAAAAAAAAAADjCHAQ/original)
 
-
 ## 脚本使用
 
 <playground src="text-renderer.ts"></playground>
 
-1、创建 [TextRenderer](${api}core/TextRenderer) 组件显示文本    
-2、通过 font 设置 [Font](${api}core/Font) 对象    
-3、通过 text 设置需要显示的文本    
-3、通过 fontSize 设置字体大小    
-4、通过 color 设置文本颜色    
+1、创建 [TextRenderer](${api}core/TextRenderer) 组件显示文本  
+2、通过 font 设置 [Font](${api}core/Font) 对象  
+3、通过 text 设置需要显示的文本  
+3、通过 fontSize 设置字体大小  
+4、通过 color 设置文本颜色
 
 ```typescript
-import { Camera, Color, Font, FontStyle, TextRenderer, Vector3, WebGLEngine } from "@galacean/engine";
+import {
+  Camera,
+  Color,
+  Font,
+  FontStyle,
+  TextRenderer,
+  Vector3,
+  WebGLEngine,
+} from "@galacean/engine";
 
 const textEntity = rootEntity.createChild("text");
 // 给实体添加 TextRenderer 组件
@@ -74,9 +88,9 @@ textRenderer.color.set(1, 0, 0, 1);
 
 ### 设置宽高
 
-可以通过 width/height 来设置文本在三维空间中的大小，主要有以下几个用处：    
-1、用于包围盒的计算    
-2、在需要多行显示文本时会结合宽高来确认换行原则    
+可以通过 width/height 来设置文本在三维空间中的大小，主要有以下几个用处：  
+1、用于包围盒的计算  
+2、在需要多行显示文本时会结合宽高来确认换行原则
 
 ```typescript
 // 设置宽
@@ -118,20 +132,21 @@ textRenderer.overflowMode = OverflowMode.Truncate;
 
 文本对齐用来设置在指定宽高的情况下，文本如何在宽高内显示，如下：
 
-| 属性名 | 属性类型 | 描述 |
-| :--- | :--- | :--- |
-|[horizontalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextHorizontalAlignment](${api}core/TextHorizontalAlignment)|水平方向对齐方式：Left/Center/Right 分别代表 左对齐/居中对齐/右对齐 显示|
-|[verticalAlignment](${api}core/TextRenderer#horizontalAlignment)|[TextVerticalAlignment](${api}core/TextVerticalAlignment)|竖直方向对齐方式：Top/Center/Bottom 分别代表 顶部开始显示/居中显示/底部开始显示|
+| 属性名                                                             | 属性类型                                                      | 描述                                                                            |
+| :----------------------------------------------------------------- | :------------------------------------------------------------ | :------------------------------------------------------------------------------ |
+| [horizontalAlignment](${api}core/TextRenderer#horizontalAlignment) | [TextHorizontalAlignment](${api}core/TextHorizontalAlignment) | 水平方向对齐方式：Left/Center/Right 分别代表 左对齐/居中对齐/右对齐 显示        |
+| [verticalAlignment](${api}core/TextRenderer#horizontalAlignment)   | [TextVerticalAlignment](${api}core/TextVerticalAlignment)     | 竖直方向对齐方式：Top/Center/Bottom 分别代表 顶部开始显示/居中显示/底部开始显示 |
 
 ### 文本的字体样式
 
 文本的字体样式用来设置文本是否加粗显示，是否斜体显示，如下：
 
-| 属性名 | 属性类型 | 描述 |
-| :--- | :--- | :--- |
-|[fontStyle](${api}core/TextRenderer#fontStyle)|[FontStyle](${api}core/FontStyle)|字体样式：None/Bold/Italic 分别代表 正常/加粗/斜体 显示|
+| 属性名                                         | 属性类型                          | 描述                                                    |
+| :--------------------------------------------- | :-------------------------------- | :------------------------------------------------------ |
+| [fontStyle](${api}core/TextRenderer#fontStyle) | [FontStyle](${api}core/FontStyle) | 字体样式：None/Bold/Italic 分别代表 正常/加粗/斜体 显示 |
 
 使用方式如下：
+
 ```typescript
 // 正常显示
 textRenderer.fontStyle = FontStyle.None;
@@ -151,10 +166,9 @@ textRenderer.fontStyle = FontStyle.Bold | FontStyle.Italic;
 
 [Font](${api}core/Font) 是字体资源，用于表示文本使用的字体。
 
-| 属性名 | 属性类型 | 描述 |
-| :--- | :--- | :--- |
-|[name](${api}core/Sprite#name)|string|字体资源名称，用来唯一标识一个字体资源，目前用这个字段来表示需要的系统字体|
-
+| 属性名                         | 属性类型 | 描述                                                                       |
+| :----------------------------- | :------- | :------------------------------------------------------------------------- |
+| [name](${api}core/Sprite#name) | string   | 字体资源名称，用来唯一标识一个字体资源，目前用这个字段来表示需要的系统字体 |
 
 ```typescript
 const font = Font.createFromOS(engine, "Arial");
@@ -163,7 +177,9 @@ const font = Font.createFromOS(engine, "Arial");
 目前支持格式：ttf/otf/woff
 
 ```typescript
-const font = await engine.resourceManager.load({url: "https://lg-2fw0hhsc-1256786476.cos.ap-shanghai.myqcloud.com/Avelia.otf"});
+const font = await engine.resourceManager.load({
+  url: "https://lg-2fw0hhsc-1256786476.cos.ap-shanghai.myqcloud.com/Avelia.otf",
+});
 ```
 
 <playground src="text-renderer-font.ts"></playground>

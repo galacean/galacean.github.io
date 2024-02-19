@@ -15,6 +15,24 @@ label: Core
 
 要新增节点，你可以点击节点面板上的添加按钮，或右键某个节点后选择添加子节点。添加完成后，你可以在检查器面板中对新节点的属性进行编辑。如果使用新增节点按钮, 你还可以快速创建立方体/球体等基本模型
 
+### 编辑节点
+
+点击节点，你就可以对它进行编辑，在右侧的检查器面板中你可以编辑它的名字
+
+![Name](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*qBiVT6YtvkQAAAAAAAAAAAAADsJ_AQ/original)
+
+是否激活
+
+![IsActive](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*1l5_QqTgZYUAAAAAAAAAAAAADsJ_AQ/original)
+
+Transform
+
+![Transform](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*3JO6S7BdgMsAAAAAAAAAAAAADsJ_AQ/original)
+
+以及为它增删组件
+
+![AddComponent](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*iZKVRrznLOAAAAAAAAAAAAAADsJ_AQ/original)
+
 ### 删除节点
 
 选中一个节点后，可以点击节点面板上的删除按钮或通过右键菜单中的删除选项来删除节点。删除节点会删除节点及其所有的子节点。所以在删除节点时，你需要注意所删除的节点是否会影响场景中其他节点。

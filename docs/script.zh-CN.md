@@ -78,7 +78,7 @@ onUpdate() {
 ```typescript
 import { TheScript } from './TheScript'
 onStart() {
-	this.otherEntity = Entity.findByName('otherEntity');
+	this.otherEntity = this.entity.findByName('otherEntity');
 	this.otherEntityScript = this.otherEntity.getComponent(TheScript)
 }
 
@@ -229,20 +229,5 @@ onAwake() {
 ```typescript
 onAwake() {
 	this.entity.findByPath('parent/child/grandson');
-}
-```
-#### 全局节点查找
-
-用户也可以通过 [Entity.findByName](${api}core/Entity#findByName) 和 [Entity.findByPath](${api}core/Entity#findByPath) 进行全局的节点查找，使用方法和之前的查找子节点类似:
-
-```typescript
-onAwake() {
-	Entity.findByName('model');
-}
-```
-
-```typescript
-onAwake() {
-	Entity.findByPath('container/model');
 }
 ```
