@@ -18,12 +18,19 @@ label: Core
 ### 编辑节点
 
 点击节点，你就可以对它进行编辑，在右侧的检查器面板中你可以编辑它的名字
+
 ![Name](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*qBiVT6YtvkQAAAAAAAAAAAAADsJ_AQ/original)
+
 是否激活
+
 ![IsActive](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*1l5_QqTgZYUAAAAAAAAAAAAADsJ_AQ/original)
+
 Transform
+
 ![Transform](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*3JO6S7BdgMsAAAAAAAAAAAAADsJ_AQ/original)
+
 以及为它增删组件
+
 ![AddComponent](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*iZKVRrznLOAAAAAAAAAAAAAADsJ_AQ/original)
 
 ### 删除节点
