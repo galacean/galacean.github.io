@@ -26,7 +26,15 @@ label: Core
 
 ## 编辑器使用
 
-从层级面板或场景中选择一个实体后，检查器将显示出当前选中节点所可以调整的属性。在此情况下，你可以点击 `Add Component` 按钮来为当前实体添加新的组件。
+从层级面板或场景中选择一个实体后，检查器将显示出当前选中节点挂载的所有组件，组件名显示在左上角
+![Name](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*tZcpRrrYQcMAAAAAAAAAAAAADsJ_AQ/original)
+你可以在检查器中控制它是否 enabled
+![Enable](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*QRG8TZ1IorQAAAAAAAAAAAAADsJ_AQ/original)
+如果不需要它也可以将它删除
+![Delete](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*uqFGQIHyLAwAAAAAAAAAAAAADsJ_AQ/original)
+或者编辑它的各种属性
+![Edit](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*IFnGRYHdi7gAAAAAAAAAAAAADsJ_AQ/original)
+如果是个空节点，你可以点击 `Add Component` 按钮来为当前实体添加新的组件。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/95d58dde-109f-44b2-89ef-2959ad8b4fe3/image-20230926112713126.png" alt="image-20230926112713126" style="zoom:50%;" />
 
