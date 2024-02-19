@@ -1,21 +1,21 @@
 ---
 order: 20
-title: Lottie
-type: 美术
-group: 美术
-label: Art
+title: 导出 Lottie 动画
+type: 图形
+group: 2D
+label: Graphics/2D
 ---
 
-## 如何从 AE 导出 Lottie 动画
+# 如何从 AE 导出 Lottie 动画
 
-### 什么是 Bodymovin
+## 什么是 Bodymovin
 
 - Bodymovin 是一个 AE 的插件，它可以把动画直接输出成代码，直接给程序员使用放在各个终端上使用。
 - 你可以在 github 上找到最新版本的 bodymovin 使用。
 - Bodymovin的版本等于输出的json文件版本。
 
 
-### 怎样使用 Bodymovin
+## 怎样使用 Bodymovin
 
 - 到 Bodymovin 的 GitHub 首页（链接：airbnb/lottie-web）克隆项目到本地，或者下载 .zip 包。   
   ![image.png](https://gw.alipayobjects.com/zos/OasisHub/429a17b1-19b3-41b8-902c-4992d722832f/1597673434824-27e06992-4a7d-486a-8514-62a470c53789.png)
