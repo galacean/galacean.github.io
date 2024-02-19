@@ -1,21 +1,19 @@
 ---
-order: 1
-title: Unlit 材质
-type: 图形
-group: 材质
-label: Graphics/Material
+order: 3
+title: Unlit
+type: 着色器
+label: Shader
 ---
 
 在一些简单的场景中，可能不希望计算光照，引擎提供了 [UnlitMaterial](${api}core/UnlitMaterial)，使用了最精简的 shader 代码，只需要提供颜色或者纹理即可渲染。Unlit 材质适用于烘焙好的模型渲染，它只需要设置一张基本纹理或者颜色，即可展现离线渲染得到的高质量渲染结果，但是缺点是无法实时展现光影交互，因为 Unlit 由纹理决定渲染，不受任何光照影响。
 
-## 编辑器使用
-<img src="https://gw.alipayobjects.com/zos/OasisHub/6be78a08-3075-4cd1-8cad-9757fc34f695/unlit.gif" alt="unlit" style="zoom:100%;" />
-
-## 脚本使用
-
 <playground src="unlit-material.ts"></playground>
 
-## 参数
+## 编辑器使用
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/6be78a08-3075-4cd1-8cad-9757fc34f695/unlit.gif" alt="unlit" style="zoom:100%;" />
+
+## 参数介绍
 
 | 参数 | 应用 |
 | :-- | :-- |
@@ -23,9 +21,11 @@ label: Graphics/Material
 | [baseTexture](${api}core/UnlitMaterial#baseTexture) | 基础纹理。搭配基础颜色使用，是个相乘的关系。 |
 | [tilingOffset](${api}core/UnlitMaterial#tilingOffset) | 纹理坐标的缩放与偏移。是一个 Vector4 数据，分别控制纹理坐标在 uv 方向上的缩放和偏移，参考 [案例](${examples}tiling-offset) |
 
+如果需要通过脚本使用材质，可以前往[材质的使用教程](${docs}graphics-material-script)。
+
 ## Blender 导出 Unlit 材质
 
-如[烘焙教程](${docs}graphics-bake-blender)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Galacean 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR\_materials\_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，Galacean 会解析插件，生成 Unlit 材质。
+如[烘焙教程](${docs}graphics-bake-blender)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Galacean 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR_materials_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，Galacean 会解析插件，生成 Unlit 材质。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/39965fc2-3fc2-44b9-a294-a04eb4441120/1623652741734-090284d5-9b1a-4db8-9231-dc3f4d188a38-20210614150743080.png)
 
@@ -51,7 +51,7 @@ label: Graphics/Material
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/50c69e7b-c099-4a2d-b546-8a55ff4f9309/1623652264008-7ae4c13c-6430-44b0-995e-2c23c9f117a7-20210614150846797.png)
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/6ed13e19-a9e5-4454-a0d5-ad27b3cabe14/1623652368637-6dda44be-4cde-4f65-a72f-d39b5d3f60ce.png) 
+![image.png](https://gw.alipayobjects.com/zos/OasisHub/6ed13e19-a9e5-4454-a0d5-ad27b3cabe14/1623652368637-6dda44be-4cde-4f65-a72f-d39b5d3f60ce.png)
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/e9a99c9c-f661-4666-86bc-d8e91030c0f7/1623652380351-501dd929-7f96-4578-b49a-11724a0782a7.png)
 
@@ -63,6 +63,6 @@ label: Graphics/Material
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/1fe38185-399e-4f56-bff4-c39ba4ae3a2a/1623652462007-85b065a3-69fa-4d80-9dfd-834ef66da12a.png)
 
-将刚才导出来的 glTF 文件拖入编辑器或者 [glTF 预览器](https://galacean.antgroup.com/#/gltf-viewer)，若材质类型为 **UnlitMaterial**，说明已经导出了 glTF 的 [KHR\_materials\_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) 插件，且 Galacean 已经解析成 Unlit 材质。
+将刚才导出来的 glTF 文件拖入编辑器或者 [glTF 预览器](https://galacean.antgroup.com/#/gltf-viewer)，若材质类型为 **UnlitMaterial**，说明已经导出了 glTF 的 [KHR_materials_unlit](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit) 插件，且 Galacean 已经解析成 Unlit 材质。
 
 ![image.png](https://gw.alipayobjects.com/zos/OasisHub/fbb6ba43-f7d7-4757-a1d3-590083d30573/1623652636074-d8bb8437-f885-43fd-8957-8e14ae9fd8c0-20210614150914493.png)
