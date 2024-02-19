@@ -6,6 +6,8 @@ group: 纹理
 label: Graphics/Texture
 ---
 
+# 立方纹理
+
 立方纹理（[TextureCube](${api}core/TextureCube)）和 2D 纹理的区别是它有 6 个面，即用 6 张 2D 纹理组成了一个立方纹理。
 
 ![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*Omw8Qo0WzfYAAAAAAAAAAAAAARQnAQ)
@@ -20,6 +22,14 @@ label: Graphics/Texture
 
 ## 创建
 
+> 可以在 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
+
+在准备好 HDR 后，依照路径 **资产面板** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
+
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
+
+同样的，在脚本中可以通过加载六张对应顺序的纹理也能得到相应的立方纹理。
+
 ```typescript
 const cubeTextureResource = {
   type: AssetType.TextureCube,
@@ -29,8 +39,8 @@ const cubeTextureResource = {
     "py - top 图片 url",
     "ny - bottom 图片 url",
     "pz - front 图片 url",
-    "nz - back 图片 url"
-  ]
+    "nz - back 图片 url",
+  ],
 };
 
 engine.resourceManager.load(cubeTextureResource).then((resource) => {
@@ -42,33 +52,4 @@ engine.resourceManager.load(cubeTextureResource).then((resource) => {
 
 ## 使用
 
-### 天空盒
-
-天空盒需要使用一张立方纹理,即将天空盒的 6 个面都赋予纹理，效果如下：
-
-<playground src="background.ts"></playground>
-
-### IBL
-
-在 PBR 材质渲染中，如果想要获得逼真的环境反射现象，我们得开启[环境光的 IBL 模式](${docs}graphics-light)。而 IBL 需要立方纹理作为漫反射和镜面反射纹理，可以在不同的视角方向，渲染出周边环境的一些细节。
-
-<playground src="ambient-light.ts"></playground>
-
-### HDR
-
-<playground src="hdr-loader.ts"></playground>
-
-## 常见 QA
-
-### 1. 为什么无法上传立方纹理？
-
-1.请确保您上传的立方纹理**至少包含 6 张纹理**，分别为：
-
-- `px`: Positive X face for a cube-mapped texture.
-- `nx`: Negative X face for a cube-mapped texture.
-- `py`: Positive Y face for a cube-mapped texture.
-- `ny`: Negative Y face for a cube-mapped texture.
-- `pz`: Positive Z face for a cube-mapped texture.
-- `nz`: Negative Z face for a cube-mapped texture.
-
-2.立方纹理必须保证每张 2D 纹理的分辨率相等，即每张 2D 纹理的宽高必须一致。
+立方纹理主要在天空盒中使用，详情可参考[天空背景]({$docs}graphics-background-sky)
