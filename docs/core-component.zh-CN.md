@@ -28,7 +28,7 @@ label: Core
 
 从层级面板或场景中选择一个实体后，检查器将显示出当前选中节点挂载的所有组件，组件名显示在左上角
 ![Name](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*tZcpRrrYQcMAAAAAAAAAAAAADsJ_AQ/original)
-你可以在检查器中控制它是否enabled
+你可以在检查器中控制它是否 enabled
 ![Enable](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*QRG8TZ1IorQAAAAAAAAAAAAADsJ_AQ/original)
 如果不需要它也可以将它删除
 ![Delete](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*uqFGQIHyLAwAAAAAAAAAAAAADsJ_AQ/original)

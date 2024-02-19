@@ -5,12 +5,11 @@ type: 动画
 label: Animation
 ---
 
-Galacean支持引用类型的动画曲线，你可以添加类型为资产的关键帧比如（精灵）下图为制作精灵动画的流程：
+Galacean 支持引用类型的动画曲线，你可以添加类型为资产的关键帧比如（精灵）下图为制作精灵动画的流程：
 
 1. 给节点添加 `SpriteRenderer` 组件
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*PxdFQKal1JEAAAAAAAAAAAAADsJ_AQ/original)
-
 
 2. 在资产面板中创建 `AnimationClip`
 
@@ -24,8 +23,8 @@ Galacean支持引用类型的动画曲线，你可以添加类型为资产的关
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*wN9sSYfs2eAAAAAAAAAAAAAADsJ_AQ/original)
 
-### 脚本实现 
+### 脚本实现
 
-引擎在1.1版本支持引用类型的动画曲线（[AnimationRefCurve](${api}core/AnimationRefCurve)），关键帧的值可以是资产如（精灵，材质），你可以通过创建引用类型的动画曲线实现比如帧动画的能力：
+引擎在 1.1 版本支持引用类型的动画曲线（[AnimationRefCurve](${api}core/AnimationRefCurve)），关键帧的值可以是资产如（精灵，材质），你可以通过创建引用类型的动画曲线实现比如帧动画的能力：
 
 <playground src="animation-sprite.ts"></playground>

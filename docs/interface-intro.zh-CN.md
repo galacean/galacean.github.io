@@ -29,7 +29,7 @@ label: Basics/Interface
 | 5 | [主编辑区](${docs}interface-viewport) | 位于编辑器中间，是编辑器的主要操作区域，可以通过鼠标和键盘来编辑场景 |
 | 6 | 工具栏 | 位于编辑器顶部，这里提供了一些快速的操作如切换 Gizmo 的模式、切换场景视角，相机配置等 |
 | 7 | 相机预览区 | 位于主编辑区域的左下角，在这里可以以当前选中的相机为视角来预览场景 |
-| 8 | [动画片段编辑器](${docs}animation-clip) | 双击AnimationClip资产或在面板区添加 ![AnimationClip](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*SIr_Rp4n8X4AAAAAAAAAAAAADsJ_AQ/original)在这里你可以对指定的AnimationClip资产进行编辑，详见[动画片段编辑](${docs}animation-clip)
+| 8 | s| 双击AnimationClip资产或在面板区添加 ![AnimationClip](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*SIr_Rp4n8X4AAAAAAAAAAAAADsJ_AQ/original)在这里你可以对指定的AnimationClip资产进行编辑，详见[动画片段编辑](${docs}animation-clip)
 | 9 | [动画控制器编辑器](${docs}animation-animator) | 双击AnimatorController资产或在面板区添加![AnimatorController](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*M-qVRII7SZUAAAAAAAAAAAAADsJ_AQ/original)在这里你可以对指定的AnimationClip资产进行编辑，详见[动画控制器编辑](${docs}animation-animator)
 
 对于各个面板详细的介绍可以点击上方链接查看。
