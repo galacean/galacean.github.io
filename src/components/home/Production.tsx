@@ -52,11 +52,12 @@ export default function Production() {
   return (
     <Flex align="both">
       <Flex align="h" css={{
-        paddingBottom: "$10",
+        padding: "$20 0 $10",
         gap: "60px",
         width: "1000px",
         '@media (max-width: 768px)': {
-          flexDirection: "column"
+          flexDirection: "column",
+          padding: "$10 0"
         }
       }}>
         <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*cOUgSYMpo1cAAAAAAAAAAAAADsB_AQ/fmt.webp)` }}>

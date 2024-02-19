@@ -12,16 +12,6 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ## 编辑器使用
 
-### 场景创建和切换
-
-在资产面板右键（或资产面板右上角 + 号）创建场景，双击场景可以切换过去：
-
-![Untitled](https://mdn.alipayobjects.com/rms/afts/img/A*3KX4QKXgZZAAAAAAAAAAAAAAARQnAQ/original/Untitled.gif)
-
-### 环境光
-
-请参考相关文档： [环境光](${docs}graphics-light)
-
 ### 背景
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/c417f715-801b-4ab6-85ca-2d0348570ef4/background.gif" alt="background" style="zoom:100%;" />
@@ -167,6 +157,10 @@ background.texture = texture;
 Playground 示例如下：
 
 <playground src="background.ts"></playground>
+
+### 设置场景环境光
+
+请参考相关文档： [环境光](${docs}graphics-light)
 
 ### 实体树管理
 

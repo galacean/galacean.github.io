@@ -21,13 +21,13 @@ PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/711f8b97-247c-465e-8cf2-4896b0c78534/metal.gif" alt="metal" style="zoom:100%;" />
 
-材质默认是各向同性，即从不同方向观测材质表面，反射形状是相同的，我们可以通过调节各向异性相关参数，控制随着视线的变化，反射在切线、副切线空间延伸的方向，做到类似唱片拉丝的效果:
-
-![material-anisotropy](https://gw.alipayobjects.com/zos/OasisHub/3d420bb8-9546-4412-a725-7a342a25fd22/material-anisotropy.gif)
-
 除此之外，还有很多通用属性可以配置，比如粗糙度、环境遮蔽、自发射光、透明度等等：
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/4806589e-386f-404a-82e5-d273e98b707d/other.gif" alt="other" style="zoom:100%;" />
+
+### Bake PBR( lightmap 过渡方案 )
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c539743b-d96a-4081-b959-7ddd5a0db217/image-20231009113312944.png" alt="image-20231009113312944" style="zoom:50%;" />
 
 ## 参数
 
