@@ -13,22 +13,21 @@ label: Light
 
 ### 1. 环境漫反射
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/7b2f79cc-7886-43da-b1cb-32bb7373dcb0/image-20231009114400810.png" alt="image-20231009114400810" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/a0bec326-364b-42ca-9172-0319b47e0256/image-20240219163916257.png" alt="image-20240219163916257" style="zoom:50%;" />
 
 | 属性 | 作用 |
 | :-- | :-- |
-| Mode | 支持 `Sky`和 `Solid Color` 两种模式，默认 `Sky` 模式，表示使用根据场景烘焙的球谐参数; `Solid Color` 模式时使用纯色作为漫反射颜色 |
+| Source | 指定漫反射来源是 `Background` 还是 `Solid Color`，默认来源 `Background`。`Background` 表示使用烘焙得到的球谐参数作为漫反射颜色; `Solid Color` 表示使用纯色作为漫反射颜色 |
 | Intensity | 漫反射强度 |
 
 ### 2. 环境镜面反射
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/635ba520-5b7c-4156-a617-445045ddf92d/image-20231009114427072.png" alt="image-20231009114427072" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/bec5c785-1969-4f3d-8d04-eff02595cbca/image-20240219163941010.png" alt="image-20240219163941010" style="zoom:50%;" />
 
 | 属性 | 作用 |
 | :-- | :-- |
-| Mode | 支持 `Sky`和 `Custom` 两种模式，默认 `Sky` 模式，表示使用根据场景烘焙的预滤波环境贴图; `Custom` 模式时可以单独上传一张 HDR 贴图作为环境反射 |
+| Source | 指定镜面反射来源是 `Background` 还是 `Custom`，默认来源 `Background`。`Background` 表示使用根据背景烘焙得到的预滤波环境贴图作为镜面反射; `Custom` 表示可以单独烘焙一张 HDR 贴图作为环境反射。 |
 | Intensity | 镜面反射强度 |
-| Baker Resolution | 表示烘焙后的预滤波环境贴图的分辨率，默认 128 分辨率，烘焙产物约为 500KB，64 分辨率的烘焙产物约为 125KB，可以根据场景选择合适的烘焙分辨率。详见[烘焙教程](${docs}graphics-light-bake)。 |
 
 ## 脚本使用
 

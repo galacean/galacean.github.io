@@ -17,15 +17,17 @@ label: Light
 
 编辑器默认打开自动烘焙，会在修改背景(颜色、曝光、旋转等配置)或者修改烘焙分辨率等操作后，自动进行烘焙。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/8ae1e2ba-fa09-4421-9c4e-0b68a27d2e6d/image-20231227152024235.png" alt="image-20231227152024235" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c1d83838-b7c8-434c-b689-118f2ddb0d9e/image-20240219164704802.png" alt="image-20240219164704802" style="zoom:50%;" />
 
 也可以关闭自动烘焙，在需要的时候进行手动烘焙。
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/2e5e0965-956b-4146-a0de-0ca5a8025d4a/image-20240219164728187.png" alt="image-20240219164728187" style="zoom:50%;" />
 
 ### 2. 烘焙分辨率
 
 表示烘焙后的预滤波环境贴图的分辨率，默认 128 分辨率，烘焙产物约为 500KB；64 分辨率的烘焙产物约为 125KB，可以根据场景选择合适的烘焙分辨率。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/635ba520-5b7c-4156-a617-445045ddf92d/image-20231009114427072.png" alt="image-20231009114427072" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/2aee8d7d-4f64-4ef9-b004-f81be968488e/image-20240219164802607.png" alt="image-20240219164802607" style="zoom:50%;" />
 
 ### 3. 设置背景
 

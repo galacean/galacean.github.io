@@ -36,6 +36,11 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/5a713502-18b2-45eb-af56-d6530a340581/fog.gif" alt="fog" style="zoom:100%;" />
 
+### 烘焙
+可以根据[环境光教程](${docs}graphics-light-ambient) 和 [烘焙教程](${docs}graphics-light-bake) 进行离线烘焙：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/ead14eb8-dc01-4e88-a14b-145f9ec6cdd3/image-20240219165258496.png" alt="image-20240219165258496" style="zoom:50%;" />
+
 ## 脚本使用
 
 | 属性名称                                 | 解释     |
