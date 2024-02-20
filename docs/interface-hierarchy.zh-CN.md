@@ -43,7 +43,7 @@ label: Basics/Interface
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">右键新增节点</figcaption>
 
-添加完毕后，您可以在[检查器面板](${docs})中对新节点的属性进行编辑。
+添加完毕后，您可以在[检查器面板](${docs}interface-inspector)中对新节点的属性进行编辑。
 
 ### 删除节点
 
@@ -67,7 +67,7 @@ label: Basics/Interface
 
 ### 拷贝节点
 
-> 拷贝节点会拷贝选中节点及其所有的子节点，本质上是在调用引擎的[克隆](${docs})能力。
+> 拷贝节点会拷贝选中节点及其所有的子节点，本质上是在调用引擎的[克隆](${docs}core-clone)能力。
 
 你可以在选中某节点后，通过 `Duplicated` 在同层级下快速克隆该节点。
 

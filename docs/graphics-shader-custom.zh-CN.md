@@ -102,14 +102,14 @@ const material = new Material(engine, Shader.find("demo"));
 
 #### 雾
 
-| 名字 | 类型 | 解释 |
-| :-- | :-- | :-- |
-| scene_FogColor | vec4 | 雾的颜色 |
+| 名字            | 类型 | 解释                                                                                          |
+| :-------------- | :--- | :-------------------------------------------------------------------------------------------- |
+| scene_FogColor  | vec4 | 雾的颜色                                                                                      |
 | scene_FogParams | vec4 | 雾的参数：(x: -1/(end-start), y: end/(end-start), z: density / ln(2), w: density / sqr(ln(2)) |
 
 ## 上传着色器数据
 
-> attribute 逐顶点数据的上传请参考 [网格渲染器](${docs}graphics-model-mesh),这里不再赘述。
+> attribute 逐顶点数据的上传请参考 [网格渲染器](${docs}graphics-mesh-modelMesh),这里不再赘述。
 
 除了内置的变量，我们可以在着色器中上传任何自定义名字的变量，我们唯一要做的就是根据着色器数据类型，使用正确的接口。上传的接口全部保存在 [ShaderData](${api}core/ShaderData) 中，而 shaderData 实例对象又分别保存在引擎的四大类 [Scene](${api}core/Scene)、[Camera](${api}core/Camera)、[Renderer](${api}core/Renderer)、[Material](${api}core/Material) 中，我们只需要分别往这些 shaderData 中调用接口，上传变量，引擎便会在底层自动帮我们组装这些数据，并进行判重等性能的优化。
 
@@ -135,18 +135,18 @@ renderer2ShaderData.setFloat("u_progross", 0.8);
 
 着色器数据的类型和分别调用的 API 如下:
 
-| shader 类型 | ShaderData API |
-| :-- | :-- |
-| `bool` 、 `int` | setInt( value: number ) |
-| `float` | setFloat( value: number )` |
-| `bvec2`、`ivec2`、`vec2` | setVector2( value:Vector2 ) |
-| `bvec3`、`ivec3`、`vec3` | setVector3( value:Vector3 ) |
-| `bvec4`、`ivec4`、`vec4` | setVector4( value:Vector4 ) |
-| `mat4` | setMatrix( value:Matrix ) |
-| `float[]` 、`vec2[]` 、`vec3[]`、 `vec4[]` 、`mat4[]` | setFloatArray( value:Float32Array ) |
-| `bool[]`、 `int[]` 、`bvec2[]`、 `bvec3[]` 、`bvec4[]`、 `ivec2[]`、 `ivec3[]` 、`ivec4[]` | setIntArray( value:Int32Array ) |
-| `sampler2D` 、 `samplerCube` | setTexture( value:Texture ) |
-| `sampler2D[]` 、 `samplerCube[]` | setTextureArray( value:Texture[] ) |
+| shader 类型                                                                                | ShaderData API                      |
+| :----------------------------------------------------------------------------------------- | :---------------------------------- |
+| `bool` 、 `int`                                                                            | setInt( value: number )             |
+| `float`                                                                                    | setFloat( value: number )`          |
+| `bvec2`、`ivec2`、`vec2`                                                                   | setVector2( value:Vector2 )         |
+| `bvec3`、`ivec3`、`vec3`                                                                   | setVector3( value:Vector3 )         |
+| `bvec4`、`ivec4`、`vec4`                                                                   | setVector4( value:Vector4 )         |
+| `mat4`                                                                                     | setMatrix( value:Matrix )           |
+| `float[]` 、`vec2[]` 、`vec3[]`、 `vec4[]` 、`mat4[]`                                      | setFloatArray( value:Float32Array ) |
+| `bool[]`、 `int[]` 、`bvec2[]`、 `bvec3[]` 、`bvec4[]`、 `ivec2[]`、 `ivec3[]` 、`ivec4[]` | setIntArray( value:Int32Array )     |
+| `sampler2D` 、 `samplerCube`                                                               | setTexture( value:Texture )         |
+| `sampler2D[]` 、 `samplerCube[]`                                                           | setTextureArray( value:Texture[] )  |
 
 代码演示如下：
 
@@ -230,7 +230,14 @@ shaderData.disableMacro("LIGHT_COUNT");
 这部分的内容是结合上文所有内容，给用户一个简单的封装示例，希望对您有所帮助：
 
 ```typescript
-import { Material, Shader, Color, Texture2D, BlendFactor, RenderQueueType } from "@galacean/engine";
+import {
+  Material,
+  Shader,
+  Color,
+  Texture2D,
+  BlendFactor,
+  RenderQueueType,
+} from "@galacean/engine";
 
 //-- Shader 代码
 const vertexSource = `
@@ -288,8 +295,10 @@ export class CustomMaterial extends Material {
     const depthState = this.renderState.depthState;
 
     target.enabled = true;
-    target.sourceColorBlendFactor = target.sourceAlphaBlendFactor = BlendFactor.SourceAlpha;
-    target.destinationColorBlendFactor = target.destinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
+    target.sourceColorBlendFactor = target.sourceAlphaBlendFactor =
+      BlendFactor.SourceAlpha;
+    target.destinationColorBlendFactor = target.destinationAlphaBlendFactor =
+      BlendFactor.OneMinusSourceAlpha;
     depthState.writeEnabled = false;
     this.renderQueueType = RenderQueueType.Transparent;
   }

@@ -52,4 +52,4 @@ engine.resourceManager.load(cubeTextureResource).then((resource) => {
 
 ## 使用
 
-立方纹理主要在天空盒中使用，详情可参考[天空背景]({$docs}graphics-background-sky)
+立方纹理主要在天空盒中使用，详情可参考[天空背景](${docs}graphics-background-sky)

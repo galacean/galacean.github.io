@@ -7,7 +7,7 @@ label: Renderer
 
 # 蒙皮网格渲染器
 
-蒙皮网格渲染器继承于[网格渲染器](${docs})，额外封装了`骨骼动画`与 `Blend Shape` 的能力，使得渲染物体的动画效果更自然逼真。
+蒙皮网格渲染器继承于[网格渲染器](${docs}graphics-renderer-meshRenderer)，额外封装了`骨骼动画`与 `Blend Shape` 的能力，使得渲染物体的动画效果更自然逼真。
 
 ## 属性
 
@@ -20,7 +20,7 @@ label: Renderer
 | `rootBone`          | 蒙皮网格渲染器对应的根骨骼节点 |
 | `blendShapeWeights` | BlendShapes 的混合权重         |
 
-美术工作流导出的模型中一般已经预先设置好了所有骨骼和 BlendShape 信息，开发者只需要结合[动画系统]({$docs})播放指定的动画即可。
+美术工作流导出的模型中一般已经预先设置好了所有骨骼和 BlendShape 信息，开发者只需要结合[动画系统](${docs}animation-overview)播放指定的动画片段即可。
 
 ## 骨骼动画
 

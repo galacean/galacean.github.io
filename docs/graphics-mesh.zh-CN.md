@@ -8,7 +8,7 @@ label: Graphics/Mesh
 
 # 网格总览
 
-网格是[网格渲染器](${docs})的数据对象，它描述了顶点的各种信息（位置，拓扑，顶点色，UV 等）。
+网格是[网格渲染器](${docs}graphics-renderer-meshRenderer)的数据对象，它描述了顶点的各种信息（位置，拓扑，顶点色，UV 等）。
 
 ## 使用
 

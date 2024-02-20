@@ -8,11 +8,11 @@ label: Graphics/2D
 
 # 精灵遮罩
 
-精灵遮罩组件用于对 3D/2D 场景中的[精灵](${docs}graphics-sprite)实现遮罩效果。
+精灵遮罩组件用于对 3D/2D 场景中的[精灵](${docs}graphics-2d-sprite)实现遮罩效果。
 
 <playground src="sprite-mask.ts"></playground>
 
-通过 [SpriteMask](${api}core/SpriteMask) 提供的参数来控制和 [精灵](${docs}graphics-sprite) 发生作用。
+通过 [SpriteMask](${api}core/SpriteMask) 提供的参数来控制和 [精灵](${docs}graphics-2d-sprite) 发生作用。
 
 | 参数            | 类型   | 说明                                                                                             |
 | :-------------- | :----- | :----------------------------------------------------------------------------------------------- |

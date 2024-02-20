@@ -20,8 +20,8 @@ label: Graphics/Texture
 - [2D 纹理](${docs}graphics-texture-2d)
 - [立方纹理](${docs}graphics-texture-cube)
 - [通过纹理播放视频](${docs}graphics-texture-2d)
-- [设置天空纹理]({$docs}graphics-background-sky)
-- 使用[压缩纹理]({$docs}graphics-texture-compression)
+- [设置天空纹理](${docs}graphics-background-sky)
+- 使用[压缩纹理](${docs}graphics-texture-compression)
 
 ## 纹理类型
 

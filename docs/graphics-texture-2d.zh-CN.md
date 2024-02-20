@@ -16,7 +16,7 @@ label: Graphics/Texture
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
 
-同样的，在脚本中可以通过 [ResourceManager](${docs}resource-manager) 加载图片获取对应的 2D 纹理：
+同样的，在脚本中可以通过 [ResourceManager](${api}core/ResourceManager) 加载图片获取对应的 2D 纹理：
 
 ```typescript
 const textureResource = {

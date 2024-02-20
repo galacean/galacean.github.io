@@ -21,10 +21,10 @@ Galacean 是 3D/2D 的互动解决方案，您可以在**编辑器主页**的**�
 
 接下来让我们来深入了解以下内容：
 
-- [精灵]($docs{})
-- [精灵渲染器]($docs{})
-- [精灵遮罩]($docs{})
-- [文字渲染器]($docs{})
-- [精灵图集]($docs{})
-- [Lottie]($docs{})
-- [Spine]($docs{})
+- [精灵](${docs}graphics-2d-sprite)
+- [精灵渲染器](${docs}graphics-2d-spriteRenderer)
+- [精灵遮罩](${docs}graphics-2d-spriteMask)
+- [文字渲染器](${docs}graphics-2d-text)
+- [精灵图集](${docs}graphics-2d-spriteAtlas)
+- [Lottie](${docs}graphics-2d-lottie)
+- [Spine](${docs}graphics-2d-spine)

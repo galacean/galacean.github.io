@@ -17,7 +17,7 @@ label: Renderer
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Pca9RZvOsNMAAAAAAAAAAAAADhuCAQ/original" alt="image-20231007153753006" style="zoom:50%;" />
 
-当然，也可以为场景中已有的节点挂载上网格渲染器，并设置任意[网格](${docs}mesh-cn)与[材质](${docs}material-cn)。（ **选中节点** -> **检查器面板** -> **Add Component** -> **Mesh Renderer** ）。
+当然，也可以为场景中已有的节点挂载上网格渲染器，并设置任意[网格](${docs}graphics-mesh)与[材质](${docs}graphics-material)。（ **选中节点** -> **检查器面板** -> **Add Component** -> **Mesh Renderer** ）。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*UHfjTYk0b4sAAAAAAAAAAAAADhuCAQ/original" alt="image-20231007153753006" style="zoom:50%;" />
 
@@ -38,13 +38,13 @@ cube.setMaterial(new BlinnPhongMaterial(engine));
 
 | 设置             | 解释                                               |
 | :--------------- | :------------------------------------------------- |
-| `material`       | 待渲染物体的[材质](${docs}material-cn)信息         |
-| `mesh`           | 待渲染物体的[网格](${docs}mesh-cn)信息             |
+| `material`       | 待渲染物体的[材质](${docs}graphics-material)信息   |
+| `mesh`           | 待渲染物体的[网格](${docs}graphics-mesh)信息       |
 | `receiveShadows` | 是否接收阴影                                       |
 | `castShadows`    | 是否投射阴影                                       |
 | `priority`       | 渲染器的渲染优先级，值越小渲染优先级越高，默认为 0 |
 
-相比于基础的[渲染器]({$docs})，网格渲染器还可设置是否支持顶点色（顶点色数据包含在网格的顶点信息中）。
+相比于基础的[渲染器](${docs}graphics-renderer)，网格渲染器还可设置是否支持顶点色（顶点色数据包含在网格的顶点信息中）。
 
 | 属性                | 解释           |
 | :------------------ | :------------- |
@@ -59,4 +59,3 @@ meshRenderer.enableVertexColor = true;
 ## 方法
 
 网格渲染器并**没有新增**其他方法，但需要注意的是，很多情况下网格渲染器的网格内包含**若干子网格**，若希望每个子网格都对应**不同的材质**，可以在设置的时候就指定相应的**网格索引**，否则默认使用相同的材质。
-

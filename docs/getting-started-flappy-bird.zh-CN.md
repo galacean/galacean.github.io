@@ -29,11 +29,11 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ### 上传资源
 
-回到场景编辑器，点击资源面板上的上传按钮 <img src="https://gw.alipayobjects.com/zos/OasisHub/07b876d3-462b-4a06-a2da-ce68d2932034/image-20231007145111353.png" alt="image-20231007145111353" style="zoom:50%;" />，选择 `Sprite`，此时会唤起操作系统的文件查看器，选中所有 FlappyBird 目录下的图片。上传之后，如下图所示，编辑器为每张图片创建了一个 [Texture](${docs}graphics-texture) 资源和 一个 [Sprite](${docs}graphics-sprite) 资源（为了和 Texture 资源作区分，Sprite 对象带灰色圆角矩形背景）。在接下来的操作中，我们只需要关心 Sprite 资源。
+回到场景编辑器，点击资源面板上的上传按钮 <img src="https://gw.alipayobjects.com/zos/OasisHub/07b876d3-462b-4a06-a2da-ce68d2932034/image-20231007145111353.png" alt="image-20231007145111353" style="zoom:50%;" />，选择 `Sprite`，此时会唤起操作系统的文件查看器，选中所有 FlappyBird 目录下的图片。上传之后，如下图所示，编辑器为每张图片创建了一个 [Texture](${docs}graphics-texture) 资源和 一个 [Sprite](${docs}graphics-2d-sprite) 资源（为了和 Texture 资源作区分，Sprite 对象带灰色圆角矩形背景）。在接下来的操作中，我们只需要关心 Sprite 资源。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/7f13679f-de18-4621-81b1-5834b5d00bd7/image-20231007145451371.png" alt="image-20231007145451371" style="zoom:50%;" />
 
-到这里，我们已经把资源上传完，但是有洁癖的你看到这散乱的资源可能已经按耐不住整理的冲动了。让我们创建一个文件夹，并重命名为 _Sprites_，把刚上传的资源批量选中后拖到 _Sprites_ 目录中。这样做的目的不仅是让资源面板更加整洁，还为我们下一步创建 [Atlas 图集](${docs}graphics-sprite-atlas)资源做好了准备。
+到这里，我们已经把资源上传完，但是有洁癖的你看到这散乱的资源可能已经按耐不住整理的冲动了。让我们创建一个文件夹，并重命名为 _Sprites_，把刚上传的资源批量选中后拖到 _Sprites_ 目录中。这样做的目的不仅是让资源面板更加整洁，还为我们下一步创建 [Atlas 图集](${docs}graphics-2d-spriteAtlas)资源做好了准备。
 
 ### 创建图集
 
@@ -61,7 +61,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ### 加上小鸟
 
-同样，我们把小鸟的 Sprite（`bird3-spr.png`）也拖到场景中。小鸟“飞”的动画是通过序列帧实现的，详见[帧动画](${docs}editor-frame-animation)。
+同样，我们把小鸟的 Sprite（`bird3-spr.png`）也拖到场景中。小鸟“飞”的动画是通过序列帧实现的，详见[帧动画](${docs}animation-sprite-sheet)。
 
 ### 加上管道
 
@@ -99,7 +99,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ### 添加遮罩
 
-添加完地面后发现，左右显示好像穿帮了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}graphics-sprite-mask)
+添加完地面后发现，左右显示好像穿帮了！对于这种情况，只需要为精灵渲染器增加遮罩就好了，详见[精灵遮罩组件](${docs}graphics-2d-spriteMask)
 
    <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*d_ZBS6zxOjQAAAAAAAAAAAAADleLAQ/original" />
 
@@ -568,7 +568,7 @@ class Pipe extends Script {
 可以看到，上方的逻辑就是对流程图的代码完善：
 
 - 当状态切换为 `Idle` 时，`Pipe._reset()` 函数被触发，场上所有的水管都被回收至池中
-- 当状态切换为 `Flying` 时，`Pipe._move()` 函数被触发，水管命运的齿轮开始转动，帧循环中判断是否需要生成新的水管，是否需要回收旧的水管，生成新水管使用了引擎自带的 [clone](${docs}core-entity-clone) 能力，可以完整复刻节点的结构与组件。
+- 当状态切换为 `Flying` 时，`Pipe._move()` 函数被触发，水管命运的齿轮开始转动，帧循环中判断是否需要生成新的水管，是否需要回收旧的水管，生成新水管使用了引擎自带的 [clone](${docs}core-clone) 能力，可以完整复刻节点的结构与组件。
 - 当状态切换为 `Crash` 时，`Pipe._pause()` 函数被触发，水管停止移动。
 
 #### 地面

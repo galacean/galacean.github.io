@@ -89,10 +89,10 @@ spriteRenderer.sprite = sprite;
 
 ### 遮罩
 
-详情参考[精灵遮罩](${docs}graphics-2d-spriteMask)文档。
+请参考[精灵遮罩](${docs}graphics-2d-spriteMask)文档。
 
 ## 自定义材质
 
-SpriteRenderer 的自定义材质的使用方法请参考[自定义材质](${docs}graphics-custom-material)文档。
+请参考[自定义着色器](${docs}graphics-shader-custom)文档。
 
 <playground src="sprite-material-blur.ts"></playground>
