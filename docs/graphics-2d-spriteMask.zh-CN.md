@@ -6,16 +6,18 @@ group: 2D
 label: Graphics/2D
 ---
 
+# 精灵遮罩
+
 精灵遮罩组件用于对 3D/2D 场景中的[精灵](${docs}graphics-sprite)实现遮罩效果。
 
 <playground src="sprite-mask.ts"></playground>
 
 通过 [SpriteMask](${api}core/SpriteMask) 提供的参数来控制和 [精灵](${docs}graphics-sprite) 发生作用。
 
-| 参数 | 类型 | 说明 |
-| :--- | :--- | :--- |
-| influenceLayers | number | 当前 mask 影响的遮罩层，默认值为 SpriteMaskLayer.Everything，表示对所有遮罩层都有影响 |
-| alphaCutoff | number | 当前 mask 有效 alpha 值的下限(范围：0~1)，即 sprite 的纹理中 alpha 值小于 alphaCutoff 的将被丢弃 |
+| 参数            | 类型   | 说明                                                                                             |
+| :-------------- | :----- | :----------------------------------------------------------------------------------------------- |
+| influenceLayers | number | 当前 mask 影响的遮罩层，默认值为 SpriteMaskLayer.Everything，表示对所有遮罩层都有影响            |
+| alphaCutoff     | number | 当前 mask 有效 alpha 值的下限(范围：0~1)，即 sprite 的纹理中 alpha 值小于 alphaCutoff 的将被丢弃 |
 
 [SpriteMaskLayer](${api}core/SpriteMaskLayer) 里面声明了引擎提供的遮罩层，一共声明了 32 个遮罩层，分别是 Layer0~Layer31，遮罩层和渲染无关，只是为了帮助开发者设置 `SpriteMask` 和 `SpriteRenderer` 如何进行关联，一个 `SpriteMask` 对象要对一个 `SpriteRenderer` 对象产生遮罩作用的一个前提就是两者的遮罩层有交集。
 
@@ -25,7 +27,7 @@ label: Graphics/2D
 
 上图中，spriteMask 对处于 `Layer1` 和 `Layer30` 的精灵有遮罩作用，spriteRenderer0 处于 `Layer2`，不存在交集，所以 spriteRenderer0 不与 spriteMask 起作用，spriteRenderer1 处于 `Layer1`，和 spriteMask 影响的遮罩层有交集，所以 spriteRenderer1 与 spriteMask 起作用。
 
-## 编辑器使用
+## 使用
 
 ### 添加精灵遮罩组件
 
@@ -51,12 +53,7 @@ label: Graphics/2D
 
 ![mask-alpha](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*2CLjT7UTVa8AAAAAAAAAAAAADjCHAQ/original)
 
-
-## 脚本使用
-
-1、下载图片纹理([Texture](${docs}graphics-texture-2d))，下载方法请参考[资源加载](${docs}resource-manager)    
-2、通过 texture 创建 [Sprite](${api}core/Sprite) 对象    
-3、创建 [SpriteMask](${api}core/SpriteRenderer)
+同样的，在脚本中我们可以用如下代码使用精灵遮罩：
 
 ```typescript
 // 创建一个遮罩实体
@@ -80,5 +77,4 @@ spriteMask.influenceLayers = SpriteMaskLayer.Layer0 | SpriteMaskLayer.Layer1;
 spriteRenderer.maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
 // 设置精灵处于哪个遮罩层
 spriteRenderer.maskLayer = SpriteMaskLayer.Layer0;
-
 ```
