@@ -4,7 +4,6 @@ title: 像素小鸟
 type: 基础知识
 group: 快速上手
 label: Basics/GettingStarted
-
 ---
 
 > 相信大家对 Flappy Bird 都不陌生，本文简单描述下如何用 Galacean 复刻这个 2D 游戏。
@@ -37,7 +36,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ### 创建图集
 
-为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过检查器面板上的 `Add to List` 按钮把所有 Sprite 资源都添加到列表中。
+为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过 **[检查器面板](${docs}interface-inspector)** 上的 `Add to List` 按钮把所有 Sprite 资源都添加到列表中。
 
 <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*en0JTIdKargAAAAAAAAAAAAADleLAQ/original" alt="image-20231007171348757" style="zoom:50%;" />
 
@@ -49,7 +48,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 ## 搭建场景
 
-搭建 2D 场景就像玩拼图一样充满乐趣。首先，我们试着把游戏背景图从资源面板拖动场景中。不要怕拖的位置不准，只要拖到大概的位置，我们后面可以在检查器面板中精细调整。
+搭建 2D 场景就像玩拼图一样充满乐趣。首先，我们试着把游戏背景图从资源面板拖动场景中。不要怕拖的位置不准，只要拖到大概的位置，我们后面可以在 **[检查器面板](${docs}interface-inspector)** 中精细调整。
 
 ![drag1](https://gw.alipayobjects.com/zos/OasisHub/6cabaeea-cc36-4fe1-8bb5-d7ed8a9a49b7/drag1.gif)
 
@@ -89,7 +88,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 1. 在节点树中创建一个节点，命名为 `ground`。
 
-2. 在检查器面板中通过 `Add Component` 按钮添加 `Sprite Renderer` 组件，并且把 `SpriteRenderer DrawMode Info` 属性设置成 `Tiled`，并将宽度设置为 `8.14`
+2. 在 **[检查器面板](${docs}interface-inspector)** 中通过 `Add Component` 按钮添加 `Sprite Renderer` 组件，并且把 `SpriteRenderer DrawMode Info` 属性设置成 `Tiled`，并将宽度设置为 `8.14`
 
    <img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*pDBbTp6a78oAAAAAAAAAAAAADleLAQ/original" alt="image-20231007173243980" style="zoom:50%;" />
 

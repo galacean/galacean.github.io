@@ -23,7 +23,6 @@ label: Basics/Interface
   </figure>
 </div>
 
-
 ## 属性类型
 
 检查器面板中的属性可以分成两大类：
@@ -53,7 +52,7 @@ label: Basics/Interface
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/b6a6835c-1c11-4a5a-a62a-58117ffab872/image-20240122143848061.png" alt="image-20240122143848061" style="zoom:50%;" />
 
-### 资产面板
+### 资产选择浮窗
 
 一些属性需要引用到需要的资产，在这种情况下，你可以点击资产选择器的输入框来唤起资产选择浮窗。不同的属性需要的资产类型不同，但资产选择器已经默认配置好了相应的过滤器，直接选择即可。
 

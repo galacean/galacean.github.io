@@ -86,7 +86,7 @@ this.engine.resourceManager.load<GLTFResource>({
 this.engine.resourceManager.load<GLTFResource>("Assets/texture.png");
 ```
 
-> 在编辑器中可以通过 **资产面板** -> **右键资产** -> **Copy relative path** 快速复制资产的相对路径
+> 在编辑器中可以通过  **[资产面板](${docs}interface-assets)**  -> **右键资产** -> **Copy relative path** 快速复制资产的相对路径
 
 ### baseUrl
 

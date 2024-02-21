@@ -7,7 +7,7 @@ label: Background
 
 # 天空
 
-天空是摄像机在渲染之前绘制的一种背景类型。此类型的背景对于 3D 游戏和应用程序非常有用，因为它可以提供深度感，使环境看上去比实际大小大得多。天空本身可以包含任何对象（例如云、山脉、建筑物和其他无法触及的对象）以营造遥远三维环境的感觉。Galacean 还可以将天空用于在场景中产生真实的环境光照，详情可参考[烘焙]()。
+天空是摄像机在渲染之前绘制的一种背景类型。此类型的背景对于 3D 游戏和应用程序非常有用，因为它可以提供深度感，使环境看上去比实际大小大得多。天空本身可以包含任何对象（例如云、山脉、建筑物和其他无法触及的对象）以营造遥远三维环境的感觉。Galacean 还可以将天空用于在场景中产生真实的环境光照，详情可参考[烘焙](${docs}graphics-light-bake)。
 
 天空模式下，开发者可以自行设置`材质`和`网格`，通过 Galacean 内置的`天空盒`与`程序化天空`可以一键设置期望的天空效果。
 
@@ -19,19 +19,19 @@ label: Background
 
 > 可以在 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
 
-天空盒纹理就是一张[立方纹理]()，首先在准备好 HDR 后，依照路径 **资产面板** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
+天空盒纹理就是一张[立方纹理](${docs}graphics-texture-cube)，首先在准备好 HDR 后，依照路径 **[资产面板](${docs}interface-assets)** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
 
 ### 2. 创建天空盒材质
 
-创建完立方纹理资产后，依照路径 **资产面板** -> **右键创建** -> **选择 Material** -> **选中生成的资产** -> **检查器面板** -> **点击 Base 栏的 Shader 属性** -> **选择 Sky Box** -> **点击 Base 栏的 HDR** -> **选择第一步创建的立方纹理** 创建天空盒材质。
+创建完立方纹理资产后，依照路径 **[资产面板](${docs}interface-assets)** -> **右键创建** -> **选择 Material** -> **选中生成的资产** -> **[检查器面板](${docs}interface-inspector)** -> **点击 Base 栏的 Shader 属性** -> **选择 Sky Box** -> **点击 Base 栏的 HDR** -> **选择第一步创建的立方纹理** 创建天空盒材质。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*YkX9R5yfGE0AAAAAAAAAAAAADhuCAQ/original)
 
 ### 3. 设置天空盒
 
-最后只需依照路径 **层级面板** -> **选中 Scene** -> **检查器面板** -> **Background 栏** -> **Mode 设置 Sky** -> **Material 选择第二步创建的材质** -> **Mesh 设置内置的 Cuboid** 可以看到场景的背景变成了天空盒。
+最后只需依照路径 **[层级面板](${docs}interface-hierarchy)** -> **选中 Scene** -> **[检查器面板](${docs}interface-inspector)** -> **Background 栏** -> **Mode 设置 Sky** -> **Material 选择第二步创建的材质** -> **Mesh 设置内置的 Cuboid** 可以看到场景的背景变成了天空盒。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*p7GoTaPzcQ0AAAAAAAAAAAAADhuCAQ/original)
 
@@ -62,7 +62,7 @@ background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
 
 ## 设置程序化天空
 
-程序化天空是编辑器在 3D 项目中的默认背景，您也可以依照路径 **层级面板** -> **选中 Scene** -> **检查器面板** -> **Background 栏** -> **Mode 设置 Sky** -> **Material 选择内置的 SkyMat 材质** -> **Mesh 设置内置的 Sphere**
+程序化天空是编辑器在 3D 项目中的默认背景，您也可以依照路径 **[层级面板](${docs}interface-hierarchy)** -> **选中 Scene** -> **[检查器面板](${docs}interface-inspector)** -> **Background 栏** -> **Mode 设置 Sky** -> **Material 选择内置的 SkyMat 材质** -> **Mesh 设置内置的 Sphere**
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*IEX-SJKmyJEAAAAAAAAAAAAADhuCAQ/original)
 
@@ -80,7 +80,7 @@ background.sky.mesh = PrimitiveMesh.createSphere(engine);
 
 ### 属性
 
-在大气散射材质的检查器面板可以看到很多可调整的属性：
+在大气散射材质的 **[检查器面板](${docs}interface-inspector)** 可以看到很多可调整的属性：
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*JlfeSJke8UYAAAAAAAAAAAAADhuCAQ/original" alt="image-4" style="zoom:40%;" />
 

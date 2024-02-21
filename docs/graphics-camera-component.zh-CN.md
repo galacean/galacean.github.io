@@ -9,7 +9,7 @@ label: Camera
 
 相机组件可以将 3D 场景投影到 2D 屏幕上，基于相机组件，我们可以定制各种不同的渲染效果。
 
-首先需要将相机组件挂载到在场景中已激活的 [Entity]() 上，编辑器项目通常已经自带了相机组件，当然我们也可以自己手动添加。
+首先需要将相机组件挂载到在场景中已激活的 [Entity](${docs}core-entity) 上，编辑器项目通常已经自带了相机组件，当然我们也可以自己手动添加。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/c6a1a344-630c-40c6-88ef-abb447cfd183/image-20231009114711623.png" alt="image-20231009114711623" style="zoom:50%;" />
 
@@ -17,7 +17,7 @@ label: Camera
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/24fa20d2-8f50-49bd-907a-3806f31e462e/image-20231009114816056.png" alt="image-20231009114816056" style="zoom:50%;" />
 
-您也可以在脚本中通过如下代码为 [Entity]() 挂载相机组件：
+您也可以在脚本中通过如下代码为 [Entity](${docs}core-entity) 挂载相机组件：
 
 ```typescript
 // 创建实体
@@ -28,7 +28,7 @@ const camera = entity.addComponent(Camera);
 
 ## 属性
 
-通过修改相机组件的属性可以定制渲染效果。下方是相机组件在[检查器面板]()暴露的属性设置。
+通过修改相机组件的属性可以定制渲染效果。下方是相机组件在 **[检查器面板](${docs}interface-inspector)** 暴露的属性设置。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Za1RSJcYrSMAAAAAAAAAAAAADhuCAQ/original)
 

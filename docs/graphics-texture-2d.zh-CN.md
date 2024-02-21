@@ -12,7 +12,7 @@ label: Graphics/Texture
 
 ## 创建
 
-在编辑器中可以方便地导入一张 2D 纹理，按照路径 **资产面板** -> **右键上传** -> **选择 Texture2D** -> **选择对应贴图** -> **2D 纹理资产创建完毕** 操作即可。
+在编辑器中可以方便地导入一张 2D 纹理，按照路径 **[资产面板](${docs}interface-assets)** -> **右键上传** -> **选择 Texture2D** -> **选择对应贴图** -> **2D 纹理资产创建完毕** 操作即可。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
 

@@ -43,7 +43,7 @@ label: Basics/Interface
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">右键新增节点</figcaption>
 
-添加完毕后，您可以在[检查器面板](${docs}interface-inspector)中对新节点的属性进行编辑。
+添加完毕后，您可以在 **[检查器面板](${docs}interface-inspector)** 中对新节点的属性进行编辑。
 
 ### 删除节点
 
@@ -102,7 +102,7 @@ label: Basics/Interface
 
 每个实体节点右侧都有一个眼睛按钮，点击可以切换节点在场景中的显示/隐藏状态。
 
-> 需要注意的是, 此处对节点显示状态的调整仅是工作区的修改, 而非在检查器面板中的 `isActive` 的属性。
+> 需要注意的是, 此处对节点显示状态的调整仅是工作区的修改, 而非在 **[检查器面板](${docs}interface-inspector)** 中的 `isActive` 的属性。
 
 ## 快捷键
 

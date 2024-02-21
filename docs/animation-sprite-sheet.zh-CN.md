@@ -11,7 +11,7 @@ Galacean 支持引用类型的动画曲线，你可以添加类型为资产的�
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*PxdFQKal1JEAAAAAAAAAAAAADsJ_AQ/original)
 
-2. 在资产面板中创建 `AnimationClip`
+2. 在 **[资产面板](${docs}interface-assets)** 中创建 `AnimationClip`
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*t1KMQb0s8V8AAAAAAAAAAAAADsJ_AQ/original)
 

@@ -24,7 +24,7 @@ label: Graphics/Texture
 
 > 可以在 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
 
-在准备好 HDR 后，依照路径 **资产面板** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
+在准备好 HDR 后，依照路径 **[资产面板](${docs}interface-assets)** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
 

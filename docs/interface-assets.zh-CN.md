@@ -33,7 +33,7 @@ label: Basics/Interface
 
 ### 添加资产
 
-为了在场景中添加资产，你可以点击资产面板上的添加按钮，或者资产面板的右键菜单中的添加选项来添加新资产。添加资产后，你可以在检查器面板中对资产的属性进行编辑。资产面板中的资产类型非常丰富，例如材质、贴图、模型、字体等等。具体可以参照上方的表格。
+为了在场景中添加资产，你可以点击资产面板上的添加按钮，或者资产面板的右键菜单中的添加选项来添加新资产。添加资产后，你可以在 **[检查器面板](${docs}interface-inspector)** 中对资产的属性进行编辑。资产面板中的资产类型非常丰富，例如材质、贴图、模型、字体等等。具体可以参照上方的表格。
 
 <figure style="width: 578px;">
  <img src="https://gw.alipayobjects.com/zos/OasisHub/5bc3747d-b1e9-4864-b490-7f9d3eb86e93/image-20240122135556344.png" alt="image-20240122135556344" style="zoom:50%;" />
@@ -73,7 +73,7 @@ this.engine.resourceManager.load({ url: "...", type: AssetType.Scene });
 
 ### 预览资产
 
-在选中一个资产后, 右侧的检查器面板会显示出此资产可配置的属性。不同的资产所对应的可配置项是不同的, 比如 glTF 资产会显示模型预览窗, 材质资产会显示出详细的材质配置选项 。
+在选中一个资产后, 右侧的 **[检查器面板](${docs}interface-inspector)** 会显示出此资产可配置的属性。不同的资产所对应的可配置项是不同的, 比如 glTF 资产会显示模型预览窗, 材质资产会显示出详细的材质配置选项 。
 
 <figure style="width: 284px;">
  <img src="https://gw.alipayobjects.com/zos/OasisHub/ffb89d11-b221-4757-96f9-c4950ea7f225/image-20240122134306052.png" alt="image-20240122134306052" style="zoom:50%;" />
