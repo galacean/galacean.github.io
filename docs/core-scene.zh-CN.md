@@ -19,11 +19,11 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ### 属性面板
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/e64f9984-16a8-4343-b947-f7bbfb223ec7/image-20240220141850226.png" alt="image-20240220141850226" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/0b263741-c368-45c4-8904-c066a345d567/image-20240221194134544.png" alt="image-20240221194134544" style="zoom:50%;" />
 
 ### 环境光
 
-详情请参照[环境光教程](${docs}graphics-light-ambient)。
+详情请参照[环境光教程](${docs}graphics-light-ambient) 和 [烘焙教程](${docs}graphics-light-bake)。
 
 ### 背景
 
@@ -39,11 +39,6 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/5a713502-18b2-45eb-af56-d6530a340581/fog.gif" alt="fog" style="zoom:100%;" />
 
-### 烘焙
-
-可以根据[环境光教程](${docs}graphics-light-ambient) 和 [烘焙教程](${docs}graphics-light-bake) 进行离线烘焙：
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/ead14eb8-dc01-4e88-a14b-145f9ec6cdd3/image-20240219165258496.png" alt="image-20240219165258496" style="zoom:50%;" />
 
 ## 脚本使用
 
