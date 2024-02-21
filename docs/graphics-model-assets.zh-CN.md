@@ -6,8 +6,6 @@ group: 模型
 label: Graphics/Model
 ---
 
-# 模型资产
-
 模型导入完毕后， **[资产面板](${docs}interface-assets)** 中会新增导入的模型资产，点击资产缩略图，可以看到这个模型的基本信息。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Aiu9SpMRvxYAAAAAAAAAAAAADhuCAQ/original" alt="image-20231009112328575" style="zoom:50%;" />

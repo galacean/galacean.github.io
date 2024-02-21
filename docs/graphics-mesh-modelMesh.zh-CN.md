@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 title: Model Mesh
 type: 图形
 group: 网格

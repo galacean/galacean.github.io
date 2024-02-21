@@ -6,8 +6,6 @@ group: 2D
 label: Graphics/2D
 ---
 
-# 精灵渲染器
-
 [SpriteRenderer](${api}core/SpriteRenderer) 组件用于在 3D/2D 场景中显示图片。
 
 > 注意：精灵渲染器默认在 XoY 平面上放置图片。

@@ -5,8 +5,6 @@ type: 背景
 label: Background
 ---
 
-# 背景总览
-
 开发者可以为场景定制背景，背景会在场景渲染前被渲染。当前 Galacean 主要有以下几种背景类型：
 
 - [纯色背景](${docs}graphics-background-solidColor)

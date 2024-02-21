@@ -5,8 +5,6 @@ type: 渲染器
 label: Renderer
 ---
 
-# 蒙皮网格渲染器
-
 蒙皮网格渲染器继承于[网格渲染器](${docs}graphics-renderer-meshRenderer)，额外封装了`骨骼动画`与 `Blend Shape` 的能力，使得渲染物体的动画效果更自然逼真。
 
 ## 属性

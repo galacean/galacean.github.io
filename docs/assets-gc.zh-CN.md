@@ -5,8 +5,6 @@ type: 资产工作流
 label: Resource
 ---
 
-# 资产释放
-
 为了避免重复加载资源，当资源被加载完成之后，会被缓存在 _ResourceManager_ 内。缓存本身会占用内存和显存，当开发者不再需要缓存的内容时，需要手动去释放缓存的内容。
 
 > 注意：资源之间是相互依赖的。
@@ -31,7 +29,7 @@ engine.resourceManager.gc();
 
 该示例在初始化时会通过创建 `Texture2D` 和 `Sprite` 渲染 2D 精灵，当点击右上角 GC 按钮后，`root` 节点被销毁，纹理和精灵资产的引用计数都被清空，此时这些资产会被真正销毁，分别在 `gc` 前后拍摄内存快照可以更直观地感受这个过程
 
-1. gc 前： **开发者工具** -> **内存** -> **拍摄堆快照** 
+1. gc 前： **开发者工具** -> **内存** -> **拍摄堆快照**
 2. gc 后： **开发者工具** -> **内存** -> **拍摄堆快照** -> **比较** -> **选择 gc 前快照**
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*CtRmTqXDgt0AAAAAAAAAAAAADhuCAQ/original" alt="image-1" style="zoom:50%;" />

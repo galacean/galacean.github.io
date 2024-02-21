@@ -1,4 +1,10 @@
-# 内置几何体
+---
+order: 3
+title: Primitive Mesh
+type: 图形
+group: 网格
+label: Graphics/Mesh
+---
 
 常用几何体统一在 [PrimitiveMesh](${api}core/PrimitiveMesh) 中提供。
 
@@ -12,7 +18,6 @@
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/b61f5f8c-1eba-4ea8-a019-f823a6c0b17d/image-20231009112014068.png" alt="image-20231009112014068" style="zoom:50%;" />
 
-
 ## 脚本使用
 
 <playground src="primitive-mesh.ts"></playground>
@@ -22,7 +27,7 @@
 - [createCuboid](${api}core/PrimitiveMesh#createCuboid) **立方体**
 
 ```typescript
-const entity = rootEntity.createChild('cuboid');
+const entity = rootEntity.createChild("cuboid");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCuboid(engine);
@@ -35,7 +40,7 @@ renderer.setMaterial(material);
 - [createSphere](${api}core/PrimitiveMesh#createSphere) **球体**
 
 ```typescript
-const entity = rootEntity.createChild('sphere');
+const entity = rootEntity.createChild("sphere");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createSphere(engine);
@@ -48,7 +53,7 @@ renderer.setMaterial(material);
 - [createPlane](${api}core/PrimitiveMesh#createPlane) **平面**
 
 ```typescript
-const entity = rootEntity.createChild('plane');
+const entity = rootEntity.createChild("plane");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createPlane(engine);
@@ -61,7 +66,7 @@ renderer.setMaterial(material);
 - [createCylinder](${api}core/PrimitiveMesh#createCylinder) **圆柱**
 
 ```typescript
-const entity = rootEntity.createChild('cylinder');
+const entity = rootEntity.createChild("cylinder");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCylinder(engine);
@@ -74,7 +79,7 @@ renderer.setMaterial(material);
 - [createTorus](${api}core/PrimitiveMesh#createTorus) **圆环**
 
 ```typescript
-const entity = rootEntity.createChild('torus');
+const entity = rootEntity.createChild("torus");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createTorus(engine);
@@ -87,7 +92,7 @@ renderer.setMaterial(material);
 - [createCone](${api}core/PrimitiveMesh#createCone) **圆锥**
 
 ```typescript
-const entity = rootEntity.createChild('cone');
+const entity = rootEntity.createChild("cone");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCone(engine);
@@ -100,7 +105,7 @@ renderer.setMaterial(material);
 - [createCapsule](${api}core/PrimitiveMesh#createCapsule) **胶囊体**
 
 ```typescript
-const entity = rootEntity.createChild('capsule');
+const entity = rootEntity.createChild("capsule");
 entity.transform.setPosition(0, 1, 0);
 const renderer = entity.addComponent(MeshRenderer);
 renderer.mesh = PrimitiveMesh.createCapsule(engine);

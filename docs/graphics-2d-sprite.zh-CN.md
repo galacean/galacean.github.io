@@ -6,8 +6,6 @@ group: 2D
 label: Graphics/2D
 ---
 
-# 精灵
-
 [Sprite](${api}core/Sprite) 是 2D 项目中最重要的资产，他从 [Texture2D](${docs}graphics-texture-2d) 中获取图形源数据，通过设置 [region](${api}core/Sprite#region)，[pivot](${api}core/Sprite#pivot) 等属性定制期望的渲染结果，若将其赋予[SpriteRenderer](${api}core/SpriteRenderer)，挂载了精灵渲染器的节点就可以在三维空间中展示 2D 图片，若将其赋予[SpriteMask](${docs}graphics-2d-spriteMask)，挂载了精灵遮罩的节点就可以对相应的 2D 元素实现遮罩效果，接下来就让我们深入了解精灵的属性和用法。
 
 ## 属性

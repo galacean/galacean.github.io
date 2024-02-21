@@ -5,8 +5,6 @@ type: 相机
 label: Camera
 ---
 
-# 相机总览
-
 相机是一个图形引擎对 [3D 投影](https://en.wikipedia.org/wiki/3D_projection)的抽象概念，作用好比现实世界中的摄像机或眼睛。Galacean 的相机实现了自动视锥剔除，只渲染视锥体内的物体。
 
 ## 相机的类型
