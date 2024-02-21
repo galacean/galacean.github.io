@@ -42,6 +42,9 @@ label: Core
 
 点击中心立方体，在所有轴上均匀的缩放选中实体。点击辅助轴，在单个方向缩放选中实体。
 
+通过 **检查器面板** 可以为节点设置更精确的位置、旋转和缩放信息。
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Y0qPTptpIBoAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
 
 ## 脚本使用
 
