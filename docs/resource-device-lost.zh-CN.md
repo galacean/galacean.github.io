@@ -18,7 +18,7 @@ label: Resource
 当 GPU 设备丢失时，`Engine` 会派发 `devicelost` 事件，用户可以做一些用户提示或保存配置之类的逻辑：
 
 ```typescript
-engine.on('devicelost', () => {
+engine.on("devicelost", () => {
   // Do some device lost logic here
   // For example，prompt user or save configuration etc
 });
@@ -27,7 +27,7 @@ engine.on('devicelost', () => {
 引擎支持自动 GPU 设备自动恢复，当程序可以恢复时，`Engine` 会派发 `devicerestored` 事件，引擎内部会自动重建纹理、缓冲、着色器等低级 GPU 资源，并且会尝试自动恢复其数据内容。通常通过引擎提供的 Loader 和 PrimitiveMesh 等方式创建的资源可以完全自动恢复其内容，开发者无需做任何处理。只有当开发者自行修改资源内容时需要手动处理，比如手动修改了纹理的像素内容。
 
 ```typescript
-engine.on('devicerestored', () => {
+engine.on("devicerestored", () => {
   // Do some device restore logic here
   // For example，restore user-modified texture content
   texture.setPixelBuffer(pixels, 0, offsetX, offsetY, width, height);
@@ -36,7 +36,7 @@ engine.on('devicerestored', () => {
 
 ### 自定义恢复器
 
-还有一种情况是资源完全由开发者自行创建，比如自定义 [Loader](${docs}resource-manager) 或程序化生成资源。除了可以通过上面的方式在 `devicerestored` 事件中处理，也可以通过自定义内容恢复器实现，以下案例是为用户自行创建的纹理注册一个自定义恢复器并注册到 `ResourceManager` 中。当设备需要恢复时，`restoreContent` 方法会自动触发并恢复其内容。
+还有一种情况是资源完全由开发者自行创建，比如自定义 [Loader](${docs}assets-type) 或程序化生成资源。除了可以通过上面的方式在 `devicerestored` 事件中处理，也可以通过自定义内容恢复器实现，以下案例是为用户自行创建的纹理注册一个自定义恢复器并注册到 `ResourceManager` 中。当设备需要恢复时，`restoreContent` 方法会自动触发并恢复其内容。
 
 ```typescript
 // Step 1: Define content restorer

@@ -35,7 +35,7 @@ Galacean 为用户提供了丰富的生命周期回调函数，用户只要定�
 
 ![脚本生命周期-zh](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_8C-TJP2UIgAAAAAAAAAAAAAARQnAQ)
 
-值得注意的是，**只有当实体被作为相机使用**，也就是添加了相机组件，[onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 才会被调用的。  
+值得注意的是，**当且仅当实体挂载了相机组件**，该实体所有脚本组件的 [onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 才会被调用的。  
 
 每个生命周周期回调函数说明：
 ### [**onAwake**](${api}core/Script#onAwake)
@@ -146,11 +146,11 @@ onLateUpdate(deltaTime: number) {
 ```
 ### [**onBeginRender**](${api}core/Script#onBeginRender)
 
-当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [render](${api}core/Camera#render) 方法调用之前 `onBeginRender` 回调将被调用。
+**当且仅当实体挂载了相机组件**，相机组件的 [render](${api}core/Camera#render) 方法调用之前，该实体所有脚本组件的 [onBeginRender](${api}core/Script#onBeginRender) 回调将被调用。
 
 ### [**onEndRender**](${api}core/Script#onEndRender)
 
-当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [render](${api}core/Camera#render) 方法调用之后 `onEndRender` 回调将被调用。
+**当且仅当实体挂载了相机组件**，相机组件的 [render](${api}core/Camera#render) 方法调用之后，该实体所有脚本组件的 [onBeginRender](${api}core/Script#onEndRender) 回调将被调用。
 
 ### [**onDestroy**](${api}core/Script#onDestroy)
 

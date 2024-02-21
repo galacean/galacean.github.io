@@ -13,7 +13,7 @@ label: Animation
 
 通过动画控制器的编辑器，用户可以在其中组织[动画片段](${docs}animation-clip)的播放逻辑
 
-1. 准备好动画片段（[制作动画片段](${docs}animation-clip-)）
+1. 准备好动画片段（[制作动画片段](${docs}animation-clip)）
 
 ![1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*Qc8sQ6iJd8IAAAAAAAAAAAAADsJ_AQ/original)
 

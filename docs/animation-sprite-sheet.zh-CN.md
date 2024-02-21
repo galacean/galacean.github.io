@@ -11,7 +11,7 @@ Galacean 支持引用类型的动画曲线，你可以添加类型为资产的�
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*PxdFQKal1JEAAAAAAAAAAAAADsJ_AQ/original)
 
-2. 在资产面板中创建 `AnimationClip`
+2. 在 **[资产面板](${docs}interface-assets)** 中创建 `AnimationClip`
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*t1KMQb0s8V8AAAAAAAAAAAAADsJ_AQ/original)
 
@@ -19,7 +19,7 @@ Galacean 支持引用类型的动画曲线，你可以添加类型为资产的�
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*yFnYT5-NDFEAAAAAAAAAAAAADsJ_AQ/original)
 
-4. 开启录制模式，编辑器中点到对应的帧数，在 `SpriteRenderer` 中添加 `Sprite` （sprite 上传相关详见[精灵](${docs}graphics-sprite)）即可自动添加关键帧
+4. 开启录制模式，编辑器中点到对应的帧数，在 `SpriteRenderer` 中添加 `Sprite` （sprite 上传相关详见[精灵](${docs}graphics-2d-sprite)）即可自动添加关键帧
 
 ![Alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*wN9sSYfs2eAAAAAAAAAAAAAADsJ_AQ/original)
 

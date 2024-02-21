@@ -6,16 +6,27 @@ group: 网格
 label: Graphics/Mesh
 ---
 
-Mesh 是 MeshRenderer 的数据对象，它的职责可以类比为市面上较为流行的填色本，描述了顶点的各种信息（位置，拓扑，顶点颜色，UV 等），同样的，在 Galacean 中我们可以使用 [ModelMesh](${api}core/ModelMesh) 或 [BufferMesh](${api}core/BufferMesh) 来描述待渲染物体的几何信息。
+# 网格总览
 
-## 分类
-
-| 类型 | 描述 |
-| :-- | :-- |
-| [ModelMesh](${docs}graphics-model-mesh) | 封装了常用的设置顶点数据和索引数据的方法，非常简单易用。开发者若想要快速地去自定义几何体可以使用该类 |
-| [BufferMesh](${docs}graphics-buffer-mesh) | 可以自由操作顶点缓冲和索引缓冲数据，以及一些与几何体绘制相关的指令。具备高效、灵活、简洁等特点。开发者如果想高效灵活的实现自定义几何体就可以使用该类 |
+网格是[网格渲染器](${docs}graphics-renderer-meshRenderer)的数据对象，它描述了顶点的各种信息（位置，拓扑，顶点色，UV 等）。
 
 ## 使用
+
+编辑器封装了常见的网格资产方便开发者使用，当需要为网格渲染器设置网格时，只需要选择对应的网格资产即可。
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*fmhoSrmQQ78AAAAAAAAAAAAADhuCAQ/original" alt="import" style="zoom:100%;" />
+
+相应的，在脚本中，网格的使用会更加自由，同时复杂度也会高一些，首先我们看下
+
+| 类型                                      | 描述                                                                                                                                                 |
+| :---------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ModelMesh](${docs}graphics-model-mesh)   | 封装了常用的设置顶点数据和索引数据的方法，非常简单易用。开发者若想要快速地去自定义几何体可以使用该类                                                 |
+| [BufferMesh](${docs}graphics-buffer-mesh) | 可以自由操作顶点缓冲和索引缓冲数据，以及一些与几何体绘制相关的指令。具备高效、灵活、简洁等特点。开发者如果想高效灵活的实现自定义几何体就可以使用该类 |
+| [内置几何体](${docs}graphics-buffer-mesh) | 本质上是预置的 ModelMesh , 包含常用的长方体，球体，平面，圆柱，圆环，圆柱与胶囊体。                                                                  |
+
+## 使用
+
+在编辑器中，网格以网格资产的形式出现，我们可以通过
 
 ```typescript
 const meshRenderer = entity.addComponent(MeshRenderer);

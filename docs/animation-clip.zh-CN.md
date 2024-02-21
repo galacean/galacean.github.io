@@ -27,7 +27,7 @@ label: Animation
 
 ### Transform 组件示例
 
-1. 在资产面板中 右键/点击+ 创建 `动画片段` 资产
+1. 在 **[资产面板](${docs}interface-assets)** 中 右键/点击+ 创建 `动画片段` 资产
 
 ![1](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*Bs6UQ6Vwz1UAAAAAAAAAAAAADsJ_AQ/original)
 
