@@ -6,8 +6,6 @@ group: 2D
 label: Graphics/2D
 ---
 
-# 2D
-
 Galacean 是 3D/2D 的互动解决方案，您可以在**编辑器主页**的**菜单视图**侧依次**点击模版**->**像素小鸟**快速体验 2D 互动开发。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*YYyxRZ2nyukAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />

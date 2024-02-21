@@ -5,8 +5,6 @@ type: 光照
 label: Light
 ---
 
-# 点光源
-
 **点光源**存在于空间中的一点，由该点向四面八方发射光线，比如生活中的灯泡就是点光源。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/f0d42119-4ebf-4214-a9c1-154e6c00be65/image-20231009113806918.png" alt="image-20231009113806918" style="zoom:50%;" />

@@ -6,8 +6,6 @@ group: 模型
 label: Graphics/Model
 ---
 
-# 模型
-
 模型通常指的是由设计师通过三维建模软件创建的，包含一系列[网格](${docs}graphics-mesh)，[材质](${docs}graphics-material)，[纹理](${docs}graphics-texture)和[动画](${docs}animation-overview)信息的三维模型，在 Galacean 中，它也被视作一种资产，模型资产工作流通常如下：
 
 ```mermaid

@@ -6,8 +6,6 @@ group: 模型
 label: Graphics/Model
 ---
 
-# glTF
-
 > 更多详情可跳转 [glTF 官方网站](https://www.khronos.org/gltf/)
 
 **glTF**（GL Transmission Format）是 [khronos ](https://www.khronos.org/)发布的一种能高效传输和加载 3D 场景的规范，是 3D 领域中的 "JPEG" 格式，其功能涵盖了 FBX、OBJ 等传统模型格式，基本支持 3D 场景中的所有特性，其[插件机制](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos)也使用户可以灵活地自定义实现想要的功能。
@@ -43,17 +41,17 @@ glTF 拥有非常多的特性，官网提供了大量的[示例](https://github.
 
 Galacean 目前支持以下 glTF 插件，若 glTF 文件中包含相应插件，则会自动加载相应功能：
 
-| 插件 | 功能 |
-| :-- | :-- |
-| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts) | 支持 Draco 压缩模型，节省显存 |
-| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts) | 支持多光源组合，会解析成引擎的光源，详见[光照教程](${docs}graphics-light) |
-| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR [高光-光泽度工作流](${api}core/PBRSpecularMaterial) |
-| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts) | 支持 [Unlit 材质](${docs}graphics-shader-unlit) |
-| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts) | 允许渲染器存在多个材质，然后通过 [setMaterial](${api}core/Renderer#setMaterial) 接口进行材质切换 |
-| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts) | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
-| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts) | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://oasisengine.cn/#/examples/latest/tiling-offset) 案例 |
-| [KHR_materials_clearcoat](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_clearcoat.ts) | 支持材质的透明清漆度拓展，可以参考 [Clearcoat](https://oasisengine.cn/#/examples/latest/pbr-clearcoat) 案例 |
-| [GALACEAN_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/GALACEAN_materials_remap.ts) | 支持编辑器材质映射 |
+| 插件                                                                                                                                                               | 功能                                                                                                                                                                                                  |
+| :----------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [KHR_draco_mesh_compression](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_draco_mesh_compression.ts)                   | 支持 Draco 压缩模型，节省显存                                                                                                                                                                         |
+| [KHR_lights_punctual](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_lights_punctual.ts)                                 | 支持多光源组合，会解析成引擎的光源，详见[光照教程](${docs}graphics-light)                                                                                                                             |
+| [KHR_materials_pbrSpecularGlossiness](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_pbrSpecularGlossiness.ts) | 支持 PBR [高光-光泽度工作流](${api}core/PBRSpecularMaterial)                                                                                                                                          |
+| [KHR_materials_unlit](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_unlit.ts)                                 | 支持 [Unlit 材质](${docs}graphics-shader-unlit)                                                                                                                                                       |
+| [KHR_materials_variants](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_variants.ts)                           | 允许渲染器存在多个材质，然后通过 [setMaterial](${api}core/Renderer#setMaterial) 接口进行材质切换                                                                                                      |
+| [KHR_mesh_quantization](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_mesh_quantization.ts)                             | 支持[顶点数据压缩](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_mesh_quantization#extending-mesh-attributes)，节省显存，如顶点数据一般都是浮点数，此插件可以保存为整型 |
+| [KHR_texture_transform](https://github.com/oasis-engine/engine/blob/main/packages/loader/src/gltf/extensions/KHR_texture_transform.ts)                             | 支持纹理的缩放位移变换，可以参考 [TilingOffset](https://oasisengine.cn/#/examples/latest/tiling-offset) 案例                                                                                          |
+| [KHR_materials_clearcoat](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/KHR_materials_clearcoat.ts)                     | 支持材质的透明清漆度拓展，可以参考 [Clearcoat](https://oasisengine.cn/#/examples/latest/pbr-clearcoat) 案例                                                                                           |
+| [GALACEAN_materials_remap](https://github.com/ant-galaxy/oasis-engine/blob/main/packages/loader/src/gltf/extensions/GALACEAN_materials_remap.ts)                   | 支持编辑器材质映射                                                                                                                                                                                    |
 
 ### 插件拓展
 

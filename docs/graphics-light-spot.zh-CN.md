@@ -5,8 +5,6 @@ type: 光照
 label: Light
 ---
 
-# 聚光灯
-
 **聚光灯**就像现实生活中的手电筒发出的光，从某个点朝特定方向锥形发射。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/1695c247-a6f1-43c5-8cfe-cb89c507cf31/image-20231009114221422.png" alt="image-20231009114221422" style="zoom:50%;" />

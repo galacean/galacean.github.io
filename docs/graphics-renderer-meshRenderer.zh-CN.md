@@ -5,8 +5,6 @@ type: 渲染器
 label: Renderer
 ---
 
-# 网格渲染器
-
 [MeshRenderer](${api}core/MeshRenderer) 是网格渲染组件，当一个实体挂载了网格渲染组件，只需设置它的 `mesh` 与 `material`即可渲染物体。
 
 <playground src="scene-basic.ts"></playground>

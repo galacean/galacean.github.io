@@ -6,8 +6,6 @@ group: 纹理
 label: Graphics/Texture
 ---
 
-# 2D 纹理
-
 2D 纹理（[Texture2D](${api}core/Texture2D)）是最常用的美术资源，使用二维 UV 坐标进行采样。
 
 ## 创建

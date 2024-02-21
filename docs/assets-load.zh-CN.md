@@ -5,8 +5,6 @@ type: 资产工作流
 label: Resource
 ---
 
-# 资产的加载
-
 在 Galacean 中，资产加载一般由使用它的情形分为三种情况：
 
 - 资产被导入到编辑器中，且在某个场景中使用
@@ -86,20 +84,20 @@ this.engine.resourceManager.load<GLTFResource>({
 this.engine.resourceManager.load<GLTFResource>("Assets/texture.png");
 ```
 
-> 在编辑器中可以通过  **[资产面板](${docs}interface-assets)**  -> **右键资产** -> **Copy relative path** 快速复制资产的相对路径
+> 在编辑器中可以通过 **[资产面板](${docs}interface-assets)** -> **右键资产** -> **Copy relative path** 快速复制资产的相对路径
 
 ### baseUrl
 
 `ResourceManger` 目前也支持了 `baseUrl` 的设置：
 
 ```typescript
-engine.resourceManager.baseUrl = "https://cdn.galacean.com"
+engine.resourceManager.baseUrl = "https://cdn.galacean.com";
 ```
 
 如果设置了 `baseUrl`，加载的相对路径会和 `baseUrl` 组合：
 
 ```typescript
-engine.resourceManager.load('img/2d.png');
+engine.resourceManager.load("img/2d.png");
 ```
 
 上面两段代码可以得出实际的加载路径是`https://cdn.galacean.com/img/2d.png`。
