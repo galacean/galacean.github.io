@@ -18,6 +18,10 @@ label: Graphics/Mesh
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/b61f5f8c-1eba-4ea8-a019-f823a6c0b17d/image-20231009112014068.png" alt="image-20231009112014068" style="zoom:50%;" />
 
+内置几何体无法满足需求？您也可以在 **[资产面板](${docs}interface-assets)** 中 **右键** → **Create** → **PrimitiveMesh** 创建一个 `Mesh` 资产，您可以通过调整 `Mesh` 的各项参数来满足需求。
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*g3XwRrrVv8kAAAAAAAAAAAAADhuCAQ/original" alt="image-20231009111916680" style="zoom:50%;" />
+
 ## 脚本使用
 
 <playground src="primitive-mesh.ts"></playground>
