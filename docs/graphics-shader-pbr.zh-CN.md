@@ -20,7 +20,9 @@ PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的�
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/711f8b97-247c-465e-8cf2-4896b0c78534/metal.gif" alt="metal" style="zoom:100%;" />
 
-除此之外，还有很多通用属性可以配置，比如粗糙度、环境遮蔽、自发射光、透明度等等：
+除此之外，还有很多通用属性可以配置，比如各向异性，粗糙度、环境遮蔽、自发射光、透明度等等：
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/2c8dde75-9557-41db-a1d0-6ca9352530e4/material-anisotropy.gif" alt="material-anisotropy" style="zoom:100%;" />
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/4806589e-386f-404a-82e5-d273e98b707d/other.gif" alt="other" style="zoom:100%;" />
 
@@ -53,11 +55,17 @@ PBR 全称是 **Physically Based Rendering**，中文意思是**基于物理的�
 | [metallic](${api}core/PBRMaterial#metallic) | 金属度。模拟材质的金属程度，金属值越大，镜面反射越强，即能反射更多周边环境。 |
 | [roughness](${api}core/PBRMaterial#roughness) | 粗糙度。模拟材质的粗糙程度，粗糙度越大，微表面越不平坦，镜面反射越模糊。 |
 | [roughnessMetallicTexture](${api}core/PBRMaterial#roughnessMetallicTexture) | 金属粗糙度纹理。搭配金属粗糙度使用，是相乘的关系。 |
-| [anisotropy](${api}core/PBRMaterial#anisotropy) | 各向异性强度。默认为0，关闭各项异性计算。 |
+| [anisotropy](${api}core/PBRMaterial#anisotropy) | 各向异性强度。默认为 0，关闭各项异性计算。参考 [案例](${examples}pbr-anisotropy) 。 |
 | [anisotropyRotation](${api}core/PBRMaterial#anisotropyRotation) | 各向异性旋转角度。沿切线、副切线空间旋转相应角度。 |
-| [anisotropyTexture](${api}core/PBRMaterial#anisotropyTexture) | 各向异性纹理。RG通道保存着各向异性方向，会和 anisotropyRotation 计算结果相乘；B通道保存着各向异性强度，会和 anisotropy 相乘。 |
+| [anisotropyTexture](${api}core/PBRMaterial#anisotropyTexture) | 各向异性纹理。RG 通道保存着各向异性方向，会和 anisotropyRotation 计算结果相乘；B 通道保存着各向异性强度，会和 anisotropy 相乘。 |
 
-<playground src="pbr-base.ts"></playground>
+### PBRSpecularMaterial
+
+| 参数 | 应用 |
+| :-- | :-- |
+| [specularColor](${api}core/PBRMaterial#specularColor) | 高光度。不同于金属粗糙度工作流的根据金属度和基础颜色计算镜面反射，而是直接使用高光度来表示镜面反射颜色。(注，只有关闭金属粗糙工作流才生效) 。|
+| [glossiness](${api}core/PBRMaterial#glossiness) | 光泽度。模拟光滑程度，与粗糙度相反。(注，只有关闭金属粗糙工作流才生效)。 |
+| [specularGlossinessTexture](${api}core/PBRMaterial#specularGlossinessTexture) | 高光光泽度纹理。搭配高光光泽度使用，是相乘的关系。 |
 
 > **注**：PBR 必须开启[环境光](${docs}graphics-light-ambient)
 
