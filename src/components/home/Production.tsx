@@ -89,7 +89,7 @@ export default function Production() {
 
         <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*ceScRpTCYmkAAAAAAAAAAAAADsB_AQ/fmt.webp)` }}>
           <StyledH align="v" wrap={false}>
-            <StyledIcon src="https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*iX_AQJ118e0AAAAAAAAAAAAADsB_AQ/original" alt="" />
+            <StyledIcon src="https://mdn.alipayobjects.com/huamei_tnzzhx/afts/img/A*OnZ7QJvE8iEAAAAAAAAAAAAADk3OAQ/original" alt="" />
             <FormattedMessage id="app.home.effects" />
           </StyledH>
           <StyledP>
