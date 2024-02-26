@@ -13,7 +13,8 @@ label: Graphics/Mesh
 网格资产一般来源于：
 
 - 通过[导入模型](${docs}graphics-model-importGlTF)，获取第三方工具创建的[模型内置网格资产](${docs}graphics-model-assets)
-- 开发者自己[创建网格资产](${docs}graphics-mesh-primitiveMesh)
+- 编辑器的[内置网格资产](${docs}graphics-mesh-primitiveMesh)
+- 开发者自身[创建网格资产](${docs}graphics-mesh-primitiveMesh)
 
 ## 使用
 
