@@ -1,8 +1,9 @@
 ---
-order: 1
+order: 0
 title: 背景总览
-type: 背景
-label: Background
+type: 图形
+group: 背景
+label: Graphics/Background
 ---
 
 开发者可以为场景定制背景，背景会在场景渲染前被渲染。当前 Galacean 主要有以下几种背景类型：

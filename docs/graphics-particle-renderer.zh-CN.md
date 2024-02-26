@@ -1,8 +1,9 @@
 ---
 order: 0
 title: 粒子渲染器
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 Galacean Engine 的粒子渲染器 [ParticleRenderer](${api}core/ParticleRenderer) 是常用的渲染组件，具备丰富的属性，通过调节各个属性值达到绚丽多彩的粒子效果。

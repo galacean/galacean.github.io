@@ -1,8 +1,9 @@
 ---
-order: 1
+order: 0
 title: 光照总览
-type: 光照
-label: Light
+type: 图形
+group: 光照
+label: Graphics/Light
 ---
 
 合理使用光照，能够提供逼真的渲染效果。本节包含以下相关信息：

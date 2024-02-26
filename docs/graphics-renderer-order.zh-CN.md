@@ -1,8 +1,9 @@
 ---
-order: 4
+order: 3
 title: 渲染排序
-type: 渲染器
-label: Renderer
+type: 图形
+group: 渲染器
+label: Graphics/Renderer
 ---
 
 渲染器的渲染顺序会影响渲染的**性能**和**准确性**，在 Galacean 中，对于每个相机，组件会按照统一的**判定规则**放置在对应的**渲染队列**中。

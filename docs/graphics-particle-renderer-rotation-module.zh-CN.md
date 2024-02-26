@@ -1,8 +1,9 @@
 ---
 order: 4
 title: 生命周期旋转模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 [`RotationOverLifetimeModule`](${api}core/RotationOverLifetimeModule) 继承自 `ParticleGeneratorModule`，用于控制粒子系统的生命周期内的旋转变化。

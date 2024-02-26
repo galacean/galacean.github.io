@@ -1,8 +1,9 @@
 ---
-order: 4
-title: 天空背景
-type: 背景
-label: Background
+order: 3
+title: 天空
+type: 图形
+group: 背景
+label: Graphics/Background
 ---
 
 天空是摄像机在渲染之前绘制的一种背景类型。此类型的背景对于 3D 游戏和应用程序非常有用，因为它可以提供深度感，使环境看上去比实际大小大得多。天空本身可以包含任何对象（例如云、山脉、建筑物和其他无法触及的对象）以营造遥远三维环境的感觉。Galacean 还可以将天空用于在场景中产生真实的环境光照，详情可参考[烘焙](${docs}graphics-light-bake)。

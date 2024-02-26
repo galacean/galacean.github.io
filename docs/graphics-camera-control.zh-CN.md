@@ -1,8 +1,9 @@
 ---
-order: 3
+order: 2
 title: 相机控件
-type: 相机
-label: Camera
+type: 图形
+group: 相机
+label: Graphics/Camera
 ---
 
 相机控件就是和相机组件一起搭配来展示三维场景的组件，这类组件根据不同的功能定制相应的参数，通过影响着相机的属性来控制三维场景的展示。

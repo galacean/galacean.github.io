@@ -1,8 +1,9 @@
 ---
-order: 4
+order: 3
 title: 多相机渲染
-type: 相机
-label: Camera
+type: 图形
+group: 相机
+label: Graphics/Camera
 ---
 
 在多个相机的情况下，通过结合相机组件的 [viewport](${api}core/Camera#viewport), [cullingMask](${api}core/Camera#cullingMask), [clearFlags](${api}core/Camera#clearFlags) 等属性完成许多定制化的渲染效果。

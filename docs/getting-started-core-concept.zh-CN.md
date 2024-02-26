@@ -24,7 +24,7 @@ label: Basics/GettingStarted
 
 我们用鼠标左键选中新建的实体节点，此时右侧的 **[检查器面板](${docs}interface-inspector)** 会显示出当前实体的一些可配置属性。因为我们的实体现在没有绑定任何组件（[什么是组件？](https://galacean.antgroup.com/#/docs/latest/cn/entity)），所以我们暂时只能调整实体的坐标信息这类的基础属性。
 
-接下来，我们点击 **[检查器面板](${docs}interface-inspector)** 中的 `Add Component` 按钮唤起组件选单，然后选择添加 `Mesh Renderer` 组件（什么是 [Mesh Renderer?](https://galacean.antgroup.com/#/docs/latest/cn/mesh-renderer)）。
+接下来，我们点击 **[检查器面板](${docs}interface-inspector)** 中的 `Add Component` 按钮唤起组件选单，然后选择添加 `Mesh Renderer` 组件（什么是 [Mesh Renderer?](${docs}graphics-renderer-meshRenderer)）。
 
 <img src="https://gw.alipayobjects.com/zos/OasisHub/c9cc9c6d-07e9-41ba-a01f-2cd9d3c610ff/image-20230921161622497.png" alt="image-20230921161622497" style="zoom:50%;" />
 

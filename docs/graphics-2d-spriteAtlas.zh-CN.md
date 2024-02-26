@@ -1,5 +1,5 @@
 ---
-order: 1
+order: 5
 title: 精灵图集
 type: 图形
 group: 2D

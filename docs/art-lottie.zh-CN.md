@@ -1,9 +1,8 @@
 ---
-order: 20
+order: 2
 title: 导出 Lottie 动画
-type: 图形
-group: 2D
-label: Graphics/2D
+type: 美术
+label: Art
 ---
 
 ## 什么是 Bodymovin

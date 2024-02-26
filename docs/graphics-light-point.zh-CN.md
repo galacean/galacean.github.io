@@ -1,8 +1,9 @@
 ---
-order: 3
+order: 2
 title: 点光源
-type: 光照
-label: Light
+type: 图形
+group: 光照
+label: Graphics/Light
 ---
 
 **点光源**存在于空间中的一点，由该点向四面八方发射光线，比如生活中的灯泡就是点光源。

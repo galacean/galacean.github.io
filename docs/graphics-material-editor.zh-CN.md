@@ -1,8 +1,9 @@
 ---
-order: 3
+order: 2
 title: 编辑器使用
 type: 材质
-label: Material
+group: 网格
+label: Graphics/Material
 ---
 
 ## 编辑器使用

@@ -1,8 +1,9 @@
 ---
-order: 5
+order: 4
 title: 自定义着色器
 type: 着色器
-label: Shader
+group: 网格
+label: Graphics/Shader
 ---
 
 业务中可能有一些特殊的渲染需求，例如水流特效，这时候就需要通过**自定义着色器** （Shader）去实现。

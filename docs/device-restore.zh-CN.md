@@ -1,8 +1,8 @@
 ---
-order: 4
+order: 0
 title: 设备恢复
 type: 资源
-label: Resource
+label: Device
 ---
 
 由于 GPU 是一种共享资源，在某些情况 GPU 可能会回收控制权，导致你的程序 GPU 设备丢失，例如以下几种情况可能会发生设备丢失：

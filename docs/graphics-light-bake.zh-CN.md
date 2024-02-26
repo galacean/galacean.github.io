@@ -1,8 +1,9 @@
 ---
-order: 6
+order: 5
 title: 烘焙
-type: 光照
-label: Light
+type: 图形
+group: 光照
+label: Graphics/Light
 ---
 
 烘焙指 Galacean 提前执行光照计算并将结果烘焙到二进制文件（包含[漫反射球谐参数](https://www.wikiwand.com/zh-hans/%E7%90%83%E8%B0%90%E5%87%BD%E6%95%B0)和[预滤波环境贴图](https://learnopengl-cn.github.io/07%20PBR/03%20IBL/02%20Specular%20IBL/)），然后在运行时实时采样。

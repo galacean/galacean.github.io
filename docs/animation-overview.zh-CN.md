@@ -5,8 +5,6 @@ type: 动画
 label: Animation
 ---
 
-## 概览
-
 Galacean 的动画系统具有以下功能：
 
 - 解析 GLTF/FBX 模型中的动画并转为 Galacean 中的 AnimationClip 对象

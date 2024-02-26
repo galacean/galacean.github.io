@@ -1,8 +1,9 @@
 ---
-order: 4
+order: 3
 title: 脚本使用
 type: 材质
-label: Material
+group: 网格
+label: Graphics/Material
 ---
 
 编辑器导出的材质只有 [Material](${api}core/Material) 基础类，而通过代码可以创建引擎已经封装好的 [PBRMaterial](${api}core/PBRMaterial)，[UnlitMaterial](${api}core/UnlitMaterial)，[BlinnPhongMaterial](${api}core/BlinnPhongMaterial)。

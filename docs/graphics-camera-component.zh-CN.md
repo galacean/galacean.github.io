@@ -1,8 +1,9 @@
 ---
-order: 2
+order: 1
 title: 相机组件
-type: 相机
-label: Camera
+type: 图形
+group: 相机
+label: Graphics/Camera
 ---
 
 相机组件可以将 3D 场景投影到 2D 屏幕上，基于相机组件，我们可以定制各种不同的渲染效果。
