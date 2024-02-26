@@ -1,8 +1,9 @@
 ---
-order: 1
+order: 0
 title: 着色器总览
 type: 着色器
-label: Shader
+group: 网格
+label: Graphics/Shader
 ---
 
 在[材质教程](${docs}graphics-material-composition) 中提到，着色器可以编写顶点、片元代码来决定渲染管线输出到屏幕上像素的颜色。

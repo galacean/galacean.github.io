@@ -1,8 +1,9 @@
 ---
-order: 3
-title: 纹理背景
-type: 背景
-label: Background
+order: 2
+title: 纹理
+type: 图形
+group: 背景
+label: Graphics/Background
 ---
 
 当场景的背景类型设置为纹理时，画布的渲染区域会在相机渲染前会按照填充规则填上对应的纹理。

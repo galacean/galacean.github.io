@@ -1,8 +1,9 @@
 ---
-order: 5
+order: 4
 title: 环境光
-type: 光照
-label: Light
+type: 图形
+group: 光照
+label: Graphics/Light
 ---
 
 除了实时计算的直接光源，我们一般还要提前离线烘焙光照作为环境光照来实时采样，这种方式可以有效地捕捉环境的全局光照和氛围，使物体更好地融入其环境。

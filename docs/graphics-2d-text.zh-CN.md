@@ -1,5 +1,5 @@
 ---
-order: 6
+order: 4
 title: 文字渲染器
 type: 图形
 group: 2D

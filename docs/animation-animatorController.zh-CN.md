@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 2
 title: 动画控制器
 type: 动画
 label: Animation

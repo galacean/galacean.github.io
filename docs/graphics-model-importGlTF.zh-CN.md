@@ -1,12 +1,12 @@
 ---
-order: 3
+order: 2
 title: 导入模型
 type: 图形
 group: 模型
 label: Graphics/Model
 ---
 
-> 模型使用 [Blender](https://docs.blender.org/manual/en/2.80/addons/io_scene_gltf2.html) 等建模软件导出 Fbx 或 glTF 格式，也可从 [Sketchfab](https://sketchfab.com/) 等模型网站下载。
+> 模型使用 [Blender](https://docs.blender.org/manual/en/2.80/addons/io_scene_gltf2.html) 等建模软件导出 FBX 或 glTF 格式，也可从 [Sketchfab](https://sketchfab.com/) 等模型网站下载。
 
 准备好模型后，就可以将模型导入到 Galacean 编辑器中进行编辑了，你可以通过以下文件格式导入模型：
 
@@ -14,7 +14,7 @@ label: Graphics/Model
 - **(.glb + 图片)**
 - **(.fbx)**
 
-需要注意的是，编辑器会将 Fbx 转换成运行时也可以解析的[ glTF 格式](${docs}graphics-model-glTF)。接下来，让我们实操一下如何将模型文件导入编辑器。
+需要注意的是，编辑器会将 FBX 转换成运行时也可以解析的[ glTF 格式](${docs}graphics-model-glTF)。接下来，让我们实操一下如何将模型文件导入编辑器。
 
 ## 拖拽导入
 

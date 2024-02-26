@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 title: 动画片段
 type: 动画
 label: Animation

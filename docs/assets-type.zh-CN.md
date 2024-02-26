@@ -1,6 +1,6 @@
 ---
 order: 1
-title: 资产类型
+title: 资产的类型
 type: 资产工作流
 label: Resource
 ---

@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: 精灵遮罩
 type: 图形
 group: 2D

@@ -1,8 +1,9 @@
 ---
 order: 2
 title: 发射器模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 [EmissionModule](${api}core/EmissionModule) 是 `ParticleGeneratorModule` 的发射模块。该模块用于处理粒子系统的发射行为，包括粒子发射速率、发射形状以及爆破（burst）行为等。

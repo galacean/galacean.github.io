@@ -126,9 +126,9 @@ Galacean 引擎和建模软件的连通渠道是 [glTF 文件](${docs}graphics-m
 
 我们针对烘焙方案也提供了几篇教程，你也可以通过 Google 搜索“\*\*\* 建模软件 烘焙 KHR_materials_unlit” 等关键词学习更多细节：
 
-- [《C4D 烘焙教程》](${docs}graphics-bake-c4d)
+- [《C4D 烘焙教程》](${docs}art-bake-c4d)
 
-- [《Blender 烘焙教程》](${docs}graphics-bake-blender)
+- [《Blender 烘焙教程》](${docs}art-bake-blender)
 
 - [《导出 Unlit 材质》](${docs}graphics-material-Unlit)
 

@@ -1,8 +1,9 @@
 ---
-order: 2
-title: 纯色背景
-type: 背景
-label: Background
+order: 1
+title: 纯色
+type: 图形
+group: 背景
+label: Graphics/Background
 ---
 
 当场景的背景类型设置为纯色时，画布的渲染区域会在相机渲染前被填充上对应的纯色背景。

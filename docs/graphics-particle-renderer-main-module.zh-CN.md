@@ -1,8 +1,9 @@
 ---
 order: 1
 title: 主模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 [MainModule](${api}core/MainModule) 是 `ParticleGeneratorModule` 的主模块，包含了最基本的粒子生成参数。这些属性大多用于控制新创建的粒子的初始状态。

@@ -1,8 +1,9 @@
 ---
-order: 4
+order: 3
 title: 聚光灯
-type: 光照
-label: Light
+type: 图形
+group: 光照
+label: Graphics/Light
 ---
 
 **聚光灯**就像现实生活中的手电筒发出的光，从某个点朝特定方向锥形发射。

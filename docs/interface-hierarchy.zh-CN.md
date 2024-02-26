@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 2
 title: 层级面板
 type: 基础知识
 group: 界面

@@ -1,8 +1,9 @@
 ---
 order: 5
 title: 生命周期速度模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 ### 生命周期速度模块

@@ -1,8 +1,9 @@
 ---
 order: 6
 title: 纹理表格动画模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 [`TextureSheetAnimationModule`](${api}core/TextureSheetAnimationModule) 继承自 `ParticleGeneratorModule`，用于控制粒子系统的纹理表动画。

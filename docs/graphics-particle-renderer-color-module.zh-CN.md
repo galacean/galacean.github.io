@@ -1,8 +1,9 @@
 ---
 order: 7
 title: 颜色模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 [`ColorOverLifetimeModule`](${api}core/ColorOverLifetimeModule) 继承自 `ParticleGeneratorModule`，用于处理粒子系统的生命周期内的颜色变化。

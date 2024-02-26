@@ -1,6 +1,6 @@
 ---
 order: 0
-title: 2D
+title: 2D 总览
 type: 图形
 group: 2D
 label: Graphics/2D

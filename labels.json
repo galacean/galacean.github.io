@@ -176,18 +176,10 @@
     "cn_name": "设备"
   },
   {
-    "uuid": "markdown-Event",
-    "name": "Event",
-    "parent_uuid": null,
-    "weight": 10,
-    "tag": "doc-engine",
-    "cn_name": "事件"
-  },
-  {
     "uuid": "markdown-Performance",
     "name": "Performance",
     "parent_uuid": null,
-    "weight": 11,
+    "weight": 10,
     "tag": "doc-engine",
     "cn_name": "性能"
   },
@@ -195,7 +187,7 @@
     "uuid": "markdown-Art",
     "name": "Art",
     "parent_uuid": null,
-    "weight": 12,
+    "weight": 11,
     "tag": "doc-engine",
     "cn_name": "美术"
   },

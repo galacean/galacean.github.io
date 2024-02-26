@@ -1,5 +1,5 @@
 ---
-order: 4
+order: 5
 title: 动画状态机
 type: 动画
 label: Animation

@@ -1,8 +1,9 @@
 ---
 order: 3
 title: 生命周期尺寸模块
-type: 粒子
-label: Particle
+type: 图形
+group: 粒子
+label: Graphics/Particle
 ---
 
 [`SizeOverLifetimeModule`](${api}core/SizeOverLifetimeModule) 是 `ParticleGeneratorModule` 的子类，用于处理粒子系统的生命周期内的大小变化。
