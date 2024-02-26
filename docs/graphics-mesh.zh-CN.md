@@ -8,9 +8,17 @@ label: Graphics/Mesh
 
 网格是[网格渲染器](${docs}graphics-renderer-meshRenderer)的数据对象，它描述了顶点的各种信息（位置，拓扑，顶点色，UV 等）。
 
+## 网格资产
+
+网格资产一般来源于：
+
+- 通过[导入模型](${docs}graphics-model-importGlTF)，获取第三方工具创建的[模型内置网格资产](${docs}graphics-model-assets)
+- 编辑器的[内置网格资产](${docs}graphics-mesh-primitiveMesh)
+- 开发者自身[创建网格资产](${docs}graphics-mesh-primitiveMesh)
+
 ## 使用
 
-编辑器封装了常见的网格资产方便开发者使用，当需要为网格渲染器设置网格时，只需要选择对应的网格资产即可。
+当需要为网格渲染器设置网格时，只需要选择对应的网格资产即可。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*fmhoSrmQQ78AAAAAAAAAAAAADhuCAQ/original" alt="import" style="zoom:100%;" />
 
