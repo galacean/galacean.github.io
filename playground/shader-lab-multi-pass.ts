@@ -1,23 +1,25 @@
 /**
- * @title ShaderLab Test
+ * @title ShaderLab Multi Pass
  * @category Material
  */
 
 import {
+  AmbientLight,
   AssetType,
   BaseMaterial,
   Camera,
   CameraClearFlags,
+  DirectLight,
   GLTFResource,
   Logger,
   MeshRenderer,
   PBRMaterial,
+  PrimitiveMesh,
   Script,
   Shader,
-  ShaderData,
   Texture2D,
-  Vector2,
   Vector3,
+  Vector4,
   WebGLEngine
 } from "@galacean/engine";
 import { ShaderLab } from "@galacean/engine-shader-lab";
@@ -43,8 +45,11 @@ Shader.create(
     uniform float u_gravityIntensity;
     uniform float u_furLength;
     uniform float u_furOffset;
+    uniform vec4 u_uvTilingOffset;
+
 
     varying vec2 v_uv;
+    varying vec2 v_uv2;
     varying vec3 v_normal;
     varying vec3 v_pos;
 
@@ -54,42 +59,43 @@ Shader.create(
       position.xyz += direction * u_furLength * u_furOffset;
       gl_Position = renderer_MVPMat * position;
   
-      v_uv = TEXCOORD_0;
+
       v_normal = normalize( mat3(renderer_NormalMat) * NORMAL );
       vec4 temp_pos = renderer_ModelMat * position;
       v_pos = temp_pos.xyz / temp_pos.w;
+
+      vec2 uvOffset = u_uvTilingOffset.zw * u_furOffset;
+      v_uv = TEXCOORD_0 + uvOffset * vec2(1.0, 1.0) / u_uvTilingOffset.xy;
+      v_uv2 = TEXCOORD_0 * u_uvTilingOffset.xy + uvOffset;
     }
 `,
   `
     uniform vec3 camera_Position;
-    uniform vec2 u_uvScale;
 
     uniform sampler2D u_mainTex;
     uniform sampler2D u_layerTex;
-    uniform sampler2D u_flowTex;
-    uniform float u_edgeFade;
     uniform float u_furOffset;
 
+
     varying vec2 v_uv;
+    varying vec2 v_uv2;
     varying vec3 v_normal;
     varying vec3 v_pos;
     
+
     void main(){
 			  vec3 normalDirection = normalize(v_normal);
 			  vec3 viewDirection =  normalize(camera_Position - v_pos);
+			  vec4 baseColor = texture2D(u_mainTex, v_uv);
+        float alpha2 = u_furOffset * u_furOffset;
 
-			  vec4 _BaseColor = texture2D(u_mainTex, v_uv);
-			  // vec4 _BaseColor = vec4(1);
+			  float mask = texture2D(u_layerTex, v_uv2).r;
+			  mask = step(mix(0.0, 1.0, alpha2), mask);
 
-        vec2 uv = v_uv * u_uvScale;
-			  float alpha = (texture2D(u_layerTex, uv)).r;
-			  alpha = step(mix(0.0, 1.0, u_furOffset), alpha);
+        gl_FragColor.rgb = baseColor.rgb;
 
-        gl_FragColor.rgb = _BaseColor.rgb;
-			  gl_FragColor.a = 1.0 - u_furOffset * u_furOffset;
-			  gl_FragColor.a += dot(viewDirection, normalDirection) - u_edgeFade;
-			  gl_FragColor.a = max(0.0, gl_FragColor.a);
-			  gl_FragColor.a *= alpha;
+        gl_FragColor.a = 1.0 - alpha2;
+        gl_FragColor.a *= mask;
     }
   `
 );
@@ -107,6 +113,11 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
   cameraEntity.addComponent(Camera);
   cameraEntity.addComponent(OrbitControl);
 
+  // direct light
+  const directLightNode = rootEntity.createChild("dir_light");
+  directLightNode.addComponent(DirectLight);
+  directLightNode.transform.setRotation(30, 30, 0);
+
   engine.resourceManager
     .load([
       {
@@ -114,84 +125,90 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
         url: "https://pic1.zhimg.com/80/v2-a0ad38493301ccb02b583fd1ba1723e4_1440w.webp"
       },
       {
-        type: AssetType.Texture2D,
-        url: "https://mdn.alipayobjects.com/huamei_dmxymu/afts/img/A*lMZtRrnIO48AAAAAAAAAAAAADuuHAQ/original"
-      },
-      {
         type: AssetType.GLTF,
         url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+      },
+      {
+        type: AssetType.Env,
+        url: "https://gw.alipayobjects.com/os/bmw-prod/f369110c-0e33-47eb-8296-756e9c80f254.bin"
       }
     ])
     .then((res) => {
       const layerTexture = res[0] as Texture2D;
-      const flowTexture = res[1] as Texture2D;
-      const glTF = res[2] as GLTFResource;
+      const glTF = res[1] as GLTFResource;
       const oriMaterial = glTF.materials![0] as PBRMaterial;
 
+      scene.ambientLight = res[2] as AmbientLight;
+      // const entity = glTF.defaultSceneRoot.clone();
+      // rootEntity.addChild(entity);
+      // const renderer = entity.getComponentsIncludeChildren(MeshRenderer, [])[0];
+
       // create sphere
-      const entity = glTF.defaultSceneRoot.clone();
-      rootEntity.addChild(entity);
-      const renderer = entity.getComponentsIncludeChildren(MeshRenderer, [])[0];
+      const entity = rootEntity.createChild("sphere");
+      const renderer = entity.addComponent(MeshRenderer);
+      renderer.mesh = PrimitiveMesh.createSphere(engine, 1, 32);
 
       const material = new BaseMaterial(engine, Shader.find("fur-shader"));
-      material.isTransparent = true;
       renderer.setMaterial(material);
 
       const shaderData = material.shaderData;
       const script = cameraEntity.addComponent(FurScript);
-      script.furShaderData = shaderData;
+      script.material = material;
 
       shaderData.setTexture("u_mainTex", oriMaterial.baseTexture);
       shaderData.setTexture("u_layerTex", layerTexture);
-      shaderData.setTexture("u_flowTex", flowTexture);
 
-      shaderData.setFloat("u_furLength", 1);
+      shaderData.setFloat("u_furLength", 0.5);
       shaderData.setVector3("u_gravity", new Vector3(0, -1, 0));
       shaderData.setFloat("u_gravityIntensity", 0.25);
-      shaderData.setFloat("u_edgeFade", 0.4);
-      shaderData.setVector2("u_uvScale", new Vector2(10, 10));
+      shaderData.setVector4("u_uvTilingOffset", new Vector4(5, 5, 0.2, 0.2));
 
       const debugInfo = {
-        layer: 10,
-        uvScale: 10,
-        u_furLength: 1,
+        layer: 20,
+        u_furLength: 0.5,
         u_gravityIntensity: 0.25,
-        u_edgeFade: 0.4
+        uvScale: 5,
+        uvOffset: 0.2
       };
 
       gui.add(debugInfo, "layer", 0, 40, 1).onChange((v) => {
         script.layer = v;
       });
-      gui.add(debugInfo, "uvScale", 0, 40, 1).onChange((v) => {
-        shaderData.getVector2("u_uvScale").set(v, v);
-      });
-      gui.add(debugInfo, "u_furLength", 0, 100, 0.01).onChange((v) => {
+      gui.add(debugInfo, "u_furLength", 0, 10, 0.01).onChange((v) => {
         shaderData.setFloat("u_furLength", v);
       });
       gui.add(debugInfo, "u_gravityIntensity", 0, 1, 0.01).onChange((v) => {
         shaderData.setFloat("u_gravityIntensity", v);
       });
-      gui.add(debugInfo, "u_edgeFade", 0, 1, 0.01).onChange((v) => {
-        shaderData.setFloat("u_edgeFade", v);
+      gui.add(debugInfo, "uvScale", 0, 50, 1).onChange((v) => {
+        const value = shaderData.getVector4("u_uvTilingOffset");
+        value.x = value.y = v;
+      });
+      gui.add(debugInfo, "uvOffset", 0, 1, 0.01).onChange((v) => {
+        const value = shaderData.getVector4("u_uvTilingOffset");
+        value.z = value.w = v;
       });
       engine.run();
     });
 });
 
 class FurScript extends Script {
-  furShaderData: ShaderData;
-  layer = 10;
+  material: BaseMaterial;
+  layer = 20;
   onEndRender(camera: Camera): void {
+    const shaderData = this.material.shaderData;
     const step = 1 / this.layer;
     const oriCameraClearFlag = camera.clearFlags;
     camera.clearFlags = CameraClearFlags.None;
-    for (let i = 0; i < this.layer; i++) {
-      this.furShaderData.setFloat("u_furOffset", step * (i + 1));
+    this.material.isTransparent = true;
+    for (let i = 1; i < this.layer; i++) {
+      shaderData.setFloat("u_furOffset", step * i);
       camera.render();
     }
 
     // revert
-    this.furShaderData.setFloat("u_furOffset", 0);
+    shaderData.setFloat("u_furOffset", 0);
+    this.material.isTransparent = false;
     camera.clearFlags = oriCameraClearFlag;
   }
 }
