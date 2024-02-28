@@ -97,26 +97,21 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
     .load([
       {
         type: AssetType.Texture2D,
-        url: "https://pic1.zhimg.com/80/v2-a0ad38493301ccb02b583fd1ba1723e4_1440w.webp"
+        url: "https://mdn.alipayobjects.com/huamei_dmxymu/afts/img/A*R75iTZlbVfgAAAAAAAAAAAAADuuHAQ/original"
       },
       {
-        type: AssetType.GLTF,
-        url: "https://gw.alipayobjects.com/os/OasisHub/267000040/9994/%25E5%25BD%2592%25E6%25A1%25A3.gltf"
+        type: AssetType.Texture2D,
+        url: "https://mdn.alipayobjects.com/huamei_dmxymu/afts/img/A*t1s4T7h_1OQAAAAAAAAAAAAADuuHAQ/original"
       }
     ])
     .then((res) => {
       const layerTexture = res[0] as Texture2D;
-      const glTF = res[1] as GLTFResource;
-      const oriMaterial = glTF.materials![0] as PBRMaterial;
-
-      // const entity = glTF.defaultSceneRoot.clone();
-      // rootEntity.addChild(entity);
-      // const renderer = entity.getComponentsIncludeChildren(MeshRenderer, [])[0];
+      const baseTexture = res[1] as Texture2D;
 
       // create sphere
       const entity = rootEntity.createChild("sphere");
       const renderer = entity.addComponent(MeshRenderer);
-      renderer.mesh = PrimitiveMesh.createSphere(engine, 0.5, 32);
+      renderer.mesh = PrimitiveMesh.createSphere(engine, 0.5, 16);
 
       const material = new BaseMaterial(engine, Shader.find("fur-shader"));
       renderer.setMaterial(material);
@@ -125,17 +120,17 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
       const script = cameraEntity.addComponent(FurScript);
       script.material = material;
 
-      shaderData.setTexture("u_mainTex", oriMaterial.baseTexture);
+      shaderData.setTexture("u_mainTex", baseTexture);
       shaderData.setTexture("u_layerTex", layerTexture);
 
-      shaderData.setFloat("u_furLength", 0.25);
-      shaderData.setVector4("u_uvTilingOffset", new Vector4(5, 5, 0.2, 0.2));
+      shaderData.setFloat("u_furLength", 0.5);
+      shaderData.setVector4("u_uvTilingOffset", new Vector4(5, 5, 0.5, 0.5));
 
       const debugInfo = {
-        layer: 20,
-        u_furLength: 0.25,
+        layer: 40,
+        u_furLength: 0.5,
         uvScale: 5,
-        uvOffset: 0.2
+        uvOffset: 0.5
       };
 
       gui.add(debugInfo, "layer", 0, 40, 1).onChange((v) => {
@@ -158,7 +153,7 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
 
 class FurScript extends Script {
   material: BaseMaterial;
-  layer = 20;
+  layer = 40;
   onEndRender(camera: Camera): void {
     const shaderData = this.material.shaderData;
     const step = 1 / this.layer;
