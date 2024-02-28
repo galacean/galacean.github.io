@@ -4,12 +4,10 @@
  */
 
 import {
-  AmbientLight,
   AssetType,
   BaseMaterial,
   Camera,
   CameraClearFlags,
-  DirectLight,
   GLTFResource,
   Logger,
   MeshRenderer,
@@ -18,7 +16,6 @@ import {
   Script,
   Shader,
   Texture2D,
-  Vector3,
   Vector4,
   WebGLEngine
 } from "@galacean/engine";
@@ -38,8 +35,6 @@ Shader.create(
     attribute vec2 TEXCOORD_0;
 
     uniform mat4 renderer_MVPMat;
-    uniform mat4 renderer_ModelMat;
-    uniform mat4 renderer_NormalMat;
 
     uniform float u_furLength;
     uniform float u_furOffset;
@@ -61,8 +56,6 @@ Shader.create(
     }
 `,
   `
-    uniform vec3 camera_Position;
-
     uniform sampler2D u_mainTex;
     uniform sampler2D u_layerTex;
     uniform float u_furOffset;
@@ -77,7 +70,7 @@ Shader.create(
         float alpha2 = u_furOffset * u_furOffset;
 
 			  float mask = texture2D(u_layerTex, v_uv2).r;
-			  mask = step(mix(0.0, 1.0, alpha2), mask);
+			  mask = step(alpha2, mask);
 
         gl_FragColor.rgb = baseColor.rgb;
 
