@@ -8,14 +8,14 @@ import {
   BaseMaterial,
   Camera,
   CameraClearFlags,
-  GLTFResource,
   Logger,
   MeshRenderer,
-  PBRMaterial,
   PrimitiveMesh,
   Script,
   Shader,
+  ShaderData,
   Texture2D,
+  Vector3,
   Vector4,
   WebGLEngine
 } from "@galacean/engine";
@@ -39,6 +39,8 @@ Shader.create(
     uniform float u_furLength;
     uniform float u_furOffset;
     uniform vec4 u_uvTilingOffset;
+    uniform vec3 u_gravity;
+    uniform float u_gravityIntensity;
 
 
     varying vec2 v_uv;
@@ -46,7 +48,10 @@ Shader.create(
 
     void main(){
       vec4 position = POSITION;
-      position.xyz += NORMAL * u_furLength * u_furOffset;
+      vec3 direction = mix(NORMAL, u_gravity * u_gravityIntensity + NORMAL * (1.0 - u_gravityIntensity), u_furOffset);
+      position.xyz += direction * u_furLength * u_furOffset;
+
+
       gl_Position = renderer_MVPMat * position;
   
 
@@ -125,21 +130,31 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
 
       shaderData.setFloat("u_furLength", 0.5);
       shaderData.setVector4("u_uvTilingOffset", new Vector4(5, 5, 0.5, 0.5));
+      shaderData.setVector3("u_gravity", new Vector3(0, 0, 0));
+      shaderData.setFloat("u_gravityIntensity", 0);
+
+      const randomGravityScript = entity.addComponent(RandomGravityScript);
+      randomGravityScript.shaderData = shaderData;
 
       const debugInfo = {
         layer: 40,
         u_furLength: 0.5,
         uvScale: 5,
-        uvOffset: 0.5
+        uvOffset: 0.5,
+        enable: () => {
+          randomGravityScript.enabled = !randomGravityScript.enabled;
+          shaderData.setFloat("u_gravityIntensity", 0);
+          randomGravityScript.progress = 0;
+        }
       };
 
-      gui.add(debugInfo, "layer", 0, 40, 1).onChange((v) => {
+      gui.add(debugInfo, "layer", 1, 40, 1).onChange((v) => {
         script.layer = v;
       });
       gui.add(debugInfo, "u_furLength", 0, 1, 0.01).onChange((v) => {
         shaderData.setFloat("u_furLength", v);
       });
-      gui.add(debugInfo, "uvScale", 0, 50, 1).onChange((v) => {
+      gui.add(debugInfo, "uvScale", 1, 20, 1).onChange((v) => {
         const value = shaderData.getVector4("u_uvTilingOffset");
         value.x = value.y = v;
       });
@@ -147,6 +162,7 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
         const value = shaderData.getVector4("u_uvTilingOffset");
         value.z = value.w = v;
       });
+      gui.add(debugInfo, "enable").name("pause/resume");
       engine.run();
     });
 });
@@ -169,5 +185,14 @@ class FurScript extends Script {
     shaderData.setFloat("u_furOffset", 0);
     this.material.isTransparent = false;
     camera.clearFlags = oriCameraClearFlag;
+  }
+}
+
+class RandomGravityScript extends Script {
+  shaderData: ShaderData;
+  progress = 0;
+  onUpdate(deltaTime: number) {
+    const progress = 0.5 + Math.cos((this.progress = this.progress + deltaTime * 2)) / 2;
+    this.shaderData.setFloat("u_gravityIntensity", progress);
   }
 }
