@@ -4,6 +4,7 @@
  */
 
 import {
+  AmbientLight,
   AssetType,
   BaseMaterial,
   Camera,
@@ -45,6 +46,8 @@ const loopPassSource = Array.from({ length: LAYER })
         ${renderStateSource}
 
         mat4 renderer_MVPMat;
+        mat4 renderer_NormalMat;
+        mat4 renderer_ModelMat;
         float u_furLength;
         vec4 u_uvTilingOffset;
         vec3 u_gravity;
@@ -55,6 +58,33 @@ const loopPassSource = Array.from({ length: LAYER })
         VertexShader = vert;
         FragmentShader = frag;
 
+        struct EnvMapLight {
+          vec3 diffuse;
+          float mipMapLevel;
+          float diffuseIntensity;
+          float specularIntensity;
+        }
+        EnvMapLight scene_EnvMapLight;
+
+        #ifdef SCENE_USE_SH
+          vec3 scene_EnvSH[9];
+         
+          vec3 getLightProbeIrradiance(vec3 sh[9], vec3 normal){
+            normal.x = -normal.x;
+            vec3 result = sh[0] +
+                  sh[1] * (normal.y) +
+                  sh[2] * (normal.z) +
+                  sh[3] * (normal.x) +
+                  sh[4] * (normal.y * normal.x) +
+                  sh[5] * (normal.y * normal.z) +
+                  sh[6] * (3.0 * normal.z * normal.z - 1.0) +
+                  sh[7] * (normal.z * normal.x) +
+                  sh[8] * (normal.x * normal.x - normal.y * normal.y);
+          
+            return max(result, vec3(0.0));
+          }
+        #endif
+
         v2f vert(a2v v) {
           v2f o;
 
@@ -64,10 +94,13 @@ const loopPassSource = Array.from({ length: LAYER })
           position.xyz += direction * u_furLength * u_furOffset;
 
           gl_Position = renderer_MVPMat * position;
-
+    
           vec2 uvOffset = u_uvTilingOffset.zw * u_furOffset;
           o.v_uv = v.TEXCOORD_0 + uvOffset * vec2(1.0, 1.0) / u_uvTilingOffset.xy;
           o.v_uv2 = v.TEXCOORD_0 * u_uvTilingOffset.xy + uvOffset;
+          o.v_normal = normalize( mat3(renderer_NormalMat) * NORMAL );
+          vec4 temp_pos = renderer_ModelMat * position;
+          o.v_pos = temp_pos.xyz / temp_pos.w;
 
           return o;
         }
@@ -76,6 +109,8 @@ const loopPassSource = Array.from({ length: LAYER })
           float u_furOffset = ${u_furOffset};
           vec2 v_uv = i.v_uv;
           vec2 v_uv2 = i.v_uv2;
+          vec3 v_normal = i.v_normal;
+          vec3 v_pos = i.v_pos;
 
           vec4 baseColor = texture2D(u_mainTex, v_uv);
           float alpha2 = u_furOffset * u_furOffset;
@@ -83,8 +118,17 @@ const loopPassSource = Array.from({ length: LAYER })
 	    	  float mask = (texture2D(u_layerTex, v_uv2)).r;
 	    	  mask = step(alpha2, mask);
 
-          gl_FragColor.rgb = baseColor.rgb;
 
+          #ifdef SCENE_USE_SH
+            vec3 irradiance = getLightProbeIrradiance(scene_EnvSH, v_normal);
+            irradiance *= scene_EnvMapLight.diffuseIntensity;
+          #else
+            vec3 irradiance = scene_EnvMapLight.diffuse * scene_EnvMapLight.diffuseIntensity;
+            irradiance *= PI;
+          #endif
+
+          baseColor.rgb += irradiance * RECIPROCAL_PI * alpha2;
+          gl_FragColor.rgb = baseColor.rgb;
           gl_FragColor.a = 1.0 - alpha2;
           gl_FragColor.a *= mask;
         }
@@ -106,7 +150,7 @@ const furShaderSource = `Shader "fur-unlit" {
     DepthState transparentDepthState {
       WriteEnabled = false;
     }
-
+   
     struct a2v {
       vec4 POSITION;
       vec3 NORMAL;
@@ -116,7 +160,12 @@ const furShaderSource = `Shader "fur-unlit" {
     struct v2f {
       vec2 v_uv;
       vec2 v_uv2;
+      vec3 v_normal;
+      vec3 v_pos;
     }
+
+    #define PI 3.14159265359
+    #define RECIPROCAL_PI 0.31830988618
 
     ${loopPassSource}
   }
@@ -153,11 +202,16 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
       {
         type: AssetType.Texture2D,
         url: "https://mdn.alipayobjects.com/huamei_dmxymu/afts/img/A*t1s4T7h_1OQAAAAAAAAAAAAADuuHAQ/original"
+      },
+      {
+        type: AssetType.Env,
+        url: "https://gw.alipayobjects.com/os/bmw-prod/6470ea5e-094b-4a77-a05f-4945bf81e318.bin"
       }
     ])
     .then((res) => {
       const layerTexture = res[0] as Texture2D;
       const baseTexture = res[1] as Texture2D;
+      scene.ambientLight = res[2] as AmbientLight;
 
       // create sphere
       const entity = rootEntity.createChild("sphere");
@@ -202,6 +256,8 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
         const value = shaderData.getVector4("u_uvTilingOffset");
         value.z = value.w = v;
       });
+
+      gui.add(scene.ambientLight, "diffuseIntensity", 0, 1, 0.01);
       gui.add(debugInfo, "enable").name("pause/resume");
       engine.run();
     });
