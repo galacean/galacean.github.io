@@ -7,7 +7,6 @@ import {
   AssetType,
   BaseMaterial,
   Camera,
-  CameraClearFlags,
   Logger,
   MeshRenderer,
   PrimitiveMesh,
@@ -23,72 +22,119 @@ import { ShaderLab } from "@galacean/engine-shader-lab";
 import { OrbitControl } from "@galacean/engine-toolkit-controls";
 import * as dat from "dat.gui";
 
+const LAYER = 40;
+
 Logger.enable();
-const shaderLab = new ShaderLab();
 const gui = new dat.GUI();
+const shaderLab = new ShaderLab();
+const loopPassSource = Array.from({ length: LAYER })
+  .map((_, index) => {
+    const step = (1 / LAYER) * index;
+    const u_furOffset = step % 1 === 0 ? step + ".0" : step;
+    const renderStateSource =
+      index > 0
+        ? `
+    BlendState = transparentBlendState;
+    DepthState = transparentDepthState;
+    RenderQueueType = RenderQueueType.Transparent;
+    `
+        : ``;
 
-Shader.create(
-  "fur-shader",
-  `
-    attribute vec4 POSITION;
-    attribute vec3 NORMAL;
-    attribute vec2 TEXCOORD_0;
+    return `
+      Pass "${index}" {
+        ${renderStateSource}
 
-    uniform mat4 renderer_MVPMat;
+        mat4 renderer_MVPMat;
+        float u_furLength;
+        vec4 u_uvTilingOffset;
+        vec3 u_gravity;
+        float u_gravityIntensity;
+        sampler2D u_mainTex;
+        sampler2D u_layerTex;
 
-    uniform float u_furLength;
-    uniform float u_furOffset;
-    uniform vec4 u_uvTilingOffset;
-    uniform vec3 u_gravity;
-    uniform float u_gravityIntensity;
+        VertexShader = vert;
+        FragmentShader = frag;
 
+        v2f vert(a2v v) {
+          v2f o;
 
-    varying vec2 v_uv;
-    varying vec2 v_uv2;
+          float u_furOffset = ${u_furOffset};
+          vec4 position = v.POSITION;
+          vec3 direction = mix(v.NORMAL, u_gravity * u_gravityIntensity + v.NORMAL * (1.0 - u_gravityIntensity), u_furOffset);
+          position.xyz += direction * u_furLength * u_furOffset;
 
-    void main(){
-      vec4 position = POSITION;
-      vec3 direction = mix(NORMAL, u_gravity * u_gravityIntensity + NORMAL * (1.0 - u_gravityIntensity), u_furOffset);
-      position.xyz += direction * u_furLength * u_furOffset;
+          gl_Position = renderer_MVPMat * position;
 
+          vec2 uvOffset = u_uvTilingOffset.zw * u_furOffset;
+          o.v_uv = v.TEXCOORD_0 + uvOffset * vec2(1.0, 1.0) / u_uvTilingOffset.xy;
+          o.v_uv2 = v.TEXCOORD_0 * u_uvTilingOffset.xy + uvOffset;
 
-      gl_Position = renderer_MVPMat * position;
-  
+          return o;
+        }
 
-      vec2 uvOffset = u_uvTilingOffset.zw * u_furOffset;
-      v_uv = TEXCOORD_0 + uvOffset * vec2(1.0, 1.0) / u_uvTilingOffset.xy;
-      v_uv2 = TEXCOORD_0 * u_uvTilingOffset.xy + uvOffset;
+        void frag(v2f i) {
+          float u_furOffset = ${u_furOffset};
+          vec2 v_uv = i.v_uv;
+          vec2 v_uv2 = i.v_uv2;
+
+          vec4 baseColor = texture2D(u_mainTex, v_uv);
+          float alpha2 = u_furOffset * u_furOffset;
+
+	    	  float mask = (texture2D(u_layerTex, v_uv2)).r;
+	    	  mask = step(alpha2, mask);
+
+          gl_FragColor.rgb = baseColor.rgb;
+
+          gl_FragColor.a = 1.0 - alpha2;
+          gl_FragColor.a *= mask;
+        }
+      }
+    `;
+  })
+  .join("\n");
+
+const furShaderSource = `Shader "fur-unlit" {
+  SubShader "Default" {
+    BlendState transparentBlendState {
+      Enabled = true;
+      SourceColorBlendFactor = BlendFactor.SourceAlpha;
+      DestinationColorBlendFactor = BlendFactor.OneMinusSourceAlpha;
+      SourceAlphaBlendFactor = BlendFactor.One;
+      DestinationAlphaBlendFactor = BlendFactor.OneMinusSourceAlpha;
     }
-`,
-  `
-    uniform sampler2D u_mainTex;
-    uniform sampler2D u_layerTex;
-    uniform float u_furOffset;
 
-
-    varying vec2 v_uv;
-    varying vec2 v_uv2;
-    
-
-    void main(){
-			  vec4 baseColor = texture2D(u_mainTex, v_uv);
-        float alpha2 = u_furOffset * u_furOffset;
-
-			  float mask = texture2D(u_layerTex, v_uv2).r;
-			  mask = step(alpha2, mask);
-
-        gl_FragColor.rgb = baseColor.rgb;
-
-        gl_FragColor.a = 1.0 - alpha2;
-        gl_FragColor.a *= mask;
+    DepthState transparentDepthState {
+      WriteEnabled = false;
     }
-  `
-);
 
-Logger.enable();
+    struct a2v {
+      vec4 POSITION;
+      vec3 NORMAL;
+      vec2 TEXCOORD_0;
+    }
+
+    struct v2f {
+      vec2 v_uv;
+      vec2 v_uv2;
+    }
+
+    ${loopPassSource}
+  }
+}`;
+
+class RandomGravityScript extends Script {
+  shaderData: ShaderData;
+  progress = 0;
+  onUpdate(deltaTime: number) {
+    const progress = 0.5 + Math.cos((this.progress = this.progress + deltaTime * 2)) / 2;
+    this.shaderData.setFloat("u_gravityIntensity", progress);
+  }
+}
+
 WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
   engine.canvas.resizeByClientSize();
 
+  const furShader = Shader.create(furShaderSource);
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
 
@@ -118,12 +164,10 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
       const renderer = entity.addComponent(MeshRenderer);
       renderer.mesh = PrimitiveMesh.createSphere(engine, 0.5, 16);
 
-      const material = new BaseMaterial(engine, Shader.find("fur-shader"));
+      const material = new BaseMaterial(engine, furShader);
       renderer.setMaterial(material);
 
       const shaderData = material.shaderData;
-      const script = cameraEntity.addComponent(FurScript);
-      script.material = material;
 
       shaderData.setTexture("u_mainTex", baseTexture);
       shaderData.setTexture("u_layerTex", layerTexture);
@@ -137,7 +181,6 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
       randomGravityScript.shaderData = shaderData;
 
       const debugInfo = {
-        layer: 40,
         u_furLength: 0.5,
         uvScale: 5,
         uvOffset: 0.5,
@@ -148,9 +191,6 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
         }
       };
 
-      gui.add(debugInfo, "layer", 1, 40, 1).onChange((v) => {
-        script.layer = v;
-      });
       gui.add(debugInfo, "u_furLength", 0, 1, 0.01).onChange((v) => {
         shaderData.setFloat("u_furLength", v);
       });
@@ -158,7 +198,7 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
         const value = shaderData.getVector4("u_uvTilingOffset");
         value.x = value.y = v;
       });
-      gui.add(debugInfo, "uvOffset", 0, 1, 0.01).onChange((v) => {
+      gui.add(debugInfo, "uvOffset", -1, 1, 0.01).onChange((v) => {
         const value = shaderData.getVector4("u_uvTilingOffset");
         value.z = value.w = v;
       });
@@ -166,33 +206,3 @@ WebGLEngine.create({ canvas: "canvas", shaderLab }).then((engine) => {
       engine.run();
     });
 });
-
-class FurScript extends Script {
-  material: BaseMaterial;
-  layer = 40;
-  onEndRender(camera: Camera): void {
-    const shaderData = this.material.shaderData;
-    const step = 1 / this.layer;
-    const oriCameraClearFlag = camera.clearFlags;
-    camera.clearFlags = CameraClearFlags.None;
-    this.material.isTransparent = true;
-    for (let i = 1; i < this.layer; i++) {
-      shaderData.setFloat("u_furOffset", step * i);
-      camera.render();
-    }
-
-    // revert
-    shaderData.setFloat("u_furOffset", 0);
-    this.material.isTransparent = false;
-    camera.clearFlags = oriCameraClearFlag;
-  }
-}
-
-class RandomGravityScript extends Script {
-  shaderData: ShaderData;
-  progress = 0;
-  onUpdate(deltaTime: number) {
-    const progress = 0.5 + Math.cos((this.progress = this.progress + deltaTime * 2)) / 2;
-    this.shaderData.setFloat("u_gravityIntensity", progress);
-  }
-}
