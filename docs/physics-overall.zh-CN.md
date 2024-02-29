@@ -12,10 +12,14 @@ label: Physics
 
 对于需要使用各种物理组件，以及 `InputManager` 等需要 Raycast 拾取的场景，都需要在使用之前初始化物理引擎。目前 Galacean 引擎提供两种内置的物理引擎后端实现：
 
-1. [physics-lite](https://github.com/galacean/engine/tree/main/packages/physics-lite)
-2. [physics-physx](https://github.com/galacean/engine/tree/main/packages/physics-physx)
+ - [physics-lite](https://github.com/galacean/engine/tree/main/packages/physics-lite)
+ - [physics-physx](https://github.com/galacean/engine/tree/main/packages/physics-physx)
 
-初始化引擎时只需要将这两个后端的对象传入 `Engine` 中即可：
+开发者可以在 [主菜单](${docs}interface-menu) 界面打开的 **项目设置** 面板中设置物理后端。
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*4gzGTLID8a8AAAAAAAAAAAAADhuCAQ/original" style="zoom:50%;" />
+
+若通过脚本初始化引擎，只需要将物理后端对象传入 `Engine` 中即可：
 
 ```typescript
 import {LitePhysics} from "@galacean/engine-physics-lite";
