@@ -30,21 +30,6 @@ Shader "ShaderName" {
 }
 ```
 
-## `ShaderLab` 初始化
-
-```ts
-import { ShaderLab } from "@galacean/engine-shaderlab";
-
-const shaderLab = new ShaderLab();
-// 使用ShaderLab初始化Engine
-const engine = await WebGLEngine.create({ canvas: "canvas", shaderLab });
-
-......
-
-// 直接使用ShaderLab创建Shader
-const shader = Shader.create(galaceanShaderCode);
-```
-
 ## ShaderLab 语法标准
 
 ### Shader
@@ -52,7 +37,7 @@ const shader = Shader.create(galaceanShaderCode);
 ```glsl
 Shader "ShaderName" {
   ...
-  // 全局变量区：变量声明，结构体声明，渲染状态声明
+  // 全局变量区：变量声明，结构体声明，渲染状态声明，材质属性定义
   ...
   SubShader "SubShaderName" {
     ...
@@ -62,6 +47,88 @@ Shader "ShaderName" {
 ```
 
 ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎渲染设置相关信息的集合封装，它允许在同一个`Shader`对象中定义多个着色器程序，并告诉 Galacean 在渲染过程中如何选择使用它们。`Shader` 对象具有嵌套的结构，包含 `SubShader` 和 `Pass` 子结构。
+
+### 材质属性定义
+
+```glsl
+// Uniform
+EditorProperties
+{
+  material_BaseColor("Offset unit scale", Color) = (1,1,1,1);
+  ...
+
+  Header("Emissive")
+  {
+    material_EmissiveColor("Emissive color", Color) = (1,1,1,1);
+    ...
+  }
+  ...
+}
+
+// 宏
+EditorMacros
+{
+  [On] UV_OFFSET("UV Offset", Range(1,100)) = 10;
+  ...
+}
+```
+
+此模块用于定义绑定该 Shader 的材质在编辑器 Inspector 面板中的 UI 展示。ShaderLab 材质属性对宏属性和其它 Uniform 属性使用`EditorProperties`和`EditorMacros`进行分开声明，其声明格式为：
+
+1. Uniform 属性
+
+   ```glsl
+   EditorProperties {
+     propertyName("label in Inspector", type) [= defaultValue];
+     ...
+     [ Header("blockName") {
+         propertyName("label in Inspector", type) [= defaultValue];
+         ...
+     } ]
+   }
+   ```
+
+   > 可以使用嵌套`Header`块对材质属性进行层级分类。
+
+   支持的类型有
+
+   | Type | Example |
+   | :-: | :-- |
+   | Bool | propertyName("Property Description", Boolean) = true; |
+   | Int | propertyName("Property Description", Int) = 1; <br/>propertyName("Property Description", Range(0,8)) = 1 |
+   | Float | propertyName("Property Description", FLoat) = 0.5; <br/>propertyName("Property Description", Range(0.0, 1.0)) = 0.5; |
+   | Texture2D | propertyName("Property Description", Texture2D); |
+   | TextureCube | propertyName("Property Description", TextureCube); |
+   | Color | propertyName("Property Description", Color) = (0.25, 0.5, 0.5, 1); |
+   | Vector2 | propertyName("Property Description", Vector2) = (0.25, 0.5); |
+   | Vector3 | propertyName("Property Description", Vector3) = (0.25, 0.5, 0.5); |
+   | Vector4 | propertyName("Property Description", Vector4) = (0.25, 0.5, 0.5, 1.0); |
+
+2. 宏属性
+
+   ```glsl
+   EditorMacros {
+     [\[Off/On\]] propertyName("label in Inspector"[, type]) [= defaultValue];
+     ...
+     [ Header("blockName") {
+         [\[Off/On\]] propertyName("label in Inspector"[, type]) [= defaultValue];
+         ...
+     } ]
+   }
+   ```
+
+   均包含开启和禁用功能，初始化通过 `[On/Off]` 指令指定，其类型包含
+
+   | Type | Example |
+   | :-: | :-- |
+   | 无(开关宏) | macroName("Macro Description"); |
+   | Bool | macroName("Macro Description", Boolean) = true; |
+   | Int | macroName("Macro Description", Int) = 1; <br/> macroName("Macro Description", Range(0,8)) = 1; |
+   | Float | macroName("Macro Description", FLoat) = 0.5; <br/> macroName("Macro Description", Range(0.0, 1.0)) = 0.5; |
+   | Color | macroName("Macro Description", Color) = (0.25, 0.5, 0.5, 1); |
+   | Vector2 | macroName("Macro Description", Vector2) = (0.25, 0.5); |
+   | Vector3 | macroName("Macro Description", Vector3) = (0.25, 0.5, 0.5); |
+   | Vector4 | macroName("Macro Description", Vector4) = (0.25, 0.5, 0.5, 1.0); |
 
 ### 全局变量
 
@@ -272,18 +339,27 @@ Pass "PassName" {
 
 ### `include` 宏
 
-为了方便代码片段复用，ShaderLab 提供了 shader 代码片段注册方法。
+为了方便代码段复用，ShaderLab 中可以如下使用 `include` 宏进行代码段引用，后续编译过程中会被自动扩展替换。
+
+```glsl
+#include "{includeKey}"
+```
+
+为了能使代码段可以通过 `include` 宏进行引用，我们有 2 种方式进行代码段声明：
+
+1. 编辑器中创建 着色器 / 着色器片段
+
+<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*8PtDQI7QzosAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+
+创建的代码段 `include key` 为该文件在工程中的文件路径，比如 `/Root/Effect.glsl`
+
+2. 脚本中显示注册代码段
 
 ```ts
 import { ShaderFactory } from '@galacean/engine';
 
-ShaderFactory.registerInclude('common_shader', commonSource);
-```
-
-代码片段注册后通过`include`宏进行代码片段替换
-
-```glsl
-#include <common_shader>
+const commonSource = `// shader chunk`;
+ShaderFactory.registerInclude('includeKey', commonSource);
 ```
 
 ## 当前不支持的 GLSL 语法格式
@@ -311,6 +387,41 @@ ShaderFactory.registerInclude('common_shader', commonSource);
        break;
      }
      ```
+
+## 编辑器使用
+
+1. 创建着色器
+
+   > 编辑器中可以添加 3 种 ShaderLab 模板: 自定义、PBR、和 着色器片段
+
+   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*8PtDQI7QzosAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+
+2. 双击着色器进入代码编辑页进行编辑
+
+   > 未来版本会推出 Galacean VSCode 插件并提供语法错误提示和自动补全功能以及代码同步功能，敬请期待
+
+   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*Djs2RJsoPawAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+
+3. 材质绑定 Shader，在 Inspector 面板中对 ShaderLab 中定义好的材质属性进行调整
+
+   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*6CdGRLSSU2gAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+
+## 脚本使用
+
+### `ShaderLab` 初始化
+
+```ts
+import { ShaderLab } from "@galacean/engine-shaderlab";
+
+const shaderLab = new ShaderLab();
+// 使用ShaderLab初始化Engine
+const engine = await WebGLEngine.create({ canvas: "canvas", shaderLab });
+
+......
+
+// 直接使用ShaderLab创建Shader
+const shader = Shader.create(galaceanShaderCode);
+```
 
 ## 一个利用多 Pass 技术实现平面阴影的示例
 
