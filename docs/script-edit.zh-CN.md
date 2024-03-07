@@ -5,104 +5,65 @@ type: 脚本
 label: Script
 ---
 
-## 脚本编辑器
-用户可以在线使用脚本编辑器编辑脚本，并且实时预览场景，以及调试事件查看日志。
+## 代码编辑器
 
-创建脚本之后，在 `资源面板` 中双击击你想要编辑的脚本, 就会打开该脚本的编辑页面：
-![CodeEditor](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*26NQRZbLtAIAAAAAAAAAAAAADqiTAQ/original)
+![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*oXB7Q7j8ngMAAAAAAAAAAAAADqiTAQ/original)
 
-### 代码编辑器
-代码编辑区会有 Galacean 使用默认模板创建的脚本代码，Galacean 的脚本编辑使用 [Typescript](https://www.typescriptlang.org/) 语言。默认代码如下：
-```typescript
-import { Script } from '@galacean/engine';
+Galacean Editor 提供了一个功能强大的代码编辑器，提供了代码提示，第三方包引入，引擎事件调试，脚本参数调试，项目实时预览等多种能力，可帮助你快速编辑和调试代码。
 
-export default class extends Script {
-  /**
-   * 第一次触发可用状态时调用,只调用一次。
-   */
-  // onAwake() {}
+> 想要详细了解 Galacean 的脚本系统的，请阅读 [脚本系统](${docs}script)
 
-  /**
-   * 触发为可用状态时调用。
-   */
-  // onEnable() {}
+### 代码编辑
 
-  /**
-   * 第一次执行帧级循环前调用，只调用一次。
-   */
-  // onStart() {}
+在场景编辑器中创建脚本资产后，双击该脚本即可打开代码编辑器。Galacean 中的脚本需使用 [Typescript](https://www.typescriptlang.org/) 语言编写，同时新脚本默认基于内置模板创建。另外，Galacean 的代码编辑器基于 Monaco，快捷键与 VSCode 类似。修改脚本后，按 `Ctrl/⌘ + S` 保存，右侧实时预览区展现最新场景效果。
 
-  /**
-   * 主更新，逐帧调用。
-   * @param deltaTime - 帧间隔时间
-   */
-  onUpdate(deltaTime: number) {}
+> 提示：Galacean 代码编辑器目前支持 `.ts` `.gs` 和 `.glsl` 的文件编辑
 
-  /**
-   * 延迟更新，在执行内部动画逻辑后调用，逐帧调用。
-   */
-  // onLateUpdate() {}
+### 文件预览
 
-  /**
-   * 触发为禁用状态时调用。
-   */
-  // onDisable() {}
+![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*o51FQa9Uh0MAAAAAAAAAAAAADqiTAQ/original)
 
-  /**
-   * 在被销毁帧的最后调用。
-   */
-  // onDestroy() {}
-}
-```
+1. **文件搜索** 可快速搜索项目中的文件
+2. **代码筛选** 文件树是否仅显示代码文件 ( `.ts` `.gs` `.glsl` )
+3. **内置文件** 用来显示哪些文件是不可编辑的内部文件
+4. **展开/隐藏** 可切换文件夹的展开或隐藏
+5. **代码文件** 可编辑的代码文件会显示对应的文件类型的缩略图标
 
-> 注意：不要写空函数，需要使用某个生命周期函数时再写，这样性能更好。
+### 引入第三方包
 
-脚本的详细介绍见：[脚本组件](${docs}script)
+代码编辑器内置了与项目相对应的引擎，可自动提供引擎 API 的智能提示，从而帮助你快速实现基于引擎的逻辑。但大多数情况下你都需要引入 Galacean 生态包或其他第三方包来增强功能。
 
-当你修改完毕后，按 `Ctrl/⌘ + S` 代码即可保存，右侧的实时预览区即可展现最新的效果。
+![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*Nc2MQqOeWxgAAAAAAAAAAAAADqiTAQ/original)
 
-> 提示： Galacean 的代码编辑器使用了 VSCode 团队开源的 Monaco 编辑器，编辑体验与快捷键与 VSCode 基本一致
+1. **搜索框** 在搜索框输入包名，按下 回车键，即可快速拉取包的版本列表
+2. **版本选择** 默认情况下使用 `latest` 版本
+3. **导入按钮** 选择好包名和版本，点击导入按钮即可将三方包的类型信息加载到工作区
+4. **包列表** 此处会列出当前项目依赖的所有第三方包
+5. **版本切换** 此处可切换已导入的包的版本，切换后会将新的类型信息加载到工作区
 
- Galacean 的代码编辑器还具有代码提示的功能，可以帮助你更加方便的编写代码。
+> 试一下：在搜索框输入 `@galacean/engine-toolkit`，点击「引入」按钮，然后在代码中使用 `import { OrbitControl } from '@galacean/engine-toolkit` 来引入自由相机组件。
 
 ### 实时预览区
-在实时预览区你可以调整显示设备以观察项目的兼容性：
 
-<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*7JWrTJnt96sAAAAAAAAAAAAADqiTAQ/original" style="zoom:50%;">
+Galacean 的代码编辑器提供实时预览功能。保存代码后，预览区会自动更新，从而让你快速查看代码的执行结果。
 
-### 事件调试面板
-事件通信区给开发者提供了方便的事件收发测试能力，帮助开发者方便的调试项目，详见[事件通信](${docs}script-communication)。
+![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*dCHqRIMdHbkAAAAAAAAAAAAADqiTAQ/original)
 
-## 引入依赖包
+1. **拖动按钮** 按住来拖动模拟器。将模拟器拖到屏幕右边缘，即可将其固定在右侧面板上。
+2. **统计信息切换** 点击来切换场景统计信息的显示状态
+3. **新窗口打开** 在新窗口中来打开项目预览页面
+4. **脚本参数编辑** 如果当前场景中激活的脚本，拥有可配置的参数，即可打开此面板来实时调整脚本参数。想要了解脚本参数的详细信息，请查看 [脚本系统](${docs}script-attributes)
+5. **关闭按钮** 点击来关闭模拟器。关闭后，屏幕右上方提供一个显示按钮，点击即可重新打开模拟器
 
-当前的脚本编辑器暂不支持依赖包管理，如需引入外部依赖包，可按以下流程操作。
+### 事件调试
 
-### 外部依赖包代码
+在代码编辑器中，我们提供了一个事件调试面板，从而帮助你快速调试场景中的事件。
 
-以 `@tweenjs/tween.js` 为例，**首先**需在对应的[包管理网站](https://www.npmjs.com/)上搜索包名：
+![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*xtmMT676qvcAAAAAAAAAAAAADqiTAQ/original)
 
-![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*MF67QZFZXt8AAAAAAAAAAAAADleLAQ/original)
+1. **事件列表** Galacean Editor 会自动收集场景中的所有事件名并显示在这里
+2. **事件参数配置** 你可以点击此按钮来配置触发事件时所携带的参数，参数的配置使用 `JSON` 格式编写
+3. **事件触发按钮** 点击此按钮会触发场景中的对应事件
 
-**找到依赖库后**，点击 `Versions` 标签选择需要依赖包的版本（只需点选 `Version History` 下相应版本即可）。
+> 注意，脚本组件一定要绑定到某个实体上，才会展示事件列表。
 
-![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*YzUsQ50BLWQAAAAAAAAAAAAADleLAQ/original)
-
-**确定版本后**，点击 `Code` 标签，找到需要的代码文件（此处我们使用 **esm** 产物）。
-
-![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*kKS_Tb8E2wQAAAAAAAAAAAAADleLAQ/original)
-
-### 创建 & 拷贝
-
-按照 [创建脚本](${docs}script-create) 的流程创建脚本，并将依赖包的代码拷贝至脚本中：
-
-![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*CfrYQ7rt9iwAAAAAAAAAAAAADleLAQ/original)
-
-### 引入
-
-只要 `TweenJS.ts` 中 export 的对象都可以供外部使用，引入方式如下：
-
-```
-import { update, Tween, Easing } from "./TweenJS";
-```
-
-![](https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*OxC1TKEE4K8AAAAAAAAAAAAADleLAQ/original)

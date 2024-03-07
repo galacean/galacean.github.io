@@ -5,16 +5,14 @@ type: 脚本
 label: Script
 ---
 
-除了[内置组件](${docs}core-component)之外，Galacean 引擎还提供强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，脚本扩展自 [Script](${api}core/Script) 基类，用户可以通过它来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
+除了[内置组件](${docs}core-component)之外，Galacean 引擎还提供了强大的脚本系统。脚本系统是衔接引擎能力和游戏逻辑的纽带，它扩展自 [Script](${api}core/Script) 基类，你可以基于此来扩展引擎的功能，也可以脚本组件提供的生命周期钩子函数中编写自己的游戏逻辑代码。
 
 ## 添加脚本组件
 
 为实体添加脚本可以这样做：
+
 ```typescript
-import {
-	Entity,
-	Script
-} from "@galacean/engine"
+import { Entity, Script } from "@galacean/engine"
 
 // 1.创建实体
 const entity = new Entity(engine);
@@ -29,15 +27,16 @@ entity.addComponent(MyScript);
 ```
 
 
-## 组件生命周期函数
+## 脚本的生命周期
 
 Galacean 为用户提供了丰富的生命周期回调函数，用户只要定义特定的回调函数，Galacean 就会在特定的时期自动执行相关脚本，用户不需要手工调用它们。目前提供给用户的生命周期回调函数如下:
 
 ![脚本生命周期-zh](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_8C-TJP2UIgAAAAAAAAAAAAAARQnAQ)
 
-值得注意的是，**只有当实体被作为相机使用**，也就是添加了相机组件，[onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 才会被调用的。  
+> [onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 这两个生命周期与其他的有些不同。
+> 
+> **只有当实体被作为相机使用** 也就是添加了相机组件时，他们才会被调用。
 
-每个生命周周期回调函数说明：
 ### [**onAwake**](${api}core/Script#onAwake)
 
 如果脚本添加到的实体的 [isActiveInHierarchy](${api}core/Entity#isactiveinhierarchy) 为 `true`，则在脚本初始化时回调函数将被调用，如果[isActiveInHierarchy](${api}core/Entity#isActiveInHierarchy) 为 `false`，则在实体被激活，即 [isActive](${api}core/Entity#isActive) 被设为 `true` 时被调用。 `onAwake` 只会被调用一次，并且在所有生命周期的最前面，通常我们会在 `onAwake` 中做一些初始化相关的操作：
@@ -73,7 +72,7 @@ onUpdate() {
 }
 ```
 
-值得注意的是 Galacean 是批量执行完 `onStart` 回调之后再批量执行 `onUpdate` 这样做的好处是，可以在 `onUpdate` 中访问其他实体初始化的值：
+需要注意的是，Galacean 在批量执行完 `onStart` 回调后再批量执行 `onUpdate` 回调。这样做的好处是可以在 `onUpdate` 中访问其他实体初始化的值。
 
 ```typescript
 import { TheScript } from './TheScript'
@@ -146,11 +145,11 @@ onLateUpdate(deltaTime: number) {
 ```
 ### [**onBeginRender**](${api}core/Script#onBeginRender)
 
-当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [render](${api}core/Camera#render) 方法调用之前 `onBeginRender` 回调将被调用。
+当实体被作为相机使用（也就是添加了相机组件），那么当相机组件的 [render](${api}core/Camera#render) 方法调用之前 `onBeginRender` 回调将被调用。
 
 ### [**onEndRender**](${api}core/Script#onEndRender)
 
-当实体被作为相机使用，也就是添加了相机组件，那么当相机组件的 [render](${api}core/Camera#render) 方法调用之后 `onEndRender` 回调将被调用。
+当实体被作为相机使用（也就是添加了相机组件），那么当相机组件的 [render](${api}core/Camera#render) 方法调用之后 `onEndRender` 回调将被调用。
 
 ### [**onDestroy**](${api}core/Script#onDestroy)
 
@@ -160,28 +159,19 @@ onLateUpdate(deltaTime: number) {
 
 详见[输入交互](${docs}input)。
 
-[实体](${docs}core-entity)是脚本的主要操作对象，以下展示一些常用操作：
+## 实体操作
 
-## 常用实体操作
-### 变换
+[实体](${docs}core-entity)是脚本的主要操作对象。你可以在编辑器场景检查器里修改节点和组件，也能在脚本中动态修改。脚本能够响应玩家输入，能够修改、创建和销毁实体或组件，从而实现各种各样的游戏逻辑。
 
-以旋转为例，在 [onUpdate](${api}core/Script#onUpdate) 中通过 [setRotation](${api}core/Transform#setRotation) 方法来旋转实体：
+### 访问实体和组件
 
-```typescript
-this.entity.transform.setRotation(0, 5, 0);
-```
-
-### 访问实体和其他组件
-
-你可以在编辑器场景检查器里修改节点和组件，也能在脚本中动态修改。脚本能够响应玩家输入，能够修改、创建和销毁节点或组件，实现各种各样的游戏逻辑。要实现这些效果，你需要先在脚本中获得你要修改的节点或组件。这里我们简单地介绍如何在脚本内:
-
-#### 获得组件所在的实体
-
-我们可以在脚本的任意生命周期内获得它所绑定的实体，如：
+你可以在脚本的任意生命周期内获得它所绑定的实体，如：
 
 ```typescript
-onAwake() {
-	const entity = this.entity;
+class MyScript extends Script {
+	onAwake() {
+		const entity = this.entity;
+	}
 }
 ```
 
@@ -191,16 +181,24 @@ onAwake() {
 
 ```typescript
 onAwake() {
-	const component = this.entity.getComponent(o3.Model);
+ 	const components = []
+	this.entity.getComponents(o3.Model, components);
 }
 ```
 
-有些时候可能会有多个同一类型的组件，上面的方法只会返回第一个找到的组件，如果需要找到所有组件可以用 [getComponents](${api}core/Entity#getComponents) ：
+有些时候可能会有多个同一类型的组件，上面的方法只会返回第一个找到的组件，如果需要找到所有组件可以用 [getComponents](${api}core/Entity#getComponents)。
+
+### 变换
+
+以旋转为例，在 [onUpdate](${api}core/Script#onUpdate) 中通过 [setRotation](${api}core/Transform#setRotation) 方法来旋转实体：
+
+```typescript
+this.entity.transform.setRotation(0, 5, 0);
+```
 
 ```typescript
 onAwake() {
- 	const components = []
-	this.entity.getComponents(o3.Model, components);
+	const component = this.entity.getComponent(o3.Model);
 }
 ```
 

@@ -5,16 +5,12 @@ type: 脚本
 label: Script
 ---
 
-[脚本组件](${docs}script)是引擎提供给开发者的重要的扩展能力，在 Galacean Editor 中，脚本也是一种资源。
-
+[脚本组件](${docs}script)是引擎提供给开发者的重要的扩展能力，在 Galacean 编辑器中，脚本也是一种资产。
 
 ## 创建脚本
-创建脚本有两种方式：
-1. 在 `资源面板` 右上角通过点击 `+` 按钮，在弹出的菜单中点击 `脚本` 即可创建一个脚本资源。
-![image-20210720204826392](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*yl9gR7Jm1s8AAAAAAAAAAAAADgeMAQ/original)
 
-2. 在 `资源面板` 中通过右键菜单点击 `创建`，在二级菜单中选择 `脚本` 即可创建一个脚本资源。
-![image](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*tx3GT7kGGI4AAAAAAAAAAAAADgeMAQ/original)
+在 `资源面板` 右上角通过点击 `+` 按钮，在弹出的菜单中点击 `脚本` 即可创建一个脚本资源。
+![image-20210720204826392](https://mdn.alipayobjects.com/huamei_vrnqmp/afts/img/A*yl9gR7Jm1s8AAAAAAAAAAAAADgeMAQ/original)
 
 ## 绑定脚本
 创建脚本后，需要将其绑定到节点上才能运行：
