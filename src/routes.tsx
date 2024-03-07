@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import Api from './components/Api';
 import Doc from './components/doc';
 import ErrorPage from './components/ErrorPage';
@@ -9,7 +9,7 @@ import GLTFView from './components/GltfViewer/gltf-viewer';
 import Header from './components/header';
 import Home from './components/home';
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: '/docs/:ver/:lang/:docTitle',
     element: (
