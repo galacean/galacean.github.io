@@ -5,12 +5,10 @@ type: 基础知识
 label: Basics
 ---
 
-**Galacean Engine**  是一套 Web 为先、移动优先、开源共建的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。它包含了[渲染](${docs}mesh-renderer)、[物理](${docs}physics-overall)、[动画](${docs}animation-system)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器，帮助你在浏览器上创作绚丽的 2D/3D 互动应用。它主要由两部分组成：
+**Galacean Engine** 是一套 Web 为先、移动优先、开源共建的实时互动解决方案，采用组件化架构与 [Typescript](https://www.typescriptlang.org/) 编写。它包含了[渲染](${docs}graphics-renderer)、[物理](${docs}physics-overall)、[动画](${docs}animation-system)和[交互](${docs}input)功能，并提供了具备完善工作流的可视化在线编辑器，帮助你在浏览器上创作绚丽的 2D/3D 互动应用。它主要由两部分组成：
 
 - 编辑器：一个在线 Web 互动创作平台 [Editor](https://galacean.antgroup.com/editor)
 - 运行时：一个 Web 为先、移动优先的高性能的互动运行时 [Runtime](https://github.com/galacean/runtime)，一系列非核心功能和偏业务逻辑定制功能 [Toolkit](https://github.com/galacean/runtime-toolkit)
-
-
 
 ## 编辑器
 
@@ -25,8 +23,6 @@ flowchart LR
 
 通过编辑器可以让技术与美术同学更好地进行协作，你可以在[编辑器首页](https://galacean.antgroup.com/editor)通过项目模板快速开始第一个项目的开发。
 
-
-
 ## 运行时
 
 核心功能由 [Galacean Runtime](https://www.npmjs.com/package/@galacean/runtime) 提供，非核心和偏业务逻辑定制的高级功能由 [Galacean Toolkit](https://github.com/galacean/runtime-toolkit) 提供。你可以通过浏览器在线浏览引擎的各种[示例](https://antg.antgroup.com/#/examples/latest/background)。
@@ -35,12 +31,12 @@ flowchart LR
 
 包括以下子包：
 
-| 功能                                                                                     | 解释                                               | API                              |
-| :--------------------------------------------------------------------------------------- | :------------------------------------------------- | -------------------------------- |
-| [@galacean/engine](https://www.npmjs.com/package/@galacean/engine)   | 核心架构逻辑和核心功能                                     | [API](${api}core)  |
-| [@galacean/engine-physics-lite](https://www.npmjs.com/package/@galacean/engine-physics-lite)   | 轻量级物理引擎                                     | [API](${api}physics-lite)  |
-| [@galacean/engine-physics-physx](https://www.npmjs.com/package/@galacean/engine-physics-physx) | 全功能物理引擎                                     | [API](${api}physics-physx) |
-| [@galacean/engine-draco](https://www.npmjs.com/package/@galacean/engine-draco)                 | Draco 模型压缩                                     | [API](${api}draco)         |
+| 功能                                                                                           | 解释                   | API                        |
+| :--------------------------------------------------------------------------------------------- | :--------------------- | -------------------------- |
+| [@galacean/engine](https://www.npmjs.com/package/@galacean/engine)                             | 核心架构逻辑和核心功能 | [API](${api}core)          |
+| [@galacean/engine-physics-lite](https://www.npmjs.com/package/@galacean/engine-physics-lite)   | 轻量级物理引擎         | [API](${api}physics-lite)  |
+| [@galacean/engine-physics-physx](https://www.npmjs.com/package/@galacean/engine-physics-physx) | 全功能物理引擎         | [API](${api}physics-physx) |
+| [@galacean/engine-draco](https://www.npmjs.com/package/@galacean/engine-draco)                 | Draco 模型压缩         | [API](${api}draco)         |
 
 你可以通过 [NPM](https://docs.npmjs.com/) 的方式进行安装：
 
@@ -60,12 +56,12 @@ import { WebGLEngine, Camera } from "@galacean/engine";
 
 非核心功能和偏业务逻辑定制功能由 galacean-toolkit 包提供（完成功能列表请查看[engine-toolkit](https://github.com/galacean/engine-toolkit/tree/main)）：
 
-| 功能                                                                                                               | 解释         | API                              |
-| :----------------------------------------------------------------------------------------------------------------- | :----------- | :------------------------------- |
-| [@galacean/engine-toolkit-controls](https://www.npmjs.com/package/@galacean/engine-toolkit-controls)                     | 控制器       | [Doc](${docs}controls)           |
+| 功能                                                                                                                     | 解释         | API                                    |
+| :----------------------------------------------------------------------------------------------------------------------- | :----------- | :------------------------------------- |
+| [@galacean/engine-toolkit-controls](https://www.npmjs.com/package/@galacean/engine-toolkit-controls)                     | 控制器       | [Doc](${docs}graphics-camera-control)  |
 | [@galacean/engine-toolkit-framebuffer-picker](https://www.npmjs.com/package/@galacean/engine-toolkit-framebuffer-picker) | 帧缓冲拾取   | [Doc](${docs}input-framebuffer-picker) |
-| [@galacean/engine-toolkit-stats](https://www.npmjs.com/package/@galacean/engine-toolkit-stats)                           | 引擎统计面板 | [Doc](${docs}performance-stats)              |
-| ......                                                                                                             |              |                                  |
+| [@galacean/engine-toolkit-stats](https://www.npmjs.com/package/@galacean/engine-toolkit-stats)                           | 引擎统计面板 | [Doc](${docs}performance-stats)        |
+| ......                                                                                                                   |              |                                        |
 
 你可以通过 [NPM](https://docs.npmjs.com/) 的方式进行安装：
 
@@ -73,7 +69,7 @@ import { WebGLEngine, Camera } from "@galacean/engine";
 npm install --save @galacean/engine-toolkit-controls
 ```
 
- 然后在业务中引入使用：
+然后在业务中引入使用：
 
 ```typescript
 import { OrbitControl } from " @galacean/engine-toolkit-controls";
@@ -83,23 +79,21 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 
 另外还有一些二方生态包，引入和使用方式和引擎工具包相同：
 
-| 功能                                                                                   | 解释        | API                     |
-| :------------------------------------------------------------------------------------- | :---------- | :---------------------- |
-| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine) | Spine 动画  | [Doc](${doc}graphics-spine)  |
-| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie)             | Lottie 动画 | [Doc](${doc}graphics-lottie) |
+| 功能                                                                             | 解释        | API                            |
+| :------------------------------------------------------------------------------- | :---------- | :----------------------------- |
+| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine)   | Spine 动画  | [Doc](${doc}graphics-2d-spine) |
+| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie 动画 | [Doc](${doc}graphics-lottie)   |
 
 ### 兼容性
 
 可以在支持 WebGL 的环境下运行，到目前为止，所有主流的移动端浏览器与桌面浏览器都支持这一标准。可以在 [CanIUse](https://caniuse.com/?search=webgl) 上检测运行环境的兼容性。
 
-此外，**Galacean Runtime** 还支持在[支付宝/淘宝小程序](${docs}miniprogram)中运行，同时也有开发者在社区贡献了[微信小程序/游戏的适配方案](https://github.com/deepkolos/platformize)。对于一些需要额外考虑兼容性的功能模块，当前的适配方案如下：
+此外，**Galacean Runtime** 还支持在[支付宝/淘宝小程序](${docs}interface-publish)中运行，同时也有开发者在社区贡献了[微信小程序/游戏的适配方案](https://github.com/deepkolos/platformize)。对于一些需要额外考虑兼容性的功能模块，当前的适配方案如下：
 
-| 模块                            | 兼容考虑                                                 | 具体文档                                                     |
-| :------------------------------ | :------------------------------------------------------- | :----------------------------------------------------------- |
+| 模块                            | 兼容考虑                                                 | 具体文档                                                                                |
+| :------------------------------ | :------------------------------------------------------- | :-------------------------------------------------------------------------------------- |
 | [鼠标与触控](${docs}input)      | [PointerEvent](https://caniuse.com/?search=PointerEvent) | 兼容请参照 [polyfill-pointer-event](https://github.com/galacean/polyfill-pointer-event) |
-| [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 运行环境需支持 WebAssembly                                   |
-
-
+| [PhysX](${docs}physics-overall) | [WebAssembly](https://caniuse.com/?search=wasm)          | 运行环境需支持 WebAssembly                                                              |
 
 ### 版本管理
 

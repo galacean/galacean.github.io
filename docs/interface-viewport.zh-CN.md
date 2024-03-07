@@ -6,166 +6,83 @@ group: 界面
 label: Basics/Interface
 ---
 
-# 简介
+## 简介
 
-视图窗口是用于选择、定位、更改当前场景中各种类型实体及组件的交互式界面。 ![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*KnUgR7hfVrsAAAAAAAAAAAAADtKFAQ/original)
+视图窗口是用于选择、定位、更改当前场景中各种类型实体及组件的交互式界面。 
 
-# 导航
+<img src="https://gw.alipayobjects.com/zos/OasisHub/7883196b-15dd-4a47-9122-394ba802c5db/drag5.gif" alt="drag5" style="zoom:50%;" />
 
-## 标准导航
+## 浏览场景
 
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*eI0bRorCPVQAAAAAAAAAAAAADtKFAQ/original)
+浏览场景有两种方式，分别为标准模式和飞行模式。标准模式是绕着中心视点转，飞行模式适合大型场景浏览，即场景相机在三维空间中前后左右上下移动。
 
-| 操作 | 快捷键 |
-| :-- | :-- |
-| `环绕轨道` | alt + 鼠标左键 |
-| `平移` | alt + command + 鼠标左键， 或者 按下鼠标滚轮 |
-| `放大/缩小` | alt + control + 鼠标左键，或者 滚动鼠标滚轮，或者 触控板上双指轻扫 |
+| 模式 | 操作 | 快捷键 |
+| :-- | :-- | --- |
+| **标准模式** | 环绕轨道 | `alt` + 鼠标左键 |
+|  | 平移 | `alt` + `command` + 鼠标左键， 或者 按下鼠标滚轮 |
+|  | 缩放 | `alt` + `control` + 鼠标左键，或者 滚动鼠标滚轮，或者 触控板上双指轻扫 |
+| **飞行模式** | 围绕相机观察 | alt + 鼠标右键 |
+|          | 前进 |方向键向上，或者 鼠标右键 + `W`|
+|          | 后退 |方向键向下，或者 鼠标右键 + `S`|
+|        | 左平移 |方向键向左，或者 鼠标右键 + `A`|
+|        | 右平移 |方向键向右，或者 鼠标右键 + `D`|
+|      | 向上移动              |鼠标右键 + `E`|
+|      | 向下移动              |鼠标右键 + `Q`|
+|  | 改变飞行速度   |鼠标右键 + 鼠标滚轮|
 
-围绕中心视点旋转视图。
-
-- 单击并按住鼠标左键
-- 按住 Alt (Windows) 或 Option (macOS)
-- （环绕轨道）拖动鼠标绕中心视点移动视图
-- （平移）叠加按住 Command， 拖动鼠标移动场景相机
-- （缩放）叠加按住 Control，拖动鼠标缩放场景
-
-或者
-
-- （平移）按住 鼠标滚轮， 拖动鼠标移动场景相机
-- （缩放）滚动 鼠标滚轮，或者在触控板上双指轻扫，缩放场景
-
-## 飞行模式
-
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*afL_QpOSDocAAAAAAAAAAAAADtKFAQ/original)
-
-| 操作           | 快捷键                        |
-| :------------- | :---------------------------- |
-| `围绕相机观察` | alt + 鼠标右键                |
-| `前进`         | 方向键向上，或者 鼠标右键 + W |
-| `后退`         | 方向键向下，或者 鼠标右键 + S |
-| `左平移`       | 方向键向左，或者 鼠标右键 + A |
-| `右平移`       | 方向键向右，或者 鼠标右键 + D |
-| `向上移动`     | 鼠标右键 + E                  |
-| `向下移动`     | 鼠标右键 + Q                  |
-| `改变飞行速度` | 鼠标右键 + 鼠标滚轮           |
-
-在大型场景中我们通常会使用第一人称控件，即场景相机在三维空间中前后左右上下移动，而不是标准导航中绕着中心视点转。
-
-- 单击并按住鼠标右键
-- 按住 **Alt (Windows)** 或 **Option (macOS)**，拖动鼠标绕场景相机移动视图
-- 使用 **WASD** 键向左/向右/向前/向后移动，使用 **Q** 和 **E** 键向上和向下移动
-- 滚动 鼠标滚轮 可以改变移动速度
-
-或者
-
-- 使用 方向键向左/向右/向前/向后移动
-
-## 导航部件
-
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*mLsJQJoi_DwAAAAAAAAAAAAADtKFAQ/original)
-
-用于显示场景相机的当前方向，并且可以通过鼠标操作快速修改视角和投影模式（正交/透视）。
-
-<h2 id = '6'> 聚焦 </h2>
-
-| 图标 | 操作 | 快捷键 |
-| :-- | :-- | :-- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*dIQJQLEsSvQAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `聚焦选中物体` | F |
-
-将场景相机聚焦于选中实体。锚点的选择会影响聚焦目标为中心锚点，或枢纽锚点。
-
-# 选择
-
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*VK62T7Q0TSkAAAAAAAAAAAAADtKFAQ/original)
-
-可以在层级中对场景中实体进行选择，也可以直接在视图窗口点选。
-
-选中的实体轮廓颜色为橙色，子节点轮廓为蓝色。
-
-# 工具栏
+## 工具栏
 
 工具栏位于视图窗口中上，鼠标停留会出现每一项的快捷键，或者内容说明。
 
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c1268178-0247-4e8a-8932-00e376a3f6f6/image-20240131181207870.png" alt="image-20240131181207870" style="zoom:50%;" />
 
-从左到右依次为：
+| 图标                                                         | 名称              | 解释                                                         | 快捷键          |
+| --- | --- | --- | --- |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/1bfc4f69-a88e-4efb-a001-cc1d145d9639/image-20240131175906508.png" alt="image-20240131175906508" style="zoom:50%;" /> | 拖动              | 拖动画面                                                     |                 |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/538ee5d8-a97c-4d88-98c7-f207873d74ab/image-20240131180117064.png" alt="image-20240131180117064" style="zoom:50%;" /><br /><img src="https://gw.alipayobjects.com/zos/OasisHub/72016aba-4f42-4683-9d26-b2525cd207be/image-20240131180217044.png" alt="image-20240131180217044" style="zoom:50%;" /><br /><img src="https://gw.alipayobjects.com/zos/OasisHub/56cdaed5-fddf-4aa7-813d-8c00056c2802/image-20240131180256738.png" alt="image-20240131180256738" style="zoom:50%;" /> | 移动<br />旋转<br />缩放 | 对选中实体进行变换操作 | `W` <br /> `E` <br />`R` |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/33b47020-ab3d-4acd-baa9-b7d111e1c5d0/image-20240131180403373.png" alt="image-20240131180403373" style="zoom:50%;" /><br /><img src="https://gw.alipayobjects.com/zos/OasisHub/40faa545-0352-47c6-a704-880821e542ca/image-20240131180513384.png" alt="image-20240131180513384" style="zoom:50%;" /> | 中心锚点/枢纽锚点 | 切换选中实体的锚点 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/41fa937d-f4e8-4475-a0a5-9278c3ce69da/image-20240131180709163.png" alt="image-20240131180709163" style="zoom:50%;" /><br /><img src="https://gw.alipayobjects.com/zos/OasisHub/664c3454-9c2c-4932-a6e1-841e20cef76d/image-20240131180731465.png" alt="image-20240131180731465" style="zoom:50%;" /> | 本地坐标/世界坐标 | 切换选中实体的坐标 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/57a9b6be-14ff-4eb3-994f-2175bd7c4d75/image-20240131181105676.png" alt="image-20240131181105676" style="zoom:50%;" /> | 聚焦 | 场景相机聚焦到的选中实体 | `F` |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/dd1abc49-d43b-4a4b-8941-e3fc5e3575ec/image-20240131181429677.png" alt="image-20240131181429677" style="zoom:50%;" /> | 场景相机 | 场景相机菜单包含用于配置场景相机的选项，主要用来解决搭建场景时，裁剪面太远或者太近导致看不到物体的问题。这些调整不会影响场景中带有相机组件的实体的设置。 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/cf528af5-d928-4eb5-94b3-849d7c561524/image-20240131181144755.png" alt="image-20240131181144755" style="zoom:50%;" /> | 设置 | 设置菜单包含用于调整视图辅助显示的选项，包括网格、辅助图标（与场景中特定组件相关联的图形，包括相机、直射光、点光源、聚光灯）、 辅助线框 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/f05e1699-9495-49fd-b123-6e501af0e023/image-20240131181242445.png" alt="image-20240131181242445" style="zoom:50%;" /><br /><img src="https://gw.alipayobjects.com/zos/OasisHub/739fb9f1-309b-497a-86b6-f3d4ef89d7ee/image-20240131181524219.png" alt="image-20240131181524219" style="zoom:50%;" /> | 场景相机类型 | 切换透视/正交相机 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/8a596654-17f6-4c97-b18e-b0188b05220d/image-20240131181459432.png" alt="image-20240131181459432" style="zoom:50%;" /><br /><img src="https://gw.alipayobjects.com/zos/OasisHub/7f101795-7966-40b8-a61a-1504a3224e7a/image-20240131181607999.png" alt="image-20240131181607999" style="zoom:50%;" /> | 模式 | 方便在 2D/3D 场景模式间进行点击切换。2D 模式下，导航部件、正交/透视切换关闭，导航中的环绕轨道不再生效。 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/408bf2c2-8238-4c23-98f4-ee02787fd69f/image-20240131182235406.png" alt="image-20240131182235406" style="zoom:50%;" /> | 全屏/复原 | 最大化视图窗口，最小化层级、资产、检查器 |  |
+| <img src="https://gw.alipayobjects.com/zos/OasisHub/c37591e0-6eb0-48ae-9faa-2d5b1a0e7941/image-20240131182303867.png" alt="image-20240131182303867" style="zoom:50%;" /> | 截屏 | 对当前场景进行快照。仅显示场景内用户创建实体，辅助显示的一系列工具，如图标、网格、gizmo 不会被计入其中。进行截屏后，该快照会在首页作为该项目缩略图。 |  |
 
-| 移动 | 旋转 | 缩放 | 锚点 | 坐标 | 聚焦 | 设置 | 场景相机 | 模式 | 全屏/复原 | 截屏 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+### 辅助元素设置界面
 
-<h2 id = '4'> 锚点 </h2>
-确定 Gizmo，以及<strong>聚焦目标</strong>的位置。更改此选项可以更容易地在想要的点周围进行转换。
 
-| 图标 | 选项 | 内容 |
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/78c6a917-3844-4467-893a-1a3533492b8b/image-20240131181825989.png" alt="image-20240131181825989" style="zoom:50%;" />
+
+| 属性                           | 内容                                                         |
+| ------------------------------ | ------------------------------------------------------------ |
+| 网格（Grid）                   | 视图中的网格是否显示                                         |
+| 3D 图标（3D Icons）            | 辅助图标是否根据组件与摄像机的距离进行缩放                   |
+| 导航 Gimzo                     | 用于显示场景相机的当前方向，并且可以通过鼠标操作快速修改视角和投影模式（正交/透视）。打开后会在画面右下角显示。<br /><img src="https://gw.alipayobjects.com/zos/OasisHub/7df797ec-e13d-457f-9990-e304a71935ca/image-20240131184405058.png" alt="image-20240131184405058" style="zoom:50%;" /> |
+| 轮廓显示（Outline）            | 选中某个实体时是否显示轮廓，选中的实体轮廓颜色为橙色，子节点轮廓为蓝色 |
+| 相机（Camera）                 | 以锥体显示选中相机组件                                       |
+| 光源（Light）                  | 显示光源组件                                                 |
+| 静态碰撞体（Static Collider）  | 显示静态碰撞体形状                                           |
+| 动态碰撞体（Dynamic Collider） | 显示动态碰撞体形状                                           |
+
+### 场景相机设置界面
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/c39263d7-5baa-4cae-ba32-54f25d4dd45f/image-20240131185805023.png" alt="image-20240131185805023" style="zoom:50%;" />
+
+| 属性 | 内容 | 默认值 |
 | :-- | :-- | :-- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*A5olSoPK_jMAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `中心锚点` | 选中实体及其子节点包围盒的中心 |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*hniTQL6c-D0AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `枢纽锚点` | 选中实体的世界坐标 |
+| 视角（Fov） | 场景相机的视角 | 60 |
+| 动态裁剪（Dynamic） | 相对选中实体和场景相机位置，自动计算场景相机的近裁面和远裁面 | 关闭 |
+| 近裁面（Near Plane） | 手动调整相对于场景相机的最近点 | 不勾选动态裁剪后开启 |
+| 远裁面（Far Plane） | 手动调整相对于场景相机的最远点 | 不勾选动态裁剪后开启 |
+| 速度（Speed） | 飞行模式下相机的移动速度 | 10 |
 
-<h2 id = '7'> 设置 </h2>
-设置菜单包含用于调整视图辅助显示的选项。包括
 
-- [网格](#1.3)
-- [辅助图标](#1.1)
-- [辅助线框](#1.2)
 
-<h3 id = '1.1'> 网格 </h3>
+## 预览
 
-在场景中沿 xz 轴方向放置的无极网格。用以增强场景空间感。
+选中带有相机组件的实体时，会在视图窗口左下角显示该相机的实时预览。帮助用户实时调整相机、场景位置。预览窗口可以拖动、锁定，并且切换不同设备比例的窗口。
 
-| 属性   | 内容                 | 默认 |
-| :----- | :------------------- | :--- |
-| `网格` | 视图中的网格是否显示 | 开启 |
-
-<h3 id = '1.2'> 辅助图标 </h3>
-
-辅助图标是与场景中特定组件相关联的图形。目前类型包括相机、直射光、点光源、聚光灯。
-
-| 属性      | 内容                                       | 默认 |
-| :-------- | :----------------------------------------- | :--- |
-| `3D 图标` | 辅助图标是否根据组件与摄像机的距离进行缩放 | 开启 |
-
-<h3 id = '1.3'> 辅助线框 </h3>
-
-辅助线框是与场景中特定组件相关联的线框。仅在选中带有该组件的实体时显示。 | 属性 | 内容 |默认 | :-- | :-- |:-- | | `相机` | 以锥体显示选中相机组件 | 开启 | `直射光` | 显示直射光组件的方向 | 关闭 | `点光源` | 显示点光源组件| 关闭 | `聚光灯` | 显示聚光灯组件的方向 | 关闭 | `静态碰撞体` | 显示静态碰撞体形状 | 开启 | `动态碰撞体` | 显示动态碰撞体形状 | 开启
-
-<h2 id = '8'> 场景相机 </h2>
-场景相机菜单包含用于配置场景相机的选项，主要用来解决搭建场景时，裁剪面太远或者太近导致看不到物体的问题。这些调整不会影响场景中带有相机组件的实体的设置。
-
-<img src="https://gw.alipayobjects.com/zos/OasisHub/38748b3a-e448-47fb-bae6-9e77414ea975/image-20231009114856297.png" alt="image-20231009114856297" style="zoom:50%;" />
-
-| 属性 | 内容 | 默认 |
-| :-- | :-- | :-- |
-| `视角` | 场景相机的视角 | 60 |
-| `动态裁剪` | 相对选中实体和场景相机位置，自动计算场景相机的近裁面和远裁面 | 关闭 |
-| `近裁面` | 手动调整相对于场景相机的最近点 | 不勾选动态裁剪后开启 |
-| `远裁面` | 手动调整相对于场景相机的最远点 | 不勾选动态裁剪后开启 |
-
-<h2 id = '9'> 模式 </h2>
-方便在 2D/3D 场景模式间进行点击切换。
-
-2D 模式下，导航部件、正交/透视切换关闭，导航中的环绕轨道不再生效。
-
-| 图标 | 内容 |
-| :-- | :-- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*QzcETYEe338AAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `当前模式为 3D` |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*EZezT6T1LBoAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `当前模式为 2D` |
-
-<h2 id = '10'> 全屏/复原 </h2>
-
-| 图标 | 内容 |
-| :-- | :-- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*WqDQQZTAOjEAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `最大化视图窗口，最小化层级、资产、检查器` |
-
-<h2 id = '11'> 截屏 </h2>
-对当前场景进行快照。仅显示场景内用户创建实体，辅助显示的一系列工具，如图标、网格、gizmo 不会被计入其中。进行截屏后，该快照会在首页作为该项目缩略图。
-
-| 图标 | 内容 |
-| :-- | :-- |
-| <img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*cqFUSrG5QvgAAAAAAAAAAAAADtKFAQ/original" width="24" height="24"> | `截屏` |
-
-# 预览
-
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*wNTaQKkA1bYAAAAAAAAAAAAADtKFAQ/original)
-
-选中带有相机组件的实体时，会在视图窗口左下角显示该相机的实时预览。帮助用户实时调整相机、场景位置。
+<img src="https://gw.alipayobjects.com/zos/OasisHub/e5235e45-586c-47b5-848e-ab7939000c4c/image-20240131190013320.png" alt="image-20240131190013320" style="zoom:50%;" />

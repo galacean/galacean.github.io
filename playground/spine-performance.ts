@@ -2,8 +2,9 @@
  * @title Spine
  * @category Benchmark
  */
-import { Camera, Vector3, WebGLEngine, Entity } from "@galacean/engine";
-import { SpineAnimation } from "@galacean/engine-spine";
+import { Camera, Vector3, WebGLEngine } from "@galacean/engine";
+import { SpineRenderer } from "@galacean/engine-spine";
+import { Stats } from "@galacean/engine-toolkit-stats";
 
 WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   engine.canvas.resizeByClientSize();
@@ -15,6 +16,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   const camera = cameraEntity.addComponent(Camera);
   cameraEntity.transform.position = new Vector3(0, 0, 110);
   camera.farClipPlane = 200;
+  cameraEntity.addComponent(Stats);
 
   engine.resourceManager
     .load({
@@ -25,15 +27,17 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       ],
       type: "spine",
     })
-    .then((spineEntity: Entity) => {
+    .then((spineResouce: any) => {
+      const spineEntity = rootEntity.createChild("spine");
+      const spineRenderer = spineEntity.addComponent(SpineRenderer);
+      spineRenderer.resource = spineResouce;
+      spineRenderer.scale = 0.01;
+      spineRenderer.animationName = "walk";
       for (let i = -5; i < 5; i++) {
         for (let j = -5; j < 5; j++) {
           const clone = spineEntity.clone();
           clone.transform.setPosition(8 * i, 8 * j, 0);
           rootEntity.addChild(clone);
-          const spineAnimation = clone.getComponent(SpineAnimation);
-          spineAnimation.state.setAnimation(0, "walk", true);
-          spineAnimation.scale = 0.01;
         }
       }
     });

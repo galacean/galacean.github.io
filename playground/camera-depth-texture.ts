@@ -82,13 +82,12 @@ async function main() {
 function showDepthPlane(engine: Engine, camera: Entity): void {
   const entity = camera.createChild("Plane");
   entity.transform.setPosition(0, 0, -1);
-  entity.transform.rotate(new Vector3(-90, 0, 0));
+  entity.transform.rotate(new Vector3(90, 0, 0));
   const renderer = entity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createPlane(engine,0.5,0.5);
 
   // Create material
   const material = new BaseMaterial(engine, Shader.find("RenderDepthTexture"));
-  material.renderFace = RenderFace.Double;
   renderer.setMaterial(material);
 }
 

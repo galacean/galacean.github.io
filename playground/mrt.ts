@@ -127,7 +127,6 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       worldPos = renderer_ModelMat * vec4(POSITION, 1.0);
       normal = renderer_ModelMat * vec4(NORMAL, 1.0);
       gl_Position = renderer_MVPMat * vec4(POSITION, 1.0);
-      gl_Position.y *= -1.0;
     }`;
     const frag = `
     varying vec4 worldPos;
