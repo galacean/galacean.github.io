@@ -6,13 +6,59 @@ group: 网格
 label: Graphics/Shader
 ---
 
-`ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往通过 glsl 编写自定义 Shader 的方式，使用 `ShaderLab` 会更加便捷。例如，它可以通过特定指令来指定渲染管线和设置渲染状态。通过 `SubShader` 和 `Pass` 模块，编写多 Pass Shader 也更加便捷。在 `ShaderLab` 中使用 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语言编写渲染管线中的顶点(Vertex)和片元(Fragment)着色器程序。
+`ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往通过原生 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 编写自定义 Shader 的方式，使用 `ShaderLab` 会更加便捷。可以按照如下流程编写着色器：
 
-> 值得一提的是，只需声明一次 uniform、attribute 和 varying 变量，未被着色器程序使用的变量会被引擎自动剔除，帮助开发者更加便捷、快速地编写自定义材质的 Shader。
+```mermaid
+flowchart LR
+   创建着色器 --> 编辑shaderlab --> 调试shaderlab
+```
 
-以下是一个简单的 ShaderLab 使用示例，其中包含了两个 Shader。"normal" Shader 定义了一个只实现 MVP 转换的顶点着色器，并且通过 Uniform 变量指定了像素颜色的片元着色器。另外，"lines" Shader 是一个使用 ShaderLab 进行改造的 [shadertoy](https://www.shadertoy.com/view/DtXfDr) 示例。
+以下是一个简单的 ShaderLab 使用示例，其中包含了两个 Shader。`normal` Shader 定义了一个只实现 MVP 转换的顶点着色器，并且通过 Uniform 变量指定了像素颜色的片元着色器。另外，`lines` Shader 是一个使用 ShaderLab 进行改造的 [shadertoy](https://www.shadertoy.com/view/DtXfDr) 示例。
 
 <playground src="shader-lab-simple.ts"></playground>
+
+## 创建着色器
+
+#### 在编辑器中创建
+
+编辑器中可以添加 3 种 ShaderLab 模板: 自定义、`PBR`、和 着色器片段
+
+  <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*8PtDQI7QzosAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+
+其中 **自定义** 和 **`PBR`** 是使用 ShaderLab 语法进行编写的着色器模板，**着色器片段** 则是为了方便代码段复用，ShaderLab 中可以如下使用 `include` 宏进行代码段引用，后续编译过程中会被自动扩展替换。使用方式详见语法标准模块。
+
+#### 在脚本中创建
+
+当前`ShaderLab`尚未集成到引擎 core 核心包中，需要在引擎初始化时传入新建的`ShaderLab`对象，否则引擎无法解析使用`ShaderLab`语法编写的 Shader。
+
+1.  `ShaderLab` 初始化
+
+```ts
+import { ShaderLab } from '@galacean/engine-shaderlab';
+
+const shaderLab = new ShaderLab();
+// 使用ShaderLab初始化Engine
+const engine = await WebGLEngine.create({ canvas: 'canvas', shaderLab });
+```
+
+2. 创建 Shader
+
+```glsl
+// 直接使用ShaderLab创建Shader
+const shader = Shader.create(galaceanShaderCode);
+```
+
+## `ShaderLab`编写
+
+### 在编辑器中编辑着色器
+
+双击我们在上一步创建的着色器资产即可跳转到代码编辑页
+
+> 未来版本会推出 Galacean VSCode 插件，该插件会为`ShaderLab`提供语法检测和自动补全功能以及代码同步功能，敬请期待
+
+   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*Djs2RJsoPawAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+
+### 语法标准
 
 `ShaderLab`语法骨架如下，每个模块语法和使用会在下文详细展开。
 
@@ -30,9 +76,7 @@ Shader "ShaderName" {
 }
 ```
 
-## ShaderLab 语法标准
-
-### Shader
+#### Shader
 
 ```glsl
 Shader "ShaderName" {
@@ -48,7 +92,7 @@ Shader "ShaderName" {
 
 ShaderLab 中的`Shader`是传统渲染管线中着色器程序和其他引擎渲染设置相关信息的集合封装，它允许在同一个`Shader`对象中定义多个着色器程序，并告诉 Galacean 在渲染过程中如何选择使用它们。`Shader` 对象具有嵌套的结构，包含 `SubShader` 和 `Pass` 子结构。
 
-### 材质属性定义
+#### 材质属性定义
 
 ```glsl
 // Uniform
@@ -130,7 +174,7 @@ EditorMacros
    | Vector3 | macroName("Macro Description", Vector3) = (0.25, 0.5, 0.5); |
    | Vector4 | macroName("Macro Description", Vector4) = (0.25, 0.5, 0.5, 1.0); |
 
-### 全局变量
+#### 全局变量
 
 可以在 ShaderLab 中声明 4 类全局变量：渲染状态(RenderState)，结构体，函数，以及单变量。
 
@@ -138,61 +182,89 @@ EditorMacros
 
   包含混合状态(BlendState)，深度状态(DepthState)，模板状态(StencilState)，光栅化状态(RasterState)
 
+  - BlendState
+
+    ```glsl
+    BlendState {
+      Enabled[n]: bool;
+      ColorBlendOperation[n]: BlendOperation;
+      AlphaBlendOperation[n]: BlendOperation;
+      SourceColorBlendFactor[n]: BlendFactor;
+      SourceAlphaBlendFactor[n]: BlendFactor;
+      DestinationColorBlendFactor[n]: BlendFactor;
+      DestinationAlphaBlendFactor[n]: BlendFactor;
+      ColorWriteMask[n]: float // 0xffffffff
+      BlendColor: vec4;
+      AlphaToCoverage: bool;
+    }
+    ```
+
+    [n] 可省略，在使用 MRT 的情况下， [n] 为指定某个 MRT 渲染状态，省略为设置所有 MRT 状态，BlendOperation 和 BlendFactor 枚举等同引擎 API
+
+  - DepthState
+
+    ```glsl
+    DepthState {
+      Enabled: bool;
+      WriteEnabled: bool;
+      CompareFunction: CompareFunction;
+    }
+    ```
+
+    CompareFunction 枚举等同引擎 API
+
+  - StencilState
+
+    ```glsl
+    StencilState {
+      Enabled: bool;
+      ReferenceValue: int;
+      Mask: float; // 0xffffffff
+      WriteMask: float; // 0xffffffff
+      CompareFunctionFront: CompareFunction;
+      CompareFunctionBack: CompareFunction;
+      PassOperationFront: StencilOperation;
+      PassOperationBack: StencilOperation;
+      FailOperationFront: StencilOperation;
+      FailOperationBack: StencilOperation;
+      ZFailOperationFront: StencilOperation;
+      ZFailOperationBack: StencilOperation;
+    }
+    ```
+
+    CompareFunction 和 StencilOperation 举等同引擎 API
+
+  - RasterState
+
+    ```glsl
+    RasterState {
+      CullMode: CullMode;
+      DepthBias: float;
+      SlopeScaledDepthBias: float;
+    }
+    ```
+
+    CullMode 举等同引擎 API
+
+  在`ShaderLab`中设置`BlendState`示例:
+
   ```glsl
-  BlendState {
-    Enabled[n]: bool;
-    ColorBlendOperation[n]: BlendOperation;
-    AlphaBlendOperation[n]: BlendOperation;
-    SourceColorBlendFactor[n]: BlendFactor;
-    SourceAlphaBlendFactor[n]: BlendFactor;
-    DestinationColorBlendFactor[n]: BlendFactor;
-    DestinationAlphaBlendFactor[n]: BlendFactor;
-    ColorWriteMask[n]: float // 0xffffffff
-    BlendColor: vec4;
-    AlphaToCoverage: bool;
+  Shader "Demo" {
+    ...
+    BlendState customBlendState
+    {
+      Enabled = true;
+      SourceColorBlendFactor = material_SrcBlend;
+      DestinationColorBlendFactor = material_DstBlend;
+    }
+    ...
+    Pass "0" {
+      ...
+      BlendState = customBlendState;
+      ...
+    }
   }
   ```
-
-  [n] 可省略，在使用 MRT 的情况下， [n] 为指定某个 MRT 渲染状态，省略为设置所有 MRT 状态，BlendOperation 和 BlendFactor 枚举等同引擎 API
-
-  ```glsl
-  DepthState {
-    Enabled: bool;
-    WriteEnabled: bool;
-    CompareFunction: CompareFunction;
-  }
-  ```
-
-  CompareFunction 枚举等同引擎 API
-
-  ```glsl
-  StencilState {
-    Enabled: bool;
-    ReferenceValue: int;
-    Mask: float; // 0xffffffff
-    WriteMask: float; // 0xffffffff
-    CompareFunctionFront: CompareFunction;
-    CompareFunctionBack: CompareFunction;
-    PassOperationFront: StencilOperation;
-    PassOperationBack: StencilOperation;
-    FailOperationFront: StencilOperation;
-    FailOperationBack: StencilOperation;
-    ZFailOperationFront: StencilOperation;
-    ZFailOperationBack: StencilOperation;
-  }
-  ```
-
-  CompareFunction 和 StencilOperation 举等同引擎 API
-
-  ```glsl
-  RasterState {
-    CullMode: CullMode;
-    DepthBias: float;
-    SlopeScaledDepthBias: float;
-  }
-  ```
-
-  CullMode 举等同引擎 API
 
 - 结构体、函数
 
@@ -206,7 +278,7 @@ EditorMacros
 
 与其他编程语言类似，ShaderLab 中的全局变量也有作用域和同名覆盖原则。简单来说，ShaderLab 中的全局变量的作用范围仅限于其声明的 SubShader 或 Pass 模块内部，而同名覆盖原则指的是如果存在与 Pass 内部同名的全局变量，则 Pass 内的全局变量会覆盖 SubShader 内的同名全局变量。
 
-### SubShader
+#### SubShader
 
 ```glsl
 SubShader "SubShaderName" {
@@ -238,7 +310,7 @@ SubShader "SubShaderName" {
   |   SpriteMask    |   SpriteMask/Default/Forward    |
   |     Sprite      |     Sprite/Default/Forward      |
 
-### Pass
+#### Pass
 
 ```glsl
 Pass "PassName" {
@@ -337,7 +409,7 @@ Pass "PassName" {
   RenderQueueType = RenderQueueType.Transparent;
   ```
 
-### `include` 宏
+#### `include` 宏
 
 为了方便代码段复用，ShaderLab 中可以如下使用 `include` 宏进行代码段引用，后续编译过程中会被自动扩展替换。
 
@@ -349,9 +421,7 @@ Pass "PassName" {
 
 1. 编辑器中创建 着色器 / 着色器片段
 
-<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*8PtDQI7QzosAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
-
-创建的代码段 `include key` 为该文件在工程中的文件路径，比如 `/Root/Effect.glsl`
+创建的代码段 `includeKey` 为该文件在工程中的文件路径，比如 `/Root/Effect.glsl`
 
 2. 脚本中显示注册代码段
 
@@ -362,7 +432,7 @@ const commonSource = `// shader chunk`;
 ShaderFactory.registerInclude('includeKey', commonSource);
 ```
 
-## 当前不支持的 GLSL 语法格式
+#### 当前不支持的 GLSL 语法格式
 
 1. 浮点数小数点前后的 0 不能省略
 
@@ -388,40 +458,17 @@ ShaderFactory.registerInclude('includeKey', commonSource);
      }
      ```
 
-## 编辑器使用
+## 材质绑定着色器
 
-1. 创建着色器
+有了使用`ShaderLab`编写的自定义着色器资产后，我们可以通过将着色器绑定到新建的材质实现用户自定义材质。
 
-   > 编辑器中可以添加 3 种 ShaderLab 模板: 自定义、PBR、和 着色器片段
+<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*LR6zR453jvAAAAAAAAAAAAAADteEAQ/fmt.webp" style="zoom:50%;">
 
-   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*8PtDQI7QzosAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+- `ShaderLab`反射材质属性
 
-2. 双击着色器进入代码编辑页进行编辑
+如果我们在`ShaderLab`中编写了`材质属性定义`模块，模块中定义的属性会暴露在绑定该 Shader 的材质资产 Inspector 面板中
 
-   > 未来版本会推出 Galacean VSCode 插件并提供语法错误提示和自动补全功能以及代码同步功能，敬请期待
-
-   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*Djs2RJsoPawAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
-
-3. 材质绑定 Shader，在 Inspector 面板中对 ShaderLab 中定义好的材质属性进行调整
-
-   <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*6CdGRLSSU2gAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
-
-## 脚本使用
-
-### `ShaderLab` 初始化
-
-```ts
-import { ShaderLab } from "@galacean/engine-shaderlab";
-
-const shaderLab = new ShaderLab();
-// 使用ShaderLab初始化Engine
-const engine = await WebGLEngine.create({ canvas: "canvas", shaderLab });
-
-......
-
-// 直接使用ShaderLab创建Shader
-const shader = Shader.create(galaceanShaderCode);
-```
+<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*Q4fvT5M1hJcAAAAAAAAAAAAADteEAQ/original" style="zoom:50%">
 
 ## 一个利用多 Pass 技术实现平面阴影的示例
 
