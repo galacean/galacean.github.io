@@ -254,7 +254,9 @@ EditorMacros
     BlendState customBlendState
     {
       Enabled = true;
-      SourceColorBlendFactor = material_SrcBlend;
+      // 常量复制方式
+      SourceColorBlendFactor = BlendFactor.SourceColor;
+      // 变量赋值方式
       DestinationColorBlendFactor = material_DstBlend;
     }
     ...
@@ -265,6 +267,11 @@ EditorMacros
     }
   }
   ```
+
+  上述案例中对于 BlendState 属性赋值展示了 2 种方式: *常量赋值*和*变量赋值*方式:
+
+  - 常量赋值指赋值语句右端为指定的对应引擎枚举变量，譬如：BlendFactor.SourceColor
+  - 变量赋值指赋值语句右端为任一变量名，变量具体值由用户通过脚本方式在运行时通过 ShaderData.setInt("material_DstBlend", BlendFactor.SourceColor) API 进行指定
 
 - 结构体、函数
 
