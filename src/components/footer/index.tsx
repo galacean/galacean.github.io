@@ -1,5 +1,5 @@
 import {
-  createFromIconfontCN, DingtalkOutlined,
+  DingtalkOutlined,
   GithubOutlined,
   TwitterOutlined,
   WechatOutlined,
@@ -9,10 +9,7 @@ import {
 import { Flex, styled } from "@galacean/editor-ui";
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-
-const Icon = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_2808716_9ux7aqrqvq9.js', // 在 iconfont.cn 上生成
-});
+import { Icon } from '../../ui/Icon';
 
 const StyledFooter = styled("footer", {
   marginTop: "$10",

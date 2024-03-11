@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useContext } from "react";
 import { AppContext } from "../contextProvider";
+import { Icon } from "../../ui/Icon";
 
 const StyledH = styled(Flex, {
   minHeight: "$12",
@@ -29,12 +30,26 @@ const StyledCard = styled('div', {
   padding: "$8",
   flex: 1,
   '@media (max-width: 768px)': {
-    margin: "0 $4"
+    margin: "0 $4",
+    minHeight: "350px",
   }
 })
 
 const StyledButton = styled(Button, {
   bottom: "$0_5"
+});
+
+const StyledGradientButton = styled(Button, {
+  backgroundImage: "linear-gradient(to right, #00c6ff 0%, #0091ff  51%, #00c6ff  100%)",
+  transition: "0.3s",
+  backgroundSize: "200% auto",
+  color: "#fff!important",
+  border: "none",
+  "&:hover": {
+    backgroundPosition: "right center"
+  },
+  position: "relative",
+  overflow: "hidden",
 });
 
 const StyledP = styled("p", {
@@ -69,20 +84,22 @@ export default function Production() {
           </StyledP>
           <Flex align="h" dir="column" gap="lg" css={{ position: "relative" }}>
             <Flex gap="lg">
+              <a href="https://galacean.antgroup.com/editor">
+                <StyledGradientButton variant="light" size="lg" round>
+                  <Icon type='icon-a-cloudeditor-fill' style={{fontSize: "25px", marginRight: "5px"}} />
+                  <FormattedMessage id="app.home.engine.open" />
+                </StyledGradientButton>
+              </a>
               <Link to={`/docs/${betaVersion}/${lang}/getting-started-overview`} onClick={() => {
                 setVersion(betaVersion);
                 localStorage.setItem('version', betaVersion);
               }}>
                 <StyledButton variant="light" size="lg" round>
+                  <Icon type='icon-book' style={{fontSize: "25px", marginRight: "5px", fill: "red"}} />
                   <FormattedMessage id="app.home.engine.use" />
-                  <ArrowRightOutlined style={{ marginLeft: "5px", fontSize: "12px" }} />
                 </StyledButton>
               </Link>
-              <a href="https://survey.alipay.com/apps/zhiliao/o1u1SSHk1">
-                <StyledButton variant="light" size="lg" round>
-                  <FormattedMessage id="app.home.engine.apply" />
-                </StyledButton>
-              </a>
+              
             </Flex>
           </Flex>
         </StyledCard>
