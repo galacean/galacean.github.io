@@ -8,6 +8,8 @@
     "@babel/standalone": "^7.19.3",
     "@galacean/editor-ui": "0.0.2",
     "@galacean/engine": "^1.2.0-alpha",
+    "@galacean/engine-xr": "^1.2.0-alpha",
+    "@galacean/engine-xr-webxr": "^1.2.0-alpha",
     "@galacean/engine-lottie": "^1.0.0-beta.0",
     "@galacean/engine-physics-lite": "^1.2.0-alpha",
     "@galacean/engine-physics-physx": "^1.2.0-alpha",
