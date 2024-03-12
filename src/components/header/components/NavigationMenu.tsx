@@ -33,7 +33,7 @@ const StyledNavigationMenu = () => {
     <StyledRoot align="both" gap="lg">
       <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.engine' })}</StyledItem >}>
         <MenuItem>
-          <StyledLink to={`/docs/${context.version}/${context.lang}/getting-started-overview`}>
+          <StyledLink as="a" rel='noopener noreferrer' href={`/docs/${context.version}/${context.lang}/getting-started-overview`}>
             {formatMessage({ id: 'app.header.menu.engine.docs' })}
           </StyledLink>
         </MenuItem>
@@ -43,18 +43,18 @@ const StyledNavigationMenu = () => {
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink to={`/examples/${context.version}`}>
+          <StyledLink as="a" rel='noopener noreferrer' href={`/examples/${context.version}`}>
             {formatMessage({ id: 'app.header.menu.engine.examples' })}
           </StyledLink>
         </MenuItem>
         <MenuItem>
-          <StyledLink to={`/api/${context.version}`}>
+          <StyledLink as="a" rel='noopener noreferrer' href={`/api/${context.version}`}>
             {formatMessage({ id: 'app.header.menu.engine.api' })}
           </StyledLink>
         </MenuItem>
         <MenuGroup label={""} divider="top">
           <MenuItem>
-            <StyledLink to={`/gltf-viewer`}>
+            <StyledLink as="a" rel='noopener noreferrer' href={`/gltf-viewer`}>
               {formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}
             </StyledLink >
           </MenuItem>
