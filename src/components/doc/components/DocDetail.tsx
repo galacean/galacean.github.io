@@ -6,12 +6,12 @@ import { PropsWithChildren, useContext, useEffect, useRef, useState } from 'reac
 import { FormattedMessage } from 'react-intl';
 import ReactMarkdown from 'react-markdown';
 import { Link, useParams } from 'react-router-dom';
-import rehypeRaw from 'rehype-raw';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
-import { AppContext } from '../../contextProvider';
 import Playground from '../../Playground';
-import customeToc from '../plugins/customeToc';
+import { AppContext } from '../../contextProvider';
 import linkPlugin from '../plugins/link';
 import playgroundPlugin from '../plugins/playground';
 import { DocData, fetchDocDataById, fetchMenuList } from '../util/docUtil';
@@ -257,9 +257,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         </StyledModifiedTime>
         <ReactMarkdown
           remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
-          // temporarily remove <a /> in toc
-          // rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
-          rehypePlugins={[toc, customeToc, rehypeRaw]}
+          rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
           skipHtml={false}
           components={{
             a(param) {
