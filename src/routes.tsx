@@ -116,5 +116,5 @@ export const router = createBrowserRouter([
     ),
   },
 ], {
-  basename: '/engine',
+  basename: '/engine'
 });
