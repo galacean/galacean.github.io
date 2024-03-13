@@ -32,7 +32,6 @@ const shaderSource = `Shader "ParticleEffect" {
 
       #define PI 3.14159265359
       mat4 renderer_MVPMat;
-      float progress;
 
       struct a2v {
         vec3 POSITION;
