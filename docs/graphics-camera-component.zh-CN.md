@@ -71,7 +71,11 @@ camera.clearFlags = CameraClearFlags.All;
 |          | [pixelViewport](${api}core/Camera#pixelViewport)               | 屏幕上相机的视口（以像素坐标表示）。 在像素屏幕坐标中，左上角为(0, 0)，右下角为(1.0, 1.0)。            |
 | 透视投影 | [fieldOfView](${api}core/Camera#fieldOfView)                   | 视角                                                                                                   |
 | 正交投影 | [orthographicSize](${api}core/Camera#orthographicSize)         | 正交模式下相机的一半尺寸                                                                               |
-|          | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>)     | 深度模式，默认为`DepthTextureMode.None`                                                                |
+| 渲染相关 | [depthTextureMode](<(${api}core/Camera#depthTextureMode)>)     | 深度纹理模式，默认为`DepthTextureMode.None`，如果开启，可以在 shader 中使用 `camera_DepthTexture` 深度纹理。   
+|  | [opaqueTextureEnabled](<(${api}core/Camera#opaqueTextureEnabled)>)     | 是否启用非透明纹理，默认关闭，如果启用，可以在透明队列的 shader 中使用 `camera_OpaqueTexture` 非透明纹理。                                                             |
+|  | [opaqueTextureDownsampling](<(${api}core/Camera#opaqueTextureDownsampling)>)     | 启用非透明纹理时，可以设置降采样，可以根据清晰度需求和性能要求来进行设置。                                                             |
+|  | [msaaSamples](<(${api}core/Camera#msaaSamples)>)     | 可以设置独立画布的多样本抗锯齿采样样本数量，仅当非透明纹理开启，且没有设置 renderTarget 时才生效。                                                            |
+|  | [independentCanvasEnabled](<(${api}core/Camera#independentCanvasEnabled)>)     | 只读属性，是否启用独立画布，仅当非透明纹理开启，且没有设置 renderTarget 时才生效。                                                            |
 
 ### 裁剪遮罩
 
