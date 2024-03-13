@@ -10,6 +10,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import remarkFrontmatter from 'remark-frontmatter';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import Playground from '../../Playground';
 import { AppContext } from '../../contextProvider';
 import linkPlugin from '../plugins/link';
@@ -257,7 +258,7 @@ function DocDetail(props: PropsWithChildren<DocDetailProps>) {
         </StyledModifiedTime>
         <ReactMarkdown
           remarkPlugins={[playgroundPlugin, linkPlugin, remarkGfm, remarkFrontmatter]}
-          rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings, toc]}
+          rehypePlugins={[rehypeRaw, rehypeSlug, rehypeAutolinkHeadings, toc]}
           skipHtml={false}
           components={{
             a(param) {
