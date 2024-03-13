@@ -1,20 +1,15 @@
 import { Helmet } from 'react-helmet';
 import { injectIntl, useIntl } from 'react-intl';
-import Footer from '../footer';
-import Header from '../header';
-import Advantage from './Advantage';
-import Banner from './Banner';
+import Footer from '../components/footer';
+import Header from '../components/header';
 import Cases from './Cases';
-import Editor from './Editor';
 import Production from './Production';
-import Features from './Features';
-import Partners from './Partners';
 
 function Home() {
   const intl = useIntl();
   return (
     <>
-      <Header></Header>
+      <Header isHomePage={true}></Header>
       <Helmet>
         <title>{`Galacean - ${intl.formatMessage({
           id: 'app.home.slogan',

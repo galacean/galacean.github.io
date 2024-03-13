@@ -7,7 +7,6 @@ import Examples from './components/Examples';
 import Footer from './components/footer';
 import GLTFView from './components/GltfViewer/gltf-viewer';
 import Header from './components/header';
-import Home from './components/home';
 
 export const router = createBrowserRouter([
   {
@@ -105,8 +104,7 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: '/',
-    element: <Home></Home>,
+    path: '*',
     errorElement: (
       <>
         <Header></Header>

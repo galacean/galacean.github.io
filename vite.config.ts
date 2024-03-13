@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import * as fs from 'fs';
+import { fileURLToPath } from "url";
 
 export default ({ mode }) => {
   return defineConfig({
@@ -18,6 +18,10 @@ export default ({ mode }) => {
     build: {
       emptyOutDir: true,
       rollupOptions: {
+        input: {
+          engine: fileURLToPath(new URL('./index.html', import.meta.url)),
+          index: fileURLToPath(new URL('./home.html', import.meta.url)),
+        },
         output: {
           manualChunks: {
             '@galacean/engine': ['@galacean/engine'],
