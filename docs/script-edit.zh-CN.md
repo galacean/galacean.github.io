@@ -9,8 +9,6 @@ label: Script
 
 Galacean Editor 提供了一个功能强大的代码编辑器，提供了代码提示，第三方包引入，引擎事件调试，脚本参数调试，项目实时预览等多种能力，可帮助你快速编辑和调试代码。
 
-> 想要详细了解 Galacean 的脚本系统的，请阅读 [脚本系统](${docs}script)
-
 ## 代码编辑
 
 在场景编辑器中创建脚本资产后，双击该脚本即可打开代码编辑器。Galacean 中的脚本需使用 [Typescript](https://www.typescriptlang.org/) 语言编写，同时新脚本默认基于内置模板创建。另外，Galacean 的代码编辑器基于 Monaco，快捷键与 VSCode 类似。修改脚本后，按 `Ctrl/⌘ + S` 保存，右侧实时预览区展现最新场景效果。
