@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const { pathname, hash } = window.location;
     // 检查是否为旧的哈希路由格式
-    if (pathname === '/' && hash.startsWith('#/')) {
+    if (pathname === '/engine/' && hash.startsWith('#/')) {
       // 提取哈希部分，移除 `#/`，然后构建新的路径，确保在 "/engine" 和哈希部分之间添加一个斜杠
       const newPath = `/engine/${hash.slice(2)}`; // 修改在这里
       // 使用 history API 更新 URL，不触发页面重载
