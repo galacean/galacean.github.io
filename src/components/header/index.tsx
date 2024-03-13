@@ -102,7 +102,7 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
                 justifyContent: "space-between"
               }
             }}>
-              <StyledLogo href='/home.html' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
+              <StyledLogo href='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
                 <img src={logoUrl} alt='galacean' />
               </StyledLogo>
               {isMobile && rightActions(true)}

@@ -74,7 +74,7 @@
   },
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build && node ./scripts/build.js",
     "deploy": "gh-pages -d dist",
     "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
   },
