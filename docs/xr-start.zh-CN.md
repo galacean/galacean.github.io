@@ -5,24 +5,24 @@ type: XR
 label: XR
 ---
 
-编辑器开发 XR 互动的流程如下所示：
+开发 XR 互动的流程如下所示：
 
 ```mermaid
 flowchart LR
-   创建XR项目 --> 编辑项目 --> 导出 --> 本地构建 --> PC预览 --> 移动端预览 --> 正式发布
+   创建XR项目 --> 编辑项目 --> 导出 --> 本地构建 --> PC预览 --> XR设备预览 --> 正式发布
 ```
 
-编辑项目的环节与其他项目无异，本文将以 XR 模版为例，重点叙述 XR 项目的难点，**本地构建**，**本地预览**与 **XR 设备预览**。
+编辑项目的环节与其他项目无异，本文将以 XR 模版为例，重点叙述 XR 项目的难点，**本地构建**， **PC 预览**与 **XR 设备预览**。
 
 ## 前置准备
 
-由于我们引入的后端为 WebXR ，因此需要准备运行环境与终端设备如下：
+由于我们引入的后端为 WebXR ，以 AR 项目为例，需要准备的运行环境与 XR 设备如下：
 
 - 支持 WebXR 的 PC 端浏览器（本文使用 Mac Chrome）
-- 支持 WebXR 的终端与浏览器（本文使用安卓机与安卓机搭载的移动端 Chrome）
+- 支持 WebXR 的终端与浏览器（本文使用安卓机与安卓机搭载的移动端 Chrome 应用）
 - 安卓手机需额外安装 [Google Play Services for AR](https://play.google.com/store/apps/details?id=com.google.ar.core&hl=en_US&pli=1)
 
-> Google Play Services for AR 是由谷歌开发的增强现实平台（ARCore），有些手机自带此 App ，若没有安装，可在应用商店搜索，下图为小米应用商城的搜索结果。
+> `Google Play Services for AR` 是由谷歌开发的增强现实平台（ARCore），有些手机自带此 App ，若没有，可在应用商店搜索，下图为小米应用商城的搜索结果。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*1piTR6lx8T8AAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
 
@@ -73,7 +73,7 @@ npm run dev
 
 请参考[远程调试安卓设备](https://developer.chrome.com/docs/devtools/remote-debugging?hl=zh-cn)
 
-> 在调试前确保手机开启 **`开发者选项`** ，且允许 **`USB 调试`** 
+> 在调试前确保手机开启 **`开发者选项`** ，且允许 **`USB 调试`**
 
 ## 最佳实践
 
