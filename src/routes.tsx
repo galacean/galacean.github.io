@@ -1,4 +1,4 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Api from './components/Api';
 import Doc from './components/doc';
 import ErrorPage from './components/ErrorPage';
@@ -104,7 +104,8 @@ export const router = createBrowserRouter([
     ),
   },
   {
-    path: '*',
+    path: '/',
+    element: <Navigate to="/docs/latest/:lang/getting-started-overview" />,
     errorElement: (
       <>
         <Header></Header>
