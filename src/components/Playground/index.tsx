@@ -63,8 +63,10 @@ export default function Playground(props: IPlayground) {
   const { lang, version } = useContext(AppContext);
   const [packages, setPackage] = useState<any>(null);
 
-  const url = `${location.origin}/engine/example/${props.id}`;
+  const url = `/engine/example/${props.id}`;
   const iframe = createRef<HTMLIFrameElement>();
+
+  const [iframeUrl, setIframeUrl] = useState(url);
 
   const fetchCode = async (id: string) => {
     const res = await fetchDocDataById(id);
@@ -72,14 +74,11 @@ export default function Playground(props: IPlayground) {
     const code = Prism.highlight(res?.content || '', Prism.languages.javascript, 'javascript');
     setCode(code);
     setSrc(res?.content || '');
+    setIframeUrl(url);
   };
 
   useEffect(() => {
-    if (!props.id) return;
     fetchCode(props.id);
-
-    // fix: iframe not reload when url hash changes
-    iframe.current?.contentWindow?.location.reload();
   }, [props.id]);
 
   const fetchDependencies = async () => {
@@ -100,7 +99,7 @@ export default function Playground(props: IPlayground) {
       {(isMobile) => (
         <StyledCodeBox wrap="false" embed={props.embed}>
           <StyledDemo>
-            <iframe src={url} width='100%' height='100%' frameBorder='0' ref={iframe} />
+            <iframe src={iframeUrl} width='100%' height='100%' frameBorder='0' ref={iframe} />
           </StyledDemo>
           {!isMobile && <StyledSource>
             <pre>
