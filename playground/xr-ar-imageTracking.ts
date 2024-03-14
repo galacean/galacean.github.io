@@ -44,14 +44,14 @@ WebGLEngine.create({
     xrManager.sessionManager.isSupportedMode(XRSessionMode.AR).then(
       () => {
         const content = xrManager.isSupportedFeature(XRImageTracking)
-          ? "进入 AR"
-          : "不支持图片追踪";
+          ? "Enter AR"
+          : "Not Support Image Tracking";
         addXRButton(content).onclick = () => {
           xrManager.enterXR(XRSessionMode.AR);
         };
       },
       (error) => {
-        addXRButton("不支持 AR");
+        addXRButton("Not Support");
         console.error(error);
       }
     );

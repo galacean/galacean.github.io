@@ -51,11 +51,12 @@ WebGLEngine.create({ canvas: "canvas", xrDevice: new WebXRDevice() }).then(
     xrManager.cameraManager.attachCamera(XRTrackedInputDevice.Camera, camera);
     xrManager.sessionManager.isSupportedMode(XRSessionMode.AR).then(
       () => {
-        addXRButton("进入 AR").onclick = () => {
+        addXRButton("Enter AR").onclick = () => {
           xrManager.enterXR(XRSessionMode.AR);
         };
       },
       (error) => {
+        addXRButton("Not Support");
         console.error(error);
       }
     );
