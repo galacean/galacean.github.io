@@ -2,7 +2,6 @@ import { ActionButton, Flex, Option, Popover, Select, styled } from '@galacean/e
 import { Menu, Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import Media from 'react-media';
-import { Link, useMatch } from 'react-router-dom';
 import { AppContext } from '../contextProvider';
 import NavigationMenu from './components/NavigationMenu';
 import { NavigationMenuMobile } from './components/NavigationMenuMobile';
@@ -10,16 +9,17 @@ import ScrollToTop from './components/ScrollToTop';
 import SearchBox from './components/SearchBox';
 import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
+import NavigationMenuHome from '../../home/NavigationMenu';
 
 
-function Header() {
+function Header({ isHomePage }: { isHomePage?: boolean }) {
   const context = useContext(AppContext);
 
   let logoUrl = 'https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original';
   let logoWidth = '7em';
   let logoWidthMobile = '5em';
 
-  if (!useMatch('/')) {
+  if (!isHomePage) {
     logoUrl = 'https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*SHz-SqISCR4AAAAAAAAAAAAADsF_AQ/original'
     logoWidth = '11em'
     logoWidthMobile = '9em';
@@ -34,7 +34,7 @@ function Header() {
     top: 0
   });
 
-  const StyledLogo = styled(Link, {
+  const StyledLogo = styled('a', {
     textDecoration: "none",
     "& img": {
       width: logoWidth,
@@ -84,7 +84,7 @@ function Header() {
         sideOffset={6}
         css={{ marginRight: "$4" }}
       >
-        <NavigationMenuMobile />
+        <NavigationMenuMobile isHomePage={isHomePage}/>
       </Popover>
       }
     </Flex>
@@ -92,7 +92,7 @@ function Header() {
 
   return (
     <>
-      <ScrollToTop />
+      {!isHomePage && <ScrollToTop />}
       <Media query='(max-width: 768px)'>
         {(isMobile) => (
           <StyledHeader justifyContent="between" align="v">
@@ -102,7 +102,7 @@ function Header() {
                 justifyContent: "space-between"
               }
             }}>
-              <StyledLogo to='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
+              <StyledLogo href='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
                 <img src={logoUrl} alt='galacean' />
               </StyledLogo>
               {isMobile && rightActions(true)}
@@ -110,7 +110,7 @@ function Header() {
             </Flex>
             {!isMobile && (
               <Flex align="both" gap="sm">
-                <NavigationMenu />
+                {isHomePage ? <NavigationMenuHome /> : <NavigationMenu />}
                 <Socials />
                 {rightActions(false)}
               </Flex>

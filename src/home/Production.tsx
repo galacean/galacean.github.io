@@ -1,10 +1,9 @@
 import { Button, Flex, styled } from "@galacean/editor-ui";
-import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { useContext } from "react";
-import { AppContext } from "../contextProvider";
-import { Icon } from "../../ui/Icon";
+import { AppContext } from "../components/contextProvider";
+import { Icon } from "../ui/Icon";
 
 const StyledH = styled(Flex, {
   minHeight: "$12",
@@ -90,7 +89,7 @@ export default function Production() {
                   <FormattedMessage id="app.home.engine.open" />
                 </StyledGradientButton>
               </a>
-              <Link to={`/docs/${betaVersion}/${lang}/getting-started-overview`} onClick={() => {
+              <a href={`/engine/docs/${betaVersion}/${lang}/getting-started-overview`} onClick={() => {
                 setVersion(betaVersion);
                 localStorage.setItem('version', betaVersion);
               }}>
@@ -98,8 +97,7 @@ export default function Production() {
                   <Icon type='icon-book' style={{fontSize: "25px", marginRight: "5px", fill: "red"}} />
                   <FormattedMessage id="app.home.engine.use" />
                 </StyledButton>
-              </Link>
-              
+              </a>
             </Flex>
           </Flex>
         </StyledCard>
