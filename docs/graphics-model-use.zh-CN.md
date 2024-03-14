@@ -47,6 +47,24 @@ engine.resourceManager
 
 没有导入编辑器的模型，对应的 URL 就是存放模型资产的路径。
 
+## 加载进度
+
+加载模型时也可以通过 [onProgress](${api}core/AssetPromise#onProgress) 事件来获取总任务/详细任务的加载进度。
+
+```typescript
+this.engine.resourceManager
+  .load(["b.gltf"])
+   .onProgress(
+      (loaded, total) => {
+        console.log("task loaded:", loaded, "task total:", total);
+      },
+      (url, loaded, total) => {
+        console.log("task detail:", url, "loaded:", loaded, "total:", total);
+      }
+```
+
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b1623aee-4f1b-405a-b5b5-c63b64dbb9de/image-20240313112859472.png" alt="image-20240313112859472" style="zoom:50%;" />
+
 ## 使用模型
 
 加载完毕的模型对象会返回包含了渲染信息和动画信息的根节点，它的使用和普通节点没有什么区别。
