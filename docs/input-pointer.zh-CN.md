@@ -11,26 +11,7 @@ Galacean 的触控是基于 [PointerEvent](https://www.w3.org/TR/pointerevents3/
 
 在 Galacean 中，无论是 PC 上的鼠标，移动端的触控笔或是指头，当他在触控范围内发生对应行为时（ **Down**, **Move**, etc），都会被实例化为 [Pointer](${api}core/Pointer)，您可以在 [InputManager](${api}core/InputManager) 里获取到当前活动着的所有触控点。
 
-```mermaid
----
-title: Diagram of pointer
----
-classDiagram
-    class InputManager
-    InputManager: +Pointer pointers 当前活动的所有触控点
-    InputManager: +Boolean multiPointerEnabled 是否支持多触控点
-    InputManager: isPointerHeldDown(PointerButton pointerButton) 某个触控按键是否被按住
-    InputManager: isPointerDown(PointerButton pointerButton) 某个触控按键在本帧是否触发按下行为
-    InputManager: isPointerUp(PointerButton pointerButton) 某个触控按键在本帧是否触发抬起行为
-    InputManager --> "many" Pointer : Contains
-
-    class Pointer
-    Pointer : +Number id 触控点的唯一序列号
-    Pointer : +PointerPhase phase 触控点的生命周期
-    Pointer : +PointerButton pressedButtons 触控点按键
-    Pointer : +Vector2 position 触控点在画布上的位置
-    Pointer : +Vector2 deltaPosition 触控点在本帧的位移
-```
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*k6_aRKNVxGkAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:100%;" />
 
 > 需要注意的是，每个触控点都是相互独立的，它们响应对应的事件并回调相应的钩子函数。
 

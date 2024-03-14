@@ -305,13 +305,13 @@ yarn add @galacean/engine-miniprogram-adapter
 
 注意：
 
-1. 使用 `import * as GALACEAN from "galacean/dist/miniprogram"` 引入小程序依赖。
+1. 使用 `import * as GALACEAN from "@galacean/engine/dist/miniprogram"` 引入小程序依赖。
 2. 需要使用『@galacean/engine-miniprogram-adapter』里的 `registerCanvas` 注册 `canvas`。
 
 详情可以参考下面代码：
 
 ```js
-import * as GALACEAN from "galacean/dist/miniprogram";
+import * as GALACEAN from "@galacean/engine/dist/miniprogram";
 import { registerCanvas } from "@galacean/engine-miniprogram-adapter";
 
 Page({

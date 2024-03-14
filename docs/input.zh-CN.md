@@ -15,16 +15,8 @@ Galacean 提供了基本的输入系统，基于跨端跨平台的特性，交�
 
 在初始化引擎时，可以自定义**触控**，**键盘**与**滚轮**的监听源。
 
-```mermaid
----
-title: Diagram of IInputOptions
----
-classDiagram
-    Interface IInputOptions
-    IInputOptions: +EventTarget pointerTarget 触控事件的监听源，默认为当前画布
-    IInputOptions: +EventTarget keyboardTarget 触控事件的监听源，默认为 window
-    IInputOptions: +EventTarget wheelTarget 触控事件的监听源，默认为当前画布
-```
+
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*GbQ_QLO0kjYAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:100%;" />
 
 ```typescript
 // 将触控事件的监听源设置为 document
