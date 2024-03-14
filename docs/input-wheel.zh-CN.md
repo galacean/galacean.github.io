@@ -9,14 +9,7 @@ Galacean 的滚轮输入是基于 [WheelEvent](https://www.w3.org/TR/uievents/#i
 
 ## 使用
 
-```mermaid
----
-title: Diagram of wheel
----
-classDiagram
-    class InputManager
-    InputManager: +Vector3 wheelDelta 获取本帧滚轮的位移
-```
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*9hCPSpreeJUAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:100%;" />
 
 可以依此实现用滚轮控制相机距离的示例。
 
