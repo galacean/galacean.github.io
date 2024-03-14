@@ -1,0 +1,340 @@
+{
+	"id": 0,
+	"name": "@galacean/engine-xr-webxr",
+	"kind": 1,
+	"kindString": "Project",
+	"flags": {},
+	"originalName": "",
+	"children": [
+		{
+			"id": 1,
+			"name": "WebXRDevice",
+			"kind": 128,
+			"kindString": "Class",
+			"flags": {},
+			"children": [
+				{
+					"id": 3,
+					"name": "constructor",
+					"kind": 512,
+					"kindString": "Constructor",
+					"flags": {},
+					"signatures": [
+						{
+							"id": 4,
+							"name": "new WebXRDevice",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"id": 1,
+								"name": "WebXRDevice"
+							}
+						}
+					]
+				},
+				{
+					"id": 11,
+					"name": "createPlatformFeature",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "WebXRDevice.ts",
+							"line": 31,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/xr-webxr/src/WebXRDevice.ts#L31"
+						}
+					],
+					"signatures": [
+						{
+							"id": 12,
+							"name": "createPlatformFeature",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 13,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "XRFeatureType"
+									}
+								},
+								{
+									"id": 14,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "WebXRFeature"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IXRDevice.createPlatformFeature"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IXRDevice.createPlatformFeature"
+					}
+				},
+				{
+					"id": 8,
+					"name": "isSupportedFeature",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "WebXRDevice.ts",
+							"line": 27,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/xr-webxr/src/WebXRDevice.ts#L27"
+						}
+					],
+					"signatures": [
+						{
+							"id": 9,
+							"name": "isSupportedFeature",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 10,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "XRFeatureType"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IXRDevice.isSupportedFeature"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IXRDevice.isSupportedFeature"
+					}
+				},
+				{
+					"id": 5,
+					"name": "isSupportedSessionMode",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "WebXRDevice.ts",
+							"line": 11,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/xr-webxr/src/WebXRDevice.ts#L11"
+						}
+					],
+					"signatures": [
+						{
+							"id": 6,
+							"name": "isSupportedSessionMode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 7,
+									"name": "mode",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "XRSessionMode"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IXRDevice.isSupportedSessionMode"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IXRDevice.isSupportedSessionMode"
+					}
+				},
+				{
+					"id": 15,
+					"name": "requestSession",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "WebXRDevice.ts",
+							"line": 36,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/xr-webxr/src/WebXRDevice.ts#L36"
+						}
+					],
+					"signatures": [
+						{
+							"id": 16,
+							"name": "requestSession",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 17,
+									"name": "rhi",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "IHardwareRenderer"
+									}
+								},
+								{
+									"id": 18,
+									"name": "mode",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "XRSessionMode"
+									}
+								},
+								{
+									"id": 19,
+									"name": "platformFeatures",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"name": "WebXRFeature"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"name": "WebXRSession"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IXRDevice.requestSession"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IXRDevice.requestSession"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						3
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						11,
+						8,
+						5,
+						15
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "WebXRDevice.ts",
+					"line": 7,
+					"character": 13,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/xr-webxr/src/WebXRDevice.ts#L7"
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "IXRDevice"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Classes",
+			"children": [
+				1
+			]
+		}
+	],
+	"sources": [
+		{
+			"fileName": "index.ts",
+			"line": 1,
+			"character": 0,
+			"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/xr-webxr/src/index.ts#L1"
+		}
+	]
+}

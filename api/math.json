@@ -40,7 +40,7 @@
 							"fileName": "enums/ContainmentType.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/ContainmentType.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/ContainmentType.ts#L8"
 						}
 					],
 					"type": {
@@ -67,7 +67,7 @@
 							"fileName": "enums/ContainmentType.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/ContainmentType.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/ContainmentType.ts#L6"
 						}
 					],
 					"type": {
@@ -94,7 +94,7 @@
 							"fileName": "enums/ContainmentType.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/ContainmentType.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/ContainmentType.ts#L10"
 						}
 					],
 					"type": {
@@ -118,7 +118,7 @@
 					"fileName": "enums/ContainmentType.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/ContainmentType.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/ContainmentType.ts#L4"
 				}
 			]
 		},
@@ -156,7 +156,7 @@
 							"fileName": "enums/FrustumFace.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L14"
 						}
 					],
 					"type": {
@@ -183,7 +183,7 @@
 							"fileName": "enums/FrustumFace.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L8"
 						}
 					],
 					"type": {
@@ -210,7 +210,7 @@
 							"fileName": "enums/FrustumFace.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L10"
 						}
 					],
 					"type": {
@@ -237,7 +237,7 @@
 							"fileName": "enums/FrustumFace.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L6"
 						}
 					],
 					"type": {
@@ -264,7 +264,7 @@
 							"fileName": "enums/FrustumFace.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L12"
 						}
 					],
 					"type": {
@@ -291,7 +291,7 @@
 							"fileName": "enums/FrustumFace.ts",
 							"line": 16,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L16"
 						}
 					],
 					"type": {
@@ -318,7 +318,7 @@
 					"fileName": "enums/FrustumFace.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/FrustumFace.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/FrustumFace.ts#L4"
 				}
 			]
 		},
@@ -356,7 +356,7 @@
 							"fileName": "enums/PlaneIntersectionType.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/PlaneIntersectionType.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/PlaneIntersectionType.ts#L6"
 						}
 					],
 					"type": {
@@ -383,7 +383,7 @@
 							"fileName": "enums/PlaneIntersectionType.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/PlaneIntersectionType.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/PlaneIntersectionType.ts#L8"
 						}
 					],
 					"type": {
@@ -410,7 +410,7 @@
 							"fileName": "enums/PlaneIntersectionType.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/PlaneIntersectionType.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/PlaneIntersectionType.ts#L10"
 						}
 					],
 					"type": {
@@ -434,7 +434,7 @@
 					"fileName": "enums/PlaneIntersectionType.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/enums/PlaneIntersectionType.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/enums/PlaneIntersectionType.ts#L4"
 				}
 			]
 		},
@@ -462,9 +462,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 111,
+							"line": 115,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L111"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L115"
 						}
 					],
 					"signatures": [
@@ -554,9 +554,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 104,
+							"line": 108,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L104"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L108"
 						}
 					],
 					"type": {
@@ -586,9 +586,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 102,
+							"line": 106,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L102"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L106"
 						}
 					],
 					"type": {
@@ -612,7 +612,7 @@
 							"fileName": "BoundingBox.ts",
 							"line": 11,
 							"character": 17,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L11"
 						}
 					],
 					"type": {
@@ -636,7 +636,7 @@
 							"fileName": "BoundingBox.ts",
 							"line": 12,
 							"character": 17,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L12"
 						}
 					],
 					"type": {
@@ -655,9 +655,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 186,
+							"line": 196,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L186"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L196"
 						}
 					],
 					"signatures": [
@@ -711,9 +711,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 195,
+							"line": 205,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L195"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L205"
 						}
 					],
 					"signatures": [
@@ -789,9 +789,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 121,
+							"line": 125,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L121"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L125"
 						}
 					],
 					"signatures": [
@@ -859,9 +859,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 143,
+							"line": 153,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L143"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L153"
 						}
 					],
 					"signatures": [
@@ -936,9 +936,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 132,
+							"line": 139,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L132"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L139"
 						}
 					],
 					"signatures": [
@@ -1008,9 +1008,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 177,
+							"line": 187,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L177"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L187"
 						}
 					],
 					"signatures": [
@@ -1082,7 +1082,7 @@
 							"fileName": "BoundingBox.ts",
 							"line": 20,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L20"
 						}
 					],
 					"signatures": [
@@ -1182,7 +1182,7 @@
 							"fileName": "BoundingBox.ts",
 							"line": 30,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L30"
 						}
 					],
 					"signatures": [
@@ -1265,7 +1265,7 @@
 							"fileName": "BoundingBox.ts",
 							"line": 51,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L51"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L51"
 						}
 					],
 					"signatures": [
@@ -1343,9 +1343,9 @@
 					"sources": [
 						{
 							"fileName": "BoundingBox.ts",
-							"line": 95,
+							"line": 99,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L95"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L99"
 						}
 					],
 					"signatures": [
@@ -1457,7 +1457,7 @@
 							"fileName": "BoundingBox.ts",
 							"line": 69,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L69"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L69"
 						}
 					],
 					"signatures": [
@@ -1583,7 +1583,7 @@
 					"fileName": "BoundingBox.ts",
 					"line": 10,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingBox.ts#L10"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingBox.ts#L10"
 				}
 			],
 			"implementedTypes": [
@@ -1642,7 +1642,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L32"
 						}
 					],
 					"signatures": [
@@ -1712,7 +1712,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 24,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L24"
 						}
 					],
 					"type": {
@@ -1742,7 +1742,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 18,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L18"
 						}
 					],
 					"type": {
@@ -1772,7 +1772,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 20,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L20"
 						}
 					],
 					"type": {
@@ -1802,7 +1802,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 16,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L16"
 						}
 					],
 					"type": {
@@ -1832,7 +1832,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 22,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L22"
 						}
 					],
 					"type": {
@@ -1862,7 +1862,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 26,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L26"
 						}
 					],
 					"type": {
@@ -1884,7 +1884,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 71,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L71"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L71"
 						}
 					],
 					"signatures": [
@@ -1942,7 +1942,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 150,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L150"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L150"
 						}
 					],
 					"signatures": [
@@ -1998,7 +1998,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 161,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L161"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L161"
 						}
 					],
 					"signatures": [
@@ -2076,7 +2076,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 48,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L48"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L48"
 						}
 					],
 					"signatures": [
@@ -2148,7 +2148,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 133,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L133"
 						}
 					],
 					"signatures": [
@@ -2219,7 +2219,7 @@
 							"fileName": "BoundingFrustum.ts",
 							"line": 142,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L142"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L142"
 						}
 					],
 					"signatures": [
@@ -2313,7 +2313,7 @@
 					"fileName": "BoundingFrustum.ts",
 					"line": 14,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingFrustum.ts#L14"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingFrustum.ts#L14"
 				}
 			],
 			"implementedTypes": [
@@ -2372,7 +2372,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 69,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L69"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L69"
 						}
 					],
 					"signatures": [
@@ -2463,7 +2463,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 60,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L60"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L60"
 						}
 					],
 					"type": {
@@ -2494,7 +2494,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 62,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L62"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L62"
 						}
 					],
 					"type": {
@@ -2517,7 +2517,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 10,
 							"character": 17,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L10"
 						}
 					],
 					"type": {
@@ -2538,7 +2538,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 78,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L78"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L78"
 						}
 					],
 					"signatures": [
@@ -2594,7 +2594,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 87,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L87"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L87"
 						}
 					],
 					"signatures": [
@@ -2674,7 +2674,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 49,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L49"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L49"
 						}
 					],
 					"signatures": [
@@ -2754,7 +2754,7 @@
 							"fileName": "BoundingSphere.ts",
 							"line": 17,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L17"
 						}
 					],
 					"signatures": [
@@ -2855,7 +2855,7 @@
 					"fileName": "BoundingSphere.ts",
 					"line": 9,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/BoundingSphere.ts#L9"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/BoundingSphere.ts#L9"
 				}
 			],
 			"implementedTypes": [
@@ -2938,7 +2938,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 15,
 							"character": 17,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L15"
 						}
 					],
 					"type": {
@@ -2962,7 +2962,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 16,
 							"character": 17,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L16"
 						}
 					],
 					"type": {
@@ -2986,7 +2986,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 17,
 							"character": 17,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L17"
 						}
 					],
 					"type": {
@@ -3009,7 +3009,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 53,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L53"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L53"
 						}
 					],
 					"signatures": [
@@ -3100,7 +3100,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 416,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L416"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L416"
 						}
 					],
 					"signatures": [
@@ -3192,7 +3192,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 370,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L370"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L370"
 						}
 					],
 					"signatures": [
@@ -3284,7 +3284,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 466,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L466"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L466"
 						}
 					],
 					"signatures": [
@@ -3376,7 +3376,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 26,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L26"
 						}
 					],
 					"signatures": [
@@ -3496,7 +3496,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 296,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L296"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L296"
 						}
 					],
 					"signatures": [
@@ -3587,7 +3587,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 347,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L347"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L347"
 						}
 					],
 					"signatures": [
@@ -3678,7 +3678,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 80,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L80"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L80"
 						}
 					],
 					"signatures": [
@@ -3770,7 +3770,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 63,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L63"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L63"
 						}
 					],
 					"signatures": [
@@ -3862,7 +3862,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 125,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L125"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L125"
 						}
 					],
 					"signatures": [
@@ -3954,7 +3954,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 173,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L173"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L173"
 						}
 					],
 					"signatures": [
@@ -4045,7 +4045,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 143,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L143"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L143"
 						}
 					],
 					"signatures": [
@@ -4136,7 +4136,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 264,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L264"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L264"
 						}
 					],
 					"signatures": [
@@ -4227,7 +4227,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 325,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L325"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L325"
 						}
 					],
 					"signatures": [
@@ -4318,7 +4318,7 @@
 							"fileName": "CollisionUtil.ts",
 							"line": 314,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L314"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L314"
 						}
 					],
 					"signatures": [
@@ -4438,7 +4438,7 @@
 					"fileName": "CollisionUtil.ts",
 					"line": 14,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/CollisionUtil.ts#L14"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/CollisionUtil.ts#L14"
 				}
 			]
 		},
@@ -4468,7 +4468,7 @@
 							"fileName": "Color.ts",
 							"line": 186,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L186"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L186"
 						}
 					],
 					"signatures": [
@@ -4589,13 +4589,13 @@
 							"fileName": "Color.ts",
 							"line": 170,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L170"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L170"
 						},
 						{
 							"fileName": "Color.ts",
 							"line": 174,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L174"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L174"
 						}
 					],
 					"getSignature": {
@@ -4655,13 +4655,13 @@
 							"fileName": "Color.ts",
 							"line": 158,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L158"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L158"
 						},
 						{
 							"fileName": "Color.ts",
 							"line": 162,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L162"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L162"
 						}
 					],
 					"getSignature": {
@@ -4721,13 +4721,13 @@
 							"fileName": "Color.ts",
 							"line": 146,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L146"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L146"
 						},
 						{
 							"fileName": "Color.ts",
 							"line": 150,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L150"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L150"
 						}
 					],
 					"getSignature": {
@@ -4787,13 +4787,13 @@
 							"fileName": "Color.ts",
 							"line": 134,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L134"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L134"
 						},
 						{
 							"fileName": "Color.ts",
 							"line": 138,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L138"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L138"
 						}
 					],
 					"getSignature": {
@@ -4851,7 +4851,7 @@
 							"fileName": "Color.ts",
 							"line": 215,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L215"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L215"
 						}
 					],
 					"signatures": [
@@ -4921,7 +4921,7 @@
 							"fileName": "Color.ts",
 							"line": 242,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L242"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L242"
 						}
 					],
 					"signatures": [
@@ -4977,7 +4977,7 @@
 							"fileName": "Color.ts",
 							"line": 252,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L252"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L252"
 						}
 					],
 					"signatures": [
@@ -5054,7 +5054,7 @@
 							"fileName": "Color.ts",
 							"line": 267,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L267"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L267"
 						}
 					],
 					"signatures": [
@@ -5151,7 +5151,7 @@
 							"fileName": "Color.ts",
 							"line": 281,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L281"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L281"
 						}
 					],
 					"signatures": [
@@ -5248,7 +5248,7 @@
 							"fileName": "Color.ts",
 							"line": 318,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L318"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L318"
 						}
 					],
 					"signatures": [
@@ -5295,7 +5295,7 @@
 							"fileName": "Color.ts",
 							"line": 229,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L229"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L229"
 						}
 					],
 					"signatures": [
@@ -5364,7 +5364,7 @@
 							"fileName": "Color.ts",
 							"line": 201,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L201"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L201"
 						}
 					],
 					"signatures": [
@@ -5490,7 +5490,7 @@
 							"fileName": "Color.ts",
 							"line": 306,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L306"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L306"
 						}
 					],
 					"signatures": [
@@ -5560,7 +5560,7 @@
 							"fileName": "Color.ts",
 							"line": 338,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L338"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L338"
 						}
 					],
 					"signatures": [
@@ -5607,7 +5607,7 @@
 							"fileName": "Color.ts",
 							"line": 293,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L293"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L293"
 						}
 					],
 					"signatures": [
@@ -5679,7 +5679,7 @@
 							"fileName": "Color.ts",
 							"line": 61,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L61"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L61"
 						}
 					],
 					"signatures": [
@@ -5791,7 +5791,7 @@
 							"fileName": "Color.ts",
 							"line": 45,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L45"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L45"
 						}
 					],
 					"signatures": [
@@ -5882,7 +5882,7 @@
 							"fileName": "Color.ts",
 							"line": 14,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L14"
 						}
 					],
 					"signatures": [
@@ -5952,7 +5952,7 @@
 							"fileName": "Color.ts",
 							"line": 109,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L109"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L109"
 						}
 					],
 					"signatures": [
@@ -6072,7 +6072,7 @@
 							"fileName": "Color.ts",
 							"line": 29,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L29"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L29"
 						}
 					],
 					"signatures": [
@@ -6142,7 +6142,7 @@
 							"fileName": "Color.ts",
 							"line": 92,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L92"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L92"
 						}
 					],
 					"signatures": [
@@ -6253,7 +6253,7 @@
 							"fileName": "Color.ts",
 							"line": 77,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L77"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L77"
 						}
 					],
 					"signatures": [
@@ -6386,7 +6386,7 @@
 					"fileName": "Color.ts",
 					"line": 8,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Color.ts#L8"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Color.ts#L8"
 				}
 			],
 			"implementedTypes": [
@@ -6476,7 +6476,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 10,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L10"
 						}
 					],
 					"type": {
@@ -6507,7 +6507,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 8,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L8"
 						}
 					],
 					"type": {
@@ -6538,7 +6538,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 6,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L6"
 						}
 					],
 					"type": {
@@ -6560,7 +6560,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 19,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L19"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L19"
 						}
 					],
 					"signatures": [
@@ -6668,7 +6668,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 57,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L57"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L57"
 						}
 					],
 					"signatures": [
@@ -6738,7 +6738,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 30,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L30"
 						}
 					],
 					"signatures": [
@@ -6827,7 +6827,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 39,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L39"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L39"
 						}
 					],
 					"signatures": [
@@ -6897,7 +6897,7 @@
 							"fileName": "MathUtil.ts",
 							"line": 48,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L48"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L48"
 						}
 					],
 					"signatures": [
@@ -6986,7 +6986,7 @@
 					"fileName": "MathUtil.ts",
 					"line": 4,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/MathUtil.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/MathUtil.ts#L4"
 				}
 			]
 		},
@@ -7016,7 +7016,7 @@
 							"fileName": "Matrix.ts",
 							"line": 823,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L823"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L823"
 						}
 					],
 					"signatures": [
@@ -7394,7 +7394,7 @@
 							"fileName": "Matrix.ts",
 							"line": 802,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L802"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L802"
 						}
 					],
 					"type": {
@@ -7420,7 +7420,7 @@
 							"fileName": "Matrix.ts",
 							"line": 15,
 							"character": 26,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L15"
 						}
 					],
 					"type": {
@@ -7445,7 +7445,7 @@
 							"fileName": "Matrix.ts",
 							"line": 12,
 							"character": 26,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L12"
 						}
 					],
 					"type": {
@@ -7470,7 +7470,7 @@
 							"fileName": "Matrix.ts",
 							"line": 13,
 							"character": 26,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L13"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L13"
 						}
 					],
 					"type": {
@@ -7495,7 +7495,7 @@
 							"fileName": "Matrix.ts",
 							"line": 14,
 							"character": 26,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L14"
 						}
 					],
 					"type": {
@@ -7514,9 +7514,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1200,
+							"line": 1194,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1200"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1194"
 						}
 					],
 					"signatures": [
@@ -7570,9 +7570,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1228,
+							"line": 1222,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1228"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1222"
 						}
 					],
 					"signatures": [
@@ -7648,9 +7648,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1261,
+							"line": 1255,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1261"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1255"
 						}
 					],
 					"signatures": [
@@ -7745,9 +7745,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1274,
+							"line": 1268,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1274"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1268"
 						}
 					],
 					"signatures": [
@@ -7844,7 +7844,7 @@
 							"fileName": "Matrix.ts",
 							"line": 985,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L985"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L985"
 						}
 					],
 					"signatures": [
@@ -7953,7 +7953,7 @@
 							"fileName": "Matrix.ts",
 							"line": 941,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L941"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L941"
 						}
 					],
 					"signatures": [
@@ -7998,9 +7998,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1045,
+							"line": 1039,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1045"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1039"
 						}
 					],
 					"signatures": [
@@ -8068,9 +8068,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1084,
+							"line": 1078,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1084"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1078"
 						}
 					],
 					"signatures": [
@@ -8138,9 +8138,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1111,
+							"line": 1105,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1111"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1105"
 						}
 					],
 					"signatures": [
@@ -8208,9 +8208,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1121,
+							"line": 1115,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1121"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1115"
 						}
 					],
 					"signatures": [
@@ -8256,9 +8256,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1151,
+							"line": 1145,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1151"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1145"
 						}
 					],
 					"signatures": [
@@ -8306,7 +8306,7 @@
 							"fileName": "Matrix.ts",
 							"line": 932,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L932"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L932"
 						}
 					],
 					"signatures": [
@@ -8374,9 +8374,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1162,
+							"line": 1156,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1162"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1156"
 						}
 					],
 					"signatures": [
@@ -8463,9 +8463,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1172,
+							"line": 1166,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1172"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1166"
 						}
 					],
 					"signatures": [
@@ -8535,7 +8535,7 @@
 							"fileName": "Matrix.ts",
 							"line": 884,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L884"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L884"
 						}
 					],
 					"signatures": [
@@ -8887,9 +8887,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1182,
+							"line": 1176,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1182"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1176"
 						}
 					],
 					"signatures": [
@@ -8957,9 +8957,9 @@
 					"sources": [
 						{
 							"fileName": "Matrix.ts",
-							"line": 1191,
+							"line": 1185,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L1191"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L1185"
 						}
 					],
 					"signatures": [
@@ -9009,7 +9009,7 @@
 							"fileName": "Matrix.ts",
 							"line": 151,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L151"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L151"
 						}
 					],
 					"signatures": [
@@ -9109,7 +9109,7 @@
 							"fileName": "Matrix.ts",
 							"line": 313,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L313"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L313"
 						}
 					],
 					"signatures": [
@@ -9229,7 +9229,7 @@
 							"fileName": "Matrix.ts",
 							"line": 87,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L87"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L87"
 						}
 					],
 					"signatures": [
@@ -9320,7 +9320,7 @@
 							"fileName": "Matrix.ts",
 							"line": 415,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L415"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L415"
 						}
 					],
 					"signatures": [
@@ -9400,7 +9400,7 @@
 							"fileName": "Matrix.ts",
 							"line": 118,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L118"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L118"
 						}
 					],
 					"signatures": [
@@ -9519,7 +9519,7 @@
 							"fileName": "Matrix.ts",
 							"line": 483,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L483"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L483"
 						}
 					],
 					"signatures": [
@@ -9639,7 +9639,7 @@
 							"fileName": "Matrix.ts",
 							"line": 43,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L43"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L43"
 						}
 					],
 					"signatures": [
@@ -9739,7 +9739,7 @@
 							"fileName": "Matrix.ts",
 							"line": 179,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L179"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L179"
 						}
 					],
 					"signatures": [
@@ -9838,7 +9838,7 @@
 							"fileName": "Matrix.ts",
 							"line": 526,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L526"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L526"
 						}
 					],
 					"signatures": [
@@ -10012,7 +10012,7 @@
 							"fileName": "Matrix.ts",
 							"line": 561,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L561"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L561"
 						}
 					],
 					"signatures": [
@@ -10148,7 +10148,7 @@
 							"fileName": "Matrix.ts",
 							"line": 594,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L594"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L594"
 						}
 					],
 					"signatures": [
@@ -10267,7 +10267,7 @@
 							"fileName": "Matrix.ts",
 							"line": 250,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L250"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L250"
 						}
 					],
 					"signatures": [
@@ -10366,7 +10366,7 @@
 							"fileName": "Matrix.ts",
 							"line": 206,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L206"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L206"
 						}
 					],
 					"signatures": [
@@ -10446,7 +10446,7 @@
 							"fileName": "Matrix.ts",
 							"line": 297,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L297"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L297"
 						}
 					],
 					"signatures": [
@@ -10546,7 +10546,7 @@
 							"fileName": "Matrix.ts",
 							"line": 670,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L670"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L670"
 						}
 					],
 					"signatures": [
@@ -10646,7 +10646,7 @@
 							"fileName": "Matrix.ts",
 							"line": 359,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L359"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L359"
 						}
 					],
 					"signatures": [
@@ -10726,7 +10726,7 @@
 							"fileName": "Matrix.ts",
 							"line": 702,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L702"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L702"
 						}
 					],
 					"signatures": [
@@ -10826,7 +10826,7 @@
 							"fileName": "Matrix.ts",
 							"line": 387,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L387"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L387"
 						}
 					],
 					"signatures": [
@@ -10906,7 +10906,7 @@
 							"fileName": "Matrix.ts",
 							"line": 742,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L742"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L742"
 						}
 					],
 					"signatures": [
@@ -11038,7 +11038,7 @@
 					"fileName": "Matrix.ts",
 					"line": 11,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix.ts#L11"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix.ts#L11"
 				}
 			],
 			"implementedTypes": [
@@ -11097,7 +11097,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 480,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L480"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L480"
 						}
 					],
 					"signatures": [
@@ -11335,7 +11335,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 466,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L466"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L466"
 						}
 					],
 					"type": {
@@ -11357,7 +11357,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 552,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L552"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L552"
 						}
 					],
 					"signatures": [
@@ -11427,7 +11427,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 675,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L675"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L675"
 						}
 					],
 					"signatures": [
@@ -11483,7 +11483,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 686,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L686"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L686"
 						}
 					],
 					"signatures": [
@@ -11561,7 +11561,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 711,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L711"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L711"
 						}
 					],
 					"signatures": [
@@ -11658,7 +11658,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 744,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L744"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L744"
 						}
 					],
 					"signatures": [
@@ -11728,7 +11728,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 724,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L724"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L724"
 						}
 					],
 					"signatures": [
@@ -11825,7 +11825,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 581,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L581"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L581"
 						}
 					],
 					"signatures": [
@@ -11872,7 +11872,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 605,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L605"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L605"
 						}
 					],
 					"signatures": [
@@ -11920,7 +11920,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 627,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L627"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L627"
 						}
 					],
 					"signatures": [
@@ -11968,7 +11968,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 572,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L572"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L572"
 						}
 					],
 					"signatures": [
@@ -12038,7 +12038,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 637,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L637"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L637"
 						}
 					],
 					"signatures": [
@@ -12107,7 +12107,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 647,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L647"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L647"
 						}
 					],
 					"signatures": [
@@ -12177,7 +12177,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 519,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L519"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L519"
 						}
 					],
 					"signatures": [
@@ -12326,7 +12326,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 562,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L562"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L562"
 						}
 					],
 					"signatures": [
@@ -12396,7 +12396,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 657,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L657"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L657"
 						}
 					],
 					"signatures": [
@@ -12466,7 +12466,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 666,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L666"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L666"
 						}
 					],
 					"signatures": [
@@ -12516,7 +12516,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 18,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L18"
 						}
 					],
 					"signatures": [
@@ -12616,7 +12616,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 110,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L110"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L110"
 						}
 					],
 					"signatures": [
@@ -12707,7 +12707,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 234,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L234"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L234"
 						}
 					],
 					"signatures": [
@@ -12787,7 +12787,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 134,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L134"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L134"
 						}
 					],
 					"signatures": [
@@ -12906,7 +12906,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 66,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L66"
 						}
 					],
 					"signatures": [
@@ -13006,7 +13006,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 277,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L277"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L277"
 						}
 					],
 					"signatures": [
@@ -13097,7 +13097,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 336,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L336"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L336"
 						}
 					],
 					"signatures": [
@@ -13196,7 +13196,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 158,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L158"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L158"
 						}
 					],
 					"signatures": [
@@ -13276,7 +13276,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 371,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L371"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L371"
 						}
 					],
 					"signatures": [
@@ -13376,7 +13376,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 192,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L192"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L192"
 						}
 					],
 					"signatures": [
@@ -13456,7 +13456,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 42,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L42"
 						}
 					],
 					"signatures": [
@@ -13556,7 +13556,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 395,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L395"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L395"
 						}
 					],
 					"signatures": [
@@ -13656,7 +13656,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 213,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L213"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L213"
 						}
 					],
 					"signatures": [
@@ -13736,7 +13736,7 @@
 							"fileName": "Matrix3x3.ts",
 							"line": 428,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L428"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L428"
 						}
 					],
 					"signatures": [
@@ -13858,7 +13858,7 @@
 					"fileName": "Matrix3x3.ts",
 					"line": 11,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Matrix3x3.ts#L11"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Matrix3x3.ts#L11"
 				}
 			],
 			"implementedTypes": [
@@ -13917,7 +13917,7 @@
 							"fileName": "Plane.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L66"
 						}
 					],
 					"signatures": [
@@ -14007,7 +14007,7 @@
 							"fileName": "Plane.ts",
 							"line": 59,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L59"
 						}
 					],
 					"type": {
@@ -14038,7 +14038,7 @@
 							"fileName": "Plane.ts",
 							"line": 57,
 							"character": 18,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L57"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L57"
 						}
 					],
 					"type": {
@@ -14059,7 +14059,7 @@
 							"fileName": "Plane.ts",
 							"line": 84,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L84"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L84"
 						}
 					],
 					"signatures": [
@@ -14115,7 +14115,7 @@
 							"fileName": "Plane.ts",
 							"line": 95,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L95"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L95"
 						}
 					],
 					"signatures": [
@@ -14193,7 +14193,7 @@
 							"fileName": "Plane.ts",
 							"line": 75,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L75"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L75"
 						}
 					],
 					"signatures": [
@@ -14243,7 +14243,7 @@
 							"fileName": "Plane.ts",
 							"line": 29,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L29"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L29"
 						}
 					],
 					"signatures": [
@@ -14363,7 +14363,7 @@
 							"fileName": "Plane.ts",
 							"line": 14,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L14"
 						}
 					],
 					"signatures": [
@@ -14461,7 +14461,7 @@
 					"fileName": "Plane.ts",
 					"line": 8,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Plane.ts#L8"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Plane.ts#L8"
 				}
 			],
 			"implementedTypes": [
@@ -14520,7 +14520,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 492,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L492"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L492"
 						}
 					],
 					"signatures": [
@@ -14641,7 +14641,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 466,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L466"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L466"
 						}
 					],
 					"getSignature": {
@@ -14677,13 +14677,13 @@
 							"fileName": "Quaternion.ts",
 							"line": 476,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L476"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L476"
 						},
 						{
 							"fileName": "Quaternion.ts",
 							"line": 480,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L480"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L480"
 						}
 					],
 					"getSignature": {
@@ -14743,13 +14743,13 @@
 							"fileName": "Quaternion.ts",
 							"line": 430,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L430"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L430"
 						},
 						{
 							"fileName": "Quaternion.ts",
 							"line": 434,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L434"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L434"
 						}
 					],
 					"getSignature": {
@@ -14809,13 +14809,13 @@
 							"fileName": "Quaternion.ts",
 							"line": 442,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L442"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L442"
 						},
 						{
 							"fileName": "Quaternion.ts",
 							"line": 446,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L446"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L446"
 						}
 					],
 					"getSignature": {
@@ -14875,13 +14875,13 @@
 							"fileName": "Quaternion.ts",
 							"line": 454,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L454"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L454"
 						},
 						{
 							"fileName": "Quaternion.ts",
 							"line": 458,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L458"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L458"
 						}
 					],
 					"getSignature": {
@@ -14941,7 +14941,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 773,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L773"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L773"
 						}
 					],
 					"signatures": [
@@ -14983,7 +14983,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 715,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L715"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L715"
 						}
 					],
 					"signatures": [
@@ -15039,7 +15039,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 520,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L520"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L520"
 						}
 					],
 					"signatures": [
@@ -15087,7 +15087,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 724,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L724"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L724"
 						}
 					],
 					"signatures": [
@@ -15164,7 +15164,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 739,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L739"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L739"
 						}
 					],
 					"signatures": [
@@ -15261,7 +15261,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 753,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L753"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L753"
 						}
 					],
 					"signatures": [
@@ -15358,7 +15358,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 684,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L684"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L684"
 						}
 					],
 					"signatures": [
@@ -15427,7 +15427,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 533,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L533"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L533"
 						}
 					],
 					"signatures": [
@@ -15496,7 +15496,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 557,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L557"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L557"
 						}
 					],
 					"signatures": [
@@ -15544,7 +15544,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 674,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L674"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L674"
 						}
 					],
 					"signatures": [
@@ -15592,7 +15592,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 570,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L570"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L570"
 						}
 					],
 					"signatures": [
@@ -15639,7 +15639,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 579,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L579"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L579"
 						}
 					],
 					"signatures": [
@@ -15686,7 +15686,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 694,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L694"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L694"
 						}
 					],
 					"signatures": [
@@ -15775,7 +15775,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 665,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L665"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L665"
 						}
 					],
 					"signatures": [
@@ -15845,7 +15845,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 588,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L588"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L588"
 						}
 					],
 					"signatures": [
@@ -15893,7 +15893,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 705,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L705"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L705"
 						}
 					],
 					"signatures": [
@@ -15982,7 +15982,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 624,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L624"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L624"
 						}
 					],
 					"signatures": [
@@ -16051,7 +16051,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 634,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L634"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L634"
 						}
 					],
 					"signatures": [
@@ -16120,7 +16120,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 644,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L644"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L644"
 						}
 					],
 					"signatures": [
@@ -16189,7 +16189,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 655,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L655"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L655"
 						}
 					],
 					"signatures": [
@@ -16278,7 +16278,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 507,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L507"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L507"
 						}
 					],
 					"signatures": [
@@ -16404,7 +16404,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 598,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L598"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L598"
 						}
 					],
 					"signatures": [
@@ -16474,7 +16474,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 764,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L764"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L764"
 						}
 					],
 					"signatures": [
@@ -16521,7 +16521,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 613,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L613"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L613"
 						}
 					],
 					"signatures": [
@@ -16593,7 +16593,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 22,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L22"
 						}
 					],
 					"signatures": [
@@ -16693,7 +16693,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 58,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L58"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L58"
 						}
 					],
 					"signatures": [
@@ -16773,7 +16773,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 72,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L72"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L72"
 						}
 					],
 					"signatures": [
@@ -16864,7 +16864,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 82,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L82"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L82"
 						}
 					],
 					"signatures": [
@@ -16955,7 +16955,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 209,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L209"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L209"
 						}
 					],
 					"signatures": [
@@ -17035,7 +17035,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 229,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L229"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L229"
 						}
 					],
 					"signatures": [
@@ -17154,7 +17154,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 36,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L36"
 						}
 					],
 					"signatures": [
@@ -17254,7 +17254,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 281,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L281"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L281"
 						}
 					],
 					"signatures": [
@@ -17334,7 +17334,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 351,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L351"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L351"
 						}
 					],
 					"signatures": [
@@ -17433,7 +17433,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 370,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L370"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L370"
 						}
 					],
 					"signatures": [
@@ -17532,7 +17532,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 389,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L389"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L389"
 						}
 					],
 					"signatures": [
@@ -17631,7 +17631,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 97,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L97"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L97"
 						}
 					],
 					"signatures": [
@@ -17730,7 +17730,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 116,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L116"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L116"
 						}
 					],
 					"signatures": [
@@ -17847,7 +17847,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 154,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L154"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L154"
 						}
 					],
 					"signatures": [
@@ -17927,7 +17927,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 299,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L299"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L299"
 						}
 					],
 					"signatures": [
@@ -18006,7 +18006,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 316,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L316"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L316"
 						}
 					],
 					"signatures": [
@@ -18085,7 +18085,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 127,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L127"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L127"
 						}
 					],
 					"signatures": [
@@ -18202,7 +18202,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 333,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L333"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L333"
 						}
 					],
 					"signatures": [
@@ -18281,7 +18281,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 408,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L408"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L408"
 						}
 					],
 					"signatures": [
@@ -18380,7 +18380,7 @@
 							"fileName": "Quaternion.ts",
 							"line": 253,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L253"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L253"
 						}
 					],
 					"signatures": [
@@ -18559,7 +18559,7 @@
 					"fileName": "Quaternion.ts",
 					"line": 10,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Quaternion.ts#L10"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Quaternion.ts#L10"
 				}
 			],
 			"implementedTypes": [
@@ -18617,7 +18617,7 @@
 							"fileName": "Rand.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L14"
 						}
 					],
 					"signatures": [
@@ -18696,7 +18696,7 @@
 							"fileName": "Rand.ts",
 							"line": 6,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L6"
 						}
 					],
 					"type": {
@@ -18717,7 +18717,7 @@
 							"fileName": "Rand.ts",
 							"line": 7,
 							"character": 10,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L7"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L7"
 						}
 					],
 					"type": {
@@ -18736,7 +18736,7 @@
 							"fileName": "Rand.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L37"
 						}
 					],
 					"signatures": [
@@ -18783,7 +18783,7 @@
 							"fileName": "Rand.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L22"
 						}
 					],
 					"signatures": [
@@ -18830,7 +18830,7 @@
 							"fileName": "Rand.ts",
 							"line": 46,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L46"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L46"
 						}
 					],
 					"signatures": [
@@ -18924,7 +18924,7 @@
 					"fileName": "Rand.ts",
 					"line": 5,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rand.ts#L5"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rand.ts#L5"
 				}
 			]
 		},
@@ -18954,7 +18954,7 @@
 							"fileName": "Ray.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L21"
 						}
 					],
 					"signatures": [
@@ -19045,7 +19045,7 @@
 							"fileName": "Ray.ts",
 							"line": 14,
 							"character": 11,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L14"
 						}
 					],
 					"type": {
@@ -19076,7 +19076,7 @@
 							"fileName": "Ray.ts",
 							"line": 12,
 							"character": 11,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L12"
 						}
 					],
 					"type": {
@@ -19097,7 +19097,7 @@
 							"fileName": "Ray.ts",
 							"line": 59,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L59"
 						}
 					],
 					"signatures": [
@@ -19186,7 +19186,7 @@
 							"fileName": "Ray.ts",
 							"line": 49,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L49"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L49"
 						}
 					],
 					"signatures": [
@@ -19255,7 +19255,7 @@
 							"fileName": "Ray.ts",
 							"line": 31,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L31"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L31"
 						}
 					],
 					"signatures": [
@@ -19324,7 +19324,7 @@
 							"fileName": "Ray.ts",
 							"line": 40,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L40"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L40"
 						}
 					],
 					"signatures": [
@@ -19412,7 +19412,7 @@
 					"fileName": "Ray.ts",
 					"line": 10,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Ray.ts#L10"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Ray.ts#L10"
 				}
 			]
 		},
@@ -19434,7 +19434,7 @@
 							"fileName": "Rect.ts",
 							"line": 72,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L72"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L72"
 						}
 					],
 					"signatures": [
@@ -19553,13 +19553,13 @@
 							"fileName": "Rect.ts",
 							"line": 56,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L56"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L56"
 						},
 						{
 							"fileName": "Rect.ts",
 							"line": 60,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L60"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L60"
 						}
 					],
 					"getSignature": {
@@ -19617,13 +19617,13 @@
 							"fileName": "Rect.ts",
 							"line": 44,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L44"
 						},
 						{
 							"fileName": "Rect.ts",
 							"line": 48,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L48"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L48"
 						}
 					],
 					"getSignature": {
@@ -19681,13 +19681,13 @@
 							"fileName": "Rect.ts",
 							"line": 20,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L20"
 						},
 						{
 							"fileName": "Rect.ts",
 							"line": 24,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L24"
 						}
 					],
 					"getSignature": {
@@ -19745,13 +19745,13 @@
 							"fileName": "Rect.ts",
 							"line": 32,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L32"
 						},
 						{
 							"fileName": "Rect.ts",
 							"line": 36,
 							"character": 6,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L36"
 						}
 					],
 					"getSignature": {
@@ -19809,7 +19809,7 @@
 							"fileName": "Rect.ts",
 							"line": 100,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L100"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L100"
 						}
 					],
 					"signatures": [
@@ -19865,7 +19865,7 @@
 							"fileName": "Rect.ts",
 							"line": 109,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L109"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L109"
 						}
 					],
 					"signatures": [
@@ -19943,7 +19943,7 @@
 							"fileName": "Rect.ts",
 							"line": 87,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L87"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L87"
 						}
 					],
 					"signatures": [
@@ -20089,7 +20089,7 @@
 					"fileName": "Rect.ts",
 					"line": 5,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Rect.ts#L5"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Rect.ts#L5"
 				}
 			],
 			"implementedTypes": [
@@ -20188,7 +20188,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L17"
 						}
 					],
 					"type": {
@@ -20210,7 +20210,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 25,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L25"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L25"
 						}
 					],
 					"signatures": [
@@ -20307,7 +20307,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 157,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L157"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L157"
 						}
 					],
 					"signatures": [
@@ -20363,7 +20363,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 168,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L168"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L168"
 						}
 					],
 					"signatures": [
@@ -20441,7 +20441,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 178,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L178"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L178"
 						}
 					],
 					"signatures": [
@@ -20526,7 +20526,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 197,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L197"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L197"
 						}
 					],
 					"signatures": [
@@ -20623,7 +20623,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 78,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L78"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L78"
 						}
 					],
 					"signatures": [
@@ -20702,7 +20702,7 @@
 							"fileName": "SphericalHarmonics3.ts",
 							"line": 139,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L139"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L139"
 						}
 					],
 					"signatures": [
@@ -20780,7 +20780,7 @@
 					"fileName": "SphericalHarmonics3.ts",
 					"line": 13,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/SphericalHarmonics3.ts#L13"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/SphericalHarmonics3.ts#L13"
 				}
 			],
 			"implementedTypes": [
@@ -20839,7 +20839,7 @@
 							"fileName": "Vector2.ts",
 							"line": 219,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L219"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L219"
 						}
 					],
 					"signatures": [
@@ -20920,13 +20920,13 @@
 							"fileName": "Vector2.ts",
 							"line": 193,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L193"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L193"
 						},
 						{
 							"fileName": "Vector2.ts",
 							"line": 197,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L197"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L197"
 						}
 					],
 					"getSignature": {
@@ -20986,13 +20986,13 @@
 							"fileName": "Vector2.ts",
 							"line": 205,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L205"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L205"
 						},
 						{
 							"fileName": "Vector2.ts",
 							"line": 209,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L209"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L209"
 						}
 					],
 					"getSignature": {
@@ -21050,7 +21050,7 @@
 							"fileName": "Vector2.ts",
 							"line": 242,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L242"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L242"
 						}
 					],
 					"signatures": [
@@ -21120,7 +21120,7 @@
 							"fileName": "Vector2.ts",
 							"line": 339,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L339"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L339"
 						}
 					],
 					"signatures": [
@@ -21176,7 +21176,7 @@
 							"fileName": "Vector2.ts",
 							"line": 348,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L348"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L348"
 						}
 					],
 					"signatures": [
@@ -21253,7 +21253,7 @@
 							"fileName": "Vector2.ts",
 							"line": 361,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L361"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L361"
 						}
 					],
 					"signatures": [
@@ -21350,7 +21350,7 @@
 							"fileName": "Vector2.ts",
 							"line": 373,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L373"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L373"
 						}
 					],
 					"signatures": [
@@ -21447,7 +21447,7 @@
 							"fileName": "Vector2.ts",
 							"line": 278,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L278"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L278"
 						}
 					],
 					"signatures": [
@@ -21517,7 +21517,7 @@
 							"fileName": "Vector2.ts",
 							"line": 289,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L289"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L289"
 						}
 					],
 					"signatures": [
@@ -21564,7 +21564,7 @@
 							"fileName": "Vector2.ts",
 							"line": 298,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L298"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L298"
 						}
 					],
 					"signatures": [
@@ -21611,7 +21611,7 @@
 							"fileName": "Vector2.ts",
 							"line": 266,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L266"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L266"
 						}
 					],
 					"signatures": [
@@ -21681,7 +21681,7 @@
 							"fileName": "Vector2.ts",
 							"line": 307,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L307"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L307"
 						}
 					],
 					"signatures": [
@@ -21729,7 +21729,7 @@
 							"fileName": "Vector2.ts",
 							"line": 318,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L318"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L318"
 						}
 					],
 					"signatures": [
@@ -21777,7 +21777,7 @@
 							"fileName": "Vector2.ts",
 							"line": 328,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L328"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L328"
 						}
 					],
 					"signatures": [
@@ -21846,7 +21846,7 @@
 							"fileName": "Vector2.ts",
 							"line": 230,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L230"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L230"
 						}
 					],
 					"signatures": [
@@ -21934,7 +21934,7 @@
 							"fileName": "Vector2.ts",
 							"line": 254,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L254"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L254"
 						}
 					],
 					"signatures": [
@@ -22004,7 +22004,7 @@
 							"fileName": "Vector2.ts",
 							"line": 382,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L382"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L382"
 						}
 					],
 					"signatures": [
@@ -22053,7 +22053,7 @@
 							"fileName": "Vector2.ts",
 							"line": 20,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L20"
 						}
 					],
 					"signatures": [
@@ -22153,7 +22153,7 @@
 							"fileName": "Vector2.ts",
 							"line": 78,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L78"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L78"
 						}
 					],
 					"signatures": [
@@ -22244,7 +22244,7 @@
 							"fileName": "Vector2.ts",
 							"line": 90,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L90"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L90"
 						}
 					],
 					"signatures": [
@@ -22335,7 +22335,7 @@
 							"fileName": "Vector2.ts",
 							"line": 56,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L56"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L56"
 						}
 					],
 					"signatures": [
@@ -22435,7 +22435,7 @@
 							"fileName": "Vector2.ts",
 							"line": 68,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L68"
 						}
 					],
 					"signatures": [
@@ -22526,7 +22526,7 @@
 							"fileName": "Vector2.ts",
 							"line": 102,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L102"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L102"
 						}
 					],
 					"signatures": [
@@ -22617,7 +22617,7 @@
 							"fileName": "Vector2.ts",
 							"line": 113,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L113"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L113"
 						}
 					],
 					"signatures": [
@@ -22736,7 +22736,7 @@
 							"fileName": "Vector2.ts",
 							"line": 126,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L126"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L126"
 						}
 					],
 					"signatures": [
@@ -22836,7 +22836,7 @@
 							"fileName": "Vector2.ts",
 							"line": 138,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L138"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L138"
 						}
 					],
 					"signatures": [
@@ -22936,7 +22936,7 @@
 							"fileName": "Vector2.ts",
 							"line": 44,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L44"
 						}
 					],
 					"signatures": [
@@ -23036,7 +23036,7 @@
 							"fileName": "Vector2.ts",
 							"line": 149,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L149"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L149"
 						}
 					],
 					"signatures": [
@@ -23116,7 +23116,7 @@
 							"fileName": "Vector2.ts",
 							"line": 160,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L160"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L160"
 						}
 					],
 					"signatures": [
@@ -23196,7 +23196,7 @@
 							"fileName": "Vector2.ts",
 							"line": 177,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L177"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L177"
 						}
 					],
 					"signatures": [
@@ -23295,7 +23295,7 @@
 							"fileName": "Vector2.ts",
 							"line": 32,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L32"
 						}
 					],
 					"signatures": [
@@ -23437,7 +23437,7 @@
 					"fileName": "Vector2.ts",
 					"line": 8,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector2.ts#L8"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector2.ts#L8"
 				}
 			],
 			"implementedTypes": [
@@ -23495,7 +23495,7 @@
 							"fileName": "Vector3.ts",
 							"line": 366,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L366"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L366"
 						}
 					],
 					"signatures": [
@@ -23596,13 +23596,13 @@
 							"fileName": "Vector3.ts",
 							"line": 327,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L327"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L327"
 						},
 						{
 							"fileName": "Vector3.ts",
 							"line": 331,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L331"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L331"
 						}
 					],
 					"getSignature": {
@@ -23662,13 +23662,13 @@
 							"fileName": "Vector3.ts",
 							"line": 339,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L339"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L339"
 						},
 						{
 							"fileName": "Vector3.ts",
 							"line": 343,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L343"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L343"
 						}
 					],
 					"getSignature": {
@@ -23728,13 +23728,13 @@
 							"fileName": "Vector3.ts",
 							"line": 351,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L351"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L351"
 						},
 						{
 							"fileName": "Vector3.ts",
 							"line": 355,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L355"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L355"
 						}
 					],
 					"getSignature": {
@@ -23792,7 +23792,7 @@
 							"fileName": "Vector3.ts",
 							"line": 392,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L392"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L392"
 						}
 					],
 					"signatures": [
@@ -23862,7 +23862,7 @@
 							"fileName": "Vector3.ts",
 							"line": 547,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L547"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L547"
 						}
 					],
 					"signatures": [
@@ -23918,7 +23918,7 @@
 							"fileName": "Vector3.ts",
 							"line": 556,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L556"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L556"
 						}
 					],
 					"signatures": [
@@ -23995,7 +23995,7 @@
 							"fileName": "Vector3.ts",
 							"line": 570,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L570"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L570"
 						}
 					],
 					"signatures": [
@@ -24092,7 +24092,7 @@
 							"fileName": "Vector3.ts",
 							"line": 583,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L583"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L583"
 						}
 					],
 					"signatures": [
@@ -24189,7 +24189,7 @@
 							"fileName": "Vector3.ts",
 							"line": 431,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L431"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L431"
 						}
 					],
 					"signatures": [
@@ -24259,7 +24259,7 @@
 							"fileName": "Vector3.ts",
 							"line": 443,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L443"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L443"
 						}
 					],
 					"signatures": [
@@ -24306,7 +24306,7 @@
 							"fileName": "Vector3.ts",
 							"line": 452,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L452"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L452"
 						}
 					],
 					"signatures": [
@@ -24353,7 +24353,7 @@
 							"fileName": "Vector3.ts",
 							"line": 418,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L418"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L418"
 						}
 					],
 					"signatures": [
@@ -24423,7 +24423,7 @@
 							"fileName": "Vector3.ts",
 							"line": 461,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L461"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L461"
 						}
 					],
 					"signatures": [
@@ -24471,7 +24471,7 @@
 							"fileName": "Vector3.ts",
 							"line": 473,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L473"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L473"
 						}
 					],
 					"signatures": [
@@ -24519,7 +24519,7 @@
 							"fileName": "Vector3.ts",
 							"line": 483,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L483"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L483"
 						}
 					],
 					"signatures": [
@@ -24588,7 +24588,7 @@
 							"fileName": "Vector3.ts",
 							"line": 379,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L379"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L379"
 						}
 					],
 					"signatures": [
@@ -24695,7 +24695,7 @@
 							"fileName": "Vector3.ts",
 							"line": 405,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L405"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L405"
 						}
 					],
 					"signatures": [
@@ -24765,7 +24765,7 @@
 							"fileName": "Vector3.ts",
 							"line": 593,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L593"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L593"
 						}
 					],
 					"signatures": [
@@ -24812,7 +24812,7 @@
 							"fileName": "Vector3.ts",
 							"line": 538,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L538"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L538"
 						}
 					],
 					"signatures": [
@@ -24882,7 +24882,7 @@
 							"fileName": "Vector3.ts",
 							"line": 528,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L528"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L528"
 						}
 					],
 					"signatures": [
@@ -24961,7 +24961,7 @@
 							"fileName": "Vector3.ts",
 							"line": 502,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L502"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L502"
 						}
 					],
 					"signatures": [
@@ -25040,7 +25040,7 @@
 							"fileName": "Vector3.ts",
 							"line": 512,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L512"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L512"
 						}
 					],
 					"signatures": [
@@ -25112,7 +25112,7 @@
 							"fileName": "Vector3.ts",
 							"line": 23,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L23"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L23"
 						}
 					],
 					"signatures": [
@@ -25212,7 +25212,7 @@
 							"fileName": "Vector3.ts",
 							"line": 85,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L85"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L85"
 						}
 					],
 					"signatures": [
@@ -25312,7 +25312,7 @@
 							"fileName": "Vector3.ts",
 							"line": 102,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L102"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L102"
 						}
 					],
 					"signatures": [
@@ -25403,7 +25403,7 @@
 							"fileName": "Vector3.ts",
 							"line": 115,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L115"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L115"
 						}
 					],
 					"signatures": [
@@ -25494,7 +25494,7 @@
 							"fileName": "Vector3.ts",
 							"line": 62,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L62"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L62"
 						}
 					],
 					"signatures": [
@@ -25594,7 +25594,7 @@
 							"fileName": "Vector3.ts",
 							"line": 75,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L75"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L75"
 						}
 					],
 					"signatures": [
@@ -25685,7 +25685,7 @@
 							"fileName": "Vector3.ts",
 							"line": 128,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L128"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L128"
 						}
 					],
 					"signatures": [
@@ -25776,7 +25776,7 @@
 							"fileName": "Vector3.ts",
 							"line": 141,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L141"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L141"
 						}
 					],
 					"signatures": [
@@ -25895,7 +25895,7 @@
 							"fileName": "Vector3.ts",
 							"line": 155,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L155"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L155"
 						}
 					],
 					"signatures": [
@@ -25995,7 +25995,7 @@
 							"fileName": "Vector3.ts",
 							"line": 168,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L168"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L168"
 						}
 					],
 					"signatures": [
@@ -26095,7 +26095,7 @@
 							"fileName": "Vector3.ts",
 							"line": 49,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L49"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L49"
 						}
 					],
 					"signatures": [
@@ -26195,7 +26195,7 @@
 							"fileName": "Vector3.ts",
 							"line": 180,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L180"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L180"
 						}
 					],
 					"signatures": [
@@ -26275,7 +26275,7 @@
 							"fileName": "Vector3.ts",
 							"line": 192,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L192"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L192"
 						}
 					],
 					"signatures": [
@@ -26355,7 +26355,7 @@
 							"fileName": "Vector3.ts",
 							"line": 207,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L207"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L207"
 						}
 					],
 					"signatures": [
@@ -26454,7 +26454,7 @@
 							"fileName": "Vector3.ts",
 							"line": 36,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L36"
 						}
 					],
 					"signatures": [
@@ -26554,7 +26554,7 @@
 							"fileName": "Vector3.ts",
 							"line": 298,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L298"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L298"
 						}
 					],
 					"signatures": [
@@ -26654,7 +26654,7 @@
 							"fileName": "Vector3.ts",
 							"line": 280,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L280"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L280"
 						}
 					],
 					"signatures": [
@@ -26765,7 +26765,7 @@
 							"fileName": "Vector3.ts",
 							"line": 226,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L226"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L226"
 						}
 					],
 					"signatures": [
@@ -26876,7 +26876,7 @@
 							"fileName": "Vector3.ts",
 							"line": 241,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L241"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L241"
 						}
 					],
 					"signatures": [
@@ -26976,7 +26976,7 @@
 							"fileName": "Vector3.ts",
 							"line": 257,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L257"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L257"
 						}
 					],
 					"signatures": [
@@ -27129,7 +27129,7 @@
 					"fileName": "Vector3.ts",
 					"line": 11,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector3.ts#L11"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector3.ts#L11"
 				}
 			],
 			"implementedTypes": [
@@ -27187,7 +27187,7 @@
 							"fileName": "Vector4.ts",
 							"line": 323,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L323"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L323"
 						}
 					],
 					"signatures": [
@@ -27308,13 +27308,13 @@
 							"fileName": "Vector4.ts",
 							"line": 307,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L307"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L307"
 						},
 						{
 							"fileName": "Vector4.ts",
 							"line": 311,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L311"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L311"
 						}
 					],
 					"getSignature": {
@@ -27374,13 +27374,13 @@
 							"fileName": "Vector4.ts",
 							"line": 271,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L271"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L271"
 						},
 						{
 							"fileName": "Vector4.ts",
 							"line": 275,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L275"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L275"
 						}
 					],
 					"getSignature": {
@@ -27440,13 +27440,13 @@
 							"fileName": "Vector4.ts",
 							"line": 283,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L283"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L283"
 						},
 						{
 							"fileName": "Vector4.ts",
 							"line": 287,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L287"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L287"
 						}
 					],
 					"getSignature": {
@@ -27506,13 +27506,13 @@
 							"fileName": "Vector4.ts",
 							"line": 295,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L295"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L295"
 						},
 						{
 							"fileName": "Vector4.ts",
 							"line": 299,
 							"character": 13,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L299"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L299"
 						}
 					],
 					"getSignature": {
@@ -27570,7 +27570,7 @@
 							"fileName": "Vector4.ts",
 							"line": 352,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L352"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L352"
 						}
 					],
 					"signatures": [
@@ -27640,7 +27640,7 @@
 							"fileName": "Vector4.ts",
 							"line": 461,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L461"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L461"
 						}
 					],
 					"signatures": [
@@ -27696,7 +27696,7 @@
 							"fileName": "Vector4.ts",
 							"line": 471,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L471"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L471"
 						}
 					],
 					"signatures": [
@@ -27773,7 +27773,7 @@
 							"fileName": "Vector4.ts",
 							"line": 486,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L486"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L486"
 						}
 					],
 					"signatures": [
@@ -27870,7 +27870,7 @@
 							"fileName": "Vector4.ts",
 							"line": 500,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L500"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L500"
 						}
 					],
 					"signatures": [
@@ -27967,7 +27967,7 @@
 							"fileName": "Vector4.ts",
 							"line": 394,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L394"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L394"
 						}
 					],
 					"signatures": [
@@ -28037,7 +28037,7 @@
 							"fileName": "Vector4.ts",
 							"line": 407,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L407"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L407"
 						}
 					],
 					"signatures": [
@@ -28084,7 +28084,7 @@
 							"fileName": "Vector4.ts",
 							"line": 416,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L416"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L416"
 						}
 					],
 					"signatures": [
@@ -28131,7 +28131,7 @@
 							"fileName": "Vector4.ts",
 							"line": 380,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L380"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L380"
 						}
 					],
 					"signatures": [
@@ -28201,7 +28201,7 @@
 							"fileName": "Vector4.ts",
 							"line": 425,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L425"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L425"
 						}
 					],
 					"signatures": [
@@ -28249,7 +28249,7 @@
 							"fileName": "Vector4.ts",
 							"line": 438,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L438"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L438"
 						}
 					],
 					"signatures": [
@@ -28297,7 +28297,7 @@
 							"fileName": "Vector4.ts",
 							"line": 448,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L448"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L448"
 						}
 					],
 					"signatures": [
@@ -28366,7 +28366,7 @@
 							"fileName": "Vector4.ts",
 							"line": 338,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L338"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L338"
 						}
 					],
 					"signatures": [
@@ -28492,7 +28492,7 @@
 							"fileName": "Vector4.ts",
 							"line": 366,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L366"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L366"
 						}
 					],
 					"signatures": [
@@ -28562,7 +28562,7 @@
 							"fileName": "Vector4.ts",
 							"line": 511,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L511"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L511"
 						}
 					],
 					"signatures": [
@@ -28611,7 +28611,7 @@
 							"fileName": "Vector4.ts",
 							"line": 22,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L22"
 						}
 					],
 					"signatures": [
@@ -28711,7 +28711,7 @@
 							"fileName": "Vector4.ts",
 							"line": 88,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L88"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L88"
 						}
 					],
 					"signatures": [
@@ -28802,7 +28802,7 @@
 							"fileName": "Vector4.ts",
 							"line": 102,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L102"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L102"
 						}
 					],
 					"signatures": [
@@ -28893,7 +28893,7 @@
 							"fileName": "Vector4.ts",
 							"line": 64,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L64"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L64"
 						}
 					],
 					"signatures": [
@@ -28993,7 +28993,7 @@
 							"fileName": "Vector4.ts",
 							"line": 78,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L78"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L78"
 						}
 					],
 					"signatures": [
@@ -29084,7 +29084,7 @@
 							"fileName": "Vector4.ts",
 							"line": 116,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L116"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L116"
 						}
 					],
 					"signatures": [
@@ -29175,7 +29175,7 @@
 							"fileName": "Vector4.ts",
 							"line": 132,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L132"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L132"
 						}
 					],
 					"signatures": [
@@ -29294,7 +29294,7 @@
 							"fileName": "Vector4.ts",
 							"line": 147,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L147"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L147"
 						}
 					],
 					"signatures": [
@@ -29394,7 +29394,7 @@
 							"fileName": "Vector4.ts",
 							"line": 161,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L161"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L161"
 						}
 					],
 					"signatures": [
@@ -29494,7 +29494,7 @@
 							"fileName": "Vector4.ts",
 							"line": 50,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L50"
 						}
 					],
 					"signatures": [
@@ -29594,7 +29594,7 @@
 							"fileName": "Vector4.ts",
 							"line": 174,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L174"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L174"
 						}
 					],
 					"signatures": [
@@ -29674,7 +29674,7 @@
 							"fileName": "Vector4.ts",
 							"line": 187,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L187"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L187"
 						}
 					],
 					"signatures": [
@@ -29754,7 +29754,7 @@
 							"fileName": "Vector4.ts",
 							"line": 206,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L206"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L206"
 						}
 					],
 					"signatures": [
@@ -29853,7 +29853,7 @@
 							"fileName": "Vector4.ts",
 							"line": 36,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L36"
 						}
 					],
 					"signatures": [
@@ -29953,7 +29953,7 @@
 							"fileName": "Vector4.ts",
 							"line": 220,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L220"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L220"
 						}
 					],
 					"signatures": [
@@ -30053,7 +30053,7 @@
 							"fileName": "Vector4.ts",
 							"line": 236,
 							"character": 9,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L236"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L236"
 						}
 					],
 					"signatures": [
@@ -30199,7 +30199,7 @@
 					"fileName": "Vector4.ts",
 					"line": 10,
 					"character": 13,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/Vector4.ts#L10"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/Vector4.ts#L10"
 				}
 			],
 			"implementedTypes": [
@@ -30269,7 +30269,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/math/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/math/src/index.ts#L1"
 		}
 	]
 }
