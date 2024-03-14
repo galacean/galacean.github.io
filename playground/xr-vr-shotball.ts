@@ -83,13 +83,13 @@ WebGLEngine.create({
 
   xrManager.sessionManager.isSupportedMode(XRSessionMode.VR).then(
     () => {
-      addXRButton("进入 VR").onclick = () => {
+      addXRButton("Enter VR").onclick = () => {
         xrManager.enterXR(XRSessionMode.VR);
       };
     },
     (error) => {
+      addXRButton("Not Support");
       console.error(error);
-      addXRButton("不支持 VR");
     }
   );
   engine.run();

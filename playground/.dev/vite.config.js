@@ -77,6 +77,8 @@ module.exports = {
       '@galacean/engine-draco',
       '@galacean/engine-lottie',
       '@galacean/engine-spine',
+      '@galacean/engine-xr',
+      '@galacean/engine-xr-webxr',
       '@galacean/tools-baker',
       '@galacean/engine-toolkit',
       '@galacean/engine-toolkit-auxiliary-lines',

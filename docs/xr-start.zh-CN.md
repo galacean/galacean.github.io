@@ -50,7 +50,7 @@ PC 端 Chrome 推荐安装 [Immersive Web Emulator](https://chromewebstore.googl
 
 ```bash
 npm install
-npm run dev
+npm run https
 ```
 
 随后在 Chrome 打开相应网址，即可调试 XR 项目。
@@ -67,7 +67,7 @@ npm run dev
 
 项目没有发布上线前，我们可以让手机与电脑在同一个局域网下进行测试。
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*8gZaS4Pc8lMAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*YGikQ6UhL5oAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
 
 ### 调试
 
