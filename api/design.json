@@ -32,7 +32,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -78,7 +78,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -145,7 +145,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -212,7 +212,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -280,7 +280,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -347,7 +347,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -414,7 +414,7 @@
 							"fileName": "physics/shape/IBoxColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IBoxColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -471,7 +471,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -548,7 +548,7 @@
 					"fileName": "physics/shape/IBoxColliderShape.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IBoxColliderShape.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IBoxColliderShape.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -585,7 +585,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -631,7 +631,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -698,7 +698,7 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L17"
 						}
 					],
 					"signatures": [
@@ -755,7 +755,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -822,7 +822,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -890,7 +890,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -957,7 +957,7 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L11"
 						}
 					],
 					"signatures": [
@@ -1014,7 +1014,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -1081,7 +1081,7 @@
 							"fileName": "physics/shape/ICapsuleColliderShape.ts",
 							"line": 23,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L23"
 						}
 					],
 					"signatures": [
@@ -1138,7 +1138,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -1217,7 +1217,7 @@
 					"fileName": "physics/shape/ICapsuleColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/ICapsuleColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -1254,7 +1254,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -1322,7 +1322,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -1368,7 +1368,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L26"
 						}
 					],
 					"signatures": [
@@ -1425,7 +1425,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L14"
 						}
 					],
 					"signatures": [
@@ -1520,7 +1520,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -1588,7 +1588,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L38"
 						}
 					],
 					"signatures": [
@@ -1645,7 +1645,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L50"
 						}
 					],
 					"signatures": [
@@ -1702,7 +1702,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L32"
 						}
 					],
 					"signatures": [
@@ -1759,7 +1759,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L44"
 						}
 					],
 					"signatures": [
@@ -1816,7 +1816,7 @@
 							"fileName": "physics/ICharacterController.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L20"
 						}
 					],
 					"signatures": [
@@ -1885,7 +1885,7 @@
 					"fileName": "physics/ICharacterController.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICharacterController.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICharacterController.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -1922,7 +1922,7 @@
 							"fileName": "IClone.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/IClone.ts#L9"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/IClone.ts#L9"
 						}
 					],
 					"signatures": [
@@ -1971,7 +1971,7 @@
 							"fileName": "IClone.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/IClone.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/IClone.ts#L15"
 						}
 					],
 					"signatures": [
@@ -2034,7 +2034,7 @@
 					"fileName": "IClone.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/IClone.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/IClone.ts#L4"
 				}
 			]
 		},
@@ -2064,7 +2064,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -2122,7 +2122,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -2158,7 +2158,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -2221,7 +2221,7 @@
 					"fileName": "physics/ICollider.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L6"
 				}
 			],
 			"extendedBy": [
@@ -2268,7 +2268,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -2304,7 +2304,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -2361,7 +2361,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -2418,7 +2418,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -2476,7 +2476,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -2533,7 +2533,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -2590,7 +2590,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -2656,7 +2656,7 @@
 					"fileName": "physics/shape/IColliderShape.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L7"
 				}
 			],
 			"extendedBy": [
@@ -2708,7 +2708,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 110,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L110"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L110"
 						}
 					],
 					"signatures": [
@@ -2765,7 +2765,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -2833,7 +2833,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 116,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L116"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L116"
 						}
 					],
 					"signatures": [
@@ -2890,7 +2890,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -2936,7 +2936,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L20"
 						}
 					],
 					"signatures": [
@@ -3012,7 +3012,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 123,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L123"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L123"
 						}
 					],
 					"signatures": [
@@ -3099,7 +3099,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -3167,7 +3167,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L32"
 						}
 					],
 					"signatures": [
@@ -3224,7 +3224,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L44"
 						}
 					],
 					"signatures": [
@@ -3281,7 +3281,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L56"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L56"
 						}
 					],
 					"signatures": [
@@ -3338,7 +3338,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 92,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L92"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L92"
 						}
 					],
 					"signatures": [
@@ -3395,7 +3395,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 104,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L104"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L104"
 						}
 					],
 					"signatures": [
@@ -3452,7 +3452,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 62,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L62"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L62"
 						}
 					],
 					"signatures": [
@@ -3509,7 +3509,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 98,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L98"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L98"
 						}
 					],
 					"signatures": [
@@ -3566,7 +3566,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L26"
 						}
 					],
 					"signatures": [
@@ -3623,7 +3623,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L38"
 						}
 					],
 					"signatures": [
@@ -3680,7 +3680,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L50"
 						}
 					],
 					"signatures": [
@@ -3737,7 +3737,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L68"
 						}
 					],
 					"signatures": [
@@ -3794,7 +3794,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L74"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L74"
 						}
 					],
 					"signatures": [
@@ -3851,7 +3851,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 80,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L80"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L80"
 						}
 					],
 					"signatures": [
@@ -3908,7 +3908,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 86,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L86"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L86"
 						}
 					],
 					"signatures": [
@@ -3965,7 +3965,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 13,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L13"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L13"
 						}
 					],
 					"signatures": [
@@ -4041,7 +4041,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 128,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L128"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L128"
 						}
 					],
 					"signatures": [
@@ -4077,7 +4077,7 @@
 							"fileName": "physics/IDynamicCollider.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L133"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L133"
 						}
 					],
 					"signatures": [
@@ -4139,7 +4139,7 @@
 					"fileName": "physics/IDynamicCollider.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IDynamicCollider.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IDynamicCollider.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -4176,7 +4176,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -4235,7 +4235,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -4294,7 +4294,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -4364,7 +4364,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -4424,7 +4424,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -4483,7 +4483,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -4542,7 +4542,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -4601,7 +4601,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -4670,7 +4670,7 @@
 					"fileName": "physics/joints/IFixedJoint.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IFixedJoint.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IFixedJoint.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -4680,6 +4680,52 @@
 					"name": "IJoint"
 				}
 			]
+		},
+		{
+			"id": 553,
+			"name": "IHardwareRenderer",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Hardware graphics API renderer."
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "renderingHardwareInterface/IHardwareRenderer.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/renderingHardwareInterface/IHardwareRenderer.ts#L4"
+				}
+			],
+			"indexSignature": {
+				"id": 554,
+				"name": "__index",
+				"kind": 8192,
+				"kindString": "Index signature",
+				"flags": {},
+				"parameters": [
+					{
+						"id": 555,
+						"name": "key",
+						"kind": 32768,
+						"flags": {},
+						"type": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				],
+				"type": {
+					"type": "intrinsic",
+					"name": "any"
+				}
+			}
 		},
 		{
 			"id": 331,
@@ -4707,7 +4753,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L21"
 						}
 					],
 					"signatures": [
@@ -4743,7 +4789,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L26"
 						}
 					],
 					"signatures": [
@@ -4779,7 +4825,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -4828,7 +4874,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -4887,7 +4933,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -4946,7 +4992,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -5016,7 +5062,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -5076,7 +5122,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -5135,7 +5181,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -5194,7 +5240,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 55,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L55"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L55"
 						}
 					],
 					"signatures": [
@@ -5251,7 +5297,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 61,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L61"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L61"
 						}
 					],
 					"signatures": [
@@ -5308,7 +5354,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 49,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L49"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L49"
 						}
 					],
 					"signatures": [
@@ -5365,7 +5411,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 34,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L34"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L34"
 						}
 					],
 					"signatures": [
@@ -5460,7 +5506,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L68"
 						}
 					],
 					"signatures": [
@@ -5536,7 +5582,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -5595,7 +5641,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -5654,7 +5700,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 43,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L43"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L43"
 						}
 					],
 					"signatures": [
@@ -5768,7 +5814,7 @@
 							"fileName": "physics/joints/IHingeJoint.ts",
 							"line": 16,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L16"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L16"
 						}
 					],
 					"signatures": [
@@ -5837,7 +5883,7 @@
 					"fileName": "physics/joints/IHingeJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IHingeJoint.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IHingeJoint.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -5845,6 +5891,164 @@
 					"type": "reference",
 					"id": 281,
 					"name": "IJoint"
+				}
+			]
+		},
+		{
+			"id": 732,
+			"name": "IInputOptions",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Options for the input."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 734,
+					"name": "keyboardTarget",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The target element of the keyboard event, defaults is the window."
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@remarks",
+								"content": [
+									{
+										"kind": "text",
+										"text": "If the type of listening target is "
+									},
+									{
+										"kind": "code",
+										"text": "`HtmlElement`"
+									},
+									{
+										"kind": "text",
+										"text": ", you need to set tabIndex to make the element focus."
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "input/IInputOptions.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/input/IInputOptions.ts#L19"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "EventTarget",
+						"qualifiedName": "EventTarget",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 733,
+					"name": "pointerTarget",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The target element of the pointer event, defaults is the current canvas."
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@remarks",
+								"content": [
+									{
+										"kind": "text",
+										"text": "@remarks: When setting the pointer target you need to specify:\n - Do not set window as target because window cannot listen to pointer leave event.\n - On mobile, pointer move may trigger the default slide event, thereby removing the point from the screen, so in most cases you need to set HtmlElement.style.touchAction = \"none\"."
+									}
+								]
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "input/IInputOptions.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/input/IInputOptions.ts#L12"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "EventTarget",
+						"qualifiedName": "EventTarget",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 735,
+					"name": "wheelTarget",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The target element of the wheel event, defaults is the current canvas."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "input/IInputOptions.ts",
+							"line": 22,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/input/IInputOptions.ts#L22"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "EventTarget",
+						"qualifiedName": "EventTarget",
+						"package": "typescript"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						734,
+						733,
+						735
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "input/IInputOptions.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/input/IInputOptions.ts#L4"
 				}
 			]
 		},
@@ -5874,7 +6078,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -5923,7 +6127,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -5972,7 +6176,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -6032,7 +6236,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -6082,7 +6286,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -6131,7 +6335,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -6180,7 +6384,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -6229,7 +6433,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -6288,7 +6492,7 @@
 					"fileName": "physics/joints/IJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L7"
 				}
 			],
 			"extendedBy": [
@@ -6335,7 +6539,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 88,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L88"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L88"
 						}
 					],
 					"signatures": [
@@ -6432,7 +6636,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 112,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L112"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L112"
 						}
 					],
 					"signatures": [
@@ -6548,7 +6752,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 64,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L64"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L64"
 						}
 					],
 					"signatures": [
@@ -6585,7 +6789,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 52,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L52"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L52"
 						}
 					],
 					"signatures": [
@@ -6662,7 +6866,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 123,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L123"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L123"
 						}
 					],
 					"signatures": [
@@ -6721,7 +6925,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 129,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L129"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L129"
 						}
 					],
 					"signatures": [
@@ -6780,7 +6984,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 25,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L25"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L25"
 						}
 					],
 					"signatures": [
@@ -6817,7 +7021,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L74"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L74"
 						}
 					],
 					"signatures": [
@@ -6951,7 +7155,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L37"
 						}
 					],
 					"signatures": [
@@ -7019,7 +7223,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 39,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L39"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L39"
 												}
 											],
 											"signatures": [
@@ -7091,7 +7295,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 40,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L40"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L40"
 												}
 											],
 											"signatures": [
@@ -7163,7 +7367,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 41,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L41"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L41"
 												}
 											],
 											"signatures": [
@@ -7235,7 +7439,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 42,
 													"character": 21,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L42"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L42"
 												}
 											],
 											"signatures": [
@@ -7307,7 +7511,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 43,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L43"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L43"
 												}
 											],
 											"signatures": [
@@ -7379,7 +7583,7 @@
 													"fileName": "physics/IPhysics.ts",
 													"line": 44,
 													"character": 20,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L44"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L44"
 												}
 											],
 											"signatures": [
@@ -7442,7 +7646,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 103,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L103"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L103"
 						}
 					],
 					"signatures": [
@@ -7520,7 +7724,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 96,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L96"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L96"
 						}
 					],
 					"signatures": [
@@ -7617,7 +7821,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 135,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L135"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L135"
 						}
 					],
 					"signatures": [
@@ -7676,7 +7880,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 59,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L59"
 						}
 					],
 					"signatures": [
@@ -7753,7 +7957,7 @@
 							"fileName": "physics/IPhysics.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L20"
 						}
 					],
 					"signatures": [
@@ -7824,7 +8028,7 @@
 					"fileName": "physics/IPhysics.ts",
 					"line": 15,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysics.ts#L15"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysics.ts#L15"
 				}
 			]
 		},
@@ -7847,7 +8051,7 @@
 					"fileName": "physics/IPhysicsManager.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsManager.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsManager.ts#L4"
 				}
 			]
 		},
@@ -7877,7 +8081,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L38"
 						}
 					],
 					"signatures": [
@@ -7913,7 +8117,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L27"
 						}
 					],
 					"signatures": [
@@ -7970,7 +8174,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 9,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L9"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L9"
 						}
 					],
 					"signatures": [
@@ -8027,7 +8231,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L15"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L15"
 						}
 					],
 					"signatures": [
@@ -8084,7 +8288,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 33,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L33"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L33"
 						}
 					],
 					"signatures": [
@@ -8141,7 +8345,7 @@
 							"fileName": "physics/IPhysicsMaterial.ts",
 							"line": 21,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L21"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L21"
 						}
 					],
 					"signatures": [
@@ -8206,7 +8410,7 @@
 					"fileName": "physics/IPhysicsMaterial.ts",
 					"line": 4,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsMaterial.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsMaterial.ts#L4"
 				}
 			]
 		},
@@ -8236,7 +8440,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 44,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L44"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L44"
 						}
 					],
 					"signatures": [
@@ -8294,7 +8498,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L32"
 						}
 					],
 					"signatures": [
@@ -8352,7 +8556,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L20"
 						}
 					],
 					"signatures": [
@@ -8410,7 +8614,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L66"
 						}
 					],
 					"signatures": [
@@ -8505,7 +8709,7 @@
 													"fileName": "physics/IPhysicsScene.ts",
 													"line": 69,
 													"character": 15,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L69"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L69"
 												}
 											],
 											"signatures": [
@@ -8566,7 +8770,7 @@
 													"fileName": "physics/IPhysicsScene.ts",
 													"line": 70,
 													"character": 19,
-													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L70"
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L70"
 												}
 											],
 											"signatures": [
@@ -8650,7 +8854,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 50,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L50"
 						}
 					],
 					"signatures": [
@@ -8708,7 +8912,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 38,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L38"
 						}
 					],
 					"signatures": [
@@ -8766,7 +8970,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L26"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L26"
 						}
 					],
 					"signatures": [
@@ -8824,7 +9028,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L14"
 						}
 					],
 					"signatures": [
@@ -8881,7 +9085,7 @@
 							"fileName": "physics/IPhysicsScene.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L56"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L56"
 						}
 					],
 					"signatures": [
@@ -8949,7 +9153,7 @@
 					"fileName": "physics/IPhysicsScene.ts",
 					"line": 9,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IPhysicsScene.ts#L9"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IPhysicsScene.ts#L9"
 				}
 			]
 		},
@@ -8979,7 +9183,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -9025,7 +9229,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -9092,7 +9296,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -9159,7 +9363,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -9227,7 +9431,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -9294,7 +9498,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -9361,7 +9565,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -9437,7 +9641,7 @@
 					"fileName": "physics/shape/IPlaneColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IPlaneColliderShape.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IPlaneColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -9449,14 +9653,14 @@
 			]
 		},
 		{
-			"id": 553,
+			"id": 556,
 			"name": "IPlatformPrimitive",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 558,
+					"id": 561,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9466,12 +9670,12 @@
 							"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 							"line": 3,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L3"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L3"
 						}
 					],
 					"signatures": [
 						{
-							"id": 559,
+							"id": 562,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9484,7 +9688,7 @@
 					]
 				},
 				{
-					"id": 554,
+					"id": 557,
 					"name": "draw",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9494,19 +9698,19 @@
 							"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 							"line": 2,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L2"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L2"
 						}
 					],
 					"signatures": [
 						{
-							"id": 555,
+							"id": 558,
 							"name": "draw",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 556,
+									"id": 559,
 									"name": "tech",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9517,7 +9721,7 @@
 									}
 								},
 								{
-									"id": 557,
+									"id": 560,
 									"name": "subPrimitive",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9540,8 +9744,8 @@
 				{
 					"title": "Methods",
 					"children": [
-						558,
-						554
+						561,
+						557
 					]
 				}
 			],
@@ -9550,19 +9754,19 @@
 					"fileName": "renderingHardwareInterface/IPlatformPrimitive.ts",
 					"line": 1,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L1"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/renderingHardwareInterface/IPlatformPrimitive.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 560,
+			"id": 563,
 			"name": "IShaderInfo",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 561,
+					"id": 564,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9572,7 +9776,7 @@
 							"fileName": "shader-lab/IShaderInfo.ts",
 							"line": 4,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderInfo.ts#L4"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderInfo.ts#L4"
 						}
 					],
 					"type": {
@@ -9581,7 +9785,7 @@
 					}
 				},
 				{
-					"id": 562,
+					"id": 565,
 					"name": "subShaders",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9591,14 +9795,14 @@
 							"fileName": "shader-lab/IShaderInfo.ts",
 							"line": 5,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderInfo.ts#L5"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderInfo.ts#L5"
 						}
 					],
 					"type": {
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"id": 573,
+							"id": 576,
 							"name": "ISubShaderInfo"
 						}
 					}
@@ -9608,8 +9812,8 @@
 				{
 					"title": "Properties",
 					"children": [
-						561,
-						562
+						564,
+						565
 					]
 				}
 			],
@@ -9618,12 +9822,12 @@
 					"fileName": "shader-lab/IShaderInfo.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderInfo.ts#L3"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderInfo.ts#L3"
 				}
 			]
 		},
 		{
-			"id": 563,
+			"id": 566,
 			"name": "IShaderLab",
 			"kind": 256,
 			"kindString": "Interface",
@@ -9638,7 +9842,7 @@
 			},
 			"children": [
 				{
-					"id": 564,
+					"id": 567,
 					"name": "parseShader",
 					"kind": 2048,
 					"kindString": "Method",
@@ -9648,12 +9852,12 @@
 							"fileName": "shader-lab/IShaderLab.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderLab.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderLab.ts#L10"
 						}
 					],
 					"signatures": [
 						{
-							"id": 565,
+							"id": 568,
 							"name": "parseShader",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -9668,7 +9872,7 @@
 							},
 							"parameters": [
 								{
-									"id": 566,
+									"id": 569,
 									"name": "shaderSource",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -9681,7 +9885,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 560,
+								"id": 563,
 								"name": "IShaderInfo"
 							}
 						}
@@ -9692,7 +9896,7 @@
 				{
 					"title": "Methods",
 					"children": [
-						564
+						567
 					]
 				}
 			],
@@ -9701,19 +9905,19 @@
 					"fileName": "shader-lab/IShaderLab.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderLab.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderLab.ts#L6"
 				}
 			]
 		},
 		{
-			"id": 567,
+			"id": 570,
 			"name": "IShaderPassInfo",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 570,
+					"id": 573,
 					"name": "fragmentSource",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9723,7 +9927,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderPassInfo.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderPassInfo.ts#L6"
 						}
 					],
 					"type": {
@@ -9732,7 +9936,7 @@
 					}
 				},
 				{
-					"id": 568,
+					"id": 571,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9742,7 +9946,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 4,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderPassInfo.ts#L4"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderPassInfo.ts#L4"
 						}
 					],
 					"type": {
@@ -9751,7 +9955,7 @@
 					}
 				},
 				{
-					"id": 572,
+					"id": 575,
 					"name": "renderStates",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9761,7 +9965,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderPassInfo.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderPassInfo.ts#L8"
 						}
 					],
 					"type": {
@@ -9820,7 +10024,7 @@
 					}
 				},
 				{
-					"id": 571,
+					"id": 574,
 					"name": "tags",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9832,7 +10036,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 7,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderPassInfo.ts#L7"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderPassInfo.ts#L7"
 						}
 					],
 					"type": {
@@ -9866,7 +10070,7 @@
 					}
 				},
 				{
-					"id": 569,
+					"id": 572,
 					"name": "vertexSource",
 					"kind": 1024,
 					"kindString": "Property",
@@ -9876,7 +10080,7 @@
 							"fileName": "shader-lab/IShaderPassInfo.ts",
 							"line": 5,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderPassInfo.ts#L5"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderPassInfo.ts#L5"
 						}
 					],
 					"type": {
@@ -9889,11 +10093,11 @@
 				{
 					"title": "Properties",
 					"children": [
-						570,
-						568,
-						572,
+						573,
 						571,
-						569
+						575,
+						574,
+						572
 					]
 				}
 			],
@@ -9902,7 +10106,7 @@
 					"fileName": "shader-lab/IShaderPassInfo.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/IShaderPassInfo.ts#L3"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/IShaderPassInfo.ts#L3"
 				}
 			]
 		},
@@ -9932,7 +10136,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L47"
 						}
 					],
 					"signatures": [
@@ -9978,7 +10182,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L30"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L30"
 						}
 					],
 					"signatures": [
@@ -10045,7 +10249,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L42"
 						}
 					],
 					"signatures": [
@@ -10112,7 +10316,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L36"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L36"
 						}
 					],
 					"signatures": [
@@ -10180,7 +10384,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L18"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L18"
 						}
 					],
 					"signatures": [
@@ -10247,7 +10451,7 @@
 							"fileName": "physics/shape/ISphereColliderShape.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/ISphereColliderShape.ts#L11"
 						}
 					],
 					"signatures": [
@@ -10304,7 +10508,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 12,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L12"
 						}
 					],
 					"signatures": [
@@ -10371,7 +10575,7 @@
 							"fileName": "physics/shape/IColliderShape.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/IColliderShape.ts#L24"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/IColliderShape.ts#L24"
 						}
 					],
 					"signatures": [
@@ -10448,7 +10652,7 @@
 					"fileName": "physics/shape/ISphereColliderShape.ts",
 					"line": 6,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/shape/ISphereColliderShape.ts#L6"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/shape/ISphereColliderShape.ts#L6"
 				}
 			],
 			"extendedTypes": [
@@ -10485,7 +10689,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 42,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L42"
 						}
 					],
 					"signatures": [
@@ -10544,7 +10748,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L47"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L47"
 						}
 					],
 					"signatures": [
@@ -10603,7 +10807,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -10673,7 +10877,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -10733,7 +10937,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 27,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L27"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L27"
 						}
 					],
 					"signatures": [
@@ -10792,7 +10996,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L22"
 						}
 					],
 					"signatures": [
@@ -10851,7 +11055,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 41,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L41"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L41"
 						}
 					],
 					"signatures": [
@@ -10908,7 +11112,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 37,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L37"
 						}
 					],
 					"signatures": [
@@ -10967,7 +11171,7 @@
 							"fileName": "physics/joints/IJoint.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/IJoint.ts#L32"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/IJoint.ts#L32"
 						}
 					],
 					"signatures": [
@@ -11026,7 +11230,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 23,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L23"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L23"
 						}
 					],
 					"signatures": [
@@ -11083,7 +11287,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L17"
 						}
 					],
 					"signatures": [
@@ -11140,7 +11344,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 35,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L35"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L35"
 						}
 					],
 					"signatures": [
@@ -11197,7 +11401,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L11"
 						}
 					],
 					"signatures": [
@@ -11246,7 +11450,7 @@
 							"fileName": "physics/joints/ISpringJoint.ts",
 							"line": 29,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L29"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L29"
 						}
 					],
 					"signatures": [
@@ -11319,7 +11523,7 @@
 					"fileName": "physics/joints/ISpringJoint.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/joints/ISpringJoint.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/joints/ISpringJoint.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -11356,7 +11560,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L11"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L11"
 						}
 					],
 					"signatures": [
@@ -11424,7 +11628,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L22"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L22"
 						}
 					],
 					"signatures": [
@@ -11470,7 +11674,7 @@
 							"fileName": "physics/IStaticCollider.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IStaticCollider.ts#L20"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IStaticCollider.ts#L20"
 						}
 					],
 					"signatures": [
@@ -11546,7 +11750,7 @@
 							"fileName": "physics/ICollider.ts",
 							"line": 17,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/ICollider.ts#L17"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/ICollider.ts#L17"
 						}
 					],
 					"signatures": [
@@ -11614,7 +11818,7 @@
 							"fileName": "physics/IStaticCollider.ts",
 							"line": 13,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IStaticCollider.ts#L13"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IStaticCollider.ts#L13"
 						}
 					],
 					"signatures": [
@@ -11697,7 +11901,7 @@
 					"fileName": "physics/IStaticCollider.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/physics/IStaticCollider.ts#L7"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/physics/IStaticCollider.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -11709,14 +11913,14 @@
 			]
 		},
 		{
-			"id": 573,
+			"id": 576,
 			"name": "ISubShaderInfo",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
 			"children": [
 				{
-					"id": 574,
+					"id": 577,
 					"name": "name",
 					"kind": 1024,
 					"kindString": "Property",
@@ -11726,7 +11930,7 @@
 							"fileName": "shader-lab/ISubShaderInfo.ts",
 							"line": 4,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/ISubShaderInfo.ts#L4"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/ISubShaderInfo.ts#L4"
 						}
 					],
 					"type": {
@@ -11735,7 +11939,7 @@
 					}
 				},
 				{
-					"id": 575,
+					"id": 578,
 					"name": "passes",
 					"kind": 1024,
 					"kindString": "Property",
@@ -11745,7 +11949,7 @@
 							"fileName": "shader-lab/ISubShaderInfo.ts",
 							"line": 5,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/ISubShaderInfo.ts#L5"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/ISubShaderInfo.ts#L5"
 						}
 					],
 					"type": {
@@ -11759,7 +11963,7 @@
 								},
 								{
 									"type": "reference",
-									"id": 567,
+									"id": 570,
 									"name": "IShaderPassInfo"
 								}
 							]
@@ -11767,7 +11971,7 @@
 					}
 				},
 				{
-					"id": 576,
+					"id": 579,
 					"name": "tags",
 					"kind": 1024,
 					"kindString": "Property",
@@ -11779,7 +11983,7 @@
 							"fileName": "shader-lab/ISubShaderInfo.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/ISubShaderInfo.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/ISubShaderInfo.ts#L6"
 						}
 					],
 					"type": {
@@ -11817,9 +12021,9 @@
 				{
 					"title": "Properties",
 					"children": [
-						574,
-						575,
-						576
+						577,
+						578,
+						579
 					]
 				}
 			],
@@ -11828,7 +12032,3728 @@
 					"fileName": "shader-lab/ISubShaderInfo.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/shader-lab/ISubShaderInfo.ts#L3"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/shader-lab/ISubShaderInfo.ts#L3"
+				}
+			]
+		},
+		{
+			"id": 617,
+			"name": "IXRCamera",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 618,
+					"name": "pose",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The pose of the camera in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRCamera.ts",
+							"line": 7,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRCamera.ts#L7"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 612,
+						"name": "IXRPose"
+					}
+				},
+				{
+					"id": 620,
+					"name": "projectionMatrix",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The projection matrix of the camera."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRCamera.ts",
+							"line": 11,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRCamera.ts#L11"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Matrix"
+					}
+				},
+				{
+					"id": 622,
+					"name": "trackingState",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The tracking state of xr input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRInput.ts",
+							"line": 5,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L5"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 630,
+						"name": "IXRInput.trackingState"
+					}
+				},
+				{
+					"id": 621,
+					"name": "type",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The type of the input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRInput.ts",
+							"line": 3,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L3"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 629,
+						"name": "IXRInput.type"
+					}
+				},
+				{
+					"id": 619,
+					"name": "viewport",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The viewport of the camera."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRCamera.ts",
+							"line": 9,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRCamera.ts#L9"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Rect"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						618,
+						620,
+						622,
+						621,
+						619
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/input/IXRCamera.ts",
+					"line": 5,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRCamera.ts#L5"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 628,
+					"name": "IXRInput"
+				}
+			]
+		},
+		{
+			"id": 623,
+			"name": "IXRController",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 624,
+					"name": "gripPose",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The grip space pose of the controller in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRController.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRController.ts#L6"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 612,
+						"name": "IXRPose"
+					}
+				},
+				{
+					"id": 625,
+					"name": "targetRayPose",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The target ray space pose of the controller in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRController.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRController.ts#L8"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 612,
+						"name": "IXRPose"
+					}
+				},
+				{
+					"id": 627,
+					"name": "trackingState",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The tracking state of xr input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRInput.ts",
+							"line": 5,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L5"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 630,
+						"name": "IXRInput.trackingState"
+					}
+				},
+				{
+					"id": 626,
+					"name": "type",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The type of the input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRInput.ts",
+							"line": 3,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L3"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 629,
+						"name": "IXRInput.type"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						624,
+						625,
+						627,
+						626
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/input/IXRController.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRController.ts#L4"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 628,
+					"name": "IXRInput"
+				}
+			]
+		},
+		{
+			"id": 669,
+			"name": "IXRDevice",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The interface of XR device."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 676,
+					"name": "createPlatformFeature",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRDevice.ts",
+							"line": 26,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRDevice.ts#L26"
+						}
+					],
+					"signatures": [
+						{
+							"id": 677,
+							"name": "createPlatformFeature",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Get the platform feature instance of this device"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 678,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The type of the feature."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 679,
+									"name": "args",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isRest": true
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "intrinsic",
+											"name": "any"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"id": 580,
+								"name": "IXRPlatformFeature"
+							}
+						}
+					]
+				},
+				{
+					"id": 673,
+					"name": "isSupportedFeature",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRDevice.ts",
+							"line": 19,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRDevice.ts#L19"
+						}
+					],
+					"signatures": [
+						{
+							"id": 674,
+							"name": "isSupportedFeature",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Check if the specified feature is supported."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 675,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 670,
+					"name": "isSupportedSessionMode",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRDevice.ts",
+							"line": 13,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRDevice.ts#L13"
+						}
+					],
+					"signatures": [
+						{
+							"id": 671,
+							"name": "isSupportedSessionMode",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Check if the specified session mode is supported."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 672,
+									"name": "mode",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The mode of the session."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 680,
+					"name": "requestSession",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRDevice.ts",
+							"line": 34,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRDevice.ts#L34"
+						}
+					],
+					"signatures": [
+						{
+							"id": 681,
+							"name": "requestSession",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Request a session."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 682,
+									"name": "rhi",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 553,
+										"name": "IHardwareRenderer"
+									}
+								},
+								{
+									"id": 683,
+									"name": "mode",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The mode of the session"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 684,
+									"name": "platformFeatures",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The requested platform features"
+											}
+										]
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 580,
+											"name": "IXRPlatformFeature"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 689,
+										"name": "IXRSession"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"children": [
+						676,
+						673,
+						670,
+						680
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/IXRDevice.ts",
+					"line": 8,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRDevice.ts#L8"
+				}
+			]
+		},
+		{
+			"id": 685,
+			"name": "IXRFrame",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of XR frame.\nIt can be understood as a snapshot of\nthe information of each input in this frame."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 686,
+					"name": "updateInputs",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRFrame.ts",
+							"line": 13,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRFrame.ts#L13"
+						}
+					],
+					"signatures": [
+						{
+							"id": 687,
+							"name": "updateInputs",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Update xr input information."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 688,
+									"name": "inputs",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "xr input"
+											}
+										]
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 628,
+											"name": "IXRInput"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"children": [
+						686
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/IXRFrame.ts",
+					"line": 8,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRFrame.ts#L8"
+				}
+			]
+		},
+		{
+			"id": 628,
+			"name": "IXRInput",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"children": [
+				{
+					"id": 630,
+					"name": "trackingState",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The tracking state of xr input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRInput.ts",
+							"line": 5,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L5"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 629,
+					"name": "type",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The type of the input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/input/IXRInput.ts",
+							"line": 3,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L3"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						630,
+						629
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/input/IXRInput.ts",
+					"line": 1,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/input/IXRInput.ts#L1"
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 617,
+					"name": "IXRCamera"
+				},
+				{
+					"type": "reference",
+					"id": 623,
+					"name": "IXRController"
+				}
+			]
+		},
+		{
+			"id": 605,
+			"name": "IXRInputEvent",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Unified XR input events."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 609,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Touch id. (Meaningful when and only when targetRayMode is screen)"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRInputEvent.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 608,
+					"name": "input",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Type of interactive input."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRInputEvent.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L10"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 606,
+					"name": "targetRayMode",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Interaction type."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRInputEvent.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L6"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 607,
+					"name": "type",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Specific interactions."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRInputEvent.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 610,
+					"name": "x",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "X coordinate on screen. (Meaningful when and only when targetRayMode is screen)"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRInputEvent.ts",
+							"line": 14,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L14"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 611,
+					"name": "y",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Y coordinate on screen. (Meaningful when and only when targetRayMode is screen)"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRInputEvent.ts",
+							"line": 16,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L16"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						609,
+						608,
+						606,
+						607,
+						610,
+						611
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/IXRInputEvent.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRInputEvent.ts#L4"
+				}
+			]
+		},
+		{
+			"id": 580,
+			"name": "IXRPlatformFeature",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of the platform feature.\nResponsible for the implementation of specific features of different XR backends."
+					}
+				]
+			},
+			"sources": [
+				{
+					"fileName": "xr/feature/IXRPlatformFeature.ts",
+					"line": 5,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/IXRPlatformFeature.ts#L5"
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 581,
+					"name": "IXRTrackablePlatformFeature"
+				}
+			]
+		},
+		{
+			"id": 612,
+			"name": "IXRPose",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Data interface for describing gestures in the XR space."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 616,
+					"name": "inverseMatrix",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The inverse matrix of the pose in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRPose.ts",
+							"line": 14,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRPose.ts#L14"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Matrix"
+					}
+				},
+				{
+					"id": 615,
+					"name": "matrix",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The matrix of the pose in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRPose.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRPose.ts#L12"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Matrix"
+					}
+				},
+				{
+					"id": 613,
+					"name": "position",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The position of the pose in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRPose.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRPose.ts#L8"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Vector3"
+					}
+				},
+				{
+					"id": 614,
+					"name": "rotation",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The rotation of the pose in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/IXRPose.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRPose.ts#L10"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Quaternion"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						616,
+						615,
+						613,
+						614
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/IXRPose.ts",
+					"line": 6,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRPose.ts#L6"
+				}
+			]
+		},
+		{
+			"id": 644,
+			"name": "IXRReferenceImage",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A reference image is an image to look for in the physical environment."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 646,
+					"name": "imageSource",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/image/IXRReferenceImage.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRReferenceImage.ts#L6"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ImageBitmapSource",
+						"qualifiedName": "ImageBitmapSource",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 645,
+					"name": "name",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/image/IXRReferenceImage.ts",
+							"line": 5,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRReferenceImage.ts#L5"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 647,
+					"name": "physicalWidth",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/image/IXRReferenceImage.ts",
+							"line": 7,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRReferenceImage.ts#L7"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						646,
+						645,
+						647
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/image/IXRReferenceImage.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRReferenceImage.ts#L4"
+				}
+			]
+		},
+		{
+			"id": 639,
+			"name": "IXRRequestAnchor",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface for request tracking in XR."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 640,
+					"name": "position",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/anchor/IXRRequestAnchor.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/anchor/IXRRequestAnchor.ts#L6"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Vector3"
+					}
+				},
+				{
+					"id": 641,
+					"name": "rotation",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/anchor/IXRRequestAnchor.ts",
+							"line": 7,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/anchor/IXRRequestAnchor.ts#L7"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Quaternion"
+					}
+				},
+				{
+					"id": 642,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The status of the current request tracking."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 632,
+						"name": "IXRRequestTracking.state"
+					}
+				},
+				{
+					"id": 643,
+					"name": "tracked",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tracked instances, make up from the tracking data returned by Session."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L10"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 635,
+							"name": "IXRTracked"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 633,
+						"name": "IXRRequestTracking.tracked"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						640,
+						641,
+						642,
+						643
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/anchor/IXRRequestAnchor.ts",
+					"line": 5,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/anchor/IXRRequestAnchor.ts#L5"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 631,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"id": 635,
+							"name": "IXRTracked"
+						}
+					],
+					"name": "IXRRequestTracking"
+				}
+			]
+		},
+		{
+			"id": 648,
+			"name": "IXRRequestImage",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface for request tracking in XR."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 649,
+					"name": "image",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/image/IXRRequestImage.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRRequestImage.ts#L6"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 644,
+						"name": "IXRReferenceImage"
+					}
+				},
+				{
+					"id": 650,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The status of the current request tracking."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 632,
+						"name": "IXRRequestTracking.state"
+					}
+				},
+				{
+					"id": 651,
+					"name": "tracked",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tracked instances, make up from the tracking data returned by Session."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L10"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 652,
+							"name": "IXRTrackedImage"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 633,
+						"name": "IXRRequestTracking.tracked"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						649,
+						650,
+						651
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/image/IXRRequestImage.ts",
+					"line": 5,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRRequestImage.ts#L5"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 631,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"id": 652,
+							"name": "IXRTrackedImage"
+						}
+					],
+					"name": "IXRRequestTracking"
+				}
+			]
+		},
+		{
+			"id": 658,
+			"name": "IXRRequestPlane",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface for request tracking in XR."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 659,
+					"name": "detectionMode",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/plane/IXRRequestPlane.ts",
+							"line": 5,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/plane/IXRRequestPlane.ts#L5"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 660,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The status of the current request tracking."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 632,
+						"name": "IXRRequestTracking.state"
+					}
+				},
+				{
+					"id": 661,
+					"name": "tracked",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tracked instances, make up from the tracking data returned by Session."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L10"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 662,
+							"name": "IXRTrackedPlane"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 633,
+						"name": "IXRRequestTracking.tracked"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						659,
+						660,
+						661
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/plane/IXRRequestPlane.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/plane/IXRRequestPlane.ts#L4"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 631,
+					"typeArguments": [
+						{
+							"type": "reference",
+							"id": 662,
+							"name": "IXRTrackedPlane"
+						}
+					],
+					"name": "IXRRequestTracking"
+				}
+			]
+		},
+		{
+			"id": 631,
+			"name": "IXRRequestTracking",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface for request tracking in XR."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 632,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The status of the current request tracking."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 633,
+					"name": "tracked",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tracked instances, make up from the tracking data returned by Session."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L10"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"id": 634,
+							"name": "T"
+						}
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						632,
+						633
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/IXRRequestTracking.ts",
+					"line": 6,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRRequestTracking.ts#L6"
+				}
+			],
+			"typeParameters": [
+				{
+					"id": 634,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"id": 635,
+						"name": "IXRTracked"
+					}
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 639,
+					"name": "IXRRequestAnchor"
+				},
+				{
+					"type": "reference",
+					"id": 648,
+					"name": "IXRRequestImage"
+				},
+				{
+					"type": "reference",
+					"id": 658,
+					"name": "IXRRequestPlane"
+				}
+			]
+		},
+		{
+			"id": 689,
+			"name": "IXRSession",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of XR session.\nCan be understood as an XR context."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 692,
+					"name": "events",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 17,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L17"
+						}
+					],
+					"getSignature": {
+						"id": 693,
+						"name": "events",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Return the event received in this frame."
+								}
+							]
+						},
+						"type": {
+							"type": "array",
+							"elementType": {
+								"type": "reference",
+								"id": 605,
+								"name": "IXRInputEvent"
+							}
+						}
+					}
+				},
+				{
+					"id": 690,
+					"name": "frame",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 12,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L12"
+						}
+					],
+					"getSignature": {
+						"id": 691,
+						"name": "frame",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns the XR information of this frame."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"id": 685,
+							"name": "IXRFrame"
+						}
+					}
+				},
+				{
+					"id": 694,
+					"name": "frameRate",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 22,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L22"
+						}
+					],
+					"getSignature": {
+						"id": 695,
+						"name": "frameRate",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns the current frame rate."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				},
+				{
+					"id": 698,
+					"name": "framebuffer",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 32,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L32"
+						}
+					],
+					"getSignature": {
+						"id": 699,
+						"name": "framebuffer",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns the device's default main framebuffer."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "WebGLFramebuffer",
+							"qualifiedName": "WebGLFramebuffer",
+							"package": "typescript"
+						}
+					}
+				},
+				{
+					"id": 702,
+					"name": "framebufferHeight",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 42,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L42"
+						}
+					],
+					"getSignature": {
+						"id": 703,
+						"name": "framebufferHeight",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns the height of the device's default main framebuffer."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				},
+				{
+					"id": 700,
+					"name": "framebufferWidth",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 37,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L37"
+						}
+					],
+					"getSignature": {
+						"id": 701,
+						"name": "framebufferWidth",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns the width of the device's default main framebuffer."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					}
+				},
+				{
+					"id": 696,
+					"name": "supportedFrameRates",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 27,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L27"
+						}
+					],
+					"getSignature": {
+						"id": 697,
+						"name": "supportedFrameRates",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns the frame rate supported by the device."
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "Float32Array",
+							"qualifiedName": "Float32Array",
+							"package": "typescript"
+						}
+					}
+				},
+				{
+					"id": 709,
+					"name": "addEventListener",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 58,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L58"
+						}
+					],
+					"signatures": [
+						{
+							"id": 710,
+							"name": "addEventListener",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Add event listener for XR session."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 729,
+					"name": "cancelAnimationFrame",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 108,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L108"
+						}
+					],
+					"signatures": [
+						{
+							"id": 730,
+							"name": "cancelAnimationFrame",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Removes a callback from the animation frame painting callback from\nXRSession's set of animation frame rendering callbacks, given the\nidentifying handle returned by a previous call to requestAnimationFrame()."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 731,
+									"name": "id",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 724,
+					"name": "end",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 92,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L92"
+						}
+					],
+					"signatures": [
+						{
+							"id": 725,
+							"name": "end",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Ends the xr session. Returns a promise which resolves when the\nsession has been shut down."
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 707,
+					"name": "getFixedFoveation",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 53,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L53"
+						}
+					],
+					"signatures": [
+						{
+							"id": 708,
+							"name": "getFixedFoveation",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Return fixed foveation of camera."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 711,
+					"name": "removeEventListener",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 63,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L63"
+						}
+					],
+					"signatures": [
+						{
+							"id": 712,
+							"name": "removeEventListener",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Remove event listener for XR session."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 726,
+					"name": "requestAnimationFrame",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 101,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L101"
+						}
+					],
+					"signatures": [
+						{
+							"id": 727,
+							"name": "requestAnimationFrame",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Schedules the specified method to be called the next time the user agent\nis working on rendering an animation frame for the WebXR device. Returns an\ninteger value which can be used to identify the request for the purposes of\ncanceling the callback using cancelAnimationFrame(). This method is comparable\nto the Window.requestAnimationFrame() method."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 728,
+									"name": "callback",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "FrameRequestCallback",
+										"qualifiedName": "FrameRequestCallback",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "number"
+							}
+						}
+					]
+				},
+				{
+					"id": 718,
+					"name": "resetEvents",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 74,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L74"
+						}
+					],
+					"signatures": [
+						{
+							"id": 719,
+							"name": "resetEvents",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Reset event flow."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 704,
+					"name": "setFixedFoveation",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 48,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L48"
+						}
+					],
+					"signatures": [
+						{
+							"id": 705,
+							"name": "setFixedFoveation",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Set fixed foveation for camera."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 706,
+									"name": "value",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The fixed foveation value"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					]
+				},
+				{
+					"id": 713,
+					"name": "setSessionExitCallBack",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 69,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L69"
+						}
+					],
+					"signatures": [
+						{
+							"id": 714,
+							"name": "setSessionExitCallBack",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Add exit listener for XR session."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 715,
+									"name": "sessionExitCallBack",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The exit listener"
+											}
+										]
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 716,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "xr/IXRSession.ts",
+													"line": 69,
+													"character": 46,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L69"
+												}
+											],
+											"signatures": [
+												{
+													"id": 717,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 720,
+					"name": "start",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 80,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L80"
+						}
+					],
+					"signatures": [
+						{
+							"id": 721,
+							"name": "start",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Ends the xr session. Returns a promise which resolves when the\nsession has been start."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 722,
+					"name": "stop",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/IXRSession.ts",
+							"line": 86,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L86"
+						}
+					],
+					"signatures": [
+						{
+							"id": 723,
+							"name": "stop",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Ends the xr session. Returns a promise which resolves when the\nsession has been start."
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Accessors",
+					"children": [
+						692,
+						690,
+						694,
+						698,
+						702,
+						700,
+						696
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						709,
+						729,
+						724,
+						707,
+						711,
+						726,
+						718,
+						704,
+						713,
+						720,
+						722
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/IXRSession.ts",
+					"line": 8,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/IXRSession.ts#L8"
+				}
+			]
+		},
+		{
+			"id": 581,
+			"name": "IXRTrackablePlatformFeature",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of the platform feature.\nResponsible for the implementation of specific features of different XR backends."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 582,
+					"name": "canModifyRequestTrackingAfterInit",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+							"line": 12,
+							"character": 6,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L12"
+						}
+					],
+					"getSignature": {
+						"id": 583,
+						"name": "canModifyRequestTrackingAfterInit",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Returns whether request tracking can be modified after initialization."
+								}
+							]
+						},
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						}
+					}
+				},
+				{
+					"id": 592,
+					"name": "checkAvailable",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+							"line": 28,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L28"
+						}
+					],
+					"signatures": [
+						{
+							"id": 593,
+							"name": "checkAvailable",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Check if the feature is available."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 594,
+									"name": "session",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The XR session"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 689,
+										"name": "IXRSession"
+									}
+								},
+								{
+									"id": 595,
+									"name": "frame",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The XR frame"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 685,
+										"name": "IXRFrame"
+									}
+								},
+								{
+									"id": 596,
+									"name": "requestTrackings",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The request trackings"
+											}
+										]
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 604,
+											"name": "K"
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "boolean"
+							}
+						}
+					]
+				},
+				{
+					"id": 584,
+					"name": "getTrackedResult",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+							"line": 20,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L20"
+						}
+					],
+					"signatures": [
+						{
+							"id": 585,
+							"name": "getTrackedResult",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Get the tracked result."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 586,
+									"name": "session",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The XR session"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 689,
+										"name": "IXRSession"
+									}
+								},
+								{
+									"id": 587,
+									"name": "frame",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The XR frame"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 685,
+										"name": "IXRFrame"
+									}
+								},
+								{
+									"id": 588,
+									"name": "requestTrackings",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The request trackings"
+											}
+										]
+									},
+									"type": {
+										"type": "array",
+										"elementType": {
+											"type": "reference",
+											"id": 604,
+											"name": "K"
+										}
+									}
+								},
+								{
+									"id": 589,
+									"name": "generateTracked",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 590,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+													"line": 20,
+													"character": 97,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L20"
+												}
+											],
+											"signatures": [
+												{
+													"id": 591,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "reference",
+														"id": 603,
+														"name": "T"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 597,
+					"name": "onAddRequestTracking",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+							"line": 34,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L34"
+						}
+					],
+					"signatures": [
+						{
+							"id": 598,
+							"name": "onAddRequestTracking",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Called when request tracking is added."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 599,
+									"name": "requestTracking",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The request tracking"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 604,
+										"name": "K"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 600,
+					"name": "onDelRequestTracking",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+							"line": 40,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L40"
+						}
+					],
+					"signatures": [
+						{
+							"id": 601,
+							"name": "onDelRequestTracking",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Called when request tracking is removed."
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 602,
+									"name": "requestTracking",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The request tracking"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 604,
+										"name": "K"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Accessors",
+					"children": [
+						582
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						592,
+						584,
+						597,
+						600
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/IXRTrackablePlatformFeature.ts",
+					"line": 7,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTrackablePlatformFeature.ts#L7"
+				}
+			],
+			"typeParameters": [
+				{
+					"id": 603,
+					"name": "T",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"id": 635,
+						"name": "IXRTracked"
+					}
+				},
+				{
+					"id": 604,
+					"name": "K",
+					"kind": 131072,
+					"kindString": "Type parameter",
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"id": 631,
+						"typeArguments": [
+							{
+								"type": "reference",
+								"id": 603,
+								"name": "T"
+							}
+						],
+						"name": "IXRRequestTracking"
+					}
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 580,
+					"name": "IXRPlatformFeature"
+				}
+			]
+		},
+		{
+			"id": 635,
+			"name": "IXRTracked",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of XR trackable."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 636,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The unique id of the trackable."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 637,
+					"name": "pose",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The pose of the trackable in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L10"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 612,
+						"name": "IXRPose"
+					}
+				},
+				{
+					"id": 638,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The tracking state of the trackable."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						636,
+						637,
+						638
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/IXRTracked.ts",
+					"line": 6,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L6"
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"id": 652,
+					"name": "IXRTrackedImage"
+				},
+				{
+					"type": "reference",
+					"id": 662,
+					"name": "IXRTrackedPlane"
+				}
+			]
+		},
+		{
+			"id": 652,
+			"name": "IXRTrackedImage",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of XR trackable."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 655,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The unique id of the trackable."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 636,
+						"name": "IXRTracked.id"
+					}
+				},
+				{
+					"id": 654,
+					"name": "measuredPhysicalWidth",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The width of the image in meters in the physical world."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/image/IXRTrackedImage.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRTrackedImage.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 656,
+					"name": "pose",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The pose of the trackable in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L10"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 612,
+						"name": "IXRPose"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 637,
+						"name": "IXRTracked.pose"
+					}
+				},
+				{
+					"id": 653,
+					"name": "referenceImage",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The reference image which was used to detect this image in the environment."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/image/IXRTrackedImage.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRTrackedImage.ts#L6"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 644,
+						"name": "IXRReferenceImage"
+					}
+				},
+				{
+					"id": 657,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The tracking state of the trackable."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 638,
+						"name": "IXRTracked.state"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						655,
+						654,
+						656,
+						653,
+						657
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/image/IXRTrackedImage.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/image/IXRTrackedImage.ts#L4"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 635,
+					"name": "IXRTracked"
+				}
+			]
+		},
+		{
+			"id": 662,
+			"name": "IXRTrackedPlane",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The base interface of XR trackable."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 665,
+					"name": "attributesDirty",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Whether this frame changes the attributes of the plane.\nNote: Includes "
+							},
+							{
+								"kind": "code",
+								"text": "`polygon`"
+							},
+							{
+								"kind": "text",
+								"text": " but no "
+							},
+							{
+								"kind": "code",
+								"text": "`pose`"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/plane/IXRTrackedPlane.ts",
+							"line": 16,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/plane/IXRTrackedPlane.ts#L16"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 666,
+					"name": "id",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The unique id of the trackable."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 636,
+						"name": "IXRTracked.id"
+					}
+				},
+				{
+					"id": 663,
+					"name": "planeMode",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Whether the detected plane is horizontal or vertical."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/plane/IXRTrackedPlane.ts",
+							"line": 6,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/plane/IXRTrackedPlane.ts#L6"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 664,
+					"name": "polygon",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The points that make up this plane.\n Note: These points are in the plane coordinate system,\n and their Y coordinates are all zero."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/plane/IXRTrackedPlane.ts",
+							"line": 11,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/plane/IXRTrackedPlane.ts#L11"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"name": "Vector3"
+						}
+					}
+				},
+				{
+					"id": 667,
+					"name": "pose",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The pose of the trackable in XR space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 10,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L10"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 612,
+						"name": "IXRPose"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 637,
+						"name": "IXRTracked.pose"
+					}
+				},
+				{
+					"id": 668,
+					"name": "state",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The tracking state of the trackable."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "xr/feature/trackable/IXRTracked.ts",
+							"line": 12,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/IXRTracked.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"id": 638,
+						"name": "IXRTracked.state"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						665,
+						666,
+						663,
+						664,
+						667,
+						668
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "xr/feature/trackable/plane/IXRTrackedPlane.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/xr/feature/trackable/plane/IXRTrackedPlane.ts#L4"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"id": 635,
+					"name": "IXRTracked"
 				}
 			]
 		}
@@ -11845,21 +15770,41 @@
 				433,
 				48,
 				306,
+				553,
 				331,
+				732,
 				281,
 				121,
 				263,
 				205,
 				223,
 				532,
-				553,
-				560,
+				556,
 				563,
-				567,
+				566,
+				570,
 				508,
 				390,
 				264,
-				573
+				576,
+				617,
+				623,
+				669,
+				685,
+				628,
+				605,
+				580,
+				612,
+				644,
+				639,
+				648,
+				658,
+				631,
+				689,
+				581,
+				635,
+				652,
+				662
 			]
 		}
 	],
@@ -11868,7 +15813,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/design/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/design/src/index.ts#L1"
 		}
 	]
 }

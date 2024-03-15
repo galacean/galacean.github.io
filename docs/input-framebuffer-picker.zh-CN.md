@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title: 帧缓冲拾取
 type: 交互
 label: Interact

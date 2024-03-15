@@ -47,19 +47,19 @@ WebGLEngine.create({
     xrManager.sessionManager.isSupportedMode(XRSessionMode.AR).then(
       () => {
         const content = xrManager.isSupportedFeature(XRPlaneTracking)
-          ? "进入 AR"
-          : "不支持平面追踪";
+          ? "Enter AR"
+          : "Not Support Plane Tracking";
         addXRButton(content).onclick = () => {
           xrManager.enterXR(XRSessionMode.AR);
         };
       },
       (error) => {
-        addXRButton("不支持 AR");
+        addXRButton("Not Support");
         console.error(error);
       }
     );
   } catch (error) {
-    addXRButton("不支持相关功能");
+    addXRButton("Not Support");
   }
 
   engine.run();

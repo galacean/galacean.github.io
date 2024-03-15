@@ -285,14 +285,14 @@ class Oasis {
 
   loadGLTF(url: string) {
     this.destroyGLTF();
-    const isGLB = /.glb$/.test(url);
     this.engine.resourceManager
       .load<GLTFResource>({
         type: AssetType.GLTF,
-        url: `${url}#${Math.random()}.${isGLB ? "glb" : "gltf"}` // @todo: resourceManager cache bug
+        url
       })
       .then((asset) => {
-        const { defaultSceneRoot, materials, animations } = asset;
+        const { materials, animations } = asset;
+        const defaultSceneRoot = asset.instantiateSceneRoot();
         this.gltfRootEntity = defaultSceneRoot;
         this.rootEntity.addChild(defaultSceneRoot);
 
