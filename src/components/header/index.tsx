@@ -61,7 +61,7 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
       >
         <Translate />
       </ActionButton>
-      <Select
+      {!isHomePage && <Select
         label="version"
         size='sm'
         onSelectionChange={(e) => {
@@ -75,7 +75,7 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
             JSON.parse(v.packages)["@galacean/engine"].version?.replace(/\.\d+-beta\.\d+/, '-beta') :
             v.version
         }</Option>)}
-      </Select>
+      </Select>}
       {isMobile && <Popover trigger={
         <ActionButton>
           <Menu />
@@ -106,7 +106,7 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
                 <img src={logoUrl} alt='galacean' />
               </StyledLogo>
               {isMobile && rightActions(true)}
-              {!isMobile && <SearchBox></SearchBox>}
+              {!isMobile && !isHomePage && <SearchBox></SearchBox>}
             </Flex>
             {!isMobile && (
               <Flex align="both" gap="sm">
