@@ -74,7 +74,7 @@ export default function Production() {
           padding: "$10 0"
         }
       }}>
-        <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_w1o8la/afts/img/A*cOUgSYMpo1cAAAAAAAAAAAAADsB_AQ/fmt.webp)` }}>
+        <StyledCard style={{ backgroundImage: `url(https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*4tQ4T4CFKRsAAAAAAAAAAAAADsF_AQ/fmt.webp)` }}>
           <StyledH align="v" wrap={false}>
             <FormattedMessage id="app.home.engine" />
           </StyledH>
