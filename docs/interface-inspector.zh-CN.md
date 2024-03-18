@@ -10,18 +10,19 @@ label: Basics/Interface
 
 <div style="display: flex; gap: 20px;">
   <figure style="flex:1;">
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/e5c728d7-02f7-4f2a-bfff-799324db54a1/image-20240122144004260.png" alt="image-20240122144004260" style="zoom:50%;" />
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/1d2e383b-2451-4d0e-8338-a16b1a99ce92/image-20240318174937155.png" alt="image-20240122144004260" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096;font-size:12px">场景检查器</figcaption>
 	</figure>
   <figure style="flex:1;">
-    <img src="https://gw.alipayobjects.com/zos/OasisHub/814940b3-147c-4d08-9223-dd7721a7c069/image-20240122144102202.png" alt="image-20240122144102202" style="zoom:50%;" />
+    <img src="https://gw.alipayobjects.com/zos/OasisHub/bb8e0881-c716-4fc2-89c0-d7b4b01d668d/image-20240318175043180.png" alt="image-20240122144102202" style="zoom:50%;" />
     <figcaption style="text-align:center; color: #889096;font-size:12px">实体检查器</figcaption>
   </figure>
   <figure style="flex:1;">
-    <img src="https://gw.alipayobjects.com/zos/OasisHub/708b77a1-a666-4573-a021-697a001c27c0/image-20240122144141450.png" alt="image-20240122144141450" style="zoom:50%;" />
+    <img src="https://gw.alipayobjects.com/zos/OasisHub/1ce2c623-bab4-45dd-a0ef-12ab2e00e9a9/image-20240318175341251.png" alt="image-20240122144141450" style="zoom:50%;" />
     <figcaption style="text-align:center; color: #889096;font-size:12px">资产检查器</figcaption>
   </figure>
 </div>
+
 
 ## 属性类型
 
@@ -36,21 +37,21 @@ label: Basics/Interface
 
 你可以通过拖拽输入框右侧的滑块来快速调整数字的大小。在拖拽时，按住 `⌘`（window 上为 `ctrl`）可以更精确地调整数字的大小（精度为原 step 的 1/10）。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/252b0426-036b-4950-a90e-24680837fc74/image-20230926105543072.png" alt="image-20230926105543072" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/b14cd188-22bf-4d78-b327-07a331f3c58b/image-20240318175444343.png" alt="image-20240318175444343" style="zoom:50%;" />
 
 一些可以调节的属性是以滑动条的形式出现的。你可以拖动滑块来快速调整数字的大小，如灯光的 `Intensity`。同样的，在拖动滑块时，按住 `⌘`（window 上为 `ctrl`）可以更精确的调整数字的大小。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/1cbd4aa5-3cf6-4358-af31-043d93b82d20/image-20230926105935206.png" alt="image-20230926105935206" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/440cd2ed-d1eb-474f-be7e-7a35cac8c954/image-20240318175518354.png" alt="image-20240318175518354" style="zoom:50%;" />
 
-还有一些数字调节的属性是以输入框和按钮的形式出现的，如阴影的 `shadowDistance`。这些属性往往拥有更精确的步进大小（如 0.1, 1, 10）。点击按钮可以直接以步进长度来增加或减小数值。
+还有一些数字调节的属性是以输入框和按钮的形式出现的，如阴影的 `Near Plane`。这些属性往往拥有更精确的步进大小（如 0.1, 1, 10）。点击按钮可以直接以步进长度来增加或减小数值。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/e00085ab-60c9-43d0-b012-f1754406ada1/image-20230926110053695.png" alt="image-20230926110053695" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/14c8726c-1a91-4206-8e73-93d436109172/image-20240318175638055.png" alt="image-20240318175638055" style="zoom:50%;" />
 
 ### 颜色面板
 
 一些属性需要调整颜色，如光照、场景的背景色，亦或者材质的自发光颜色等。想要调整颜色，你需要点击左侧的颜色按钮来唤起颜色选择器。在颜色选择器中，你可以使用 HUE 来选择颜色，调整颜色的透明度；也可以在输入框来调整颜色具体的 RGBA 数值。点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/dc030a4b-8813-4ea2-acb0-549c04363b1d/image-20230926110451443.png" alt="image-20230926110451443" style="zoom: 33%;" />按钮可以在 HSLA，RGBA 和 HEXA 三种模式下进行切换。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/b6a6835c-1c11-4a5a-a62a-58117ffab872/image-20240122143848061.png" alt="image-20240122143848061" style="zoom:50%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/d340d0ea-a88a-4b82-b6c4-c69d3f4b8c4e/image-20240318175748734.png" alt="image-20240318175748734" style="zoom:50%;" />
 
 ### 资产选择浮窗
 
@@ -60,11 +61,12 @@ label: Basics/Interface
 
 <div style="display: flex; gap: 20px;">
   <figure style="flex:1;">
-  <img src="https://gw.alipayobjects.com/zos/OasisHub/e2d0e8fd-7926-4c6b-b7bf-b0e712649855/image-20240122143554973.png" alt="image-20240122143554973" style="zoom:50%;" />
+  <img src="https://gw.alipayobjects.com/zos/OasisHub/b7845736-d13a-4332-af75-65cf1e2bb268/image-20240318175855279.png" alt="image-20240122143554973" style="zoom:50%;" />
   <figcaption style="text-align:center; color: #889096;font-size:12px">Mesh Asset Picker</figcaption>
 	</figure>
   <figure style="flex:1;">
-    <img src="https://gw.alipayobjects.com/zos/OasisHub/f456c74e-b8ba-4bd6-9cf9-4f907535af26/image-20240122134039213.png" alt="image-20240122134039213" style="zoom:50%;" />
+    <img src="https://gw.alipayobjects.com/zos/OasisHub/b8463854-4343-4dea-b1cf-713a7c617288/image-20240318175957149.png" alt="image-20240122134039213" style="zoom:50%;" />
     <figcaption style="text-align:center; color: #889096;font-size:12px">Texture Asset Picker</figcaption>
   </figure>
 </div>
+
