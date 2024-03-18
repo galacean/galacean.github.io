@@ -5,9 +5,22 @@ type: 脚本
 label: Script
 ---
 
-![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*oXB7Q7j8ngMAAAAAAAAAAAAADqiTAQ/original)
-
 Galacean Editor 提供了一个功能强大的代码编辑器，提供了代码提示，第三方包引入，引擎事件调试，脚本参数调试，项目实时预览等多种能力，可帮助你快速编辑和调试代码。
+
+![image-20240318173952160](https://gw.alipayobjects.com/zos/OasisHub/2707ed27-a85a-4915-9db0-1cbed9e5c3dc/image-20240318173952160.png)
+
+| 序号 | 区域         | 说明                                                         |
+| ---- | ------------ | ------------------------------------------------------------ |
+| 1    | 文件列表     | 查看项目中的所有脚本文件                                     |
+| 2    | 代码编辑区   | 编辑脚本文件，支持代码高亮，代码提示，代码格式化等功能       |
+| 3    | 预览区       | 预览当前脚本的运行效果。保存代码后会实时刷新此区域的渲染状态 |
+| 4    | 包依赖管理区 | 添加需要依赖的 [NPM](https://www.npmjs.org/) 三方包，比如 [tween.js](https://www.npmjs.com/package/@tweenjs/tween.js) |
+| 5    | 事件调试区   | 代码编辑器会自动检索所有绑定到引擎中的事件并显示在这里，你可以在这里触发事件，也可以配置事件的参数 |
+| 5    | 控制台       | 查看代码运行时的日志信息                                     |
+
+想要了解更多关于代码编辑器的信息，请查看[代码编辑器](${docs}script-edit)。
+
+
 
 ## 代码编辑
 
@@ -17,7 +30,7 @@ Galacean Editor 提供了一个功能强大的代码编辑器，提供了代码�
 
 ## 文件预览
 
-![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*o51FQa9Uh0MAAAAAAAAAAAAADqiTAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*o51FQa9Uh0MAAAAAAAAAAAAADqiTAQ/original" alt="Code Editor Snapshot" style="zoom:50%;" />
 
 1. **文件搜索** 可快速搜索项目中的文件
 2. **代码筛选** 文件树是否仅显示代码文件 ( `.ts` `.gs` `.glsl` )
@@ -29,7 +42,7 @@ Galacean Editor 提供了一个功能强大的代码编辑器，提供了代码�
 
 代码编辑器内置了与项目相对应的引擎，可自动提供引擎 API 的智能提示，从而帮助你快速实现基于引擎的逻辑。但大多数情况下你都需要引入 Galacean 生态包或其他第三方包来增强功能。
 
-![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*Nc2MQqOeWxgAAAAAAAAAAAAADqiTAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*Nc2MQqOeWxgAAAAAAAAAAAAADqiTAQ/original" alt="Code Editor Snapshot" style="zoom:50%;" />
 
 1. **搜索框** 在搜索框输入包名，按下 回车键，即可快速拉取包的版本列表
 2. **版本选择** 默认情况下使用 `latest` 版本
@@ -43,7 +56,7 @@ Galacean Editor 提供了一个功能强大的代码编辑器，提供了代码�
 
 Galacean 的代码编辑器提供实时预览功能。保存代码后，预览区会自动更新，从而让你快速查看代码的执行结果。
 
-![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*dCHqRIMdHbkAAAAAAAAAAAAADqiTAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*dCHqRIMdHbkAAAAAAAAAAAAADqiTAQ/original" alt="Code Editor Snapshot" style="zoom:50%;" />
 
 1. **拖动按钮** 按住来拖动模拟器。将模拟器拖到屏幕右边缘，即可将其固定在右侧面板上。
 2. **统计信息切换** 点击来切换场景统计信息的显示状态
@@ -55,7 +68,7 @@ Galacean 的代码编辑器提供实时预览功能。保存代码后，预览�
 
 在代码编辑器中，我们提供了一个事件调试面板，从而帮助你快速调试场景中的事件。
 
-![Code Editor Snapshot](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*xtmMT676qvcAAAAAAAAAAAAADqiTAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*xtmMT676qvcAAAAAAAAAAAAADqiTAQ/original" alt="Code Editor Snapshot" style="zoom:50%;" />
 
 1. **事件列表** Galacean Editor 会自动收集场景中的所有事件名并显示在这里
 2. **事件参数配置** 你可以点击此按钮来配置触发事件时所携带的参数，参数的配置使用 `JSON` 格式编写

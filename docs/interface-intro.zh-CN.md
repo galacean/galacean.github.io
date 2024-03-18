@@ -6,9 +6,9 @@ group: 界面
 label: Basics/Interface
 ---
 
-## 编辑器首页
+## 首页
 
-![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*zRqTSIcsY74AAAAAAAAAAAAADqiTAQ/original)
+![image-20240318173506046](https://gw.alipayobjects.com/zos/OasisHub/334d8ca3-639f-4cd9-8aaa-93c1da7acdc3/image-20240318173506046.png)
 
 | 序号 | 区域         | 说明                                                   |
 | ---- | ------------ | ------------------------------------------------------ |
@@ -18,7 +18,7 @@ label: Basics/Interface
 
 ## 场景编辑页
 
-<img src="https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*-txWQZkYIjgAAAAAAAAAAAAADqiTAQ/original" alt="SCR-20230223-klw.png" style="zoom: 50%;" />
+![image-20240318173406939](https://gw.alipayobjects.com/zos/OasisHub/f5b3b853-c5d6-4048-a4de-e18dc69339de/image-20240318173406939.png)
 
 | 序号 | 区域                                          | 说明                                                                                                                                                                                                                                      |
 | ---- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -33,17 +33,3 @@ label: Basics/Interface
 | 9    | [动画控制器编辑器](${docs}animation-animator) | 双击 AnimatorController 资产或点击**面板切换按钮** -> <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*MRuqSJWALfYAAAAAAAAAAAAADhuCAQ/original" width="140" height="20">，在这里你可以对指定的 AnimationClip 资产进行编辑 |
 
 对于各个面板详细的介绍可以点击上方链接查看。
-
-## 代码编辑页
-
-![Untitled](https://mdn.alipayobjects.com/huamei_fvsq9p/afts/img/A*3crSToI-RdAAAAAAAAAAAAAADqiTAQ/**original**)
-
-| 序号 | 区域       | 说明                                                                                               |
-| ---- | ---------- | -------------------------------------------------------------------------------------------------- |
-| 1    | 文件列表   | 在这里可以查看项目中的所有脚本文件                                                                 |
-| 2    | 代码编辑区 | 在这里可以编辑脚本文件，支持代码高亮，代码提示，代码格式化等功能                                   |
-| 3    | 预览区     | 在这里可以预览当前脚本的运行效果。保存代码后会实时刷新此区域的渲染状态                             |
-| 4    | 事件调试区 | 代码编辑器会自动检索所有绑定到引擎中的事件并显示在这里，你可以在这里触发事件，也可以配置事件的参数 |
-| 5    | 控制台     | 你可以在这里查看代码运行时的日志信息                                                               |
-
-想要了解更多关于代码编辑器的信息，请查看[代码编辑器](${docs}script-edit)。
