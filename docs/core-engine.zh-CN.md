@@ -29,7 +29,7 @@ const engine = await WebGLEngine.create({ canvas: "canvas" });
 
 ### 渲染上下文
 
-开发者可以在 [导出界面](${docs}interface-publish) 设置上下文的渲染配置。
+开发者可以在 [导出界面](${docs}assets-build) 设置上下文的渲染配置。
 
 <img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*WZHzRYIpUzQAAAAAAAAAAAAADhuCAQ/original" style="zoom:50%;" />
 

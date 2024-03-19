@@ -34,7 +34,7 @@ flowchart LR
 
 ### 资源上传
 
-资源导出后，开发者需要同时把三个文件上传到 Galacean Editor。通过 **[资产面板](${docs}interface-assets)** 的上传按钮选择 “spine” 资产，选择本地的这三个文件，上传成功后能够在资产面板看到上传的 spine 资产：
+资源导出后，开发者需要同时把三个文件上传到 Galacean Editor。通过 **[资产面板](${docs}assets-interface)** 的上传按钮选择 “spine” 资产，选择本地的这三个文件，上传成功后能够在资产面板看到上传的 spine 资产：
 <img src="https://mdn.alipayobjects.com/huamei_kz4wfo/afts/img/A*OYpQSIgQi8UAAAAAAAAAAAAADsp6AQ/original"  style="zoom:50%;" />
 
 也可以直接把三个文件拖动到资产区域完成上传：

@@ -13,7 +13,7 @@ Scene 作为场景单元，可以方便的进行实体树管理，尤其是大�
 
 ### 创建和切换
 
-在 **[资产面板](${docs}interface-assets)** 右键（或资产面板右上角 + 号）创建场景，双击场景可以切换过去：
+在 **[资产面板](${docs}assets-interface)** 右键（或资产面板右上角 + 号）创建场景，双击场景可以切换过去：
 
 ![Untitled](https://mdn.alipayobjects.com/rms/afts/img/A*3KX4QKXgZZAAAAAAAAAAAAAAARQnAQ/original/Untitled.gif)
 

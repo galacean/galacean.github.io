@@ -18,13 +18,13 @@ label: Graphics/Background
 
 > 可以在 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
 
-天空盒纹理就是一张[立方纹理](${docs}graphics-texture-cube)，首先在准备好 HDR 后，依照路径 **[资产面板](${docs}interface-assets)** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
+天空盒纹理就是一张[立方纹理](${docs}graphics-texture-cube)，首先在准备好 HDR 后，依照路径 **[资产面板](${docs}assets-interface)** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
 
 ### 2. 创建天空盒材质
 
-创建完立方纹理资产后，依照路径 **[资产面板](${docs}interface-assets)** -> **右键创建** -> **选择 Material** -> **选中生成的资产** -> **[检查器面板](${docs}interface-inspector)** -> **点击 Base 栏的 Shader 属性** -> **选择 Sky Box** -> **点击 Base 栏的 HDR** -> **选择第一步创建的立方纹理** 创建天空盒材质。
+创建完立方纹理资产后，依照路径 **[资产面板](${docs}assets-interface)** -> **右键创建** -> **选择 Material** -> **选中生成的资产** -> **[检查器面板](${docs}interface-inspector)** -> **点击 Base 栏的 Shader 属性** -> **选择 Sky Box** -> **点击 Base 栏的 HDR** -> **选择第一步创建的立方纹理** 创建天空盒材质。
 
 ![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*YkX9R5yfGE0AAAAAAAAAAAAADhuCAQ/original)
 
