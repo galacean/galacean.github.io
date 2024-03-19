@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 3
 title: 资产的加载
 type: 资产工作流
 label: Resource

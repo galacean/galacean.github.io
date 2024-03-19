@@ -1,9 +1,8 @@
 ---
-order: 6
+order: 2
 title: 项目导出
-type: 基础知识
-group: 界面
-label: Basics/Interface
+type: 资产工作流
+label: Resource
 ---
 
 ## HTML5 项目
@@ -25,7 +24,7 @@ Galacean Editor 项目导出功能可以将当前编辑器项目作为一个前�
 | 纹理类型      | 勾选 [KTX2](https://www.khronos.org/ktx/) 开启[纹理压缩](${docs}graphics-texture-compression)优化选项                             |
 | 纹理压缩格式  | 勾选 [KTX2](https://www.khronos.org/ktx/) 后可见，不同压缩格式会影响纹理的尺寸和渲染质量                                          |
 | 纹理压缩质量  | 勾选 [KTX2](https://www.khronos.org/ktx/) 后可见，可以一定限度上调整纹理的尺寸和渲染质量                                          |
-| 主场景        | 选择 **[资产面板](${docs}interface-assets)** 中的某个场景作为项目加载后的主场景                                                   |
+| 主场景        | 选择 **[资产面板](${docs}assets-interface)** 中的某个场景作为项目加载后的主场景                                                   |
 
 #### 渲染导出配置
 

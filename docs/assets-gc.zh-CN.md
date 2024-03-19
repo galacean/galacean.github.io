@@ -1,5 +1,5 @@
 ---
-order: 3
+order: 4
 title: 资产的释放
 type: 资产工作流
 label: Resource
