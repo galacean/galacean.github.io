@@ -10,6 +10,8 @@ label: Graphics/Light
 
 ## 光照与阴影
 
+<img src="https://gw.alipayobjects.com/zos/OasisHub/bf6acb06-c026-4a36-b243-0b39a759624c/image-20240319174904033.png" alt="image-20240319174904033" style="zoom:50%;" />
+
 基于这样的原理就比较好理解在 `Light` 组件中有关阴影的各项属性设置：
 
 | 参数                                                  | 应用                 |
@@ -28,7 +30,7 @@ label: Graphics/Light
 
 除了上述位于 `Light` 组件当中的阴影配置外，还有一些有关阴影的全局配置位于 `Scene` 当中:
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/0b8707a9-5084-4e87-b530-897bcd37c16b/shadow.gif" alt="shadow" style="zoom:100%;" />
+<img src="https://gw.alipayobjects.com/zos/OasisHub/05b00536-63c3-42f4-b89f-1f3270aa375e/image-20240319175051723.png" alt="image-20240319175051723" style="zoom:50%;" />
 
 | 参数 | 应用 |
 | :-- | :-- |
