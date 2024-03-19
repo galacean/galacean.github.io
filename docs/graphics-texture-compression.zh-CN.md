@@ -31,7 +31,7 @@ KTX2 的生成可以使用：
 
 - toktx
 - basisu
-- 编辑器打包，可以参考『[项目发布](${docs}interface-publish)』文档。
+- 编辑器打包，可以参考『[项目发布](${docs}assets-build)』文档。
 
 ## 兼容性
 

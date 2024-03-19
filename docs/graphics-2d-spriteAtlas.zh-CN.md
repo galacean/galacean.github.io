@@ -20,7 +20,7 @@ label: Graphics/2D
 
 ### 创建精灵图集
 
-在 **[资产面板](${docs}interface-assets)** 内右键，选择`功能列表`中的`创建`，并选中`精灵图集`，此时，一个空白的精灵图集资产就创建成功了。
+在 **[资产面板](${docs}assets-interface)** 内右键，选择`功能列表`中的`创建`，并选中`精灵图集`，此时，一个空白的精灵图集资产就创建成功了。
 
 <img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*W-HZSrvAiG8AAAAAAAAAAAAADjCHAQ/original" alt="buildBox" style="zoom: 67%;" />
 
