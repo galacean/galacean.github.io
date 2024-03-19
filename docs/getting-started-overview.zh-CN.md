@@ -79,10 +79,10 @@ import { OrbitControl } from " @galacean/engine-toolkit-controls";
 
 另外还有一些二方生态包，引入和使用方式和引擎工具包相同：
 
-| 功能                                                                             | 解释        | API                            |
-| :------------------------------------------------------------------------------- | :---------- | :----------------------------- |
-| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine)   | Spine 动画  | [Doc](${doc}graphics-2d-spine) |
-| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie 动画 | [Doc](${doc}graphics-lottie)   |
+| 功能                                                                             | 解释        | API                             |
+| :------------------------------------------------------------------------------- | :---------- | :------------------------------ |
+| [@galacean/engine-spine](https://www.npmjs.com/package/@galacean/engine-spine)   | Spine 动画  | [Doc](${docs}graphics-2d-spine) |
+| [@galacean/engine-lottie](https://www.npmjs.com/package/@galacean/engine-lottie) | Lottie 动画 | [Doc](${docs}graphics-lottie)   |
 
 ### 兼容性
 
