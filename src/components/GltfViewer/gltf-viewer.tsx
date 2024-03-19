@@ -3,15 +3,6 @@
 /* eslint no-param-reassign: ["error", { "props": false }] */
 /* eslint no-underscore-dangle: 0 */
 import {
-  BakerResolution,
-  DecodeMode,
-  downloadArrayBuffer,
-  IBLBaker,
-  SphericalHarmonics3Baker,
-  toBuffer
-} from "@galacean/tools-baker";
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
-import {
   AmbientLight,
   AnimationClip,
   Animator,
@@ -39,8 +30,17 @@ import {
   Vector3,
   WebGLEngine
 } from "@galacean/engine";
-import React, { useEffect } from "react";
+import { OrbitControl } from "@galacean/engine-toolkit-controls";
+import {
+  BakerResolution,
+  DecodeMode,
+  IBLBaker,
+  SphericalHarmonics3Baker,
+  downloadArrayBuffer,
+  toBuffer
+} from "@galacean/tools-baker";
 import * as dat from "dat.gui";
+import { useEffect } from "react";
 import { SimpleDropzone } from "simple-dropzone";
 import "./gltf-viewer.less";
 
@@ -252,8 +252,8 @@ class Oasis {
     const center = this._center;
     const extent = this._extent;
 
-    boundingBox.min.set(0, 0, 0);
-    boundingBox.max.set(0, 0, 0);
+    boundingBox.min.set(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
+    boundingBox.max.set(Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY);
 
     renderers.forEach((renderer) => {
       BoundingBox.merge(renderer.bounds, boundingBox, boundingBox);
@@ -348,7 +348,7 @@ class Oasis {
           this.engine.resourceManager
             .load<GLTFResource>({
               type: AssetType.GLTF,
-              url: `${urlNew}#.gltf`
+              url: urlNew
             })
             .then((asset) => {
               this.handleGltfResource(asset);
@@ -361,7 +361,7 @@ class Oasis {
       this.engine.resourceManager
         .load<GLTFResource>({
           type: AssetType.GLTF,
-          url: `${url}#.glb`
+          url
         })
         .then((asset) => {
           this.handleGltfResource(asset);
@@ -373,7 +373,8 @@ class Oasis {
   }
 
   handleGltfResource(asset: GLTFResource) {
-    const { defaultSceneRoot, materials, animations } = asset;
+    const { materials, animations } = asset;
+    const defaultSceneRoot = asset.instantiateSceneRoot();
     console.log(asset);
     this.dropSuccess();
     this.gltfRootEntity = defaultSceneRoot;
@@ -413,7 +414,7 @@ class Oasis {
 
     const bakedHDRCubeMap = IBLBaker.fromTextureCubeMap(texture, BakerResolution.R128, DecodeMode.RGBM);
     const sh = new SphericalHarmonics3();
-    SphericalHarmonics3Baker.fromTextureCubeMap(texture, sh);
+    await SphericalHarmonics3Baker.fromTextureCube(texture, sh);
     const arrayBuffer = toBuffer(bakedHDRCubeMap, sh);
     downloadArrayBuffer(arrayBuffer, name);
 

@@ -1,13 +1,13 @@
 {
 	"id": 0,
-	"name": "@oasis-engine/physics-physx",
+	"name": "@galacean/engine-physics-physx",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
 	"originalName": "",
 	"children": [
 		{
-			"id": 93,
+			"id": 100,
 			"name": "PhysXRuntimeMode",
 			"kind": 8,
 			"kindString": "Enumeration",
@@ -22,7 +22,7 @@
 			},
 			"children": [
 				{
-					"id": 94,
+					"id": 101,
 					"name": "Auto",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -40,7 +40,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 6,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L6"
 						}
 					],
 					"type": {
@@ -49,7 +49,7 @@
 					}
 				},
 				{
-					"id": 96,
+					"id": 103,
 					"name": "JavaScript",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -67,7 +67,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L10"
 						}
 					],
 					"type": {
@@ -76,7 +76,7 @@
 					}
 				},
 				{
-					"id": 95,
+					"id": 102,
 					"name": "WebAssembly",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -94,7 +94,7 @@
 							"fileName": "enum/PhysXRuntimeMode.ts",
 							"line": 8,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L8"
 						}
 					],
 					"type": {
@@ -107,9 +107,9 @@
 				{
 					"title": "Enumeration Members",
 					"children": [
-						94,
-						96,
-						95
+						101,
+						103,
+						102
 					]
 				}
 			],
@@ -118,12 +118,12 @@
 					"fileName": "enum/PhysXRuntimeMode.ts",
 					"line": 4,
 					"character": 12,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/enum/PhysXRuntimeMode.ts#L4"
 				}
 			]
 		},
 		{
-			"id": 1,
+			"id": 2,
 			"name": "PhysXPhysics",
 			"kind": 128,
 			"kindString": "Class",
@@ -138,54 +138,149 @@
 			},
 			"children": [
 				{
-					"id": 91,
+					"id": 3,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 50,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L50"
+						}
+					],
 					"signatures": [
 						{
-							"id": 92,
+							"id": 4,
 							"name": "new PhysXPhysics",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
+							"parameters": [
+								{
+									"id": 5,
+									"name": "runtimeMode",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"id": 100,
+										"name": "PhysXRuntimeMode"
+									},
+									"defaultValue": "PhysXRuntimeMode.Auto"
+								}
+							],
 							"type": {
 								"type": "reference",
-								"id": 1,
+								"id": 2,
 								"name": "PhysXPhysics"
 							}
 						}
 					]
 				},
 				{
-					"id": 88,
-					"name": "_init",
-					"kind": 2048,
-					"kindString": "Method",
+					"id": 11,
+					"name": "_initializePromise",
+					"kind": 1024,
+					"kindString": "Property",
 					"flags": {
-						"isPrivate": true,
-						"isStatic": true
+						"isPrivate": true
 					},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 217,
-							"character": 17,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L217"
+							"line": 48,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L48"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "void"
+							}
+						],
+						"name": "Promise",
+						"qualifiedName": "Promise",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 10,
+					"name": "_initializeState",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 47,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L47"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "InitializeState"
+					},
+					"defaultValue": "InitializeState.Uninitialized"
+				},
+				{
+					"id": 9,
+					"name": "_runTimeMode",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 46,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L46"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 100,
+						"name": "PhysXRuntimeMode"
+					}
+				},
+				{
+					"id": 97,
+					"name": "_init",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 250,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L250"
 						}
 					],
 					"signatures": [
 						{
-							"id": 89,
+							"id": 98,
 							"name": "_init",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 90,
-									"name": "PHYSX",
+									"id": 99,
+									"name": "physX",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
@@ -203,24 +298,22 @@
 					]
 				},
 				{
-					"id": 59,
+					"id": 68,
 					"name": "createBoxColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
+					"flags": {},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 162,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L162"
+							"line": 199,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L199"
 						}
 					],
 					"signatures": [
 						{
-							"id": 60,
+							"id": 69,
 							"name": "createBoxColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -236,7 +329,7 @@
 							},
 							"parameters": [
 								{
-									"id": 61,
+									"id": 70,
 									"name": "uniqueID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -247,7 +340,7 @@
 									}
 								},
 								{
-									"id": 62,
+									"id": 71,
 									"name": "size",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -258,7 +351,7 @@
 									}
 								},
 								{
-									"id": 63,
+									"id": 72,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -272,29 +365,35 @@
 							"type": {
 								"type": "reference",
 								"name": "IBoxColliderShape"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createBoxColliderShape"
 							}
 						}
-					]
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createBoxColliderShape"
+					}
 				},
 				{
-					"id": 73,
+					"id": 82,
 					"name": "createCapsuleColliderShape",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
+					"flags": {},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 187,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L187"
+							"line": 220,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L220"
 						}
 					],
 					"signatures": [
 						{
-							"id": 74,
+							"id": 83,
 							"name": "createCapsuleColliderShape",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -305,6 +404,985 @@
 										"kind": "inline-tag",
 										"tag": "@inheritDoc",
 										"text": "IPhysics.createCapsuleColliderShape"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 84,
+									"name": "uniqueID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 85,
+									"name": "radius",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 86,
+									"name": "height",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 87,
+									"name": "material",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PhysXPhysicsMaterial"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "ICapsuleColliderShape"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createCapsuleColliderShape"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createCapsuleColliderShape"
+					}
+				},
+				{
+					"id": 59,
+					"name": "createCharacterController",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 179,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L179"
+						}
+					],
+					"signatures": [
+						{
+							"id": 60,
+							"name": "createCharacterController",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createCharacterController"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "ICharacterController"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createCharacterController"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createCharacterController"
+					}
+				},
+				{
+					"id": 55,
+					"name": "createDynamicCollider",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 172,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L172"
+						}
+					],
+					"signatures": [
+						{
+							"id": 56,
+							"name": "createDynamicCollider",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createDynamicCollider"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 57,
+									"name": "position",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Vector3"
+									}
+								},
+								{
+									"id": 58,
+									"name": "rotation",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Quaternion"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IDynamicCollider"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createDynamicCollider"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createDynamicCollider"
+					}
+				},
+				{
+					"id": 88,
+					"name": "createFixedJoint",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 232,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L232"
+						}
+					],
+					"signatures": [
+						{
+							"id": 89,
+							"name": "createFixedJoint",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createFixedJoint"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 90,
+									"name": "collider",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PhysXCollider"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IFixedJoint"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createFixedJoint"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createFixedJoint"
+					}
+				},
+				{
+					"id": 91,
+					"name": "createHingeJoint",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 239,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L239"
+						}
+					],
+					"signatures": [
+						{
+							"id": 92,
+							"name": "createHingeJoint",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createHingeJoint"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 93,
+									"name": "collider",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PhysXCollider"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IHingeJoint"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createHingeJoint"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createHingeJoint"
+					}
+				},
+				{
+					"id": 16,
+					"name": "createPhysicsManager",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 133,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L133"
+						}
+					],
+					"signatures": [
+						{
+							"id": 17,
+							"name": "createPhysicsManager",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPhysicsManager"
+									}
+								]
+							},
+							"type": {
+								"type": "reference",
+								"name": "IPhysicsManager"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createPhysicsManager"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createPhysicsManager"
+					}
+				},
+				{
+					"id": 61,
+					"name": "createPhysicsMaterial",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 186,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L186"
+						}
+					],
+					"signatures": [
+						{
+							"id": 62,
+							"name": "createPhysicsMaterial",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPhysicsMaterial"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 63,
+									"name": "staticFriction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 64,
+									"name": "dynamicFriction",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 65,
+									"name": "bounciness",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 66,
+									"name": "frictionCombine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 67,
+									"name": "bounceCombine",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPhysicsMaterial"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createPhysicsMaterial"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createPhysicsMaterial"
+					}
+				},
+				{
+					"id": 18,
+					"name": "createPhysicsScene",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 140,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L140"
+						}
+					],
+					"signatures": [
+						{
+							"id": 19,
+							"name": "createPhysicsScene",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPhysicsScene"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 20,
+									"name": "physicsManager",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PhysXPhysicsManager"
+									}
+								},
+								{
+									"id": 21,
+									"name": "onContactBegin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 22,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "PhysXPhysics.ts",
+													"line": 142,
+													"character": 21,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L142"
+												}
+											],
+											"signatures": [
+												{
+													"id": 23,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 24,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 25,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 26,
+									"name": "onContactEnd",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 27,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "PhysXPhysics.ts",
+													"line": 143,
+													"character": 19,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L143"
+												}
+											],
+											"signatures": [
+												{
+													"id": 28,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 29,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 30,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 31,
+									"name": "onContactStay",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 32,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "PhysXPhysics.ts",
+													"line": 144,
+													"character": 20,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L144"
+												}
+											],
+											"signatures": [
+												{
+													"id": 33,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 34,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 35,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 36,
+									"name": "onTriggerBegin",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 37,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "PhysXPhysics.ts",
+													"line": 145,
+													"character": 21,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L145"
+												}
+											],
+											"signatures": [
+												{
+													"id": 38,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 39,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 40,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 41,
+									"name": "onTriggerEnd",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 42,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "PhysXPhysics.ts",
+													"line": 146,
+													"character": 19,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L146"
+												}
+											],
+											"signatures": [
+												{
+													"id": 43,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 44,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 45,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 46,
+									"name": "onTriggerStay",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 47,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "PhysXPhysics.ts",
+													"line": 147,
+													"character": 20,
+													"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L147"
+												}
+											],
+											"signatures": [
+												{
+													"id": 48,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"parameters": [
+														{
+															"id": 49,
+															"name": "obj1",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														},
+														{
+															"id": 50,
+															"name": "obj2",
+															"kind": 32768,
+															"kindString": "Parameter",
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "number"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPhysicsScene"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createPhysicsScene"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createPhysicsScene"
+					}
+				},
+				{
+					"id": 78,
+					"name": "createPlaneColliderShape",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 213,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L213"
+						}
+					],
+					"signatures": [
+						{
+							"id": 79,
+							"name": "createPlaneColliderShape",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createPlaneColliderShape"
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 80,
+									"name": "uniqueID",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 81,
+									"name": "material",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "PhysXPhysicsMaterial"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlaneColliderShape"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createPlaneColliderShape"
+							}
+						}
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createPlaneColliderShape"
+					}
+				},
+				{
+					"id": 73,
+					"name": "createSphereColliderShape",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "PhysXPhysics.ts",
+							"line": 206,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L206"
+						}
+					],
+					"signatures": [
+						{
+							"id": 74,
+							"name": "createSphereColliderShape",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "inline-tag",
+										"tag": "@inheritDoc",
+										"text": "IPhysics.createSphereColliderShape"
 									}
 								]
 							},
@@ -333,881 +1411,6 @@
 								},
 								{
 									"id": 77,
-									"name": "height",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 78,
-									"name": "material",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "PhysXPhysicsMaterial"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "ICapsuleColliderShape"
-							}
-						}
-					]
-				},
-				{
-					"id": 50,
-					"name": "createCharacterController",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 142,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L142"
-						}
-					],
-					"signatures": [
-						{
-							"id": 51,
-							"name": "createCharacterController",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createCharacterController"
-									}
-								]
-							},
-							"type": {
-								"type": "reference",
-								"name": "ICharacterController"
-							}
-						}
-					]
-				},
-				{
-					"id": 46,
-					"name": "createDynamicCollider",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 135,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L135"
-						}
-					],
-					"signatures": [
-						{
-							"id": 47,
-							"name": "createDynamicCollider",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createDynamicCollider"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 48,
-									"name": "position",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Vector3"
-									}
-								},
-								{
-									"id": 49,
-									"name": "rotation",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Quaternion"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "IDynamicCollider"
-							}
-						}
-					]
-				},
-				{
-					"id": 79,
-					"name": "createFixedJoint",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 199,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L199"
-						}
-					],
-					"signatures": [
-						{
-							"id": 80,
-							"name": "createFixedJoint",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createFixedJoint"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 81,
-									"name": "collider",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "PhysXCollider"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "IFixedJoint"
-							}
-						}
-					]
-				},
-				{
-					"id": 82,
-					"name": "createHingeJoint",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 206,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L206"
-						}
-					],
-					"signatures": [
-						{
-							"id": 83,
-							"name": "createHingeJoint",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createHingeJoint"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 84,
-									"name": "collider",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "PhysXCollider"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "IHingeJoint"
-							}
-						}
-					]
-				},
-				{
-					"id": 10,
-					"name": "createPhysicsManager",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 107,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L107"
-						}
-					],
-					"signatures": [
-						{
-							"id": 11,
-							"name": "createPhysicsManager",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createPhysicsManager"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 12,
-									"name": "onContactBegin",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 13,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "PhysXPhysics.ts",
-													"line": 108,
-													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L108"
-												}
-											],
-											"signatures": [
-												{
-													"id": 14,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 15,
-															"name": "obj1",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 16,
-															"name": "obj2",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								},
-								{
-									"id": 17,
-									"name": "onContactEnd",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 18,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "PhysXPhysics.ts",
-													"line": 109,
-													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L109"
-												}
-											],
-											"signatures": [
-												{
-													"id": 19,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 20,
-															"name": "obj1",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 21,
-															"name": "obj2",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								},
-								{
-									"id": 22,
-									"name": "onContactStay",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 23,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "PhysXPhysics.ts",
-													"line": 110,
-													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L110"
-												}
-											],
-											"signatures": [
-												{
-													"id": 24,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 25,
-															"name": "obj1",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 26,
-															"name": "obj2",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								},
-								{
-									"id": 27,
-									"name": "onTriggerBegin",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 28,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "PhysXPhysics.ts",
-													"line": 111,
-													"character": 21,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L111"
-												}
-											],
-											"signatures": [
-												{
-													"id": 29,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 30,
-															"name": "obj1",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 31,
-															"name": "obj2",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								},
-								{
-									"id": 32,
-									"name": "onTriggerEnd",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 33,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "PhysXPhysics.ts",
-													"line": 112,
-													"character": 19,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L112"
-												}
-											],
-											"signatures": [
-												{
-													"id": 34,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 35,
-															"name": "obj1",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 36,
-															"name": "obj2",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								},
-								{
-									"id": 37,
-									"name": "onTriggerStay",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 38,
-											"name": "__type",
-											"kind": 65536,
-											"kindString": "Type literal",
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "PhysXPhysics.ts",
-													"line": 113,
-													"character": 20,
-													"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L113"
-												}
-											],
-											"signatures": [
-												{
-													"id": 39,
-													"name": "__type",
-													"kind": 4096,
-													"kindString": "Call signature",
-													"flags": {},
-													"parameters": [
-														{
-															"id": 40,
-															"name": "obj1",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														},
-														{
-															"id": 41,
-															"name": "obj2",
-															"kind": 32768,
-															"kindString": "Parameter",
-															"flags": {},
-															"type": {
-																"type": "intrinsic",
-																"name": "number"
-															}
-														}
-													],
-													"type": {
-														"type": "intrinsic",
-														"name": "void"
-													}
-												}
-											]
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "IPhysicsManager"
-							}
-						}
-					]
-				},
-				{
-					"id": 52,
-					"name": "createPhysicsMaterial",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 149,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L149"
-						}
-					],
-					"signatures": [
-						{
-							"id": 53,
-							"name": "createPhysicsMaterial",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createPhysicsMaterial"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 54,
-									"name": "staticFriction",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 55,
-									"name": "dynamicFriction",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 56,
-									"name": "bounciness",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 57,
-									"name": "frictionCombine",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 58,
-									"name": "bounceCombine",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "IPhysicsMaterial"
-							}
-						}
-					]
-				},
-				{
-					"id": 69,
-					"name": "createPlaneColliderShape",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 180,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L180"
-						}
-					],
-					"signatures": [
-						{
-							"id": 70,
-							"name": "createPlaneColliderShape",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createPlaneColliderShape"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 71,
-									"name": "uniqueID",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 72,
-									"name": "material",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "PhysXPhysicsMaterial"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "IPlaneColliderShape"
-							}
-						}
-					]
-				},
-				{
-					"id": 64,
-					"name": "createSphereColliderShape",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
-					"sources": [
-						{
-							"fileName": "PhysXPhysics.ts",
-							"line": 169,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L169"
-						}
-					],
-					"signatures": [
-						{
-							"id": 65,
-							"name": "createSphereColliderShape",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "inline-tag",
-										"tag": "@inheritDoc",
-										"text": "IPhysics.createSphereColliderShape"
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 66,
-									"name": "uniqueID",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 67,
-									"name": "radius",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "number"
-									}
-								},
-								{
-									"id": 68,
 									"name": "material",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1221,29 +1424,35 @@
 							"type": {
 								"type": "reference",
 								"name": "ISphereColliderShape"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createSphereColliderShape"
 							}
 						}
-					]
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createSphereColliderShape"
+					}
 				},
 				{
-					"id": 85,
+					"id": 94,
 					"name": "createSpringJoint",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
+					"flags": {},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 213,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L213"
+							"line": 246,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L246"
 						}
 					],
 					"signatures": [
 						{
-							"id": 86,
+							"id": 95,
 							"name": "createSpringJoint",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1259,7 +1468,7 @@
 							},
 							"parameters": [
 								{
-									"id": 87,
+									"id": 96,
 									"name": "collider",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1273,29 +1482,35 @@
 							"type": {
 								"type": "reference",
 								"name": "ISpringJoint"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createSpringJoint"
 							}
 						}
-					]
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createSpringJoint"
+					}
 				},
 				{
-					"id": 42,
+					"id": 51,
 					"name": "createStaticCollider",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isStatic": true
-					},
+					"flags": {},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 128,
-							"character": 9,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L128"
+							"line": 165,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L165"
 						}
 					],
 					"signatures": [
 						{
-							"id": 43,
+							"id": 52,
 							"name": "createStaticCollider",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1311,7 +1526,7 @@
 							},
 							"parameters": [
 								{
-									"id": 44,
+									"id": 53,
 									"name": "position",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1322,7 +1537,7 @@
 									}
 								},
 								{
-									"id": 45,
+									"id": 54,
 									"name": "rotation",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1336,30 +1551,37 @@
 							"type": {
 								"type": "reference",
 								"name": "IStaticCollider"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.createStaticCollider"
 							}
 						}
-					]
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.createStaticCollider"
+					}
 				},
 				{
-					"id": 8,
+					"id": 14,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {
-						"isPublic": true,
-						"isStatic": true
+						"isPublic": true
 					},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 99,
-							"character": 16,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L99"
+							"line": 121,
+							"character": 9,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L121"
 						}
 					],
 					"signatures": [
 						{
-							"id": 9,
+							"id": 15,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1380,25 +1602,22 @@
 					]
 				},
 				{
-					"id": 5,
+					"id": 12,
 					"name": "initialize",
 					"kind": 2048,
 					"kindString": "Method",
-					"flags": {
-						"isPublic": true,
-						"isStatic": true
-					},
+					"flags": {},
 					"sources": [
 						{
 							"fileName": "PhysXPhysics.ts",
-							"line": 50,
-							"character": 16,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L50"
+							"line": 59,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L59"
 						}
 					],
 					"signatures": [
 						{
-							"id": 6,
+							"id": 13,
 							"name": "initialize",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1422,29 +1641,6 @@
 									}
 								]
 							},
-							"parameters": [
-								{
-									"id": 7,
-									"name": "runtimeMode",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "Runtime mode"
-											}
-										]
-									},
-									"type": {
-										"type": "reference",
-										"id": 93,
-										"name": "PhysXRuntimeMode"
-									},
-									"defaultValue": "PhysXRuntimeMode.Auto"
-								}
-							],
 							"type": {
 								"type": "reference",
 								"typeArguments": [
@@ -1456,58 +1652,109 @@
 								"name": "Promise",
 								"qualifiedName": "Promise",
 								"package": "typescript"
+							},
+							"implementationOf": {
+								"type": "reference",
+								"name": "IPhysics.initialize"
 							}
 						}
-					]
+					],
+					"implementationOf": {
+						"type": "reference",
+						"name": "IPhysics.initialize"
+					}
 				}
 			],
 			"groups": [
 				{
 					"title": "Constructors",
 					"children": [
-						91
+						3
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						11,
+						10,
+						9
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						88,
-						59,
-						73,
-						50,
-						46,
-						79,
+						97,
+						68,
 						82,
-						10,
-						52,
-						69,
-						64,
-						85,
-						42,
-						8,
-						5
+						59,
+						55,
+						88,
+						91,
+						16,
+						61,
+						18,
+						78,
+						73,
+						94,
+						51,
+						14,
+						12
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "PhysXPhysics.ts",
-					"line": 37,
+					"line": 38,
 					"character": 13,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/PhysXPhysics.ts#L37"
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/PhysXPhysics.ts#L38"
+				}
+			],
+			"implementedTypes": [
+				{
+					"type": "reference",
+					"name": "IPhysics"
 				}
 			]
+		},
+		{
+			"id": 1,
+			"name": "version",
+			"kind": 32,
+			"kindString": "Variable",
+			"flags": {
+				"isConst": true
+			},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 5,
+					"character": 13,
+					"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/index.ts#L5"
+				}
+			],
+			"type": {
+				"type": "literal",
+				"value": "__buildVersion"
+			},
+			"defaultValue": "..."
 		}
 	],
 	"groups": [
 		{
 			"title": "Enumerations",
 			"children": [
-				93
+				100
 			]
 		},
 		{
 			"title": "Classes",
+			"children": [
+				2
+			]
+		},
+		{
+			"title": "Variables",
 			"children": [
 				1
 			]
@@ -1518,7 +1765,7 @@
 			"fileName": "index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/physics-physx/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/2f4176c3/packages/physics-physx/src/index.ts#L1"
 		}
 	]
 }

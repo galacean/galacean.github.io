@@ -3,7 +3,7 @@
  * @category 2D
  */
 import { Camera, Logger, Vector3, WebGLEngine, Entity } from "@galacean/engine";
-import { SpineAnimation } from "@galacean/engine-spine";
+import { SpineRenderer } from "@galacean/engine-spine";
 import * as dat from "dat.gui";
 
 Logger.enable();
@@ -31,16 +31,19 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       ],
       type: "spine",
     })
-    .then((spineEntity: Entity) => {
+    .then((spineResource: any) => {
+      const spineEntity = rootEntity.createChild("spine");
       rootEntity.addChild(spineEntity);
-      const spineAnimation = spineEntity.getComponent(SpineAnimation);
-      const { skeleton, state, skeletonData } = spineAnimation;
+      const spineRenderer = spineEntity.addComponent(SpineRenderer);
+      spineRenderer.scale = 0.05;
+      spineRenderer.animationName = "walk";
+      spineRenderer.resource = spineResource;
+      const { skeleton, state, skeletonData } = spineRenderer.spineAnimation;
       spineEntity.transform.setPosition(0, -10, 0);
       state.setAnimation(0, "sneering", true);
       skeleton.setSkinByName("fullskin/0101"); // 1. Set the active skin
       skeleton.setSlotsToSetupPose(); // 2. Use setup pose to set base attachments.
       state.apply(skeleton);
-      spineAnimation.scale = 0.05;
       const slotName = "fBody";
       const info = {
         更换衣服部件: "fullskin/0101",

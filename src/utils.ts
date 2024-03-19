@@ -6,7 +6,8 @@ export function isZhCN() {
     const local = window.localStorage.getItem('locale');
     return local
       ? local === 'cn'
-      : window.navigator.language && window.navigator.language.toLocaleLowerCase() === 'zh-cn';
+      : window.navigator.language &&
+          window.navigator.language.toLocaleLowerCase() === 'zh-cn';
   }
 }
 
@@ -42,9 +43,13 @@ export function getMenuItems(moduleData: Record<string, any>, locale: string) {
   const menuMeta = moduleData.map((item: { meta: any }) => item.meta);
   const menuItems: Record<string, any> = { topLevel: {} };
   menuMeta
-    .sort((a: { order: number }, b: { order: number }) => (a.order || 0) - (b.order || 0))
+    .sort(
+      (a: { order: number }, b: { order: number }) =>
+        (a.order || 0) - (b.order || 0)
+    )
     .forEach((meta: { category: Record<string, any>; type: string }) => {
-      const category = (meta.category && meta.category[locale]) || meta.category || 'topLevel';
+      const category =
+        (meta.category && meta.category[locale]) || meta.category || 'topLevel';
       if (!menuItems[category]) {
         menuItems[category] = {};
       }
@@ -92,17 +97,20 @@ export enum Env {
 
 export function getEnv() {
   const host = window.location.host;
-  if (host.indexOf('local.alipay.net') > -1 || host.indexOf('localhost') > -1) {
-    return Env.local;
-  }
+  // if (
+  //   /(local|debug.*?)\.alipay\.net/.test(host) ||
+  //   host.indexOf('localhost') > -1
+  // ) {
+  //   return Env.test;
+  // }
 
-  if (/dev.*alipay/.test(host)) {
-    return Env.dev;
-  }
+  // if (/dev.*alipay/.test(host)) {
+  //   return Env.dev;
+  // }
 
-  if (/pre/.test(host)) {
-    return Env.pre;
-  }
+  // if (/pre/.test(host)) {
+  //   return Env.pre;
+  // }
 
   return Env.prod;
 }
@@ -119,8 +127,7 @@ async function getH5Data(path: string) {
 }
 
 export async function fetchEngineDataConfig() {
-  const dependencyConfig: { version: string; packages: string }[] = await getH5Data(
-    'oasis-version/site-doc-versions-h5data'
-  );
+  const dependencyConfig: { version: string; packages: string }[] =
+    await getH5Data('oasis-version/site-doc-versions-h5data');
   return dependencyConfig;
 }

@@ -1,4 +1,11 @@
-import { ActionButton, Breadcrumb, BreadcrumbItem, Flex, Popover, styled } from '@galacean/editor-ui';
+import {
+  ActionButton,
+  Breadcrumb,
+  BreadcrumbItem,
+  Flex,
+  Popover,
+  styled,
+} from '@galacean/editor-ui';
 import { List } from 'iconoir-react';
 import { useContext, useEffect, useState } from 'react';
 import Media from 'react-media';
@@ -13,43 +20,52 @@ import {
   fetchPkgChildrenDetail,
   fetchPkgList,
   PkgChild,
-  PkgChildDetail
+  PkgChildDetail,
 } from './util/apiUtil';
 
-const StyledContent = styled("article", {
+const StyledContent = styled('article', {
   padding: '$8',
   backgroundColor: '$slate1',
-  fontSize: "$2",
+  fontSize: '$2',
   flex: 1,
   '@media (max-width: 768px)': {
     padding: '$4',
-  }
-});
-
-const StyledBreadcrumb = styled("div", {
-  marginBottom: "$2"
-});
-
-const StyledPanel = styled("section", {
-  padding: "0 $4 $4 $4",
-  border: "1px solid $slate5",
-  borderRadius: "$2",
-  "& h2": {
-    margin: "0 -$4 0",
-    padding: "$2 $4 $2",
-    fontSize: "$4"
   },
-  "& h3": {
-    fontSize: "$3",
-    margin: "$2 -$4 0"
-  },
-  "& h4": {
-    fontSize: "$2"
-  }
 });
 
+const StyledBreadcrumb = styled('div', {
+  marginBottom: '$2',
+});
 
-const PackagePage = ({ isMobile, pkg, version, pkgChildren }: { isMobile: boolean, pkg: string, version: string, pkgChildren: PkgChild[] }) => {
+const StyledPanel = styled('section', {
+  padding: '0 $4 $4 $4',
+  border: '1px solid $slate5',
+  borderRadius: '$2',
+  '& h2': {
+    margin: '0 -$4 0',
+    padding: '$2 $4 $2',
+    fontSize: '$4',
+  },
+  '& h3': {
+    fontSize: '$3',
+    margin: '$2 -$4 0',
+  },
+  '& h4': {
+    fontSize: '$2',
+  },
+});
+
+const PackagePage = ({
+  isMobile,
+  pkg,
+  version,
+  pkgChildren,
+}: {
+  isMobile: boolean;
+  pkg: string;
+  version: string;
+  pkgChildren: PkgChild[];
+}) => {
   const [children, setChildren] = useState<Record<string, PkgChild[]>>();
   const navigate = useNavigate();
 
@@ -67,30 +83,51 @@ const PackagePage = ({ isMobile, pkg, version, pkgChildren }: { isMobile: boolea
     setChildren(tempChildren);
   }, [pkg, pkgChildren]);
 
+  return (
+    <Flex wrap='false'>
+      <StyledContent>
+        <NavBreadcrumb pkg={pkg} version={version} />
+        <StyledPanel>
+          {children &&
+            Object.keys(children).map((kind) => {
+              return (
+                <Package
+                  key={kind}
+                  setSelectedItem={(id: number, name: string) => {
+                    navigate(`/api/${version}/${pkg}/${name}`);
+                  }}
+                  kind={kind}
+                  pgkChildren={children[kind]}
+                />
+              );
+            })}
+        </StyledPanel>
+      </StyledContent>
+      <ResponsibleMenu
+        isMobile={isMobile}
+        version={version}
+        pkg={pkg}
+        pkgChildren={pkgChildren}
+      />
+    </Flex>
+  );
+};
 
-  return <Flex wrap="false">
-    <StyledContent>
-      <NavBreadcrumb pkg={pkg} version={version} />
-      <StyledPanel>
-        {children && Object.keys(children).map((kind) => {
-          return (
-            <Package
-              key={kind}
-              setSelectedItem={(id: number, name: string) => {
-                navigate(`/api/${version}/${pkg}/${name}`);
-              }}
-              kind={kind}
-              pgkChildren={children[kind]}
-            />
-          );
-        })}
-      </StyledPanel>
-    </StyledContent>
-    <ResponsibleMenu isMobile={isMobile} version={version} pkg={pkg} pkgChildren={pkgChildren} />
-  </Flex>
-}
-
-const ModulePage = ({ isMobile, pkg, version, id, name, pkgChildren }: { isMobile: boolean, pkg: string, version: string, name?: string, id?: number, pkgChildren: PkgChild[] }) => {
+const ModulePage = ({
+  isMobile,
+  pkg,
+  version,
+  id,
+  name,
+  pkgChildren,
+}: {
+  isMobile: boolean;
+  pkg: string;
+  version: string;
+  name?: string;
+  id?: number;
+  pkgChildren: PkgChild[];
+}) => {
   const [childrenDetail, setChildrenDetail] = useState<PkgChildDetail | null>();
 
   useEffect(() => {
@@ -98,8 +135,7 @@ const ModulePage = ({ isMobile, pkg, version, id, name, pkgChildren }: { isMobil
       fetchPkgChildrenDetail(pkg, id, version).then((res) => {
         setChildrenDetail(res);
       });
-    }
-    else if (name) {
+    } else if (name) {
       const item = pkgChildren.find((child) => child.name === name);
 
       if (item) {
@@ -108,18 +144,38 @@ const ModulePage = ({ isMobile, pkg, version, id, name, pkgChildren }: { isMobil
         });
       }
     }
-  }, []);
+  }, [name, pkg]);
 
-  return <Flex wrap="false">
-    {childrenDetail ? <StyledContent>
-      <NavBreadcrumb pkg={pkg} version={version} name={name} />
-      <Module {...childrenDetail} />
-    </StyledContent> : null}
-    <ResponsibleMenu isMobile={isMobile} version={version} pkg={pkg} pkgChildren={pkgChildren} childrenDetail={childrenDetail} />
-  </Flex>
-}
+  return (
+    <Flex wrap='false'>
+      {childrenDetail ? (
+        <StyledContent>
+          <NavBreadcrumb pkg={pkg} version={version} name={name} />
+          <Module {...childrenDetail} />
+        </StyledContent>
+      ) : null}
+      <ResponsibleMenu
+        isMobile={isMobile}
+        version={version}
+        pkg={pkg}
+        pkgChildren={pkgChildren}
+        childrenDetail={childrenDetail}
+      />
+    </Flex>
+  );
+};
 
-const NavMenu = ({ version, pkg, pkgChildren, childrenDetail }: { version: string, pkg: string, pkgChildren: PkgChild[], childrenDetail?: PkgChildDetail }) => {
+const NavMenu = ({
+  version,
+  pkg,
+  pkgChildren,
+  childrenDetail,
+}: {
+  version: string;
+  pkg: string;
+  pkgChildren: PkgChild[];
+  childrenDetail?: PkgChildDetail;
+}) => {
   const [pkgList, setPkgList] = useState<string[]>([]);
   const navigate = useNavigate();
 
@@ -131,66 +187,111 @@ const NavMenu = ({ version, pkg, pkgChildren, childrenDetail }: { version: strin
       res.sort();
       setPkgList(res);
     });
-
   }, []);
 
-  return <Menu
-    {...{
-      pkgList,
-      pkgChildren,
-      selectedPkg: pkg,
-      childrenDetail,
-      onPkgClick: (newPkg: string) => {
-        if (pkg !== newPkg) {
-          navigate(`/api/${version}/${newPkg}`);
-        }
-      },
-    }}
-  ></Menu>
-}
+  return (
+    <Menu
+      {...{
+        pkgList,
+        pkgChildren,
+        selectedPkg: pkg,
+        childrenDetail,
+        onPkgClick: (newPkg: string) => {
+          if (pkg !== newPkg) {
+            navigate(`/api/${version}/${newPkg}`);
+          }
+        },
+      }}
+    ></Menu>
+  );
+};
 
-const ResponsibleMenu = ({ isMobile, version, pkg, pkgChildren, childrenDetail }: { isMobile: boolean, version: string, pkg: string, pkgChildren: PkgChild[], childrenDetail?: PkgChildDetail }) => {
+const ResponsibleMenu = ({
+  isMobile,
+  version,
+  pkg,
+  pkgChildren,
+  childrenDetail,
+}: {
+  isMobile: boolean;
+  version: string;
+  pkg: string;
+  pkgChildren: PkgChild[];
+  childrenDetail?: PkgChildDetail;
+}) => {
   return isMobile ? (
-    <Popover trigger={
-      <ActionButton size="lg" css={{ position: "fixed", right: "$4", bottom: "$16", zIndex: 11, }}>
-        <List />
-      </ActionButton>
-    } sideOffset={6} css={{ marginRight: "$4", maxHeight: "70vh", overflow: "auto" }}>
-      <NavMenu version={version} pkgChildren={pkgChildren} pkg={pkg} childrenDetail={childrenDetail} />
+    <Popover
+      trigger={
+        <ActionButton
+          size='lg'
+          css={{ position: 'fixed', right: '$4', bottom: '$16', zIndex: 11 }}
+        >
+          <List />
+        </ActionButton>
+      }
+      sideOffset={6}
+      css={{ marginRight: '$4', maxHeight: '70vh', overflow: 'auto' }}
+    >
+      <NavMenu
+        version={version}
+        pkgChildren={pkgChildren}
+        pkg={pkg}
+        childrenDetail={childrenDetail}
+      />
     </Popover>
-  ) :
-  <NavMenu version={version} pkgChildren={pkgChildren} pkg={pkg} childrenDetail={childrenDetail} />
-}
+  ) : (
+    <NavMenu
+      version={version}
+      pkgChildren={pkgChildren}
+      pkg={pkg}
+      childrenDetail={childrenDetail}
+    />
+  );
+};
 
-const NavBreadcrumb = ({ pkg, version, name }: { pkg: string, version: string, name?: string }) => {
+const NavBreadcrumb = ({
+  pkg,
+  version,
+  name,
+}: {
+  pkg: string;
+  version: string;
+  name?: string;
+}) => {
   const navigate = useNavigate();
 
-  return <StyledBreadcrumb>
-    <Breadcrumb>
-      <BreadcrumbItem>API</BreadcrumbItem>
-      <BreadcrumbItem>
-        <span onClick={() => {
-          navigate(`/api/${version}/${pkg}`);
-        }}
-          style={{ cursor: 'pointer' }}
-        >
-          {pkg}
-        </span>
-      </BreadcrumbItem>
-      {name && (
+  return (
+    <StyledBreadcrumb>
+      <Breadcrumb>
+        <BreadcrumbItem>API</BreadcrumbItem>
         <BreadcrumbItem>
-          <span>{name}</span>
+          <span
+            onClick={() => {
+              navigate(`/api/${version}/${pkg}`);
+            }}
+            style={{ cursor: 'pointer' }}
+          >
+            {pkg}
+          </span>
         </BreadcrumbItem>
-      )}
-    </Breadcrumb>
-  </StyledBreadcrumb>
-}
+        {name && (
+          <BreadcrumbItem>
+            <span>{name}</span>
+          </BreadcrumbItem>
+        )}
+      </Breadcrumb>
+    </StyledBreadcrumb>
+  );
+};
 
 const Api = () => {
   let { pkg, name } = useParams();
   let { version } = useContext(AppContext);
   const [pkgChildren, setPkgChildren] = useState<PkgChild[]>();
   const navigate = useNavigate();
+  const context = useContext(AppContext);
+  const { ver } = useParams();
+
 
   if (!pkg) {
     pkg = pkg || 'core';
@@ -198,17 +299,56 @@ const Api = () => {
   }
 
   useEffect(() => {
-    fetchPkgChildren(pkg, version).then((res) => {
+    if (ver && ver !== localStorage.getItem('version')) {
+      context.setVersion(ver);
+      localStorage.setItem('version', ver as string);
+    }
+  }, [ver]);
+  
+  const fetchPkgs = (pkg, v) => {
+    fetchPkgChildren(pkg, v).then((res) => {
       setPkgChildren(res);
     });
-  }, [pkg]);
+  }
+
+  useEffect(() => {
+    const v = localStorage.getItem('version');
+    if (name) {
+      navigate(`/api/${v}/${pkg}/${name}`);
+    }
+    else {
+      navigate(`/api/${v}/${pkg}`);
+    }
+
+    fetchPkgs(pkg, v);
+  }, [pkg, localStorage.getItem('version')]);
+
 
   return (
     <Media query='(max-width: 768px)'>
-      {(isMobile) => pkgChildren ? (name ?
-        <ModulePage pkgChildren={pkgChildren} pkg={pkg} name={name} version={version} isMobile={isMobile} /> :
-        <PackagePage pkgChildren={pkgChildren} pkg={pkg} version={version} isMobile={isMobile} />) : <LoadingIcon></LoadingIcon>}
-    </Media >
+      {(isMobile) =>
+        pkgChildren ? (
+          name ? (
+            <ModulePage
+              pkgChildren={pkgChildren}
+              pkg={pkg}
+              name={name}
+              version={version}
+              isMobile={isMobile}
+            />
+          ) : (
+            <PackagePage
+              pkgChildren={pkgChildren}
+              pkg={pkg}
+              version={version}
+              isMobile={isMobile}
+            />
+          )
+        ) : (
+          <LoadingIcon></LoadingIcon>
+        )
+      }
+    </Media>
   );
 };
 

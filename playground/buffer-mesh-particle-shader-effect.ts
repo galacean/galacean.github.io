@@ -18,91 +18,105 @@ import {
   BaseMaterial,
   Script,
   WebGLEngine,
-} from "@galacean/engine";
-import { OrbitControl } from "@galacean/engine-toolkit-controls";
+} from '@galacean/engine';
+import { OrbitControl } from '@galacean/engine-toolkit-controls';
+import { ShaderLab } from '@galacean/engine-shader-lab';
 
-const fs = `uniform float progress;
-uniform sampler2D texture1;
-uniform sampler2D texture2;
+const shaderLab = new ShaderLab();
 
-varying vec2 v_uv;
+const shaderSource = `Shader "ParticleEffect" {
+  SubShader "Default" {
+    Pass "0" {
+      VertexShader = vert;
+      FragmentShader = frag;
 
-// This function could be changed. Some great effects could be referred to https://gl-transitions.com/gallery
-vec4 transition(vec2 p, float progress) {
-  vec2 dir = p - vec2(.5);
-  float dist = length(dir);
+      #define PI 3.14159265359
+      mat4 renderer_MVPMat;
 
-  if (dist > progress) {
-    return mix(texture2D(texture1, v_uv), texture2D(texture2, v_uv), progress);
-  } else {
-    vec2 offset = dir * sin(dist * 30. - progress * 30.);
-    return mix(texture2D(texture1, v_uv + offset), texture2D(texture2, v_uv), progress);
+      struct a2v {
+        vec3 POSITION;
+        vec3 INDEX;
+        vec2 UV;
+      }
+
+      struct v2f {
+        vec2 v_uv;
+      }
+
+      v2f vert(a2v v) {
+        v2f o;
+
+        o.v_uv = v.UV;
+        vec4 position = vec4(v.POSITION , 1.0);
+        float distance = length(v.INDEX.xy);
+        float maxDistance = 40.0 * 1.414;
+        float wait = distance / maxDistance * 0.5;
+
+        float p = clamp(progress-wait, 0.0, 2.0);
+        position.z += sin(p * PI * 6.0) * 3.0 * (maxDistance - distance * 0.5) / maxDistance * (2.0 - progress) * 0.5;
+
+        gl_Position = renderer_MVPMat * position;
+        return o;
+      }
+
+      float progress;
+      sampler2D texture1;
+      sampler2D texture2;
+
+      // This function could be changed. Some great effects could be referred to https://gl-transitions.com/gallery
+      vec4 transition(vec2 p, float progress) {
+        vec2 dir = p - vec2(0.5);
+        float dist = length(dir);
+
+        if (dist > progress) {
+          return mix(texture2D(texture1, v_uv), texture2D(texture2, v_uv), progress);
+        } else {
+          vec2 offset = dir * sin(dist * 30.0 - progress * 30.0);
+          return mix(texture2D(texture1, v_uv + offset), texture2D(texture2, v_uv), progress);
+        }
+      }
+
+      void frag(v2f i) {
+        gl_FragColor = transition(i.v_uv, clamp(progress, 0.0, 1.0));
+      }
+    }
   }
-}
-
-void main() {
-	gl_FragColor = transition(v_uv, clamp(progress, 0., 1.));
 }
 `;
 
-const vs = `#define PI 3.14159265359
-attribute vec3 POSITION;
-attribute vec3 INDEX;
-attribute vec2 UV;
-uniform mat4 renderer_MVPMat;
-uniform float progress;
-
-varying vec2 v_uv;
-varying vec3 v_pos;
-
-void main() {
-  v_uv = UV;
-  vec4 position = vec4(POSITION , 1.0);
-  float distance = length(INDEX.xy);
-  float maxDistance = 40. * 1.414;
-  float wait = distance / maxDistance * 0.5;
-
-  float p = clamp(progress-wait, 0., 2.0);
-  position.z += sin(p * PI * 6.) * 3. * (maxDistance - distance * 0.5) / maxDistance * (2. - progress) * 0.5;
-
-  gl_Position = renderer_MVPMat * position;
-}`;
-
-const ParticleMeshShader = Shader.create("test", vs, fs);
-
 class ParticleMeshMaterial extends BaseMaterial {
-  constructor(engine: Engine) {
-    super(engine, ParticleMeshShader);
+  constructor(engine: Engine, shader: Shader) {
+    super(engine, shader);
   }
 
   clone(): ParticleMeshMaterial {
-    const dest = new ParticleMeshMaterial(this._engine);
+    const dest = new ParticleMeshMaterial(this._engine, this.shader);
     this.cloneTo(dest);
     return dest;
   }
 
   get texture1(): Texture2D {
-    return <Texture2D>this.shaderData.getTexture("texture1");
+    return <Texture2D>this.shaderData.getTexture('texture1');
   }
 
   set texture1(value: Texture2D) {
-    this.shaderData.setTexture("texture1", value);
+    this.shaderData.setTexture('texture1', value);
   }
 
   get texture2(): Texture2D {
-    return <Texture2D>this.shaderData.getTexture("texture2");
+    return <Texture2D>this.shaderData.getTexture('texture2');
   }
 
   set texture2(value: Texture2D) {
-    this.shaderData.setTexture("texture2", value);
+    this.shaderData.setTexture('texture2', value);
   }
 
   get progress(): number {
-    return <number>this.shaderData.getFloat("progress");
+    return <number>this.shaderData.getFloat('progress');
   }
 
   set progress(value: number) {
-    this.shaderData.setFloat("progress", value);
+    this.shaderData.setFloat('progress', value);
   }
 }
 
@@ -111,13 +125,13 @@ class AnimationComponent extends Script {
   mtl: ParticleMeshMaterial | undefined;
   onAwake() {
     this.mtl = this.entity
-      .getComponent(MeshRenderer)
+      .getComponent(MeshRenderer)!
       .getMaterial() as ParticleMeshMaterial;
   }
   onUpdate(time: number) {
     this.time += time;
     if (this.mtl) {
-      this.mtl.progress = (this.time / 5000) % 2;
+      this.mtl.progress = (this.time / 5) % 2;
     }
   }
 }
@@ -221,35 +235,37 @@ function createPlaneParticleMesh(
   ]);
 
   mesh.setVertexElements([
-    new VertexElement("POSITION", 0, VertexElementFormat.Vector3, 0),
-    new VertexElement("UV", 0, VertexElementFormat.Vector2, 1),
-    new VertexElement("INDEX", 0, VertexElementFormat.Vector3, 2),
+    new VertexElement('POSITION', 0, VertexElementFormat.Vector3, 0),
+    new VertexElement('UV', 0, VertexElementFormat.Vector2, 1),
+    new VertexElement('INDEX', 0, VertexElementFormat.Vector3, 2),
   ]);
 
   mesh.addSubMesh(0, vertexCount);
   return mesh;
 }
 
-WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
+WebGLEngine.create({ canvas: 'canvas', shaderLab }).then((engine) => {
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
   const rootEntity = scene.createRootEntity();
 
-  const cameraEntity = rootEntity.createChild("camera");
+  const particleMeshShader = Shader.create(shaderSource);
+
+  const cameraEntity = rootEntity.createChild('camera');
   cameraEntity.addComponent(Camera);
   cameraEntity.transform.position.set(0, 0, 50);
   cameraEntity.addComponent(OrbitControl);
 
   engine.resourceManager
     .load([
-      "https://gw.alipayobjects.com/zos/OasisHub/440001901/3736/spring.jpeg",
-      "https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg",
+      'https://gw.alipayobjects.com/zos/OasisHub/440001901/3736/spring.jpeg',
+      'https://gw.alipayobjects.com/zos/OasisHub/440001901/9546/winter.jpeg',
     ])
     .then((assets) => {
-      const entity = rootEntity.createChild("plane");
+      const entity = rootEntity.createChild('plane');
       const renderer = entity.addComponent(MeshRenderer);
       const mesh = createPlaneParticleMesh(engine, 20, 20, 80, 80, true);
-      const mtl = new ParticleMeshMaterial(engine);
+      const mtl = new ParticleMeshMaterial(engine, particleMeshShader);
       renderer.setMaterial(mtl);
       renderer.mesh = mesh;
       mtl.texture1 = assets[0] as Texture2D;

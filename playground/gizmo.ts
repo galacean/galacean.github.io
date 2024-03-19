@@ -17,32 +17,20 @@ import {
   PointerButton,
   Renderer,
   Script,
-  Vector3,
-  WebGLEngine,
   ShadowType,
+  Vector3,
+  WebGLEngine
 } from "@galacean/engine";
 import { LitePhysics } from "@galacean/engine-physics-lite";
-import {
-  GridControl,
-  NavigationGizmo,
-  FramebufferPicker,
-  OrbitControl,
-} from "@galacean/engine-toolkit";
-import {
-  AnchorType,
-  CoordinateType,
-  Gizmo,
-  State,
-  Group,
-} from "@galacean/engine-toolkit-gizmo";
-
+import { FramebufferPicker, GridControl, NavigationGizmo, OrbitControl } from "@galacean/engine-toolkit";
+import { AnchorType, CoordinateType, Gizmo, Group, State } from "@galacean/engine-toolkit-gizmo";
 import * as dat from "dat.gui";
 
-enum LayerSetting {
-  Entity = Layer.Layer22,
-  Gizmo = Layer.Layer29,
-  NavigationGizmo = Layer.Layer30,
-}
+const LayerSetting = {
+  Entity: Layer.Layer22,
+  NavigationGizmo: Layer.Layer30,
+  Gizmo: Layer.Layer31
+};
 
 const gui = new dat.GUI();
 const traverseEntity = (entity: Entity, callback: (entity: Entity) => any) => {
@@ -55,7 +43,7 @@ const traverseEntity = (entity: Entity, callback: (entity: Entity) => any) => {
 // setup scene
 WebGLEngine.create({
   canvas: "canvas",
-  physics: new LitePhysics(),
+  physics: new LitePhysics()
 }).then((engine) => {
   engine.canvas.resizeByClientSize();
   const scene = engine.sceneManager.activeScene;
@@ -67,6 +55,7 @@ WebGLEngine.create({
   const camera = cameraEntity.addComponent(Camera);
   cameraEntity.transform.setPosition(8, 5, 8);
   cameraEntity.transform.lookAt(new Vector3(0, 0, 0));
+  camera.cullingMask &= ~LayerSetting.NavigationGizmo;
 
   const lightEntity = rootEntity.createChild("Light");
   lightEntity.transform.setPosition(20, 20, 20);
@@ -138,6 +127,7 @@ WebGLEngine.create({
     // left mouse for single selection
     private _selectHandler(result: Renderer) {
       const selectedEntity = result?.entity;
+
       switch (selectedEntity?.layer) {
         case undefined: {
           this._orbitControl.enabled = true;
@@ -163,7 +153,7 @@ WebGLEngine.create({
       const info = {
         Gizmo: State.translate,
         Coordinate: CoordinateType.Local,
-        Anchor: AnchorType.Center,
+        Anchor: AnchorType.Center
       };
       const gizmoConfig = ["null", "translate", "rotate", "scale", "all"];
       const orientationConfig = ["global", "local"];
@@ -174,6 +164,7 @@ WebGLEngine.create({
         .onChange((v: string) => {
           switch (v) {
             case "null":
+              // @ts-ignore
               this.gizmo.state = null;
               break;
             case "translate":
@@ -226,9 +217,7 @@ WebGLEngine.create({
   const sceneControl = controlEntity.addComponent(ControlScript);
 
   engine.resourceManager
-    .load<GLTFResource>(
-      "https://mdn.alipayobjects.com/oasis_be/afts/file/A*AmbsSpS0IAcAAAAAAAAAAAAADkp5AQ/boxPBR.glb"
-    )
+    .load<GLTFResource>("https://mdn.alipayobjects.com/oasis_be/afts/file/A*AmbsSpS0IAcAAAAAAAAAAAAADkp5AQ/boxPBR.glb")
     .then((gltf) => {
       const { defaultSceneRoot } = gltf;
       rootEntity.addChild(defaultSceneRoot);

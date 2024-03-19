@@ -1,35 +1,27 @@
 [
   {
-    "uuid": "markdown-Binary library",
-    "name": "Binary library",
+    "uuid": "markdown-Basics",
+    "name": "Basics",
     "parent_uuid": null,
     "weight": 1,
     "tag": "doc-engine",
-    "cn_name": "二方库"
+    "cn_name": "基础知识"
   },
   {
-    "uuid": "markdown-Introduction",
-    "name": "Introduction",
-    "parent_uuid": null,
+    "uuid": "markdown-GettingStarted",
+    "name": "GettingStarted",
+    "parent_uuid": "markdown-Basics",
     "weight": 2,
     "tag": "doc-engine",
-    "cn_name": "快速入门"
+    "cn_name": "快速上手"
   },
   {
-    "uuid": "markdown-Introduction-basic",
-    "name": "Basic",
-    "parent_uuid": "markdown-Introduction",
-    "weight": 2,
-    "tag": "doc-engine",
-    "cn_name": "基础"
-  },
-  {
-    "uuid": "markdown-Introduction-advanced",
-    "name": "Advanced",
-    "parent_uuid": "markdown-Introduction",
+    "uuid": "markdown-Interface",
+    "name": "Interface",
+    "parent_uuid": "markdown-Basics",
     "weight": 3,
     "tag": "doc-engine",
-    "cn_name": "进阶"
+    "cn_name": "用户界面"
   },
   {
     "uuid": "markdown-Core",
@@ -38,6 +30,14 @@
     "weight": 2,
     "tag": "doc-engine",
     "cn_name": "核心"
+  },
+  {
+    "uuid": "markdown-Resource",
+    "name": "Resource",
+    "parent_uuid": null,
+    "weight": 3,
+    "tag": "doc-engine",
+    "cn_name": "资产工作流"
   },
   {
     "uuid": "markdown-Graphics",
@@ -51,9 +51,25 @@
     "uuid": "markdown-Camera",
     "name": "Camera",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 1,
     "tag": "doc-engine",
-    "cn_name": "摄像机"
+    "cn_name": "相机"
+  },
+  {
+    "uuid": "markdown-Background",
+    "name": "Background",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 2,
+    "tag": "doc-engine",
+    "cn_name": "背景"
+  },
+  {
+    "uuid": "markdown-Light",
+    "name": "Light",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 3,
+    "tag": "doc-engine",
+    "cn_name": "光照"
   },
   {
     "uuid": "markdown-Renderer",
@@ -61,13 +77,21 @@
     "parent_uuid": "markdown-Graphics",
     "weight": 4,
     "tag": "doc-engine",
-    "cn_name": "渲染器组件"
+    "cn_name": "渲染器"
+  },
+  {
+    "uuid": "markdown-Model",
+    "name": "Model",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 5,
+    "tag": "doc-engine",
+    "cn_name": "模型"
   },
   {
     "uuid": "markdown-Mesh",
     "name": "Mesh",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 6,
     "tag": "doc-engine",
     "cn_name": "网格"
   },
@@ -75,194 +99,105 @@
     "uuid": "markdown-Material",
     "name": "Material",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 7,
     "tag": "doc-engine",
     "cn_name": "材质"
+  },
+  {
+    "uuid": "markdown-Shader",
+    "name": "Shader",
+    "parent_uuid": "markdown-Graphics",
+    "weight": 8,
+    "tag": "doc-engine",
+    "cn_name": "着色器"
   },
   {
     "uuid": "markdown-Texture",
     "name": "Texture",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 9,
     "tag": "doc-engine",
     "cn_name": "纹理"
-  },
-  {
-    "uuid": "markdown-Light",
-    "name": "Light",
-    "parent_uuid": "markdown-Graphics",
-    "weight": 4,
-    "tag": "doc-engine",
-    "cn_name": "光照"
   },
   {
     "uuid": "markdown-2D",
     "name": "2D",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 10,
     "tag": "doc-engine",
     "cn_name": "2D"
   },
   {
-    "uuid": "markdown-Mask",
-    "name": "Mask",
+    "uuid": "markdown-Particle",
+    "name": "Particle",
     "parent_uuid": "markdown-Graphics",
-    "weight": 4,
+    "weight": 11,
     "tag": "doc-engine",
-    "cn_name": "Mask"
+    "cn_name": "粒子系统"
   },
   {
     "uuid": "markdown-Animation",
     "name": "Animation",
     "parent_uuid": null,
-    "weight": 4,
+    "weight": 5,
     "tag": "doc-engine",
     "cn_name": "动画"
-  },
-  {
-    "uuid": "markdown-Animator Component",
-    "name": "Animator Component",
-    "parent_uuid": "markdown-Animation",
-    "weight": 1,
-    "tag": "doc-engine",
-    "cn_name": "Animator Component"
   },
   {
     "uuid": "markdown-Physics",
     "name": "Physics",
     "parent_uuid": null,
-    "weight": 4,
+    "weight": 6,
     "tag": "doc-engine",
     "cn_name": "物理"
+  },
+  {
+    "uuid": "markdown-Scripts",
+    "name": "Script",
+    "parent_uuid": null,
+    "weight": 7,
+    "tag": "doc-engine",
+    "cn_name": "脚本"
+  },
+  {
+    "uuid": "markdown-XR",
+    "name": "XR",
+    "parent_uuid": null,
+    "weight": 8,
+    "tag": "doc-engine",
+    "cn_name": "XR"
   },
   {
     "uuid": "markdown-Interact",
     "name": "Interact",
     "parent_uuid": null,
-    "weight": 7,
+    "weight": 9,
     "tag": "doc-engine",
     "cn_name": "交互"
   },
   {
-    "uuid": "markdown-Resource",
-    "name": "Resource",
+    "uuid": "markdown-Device",
+    "name": "Device",
     "parent_uuid": null,
-    "weight": 8,
+    "weight": 10,
     "tag": "doc-engine",
-    "cn_name": "资源"
+    "cn_name": "设备"
   },
   {
     "uuid": "markdown-Performance",
     "name": "Performance",
     "parent_uuid": null,
-    "weight": 9,
-    "tag": "doc-engine",
-    "cn_name": "性能调试"
-  },
-  {
-    "uuid": "markdown-Tool",
-    "name": "Tool",
-    "parent_uuid": null,
-    "weight": 10,
-    "tag": "doc-engine",
-    "cn_name": "工具库"
-  },
-  {
-    "uuid": "markdown-Adaptation",
-    "name": "Adaptation",
-    "parent_uuid": null,
     "weight": 11,
     "tag": "doc-engine",
-    "cn_name": "平台适配"
+    "cn_name": "性能"
   },
   {
     "uuid": "markdown-Art",
     "name": "Art",
     "parent_uuid": null,
     "weight": 12,
-    "tag": "doc-art",
+    "tag": "doc-engine",
     "cn_name": "美术"
-  },
-  {
-    "uuid": "markdown-Art-规范",
-    "name": "规范",
-    "parent_uuid": "markdown-Art",
-    "weight": 12,
-    "tag": "doc-art",
-    "cn_name": "规范"
-  },
-  {
-    "uuid": "markdown-Art-教程",
-    "name": "教程",
-    "parent_uuid": "markdown-Art",
-    "weight": 12,
-    "tag": "doc-art",
-    "cn_name": "教程"
-  },
-  {
-    "uuid": "markdown-Editor-Introduction",
-    "name": "Editor-Introduction",
-    "parent_uuid": null,
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "介绍"
-  },
-  {
-    "uuid": "markdown-Editor-Interface",
-    "name": "Editor-Interface",
-    "parent_uuid": null,
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "界面"
-  },
-  {
-    "uuid": "markdown-Editor-Feature",
-    "name": "Editor-Feature",
-    "parent_uuid": null,
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "功能"
-  },
-  {
-    "uuid": "markdown-EF-R3d",
-    "name": "Rendering-3d",
-    "parent_uuid": "markdown-Editor-Feature",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "3D 渲染"
-  },
-  {
-    "uuid": "markdown-EF-R2d",
-    "name": "Rendering-2d",
-    "parent_uuid": "markdown-Editor-Feature",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "2D 渲染"
-  },
-
-  {
-    "uuid": "markdown-EF-Animation",
-    "name": "Animation",
-    "parent_uuid": "markdown-Editor-Feature",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "动画"
-  },
-  {
-    "uuid": "markdown-EF-Physics",
-    "name": "Physics",
-    "parent_uuid": "markdown-Editor-Feature",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "物理"
-  },
-  {
-    "uuid": "markdown-EF-Scripting",
-    "name": "Scripting",
-    "parent_uuid": "markdown-Editor-Feature",
-    "weight": 13,
-    "tag": "doc-editor",
-    "cn_name": "脚本"
   },
   {
     "uuid": "ts-Scene",
@@ -337,10 +272,18 @@
     "cn_name": "2D"
   },
   {
+    "uuid": "ts-XR",
+    "name": "XR",
+    "parent_uuid": null,
+    "weight": 11,
+    "tag": "example",
+    "cn_name": "XR"
+  },
+  {
     "uuid": "ts-Input",
     "name": "Input",
     "parent_uuid": null,
-    "weight": 10,
+    "weight": 12,
     "tag": "example",
     "cn_name": "Input"
   },
@@ -348,7 +291,7 @@
     "uuid": "ts-Basic",
     "name": "Basic",
     "parent_uuid": null,
-    "weight": 11,
+    "weight": 13,
     "tag": "example",
     "cn_name": "Basic"
   },
@@ -356,7 +299,7 @@
     "uuid": "ts-Toolkit",
     "name": "Toolkit",
     "parent_uuid": null,
-    "weight": 12,
+    "weight": 14,
     "tag": "example",
     "cn_name": "Toolkit"
   },
@@ -364,7 +307,7 @@
     "uuid": "ts-Advance",
     "name": "Advance",
     "parent_uuid": null,
-    "weight": 13,
+    "weight": 15,
     "tag": "example",
     "cn_name": "Advance"
   },
@@ -372,7 +315,7 @@
     "uuid": "ts-Particle",
     "name": "Particle",
     "parent_uuid": null,
-    "weight": 15,
+    "weight": 16,
     "tag": "example",
     "cn_name": "Particle"
   },
@@ -380,8 +323,16 @@
     "uuid": "ts-Light",
     "name": "Light",
     "parent_uuid": null,
-    "weight": 16,
+    "weight": 17,
     "tag": "example",
     "cn_name": "Light"
+  },
+  {
+    "uuid": "ts-Video",
+    "name": "Video",
+    "parent_uuid": null,
+    "weight": 18,
+    "tag": "example",
+    "cn_name": "Video"
   }
 ]

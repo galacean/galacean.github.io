@@ -12,7 +12,7 @@
     <link rel="apple-touch-icon" href="/logo192.png" />
     <link
       rel="icon"
-      href="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*mXcgQ7ZHThAAAAAAAAAAAAAAARQnAQ"
+      href="https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*JpBsR4eFFfkAAAAAAAAAAAAADsF_AQ/original"
       type="image/x-icon"
     />
     <!--
@@ -30,6 +30,18 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Galacean - Mobile first high performance web interactive engine</title>
+    <script>
+      (function() {
+        var pathname = window.location.pathname;
+        var hash = window.location.hash;
+
+        // 检查是否为旧的哈希路由格式
+        if (pathname === '/' && hash.startsWith('#/')) {
+          const newPath = `/engine/${hash.slice(2)}`;
+          window.location.replace(newPath);
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -1,4 +1,4 @@
-import { createHashRouter } from 'react-router-dom';
+import { Navigate, createBrowserRouter } from 'react-router-dom';
 import Api from './components/Api';
 import Doc from './components/doc';
 import ErrorPage from './components/ErrorPage';
@@ -7,9 +7,8 @@ import Examples from './components/Examples';
 import Footer from './components/footer';
 import GLTFView from './components/GltfViewer/gltf-viewer';
 import Header from './components/header';
-import Home from './components/home';
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: '/docs/:ver/:lang/:docTitle',
     element: (
@@ -106,7 +105,7 @@ export const router = createHashRouter([
   },
   {
     path: '/',
-    element: <Home></Home>,
+    element: <Navigate to="/docs/latest/:lang/getting-started-overview" />,
     errorElement: (
       <>
         <Header></Header>
@@ -115,4 +114,6 @@ export const router = createHashRouter([
       </>
     ),
   },
-]);
+], {
+  basename: '/engine'
+});

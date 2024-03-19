@@ -5,7 +5,7 @@ type: 物理
 label: Physics
 ---
 
-物理管理器（PhysicsManager）用于管理场景中所有的物理组件，并且负责与物理后端通信，实现有关物理场景的全局操作，例如更新和射线检测等等。
+物理管理器（PhysicsManager）用于管理场景中所有的物理组件，并且负责与物理后端通信，实现有关物理场景的全局操作，例如更新和射线检测等等。在多场景项目中，每个Scene都有自己的PhysicsManager，Scene之间的物理系统是相互隔离互不影响的。
 
 ## 物理更新
 
@@ -80,6 +80,6 @@ document.getElementById('canvas').addEventListener('click', (e) => {
 });
 ```
 
-需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。
+需要特别指出，如果想要对 Entity 启用射线投射，该 Entity 就必须拥有 **Collider** ，否则无法触发。若射线命中的Collider的Shape距离相同，则返回先被添加的Shape（举个例子：有两个Collider相同的Entity完全重合，则会返回先添加Collider，更准确的说是先添加Shape的Entity）。
 
-同时，在 Galacean 当中，还提供了 InputManager，该管理器将输入源做了封装，提供了更加易用的逻辑，使用方式可以[参考](${docs}input-cn) .
+同时，在 Galacean 当中，还提供了 InputManager，该管理器将输入源做了封装，提供了更加易用的逻辑，使用方式可以[参考](${docs}input) .

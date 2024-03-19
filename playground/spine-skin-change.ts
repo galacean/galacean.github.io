@@ -3,7 +3,7 @@
  * @category 2D
  */
 import { Camera, Logger, Vector3, WebGLEngine, Entity } from "@galacean/engine";
-import { SpineAnimation } from "@galacean/engine-spine";
+import { SpineRenderer } from "@galacean/engine-spine";
 import * as dat from "dat.gui";
 
 Logger.enable();
@@ -31,9 +31,12 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       ],
       type: "spine",
     })
-    .then((spineEntity: Entity) => {
+    .then((spineResource: any) => {
+      const spineEntity = rootEntity.createChild("spine");
       rootEntity.addChild(spineEntity);
-      const spineAnimation = spineEntity.getComponent(SpineAnimation);
+      const spineRenderer = spineEntity.addComponent(SpineRenderer);
+      spineRenderer.resource = spineResource;
+      const spineAnimation = spineRenderer.spineAnimation;
       const { skeleton, state } = spineAnimation;
       spineEntity.transform.setPosition(0, -18, 0);
       state.setAnimation(0, "dance", true);

@@ -13,11 +13,13 @@ interface IPackage {
 const SubMenu = (props: { id?: string; className: string; name?: string }) => {
   if (!props.name) return null;
   return (
-    <StyledKind type={props.className}>
-      <StyledKindIcon id={props.name}>
-        {props.name}
-      </StyledKindIcon>
-    </StyledKind>
+    <a href={'#' + props.id}>
+      <StyledKind type={props.className}>
+        <StyledKindIcon id={props.name}>
+          {props.name}
+        </StyledKindIcon>
+      </StyledKind>
+    </a>
   );
 };
 

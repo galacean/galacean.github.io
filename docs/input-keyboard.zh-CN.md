@@ -5,15 +5,15 @@ type: 交互
 label: Interact
 ---
 
-Galacean 支持开发者随时查询当前的键盘交互实况，不需引入额外包且调用接口十分简单。
+Galacean 支持开发者随时查询当前的键盘交互实况，且调用接口十分简单。
 
 ## 方法
 
-| 方法名称                                               | 方法释义                     |
-| ------------------------------------------------------ | ---------------------------- |
+| 方法名称                                               | 方法释义                   |
+| ------------------------------------------------------ | -------------------------- |
 | [isKeyHeldDown](${api}core/InputManager#isKeyHeldDown) | 返回这个按键是否被持续按住 |
-| [isKeyDown](${api}core/InputManager#isKeyDown)         | 返回当前帧是否按下过此按键   |
-| [isKeyUp](${api}core/InputManager#isKeyUp)             | 返回当前帧是否抬起过此按键   |
+| [isKeyDown](${api}core/InputManager#isKeyDown)         | 返回当前帧是否按下过此按键 |
+| [isKeyUp](${api}core/InputManager#isKeyUp)             | 返回当前帧是否抬起过此按键 |
 
 ## 快速上手
 
@@ -44,16 +44,16 @@ class KeyScript extends Script {
 
 ## 状态字典
 
-| 按键状态 | isKeyHeldDown | isKeyDown | isKeyUp |
-| ------------------------------------------------------ |------------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
-| 该键从上帧开始就一直按着|true|false|false|
-| 该键当前帧按下后就没有松开|true|true|false|
-| 该键在当前帧松开后又按下|true|true|true| 
-| 该键在当前帧按下后又松开|false|true|true|
-| 该键在当前帧被抬起|false|false|true|
-| 该键没按下且没交互|false|false|false| 
-| 不会出现这种情况|true|false|true|
-| 不会出现这种情况|false|true|false|
+| 按键状态                   | isKeyHeldDown | isKeyDown | isKeyUp |
+| -------------------------- | ------------- | --------- | ------- |
+| 该键从上帧开始就一直按着   | true          | false     | false   |
+| 该键当前帧按下后就没有松开 | true          | true      | false   |
+| 该键在当前帧松开后又按下   | true          | true      | true    |
+| 该键在当前帧按下后又松开   | false         | true      | true    |
+| 该键在当前帧被抬起         | false         | false     | true    |
+| 该键没按下且没交互         | false         | false     | false   |
+| 不会出现这种情况           | true          | false     | true    |
+| 不会出现这种情况           | false         | true      | false   |
 
 ## Keys
 

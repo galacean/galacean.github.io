@@ -1,6 +1,6 @@
 {
 	"id": 0,
-	"name": "@oasis-engine/rhi-webgl",
+	"name": "@galacean/engine-rhi-webgl",
 	"kind": 1,
 	"kindString": "Project",
 	"flags": {},
@@ -30,10 +30,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 92,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L92"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L92"
 						}
 					],
 					"type": {
@@ -49,10 +49,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 94,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L94"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L94"
 						}
 					],
 					"type": {
@@ -68,10 +68,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 96,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L96"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L96"
 						}
 					],
 					"type": {
@@ -87,10 +87,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 98,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L98"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L98"
 						}
 					],
 					"type": {
@@ -106,10 +106,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 100,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L100"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L100"
 						}
 					],
 					"type": {
@@ -125,10 +125,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 70,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L70"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L70"
 						}
 					],
 					"type": {
@@ -144,10 +144,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 67,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L67"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L67"
 						}
 					],
 					"type": {
@@ -163,10 +163,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L68"
 						}
 					],
 					"type": {
@@ -182,10 +182,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 69,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L69"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L69"
 						}
 					],
 					"type": {
@@ -201,10 +201,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 71,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L71"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L71"
 						}
 					],
 					"type": {
@@ -220,10 +220,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 72,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L72"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L72"
 						}
 					],
 					"type": {
@@ -239,10 +239,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 59,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L59"
 						}
 					],
 					"type": {
@@ -258,10 +258,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 60,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L60"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L60"
 						}
 					],
 					"type": {
@@ -277,10 +277,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 61,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L61"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L61"
 						}
 					],
 					"type": {
@@ -296,10 +296,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 62,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L62"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L62"
 						}
 					],
 					"type": {
@@ -315,10 +315,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 63,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L63"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L63"
 						}
 					],
 					"type": {
@@ -334,10 +334,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 64,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L64"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L64"
 						}
 					],
 					"type": {
@@ -353,10 +353,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 65,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L65"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L65"
 						}
 					],
 					"type": {
@@ -372,15 +372,34 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L66"
 						}
 					],
 					"type": {
 						"type": "literal",
 						"value": 37815
+					}
+				},
+				{
+					"id": 49,
+					"name": "RGBA_BPTC_UNORM_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
+							"line": 116,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L116"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 36492
 					}
 				},
 				{
@@ -391,10 +410,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 107,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L107"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L107"
 						}
 					],
 					"type": {
@@ -410,10 +429,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 106,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L106"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L106"
 						}
 					],
 					"type": {
@@ -429,10 +448,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 111,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L111"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L111"
 						}
 					],
 					"type": {
@@ -448,10 +467,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 112,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L112"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L112"
 						}
 					],
 					"type": {
@@ -467,15 +486,53 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 113,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L113"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L113"
 						}
 					],
 					"type": {
 						"type": "literal",
 						"value": 33779
+					}
+				},
+				{
+					"id": 51,
+					"name": "RGB_BPTC_SIGNED_FLOAT_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
+							"line": 118,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L118"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 36494
+					}
+				},
+				{
+					"id": 52,
+					"name": "RGB_BPTC_UNSIGNED_FLOAT_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
+							"line": 119,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L119"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 36495
 					}
 				},
 				{
@@ -486,10 +543,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 89,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L89"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L89"
 						}
 					],
 					"type": {
@@ -505,10 +562,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 105,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L105"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L105"
 						}
 					],
 					"type": {
@@ -524,10 +581,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 104,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L104"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L104"
 						}
 					],
 					"type": {
@@ -543,10 +600,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 110,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L110"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L110"
 						}
 					],
 					"type": {
@@ -562,10 +619,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 93,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L93"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L93"
 						}
 					],
 					"type": {
@@ -581,10 +638,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 95,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L95"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L95"
 						}
 					],
 					"type": {
@@ -600,10 +657,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 84,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L84"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L84"
 						}
 					],
 					"type": {
@@ -619,10 +676,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 81,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L81"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L81"
 						}
 					],
 					"type": {
@@ -638,10 +695,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 82,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L82"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L82"
 						}
 					],
 					"type": {
@@ -657,10 +714,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 83,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L83"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L83"
 						}
 					],
 					"type": {
@@ -676,10 +733,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 85,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L85"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L85"
 						}
 					],
 					"type": {
@@ -695,10 +752,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 86,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L86"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L86"
 						}
 					],
 					"type": {
@@ -714,10 +771,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 73,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L73"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L73"
 						}
 					],
 					"type": {
@@ -733,10 +790,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 74,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L74"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L74"
 						}
 					],
 					"type": {
@@ -752,10 +809,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 75,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L75"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L75"
 						}
 					],
 					"type": {
@@ -771,10 +828,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 76,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L76"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L76"
 						}
 					],
 					"type": {
@@ -790,10 +847,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 77,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L77"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L77"
 						}
 					],
 					"type": {
@@ -809,10 +866,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 78,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L78"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L78"
 						}
 					],
 					"type": {
@@ -828,10 +885,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 79,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L79"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L79"
 						}
 					],
 					"type": {
@@ -847,10 +904,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 80,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L80"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L80"
 						}
 					],
 					"type": {
@@ -866,10 +923,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 101,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L101"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L101"
 						}
 					],
 					"type": {
@@ -885,10 +942,10 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 97,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L97"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L97"
 						}
 					],
 					"type": {
@@ -904,15 +961,34 @@
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/type.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 							"line": 99,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L99"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L99"
 						}
 					],
 					"type": {
 						"type": "literal",
 						"value": 37495
+					}
+				},
+				{
+					"id": 50,
+					"name": "SRGB_ALPHA_BPTC_UNORM_EXT",
+					"kind": 16,
+					"kindString": "Enumeration Member",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
+							"line": 117,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L117"
+						}
+					],
+					"type": {
+						"type": "literal",
+						"value": 36493
 					}
 				}
 			],
@@ -939,11 +1015,14 @@
 						7,
 						8,
 						9,
+						49,
 						44,
 						43,
 						46,
 						47,
 						48,
+						51,
+						52,
 						30,
 						42,
 						41,
@@ -966,21 +1045,22 @@
 						23,
 						40,
 						36,
-						38
+						38,
+						50
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "engine/packages/rhi-webgl/src/type.ts",
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/type.ts",
 					"line": 57,
 					"character": 12,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/type.ts#L57"
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/type.ts#L57"
 				}
 			]
 		},
 		{
-			"id": 172,
+			"id": 168,
 			"name": "WebGLMode",
 			"kind": 8,
 			"kindString": "Enumeration",
@@ -995,7 +1075,7 @@
 			},
 			"children": [
 				{
-					"id": 173,
+					"id": 169,
 					"name": "Auto",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -1010,10 +1090,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 38,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 44,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L38"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L44"
 						}
 					],
 					"type": {
@@ -1022,7 +1102,7 @@
 					}
 				},
 				{
-					"id": 175,
+					"id": 171,
 					"name": "WebGL1",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -1037,10 +1117,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 42,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 48,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L42"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L48"
 						}
 					],
 					"type": {
@@ -1049,7 +1129,7 @@
 					}
 				},
 				{
-					"id": 174,
+					"id": 170,
 					"name": "WebGL2",
 					"kind": 16,
 					"kindString": "Enumeration Member",
@@ -1064,10 +1144,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 40,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 46,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L40"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L46"
 						}
 					],
 					"type": {
@@ -1080,23 +1160,23 @@
 				{
 					"title": "Enumeration Members",
 					"children": [
-						173,
-						175,
-						174
+						169,
+						171,
+						170
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-					"line": 36,
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+					"line": 42,
 					"character": 12,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L36"
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L42"
 				}
 			]
 		},
 		{
-			"id": 49,
+			"id": 53,
 			"name": "WebCanvas",
 			"kind": 128,
 			"kindString": "Class",
@@ -1111,22 +1191,22 @@
 			},
 			"children": [
 				{
-					"id": 50,
+					"id": 54,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 83,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L83"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L83"
 						}
 					],
 					"signatures": [
 						{
-							"id": 51,
+							"id": 55,
 							"name": "new WebCanvas",
 							"kind": 16384,
 							"kindString": "Constructor signature",
@@ -1141,7 +1221,7 @@
 							},
 							"parameters": [
 								{
-									"id": 52,
+									"id": 56,
 									"name": "webCanvas",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1162,14 +1242,14 @@
 							],
 							"type": {
 								"type": "reference",
-								"id": 49,
+								"id": 53,
 								"name": "WebCanvas"
 							}
 						}
 					]
 				},
 				{
-					"id": 55,
+					"id": 59,
 					"name": "_height",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1178,10 +1258,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 13,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L13"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L13"
 						}
 					],
 					"type": {
@@ -1190,7 +1270,7 @@
 					}
 				},
 				{
-					"id": 56,
+					"id": 60,
 					"name": "_scale",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1199,10 +1279,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 14,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L14"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L14"
 						}
 					],
 					"type": {
@@ -1212,17 +1292,17 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 53,
+					"id": 57,
 					"name": "_webCanvas",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 10,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L10"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L10"
 						}
 					],
 					"type": {
@@ -1231,7 +1311,7 @@
 					}
 				},
 				{
-					"id": 54,
+					"id": 58,
 					"name": "_width",
 					"kind": 1024,
 					"kindString": "Property",
@@ -1240,10 +1320,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 12,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L12"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L12"
 						}
 					],
 					"type": {
@@ -1252,27 +1332,27 @@
 					}
 				},
 				{
-					"id": 61,
+					"id": 65,
 					"name": "height",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 33,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L33"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L33"
 						},
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 37,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L37"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L37"
 						}
 					],
 					"getSignature": {
-						"id": 62,
+						"id": 66,
 						"name": "height",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -1296,14 +1376,14 @@
 						}
 					},
 					"setSignature": {
-						"id": 63,
+						"id": 67,
 						"name": "height",
 						"kind": 1048576,
 						"kindString": "Set signature",
 						"flags": {},
 						"parameters": [
 							{
-								"id": 64,
+								"id": 68,
 								"name": "value",
 								"kind": 32768,
 								"kindString": "Parameter",
@@ -1329,27 +1409,27 @@
 					}
 				},
 				{
-					"id": 65,
+					"id": 69,
 					"name": "scale",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 48,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L48"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L48"
 						},
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 59,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L59"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L59"
 						}
 					],
 					"getSignature": {
-						"id": 66,
+						"id": 70,
 						"name": "scale",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -1379,14 +1459,14 @@
 						}
 					},
 					"setSignature": {
-						"id": 67,
+						"id": 71,
 						"name": "scale",
 						"kind": 1048576,
 						"kindString": "Set signature",
 						"flags": {},
 						"parameters": [
 							{
-								"id": 68,
+								"id": 72,
 								"name": "value",
 								"kind": 32768,
 								"kindString": "Parameter",
@@ -1404,27 +1484,27 @@
 					}
 				},
 				{
-					"id": 57,
+					"id": 61,
 					"name": "width",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 19,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L19"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L19"
 						},
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 23,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L23"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L23"
 						}
 					],
 					"getSignature": {
-						"id": 58,
+						"id": 62,
 						"name": "width",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -1448,14 +1528,14 @@
 						}
 					},
 					"setSignature": {
-						"id": 59,
+						"id": 63,
 						"name": "width",
 						"kind": 1048576,
 						"kindString": "Set signature",
 						"flags": {},
 						"parameters": [
 							{
-								"id": 60,
+								"id": 64,
 								"name": "value",
 								"kind": 32768,
 								"kindString": "Parameter",
@@ -1481,22 +1561,22 @@
 					}
 				},
 				{
-					"id": 69,
+					"id": 73,
 					"name": "resizeByClientSize",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 71,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L71"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L71"
 						}
 					],
 					"signatures": [
 						{
-							"id": 70,
+							"id": 74,
 							"name": "resizeByClientSize",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1511,7 +1591,7 @@
 							},
 							"parameters": [
 								{
-									"id": 71,
+									"id": 75,
 									"name": "pixelRatio",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1539,22 +1619,22 @@
 					]
 				},
 				{
-					"id": 72,
+					"id": 76,
 					"name": "setScale",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 							"line": 96,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L96"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L96"
 						}
 					],
 					"signatures": [
 						{
-							"id": 73,
+							"id": 77,
 							"name": "setScale",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -1569,7 +1649,7 @@
 							},
 							"parameters": [
 								{
-									"id": 74,
+									"id": 78,
 									"name": "x",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1588,7 +1668,7 @@
 									}
 								},
 								{
-									"id": 75,
+									"id": 79,
 									"name": "y",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -1619,40 +1699,40 @@
 				{
 					"title": "Constructors",
 					"children": [
-						50
+						54
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						55,
-						56,
-						53,
-						54
+						59,
+						60,
+						57,
+						58
 					]
 				},
 				{
 					"title": "Accessors",
 					"children": [
-						61,
 						65,
-						57
+						69,
+						61
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						69,
-						72
+						73,
+						76
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "engine/packages/rhi-webgl/src/WebCanvas.ts",
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebCanvas.ts",
 					"line": 9,
 					"character": 13,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebCanvas.ts#L9"
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebCanvas.ts#L9"
 				}
 			],
 			"implementedTypes": [
@@ -1663,7 +1743,7 @@
 			]
 		},
 		{
-			"id": 76,
+			"id": 80,
 			"name": "WebGLEngine",
 			"kind": 128,
 			"kindString": "Class",
@@ -1678,395 +1758,98 @@
 			},
 			"children": [
 				{
-					"id": 77,
+					"id": 84,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLEngine.ts",
-							"line": 16,
-							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLEngine.ts#L16"
-						}
-					],
-					"signatures": [
-						{
-							"id": 78,
-							"name": "new WebGLEngine",
-							"kind": 16384,
-							"kindString": "Constructor signature",
-							"flags": {},
-							"comment": {
-								"summary": [
-									{
-										"kind": "text",
-										"text": "Create an engine suitable for the WebGL platform."
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 79,
-									"name": "canvas",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "Native web canvas"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								},
-								{
-									"id": 80,
-									"name": "webGLRendererOptions",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "WebGL renderer options"
-											}
-										]
-									},
-									"type": {
-										"type": "reference",
-										"id": 269,
-										"name": "WebGLRendererOptions"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"id": 76,
-								"name": "WebGLEngine"
-							},
-							"overwrites": {
-								"type": "reference",
-								"name": "Engine.constructor"
-							}
-						}
-					],
-					"overwrites": {
-						"type": "reference",
-						"name": "Engine.constructor"
-					}
-				},
-				{
-					"id": 96,
-					"name": "_canvas",
-					"kind": 1024,
-					"kindString": "Property",
 					"flags": {
 						"isProtected": true
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 39,
-							"character": 14
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "Canvas"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._canvas"
-					}
-				},
-				{
-					"id": 86,
-					"name": "_componentsManager",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 29,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 77,
 							"character": 4
 						}
 					],
-					"type": {
-						"type": "reference",
-						"name": "ComponentsManager"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._componentsManager"
-					}
-				},
-				{
-					"id": 87,
-					"name": "_hardwareRenderer",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
+					"signatures": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 30,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "IHardwareRenderer"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._hardwareRenderer"
-					}
-				},
-				{
-					"id": 88,
-					"name": "_lastRenderState",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 31,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "RenderState"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._lastRenderState"
-					}
-				},
-				{
-					"id": 85,
-					"name": "_lightManager",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 28,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "LightManager"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._lightManager"
-					}
-				},
-				{
-					"id": 95,
-					"name": "_renderContext",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 38,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "RenderContext"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._renderContext"
-					}
-				},
-				{
-					"id": 89,
-					"name": "_renderElementPool",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 32,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"typeArguments": [
-							{
+							"id": 85,
+							"name": "new WebGLEngine",
+							"kind": 16384,
+							"kindString": "Constructor signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 86,
+									"name": "canvas",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "Canvas"
+									}
+								},
+								{
+									"id": 87,
+									"name": "hardwareRenderer",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "IHardwareRenderer"
+									}
+								},
+								{
+									"id": 88,
+									"name": "configuration",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "EngineConfiguration"
+									}
+								}
+							],
+							"type": {
 								"type": "reference",
-								"name": "MeshRenderElement"
-							}
-						],
-						"name": "ClassPool"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._renderElementPool"
-					}
-				},
-				{
-					"id": 93,
-					"name": "_spriteDefaultMaterial",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 36,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "Material"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._spriteDefaultMaterial"
-					}
-				},
-				{
-					"id": 90,
-					"name": "_spriteElementPool",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 33,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"typeArguments": [
-							{
+								"id": 80,
+								"name": "WebGLEngine"
+							},
+							"inheritedFrom": {
 								"type": "reference",
-								"name": "SpriteElement"
+								"name": "Engine.constructor"
 							}
-						],
-						"name": "ClassPool"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._spriteElementPool"
-					}
-				},
-				{
-					"id": 94,
-					"name": "_spriteMaskDefaultMaterial",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 37,
-							"character": 4
 						}
 					],
-					"type": {
-						"type": "reference",
-						"name": "Material"
-					},
 					"inheritedFrom": {
 						"type": "reference",
-						"name": "Engine._spriteMaskDefaultMaterial"
+						"name": "Engine.constructor"
 					}
 				},
 				{
 					"id": 91,
-					"name": "_spriteMaskElementPool",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 34,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"typeArguments": [
-							{
-								"type": "reference",
-								"name": "SpriteMaskElement"
-							}
-						],
-						"name": "ClassPool"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._spriteMaskElementPool"
-					}
-				},
-				{
-					"id": 92,
-					"name": "_textElementPool",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 35,
-							"character": 4
-						}
-					],
-					"type": {
-						"type": "reference",
-						"typeArguments": [
-							{
-								"type": "reference",
-								"name": "TextRenderElement"
-							}
-						],
-						"name": "ClassPool"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._textElementPool"
-					}
-				},
-				{
-					"id": 84,
 					"name": "inputManager",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {
 						"isReadonly": true
 					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Input manager of Engine."
+							}
+						]
+					},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 27,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 17,
 							"character": 13
 						}
 					],
@@ -2080,53 +1863,21 @@
 					}
 				},
 				{
-					"id": 83,
-					"name": "physicsManager",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {
-						"isReadonly": true
-					},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Physics manager of Engine."
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 26,
-							"character": 13
-						}
-					],
-					"type": {
-						"type": "reference",
-						"name": "PhysicsManager"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine.physicsManager"
-					}
-				},
-				{
-					"id": 81,
+					"id": 89,
 					"name": "canvas",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLEngine.ts",
-							"line": 27,
-							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLEngine.ts#L27"
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLEngine.ts",
+							"line": 30,
+							"character": 15,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLEngine.ts#L30"
 						}
 					],
 					"getSignature": {
-						"id": 82,
+						"id": 90,
 						"name": "canvas",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2141,7 +1892,7 @@
 						},
 						"type": {
 							"type": "reference",
-							"id": 49,
+							"id": 53,
 							"name": "WebCanvas"
 						},
 						"overwrites": {
@@ -2155,20 +1906,20 @@
 					}
 				},
 				{
-					"id": 115,
+					"id": 110,
 					"name": "destroyed",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 95,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 76,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 116,
+						"id": 111,
 						"name": "destroyed",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2196,20 +1947,20 @@
 					}
 				},
 				{
-					"id": 105,
+					"id": 100,
 					"name": "isPaused",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 77,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 58,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 106,
+						"id": 101,
 						"name": "isPaused",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2237,20 +1988,67 @@
 					}
 				},
 				{
-					"id": 99,
+					"id": 129,
+					"name": "physicsManager",
+					"kind": 262144,
+					"kindString": "Accessor",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 125,
+							"character": 8
+						}
+					],
+					"getSignature": {
+						"id": 130,
+						"name": "physicsManager",
+						"kind": 524288,
+						"kindString": "Get signature",
+						"flags": {},
+						"comment": {
+							"summary": [],
+							"blockTags": [
+								{
+									"tag": "@deprecated",
+									"content": [
+										{
+											"kind": "text",
+											"text": "The first scene physics manager."
+										}
+									]
+								}
+							]
+						},
+						"type": {
+							"type": "reference",
+							"name": "PhysicsScene"
+						},
+						"inheritedFrom": {
+							"type": "reference",
+							"name": "Engine.physicsManager"
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.physicsManager"
+					}
+				},
+				{
+					"id": 94,
 					"name": "resourceManager",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 65,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 46,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 100,
+						"id": 95,
 						"name": "resourceManager",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2259,7 +2057,7 @@
 							"summary": [
 								{
 									"kind": "text",
-									"text": "Get the resource manager."
+									"text": "The resource manager."
 								}
 							]
 						},
@@ -2278,20 +2076,20 @@
 					}
 				},
 				{
-					"id": 101,
+					"id": 96,
 					"name": "sceneManager",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 69,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 50,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 102,
+						"id": 97,
 						"name": "sceneManager",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2300,7 +2098,7 @@
 							"summary": [
 								{
 									"kind": "text",
-									"text": "Get the scene manager."
+									"text": "The scene manager."
 								}
 							]
 						},
@@ -2319,20 +2117,20 @@
 					}
 				},
 				{
-					"id": 97,
+					"id": 92,
 					"name": "settings",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 57,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 38,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 98,
+						"id": 93,
 						"name": "settings",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2360,25 +2158,25 @@
 					}
 				},
 				{
-					"id": 111,
+					"id": 106,
 					"name": "targetFrameRate",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 90,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 71,
 							"character": 8
 						},
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 91,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 72,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 112,
+						"id": 107,
 						"name": "targetFrameRate",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2412,14 +2210,14 @@
 						}
 					},
 					"setSignature": {
-						"id": 113,
+						"id": 108,
 						"name": "targetFrameRate",
 						"kind": 1048576,
 						"kindString": "Set signature",
 						"flags": {},
 						"parameters": [
 							{
-								"id": 114,
+								"id": 109,
 								"name": "value",
 								"kind": 32768,
 								"kindString": "Parameter",
@@ -2445,20 +2243,20 @@
 					}
 				},
 				{
-					"id": 103,
+					"id": 98,
 					"name": "time",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 73,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 54,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 104,
+						"id": 99,
 						"name": "time",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2467,7 +2265,7 @@
 							"summary": [
 								{
 									"kind": "text",
-									"text": "Get the Time class."
+									"text": "The time information of the engine."
 								}
 							]
 						},
@@ -2486,25 +2284,25 @@
 					}
 				},
 				{
-					"id": 107,
+					"id": 102,
 					"name": "vSyncCount",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 82,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 63,
 							"character": 8
 						},
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 83,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 64,
 							"character": 8
 						}
 					],
 					"getSignature": {
-						"id": 108,
+						"id": 103,
 						"name": "vSyncCount",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -2538,14 +2336,14 @@
 						}
 					},
 					"setSignature": {
-						"id": 109,
+						"id": 104,
 						"name": "vSyncCount",
 						"kind": 1048576,
 						"kindString": "Set signature",
 						"flags": {},
 						"parameters": [
 							{
-								"id": 110,
+								"id": 105,
 								"name": "value",
 								"kind": 32768,
 								"kindString": "Parameter",
@@ -2571,198 +2369,21 @@
 					}
 				},
 				{
-					"id": 130,
-					"name": "_render",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 130,
-							"character": 4
-						}
-					],
-					"signatures": [
-						{
-							"id": 131,
-							"name": "_render",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"parameters": [
-								{
-									"id": 132,
-									"name": "scene",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Scene"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Engine._render"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine._render"
-					}
-				},
-				{
-					"id": 153,
-					"name": "addEventListener",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
-							"line": 54,
-							"character": 4
-						}
-					],
-					"signatures": [
-						{
-							"id": 154,
-							"name": "addEventListener",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [],
-								"blockTags": [
-									{
-										"tag": "@deprecated",
-										"content": [
-											{
-												"kind": "text",
-												"text": "Use "
-											},
-											{
-												"kind": "code",
-												"text": "`on/once`"
-											},
-											{
-												"kind": "text",
-												"text": " instead.\nAdd a listener function with the specified event name."
-											}
-										]
-									},
-									{
-										"tag": "@returns",
-										"content": [
-											{
-												"kind": "text",
-												"text": "this"
-											}
-										]
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 155,
-									"name": "event",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "Event name"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								},
-								{
-									"id": 156,
-									"name": "fn",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "Function"
-											}
-										]
-									},
-									"type": {
-										"type": "reference",
-										"name": "Function",
-										"qualifiedName": "Function",
-										"package": "typescript"
-									}
-								},
-								{
-									"id": 157,
-									"name": "once",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {
-										"isOptional": true
-									},
-									"comment": {
-										"summary": [
-											{
-												"kind": "text",
-												"text": "Is it a one-time listener"
-											}
-										]
-									},
-									"type": {
-										"type": "intrinsic",
-										"name": "boolean"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"name": "EventDispatcher"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Engine.addEventListener"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine.addEventListener"
-					}
-				},
-				{
-					"id": 117,
+					"id": 112,
 					"name": "createEntity",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 108,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 83,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 118,
+							"id": 113,
 							"name": "createEntity",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2788,7 +2409,7 @@
 							},
 							"parameters": [
 								{
-									"id": 119,
+									"id": 114,
 									"name": "name",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2825,21 +2446,21 @@
 					}
 				},
 				{
-					"id": 128,
+					"id": 127,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 129,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 115,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 129,
+							"id": 128,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2857,7 +2478,7 @@
 										"content": [
 											{
 												"kind": "text",
-												"text": "The timing of engine destruction is at the end of the current frame"
+												"text": "If call during frame execution will delay until the end of the frame"
 											}
 										]
 									}
@@ -2879,21 +2500,21 @@
 					}
 				},
 				{
-					"id": 141,
+					"id": 139,
 					"name": "dispatch",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
 							"line": 31,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 142,
+							"id": 140,
 							"name": "dispatch",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -2919,7 +2540,7 @@
 							},
 							"parameters": [
 								{
-									"id": 143,
+									"id": 141,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2938,7 +2559,7 @@
 									}
 								},
 								{
-									"id": 144,
+									"id": 142,
 									"name": "data",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -2975,21 +2596,21 @@
 					}
 				},
 				{
-					"id": 136,
+					"id": 134,
 					"name": "eventNames",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
 							"line": 18,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 137,
+							"id": 135,
 							"name": "eventNames",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3032,21 +2653,129 @@
 					}
 				},
 				{
-					"id": 133,
+					"id": 123,
+					"name": "forceLoseDevice",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 104,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 124,
+							"name": "forceLoseDevice",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Force lose graphic device."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@remarks",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Used to simulate the phenomenon after the real loss of device."
+											}
+										]
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.forceLoseDevice"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.forceLoseDevice"
+					}
+				},
+				{
+					"id": 125,
+					"name": "forceRestoreDevice",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 109,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 126,
+							"name": "forceRestoreDevice",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Force restore graphic device."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@remarks",
+										"content": [
+											{
+												"kind": "text",
+												"text": "Used to simulate the phenomenon after the real restore of device."
+											}
+										]
+									}
+								]
+							},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"name": "Engine.forceRestoreDevice"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "Engine.forceRestoreDevice"
+					}
+				},
+				{
+					"id": 131,
 					"name": "hasEvent",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
 							"line": 13,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 134,
+							"id": 132,
 							"name": "hasEvent",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3072,7 +2801,7 @@
 							},
 							"parameters": [
 								{
-									"id": 135,
+									"id": 133,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3107,21 +2836,21 @@
 					}
 				},
 				{
-					"id": 138,
+					"id": 136,
 					"name": "listenerCount",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
 							"line": 24,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 139,
+							"id": 137,
 							"name": "listenerCount",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3147,7 +2876,7 @@
 							},
 							"parameters": [
 								{
-									"id": 140,
+									"id": 138,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3182,21 +2911,21 @@
 					}
 				},
 				{
-					"id": 158,
+					"id": 151,
 					"name": "off",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
-							"line": 60,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 51,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 159,
+							"id": 152,
 							"name": "off",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3211,7 +2940,7 @@
 							},
 							"parameters": [
 								{
-									"id": 160,
+									"id": 153,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3230,7 +2959,7 @@
 									}
 								},
 								{
-									"id": 161,
+									"id": 154,
 									"name": "fn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3269,21 +2998,21 @@
 					}
 				},
 				{
-					"id": 145,
+					"id": 143,
 					"name": "on",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
 							"line": 38,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 146,
+							"id": 144,
 							"name": "on",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3309,7 +3038,7 @@
 							},
 							"parameters": [
 								{
-									"id": 147,
+									"id": 145,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3328,7 +3057,7 @@
 									}
 								},
 								{
-									"id": 148,
+									"id": 146,
 									"name": "fn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3365,21 +3094,21 @@
 					}
 				},
 				{
-					"id": 149,
+					"id": 147,
 					"name": "once",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
 							"line": 45,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 150,
+							"id": 148,
 							"name": "once",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3405,7 +3134,7 @@
 							},
 							"parameters": [
 								{
-									"id": 151,
+									"id": 149,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3424,7 +3153,7 @@
 									}
 								},
 								{
-									"id": 152,
+									"id": 150,
 									"name": "fn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3461,21 +3190,21 @@
 					}
 				},
 				{
-					"id": 120,
+					"id": 115,
 					"name": "pause",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 112,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 87,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 121,
+							"id": 116,
 							"name": "pause",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3504,21 +3233,21 @@
 					}
 				},
 				{
-					"id": 166,
+					"id": 159,
 					"name": "removeAllEventListeners",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
-							"line": 72,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 63,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 167,
+							"id": 160,
 							"name": "removeAllEventListeners",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3533,7 +3262,7 @@
 							},
 							"parameters": [
 								{
-									"id": 168,
+									"id": 161,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3570,21 +3299,21 @@
 					}
 				},
 				{
-					"id": 162,
+					"id": 155,
 					"name": "removeEventListener",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
-							"line": 67,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/base/EventDispatcher.d.ts",
+							"line": 58,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 163,
+							"id": 156,
 							"name": "removeEventListener",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3613,7 +3342,7 @@
 							},
 							"parameters": [
 								{
-									"id": 164,
+									"id": 157,
 									"name": "event",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3632,7 +3361,7 @@
 									}
 								},
 								{
-									"id": 165,
+									"id": 158,
 									"name": "fn",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -3671,21 +3400,21 @@
 					}
 				},
 				{
-					"id": 122,
+					"id": 117,
 					"name": "resume",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 116,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 91,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 123,
+							"id": 118,
 							"name": "resume",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3714,21 +3443,21 @@
 					}
 				},
 				{
-					"id": 126,
+					"id": 121,
 					"name": "run",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 124,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 99,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 127,
+							"id": 122,
 							"name": "run",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3757,91 +3486,21 @@
 					}
 				},
 				{
-					"id": 169,
-					"name": "trigger",
-					"kind": 2048,
-					"kindString": "Method",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/core/types/base/EventDispatcher.d.ts",
-							"line": 76,
-							"character": 4
-						}
-					],
-					"signatures": [
-						{
-							"id": 170,
-							"name": "trigger",
-							"kind": 4096,
-							"kindString": "Call signature",
-							"flags": {},
-							"comment": {
-								"summary": [],
-								"blockTags": [
-									{
-										"tag": "@deprecated",
-										"content": [
-											{
-												"kind": "text",
-												"text": "Use "
-											},
-											{
-												"kind": "code",
-												"text": "`dispatch`"
-											},
-											{
-												"kind": "text",
-												"text": " instead."
-											}
-										]
-									}
-								]
-							},
-							"parameters": [
-								{
-									"id": 171,
-									"name": "e",
-									"kind": 32768,
-									"kindString": "Parameter",
-									"flags": {},
-									"type": {
-										"type": "reference",
-										"name": "Event"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"name": "Engine.trigger"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"name": "Engine.trigger"
-					}
-				},
-				{
-					"id": 124,
+					"id": 119,
 					"name": "update",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/core/types/Engine.d.ts",
-							"line": 120,
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 95,
 							"character": 4
 						}
 					],
 					"signatures": [
 						{
-							"id": 125,
+							"id": 120,
 							"name": "update",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -3868,78 +3527,146 @@
 						"type": "reference",
 						"name": "Engine.update"
 					}
+				},
+				{
+					"id": 81,
+					"name": "create",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isStatic": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLEngine.ts",
+							"line": 14,
+							"character": 9,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLEngine.ts#L14"
+						}
+					],
+					"signatures": [
+						{
+							"id": 82,
+							"name": "create",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Create a WebGL engine."
+									}
+								],
+								"blockTags": [
+									{
+										"tag": "@returns",
+										"content": [
+											{
+												"kind": "text",
+												"text": "A promise that will resolve when the engine is created"
+											}
+										]
+									}
+								]
+							},
+							"parameters": [
+								{
+									"id": 83,
+									"name": "configuration",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "WebGL engine configuration"
+											}
+										]
+									},
+									"type": {
+										"type": "reference",
+										"id": 162,
+										"name": "WebGLEngineConfiguration"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"typeArguments": [
+									{
+										"type": "reference",
+										"id": 80,
+										"name": "WebGLEngine"
+									}
+								],
+								"name": "Promise",
+								"qualifiedName": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
 				}
 			],
 			"groups": [
 				{
 					"title": "Constructors",
 					"children": [
-						77
+						84
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						96,
-						86,
-						87,
-						88,
-						85,
-						95,
-						89,
-						93,
-						90,
-						94,
-						91,
-						92,
-						84,
-						83
+						91
 					]
 				},
 				{
 					"title": "Accessors",
 					"children": [
-						81,
-						115,
-						105,
-						99,
-						101,
-						97,
-						111,
-						103,
-						107
+						89,
+						110,
+						100,
+						129,
+						94,
+						96,
+						92,
+						106,
+						98,
+						102
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						130,
-						153,
-						117,
-						128,
-						141,
+						112,
+						127,
+						139,
+						134,
+						123,
+						125,
+						131,
 						136,
-						133,
-						138,
-						158,
-						145,
-						149,
-						120,
-						166,
-						162,
-						122,
-						126,
-						169,
-						124
+						151,
+						143,
+						147,
+						115,
+						159,
+						155,
+						117,
+						121,
+						119,
+						81
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "engine/packages/rhi-webgl/src/WebGLEngine.ts",
-					"line": 10,
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLEngine.ts",
+					"line": 8,
 					"character": 13,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLEngine.ts#L10"
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLEngine.ts#L8"
 				}
 			],
 			"extendedTypes": [
@@ -3950,8 +3677,8 @@
 			]
 		},
 		{
-			"id": 176,
-			"name": "WebGLRenderer",
+			"id": 172,
+			"name": "WebGLGraphicDevice",
 			"kind": 128,
 			"kindString": "Class",
 			"flags": {},
@@ -3959,57 +3686,57 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "WebGL renderer, including WebGL1.0 and WebGL2.0."
+						"text": "WebGL graphic device, including WebGL1.0 and WebGL2.0."
 					}
 				]
 			},
 			"children": [
 				{
-					"id": 177,
+					"id": 173,
 					"name": "constructor",
 					"kind": 512,
 					"kindString": "Constructor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 107,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 132,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L107"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L132"
 						}
 					],
 					"signatures": [
 						{
-							"id": 178,
-							"name": "new WebGLRenderer",
+							"id": 174,
+							"name": "new WebGLGraphicDevice",
 							"kind": 16384,
 							"kindString": "Constructor signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 179,
-									"name": "options",
+									"id": 175,
+									"name": "initializeOptions",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"id": 269,
-										"name": "WebGLRendererOptions"
+										"id": 315,
+										"name": "WebGLGraphicDeviceOptions"
 									},
 									"defaultValue": "{}"
 								}
 							],
 							"type": {
 								"type": "reference",
-								"id": 176,
-								"name": "WebGLRenderer"
+								"id": 172,
+								"name": "WebGLGraphicDevice"
 							}
 						}
 					]
 				},
 				{
-					"id": 190,
+					"id": 187,
 					"name": "_activeTextureID",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4018,10 +3745,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 71,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 93,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L71"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L93"
 						}
 					],
 					"type": {
@@ -4030,7 +3757,7 @@
 					}
 				},
 				{
-					"id": 191,
+					"id": 188,
 					"name": "_activeTextures",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4039,10 +3766,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 72,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 94,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L72"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L94"
 						}
 					],
 					"type": {
@@ -4055,7 +3782,7 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 186,
+					"id": 183,
 					"name": "_capability",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4064,10 +3791,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 66,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 88,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L66"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L88"
 						}
 					],
 					"type": {
@@ -4076,26 +3803,7 @@
 					}
 				},
 				{
-					"id": 181,
-					"name": "_currentBind",
-					"kind": 1024,
-					"kindString": "Property",
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 60,
-							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L60"
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "any"
-					}
-				},
-				{
-					"id": 185,
+					"id": 182,
 					"name": "_extensions",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4104,10 +3812,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 65,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 87,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L65"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L87"
 						}
 					],
 					"type": {
@@ -4116,7 +3824,7 @@
 					}
 				},
 				{
-					"id": 183,
+					"id": 180,
 					"name": "_gl",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4125,10 +3833,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 63,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 85,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L63"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L85"
 						}
 					],
 					"type": {
@@ -4159,7 +3867,7 @@
 					}
 				},
 				{
-					"id": 187,
+					"id": 184,
 					"name": "_isWebGL2",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4168,10 +3876,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 67,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 89,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L67"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L89"
 						}
 					],
 					"type": {
@@ -4180,7 +3888,7 @@
 					}
 				},
 				{
-					"id": 193,
+					"id": 191,
 					"name": "_lastClearColor",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4189,10 +3897,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 76,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 98,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L76"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L98"
 						}
 					],
 					"type": {
@@ -4202,8 +3910,8 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 192,
-					"name": "_lastViewport",
+					"id": 190,
+					"name": "_lastScissor",
 					"kind": 1024,
 					"kindString": "Property",
 					"flags": {
@@ -4211,10 +3919,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 75,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 97,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L75"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L97"
 						}
 					],
 					"type": {
@@ -4224,7 +3932,125 @@
 					"defaultValue": "..."
 				},
 				{
-					"id": 182,
+					"id": 189,
+					"name": "_lastViewport",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 96,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L96"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "Vector4"
+					},
+					"defaultValue": "..."
+				},
+				{
+					"id": 193,
+					"name": "_onDeviceLost",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 101,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L101"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 194,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+									"line": 101,
+									"character": 25,
+									"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L101"
+								}
+							],
+							"signatures": [
+								{
+									"id": 195,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 196,
+					"name": "_onDeviceRestored",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 102,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L102"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 197,
+							"name": "__type",
+							"kind": 65536,
+							"kindString": "Type literal",
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+									"line": 102,
+									"character": 29,
+									"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L102"
+								}
+							],
+							"signatures": [
+								{
+									"id": 198,
+									"name": "__type",
+									"kind": 4096,
+									"kindString": "Call signature",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "void"
+									}
+								}
+							]
+						}
+					}
+				},
+				{
+					"id": 179,
 					"name": "_options",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4233,20 +4059,20 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 62,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 84,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L62"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L84"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"id": 269,
-						"name": "WebGLRendererOptions"
+						"id": 315,
+						"name": "WebGLGraphicDeviceOptions"
 					}
 				},
 				{
-					"id": 184,
+					"id": 181,
 					"name": "_renderStates",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4255,10 +4081,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 64,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 86,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L64"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L86"
 						}
 					],
 					"type": {
@@ -4267,7 +4093,7 @@
 					}
 				},
 				{
-					"id": 188,
+					"id": 185,
 					"name": "_renderer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4276,10 +4102,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 68,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 90,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L68"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L90"
 						}
 					],
 					"type": {
@@ -4288,7 +4114,7 @@
 					}
 				},
 				{
-					"id": 194,
+					"id": 192,
 					"name": "_scissorEnable",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4297,10 +4123,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 77,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 99,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L77"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L99"
 						}
 					],
 					"type": {
@@ -4310,7 +4136,7 @@
 					"defaultValue": "false"
 				},
 				{
-					"id": 189,
+					"id": 186,
 					"name": "_webCanvas",
 					"kind": 1024,
 					"kindString": "Property",
@@ -4319,34 +4145,46 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 69,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 91,
 							"character": 10,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L69"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L91"
 						}
 					],
 					"type": {
-						"type": "reference",
-						"id": 49,
-						"name": "WebCanvas"
+						"type": "union",
+						"types": [
+							{
+								"type": "reference",
+								"name": "HTMLCanvasElement",
+								"qualifiedName": "HTMLCanvasElement",
+								"package": "typescript"
+							},
+							{
+								"type": "reference",
+								"name": "OffscreenCanvas",
+								"qualifiedName": "OffscreenCanvas",
+								"package": "typescript"
+							}
+						]
 					}
 				},
 				{
-					"id": 205,
+					"id": 209,
 					"name": "canIUseMoreJoints",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 103,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 128,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L103"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L128"
 						}
 					],
 					"getSignature": {
-						"id": 206,
+						"id": 210,
 						"name": "canIUseMoreJoints",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -4358,21 +4196,21 @@
 					}
 				},
 				{
-					"id": 203,
+					"id": 207,
 					"name": "capability",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 99,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 124,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L99"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L124"
 						}
 					],
 					"getSignature": {
-						"id": 204,
+						"id": 208,
 						"name": "capability",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -4384,21 +4222,21 @@
 					}
 				},
 				{
-					"id": 199,
+					"id": 203,
 					"name": "gl",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 91,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 116,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L91"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L116"
 						}
 					],
 					"getSignature": {
-						"id": 200,
+						"id": 204,
 						"name": "gl",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -4446,21 +4284,21 @@
 					}
 				},
 				{
-					"id": 195,
+					"id": 199,
 					"name": "isWebGL2",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 79,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 104,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L79"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L104"
 						}
 					],
 					"getSignature": {
-						"id": 196,
+						"id": 200,
 						"name": "isWebGL2",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -4472,21 +4310,21 @@
 					}
 				},
 				{
-					"id": 201,
+					"id": 205,
 					"name": "renderStates",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 95,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 120,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L95"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L120"
 						}
 					],
 					"getSignature": {
-						"id": 202,
+						"id": 206,
 						"name": "renderStates",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -4498,21 +4336,21 @@
 					}
 				},
 				{
-					"id": 197,
+					"id": 201,
 					"name": "renderer",
 					"kind": 262144,
 					"kindString": "Accessor",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 83,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 108,
 							"character": 6,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L83"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L108"
 						}
 					],
 					"getSignature": {
-						"id": 198,
+						"id": 202,
 						"name": "renderer",
 						"kind": 524288,
 						"kindString": "Get signature",
@@ -4524,29 +4362,229 @@
 					}
 				},
 				{
-					"id": 256,
+					"id": 301,
+					"name": "_initGLState",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 405,
+							"character": 12,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L405"
+						}
+					],
+					"signatures": [
+						{
+							"id": 302,
+							"name": "_initGLState",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 303,
+									"name": "gl",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "intersection",
+												"types": [
+													{
+														"type": "reference",
+														"name": "WebGLRenderingContext",
+														"qualifiedName": "WebGLRenderingContext",
+														"package": "typescript"
+													},
+													{
+														"type": "reference",
+														"name": "WebGLExtension"
+													}
+												]
+											},
+											{
+												"type": "reference",
+												"name": "WebGL2RenderingContext",
+												"qualifiedName": "WebGL2RenderingContext",
+												"package": "typescript"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 306,
+					"name": "_onContextCreationError",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 426,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L426"
+						}
+					],
+					"signatures": [
+						{
+							"id": 307,
+							"name": "_onContextCreationError",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 308,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "WebGLContextEvent",
+										"qualifiedName": "WebGLContextEvent",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 309,
+					"name": "_onWebGLContextLost",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 430,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L430"
+						}
+					],
+					"signatures": [
+						{
+							"id": 310,
+							"name": "_onWebGLContextLost",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 311,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "WebGLContextEvent",
+										"qualifiedName": "WebGLContextEvent",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 312,
+					"name": "_onWebGLContextRestored",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {
+						"isPrivate": true
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 435,
+							"character": 10,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L435"
+						}
+					],
+					"signatures": [
+						{
+							"id": 313,
+							"name": "_onWebGLContextRestored",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 314,
+									"name": "event",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "WebGLContextEvent",
+										"qualifiedName": "WebGLContextEvent",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 278,
 					"name": "activeRenderTarget",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 269,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 325,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L269"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L325"
 						}
 					],
 					"signatures": [
 						{
-							"id": 257,
+							"id": 279,
 							"name": "activeRenderTarget",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 258,
+									"id": 280,
 									"name": "renderTarget",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4557,7 +4595,7 @@
 									}
 								},
 								{
-									"id": 259,
+									"id": 281,
 									"name": "viewport",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4568,7 +4606,7 @@
 									}
 								},
 								{
-									"id": 260,
+									"id": 282,
 									"name": "mipLevel",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4587,29 +4625,29 @@
 					]
 				},
 				{
-					"id": 263,
+					"id": 283,
 					"name": "activeTexture",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 289,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 346,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L289"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L346"
 						}
 					],
 					"signatures": [
 						{
-							"id": 264,
+							"id": 284,
 							"name": "activeTexture",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 265,
+									"id": 285,
 									"name": "textureID",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4628,29 +4666,29 @@
 					]
 				},
 				{
-					"id": 266,
+					"id": 286,
 					"name": "bindTexture",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 296,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 353,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L296"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L353"
 						}
 					],
 					"signatures": [
 						{
-							"id": 267,
+							"id": 287,
 							"name": "bindTexture",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 268,
+									"id": 288,
 									"name": "texture",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4669,29 +4707,29 @@
 					]
 				},
 				{
-					"id": 228,
+					"id": 244,
 					"name": "canIUse",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 186,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 234,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L186"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L234"
 						}
 					],
 					"signatures": [
 						{
-							"id": 229,
+							"id": 245,
 							"name": "canIUse",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 230,
+									"id": 246,
 									"name": "capabilityType",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4710,29 +4748,29 @@
 					]
 				},
 				{
-					"id": 231,
+					"id": 247,
 					"name": "canIUseCompressedTextureInternalFormat",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 190,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 238,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L190"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L238"
 						}
 					],
 					"signatures": [
 						{
-							"id": 232,
+							"id": 248,
 							"name": "canIUseCompressedTextureInternalFormat",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 233,
+									"id": 249,
 									"name": "type",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4751,29 +4789,29 @@
 					]
 				},
 				{
-					"id": 246,
+					"id": 268,
 					"name": "clearRenderTarget",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 219,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 274,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L219"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L274"
 						}
 					],
 					"signatures": [
 						{
-							"id": 247,
+							"id": 269,
 							"name": "clearRenderTarget",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 248,
+									"id": 270,
 									"name": "engine",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4784,7 +4822,7 @@
 									}
 								},
 								{
-									"id": 249,
+									"id": 271,
 									"name": "clearFlags",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4795,7 +4833,7 @@
 									}
 								},
 								{
-									"id": 250,
+									"id": 272,
 									"name": "clearColor",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4814,69 +4852,69 @@
 					]
 				},
 				{
-					"id": 240,
+					"id": 262,
 					"name": "colorMask",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 215,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 270,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L215"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L270"
 						}
 					],
 					"signatures": [
 						{
-							"id": 241,
+							"id": 263,
 							"name": "colorMask",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 242,
+									"id": 264,
 									"name": "r",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
-										"name": "any"
+										"name": "boolean"
 									}
 								},
 								{
-									"id": 243,
+									"id": 265,
 									"name": "g",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
-										"name": "any"
+										"name": "boolean"
 									}
 								},
 								{
-									"id": 244,
+									"id": 266,
 									"name": "b",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
-										"name": "any"
+										"name": "boolean"
 									}
 								},
 								{
-									"id": 245,
+									"id": 267,
 									"name": "a",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "intrinsic",
-										"name": "any"
+										"name": "boolean"
 									}
 								}
 							],
@@ -4888,29 +4926,119 @@
 					]
 				},
 				{
-					"id": 210,
+					"id": 235,
+					"name": "createPlatformBuffer",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 221,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L221"
+						}
+					],
+					"signatures": [
+						{
+							"id": 236,
+							"name": "createPlatformBuffer",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 237,
+									"name": "type",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BufferBindFlag"
+									}
+								},
+								{
+									"id": 238,
+									"name": "byteLength",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 239,
+									"name": "bufferUsage",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"name": "BufferUsage"
+									},
+									"defaultValue": "BufferUsage.Static"
+								},
+								{
+									"id": 240,
+									"name": "data",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "union",
+										"types": [
+											{
+												"type": "reference",
+												"name": "ArrayBufferView",
+												"qualifiedName": "ArrayBufferView",
+												"package": "typescript"
+											},
+											{
+												"type": "reference",
+												"name": "ArrayBuffer",
+												"qualifiedName": "ArrayBuffer",
+												"package": "typescript"
+											}
+										]
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"name": "IPlatformBuffer"
+							}
+						}
+					]
+				},
+				{
+					"id": 220,
 					"name": "createPlatformPrimitive",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 162,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 201,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L162"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L201"
 						}
 					],
 					"signatures": [
 						{
-							"id": 211,
+							"id": 221,
 							"name": "createPlatformPrimitive",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 212,
+									"id": 222,
 									"name": "primitive",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4929,29 +5057,29 @@
 					]
 				},
 				{
-					"id": 222,
+					"id": 232,
 					"name": "createPlatformRenderTarget",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 178,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 217,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L178"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L217"
 						}
 					],
 					"signatures": [
 						{
-							"id": 223,
+							"id": 233,
 							"name": "createPlatformRenderTarget",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 224,
+									"id": 234,
 									"name": "target",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -4970,29 +5098,29 @@
 					]
 				},
 				{
-					"id": 213,
+					"id": 223,
 					"name": "createPlatformTexture2D",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 166,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 205,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L166"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L205"
 						}
 					],
 					"signatures": [
 						{
-							"id": 214,
+							"id": 224,
 							"name": "createPlatformTexture2D",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 215,
+									"id": 225,
 									"name": "texture2D",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5011,29 +5139,29 @@
 					]
 				},
 				{
-					"id": 216,
+					"id": 226,
 					"name": "createPlatformTexture2DArray",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 170,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 209,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L170"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L209"
 						}
 					],
 					"signatures": [
 						{
-							"id": 217,
+							"id": 227,
 							"name": "createPlatformTexture2DArray",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 218,
+									"id": 228,
 									"name": "texture2D",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5052,29 +5180,29 @@
 					]
 				},
 				{
-					"id": 219,
+					"id": 229,
 					"name": "createPlatformTextureCube",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 174,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 213,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L174"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L213"
 						}
 					],
 					"signatures": [
 						{
-							"id": 220,
+							"id": 230,
 							"name": "createPlatformTextureCube",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 221,
+									"id": 231,
 									"name": "textureCube",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5093,22 +5221,22 @@
 					]
 				},
 				{
-					"id": 261,
+					"id": 304,
 					"name": "destroy",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 287,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 419,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L287"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L419"
 						}
 					],
 					"signatures": [
 						{
-							"id": 262,
+							"id": 305,
 							"name": "destroy",
 							"kind": 4096,
 							"kindString": "Call signature",
@@ -5121,40 +5249,40 @@
 					]
 				},
 				{
-					"id": 251,
+					"id": 273,
 					"name": "drawPrimitive",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 259,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 316,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L259"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L316"
 						}
 					],
 					"signatures": [
 						{
-							"id": 252,
+							"id": 274,
 							"name": "drawPrimitive",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 253,
+									"id": 275,
 									"name": "primitive",
 									"kind": 32768,
 									"kindString": "Parameter",
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"name": "Mesh"
+										"name": "GLPrimitive"
 									}
 								},
 								{
-									"id": 254,
+									"id": 276,
 									"name": "subPrimitive",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5165,7 +5293,7 @@
 									}
 								},
 								{
-									"id": 255,
+									"id": 277,
 									"name": "shaderProgram",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5184,29 +5312,113 @@
 					]
 				},
 				{
-					"id": 207,
+					"id": 293,
+					"name": "flush",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 373,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L373"
+						}
+					],
+					"signatures": [
+						{
+							"id": 294,
+							"name": "flush",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 295,
+					"name": "forceLoseDevice",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 377,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L377"
+						}
+					],
+					"signatures": [
+						{
+							"id": 296,
+							"name": "forceLoseDevice",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 297,
+					"name": "forceRestoreDevice",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 382,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L382"
+						}
+					],
+					"signatures": [
+						{
+							"id": 298,
+							"name": "forceRestoreDevice",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 211,
 					"name": "init",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 111,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 156,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L111"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L156"
 						}
 					],
 					"signatures": [
 						{
-							"id": 208,
+							"id": 212,
 							"name": "init",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 209,
+									"id": 213,
 									"name": "canvas",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5214,6 +5426,82 @@
 									"type": {
 										"type": "reference",
 										"name": "Canvas"
+									}
+								},
+								{
+									"id": 214,
+									"name": "onDeviceLost",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 215,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+													"line": 156,
+													"character": 37,
+													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L156"
+												}
+											],
+											"signatures": [
+												{
+													"id": 216,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								},
+								{
+									"id": 217,
+									"name": "onDeviceRestored",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 218,
+											"name": "__type",
+											"kind": 65536,
+											"kindString": "Type literal",
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+													"line": 156,
+													"character": 67,
+													"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L156"
+												}
+											],
+											"signatures": [
+												{
+													"id": 219,
+													"name": "__type",
+													"kind": 4096,
+													"kindString": "Call signature",
+													"flags": {},
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
 									}
 								}
 							],
@@ -5225,29 +5513,29 @@
 					]
 				},
 				{
-					"id": 225,
+					"id": 241,
 					"name": "requireExtension",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 182,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 230,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L182"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L230"
 						}
 					],
 					"signatures": [
 						{
-							"id": 226,
+							"id": 242,
 							"name": "requireExtension",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 227,
+									"id": 243,
 									"name": "ext",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5266,29 +5554,57 @@
 					]
 				},
 				{
-					"id": 234,
-					"name": "viewport",
+					"id": 299,
+					"name": "resetState",
 					"kind": 2048,
 					"kindString": "Method",
 					"flags": {},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 194,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 387,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L194"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L387"
 						}
 					],
 					"signatures": [
 						{
-							"id": 235,
-							"name": "viewport",
+							"id": 300,
+							"name": "resetState",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 256,
+					"name": "scissor",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 250,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L250"
+						}
+					],
+					"signatures": [
+						{
+							"id": 257,
+							"name": "scissor",
 							"kind": 4096,
 							"kindString": "Call signature",
 							"flags": {},
 							"parameters": [
 								{
-									"id": 236,
+									"id": 258,
 									"name": "x",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5299,7 +5615,7 @@
 									}
 								},
 								{
-									"id": 237,
+									"id": 259,
 									"name": "y",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5310,7 +5626,7 @@
 									}
 								},
 								{
-									"id": 238,
+									"id": 260,
 									"name": "width",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5321,7 +5637,133 @@
 									}
 								},
 								{
-									"id": 239,
+									"id": 261,
+									"name": "height",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 289,
+					"name": "setGlobalDepthBias",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 361,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L361"
+						}
+					],
+					"signatures": [
+						{
+							"id": 290,
+							"name": "setGlobalDepthBias",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 291,
+									"name": "bias",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 292,
+									"name": "slopeBias",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 250,
+					"name": "viewport",
+					"kind": 2048,
+					"kindString": "Method",
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 242,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L242"
+						}
+					],
+					"signatures": [
+						{
+							"id": 251,
+							"name": "viewport",
+							"kind": 4096,
+							"kindString": "Call signature",
+							"flags": {},
+							"parameters": [
+								{
+									"id": 252,
+									"name": "x",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 253,
+									"name": "y",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 254,
+									"name": "width",
+									"kind": 32768,
+									"kindString": "Parameter",
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "number"
+									}
+								},
+								{
+									"id": 255,
 									"name": "height",
 									"kind": 32768,
 									"kindString": "Parameter",
@@ -5344,68 +5786,81 @@
 				{
 					"title": "Constructors",
 					"children": [
-						177
+						173
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						190,
+						187,
+						188,
+						183,
+						182,
+						180,
+						184,
 						191,
-						186,
+						190,
+						189,
+						193,
+						196,
+						179,
 						181,
 						185,
-						183,
-						187,
-						193,
 						192,
-						182,
-						184,
-						188,
-						194,
-						189
+						186
 					]
 				},
 				{
 					"title": "Accessors",
 					"children": [
-						205,
+						209,
+						207,
 						203,
 						199,
-						195,
-						201,
-						197
+						205,
+						201
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
+						301,
+						306,
+						309,
+						312,
+						278,
+						283,
+						286,
+						244,
+						247,
+						268,
+						262,
+						235,
+						220,
+						232,
+						223,
+						226,
+						229,
+						304,
+						273,
+						293,
+						295,
+						297,
+						211,
+						241,
+						299,
 						256,
-						263,
-						266,
-						228,
-						231,
-						246,
-						240,
-						210,
-						222,
-						213,
-						216,
-						219,
-						261,
-						251,
-						207,
-						225,
-						234
+						289,
+						250
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-					"line": 56,
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+					"line": 76,
 					"character": 13,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L56"
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L76"
 				}
 			],
 			"implementedTypes": [
@@ -5416,8 +5871,8 @@
 			]
 		},
 		{
-			"id": 269,
-			"name": "WebGLRendererOptions",
+			"id": 162,
+			"name": "WebGLEngineConfiguration",
 			"kind": 256,
 			"kindString": "Interface",
 			"flags": {},
@@ -5425,13 +5880,226 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "WebGL renderer options."
+						"text": "WebGL engine configuration."
 					}
 				]
 			},
 			"children": [
 				{
-					"id": 271,
+					"id": 163,
+					"name": "canvas",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Canvas element or canvas id."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLEngine.ts",
+							"line": 41,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLEngine.ts#L41"
+						}
+					],
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "reference",
+								"name": "HTMLCanvasElement",
+								"qualifiedName": "HTMLCanvasElement",
+								"package": "typescript"
+							},
+							{
+								"type": "reference",
+								"name": "OffscreenCanvas",
+								"qualifiedName": "OffscreenCanvas",
+								"package": "typescript"
+							}
+						]
+					}
+				},
+				{
+					"id": 166,
+					"name": "colorSpace",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Color space."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 134,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "ColorSpace"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineConfiguration.colorSpace"
+					}
+				},
+				{
+					"id": 164,
+					"name": "graphicDeviceOptions",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Graphic device options."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLEngine.ts",
+							"line": 43,
+							"character": 2,
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLEngine.ts#L43"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"id": 315,
+						"name": "WebGLGraphicDeviceOptions"
+					}
+				},
+				{
+					"id": 165,
+					"name": "physics",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Physics."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 132,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IPhysics"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineConfiguration.physics"
+					}
+				},
+				{
+					"id": 167,
+					"name": "shaderLab",
+					"kind": 1024,
+					"kindString": "Property",
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Shader lab"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "git-repos/ant/oasis/engine/packages/core/types/Engine.d.ts",
+							"line": 136,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"name": "IShaderLab"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"name": "EngineConfiguration.shaderLab"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						163,
+						166,
+						164,
+						165,
+						167
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLEngine.ts",
+					"line": 39,
+					"character": 17,
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLEngine.ts#L39"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"name": "EngineConfiguration"
+				}
+			]
+		},
+		{
+			"id": 315,
+			"name": "WebGLGraphicDeviceOptions",
+			"kind": 256,
+			"kindString": "Interface",
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "WebGL graphic device options."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 319,
 					"name": "alpha",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5441,8 +6109,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1860,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1952,
 							"character": 4
 						}
 					],
@@ -5456,7 +6124,7 @@
 					}
 				},
 				{
-					"id": 272,
+					"id": 320,
 					"name": "antialias",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5466,8 +6134,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1861,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1953,
 							"character": 4
 						}
 					],
@@ -5481,7 +6149,7 @@
 					}
 				},
 				{
-					"id": 273,
+					"id": 321,
 					"name": "depth",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5491,8 +6159,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1862,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1954,
 							"character": 4
 						}
 					],
@@ -5506,7 +6174,7 @@
 					}
 				},
 				{
-					"id": 274,
+					"id": 322,
 					"name": "desynchronized",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5516,8 +6184,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1863,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1955,
 							"character": 4
 						}
 					],
@@ -5531,7 +6199,7 @@
 					}
 				},
 				{
-					"id": 275,
+					"id": 323,
 					"name": "failIfMajorPerformanceCaveat",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5541,8 +6209,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1864,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1956,
 							"character": 4
 						}
 					],
@@ -5556,7 +6224,7 @@
 					}
 				},
 				{
-					"id": 276,
+					"id": 324,
 					"name": "powerPreference",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5566,8 +6234,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1865,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1957,
 							"character": 4
 						}
 					],
@@ -5583,7 +6251,7 @@
 					}
 				},
 				{
-					"id": 277,
+					"id": 325,
 					"name": "premultipliedAlpha",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5593,8 +6261,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1866,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1958,
 							"character": 4
 						}
 					],
@@ -5608,7 +6276,7 @@
 					}
 				},
 				{
-					"id": 278,
+					"id": 326,
 					"name": "preserveDrawingBuffer",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5618,8 +6286,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1867,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1959,
 							"character": 4
 						}
 					],
@@ -5633,7 +6301,7 @@
 					}
 				},
 				{
-					"id": 279,
+					"id": 327,
 					"name": "stencil",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5643,8 +6311,8 @@
 					},
 					"sources": [
 						{
-							"fileName": "oasis-engine.github.io/node_modules/typescript/lib/lib.dom.d.ts",
-							"line": 1868,
+							"fileName": ".npm/_npx/92b0ed842e9bcf70/node_modules/typescript/lib/lib.dom.d.ts",
+							"line": 1960,
 							"character": 4
 						}
 					],
@@ -5658,7 +6326,7 @@
 					}
 				},
 				{
-					"id": 270,
+					"id": 316,
 					"name": "webGLMode",
 					"kind": 1024,
 					"kindString": "Property",
@@ -5675,15 +6343,15 @@
 					},
 					"sources": [
 						{
-							"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-							"line": 50,
+							"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+							"line": 56,
 							"character": 2,
-							"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L50"
+							"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L56"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"id": 172,
+						"id": 168,
 						"name": "WebGLMode"
 					}
 				}
@@ -5692,25 +6360,25 @@
 				{
 					"title": "Properties",
 					"children": [
-						271,
-						272,
-						273,
-						274,
-						275,
-						276,
-						277,
-						278,
-						279,
-						270
+						319,
+						320,
+						321,
+						322,
+						323,
+						324,
+						325,
+						326,
+						327,
+						316
 					]
 				}
 			],
 			"sources": [
 				{
-					"fileName": "engine/packages/rhi-webgl/src/WebGLRenderer.ts",
-					"line": 48,
+					"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/WebGLGraphicDevice.ts",
+					"line": 54,
 					"character": 17,
-					"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/WebGLRenderer.ts#L48"
+					"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/WebGLGraphicDevice.ts#L54"
 				}
 			],
 			"extendedTypes": [
@@ -5728,30 +6396,31 @@
 			"title": "Enumerations",
 			"children": [
 				1,
-				172
+				168
 			]
 		},
 		{
 			"title": "Classes",
 			"children": [
-				49,
-				76,
-				176
+				53,
+				80,
+				172
 			]
 		},
 		{
 			"title": "Interfaces",
 			"children": [
-				269
+				162,
+				315
 			]
 		}
 	],
 	"sources": [
 		{
-			"fileName": "engine/packages/rhi-webgl/src/index.ts",
+			"fileName": "git-repos/ant/oasis/engine/packages/rhi-webgl/src/index.ts",
 			"line": 1,
 			"character": 0,
-			"url": "https://github.com/oasis-engine/engine/blob/70013030/packages/rhi-webgl/src/index.ts#L1"
+			"url": "https://github.com/galacean/engine/blob/0f14c3f1/packages/rhi-webgl/src/index.ts#L1"
 		}
 	]
 }

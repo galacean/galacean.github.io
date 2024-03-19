@@ -42,7 +42,6 @@ export default function Examples() {
   const { version, exampleTitle } = useParams();
   const navigate = useNavigate();
 
-  const [menuVisible, toggleMenu] = useState(false);
   const [search, setSearch] = useState('');
 
   const menu = (
@@ -61,16 +60,20 @@ export default function Examples() {
   );
 
   useEffect(() => {
-    context.setVersion(version);
+    if (version && version !== localStorage.getItem('version')) {
+      context.setVersion(version);
+      localStorage.setItem('version', version  as string);
+    }
   }, [version]);
 
   useEffect(() => {
+    const v = localStorage.getItem('version');
+
     setSelectedExampleId('');
     setItems([]);
     setFilteredItems([]);
     menuKeyTitleMapRef.current.clear();
-    navigate(`/examples/${context.version}`);
-    fetchMenuList('example', context.version).then((list) => {
+    fetchMenuList('example', v).then((list) => {
       const itemRes: any[] = [];
       list
         .sort((a, b) => a.weight - b.weight)
@@ -116,7 +119,7 @@ export default function Examples() {
       setItems(itemRes);
       setFilteredItems(itemRes);
     });
-  }, [context.version]);
+  }, [localStorage.getItem('version')]);
 
   // update URL address
   useEffect(() => {
@@ -146,7 +149,7 @@ export default function Examples() {
         break;
       }
     }
-  }, [exampleTitle, context.version]);
+  }, [exampleTitle]);
 
   // filter items
   useEffect(() => {
