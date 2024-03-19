@@ -12,7 +12,7 @@ label: Graphics/Background
 
 依据路径 **[层级面板](${docs}interface-hierarchy)** -> **选中 Scene** -> **[检查器面板](${docs}interface-inspector)** -> **Background 栏** 设置 **Mode** 为 **Texture**，然后选择期望的纹理，可以看到场景的背景发生实时变化。
 
-![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*OXSrT4hENVsAAAAAAAAAAAAADhuCAQ/original)
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*-JYDQoHcbSsAAAAAAAAAAAAADhuCAQ/original)
 
 同样的，在脚本中也可通过如下代码进行设置：
 

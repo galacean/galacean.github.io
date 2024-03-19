@@ -16,23 +16,23 @@ label: Graphics/Background
 
 ### 1. 创建天空盒纹理
 
-> 可以在 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
+> 可以在 [Poly Haven](https://polyhaven.com/) 或 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
 
 天空盒纹理就是一张[立方纹理](${docs}graphics-texture-cube)，首先在准备好 HDR 后，依照路径 **[资产面板](${docs}assets-interface)** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
 
-![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Oi3FSLEEaYgAAAAAAAAAAAAADhuCAQ/original)
 
 ### 2. 创建天空盒材质
 
 创建完立方纹理资产后，依照路径 **[资产面板](${docs}assets-interface)** -> **右键创建** -> **选择 Material** -> **选中生成的资产** -> **[检查器面板](${docs}interface-inspector)** -> **点击 Base 栏的 Shader 属性** -> **选择 Sky Box** -> **点击 Base 栏的 HDR** -> **选择第一步创建的立方纹理** 创建天空盒材质。
 
-![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*YkX9R5yfGE0AAAAAAAAAAAAADhuCAQ/original)
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*9j2eSYkwg8MAAAAAAAAAAAAADhuCAQ/original)
 
 ### 3. 设置天空盒
 
 最后只需依照路径 **[层级面板](${docs}interface-hierarchy)** -> **选中 Scene** -> **[检查器面板](${docs}interface-inspector)** -> **Background 栏** -> **Mode 设置 Sky** -> **Material 选择第二步创建的材质** -> **Mesh 设置内置的 Cuboid** 可以看到场景的背景变成了天空盒。
 
-![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*p7GoTaPzcQ0AAAAAAAAAAAAADhuCAQ/original)
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*rqvsSpkGJ6UAAAAAAAAAAAAADhuCAQ/original)
 
 ### 代码设置天空盒
 
@@ -63,7 +63,7 @@ background.sky.mesh = PrimitiveMesh.createCuboid(engine, 2, 2, 2);
 
 程序化天空是编辑器在 3D 项目中的默认背景，您也可以依照路径 **[层级面板](${docs}interface-hierarchy)** -> **选中 Scene** -> **[检查器面板](${docs}interface-inspector)** -> **Background 栏** -> **Mode 设置 Sky** -> **Material 选择内置的 SkyMat 材质** -> **Mesh 设置内置的 Sphere**
 
-![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*IEX-SJKmyJEAAAAAAAAAAAAADhuCAQ/original)
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Qe3IRJ9ciNoAAAAAAAAAAAAADhuCAQ/original)
 
 ### 代码设置程序化天空
 
@@ -81,7 +81,9 @@ background.sky.mesh = PrimitiveMesh.createSphere(engine);
 
 在大气散射材质的 **[检查器面板](${docs}interface-inspector)** 可以看到很多可调整的属性：
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*JlfeSJke8UYAAAAAAAAAAAAADhuCAQ/original" alt="image-4" style="zoom:40%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*igE-RLCRc24AAAAAAAAAAAAADhuCAQ/original" alt="image-4" style="zoom:40%;" />
+
+> 内置的大气散射材质无法随意调整属性，开发者可以自行创建并调整。
 
 | 属性名称                                                                    | 解释                                                                                                                                                   |
 | :-------------------------------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -9,7 +9,7 @@ label: Basics/Interface
 层级面板位于编辑器的最左侧，它以树状结构显示当前场景中的所有节点，场景节点是所有其他节点的父节点，包括相机、灯光、网格等等。
 
 <div style="text-align:center;">
-    <img alt="Hierarchy Panel" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*0qOfQ6uOnRcAAAAAAAAAAAAADhuCAQ/original" >
+    <img alt="Hierarchy Panel" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*w_LPQbXK5OcAAAAAAAAAAAAADhuCAQ/original" >
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">Hierarchy Panel</figcaption>
 
@@ -30,14 +30,14 @@ label: Basics/Interface
 您可以按照 **点击添加按钮**<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*z9xnR68jixgAAAAAAAAAAAAADhuCAQ/original" width="20" height="20"> -> **选择要添加的节点** 的步骤新增节点，需要注意的是，若您此时正选中了某个节点，那么添加的节点将会成为**选中节点的子节点**，否则将默认为场景的子节点：
 
 <div style="text-align:center;">
-    <img alt="add button" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*tG0QS5CnoQkAAAAAAAAAAAAADhuCAQ/original" >
+    <img alt="add button" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*JmW8S4_cb4YAAAAAAAAAAAAADhuCAQ/original" >
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">通过添加按钮新增节点</figcaption>
 
 您也可以按照 **右键某个节点** -> **选择要添加的节点** 的步骤为该节点新增子节点：
 
 <div style="text-align:center;">
-    <img alt="right click" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*dLa0RoKrBO8AAAAAAAAAAAAADhuCAQ/original" >
+    <img alt="right click" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*JmW8S4_cb4YAAAAAAAAAAAAADhuCAQ/original" >
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">右键新增节点</figcaption>
 
@@ -47,17 +47,17 @@ label: Basics/Interface
 
 > 删除节点会删除节点及其所有的子节点。所以在删除节点时，你需要注意所删除的节点是否会影响场景中其他节点。
 
-您可以按照 **选中待删节点** -> **点击删除按钮**<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*wGFZSKoH2D8AAAAAAAAAAAAADhuCAQ/original" width="20" height="20"> 的步骤删除节点：
+您可以按照 **选中待删节点** -> **点击删除按钮**<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*pdYsTLNgz2IAAAAAAAAAAAAADhuCAQ/original" width="20" height="20"> 的步骤删除节点：
 
 <div style="text-align:center;">
-    <img alt="del button" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*7OPCT7pnAFkAAAAAAAAAAAAADhuCAQ/original" >
+    <img alt="del button" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*P7PJTrSlaHMAAAAAAAAAAAAADhuCAQ/original" >
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">通过删除按钮移除节点</figcaption>
 
 您也可以按照 **右键某个节点** -> **Delete** 的步骤移除该节点：
 
 <div style="text-align:center;">
-    <img alt="del button" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*aR8GTqvnVWMAAAAAAAAAAAAADhuCAQ/original" >
+    <img alt="del button" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*4FP6QqedU5QAAAAAAAAAAAAADhuCAQ/original" >
 </div>
 <figcaption style="text-align:center; color: #889096;font-size:12px">右键移除节点</figcaption>
 
