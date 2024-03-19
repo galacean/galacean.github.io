@@ -20,11 +20,11 @@ label: Graphics/Texture
 
 ## 创建
 
-> 可以在 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
+> 可以在 [Poly Haven](https://polyhaven.com/) 或 [BimAnt HDRI](http://hdri.bimant.com/) 下载免费的 HDR 贴图
 
 在准备好 HDR 后，依照路径 **[资产面板](${docs}assets-interface)** -> **右键上传** -> **选择 TextureCube(.hdr)** -> **选择对应 HDR 贴图** -> **立方纹理资产创建完毕** 操作即可。
 
-![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*5PG6Rpo-aTwAAAAAAAAAAAAADhuCAQ/original)
+![image.png](https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Oi3FSLEEaYgAAAAAAAAAAAAADhuCAQ/original)
 
 同样的，在脚本中可以通过加载六张对应顺序的纹理也能得到相应的立方纹理。
 

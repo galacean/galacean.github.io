@@ -38,7 +38,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 为了达到更好的运行时性能，我们选择把这些 Sprite 资源打包到一个 Atlas 资源。我们点击 <img src="https://gw.alipayobjects.com/zos/OasisHub/16aa674c-1bee-49d7-a516-21c591a4ce36/image-20231007152415467.png" alt="image-20231007152415467" style="zoom:50%;" /> 按钮选择 `Sprite Atlas`，创建后选中它，通过 **[检查器面板](${docs}interface-inspector)** 上的 `Add to List` 按钮把所有 Sprite 资源都添加到列表中。
 
-<img src="https://mdn.alipayobjects.com/huamei_jvf0dp/afts/img/A*en0JTIdKargAAAAAAAAAAAAADleLAQ/original" alt="image-20231007171348757" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*1YsTTZdjmm4AAAAAAAAAAAAADhuCAQ/original" alt="image-20231007171348757" style="zoom:50%;" />
 
 点击 `Pack and Preview` 按钮可以看到 Atlas 创建成功：
 
@@ -56,7 +56,7 @@ Flappy Bird 依赖的资源是一堆图片，点击[这里](https://github.com/g
 
 > 如果你发现画面太大或太小，可以调整正交相机的 `Orthographic Size` 来实现缩放。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/6b8b4c29-95fe-400d-b9a7-9f29ac5495b8/image-20231007162550749.png" alt="image-20231007162550749" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*XRceR5mdqLgAAAAAAAAAAAAADhuCAQ/original" alt="image-20231007162550749" style="zoom:50%;" />
 
 ### 加上小鸟
 

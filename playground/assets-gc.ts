@@ -1,6 +1,6 @@
 /**
- * @title Assets Garbage Collection
- * @category Assets
+ * @title Sprite Garbage Collection
+ * @category 2D
  */
 
 import {

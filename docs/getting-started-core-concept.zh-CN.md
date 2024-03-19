@@ -14,29 +14,29 @@ label: Basics/GettingStarted
 
 在你登录之后，首先看到的是编辑器的首页，在这个页面中会显示所有你创建的项目。使用右上角的按钮来创建项目，点击后可以选择要创建的项目类型，2D 或 3D。我们选择 3D Project。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/78a618a3-ff7b-4579-8489-9ed6548f3b6c/image-20230921161225962.png" alt="image-20230921161225962" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*luxKRKYGSBMAAAAAAAAAAAAADhuCAQ/original" alt="image-20230921161225962" style="zoom:50%;" />
 
 ### 创建立方体
 
 首先，我们在 **层级面板** 中创建一个新的实体（[什么是实体？](https://galacean.antgroup.com/#/docs/latest/cn/entity)）。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/21284e97-8e62-4453-be70-a21047ae7351/image-20230921161422138.png" alt="image-20230921161422138" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*g-zmTr6rD9MAAAAAAAAAAAAADhuCAQ/original" alt="image-20230921161422138" style="zoom:50%;" />
 
 我们用鼠标左键选中新建的实体节点，此时右侧的 **[检查器面板](${docs}interface-inspector)** 会显示出当前实体的一些可配置属性。因为我们的实体现在没有绑定任何组件（[什么是组件？](https://galacean.antgroup.com/#/docs/latest/cn/entity)），所以我们暂时只能调整实体的坐标信息这类的基础属性。
 
 接下来，我们点击 **[检查器面板](${docs}interface-inspector)** 中的 `Add Component` 按钮唤起组件选单，然后选择添加 `Mesh Renderer` 组件（什么是 [Mesh Renderer?](${docs}graphics-renderer-meshRenderer)）。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/c9cc9c6d-07e9-41ba-a01f-2cd9d3c610ff/image-20230921161622497.png" alt="image-20230921161622497" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*TrArQ7FmXc4AAAAAAAAAAAAADhuCAQ/original" alt="image-20230921161622497" style="zoom:50%;" />
 
 这样，我们就给当前的实体新增了一个 `Mesh Renderer` 组件。但我们在主编辑区还看不到这个物体。需要为该组件添加 Mesh 和 Material 才行。编辑器会默认为 `Mesh Renderer` 组件添加一个不可编辑的默认材质，我们只需要为组件的 Mesh 属性添加一个 Cuboid Mesh 就可以在场景中看到它了。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/b63b8bbd-048e-4dbb-8c91-02421a364b3b/image-20230921161758541.png" alt="image-20230921161758541" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*pc_6S5zuGhYAAAAAAAAAAAAADhuCAQ/original" alt="image-20230921161758541" style="zoom:50%;" />
 
 默认的材质比较简单，所以接下来，我们来创建一个自定义的材质。
 
 你也可以通过添加实体按钮中的 `3D Object` → `Cuboid` 来快速添加一个立方体模型，它会自动帮你添加一个 `Mesh Renderer` 组件：
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/d213fa73-e29a-4808-9753-d5977d19ab9b/image-20230921164949519.png" alt="image-20230921164949519" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*zlEzSLQ-L9cAAAAAAAAAAAAADhuCAQ/original" style="zoom:50%;" />
 
 ### 创建材质
 
@@ -71,7 +71,7 @@ label: Basics/GettingStarted
 
 创建脚本后，我们可以 **双击它** 来跳转到代码编辑器页面。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/c1f6ec7e-9a9c-453d-ac7f-41fbea3a792e/image-20230921180953712.png" alt="image-20230921180953712" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*gmIjSbbNHZ0AAAAAAAAAAAAADhuCAQ/original" alt="image-20230921180953712" style="zoom:50%;" />
 
 进入代码编辑器后，我们写一个非常简单的旋转功能：
 
@@ -94,7 +94,7 @@ export default class extends Script {
 
 我们点击左侧工具栏的 **下载** 按钮，会唤起导出界面，我们这里把项目名改为 “box”，然后点击 `Download` 按钮，编辑器就会把项目打包为一个 `box.zip` 文件下载。
 
-<img src="https://gw.alipayobjects.com/zos/OasisHub/9412a241-b07b-462b-8d29-b8f640f710fd/image-20230921162204014.png" alt="image-20230921162204014" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*mmoIRqIt30oAAAAAAAAAAAAADhuCAQ/original" alt="image-20230921162204014" style="zoom:50%;" />
 
 项目打包完成后，我们使用 VsCode 打开 box 项目，运行 `npm install` & `npm run dev` ，可以看到项目已经能够正常运行了。
 
