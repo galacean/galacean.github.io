@@ -57,7 +57,7 @@ spriteRenderer.sprite = sprite;
 
 需要显示图片的时候，需要先给一个实体添加精灵组件，然后设置精灵资产，如下：
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*adizTpp_l5cAAAAAAAAAAAAADjCHAQ/original" alt="avatar" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*adizTpp_l5cAAAAAAAAAAAAADjCHAQ/original" alt="avatar"  />
 
 ### 渲染尺寸
 
@@ -69,13 +69,13 @@ spriteRenderer.sprite = sprite;
 
 可以通过设置 `color` 属性来调整颜色，从而实现一些淡入淡出的效果，如下：
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*5pRRSLLGfq8AAAAAAAAAAAAADjCHAQ/original" alt="avatar" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*5pRRSLLGfq8AAAAAAAAAAAAADjCHAQ/original" alt="avatar"  />
 
 ### 图片翻转
 
 除了基本的图片显示，`SpriteRenderer` 还支持图片的翻转，只需要通过设置属性 `flipX/flipY` 即可完成翻转，如下：
 
-<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*sK6tTJELnP0AAAAAAAAAAAAADjCHAQ/original" alt="avatar" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*sK6tTJELnP0AAAAAAAAAAAAADjCHAQ/original" alt="avatar"  />
 
 <playground src="sprite-flip.ts"></playground>
 

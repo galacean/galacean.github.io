@@ -27,19 +27,19 @@ label: Core
 ## 编辑器使用
 
 从 **[层级面板](${docs}interface-hierarchy)** 或场景中选择一个实体后，检查器将显示出当前选中节点挂载的所有组件，组件名显示在左上角
-![Name](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*tZcpRrrYQcMAAAAAAAAAAAAADsJ_AQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*tZcpRrrYQcMAAAAAAAAAAAAADsJ_AQ/original" alt="Name" style="zoom:50%;" />
 
 你可以在检查器中控制它是否 enabled
 
-![Enable](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*QRG8TZ1IorQAAAAAAAAAAAAADsJ_AQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*QRG8TZ1IorQAAAAAAAAAAAAADsJ_AQ/original" alt="Enable" style="zoom:50%;" />
 
 如果不需要它也可以将它删除
 
-![Delete](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*uqFGQIHyLAwAAAAAAAAAAAAADsJ_AQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*uqFGQIHyLAwAAAAAAAAAAAAADsJ_AQ/original" alt="Delete" style="zoom:50%;" />
 
 或者编辑它的各种属性
 
-![Edit](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*IFnGRYHdi7gAAAAAAAAAAAAADsJ_AQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*IFnGRYHdi7gAAAAAAAAAAAAADsJ_AQ/original" alt="Edit" style="zoom:50%;" />
 
 如果是个空节点，你可以点击 `Add Component` 按钮来为当前实体添加新的组件。
 

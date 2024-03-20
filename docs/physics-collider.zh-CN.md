@@ -43,7 +43,7 @@ label: Physics
 
 对于每一个碰撞器外形，都可以设计对应的一些大小属性。例如
 
-![alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*d4MCRbuHeMsAAAAAAAAAAAAADsJ_AQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*d4MCRbuHeMsAAAAAAAAAAAAADsJ_AQ/original" alt="alt text" style="zoom:67%;" />
 
 但无论那个碰撞器外形，都可以设置 Local Position，即相对于 Entity 坐标的局部偏移
 
@@ -52,7 +52,7 @@ label: Physics
 ### 动态碰撞器设置
 和静态碰撞器不同，动态碰撞器会受到物理规律的作用，因此有许多附加的物理属性进行设置
 
-![alt text](https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*7rzqSKtjULMAAAAAAAAAAAAADsJ_AQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_3zduhr/afts/img/A*7rzqSKtjULMAAAAAAAAAAAAADsJ_AQ/original" alt="alt text" style="zoom:67%;" />
 
 在修改这些参数后，视口不会发生变化，因为动态碰撞器默认会受到重力的作用，因此需要在 Play 模式下才能进行观察。
 

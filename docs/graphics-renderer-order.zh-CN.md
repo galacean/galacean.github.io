@@ -54,7 +54,7 @@ flowchart TD
 
 渲染器组件包围盒到相机距离的计算方式取决于[相机](${docs}graphics-camera)的类型。在正交相机中，是渲染器包围盒中心点与摄像机沿着摄像机视图方向的距离，在透视相机中，是渲染器包围盒中心点与摄像机位置的直接距离。
 
-![到相机距离示意图](https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*gYvyQp6qD3YAAAAAAAAAAAAADjCHAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_w6ifet/afts/img/A*gYvyQp6qD3YAAAAAAAAAAAAADjCHAQ/original" alt="到相机距离示意图" style="zoom:50%;" />
 
 > 需要注意的是，不同渲染队列中，距离对渲染顺序的影响规则是不同的，在非透明渲染队列和透明裁剪渲染队列中中，渲染的顺序都是**由近到远**，而在透明渲染队列中，渲染的顺序则为**由远到近**。
 

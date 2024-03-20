@@ -8,7 +8,7 @@ label: Graphics/Particle
 
 [`SizeOverLifetimeModule`](${api}core/SizeOverLifetimeModule) 是 `ParticleGeneratorModule` 的子类，用于处理粒子系统的生命周期内的大小变化。
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*e0FeQqj-HvAAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*e0FeQqj-HvAAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 ## 属性
 
@@ -24,7 +24,7 @@ label: Graphics/Particle
 
 针对[ ParticleCompositeCurve](${api}core/ParticleCompositeCurve) 对象，在编辑器内置了折线编辑器，可视化调整曲线。
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*70KGQpOg85oAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*70KGQpOg85oAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 或者在代码中：
 

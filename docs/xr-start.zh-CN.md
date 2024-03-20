@@ -42,7 +42,7 @@ PC 端 Chrome 推荐安装 [Immersive Web Emulator](https://chromewebstore.googl
 
 在做好以上准备后，可以在**编辑器主页**的**菜单视图**侧依次**点击模版**-> **XR 模版**快速创建 XR 项目。
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*du7MS4eTWkgAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*du7MS4eTWkgAAAAAAAAAAAAADhuCAQ/original" alt="image.png"  />
 
 ## PC 端预览
 
@@ -55,7 +55,7 @@ npm run https
 
 随后在 Chrome 打开相应网址，即可调试 XR 项目。
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*4rqLS51t6DoAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*4rqLS51t6DoAAAAAAAAAAAAADhuCAQ/original" alt="image.png"  />
 
 > WebXR 仅在安全环境（HTTPS）中可用，因此，构建项目调试时需启用 Https。
 

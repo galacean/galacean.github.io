@@ -15,7 +15,7 @@ label: Core
 
 ## 编辑器使用
 
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original" alt="merge" style="zoom:50%;" />
 
 更改选中实体的可视化变换组件，直接使用鼠标操纵辅助图标轴。
 
@@ -46,7 +46,7 @@ label: Core
 
 通过 **[检查器面板](${docs}interface-inspector)** 可以为节点设置更精确的位置、旋转和缩放信息。
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Y0qPTptpIBoAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Y0qPTptpIBoAAAAAAAAAAAAADhuCAQ/original" alt="image.png"  />
 
 ## 脚本使用
 

@@ -35,7 +35,7 @@ let particleRenderer = particleEntity.addComponent(ParticleRenderer);
 
 编辑器中通过 添加材质 - 选择粒子材质 创建。编辑完成后回到粒子观察器面板中选择该材质进行使用。
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*l8WoQbbd6lMAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*l8WoQbbd6lMAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 或者在脚本中:
 
@@ -56,7 +56,7 @@ particleRenderer.setMaterial(material);
 
 需要注意的是，在该面板上对粒子播放的调整，仅为视图窗口的预览服务，并不改变该粒子组件的属性。如果需要改变粒子的播放相关属性，需要在观察器面板调整。
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*2ZnqSqCymCUAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*2ZnqSqCymCUAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 | 预览播放选项    | 释义                                                               |
 | --------------- | ------------------------------------------------------------------ |
@@ -84,7 +84,7 @@ particleRenderer.generator.main.simulationSpeed = 2;
 
 ## 其他参数
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*MiCESpgK-LwAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*MiCESpgK-LwAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 | 属性                                                       | 释义                                                             |
 | ---------------------------------------------------------- | ---------------------------------------------------------------- |

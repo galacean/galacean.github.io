@@ -8,10 +8,7 @@ label: Basics/Interface
 
 层级面板位于编辑器的最左侧，它以树状结构显示当前场景中的所有节点，场景节点是所有其他节点的父节点，包括相机、灯光、网格等等。
 
-<div style="text-align:center;">
-    <img alt="Hierarchy Panel" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*w_LPQbXK5OcAAAAAAAAAAAAADhuCAQ/original" >
-</div>
-<figcaption style="text-align:center; color: #889096;font-size:12px">Hierarchy Panel</figcaption>
+<img alt="Hierarchy Panel" src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*w_LPQbXK5OcAAAAAAAAAAAAADhuCAQ/original" style="zoom:50%;"  >
 
 在层级面板，您可以：
 
