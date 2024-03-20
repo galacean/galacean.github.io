@@ -28,7 +28,7 @@ label: Graphics/Shader
 
 如[烘焙教程](${docs}graphics-bake-blender)介绍，如果我们已经制作完了烘焙贴图，希望有一种**便捷材质**，颜色只由烘焙纹理影响，不用添加灯光，不用调试法线，也不用调试金属粗糙度等高阶属性，那么你可以试试 Galacean 的 [UnlitMaterial](${api}core/UnlitMaterial), glTF 有专门的[KHR_materials_unlit ](https://github.com/KhronosGroup/glTF/tree/master/extensions/2.0/Khronos/KHR_materials_unlit)插件，Galacean 会解析插件，生成 Unlit 材质。
 
-![image.png](https://gw.alipayobjects.com/zos/OasisHub/39965fc2-3fc2-44b9-a294-a04eb4441120/1623652741734-090284d5-9b1a-4db8-9231-dc3f4d188a38-20210614150743080.png)
+<img src="https://gw.alipayobjects.com/zos/OasisHub/39965fc2-3fc2-44b9-a294-a04eb4441120/1623652741734-090284d5-9b1a-4db8-9231-dc3f4d188a38-20210614150743080.png" alt="image.png" style="zoom:50%;" />
 
 测试模型：[TREX.zip](https://www.yuque.com/attachments/yuque/0/2021/zip/381718/1623651429048-7f6a3610-d5cb-4a73-97f5-0d37d0c63b2c.zip?_lake_card=%7B%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2021%2Fzip%2F381718%2F1623651429048-7f6a3610-d5cb-4a73-97f5-0d37d0c63b2c.zip%22%2C%22name%22%3A%22TREX.zip%22%2C%22size%22%3A499161%2C%22type%22%3A%22application%2Fx-zip-compressed%22%2C%22ext%22%3A%22zip%22%2C%22status%22%3A%22done%22%2C%22taskId%22%3A%22u458bcbec-d647-4328-8036-3d5eb12860f%22%2C%22taskType%22%3A%22upload%22%2C%22id%22%3A%22ua8a5baad%22%2C%22card%22%3A%22file%22%7D)
 

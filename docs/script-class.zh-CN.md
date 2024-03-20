@@ -16,7 +16,7 @@ label: Script
 
 ## 脚本生命周期
 
-![脚本生命周期-zh](https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_8C-TJP2UIgAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_7c464e/afts/img/A*_8C-TJP2UIgAAAAAAAAAAAAAARQnAQ" alt="脚本生命周期-zh" style="zoom:67%;" />
 
 > [onBeginRender](${api}core/Script#onBeginRender) 和 [onEndRender](${api}core/Script#onEndRender) 这两个生命周期与其他的有些不同。
 >

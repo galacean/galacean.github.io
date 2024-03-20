@@ -35,13 +35,13 @@ pivot 代表精灵中心在 region 中的位置，如下：
 
 在 **[资产面板](${docs}assets-interface)** 空白处依次 **右键** → **Upload** → **Sprite** → **选中对应图片** 即可上传精灵资产，上传成功后当前资产列表会同步添加一份名为 `图片名.png` 的纹理资产和一份 `图片名-spr.png` 的精灵资产
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*bRghQqoN1GAAAAAAAAAAAAAADhuCAQ/original" alt="avatar" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*bRghQqoN1GAAAAAAAAAAAAAADhuCAQ/original" alt="avatar"  />
 
 #### 创建空白精灵
 
 在 **[资产面板](${docs}assets-interface)** 空白处依次 **右键** → **Create** → **Sprite** 即可创建一份空白的精灵资产。
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Gv96TrKvRkEAAAAAAAAAAAAADhuCAQ/original" alt="avatar" style="zoom:50%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*Gv96TrKvRkEAAAAAAAAAAAAADhuCAQ/original" alt="avatar"  />
 
 #### 脚本创建
 

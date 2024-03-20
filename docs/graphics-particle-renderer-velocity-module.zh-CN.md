@@ -10,7 +10,7 @@ label: Graphics/Particle
 
 [`VelocityOverLifetimeModule`](${api}core/VelocityOverLifetimeModule) 继承自 `ParticleGeneratorModule`，用于控制粒子系统的生命周期内的速度变化。
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*cJWxR6XQ2VwAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*cJWxR6XQ2VwAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 ## 属性
 

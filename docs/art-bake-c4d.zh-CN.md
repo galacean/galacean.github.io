@@ -25,32 +25,32 @@ label: Art
 
 1.将准备好的高模用 C4D 进行调节材质渲染出来需要的效果，像面部使用的贴图也需要按照整体的 uv 排布来绘制贴图。调节好材质之后就可以准备进行烘培了。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*u81UTYTkSVMAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*u81UTYTkSVMAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
 2.  烘培重要的一点是需要对摄像机的模式进行选择，对需要进行输出的摄像机进行标签指定，加入 OC 渲染器特有的摄像机标签。
 
-![](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*gRWvSK1MoTMAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*gRWvSK1MoTMAAAAAAAAAAAAAARQnAQ" style="zoom: 67%;" />
 
 3. 点击添加好的摄像机标签进入标签属性摄像机类型会有很多选项其中一项为烘培，选择烘培。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*7XApTKsQy9wAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*7XApTKsQy9wAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom: 67%;" />
 
 4. 在烘培菜单中将烘培群组 ID 设置为除 1 以外的数字这里设置为 2。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*n_1qRIkFtdAAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*n_1qRIkFtdAAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
 5. 然后需要将需要烘培的模型并为一组，如下图所示将所有需要的模型打一个组并且加入 OC 对象标签。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*_iMOSaTyfroAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*_iMOSaTyfroAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
 6. 点击标签出现标签属性选择对象图层，然后将里面的烘培 ID 设置为和烘培群组 ID 一样的数值这里是 2，然后点击渲染即可,这样就可以烘培出需要的图片。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lP1pQqZWZC8AAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*lP1pQqZWZC8AAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*gsxbTZBSKGQAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*gsxbTZBSKGQAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
 如果对烘焙的结果不是非常满意，C4D、Substance Painter 都能够涂刷修改贴图。真实感渲染不是唯一的选择，涂刷贴图也可以用来还原一些特殊的风格。
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*PCz8TpYJd5wAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*PCz8TpYJd5wAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />
 
-![image.png](https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*8mwtRY6YdiIAAAAAAAAAAAAAARQnAQ)
+<img src="https://gw.alipayobjects.com/mdn/rms_d27172/afts/img/A*8mwtRY6YdiIAAAAAAAAAAAAAARQnAQ" alt="image.png" style="zoom:50%;" />

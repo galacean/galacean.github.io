@@ -11,7 +11,7 @@ Galacean 的触控是基于 [PointerEvent](https://www.w3.org/TR/pointerevents3/
 
 在 Galacean 中，无论是 PC 上的鼠标，移动端的触控笔或是指头，当他在触控范围内发生对应行为时（ **Down**, **Move**, etc），都会被实例化为 [Pointer](${api}core/Pointer)，您可以在 [InputManager](${api}core/InputManager) 里获取到当前活动着的所有触控点。
 
-<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*k6_aRKNVxGkAAAAAAAAAAAAADhuCAQ/original" alt="image.png" style="zoom:100%;" />
+<img src="https://mdn.alipayobjects.com/huamei_yo47yq/afts/img/A*k6_aRKNVxGkAAAAAAAAAAAAADhuCAQ/original" alt="image.png"  />
 
 > 需要注意的是，每个触控点都是相互独立的，它们响应对应的事件并回调相应的钩子函数。
 

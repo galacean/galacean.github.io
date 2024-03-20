@@ -8,7 +8,7 @@ label: Graphics/Particle
 
 [MainModule](${api}core/MainModule) 是 `ParticleGeneratorModule` 的主模块，包含了最基本的粒子生成参数。这些属性大多用于控制新创建的粒子的初始状态。
 
-![avatar](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*JUjgTLfiz7kAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*JUjgTLfiz7kAAAAAAAAAAAAADtKFAQ/original" alt="avatar" style="zoom:50%;" />
 
 ## 属性
 

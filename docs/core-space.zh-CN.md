@@ -29,7 +29,7 @@ label: Core
 
 ## 编辑器使用
 
-![merge](https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original)
+<img src="https://mdn.alipayobjects.com/huamei_qbugvr/afts/img/A*vU40Rb-2s5QAAAAAAAAAAAAADtKFAQ/original" alt="merge" style="zoom:50%;" />
 
 确定 gizmo 在场景中姿态
 
