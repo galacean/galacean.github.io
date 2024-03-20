@@ -23,7 +23,7 @@ flowchart LR
 
 编辑器中可以添加 3 种 ShaderLab 模板: 自定义、`PBR`、和 着色器片段
 
-  <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*8PtDQI7QzosAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
+  <img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*MiW5RYzGUhwAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
 
 其中 **自定义** 和 **`PBR`** 是使用 ShaderLab 语法进行编写的着色器模板，**着色器片段** 则是为了方便代码段复用，ShaderLab 中可以如下使用 `include` 宏进行代码段引用，后续编译过程中会被自动扩展替换。使用方式详见语法标准模块。
 
@@ -469,13 +469,13 @@ ShaderFactory.registerInclude('includeKey', commonSource);
 
 有了使用`ShaderLab`编写的自定义着色器资产后，我们可以通过将着色器绑定到新建的材质实现用户自定义材质。
 
-<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*LR6zR453jvAAAAAAAAAAAAAADteEAQ/fmt.webp" style="zoom:50%;">
+<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*tVDOTq0ms2gAAAAAAAAAAAAADteEAQ/original" style="zoom:50%;">
 
 - `ShaderLab`反射材质属性
 
 如果我们在`ShaderLab`中编写了`材质属性定义`模块，模块中定义的属性会暴露在绑定该 Shader 的材质资产 Inspector 面板中
 
-<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*Q4fvT5M1hJcAAAAAAAAAAAAADteEAQ/original" style="zoom:50%">
+<img src="https://mdn.alipayobjects.com/huamei_aftkdx/afts/img/A*38UISKqK2WUAAAAAAAAAAAAADteEAQ/original" style="zoom:50%">
 
 ## 一个利用多 Pass 技术实现平面阴影的示例
 
