@@ -5,6 +5,7 @@ import { useIntl } from 'react-intl';
 import { AppContext } from '../../contextProvider';
 import { APISearchResponse, searchAPI, searchDoc } from '../headerUtils';
 import DocSearchRes from './SearchResult';
+import { useLocation } from 'react-router-dom';
 
 interface ISearchResProps {
   searchText: string;
@@ -33,8 +34,18 @@ const SearchResult = (props: ISearchResProps) => {
 
   const PAGE_SIZE = '20';
 
+  const {pathname} = useLocation();
+  let searchContext = 'docs';
+
+  if (pathname.indexOf('/api/') > -1) {
+    searchContext = 'api';
+  }
+  else if (pathname.indexOf('/examples/') > -1) {
+    searchContext = 'examples';
+  }
+
   const searchResultTab = (
-    <Tabs defaultValue='docs' closable>
+    <Tabs defaultValue={searchContext} closable>
       <StyledTabList
         tabs={[
           {
