@@ -38,7 +38,7 @@ label: Graphics/Background
 
 ```typescript
 // 创建天空盒纹理
-const textureCube = await engine.resourceManager.load<Texture2D>({
+const textureCube = await engine.resourceManager.load<TextureCube>({
   urls: [
     "px - right 图片 url",
     "nx - left 图片 url",
@@ -47,7 +47,7 @@ const textureCube = await engine.resourceManager.load<Texture2D>({
     "pz - front 图片 url",
     "nz - back 图片 url",
   ],
-  type: AssetType.Texture2D,
+  type: AssetType.TextureCube,
 });
 // 创建天空盒材质
 const skyMaterial = new SkyBoxMaterial(engine);

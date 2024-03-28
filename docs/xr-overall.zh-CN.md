@@ -19,3 +19,4 @@ Galacean 对 XR 做了干净灵活的设计：
 
 - [快速开发 XR 互动](${docs}xr-start)：XR 工作流与调试
 - [XR 管理器](${docs}xr-manager)：管理[相机](${docs}xr-camera)，[会话](${docs}xr-session)，[交互](${docs}xr-input)，[功能](${docs}xr-features)等
+- [XR 兼容性](${docs}xr-compatibility)：介绍当前 WebXR 的兼容性
