@@ -174,6 +174,8 @@ EditorMacros
    | Vector3 | macroName("Macro Description", Vector3) = (0.25, 0.5, 0.5); |
    | Vector4 | macroName("Macro Description", Vector4) = (0.25, 0.5, 0.5, 1.0); |
 
+> 注意，当前版本 ShaderLab 材质属性模块只是定义了绑定该 Shader 的材质在编辑器中的 Inspector UI 面板，并不会替你在`ShaderPass`中声明对应的全局变量，如果`ShaderPass`代码中引用了该变量需在全局变量模块(见下文)中明确声明补充。
+
 #### 全局变量
 
 可以在 ShaderLab 中声明 4 类全局变量：渲染状态(RenderState)，结构体，函数，以及单变量。
