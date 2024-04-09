@@ -6,7 +6,7 @@ group: 网格
 label: Graphics/Shader
 ---
 
-`ShaderLab` 是专为 Galacean 引擎设计的一种 Shader 语言。相较于以往通过原生 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 编写自定义 Shader 的方式，使用 `ShaderLab` 会更加便捷。可以按照如下流程编写着色器：
+`ShaderLab` 是一个针对 Galacean 引擎打造的 Shader 包装语言，它允许开发人员使用熟悉的 [GLSL](https://www.khronos.org/files/opengles_shading_language.pdf) 语法编写自定义 Shader，同时提供了额外的高级抽象和管理特性以增强开发效率。通过 ShaderLab，开发者能够更便捷地定义材质属性、渲染配置和其他效果。尽管 ShaderLab 为着色器的编写引入了便利性，但它并不取代 GLSL，而是与之兼容。开发者可以在 ShaderLab 框架内编写原生 GLSL 代码块，享受两者的结合优势。ShaderLab 使用流程如下:
 
 ```mermaid
 flowchart LR
