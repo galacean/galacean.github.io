@@ -695,7 +695,7 @@ class Score extends Script {
     });
   }
 
-  private _show(score: number): void {
+  private _show(num: number): void {
     const {
       _scoreEntities: entities,
       _scoreRenderers: renderers,

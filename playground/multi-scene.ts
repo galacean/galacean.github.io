@@ -74,10 +74,10 @@ function initFirstScene(engine: Engine): Scene {
   lightEntity.transform.setRotation(-30, 0, 0);
   lightEntity.addComponent(DirectLight);
 
-  // Create cube
-  const cubeEntity = rootEntity.createChild("cube");
-  cubeEntity.transform.setPosition(-3, 0, 3);
-  const renderer = cubeEntity.addComponent(MeshRenderer);
+  // Create sphere
+  const entity = rootEntity.createChild("cube");
+  entity.transform.setPosition(-3, 0, 3);
+  const renderer = entity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createSphere(engine, 2, 24);
   const material = new BlinnPhongMaterial(engine);
   material.baseColor = new Color(1, 0.25, 0.25, 1);
