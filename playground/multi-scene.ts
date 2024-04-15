@@ -75,7 +75,7 @@ function initFirstScene(engine: Engine): Scene {
   lightEntity.addComponent(DirectLight);
 
   // Create sphere
-  const entity = rootEntity.createChild("cube");
+  const entity = rootEntity.createChild("sphere");
   entity.transform.setPosition(-3, 0, 3);
   const renderer = entity.addComponent(MeshRenderer);
   renderer.mesh = PrimitiveMesh.createSphere(engine, 2, 24);
