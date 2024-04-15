@@ -36,3 +36,9 @@ KTX2 的生成可以使用：
 ## 兼容性
 
 KTX2 转码使用到了 WebAssembly 技术，需要使用 Chrome 57+，和 iOS 11.3+（11.0 ~ 11.2.以下的 WebAssembly 存在 [bug](https://bugs.webkit.org/show_bug.cgi?id=181781)）
+
+iOS 16 以下系统，在通过 worker 加载必要的 KTX2 解析 wasm 文件时会概率发生无返回的情况，尤其是在 wasm 首次加载时概率较大。可以通过 iOS 不走 worker 来绕过去: 
+
+```typescript
+WebGLEngine.create({ canvas: "canvas", ktx2Loader: { workerCount: 0 } });
+```
