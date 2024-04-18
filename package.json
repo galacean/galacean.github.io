@@ -8,16 +8,16 @@
     "@babel/standalone": "^7.19.3",
     "@galacean/editor-ui": "0.0.2",
     "@galacean/engine": "^1.2.0-beta.0",
-    "@galacean/engine-xr": "^1.2.0-alpha",
-    "@galacean/engine-xr-webxr": "^1.2.0-alpha",
     "@galacean/engine-lottie": "^1.1.0-beta.0",
     "@galacean/engine-physics-lite": "^1.2.0-beta.0",
     "@galacean/engine-physics-physx": "^1.2.0-beta.0",
+    "@galacean/engine-shader-lab": "^1.2.0-beta.0",
     "@galacean/engine-spine": "^1.1.0-beta.21",
     "@galacean/engine-toolkit": "^1.2.0-beta.0",
     "@galacean/engine-toolkit-input-logger": "^1.2.0-beta.0",
+    "@galacean/engine-xr": "^1.2.0-alpha",
+    "@galacean/engine-xr-webxr": "^1.2.0-alpha",
     "@galacean/tools-baker": "^1.2.0-beta.0",
-    "@galacean/engine-shader-lab": "^1.2.0-beta.0",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-icons": "^1.1.1",
@@ -78,7 +78,8 @@
     "dev": "vite --host",
     "build": "vite build && node ./scripts/build.js",
     "deploy": "gh-pages -d dist",
-    "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js"
+    "playground": "vite serve playground/.dev --config playground/.dev/vite.config.js",
+    "excel": "node ./scripts/md2excel.js"
   },
   "eslintConfig": {
     "extends": [
@@ -109,6 +110,7 @@
     "@types/react-syntax-highlighter": "^15.5.5",
     "fs-extra": "^10.1.0",
     "gh-pages": "^4.0.0",
+    "js-yaml": "^4.1.0",
     "less": "^4.1.3",
     "sass": "^1.55.0"
   },
