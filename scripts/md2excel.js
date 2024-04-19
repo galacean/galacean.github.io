@@ -63,13 +63,14 @@ function writeExcel(data) {
   // 创建工作簿并添加工作表
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
-  XLSX.writeFile(workbook, 'data.xlsx');
+  XLSX.writeFile(workbook, 'docs.xlsx');
 }
 
 
 async function main() {
   await readMarkdownFiles('docs');
   writeExcel(data);
+  console.log('"docs.xlsx" has been successfully generated!');
 }
 
 main();
