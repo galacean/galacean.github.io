@@ -32,3 +32,6 @@ yarn.lock
 
 # playground
 playground/.dev/mpa
+
+# excel
+docs.xlsx
