@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const path = require('path');
 const yaml = require('js-yaml');
+const XLSX = require('xlsx');
 
 const data = [];
 
@@ -18,10 +19,14 @@ async function readMarkdownFiles(dir) {
 
         const { title, type, group } = yaml.load(yamlContent);
         data.push({
-          file,
-          title,
           directory: group ? `${type}-${group}` : type,
-          content: content.replace(reg, '')
+          title,
+          keywords: '',
+          extends: '',
+          refs: '',
+          format: 'markdown',
+          content: content.replace(reg, ''),
+          remarks: ''
         })
       }
     }
@@ -31,9 +36,40 @@ async function readMarkdownFiles(dir) {
 }
 
 
+function writeExcel(data) {
+  // 中英文表头映射
+  const mapping = {
+    directory: '*类目',
+    title: '*标题',
+    keywords: '关键词',
+    extends: '扩展问法',
+    refs: '关联知识点',
+    format: '*知识点格式',
+    content: '*知识点内容',
+    remarks: '备注'
+  };
+
+  // 生成映射后的英文表头顺序
+  const englishHeaders = Object.keys(mapping);
+  // 生成中文表头数组
+  const chineseHeaders = englishHeaders.map(key => mapping[key]);
+
+  // 生成 JSON 数据表
+  const worksheet = XLSX.utils.json_to_sheet(data, { header: englishHeaders, skipHeader: true });
+
+  // 在工作表上的 'A1' 位置添加中文表头
+  XLSX.utils.sheet_add_aoa(worksheet, [chineseHeaders], { origin: 'A1' });
+
+  // 创建工作簿并添加工作表
+  const workbook = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+  XLSX.writeFile(workbook, 'data.xlsx');
+}
+
+
 async function main() {
   await readMarkdownFiles('docs');
-  console.log(data);
+  writeExcel(data);
 }
 
 main();
