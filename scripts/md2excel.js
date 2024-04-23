@@ -5,7 +5,11 @@ const XLSX = require('xlsx');
 
 const data = [];
 
-const reg = /---\n([\s\S]*?)\n---/;
+// yaml content
+const yamlReg = /---\n([\s\S]*?)\n---/;
+const docLinkReg = /\${docs}/g;
+const apiLinkReg = /\${api}/g;
+const exampleLinkReg = /\${examples}/g;
 
 async function readFiles(dir) {
   try {
@@ -25,10 +29,17 @@ async function readFiles(dir) {
 }
 
 async function readMarkdownFile(file, filePath) {
-  const content = await fs.readFile(filePath, 'utf8');
-  const yamlContent = content.match(reg)[1];
+  let content = await fs.readFile(filePath, 'utf8');
+  const yamlContent = content.match(yamlReg)[1];
 
   const { title, type, group } = yaml.load(yamlContent);
+  // remove yaml content
+  content = content.replace(yamlReg, '');
+
+  // replace links
+  content = content.replace(docLinkReg, 'https://galacean.antgroup.com/engine/docs/latest/cn/')
+  content = content.replace(apiLinkReg, 'https://galacean.antgroup.com/engine/api/latest/')
+  content = content.replace(exampleLinkReg, 'https://galacean.antgroup.com/engine/examples/latest/')
 
   data.push({
     // directory: group ? `${type}-${group}` : type,
@@ -38,7 +49,7 @@ async function readMarkdownFile(file, filePath) {
     extends: '',
     refs: '',
     format: 'Markdown',
-    content: content.replace(reg, ''),
+    content,
     remarks: `官网文档: https://galacean.antgroup.com/engine/docs/latest/cn/${file.replace(/(\.zh-CN)?\.md$/, '')}`
   })
 }
