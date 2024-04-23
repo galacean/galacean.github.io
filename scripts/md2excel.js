@@ -7,32 +7,55 @@ const data = [];
 
 const reg = /---\n([\s\S]*?)\n---/;
 
-async function readMarkdownFiles(dir) {
+async function readFiles(dir) {
   try {
     const files = await fs.readdir(dir);
     for (const file of files) {
       const filePath = path.join(dir, file);
       const fileStat = await fs.stat(filePath);
       if (fileStat.isFile() && /\.(md|markdown)$/i.test(path.extname(file))) {
-        const content = await fs.readFile(filePath, 'utf8');
-        const yamlContent = content.match(reg)[1];
-
-        const { title, type, group } = yaml.load(yamlContent);
-        data.push({
-          directory: group ? `${type}-${group}` : type,
-          title,
-          keywords: '',
-          extends: '',
-          refs: '',
-          format: 'markdown',
-          content: content.replace(reg, ''),
-          remarks: ''
-        })
+        readMarkdownFile(file ,filePath)
+      } else if (fileStat.isFile() && /\.(ts)$/i.test(path.extname(file))) {
+        readTsFile(file, filePath)
       }
     }
   } catch (err) {
     console.error('Error reading directory:', err);
   }
+}
+
+async function readMarkdownFile(file, filePath) {
+  const content = await fs.readFile(filePath, 'utf8');
+  const yamlContent = content.match(reg)[1];
+
+  const { title, type, group } = yaml.load(yamlContent);
+
+  data.push({
+    // directory: group ? `${type}-${group}` : type,
+    directory: '官方文档',
+    title,
+    keywords: '文档$教程',
+    extends: '',
+    refs: '',
+    format: 'Markdown',
+    content: content.replace(reg, ''),
+    remarks: `官网文档: https://galacean.antgroup.com/engine/docs/latest/cn/${file.replace(/(\.zh-CN)?\.md$/, '')}`
+  })
+}
+
+async function readTsFile(file, filePath) {
+  const content = await fs.readFile(filePath, 'utf8');
+
+  data.push({
+    directory: '官方文档',
+    title: file,
+    keywords: '示例$Demo$Example',
+    extends: '',
+    refs: '',
+    format: 'Markdown',
+    content,
+    remarks: `官网示例: https://galacean.antgroup.com/engine/examples/latest/${file.replace(/\.ts$/, '')}`
+  })
 }
 
 
@@ -68,7 +91,8 @@ function writeExcel(data) {
 
 
 async function main() {
-  await readMarkdownFiles('docs');
+  await readFiles('docs');
+  await readFiles('playground');
   writeExcel(data);
   console.log('"docs.xlsx" has been successfully generated!');
 }
