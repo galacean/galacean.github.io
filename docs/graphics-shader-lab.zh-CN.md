@@ -34,7 +34,7 @@ flowchart LR
 1.  `ShaderLab` 初始化
 
 ```ts
-import { ShaderLab } from '@galacean/engine-shaderlab';
+import { ShaderLab } from '@galacean/engine-shader-lab';
 
 const shaderLab = new ShaderLab();
 // 使用ShaderLab初始化Engine
