@@ -2,7 +2,6 @@
  * @title Sprite Draw Mode
  * @category 2D
  */
-import * as dat from "dat.gui";
 import {
   AssetType,
   Camera,
@@ -21,9 +20,11 @@ import {
   SubMesh,
   Texture2D,
   UnlitMaterial,
+  Vector3,
   Vector4,
   WebGLEngine,
 } from "@galacean/engine";
+import * as dat from "dat.gui";
 
 Logger.enable();
 
@@ -96,32 +97,44 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
 
     onUpdate(): void {
       const { modelMesh, targetSpriteRenderer } = this;
-      const { positions, vertexCount, triangles } =
-        // @ts-ignore
-        targetSpriteRenderer._verticesData;
-      if (vertexCount > 0) {
+      const subChunk = targetSpriteRenderer._subChunk;
+      if (subChunk) {
+        const vertexArea = subChunk.vertexArea;
+        const vertexCount = vertexArea.size / 9;
+        const vertices = subChunk.chunk.vertices;
+        const myPositions = modelMesh.getPositions() || [];
+        for (let i = 0, o = vertexArea.start; i < vertexCount; ++i, o += 9) {
+          if (myPositions[i]) {
+            myPositions[i].copyFromArray(vertices, o);
+          } else {
+            myPositions[i] = new Vector3(
+              vertices[o],
+              vertices[o + 1],
+              vertices[o + 2]
+            );
+          }
+        }
+
         const trianglesCount =
           targetSpriteRenderer.drawMode === SpriteDrawMode.Sliced
             ? (vertexCount * 27) / 4
             : vertexCount * 3;
         const myTriangles =
           modelMesh.getIndices() || new Uint16Array(Math.floor(4096 * 3));
-        const myPositions = modelMesh.getPositions() || [];
-        for (let i = 0; i < vertexCount; i++) {
-          if (myPositions[i]) {
-            myPositions[i].copyFrom(positions[i]);
-          } else {
-            myPositions[i] = positions[i].clone();
-          }
-        }
+        const indices = subChunk.indices;
         for (let i = 0, l = trianglesCount / 6; i < l; i++) {
-          myTriangles[6 * i] = triangles[i * 3];
-          myTriangles[6 * i + 1] = triangles[i * 3 + 1];
-          myTriangles[6 * i + 2] = triangles[i * 3 + 1];
-          myTriangles[6 * i + 3] = triangles[i * 3 + 2];
-          myTriangles[6 * i + 4] = triangles[i * 3 + 2];
-          myTriangles[6 * i + 5] = triangles[i * 3];
+          const i3 = i * 3;
+          const i31 = i3 + 1;
+          const i32 = i3 + 2;
+          const i6 = i * 6;
+          myTriangles[i6] = indices[i3];
+          myTriangles[i6 + 1] = indices[i31];
+          myTriangles[i6 + 2] = indices[i31];
+          myTriangles[i6 + 3] = indices[i32];
+          myTriangles[i6 + 4] = indices[i32];
+          myTriangles[i6 + 5] = indices[i3];
         }
+
         modelMesh.setPositions(myPositions);
         modelMesh.setIndices(myTriangles);
         const subMesh = modelMesh.subMesh;

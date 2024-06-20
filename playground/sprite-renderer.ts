@@ -70,9 +70,10 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       this._scaleFlag = true;
     }
 
-    onUpdate() {
+    onUpdate(dt: number) {
       // Update position.
-      this._curRadian += 0.005;
+      const dtRadian = dt * 0.3;
+      this._curRadian += dtRadian;
       const { _radius, _curRadian, entity } = this;
       const { transform } = entity;
       const posX = Math.cos(_curRadian) * _radius;
@@ -80,7 +81,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       transform.setPosition(posX, posY, 0);
 
       // Update scale.
-      this._scale += this._scaleFlag ? 0.005 : -0.005;
+      this._scale += this._scaleFlag ? 0.2 * dt : -0.2 * dt;
       const { _scale } = this;
       transform.setScale(_scale, _scale, _scale);
       if (this._scale >= 0.6) {
@@ -90,7 +91,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
       }
 
       // Update rotation.
-      SpriteController._curRotation += 0.05;
+      SpriteController._curRotation += dt * 3;
       const { _curRotation } = SpriteController;
       transform.setRotation(0, 0, _curRotation);
     }
