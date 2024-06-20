@@ -131,7 +131,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   precision mediump float;
   precision mediump int;
 
-  uniform sampler2D renderer_SpriteTexture;
+  uniform sampler2D renderElement_TextTexture;
   uniform float u_percent;
   uniform vec4 u_subtitleColor;
 
@@ -142,7 +142,7 @@ WebGLEngine.create({ canvas: "canvas" }).then((engine) => {
   varying float v_posX;
 
   void main() {
-    vec4 baseColor = texture2D(renderer_SpriteTexture, v_uv);
+    vec4 baseColor = texture2D(renderElement_TextTexture, v_uv);
     float percent = (v_posX - v_startX) / v_width;
     if (percent <= u_percent) {
       gl_FragColor = baseColor * u_subtitleColor;
