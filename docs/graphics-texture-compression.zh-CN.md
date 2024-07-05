@@ -31,7 +31,15 @@ KTX2 的生成可以使用：
 
 - toktx
 - basisu
-- 编辑器打包，可以参考『[项目发布](${docs}assets-build)』文档。
+
+### 编辑器
+
+编辑器在项目打包时，可以配置选项生成 KTX2，可以参考『[项目发布](${docs}assets-build)』文档。项目导出是全局的配置，也可以独立给不同的纹理资源配置不同的压缩格式。在编辑器的纹理面板下勾选 overwrite 可以覆盖全局配置：
+
+<img src="/Users/husong/Library/Application Support/typora-user-images/image-20240705112419249.png" alt="image-20240705112419249" style="zoom:50%;" />
+
+- ETC1S 尺寸小，内存极小，但是质量较低，适合 albedo, specular 等贴图
+- UASTC 尺寸大，质量高，适合 normal 这类贴图
 
 ## 兼容性
 
