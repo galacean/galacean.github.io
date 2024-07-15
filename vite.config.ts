@@ -18,13 +18,6 @@ export default ({ mode }) => {
       emptyOutDir: true,
       rollupOptions: {
         output: {
-          manualChunks: {
-            '@galacean/engine': ['@galacean/engine'],
-            '@galacean/engine-spine': ['@galacean/engine-spine'],
-            '@galacean/editor-ui': ['@galacean/editor-ui'],
-            '@babel/standalone': ['@babel/standalone'],
-            'mermaid': ['mermaid']
-          },
           chunkFileNames() {
             return 'assets/modules/[name]-[hash].js'
           }
