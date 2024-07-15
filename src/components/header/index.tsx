@@ -1,22 +1,16 @@
 import { ActionButton, Flex, Option, Popover, Select, styled } from '@galacean/editor-ui';
-import { Menu, Translate } from 'iconoir-react';
+import { Translate } from 'iconoir-react';
 import { useContext } from 'react';
 import Media from 'react-media';
 import { AppContext } from '../contextProvider';
-import NavigationMenu from './components/NavigationMenu';
-import { NavigationMenuMobile } from './components/NavigationMenuMobile';
-import ScrollToTop from './components/ScrollToTop';
-import SearchBox from './components/SearchBox';
-import Socials from './components/Socials';
 import ThemeButton from './components/ThemeButton';
-import NavigationMenuHome from '../../home/NavigationMenu';
 
 
 function Header({ isHomePage }: { isHomePage?: boolean }) {
   const context = useContext(AppContext);
 
   let logoUrl = 'https://mdn.alipayobjects.com/huamei_2uqjce/afts/img/A*FK6nTLRyI5IAAAAAAAAAAAAADsF_AQ/original';
-  let logoWidth = '7em';
+  let logoWidth = '6em';
   let logoWidthMobile = '5em';
 
   if (!isHomePage) {
@@ -34,7 +28,7 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
     top: 0
   });
 
-  const StyledLogo = styled('a', {
+  const StyledLogo = styled(Flex, {
     textDecoration: "none",
     "& img": {
       width: logoWidth,
@@ -76,42 +70,27 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
             v.version
         }</Option>)}
       </Select>}
-      {isMobile && <Popover trigger={
-        <ActionButton>
-          <Menu />
-        </ActionButton>
-      }
-        sideOffset={6}
-        css={{ marginRight: "$4" }}
-      >
-        <NavigationMenuMobile isHomePage={isHomePage}/>
-      </Popover>
-      }
     </Flex>
   }
 
   return (
     <>
-      {!isHomePage && <ScrollToTop />}
       <Media query='(max-width: 768px)'>
         {(isMobile) => (
           <StyledHeader justifyContent="between" align="v">
-            <Flex wrap="false" align="v" css={{
+            <Flex wrap="false" css={{
               flex: 1,
               '@media (max-width: 768px)': {
                 justifyContent: "space-between"
               }
             }}>
-              <StyledLogo href='/' css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
+              <StyledLogo align="v" css={context.theme === 'dark-theme' ? { filter: "invert(0.9)" } : {}}>
                 <img src={logoUrl} alt='galacean' />
               </StyledLogo>
               {isMobile && rightActions(true)}
-              {!isMobile && !isHomePage && <SearchBox></SearchBox>}
             </Flex>
             {!isMobile && (
               <Flex align="both" gap="sm">
-                {isHomePage ? <NavigationMenuHome /> : <NavigationMenu />}
-                <Socials />
                 {rightActions(false)}
               </Flex>
             )}

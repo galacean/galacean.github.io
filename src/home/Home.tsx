@@ -2,7 +2,6 @@ import { Helmet } from 'react-helmet';
 import { injectIntl, useIntl } from 'react-intl';
 import Footer from '../components/footer';
 import Header from '../components/header';
-import Cases from './Cases';
 import Production from './Production';
 
 function Home() {
@@ -22,7 +21,6 @@ function Home() {
         />
       </Helmet>
       <Production />
-      <Cases />
       <Footer></Footer>
     </>
   );
