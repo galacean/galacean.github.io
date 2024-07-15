@@ -110,8 +110,6 @@ function Header({ isHomePage }: { isHomePage?: boolean }) {
             </Flex>
             {!isMobile && (
               <Flex align="both" gap="sm">
-                {isHomePage ? <NavigationMenuHome /> : <NavigationMenu />}
-                <Socials />
                 {rightActions(false)}
               </Flex>
             )}

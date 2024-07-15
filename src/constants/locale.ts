@@ -93,7 +93,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.sponsoring": "1.0 发布会",
     "app.home.engine": "Galacean Engine",
     "app.home.engine.open": "打开编辑器",
-    "app.home.engine.use": "阅读文档",
+    "app.home.engine.use": "了解详情",
     "app.home.engine.intro":
       "提供场景搭建、资产处理、动画编辑、脚本编辑等能力，大幅提升 2D、3D 互动项目的开发效率。",
     "app.home.effects": "Galacean Effects",
@@ -245,7 +245,7 @@ export const translationsData: { [lang: string]: any } = {
     "app.home.sponsoring": "1.0 Launch Event",
     "app.home.engine": "Galacean Engine",
     "app.home.engine.open": "Open editor",
-    "app.home.engine.use": "Documentation",
+    "app.home.engine.use": "Get started",
     "app.home.engine.intro":
       "Scene building, resource processing, animation editing, script editing, greatly improving the development efficiency of 2D and 3D interactive projects.",
     "app.home.effects": "Galacean Effects",
