@@ -1,3 +1,5 @@
+This repository is archived. The documentation source of Galacean Engine has been moved to [galacean/engine](https://github.com/galacean/engine/docs).
+
 # Galacean Site
 
 The documentation source of [Galacean Engine](https://github.com/galacean/engine).

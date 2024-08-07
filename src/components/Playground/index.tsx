@@ -63,7 +63,7 @@ export default function Playground(props: IPlayground) {
   const { lang, version } = useContext(AppContext);
   const [packages, setPackage] = useState<any>(null);
 
-  const url = `/engine/example/${props.id}`;
+  const url = `/archive-engine/example/${props.id}`;
   const iframe = createRef<HTMLIFrameElement>();
 
   const [iframeUrl, setIframeUrl] = useState(url);

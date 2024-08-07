@@ -89,7 +89,7 @@ export default function Production() {
                   <FormattedMessage id="app.home.engine.open" />
                 </StyledGradientButton>
               </a>
-              <a href={`/engine/docs/${betaVersion}/${lang}/getting-started-overview`} onClick={() => {
+              <a href={`/archive-engine/docs/${betaVersion}/${lang}/getting-started-overview`} onClick={() => {
                 setVersion(betaVersion);
                 localStorage.setItem('version', betaVersion);
               }}>

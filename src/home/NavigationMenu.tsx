@@ -31,7 +31,7 @@ const StyledNavigationMenuHome = () => {
   return <StyledRoot align="both" gap="lg">
     <DropdownMenu size="lg" trigger={<StyledItem>{formatMessage({ id: 'app.header.menu.engine' })}</StyledItem >}>
       <MenuItem>
-        <StyledLink rel='noopener noreferrer' href={`/engine/docs/${context.version}/${context.lang}/getting-started-overview`}>
+        <StyledLink rel='noopener noreferrer' href={`/archive-engine/docs/${context.version}/${context.lang}/getting-started-overview`}>
           {formatMessage({ id: 'app.header.menu.engine.docs' })}
         </StyledLink>
       </MenuItem>
@@ -41,18 +41,18 @@ const StyledNavigationMenuHome = () => {
         </StyledLink>
       </MenuItem>
       <MenuItem>
-        <StyledLink rel='noopener noreferrer' href={`/engine/examples/${context.version}`}>
+        <StyledLink rel='noopener noreferrer' href={`/archive-engine/examples/${context.version}`}>
           {formatMessage({ id: 'app.header.menu.engine.examples' })}
         </StyledLink>
       </MenuItem>
       <MenuItem>
-        <StyledLink rel='noopener noreferrer' href={`/engine/api/${context.version}`}>
+        <StyledLink rel='noopener noreferrer' href={`/archive-engine/api/${context.version}`}>
           {formatMessage({ id: 'app.header.menu.engine.api' })}
         </StyledLink>
       </MenuItem>
       <MenuGroup label={""} divider="top">
         <MenuItem>
-          <StyledLink rel='noopener noreferrer' href={`/engine/gltf-viewer`}>
+          <StyledLink rel='noopener noreferrer' href={`/archive-engine/gltf-viewer`}>
             {formatMessage({ id: 'app.header.menu.ecosystem.gltfviewer' })}
           </StyledLink >
         </MenuItem>

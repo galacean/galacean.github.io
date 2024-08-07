@@ -15,7 +15,7 @@ export default ({ mode }) => {
     define: {
       "process.env.NODE_ENV": `"${mode}"`,
     },
-    base: '/engine/',
+    base: '/archive-engine/',
     build: {
       emptyOutDir: true,
       rollupOptions: {

@@ -37,7 +37,7 @@
 
         // 检查是否为旧的哈希路由格式
         if (pathname === '/' && hash.startsWith('#/')) {
-          const newPath = `/engine/${hash.slice(2)}`;
+          const newPath = `/archive-engine/${hash.slice(2)}`;
           window.location.replace(newPath);
         }
       })();

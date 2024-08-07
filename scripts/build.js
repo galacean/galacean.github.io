@@ -9,9 +9,9 @@ function moveFile(oldPath, newPath) {
 
 try {
   process.chdir('./dist');
-  fs.mkdirSync('engine');
-  moveFile('index.html', './engine/index.html');
-  moveFile('assets', './engine/assets');
+  fs.mkdirSync('archive-engine');
+  moveFile('index.html', './archive-engine/index.html');
+  moveFile('assets', './archive-engine/assets');
   moveFile('home.html', 'index.html');
 } catch (error) {
   console.error(error);
